@@ -3412,6 +3412,7 @@ resourcestring
   lisPathEditBrowse = 'Browse';
   lisPathEditPathTemplates = 'Path templates';
   lisPathEditDeleteInvalidPaths = 'Delete Invalid Paths';
+  lisPathEditImportPaths = 'Import Paths';  
   
   // new dialog
   lisNewDlgNoItemSelected = 'No item selected';
