@@ -32,6 +32,8 @@ type
   TPathEditorDialog = class(TForm)
     AddTemplateButton: TBitBtn;
     ButtonPanel1: TButtonPanel;
+    ImportPathsButton: TBitBtn;
+    OpenDialogPathsImport: TOpenDialog;
     ReplaceButton: TBitBtn;
     AddButton: TBitBtn;
     DeleteInvalidPathsButton: TBitBtn;
@@ -54,6 +56,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure ImportPathsButtonClick(Sender: TObject);    
     procedure MoveDownButtonClick(Sender: TObject);
     procedure MoveUpButtonClick(Sender: TObject);
     procedure PathListBoxDrawItem(Control: TWinControl; Index: Integer;
@@ -259,6 +262,7 @@ begin
   DeleteButton.Hint:=lisPathEditorDeleteHint;
   DeleteInvalidPathsButton.Caption:=lisPathEditDeleteInvalidPaths;
   DeleteInvalidPathsButton.Hint:=lisPathEditorDeleteInvalidHint;
+  ImportPathsButton.Caption:=lisPathEditImportPaths;  
 
   TemplateGroupBox.Caption:=lisPathEditPathTemplates;
   AddTemplateButton.Caption:=lisCodeTemplAdd;
@@ -301,6 +305,48 @@ begin
     UpdateButtons;
   end;
 end;
+
+
+procedure TPathEditorDialog.ImportPathsButtonClick(Sender: TObject);
+var paths:TStringList;
+    y:integer;
+    c:integer;
+    RelPath:string;
+begin
+  if not OpenDialogPathsImport.Execute then exit;
+
+  paths:=TStringList.Create();
+
+  try
+    paths.LoadFromFile(OpenDialogPathsImport.FileName);
+
+    with PathListBox do
+    begin
+      y:=ItemIndex+1;
+
+      if y=0 then
+      begin
+        y:=Count;
+      end;
+
+      for c:=0 to paths.Count-1 do
+      begin
+        if Trim(paths[c])<>'' then
+        begin
+          RelPath:=BaseRelative(paths[c]);
+          Items.InsertObject(y, RelPath, PathMayExist(paths[c]));
+          ItemIndex:=y;
+        end;
+      end;
+
+      UpdateButtons;
+    end;
+
+  finally
+    FreeAndNil(paths);
+  end;
+end;
+
 
 procedure TPathEditorDialog.MoveUpButtonClick(Sender: TObject);
 var
@@ -454,6 +500,7 @@ begin
   i := PathListBox.ItemIndex;
   MoveUpButton.Enabled := i > 0;
   MoveDownButton.Enabled := (i > -1) and (i < PathListBox.Count-1);
+  ImportPathsButton.Enabled:=true;
 end;
 
 procedure TPathEditorDialog.SetBaseDirectory(const AValue: string);
