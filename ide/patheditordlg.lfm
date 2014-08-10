@@ -175,6 +175,25 @@ object PathEditorDialog: TPathEditorDialog
       OnChange = DirectoryEditChange
     end
   end
+  object ImportPathsButton: TBitBtn
+    AnchorSideLeft.Control = DeleteInvalidPathsButton
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideBottom.Control = PathGroupBox
+    AnchorSideBottom.Side = asrBottom
+    Left = 471
+    Height = 25
+    Top = 172
+    Width = 127
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    Caption = 'ImportPathsButton'
+    Enabled = False
+    OnClick = ImportPathsButtonClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 8
+  end
   object TemplateGroupBox: TGroupBox
     AnchorSideTop.Side = asrBottom
     Left = 6
@@ -254,5 +273,9 @@ object PathEditorDialog: TPathEditorDialog
     Options = [ofFileMustExist, ofEnableSizing, ofViewDetail]
     left = 504
     top = 32
+  end
+  object OpenDialogPathsImport: TOpenDialog
+    left = 408
+    top = 63
   end
 end
