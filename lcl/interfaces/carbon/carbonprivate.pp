@@ -330,7 +330,7 @@ const
 
 implementation
 
-uses InterfaceBase, CarbonInt, CarbonProc, CarbonDbgConsts, CarbonUtils, CarbonCanvas, CarbonCaret;
+uses LazUTF8, InterfaceBase, CarbonInt, CarbonProc, CarbonDbgConsts, CarbonUtils, CarbonCanvas, CarbonCaret;
 
 var
   // recursive number of draw events called by OSX

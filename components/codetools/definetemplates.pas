@@ -1194,7 +1194,7 @@ end;
 function GatherFilesInFPCSources(Directory: string;
   const OnProgress: TDefinePoolProgress): TStringList;
 begin
-  Result:=GatherFiles(Directory,'{.svn,CVS}',
+  Result:=GatherFiles(Directory,'{.*,CVS}',
                       '{*.pas,*.pp,*.p,*.inc,Makefile.fpc}',8,OnProgress);
 end;
 

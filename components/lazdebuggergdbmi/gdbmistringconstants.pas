@@ -79,6 +79,9 @@ resourcestring
   lisResponseContinue = 'Response: %sContinue ?';
   dlgGroupDebugger = 'Debugger';
   synfFailedToLoadApplicationExecutable = 'Failed to load application executable';
+  synfFailedToInitializeTheDebuggerSetPascalFailed = 'Failed to initialize the debugger (set '
+    +'pascal failed)';
+  synfFailedToInitializeDebugger = 'Failed to initialize debugger';
 
 implementation
 

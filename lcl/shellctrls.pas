@@ -53,6 +53,7 @@ type
     FRoot: string;
     FShellListView: TCustomShellListView;
     FFileSortType: TFileSortType;
+    FInitialRoot: String;
     { Setters and getters }
     function GetPath: string;
     procedure SetFileSortType(const AValue: TFileSortType);
@@ -60,6 +61,7 @@ type
     procedure SetRoot(const AValue: string);
     procedure SetShellListView(const Value: TCustomShellListView);
   protected
+    procedure Loaded; override;
     { Other methods specific to Lazarus }
     function  PopulateTreeNodeWithFiles(
       ANode: TTreeNode; ANodePath: string): Boolean;
@@ -294,6 +296,8 @@ const
   SShellCtrlsInvalidPathRelative = 'Invalid relative pathname:'#13'"%s"'#13
                                     +'in relation to rootpath:'#13'"%s"';
 
+function DbgS(OT: TObjectTypes): String; overload;
+
 procedure Register;
 
 implementation
@@ -301,6 +305,19 @@ implementation
 {$ifdef windows}
 uses Windows;
 {$endif}
+
+
+
+function DbgS(OT: TObjectTypes): String; overload;
+begin
+  Result := '[';
+  if (otFolders in OT) then Result := Result + 'otFolders,';
+  if (otNonFolders in OT) then Result := Result + 'otNonFolders,';
+  if (otHidden in OT) then Result := Result + 'otHidden';
+  if Result[Length(Result)] = ',' then System.Delete(Result, Length(Result), 1);
+  Result := Result + ']';
+end;
+
 
 {
 uses ShlObj;
@@ -361,11 +378,25 @@ begin
     Value.ShellTreeView := Self;
 end;
 
+procedure TCustomShellTreeView.Loaded;
+begin
+  inherited Loaded;
+  if (FInitialRoot = '') then
+    PopulateWithBaseFiles()
+  else
+    SetRoot(FInitialRoot);
+end;
+
 procedure TCustomShellTreeView.SetRoot(const AValue: string);
 var
   RootNode: TTreeNode;
 begin
   if FRoot=AValue then exit;
+  if (csLoading in ComponentState) then
+  begin
+    FInitialRoot := AValue;
+    Exit;
+  end;
   //Delphi raises an unspecified exception in this case, but don't crash the IDE at designtime
   if not (csDesigning in ComponentState)
      and (AValue <> '')
@@ -442,14 +473,13 @@ end;
 constructor TCustomShellTreeView.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
+  FInitialRoot := '';
 
   // Initial property values
 
   ObjectTypes:= [otFolders];
 
-  // Populates the base dirs
-
-  PopulateWithBaseFiles();
+  // Populating the base dirs is done in Loaded
 end;
 
 destructor TCustomShellTreeView.Destroy;
@@ -560,10 +590,11 @@ begin
         IsValidDirectory := (DirInfo.Name <> '.') and (DirInfo.Name <> '..');
 
         IsHidden := (DirInfo.Attr and faHidden = faHidden);
-        {$IFDEF Unix}
-        if (DirInfo.Name<>'') and (DirInfo.Name[1]='.') then
-          IsHidden:=true;
-        {$ENDIF}
+        //LinuxToWinAttr already does this in FF/FN
+        //{$IFDEF Unix}
+        //if (DirInfo.Name<>'') and (DirInfo.Name[1]='.') then
+        //  IsHidden:=true;
+        //{$ENDIF}
 
         // First check if we show hidden files
         if IsHidden then AddFile := (otHidden in AObjectTypes)
@@ -662,17 +693,30 @@ var
    var
      SR: TSearchRec;
      FindRes: LongInt;
+     Attr: Longint;
+     IsHidden: Boolean;
    begin
      Result:=False;
      try
-       FindRes := FindFirstUTF8(AppendPathDelim(ADir) + AllFilesMask, faDirectory, SR);
+       Attr := faDirectory;
+       if (otHidden in fObjectTypes) then Attr := Attr or faHidden;
+       FindRes := FindFirstUTF8(AppendPathDelim(ADir) + AllFilesMask, Attr , SR);
        while (FindRes = 0) do
        begin
          if ((SR.Attr and faDirectory <> 0) and (SR.Name <> '.') and
             (SR.Name <> '..')) then
          begin
-           Result := True;
-           Break;
+           IsHidden := ((Attr and faHidden) > 0);
+           //LinuxToWinAttr already does this in FF/FN
+           //{$IFDEF Unix}
+           //if (SR.Name<>'') and (SR.Name[1]='.') then
+           //  IsHidden := True;
+           //{$ENDIF}
+           if not (IsHidden and (not ((otHidden in fObjectTypes)))) then
+           begin
+             Result := True;
+             Break;
+           end;
          end;
          FindRes := FindNextUtf8(SR);
        end;
@@ -695,7 +739,7 @@ begin
     begin
       NewNode := Items.AddChildObject(ANode, Files.Strings[i], nil); //@Files.Strings[i]);
       // This marks if the node is a directory
-      if (fObjectTypes = [otFolders]) then
+      if (fObjectTypes * [otNonFolders] = []) then
         NewNode.HasChildren := ((Files.Objects[i] <> nil) and
                                HasSubDir(AppendpathDelim(ANodePath)+Files[i]))
       else
@@ -746,7 +790,8 @@ var
   NewNode: TTreeNode;
 begin
   // avoids crashes in the IDE by not populating during design
-  if (csDesigning in ComponentState) then Exit;
+  // also do not populate before loading is done
+  if ([csDesigning, csLoading] * ComponentState <> []) then Exit;
 
   // This allows showing "/" in Linux, but in Windows it makes no sense to show the base
   if GetBasePath() <> '' then

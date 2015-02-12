@@ -121,6 +121,8 @@ type
     FColor: TColor;
     FUsedList: TSynPluginMultiCaretVisualList;
     FUnUsedList: TSynPluginMultiCaretVisualList;
+    FInPaint: Boolean;
+    FPaintClip: TRect;
 
     FCustomPixelWidth, FCustomPixelHeight: Array [TSynCaretType] of Integer;
     FCustomOffsetX, FCustomOffsetY: Array [TSynCaretType] of Integer;
@@ -134,7 +136,10 @@ type
     function  GetTextArea: TLazSynTextArea;
     procedure DoTextSizeChanged(Sender: TObject);
     procedure DoBoundsChanged(Sender: TObject);
-    procedure DoEditorPaintEvent(Sender: TObject; Changes: TSynPaintEvents);
+    procedure DoEditorPaintEvent(Sender: TObject; EventType: TSynPaintEvent;
+      const prcClip: TRect);
+    procedure DoEditorScrollEvent(Sender: TObject; EventType: TSynScrollEvent; dx,
+      dy: Integer; const prcScroll, prcClip: TRect);
     procedure DoEditorStatusChanged(Sender: TObject; Changes: TSynStatusChanges);
     procedure DoAfterDecPaintLock(Sender: TObject); virtual;
     procedure DoBeforeIncPaintLock(Sender: TObject); virtual;
@@ -143,7 +148,8 @@ type
                             aLineBrkCnt: Integer; aText: String);
     procedure SetColor(AValue: TColor);
     property TextArea: TLazSynTextArea read GetTextArea;
-    function CreateVisual: TSynPluginMultiCaretVisual;
+    function CreateVisual: TSynPluginMultiCaretVisual; virtual;
+    function GetVisual: TSynPluginMultiCaretVisual;
   protected
     function  AddCaret(X, Y: Integer; flags: TCaretFlags = []): Integer;
     procedure RemoveCaret(Index: Integer);
@@ -199,6 +205,8 @@ type
                          HandleActionProc: TSynEditMouseActionHandler): Boolean;
     function DoHandleMouseAction(AnAction: TSynEditMouseAction;
                                  var AnInfo: TSynEditMouseActionInfo): Boolean;
+
+    function CreateVisual: TSynPluginMultiCaretVisual; override;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -780,19 +788,22 @@ begin
 end;
 
 function TSynPluginMultiCaretBase.CreateVisual: TSynPluginMultiCaretVisual;
+begin
+  Result := TSynPluginMultiCaretVisual.Create(Editor,
+    TSynEditScreenCaretPainterInternal,
+    FUsedList, FUnUsedList);
+  Result.PaintTimer:= ScreenCaret.PaintTimer;
+end;
+
+function TSynPluginMultiCaretBase.GetVisual: TSynPluginMultiCaretVisual;
 var
   ta: TLazSynTextArea;
   i: TSynCaretType;
 begin
-  if FUnUsedList.Count > 0 then begin
-    Result := FUnUsedList[FUnUsedList.Count-1];
-  end
-  else begin
-    Result := TSynPluginMultiCaretVisual.Create(Editor,
-      TSynEditScreenCaretPainterInternal,
-      FUsedList, FUnUsedList);
-    Result.PaintTimer:= ScreenCaret.PaintTimer;
-  end;
+  if FUnUsedList.Count > 0 then
+    Result := FUnUsedList[FUnUsedList.Count-1]
+  else
+    Result := CreateVisual;
 
   ta := TextArea;
   Result.ClipRect   := ta.Bounds;
@@ -826,15 +837,52 @@ begin
 end;
 
 procedure TSynPluginMultiCaretBase.DoEditorPaintEvent(Sender: TObject;
-  Changes: TSynPaintEvents);
+  EventType: TSynPaintEvent; const prcClip: TRect);
 var
   i: Integer;
 begin
-  if Changes * [peBeforeScroll, peBeforePaintCanvas] <> [] then
-    for i := 0 to FUsedList.Count - 1 do
-      FUsedList[i].Hide;
+  if EventType = peAfterPaint then
+    UpdateCaretsPos;
 
-  if Changes * [peAfterPaintCanvas] <> [] then
+  case EventType of
+    peBeforePaint:
+      begin
+        FInPaint := True;
+        FPaintClip := prcClip;
+        for i := 0 to FUsedList.Count - 1 do
+          FUsedList[i].BeginPaint(prcClip);
+        for i := 0 to FUnUsedList.Count - 1 do
+          FUnUsedList[i].BeginPaint(prcClip);
+      end;
+    peAfterPaint:
+      begin
+        FInPaint := False;
+        for i := 0 to FUsedList.Count - 1 do
+          FUsedList[i].FinishPaint(prcClip);
+        for i := 0 to FUnUsedList.Count - 1 do
+          FUnUsedList[i].FinishPaint(prcClip);
+      end;
+  end;
+end;
+
+procedure TSynPluginMultiCaretBase.DoEditorScrollEvent(Sender: TObject;
+  EventType: TSynScrollEvent; dx, dy: Integer; const prcScroll, prcClip: TRect);
+var
+  i: Integer;
+begin
+  case EventType of
+    peBeforeScroll:
+      for i := 0 to FUsedList.Count - 1 do
+        FUsedList[i].BeginScroll(dx, dy, prcScroll, prcClip);
+    peAfterScroll:
+      for i := 0 to FUsedList.Count - 1 do
+        FUsedList[i].FinishScroll(dx, dy, prcScroll, prcClip, True);
+    peAfterScrollFailed:
+      for i := 0 to FUsedList.Count - 1 do
+        FUsedList[i].FinishScroll(dx, dy, prcScroll, prcClip, False);
+  end;
+
+  if EventType = peAfterScroll then
     UpdateCaretsPos;
 end;
 
@@ -842,10 +890,13 @@ procedure TSynPluginMultiCaretBase.DoEditorStatusChanged(Sender: TObject;
   Changes: TSynStatusChanges);
 var
   i: Integer;
+  v: Boolean;
 begin
-  if scFocus in Changes then
+  if scFocus in Changes then begin
+    v := (Editor.Focused or (eoPersistentCaret in Editor.Options)) and not (eoNoCaret in Editor.Options);
     for i := 0 to FUsedList.Count - 1 do
-      FUsedList[i].Visible := Editor.Focused;
+      FUsedList[i].Visible := v;
+  end;
   if scInsertMode in Changes then
     for i := 0 to FUsedList.Count - 1 do
       if Editor.InsertMode
@@ -917,7 +968,7 @@ begin
 
   if (y > 0) and (y1 <> y2) or (y=1) then begin
     if Carets.Visual[Result] = nil then
-      Carets.Visual[Result] := CreateVisual;
+      Carets.Visual[Result] := GetVisual;
     x := Editor.LogicalToPhysicalPos(Point(x, y)).x;
     Carets.Visual[Result].DisplayPos := TextArea.RowColumnToPixels(Point(x, y1));
     Carets.Visual[Result].Visible := True;
@@ -966,7 +1017,7 @@ begin
 
     if (y1 <> y2) or (y=1) then begin
       if Carets.Visual[i] = nil then
-        Carets.Visual[i] := CreateVisual;
+        Carets.Visual[i] := GetVisual;
       x := Editor.LogicalToPhysicalPos(Point(x, y)).x;
       Carets.Visual[i].DisplayPos := TextArea.RowColumnToPixels(Point(x, y1));
       Carets.Visual[i].Visible := True;
@@ -1006,6 +1057,7 @@ begin
     TextArea.RemoveBoundsChangeHandler(@DoBoundsChanged);
     TextArea.RemoveTextSizeChangeHandler(@DoTextSizeChanged);
     Editor.UnRegisterStatusChangedHandler(@DoEditorStatusChanged);
+    Editor.UnRegisterScrollEventHandler(@DoEditorScrollEvent);
     Editor.UnRegisterPaintEventHandler(@DoEditorPaintEvent);
     ViewedTextBuffer.RemoveNotifyHandler(senrAfterDecPaintLock, @DoAfterDecPaintLock);
     ViewedTextBuffer.RemoveNotifyHandler(senrBeforeIncPaintLock, @DoBeforeIncPaintLock);
@@ -1021,7 +1073,8 @@ begin
     ViewedTextBuffer.AddEditHandler(@DoLinesEdited);
     ViewedTextBuffer.AddNotifyHandler(senrBeforeIncPaintLock, @DoBeforeIncPaintLock);
     ViewedTextBuffer.AddNotifyHandler(senrAfterDecPaintLock, @DoAfterDecPaintLock);
-    Editor.RegisterPaintEventHandler(@DoEditorPaintEvent, [peBeforePaintCanvas, peAfterPaintCanvas, peBeforeScroll]);
+    Editor.RegisterPaintEventHandler(@DoEditorPaintEvent, [peBeforePaint, peAfterPaint]);
+    Editor.RegisterScrollEventHandler(@DoEditorScrollEvent, [peBeforeScroll, peAfterScroll, peAfterScrollFailed]);
     Editor.RegisterStatusChangedHandler(@DoEditorStatusChanged, [scInsertMode, scFocus, scOptions]);
     TextArea.AddTextSizeChangeHandler(@DoTextSizeChanged);
     TextArea.AddBoundsChangeHandler(@DoBoundsChanged);
@@ -1230,6 +1283,7 @@ begin
   *)
 
   case Command of
+  // TODO: delete and smColumn -- only delete once
     ecDeleteLastChar..ecDeleteLine,
     ecLineBreak..ecChar:
       begin
@@ -1326,6 +1380,13 @@ begin
     else
       AddCaret(AnInfo.NewCaret.BytePos, AnInfo.NewCaret.LinePos);
   end;
+end;
+
+function TSynPluginMultiCaret.CreateVisual: TSynPluginMultiCaretVisual;
+begin
+  Result := inherited CreateVisual;
+  if FInPaint then
+    Result.BeginPaint(FPaintClip);
 end;
 
 constructor TSynPluginMultiCaret.Create(AOwner: TComponent);

@@ -7,7 +7,9 @@
   filename it must be relative to the location of the exe.
   Select the option to automatically update the po file.
   
-- Add DefaultTranslator to uses clause of main form
+- Add DefaultTranslator or LCLTranslator to uses clause of main form
+  (DefaultTranslator determines the default language automatically,
+  LCLTranslator does not).
 
 - If the project contains several forms that need translation:
   - Copy LocalizedForms.* (to be found in this project) to the folder of
@@ -23,7 +25,7 @@
     
 - Declare each string that needs to be translated as a resourcestring. This
   is not absolutely necessary for component properties "Caption", "Text" or
-  "Hint" which are transparently handled by DefaultTranslator. 
+  "Hint" which are transparently handled by Default/LCLTranslator. 
   Explicitly declared resource strings are required for stringlist items, 
   such as those of comboboxes, radiogroups etc.
   
@@ -116,7 +118,7 @@ begin
 
     { Another comment: The strings used in "MessageDlg" can be translated by
       copying the files "lclstrconsts.*.po" to the languages folder.
-      DefaultTranslater then includes these strings as well. Please note that
+      LCL/DefaultTranslater then includes these strings as well. Please note that
       we did not copy these files in this demo project to avoid duplication of
       Lazarus files. }
 end;
@@ -148,6 +150,8 @@ begin
   { Lets start the program with English translation by default. You could also
     store language in a configuration file and apply that selection here. }
   SelectLanguage('en');
+  { OR: Start the program with system's default language:
+  SelectLanguage(GetDefaultLang); }
 end;
 
 { Another example how to combine translated strings, in this case  for a
@@ -171,7 +175,7 @@ var
   i, p: Integer;
   lang: String;
 begin
-  // Switch language - this is in DefaultTranslator
+  // Switch language - this is in LCLTranslator
   SetDefaultLang(ALang);
 
   // Switch default settings by calling the procedure provided in BasicLocalizedForm.pas.
@@ -204,20 +208,20 @@ begin
 end;
 
 { This method is inherited from LocalizedForm and manually inserts translated
-  strings in cases where DefaultTranslator cannot do this. }
+  strings in cases where LCL/DefaultTranslator cannot do this. }
 procedure TMainForm.UpdateTranslation(ALang: String);
 begin
   inherited;
 
   { The items of the radiogroup are not automatically handled by
-    DefaultTranslator. Therefore, we have to assign the strings to the
+    LCL/DefaultTranslator. Therefore, we have to assign the strings to the
     translated versions explicitly. }
   RgDrinks.Items[0] := rsBeer;
   RgDrinks.Items[1] := rsWine;
   RgDrinks.Items[2] := rsWater;
 
   { The label LblCurrentSelection is created by a Format statement. Since
-    DefaultTranslator does not execute code we have to update the translation
+    LCL/DefaultTranslator does not execute code we have to update the translation
     of the label here. It is sufficient to call RgDrinksClick here where the
     caption is re-composed by means of the Format statement. }
   RgDrinksClick(nil);

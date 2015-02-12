@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-02-03 01:47+0300\n"
+"PO-Revision-Date: 2015-02-11 01:18+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,3325,-1,-1\n"
@@ -2746,10 +2746,6 @@ msgstr "Использовать Application Bundle для запуска и о�
 msgid "Use manifest file to enable themes"
 msgstr "Использовать файл manifest для включения поддержки тем"
 
-#: lazarusidestrconsts.dlgpoutf8application
-msgid "UTF-8 Application"
-msgstr "Приложение UTF-8"
-
 #: lazarusidestrconsts.dlgpreferdoubleclickoversingleclick
 msgid "Prefer double-click over single-click"
 msgstr "Предпочитать двойной щелчок одинарному"
@@ -4287,6 +4283,14 @@ msgstr "начинается"
 msgid "Behind related"
 msgstr "После связанных"
 
+#: lazarusidestrconsts.lisbelessverbosecanbegivenmultipletimes
+msgid "be less verbose, can be given multiple times"
+msgstr "выводить меньше подробностей, может задаваться несколько раз"
+
+#: lazarusidestrconsts.lisbemoreverbosecanbegivenmultipletimes
+msgid "be more verbose, can be given multiple times"
+msgstr "выводить больше подробностей, может задаваться несколько раз"
+
 #: lazarusidestrconsts.lisbestviewedbyinstallingahtmlcontrolliketurbopowerip
 msgid "Best viewed by installing a HTML control like turbopoweriprodsgn"
 msgstr "Отображается наилучшим образом при установленном компоненте HTML, например, turbopoweriprodsgn"
@@ -4428,6 +4432,10 @@ msgstr "Сборка IDE"
 #: lazarusidestrconsts.lisbuildidewithpackages
 msgid "build IDE with packages"
 msgstr "собрать IDE с пакетами"
+
+#: lazarusidestrconsts.lisbuilding
+msgid "Building"
+msgstr "Сборка"
 
 #: lazarusidestrconsts.lisbuildinglazarusfailed
 msgid "Building Lazarus failed"
@@ -5287,6 +5295,10 @@ msgstr "Очистить и собрать"
 #: lazarusidestrconsts.liscleanupandbuildproject
 msgid "Clean up and build project"
 msgstr "Очистка и сборка проекта"
+
+#: lazarusidestrconsts.liscleanuppackage
+msgid "Clean up package \"%s\"."
+msgstr "Удалите пакет \"%s\"."
 
 #: lazarusidestrconsts.liscleanupunitpath
 msgid "Clean up unit path?"
@@ -6236,6 +6248,10 @@ msgstr "Продолжить"
 #: lazarusidestrconsts.liscontinueanddonotaskagain
 msgid "Continue and do not ask again"
 msgstr "Продолжить и больше не спрашивать"
+
+#: lazarusidestrconsts.liscontinuebuilding
+msgid "Continue building"
+msgstr "Продолжить сборку"
 
 #: lazarusidestrconsts.liscontinuewithoutloadingform
 msgid "Continue without loading form"
@@ -10794,6 +10810,10 @@ msgstr "Строковая константа в исходном коде"
 msgid "Strings with same value:"
 msgstr "Строки с тем же значением:"
 
+#: lazarusidestrconsts.lismakesureallppufilesofapackageareinitsoutputdirecto
+msgid "Make sure all ppu files of a package are in its output directory."
+msgstr "Убедитесь, что все файлы PPU пакета находятся в его каталоге вывода."
+
 #: lazarusidestrconsts.lismanagesourceeditors
 msgid "Manage Source Editors ..."
 msgstr "Управление редакторами исходного кода ..."
@@ -12696,6 +12716,10 @@ msgstr "Имя пакета начинается с ..."
 msgid "Package name contains ..."
 msgstr "Имя пакета содержит ..."
 
+#: lazarusidestrconsts.lispackageneedsanoutputdirectory
+msgid "Package needs an output directory."
+msgstr "Пакету требуется каталог вывода."
+
 #: lazarusidestrconsts.lispackageneedsinstallation
 msgid "Package needs installation"
 msgstr "Пакет требует установки"
@@ -14048,6 +14072,10 @@ msgstr "Файл .lpi является главным хранилищем св�
 msgid "%s (position outside of source)"
 msgstr "%s (положение вне границ исходного кода)"
 
+#: lazarusidestrconsts.lisppuinwrongdirectory
+msgid "ppu in wrong directory=%s."
+msgstr "PPU в неверном каталоге=%s."
+
 #: lazarusidestrconsts.lisprecedingword
 msgid "Preceding word"
 msgstr "Предыдущее слово"
@@ -15071,6 +15099,10 @@ msgstr "Просмотр родительского каталога"
 msgid "Search paths"
 msgstr "Пути поиска"
 
+#: lazarusidestrconsts.lissearchunit
+msgid "Search Unit \"%s\""
+msgstr "Найти модуль \"%s\""
+
 #: lazarusidestrconsts.lissecondaryconfigdirectorywherelazarussearchesfor
 msgid "secondary config directory, where Lazarus searches for config template files. Default is "
 msgstr "вторичный каталог настройки, где Lazarus ищет шаблоны файлов настройки. По умолчанию - "
@@ -15895,6 +15927,10 @@ msgstr "Каталог исходного кода FPC \"%s\", вероятно,
 #: lazarusidestrconsts.listhefreepascalcompilerexecutabletypicallyhasthename
 msgid "The Free Pascal compiler executable typically has the name \"%s\". You can also use the target specific compiler like \"%s\". Please give the full file path."
 msgstr "Исполнимый файл компилятора Free Pascal обычно имеет имя \"%s\". Вы также можете использовать компилятор для определённой платформы, например, \"%s\". Задайте полный путь к файлу."
+
+#: lazarusidestrconsts.listheideisstillbuilding
+msgid "The IDE is still building."
+msgstr "IDE всё ещё ведёт сборку."
 
 #: lazarusidestrconsts.listheidentifierisaunitpleaseusethefilesaveasfunction
 msgid "The identifier is a unit. Please use the File - Save as function to rename a unit."
@@ -17171,10 +17207,6 @@ msgstr "Добавить модуль в выражение Uses"
 #: lazarusidestrconsts.lisuseunitinunit
 msgid "Use unit %s in unit %s"
 msgstr "Использовать модуль %s в модуле %s"
-
-#: lazarusidestrconsts.lisutf8applicationprogramdescriptor
-msgid "A graphical application for FPC 3.0 and higher using the cross-platform LCL library for its GUI and mapping FPC default String to UTF-8 encoding."
-msgstr "Графическое приложение на FPC 3.0 и выше, использующее кроссплатформенную библиотеку LCL для своего графического интерфейса пользователя и задающее для строк UTF-8 в качестве кодировки по умолчанию."
 
 #: lazarusidestrconsts.lisutf8withbom
 msgid "UTF-8 with BOM"

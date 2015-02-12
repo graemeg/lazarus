@@ -95,6 +95,7 @@ type
     procedure Insert(Index: Integer; const S: string); override;
     procedure LoadFromFile(const FileName: string); override;
     procedure SaveToFile(const FileName: string); override;
+    procedure AddStrings(TheStrings: TStrings); overload; override;
   public
     property Owner: TCarbonMemo read FOwner;
   end;
@@ -452,6 +453,18 @@ begin
     SaveToStream(TheStream);
   finally
     TheStream.Free;
+  end;
+end;
+
+procedure TCarbonMemoStrings.AddStrings(TheStrings: TStrings);
+begin
+  BeginUpdate;
+  try
+    // don't need to copy Objects, VCL does not support them neither
+    // preserve the last line ending
+    Text:=ConvertLineEndings(TheStrings.Text);
+  finally
+    EndUpdate;
   end;
 end;
 

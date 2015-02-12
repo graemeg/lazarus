@@ -5194,7 +5194,11 @@ begin
       SetDebuggerErrorState(synfFailedToLoadApplicationExecutable, FErrorMsg);
       exit;
     end;
-    if not DoSetPascal then exit;
+    if not DoSetPascal then begin
+      SetDebuggerErrorState(synfFailedToInitializeTheDebuggerSetPascalFailed,
+        FLastExecResult.Values);
+      exit;
+    end;
 
     DebugLn(['TGDBMIDebugger.StartDebugging WorkingDir="', FTheDebugger.WorkingDir,'"']);
     if FTheDebugger.WorkingDir <> ''
@@ -5346,6 +5350,8 @@ begin
     then ProcessFrame;
   finally
     ReleaseRefAndNil(FContinueCommand);
+    if not (DebuggerState in [dsInit, dsRun, dsPause]) then
+      SetDebuggerErrorState(synfFailedToInitializeDebugger);
   end;
 
   FSuccess := True;

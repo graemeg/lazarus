@@ -2758,10 +2758,6 @@ msgstr "アプリケーションバンドルを実行およびデバッグに用
 msgid "Use manifest file to enable themes"
 msgstr "テーマを使用可能とするためマニフェストファイルを用いる（Windowsのみ）"
 
-#: lazarusidestrconsts.dlgpoutf8application
-msgid "UTF-8 Application"
-msgstr ""
-
 #: lazarusidestrconsts.dlgpreferdoubleclickoversingleclick
 msgid "Prefer double-click over single-click"
 msgstr ""
@@ -4361,6 +4357,14 @@ msgstr "begins"
 msgid "Behind related"
 msgstr "関連するものの後に"
 
+#: lazarusidestrconsts.lisbelessverbosecanbegivenmultipletimes
+msgid "be less verbose, can be given multiple times"
+msgstr ""
+
+#: lazarusidestrconsts.lisbemoreverbosecanbegivenmultipletimes
+msgid "be more verbose, can be given multiple times"
+msgstr ""
+
 #: lazarusidestrconsts.lisbestviewedbyinstallingahtmlcontrolliketurbopowerip
 msgid "Best viewed by installing a HTML control like turbopoweriprodsgn"
 msgstr "turbopoweriprodsgnのようなHTMLコントロールをインストールすることによって最も良く見えます"
@@ -4502,6 +4506,10 @@ msgstr ""
 #: lazarusidestrconsts.lisbuildidewithpackages
 msgid "build IDE with packages"
 msgstr "パッケージ付きのIDEを構築"
+
+#: lazarusidestrconsts.lisbuilding
+msgid "Building"
+msgstr ""
 
 #: lazarusidestrconsts.lisbuildinglazarusfailed
 msgid "Building Lazarus failed"
@@ -5372,6 +5380,10 @@ msgstr "掃除して構築"
 #: lazarusidestrconsts.liscleanupandbuildproject
 msgid "Clean up and build project"
 msgstr "掃除してプロジェクトを構築"
+
+#: lazarusidestrconsts.liscleanuppackage
+msgid "Clean up package \"%s\"."
+msgstr ""
 
 #: lazarusidestrconsts.liscleanupunitpath
 msgid "Clean up unit path?"
@@ -6332,6 +6344,10 @@ msgstr "継続"
 #: lazarusidestrconsts.liscontinueanddonotaskagain
 msgid "Continue and do not ask again"
 msgstr "続行し、もう尋ねない"
+
+#: lazarusidestrconsts.liscontinuebuilding
+msgid "Continue building"
+msgstr ""
 
 #: lazarusidestrconsts.liscontinuewithoutloadingform
 msgid "Continue without loading form"
@@ -10952,6 +10968,10 @@ msgstr "ソース内の文字列定数"
 msgid "Strings with same value:"
 msgstr "同じ値の文字列"
 
+#: lazarusidestrconsts.lismakesureallppufilesofapackageareinitsoutputdirecto
+msgid "Make sure all ppu files of a package are in its output directory."
+msgstr ""
+
 #: lazarusidestrconsts.lismanagesourceeditors
 msgid "Manage Source Editors ..."
 msgstr "ソースエディタの管理 ..."
@@ -12842,6 +12862,10 @@ msgstr "パッケージ名が次で始まる ..."
 msgid "Package name contains ..."
 msgstr "パッケージ名が次を含む ..."
 
+#: lazarusidestrconsts.lispackageneedsanoutputdirectory
+msgid "Package needs an output directory."
+msgstr ""
+
 #: lazarusidestrconsts.lispackageneedsinstallation
 msgid "Package needs installation"
 msgstr "パッケージはインストールが必要です"
@@ -14300,6 +14324,10 @@ msgstr ""
 msgid "%s (position outside of source)"
 msgstr ""
 
+#: lazarusidestrconsts.lisppuinwrongdirectory
+msgid "ppu in wrong directory=%s."
+msgstr ""
+
 #: lazarusidestrconsts.lisprecedingword
 msgid "Preceding word"
 msgstr "先行する単語"
@@ -15347,6 +15375,10 @@ msgstr "親ディレクトリを走査"
 msgid "Search paths"
 msgstr "検索パス"
 
+#: lazarusidestrconsts.lissearchunit
+msgid "Search Unit \"%s\""
+msgstr ""
+
 #: lazarusidestrconsts.lissecondaryconfigdirectorywherelazarussearchesfor
 msgid "secondary config directory, where Lazarus searches for config template files. Default is "
 msgstr "Lazarusが設定テンプレートファイルを検索する二次的な設定ディレクトリ。デフォルト："
@@ -16223,6 +16255,10 @@ msgstr "FPCソースディレクトリ \"%s\" は正しくないようです:%s%
 #: lazarusidestrconsts.listhefreepascalcompilerexecutabletypicallyhasthename
 msgid "The Free Pascal compiler executable typically has the name \"%s\". You can also use the target specific compiler like \"%s\". Please give the full file path."
 msgstr "Free Pascalコンパイラ実行ファイルはふつう\"%s\"という名前を持っています。あなたは\"%s\"のような特定のコンパイラを用いることもできます。その完全なパスを与えてください。"
+
+#: lazarusidestrconsts.listheideisstillbuilding
+msgid "The IDE is still building."
+msgstr ""
 
 #: lazarusidestrconsts.listheidentifierisaunitpleaseusethefilesaveasfunction
 msgid "The identifier is a unit. Please use the File - Save as function to rename a unit."
@@ -17612,10 +17648,6 @@ msgstr "Uses節にユニットを追加"
 #: lazarusidestrconsts.lisuseunitinunit
 msgid "Use unit %s in unit %s"
 msgstr "ユニット %s をユニット %s 内で使用"
-
-#: lazarusidestrconsts.lisutf8applicationprogramdescriptor
-msgid "A graphical application for FPC 3.0 and higher using the cross-platform LCL library for its GUI and mapping FPC default String to UTF-8 encoding."
-msgstr ""
 
 #: lazarusidestrconsts.lisutf8withbom
 msgid "UTF-8 with BOM"

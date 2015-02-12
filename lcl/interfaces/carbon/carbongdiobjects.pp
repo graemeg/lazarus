@@ -401,7 +401,7 @@ var
 implementation
 
 uses
-  CarbonInt, CarbonProc, CarbonCanvas, CarbonDbgConsts;
+  LazUTF8, CarbonInt, CarbonProc, CarbonCanvas, CarbonDbgConsts;
 
 const
   BITMAPINFOMAP: array[TCarbonBitmapType] of CGBitmapInfo = (
@@ -1067,7 +1067,7 @@ var
   PValue: ATSUAttributeValuePtr;
 begin
   // keep copy of text
-  FTextBuffer := UTF8ToUTF16(Text);
+  FTextBuffer := LazUTF8.UTF8ToUTF16(Text);
   if FTextBuffer='' then
     FTextBuffer:=#0#0;
   TextStyle := Font.Style;

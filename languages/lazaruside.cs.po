@@ -2755,10 +2755,6 @@ msgstr "Použít aplikační balík pro spuštění a ladění (pouze Darwin)"
 msgid "Use manifest file to enable themes"
 msgstr "Použít soubor manifest k povolení grafických stylů (pouze Windows)"
 
-#: lazarusidestrconsts.dlgpoutf8application
-msgid "UTF-8 Application"
-msgstr ""
-
 #: lazarusidestrconsts.dlgpreferdoubleclickoversingleclick
 msgid "Prefer double-click over single-click"
 msgstr ""
@@ -4310,6 +4306,14 @@ msgstr "začátky"
 msgid "Behind related"
 msgstr "Za vztaženými"
 
+#: lazarusidestrconsts.lisbelessverbosecanbegivenmultipletimes
+msgid "be less verbose, can be given multiple times"
+msgstr ""
+
+#: lazarusidestrconsts.lisbemoreverbosecanbegivenmultipletimes
+msgid "be more verbose, can be given multiple times"
+msgstr ""
+
 #: lazarusidestrconsts.lisbestviewedbyinstallingahtmlcontrolliketurbopowerip
 msgid "Best viewed by installing a HTML control like turbopoweriprodsgn"
 msgstr "Nejlépe zobrazíte instalací HTML ovládacího prvku jako turbopoweriprodsgn"
@@ -4451,6 +4455,10 @@ msgstr "Sestavit IDE"
 #: lazarusidestrconsts.lisbuildidewithpackages
 msgid "build IDE with packages"
 msgstr "sestavit IDE s balíčky"
+
+#: lazarusidestrconsts.lisbuilding
+msgid "Building"
+msgstr ""
 
 #: lazarusidestrconsts.lisbuildinglazarusfailed
 msgid "Building Lazarus failed"
@@ -5317,6 +5325,10 @@ msgstr "Vyčistit a sestavit"
 #: lazarusidestrconsts.liscleanupandbuildproject
 msgid "Clean up and build project"
 msgstr "Vyčistit a sestavit projekt"
+
+#: lazarusidestrconsts.liscleanuppackage
+msgid "Clean up package \"%s\"."
+msgstr ""
 
 #: lazarusidestrconsts.liscleanupunitpath
 msgid "Clean up unit path?"
@@ -6269,6 +6281,10 @@ msgstr "Pokračovat"
 #: lazarusidestrconsts.liscontinueanddonotaskagain
 msgid "Continue and do not ask again"
 msgstr "Pokračovat a již se znovu neptat"
+
+#: lazarusidestrconsts.liscontinuebuilding
+msgid "Continue building"
+msgstr ""
 
 #: lazarusidestrconsts.liscontinuewithoutloadingform
 msgid "Continue without loading form"
@@ -10850,6 +10866,10 @@ msgstr "Konstantní řetězec ve zdroji"
 msgid "Strings with same value:"
 msgstr "Řetězec se stejnou hodnotou:"
 
+#: lazarusidestrconsts.lismakesureallppufilesofapackageareinitsoutputdirecto
+msgid "Make sure all ppu files of a package are in its output directory."
+msgstr ""
+
 #: lazarusidestrconsts.lismanagesourceeditors
 msgid "Manage Source Editors ..."
 msgstr "Spravovat editory zdrojových kódů ..."
@@ -12749,6 +12769,10 @@ msgstr "Jméno balíčku začíná s..."
 msgid "Package name contains ..."
 msgstr "Jméno balíčku obsahuje..."
 
+#: lazarusidestrconsts.lispackageneedsanoutputdirectory
+msgid "Package needs an output directory."
+msgstr ""
+
 #: lazarusidestrconsts.lispackageneedsinstallation
 msgid "Package needs installation"
 msgstr "Balíček vyžaduje instalaci"
@@ -14130,6 +14154,10 @@ msgstr ""
 msgid "%s (position outside of source)"
 msgstr "%s (pozice vně zdroje"
 
+#: lazarusidestrconsts.lisppuinwrongdirectory
+msgid "ppu in wrong directory=%s."
+msgstr ""
+
 #: lazarusidestrconsts.lisprecedingword
 msgid "Preceding word"
 msgstr "Předcházející slovo"
@@ -15162,6 +15190,10 @@ msgstr "Prohledávání nadřazeného adresáře"
 msgid "Search paths"
 msgstr "Prohledávané cesty"
 
+#: lazarusidestrconsts.lissearchunit
+msgid "Search Unit \"%s\""
+msgstr ""
+
 #: lazarusidestrconsts.lissecondaryconfigdirectorywherelazarussearchesfor
 msgid "secondary config directory, where Lazarus searches for config template files. Default is "
 msgstr "druhotná konfigurační složka, kde Lazarus hledá šablony konfiguračních souborů. Implicitní je "
@@ -16002,6 +16034,10 @@ msgstr "Zdrojový adresář FPC \"%s\" nevypadá v pořádku:%s%s"
 #: lazarusidestrconsts.listhefreepascalcompilerexecutabletypicallyhasthename
 msgid "The Free Pascal compiler executable typically has the name \"%s\". You can also use the target specific compiler like \"%s\". Please give the full file path."
 msgstr "Spustitelný soubor Free Pascal překladače má obvykle jméno \"%s\". Můžete rovněž použít překladač specifický pro cílovou platformu jako \"%s\". Zadejte, prosím, kompletní souborovou cestu."
+
+#: lazarusidestrconsts.listheideisstillbuilding
+msgid "The IDE is still building."
+msgstr ""
 
 #: lazarusidestrconsts.listheidentifierisaunitpleaseusethefilesaveasfunction
 msgid "The identifier is a unit. Please use the File - Save as function to rename a unit."
@@ -17302,10 +17338,6 @@ msgstr "Přidat jednotku do sekce použitých jednotek"
 #: lazarusidestrconsts.lisuseunitinunit
 msgid "Use unit %s in unit %s"
 msgstr "Použít jednotku %s v jednotce %s"
-
-#: lazarusidestrconsts.lisutf8applicationprogramdescriptor
-msgid "A graphical application for FPC 3.0 and higher using the cross-platform LCL library for its GUI and mapping FPC default String to UTF-8 encoding."
-msgstr ""
 
 #: lazarusidestrconsts.lisutf8withbom
 msgid "UTF-8 with BOM"

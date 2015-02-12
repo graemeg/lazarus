@@ -194,7 +194,7 @@ begin
       AForm.BorderIcons, AForm.FormStyle);
   end;
 
-  if not (AForm.FormStyle in [fsMDIChild]) and
+  if (not (AForm.FormStyle in [fsMDIChild]) or (csDesigning in AForm.ComponentState)) and
      (Application <> nil) and
      (Application.MainForm <> nil) and
      (Application.MainForm.HandleAllocated) and
@@ -203,14 +203,16 @@ begin
     if (AForm.ShowInTaskBar in [stDefault, stNever])
        {$ifdef HASX11}
        {QtTool have not minimize button !}
-       and not (AForm.BorderStyle in [bsSizeToolWin, bsToolWindow])
+       and (not (AForm.BorderStyle in [bsSizeToolWin, bsToolWindow]) or
+          (csDesigning in AForm.ComponentState))
        {$endif} then
       QtMainWindow.setShowInTaskBar(False);
     if Assigned(AForm.PopupParent) then
       PopupParent := TQtWidget(AForm.PopupParent.Handle).Widget
     else
       PopupParent := nil;
-    QtMainWindow.setPopupParent(AForm.PopupMode, PopupParent);
+    if not (csDesigning in AForm.ComponentState) then
+      QtMainWindow.setPopupParent(AForm.PopupMode, PopupParent);
   end;
 
   {$IFDEF HASX11}
@@ -226,9 +228,9 @@ begin
   {$ENDIF}
   QtMainWindow.MenuBar.AttachEvents;
   
-  if (AForm.FormStyle in [fsMDIChild]) and
-     (Application.MainForm.FormStyle = fsMdiForm) and
-     not (csDesigning in AWinControl.ComponentState) then
+  if not (csDesigning in AForm.ComponentState) and
+    (AForm.FormStyle in [fsMDIChild]) and
+    (Application.MainForm.FormStyle = fsMdiForm) then
   begin
     QMdiArea_addSubWindow(
       QMdiAreaH(TQtMainWindow(Application.MainForm.Handle).MDIAreaHandle.Widget),
@@ -377,7 +379,7 @@ begin
      (Application.MainForm <> AForm) then
     Enable := false;
   {$IFDEF HASX11}
-  if AForm.FormStyle <> fsMDIChild then
+  if (AForm.FormStyle <> fsMDIChild) then
     SetSkipX11Taskbar(TQtMainWindow(AForm.Handle).Widget, not Enable);
   {$ENDIF}
   TQtMainWindow(AForm.Handle).setShowInTaskBar(Enable);
@@ -505,7 +507,8 @@ begin
       end;
     end;
 
-    if TForm(AWinControl).FormStyle <> fsMDIChild then
+    if (TForm(AWinControl).FormStyle <> fsMDIChild) or
+      (csDesigning in AWinControl.ComponentState) then
     begin
       if (csDesigning in AWinControl.ComponentState) and
         (TCustomForm(AWinControl).WindowState = wsMaximized) then

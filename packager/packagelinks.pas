@@ -41,7 +41,7 @@ interface
 uses
   Classes, SysUtils, Laz2_XMLCfg, FileProcs, CodeToolManager, CodeToolsStructs,
   LCLProc, FileUtil, AvgLvlTree, lazutf8classes, LazFileUtils, MacroIntf,
-  PackageIntf, IDEProcs, EnvironmentOpts, PackageDefs, LazConf;
+  PackageIntf, IDEProcs, EnvironmentOpts, PackageDefs, LazConf, IDECmdLine;
   
 const
   PkgLinksFileVersion = 3;
@@ -635,14 +635,17 @@ begin
       if OtherNode<>nil then begin
         // a link to the same file
         OtherLink:=TPackageLink(OtherNode.Data);
-        debugln(['Warning: TPackageLinks.UpdateUserLinks two links for file: ',NewPkgLink.LPKFilename,' A=',OtherLink.IDAsString,' B=',NewPkgLink.IDAsString]);
+        if ConsoleVerbosity>0 then
+          debugln(['Warning: TPackageLinks.UpdateUserLinks two links for file: ',NewPkgLink.LPKFilename,' A=',OtherLink.IDAsString,' B=',NewPkgLink.IDAsString]);
         if OtherLink.LastUsed<NewPkgLink.LastUsed then begin
-          debugln(['Warning: TPackageLinks.UpdateUserLinks removing older link ',OtherLink.IDAsString]);
+          if ConsoleVerbosity>0 then
+            debugln(['Warning: TPackageLinks.UpdateUserLinks ignoring older link ',OtherLink.IDAsString]);
           FUserLinksSortID.RemovePointer(OtherLink);
           FUserLinksSortFile.Delete(OtherNode);
           OtherLink.Release;
         end else begin
-          debugln(['Warning: TPackageLinks.UpdateUserLinks ignoring older link ',NewPkgLink.IDAsString]);
+          if ConsoleVerbosity>0 then
+            debugln(['Warning: TPackageLinks.UpdateUserLinks ignoring older link ',NewPkgLink.IDAsString]);
           NewPkgLink.Release;
           continue;
         end;

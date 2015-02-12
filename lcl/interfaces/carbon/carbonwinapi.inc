@@ -2410,8 +2410,8 @@ function TCarbonWidgetSet.GradientFill(DC: HDC; Vertices: PTriVertex;
     with Mesh do
     begin
       Result :=
-        (UpperLeft < Cardinal(NumVertices)) and (UpperLeft >= 0) and
-        (LowerRight < Cardinal(NumVertices)) and (LowerRight >= 0);
+        (UpperLeft < Cardinal(NumVertices)) {and (UpperLeft >= 0)} and
+        (LowerRight < Cardinal(NumVertices)) {and (LowerRight >= 0)};
       if (LowerRight = UpperLeft) or not Result then
         Exit;
 

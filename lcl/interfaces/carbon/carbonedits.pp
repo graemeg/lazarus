@@ -25,7 +25,7 @@ uses
   MacOSAll,
  // LCL
   LMessages, LCLMessageGlue, LCLProc, LCLType, Graphics, Controls, StdCtrls, ExtCtrls,
-  Spin,
+  Spin, LazUTF8,
  // widgetset
   WSLCLClasses,
  // LCL Carbon
@@ -276,10 +276,10 @@ begin
   if MaxLength > 0 then
   begin
     if GetText(S{%H-}) then
-      if UTF8Length(S) > MaxLength then
+      if LazUTF8.UTF8Length(S) > MaxLength then
       begin
         R := GetSelStart(SelStart{%H-});
-        S := UTF8Copy(S, 1, MaxLength);
+        S := LazUTF8.UTF8Copy(S, 1, MaxLength);
         if SetText(S) then
           if R then SetSelStart(SelStart);
       end;
@@ -1926,7 +1926,7 @@ begin
       end
       else if lIsReadOnlyMemo and (lInputPasStr = 'AXNumberOfCharacters') then
       begin
-        lOutputInt := UTF8Length(lLazMemo.Lines.Text);
+        lOutputInt := LazUTF8.UTF8Length(lLazMemo.Lines.Text);
         lOutputNum := CFNumberCreate(nil, kCFNumberSInt64Type, @lOutputInt);
         SetEventParameter(AEvent, kEventParamAccessibleAttributeValue, typeCFNumberRef,
           SizeOf(lOutputNum), @lOutputNum);
@@ -2055,7 +2055,8 @@ var
   iStart : integer;
   iEnd   : integer;
 begin
-  Result := GetTXNSelection(iStart{%H-},{%H-} iEnd);
+  iEnd := 0;
+  Result := GetTXNSelection(iStart{%H-},{%H-}iEnd);
   if not Result then
   begin
     iStart := 0;
@@ -2279,7 +2280,7 @@ begin
   
   W := PWideChar(Data^);
 
-  Result := UTF16ToUTF8(Copy(W, 0, GetHandleSize(Data) div 2));
+  Result := LazUTF8.UTF16ToUTF8(Copy(W, 0, GetHandleSize(Data) div 2));
   // remove CRLF
   if (Result <> '') and (Result[Length(Result)] in [#10, #13]) then
     Delete(Result, Length(Result), 1);
@@ -2320,7 +2321,7 @@ const
   CarbonEoln = #13;
 begin
   if AIndex < 0 then AIndex := 0;
-  W := UTF8ToUTF16(S);
+  W := LazUTF8.UTF8ToUTF16(S);
 
   LineCnt:=GetLineCount;
   if LineCnt = 0 then
@@ -2341,6 +2342,7 @@ begin
   p:=nil;
   if W<>'' then
     p:=@W[1];
+  //debugln(['TCarbonMemo.InsertLine Index=',AIndex,' LineCnt=',LineCnt,' AStart=',AStart,' len=',length(W)]);
   OSError(TXNSetData(HITextViewGetTXNObject(ControlRef(Widget)),
     kTXNUnicodeTextData, p, Length(W) * 2, AStart, AStart),
     Self, 'InsertLine', 'TXNSetData');

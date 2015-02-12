@@ -73,6 +73,7 @@ type
   end;
 
 procedure SetDefaultLang(Lang: string; Dir: string = ''; ForceUpdate: boolean = true);
+function GetDefaultLang: String;
 
 implementation
 
@@ -81,6 +82,9 @@ uses
 
 type
   TPersistentAccess = class(TPersistent);
+
+var
+  DefaultLang: String = '';
 
 function FindLocaleFileName(LCExt: string; Lang: string; Dir: string): string;
 var
@@ -92,6 +96,8 @@ var
     LangShortID: string;
     AppDir,LCFileName,FullLCFileName: String;
   begin
+    DefaultLang := LangID;
+
     if LangID <> '' then
     begin
       AppDir := ExtractFilePath(ParamStrUTF8(0));
@@ -134,6 +140,7 @@ var
       {$ENDIF}
       //Let us search for reducted files
       LangShortID := copy(LangID, 1, 2);
+      Defaultlang := LangShortID;
 
       if Dir<>'' then
       begin
@@ -218,6 +225,7 @@ var
     end;
 
     Result := '';
+    DefaultLang := '';
   end;
 
 begin
@@ -245,6 +253,7 @@ begin
     exit;
 
   Result := '';
+  DefaultLang := '';
 end;
 
 function GetIdentifierPath(Sender: TObject;
@@ -522,6 +531,12 @@ begin
         LocalTranslator.UpdateTranslation(Screen.CustomForms[i]);
     end;
   end;
+end;
+
+function GetDefaultLang: String;
+begin
+  if DefaultLang = '' then SetDefaultLang('');
+  GetDefaultLang := DefaultLang;
 end;
 
 finalization

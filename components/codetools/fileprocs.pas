@@ -1548,227 +1548,234 @@ begin
   Result:='';
 end;
 
-function FilenameIsMatching(const Mask, Filename: string;
-  MatchExactly: boolean): boolean;
+function FilenameIsMatching(const Mask, Filename: string; MatchExactly: boolean
+  ): boolean;
 (*
   check if Filename matches Mask
   if MatchExactly then the complete Filename must match, else only the
   start
 
-  Filename matches exactly or is a file/directory in a subdirectory of mask
-  Mask can contain the wildcards * and ? and the set operator {,}
-  The wildcards will _not_ match PathDelim
+  Filename matches exactly or is a file/directory in a subdirectory of mask.
+  Mask can contain the wildcards * and ? and the set operator {,}.
+  The wildcards will *not* match PathDelim.
+  You can nest the {} sets.
   If you need the asterisk, the question mark or the PathDelim as character
-  just put the SpecialChar character in front of it.
+  just put the SpecialChar character in front of it (e.g. #*, #? #/).
 
   Examples:
-    /abc           matches /abc, /abc/p, /abc/xyz/filename
-                   but not /abcd
-    /abc/x?z/www   matches /abc/xyz/www, /abc/xaz/www
-                   but not /abc/x/z/www
-    /abc/x*z/www   matches /abc/xz/www, /abc/xyz/www, /abc/xAAAz/www
-                   but not /abc/x/z/www
-    /abc/x\*z/www  matches /abc/x*z/www, /abc/x*z/www/ttt
-
-    /a{b,c,d}e     matches /abe, /ace, /ade
+    /abc             matches /abc, /abc/, /abc/p, /abc/xyz/filename
+                     but not /abcd
+    /abc/            matches /abc, /abc/, /abc//, but not /abc/.
+    /abc/x?z/www     matches /abc/xyz/www, /abc/xaz/www
+                     but not /abc/x/z/www
+    /abc/x*z/www     matches /abc/xz/www, /abc/xyz/www, /abc/xAAAz/www
+                     but not /abc/x/z/www
+    /abc/x#*z/www    matches /abc/x*z/www, /abc/x*z/www/ttt
+    /a{b,c,d}e       matches /abe, /ace, /ade
+    *.p{as,p,}       matches a.pas, unit1.pp, b.p but not b.inc
+    *.{p{as,p,},inc} matches a.pas, unit1.pp, b.p, b.inc but not c.lfm
 *)
+{off $DEFINE VerboseFilenameIsMatching}
 
-  function FindDirectoryStart(const AFilename: string;
-    CurPos: integer): integer;
+  function Check(MaskP, FileP: PChar): boolean;
+  var
+    Level: Integer;
+    MaskStart: PChar;
+    FileStart: PChar;
   begin
-    Result:=CurPos;
-    while (Result<=length(AFilename))
-    and (AFilename[Result]=PathDelim) do
-      inc(Result);
-  end;
-
-  function FindDirectoryEnd(const AFilename: string; CurPos: integer): integer;
-  begin
-    Result:=CurPos;
-    while (Result<=length(AFilename)) do begin
-      if AFilename[Result]=SpecialChar then
-        inc(Result,2)
-      else if (AFilename[Result]=PathDelim) then
-        break
-      else
-        inc(Result);
-    end;
-  end;
-
-  function CharsEqual(c1, c2: char): boolean;
-  begin
-    {$ifdef CaseInsensitiveFilenames}
-    Result:=(FPUpChars[c1]=FPUpChars[c2]);
-    {$else}
-    Result:=(c1=c2);
-    {$endif}
-  end;
-
-var
-  DirStartMask, DirEndMask,
-  DirStartFile, DirEndFile,
-  BracketMaskPos, BracketFilePos: integer;
-  StopChar: LongInt;
-  Fits: Boolean;
-
-  function TryNextOr: boolean;
-  begin
+    {$IFDEF VerboseFilenameIsMatching}
+    debugln(['  Check Mask="',MaskP,'" FileP="',FileP,'"']);
+    {$ENDIF}
     Result:=false;
-    if BracketMaskPos<1 then exit;
     repeat
-      inc(DirStartMask);
-      if DirStartMask>=DirEndMask then exit; // error, missing }
-      if Mask[DirStartMask]=SpecialChar then begin
-        // special char -> next char is normal char
-        inc(DirStartMask);
-      end else if Mask[DirStartMask]='}' then begin
-        // bracket found (= end of Or operator)
-        // -> filename does not match
-        exit;
-      end else if Mask[DirStartMask]=',' then begin
-        // next Or found
-        // -> reset filename position and compare
-        inc(DirStartMask);
-        DirStartFile:=BracketFilePos;
-        exit(true);
+      case MaskP^ of
+      #0:
+        begin
+          // the whole Mask fits the start of Filename
+          // trailing PathDelim in FileP are ok
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check END Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          if FileP^=#0 then exit(true);
+          if FileP^<>PathDelim then exit(false);
+          while FileP^=PathDelim do inc(FileP);
+          Result:=(FileP^=#0) or (not MatchExactly);
+          exit;
+        end;
+      SpecialChar:
+        begin
+          // match on character
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check specialchar Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          inc(MaskP);
+          if MaskP^=#0 then exit;
+          if MaskP^<>FileP^ then exit;
+          inc(MaskP);
+          inc(FileP);
+        end;
+      PathDelim:
+        begin
+          // match PathDelim(s) or end of filename
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check PathDelim Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          if not (FileP^ in [#0,PathDelim]) then exit;
+          // treat several PathDelim as one
+          while MaskP^=PathDelim do inc(MaskP);
+          while FileP^=PathDelim do inc(FileP);
+          if MaskP^=#0 then
+            exit((FileP^=#0) or not MatchExactly);
+        end;
+      '?':
+        begin
+          // match any one character, but PathDelim
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check any one char Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          if FileP^ in [#0,PathDelim] then exit;
+          inc(MaskP);
+          inc(FileP,UTF8CharacterLength(FileP));
+        end;
+      '*':
+        begin
+          // match 0 or more characters, but PathDelim
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check any chars Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          while MaskP^='*' do inc(MaskP);
+          repeat
+            if Check(MaskP,FileP) then exit(true);
+            if FileP^ in [#0,PathDelim] then exit;
+            inc(FileP);
+          until false;
+        end;
+      '{':
+        begin
+          // OR options separated by comma
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check { Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          inc(MaskP);
+          repeat
+            if Check(MaskP,FileP) then begin
+              {$IFDEF VerboseFilenameIsMatching}
+              debugln(['  Check { option fits -> end']);
+              {$ENDIF}
+              exit(true);
+            end;
+            {$IFDEF VerboseFilenameIsMatching}
+            debugln(['  Check { skip to next option ...']);
+            {$ENDIF}
+            // skip to next option in MaskP
+            Level:=1;
+            repeat
+              case MaskP^ of
+              #0: exit;
+              SpecialChar:
+                begin
+                  inc(MaskP);
+                  if MaskP^=#0 then exit;
+                  inc(MaskP);
+                end;
+              '{': inc(Level);
+              '}':
+                begin
+                  dec(Level);
+                  if Level=0 then exit; // no option fits
+                end;
+              ',':
+                if Level=1 then break;
+              end;
+              inc(MaskP);
+            until false;
+            {$IFDEF VerboseFilenameIsMatching}
+            debugln(['  Check { next option: "',MaskP,'"']);
+            {$ENDIF}
+            inc(MaskP)
+          until false;
+        end;
+      '}':
+        begin
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check } Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          inc(MaskP);
+        end;
+      ',':
+        begin
+          // OR option fits => continue behind the {}
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check Skipping to end of {} Mask="',MaskP,'" ...']);
+          {$ENDIF}
+          Level:=1;
+          repeat
+            inc(MaskP);
+            case MaskP^ of
+            #0: exit;
+            SpecialChar:
+              begin
+                inc(MaskP);
+                if MaskP^=#0 then exit;
+                inc(MaskP);
+              end;
+            '{': inc(Level);
+            '}':
+              begin
+                dec(Level);
+                if Level=0 then break;
+              end;
+            end;
+          until false;
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check Skipped to end of {} Mask="',MaskP,'"']);
+          {$ENDIF}
+          inc(MaskP);
+        end;
+      #128..#255:
+        begin
+          // match UTF-8 characters
+          {$IFDEF VerboseFilenameIsMatching}
+          debugln(['  Check UTF-8 chars Mask="',MaskP,'" FileP="',FileP,'"']);
+          {$ENDIF}
+          MaskStart:=MaskP;
+          FileStart:=FileP;
+          while not (MaskP^ in [#0,SpecialChar,PathDelim,'?','*','{',',','}']) do
+          begin
+            if FileP^ in [#0,PathDelim] then exit;
+            inc(MaskP,UTF8CharacterLength(MaskP));
+            inc(FileP,UTF8CharacterLength(FileP));
+          end;
+          if CompareFilenames(MaskStart,MaskP-MaskStart,FileStart,FileP-FileStart)<>0 then
+            exit;
+        end;
+      else
+        // match ASCII characters
+        repeat
+          case MaskP^ of
+          #0,SpecialChar,PathDelim,'?','*','{',',','}': break;
+          {$IFDEF CaseInsensitiveFilenames}
+          'a'..'z','A'..'Z':
+            if FPUpChars[MaskP^]<>FPUpChars[FileP^] then exit;
+          {$ENDIF}
+          else
+            if MaskP^<>FileP^ then exit;
+          end;
+          inc(MaskP);
+          inc(FileP);
+        until false;
       end;
     until false;
   end;
 
 begin
-  //debugln(['[FilenameIsMatching] Mask="',Mask,'" Filename="',Filename,'" MatchExactly=',MatchExactly]);
-  Result:=false;
-  if (Filename='') then exit;
-  if (Mask='') then begin
-    Result:=true;  exit;
-  end;
-  // test every directory
-  DirStartMask:=1;
-  DirStartFile:=1;
-  repeat
-    // find start of directories
-    DirStartMask:=FindDirectoryStart(Mask,DirStartMask);
-    DirStartFile:=FindDirectoryStart(Filename,DirStartFile);
-    // find ends of directories
-    DirEndMask:=FindDirectoryEnd(Mask,DirStartMask);
-    DirEndFile:=FindDirectoryEnd(Filename,DirStartFile);
-    //debugln('  Compare "',copy(Mask,DirStartMask,DirEndMask-DirStartMask),'"',
-      // ' "',copy(Filename,DirStartFile,DirEndFile-DirStartFile),'"');
-    // compare directories
-    BracketMaskPos:=0;
-    while (DirStartMask<DirEndMask) do begin
-      //debugln(['FilenameIsMatching ',DirStartMask,' ',Mask[DirStartMask],' - ',DirStartFile,' ',Pchar(Filename)[DirStartFile-1]]);
-      case Mask[DirStartMask] of
-      '?':
-        if DirStartFile<DirEndFile then begin
-          inc(DirStartMask);
-          inc(DirStartFile);
-          continue;
-        end else begin
-          if not TryNextOr then exit;
-        end;
-      '*':
-        begin
-          inc(DirStartMask);
-          Fits:=false;
-          if (DirStartMask=DirEndMask) then begin
-            Fits:=true;
-          end else begin
-            StopChar:=DirStartMask;
-            if (BracketMaskPos>0) and (Mask[StopChar] in [',','}']) then begin
-              while (StopChar<DirEndMask) and (Mask[StopChar]<>'}') do
-                inc(StopChar);
-              inc(StopChar);
-            end;
-            if StopChar>=DirEndMask then
-              Fits:=true
-            else begin
-              while (DirStartFile<DirEndFile)
-              and (not CharsEqual(Filename[DirStartFile],Mask[StopChar]))
-              do
-                inc(DirStartFile);
-              Fits:=DirStartFile<DirEndFile;
-            end;
-          end;
-          if (not Fits) and (not TryNextOr) then exit;
-          continue;
-        end;
-      '{':
-        if BracketMaskPos<1 then begin
-          inc(DirStartMask);
-          BracketMaskPos:=DirStartMask;
-          BracketFilePos:=DirStartFile;
-          continue;
-        end else begin
-          // treat as normal character
-        end;
-      ',':
-        if BracketMaskPos>0 then begin
-          // Bracket operator fits complete
-          // -> skip rest of Bracket operator
-          repeat
-            inc(DirStartMask);
-            if DirStartMask>=DirEndMask then exit; // error, missing }
-            if Mask[DirStartMask]=SpecialChar then begin
-              // special char -> next char is normal char
-              inc(DirStartMask);
-            end else if Mask[DirStartMask]='}' then begin
-              // bracket found (= end of Or operator)
-              inc(DirStartMask);
-              break;
-            end;
-          until false;
-          BracketMaskPos:=0;
-          continue;
-        end else begin
-          // treat as normal character
-        end;
-      '}':
-        if BracketMaskPos>0 then begin
-          // Bracket operator fits complete
-          inc(DirStartMask);
-          BracketMaskPos:=0;
-          continue;
-        end else begin
-          // treat as normal character
-        end;
-      end;
-      if Mask[DirStartMask]=SpecialChar then begin
-        // special char -> next char is normal char
-        inc(DirStartMask);
-        if (DirStartMask>=DirEndMask) then exit;
-      end;
-      // compare char
-      if (DirStartFile<DirEndFile)
-      and CharsEqual(Mask[DirStartMask],Filename[DirStartFile]) then begin
-        inc(DirStartMask);
-        inc(DirStartFile);
-      end else begin
-        // chars different
-        if (BracketMaskPos=0) or (not TryNextOr) then begin
-          // filename does not match
-          exit;
-        end;
-      end;
-    end;
-    if BracketMaskPos>0 then exit;
-    if (DirStartMask<DirEndmask) or (DirStartFile<DirEndFile) then exit;
-    // find starts of next directories
-    DirStartMask:=DirEndMask+1;
-    DirStartFile:=DirEndFile+1;
-  until (DirStartFile>length(Filename)) or (DirStartMask>length(Mask));
+  if Filename='' then exit(false);
+  if Mask='' then exit(true);
+  {$IFDEF VerboseFilenameIsMatching}
+  debugln(['FilenameIsMatching2 Mask="',Mask,'" File="',Filename,'" Exactly=',MatchExactly]);
+  {$ENDIF}
 
-  DirStartMask:=FindDirectoryStart(Mask,DirStartMask);
-
-  // check that complete mask matches
-  Result:=(DirStartMask>length(Mask));
-
-  if MatchExactly then begin
-    DirStartFile:=FindDirectoryStart(Filename,DirStartFile);
-    // check that the complete Filename matches
-    Result:=(Result and (DirStartFile>length(Filename)));
-  end;
-  //debugl('  [FilenameIsMatching] Result=',Result,' ',DirStartMask,',',length(Mask),'  ',DirStartFile,',',length(Filename));
+  Result:=Check(PChar(Mask),PChar(Filename));
 end;
 
 function FindNextDirectoryInFilename(const Filename: string;

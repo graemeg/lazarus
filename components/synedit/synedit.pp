@@ -182,7 +182,7 @@ type
 
   TSynStateFlag = (sfCaretChanged, sfHideCursor,
     sfEnsureCursorPos, sfEnsureCursorPosAtResize,
-    sfIgnoreNextChar, sfPainting, sfHasScrolled,
+    sfIgnoreNextChar, sfPainting, sfHasPainted, sfHasScrolled,
     sfScrollbarChanged, sfHorizScrollbarVisible, sfVertScrollbarVisible,
     sfAfterLoadFromFileNeeded,
     // Mouse-states
@@ -544,6 +544,7 @@ type
     FUtf8KeyPressEventList: TLazSynUtf8KeyPressEventList;
     FStatusChangedList: TObject;
     FPaintEventHandlerList: TObject; // TSynPaintEventHandlerList
+    FScrollEventHandlerList: TObject; // TSynScrollEventHandlerList
     FPlugins: TList;
     fScrollTimer: TTimer;
     FScrollDeltaX, FScrollDeltaY: Integer;
@@ -739,7 +740,6 @@ type
     FPaintArea: TLazSynSurfaceManager;
     property ScreenCaret: TSynEditScreenCaret read FScreenCaret;
 
-    procedure PaintWindow(DC: HDC); override;
     procedure Paint; override;
     procedure StartPaintBuffer(const ClipRect: TRect);
     procedure EndPaintBuffer(const ClipRect: TRect);
@@ -1017,6 +1017,8 @@ type
 
     procedure RegisterPaintEventHandler(APaintEventProc: TSynPaintEventProc; AnEvents: TSynPaintEvents);
     procedure UnRegisterPaintEventHandler(APaintEventProc: TSynPaintEventProc);
+    procedure RegisterScrollEventHandler(AScrollEventProc: TSynScrollEventProc; AnEvents: TSynScrollEvents);
+    procedure UnRegisterScrollEventHandler(AScrollEventProc: TSynScrollEventProc);
 
     function SearchReplace(const ASearch, AReplace: string;
       AOptions: TSynSearchOptions): integer;
@@ -1303,7 +1305,17 @@ type
   public
     procedure Add(AHandler: TSynPaintEventProc; Changes: TSynPaintEvents);
     procedure Remove(AHandler: TSynPaintEventProc);
-    procedure CallPaintEventHandlers(Sender: TObject; AnEvents: TSynPaintEvents);
+    procedure CallPaintEventHandlers(Sender: TObject; AnEvent: TSynPaintEvent; const rcClip: TRect);
+  end;
+
+  { TSynScrollEventHandlerList}
+
+  TSynScrollEventHandlerList = Class(TSynFilteredMethodList)
+  public
+    procedure Add(AHandler: TSynScrollEventProc; Changes: TSynScrollEvents);
+    procedure Remove(AHandler: TSynScrollEventProc);
+    procedure CallScrollEventHandlers(Sender: TObject; AnEvent: TSynScrollEvent;
+      dx, dy: Integer; const rcScroll, rcClip: TRect);
   end;
 
   { TSynEditUndoCaret }
@@ -1895,6 +1907,7 @@ begin
 
   FStatusChangedList := TSynStatusChangedHandlerList.Create;
   FPaintEventHandlerList := TSynPaintEventHandlerList.Create;
+  FScrollEventHandlerList := TSynScrollEventHandlerList.Create;
 
   FDefaultBeautifier := TSynBeautifier.Create(self);
   FBeautifier := FDefaultBeautifier;
@@ -2419,6 +2432,7 @@ begin
   FreeAndNil(FScreenCaret);
   FreeAndNil(FStatusChangedList);
   FreeAndNil(FPaintEventHandlerList);
+  FreeAndNil(FScrollEventHandlerList);
   FBeautifier := nil;
   FreeAndNil(FDefaultBeautifier);
   FreeAndNil(FKeyDownEventList);
@@ -3687,26 +3701,9 @@ begin
   //DebugLn('TCustomSynEdit.MouseUp END Mouse=',X,',',Y,' Caret=',CaretX,',',CaretY,', BlockBegin=',BlockBegin.X,',',BlockBegin.Y,' BlockEnd=',BlockEnd.X,',',BlockEnd.Y);
 end;
 
-procedure TCustomSynEdit.PaintWindow(DC: HDC);
-begin
-  //before canvas is substituded
-  Include(fStateFlags,sfPainting);
-  try
-    FScreenCaret.Hide;
-    TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, [peBeforePaintCanvas]);
-    inherited PaintWindow(DC);
-    // Doublebuffer has NOT yet painted back
-    UpdateCaret; // Todo: only ShowCaret() / do not create caret here / Issue 0021924
-    TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, [peAfterPaintCanvas]);
-  finally
-    Exclude(fStateFlags,sfPainting);
-  end;
-end;
-
 procedure TCustomSynEdit.Paint;
 var
   rcClip: TRect;
-  NoState: Boolean;
 begin
   // Get the invalidated rect. Compute the invalid area in lines / columns.
   rcClip := Canvas.ClipRect;
@@ -3732,14 +3729,6 @@ begin
     exit;
   end;
 
-  NoState := False;
-  if not(sfPainting in fStateFlags) then begin
-    debugln(['Warning TCustomSynEdit.Paint called outsid WMPaint']);
-    Include(fStateFlags,sfPainting);
-    FScreenCaret.Hide;
-    NoState := True;
-  end;
-
   {$IFDEF EnableDoubleBuf}
   //rcClip:=Rect(0,0,ClientWidth,ClientHeight);
   StartPaintBuffer(rcClip);
@@ -3750,21 +3739,21 @@ begin
 
   Include(fStateFlags,sfPainting);
   Exclude(fStateFlags, sfHasScrolled);
-  TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, [peBeforePaint]);
+  TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, peBeforePaint, rcClip);
+  FScreenCaret.BeginPaint(rcClip);
   // Now paint everything while the caret is hidden.
   try
     FPaintArea.Paint(Canvas, rcClip);
     DoOnPaint;
   finally
+    UpdateCaret; // Todo: this is to call only ShowCaret() / do not create caret here / Issue 0021924
+    FScreenCaret.FinishPaint(rcClip); // after update caret
+    TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, peAfterPaint, rcClip);
     {$IFDEF EnableDoubleBuf}
     EndPaintBuffer(rcClip);
     {$ENDIF}
-    TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, [peAfterPaint]);
     Exclude(fStateFlags,sfPainting);
-    if NoState then begin
-      UpdateCaret; // Todo: only ShowCaret() / do not create caret here / Issue 0021924
-      Exclude(fStateFlags,sfPainting);
-    end;
+  Include(fStateFlags, sfHasPainted);
   end;
 end;
 
@@ -4470,25 +4459,31 @@ begin
       Invalidate;
     end else
     begin
-      TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, [peBeforeScroll]);
       srect := FPaintArea.Bounds;
       srect.Top := FTextArea.TextBounds.Top;
       srect.Bottom := FTextArea.TextBounds.Bottom;
-      FScreenCaret.Hide;
+      TSynScrollEventHandlerList(FScrollEventHandlerList).CallScrollEventHandlers(Self, peBeforeScroll,
+        0, LineHeight * Delta, srect, srect);
+      FScreenCaret.BeginScroll(0, LineHeight * Delta, srect, srect);
       if ScrollWindowEx(Handle, 0, LineHeight * Delta, @srect, @srect, 0, nil, SW_INVALIDATE)
       then begin
         {$IFDEF SYNSCROLLDEBUG}
         debugln(['ScrollAfterTopLineChanged did scroll Delta=',Delta]);
         {$ENDIF}
         include(fStateFlags, sfHasScrolled);
-        FScreenCaret.InvalidatePos; // Wine (Win emulator) may have changed the pos with the scroll
+        Include(fStateFlags, sfCaretChanged); // need to update
+        FScreenCaret.FinishScroll(0, LineHeight * Delta, srect, srect, True);
+        TSynScrollEventHandlerList(FScrollEventHandlerList).CallScrollEventHandlers(Self, peAfterScroll,
+          0, LineHeight * Delta, srect, srect);
       end else begin
+        FScreenCaret.FinishScroll(0, LineHeight * Delta, srect, srect, False);
+        TSynScrollEventHandlerList(FScrollEventHandlerList).CallScrollEventHandlers(Self, peAfterScrollFailed,
+          0, LineHeight * Delta, srect, srect);
         Invalidate;    // scrollwindow failed, invalidate all
         {$IFDEF SYNSCROLLDEBUG}
         debugln(['ScrollAfterTopLineChanged does invalidet (scroll failed) Delta=',Delta]);
         {$ENDIF}
       end;
-      TSynPaintEventHandlerList(FPaintEventHandlerList).CallPaintEventHandlers(Self, [peAfterScroll]);
     end;
   end;
   FOldTopView := TopView;
@@ -5822,6 +5817,12 @@ procedure TCustomSynEdit.WndProc(var Msg: TMessage);
 const
   ALT_KEY_DOWN = $20000000;
 begin
+  // ASAP after a paint // in case an App.AsyncCall takes longer
+  if (Msg.msg <> WM_PAINT) and (Msg.msg <> LM_PAINT) and
+     (sfHasPainted in fStateFlags) and (FScreenCaret <> nil)
+  then
+    FScreenCaret.AfterPaintEvent;
+
   if (Msg.Msg = WM_SYSCHAR) and (Msg.wParam = VK_BACK) and
     (Msg.lParam and ALT_KEY_DOWN <> 0)
   then
@@ -8989,6 +8990,17 @@ begin
   TSynPaintEventHandlerList(FPaintEventHandlerList).Remove(APaintEventProc);
 end;
 
+procedure TCustomSynEdit.RegisterScrollEventHandler(AScrollEventProc: TSynScrollEventProc;
+  AnEvents: TSynScrollEvents);
+begin
+  TSynScrollEventHandlerList(FScrollEventHandlerList).Add(AScrollEventProc, AnEvents);
+end;
+
+procedure TCustomSynEdit.UnRegisterScrollEventHandler(AScrollEventProc: TSynScrollEventProc);
+begin
+  TSynScrollEventHandlerList(FScrollEventHandlerList).Remove(AScrollEventProc);
+end;
+
 procedure TCustomSynEdit.NotifyHookedCommandHandlers(var Command: TSynEditorCommand;
   var AChar: TUTF8Char; Data: pointer; ATime: THookedCommandFlag);
 var
@@ -9344,13 +9356,36 @@ begin
 end;
 
 procedure TSynPaintEventHandlerList.CallPaintEventHandlers(Sender: TObject;
-  AnEvents: TSynPaintEvents);
+  AnEvent: TSynPaintEvent; const rcClip: TRect);
 var
   i: Integer;
 begin
   i:=Count;
-  while NextDownIndexBitFilter(i, LongInt(AnEvents)) do
-    TSynPaintEventProc(FItems[i].FHandler)(Sender, AnEvents);
+  while NextDownIndexBitFilter(i, LongInt([AnEvent])) do
+    TSynPaintEventProc(FItems[i].FHandler)(Sender, AnEvent, rcClip);
+end;
+
+{ TSynScrollEventHandlerList}
+
+procedure TSynScrollEventHandlerList.Add(AHandler: TSynScrollEventProc;
+  Changes: TSynScrollEvents);
+begin
+  AddBitFilter(TMethod(AHandler), LongInt(Changes));
+end;
+
+procedure TSynScrollEventHandlerList.Remove(AHandler: TSynScrollEventProc);
+begin
+  inherited Remove(TMethod(AHandler));
+end;
+
+procedure TSynScrollEventHandlerList.CallScrollEventHandlers(Sender: TObject;
+  AnEvent: TSynScrollEvent; dx, dy: Integer; const rcScroll, rcClip: TRect);
+var
+  i: Integer;
+begin
+  i:=Count;
+  while NextDownIndexBitFilter(i, LongInt([AnEvent])) do
+    TSynScrollEventProc(FItems[i].FHandler)(Sender, AnEvent, dx, dy, rcScroll, rcClip);
 end;
 
 { TSynEditMarkListInternal }

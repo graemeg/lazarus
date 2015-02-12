@@ -360,8 +360,9 @@ begin
       AForm := Screen.CustomFormsZOrdered[i];
       if (AForm.Parent=nil) and AForm.HandleAllocated and
         TQtWidget(AForm.Handle).getVisible and
-        not (AForm.FormStyle in [fsMDIChild, fsSplash]) and
-        not (AForm.BorderStyle in [bsNone]) then
+        ((not (AForm.FormStyle in [fsMDIChild, fsSplash]) and
+         not (AForm.BorderStyle = bsNone)) or
+        (csDesigning in AForm.ComponentState)) then
       begin
         States := TQtMainWindow(AForm.Handle).getWindowState;
         if not TQtMainWindow(AForm.Handle).isMinimized then
@@ -391,8 +392,9 @@ begin
       AForm := Screen.CustomFormsZOrdered[i];
       if (AForm.Parent=nil) and AForm.HandleAllocated and
         TQtWidget(AForm.Handle).getVisible and
-        not (AForm.FormStyle in [fsMDIChild, fsSplash]) and
-        not (AForm.BorderStyle in [bsNone]) then
+        ((not (AForm.FormStyle in [fsMDIChild, fsSplash]) and
+         not (AForm.BorderStyle = bsNone)) or
+        (csDesigning in AForm.ComponentState)) then
       begin
         States := TQtMainWindow(AForm.Handle).getWindowState;
         if TQtMainWindow(AForm.Handle).isMinimized then

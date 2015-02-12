@@ -739,6 +739,10 @@ type
   private
     FGroupBoxType: TQtGroupBoxType;
     FCWEventHook: QObject_hookH;
+    function GetCheckBoxState: boolean;
+    function GetCheckBoxVisible: boolean;
+    procedure SetCheckBoxState(AValue: boolean);
+    procedure SetCheckBoxVisible(AValue: boolean);
     procedure setLayoutThemeMargins(ALayout: QLayoutH; AWidget: QWidgetH);
   protected
     function CreateWidget(const AParams: TCreateParams):QWidgetH; override;
@@ -754,6 +758,8 @@ type
     procedure setText(const W: WideString); override;
     procedure setFocusPolicy(const APolicy: QtFocusPolicy); override;
     property GroupBoxType: TQtGroupBoxType read FGroupBoxType write FGroupBoxType;
+    property CheckBoxState: boolean read GetCheckBoxState write SetCheckBoxState;
+    property CheckBoxVisible: boolean read GetCheckBoxVisible write SetCheckBoxVisible;
   end;
   
   { TQtToolBar }
@@ -3939,7 +3945,8 @@ begin
   {$IFDEF HASX11}
   if (LCLObject is TCustomForm) and EqualRect(FrameRect, WindowRect) and
     (TCustomForm(LCLObject).BorderStyle <> bsNone) and
-    not (TCustomForm(LCLObject).FormStyle in [fsMDIChild,fsSplash]) then
+    (not (TCustomForm(LCLObject).FormStyle in [fsMDIChild,fsSplash]) or
+      (csDesigning in LCLObject.ComponentState)) then
   begin
     ACurrPos := getPos;
     // do not send garbage to LCL. This window isn't decorated yet by WM.
@@ -7612,6 +7619,27 @@ begin
     LCLObject.DoAdjustClientRectChange(False);
     LCLObject.InvalidateClientRectCache(True);
   end;
+end;
+
+function TQtGroupBox.GetCheckBoxVisible: boolean;
+begin
+  Result := QGroupBox_isCheckable(QGroupBoxH(Widget));
+end;
+
+function TQtGroupBox.GetCheckBoxState: boolean;
+begin
+  Result := CheckBoxVisible and QGroupBox_isChecked(QGroupBoxH(Widget));
+end;
+
+procedure TQtGroupBox.SetCheckBoxState(AValue: boolean);
+begin
+  if CheckBoxVisible then
+    QGroupBox_setChecked(QGroupBoxH(Widget), AValue);
+end;
+
+procedure TQtGroupBox.SetCheckBoxVisible(AValue: boolean);
+begin
+  QGroupBox_setCheckable(QGroupBoxH(Widget), AValue);
 end;
 
 function TQtGroupBox.CreateWidget(const AParams: TCreateParams): QWidgetH;

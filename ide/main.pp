@@ -6409,6 +6409,9 @@ begin
   if Result<>mrOK then
     if ConsoleVerbosity>0 then
       debugln(['TMainIDE.DoSaveForBuild PkgBoss.DoSaveAllPackages failed']);
+
+  // get non IDE disk changes
+  InvalidateFileStateCache;
 end;
 
 function TMainIDE.DoSaveProjectToTestDirectory(Flags: TSaveFlags): TModalResult;

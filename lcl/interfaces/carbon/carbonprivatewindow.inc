@@ -557,7 +557,7 @@ const
       if TextLen>0 then begin
         u:=UTF16CharacterToUnicode(@WideBuf[1],CharLen);
         if CharLen>0 then begin
-          UTF8VKCharacter:=UnicodeToUTF8(u);
+          UTF8VKCharacter:=LazUTF8.UnicodeToUTF8(u);
           if (UTF8VKCharacter<>'') and (ord(Utf8VKCharacter[1])<=127) then //It's (true) ascii.
             VKKeyChar:=Utf8VKCharacter[1]
           else //not ascii, get the Mac character.
@@ -612,7 +612,7 @@ const
 
       u:=UTF16CharacterToUnicode(@WideBuf[1],CharLen);
       if CharLen=0 then exit;
-      UTF8Character:=UnicodeToUTF8(u);
+      UTF8Character:=LazUTF8.UnicodeToUTF8(u);
 
       if (UTF8Character<>'') and (ord(Utf8Character[1])<=127) then //It's (true) ascii.
         KeyChar:=Utf8Character[1]
@@ -705,7 +705,7 @@ const
   begin
     if AUTF8Char='' then Exit;
     // only one character should be used
-    WideBuf:={%H-}UTF8Encode(UTF8Copy(AUTF8Char, 1,1));
+    WideBuf:={%H-}UTF8Encode(LazUTF8.UTF8Copy(AUTF8Char, 1,1));
     Result:=(length(WideBuf)>0) and
       (not OSError(SetEventParameter(AEvent, kEventParamKeyUnicodes, typeUnicodeText,
         length(WideBuf)*2, @WideBuf[1]), SName, ASetEvent, 'kEventParamKeyUnicodes'));
