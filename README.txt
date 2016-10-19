@@ -42,6 +42,9 @@ See the file docs/INSTALL.
 --------------------------------------------------------------------------------
 Usage:
 
+Clone the IDE with:
+  []$ git clone https://github.com/graemeg/lazarus.git
+ 
 Start the IDE with:
   []$ cd your/lazarus/directory
   []$ ./lazarus
