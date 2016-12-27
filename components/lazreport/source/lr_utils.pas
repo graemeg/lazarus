@@ -967,7 +967,14 @@ begin
     b := UTF8CharacterStrictLength(@S[i]);
     inc(i,b);
     inc(Result);
-    Desc[Result] := Char(b);
+    if Result<length(Desc) then
+      Desc[Result] := Char(b)
+    else //abort on invalid UTF8 String
+      begin
+        s := '';
+        Result := 0;
+        exit;
+      end;
   end;
   Setlength(Desc, Result);
 end;
