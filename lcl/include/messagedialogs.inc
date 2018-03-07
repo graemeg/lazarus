@@ -385,6 +385,23 @@ var
   FButtons: TButtonPanel;
   FForm: TDummyForInput;
   Len, NSpacing, NEditWidth, i: integer;
+
+  function GetPromptCaption(const APrompt: string): string;
+  begin
+    if (Length(APrompt) > 1) and (APrompt[1] < #32) then
+      Result := Copy(APrompt, 2, Length(APrompt) - 1)
+    else
+      Result := APrompt;
+  end;
+
+  function GetPasswordChar(const APrompt: string): Char;
+  begin
+    if (Length(APrompt) > 1) and (APrompt[1] < #32) then
+      Result := '*'
+    else
+      Result := #0;
+  end;
+
 begin
   Result:= false;
   if Length(APrompts)<1 then
@@ -436,6 +453,8 @@ begin
     FEdits[i].Align:= alRight;
     FEdits[i].Width:= NEditWidth;
     FEdits[i].Text:= AValues[i];
+    if i<Length(APrompts) then
+      FEdits[i].PasswordChar:= GetPasswordChar(APrompts[i]);
 
     FLabels[i]:= TPanel.Create(FForm);
     FLabels[i].Parent:= FPanels[i];
@@ -443,7 +462,7 @@ begin
     FLabels[i].BevelInner:= bvNone;
     FLabels[i].BevelOuter:= bvNone;
     if i<Length(APrompts) then
-      FLabels[i].Caption:= APrompts[i];
+      FLabels[i].Caption:= GetPromptCaption(APrompts[i]);
     FLabels[i].BorderSpacing.Right:= NSpacing;
     FLabels[i].Width:= FLabels[i].Canvas.TextWidth(FLabels[i].Caption);
 
