@@ -4157,7 +4157,7 @@ begin
       // check ambiguous units
       Result:=CheckAmbiguousPackageUnits(APackage);
       if Result<>mrOk then begin
-        DebugLn('Error: (lazarus) [TLazPackageGraph.CompilePackage} CheckAmbiguousPackageUnits failed: ',APackage.IDAsString);
+        DebugLn('Error: (lazarus) [TLazPackageGraph.CompilePackage] CheckAmbiguousPackageUnits failed: ',APackage.IDAsString);
         exit;
       end;
 
@@ -5265,7 +5265,7 @@ begin
   // delete ambiguous files
   Result:=DeleteAmbiguousFiles(SrcFilename);
   if Result=mrAbort then begin
-    DebugLn('Error: (lazarus) [TLazPackageGraph.SavePackageMainSource} DoDeleteAmbiguousFiles failed');
+    DebugLn('Error: (lazarus) [TLazPackageGraph.SavePackageMainSource] DoDeleteAmbiguousFiles failed');
     exit;
   end;
 

@@ -776,7 +776,7 @@ begin
   end;
 end;
 {$ELSE}
-  ToDo: Use FPC's resource type (.res)
+ // ToDo: Use FPC's resource type (.res)
 {$ENDIF}
 
 function TPkgManager.OnPackageEditorCreateFile(Sender: TObject;
