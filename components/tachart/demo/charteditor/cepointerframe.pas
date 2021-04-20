@@ -14,22 +14,21 @@ type
   { TPointerFrame }
 
   TPointerFrame = class(TFrame)
-    Bevel1: TBevel;
-    Bevel2: TBevel;
-    Bevel3: TBevel;
     cbPointerStyle: TChartComboBox;
+    GroupBox1: TGroupBox;
+    gbPointerBrush: TGroupBox;
+    gbPointerPen: TGroupBox;
     Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
     lblPointerSize: TLabel;
-    PointerPenFrame: TPenFrame;
-    PointerBrushFrame: TBrushFrame;
     sePointerSize: TSpinEdit;
     procedure cbPointerStyleChange(Sender: TObject);
     procedure sePointerSizeChange(Sender: TObject);
   private
     FPointer: TSeriesPointer;
+    FPointerBrushFrame: TBrushFrame;
+    FPointerPenFrame: TPenFrame;
     FOnChange: TNotifyEvent;
+    procedure ChangedHandler(Sender: TObject);
     procedure DoChange;
   protected
     function GetChart: TChart;
@@ -51,11 +50,40 @@ constructor TPointerFrame.Create(AOwner: TComponent);
 begin
   inherited;
   cbPointerStyle.DropdownCount := DEFAULT_DROPDOWN_COUNT;
+
+  FPointerBrushFrame := TBrushFrame.Create(Self);
+  FPointerBrushFrame.Parent := gbPointerBrush;
+  FPointerBrushFrame.Name := '';
+  FPointerBrushFrame.Align := alClient;
+  FPointerBrushFrame.BorderSpacing.Left := 8;
+  FPointerBrushFrame.BorderSpacing.Right := 8;
+  FPointerBrushFrame.BorderSpacing.Bottom := 8;
+  FPointerBrushFrame.OnChange := @ChangedHandler;
+  gbPointerBrush.Caption := 'Fill';
+  gbPointerBrush.AutoSize := true;
+
+  FPointerPenFrame := TPenFrame.Create(self);
+  FPointerPenFrame.Parent := gbPointerPen;
+  FPointerPenFrame.Name := '';
+  FPointerPenFrame.Align := alClient;
+  FPointerPenFrame.borderspacing.Left := 8;
+  FPointerPenFrame.BorderSpacing.Right := 8;
+  FPointerPenFrame.BorderSpacing.Bottom := 8;
+  FPointerPenFrame.OnChange := @ChangedHandler;
+  gbPointerPen.caption := 'Border';
+  gbPointerPen.AutoSize := true;
+
+  AutoSize := true;
 end;
 
 procedure TPointerFrame.cbPointerStyleChange(Sender: TObject);
 begin
   FPointer.Style := cbPointerStyle.PointerStyle;
+  DoChange;
+end;
+
+procedure TPointerFrame.ChangedHandler(Sender: TObject);
+begin
   DoChange;
 end;
 
@@ -81,8 +109,8 @@ begin
   FPointer := APointer;
   cbPointerStyle.PointerStyle := APointer.Style;
   sePointerSize.Value := APointer.HorizSize;
-  PointerBrushFrame.Prepare(APointer.Brush);
-  PointerPenFrame.Prepare(APointer.Pen);
+  FPointerBrushFrame.Prepare(APointer.Brush);
+  FPointerPenFrame.Prepare(APointer.Pen);
 end;
 
 end.

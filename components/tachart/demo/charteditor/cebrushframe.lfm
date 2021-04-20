@@ -13,16 +13,17 @@ object BrushFrame: TBrushFrame
     AnchorSideLeft.Control = lblBrushStyle
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Control = Owner
+    AnchorSideTop.Side = asrCenter
     AnchorSideRight.Control = cbBrushColor
-    Left = 48
+    Left = 49
     Height = 22
-    Top = 0
-    Width = 144
+    Top = 1
+    Width = 142
     Mode = ccmBrushStyle
     PenPattern = '1|1'
     PointerStyle = psNone
     Anchors = [akTop, akLeft, akRight]
-    BorderSpacing.Left = 23
+    BorderSpacing.Left = 24
     ItemHeight = 16
     ItemIndex = 0
     TabOrder = 0
@@ -34,7 +35,7 @@ object BrushFrame: TBrushFrame
     AnchorSideTop.Side = asrCenter
     Left = 0
     Height = 15
-    Top = 4
+    Top = 5
     Width = 25
     Caption = 'Style'
     ParentColor = False
@@ -47,13 +48,14 @@ object BrushFrame: TBrushFrame
     AnchorSideRight.Side = asrBottom
     Left = 197
     Height = 25
-    Top = -1
+    Top = 0
     Width = 31
     Anchors = [akTop, akRight]
-    BorderSpacing.Left = 5
+    BorderSpacing.Left = 6
     BorderWidth = 2
     ButtonColorSize = 16
     ButtonColor = clBlack
+    Margin = 2
     OnColorChanged = cbBrushColorColorChanged
   end
 end
