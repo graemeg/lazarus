@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TFontFrame }
+  { TChartFontFrame }
 
-  TFontFrame = class(TFrame)
+  TChartFontFrame = class(TFrame)
     cbBold: TCheckBox;
     cbFontColor: TColorButton;
     cbItalic: TCheckBox;
@@ -55,7 +55,7 @@ const
     'default', '8', '9', '10', '12', '14', '16', '18', '20', '22', '24', '28',
     '32', '36', '40', '44', '48', '56', '64', '72', '80');
 
-constructor TFontFrame.Create(AOwner: TComponent);
+constructor TChartFontFrame.Create(AOwner: TComponent);
 var
   i: Integer;
 begin
@@ -70,7 +70,7 @@ begin
   cmbFontSize.DropdownCount := DEFAULT_DROPDOWN_COUNT;
 end;
 
-procedure TFontFrame.cbBoldChange(Sender: TObject);
+procedure TChartFontFrame.cbBoldChange(Sender: TObject);
 begin
   if cbBold.Checked then
     FFont.Style := FFont.Style + [fsBold]
@@ -79,13 +79,13 @@ begin
   DoChanged;
 end;
 
-procedure TFontFrame.cbFontColorColorChanged(Sender: TObject);
+procedure TChartFontFrame.cbFontColorColorChanged(Sender: TObject);
 begin
   FFont.Color := cbFontColor.ButtonColor;
   DoChanged;
 end;
 
-procedure TFontFrame.cbItalicChange(Sender: TObject);
+procedure TChartFontFrame.cbItalicChange(Sender: TObject);
 begin
   if cbItalic.Checked then
     FFont.Style := FFont.Style + [fsItalic]
@@ -94,7 +94,7 @@ begin
   DoChanged;
 end;
 
-procedure TFontFrame.cbUnderlineChange(Sender: TObject);
+procedure TChartFontFrame.cbUnderlineChange(Sender: TObject);
 begin
   if cbUnderline.Checked then
     FFont.Style := FFont.Style + [fsUnderline]
@@ -103,7 +103,7 @@ begin
   DoChanged;
 end;
 
-procedure TFontFrame.cmbFontNameChange(Sender: TObject);
+procedure TChartFontFrame.cmbFontNameChange(Sender: TObject);
 begin
   if cmbFontName.ItemIndex < 1 then
     FFont.Name := 'default'
@@ -112,7 +112,7 @@ begin
   DoChanged;
 end;
 
-procedure TFontFrame.cmbFontSizeChange(Sender: TObject);
+procedure TChartFontFrame.cmbFontSizeChange(Sender: TObject);
 begin
   if cmbFontSize.ItemIndex < 1 then
     FFont.Size := 0
@@ -121,18 +121,18 @@ begin
   DoChanged;
 end;
 
-procedure TFontFrame.seOrientationChange(Sender: TObject);
+procedure TChartFontFrame.seOrientationChange(Sender: TObject);
 begin
   FFont.Orientation := seOrientation.Value * 10;
   DoChanged;
 end;
 
-procedure TFontFrame.DoChanged;
+procedure TChartFontFrame.DoChanged;
 begin
   if Assigned(FOnChange) then FOnChange(Self);
 end;
 
-procedure TFontFrame.GetData(AFont: TFont);
+procedure TChartFontFrame.GetData(AFont: TFont);
 begin
   if cmbFontSize.ItemIndex < 1 then
     AFont.Name := cmbFontName.Items[0]
@@ -149,7 +149,7 @@ begin
   if cbUnderline.Checked then AFont.Style := AFont.Style + [fsUnderline] else AFont.Style := [];
 end;
 
-procedure TFontFrame.Prepare(AFont: TFont; WithOrientation: Boolean);
+procedure TChartFontFrame.Prepare(AFont: TFont; WithOrientation: Boolean);
 begin
   FFont := AFont;
 

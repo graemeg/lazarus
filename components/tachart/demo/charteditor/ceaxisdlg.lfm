@@ -1,4 +1,4 @@
-object AxisEditor: TAxisEditor
+object AxisEditor: TChartAxisEditor
   Left = 931
   Height = 524
   Top = 284
@@ -10,7 +10,6 @@ object AxisEditor: TAxisEditor
   OnActivate = FormActivate
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.1.0.0'
@@ -20,11 +19,11 @@ object AxisEditor: TAxisEditor
     Height = 445
     Top = 33
     Width = 523
-    ActivePage = pgGrid
+    ActivePage = pgLabels
     Align = alClient
     BorderSpacing.Left = 6
     BorderSpacing.Right = 6
-    TabIndex = 2
+    TabIndex = 1
     TabOrder = 1
     object pgTitle: TTabSheet
       Caption = 'Title'
@@ -232,80 +231,91 @@ object AxisEditor: TAxisEditor
           Caption = 'Automatic'
           ParentColor = False
         end
-        object cbAutoMin: TCheckBox
+        object cbAutoMax: TCheckBox
           AnchorSideLeft.Control = lblAutomatic
-          AnchorSideTop.Control = seMinimum
-          AnchorSideTop.Side = asrCenter
+          AnchorSideTop.Control = lblAutomatic
+          AnchorSideTop.Side = asrBottom
           Left = 32
           Height = 19
           Top = 31
-          Width = 73
+          Width = 75
           BorderSpacing.Left = 16
-          BorderSpacing.Top = 8
-          Caption = 'Minimum'
-          OnChange = cbAutoMinChange
+          BorderSpacing.Top = 10
+          Caption = 'Maximum'
+          OnChange = cbAutoMaxChange
           TabOrder = 0
         end
-        object cbAutoMax: TCheckBox
-          AnchorSideLeft.Control = cbAutoMin
-          AnchorSideTop.Control = seMaximum
-          AnchorSideTop.Side = asrCenter
+        object cbAutoMin: TCheckBox
+          AnchorSideLeft.Control = cbAutoMax
+          AnchorSideTop.Control = cbAutoMax
+          AnchorSideTop.Side = asrBottom
           Left = 32
           Height = 19
           Top = 62
-          Width = 75
-          Caption = 'Maximum'
-          OnChange = cbAutoMaxChange
+          Width = 73
+          BorderSpacing.Top = 12
+          Caption = 'Minimum'
+          OnChange = cbAutoMinChange
           TabOrder = 2
         end
-        object seMinimum: TFloatSpinEdit
-          AnchorSideLeft.Control = cbAutoMin
+        object seMaximum: TFloatSpinEdit
+          AnchorSideLeft.Control = Spacer
           AnchorSideLeft.Side = asrBottom
-          AnchorSideTop.Control = lblAutomatic
-          AnchorSideTop.Side = asrBottom
+          AnchorSideTop.Control = cbAutoMax
+          AnchorSideTop.Side = asrCenter
           AnchorSideRight.Control = gbAxisRange
           AnchorSideRight.Side = asrBottom
-          Left = 129
+          Left = 128
           Height = 23
           Top = 29
-          Width = 84
+          Width = 85
           Alignment = taRightJustify
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Left = 24
+          BorderSpacing.Top = 8
+          BorderSpacing.Right = 24
+          OnChange = seMaximumChange
+          TabOrder = 1
+        end
+        object seMinimum: TFloatSpinEdit
+          AnchorSideLeft.Control = Spacer
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = cbAutoMin
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = gbAxisRange
+          AnchorSideRight.Side = asrBottom
+          Left = 128
+          Height = 23
+          Top = 60
+          Width = 85
+          Alignment = taRightJustify
+          Anchors = [akTop, akLeft, akRight]
           BorderSpacing.Top = 8
           BorderSpacing.Right = 24
           OnChange = seMinimumChange
-          TabOrder = 1
-        end
-        object seMaximum: TFloatSpinEdit
-          AnchorSideLeft.Control = seMinimum
-          AnchorSideTop.Control = seMinimum
-          AnchorSideTop.Side = asrBottom
-          AnchorSideRight.Control = seMinimum
-          AnchorSideRight.Side = asrBottom
-          Left = 129
-          Height = 23
-          Top = 60
-          Width = 84
-          Alignment = taRightJustify
-          Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Top = 8
-          OnChange = seMaximumChange
           TabOrder = 3
         end
         object cbInverted: TCheckBox
           AnchorSideLeft.Control = lblAutomatic
-          AnchorSideTop.Control = seMaximum
+          AnchorSideTop.Control = cbAutoMin
           AnchorSideTop.Side = asrBottom
           Left = 16
           Height = 19
           Top = 95
           Width = 63
-          BorderSpacing.Top = 12
+          BorderSpacing.Top = 14
           BorderSpacing.Bottom = 16
           Caption = 'Inverted'
           OnChange = cbInvertedChange
           TabOrder = 4
+        end
+        object Spacer: TBevel
+          AnchorSideLeft.Control = cbAutoMax
+          AnchorSideLeft.Side = asrBottom
+          Left = 107
+          Height = 50
+          Top = 32
+          Width = 21
+          Shape = bsSpacer
         end
       end
       object gbLabelFont: TGroupBox

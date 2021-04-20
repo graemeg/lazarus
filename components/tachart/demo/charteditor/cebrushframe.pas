@@ -9,9 +9,9 @@ uses
 
 type
 
-  { TBrushFrame }
+  { TChartBrushFrame }
 
-  TBrushFrame = class(TFrame)
+  TChartBrushFrame = class(TFrame)
     cbBrushStyle: TChartComboBox;
     cbBrushColor: TColorButton;
     lblBrushStyle: TLabel;
@@ -33,31 +33,31 @@ implementation
 
 {$R *.lfm}
 
-constructor TBrushFrame.Create(AOwner: TComponent);
+constructor TChartBrushFrame.Create(AOwner: TComponent);
 begin
   inherited;
   cbBrushStyle.DropDownCount := DEFAULT_DROPDOWN_COUNT;
   cbBrushColor.Width := cbBrushColor.Height;
 end;
 
-procedure TBrushFrame.cbBrushStyleChange(Sender: TObject);
+procedure TChartBrushFrame.cbBrushStyleChange(Sender: TObject);
 begin
   FBrush.Style := cbBrushStyle.BrushStyle;
   DoChanged;
 end;
 
-procedure TBrushFrame.cbBrushColorColorChanged(Sender: TObject);
+procedure TChartBrushFrame.cbBrushColorColorChanged(Sender: TObject);
 begin
   FBrush.Color := cbBrushColor.ButtonColor;
   DoChanged;
 end;
 
-procedure TBrushFrame.DoChanged;
+procedure TChartBrushFrame.DoChanged;
 begin
   if Assigned(FOnChange) then FOnChange(FBrush);
 end;
 
-procedure TBrushFrame.Prepare(ABrush: TBrush);
+procedure TChartBrushFrame.Prepare(ABrush: TBrush);
 begin
   FBrush := ABrush;
   cbBrushColor.ButtonColor := ColorToRGB(ABrush.Color);

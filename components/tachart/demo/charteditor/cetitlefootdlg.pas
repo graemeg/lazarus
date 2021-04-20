@@ -11,9 +11,9 @@ uses
 
 type
 
-  { TTitleFootEditor }
+  { TChartTitleFootEditor }
 
-  TTitleFootEditor = class(TForm)
+  TChartTitleFootEditor = class(TForm)
     ButtonPanel: TButtonPanel;
     cbShow: TCheckBox;
     gbShapeBrushPenMargins: TGroupBox;
@@ -36,8 +36,8 @@ type
   private
     FTitle: TChartTitle;
     FSavedTitle: TChartTitle;
-    FFontFrame: TFontFrame;
-    FShapeBrushPenMarginsFrame: TShapeBrushPenMarginsFrame;
+    FFontFrame: TChartFontFrame;
+    FShapeBrushPenMarginsFrame: TChartShapeBrushPenMarginsFrame;
     FOKClicked: boolean;
     procedure ChangedHandler(Sender: TObject);
     function GetAlignment: TAlignment;
@@ -51,7 +51,7 @@ type
   end;
 
 var
-  TitleFootEditor: TTitleFootEditor;
+  TitleFootEditor: TChartTitleFootEditor;
 
 implementation
 
@@ -61,7 +61,7 @@ uses
   TATypes,
   ceUtils;
 
-procedure TTitleFootEditor.cbShowChange(Sender: TObject);
+procedure TChartTitleFootEditor.cbShowChange(Sender: TObject);
 begin
   FTitle.Visible := cbShow.Checked;
   lblText.Visible := cbShow.Checked;
@@ -71,7 +71,7 @@ begin
   gbFont.Visible := cbShow.Checked;
 end;
 
-procedure TTitleFootEditor.FormActivate(Sender: TObject);
+procedure TChartTitleFootEditor.FormActivate(Sender: TObject);
 begin
   Constraints.MinHeight :=  PanelTop.Height +
     MemoPanel.Constraints.MinHeight +
@@ -86,14 +86,14 @@ begin
   Height := 1;
 end;
 
-procedure TTitleFootEditor.ChangedHandler(Sender: TObject);
+procedure TChartTitleFootEditor.ChangedHandler(Sender: TObject);
 begin
   GetChart.Invalidate;
   mmoText.Font.Assign(FTitle.Font);
   mmoText.Color := FTitle.Brush.Color;
 end;
 
-procedure TTitleFootEditor.FormCloseQuery(Sender: TObject;
+procedure TChartTitleFootEditor.FormCloseQuery(Sender: TObject;
   var CanClose: boolean);
 begin
   if not CanClose then exit;
@@ -103,10 +103,10 @@ begin
   end;
 end;
 
-procedure TTitleFootEditor.FormCreate(Sender: TObject);
+procedure TChartTitleFootEditor.FormCreate(Sender: TObject);
 begin
   // Insert frames at runtime - this makes life much easier...
-  FFontFrame := TFontFrame.Create(self);
+  FFontFrame := TChartFontFrame.Create(self);
   FFontFrame.Parent := gbFont;
   FFontFrame.Align := alClient;
   FFontFrame.BorderSpacing.Left := 8;
@@ -115,7 +115,7 @@ begin
   FFontFrame.OnChange := @ChangedHandler;
   gbFont.AutoSize := true;
 
-  FShapeBrushPenMarginsFrame := TShapeBrushPenMarginsFrame.Create(self);
+  FShapeBrushPenMarginsFrame := TChartShapeBrushPenMarginsFrame.Create(self);
   FShapeBrushPenMarginsFrame.Parent := gbShapeBrushPenMargins;
   FShapeBrushPenMarginsFrame.Align := alClient;
   FShapeBrushPenMarginsFrame.BorderSpacing.Left := 8;
@@ -131,12 +131,12 @@ begin
   ParamsPanel.AutoSize := true;
 end;
 
-procedure TTitleFootEditor.FormDestroy(Sender: TObject);
+procedure TChartTitleFootEditor.FormDestroy(Sender: TObject);
 begin
   FSavedTitle.Free;
 end;
 
-procedure TTitleFootEditor.FormShow(Sender: TObject);
+procedure TChartTitleFootEditor.FormShow(Sender: TObject);
 begin
   (*
   if cbShow.Checked then begin
@@ -148,29 +148,29 @@ begin
   *)
 end;
 
-procedure TTitleFootEditor.mmoTextChange(Sender: TObject);
+procedure TChartTitleFootEditor.mmoTextChange(Sender: TObject);
 begin
   FTitle.Text.Assign(mmoText.Lines);
 end;
 
-function TTitleFootEditor.GetAlignment: TAlignment;
+function TChartTitleFootEditor.GetAlignment: TAlignment;
 const
   ALIGNMENTS: array[0..2] of TAlignment = (taLeftJustify, taCenter, taRightJustify);
 begin
   Result := ALIGNMENTS[rgAlignment.ItemIndex];
 end;
 
-function TTitleFootEditor.GetChart: TChart;
+function TChartTitleFootEditor.GetChart: TChart;
 begin
   Result := FTitle.GetOwner as TChart;
 end;
 
-procedure TTitleFootEditor.OKButtonClick(Sender: TObject);
+procedure TChartTitleFootEditor.OKButtonClick(Sender: TObject);
 begin
   FOKClicked := true;
 end;
 
-procedure TTitleFootEditor.Prepare(ATitle: TChartTitle; ACaption: String = '');
+procedure TChartTitleFootEditor.Prepare(ATitle: TChartTitle; ACaption: String = '');
 begin
   FTitle := ATitle;
   if FSavedTitle = nil then
@@ -190,19 +190,19 @@ begin
   FShapeBrushPenMarginsFrame.Prepare(ATitle.Shape, ATitle.Brush, ATitle.Frame, ATitle.Margins);
 end;
 
-procedure TTitleFootEditor.rgAlignmentClick(Sender: TObject);
+procedure TChartTitleFootEditor.rgAlignmentClick(Sender: TObject);
 begin
   FTitle.Alignment := GetAlignment;
 end;
 
-procedure TTitleFootEditor.SetAlignment(AValue: TAlignment);
+procedure TChartTitleFootEditor.SetAlignment(AValue: TAlignment);
 const
   ALIGNMENTS: array[TAlignment] of Integer = (0, 2, 1);
 begin
   rgAlignment.ItemIndex := ALIGNMENTS[AValue];
 end;
 
-procedure TTitleFootEditor.ShapeChangedHandler(AShape: TChartLabelShape);
+procedure TChartTitleFootEditor.ShapeChangedHandler(AShape: TChartLabelShape);
 begin
   FTitle.Shape := AShape;
 end;

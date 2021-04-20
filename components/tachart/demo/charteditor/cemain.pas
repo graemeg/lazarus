@@ -56,7 +56,7 @@ type
     procedure mnuChartTitleClick(Sender: TObject);
     procedure mnuLeftAxisClick(Sender: TObject);
   private
-    procedure EditAxis(AAxis: TChartAxis; APage: TAxisEditorPage);
+    procedure EditAxis(AAxis: TChartAxis; APage: TChartAxisEditorPage);
     procedure EditLegend(ALegend: TChartLegend);
     procedure EditSeries(ASeries: TBasicChartSeries);
     procedure EditTitleFoot(ATitle: TChartTitle);
@@ -126,7 +126,7 @@ end;
 procedure TMainForm.ChartToolset1AxisClickTool1Click(ASender: TChartTool;
   Axis: TChartAxis; AHit: TChartAxisHitTests);
 var
-  pg: TAxisEditorPage;
+  pg: TChartAxisEditorPage;
 begin
   Unused(ASender);
   if (ahtTitle in AHit) then
@@ -156,11 +156,11 @@ begin
   EditLegend(ALegend);
 end;
 
-procedure TMainForm.EditAxis(AAxis: TChartAxis; APage: TAxisEditorPage);
+procedure TMainForm.EditAxis(AAxis: TChartAxis; APage: TChartAxisEditorPage);
 var
-  F: TAxisEditor;
+  F: TChartAxisEditor;
 begin
-  F := TAxisEditor.Create(nil);
+  F := TChartAxisEditor.Create(nil);
   try
     F.Prepare(AAxis, 'Edit chart axis "%s"');
     F.Page := APage;
@@ -172,9 +172,9 @@ end;
 
 procedure TMainForm.EditLegend(ALegend: TChartLegend);
 var
-  F: TLegendEditor;
+  F: TChartLegendEditor;
 begin
-  F := TLegendEditor.Create(nil);
+  F := TChartLegendEditor.Create(nil);
   try
     F.Prepare(ALegend, 'Edit chart legend');
     F.ShowModal;
@@ -185,9 +185,9 @@ end;
 
 procedure TMainForm.EditSeries(ASeries: TBasicChartSeries);
 var
-  F: TSeriesEditor;
+  F: TChartSeriesEditor;
 begin
-  F := TSeriesEditor.Create(nil);
+  F := TChartSeriesEditor.Create(nil);
   try
     F.Prepare(ASeries, 'Edit series "%s"');
     F.ShowModal;
@@ -198,10 +198,10 @@ end;
 
 procedure TMainForm.EditTitleFoot(ATitle: TChartTitle);
 var
-  F: TtitleFootEditor;
+  F: TChartTitleFootEditor;
   s: String;
 begin
-  F := TTitleFootEditor.Create(nil);
+  F := TChartTitleFootEditor.Create(nil);
   try
     s := 'Edit chart %s';
     if ATitle = Chart1.Title then s := Format(s, ['title']) else s := Format(s, ['footer']);

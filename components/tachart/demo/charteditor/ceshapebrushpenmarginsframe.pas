@@ -10,11 +10,11 @@ uses
 
 type
 
-  TShapeChangeEvent = procedure (AShape: TChartLabelShape) of object;
+  TChartShapeChangeEvent = procedure (AShape: TChartLabelShape) of object;
 
-  { TShapeBrushPenMarginsFrame }
+  { TChartShapeBrushPenMarginsFrame }
 
-  TShapeBrushPenMarginsFrame = class(TFrame)
+  TChartShapeBrushPenMarginsFrame = class(TFrame)
     Bevel1: TBevel;
     cbBorderColor: TColorButton;
     cbFillColor: TColorButton;
@@ -39,7 +39,7 @@ type
     procedure seTopMarginChange(Sender: TObject);
   private
     FOnChange: TNotifyEvent;
-    FOnShapeChange: TShapeChangeEvent;
+    FOnShapeChange: TChartShapeChangeEvent;
     FBrush: TBrush;
     FPen: TChartPen;
     FMargins: TChartLabelMargins;
@@ -55,7 +55,7 @@ type
     procedure Prepare(AShape: TChartLabelShape; ABrush: TBrush; APen: TChartPen;
       AMargins: TChartLabelMargins);
     property OnChange: TNotifyEvent read FOnChange write FOnChange;
-    property OnShapeChange: TShapeChangeEvent read FOnShapeChange write FOnShapeChange;
+    property OnShapeChange: TChartShapeChangeEvent read FOnShapeChange write FOnShapeChange;
   end;
 
 implementation
@@ -65,9 +65,9 @@ implementation
 uses
   ceUtils;
 
-{ TShapeBrushPenMarginsFrame }
+{ TChartShapeBrushPenMarginsFrame }
 
-constructor TShapeBrushPenMarginsFrame.Create(AOwner: TComponent);
+constructor TChartShapeBrushPenMarginsFrame.Create(AOwner: TComponent);
 begin
   inherited;
   cbFillColor.Width := cbFillColor.Height;
@@ -75,14 +75,14 @@ begin
   cmbShape.DropdownCount := DEFAULT_DROPDOWN_COUNT;
 end;
 
-procedure TShapeBrushPenMarginsFrame.cbBorderColorColorChanged(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.cbBorderColorColorChanged(Sender: TObject);
 begin
   FPen.Color := cbBorderColor.ButtonColor;
 //  if FPen.Style <> psClear then
     DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.cbFillColorColorChanged(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.cbFillColorColorChanged(Sender: TObject);
 var
   bs: TBrushStyle;
 begin
@@ -93,14 +93,14 @@ begin
     DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.cbFilledChange(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.cbFilledChange(Sender: TObject);
 begin
   if cbFilled.Checked then FBrush.Style := bsSolid else FBrush.Style := bsClear;
   UpdateControls;
   DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.cbShowBorderChange(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.cbShowBorderChange(Sender: TObject);
 begin
   FPen.Visible := cbShowBorder.Checked;
   if FPen.Visible and (FPen.Style = psClear) then FPen.Style := psSolid;
@@ -108,48 +108,48 @@ begin
   DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.cmbShapeChange(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.cmbShapeChange(Sender: TObject);
 begin
   DoShapeChanged(TChartLabelShape(cmbShape.ItemIndex));
 end;
 
-procedure TShapeBrushPenMarginsFrame.DoChanged;
+procedure TChartShapeBrushPenMarginsFrame.DoChanged;
 begin
   if (FLockEvents = 0) and Assigned(FOnChange) then
     FOnChange(Self);
 end;
 
-procedure TShapeBrushPenMarginsFrame.DoShapeChanged(AShape: TChartLabelShape);
+procedure TChartShapeBrushPenMarginsFrame.DoShapeChanged(AShape: TChartLabelShape);
 begin
   if (FLockEvents = 0) and Assigned(FOnShapeChange) then
     FOnShapeChange(AShape);
 end;
 
-procedure TShapeBrushPenMarginsFrame.seBottomMarginChange(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.seBottomMarginChange(Sender: TObject);
 begin
   FMargins.Bottom := seBottomMargin.Value;
   DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.seLeftMarginChange(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.seLeftMarginChange(Sender: TObject);
 begin
   FMargins.Left := seLeftMargin.Value;
   DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.seRightMarginChange(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.seRightMarginChange(Sender: TObject);
 begin
   FMargins.Right := seRightMargin.Value;
   DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.seTopMarginChange(Sender: TObject);
+procedure TChartShapeBrushPenMarginsFrame.seTopMarginChange(Sender: TObject);
 begin
   FMargins.Top := seTopMargin.Value;
   DoChanged;
 end;
 
-procedure TShapeBrushPenMarginsFrame.GetData(out AShape: TChartLabelShape;
+procedure TChartShapeBrushPenMarginsFrame.GetData(out AShape: TChartLabelShape;
   ABrush: TBrush; APen: TChartPen; AMargins: TChartLabelMargins);
 begin
   AShape := TChartLabelShape(cmbShape.ItemIndex);
@@ -167,7 +167,7 @@ begin
   AMargins.Bottom := seBottomMargin.Value;
 end;
 
-procedure TShapeBrushPenMarginsFrame.Prepare(AShape: TChartLabelShape;
+procedure TChartShapeBrushPenMarginsFrame.Prepare(AShape: TChartLabelShape;
   ABrush: TBrush; APen: TChartPen; AMargins: TChartLabelMargins);
 begin
   inc(FLockEvents);
@@ -190,7 +190,7 @@ begin
   dec(FLockEvents);
 end;
 
-procedure TShapeBrushPenMarginsFrame.UpdateControls;
+procedure TChartShapeBrushPenMarginsFrame.UpdateControls;
 begin
   cbBorderColor.Visible := cbShowBorder.Checked;
   cmbShape.Enabled := cbShowBorder.Checked or cbFilled.Checked;

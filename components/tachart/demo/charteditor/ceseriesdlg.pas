@@ -12,9 +12,9 @@ uses
 
 type
 
-  { TSeriesEditor }
+  { TChartSeriesEditor }
 
-  TSeriesEditor = class(TForm)
+  TChartSeriesEditor = class(TForm)
     Bevel1: TBevel;
     Bevel2: TBevel;
     Bevel3: TBevel;
@@ -77,13 +77,13 @@ type
     FSavedSeries: TBasicChartSeries;
     FSavedActive: Boolean;
     FOKClicked: Boolean;
-    FLineSeriesPenFrame: TPenFrame;
-    FLineSeriesPointerFrame: TPointerFrame;
-    FBarSeriesBrushFrame: TBrushFrame;
-    FBarSeriesPenFrame: TPenFrame;
-    FAreaSeriesBrushFrame: TBrushFrame;
-    FAreaSeriesContourPenFrame: TPenFrame;
-    FAreaSeriesDropLinesPenFrame: TPenFrame;
+    FLineSeriesPenFrame: TChartPenFrame;
+    FLineSeriesPointerFrame: TChartPointerFrame;
+    FBarSeriesBrushFrame: TChartBrushFrame;
+    FBarSeriesPenFrame: TChartPenFrame;
+    FAreaSeriesBrushFrame: TChartBrushFrame;
+    FAreaSeriesContourPenFrame: TChartPenFrame;
+    FAreaSeriesDropLinesPenFrame: TChartPenFrame;
     procedure ChangedHandler(Sender: TObject);
   protected
     function GetChart: TChart;
@@ -94,7 +94,7 @@ type
   end;
 
 var
-  SeriesEditor: TSeriesEditor;
+  SeriesEditor: TChartSeriesEditor;
 
 implementation
 
@@ -104,12 +104,12 @@ uses
   TAChartUtils, TATextElements, TALegend,
   ceUtils;
 
-procedure TSeriesEditor.cbShowSeriesChange(Sender: TObject);
+procedure TChartSeriesEditor.cbShowSeriesChange(Sender: TObject);
 begin
   FSeries.Active := cbShowSeries.Checked;
 end;
 
-procedure TSeriesEditor.edMarksFormatEditingDone(Sender: TObject);
+procedure TChartSeriesEditor.edMarksFormatEditingDone(Sender: TObject);
 begin
   if (FSeries is TChartSeries) then
     try
@@ -118,12 +118,12 @@ begin
     end;
 end;
 
-procedure TSeriesEditor.edSeriesTitleChange(Sender: TObject);
+procedure TChartSeriesEditor.edSeriesTitleChange(Sender: TObject);
 begin
   (FSeries as TCustomChartSeries).Title := edSeriesTitle.Text;
 end;
 
-procedure TSeriesEditor.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+procedure TChartSeriesEditor.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
   if not CanClose then exit;
   if not FOKClicked then begin
@@ -133,10 +133,10 @@ begin
   end;
 end;
 
-procedure TSeriesEditor.FormCreate(Sender: TObject);
+procedure TChartSeriesEditor.FormCreate(Sender: TObject);
 begin
   { Line series page }
-  FLineSeriesPenFrame := TPenFrame.Create(self);
+  FLineSeriesPenFrame := TChartPenFrame.Create(self);
   FLineSeriesPenFrame.Parent := gbLineSeriesLineStyle;
   FLineSeriesPenFrame.Name := '';
   FLineSeriesPenFrame.Align := alTop;
@@ -146,7 +146,7 @@ begin
   gbLineSeriesLineStyle.Caption := 'Connecting lines';
   gbLineSeriesLineStyle.AutoSize := true;
 
-  FLineSeriesPointerFrame := TPointerFrame.Create(self);
+  FLineSeriesPointerFrame := TChartPointerFrame.Create(self);
   FLineSeriesPointerFrame.Parent := gbLineSeriesPointer;
   FLineSeriesPointerFrame.Name := '';
   FLineSeriesPointerFrame.Align := alTop;
@@ -157,7 +157,7 @@ begin
   gbLineSeriesPointer.AutoSize := true;
 
   { Bar series page }
-  FBarSeriesBrushFrame := TBrushFrame.Create(self);
+  FBarSeriesBrushFrame := TChartBrushFrame.Create(self);
   FBarSeriesBrushFrame.Parent := gbBarSeriesBrush;
   FBarSeriesBrushFrame.Name := '';
   FBarSeriesBrushFrame.Align := alTop;
@@ -168,7 +168,7 @@ begin
   gbBarSeriesBrush.Caption := 'Bar brush';
   gbBarSeriesBrush.AutoSize := true;
 
-  FBarSeriesPenFrame := TPenFrame.Create(self);
+  FBarSeriesPenFrame := TChartPenFrame.Create(self);
   FBarSeriesPenFrame.Parent := gbBarSeriesBorder;
   FBarSeriesPenFrame.Name := '';
   FBarSeriesPenFrame.Align := alTop;
@@ -182,7 +182,7 @@ begin
   cbBarShape.DropdownCount := DEFAULT_DROPDOWN_COUNT;
 
   { Area series page }
-  FAreaSeriesBrushFrame := TBrushFrame.Create(self);
+  FAreaSeriesBrushFrame := TChartBrushFrame.Create(self);
   FAreaSeriesBrushFrame.Parent := gbAreaSeriesBrush;
   FAreaSeriesBrushFrame.Name := '';
   FAreaSeriesBrushFrame.Align := alTop;
@@ -193,7 +193,7 @@ begin
   gbAreaSeriesBrush.Caption := 'Area fill';
   gbAreaSeriesBrush.AutoSize := true;
 
-  FAreaSeriesContourPenFrame := TPenFrame.Create(self);
+  FAreaSeriesContourPenFrame := TChartPenFrame.Create(self);
   FAreaSeriesContourPenFrame.Parent := gbAreaContourPen;
   FAreaSeriesContourPenFrame.Name := '';
   FAreaSeriesContourPenFrame.Align := alTop;
@@ -205,7 +205,7 @@ begin
   gbAreaContourPen.Caption := 'Border';
   gbAreaContourPen.AutoSize := true;
 
-  FAreaSeriesDropLinesPenFrame := TPenFrame.Create(self);
+  FAreaSeriesDropLinesPenFrame := TChartPenFrame.Create(self);
   FAreaSeriesDropLinesPenFrame.Parent := gbAreaDropLinePen;
   FAreaSeriesDropLinesPenFrame.Name := '';
   FAreaSeriesDropLinesPenFrame.Align := alTop;
@@ -225,12 +225,12 @@ begin
   cbMarksStyle.DropdownCount := DEFAULT_DROPDOWN_COUNT;
 end;
 
-procedure TSeriesEditor.FormDestroy(Sender: TObject);
+procedure TChartSeriesEditor.FormDestroy(Sender: TObject);
 begin
   FSavedSeries.Free;
 end;
 
-procedure TSeriesEditor.FormShow(Sender: TObject);
+procedure TChartSeriesEditor.FormShow(Sender: TObject);
 begin
   AutoSize := true;
   Constraints.MinWidth := Width;
@@ -238,23 +238,23 @@ begin
   AutoSize := false;
 end;
 
-procedure TSeriesEditor.OKButtonClick(Sender: TObject);
+procedure TChartSeriesEditor.OKButtonClick(Sender: TObject);
 begin
   FOKClicked := true;
 end;
 
-procedure TSeriesEditor.cbBarShapeChange(Sender: TObject);
+procedure TChartSeriesEditor.cbBarShapeChange(Sender: TObject);
 begin
   if FSeries is TBarSeries then
     TBarSeries(FSeries).BarShape := TBarShape(cbBarShape.ItemIndex);
 end;
 
-procedure TSeriesEditor.cbLegendMultiplicityChange(Sender: TObject);
+procedure TChartSeriesEditor.cbLegendMultiplicityChange(Sender: TObject);
 begin
   (FSeries as TCustomChartSeries).Legend.Multiplicity := TLegendMultiplicity(cbLegendMultiplicity.ItemIndex);
 end;
 
-procedure TSeriesEditor.cbAreaShowContourLinesChange(Sender: TObject);
+procedure TChartSeriesEditor.cbAreaShowContourLinesChange(Sender: TObject);
 begin
   if FSeries is TAreaSeries then begin
     if cbAreaShowContourLines.Checked then
@@ -264,7 +264,7 @@ begin
   end;
 end;
 
-procedure TSeriesEditor.cbAreaShowDropLinesChange(Sender: TObject);
+procedure TChartSeriesEditor.cbAreaShowDropLinesChange(Sender: TObject);
 begin
   if FSeries is TAreaSeries then begin
     if cbAreaShowDropLines.Checked then
@@ -274,19 +274,19 @@ begin
   end;
 end;
 
-procedure TSeriesEditor.cbLineSeriesShowLinesChange(Sender: TObject);
+procedure TChartSeriesEditor.cbLineSeriesShowLinesChange(Sender: TObject);
 begin
   if FSeries is TLineSeries then
     TLineSeries(FSeries).ShowLines := cbLineSeriesShowLines.Checked;
 end;
 
-procedure TSeriesEditor.cbLineSeriesShowPointsChange(Sender: TObject);
+procedure TChartSeriesEditor.cbLineSeriesShowPointsChange(Sender: TObject);
 begin
   if FSeries is TLineSeries then
     TLineSeries(FSeries).ShowPoints := cbLineSeriesShowPoints.Checked;
 end;
 
-procedure TSeriesEditor.cbMarksStyleChange(Sender: TObject);
+procedure TChartSeriesEditor.cbMarksStyleChange(Sender: TObject);
 var
   series: TChartSeries;
 begin
@@ -297,28 +297,28 @@ begin
   end;
 end;
 
-procedure TSeriesEditor.cbShowInLegendChange(Sender: TObject);
+procedure TChartSeriesEditor.cbShowInLegendChange(Sender: TObject);
 begin
   (FSeries as TCustomChartSeries).Legend.Visible := cbShowInLegend.Checked;
 end;
 
-procedure TSeriesEditor.cbShowMarksChange(Sender: TObject);
+procedure TChartSeriesEditor.cbShowMarksChange(Sender: TObject);
 begin
   if (FSeries is TChartSeries) then
     TChartSeries(FSeries).Marks.Visible := cbShowMarks.Checked;
 end;
 
-procedure TSeriesEditor.ChangedHandler(Sender: TObject);
+procedure TChartSeriesEditor.ChangedHandler(Sender: TObject);
 begin
   GetChart.Invalidate;
 end;
 
-function TSeriesEditor.GetChart: TChart;
+function TChartSeriesEditor.GetChart: TChart;
 begin
   Result := FSeries.ParentChart;
 end;
 
-procedure TSeriesEditor.Prepare(ASeries: TBasicChartSeries; ACaptionMask: String);
+procedure TChartSeriesEditor.Prepare(ASeries: TBasicChartSeries; ACaptionMask: String);
 var
   seriesClass: TSeriesClass;
   series: TCustomChartSeries;

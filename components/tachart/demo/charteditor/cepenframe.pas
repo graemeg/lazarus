@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TPenFrame }
+  { TChartPenFrame }
 
-  TPenFrame = class(TFrame)
+  TChartPenFrame = class(TFrame)
     Bevel1: TBevel;
     cbPenStyle: TChartComboBox;
     cbPenWidth: TChartComboBox;
@@ -38,9 +38,9 @@ implementation
 
 {$R *.lfm}
 
-{ TPenFrame }
+{ TChartPenFrame }
 
-constructor TPenFrame.Create(AOwner: TComponent);
+constructor TChartPenFrame.Create(AOwner: TComponent);
 begin
   inherited;
   cbPenStyle.DropdownCount := DEFAULT_DROPDOWN_COUNT;
@@ -48,30 +48,30 @@ begin
   cbPenColor.Width := cbPenColor.Height;
 end;
 
-procedure TPenFrame.cbPenColorColorChanged(Sender: TObject);
+procedure TChartPenFrame.cbPenColorColorChanged(Sender: TObject);
 begin
   FPen.Color := cbPenColor.ButtonColor;
   DoChanged;
 end;
 
-procedure TPenFrame.cbPenStyleChange(Sender: TObject);
+procedure TChartPenFrame.cbPenStyleChange(Sender: TObject);
 begin
   FPen.Style := cbPenStyle.PenStyle;
   DoChanged;
 end;
 
-procedure TPenFrame.cbPenWidthChange(Sender: TObject);
+procedure TChartPenFrame.cbPenWidthChange(Sender: TObject);
 begin
   FPen.Width := cbPenWidth.PenWidth;
   DoChanged;
 end;
 
-procedure TPenFrame.DoChanged;
+procedure TChartPenFrame.DoChanged;
 begin
   if Assigned(FOnChange) then FOnChange(FPen);
 end;
 
-procedure TPenFrame.Prepare(APen: TPen);
+procedure TChartPenFrame.Prepare(APen: TPen);
 begin
   FPen := APen;
   cbPenStyle.PenStyle := FPen.Style;

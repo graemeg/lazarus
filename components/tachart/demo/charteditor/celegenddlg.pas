@@ -11,9 +11,9 @@ uses
 
 type
 
-  { TLegendEditor }
+  { TChartLegendEditor }
 
-  TLegendEditor = class(TForm)
+  TChartLegendEditor = class(TForm)
     Bevel1: TBevel;
     ButtonPanel: TButtonPanel;
     cbFilled: TCheckBox;
@@ -74,7 +74,7 @@ type
     FLegend: TChartLegend;
     FSavedLegend: TChartLegend;
     FOKClicked: Boolean;
-    FFontFrame: TFontFrame;
+    FFontFrame: TChartFontFrame;
     procedure ChangedHandler(Sender: TObject);
     function GetAlignment: TLegendAlignment;
     procedure SetAlignment(AValue: TLegendAlignment);
@@ -86,7 +86,7 @@ type
   end;
 
 var
-  LegendEditor: TLegendEditor;
+  LegendEditor: TChartLegendEditor;
 
 implementation
 
@@ -95,27 +95,27 @@ implementation
 uses
   ceUtils;
 
-procedure TLegendEditor.cbBorderColorChange(Sender: TObject);
+procedure TChartLegendEditor.cbBorderColorChange(Sender: TObject);
 begin
   FLegend.Frame.Color := cbBorderColor.Selected;
 end;
 
-procedure TLegendEditor.cbFillColorChange(Sender: TObject);
+procedure TChartLegendEditor.cbFillColorChange(Sender: TObject);
 begin
   FLegend.BackgroundBrush.Color := cbFillColor.Selected;
 end;
 
-procedure TLegendEditor.cbInvertedChange(Sender: TObject);
+procedure TChartLegendEditor.cbInvertedChange(Sender: TObject);
 begin
   FLegend.Inverted := cbInverted.Checked;
 end;
 
-procedure TLegendEditor.cbItemFillOrderChange(Sender: TObject);
+procedure TChartLegendEditor.cbItemFillOrderChange(Sender: TObject);
 begin
   FLegend.ItemFillOrder := TLegendItemFillOrder(cbItemFillOrder.ItemIndex);
 end;
 
-procedure TLegendEditor.cbFilledChange(Sender: TObject);
+procedure TChartLegendEditor.cbFilledChange(Sender: TObject);
 begin
   cbFillColor.Visible := cbFilled.Checked;
   if cbFilled.Checked then
@@ -124,13 +124,13 @@ begin
     FLegend.BackgroundBrush.Style := bsClear;
 end;
 
-procedure TLegendEditor.cbShowBorderChange(Sender: TObject);
+procedure TChartLegendEditor.cbShowBorderChange(Sender: TObject);
 begin
   FLegend.Frame.Visible := cbShowBorder.Checked;
   cbBorderColor.Visible := cbShowBorder.Checked;
 end;
 
-procedure TLegendEditor.cbShowChange(Sender: TObject);
+procedure TChartLegendEditor.cbShowChange(Sender: TObject);
 begin
   FLegend.Visible := cbShow.Checked;
   cbUseSideBar.Visible := cbShow.Checked;
@@ -142,17 +142,17 @@ begin
   gbMargins.Visible := cbShow.Checked;
 end;
 
-procedure TLegendEditor.cbUseSideBarChange(Sender: TObject);
+procedure TChartLegendEditor.cbUseSideBarChange(Sender: TObject);
 begin
   FLegend.UseSideBar := cbUseSideBar.Checked;
 end;
 
-procedure TLegendEditor.ChangedHandler(Sender: TObject);
+procedure TChartLegendEditor.ChangedHandler(Sender: TObject);
 begin
   GetChart.Invalidate;
 end;
 
-procedure TLegendEditor.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+procedure TChartLegendEditor.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
   if not CanClose then exit;
   if not FOKClicked then begin
@@ -161,9 +161,9 @@ begin
   end;
 end;
 
-procedure TLegendEditor.FormCreate(Sender: TObject);
+procedure TChartLegendEditor.FormCreate(Sender: TObject);
 begin
-  FFontFrame := TFontFrame.Create(self);
+  FFontFrame := TChartFontFrame.Create(self);
   FFontFrame.Parent := gbFont;
   FFontFrame.Name := '';
   FFontFrame.Align := alClient;
@@ -177,12 +177,12 @@ begin
   BoldHeaders(Self);
 end;
 
-procedure TLegendEditor.FormDestroy(Sender: TObject);
+procedure TChartLegendEditor.FormDestroy(Sender: TObject);
 begin
   FSavedLegend.Free;
 end;
 
-procedure TLegendEditor.FormShow(Sender: TObject);
+procedure TChartLegendEditor.FormShow(Sender: TObject);
 begin
   if cbShow.Checked then begin
     AutoSize := true;
@@ -194,7 +194,7 @@ begin
   FOKClicked := false;
 end;
 
-function TLegendEditor.GetAlignment: TLegendAlignment;
+function TChartLegendEditor.GetAlignment: TLegendAlignment;
 var
   i: Integer;
   rb: TRadioButton;
@@ -210,47 +210,47 @@ begin
   Result := laTopRight;
 end;
 
-function TLegendEditor.GetChart: TChart;
+function TChartLegendEditor.GetChart: TChart;
 begin
   Result := FLegend.GetOwner as TChart;
 end;
 
-procedure TLegendEditor.OKButtonClick(Sender: TObject);
+procedure TChartLegendEditor.OKButtonClick(Sender: TObject);
 begin
   FOKClicked := true;
 end;
 
-procedure TLegendEditor.rbAlignmentChange(Sender: TObject);
+procedure TChartLegendEditor.rbAlignmentChange(Sender: TObject);
 begin
   FLegend.Alignment := GetAlignment;
 end;
 
-procedure TLegendEditor.seColumnsChange(Sender: TObject);
+procedure TChartLegendEditor.seColumnsChange(Sender: TObject);
 begin
   FLegend.ColumnCount := seColumns.Value;
 end;
 
-procedure TLegendEditor.seMarginXChange(Sender: TObject);
+procedure TChartLegendEditor.seMarginXChange(Sender: TObject);
 begin
   FLegend.MarginX := seMarginX.Value;
 end;
 
-procedure TLegendEditor.seMarginYChange(Sender: TObject);
+procedure TChartLegendEditor.seMarginYChange(Sender: TObject);
 begin
   FLegend.MarginY := seMarginY.Value;
 end;
 
-procedure TLegendEditor.seSpacingChange(Sender: TObject);
+procedure TChartLegendEditor.seSpacingChange(Sender: TObject);
 begin
   FLegend.Spacing := seSpacing.Value;
 end;
 
-procedure TLegendEditor.seSymbolWidthChange(Sender: TObject);
+procedure TChartLegendEditor.seSymbolWidthChange(Sender: TObject);
 begin
   FLegend.SymbolWidth := seSymbolWidth.Value;
 end;
 
-procedure TLegendEditor.SetAlignment(AValue: TLegendAlignment);
+procedure TChartLegendEditor.SetAlignment(AValue: TLegendAlignment);
 var
   i: Integer;
   rb: TRadioButton;
@@ -265,7 +265,7 @@ begin
     end;
 end;
 
-procedure TLegendEditor.Prepare(ALegend: TChartLegend;
+procedure TChartLegendEditor.Prepare(ALegend: TChartLegend;
   ACaption: String = '');
 begin
   FLegend := ALegend;

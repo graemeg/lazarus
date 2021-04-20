@@ -11,9 +11,9 @@ uses
 
 type
 
-  { TPointerFrame }
+  { TChartPointerFrame }
 
-  TPointerFrame = class(TFrame)
+  TChartPointerFrame = class(TFrame)
     cbPointerStyle: TChartComboBox;
     GroupBox1: TGroupBox;
     gbPointerBrush: TGroupBox;
@@ -25,8 +25,8 @@ type
     procedure sePointerSizeChange(Sender: TObject);
   private
     FPointer: TSeriesPointer;
-    FPointerBrushFrame: TBrushFrame;
-    FPointerPenFrame: TPenFrame;
+    FPointerBrushFrame: TChartBrushFrame;
+    FPointerPenFrame: TChartPenFrame;
     FOnChange: TNotifyEvent;
     procedure ChangedHandler(Sender: TObject);
     procedure DoChange;
@@ -46,12 +46,12 @@ implementation
 type
   TSeriesPointerAccess = class(TSeriesPointer);
 
-constructor TPointerFrame.Create(AOwner: TComponent);
+constructor TChartPointerFrame.Create(AOwner: TComponent);
 begin
   inherited;
   cbPointerStyle.DropdownCount := DEFAULT_DROPDOWN_COUNT;
 
-  FPointerBrushFrame := TBrushFrame.Create(Self);
+  FPointerBrushFrame := TChartBrushFrame.Create(Self);
   FPointerBrushFrame.Parent := gbPointerBrush;
   FPointerBrushFrame.Name := '';
   FPointerBrushFrame.Align := alClient;
@@ -62,7 +62,7 @@ begin
   gbPointerBrush.Caption := 'Fill';
   gbPointerBrush.AutoSize := true;
 
-  FPointerPenFrame := TPenFrame.Create(self);
+  FPointerPenFrame := TChartPenFrame.Create(self);
   FPointerPenFrame.Parent := gbPointerPen;
   FPointerPenFrame.Name := '';
   FPointerPenFrame.Align := alClient;
@@ -76,35 +76,35 @@ begin
   AutoSize := true;
 end;
 
-procedure TPointerFrame.cbPointerStyleChange(Sender: TObject);
+procedure TChartPointerFrame.cbPointerStyleChange(Sender: TObject);
 begin
   FPointer.Style := cbPointerStyle.PointerStyle;
   DoChange;
 end;
 
-procedure TPointerFrame.ChangedHandler(Sender: TObject);
+procedure TChartPointerFrame.ChangedHandler(Sender: TObject);
 begin
   DoChange;
 end;
 
-procedure TPointerFrame.sePointerSizeChange(Sender: TObject);
+procedure TChartPointerFrame.sePointerSizeChange(Sender: TObject);
 begin
   FPointer.HorizSize := sePointerSize.Value;
   FPointer.VertSize := sePointerSize.Value;
   DoChange;
 end;
 
-procedure TPointerFrame.DoChange;
+procedure TChartPointerFrame.DoChange;
 begin
   if Assigned(FOnChange) then FOnChange(FPointer);
 end;
 
-function TPointerFrame.GetChart: TChart;
+function TChartPointerFrame.GetChart: TChart;
 begin
   Result := TSeriesPointerAccess(FPointer).GetOwner as TChart;
 end;
 
-procedure TPointerFrame.Prepare(APointer: TSeriesPointer);
+procedure TChartPointerFrame.Prepare(APointer: TSeriesPointer);
 begin
   FPointer := APointer;
   cbPointerStyle.PointerStyle := APointer.Style;

@@ -1,4 +1,4 @@
-object SeriesEditor: TSeriesEditor
+object SeriesEditor: TChartSeriesEditor
   Left = 509
   Height = 450
   Top = 284
@@ -37,7 +37,7 @@ object SeriesEditor: TSeriesEditor
     Height = 254
     Top = 150
     Width = 600
-    PageIndex = 2
+    PageIndex = 0
     Align = alClient
     TabOrder = 1
     object pgLineSeries: TPage
