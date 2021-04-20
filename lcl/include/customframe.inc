@@ -98,8 +98,9 @@ end;
 procedure TCustomFrame.SetColor(Value: TColor);
 begin
   inherited SetColor(Value);
-  if Color <> clDefault then
-    ParentBackground := False;
+  if Color = clDefault then Exit;
+  if Assigned(Parent) and (Value = Parent.Color) then Exit;
+  ParentBackground := False;
 end;
 
 procedure TCustomFrame.SetParent(AParent: TWinControl);
