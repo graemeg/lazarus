@@ -306,7 +306,7 @@ resourcestring
   rsOptions_ProxyPort_Info = 'Please enter the proxy server port!';
   rsOptions_InvalidDirectory_Info = 'Please enter a valid directory!';
   rsOptions_RestoreDefaults_Conf = 'This will restore the default settings. Continue?';
-  rsOptions_lbCheckForUpdates_Caption = 'Check for package updates';
+  rsOptions_lbCheckForUpdates_Caption = 'Check external repositories for package updates';
   rsOptions_cbCheckForUpdates_Item0 = 'Every few minutes';
   rsOptions_cbCheckForUpdates_Item1 = 'Every hour';
   rsOptions_cbCheckForUpdates_Item2 = 'Once per day';
