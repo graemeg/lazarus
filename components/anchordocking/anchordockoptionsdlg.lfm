@@ -371,4 +371,19 @@ object AnchorDockOptionsFrame: TAnchorDockOptionsFrame
     ShowHint = True
     TabOrder = 17
   end
+  object FloatingWindowsOnTop: TCheckBox
+    AnchorSideLeft.Control = DragThresholdLabel
+    AnchorSideTop.Control = MultiLinePagesCheckBox
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 17
+    Top = 466
+    Width = 133
+    BorderSpacing.Top = 4
+    Caption = 'FloatingWindowsOnTop'
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 18
+  end
 end

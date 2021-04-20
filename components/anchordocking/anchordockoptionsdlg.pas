@@ -38,6 +38,7 @@ type
     HideHeaderCaptionForFloatingCheckBox: TCheckBox;
     HighlightFocusedCheckBox: TCheckBox;
     DockSitesCanBeMinimized: TCheckBox;
+    FloatingWindowsOnTop: TCheckBox;
     ScaleOnResizeCheckBox: TCheckBox;
     MultiLinePagesCheckBox: TCheckBox;
     ShowHeaderCaptionCheckBox: TCheckBox;
@@ -349,6 +350,7 @@ begin
     TheSettings.SplitterWidth:=SplitterWidthTrackBar.Position;
   end;
   TheSettings.DockSitesCanBeMinimized:=DockSitesCanBeMinimized.Checked;
+  TheSettings.FloatingWindowsOnTop:=FloatingWindowsOnTop.Checked;
   TheSettings.HeaderFilled:=FilledHeadersCheckBox.Checked;
   TheSettings.HeaderFlatten:=FlattenHeadersCheckBox.Checked;
   TheSettings.HeaderHighlightFocused:=HighlightFocusedCheckBox.Checked;
@@ -442,6 +444,10 @@ begin
   MultiLinePagesCheckBox.Caption:=adrsMultiLinePages;
   MultiLinePagesCheckBox.Hint:=adrsMultiLinePagesHint;
   MultiLinePagesCheckBox.Checked:=TheSettings.MultiLinePages;
+
+  FloatingWindowsOnTop.Caption:=adrsFloatingWindowsOnTop;
+  FloatingWindowsOnTop.Hint:=adrsFloatingWindowsOnTopHint;
+  FloatingWindowsOnTop.Checked:=TheSettings.FloatingWindowsOnTop;
 end;
 
 end.
