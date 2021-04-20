@@ -461,8 +461,11 @@ begin
 
   ScrLine := ToIdx(AnInfo.NewCaret.ViewedLinePos) - ToIdx(GutterArea.TextArea.TopLine);
 
+  // TODO: Keepvisible is incorrect, if the line can fold AND unfold, and the action does not match the symbol
+
   KeepVisible := 1;
-  if FoldTypeForLine(ScrLine) = cfHideStart then KeepVisible := 0;
+  if (FoldTypeForLine(ScrLine) = cfHideStart) and (ACommand <> emcCodeFoldExpand) then
+    KeepVisible := 0;
 
   if (FoldTypeForLine(ScrLine) = cfCollapsedHide) then begin
     if IsFoldHidePreviousLine(ScrLine) then
