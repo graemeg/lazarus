@@ -156,6 +156,7 @@ type
     procedure ShowDetails(const AButtonID: Integer);
     procedure OpenPackage(const AButtonID: Integer);
     procedure ResetDependencyNodes;
+    function GetPackageAbsolutePath(APackageName: String): String;
   public
     constructor Create(const AParent: TWinControl; const AImgList: TImageList;
       APopupMenu: TPopupMenu);
@@ -611,16 +612,11 @@ end;
 
 procedure TVisualTree.DoOpenPackage(const APackageName: String);
 var
-  LazarusPkg: TLazarusPackage;
+  PackageAbsolutePath: String;
 begin
-  LazarusPkg := SerializablePackages.FindLazarusPackage(APackageName);
-  if (LazarusPkg <> nil) and (FileExists(LazarusPkg.PackageAbsolutePath)) then
-  begin
-    if PackageEditingInterface.DoOpenPackageFile(LazarusPkg.PackageAbsolutePath, [], True) <> mrOk then
+  PackageAbsolutePath  := GetPackageAbsolutePath(APackageName);
+  if PackageEditingInterface.DoOpenPackageFile(PackageAbsolutePath, [], True) <> mrOk then
       MessageDlgEx(rsMainFrm_VSTText_Open_Error, mtError, [mbOk], TForm(FVST.Parent.Parent));
-  end
-  else
-    MessageDlgEx(rsMainFrm_VSTText_Open_Notfound, mtError, [mbOk], TForm(FVST.Parent.Parent));
 end;
 
 procedure TVisualTree.OpenPackage(const AButtonID: Integer);
@@ -1819,6 +1815,16 @@ begin
   end;
 end;
 
+function TVisualTree.GetPackageAbsolutePath(APackageName: String): String;
+var
+  LazarusPkg: TLazarusPackage;
+begin
+  Result := '';
+  LazarusPkg := SerializablePackages.FindLazarusPackage(APackageName);
+  if (LazarusPkg <> nil) and (FileExists(LazarusPkg.PackageAbsolutePath)) then
+    Result := LazarusPkg.PackageAbsolutePath;
+end;
+
 procedure TVisualTree.VSTMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
 var
   Data: PData;
@@ -1890,7 +1896,7 @@ begin
 
     if (Data^.Button = nil) and
        (
-         ((Data^.DataType = 2) and (Data^.PackageState in [psExtracted, psInstalled])) or
+         ((Data^.DataType = 2) and (Data^.PackageState in [psExtracted, psInstalled]) and (GetPackageAbsolutePath(Data^.LazarusPackageName) <> '')) or
          ((Data^.DataType = 3) and (Trim(Data^.Description) <> '')) or
          ((Data^.DataType = 9) and (Trim(Data^.License) <> '')) or
          ((Data^.DataType = 19) and (Trim(Data^.CommunityDescription) <> '')) or
