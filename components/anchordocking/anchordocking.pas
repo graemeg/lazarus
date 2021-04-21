@@ -90,6 +90,8 @@
 unit AnchorDocking;
 
 {$mode objfpc}{$H+}
+{$modeswitch advancedrecords}
+{$modeswitch typehelpers}
 
 // better use this definitions in project options, as it used in other units too
 { $DEFINE VerboseAnchorDockRestore}
@@ -586,6 +588,23 @@ type
                 var AControl: TControl; DoDisableAutoSizing: boolean) of object;
   TADShowDockMasterOptionsEvent = function(aDockMaster: TAnchorDockMaster): TModalResult;
 
+  { TStyleOfForm }
+
+  TStyleOfForm = record
+    Form: TCustomForm;
+    FormStyle: TFormStyle;
+    class operator = (Item1, Item2: TStyleOfForm): Boolean;
+  end;
+
+  { TFormStyles }
+
+  TFormStyles = class(specialize TFPGList<TStyleOfForm>)
+  public
+    procedure AddForm(const AForm: TCustomForm);
+    function IndexOfForm(const AForm: TCustomForm): Integer;
+    procedure RemoveForm(const AForm: TCustomForm);
+  end;
+
   TAnchorDockMaster = class(TComponent)
   private
     FAllowDragging: boolean;
@@ -594,6 +613,7 @@ type
     FDockParentMargin: integer;
     FDragTreshold: integer;
     FFloatingWindowsOnTop: boolean;
+    FFormStyles: TFormStyles;
     FHeaderAlignLeft: integer;
     FHeaderAlignTop: integer;
     FHeaderClass: TAnchorDockHeaderClass;
@@ -650,6 +670,7 @@ type
     procedure MapTreeToControls(Tree: TAnchorDockLayoutTree);
     function RestoreLayout(Tree: TAnchorDockLayoutTree; Scale: boolean): boolean;
     procedure ScreenFormAdded(Sender: TObject; Form: TCustomForm);
+    procedure ScreenRemoveForm(Sender: TObject; Form: TCustomForm);
     procedure SetMinimizedState(Tree: TAnchorDockLayoutTree);
     procedure UpdateHeaders;
     procedure SetNodeMinimizedState(ANode: TAnchorDockLayoutTreeNode);
@@ -1588,6 +1609,45 @@ begin
   SplitterWidth                    := Config.GetValue(Path+'SplitterWidth',4);
 end;
 
+{ TStyleOfForm }
+
+class operator TStyleOfForm. = (Item1, Item2: TStyleOfForm): Boolean;
+begin
+  Result := (Item1.Form = Item2.Form) and
+            (Item1.FormStyle = Item2.FormStyle);
+end;
+
+{ TFormStyles }
+
+procedure TFormStyles.AddForm(const AForm: TCustomForm);
+var
+  AStyleOfForm: TStyleOfForm;
+begin
+  if not Assigned(AForm) then Exit;
+  if IndexOfForm(AForm) >= 0 then Exit;
+  AStyleOfForm.Form := AForm;
+  AStyleOfForm.FormStyle := AForm.FormStyle;
+  Add(AStyleOfForm);
+end;
+
+function TFormStyles.IndexOfForm(const AForm: TCustomForm): Integer;
+var
+  i: Integer;
+begin
+  for i := 0 to Count - 1 do
+    if Self[i].Form = AForm then Exit(i);
+  Result := -1;
+end;
+
+procedure TFormStyles.RemoveForm(const AForm: TCustomForm);
+var
+  AIndex: Integer;
+begin
+  AIndex := IndexOfForm(AForm);
+  if AIndex < 0 then Exit;
+  Delete(AIndex);
+end;
+
 { TAnchorDockMaster }
 
 function TAnchorDockMaster.GetControls(Index: integer): TControl;
@@ -2366,7 +2426,13 @@ end;
 
 procedure TAnchorDockMaster.ScreenFormAdded(Sender: TObject; Form: TCustomForm);
 begin
+  FFormStyles.AddForm(Form);
   Form.AddHandlerFirstShow(@FormFirstShow);
+end;
+
+procedure TAnchorDockMaster.ScreenRemoveForm(Sender: TObject; Form: TCustomForm);
+begin
+  FFormStyles.RemoveForm(Form);
 end;
 
 function TAnchorDockMaster.DoCreateControl(aName: string;
@@ -2718,24 +2784,37 @@ end;
 
 procedure TAnchorDockMaster.SetFloatingWindowsOnTop(AValue: boolean);
 var
-  i: Integer;
-  AWinControl: TWinControl;
+  i, AIndex: Integer;
+  AForm, ParentForm: TCustomForm;
+  IsMainForm: Boolean;
+  AFormStyle: TFormStyle;
 begin
   if FFloatingWindowsOnTop = AValue then Exit;
   FFloatingWindowsOnTop := AValue;
   for i:=0 to Screen.FormCount-1 do
   begin
-    AWinControl := Screen.Forms[i];
-    while Assigned(AWinControl) and not (AWinControl is TAnchorDockHostSite) do
-      AWinControl := AWinControl.Parent;
-    if not (AWinControl is TAnchorDockHostSite) then Continue;
+    AForm := Screen.Forms[i];
+    ParentForm := GetParentForm(AForm);
+    IsMainForm := (AForm = Application.MainForm)
+                  or (AForm.IsParentOf(Application.MainForm))
+                  or (ParentForm = Application.MainForm);
+    if IsMainForm then Continue;
     if AValue then
-      TAnchorDockHostSite(AWinControl).FormStyle := fsStayOnTop
-    else
-    begin
-      TAnchorDockHostSite(AWinControl).FormStyle := fsNormal;
-      TAnchorDockHostSite(AWinControl).CheckFormStyle;
+      AFormStyle := fsStayOnTop
+    else begin
+      AIndex := FFormStyles.IndexOfForm(AForm);
+      if AIndex >= 0 then
+        AFormStyle := FFormStyles[AIndex].FormStyle
+      else
+        AFormStyle := fsNormal;
     end;
+    if ParentForm is TAnchorDockHostSite then
+    begin
+      ParentForm.FormStyle := AFormStyle;
+      TAnchorDockHostSite(ParentForm).CheckFormStyle;
+      Continue;
+    end;
+    AForm.FormStyle := AFormStyle;
   end;
   OptionsChanged;
 end;
@@ -2944,6 +3023,7 @@ end;
 constructor TAnchorDockMaster.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
+  FFormStyles:=TFormStyles.Create;
   FControls:=TFPList.Create;
   FAllowDragging:=true;
   FDragTreshold:=4;
@@ -2979,6 +3059,7 @@ begin
   FAllClosing:=False;
   FHeaderStyleName2ADHeaderStyle:=THeaderStyleName2ADHeaderStylesMap.create;
   Screen.AddHandlerFormAdded(@ScreenFormAdded);
+  Screen.AddHandlerRemoveForm(@ScreenRemoveForm);
 end;
 
 destructor TAnchorDockMaster.Destroy;
@@ -2986,6 +3067,8 @@ var
   AControl: TControl;
   i, j: Integer;
 begin
+  Screen.RemoveHandlerFormAdded(@ScreenFormAdded);
+  Screen.RemoveHandlerRemoveForm(@ScreenRemoveForm);
   QueueSimplify:=false;
   FreeAndNil(FRestoreLayouts);
   FreeAndNil(fPopupMenu);
@@ -3014,6 +3097,7 @@ begin
   end;
   end;
   FreeAndNil(FHeaderStyleName2ADHeaderStyle);
+  FreeAndNil(FFormStyles);
   inherited Destroy;
 end;
 
