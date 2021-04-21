@@ -3460,15 +3460,10 @@ end;
 function TPkgManager.DoNewPackage: TModalResult;
 var
   NewPackage: TLazPackage;
-  NewPkgName: String;
 begin
   Result:=mrCancel;
-
-  NewPkgName:= ExtractPasIdentifier(lisPkgMangNewPackage,true);
-  if NewPkgName = '' then
-    NewPkgName:='NewPackage';
   // create a new package with standard dependencies
-  NewPackage:=PackageGraph.CreateNewPackage(NewPkgName);
+  NewPackage:=PackageGraph.CreateNewPackage(lisPkgMangNewPackage);
   PackageGraph.AddDependencyToPackage(NewPackage,
                 PackageGraph.FCLPackage.CreateDependencyWithOwner(NewPackage));
   NewPackage.Modified:=false;
@@ -5290,7 +5285,7 @@ begin
   if APackage=nil then begin
     // create new package
     // create a new package with standard dependencies
-    APackage:=PackageGraph.CreateNewPackage(ExtractPasIdentifier(lisPkgMangNewPackage,true));
+    APackage:=PackageGraph.CreateNewPackage(lisPkgMangNewPackage);
     PackageGraph.AddDependencyToPackage(APackage,
                   PackageGraph.IDEIntfPackage.CreateDependencyWithOwner(APackage));
     APackage.Modified:=false;
