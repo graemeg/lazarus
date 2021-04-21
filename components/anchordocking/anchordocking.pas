@@ -1444,7 +1444,7 @@ begin
   FDockParentMargin                 := Source.FDockParentMargin;
   FDockSitesCanBeMinimized          := Source.FDockSitesCanBeMinimized;
   FDragTreshold                     := Source.FDragTreshold;
-  FloatingWindowsOnTop              := Source.FFloatingWindowsOnTop;
+  FFloatingWindowsOnTop             := Source.FFloatingWindowsOnTop;
   FHeaderAlignLeft                  := Source.FHeaderAlignLeft;
   FHeaderAlignTop                   := Source.FHeaderAlignTop;
   FHeaderFilled                     := Source.FHeaderFilled;
@@ -1474,7 +1474,7 @@ begin
   DockParentMargin                 := Config.GetValue('DockParentMargin',10);
   DockSitesCanBeMinimized          := Config.GetValue('DockSitesCanBeMinimized',False);
   DragTreshold                     := Config.GetValue('DragThreshold',4);
-  FloatingWindowsOnTop             := Config.GetValue('FFloatingWindowsOnTop',false);
+  FloatingWindowsOnTop             := Config.GetValue('FloatingWindowsOnTop',false);
   HeaderAlignLeft                  := Config.GetValue('HeaderAlignLeft',120);
   HeaderAlignTop                   := Config.GetValue('HeaderAlignTop',80);
   HeaderFilled                     := Config.GetValue('HeaderFilled',true);
@@ -1522,7 +1522,7 @@ begin
   Config.SetDeleteValue('DockParentMargin',DockParentMargin,10);
   Config.SetDeleteValue('DockSitesCanBeMinimized',DockSitesCanBeMinimized,False);
   Config.SetDeleteValue('DragThreshold',DragTreshold,4);
-  Config.SetDeleteValue('FloatingWindowsOnTop',FFloatingWindowsOnTop,false);
+  Config.SetDeleteValue('FloatingWindowsOnTop',FloatingWindowsOnTop,false);
   Config.SetDeleteValue('HeaderAlignLeft',HeaderAlignLeft,120);
   Config.SetDeleteValue('HeaderAlignTop',HeaderAlignTop,80);
   Config.SetDeleteValue('HeaderFilled',HeaderFilled,true);
@@ -1546,7 +1546,7 @@ begin
       and (DockParentMargin=Settings.DockParentMargin)
       and (DockSitesCanBeMinimized=Settings.DockSitesCanBeMinimized)
       and (DragTreshold=Settings.DragTreshold)
-      and (FloatingWindowsOnTop=Settings.FFloatingWindowsOnTop)
+      and (FloatingWindowsOnTop=Settings.FloatingWindowsOnTop)
       and (HeaderAlignLeft=Settings.HeaderAlignLeft)
       and (HeaderAlignTop=Settings.HeaderAlignTop)
       and (HeaderFilled=Settings.HeaderFilled)
