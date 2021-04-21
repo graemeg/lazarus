@@ -15,7 +15,7 @@ type
   { TChartShapeBrushPenMarginsFrame }
 
   TChartShapeBrushPenMarginsFrame = class(TFrame)
-    Bevel1: TBevel;
+    Spacer: TBevel;
     cbBorderColor: TColorButton;
     cbFillColor: TColorButton;
     cbFilled: TCheckBox;
@@ -48,6 +48,9 @@ type
     procedure DoChanged;
     procedure DoShapeChanged(AShape: TChartLabelShape);
     procedure UpdateControls;
+  protected
+    procedure CalculatePreferredSize(var PreferredWidth, PreferredHeight: integer;
+      WithThemeSpace: Boolean); override;
   public
     constructor Create(AOwner: TComponent); override;
     procedure GetData(out AShape: TChartLabelShape; ABrush: TBrush;
@@ -63,6 +66,7 @@ implementation
 {$R *.lfm}
 
 uses
+  Math,
   ceUtils;
 
 { TChartShapeBrushPenMarginsFrame }
@@ -73,6 +77,20 @@ begin
   cbFillColor.Width := cbFillColor.Height;
   cbBorderColor.Width := cbBorderColor.Height;
   cmbShape.DropdownCount := DEFAULT_DROPDOWN_COUNT;
+end;
+
+procedure TChartShapeBrushPenMarginsFrame.CalculatePreferredSize(
+  var PreferredWidth, PreferredHeight: integer;
+  WithThemeSpace: Boolean);
+begin
+  PreferredHeight := cmbShape.Height +
+    gbBackground.BorderSpacing.Top + gbBackground.Height +
+    gbMargins.BorderSpacing.Top + gbMargins.Height;
+
+  PreferredWidth := Max(
+    Max(gbBackground.Width, gbBorder.Width) * 2 + Spacer.Width,
+    gbMargins.Width
+  );;
 end;
 
 procedure TChartShapeBrushPenMarginsFrame.cbBorderColorColorChanged(Sender: TObject);

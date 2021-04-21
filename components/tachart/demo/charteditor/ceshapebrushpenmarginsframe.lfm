@@ -37,7 +37,7 @@ object ChartShapeBrushPenMarginsFrame: TChartShapeBrushPenMarginsFrame
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = cmbShape
     AnchorSideTop.Side = asrBottom
-    AnchorSideRight.Control = Bevel1
+    AnchorSideRight.Control = Spacer
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Side = asrBottom
     Left = 0
@@ -91,7 +91,7 @@ object ChartShapeBrushPenMarginsFrame: TChartShapeBrushPenMarginsFrame
     end
   end
   object gbBorder: TGroupBox
-    AnchorSideLeft.Control = Bevel1
+    AnchorSideLeft.Control = Spacer
     AnchorSideTop.Control = gbBackground
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
@@ -222,7 +222,7 @@ object ChartShapeBrushPenMarginsFrame: TChartShapeBrushPenMarginsFrame
       TabOrder = 3
     end
   end
-  object Bevel1: TBevel
+  object Spacer: TBevel
     AnchorSideLeft.Control = cmbShape
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = cmbShape

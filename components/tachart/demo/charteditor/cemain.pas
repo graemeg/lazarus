@@ -5,9 +5,11 @@ unit ceMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls,
-  ExtCtrls, Types, TAGraph, TATools, TAChartAxis, TATextElements, TASeries,
-  TASources, TALegend, TAChartImageList, ceAxisDlg;
+  Classes, SysUtils, Forms, Controls, Graphics,
+  Dialogs, Menus, StdCtrls, ExtCtrls, Types,
+  TAGraph, TATools, TAChartAxis, TATextElements, TASeries, TASources,
+  TALegend, TAChartImageList,
+  ceAxisFrame;
 
 type
 
@@ -75,7 +77,7 @@ implementation
 
 uses
   TAChartUtils, TACustomSeries,
-  ceTitleFootDlg, ceLegendDlg, ceSeriesDlg;
+  ceTitleFootDlg, ceLegendDlg, ceSeriesDlg, ceAxisDlg;
 
 { TMainForm }
 
