@@ -7,7 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, ceMain, ceSeriesDlg, cePointerFrame, ceTitleFootFrame, ceAxisFrame;
+  Forms, ceMain, ceSeriesDlg, cePointerFrame, ceTitleFootFrame, ceAxisFrame,
+  ceSeriesFrame;
 
 {$R *.res}
 

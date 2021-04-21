@@ -1,6 +1,7 @@
 unit ceTitleFootFrame;
 
 {$mode ObjFPC}{$H+}
+{.$DEFINE WYSIWYG_TITLE}
 
 interface
 
@@ -105,8 +106,10 @@ end;
 procedure TChartTitleFootFrame.ChangedHandler(Sender: TObject);
 begin
   GetChart.Invalidate;
+  {$IFDEF WYSIWYG_TITLE}
   mmoText.Font.Assign(FTitle.Font);
   mmoText.Color := FTitle.Brush.Color;
+  {$ENDIF}
 end;
 
 function TChartTitleFootFrame.GetAlignment: TAlignment;
@@ -137,8 +140,10 @@ begin
 
   cbShow.Checked := ATitle.Visible;
   mmoText.Lines.Assign(ATitle.Text);
+  {$IFDEF WYSIWYG_TITLE}
   mmoText.Font.Assign(ATitle.Font);
   mmoText.Font.Orientation := 0;
+  {$ENDIF}
 
   SetAlignment(ATitle.Alignment);
 
