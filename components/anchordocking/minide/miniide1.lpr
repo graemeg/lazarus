@@ -12,7 +12,6 @@ uses
 {$R *.res}
 
 begin
-  Application.Title := '';
   Application.Initialize;
   Application.CreateForm(TMainIDE, MainIDE);
   if (Paramcount>0) then
