@@ -1,0 +1,474 @@
+object ChartSeriesFrame: TChartSeriesFrame
+  Left = 0
+  Height = 459
+  Top = 0
+  Width = 589
+  ClientHeight = 459
+  ClientWidth = 589
+  TabOrder = 0
+  DesignLeft = 575
+  DesignTop = 344
+  object PanelTop: TPanel
+    Left = 0
+    Height = 134
+    Top = 0
+    Width = 589
+    Align = alTop
+    AutoSize = True
+    BorderSpacing.Bottom = 12
+    BevelOuter = bvNone
+    ClientHeight = 134
+    ClientWidth = 589
+    TabOrder = 0
+    object cbShowSeries: TCheckBox
+      Left = 0
+      Height = 19
+      Top = 0
+      Width = 49
+      BorderSpacing.Bottom = 6
+      Caption = 'Show'
+      Checked = True
+      OnChange = cbShowSeriesChange
+      State = cbChecked
+      TabOrder = 0
+    end
+    object gbLegendText: TGroupBox
+      AnchorSideLeft.Control = PanelTop
+      AnchorSideTop.Control = cbShowSeries
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Bevel4
+      Left = 0
+      Height = 109
+      Top = 25
+      Width = 286
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      Caption = 'Legend text'
+      ClientHeight = 89
+      ClientWidth = 282
+      TabOrder = 1
+      object edSeriesTitle: TEdit
+        AnchorSideLeft.Control = gbLegendText
+        AnchorSideTop.Control = gbLegendText
+        AnchorSideRight.Control = gbLegendText
+        AnchorSideRight.Side = asrBottom
+        Left = 8
+        Height = 23
+        Top = 4
+        Width = 266
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 4
+        BorderSpacing.Right = 8
+        OnChange = edSeriesTitleChange
+        TabOrder = 0
+        Text = 'edSeriesTitle'
+      end
+      object cbShowInLegend: TCheckBox
+        AnchorSideLeft.Control = edSeriesTitle
+        AnchorSideTop.Control = edSeriesTitle
+        AnchorSideTop.Side = asrBottom
+        Left = 8
+        Height = 19
+        Top = 33
+        Width = 101
+        BorderSpacing.Top = 6
+        Caption = 'Show in legend'
+        OnChange = cbShowInLegendChange
+        TabOrder = 1
+      end
+      object cbLegendMultiplicity: TComboBox
+        AnchorSideLeft.Control = Label1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = cbShowInLegend
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = edSeriesTitle
+        AnchorSideRight.Side = asrBottom
+        Left = 87
+        Height = 23
+        Top = 58
+        Width = 187
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 6
+        BorderSpacing.Bottom = 8
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'single item per series'
+          'marks text per data point'
+        )
+        OnChange = cbLegendMultiplicityChange
+        Style = csDropDownList
+        TabOrder = 2
+        Text = 'single item per series'
+      end
+      object Label1: TLabel
+        AnchorSideLeft.Control = edSeriesTitle
+        AnchorSideTop.Control = cbLegendMultiplicity
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 15
+        Top = 62
+        Width = 71
+        Caption = 'Legend items'
+        ParentColor = False
+      end
+    end
+    object gbMarks: TGroupBox
+      AnchorSideLeft.Control = Bevel4
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = gbLegendText
+      AnchorSideRight.Control = PanelTop
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = gbLegendText
+      AnchorSideBottom.Side = asrBottom
+      Left = 302
+      Height = 109
+      Top = 25
+      Width = 287
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      AutoSize = True
+      Caption = 'Marks'
+      ClientHeight = 89
+      ClientWidth = 283
+      TabOrder = 2
+      object lblSeriesMarksStyle: TLabel
+        AnchorSideLeft.Control = gbMarks
+        AnchorSideTop.Control = cbMarksStyle
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 15
+        Top = 8
+        Width = 25
+        BorderSpacing.Left = 8
+        Caption = 'Style'
+        ParentColor = False
+      end
+      object cbMarksStyle: TComboBox
+        AnchorSideLeft.Control = edMarksFormat
+        AnchorSideTop.Control = gbMarks
+        AnchorSideRight.Control = gbMarks
+        AnchorSideRight.Side = asrBottom
+        Left = 54
+        Height = 23
+        Top = 4
+        Width = 221
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 4
+        BorderSpacing.Right = 8
+        ItemHeight = 15
+        ItemIndex = 1
+        Items.Strings = (
+          'User-defined'
+          'No labels'
+          'Value'
+          'Percent'
+          'Label'
+          'Label and percent'
+          'Label and value'
+          'Legend'
+          'Percent and total'
+          'Label, percent, and total'
+          'X value'
+        )
+        OnChange = cbMarksStyleChange
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'No labels'
+      end
+      object Label2: TLabel
+        AnchorSideLeft.Control = lblSeriesMarksStyle
+        AnchorSideTop.Control = edMarksFormat
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 15
+        Top = 37
+        Width = 38
+        Caption = 'Format'
+        ParentColor = False
+      end
+      object edMarksFormat: TEdit
+        AnchorSideLeft.Control = Label2
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = cbMarksStyle
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = gbMarks
+        AnchorSideRight.Side = asrBottom
+        Left = 54
+        Height = 23
+        Top = 33
+        Width = 221
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 6
+        BorderSpacing.Right = 8
+        OnEditingDone = edMarksFormatEditingDone
+        TabOrder = 1
+        Text = 'edMarksFormat'
+      end
+      object cbShowMarks: TCheckBox
+        AnchorSideLeft.Control = edMarksFormat
+        AnchorSideTop.Control = edMarksFormat
+        AnchorSideTop.Side = asrBottom
+        Left = 54
+        Height = 19
+        Top = 62
+        Width = 156
+        BorderSpacing.Top = 6
+        Caption = 'Show at series data points'
+        OnChange = cbShowMarksChange
+        TabOrder = 2
+      end
+    end
+    object Bevel4: TBevel
+      AnchorSideLeft.Control = PanelTop
+      AnchorSideLeft.Side = asrCenter
+      Left = 286
+      Height = 94
+      Top = 40
+      Width = 16
+      Shape = bsSpacer
+    end
+  end
+  object nbSeriesTypes: TNotebook
+    Left = 0
+    Height = 313
+    Top = 146
+    Width = 589
+    PageIndex = 0
+    Align = alClient
+    TabOrder = 1
+    object pgLineSeries: TPage
+      object gbLineSeriesLineStyle: TGroupBox
+        AnchorSideLeft.Control = pgLineSeries
+        AnchorSideTop.Control = pgLineSeries
+        AnchorSideRight.Control = Bevel1
+        Left = 0
+        Height = 88
+        Top = 0
+        Width = 286
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'gbLineSeriesLineStyle'
+        ClientHeight = 68
+        ClientWidth = 282
+        TabOrder = 0
+        object cbLineSeriesShowLines: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 6
+          Width = 274
+          Align = alTop
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 6
+          Caption = 'Visible'
+          OnChange = cbLineSeriesShowLinesChange
+          TabOrder = 0
+        end
+      end
+      object gbLineSeriesPointer: TGroupBox
+        AnchorSideLeft.Control = Bevel1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = gbLineSeriesLineStyle
+        AnchorSideRight.Control = pgLineSeries
+        AnchorSideRight.Side = asrBottom
+        Left = 302
+        Height = 240
+        Top = 0
+        Width = 287
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'gbLineSeriesPointer'
+        ClientHeight = 220
+        ClientWidth = 283
+        TabOrder = 1
+        object cbLineSeriesShowPoints: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 6
+          Width = 275
+          Align = alTop
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 6
+          Caption = 'Visible'
+          OnChange = cbLineSeriesShowPointsChange
+          TabOrder = 0
+        end
+      end
+      object Bevel1: TBevel
+        AnchorSideLeft.Control = pgLineSeries
+        AnchorSideLeft.Side = asrCenter
+        Left = 286
+        Height = 104
+        Top = 120
+        Width = 16
+        Shape = bsSpacer
+      end
+    end
+    object pgBarSeries: TPage
+      object gbBarSeriesBorder: TGroupBox
+        AnchorSideLeft.Control = pgBarSeries
+        AnchorSideTop.Control = gbBarSeriesBrush
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = Bevel2
+        Left = 0
+        Height = 92
+        Top = 64
+        Width = 286
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 12
+        Caption = 'gbBarSeriesBorder'
+        TabOrder = 2
+      end
+      object gbBarSeriesBrush: TGroupBox
+        AnchorSideLeft.Control = pgBarSeries
+        AnchorSideTop.Control = pgBarSeries
+        AnchorSideRight.Control = Bevel2
+        Left = 0
+        Height = 52
+        Top = 0
+        Width = 286
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'gbBarSeriesBrush'
+        TabOrder = 0
+      end
+      object gbBarShape: TGroupBox
+        AnchorSideLeft.Control = Bevel2
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = gbBarSeriesBrush
+        AnchorSideRight.Control = pgBarSeries
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = gbBarSeriesBrush
+        AnchorSideBottom.Side = asrBottom
+        Left = 302
+        Height = 52
+        Top = 0
+        Width = 287
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        AutoSize = True
+        Caption = 'Bar shape'
+        ClientHeight = 32
+        ClientWidth = 283
+        TabOrder = 1
+        object cbBarShape: TComboBox
+          AnchorSideLeft.Control = gbBarShape
+          AnchorSideTop.Control = gbBarShape
+          AnchorSideRight.Control = gbBarShape
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 23
+          Top = 0
+          Width = 267
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 8
+          BorderSpacing.Right = 8
+          BorderSpacing.Bottom = 8
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Rectangular'
+            'Cylindrical'
+            'Hexagonal prism'
+            'Pyramid'
+            'Conical'
+          )
+          OnChange = cbBarShapeChange
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'Rectangular'
+        end
+      end
+      object Bevel2: TBevel
+        AnchorSideLeft.Control = pgBarSeries
+        AnchorSideLeft.Side = asrCenter
+        Left = 286
+        Height = 11
+        Top = 208
+        Width = 16
+        Shape = bsSpacer
+      end
+    end
+    object pgAreaSeries: TPage
+      object gbAreaSeriesBrush: TGroupBox
+        AnchorSideLeft.Control = pgAreaSeries
+        AnchorSideTop.Control = pgAreaSeries
+        AnchorSideRight.Control = Bevel3
+        Left = 0
+        Height = 57
+        Top = 0
+        Width = 286
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'gbAreaSeriesBrush'
+        TabOrder = 0
+      end
+      object gbAreaContourPen: TGroupBox
+        AnchorSideLeft.Control = gbAreaSeriesBrush
+        AnchorSideTop.Control = gbAreaSeriesBrush
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = Bevel3
+        Left = 0
+        Height = 115
+        Top = 69
+        Width = 286
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 12
+        Caption = 'gbAreaContourPen'
+        ClientHeight = 95
+        ClientWidth = 282
+        TabOrder = 1
+        object cbAreaShowContourLines: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 8
+          Width = 274
+          Align = alTop
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 8
+          BorderSpacing.Bottom = 8
+          Caption = 'Visible'
+          OnChange = cbAreaShowContourLinesChange
+          TabOrder = 0
+        end
+      end
+      object Bevel3: TBevel
+        AnchorSideLeft.Control = pgAreaSeries
+        AnchorSideLeft.Side = asrCenter
+        Left = 286
+        Height = 104
+        Top = 72
+        Width = 16
+        Shape = bsSpacer
+      end
+      object gbAreaDropLinePen: TGroupBox
+        AnchorSideLeft.Control = Bevel3
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = gbAreaSeriesBrush
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = pgAreaSeries
+        AnchorSideRight.Side = asrBottom
+        Left = 302
+        Height = 115
+        Top = 69
+        Width = 287
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 12
+        Caption = 'gbAreaDropLinePen'
+        ClientHeight = 95
+        ClientWidth = 283
+        TabOrder = 2
+        object cbAreaShowDropLines: TCheckBox
+          Left = 8
+          Height = 19
+          Top = 8
+          Width = 275
+          Align = alTop
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 8
+          BorderSpacing.Bottom = 8
+          Caption = 'Visible'
+          OnChange = cbAreaShowDropLinesChange
+          TabOrder = 0
+        end
+      end
+    end
+  end
+end
