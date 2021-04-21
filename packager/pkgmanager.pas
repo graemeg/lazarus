@@ -3457,10 +3457,15 @@ end;
 function TPkgManager.DoNewPackage: TModalResult;
 var
   NewPackage: TLazPackage;
+  NewPkgName: String;
 begin
   Result:=mrCancel;
+
+  NewPkgName:= ExtractPasIdentifier(lisPkgMangNewPackage,true);
+  if NewPkgName = '' then
+    NewPkgName:='NewPackage';
   // create a new package with standard dependencies
-  NewPackage:=PackageGraph.CreateNewPackage(ExtractPasIdentifier(lisPkgMangNewPackage,true));
+  NewPackage:=PackageGraph.CreateNewPackage(NewPkgName);
   PackageGraph.AddDependencyToPackage(NewPackage,
                 PackageGraph.FCLPackage.CreateDependencyWithOwner(NewPackage));
   NewPackage.Modified:=false;
