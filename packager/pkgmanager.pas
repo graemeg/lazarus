@@ -410,6 +410,9 @@ var
 
 implementation
 
+const
+  lisPkgMangNewPackage = 'NewPackage'; //must be valid Pascal identifier, thus should not be allowed to be translated
+
 { TPkgManager }
 
 procedure TPkgManager.MainIDEitmPkgOpenPackageFileClick(Sender: TObject);

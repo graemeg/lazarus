@@ -4440,7 +4440,6 @@ resourcestring
     +'%sfrom file %s.'
     +'%sThe old package is modified.'
     +'%sSave old package %s?';
-  lisPkgMangNewPackage = 'NewPackage';
   lisProbablyYouNeedToInstallSomePackagesForBeforeConti = 'Probably you need to '
     +'install some packages before continuing.'
     +'%sWarning:'
