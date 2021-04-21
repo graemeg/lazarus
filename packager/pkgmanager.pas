@@ -411,7 +411,7 @@ var
 implementation
 
 const
-  lisPkgMangNewPackage = 'NewPackage'; //must be valid Pascal identifier, thus should not be allowed to be translated
+  constNewPackageName = 'NewPackage'; //must be valid Pascal identifier, thus should not be allowed to be translated
 
 { TPkgManager }
 
@@ -3463,7 +3463,7 @@ var
 begin
   Result:=mrCancel;
   // create a new package with standard dependencies
-  NewPackage:=PackageGraph.CreateNewPackage(lisPkgMangNewPackage);
+  NewPackage:=PackageGraph.CreateNewPackage(constNewPackageName);
   PackageGraph.AddDependencyToPackage(NewPackage,
                 PackageGraph.FCLPackage.CreateDependencyWithOwner(NewPackage));
   NewPackage.Modified:=false;
@@ -5285,7 +5285,7 @@ begin
   if APackage=nil then begin
     // create new package
     // create a new package with standard dependencies
-    APackage:=PackageGraph.CreateNewPackage(lisPkgMangNewPackage);
+    APackage:=PackageGraph.CreateNewPackage(constNewPackageName);
     PackageGraph.AddDependencyToPackage(APackage,
                   PackageGraph.IDEIntfPackage.CreateDependencyWithOwner(APackage));
     APackage.Modified:=false;
