@@ -2785,19 +2785,25 @@ end;
 procedure TAnchorDockMaster.SetFloatingWindowsOnTop(AValue: boolean);
 var
   i, AIndex: Integer;
-  AForm, ParentForm: TCustomForm;
+  AMainForm, AForm, ParentForm: TCustomForm;
   IsMainForm: Boolean;
   AFormStyle: TFormStyle;
 begin
   if FFloatingWindowsOnTop = AValue then Exit;
   FFloatingWindowsOnTop := AValue;
+  AMainForm := nil;
   for i:=0 to Screen.FormCount-1 do
   begin
     AForm := Screen.Forms[i];
     ParentForm := GetParentForm(AForm);
-    IsMainForm := (AForm = Application.MainForm)
-                  or (AForm.IsParentOf(Application.MainForm))
-                  or (ParentForm = Application.MainForm);
+    // Workaround: if FloatingWindowsOnTop is loaded on MainForm.Create
+    // Application.MainForm is not set now, but already in Screen.Forms
+    // see https://bugs.freepascal.org/view.php?id=19272
+    if not Assigned(AMainForm) then AMainForm := Application.MainForm;
+    if not Assigned(AMainForm) then AMainForm := Screen.Forms[0];
+    IsMainForm := (AForm = AMainForm)
+                  or (AForm.IsParentOf(AMainForm))
+                  or (ParentForm = AMainForm);
     if IsMainForm then Continue;
     if AValue then
       AFormStyle := fsStayOnTop
