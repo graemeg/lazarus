@@ -623,12 +623,12 @@ begin
     //  RecreateWnd(AForm);
 
 
-    if not (csDesigning in AForm.ComponentState) then 
+    if not (csDesigning in AForm.ComponentState) then
     begin
       toplist := TList.Create;
       try
         EnumStayOnTop(AForm.Handle, toplist);
-        SetWindowPos(AForm.Handle, HWND_NOTOPMOST,  0, 0, 0, 0, WindowPosFlags);
+        SetWindowPos(AForm.Handle, HWND_NOTOPMOST,  0, 0, 0, 0, SWP_NOMOVE or SWP_NOSIZE or SWP_NOOWNERZORDER);
         for i := 0 to toplist.Count - 1 do 
           if HWND(toplist[i]) <> AForm.Handle then
             SetWindowPos(HWND(toplist[i]), HWND_TOPMOST,  0, 0, 0, 0, WindowPosFlags);
@@ -636,11 +636,7 @@ begin
         toplist.Free;
       end;
     end;
-
-    // original code:
-    //  if not (csDesigning in AForm.ComponentState) then
-    //    SetWindowPos(AForm.Handle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE or SWP_NOSIZE)
-  end 
+  end
   else
     RecreateWnd(AForm);
 end;
