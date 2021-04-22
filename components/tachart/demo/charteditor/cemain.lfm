@@ -6,10 +6,15 @@ object MainForm: TMainForm
   Caption = 'MainForm'
   ClientHeight = 346
   ClientWidth = 613
-  Menu = MainMenu1
+  Menu = MainMenu
   OnCreate = FormCreate
   LCLVersion = '2.1.0.0'
   object Chart1: TChart
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Bevel1
     Left = 0
     Height = 290
     Top = 0
@@ -47,7 +52,7 @@ object MainForm: TMainForm
     )
     Title.Visible = True
     Toolset = ChartToolset1
-    Align = alClient
+    Anchors = [akTop, akLeft, akRight, akBottom]
     object Chart1LineSeries1: TLineSeries
       Title = 'Line'
       LinePen.Color = clBlue
@@ -74,36 +79,51 @@ object MainForm: TMainForm
     end
   end
   object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = cbDoubleClick
     Left = 6
     Height = 15
     Top = 300
     Width = 601
-    Align = alBottom
-    Anchors = [akLeft, akRight]
+    Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Around = 6
     Caption = 'Click on a title, axis, label, grid, data point to open the corresponding editor.'
     ParentColor = False
   end
   object Bevel1: TBevel
+    AnchorSideBottom.Control = Label1
     Left = 0
     Height = 4
     Top = 290
     Width = 613
-    Align = alBottom
     Shape = bsBottomLine
   end
   object cbDoubleClick: TCheckBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
     Left = 6
     Height = 19
     Top = 321
-    Width = 607
-    Align = alBottom
+    Width = 177
     Anchors = [akLeft, akBottom]
     BorderSpacing.Left = 6
     BorderSpacing.Bottom = 6
     Caption = 'Activate tools by double-click'
     OnChange = cbDoubleClickChange
     TabOrder = 1
+  end
+  object cbUseAllInOneDialog: TCheckBox
+    AnchorSideLeft.Control = cbDoubleClick
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = cbDoubleClick
+    Left = 207
+    Height = 19
+    Top = 321
+    Width = 140
+    BorderSpacing.Left = 24
+    Caption = 'Use "all-in-one" dialog'
+    TabOrder = 2
   end
   object ChartToolset1: TChartToolset
     Left = 104
@@ -125,10 +145,10 @@ object MainForm: TMainForm
       OnClick = ChartToolset1AxisClickTool1Click
     end
   end
-  object MainMenu1: TMainMenu
-    Images = ChartImageList1
-    Left = 488
-    Top = 272
+  object MainMenu: TMainMenu
+    Images = ChartImagesDM.ChartImages
+    Left = 104
+    Top = 88
     object mnuSettings: TMenuItem
       Caption = 'Settings'
       object mnuChartTitle: TMenuItem
@@ -151,12 +171,12 @@ object MainForm: TMainForm
       end
       object mnuBottomAxis: TMenuItem
         Caption = 'Bottom axis...'
-        ImageIndex = 3
+        ImageIndex = 6
         OnClick = mnuBottomAxisClick
       end
       object mnuLeftAxis: TMenuItem
         Caption = 'Left axis...'
-        ImageIndex = 4
+        ImageIndex = 3
         OnClick = mnuLeftAxisClick
       end
       object MenuItem1: TMenuItem
@@ -191,28 +211,5 @@ object MainForm: TMainForm
     YMax = 50
     Left = 444
     Top = 168
-  end
-  object ChartImageList1: TChartImageList
-    Left = 216
-    Top = 16
-    Bitmap = {
-      4C7A050000001000000010000000FF0100000000000078DAED95314B033114C7
-      E3A01404C1CDF1C06FE027C828752DDDC40387729FC0F570D1D14F213A58BA15
-      41217BB77E802238DDD44304C7675F7AEFFAEE9ABB26B9D20EADF227B934BFBC
-      7FDEE55E0040402671750FB602C615F84F58AD157CAFD7AB940DEF125F4A0949
-      92801E70DBBFE6E23806973FA500A48C738EC7C7B6AE8F08F27CDC96174218C7
-      6DFCD74DE1F1D334D5E27D62AB7CD5F1E88DF65BC59BFC2383C3367BE3F10783
-      B490639BBC228F71F09D226FFB2E39AF30A0F6AD9CFB7486E71E24B8F6F7E777
-      7F7EB7797E7DCE2CEFC38EDF5F4DF7EFF2FDE6DF8158FCFBD40FCEFBD40F1F9E
-      D70F57FF4B532AE2BBE49F54E65BA3B4A08BF1AF5634F983CB715A68713EF7CF
-      F9D1C3692EE439FB3849755B17FFE3EE0CA66F42B7C80F874368B7DBD0ED76F5
-      33AE413CD58F32FF7C73AE85B1283E72D4124FF58078D37E713EB1659E3CE033
-      E5EBA4F59E8BB3AFDFD35CFA3B60EF129F29DEF1E10BDC5E4F758B6CBFDF8728
-      8A740E3A9D8E157F74F0A4C5F74C1E54F263E469CF38877CA3C833722413EF2A
-      531DF151760EBD595213D6778DA6FEF7FCE678250368C487B37A13CAA5B92A10
-      902B14309F172C5A8C2BB2F1AC5FF435FB8D94B3015B83AD97ADE393278CEDCB
-      D6E5AFA9301DD915EBCDFAAC516645A8B436E97F6DBCFCDA1E8F79DB01BEAA4E
-      B8F0A6358837DD47556A7257AEABCEFE034F9AC8A1
-    }
   end
 end

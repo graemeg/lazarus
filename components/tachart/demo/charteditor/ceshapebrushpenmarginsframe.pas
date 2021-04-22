@@ -50,7 +50,7 @@ type
     procedure UpdateControls;
   protected
     procedure CalculatePreferredSize(var PreferredWidth, PreferredHeight: integer;
-      WithThemeSpace: Boolean); override;
+      {%H-}WithThemeSpace: Boolean); override;
   public
     constructor Create(AOwner: TComponent); override;
     procedure GetData(out AShape: TChartLabelShape; ABrush: TBrush;

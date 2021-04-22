@@ -6,9 +6,9 @@ unit ceAxisDlg;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ButtonPanel,
-  ExtCtrls, Buttons, ComCtrls, Spin,
-  TAChartAxis, TAChartAxisUtils, TATextElements, TAChartCombos, TAGraph,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ButtonPanel,
+  ExtCtrls, Buttons, ComCtrls,
+  TAChartAxis, TAChartAxisUtils, TATextElements, TAGraph,
   ceAxisFrame;
 
 type

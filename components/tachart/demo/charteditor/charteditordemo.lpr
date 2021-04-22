@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, ceMain, ceSeriesDlg, cePointerFrame, ceTitleFootFrame, ceAxisFrame,
-  ceSeriesFrame;
+  ceSeriesFrame, ceChartEditor, ceImages;
 
 {$R *.res}
 
@@ -16,6 +16,7 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
+  Application.CreateForm(TChartImagesDM, ChartImagesDM);
   Application.CreateForm(TMainForm, MainForm);
   Application.Run;
 end.

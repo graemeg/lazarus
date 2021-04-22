@@ -5,8 +5,8 @@ unit ceLegendDlg;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ButtonPanel,
-  ExtCtrls, Buttons, ColorBox, ComCtrls, Spin,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ButtonPanel,
+  ExtCtrls, Buttons, ComCtrls,
   TAGraph, TALegend,
   ceLegendFrame;
 
@@ -39,9 +39,6 @@ var
 implementation
 
 {$R *.lfm}
-
-uses
-  ceUtils;
 
 procedure TChartLegendEditor.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin

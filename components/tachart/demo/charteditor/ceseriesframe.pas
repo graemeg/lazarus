@@ -69,12 +69,14 @@ type
     FAreaSeriesBrushFrame: TChartBrushFrame;
     FAreaSeriesContourPenFrame: TChartPenFrame;
     FAreaSeriesDropLinesPenFrame: TChartPenFrame;
+    FOnChanged: TNotifyEvent;
     procedure ChangedHandler(Sender: TObject);
   protected
     function GetChart: TChart;
   public
     constructor Create(AOwner: TComponent); override;
     procedure Prepare(ASeries: TBasicChartSeries);
+    property OnChanged: TNotifyEvent read FOnChanged write FOnChanged;
 
   end;
 
@@ -251,6 +253,7 @@ end;
 procedure TChartSeriesFrame.ChangedHandler(Sender: TObject);
 begin
   GetChart.Invalidate;
+  if Assigned(FOnChanged) then FOnChanged(self);
 end;
 
 procedure TChartSeriesFrame.edMarksFormatEditingDone(Sender: TObject);

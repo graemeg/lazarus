@@ -37,7 +37,7 @@ type
     procedure ShapeChangedHandler(AShape: TChartLabelShape);
   protected
     procedure CalculatePreferredSize(var PreferredWidth, PreferredHeight: integer;
-      WithThemeSpace: Boolean); override;
+      {%H-}WithThemeSpace: Boolean); override;
     function GetChart: TChart;
   public
     constructor Create(AOwner: TComponent); override;

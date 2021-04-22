@@ -21,15 +21,15 @@ type
     Chart1AreaSeries1: TAreaSeries;
     Chart1BarSeries1: TBarSeries;
     Chart1LineSeries1: TLineSeries;
-    ChartImageList1: TChartImageList;
     ChartToolset1: TChartToolset;
     ChartToolset1AxisClickTool1: TAxisClickTool;
     ChartToolset1DataPointClickTool1: TDataPointClickTool;
     ChartToolset1LegendClickTool1: TLegendClickTool;
     ChartToolset1TitleFootClickTool1: TTitleFootClickTool;
     cbDoubleClick: TCheckBox;
+    cbUseAllInOneDialog: TCheckBox;
     Label1: TLabel;
-    MainMenu1: TMainMenu;
+    MainMenu: TMainMenu;
     MenuItem1: TMenuItem;
     mnuSeries: TMenuItem;
     mnuChartLegend: TMenuItem;
@@ -58,6 +58,7 @@ type
     procedure mnuChartTitleClick(Sender: TObject);
     procedure mnuLeftAxisClick(Sender: TObject);
   private
+    procedure ChartEditor(AChart: TChart);
     procedure EditAxis(AAxis: TChartAxis; APage: TChartAxisEditorPage);
     procedure EditLegend(ALegend: TChartLegend);
     procedure EditSeries(ASeries: TBasicChartSeries);
@@ -77,9 +78,22 @@ implementation
 
 uses
   TAChartUtils, TACustomSeries,
-  ceTitleFootDlg, ceLegendDlg, ceSeriesDlg, ceAxisDlg;
+  ceTitleFootDlg, ceLegendDlg, ceSeriesDlg, ceAxisDlg, ceChartEditor, ceImages;
 
 { TMainForm }
+
+procedure TMainForm.ChartEditor(AChart: TChart);
+var
+  F: TChartEditorForm;
+begin
+  F := TChartEditorForm.Create(nil);
+  try
+    F.Chart := AChart;
+    F.ShowModal;
+  finally
+    F.Free;
+  end;
+end;
 
 procedure TMainForm.ChartToolset1TitleFootClickTool1Click(ASender: TChartTool;
   ATitle: TChartTitle);
@@ -91,11 +105,18 @@ end;
 procedure TMainForm.cbDoubleClickChange(Sender: TObject);
 var
   shift: TShiftState;
+  s: String;
 begin
   if cbDoubleClick.Checked then
-    shift := [ssLeft, ssDouble]
-  else
+  begin
+    shift := [ssLeft, ssDouble];
+    s := 'Double-click';
+  end else
+  begin
     shift := [ssLeft];
+    s := 'Click';
+  end;
+  Label1.Caption := s + ' on a title, axis, label, grid, data point to open the corresponding editor.';
 
   ChartToolset1DatapointClickTool1.Shift := shift;
   ChartToolset1TitleFootClickTool1.Shift := shift;
@@ -108,14 +129,14 @@ var
   i: Integer;
   item: TMenuItem;
 begin
-  ChartImageList1.Chart := Chart1;
+  ChartImagesDM.ChartImages.Chart := Chart1;
 
   for i := 0 to Chart1.SeriesCount-1 do begin
-    item := TMenuItem.Create(MainMenu1);
+    item := TMenuItem.Create(MainMenu);
     item.Caption := TCustomChartSeries(Chart1.Series[i]).Title + '...';
     item.OnClick := @MenuSeriesClick;
     item.Tag := PtrInt(Chart1.Series[i]);
-    item.ImageIndex := ChartImageList1.FirstSeriesIndex + i;
+    item.ImageIndex := ChartImagesDM.ChartImages.FirstSeriesIndex + i;
     mnuSeries.Add(item);
   end;
 end;
@@ -162,13 +183,18 @@ procedure TMainForm.EditAxis(AAxis: TChartAxis; APage: TChartAxisEditorPage);
 var
   F: TChartAxisEditor;
 begin
-  F := TChartAxisEditor.Create(nil);
-  try
-    F.Prepare(AAxis, 'Edit chart axis "%s"');
-    F.Page := APage;
-    F.ShowModal;
-  finally
-    F.Free;
+  if cbUseAllInOneDialog.Checked then
+    EditChartAxis(AAxis, APage)
+  else
+  begin
+    F := TChartAxisEditor.Create(nil);
+    try
+      F.Prepare(AAxis, 'Edit chart axis "%s"');
+      F.Page := APage;
+      F.ShowModal;
+    finally
+      F.Free;
+    end;
   end;
 end;
 
@@ -176,12 +202,17 @@ procedure TMainForm.EditLegend(ALegend: TChartLegend);
 var
   F: TChartLegendEditor;
 begin
-  F := TChartLegendEditor.Create(nil);
-  try
-    F.Prepare(ALegend, 'Edit chart legend');
-    F.ShowModal;
-  finally
-    F.Free;
+  if cbUseAllInOneDialog.Checked then
+    EditChartLegend(ALegend.GetOwner as TChart)
+  else
+  begin
+    F := TChartLegendEditor.Create(nil);
+    try
+      F.Prepare(ALegend, 'Edit chart legend');
+      F.ShowModal;
+    finally
+      F.Free;
+    end;
   end;
 end;
 
@@ -189,12 +220,17 @@ procedure TMainForm.EditSeries(ASeries: TBasicChartSeries);
 var
   F: TChartSeriesEditor;
 begin
-  F := TChartSeriesEditor.Create(nil);
-  try
-    F.Prepare(ASeries, 'Edit series "%s"');
-    F.ShowModal;
-  finally
-    F.Free;
+  if cbUseAllInOneDialog.Checked then
+    EditChartSeries(ASeries)
+  else
+  begin
+    F := TChartSeriesEditor.Create(nil);
+    try
+      F.Prepare(ASeries, 'Edit series "%s"');
+      F.ShowModal;
+    finally
+      F.Free;
+    end;
   end;
 end;
 
@@ -203,14 +239,24 @@ var
   F: TChartTitleFootEditor;
   s: String;
 begin
-  F := TChartTitleFootEditor.Create(nil);
-  try
-    s := 'Edit chart %s';
-    if ATitle = Chart1.Title then s := Format(s, ['title']) else s := Format(s, ['footer']);
-    F.Prepare(ATitle, s);
-    F.ShowModal;
-  finally
-    F.Free;
+  if cbUseAllInOneDialog.Checked then
+  begin
+    if ATitle = Chart1.Title then
+      EditChartTitle(ATitle.GetOwner as TChart)
+    else
+    if ATitle = Chart1.Foot then
+      EditChartFooter(ATitle.GetOwner as TChart);
+  end else
+  begin
+    F := TChartTitleFootEditor.Create(nil);
+    try
+      s := 'Edit chart %s';
+      if ATitle = Chart1.Title then s := Format(s, ['title']) else s := Format(s, ['footer']);
+      F.Prepare(ATitle, s);
+      F.ShowModal;
+    finally
+      F.Free;
+    end;
   end;
 end;
 

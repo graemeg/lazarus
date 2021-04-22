@@ -1,0 +1,127 @@
+object ChartEditorForm: TChartEditorForm
+  Left = 443
+  Height = 454
+  Top = 161
+  Width = 791
+  Caption = 'Chart Editor'
+  ClientHeight = 454
+  ClientWidth = 791
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.1.0.0'
+  object ButtonPanel: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 414
+    Width = 779
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'ApplyButton'
+    CloseButton.Caption = 'Apply'
+    CloseButton.OnClick = ApplyButtonClick
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel, pbClose]
+  end
+  object Tree: TTreeView
+    Left = 6
+    Height = 402
+    Top = 6
+    Width = 150
+    Align = alLeft
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 3
+    Constraints.MinWidth = 120
+    Images = ChartImagesDM.ChartImages
+    TabOrder = 1
+    OnDeletion = TreeDeletion
+    OnSelectionChanged = TreeSelectionChanged
+  end
+  object Splitter1: TSplitter
+    Left = 159
+    Height = 408
+    Top = 0
+    Width = 5
+    ResizeStyle = rsPattern
+  end
+  object Notebook: TNotebook
+    AnchorSideLeft.Control = Splitter1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = TitlePanel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonPanel
+    Left = 167
+    Height = 367
+    Top = 41
+    Width = 618
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 3
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    BorderSpacing.Bottom = 6
+    TabOrder = 3
+  end
+  object TitlePanel: TPanel
+    AnchorSideLeft.Control = Splitter1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 167
+    Height = 29
+    Top = 6
+    Width = 618
+    Alignment = taLeftJustify
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Left = 3
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    ClientHeight = 29
+    ClientWidth = 618
+    Color = clWindowText
+    Font.Color = clWindow
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    object Label1: TLabel
+      AnchorSideLeft.Control = Image1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = TitlePanel
+      Left = 30
+      Height = 21
+      Top = 4
+      Width = 50
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 2
+      BorderSpacing.Bottom = 2
+      Caption = 'Label1'
+      Font.Color = clWindow
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Image1: TImage
+      AnchorSideLeft.Control = TitlePanel
+      AnchorSideTop.Control = TitlePanel
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 16
+      Top = 6
+      Width = 16
+      BorderSpacing.Left = 4
+    end
+  end
+end

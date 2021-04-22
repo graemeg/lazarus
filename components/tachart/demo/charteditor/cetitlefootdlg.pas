@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Graphics,
-  Forms, Controls, Dialogs, StdCtrls, ButtonPanel, ExtCtrls, Buttons, ComCtrls,
+  Forms, Controls, Dialogs, ButtonPanel, ExtCtrls, Buttons, ComCtrls,
   TAGraph, TATextElements,
   ceTitleFootFrame;
 
@@ -41,12 +41,12 @@ implementation
 {$R *.lfm}
 
 uses
-  TATypes,
-  ceUtils;
+  TATypes;
 
 procedure TChartTitleFootEditor.FormActivate(Sender: TObject);
 var
-  h, w: Integer;
+  h: Integer = 0;
+  w: Integer = 0;
 begin
   FTitleFootFrame.GetPreferredSize(w, h);
   inc(h, FTitleFootFrame.BorderSpacing.Around * 2);

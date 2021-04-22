@@ -150,8 +150,24 @@
         <Filename Value="ceseriesframe.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="ChartSeriesFrame"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="ceSeriesFrame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="cecharteditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ChartEditorForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ceChartEditor"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ceimages.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ChartImagesDM"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="ceImages"/>
       </Unit>
     </Units>
   </ProjectOptions>
@@ -180,6 +196,9 @@
       <VerifyObjMethodCallValidity Value="True"/>
     </CodeGeneration>
     <Linking>
+      <Debugging>
+        <TrashVariables Value="True"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
