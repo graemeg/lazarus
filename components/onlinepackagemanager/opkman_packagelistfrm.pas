@@ -162,6 +162,7 @@ var
   LazarusPkg: TLazarusPackage;
   ChkCnt, InvCnt: Integer;
   LazComp, FPCComp, WSComp: Boolean;
+  NoURL: Boolean;
 begin
   SetupControls(ATyp);
   ChkCnt := 0;
@@ -202,9 +203,8 @@ begin
       if (SerializablePackages.Items[I].Checked) then
       begin
         Inc(ChkCnt);
-        if (Trim(SerializablePackages.Items[I].DownloadURL) = '') or
-           (Trim(SerializablePackages.Items[I].DownloadZipURL) = '') then  {or
-           (SerializablePackages.GetPackageInstallState(SerializablePackages.Items[I]) = 0) then}
+        NoURL := (Trim(SerializablePackages.Items[I].DownloadURL) = '') or (Trim(SerializablePackages.Items[I].DownloadZipURL) = '');
+        if NoURL and (not SerializablePackages.Items[I].IsDependencyPackage) then
         begin
           Inc(InvCnt);
           Node := FVST.AddChild(nil);

@@ -787,7 +787,7 @@ var
   InstallStatus: TInstallStatus;
   NeedToRebuild: Boolean;
 begin
-  if not IsSomethingChecked(False) then
+  if not IsSomethingChecked(True) then
     Exit;
   CanGo := True;
 

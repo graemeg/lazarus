@@ -124,6 +124,7 @@ type
     FDependencies: TPackageDependencies;
     FDependenciesAsString: String;
     FChecked: Boolean;
+    FIsDependencyPackage: Boolean;
     function GetVersionAsString: String;
     function GetDependenciesAsString: String;
     procedure SetVersionAsString(const AValue: String);
@@ -143,6 +144,7 @@ type
     property UpdateVersion: String read FUpdateVersion write FUpdateVersion;
     property PackageAbsolutePath: String read FPackageAbsolutePath write FPackageAbsolutePath;
     property Checked: Boolean read FChecked write FChecked;
+    property IsDependencyPackage: Boolean read FIsDependencyPackage write FIsDependencyPackage;
     property IsInstallable: Boolean read GetInstallable;
     property ForceNotify: Boolean read FForceNotify write FForceNotify;
     property InternalVersion: Integer read FInternalVersion write FInternalVersion;
@@ -178,6 +180,7 @@ type
     FRepositoryFileSize: Int64;
     FRepositoryFileHash: String;
     FChecked: Boolean;
+    FIsDependencyPackage: Boolean;
     FRepositoryDate: TDateTime;
     FPackageState: TPackageState;
     FPackageStates: TPackageStates;
@@ -220,6 +223,7 @@ type
     property ExternalDependecies: String read FExternalDependencies write FExternalDependencies;
     property OrphanedPackage: Integer read FOrphanedPackage write FOrphanedPackage;
     property Checked: Boolean read FChecked write FChecked;
+    property IsDependencyPackage: Boolean read FIsDependencyPackage write FIsDependencyPackage;
     property RepositoryFileName: String read FRepositoryFileName write FRepositoryFileName;
     property RepositoryFileSize: int64 read FRepositoryFileSize write FRepositoryFileSize;
     property RepositoryFileHash: String read FRepositoryFileHash write FRepositoryFileHash;
@@ -1479,10 +1483,12 @@ begin
   begin
     MetaPkg := TMetaPackage(Items[I]);
     MetaPkg.Checked := False;
+    MetaPkg.IsDependencyPackage := False;
     for J := 0 to Items[I].FLazarusPackages.Count - 1 do
     begin
       LazarusPkg := TLazarusPackage(Items[I].FLazarusPackages.Items[J]);
       LazarusPkg.Checked := False;
+      LazarusPkg.IsDependencyPackage := False;
     end;
   end;
 end;

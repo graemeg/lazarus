@@ -1133,7 +1133,11 @@ begin
         if (FVST.CheckState[Node] = csCheckedNormal) or (FVST.CheckState[Node] = csMixedNormal) then
         begin
           if (FVST.IsVisible[Node]) or (Data^.IsDependencyNode) then
-            MetaPkg.Checked := True
+          begin
+            MetaPkg.Checked := True;
+            if Data^.IsDependencyNode then
+              MetaPkg.IsDependencyPackage := True;
+          end
           else
             MetaPkg.Checked := False;
         end
@@ -1149,7 +1153,11 @@ begin
         if FVST.CheckState[Node] = csCheckedNormal then
         begin
           if (FVST.IsVisible[Node]) or (Data^.IsDependencyNode) then
-            LazarusPkg.Checked := True
+          begin
+            LazarusPkg.Checked := True;
+            if Data^.IsDependencyNode then
+              LazarusPkg.IsDependencyPackage:= True
+          end
           else
             LazarusPkg.Checked := False;
         end

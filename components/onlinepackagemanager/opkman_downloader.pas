@@ -391,14 +391,17 @@ begin
     begin
       if FNeedToBreak then
         Break;
-      if (SerializablePackages.Items[I].Checked) and (Trim(SerializablePackages.Items[I].DownloadZipURL) <> '') then
+      if (SerializablePackages.Items[I].Checked) then
       begin
         Inc(FCnt);
         FUpackageName := SerializablePackages.Items[I].Name;
-        FUPackageURL := SerializablePackages.Items[I].DownloadZipURL;
+        if SerializablePackages.Items[I].IsDependencyPackage then
+          FUPackageURL := Options.RemoteRepository[Options.ActiveRepositoryIndex] + SerializablePackages.Items[I].RepositoryFileName
+        else
+          FUPackageURL := SerializablePackages.Items[I].DownloadZipURL;
         FUTyp := 0;
         Synchronize(@DoOnPackageUpdateProgress);
-        UpdateSize := GetUpdateSize(SerializablePackages.Items[I].DownloadZipURL, FUErrMsg);
+        UpdateSize := GetUpdateSize(FUPackageURL, FUErrMsg);
         if UpdateSize > -1 then
         begin
           if UpdateSize = 0 then
@@ -435,11 +438,13 @@ begin
       begin
         if NeedToBreak then
           Break;
-        if (SerializablePackages.Items[I].Checked) and (Trim(SerializablePackages.Items[I].DownloadZipURL) <> '') and
-           (SerializablePackages.Items[I].UpdateSize > -1) and (not (psError in  SerializablePackages.Items[I].PackageStates)) then
+        if (SerializablePackages.Items[I].Checked) and (SerializablePackages.Items[I].UpdateSize > -1) and (not (psError in  SerializablePackages.Items[I].PackageStates)) then
         begin
           Inc(FCnt);
-          FFrom := FixProtocol(SerializablePackages.Items[I].DownloadZipURL);
+          if SerializablePackages.Items[I].IsDependencyPackage then
+            FFrom := Options.RemoteRepository[Options.ActiveRepositoryIndex] + SerializablePackages.Items[I].RepositoryFileName
+          else
+            FFrom := FixProtocol(SerializablePackages.Items[I].DownloadZipURL);
           FTo := FDownloadTo + SerializablePackages.Items[I].RepositoryFileName;
           FCurSize := SerializablePackages.Items[I].UpdateSize;
           DS := TDownloadStream.Create(TFileStream.Create(FTo, fmCreate));
@@ -584,7 +589,7 @@ begin
   FTotCnt := 0;
   FTotSize := 0;
   for I := 0 to SerializablePackages.Count - 1 do
-    if (SerializablePackages.Items[I].Checked) and (Trim(SerializablePackages.Items[I].DownloadZipURL) <> '') then
+    if (SerializablePackages.Items[I].Checked) then
       Inc(FTotCnt);
   if (Assigned(LazarusIDE) and LazarusIDE.IDEStarted and (not LazarusIDE.IDEIsClosing)) then
     Start;
