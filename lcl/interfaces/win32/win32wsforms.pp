@@ -587,9 +587,6 @@ class procedure TWin32WSCustomForm.SetFormStyle(const AForm: TCustomform;
   const AFormStyle, AOldFormStyle: TFormStyle);
 const
   WindowPosFlags = SWP_NOMOVE or SWP_NOSIZE or SWP_NOACTIVATE or SWP_NOOWNERZORDER;
-var
-  toplist: TList;
-  i: Integer;
 begin
   // Some changes don't require RecreateWnd
 
@@ -608,7 +605,7 @@ begin
   begin
 
     // NOTE:
-    // see bug report #16573
+    // see bug report #16573 and #38790
     // if a window changes from HWND_TOPMOST to HWND_NOTOPMOST
     // other TOP most windows also change their state to Non-topmost!
 
@@ -616,26 +613,10 @@ begin
     // "When a topmost window is made non-topmost, its owners and its owned windows are also made non-topmost windows"
     // Is it possible, that Application window, makes all other forms, non-top most?
     // It's also possible to make a list of "topmost forms" and re-enable their state
-    // after changing the style of the window (so recreation can be avoided)
-
-    // Possible solution, using window re-creation
-    //if not (csDesigning in AForm.ComponentState) then
-    //  RecreateWnd(AForm);
-
+    // after changing the style of the window (so recreation can be avoided).
 
     if not (csDesigning in AForm.ComponentState) then
-    begin
-      toplist := TList.Create;
-      try
-        EnumStayOnTop(AForm.Handle, toplist);
-        SetWindowPos(AForm.Handle, HWND_NOTOPMOST,  0, 0, 0, 0, SWP_NOMOVE or SWP_NOSIZE or SWP_NOOWNERZORDER);
-        for i := 0 to toplist.Count - 1 do 
-          if HWND(toplist[i]) <> AForm.Handle then
-            SetWindowPos(HWND(toplist[i]), HWND_TOPMOST,  0, 0, 0, 0, WindowPosFlags);
-      finally
-        toplist.Free;
-      end;
-    end;
+      RecreateWnd(AForm);
   end
   else
     RecreateWnd(AForm);
