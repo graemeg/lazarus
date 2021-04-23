@@ -138,8 +138,12 @@ end;
   Hide dragging image without unlocking of window
 }
 procedure TDragImageList.HideDragImage;
+var
+  DragImageListResolution: TDragImageListResolution;
 begin
-  GetDraggingResolution.HideDragImage;
+  DragImageListResolution := GetDraggingResolution;
+  if DragImageListResolution <> nil then
+    DragImageListResolution.HideDragImage;
 end;
 
 {
@@ -176,8 +180,12 @@ end;
   Show dragging image
 }
 procedure TDragImageList.ShowDragImage;
+var
+  DragImageListResolution: TDragImageListResolution;
 begin
-  GetDraggingResolution.ShowDragImage;
+  DragImageListResolution := GetDraggingResolution;
+  if DragImageListResolution <> nil then
+    DragImageListResolution.ShowDragImage;
 end;
 
 { TDragImageListResolution }
