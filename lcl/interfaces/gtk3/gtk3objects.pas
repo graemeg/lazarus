@@ -1414,7 +1414,7 @@ begin
   else
   begin
     w := FCurrentPen.Width;
-    if w = 0 then
+    if w <= 1 then
       w := 0.5;
     cairo_set_line_width(pcr, w {* ScaleX}); //line_width is diameter of the pen circle
   end;
@@ -2279,37 +2279,51 @@ end;
 function TGtk3DeviceContext.LineTo(X, Y: Integer): Boolean;
 var
   FX, FY: Double;
-  X0, Y0: Integer;
+  X0, Y0,dx,dy:integer;
 begin
   if not Assigned(pcr) then
     exit(False);
   ApplyPen;
 
-  // we must paint line until, but NOT including, (X,Y)
-  // let's offset X, Y by 1 px, but only for horizontal and vertical lines (yet?)
-  cairo_get_current_point(pcr, @FX, @FY);
-  X0 := Round(FX-PixelOffset);
-  Y0 := Round(FY-PixelOffset);
-  if X0 = X then
-  begin
-    if Y = Y0 then
-      exit
-    else
-    if Y > Y0 then
-      Dec(Y)
-    else
-      Inc(Y);
-  end
-  else
-  if Y0 = Y then
-  begin
-    if X > X0 then
-      Dec(X)
-    else
-      Inc(X);
-  end;
 
-  cairo_line_to(pcr, X+PixelOffset, Y+PixelOffset);
+  if fCurrentPen.Width<=1 then // optimizations
+  begin
+    cairo_get_current_point(pcr, @FX, @FY);
+    X0:=round(FX);
+    Y0:=round(FY);
+    dx:=X-X0;
+    dy:=Y-Y0;
+
+    if (dx=0) and (dy=0) then exit;
+
+    if (dx=0) then
+    begin
+      cairo_move_to(pcr,X+PixelOffset,Y0);
+      cairo_line_to(pcr,X+PixelOffset,Y);
+    end else
+    if (dy=0) then
+    begin
+      cairo_move_to(pcr,X0,Y+PixelOffset);
+      cairo_line_to(pcr,X,Y+PixelOffset);
+    end else
+    if abs(dx)=abs(dy) then
+    begin
+      // here is required more Cairo magic
+      if (dx>0) then
+      begin
+        cairo_move_to(pcr,FX-PixelOffset,FY-PixelOffset);
+        cairo_line_to(pcr,X+2*PixelOffset, Y+2*PixelOffset);
+      end else
+      begin
+        cairo_move_to(pcr,FX+2*PixelOffset,FY);
+        cairo_line_to(pcr,X+PixelOffset, Y+PixelOffset);
+      end;
+    end else
+      cairo_line_to(pcr,X+PixelOffset, Y+PixelOffset);
+
+  end else
+    cairo_line_to(pcr,X+PixelOffset, Y+PixelOffset);
+
   cairo_stroke(pcr);
   Result := True;
 end;
@@ -2327,7 +2341,7 @@ begin
     OldPoint^.X := Round(dx);
     OldPoint^.Y := Round(dy);
   end;
-  cairo_move_to(pcr, X+PixelOffset, Y+PixelOffset);
+  cairo_move_to(pcr, X{-PixelOffset}, Y{-PixelOffset});
   Result := True;
 end;
 
