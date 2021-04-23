@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <fpdoc-descriptions>
 <package name="lazutils">
 
@@ -9,8 +9,13 @@
 -->
 
 <module name="LazLoggerBase">
-<short></short>
+<short> Defines base logging classes used in the Lazarus IDE</short>
 <descr>
+  <p>
+    <file>lazloggerbase.pas</file> contains classes, types, and routines used
+    to implement the base logging mechanisms in the Lazarus IDE. This file
+    is part of the <file>LazUtils</file> package.
+  </p>
 </descr>
 
 <!-- unresolved externals -->
@@ -2427,6 +2432,45 @@
 </seealso>
 </element>
 
+<element name="DbgStr">
+  <short/>
+  <descr/>
+  <seealso/>
+</element>
+<element name="DbgStr.Result">
+  <short/>
+</element>
+<element name="DbgStr.StringWithSpecialChars">
+  <short/>
+</element>
+<element name="DbgStr.StartPos">
+  <short/>
+</element>
+<element name="DbgStr.Len">
+  <short/>
+</element>
+<element name="DbgStr.p">
+  <short/>
+</element>
+
+<element name="DbgWideStr">
+  <short/>
+  <descr/>
+  <seealso/>
+</element>
+<element name="DbgWideStr.Result">
+  <short/>
+</element>
+<element name="DbgWideStr.StringWithSpecialChars">
+  <short/>
+</element>
+
+<element name="DumpStack">
+  <short/>
+  <descr/>
+  <seealso/>
+</element>
+
 <!-- function type Visibility: default -->
 <element name="TLazDebugLoggerCreator">
 <short></short>
@@ -2468,7 +2512,7 @@
 </seealso>
 </element>
 
-</module> <!-- LazLoggerBase -->
-
+</module>
+<!-- LazLoggerBase -->
 </package>
 </fpdoc-descriptions>

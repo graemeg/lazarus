@@ -830,7 +830,10 @@
         <short>Sets the value for the Color property</short>
         <descr>
           <p>
-            Changes the value in <var>ParentBackground</var> to <b>False</b> when <var>Color</var> is set to a value other than <var>clDefault</var>.
+            SetColor is a method used to set the value in the Color property. It calls the inherited method on entry.
+          </p>
+          <p>
+            When the value for the Color property is set to <var>clDefault</var>, or has the same value as the Color property in <var>Parent</var>, no additional actions are performed in the method. Otherwise, the value in ParentBackground is set to <b>False</b>.
           </p>
         </descr>
         <seealso>

@@ -1499,7 +1499,7 @@
             <var>SetColor</var> is an overridden method in <var>TCustomFrame</var> used to set the value for the <var>Color</var> property. It calls the inherited method on entry.
           </p>
           <p>
-            When the Color property contains a value other than <var>clDefault</var>, the <var>ParentBackground</var> property is set to <b>False</b>.
+            When the value for the Color property is set to <var>clDefault</var>, or has the same value as the Color property in <var>Parent</var>, no additional actions are performed in the method. Otherwise, the value in ParentBackground is set to <b>False</b>.
           </p>
         </descr>
         <seealso>

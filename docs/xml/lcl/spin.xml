@@ -70,6 +70,9 @@
       <element name="TCustomFloatSpinEdit.FDecimals">
         <short>Stores the decimal places displayed for the control</short>
       </element>
+      <element name="TCustomFloatSpinEdit.FEditorEnabled">
+        <short>Stores the value for the EditorEnabled property</short>
+      </element>
       <element name="TCustomFloatSpinEdit.FMaxValue">
         <short>Stores the value for the MaxValue property</short>
       </element>
@@ -94,6 +97,17 @@
       </element>
       <element name="TCustomFloatSpinEdit.GetValue.Result">
         <short>Value for the property</short>
+      </element>
+
+      <element name="TCustomFloatSpinEdit.SetEditorEnabled">
+        <short>Sets the value for the EditorEnabled property</short>
+        <descr/>
+        <seealso>
+          <link id="TCustomFloatSpinEdit.EditorEnabled"/>
+        </seealso>
+      </element>
+      <element name="TCustomFloatSpinEdit.SetEditorEnabled.AValue">
+        <short>New value for the property</short>
       </element>
 
       <element name="TCustomFloatSpinEdit.UpdateControl">
@@ -353,6 +367,30 @@
         <seealso/>
       </element>
 
+      <element name="TCustomFloatSpinEdit.EditorEnabled">
+        <short>
+          Indicates whether the value for the control can be entered directly into its edit box
+        </short>
+        <descr>
+          <p>
+            <var>EditorEnabled</var> is a <var>Boolean</var> property which indicates if the <var>Value</var> for the control can be input directly. When set to <b>True</b>, the edit box is enabled. When set To <b>False</b>, only the up and down arrow buttons can be used to change the Value for the control.
+          </p>
+          <p>
+            The default value for the property is <b>True</b>. Changing the value for the property causes the widgetset class to be notified when the Handle for the control has been allocated.
+          </p>
+          <p>
+            EditorEnabled is independent of the settings in the <var>ReadOnly</var> and <var>Enabled</var> properties. When ReadOnly is set to <b>True</b>, the Value for the control cannot be modified using either the edit box or the up / down buttons. When Enabled is set to <b>False</b>, the control cannot be given focus or modified.
+          </p>
+          <remark>
+            Disabling the edit box requires support from the underlying widgetset class. It may not be supported or implemented for all widgetsets  / platforms. In the current LCL version, it is implemented for the Windows and Windows CE platforms.
+          </remark>
+        </descr>
+        <version>
+          Added in LCL version 2.1.
+        </version>
+        <seealso/>
+      </element>
+
       <element name="TCustomFloatSpinEdit.Increment">
         <short>
           Amount applied to the control value when the up or down arrow button is pushed
@@ -464,6 +502,7 @@
       <element name="TFloatSpinEdit.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
       <element name="TFloatSpinEdit.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element name="TFloatSpinEdit.DecimalPlaces" link="#lcl.spin.TCustomFloatSpinEdit.DecimalPlaces"/>
+      <element name="TFloatSpinEdit.EditorEnabled" link="#lcl.spin.TCustomFloatSpinEdit.EditorEnabled"/>
       <element name="TFloatSpinEdit.Enabled" link="#lcl.controls.TControl.Enabled"/>
       <element name="TFloatSpinEdit.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TFloatSpinEdit.Increment" link="#lcl.spin.TCustomFloatSpinEdit.Increment"/>
@@ -706,7 +745,7 @@
             <var>TSpinEdit</var> is a <var>TCustomSpinEdit</var> descendant which implements an integer-based spin edit control. It provides an edit control where the Integer value can be entered directly, and has arrow buttons to allow the user to increment / decrement the value for the control.
           </p>
           <p>
-            TSpinEdit sets the visiblity for properties introduced in ancestor classes.
+            TSpinEdit sets the visibility for properties introduced in ancestor classes.
           </p>
           <p>
             Use TFloatSpinEdit to edit a float value in a spin edit control.
@@ -726,6 +765,7 @@
       <element name="TSpinEdit.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TSpinEdit.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
       <element name="TSpinEdit.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TSpinEdit.EditorEnabled" link="#lcl.spin.TCustomFloatSpinEdit.EditorEnabled"/>
       <element name="TSpinEdit.Enabled" link="#lcl.controls.TControl.Enabled"/>
       <element name="TSpinEdit.Increment" link="#lcl.spin.TCustomSpinEdit.Increment"/>
       <element name="TSpinEdit.MaxValue" link="#lcl.spin.TCustomSpinEdit.MaxValue"/>
