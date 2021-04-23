@@ -231,6 +231,7 @@ begin
     GetMem(NewData, ArawImage.DataSize);
 
     //if (Ridx <> 0) or (Gidx <> 1) or (Bidx <> 2) or (AIdx <> 3) then
+    if desc.Depth=32 then
     begin
       // put components in right order
 
@@ -266,7 +267,7 @@ begin
   // this is only a rough implementation, there is no check against bitsperpixel
   case Desc.Depth of
     1: ImageFormat := CAIRO_FORMAT_A1;
-    2: ImageFormat := CAIRO_FORMAT_A8;
+    8: ImageFormat := CAIRO_FORMAT_A8;
     else
        ImageFormat := CAIRO_FORMAT_ARGB32;
   end;
