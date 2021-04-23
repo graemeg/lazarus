@@ -5947,8 +5947,9 @@ begin
       TextMetric.tmAveCharWidth := Max(1,
                  pango_font_metrics_get_approximate_char_width(APangoMetrics)
                  div PANGO_SCALE);
-      TextMetric.tmAscent := pango_font_metrics_get_ascent(APangoMetrics) div PANGO_SCALE;
-      TextMetric.tmDescent := pango_font_metrics_get_descent(APangoMetrics) div PANGO_SCALE;
+
+      TextMetric.tmAscent := PANGO_PIXELS(pango_font_metrics_get_ascent(APangoMetrics));
+      TextMetric.tmDescent := PANGO_PIXELS(pango_font_metrics_get_descent(APangoMetrics));
       TextMetric.tmHeight := TextMetric.tmAscent+TextMetric.tmDescent;
 
       pango_layout_set_text(UseFont, PChar(TestString[IsDoubleByteChar]),

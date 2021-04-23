@@ -875,7 +875,7 @@ function TGtkDeviceContext.CreateGC: PGdkGC;
 begin
   // create GC
 
-  if Drawable <> nil then
+  if (Drawable <> nil) and (Drawable^.parent_instance.ref_count>0) then
   begin
     if FWithChildWindows then
     begin

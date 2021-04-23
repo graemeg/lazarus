@@ -2483,6 +2483,7 @@ var
       else
       begin
         theRect.Right := theRect.Left + Min(MaxWidth, AP.cX);
+        theRect.Bottom := theRect.Top +  AP.cY;
         if (Flags and DT_VCENTER) > 0 then
         begin
           OffsetRect(theRect, 0, ((Rect.Bottom - Rect.Top) - (theRect.Bottom - theRect.Top)) div 2);
@@ -2492,6 +2493,7 @@ var
         begin
           OffsetRect(theRect, 0, (Rect.Bottom - Rect.Top) - (theRect.Bottom - theRect.Top));
         end;
+
       end;
     end
     else
