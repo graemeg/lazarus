@@ -68,6 +68,9 @@
     - on close button: save a restore layout
     - option to show/hide dock headers
     - option HeaderStyle to change appearance of grabbers
+    - option MultiLine show pages tabs on multiple lines when needed
+    - option FloatingWindowsOnTop MainDockForm has FormStyle fsNormal, all other
+      not docked windows get FormStyle fsStayOnTop to not hide helper windows
 
   ToDo:
     - option to save on IDE close (if MainForm is visible on active screen)
@@ -625,6 +628,7 @@ type
     FDockSitesCanBeMinimized: boolean;
     FIdleConnected: Boolean;
     FManagerClass: TAnchorDockManagerClass;
+    FMainDockForm: TCustomForm;
     FMultiLinePages: boolean;
     FOnCreateControl: TADCreateControlEvent;
     FOnOptionsChanged: TNotifyEvent;
@@ -662,6 +666,7 @@ type
     procedure FormFirstShow(Sender: TObject);
     function GetControls(Index: integer): TControl;
     function GetLocalizedHeaderHint: string;
+    function GetMainDockForm: TCustomForm;
     procedure MarkCorrectlyLocatedControl(Tree: TAnchorDockLayoutTree);
     function CloseUnneededAndWronglyLocatedControls(Tree: TAnchorDockLayoutTree): boolean;
     function CreateNeededControls(Tree: TAnchorDockLayoutTree;
@@ -671,6 +676,7 @@ type
     function RestoreLayout(Tree: TAnchorDockLayoutTree; Scale: boolean): boolean;
     procedure ScreenFormAdded(Sender: TObject; Form: TCustomForm);
     procedure ScreenRemoveForm(Sender: TObject; Form: TCustomForm);
+    procedure SetMainDockForm(AValue: TCustomForm);
     procedure SetMinimizedState(Tree: TAnchorDockLayoutTree);
     procedure UpdateHeaders;
     procedure SetNodeMinimizedState(ANode: TAnchorDockLayoutTreeNode);
@@ -678,6 +684,7 @@ type
     procedure ClearLayoutProperties(AControl: TControl; NewAlign: TAlign = alClient);
     procedure PopupMenuPopup(Sender: TObject);
     procedure ChangeLockButtonClick(Sender: TObject);
+    procedure RefreshFloatingWindowsOnTop;
     function ScaleChildX(p: integer): integer;
     function ScaleChildY(p: integer): integer;
     function ScaleTopLvlX(p: integer): integer;
@@ -842,6 +849,9 @@ type
     property PageControlClass: TAnchorDockPageControlClass read FPageControlClass write FPageControlClass;
     property PageClass: TAnchorDockPageClass read FPageClass write FPageClass;
     property HeaderStyleName2ADHeaderStyle:THeaderStyleName2ADHeaderStylesMap read FHeaderStyleName2ADHeaderStyle;
+
+    // for floating windows on top
+    property MainDockForm: TCustomForm read GetMainDockForm write SetMainDockForm;
   end;
 
 var
@@ -1658,15 +1668,17 @@ end;
 procedure TAnchorDockMaster.FormFirstShow(Sender: TObject);
 var
   AForm: TCustomForm absolute Sender;
-  IsMainForm: Boolean;
+  IsMainDockForm: Boolean;
 begin
   if not (Sender is TCustomForm) then Exit;
   if AForm.FormStyle in fsAllStayOnTop then Exit;
-  IsMainForm := (AForm = Application.MainForm)
-                or (AForm.IsParentOf(Application.MainForm))
-                or (GetParentForm(AForm) = Application.MainForm);
-  if IsMainForm then Exit;
-  if FloatingWindowsOnTop then
+  if not FloatingWindowsOnTop then Exit;
+  IsMainDockForm := (AForm = MainDockForm)
+                or (AForm.IsParentOf(MainDockForm))
+                or (GetParentForm(AForm) = MainDockForm);
+  if IsMainDockForm then
+    AForm.FormStyle := fsNormal
+  else
     AForm.FormStyle := fsStayOnTop;
 end;
 
@@ -1676,6 +1688,18 @@ begin
     Result:=HeaderHint
   else
     Result:=adrsDragAndDockC;
+end;
+
+function TAnchorDockMaster.GetMainDockForm: TCustomForm;
+begin
+  if not Assigned(FMainDockForm) then
+    FMainDockForm := Application.MainForm;
+  // Workaround: if FloatingWindowsOnTop is loaded on MainForm.Create
+  // Application.MainForm is not set now, but already in Screen.Forms
+  // see https://bugs.freepascal.org/view.php?id=19272
+  if not Assigned(FMainDockForm) and (Screen.FormCount > 0) then
+    FMainDockForm := Screen.Forms[0];
+  Result := FMainDockForm;
 end;
 
 procedure TAnchorDockMaster.SetHeaderAlignLeft(const AValue: integer);
@@ -2435,6 +2459,13 @@ begin
   FFormStyles.RemoveForm(Form);
 end;
 
+procedure TAnchorDockMaster.SetMainDockForm(AValue: TCustomForm);
+begin
+  if FMainDockForm = AValue then Exit;
+  FMainDockForm := AValue;
+  RefreshFloatingWindowsOnTop;
+end;
+
 function TAnchorDockMaster.DoCreateControl(aName: string;
   DisableAutoSizing: boolean): TControl;
 begin
@@ -2690,6 +2721,40 @@ begin
   AllowDragging:=not AllowDragging;
 end;
 
+procedure TAnchorDockMaster.RefreshFloatingWindowsOnTop;
+var
+  i, AIndex: Integer;
+  AForm, ParentForm: TCustomForm;
+  IsMainDockForm: Boolean;
+  AFormStyle: TFormStyle;
+begin
+  for i := 0 to Screen.FormCount - 1 do
+  begin
+    AForm := Screen.Forms[i];
+    ParentForm := GetParentForm(AForm);
+    if FFloatingWindowsOnTop then
+    begin
+      IsMainDockForm := (AForm = MainDockForm)
+                    or (AForm.IsParentOf(MainDockForm))
+                    or (ParentForm = MainDockForm);
+      if IsMainDockForm then
+        AFormStyle := fsNormal
+      else
+        AFormStyle := fsStayOnTop;
+    end else begin
+      AIndex := FFormStyles.IndexOfForm(AForm);
+      if AIndex >= 0 then
+        AFormStyle := FFormStyles[AIndex].FormStyle
+      else
+        AFormStyle := fsNormal;
+    end;
+    if ParentForm is TAnchorDockHostSite then
+      ParentForm.FormStyle := AFormStyle
+    else
+      AForm.FormStyle := AFormStyle;
+  end;
+end;
+
 procedure TAnchorDockMaster.SetAllowDragging(AValue: boolean);
 begin
   if FAllowDragging=AValue then Exit;
@@ -2783,45 +2848,10 @@ begin
 end;
 
 procedure TAnchorDockMaster.SetFloatingWindowsOnTop(AValue: boolean);
-var
-  i, AIndex: Integer;
-  AMainForm, AForm, ParentForm: TCustomForm;
-  IsMainForm: Boolean;
-  AFormStyle: TFormStyle;
 begin
   if FFloatingWindowsOnTop = AValue then Exit;
   FFloatingWindowsOnTop := AValue;
-  AMainForm := nil;
-  for i:=0 to Screen.FormCount-1 do
-  begin
-    AForm := Screen.Forms[i];
-    ParentForm := GetParentForm(AForm);
-    // Workaround: if FloatingWindowsOnTop is loaded on MainForm.Create
-    // Application.MainForm is not set now, but already in Screen.Forms
-    // see https://bugs.freepascal.org/view.php?id=19272
-    if not Assigned(AMainForm) then AMainForm := Application.MainForm;
-    if not Assigned(AMainForm) then AMainForm := Screen.Forms[0];
-    IsMainForm := (AForm = AMainForm)
-                  or (AForm.IsParentOf(AMainForm))
-                  or (ParentForm = AMainForm);
-    if IsMainForm then Continue;
-    if AValue then
-      AFormStyle := fsStayOnTop
-    else begin
-      AIndex := FFormStyles.IndexOfForm(AForm);
-      if AIndex >= 0 then
-        AFormStyle := FFormStyles[AIndex].FormStyle
-      else
-        AFormStyle := fsNormal;
-    end;
-    if ParentForm is TAnchorDockHostSite then
-    begin
-      ParentForm.FormStyle := AFormStyle;
-      TAnchorDockHostSite(ParentForm).CheckFormStyle;
-      Continue;
-    end;
-    AForm.FormStyle := AFormStyle;
-  end;
+  RefreshFloatingWindowsOnTop;
   OptionsChanged;
 end;
 
@@ -3030,6 +3060,7 @@ constructor TAnchorDockMaster.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FFormStyles:=TFormStyles.Create;
+  FMainDockForm:=nil;
   FControls:=TFPList.Create;
   FAllowDragging:=true;
   FDragTreshold:=4;
@@ -4186,7 +4217,7 @@ procedure TAnchorDockHostSite.CheckFormStyle;
 var
   AControl: TControl;
   AForm: TCustomForm absolute AControl;
-  IsMainForm: Boolean;
+  IsMainDockForm: Boolean;
 begin
   AControl := GetOneControl;
   if not (AControl is TCustomForm) then Exit;
@@ -4197,10 +4228,10 @@ begin
   end;
   if not DockMaster.FloatingWindowsOnTop then
     Exit;
-  IsMainForm := (AForm = Application.MainForm)
-                or (AForm.IsParentOf(Application.MainForm))
-                or (GetParentForm(AForm) = Application.MainForm);
-  if IsMainForm then Exit;
+  IsMainDockForm := (AForm = DockMaster.MainDockForm)
+                or (AForm.IsParentOf(DockMaster.MainDockForm))
+                or (GetParentForm(AForm) = DockMaster.MainDockForm);
+  if IsMainDockForm then Exit;
   FormStyle := fsStayOnTop;
 end;
 
