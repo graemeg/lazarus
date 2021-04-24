@@ -20,7 +20,8 @@ unit Gtk3WSFactory;
 interface
 uses
   Classes, Controls, ComCtrls, Calendar, StdCtrls, Dialogs, ExtCtrls, ExtDlgs,
-  Buttons, Spin, CheckLst, Forms, Menus, ImgList, PairSplitter, WSLCLClasses;
+  Buttons, Spin, CheckLst, Forms, Menus, ImgList, PairSplitter, WSLCLClasses,
+  ShellCtrls;
 
 
 // imglist
@@ -139,7 +140,8 @@ uses
 uses
   Gtk3WSImgList, Gtk3WSControls, Gtk3WSForms, Gtk3WSButtons, Gtk3WSStdCtrls,
   Gtk3WSComCtrls, Gtk3WSExtCtrls, Gtk3WSSpin, Gtk3WSMenus, Gtk3WSCalendar,
-  Gtk3WSDialogs, Gtk3WSCheckLst, Gtk3WSExtDlgs, gtk3wssplitter, Gtk3WSTrayIcon;
+  Gtk3WSDialogs, Gtk3WSCheckLst, Gtk3WSExtDlgs, gtk3wssplitter, Gtk3WSTrayIcon,
+  Gtk3WSShellCtrls;
 
 // imglist
 function RegisterCustomImageListResolution: Boolean; alias : 'WSRegisterCustomImageListResolution';
@@ -625,12 +627,14 @@ end;
 // ShellCtrls
 function RegisterCustomShellTreeView: Boolean; alias : 'WSRegisterCustomShellTreeView';
 begin
-  Result := False;
+  RegisterWSComponent(TCustomShellTreeView, TGTK3WSCustomShellTreeView);
+  Result := True;
 end;
 
 function RegisterCustomShellListView: Boolean; alias : 'WSRegisterCustomShellListView';
 begin
-  Result := False;
+  RegisterWSComponent(TCustomShellListView, TGTK3WSCustomShellListView);
+  Result := True;
 end;
 
 function RegisterLazDeviceAPIs: Boolean; alias : 'WSRegisterLazDeviceAPIs';

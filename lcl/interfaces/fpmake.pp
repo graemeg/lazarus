@@ -177,6 +177,7 @@ begin
     t.Dependencies.AddUnit('gtk2wsmenus');
     t.Dependencies.AddUnit('gtk2wspairsplitter');
     t.Dependencies.AddUnit('gtk2wsprivate');
+    t.Dependencies.AddUnit('gtk2wsshellctrls');
     t.Dependencies.AddUnit('gtk2wsspin');
     t.Dependencies.AddUnit('gtk2wsstdctrls');
     t.Dependencies.AddUnit('unitywsctrls');
@@ -255,6 +256,7 @@ begin
     t.Dependencies.AddUnit('qtwsimglist');
     t.Dependencies.AddUnit('qtwsmenus');
     t.Dependencies.AddUnit('qtwspairsplitter');
+    t.Dependencies.AddUnit('qtwsshellctrls');
     t.Dependencies.AddUnit('qtwsspin');
     t.Dependencies.AddUnit('qtwsstdctrls');
     t.Dependencies.AddUnit('cocoawsbuttons');
@@ -317,6 +319,7 @@ begin
     t.Dependencies.AddUnit('gtk3wsimglist');
     t.Dependencies.AddUnit('gtk3wsmenus');
     t.Dependencies.AddUnit('gtk3wsspin');
+    t.Dependencies.AddUnit('gtk3wsshellctrls');
     t.Dependencies.AddUnit('gtk3wsstdctrls');
     t.Dependencies.AddUnit('gtk3wscalendar');
     t.Dependencies.AddUnit('lazatk1');
@@ -509,6 +512,7 @@ begin
     P.Targets.AddImplicitUnit('gtk2/gtk2wsmenus.pp');
     P.Targets.AddImplicitUnit('gtk2/gtk2wspairsplitter.pp');
     P.Targets.AddImplicitUnit('gtk2/gtk2wsprivate.pp');
+    P.Targets.AddImplicitUnit('gtk2/gtk2wsshellctrls.pp');
     P.Targets.AddImplicitUnit('gtk2/gtk2wsspin.pp');
     P.Targets.AddImplicitUnit('gtk2/gtk2wsstdctrls.pp');
     P.Targets.AddImplicitUnit('gtk2/unitywsctrls.pas');
@@ -588,6 +592,7 @@ begin
     P.Targets.AddImplicitUnit('qt/qtwsmenus.pp');
     P.Targets.AddImplicitUnit('qt/qtwspairsplitter.pp');
     P.Targets.AddImplicitUnit('qt/qtwsspin.pp');
+    P.Targets.AddImplicitUnit('qt/qtwsshellctrls.pp');
     P.Targets.AddImplicitUnit('qt/qtwsstdctrls.pp');
     P.Targets.AddImplicitUnit('cocoa/cocoawsbuttons.pas');
     P.Targets.AddImplicitUnit('customdrawn/customdrawn_winproc.pas');
@@ -649,6 +654,7 @@ begin
     P.Targets.AddImplicitUnit('gtk3/gtk3wsimglist.pp');
     P.Targets.AddImplicitUnit('gtk3/gtk3wsmenus.pp');
     P.Targets.AddImplicitUnit('gtk3/gtk3wsspin.pp');
+    P.Targets.AddImplicitUnit('gtk3/gtk3wsshellctrls.pp');
     P.Targets.AddImplicitUnit('gtk3/gtk3wsstdctrls.pp');
     P.Targets.AddImplicitUnit('gtk3/gtk3wscalendar.pp');
     P.Targets.AddImplicitUnit('gtk3/gtk3bindings/lazatk1.pas');
