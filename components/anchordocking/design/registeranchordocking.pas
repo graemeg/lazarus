@@ -83,6 +83,7 @@ type
       const AAdjustHeight: Boolean; const ANewHeight: Integer); override;
     procedure CloseAll; override;
     procedure ResetSplitters; override;
+    procedure SetMainDockWindow(AForm: TCustomForm); override;
   end;
 
   { TAnchorDockIDEFrame }
@@ -235,6 +236,14 @@ end;
 procedure TIDEAnchorDockMaster.ResetSplitters;
 begin
   DockMaster.ResetSplitters;
+end;
+
+procedure TIDEAnchorDockMaster.SetMainDockWindow(AForm: TCustomForm);
+begin
+  {$IFDEF VerboseAnchorDocking}
+  debugln(['TIDEAnchorDockMaster.SetMainDockWindow ',DbgSName(AForm)]);
+  {$ENDIF}
+  DockMaster.MainDockForm := AForm;
 end;
 
 procedure TIDEAnchorDockMaster.MakeIDEWindowDockable(AControl: TWinControl);

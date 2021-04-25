@@ -134,8 +134,8 @@ end;
 
 procedure TAnchorDesktopOpt.LoadDefaults;
 begin
-  LoadDefaultLayout;
   LoadLegacyAnchorDockOptions;
+  LoadDefaultLayout;
 end;
 
 procedure TAnchorDesktopOpt.ImportSettingsFromIDE;

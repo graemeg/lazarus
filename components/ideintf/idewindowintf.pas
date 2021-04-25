@@ -446,6 +446,7 @@ type
     procedure CloseAll; virtual; // close all forms, called after IDE has saved all and shuts down
     procedure ResetSplitters; virtual; abstract; // if the dock site has been resized after loading, you have to reset (percentual) splitters
     function DockedDesktopOptClass: TAbstractDesktopDockingOptClass; virtual; abstract;
+    procedure SetMainDockWindow(AForm: TCustomForm); virtual; abstract;
   end;
 
   TIDEWindowGlobalOption = class

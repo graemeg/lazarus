@@ -623,6 +623,8 @@ begin
   AllowDropFiles:=true;
   Scaled:=true;
   OnDropFiles:=@MainIDEBarDropFiles;
+  if Assigned(IDEDockMaster) then
+    IDEDockMaster.SetMainDockWindow(Self);
   {$IFNDEF LCLGtk2}
   try
     Icon.LoadFromResourceName(HInstance, 'WIN_MAIN');
