@@ -61,6 +61,7 @@ type
     FNodeType: TADLTreeNodeType;
     FPageIndex: integer;
     FParent: TAnchorDockLayoutTreeNode;
+    FPixelsPerInch: Integer;
     FWorkAreaRect: TRect;
     FTabPosition: TTabPosition;
     FWindowState: TWindowState;
@@ -87,6 +88,7 @@ type
     procedure SetNodeType(const AValue: TADLTreeNodeType);
     procedure SetPageIndex(AValue: integer);
     procedure SetParent(const AValue: TAnchorDockLayoutTreeNode);
+    procedure SetPixelsPerInch(AValue: Integer);
     procedure SetRight(const AValue: integer);
     procedure SetWorkAreaRect(const AValue: TRect);
     procedure SetTabPosition(const AValue: TTabPosition);
@@ -132,6 +134,7 @@ type
     property Bottom: integer read GetBottom write SetBottom;
     property BoundsRect: TRect read FBoundsRect write SetBoundsRect;
     property BoundSplitterPos: integer read FBoundSplitterPos write SetBoundSplitterPos;
+    property PixelsPerInch: Integer read FPixelsPerInch write SetPixelsPerInch;
     property WorkAreaRect: TRect read FWorkAreaRect write SetWorkAreaRect;
     property Anchors[Site: TAnchorKind]: string read GetAnchors write SetAnchors; // empty means default (parent)
     property Align: TAlign read FAlign write SetAlign;
@@ -772,6 +775,8 @@ procedure DebugWriteChildAnchors(RootNode: TAnchorDockLayoutTreeNode);
       DbgOut(' Monitor=',dbgs(Node.Monitor));
     if Node.BoundSplitterPos<>0 then
       DbgOut(' SplitterPos=',dbgs(Node.BoundSplitterPos));
+    if Node.PixelsPerInch<>0 then
+      DbgOut(' PixelsPerInch=',dbgs(Node.PixelsPerInch));
     if (Node.WorkAreaRect.Right>0) and (Node.WorkAreaRect.Bottom>0) then
       DbgOut(' WorkArea=',dbgs(Node.WorkAreaRect));
     debugln;
@@ -980,6 +985,13 @@ begin
   IncreaseChangeStamp;
 end;
 
+procedure TAnchorDockLayoutTreeNode.SetPixelsPerInch(AValue: Integer);
+begin
+  if FPixelsPerInch=AValue then Exit;
+  FPixelsPerInch:=AValue;
+  IncreaseChangeStamp;
+end;
+
 procedure TAnchorDockLayoutTreeNode.SetRight(const AValue: integer);
 begin
   if Right=AValue then exit;
@@ -1058,6 +1070,7 @@ begin
   TabPosition:=tpTop;
   PageIndex:=0;
   BoundSplitterPos:=0;
+  PixelsPerInch:=0;
   WorkAreaRect:=Rect(0,0,0,0);
   for a:=low(TAnchorKind) to high(TAnchorKind) do
     Anchors[a]:='';
@@ -1080,6 +1093,7 @@ begin
   or (TabPosition<>Node.TabPosition)
   or (PageIndex<>Node.PageIndex)
   or (BoundSplitterPos<>Node.BoundSplitterPos)
+  or (PixelsPerInch<>Node.PixelsPerInch)
   or (not CompareRect(@FWorkAreaRect,@Node.FWorkAreaRect))
   then
     exit;
@@ -1105,6 +1119,7 @@ begin
   TabPosition:=Node.TabPosition;
   PageIndex:=Node.PageIndex;
   BoundSplitterPos:=Node.BoundSplitterPos;
+  PixelsPerInch:=Node.PixelsPerInch;
   WorkAreaRect:=Node.WorkAreaRect;
   Monitor:=Node.Monitor;
   Minimized:=Node.Minimized;
@@ -1138,6 +1153,7 @@ begin
   if (AControl.Parent=nil) and (AControl is TCustomForm) then begin
     WindowState:=TCustomForm(AControl).WindowState;
     Monitor:=TCustomForm(AControl).Monitor.MonitorNum;
+    PixelsPerInch:=TCustomForm(AControl).PixelsPerInch;
     WorkAreaRect:=TCustomForm(AControl).Monitor.WorkareaRect;
   end else begin
     ParentForm:=GetParentForm(AControl);
@@ -1189,6 +1205,7 @@ begin
   PageIndex:=Config.GetValue('Header/PageIndex',0);
   Monitor:=Config.GetValue('Monitor',0);
   NewCount:=Config.GetValue('ChildCount',0);
+  PixelsPerInch:=Config.GetValue('PixelsPerInch',96);
   for i:=1 to NewCount do begin
     Config.AppendBasePath('Item'+IntToStr(i)+'/');
     Child:=TAnchorDockLayoutTreeNode.Create;
@@ -1225,6 +1242,7 @@ begin
   PageIndex:=Config.GetValue(Path+'Header/PageIndex',0);
   Monitor:=Config.GetValue(Path+'Monitor',0);
   NewCount:=Config.GetValue(Path+'ChildCount',0);
+  PixelsPerInch:=Config.GetValue(Path+'PixelsPerInch',96);
   for i:=1 to NewCount do
   begin
     Child:=TAnchorDockLayoutTreeNode.Create;
@@ -1261,6 +1279,7 @@ begin
   Config.SetDeleteValue('Minimized',Minimized,False);
   Config.SetDeleteValue('Monitor',Monitor,0);
   Config.SetDeleteValue('ChildCount',Count,0);
+  Config.SetDeleteValue('PixelsPerInch',PixelsPerInch,96);
   for i:=1 to Count do begin
     Config.AppendBasePath('Item'+IntToStr(i)+'/');
     Nodes[i-1].SaveToConfig(Config);
@@ -1296,6 +1315,7 @@ begin
   Config.SetDeleteValue(Path+'Minimized',Minimized,False);
   Config.SetDeleteValue(Path+'Monitor',Monitor,0);
   Config.SetDeleteValue(Path+'ChildCount',Count,0);
+  Config.SetDeleteValue(Path+'PixelsPerInch',PixelsPerInch,96);
   for i:=1 to Count do
     Nodes[i-1].SaveToConfig(Path+'Item'+IntToStr(i)+'/', Config);
 end;

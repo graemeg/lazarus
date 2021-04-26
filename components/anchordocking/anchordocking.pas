@@ -2146,6 +2146,7 @@ var
 begin
   if Site is TCustomForm then begin
     Site.Align:=alNone;
+    TCustomForm(Site).DesignTimePPI:=ANode.PixelsPerInch;
     if AParent=nil then
       TCustomForm(Site).WindowState:=ANode.WindowState
     else
