@@ -34,7 +34,7 @@ procedure TSpinEditExBase.UpdateControl;
 var
   ANumber: T;
 begin
-  if (MaxValue < MinValue) then FMaxValue := MinValue;
+  //if (MaxValue < MinValue) then FMaxValue := MinValue;
   if (FNullValueBehaviour <> nvbShowTextHint) then
     FValue := GetLimitedValue(FValue);
   if (not HandleAllocated) then Exit;
