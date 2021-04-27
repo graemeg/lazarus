@@ -1245,7 +1245,7 @@ var
 
     ALogFontA.lfHeight := pango_font_description_get_size(Font);
     if not pango_font_description_get_size_is_absolute(Font) then
-      ALogFontA.lfHeight := ALogFontA.lfHeight div PANGO_SCALE;
+      ALogFontA.lfHeight := PANGO_PIXELS(ALogFontA.lfHeight);
 
     // pango does not have underline and strikeout params for font
     // ALogFontA.lfUnderline := ;
@@ -2631,10 +2631,10 @@ begin
     FillChar(TM, SizeOf(TM), #0);
 
     TM.tmAveCharWidth := Max(1,
-               pango_font_metrics_get_approximate_char_width(APangoMetrics)
-               div PANGO_SCALE);
-    TM.tmAscent := APangoMetrics^.get_ascent div PANGO_SCALE;
-    TM.tmDescent := APangoMetrics^.get_descent div PANGO_SCALE;
+               PANGO_PIXELS(pango_font_metrics_get_approximate_char_width(APangoMetrics))
+               );
+    TM.tmAscent := PANGO_PIXELS(APangoMetrics^.get_ascent);
+    TM.tmDescent := PANGO_PIXELS(APangoMetrics^.get_descent);
 
     TM.tmHeight := TM.tmAscent + TM.tmDescent;
 

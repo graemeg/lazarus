@@ -715,12 +715,12 @@ begin
     sz:=fHandle^.get_size;
     if fHandle^.get_size_is_absolute then
     begin
-      sz:= sz div PANGO_SCALE;
+      sz:= PANGO_PIXELS(sz);
     end else
     begin
       { in points }
       //sz:=round(96*sz/PANGO_SCALE/72);//round(2.03*sz/PANGO_SCALE);
-      sz := MulDiv(sz, 96{Screen.PixelsPerInch}, 72 * PANGO_SCALE)
+      sz := MulDiv(PANGO_PIXELS(sz), 96{Screen.PixelsPerInch}, 72 )
     end;
 
     fLogFont.lfHeight:=sz;//round(sz/PANGO_SCALE);

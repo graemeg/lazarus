@@ -431,8 +431,6 @@ end;
 class procedure TGtk3WSWinControl.SetFont(const AWinControl: TWinControl; const AFont: TFont);
 var
   AWidget: TGtk3Widget;
-  AGtkFont: PPangoFontDescription;
-  APangoStyle: TPangoStyle;
 begin
   if not WSCheckHandleAllocated(AWinControl, 'SetFont') then
     Exit;
@@ -442,28 +440,7 @@ begin
   ' pxPerInch ',dbgs(AFont.PixelsPerInch));
   {$ENDIF}
   AWidget := TGtk3Widget(AWinControl.Handle);
-  if IsFontNameDefault(AFont.Name) then
-  begin
-    AGtkFont := TGtk3Widget(AWinControl.Handle).Font;
-    if AFont.Size <> 0 then
-      pango_font_description_set_absolute_size(AGtkFont, Abs(AFont.Size) * PANGO_SCALE);
-  end else
-  begin
-    AGtkFont := pango_font_description_from_string(PgChar(AFont.Name));
-    pango_font_description_set_family(AGtkFont, PgChar(AFont.Name));
-    if AFont.Size <> 0 then
-      pango_font_description_set_size(AGtkFont, Abs(AFont.Size) * PANGO_SCALE);
-  end;
-
-  if fsItalic in AFont.Style then
-    APangoStyle := PANGO_STYLE_ITALIC
-  else
-    APangoStyle := PANGO_STYLE_NORMAL;
-  pango_font_description_set_style(AGtkFont, APangoStyle);
-  if fsBold in AFont.Style then
-    pango_font_description_set_weight(AGtkFont, PANGO_WEIGHT_BOLD);
-  AWidget.Font := AGtkFont;
-  AWidget.FontColor := AFont.Color;
+  AWidget.SetLclFont(AFont);
 end;
 
 class procedure TGtk3WSWinControl.SetPos(const AWinControl: TWinControl; const ALeft, ATop: Integer);

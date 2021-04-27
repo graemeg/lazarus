@@ -158,6 +158,7 @@ type
     function getClientBounds: TRect; virtual;
 
     procedure SetBounds(ALeft,ATop,AWidth,AHeight:integer);virtual;
+    procedure SetLclFont(const AFont:TFont);virtual;
 
     function GetContainerWidget: PGtkWidget; virtual;
     function GetPosition(out APoint: TPoint): Boolean; virtual;
@@ -884,7 +885,7 @@ function Gtk3WidgetEvent(widget: PGtkWidget; event: PGdkEvent; data: GPointer): 
 
 implementation
 
-uses gtk3int,imglist;
+uses gtk3int,imglist,lclproc;
 
 const
   GDK_DEFAULT_EVENTS_MASK: TGdkEventMask =
@@ -2663,7 +2664,6 @@ begin
 
     LCLObject.Constraints.MinHeight:=mh;
     LCLObject.Constraints.MinWidth:=mw;
-
   end;
   LCLIntf.SetProp(HWND(Self),'lclwidget',Self);
 
@@ -2971,6 +2971,35 @@ begin
   finally
     EndUpdate;
   end;
+end;
+
+procedure TGtk3Widget.SetLclFont(const AFont:TFont);
+var
+  AGtkFont: PPangoFontDescription;
+  APangoStyle: TPangoStyle;
+begin
+  if not IsWidgetOk then exit;
+  if IsFontNameDefault(AFont.Name) then
+  begin
+    AGtkFont := Self.Font;
+  end else
+  begin
+    AGtkFont := pango_font_description_from_string(PgChar(AFont.Name));
+    AGtkFont^.set_family(PgChar(AFont.Name));
+  end;
+
+  if AFont.Size <> 0 then
+    AGtkFont^.set_size(Abs(AFont.Size) * PANGO_SCALE);
+
+  if fsItalic in AFont.Style then
+    APangoStyle := PANGO_STYLE_ITALIC
+  else
+    APangoStyle := PANGO_STYLE_NORMAL;
+  AGtkFont^.set_style(APangoStyle);
+  if fsBold in AFont.Style then
+    AGtkFont^.set_weight(PANGO_WEIGHT_BOLD);
+  Font := AGtkFont;
+  FontColor := AFont.Color;
 end;
 
 function TGtk3Widget.GetContainerWidget: PGtkWidget;

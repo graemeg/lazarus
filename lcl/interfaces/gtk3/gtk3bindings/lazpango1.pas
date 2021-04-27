@@ -26,6 +26,9 @@ const
   PANGO_UNKNOWN_GLYPH_HEIGHT = 14;
   PANGO_UNKNOWN_GLYPH_WIDTH = 10;
 
+  function PANGO_PIXELS(d:integer):integer;inline;
+
+
 type
   TPangoAlignment = Integer;
 const
@@ -1467,6 +1470,12 @@ procedure pango_tab_array_get_tabs(tab_array: PPangoTabArray; alignments: PPPang
 procedure pango_tab_array_resize(tab_array: PPangoTabArray; new_size: gint); cdecl; external;
 procedure pango_tab_array_set_tab(tab_array: PPangoTabArray; tab_index: gint; alignment: TPangoTabAlign; location: gint); cdecl; external;
 implementation
+
+function PANGO_PIXELS(d:integer):integer;
+begin
+  Result:=((d + 512) shr 10);
+end;
+
 function TPangoGlyphItem.apply_attrs(text: Pgchar; list: PPangoAttrList): PGSList; cdecl;
 begin
   Result := LazPango1.pango_glyph_item_apply_attrs(@self, text, list);

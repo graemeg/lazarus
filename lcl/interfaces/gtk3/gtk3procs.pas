@@ -380,10 +380,10 @@ function RectFromPangoRect(APangoRect: TPangoRectangle): TRect;
 begin
   with APangoRect do
   begin
-    Result.Left := x div PANGO_SCALE;
-    Result.Top := y div PANGO_SCALE;
-    Result.Right := (Width div PANGO_SCALE) + (x div PANGO_SCALE);
-    Result.Bottom := (Height div PANGO_SCALE) + (y div PANGO_SCALE);
+    Result.Left := PANGO_PIXELS(x);
+    Result.Top := PANGO_PIXELS(y);
+    Result.Right := PANGO_PIXELS(Width+x);
+    Result.Bottom := PANGO_PIXELS(Height+y);
   end;
 end;
 
