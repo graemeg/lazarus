@@ -12,11 +12,10 @@
 
 procedure TCustomFloatSpinEdit.UpdateControl;
 begin
-  if MaxValue < MinValue then FMaxValue := MinValue;
+  // Both Min and Max can be < 0 and Max is read first. Don't adjust. Issue #38810.
+  //if MaxValue < MinValue then FMaxValue := MinValue;
   FValue := GetLimitedValue(FValue);
-  
   if (not HandleAllocated) then Exit;
-
   if ([csLoading, csDestroying] * ComponentState <> []) then
     FUpdatePending := True
   else
