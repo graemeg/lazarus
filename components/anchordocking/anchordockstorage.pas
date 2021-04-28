@@ -1070,7 +1070,7 @@ begin
   TabPosition:=tpTop;
   PageIndex:=0;
   BoundSplitterPos:=0;
-  PixelsPerInch:=0;
+  PixelsPerInch:=96;
   WorkAreaRect:=Rect(0,0,0,0);
   for a:=low(TAnchorKind) to high(TAnchorKind) do
     Anchors[a]:='';

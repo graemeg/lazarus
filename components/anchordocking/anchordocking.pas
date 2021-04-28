@@ -685,6 +685,7 @@ type
     procedure PopupMenuPopup(Sender: TObject);
     procedure ChangeLockButtonClick(Sender: TObject);
     procedure RefreshFloatingWindowsOnTop;
+    function ScaleBoundsRect(ARect: TRect; FromDPI, ToDPI: integer): TRect;
     function ScaleChildX(p: integer): integer;
     function ScaleChildY(p: integer): integer;
     function ScaleTopLvlX(p: integer): integer;
@@ -2143,18 +2144,22 @@ var
   NewBounds: TRect;
   aMonitor: TMonitor;
   aHostSite: TAnchorDockHostSite;
+  ParentForm: TCustomForm;
 begin
   if Site is TCustomForm then begin
     Site.Align:=alNone;
-    TCustomForm(Site).DesignTimePPI:=ANode.PixelsPerInch;
+    TCustomForm(Site).PixelsPerInch:=Screen.PixelsPerInch;
     if AParent=nil then
       TCustomForm(Site).WindowState:=ANode.WindowState
     else
       TCustomForm(Site).WindowState:=wsNormal;
-  end else
-    GetParentForm(Site).WindowState:=ANode.WindowState;
+  end else begin
+    ParentForm:=GetParentForm(Site);
+    ParentForm.WindowState:=ANode.WindowState;
+    ParentForm.PixelsPerInch:=Screen.PixelsPerInch;
+  end;
   if Site is TAnchorDockPanel then
-    GetParentForm(Site).BoundsRect:=ANode.BoundsRect
+    ParentForm.BoundsRect:=ScaleBoundsRect(ANode.BoundsRect,ANode.PixelsPerInch,Screen.PixelsPerInch)
   else begin
     if AParent=nil then begin
       if (ANode.Monitor>=0) and (ANode.Monitor<Screen.MonitorCount) then
@@ -2163,7 +2168,7 @@ begin
         if Site is TCustomForm then
           aMonitor:=TCustomForm(Site).Monitor
         else
-          aMonitor:=GetParentForm(Site).Monitor;
+          aMonitor:=ParentForm.Monitor;
       end;
       WorkArea:=aMonitor.WorkareaRect;
       {$IFDEF VerboseAnchorDockRestore}
@@ -2180,7 +2185,7 @@ begin
   end;
   Site.Constraints.MaxWidth:=0;
   Site.Constraints.MaxHeight:=0;
-  NewBounds:=ANode.BoundsRect;
+  NewBounds:=ScaleBoundsRect(ANode.BoundsRect,ANode.PixelsPerInch,Screen.PixelsPerInch);
   if AParent=nil then begin
     NewBounds:=Rect(ScaleTopLvlX(NewBounds.Left),ScaleTopLvlY(NewBounds.Top),
                     ScaleTopLvlX(NewBounds.Right),ScaleTopLvlY(NewBounds.Bottom));
@@ -2210,7 +2215,10 @@ begin
     {$IFDEF VerboseAnchorDockRestore}
     debugln(['TAnchorDockMaster.RestoreLayout.SetupSite custom Site=',DbgSName(Site),' Site.Bounds=',dbgs(Site.BoundsRect),' BoundSplitterPos=',aNode.BoundSplitterPos]);
     {$ENDIF}
-    aManager.RestoreSite(ANode.BoundSplitterPos);
+    if Application.Scaled then
+      aManager.RestoreSite(MulDiv(ANode.BoundSplitterPos,Screen.PixelsPerInch,ANode.PixelsPerInch))
+    else
+      aManager.RestoreSite(ANode.BoundSplitterPos);
     Site.HostDockSite:=AParent;
   end;
   if Site is TAnchorDockHostSite then begin
@@ -2330,7 +2338,7 @@ function TAnchorDockMaster.RestoreLayout(Tree: TAnchorDockLayoutTree;
       debugln(['TAnchorDockMaster.RestoreLayout.Restore Splitter Node.Name=',aNode.Name,' ',dbgs(aNode.NodeType),' Splitter=',DbgSName(Splitter)]);
       {$ENDIF}
       Splitter.Parent:=AParent;
-      NewBounds:=ANode.BoundsRect;
+      NewBounds:=ScaleBoundsRect(ANode.BoundsRect,ANode.PixelsPerInch,Screen.PixelsPerInch);
       if SrcRectValid(SrcWorkArea) then
         NewBounds:=Rect(ScaleChildX(NewBounds.Left),ScaleChildY(NewBounds.Top),
           ScaleChildX(NewBounds.Right),ScaleChildY(NewBounds.Bottom));
@@ -2754,6 +2762,21 @@ begin
     else
       AForm.FormStyle := AFormStyle;
   end;
+end;
+
+function TAnchorDockMaster.ScaleBoundsRect(ARect: TRect; FromDPI, ToDPI: integer): TRect;
+begin
+  if not Application.Scaled or (FromDPI <= 0) or (ToDPI <= 0) then
+    Result := ARect
+  else begin
+    Result.Left  :=MulDiv(ARect.Left  ,ToDPI,FromDPI);
+    Result.Top   :=MulDiv(ARect.Top   ,ToDPI,FromDPI);
+    Result.Width :=MulDiv(ARect.Width ,ToDPI,FromDPI);
+    Result.Height:=MulDiv(ARect.Height,ToDPI,FromDPI);
+  end;
+  {$IFDEF VerboseAnchorDockRestore}
+  debugln(['TAnchorDockMaster.ScaleBoundsRect FromDPI=',FromDPI,' ToDPI=',ToDPI,' FromRect[',dbgs(ARect),'] ToRect[',dbgs(Result),']']);
+  {$ENDIF}
 end;
 
 procedure TAnchorDockMaster.SetAllowDragging(AValue: boolean);
@@ -6322,6 +6345,7 @@ begin
     else
       LayoutNode.BoundSplitterPos:=BoundSplitter.Top;
   end;
+  LayoutNode.PixelsPerInch:=Screen.PixelsPerInch;
 end;
 
 constructor TAnchorDockHostSite.CreateNew(AOwner: TComponent; Num: Integer);
@@ -7732,9 +7756,9 @@ begin
   else
     LayoutNode.NodeType:=adltnSplitterHorizontal;
   LayoutNode.Assign(Self,false,false);
-  if not Enabled then begin
+  if not Enabled then
     LayoutNode.BoundsRect:=GetSpliterBoundsWithUnminimizedDockSites;
-  end
+  LayoutNode.PixelsPerInch:=Screen.PixelsPerInch;
 end;
 
 function TAnchorDockSplitter.HasOnlyOneSibling(Side: TAnchorKind; MinPos,
