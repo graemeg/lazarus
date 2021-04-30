@@ -2938,6 +2938,16 @@ begin
   Result:=HMONITOR(nmon+1);
 end;
 
+function TGtk3WidgetSet.MonitorFromWindow(hWnd: HWND; dwFlags: DWord): HMONITOR;
+var
+  pscr:PGdkScreen;
+  nmon:gint;
+begin
+  pscr:=TGdkScreen.get_default;
+  nmon:=pscr^.get_monitor_at_window(TGtk3Widget(hWnd).GetWindow);
+  Result:=HMONITOR(nmon+1);
+end;
+
 function TGtk3WidgetSet.MoveToEx(DC: HDC; X, Y: Integer; OldPoint: PPoint
   ): Boolean;
 begin

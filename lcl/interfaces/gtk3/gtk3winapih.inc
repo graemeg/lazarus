@@ -167,6 +167,7 @@ function LPtoDP(DC: HDC; var Points; Count: Integer): BOOL; override;
 
 function MessageBox({%H-}hWnd: HWND; lpText, lpCaption: PChar; uType: Cardinal): integer; override;
 function MonitorFromPoint(ptScreenCoords: TPoint; dwFlags: DWord): HMONITOR;override;
+function MonitorFromWindow(hWnd: HWND; dwFlags: DWord): HMONITOR;override;
 function MoveToEx(DC: HDC; X, Y: Integer; OldPoint: PPoint): Boolean; override;
 
 function OffsetRgn(RGN: HRGN; nXOffset, nYOffset: Integer): Integer; override;

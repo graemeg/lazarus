@@ -87,7 +87,7 @@ begin
   DebugLn('TGtk3WSBitBtn.CreateHandle');
   {$ENDIF}
   ABitBtn := TGtk3Button.Create(AWinControl, AParams);
-  with ARect do
+{  with ARect do
   begin
     x := AWinControl.Left;
     y := AWinControl.Top;
@@ -95,7 +95,7 @@ begin
     height := AWinControl.Height;
   end;
 
-  ABitBtn.Widget^.set_allocation(@ARect);
+  ABitBtn.Widget^.set_allocation(@ARect);}
 
   Result := TLCLIntfHandle(ABitBtn);
   {$IFDEF GTK3DEBUGCORE}
