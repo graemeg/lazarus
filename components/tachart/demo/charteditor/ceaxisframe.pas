@@ -239,7 +239,10 @@ begin
     TitleMemoPanel.BorderSpacing.Around * 2;
 
   PreferredHeight :=
-    gbTicks.Top + gbTicks.Height + gbTicks.BorderSpacing.Bottom +
+    Max(
+      gbTicks.Top + gbTicks.Height + gbTicks.BorderSpacing.Bottom,
+      gbShapeFillBorder.Top + gbShapeFillBorder.Height + gbShapeFillBorder.BorderSpacing.Bottom
+    ) +
     PageControl.Height - PageControl.ClientHeight +
     PanelTop.Height;
 end;

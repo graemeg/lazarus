@@ -292,6 +292,7 @@ end;
 
 procedure TChartEditorForm.FormCreate(Sender: TObject);
 begin
+  ceImages.ChartImagesDM.ChartImages.GetBitmap(7, ButtonPanel.CloseButton.Glyph);
   Tree.Items.BeginUpdate;
   try
     Tree.Items.Clear;
