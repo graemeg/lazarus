@@ -406,7 +406,6 @@
           <link id="TCustomScrollBar.CreateWnd"/>
           <link id="#lcl.lcltype.TCreateParams">TCreateParams</link>
         </seealso>
-        <notes><note>What is FRTLFactor?</note></notes>
       </element>
       <element name="TCustomScrollBar.CreateParams.Params">
         <short>The creation parameters and flags for the instance</short>
@@ -1710,7 +1709,6 @@
         <short>Handles key up events forwarded from the LCL interface</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TCustomComboBox.KeyUpAfterInterface.Key">
         <short>Key code examined in the method</short>
@@ -3272,7 +3270,6 @@
       </element>
       <element name="TListBoxStyle.lbVirtual">
         <short>Not used in the current LCL version</short>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TSelectionChangeEvent">
@@ -4680,13 +4677,7 @@
           <p>
             The value in ItemHeight may be scaled when <var>AutoAdjustLayout</var> is called using a layout policy that includes auto-adjustment for display density.
           </p>
-          <p>
-            ItemHeight support has been implemented for Windows, GTK, GTK2, and MacOS Carbon and Cocoa widgetsets. It has not been implemented for Qt4 or Qt5.
-          </p>
         </descr>
-        <notes>
-          <note>Platform support still correct?</note>
-        </notes>
       </element>
 
       <element name="TListBox.MultiSelect" link="#lcl.stdctrls.TCustomListBox.MultiSelect"/>
@@ -5721,7 +5712,6 @@
           </p>
         </descr>
         <seealso/>
-        <notes><note>Is key handling the same on all platforms?</note></notes>
       </element>
 
       <element name="TCustomEdit.PasteFromClipboard">
@@ -5784,7 +5774,6 @@
         <short>Adds the specified OnChange event handler to the control</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TCustomEdit.AddHandlerOnChange.AnOnChangeEvent">
         <short>Event handler added in the method</short>
@@ -6381,7 +6370,6 @@ end;
           <link id="#rtl.classes.TStrings.Text">TStrings.Text</link>
           <link id="#LCL.Controls.TControl.RealGetText">TControl.RealGetText</link>
         </seealso>
-        <notes><note>?</note></notes>
       </element>
       <element name="TCustomMemo.RealGetText.Result">
         <short>The entire text in a single string</short>
@@ -6403,7 +6391,6 @@ end;
             Sets the value for the control from a single string. Lines are separated by LineFeed (LF) and/or CarriageReturn (CR) characters.
           </p>
         </descr>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TCustomMemo.GetCachedText" link="#lcl.controls.TControl.GetCachedText">
@@ -7269,13 +7256,12 @@ end;
         <short>Control to display a text value which does not change</short>
         <descr>
           <p>
-            This control can be used instead of TLabel, when a TWinControl descendant is required.
+            <var>TStaticText</var> is a <var>TCustomStaticText</var> descendant which implements a control used to display text that does not change. It can be used in place of TLabel for situations where a TWinControl descendant is required. It has a window handle, and allows the accelerator key for the control to be forwarded to another windowed control.
           </p>
         </descr>
         <seealso>
           <link id="HowToUseStdCtrls"/>
         </seealso>
-        <notes><note>Needs more description.</note></notes>
       </element>
 
       <element name="TStaticText.Align" link="#lcl.controls.TControl.Align"/>
@@ -8151,6 +8137,9 @@ end;
             The value in ShortCut is automatically updated when a caption is assigned for the control which includes an accelerator key. The accelerator key is designated using an Ampersand (&amp;) character before the character used as the short cut. A value assigned in this manner always includes the ssCtrl modifier in the short cut value by default.
           </p>
           <p>
+            The property value (along with ShortcutKey2) is passed to the widgetset class when the WSSetText method is called.
+          </p>
+          <p>
             Use the <var>ShortCut</var> and <var>ShortCutToKey</var> routines in the <file>menu.pp</file> unit to convert to and from virtual key codes with shift modifiers.
           </p>
         </descr>
@@ -8161,11 +8150,13 @@ end;
         <short>Secondary shortcut key for the control</short>
         <descr>
           <p>
-            ShortCutKey2 is a TShortCut property with the secondary shortcut key or accelerator key for the control.
+            ShortCutKey2 is a TShortCut property with the secondary shortcut key or accelerator key for the control. The property value contains both the virtual  key code and the shift modifier for the short cut key. The property value (along with Shortcut) is passed to the widgetset class when the WSSetText method is called.
+          </p>
+          <p>
+            Use the <var>ShortCut</var> and <var>ShortCutToKey</var> routines in the <file>menu.pp</file> unit to convert to and from virtual key codes with shift modifiers.
           </p>
         </descr>
         <seealso/>
-        <notes><note>Is this implemented mainly for use in the Lazarus IDE?</note></notes>
       </element>
 
       <element name="TCustomButton.TabStop" link="#lcl.controls.TWinControl.TabStop">
@@ -8583,7 +8574,7 @@ end;
         <short>Shortcut key for the control</short>
         <descr>
           <p>
-            <var>ShortCut</var> is a <var>TShortCut</var> property with the primary shortcut key or accelerator key for the control. The property value contains both the virtual  key code and the shift modifier for the short cut  key.
+            <var>ShortCut</var> is a <var>TShortCut</var> property with the primary shortcut key or accelerator key for the control. The property value contains both the virtual key code and the shift modifier for the short cut key.
           </p>
           <p>
             The value in ShortCut is automatically updated when a caption is assigned for the control which includes an accelerator key. The accelerator key is designated using an Ampersand (&amp;) character before the character used as the short cut. A value assigned in this manner always includes the ssCtrl modifier in the short cut value by default.
@@ -8599,11 +8590,19 @@ end;
         <short>Secondary shortcut key for the control</short>
         <descr>
           <p>
-            Secondary shortcut key for the control.
+            <var>ShortCutKey2</var> is a <var>TShortCut</var> property with the secondary  shortcut key or accelerator key for the control. The property value contains both the virtual key code and the shift modifier cobined to form the short cut key.
           </p>
+          <p>
+            The property value (along with Shortcut) is passed to the widgetst class when the WSSetText method is called.
+          </p>
+          <p>
+            Use the <var>ShortCut</var> and <var>ShortCutToKey</var> routines in the <file>menu.pp</file> unit to convert to and from virtual key codes with shift modifiers.
+          </p>
+          <remark>
+            ShortCutKey2 may not be implemented for all platforms supported in the LCL.
+          </remark>
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TCustomCheckBox.TabStop" link="#lcl.controls.TWinControl.TabStop"/>

@@ -6478,10 +6478,6 @@
           <p>For the Windows platform, the <var>TBitmap</var> format is expected in Picture. For all other platforms, the <var>TPortableNetworkGraphic</var> format is expected. DoCopyToClipboard calls the <var>AddFormat</var> method in Clipboard when needed. If Picture uses a <var>Graphic</var> format other than expected, it is written to a memory stream and loaded into the Clipboard using the newly registered graphic format.
           </p>
         </descr>
-        <notes>
-          <note>Source code comments indicate that there is some question about Linux and Mac support for PNG in clipboard operations.
-          </note>
-        </notes>
         <seealso>
           <link id="#lcl.extctrls.TCustomImage.Picture">TCustomImage.Picture</link>
           <link id="#lcl.clipbrd.TClipboard.AddFormat">TClipboard.AddFormat</link>
@@ -8252,7 +8248,7 @@
         </descr>
       </topic>
     </module>
-    
+
     <!-- DbCtrls -->
   </package>
 </fpdoc-descriptions>

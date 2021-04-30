@@ -626,7 +626,7 @@
       </element>
 
       <element name="TCustomShellTreeView.UseBuiltinIcons">
-        <short/>
+        <short>Indicates if OS-provided icons are used for entries in the Shell control</short>
         <descr>
           <p>
             <var>UseBuiltinIcons</var> is a <var>Boolean</var> property which indicates if OS-provided icons are used for the file system entries in the Shell control.
@@ -634,17 +634,12 @@
           <p>
             The default value for the property is <b>True</b>. Setting a new value for the property causes the <var>Invalidate</var> method to be called to redraw the control.
           </p>
-          <!--
           <p>
-            UseBuiltinIcons is used in the <var>DrawBuiltinIcon</var> method, and controls whether the internal <var>GetShellIcon</var> routine is used to get the icon drawn in the method. When UseBuiltinIcons is set to <b>False</b>, an icon is not drawn in the DrawBuiltinIcon method.
+            UseBuiltinIcons is used in the <var>DrawBuiltinIcon</var> method, and controls whether the corresponding method is called in the widgetset class. When UseBuiltinIcons is set to <b>False</b>, an icon is not drawn in the DrawBuiltinIcon method.
           </p>
-          <remark>
-            The <var>DrawBuiltinIcon</var> and <var>GetBuiltinIconSize</var> methods are defined for the Windows platform only; they requires use of the <var>SHGetFileInfoW</var> routine in the FPC <file>ShellApi.pp</file> unit.
-          </remark>
-          -->
         </descr>
         <seealso>
-          <!-- link id="TCustomShellTreeView.DrawBuiltinIcon"/ -->
+          <link id="TCustomShellTreeView.DrawBuiltinIcon"/>
         </seealso>
       </element>
 
@@ -768,7 +763,6 @@
           </ul>
         </descr>
         <seealso></seealso>
-        <notes><note>Needs review.</note></notes>
       </element>
 
       <element name="TCustomShellTreeView.OnAddItem">
@@ -992,10 +986,7 @@
         <short>Sets the value for the Root property</short>
         <descr>
           <p>
-            Calls <var>Clear</var> to remove list items in the control.
-            Calls PopulateWithRoot to load file system entries in the new root directory.
-            Raises an EInvalidPath exception at run-time if Value contains an invalid path name.
-            Does <b>not</b> raise an exception at design-time to prevent crashing the IDE.
+            Calls <var>Clear</var> to remove list items in the control. Calls <var>PopulateWithRoot</var> to load file system entries in the new root directory. Raises an <var>EInvalidPath</var> exception at run-time if Value contains an invalid path name. Does <b>not</b> raise an exception at design-time to prevent crashing the IDE.
           </p>
         </descr>
         <errors>
@@ -1040,7 +1031,10 @@
             <var>PopulateWithRoot</var> calls the internal <var>GetFilesInDir</var> helper to get a list of file system items for the path which match the <var>Mask</var> and <var>ObjectTypes</var> specified for the control. Each of the files in the list are passed to <var>DoAddItem</var> / <var>OnAddItem</var> to determine if they can be added to the <var>Items</var> in the control.
           </p>
           <p>
-            A <var>TListItem</var> instance is added to Items to represent the files or directories. The <var>Data</var> property in the list item is used to store a pointer to the file size. Values are added to SubItems with the string representation for the file size, and the file extension. When <var>UseBuiltInIcons</var> is set to <b>True</b>, the <var>GetBuiltInImageIndex</var> method is called to get the <var>ImageIndex</var> for the built-in icon used for the list item.
+            A <var>TListItem</var> instance is added to Items to represent the files or directories. The <var>Data</var> property in the list item is used to store a pointer to the file size. Values are added to SubItems with the string representation for the file size, and the file extension.
+          </p>
+          <p>
+            When <var>UseBuiltInIcons</var> is set to <b>True</b>, the <var>GetBuiltInImageIndex</var> method is called to get the <var>ImageIndex</var> for the built-in icon used for the list item. The value in <var>ViewStyle</var> determines the image size requested. When ViewStyle is <var>vsIcon</var>, LargeImages is checked for the index value. Otherwise, <var>SmalImages</var> is checked.
           </p>
           <p>
             The <var>OnFileAdded</var> event handler is signalled (when assigned) for each new entry added to Items.
@@ -1375,6 +1369,10 @@
       </element>
 
       <element name="TCustomShellListView.Items" link="#lcl.comctrls.TCustomListView.Items"/>
+      <element name="TCustomShellListView.SmallImages" link="#lcl.comctrls.TCustomListView.SmallImages"/>
+      <element name="TCustomShellListView.SmallImagesWidth" link="#lcl.comctrls.TCustomListView.SmallImagesWidth"/>
+      <element name="TCustomShellListView.LargeImages" link="#lcl.comctrls.TCustomListView.LargeImages"/>
+      <element name="TCustomShellListView.LargeImagesWidth" link="#lcl.comctrls.TCustomListView.LargeImagesWidth"/>
 
       <element name="TShellListView">
         <short>

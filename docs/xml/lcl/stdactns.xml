@@ -747,13 +747,13 @@
             selected <var>FileName</var>. The default value for the proprety is
             <b>False</b>.
           </p>
+          <remark>
+            UseDefaultApp is not used in the current LCL version.
+          </remark>
         </descr>
         <seealso>
           <link id="TFileAction.FileName"/>
         </seealso>
-        <notes>
-          <note>UseDefaultApp is never actually used anywhere.</note>
-        </notes>
       </element>
 
       <element name="TFileOpen.Visible" link="#lcl.actnlist.TCustomAction.Visible"/>

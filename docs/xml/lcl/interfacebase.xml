@@ -221,10 +221,12 @@
           Specifies an event handler signalled for a socket handle in a widgetset object
         </short>
         <descr>
-          TSocketEvent is an object procedure type which specifies an event handler signalled for a socket handle in a widgetset object.
+          <p>
+            <var>TSocketEvent</var> is an object procedure type which specifies an event handler signalled for a socket handle in a widgetset object.
+          </p>
         </descr>
         <seealso/>
-        <notes><note>Cannot find a use case. Redeclared in widgetsets.</note></notes>
+        <notes><note>Cannot find a use case. Redeclared in widgetset classes.</note></notes>
       </element>
       <element name="TSocketEvent.AData">
         <short>Pointer to the data for the event notification</short>
@@ -259,7 +261,6 @@
       </element>
       <element name="TLCLCapability.lcNeedMininimizeAppWithMainForm">
         <short>When the main form is minimized, the application is minimized too</short>
-        <notes><note>All other forms too?</note></notes>
       </element>
       <element name="TLCLCapability.lcApplicationTitle">
         <short>Can change application title at run-time</short>
@@ -763,9 +764,6 @@
           <link id="TWidgetSet.ThemeServices"/>
           <link id="#rtl.objects.TObject.BeforeDestruction">TObject.BeforeDestruction</link>
         </seealso>
-        <notes>
-          <note>Why BeforeDestruction instead of an overridden Destroy?</note>
-        </notes>
       </element>
 
       <element name="TWidgetSet.AppInit">
@@ -1071,11 +1069,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes>
-          <note>
-            Not implemented for any of the widgetsets. Seems to exist for the benefit of the IDE only.
-          </note>
-        </notes>
       </element>
       <element name="TWidgetSet.SetDesigning.AComponent">
         <short/>
@@ -1139,7 +1132,6 @@
         <seealso>
           <link id="TWidgetSet.CreateTimer"/>
         </seealso>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWidgetSet.DestroyTimer.Result">
         <short>False on failure</short>

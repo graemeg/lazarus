@@ -55,8 +55,6 @@
         <short/>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- object Visibility: default -->
       <element name="TLResource">
@@ -335,8 +333,6 @@
         <short>The resource descriptor, owned by the global resource list.</short>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- class Visibility: default -->
       <element name="TAbstractTranslator">
@@ -345,19 +341,14 @@
         </descr>
         <errors/>
         <seealso/>
-      <notes><note>what's this?</note><note>implemented where?</note>
-        </notes>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TAbstractTranslator.TranslateStringProperty">
-        <short>The base class for an TReader.OnReadStringProperty handler.
-        </short>
+        <short>The base class for an TReader.OnReadStringProperty handler</short>
         <descr>
         </descr>
         <errors/>
         <seealso/>
-      <notes><note>do what?</note>
-        </notes>
       </element>
       <element name="TAbstractTranslator.TranslateStringProperty.Sender">
         <short/>
@@ -386,8 +377,6 @@
       </element>
       <element name="TLRSItemType.lrsitCollection">
         <short>A list terminated by an EndList.</short>
-      <notes><note>empty entry?</note>
-        </notes>
       </element>
       <element name="TLRSItemType.lrsitComponent">
         <short>A component has two lists: properties and children.</short>
@@ -504,8 +493,6 @@
         <descr/>
         <errors/>
         <seealso/>
-      <notes><note>EndList?</note>
-        </notes>
       </element>
       <!-- procedure Visibility: private -->
       <element name="TLRSObjectReader.Push">
@@ -533,8 +520,6 @@
         </descr>
         <errors/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- procedure Visibility: private -->
       <element name="TLRSObjectReader.ClearStack">
@@ -858,8 +843,6 @@
         <short>The root component reader</short>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- "class of" type Visibility: default -->
       <element link="#lcl.lresources.TLRSObjectReader" name="TLRSObjectReaderClass"/>
@@ -1481,8 +1464,6 @@
         <short/>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- variable Visibility: default -->
       <element name="TLRPositionLink.LFMPosition">
@@ -1509,8 +1490,6 @@
         <short/>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- variable Visibility: private -->
       <element name="TLRPositionLinks.FItems">
@@ -1772,8 +1751,6 @@
         <short>Holds the last parsed token text</short>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- function Visibility: private -->
       <element name="TUTF8Parser.GetTokenName">
@@ -1798,8 +1775,6 @@
         <short>Skips to the next non-null character</short>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- procedure Visibility: private -->
       <element name="TUTF8Parser.ProcessChar">
@@ -2275,14 +2250,10 @@
         <short/>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
 <!-- class Visibility: default -->
       <element name="TLazComponentQueue">
         <short/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- property Visibility: published -->
       <element name="TLazComponentQueue.Name">
@@ -2297,8 +2268,6 @@
         <short>Item of TPropertiesToSkip</short>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- variable Visibility: default -->
       <element name="TPropertyToSkip.PersistentClass">
@@ -2331,8 +2300,6 @@
         <short/>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- function Visibility: private -->
       <element name="TPropertiesToSkip.GetItem">
@@ -2469,8 +2436,6 @@
         <short/>
         <descr/>
         <seealso/>
-      <notes><note>?</note>
-        </notes>
       </element>
       <!-- variable Visibility: default -->
       <element name="LRSObjectReaderClass">

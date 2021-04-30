@@ -2011,12 +2011,11 @@
       <element name="TCustomMaskEdit.Modified">
         <short>Indicates if the value for the edit control has been changed</short>
         <descr>
-          Modified is a Boolean property which indicates if the value for the edit control has been changed.
+          <p>
+            <var>Modified</var> is a <var>Boolean</var> property which indicates if the value for the edit control has been changed.
+          </p>
         </descr>
         <seealso/>
-        <notes>
-          <note>Discuss relationship between Text, EditText, RealSetText, et. al.</note>
-      </notes>
       </element>
 
       <element name="TCustomMaskEdit.OnValidationError">
@@ -2315,7 +2314,9 @@
       <element name="TMaskEdit.Text">
         <short>Contains the value for the control</short>
         <descr>
-          Text is a public property in TMaskEdit which provides access to the value for the edit control.
+          <p>
+            <var>Text</var> is a public <var>String</var> property in <var>TMaskEdit</var> which provides access to the value for the edit control.
+          </p>
         </descr>
         <seealso>
           <link id="#lcl.stdctrls.TCustomEdit.Text">TCustomEdit.Text</link>
@@ -2325,9 +2326,6 @@
           <link id="TCustomMaskEdit.RealGetText"/>
           <link id="TCustomMaskEdit.RealSetText"/>
         </seealso>
-        <notes>
-          <note>Discuss relationship between Text, EditText, RealSetText, et. al.</note>
-        </notes>
       </element>
 
       <element name="TMaskEdit.TextHint" link="#lcl.stdctrls.TCustomEdit.TextHint"/>

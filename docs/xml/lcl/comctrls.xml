@@ -1931,9 +1931,12 @@
 
       <element name="TNBNoPages">
         <short/>
-        <descr/>
+        <descr>
+            <p>
+              <var>TNBNoPages</var> is a <var>TNBBasePages</var> descendant which re-implements the page container for a TCustomTabControl. As the name implies, it does not actually use TCustomPages instances in the container. It removes the methods used to add and maintain the values in the class instance.
+            </p>
+        </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TNBNoPages.Get">
@@ -17931,7 +17934,6 @@
         <descr>
           Contains the same value as the Count property in Items.
         </descr>
-        <notes><note>Are you sure?</note></notes>
         <seealso/>
       </element>
 
@@ -18523,9 +18525,6 @@
           <link id="TCustomTreeView.Items"/>
           <link id="TTreeNodesEnumerator"/>
         </seealso>
-        <notes>
-          <note>Mention internals like node cache and selection list?</note>
-        </notes>
       </element>
 
       <element name="TTreeNodes.FCount"/>
@@ -19743,11 +19742,15 @@
 
       <element name="TCustomTreeView.CanvasChanged">
         <short>Performs actions needed when the control Canvas has been changed</short>
-        <descr/>
+        <descr>
+          <p>
+            Updates the <var>States</var> property to include the value <var>tvsCanvasChanged</var>.
+          </p>
+          <remark>
+            CanvasChanged is not used in the current LCL implementation.
+          </remark>
+        </descr>
         <seealso/>
-        <notes>
-          <note>Cannot find any place where this is actually assigned or called.</note>
-        </notes>
       </element>
       <element name="TCustomTreeView.CanvasChanged.Sender">
         <short/>

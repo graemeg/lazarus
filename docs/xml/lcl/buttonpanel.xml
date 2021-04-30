@@ -559,12 +559,32 @@
       </element>
 
       <element name="TCustomButtonPanel.UpdateButtonSize">
-        <short>Applies button sizes using theming and scaling</short>
-        <descr></descr>
-        <notes>
-          <note>???</note>
-        </notes>
-        <seealso></seealso>
+        <short>Applies button sizes when the visibiity for the panel is changed</short>
+        <descr>
+          <p>
+            <var>UpdateButtonSize</var> is a method used to adjust the size for the visible buttons on the panel when the value in the <var>Visible</var> property has been changed.
+          </p>
+          <p>
+            UpdateButtonSize applies the size used for push button elements in theme services to the <var>Constraints</var> property in the <var>TPanelBitBtn</var> instances on the panel. The button size is scaled when <var>Application.Scaled</var> is set to <b>True</b> and the design-time display density differs from the run-time Font setting.
+          </p>
+          <p>
+            No actions are performed in the method if a designer surface cannot be located for the panel; the designer surface has the original font density used in the scaling operation.
+          </p>
+          <p>
+            UpdateButtonSize temporarily disables auto-sizing in the panel while the button sizes are updated. Auto-sizing is re-enabled prior to exit.
+          </p>
+          <p>
+            UpdateButtonSize is called from the <var>CMShowingChanged</var> method when the <b>CM_SHOWINGCHANGED</b> message is handled for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomButtonPanel.ShowButtons"/>
+          <link id="TCustomButtonPanel.AutoSize"/>
+          <link id="TCustomButtonPanel.Visible"/>
+          <link id="TCustomButtonPanel.CMShowingChanged"/>
+          <link id="TPanelBitBtn"/>
+          <link id="#lcl.controls.TControl.Constraints">TControl.Constraints</link>
+        </seealso>
       </element>
 
       <element name="TCustomButtonPanel.IsLastButton">

@@ -240,9 +240,6 @@
             <var>UpdateControl</var> is a method used to update members in the class instance to reflect the state for the control. It is called when a new value is assigned to properties in the class instance. It is called when editing has been completed using the <var>Edit</var> for the grouped editing control. It is also called when the handle is allocated for the control in <var>InitializeWnd</var>.
           </p>
           <p>
-            UpdateControl ensures that values in <var>MinValue</var> and <var>MaxValue</var> are valid. If MaxValue is not larger than MinValue, the value in MinValue is used in both properties.
-          </p>
-          <p>
             <var>NullValueBehaviour</var> is used to determine whether <var>Value</var> is adjusted to ensure that it is in the range specified by MinValue and MaxValue. A value other than <var>nvbShowTextHint</var> causes <var>GetLimitedValue</var> to be called to get the adjusted Value.
           </p>
           <p>

@@ -325,11 +325,14 @@
 
       <element name="TButtonGlyph.CacheSetImageList">
         <short>Stores the specified Image list in the Images property</short>
-        <descr></descr>
-        <seealso></seealso>
-        <notes>
-          <note>???</note>
-        </notes>
+        <descr>
+          <p>
+            Implements the <var>IImageCacheListener</var> interface method used to receive changes to the cached image list. Stores the image list specified in <var>AImageList</var> to the <var>Images</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TButtonGlyph.Images"/>
+        </seealso>
       </element>
       <element name="TButtonGlyph.CacheSetImageList.AImageList">
         <short>Image list stored to the Images property</short>
@@ -545,9 +548,6 @@
             <var>GetImageIndexAndEffect</var> is used in in the implementation of the <var>Draw</var> method in <var>TButtonGlyph</var>, and in the <var>GetGlyphSize</var> method in <var>TCustomSpeedButton</var>.
           </p>
         </descr>
-        <notes>
-          <note>Not sure how to describe the purpose/use of CEffects in the method.</note>
-        </notes>
         <seealso>
           <link id="TButtonGlyph.ExternalImages"/>
           <link id="TButtonGlyph.ExternalImageIndex"/>
@@ -911,9 +911,11 @@
         <short>
           <var>TBitBtnKinds</var> - set of <var>TBitBtnKind</var>
         </short>
-        <notes>
-          <note>Not used internally, nor in any other units in LCL.</note>
-        </notes>
+        <descr>
+          <p>
+            Not used in the current LCL implementation.
+          </p>
+        </descr>
       </element>
 
       <element name="TCustomBitBtn">
@@ -1332,17 +1334,21 @@
       </element>
 
       <element name="TCustomBitBtn.CMAppShowBtnGlyphChanged">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
-        <notes>
-          <note>???</note>
-        </notes>
+        <short>Handles the CM_APPSHOWBTNGLYPHCHANGED message for the control</short>
+        <descr>
+          <p>
+            <var>CMAppShowBtnGlyphChanged</var> is a method used to handle the <b>CM_APPSHOWBTNGLYPHCHANGED</b> control message for the control. It ensures that the bitmap in <var>Glyph</var> is refreshed when the value in the <var>GlyphShowMode</var> property is set to <var>gsmApplication</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomBitBtn.Glyph"/>
+          <link id="TCustomBitBtn.GlyphShowMode"/>
+          <link id="TButtonGlyph.Refresh"/>
+          <link id="#lcl.menus.TGlyphShowMode">TGlyphShowMode</link>
+        </seealso>
       </element>
       <element name="TCustomBitBtn.CMAppShowBtnGlyphChanged.Message">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>Control message handled in the method</short>
       </element>
 
       <element name="TCustomBitBtn.Create">
@@ -2844,11 +2850,42 @@
 
       <element name="GetDefaultBitBtnGlyph">
         <short></short>
-        <descr></descr>
-        <seealso></seealso>
-        <notes>
-          <note>???</note>
-        </notes>
+        <descr>
+          <p>
+            <var>GetDefaultBitBtnGlyph</var> is a <var>TGetDefaultBitBtnGlyph</var> variable with the address for the routine used to get the default glyphs for <var>TBitBtn</var> instances in the application.
+          </p>
+          <p>
+            <var>Kind</var> is a <var>TBitBtnKind</var> argument that identifies the content needed in the bitmap returned from the function.
+          </p>
+          <p>
+            <var>Handled</var> is a <var>Boolean</var> value which indicates if the <var>TBitmap</var> instance was successfuly created and loaded in the routine.
+          </p>
+          <p>
+            Create a function using the signature in TGetDefaultBitBtnGlyph, and assign it the variable to use custom bitmaps for the glyphs in TBitBtn. For example:
+          </p>
+<code>
+// provides Ok and Cancel glyphs
+function GetCustomBitBtnGlyph(Kind: TBitBtnKind; Handled: Boolean): TBitmap;
+begin
+  if Kind in [bkOK, bkCancel] then
+  begin
+    Result := TBitmap.Create;
+    case Kind of
+      bkOk: Result.Assign(MyOkGlyph);
+      bkCancel: Result.Assign(MyCancelGlyph);
+    end;
+  end
+  else
+    Result := Nil;
+
+  Handled := (Result <> Nil);
+end;
+
+// assign the routine to the GetDefaultBitBtnGlyph variable
+Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
+</code>
+        </descr>
+        <seealso/>
       </element>
 
       <element name="GetLCLDefaultBtnGlyph">
@@ -2985,20 +3022,27 @@
 
       <element name="BidiAdjustButtonLayout">
         <short>Adjusts the specified button layout for use in bi-drectional rendering</short>
-        <descr></descr>
-        <seealso></seealso>
-        <notes>
-          <note>???</note>
-        </notes>
+        <descr>
+          <p>
+            Adjusts the layout for button glyphs to reflect the settings in <var>IsRightToLeft</var>. Uses an implementation constant to get the <var>TButtonLayout</var> value needed for the setting in IsRightLeft.
+          </p>
+          <p>
+            In general, when IsRightToLeft is <b>True</b> the value in <var>Layout</var> is reversed and used as the return value.  <var>blGlyphLeft</var> becomes <var>blGlyphRight</var>, <var>blGlyphTop</var> becomes <var>blGlyphBottom</var>, etc.
+          </p>
+          <p>
+            When IsRightToLeft is <var>False</var>, the value in Layout is used.
+          </p>
+        </descr>
+        <seealso/>
       </element>
       <element name="BidiAdjustButtonLayout.Result">
-        <short></short>
+        <short>Adjusted glyph layout needed for the value in IsRightToLeft</short>
       </element>
       <element name="BidiAdjustButtonLayout.IsRightToLeft">
-        <short></short>
+        <short>True when BiDiMode has any value other than bdLeftToRight</short>
       </element>
       <element name="BidiAdjustButtonLayout.Layout">
-        <short></short>
+        <short>Glyph layout needed for the button using the specified BiDi setting</short>
       </element>
 
       <element name="dbgs">

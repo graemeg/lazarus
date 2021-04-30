@@ -530,7 +530,7 @@
       </element>
 
       <element name="GUID_ObjInspInterface">
-        <short/>
+        <short>GUID for the Object Inspector in the Lazaurus IDE</short>
         <descr>
           Value is '{37417989-8C8F-4A2D-9D26-0FA377E8D8CC}'
         </descr>
@@ -538,7 +538,7 @@
       </element>
 
       <element name="IObjInspInterface">
-        <short/>
+        <short>Defines an interface used in the Lazarus Object Inspector</short>
         <descr/>
         <seealso/>
       </element>
@@ -578,7 +578,7 @@
       </element>
 
       <element name="TCMMouseWheel">
-        <short>Parameters for a CMMouseWheel message</short>
+        <short>Defines a structure used for mouse wheel control messages</short>
         <descr>
           <p>Holds mouse wheel details that include:</p>
           <ul>
@@ -659,7 +659,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
       <element name="TCMChanged.Msg">
         <short/>
@@ -686,7 +685,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
       <element name="TCMControlListChange.Msg">
         <short/>
@@ -714,22 +712,18 @@
 
       <element name="TCMDialogKey" link="#lcl.lmessages.TLMKey">
         <short/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
 
       <element name="TCMEnter" link="#lcl.lmessages.TLMEnter">
         <short/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
 
       <element name="TCMExit" link="#lcl.lmessages.TLMExit">
         <short/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
 
       <element name="TCMCancelMode">
         <short/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
       <element name="TCMCancelMode.Msg">
         <short/>
@@ -748,7 +742,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
       <element name="TCMChildKey.Msg">
         <short/>
@@ -756,7 +749,6 @@
       <element name="TCMChildKey.Unused"/>
       <element name="TCMChildKey.CharCode">
         <short>VK_XXX constants for TLMKeyDown/Up, ASCII for TLMChar</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TCMChildKey.Sender">
         <short/>
@@ -794,10 +786,6 @@
             The order of multiple controls with the same (stackable) alignment is determined by their Left and/or Top coordinate. The precedence of conflicting alignment requests (e.g. one at top, one at right) is resolved.
           </p>
         </descr>
-        <notes>
-          <note>How are alignment conflicts resolved?</note>
-          <note>Which provisions exist for alCustom implementation?</note>
-        </notes>
       </element>
       <element name="TAlign.alNone">
         <short>Control has fixed size and position</short>
@@ -820,7 +808,6 @@
       <element name="TAlign.alCustom">
         <short>Control has special alignment</short>
         <descr/>
-        <notes><note>How and where is custom alignment determined?</note></notes>
       </element>
 
       <element name="TAlignSet" link="#lcl.controls.TAlign">
@@ -1033,7 +1020,6 @@
           A subset of TFormBorderStyle, listing only the styles available to a control that is not a form.
         </descr>
         <seealso/>
-        <notes><note>Not used in the current LCL version.</note></notes>
       </element>
 
       <element name="TControlRoleForForm">
@@ -1278,18 +1264,18 @@
         <short>Key messages are handler by widgetset classes instead of control events</short>
       </element>
       <element name="TControlStyleType.csDisplayDragImage">
-        <short>display images from dragimagelist during drag operation over control</short>
+        <short>Display images from the drag imagelist during drag operation over control</short>
       </element>
       <element name="TControlStyleType.csReflector">
-        <short/>
-        <notes><note>?</note></notes>
+        <short>
+          Control responds to size, focus, and dialog messages and can be used as an ActiveX control (Windows)
+        </short>
       </element>
       <element name="TControlStyleType.csActionClient">
         <short>Control includes support for TBasicAction</short>
       </element>
       <element name="TControlStyleType.csMenuEvents">
-        <short/>
-        <notes><note>?</note></notes>
+        <short>Control responds to menu and menu item events</short>
       </element>
       <element name="TControlStyleType.csNoFocus">
         <short>
@@ -1384,8 +1370,7 @@
         <short>Indicates the control was clicked; occurs after button down/up processing</short>
       </element>
       <element name="TControlStateType.csPalette">
-        <short/>
-        <notes><note>? Not used in the current LCL version</note></notes>
+        <short>Palettes are not currently implemented in LCL</short>
       </element>
       <element name="TControlStateType.csReadingState">
         <short>Indicates the ReadState method has been called for the control</short>
@@ -1448,10 +1433,21 @@
         <short>New value for the property</short>
       </element>
 
-      <element name="TControlCanvas.CreateFont"/>
       <element name="TControlCanvas.CreateHandle" link="#LCL.Graphics.TCanvas.CreateHandle"/>
 
-      <element name="TControlCanvas.GetDefaultColor"/>
+      <element name="TControlCanvas.GetDefaultColor" link="#lcl.graphics.TCanvas.GetDefaultColor">
+        <short/>
+        <descr>
+          <p>
+            <var>GetDefaultColor</var> is overridden in <var>TControlCanvas</var> to ensure that the <var>Control</var> is used (when assigned) to retrieve the default color. If Control is not assigned, the inherited method is called to get the default color value.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControlCanvas.Control"/>
+          <link id="#lcl.graphics.TCanvas.GetDefaultColor">TCanvas.GetDefaultColor</link>
+          <link id="#lcl.controls.TControl.GetDefaultColor">TControl.GetDefaultColor</link>
+        </seealso>
+      </element>
       <element name="TControlCanvas.GetDefaultColor.Result">
         <short/>
       </element>
@@ -1847,22 +1843,24 @@
 
       <element name="TDragImageListResolution.DragLock">
         <short>
-          Shows the Drag image and locks updates to the Window during the Drag operation
+          Shows the Drag image and optionally locks the Window handle during the Drag operation
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDragImageListResolution.DragLock.Result">
-        <short/>
+        <short>
+          True if the drag operation was started or the drag image position was updated
+        </short>
       </element>
       <element name="TDragImageListResolution.DragLock.Window">
-        <short/>
+        <short>Window handle used as the lock handle when not already assigned</short>
       </element>
       <element name="TDragImageListResolution.DragLock.X">
-        <short/>
+        <short>Horizontal coordinate for the drag image</short>
       </element>
       <element name="TDragImageListResolution.DragLock.Y">
-        <short/>
+        <short>Vertical coordinate for the drag image</short>
       </element>
 
       <element name="TDragImageListResolution.DragMove">
@@ -1992,7 +1990,6 @@
         <short>Show drag image during drag operation</short>
         <descr/>
         <seealso/>
-        <notes><note>Lock updates of Window?</note></notes>
       </element>
       <element name="TDragImageList.DragLock.Result">
         <short>True if Dragging and image shown</short>
@@ -2026,7 +2023,6 @@
         <short>Hide the drag image</short>
         <descr/>
         <seealso/>
-        <notes><note>and unlock window updates?</note></notes>
       </element>
 
       <element name="TDragImageList.EndDrag">
@@ -2045,8 +2041,12 @@
       </element>
 
       <element name="TDragImageList.HideDragImage">
-        <short>Hide the dragged image without unlocking the window</short>
-        <descr/>
+        <short>Hides the drag image without unlocking the window</short>
+        <descr>
+          <p>
+            Calls the <var>HideDragImage</var> method in <var>DraggingResolution</var>. No actions are performed in the method when an image resolution is not available in  the DraggingResolution property.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
@@ -2057,7 +2057,6 @@
       </element>
       <element name="TDragImageList.SetDragImage.Result">
         <short>Always True</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TDragImageList.SetDragImage.Index">
         <short>List index of the image to use</short>
@@ -2071,7 +2070,11 @@
 
       <element name="TDragImageList.ShowDragImage">
         <short>Displays the drag image</short>
-        <descr/>
+        <descr>
+          <p>
+            Calls the <var>ShowDragImage</var> method in <var>DraggingResolution</var>. No actions are performed in the method when an image resolution is not available in  the DraggingResolution property.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
@@ -2476,7 +2479,6 @@
       </element>
       <element name="TEndDragEvent.Sender">
         <short>The dragged control</short>
-        <notes><note>or DragObject?</note></notes>
       </element>
       <element name="TEndDragEvent.Target">
         <short>The drop target (control), or <b>Nil</b> if cancelled</short>
@@ -2514,9 +2516,6 @@
           <link id="TDragControlObject"/>
           <link id="TDragDockObject"/>
         </seealso>
-        <notes>
-          <note>[entire review DoDi 2011-09-10]</note>
-        </notes>
       </element>
 
       <element name="TDragObject.FAlwaysShowDragImages" link="#lcl.controls.TDragObject.AlwaysShowDragImage"/>
@@ -2625,7 +2624,6 @@
           This is another chance for enforcing the display of a drag image, even if a drop is acceptable.
         </descr>
         <seealso/>
-        <notes><note>where to describe the various conditions?</note></notes>
       </element>
 
       <element name="TDragObject.AutoCreated">
@@ -2887,7 +2885,6 @@
       </element>
       <element name="TGetSiteInfoEvent.MousePos">
         <short>The current position of the mouse</short>
-        <notes><note>screen?</note></notes>
       </element>
       <element name="TGetSiteInfoEvent.CanDock">
         <short>Set CanDock to False to reject docking</short>
@@ -3153,7 +3150,6 @@
           </remark>
         </descr>
         <seealso/>
-        <notes><note>[entire review DoDi 2010-02-16]</note></notes>
       </element>
 
       <element name="TDragManager.FDragImmediate"/>
@@ -3899,7 +3895,6 @@
         <short>Options used to determine the size constraints</short>
         <descr/>
         <seealso/>
-        <notes><note>Usage? No examples in current LCL version.</note></notes>
       </element>
 
       <element name="TSizeConstraints.OnChange">
@@ -3942,7 +3937,6 @@
         <seealso>
           <link id="TControl.OnConstrainedResize"/>
         </seealso>
-        <notes><note>?</note></notes>
       </element>
       <element name="TConstrainedResizeEvent.Sender">
         <short>TObject for the event notification</short>
@@ -4604,9 +4598,6 @@
 </code>
         </descr>
         <seealso/>
-        <notes>
-          <note>Make this an topic, describing *everything* related to anchoring?</note>
-        </notes>
       </element>
 
       <element name="TAnchorSide.FControl"/>
@@ -4705,11 +4696,9 @@
       </element>
       <element name="TAnchorSide.CheckSidePosition.NewControl">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TAnchorSide.CheckSidePosition.NewSide">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TAnchorSide.CheckSidePosition.ReferenceControl">
         <short>The control we are anchored to</short>
@@ -4730,15 +4719,12 @@
         <short>True when we are anchored to our parent, at least on the ParentSide</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TAnchorSide.IsAnchoredToParent.Result">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TAnchorSide.IsAnchoredToParent.ParentSide">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TAnchorSide.FixCenterAnchoring">
@@ -4988,30 +4974,24 @@
           <link id="TControl.AutoSizePhases"/>
           <link id="TWinControl.AutoSizePhases"/>
         </seealso>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlAutoSizePhase.caspNone">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlAutoSizePhase.caspChangingProperties">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlAutoSizePhase.caspCreatingHandles">
         <short>Create/Destroy handles</short>
       </element>
       <element name="TControlAutoSizePhase.caspComputingBounds">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlAutoSizePhase.caspRealizingBounds">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlAutoSizePhase.caspShowing">
         <short>Makes a handle visible</short>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControlAutoSizePhases" link="#lcl.controls.TControlAutoSizePhase"/>
@@ -5065,7 +5045,6 @@
       </element>
       <element name="TControlFlag.cfAutoSizeNeeded">
         <short>Set when AutoSize was delayed</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlFlag.cfLeftLoaded">
         <short>Set when Left was set during loading</short>
@@ -5090,34 +5069,27 @@
       </element>
       <element name="TControlFlag.cfBaseBoundsValid">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlFlag.cfPreferredSizeValid">
         <short>Set when PreferredSize has been calculated (CalculatePreferredSize)</short>
       </element>
       <element name="TControlFlag.cfPreferredMinSizeValid">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlFlag.cfOnChangeBoundsNeeded">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlFlag.cfProcessingWMPaint">
         <short>Set (in WndProc) while processing an LM_PAINT message</short>
       </element>
       <element name="TControlFlag.cfKillChangeBounds">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlFlag.cfKillInvalidatePreferredSize">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControlFlag.cfKillAdjustSize">
         <short/>
-        <notes><note>?</note>
-        </notes>
       </element>
 
       <element name="TControlFlags" link="#lcl.controls.TControlFlag"/>
@@ -5642,7 +5614,6 @@
 
       <element name="TControl.FLoadedClientSize">
         <short>Intended ClientSize, initialized during loading</short>
-        <notes><note>?</note></notes>
       </element>
 
       <element link="#lcl.controls.TControl.LRDockWidth" name="TControl.FLRDockWidth"/>
@@ -5867,7 +5838,6 @@
         <short>Generate MouseEnter and MouseLeave events</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.DoConstrainedResize">
@@ -6129,7 +6099,6 @@
         <short/>
         <descr>Implement in descendants</descr>
         <seealso/>
-        <notes><note>?</note><note>what?</note></notes>
       </element>
 
       <element name="TControl.DoAutoSize">
@@ -6252,7 +6221,6 @@
             Overridden in TWinControl; in TControl it's a NOP. This method simulates the VCL behavior and has no real effect.
           </p>
         </descr>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControl.SendMoveSizeMessages.SizeChanged">
         <short/>
@@ -6342,7 +6310,6 @@
 
       <element name="TControl.UpdateAnchorRules">
         <short>Update the rules for anchoring the control</short>
-        <notes><note>or of anchored controls?</note></notes>
       </element>
 
       <element name="TControl.ChangeBounds">
@@ -6393,7 +6360,6 @@
             Override this to update the content layout of the control, for example scroll bars. As always: do not paint here, but call Invalidate and paint in OnPaint or override Paint.
           </p>
         </descr>
-        <notes><note>This doesn't look correct. ???</note></notes>
       </element>
       <element name="TControl.DoSetBounds.ALeft">
         <short/>
@@ -6530,7 +6496,6 @@
           <link id="#lcl.forms.TScrollingWinControl.GetClientScrollOffset">
             TScrollingWinControl.GetClientScrollOffset</link>
         </seealso>
-        <notes><note>!?</note></notes>
       </element>
       <element name="TControl.GetClientScrollOffset.Result">
         <short>
@@ -7064,7 +7029,6 @@
         <descr>
           The new dock site is owned by the control.
         </descr>
-        <notes><note>Delphi: by Application!?</note></notes>
       </element>
       <element name="TControl.CreateFloatingDockSite.Result">
         <short>The dock site, can be <b>Nil</b> for a TWinControl that can float by itself</short>
@@ -7184,7 +7148,6 @@
           A correct implementation should allow for computations in a derived class, and accept and handle the changed bounds without any further adjustments.
         </errors>
         <seealso/>
-        <notes><note>Otherwise ARect is ignored (bug?)...</note></notes>
       </element>
       <element name="TControl.DoDock.NewDockSite">
         <short>The site where the control will be docked, or <b>Nil</b> when it becomes floating</short>
@@ -7503,7 +7466,6 @@
       </element>
       <element name="TControl.UpdateMouseCursor.X">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControl.UpdateMouseCursor.Y">
         <short/>
@@ -7874,7 +7836,6 @@
       </element>
       <element name="TControl.DoMouseWheel.MousePos">
         <short>The mouse coordinates</short>
-        <notes><note>client/screen?</note></notes>
       </element>
 
       <element name="TControl.DoMouseWheelDown">
@@ -7981,9 +7942,6 @@
       </element>
       <element name="TControl.AddHandler.AsFirst">
         <short>Unused</short>
-        <notes>
-          <note>If true, the handler is added before all installed handlers?</note>
-        </notes>
       </element>
 
       <element name="TControl.RemoveHandler">
@@ -8154,7 +8112,6 @@
         <short>Allows to use the desktop font for text display in this control</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.DragCursor">
@@ -8252,7 +8209,6 @@
         </short>
         <descr/>
         <seealso/>
-        <notes><note>Usage?</note></notes>
       </element>
 
       <element name="TControl.Text">
@@ -8550,7 +8506,6 @@
       </element>
       <element name="TControl.ManualDock.KeepDockSiteSize">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.ManualFloat">
@@ -8569,7 +8524,6 @@
       </element>
       <element name="TControl.ManualFloat.KeepDockSiteSize">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.ReplaceDockedControl">
@@ -8924,7 +8878,6 @@
             Table or tree style anchoring, into a neighbor cell of Sibling. Obtain the row height (or column width) from <var>Sibling</var>.
           </p>
         </descr>
-        <notes><note>?</note></notes>
       </element>
       <element name="TControl.AnchorToCompanion.Side">
         <short>The side to anchor to the sibling</short>
@@ -8937,7 +8890,6 @@
       </element>
       <element name="TControl.AnchorToCompanion.FreeCompositeSide">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.AnchorSame">
@@ -9102,7 +9054,6 @@
             <var>TWinControl</var> overrides this and asks the interface for theme dependent values. See <link id="TWinControl.CalculatePreferredSize"/> for more information.
           </p>
         </descr>
-        <notes><note>link?</note></notes>
       </element>
       <element name="TControl.GetPreferredSize.PreferredWidth">
         <short/>
@@ -9170,7 +9121,6 @@
         <descr>
           GetColorResolvingParent is a convenience routine used to obtain the Color for the control while resolving clDefault. It will never return clDefault, but it might return a non-RGB color. To obtain a purely RGB result use GetRGBColorResolvingParent.
         </descr>
-        <notes><note>A non-RGB color? What does that even mean?</note></notes>
         <seealso>
           <link id="TControl.Color"/>
           <link id="TControl.GetDefaultColor"/>
@@ -9220,7 +9170,6 @@
       </element>
       <element name="TControl.GetAnchorsDependingOnParent.WithNormalAnchors">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.DisableAutoSizing">
@@ -9246,7 +9195,6 @@
       </element>
       <element name="TControl.UpdateBaseBounds.UseLoadedValues">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.BaseBounds">
@@ -9501,7 +9449,7 @@
       </element>
 
       <element name="TControl.GetTopParent">
-        <short>Find which control is the top parent (which has no further parent itself)</short>
+        <short>Find the control that is the top-most parent</short>
         <descr/>
         <seealso/>
       </element>
@@ -10028,9 +9976,6 @@
         <short>Removes an <var>OnEnabledChanged</var> handler</short>
         <descr/>
         <seealso/>
-        <notes>
-          <note>The name doesn't look correct, should read RemoveHandlerOnEnabledChanged?</note>
-        </notes>
       </element>
       <element name="TControl.RemoveHandlerOnEnableChanging.OnEnableChangingEvent">
         <short/>
@@ -10186,13 +10131,9 @@
           <link id="TControl.AnchorAsAlign"/>
           <link id="TControl.AnchorToNeighbour"/>
         </seealso>
-        <notes>
-          <note>Anchors may be invalidated by cycle and other checks?</note>
-        </notes>
       </element>
       <element name="TControl.AnchorSide.Kind">
         <short>The anchored side of the control</short>
-        <notes><note>possibly?</note></notes>
       </element>
 
       <element name="TControl.AutoSize">
@@ -10222,7 +10163,6 @@
             When a control sits in a cell of a table (Grid) control, its horizontal and vertical alignment inside the cell can be specified, too.
           </p>
         </descr>
-        <notes><note>?</note><note>Does grid spacing override other settings?</note></notes>
       </element>
 
       <element name="TControl.BoundsRect">
@@ -10272,7 +10212,6 @@
         </short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControl.ClientHeight">
@@ -10380,7 +10319,6 @@
         <descr>
           Delphi compatible property, affecting only the streaming of <var>Form</var> properties.
         </descr>
-        <notes><note>Has no effect in the LCL?</note></notes>
       </element>
 
       <element name="TControl.MouseEntered">
@@ -10450,7 +10388,6 @@
           <link id="THintInfo"/>
           <link id="TControlShowHintEvent"/>
         </seealso>
-        <notes><note>Tasks, Usage?</note></notes>
       </element>
 
       <element name="TControl.Parent">
@@ -11041,11 +10978,9 @@
       </element>
       <element name="TWinControlFlag.wcfClientRectNeedsUpdate">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControlFlag.wcfColorChanged">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControlFlag.wcfFontChanged">
         <short>Set when the font was changed before handle creation</short>
@@ -11078,11 +11013,9 @@
       </element>
       <element name="TWinControlFlag.wcfUpdateShowing">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControlFlag.wcfHandleVisible">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControlFlag.wcfAdjustedLogicalClientRectValid">
         <short>Set when the adjusted ClientRect is valid</short>
@@ -11092,7 +11025,6 @@
       </element>
       <element name="TWinControlFlag.wcfKillIntfSetBounds">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControlFlag.wcfDesignerDeleting">
         <short>Only used for TCustomPairSplitter / TPairSplitter</short>
@@ -11180,7 +11112,6 @@
         <short>Index of current control</short>
         <descr/>
         <seealso/>
-        <notes><note>in AlignList?</note></notes>
       </element>
 
       <element name="TAlignInfo.Align">
@@ -11209,7 +11140,6 @@
       </element>
       <element name="TAlignInsertBeforeEvent.Sender">
         <short>The Parent control</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TAlignInsertBeforeEvent.Control1">
         <short/>
@@ -11247,11 +11177,9 @@
       </element>
       <element name="TAlignPositionEvent.AlignRect">
         <short>The remaining ClientRect</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TAlignPositionEvent.AlignInfo">
         <short>Information about the current align process</short>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TWinControlEnumerator">
@@ -11741,7 +11669,6 @@
       </element>
       <element name="TWinControl.AlignControls.AControl">
         <short/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.AlignControls.RemainingClientRect">
         <short>The available space, becomes remaining space on exit</short>
@@ -11800,11 +11727,9 @@
         <short>
           The remaining client area, within which the control can be placed
         </short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.CustomAlignPosition.AlignInfo">
         <short>Information about the current align process</short>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TWinControl.DoAlignChildControls">
@@ -11877,7 +11802,6 @@
         <short>Called by AlignControls after aligning controls</short>
         <descr/>
         <seealso/>
-        <notes><note>to do what?</note></notes>
       </element>
 
       <element name="TWinControl.DoSendBoundsToInterface">
@@ -11917,10 +11841,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes>
-          <note>Implementation is empty in the current LCL version.</note>
-          <note>TODO: Check if we need this method.</note>
-        </notes>
       </element>
       <element name="TWinControl.CreateSubClass.Params">
         <short/>
@@ -12236,7 +12156,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.CMEnter.Message">
         <short/>
@@ -12246,7 +12165,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.CMExit.Message">
         <short/>
@@ -12290,7 +12208,6 @@
         <short>Handler for receiving Focus event</short>
         <descr/>
         <seealso/>
-        <notes><note>do what?</note></notes>
       </element>
       <element name="TWinControl.WMSetFocus.Message">
         <short/>
@@ -12319,7 +12236,6 @@
         <short>Handler for changed visibility notification</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.WMShowWindow.Message">
         <short/>
@@ -12329,7 +12245,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.WMEnter.Message">
         <short/>
@@ -12339,7 +12254,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.WMExit.Message">
         <short/>
@@ -12362,7 +12276,6 @@
         </short>
         <descr/>
         <seealso/>
-        <notes><note>what's this?</note></notes>
       </element>
       <element name="TWinControl.WMSysKeyDown.Message">
         <short/>
@@ -12708,7 +12621,6 @@
       </element>
       <element name="TWinControl.DoUnDock.KeepDockSiteSize">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TWinControl.GetSiteInfo">
@@ -12721,7 +12633,6 @@
       </element>
       <element name="TWinControl.GetSiteInfo.Client">
         <short>The dragged control</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.GetSiteInfo.InfluenceRect">
         <short>The screen rectangle within which a drop is allowed</short>
@@ -12797,9 +12708,6 @@
           TWinControls can float for themselves, unless they request a special FloatingDockSiteClass.
         </descr>
         <seealso/>
-        <notes>
-          <note>Bug: when no FloatingDockSiteClass was assigned, a default floating site is created?</note>
-        </notes>
       </element>
       <element name="TWinControl.DoFloatMsg.ADockSource">
         <short/>
@@ -12889,7 +12797,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.DoRemainingKeyUp.Result">
         <short>True if the key was handled</short>
@@ -12944,7 +12851,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.ChildKey.Result">
         <short>True if the key was handled</short>
@@ -12957,7 +12863,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.SendDialogChar.Result">
         <short>True if the key was handled</short>
@@ -13030,7 +12935,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.KeyDownAfterInterface.Key">
         <short/>
@@ -13082,7 +12986,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.KeyUpAfterInterface.Key">
         <short/>
@@ -13324,10 +13227,6 @@
         <descr>
         </descr>
         <seealso/>
-        <notes>
-          <note>?</note>
-          <note>This method does nothing, and cannot be overridden???</note>
-        </notes>
       </element>
       <element name="TWinControl.MainWndProc.Msg">
         <short/>
@@ -13609,7 +13508,6 @@
         <seealso>
           <link id="TWinControl.ControlCount"/>
         </seealso>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.Controls.Index">
         <short>Index of the requested control</short>
@@ -13619,7 +13517,6 @@
         <short>
           The default WndProc on Windows widgetset and platforms
         </short>
-        <notes><note>Usage?</note></notes>
       </element>
 
       <element name="TWinControl.DockClientCount">
@@ -13718,7 +13615,6 @@
         <short/>
         <descr>IsFlipped is a read-only Boolean property.</descr>
         <seealso/>
-        <notes><note>Is this Mac-specific, or does it apply to BiDi mode too?</note></notes>
       </element>
 
       <element name="TWinControl.IsResizing">
@@ -13884,7 +13780,6 @@
         <short>The Handle of the parent widget</short>
         <descr/>
         <seealso/>
-        <notes><note>Usage?</note></notes>
       </element>
 
       <element name="TWinControl.Showing">
@@ -13946,7 +13841,6 @@
         <short>Translates state flags into AutoSizePhases</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.AutoSizePhases.Result">
         <short/>
@@ -13962,7 +13856,6 @@
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.AutoSizeDelayedReport.Result">
         <short/>
@@ -14495,7 +14388,6 @@ if MyControl.CanSetFocus then
         <short>Tells the widgetset to add a Handle object to a parent Handle object</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TWinControl.InsertControl">
@@ -14672,7 +14564,6 @@ if MyControl.CanSetFocus then
       </element>
       <element name="TWinControl.EraseBackground.DC">
         <short>The device context to use; may be clipped to a certain shape</short>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TWinControl.IntfUTF8KeyPress">
@@ -14686,7 +14577,6 @@ if MyControl.CanSetFocus then
           </p>
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.IntfUTF8KeyPress.Result">
         <short>True when multiple keystrokes have been processed</short>
@@ -14696,11 +14586,9 @@ if MyControl.CanSetFocus then
       </element>
       <element name="TWinControl.IntfUTF8KeyPress.RepeatCount">
         <short>Must be greater than zero, the exact value is ignored</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TWinControl.IntfUTF8KeyPress.SystemKey">
         <short>Must be False, else nothing happens</short>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TWinControl.IntfGetDropFilesTarget">
@@ -14750,7 +14638,6 @@ if MyControl.CanSetFocus then
           </p>
         </descr>
         <seealso/>
-        <notes><note>What does a Nil TBitmap value really do to the shape?</note></notes>
       </element>
       <element name="TWinControl.SetShape.AShape">
         <short>Shape for the control; TBitmap or TRegion in overloaded methods</short>
@@ -14983,7 +14870,6 @@ if MyControl.CanSetFocus then
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TControlPropertyStorage.GetPropertyList">
@@ -15358,7 +15244,6 @@ if MyControl.CanSetFocus then
         </short>
         <descr/>
         <seealso/>
-        <notes><note>unused?</note></notes>
       </element>
       <element name="TForEachZoneProc.Zone">
         <short>The iterated zone.
@@ -15369,11 +15254,9 @@ if MyControl.CanSetFocus then
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TDockTreeFlag.dtfUpdateAllNeeded">
         <short/>
-        <notes><note>?</note></notes>
       </element>
 
       <element link="#lcl.controls.TDockTreeFlag" name="TDockTreeFlags"/>
@@ -15513,7 +15396,6 @@ if MyControl.CanSetFocus then
       </element>
       <element name="TDockTree.HitTest.MousePos">
         <short>The client coordinates</short>
-        <notes><note>?</note></notes>
       </element>
       <element name="TDockTree.HitTest.HTFlag">
         <short>Returns the zone part at MousePos</short>
@@ -15552,11 +15434,6 @@ if MyControl.CanSetFocus then
           <link id="TDockTreeFlags"/>
           <link id="TDockTreeFlag"/>
         </seealso>
-        <notes>
-          <note>
-            BeginUpdate increments the update lock count, but does not set the flag in the current implementation. It is not set in any other methods in the class either.
-          </note>
-        </notes>
       </element>
 
       <element link="#lcl.controls.TDockTree.DockZoneClass" name="TDockTree.SetDockZoneClass"/>
@@ -15753,7 +15630,6 @@ if MyControl.CanSetFocus then
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>Not used in the current LCL implementation.</note></notes>
       </element>
 
       <element name="TMouse">
@@ -15906,7 +15782,6 @@ AControl.Align := AnchorAlign[alRight]; // contains [akRight, akTop, akBottom]
           </p>
         </descr>
         <seealso/>
-        <notes><note>??? Is this still True?</note></notes>
       </element>
       <element name="FindDragTarget.Result">
         <short>The control at Position; <b>Nil</b> if none</short>
@@ -16000,7 +15875,6 @@ AControl.Align := AnchorAlign[alRight]; // contains [akRight, akTop, akBottom]
             The function recursively tries GetParent(Handle), so the result depends on the implementation (meaning) of a parent handle.
           </remark>
         </descr>
-        <notes><note>?</note></notes>
       </element>
       <element name="FindOwnerControl.Result">
         <short/>
@@ -16072,7 +15946,6 @@ AControl.Align := AnchorAlign[alRight]; // contains [akRight, akTop, akBottom]
           </p>
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="RecreateWnd.AWinControl">
         <short/>
@@ -16110,7 +15983,6 @@ AControl.Align := AnchorAlign[alRight]; // contains [akRight, akTop, akBottom]
         </short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="SetCaptureControl.Control">
         <short/>
@@ -16143,7 +16015,6 @@ AControl.Align := AnchorAlign[alRight]; // contains [akRight, akTop, akBottom]
           <var>NewStyleControls</var> is a <var>Boolean</var> variable. Currently used only by SynEdit in <file>synedit.pp</file>.
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="Mouse">
@@ -16194,7 +16065,6 @@ AControl.Align := AnchorAlign[alRight]; // contains [akRight, akTop, akBottom]
         <short/>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="GetCursorValues.Proc">
         <short/>
@@ -16224,7 +16094,6 @@ AControl.Align := AnchorAlign[alRight]; // contains [akRight, akTop, akBottom]
         <descr>
           If found, the cursor value (handle) is returned in <var>Cursor</var>.
         </descr>
-        <notes><note>?</note></notes>
       </element>
       <element name="IdentToCursor.Result">
         <short>Returns True if a valid entry was found in the look-up table</short>
@@ -16707,7 +16576,6 @@ BoundsRect.Left:=3; // WRONG: common newbie mistake
             Returns the screen coordinate of the topleft coordinate 0,0 of the control area. (The topleft pixel of the control on the screen) Note that this value is the position as stored in the interface and is not always in sync with the LCL. When a control is moved, the LCL sets the bounds to the wanted position and sends a move message to the interface. It is up to the interface to handle moves instantly or queued.
           </p>
         </descr>
-        <notes><note>deserves a review!</note></notes>
       </topic>
 
       <topic name="ControlCoordinates">

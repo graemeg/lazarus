@@ -1165,11 +1165,6 @@
           </dl>
         </errors>
         <seealso/>
-        <notes>
-          <note>
-            Exception message text does not match the actual name for the method. Refactoring oversight?
-          </note>
-        </notes>
       </element>
       <element name="TPaperSize.Create.aOwner">
         <short>Owner of the class instance</short>
@@ -1951,11 +1946,10 @@
         <short>Performs actions needed to set the selected paper bin for the current printer</short>
         <descr>
           <remark>
-            Please note: In <var>TPrinter</var>, DoSetBinName has an empty implementation. It must be overridden in a descendent class to perform actions needed for the operating system / widgetset / printer-related technology used in the implementation.
+            In <var>TPrinter</var>, DoSetBinName has an empty implementation. It must be overridden in a descendent class to perform actions needed for the operating system / widgetset / printer-related technology used in the implementation.
           </remark>
         </descr>
         <seealso/>
-        <notes><note>??? Includes DebugLn output.</note></notes>
       </element>
       <element name="TPrinter.DoSetBinName.aName">
         <short>Name for the paper bin selected in the method</short>

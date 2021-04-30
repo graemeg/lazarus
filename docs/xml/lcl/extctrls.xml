@@ -413,14 +413,23 @@
       </element>
 
       <element name="TUNBPages.Clear">
-        <short>Deletes all page objects stored in the list of pages</short>
-        <descr/>
-        <seealso/>
+        <short>Removes all page objects stored in the list of pages</short>
+        <descr>
+          <p>
+            <var>Clear</var> is an overridden method which implements the abstract virtual method declared in the <var>TStrings</var> ancestor. Clear is used to remove all <var>TPage</var> instances stored in the the internal page list. It calls the <var>Delete</var> method to remove the last TPage instance in the list until all items in the list have been deleted.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TUNBPages.Delete"/>
+          <link id="TUNBPages.GetCount"/>
+          <link id="TPage"/>
+        </seealso>
       </element>
 
       <element name="TUNBPages.Delete">
         <short>Deletes the page at the specified position in the list of pages</short>
-        <descr/>
+        <descr>
+        </descr>
         <seealso/>
       </element>
       <element name="TUNBPages.Delete.Index">
@@ -1367,19 +1376,28 @@
       </element>
 
       <element name="TCanOffsetEvent">
-        <short/>
-        <descr/>
-        <seealso/>
-        <notes><note>?</note></notes>
+        <short>
+          Specifies an event handler signalled to determine if the given offset is valid for a splitter control
+        </short>
+        <descr>
+          <p>
+            <var>TCanOffsetEvent</var> is the type used to implement the <var>OnCanOffset</var> property in <var>TCustomSplitter</var>.  It is signalled from the <var>CheckOffset</var> method when the splitter is moved.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomSplitter.OnCanOffset"/>
+          <link id="TCustomSplitter.CheckOffset"/>
+          <link id="TCustomSplitter.MoveSplitter"/>
+        </seealso>
       </element>
       <element name="TCanOffsetEvent.Sender">
-        <short/>
+        <short>Object for the event notification</short>
       </element>
       <element name="TCanOffsetEvent.NewOffset">
-        <short/>
+        <short>Offset value examined in the routine</short>
       </element>
       <element name="TCanOffsetEvent.Accept">
-        <short/>
+        <short>True if the offset value is valid</short>
       </element>
 
       <element name="TCanResizeEvent">
@@ -1561,7 +1579,6 @@
           Used in the implementation of the MoveSplitter method.
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TCustomSplitter.CheckOffset.Result">
         <short/>
@@ -2489,7 +2506,6 @@
           </p>
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TCustomImage.StretchInEnabled">
@@ -2500,7 +2516,6 @@
           </p>
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TCustomImage.Transparent">
@@ -2805,7 +2820,7 @@
         </seealso>
       </element>
       <element name="TBevel.Create.AOwner">
-        <short/>
+        <short>Owner of the class instance</short>
       </element>
 
       <element name="TBevel.Destroy" link="#lcl.controls.TGraphicControl.Destroy">
@@ -2815,7 +2830,7 @@
       </element>
 
       <element name="TBevel.Assign" link="#rtl.classes.TPersistent.Assign">
-        <short/>
+        <short>Copies properrtty values from Source to the current class instance</short>
         <descr>
           <p>
             <var>Assign</var> copies the contents of <var>Source</var> to <var>Self</var>, if the classes of the destination and source classes are compatible.
@@ -3164,7 +3179,6 @@
         </short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TCustomRadioGroup.UpdateItems">
@@ -3845,18 +3859,32 @@
       </element>
 
       <element name="TCustomCheckGroup.SetItems">
-        <short>
-          <var>SetItems</var> - specify the strings that form the Items of the group</short>
-        <descr/>
-        <seealso/>
+        <short>Sets the value for the Items property</short>
+        <descr>
+          <p>
+            Calls the Assign method in Items to store the specified Value. Updates the group by re-creating the check-box controls needed for the values in Items. Re-displays the control using the required number of Columns.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomCheckGroup.Items"/>
+          <link id="TCustomCheckGroup.Columns"/>
+          <link id="TCustomCheckGroup.UpdateAll"/>
+        </seealso>
       </element>
       <element name="TCustomCheckGroup.SetItems.Value">
-        <short/>
+        <short>New value for the property</short>
       </element>
 
       <element name="TCustomCheckGroup.SetColumns">
         <short>Sets the value for the Columns property</short>
-        <descr/>
+        <descr>
+          <p>
+            Raises an <var>Exception</var> if the new property value is less than 1. At minimum,  a single column is required.
+          </p>
+          <p>
+            Re-displays the control using the required number of <var>Columns</var>.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomCheckGroup.Columns"/>
         </seealso>
@@ -3945,7 +3973,9 @@
             <var>FlipChildren</var> is an empty implementation in <var>TCustomCheckGroup</var>; no flipping is performed for the control.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.FlipChildren">TWinControl.FlipChildren</link>
+        </seealso>
       </element>
       <element name="TCustomCheckGroup.FlipChildren.AllLevels">
         <short/>
@@ -7535,7 +7565,6 @@
           The default value for the property is True.
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TCustomControlBar.OnBandDrag">

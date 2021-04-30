@@ -156,7 +156,6 @@
           </p>
         </descr>
         <seealso></seealso>
-        <notes><note>?</note></notes>
       </element>
 
       <!-- variable Visibility: public -->
@@ -168,7 +167,6 @@
           </p>
         </descr>
         <seealso></seealso>
-        <notes><note>?</note></notes>
       </element>
 
       <!-- variable Visibility: public -->
@@ -208,6 +206,9 @@
           <p>
             <var>TLazCanvas</var> is an FCL <var>TFPImageCanvas</var> descendant. TLazCanvas extends the ancestor class to support stretching filters and features found in the <var>TCanvas</var> class from the LCL. TLazCanvas also fixes various small problems and incompatibilities between <var>TFPImageCanvas</var> versions, making the interface smoother and more consistent.
           </p>
+          <p>
+            TLazCanvas is used in the implementation of custom-drawn widgetset classes, and provides a device context used to perform drawing operations for a control.
+          </p>
         </descr>
         <seealso>
           <link id="#LCL.Graphics.TCanvas">TCanvas</link>
@@ -227,7 +228,7 @@
         <short>Stores saved canvas state information</short>
         <descr>
           <p>
-            Used to store saved canvas states in the <var>SaveState</var> and <var>RestoreState</var> methods. Contains <var>TLazCanvasState</var> class instances.
+            Used to store and restore canvas states in the <var>SaveState</var> and <var>RestoreState</var> methods. Contains <var>TLazCanvasState</var> class instances.
           </p>
         </descr>
         <seealso>
@@ -551,7 +552,6 @@
         <descr></descr>
         <errors></errors>
         <seealso></seealso>
-        <notes><note>?</note></notes>
       </element>
       <element name="TLazCanvas.AlphaBlend.ASource">
         <short></short>
@@ -687,7 +687,6 @@
           </p>
         </descr>
         <seealso></seealso>
-        <notes><note>Dangerous in what way?</note></notes>
       </element>
       <element name="TLazCanvas.FillColor.AColor">
         <short>Color applied to the canvas area</short>
@@ -783,7 +782,6 @@
           </p>
         </descr>
         <seealso></seealso>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TLazCanvas.ClipRegion">
@@ -801,7 +799,6 @@
           </p>
         </descr>
         <seealso></seealso>
-        <notes><note>?</note></notes>
       </element>
 
     </module>

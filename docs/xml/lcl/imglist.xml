@@ -2734,13 +2734,6 @@
         <seealso>
           <link id="TCustomImageList.AssignTo"/>
         </seealso>
-        <notes>
-          <note>
-            There are several public properties not handled in Assign.
-            BlendColor, BkColor, DrawingStyle, Masked, Scaled, ShareImages, ImageType.
-            Is this intentional?
-          </note>
-        </notes>
       </element>
       <element name="TCustomImageList.Assign.Source">
         <short>Image list with properties stored in the current class instance</short>
@@ -3069,7 +3062,6 @@
           <link id="TCustomImageListResolution"/>
           <link id="TCustomImageListResolutions"/>
         </seealso>
-        <notes><note>The wording in this topic seems awkward. Suggestions?</note></notes>
       </element>
       <element name="TCustomImageList.AddMultipleResolutions.Result">
         <short>Ordinal position where images were stored in the various resolutions</short>
@@ -4456,9 +4448,6 @@
         <seealso>
           <link id="TDrawingStyle"/>
         </seealso>
-        <notes>
-          <note>How is drawing style different than drawing effect?</note>
-        </notes>
       </element>
 
       <element name="TCustomImageList.Height">

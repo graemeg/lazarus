@@ -124,33 +124,30 @@
           <p>
             <var>TComboBoxExStyleEx</var> is an enumerated type with values which modify the behavior in <var>TComboEx</var>. Values from the enumeration are stored in the <var>TComboBoxExStyles</var> set type, and used in the <var>StyleEx</var> property in <var>TCustomComboBoxEx</var> and <var>TComboBoxEx</var>.
           </p>
+          <remark>
+            Not used in the current LCL implementation.
+          </remark>
         </descr>
         <seealso>
           <link id="TComboBoxExStyles"/>
           <link id="TCustomComboBoxEx.StyleEx"/>
           <link id="TComboBoxEx.StyleEx"/>
         </seealso>
-        <notes><note>Not used in the current LCL implementation.</note></notes>
       </element>
       <element name="TComboBoxExStyleEx.csExCaseSensitive">
         <short>Enables case-sensitive comparisons in the control</short>
-        <notes><note>Not used in the current LCL implementation.</note></notes>
       </element>
       <element name="TComboBoxExStyleEx.csExNoEditImage">
         <short/>
-        <notes><note>Not used in the current LCL implementation.</note></notes>
       </element>
       <element name="TComboBoxExStyleEx.csExNoEditImageIndent">
         <short/>
-        <notes><note>Not used in the current LCL implementation.</note></notes>
       </element>
       <element name="TComboBoxExStyleEx.csExNoSizeLimit">
         <short/>
-        <notes><note>Not used in the current LCL implementation.</note></notes>
       </element>
       <element name="TComboBoxExStyleEx.csExPathWordBreak">
         <short/>
-        <notes><note>Not used in the current LCL implementation.</note></notes>
       </element>
 
       <element name="TComboBoxExStyles">
@@ -2308,11 +2305,18 @@
 
       <element name="TCustomCheckCombo.Toggle">
         <short>Toggles the checked state for the check box at the specified position</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>Toggle</var> is a method used to toggle the checked state for the combo-box item at the position specified in <var>AIndex</var>. Toggle sets the value in the indexed <var>State</var> property to the next <var>TCheckBoxState</var> value for the entry in Items.
+          </p>
+          <p>
+            The value in the <var>AllowGrayed</var> property is used to determine the next checked stated.  When AllowGrayed is <b>False</b>, the value progresses in the order <var>cbUnchecked</var> to <var>cbChecked</var> and repeats. When AllowGrayed is <b>True</b>, the order is <var>cbGrayed</var>, cbUnchecked, cbChecked and repeats.
+          </p>
+          <p>
+            Toggle is called from the <var>KeyDown</var> and <var>DropDown</var> methods when the <b>Return</b> or <b>Space</b> key is pressed on the item in <var>ItemIndex</var> and the item is <var>Enabled</var>. It is also called from the <var>Select</var> method.
+          </p>
+        </descr>
         <seealso/>
-        <notes>
-          <note>Not sure how to describe the internal state map.</note>
-        </notes>
       </element>
       <element name="TCustomCheckCombo.Toggle.AIndex">
         <short>Ordinal position for the check box affected in the method</short>
