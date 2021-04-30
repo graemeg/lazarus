@@ -1942,7 +1942,8 @@ begin
           Params,Params.NewNode);
         OrigExprContext:=ExprType.Context.Tool.FindBaseTypeOfNode(
           Params,ExprType.Context.Node);
-        if (ResExprContext.Tool <> OrigExprContext.Tool) then // the "source" types are different -> add unit to the type
+        if (ResExprContext.Tool <> OrigExprContext.Tool)
+        and (ResExprContext.Tool.ExtractSourceName <> 'objpas') then // the "source" types are different -> add unit to the type
           NewType := ExprType.Context.Tool.ExtractSourceName + '.' + NewType
         else
         begin // the "source" types are the same -> set ExprType to found Params.New* so that unit adding is avoided (with MissingUnit)

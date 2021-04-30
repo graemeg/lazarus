@@ -9778,22 +9778,30 @@ var
       ReadNextAtom;
       RaiseIdentExpected(20191003163224);
     end;
-    ResolveChildren;
-    if ExprType.Desc in xtAllTypeHelperTypes then begin
-      // Lazarus supports record helpers for basic types (string) as well (with TYPEHELPERS modeswitch!).
-    end else if (ExprType.Context.Node=nil) then begin
-      MoveCursorToCleanPos(CurAtom.StartPos);
-      ReadNextAtom;
-      RaiseIllegalQualifierFound(20191003163056);
-    end else if ExprType.Context.Node.Desc in AllPointContexts then begin
-      // ok, allowed
-    end else begin
-      // not allowed
-      //debugln(['ResolvePoint ',ExprTypeToString(ExprType)]);
-      MoveCursorToCleanPos(CurAtom.StartPos);
-      ReadNextAtom;
-      RaiseIllegalQualifierFound(20191003163059);
-    end;
+    repeat
+      ResolveChildren;
+      if ExprType.Desc in xtAllTypeHelperTypes then begin
+        // Lazarus supports record helpers for basic types (string) as well (with TYPEHELPERS modeswitch!).
+        break;
+      end else if (ExprType.Context.Node=nil) then begin
+        MoveCursorToCleanPos(CurAtom.StartPos);
+        ReadNextAtom;
+        RaiseIllegalQualifierFound(20191003163056);
+        break;
+      end else if ExprType.Context.Node.Desc in AllPointContexts then begin
+        // ok, allowed
+        break;
+      end else if ExprType.Context.Node.Desc = ctnGenericParameter then begin
+        // ok, allowed
+        Params.UpdateContexWithGenParamValue(ExprType.Context);
+      end else begin
+        // not allowed
+        //debugln(['ResolvePoint ',ExprTypeToString(ExprType)]);
+        MoveCursorToCleanPos(CurAtom.StartPos);
+        ReadNextAtom;
+        RaiseIllegalQualifierFound(20191003163059);
+      end;
+    until False;
   end;
 
   procedure ResolveAs;
@@ -14116,6 +14124,10 @@ var
   lPNode, lVNode: TCodeTreeNode;
   lPTool, lVTool: TFindDeclarationTool;
 begin
+  if Assigned(Parent) then begin
+    Parent.UpdateContexWithGenParamValue(SpecializeParamContext);
+    exit;
+  end;
   lMapping := GenParamValueMappings.FirstParamValueMapping;
   while lMapping <> nil do begin
     lPNode := lMapping.GenericParamNode;
