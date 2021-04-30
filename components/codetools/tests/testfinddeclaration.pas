@@ -94,6 +94,7 @@ type
     procedure TestFindDeclaration_Generics_Enumerator;
     procedure TestFindDeclaration_Generics;
     procedure TestFindDeclaration_Generics_GuessType;
+    procedure TestFindDeclaration_Generics_GuessType2;
     procedure TestFindDeclaration_GenericsDelphi_InterfaceAncestor;
     procedure TestFindDeclaration_ForIn;
     procedure TestFindDeclaration_FileAtCursor;
@@ -667,6 +668,11 @@ end;
 procedure TTestFindDeclaration.TestFindDeclaration_Generics_GuessType;
 begin
   FindDeclarations('moduletests/fdt_generics_guesstype.pas');
+end;
+
+procedure TTestFindDeclaration.TestFindDeclaration_Generics_GuessType2;
+begin
+  FindDeclarations('moduletests/fdt_generics_guesstype2.pas');
 end;
 
 procedure TTestFindDeclaration.TestFindDeclaration_GenericsDelphi_InterfaceAncestor;
