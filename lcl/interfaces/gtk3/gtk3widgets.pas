@@ -383,6 +383,7 @@ type
   protected
     function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
   public
+    procedure InitializeWidget;override;
     function getClientRect: TRect; override;
     function getPagesCount: integer;
     procedure InsertPage(ACustomPage: TCustomPage; AIndex: Integer);
@@ -3318,12 +3319,7 @@ begin
   FCentralWidget := TGtkFixed.new;
   PGtkBin(Result)^.add(FCentralWidget);
   FCentralWidget^.set_has_window(True);
-
-  {fWidgetRGBA[0].R:=0.8;
-  fWidgetRGBA[0].Alpha:=0.7;
-  PgtkFrame(Result)^.override_color(GTK_STATE_NORMAL,@Self.FWidgetRGBA[0]);}
-  // nil resets color to gtk default
-  //FWidget^.override_background_color(GTK_STATE_FLAG_NORMAL, nil);
+  PgtkFrame(result)^.set_label_align(0.1,0.5);
 end;
 
 function TGtk3GroupBox.getText: String;
@@ -4576,6 +4572,12 @@ begin
   // those signals doesn't trigger with gtk3-3.6
   // g_signal_connect_data(FCentralWidget,'change-current-page', TGCallback(@GtkNotebookAfterSwitchPage), Self, nil, 0);
   // g_signal_connect_data(FCentralWidget,'select-page', TGCallback(@GtkNotebookSelectPage), Self, nil, 0);
+end;
+
+procedure TGtk3NoteBook.InitializeWidget;
+begin
+  inherited;
+  SetTabPosition(TCustomTabControl(LCLObject).TabPosition);
 end;
 
 function TGtk3NoteBook.getClientRect: TRect;
