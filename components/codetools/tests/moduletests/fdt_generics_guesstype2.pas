@@ -201,6 +201,18 @@ begin
   o_p3_3_x{guesstype:XYZ} := OL_P3_3[0].X;
   o_p3_3_y{guesstype:Integer} := OL_P3_3[0].Y;
   o_p3_3_z{guesstype:String} := OL_P3_3[0].Z;
+  o2_x{guesstype:XYZ} := OL2[0].X;
+  o2_y{guesstype:Integer} := OL2[0].Y;
+  o2_z{guesstype:String} := OL2[0].Z;
+  o3_x{guesstype:XYZ} := OL3[0].X;
+  o3_y{guesstype:Integer} := OL3[0].Y;
+  o3_z{guesstype:String} := OL3[0].Z;
+  o4_x{guesstype:XYZ} := OL4[0].X;
+  o4_y{guesstype:Integer} := OL4[0].Y;
+  o4_z{guesstype:String} := OL4[0].Z;
+  o_x{guesstype:XYZ} := A[0].X;
+  o_y{guesstype:Integer} := A[0].Y;
+  o_z{guesstype:String} := A[0].Z;
 end.
 
 
