@@ -2740,6 +2740,7 @@ begin
   for i := 0 to Screen.FormCount - 1 do
   begin
     AForm := Screen.Forms[i];
+    if AForm.FormStyle = fsSplash then continue;
     ParentForm := GetParentForm(AForm);
     if FFloatingWindowsOnTop then
     begin
