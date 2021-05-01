@@ -248,27 +248,34 @@ end;
 
 procedure TScrollingWinControl.ScrollInView(AControl: TControl);
 var
-  xRect: TRect;
+  LRect: TRect;
+  LParent: TWinControl;
 begin
-  if AControl=nil then
-    Exit;
-  xRect := AControl.BoundsRect;
-  OffsetRect(xRect, -HorzScrollBar.Position, -VertScrollBar.Position);
-  if xRect.Left < 0 then
-    HorzScrollBar.Position := HorzScrollBar.Position + xRect.Left
-  else if xRect.Right > ClientWidth then
+  if AControl = nil then Exit;
+  LRect := AControl.BoundsRect;
+  LParent := AControl.Parent;
+  while LParent <> Self do
   begin
-    if xRect.Right - xRect.Left > ClientWidth then
-      xRect.Right := xRect.Left + ClientWidth;
-    HorzScrollBar.Position := HorzScrollBar.Position + xRect.Right - ClientWidth;
+    OffsetRect(LRect, LParent.BoundsRect.Left, LParent.BoundsRect.Top);
+    LParent := LParent.Parent;
+    if LParent = nil then Exit; //ScrollingWinControl isn't parent of AControl
   end;
-  if xRect.Top < 0 then
-    VertScrollBar.Position := VertScrollBar.Position + xRect.Top
-  else if xRect.Bottom > ClientHeight then
+  OffsetRect(LRect, -HorzScrollBar.Position, -VertScrollBar.Position);
+  if LRect.Left < 0 then
+    HorzScrollBar.Position := HorzScrollBar.Position + LRect.Left
+  else if LRect.Right > ClientWidth then
   begin
-    if xRect.Bottom - xRect.Top > ClientHeight then
-      xRect.Bottom := xRect.Top + ClientHeight;
-    VertScrollBar.Position := VertScrollBar.Position + xRect.Bottom - ClientHeight;
+    if LRect.Right - LRect.Left > ClientWidth then
+      LRect.Right := LRect.Left + ClientWidth;
+    HorzScrollBar.Position := HorzScrollBar.Position + LRect.Right - ClientWidth;
+  end;
+  if LRect.Top < 0 then
+    VertScrollBar.Position := VertScrollBar.Position + LRect.Top
+  else if LRect.Bottom > ClientHeight then
+  begin
+    if LRect.Bottom - LRect.Top > ClientHeight then
+      LRect.Bottom := LRect.Top + ClientHeight;
+    VertScrollBar.Position := VertScrollBar.Position + LRect.Bottom - ClientHeight;
   end;
 end;
 
