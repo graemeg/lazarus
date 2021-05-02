@@ -249,18 +249,15 @@ end;
 procedure TScrollingWinControl.ScrollInView(AControl: TControl);
 var
   LRect: TRect;
-  LParent: TWinControl;
+  LPoint: TPoint;
 begin
   if AControl = nil then Exit;
-  LRect := AControl.BoundsRect;
-  LParent := AControl.Parent;
-  while LParent <> Self do
-  begin
-    OffsetRect(LRect, LParent.BoundsRect.Left, LParent.BoundsRect.Top);
-    LParent := LParent.Parent;
-    if LParent = nil then Exit; //ScrollingWinControl isn't parent of AControl
-  end;
-  OffsetRect(LRect, -HorzScrollBar.Position, -VertScrollBar.Position);
+  LPoint := AControl.ClientToParent(Point(0, 0), Self);
+  LRect.Left := LPoint.x;
+  LRect.Top := LPoint.y;
+  LPoint := AControl.ClientToParent(Point(AControl.Width, AControl.Height), Self);
+  LRect.Right := LPoint.x;
+  LRect.Bottom := LPoint.y;
   if LRect.Left < 0 then
     HorzScrollBar.Position := HorzScrollBar.Position + LRect.Left
   else if LRect.Right > ClientWidth then
