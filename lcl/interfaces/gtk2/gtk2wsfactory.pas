@@ -8,7 +8,7 @@ uses
   // RTL
   Classes,
   // LCL
-  Controls, ComCtrls, Calendar, StdCtrls, Spin, ShellCtrls,
+  Controls, ComCtrls, Calendar, StdCtrls, Spin,
   Dialogs, ExtCtrls, ExtDlgs, Buttons, CheckLst, Forms, Grids, Menus,
   PairSplitter, WSLCLClasses;
 
@@ -124,7 +124,6 @@ uses
   Gtk2WSStdCtrls,
   Gtk2WSPairSplitter,
   Gtk2WSPrivate,
-  Gtk2WSShellCtrls,
   UnityWSCtrls;
 
 // imglist
@@ -625,14 +624,12 @@ end;
 // ShellCtrls
 function RegisterCustomShellTreeView: Boolean; alias : 'WSRegisterCustomShellTreeView';
 begin
-  RegisterWSComponent(TCustomShellTreeView, TGTK2WSCustomShellTreeView);
-  Result := True;
+  Result := False;
 end;
 
 function RegisterCustomShellListView: Boolean; alias : 'WSRegisterCustomShellListView';
 begin
-  RegisterWSComponent(TCustomShellListView, TGTK2WSCustomShellListView);
-  Result := True;
+  Result := False;
 end;
 
 function RegisterLazDeviceAPIs: Boolean; alias : 'WSRegisterLazDeviceAPIs';

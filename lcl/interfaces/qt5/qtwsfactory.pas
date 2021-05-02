@@ -4,7 +4,7 @@ unit QtWSFactory;
 
 interface
 uses
-  Classes, Controls, ComCtrls, Calendar, StdCtrls, Spin, Grids, ShellCtrls,
+  Classes, Controls, ComCtrls, Calendar, StdCtrls, Spin, Grids,
   Dialogs, ExtCtrls, Buttons, CheckLst, Forms, Menus, RubberBand, PairSplitter,
   WSLCLClasses;
 
@@ -115,8 +115,7 @@ uses
  QtWSSpin,
  QtWSStdCtrls,
  QtWSGrids,
- QtWSDesigner,
- QtWSShellCtrls;
+ QtWSDesigner;
 
 // imglist
 function RegisterCustomImageListResolution: Boolean; alias : 'WSRegisterCustomImageListResolution';
@@ -563,14 +562,12 @@ end;
 // ShellCtrls
 function RegisterCustomShellTreeView: Boolean; alias : 'WSRegisterCustomShellTreeView';
 begin
-  RegisterWSComponent(TCustomShellTreeView, TQTWSCustomShellTreeView);
-  Result := True;
+  Result := False;
 end;
 
 function RegisterCustomShellListView: Boolean; alias : 'WSRegisterCustomShellListView';
 begin
-  RegisterWSComponent(TCustomShellListView, TQTWSCustomShellListView);
-  Result := True;
+  Result := False;
 end;
 
 function RegisterLazDeviceAPIs: Boolean; alias : 'WSRegisterLazDeviceAPIs';

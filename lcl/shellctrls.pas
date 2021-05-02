@@ -245,10 +245,6 @@ type
     property OnAddItem: TAddItemEvent read FOnAddItem write FOnAddItem;
     { Protected properties which users may want to access, see bug 15374 }
     property Items;
-    property SmallImages;  
-    property SmallImagesWidth;
-    property LargeImages;   
-    property LargeImagesWidth;
   end;
 
   { TShellListView }
@@ -1543,9 +1539,9 @@ begin
         // Image index
         if FUseBuiltInIcons then
         begin
-          if (ViewStyle = vsIcon) then
+          if (ViewStyle = vsIcon) and (LargeImages = nil) then
             NewItem.ImageIndex := GetBuiltInImageIndex(CurFilePath, true)
-          else if (ViewStyle <> vsIcon) then
+          else if (ViewStyle <> vsIcon) and (SmallImages = nil) then
             NewItem.ImageIndex := GetBuiltinImageIndex(CurFilePath, false);
         end;
         if Assigned(FOnFileAdded) then FOnFileAdded(Self,NewItem);
