@@ -404,6 +404,14 @@ begin
 
           if ARawImage.Description.BitsPerPixel <> GetGdkImageBitsPerPixel(GdkImage)
           then begin
+            DebugLn('TGtk2WidgetSet.CreateBitmapFromRawImage GdkImage: ',
+              ' BytesPerLine=',dbgs(GdkImage^.bpl),
+              ' BitsPerPixel=',dbgs(GetGdkImageBitsPerPixel(GdkImage)),
+              ' ByteOrder=',dbgs(ord(GdkImage^.byte_order)),
+              ' Visual^.depth=',dbgs(Visual^.depth),
+              ' ImgDepth=',dbgs(ImgDepth),
+              ' ARawImage.Description.BitsPerPixel=',dbgs(ARawImage.Description.BitsPerPixel),
+              '');
             RaiseGDBException('TGtk2WidgetSet.CreateBitmapFromRawImage Incompatible BitsPerPixel');
           end;
           if ImgDataSize <> GdkImage^.bpl * ImgHeight
