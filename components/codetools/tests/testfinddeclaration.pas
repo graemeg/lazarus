@@ -97,6 +97,7 @@ type
     procedure TestFindDeclaration_Generics_GuessType2;
     procedure TestFindDeclaration_Generics_FindDeclaration;
     procedure TestFindDeclaration_GenericsDelphi_InterfaceAncestor;
+    procedure TestFindDeclaration_GenericsDelphi_FuncParam;
     procedure TestFindDeclaration_ForIn;
     procedure TestFindDeclaration_FileAtCursor;
     procedure TestFindDeclaration_CBlocks;
@@ -694,6 +695,28 @@ begin
   '  IBirdy = interface (IParameters<IItem>)',
   '    [''guid'']',
   '  end;',
+  'end.']);
+  FindDeclarations(Code);
+end;
+
+procedure TTestFindDeclaration.TestFindDeclaration_GenericsDelphi_FuncParam;
+begin
+  StartProgram;
+  Add([
+  '{$mode delphi}',
+  'type',
+  '  TAnt<T> = class',
+  '  type TEvent = procedure(aSender: T);',
+  '  end;',
+  '  TBird = class',
+  '    procedure Fly<T>(Event: TAnt<T>.TEvent; aSender: T)',
+  '  end;',
+  'procedure Run(Sender: TObject);',
+  'begin',
+  'end;',
+  'var Bird: TBird;',
+  'begin',
+  '  Bird.Fly<TObject>(Run,Bird);',
   'end.']);
   FindDeclarations(Code);
 end;

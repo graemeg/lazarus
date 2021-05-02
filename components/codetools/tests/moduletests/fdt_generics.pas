@@ -1,5 +1,5 @@
 {
-  ./testcodetools --format=plain --suite=TestFindDeclaration_Generics
+  ./runtestscodetools --format=plain --suite=TestFindDeclaration_Generics
 }
 unit fdt_generics;
 
@@ -12,6 +12,7 @@ uses
 
 type
   generic TGenBaseAction<GenParam1> = class
+  var
     BaseName: GenParam1{declaration:fdt_generics.TGenBaseAction.GenParam1};
   end;
 
