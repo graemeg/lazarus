@@ -1633,6 +1633,7 @@ function TPascalParserTool.ReadParamType(ExceptionOnError, Extract: boolean;
 //   array of const
 //   file
 //   file of integer
+//   a<b>.c (only mode delphi)
 //   LongInt location 'd0'  (only m68k, powerpc)
 //   univ longint  (only macpas)
 var
@@ -1711,28 +1712,7 @@ begin
           AtomIsIdentifierSaveE(20180411194035);
         exit;
       end;
-      if (phpCreateNodes in Attr) then begin
-        CreateChildNode;
-        CurNode.Desc:=ctnIdentifier;
-        CurNode.EndPos:=CurPos.EndPos;
-      end;
-      Next;
-      while CurPos.Flag=cafPoint do begin
-        Next;
-        if not AtomIsIdentifier then begin
-          if ExceptionOnError then
-            AtomIsIdentifierSaveE(20180411194038);
-          exit;
-        end;
-        if (phpCreateNodes in Attr) then
-          CurNode.EndPos:=CurPos.EndPos;
-        Next;
-      end;
-      if (phpCreateNodes in Attr) then begin
-        EndChildNode;
-      end;
-      if (Scanner.CompilerMode in [cmDELPHI,cmDELPHIUNICODE]) and AtomIsChar('<') then
-        ReadSpecialize(phpCreateNodes in Attr,Extract,Copying,Attr);
+      ReadTypeReference(phpCreateNodes in Attr,Extract,Copying,Attr);
     end;
     if (phpCreateNodes in Attr) then begin
       if IsFileType then begin
@@ -4428,6 +4408,7 @@ begin
   if CreateNodes then begin
     CreateChildNode;
     CurNode.Desc:=ctnIdentifier;
+    CurNode.EndPos:=CurPos.EndPos;
   end;
   Next;
   Cnt:=1;
