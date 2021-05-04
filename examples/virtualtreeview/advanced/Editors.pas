@@ -449,6 +449,7 @@ var
   //S: WideString;
   S: String;
   I: Integer;
+  D: TDateTime;
   
 begin
   Result := True;
@@ -463,27 +464,37 @@ begin
     end;
   end
   else
-    if FEdit is TMaskEdit then
+  if FEdit is TMaskEdit then
+  begin
+    I := StrToInt(Trim(TMaskEdit(FEdit).EditText));
+    if I <> Data.Value[FColumn - 1] then
     begin
-      I := StrToInt(Trim(TMaskEdit(FEdit).EditText));
-      if I <> Data.Value[FColumn - 1] then
-      begin
-        Data.Value[FColumn - 1] := I;
-        Data.Changed := True;
-      end;
-    end
-    else
-      if FEdit is TCustomEdit then
-      begin
-        S := TCustomEdit(FEdit).Text;
-        if S <> Data.Value[FColumn - 1] then
-        begin
-          Data.Value[FColumn - 1] := S;
-          Data.Changed := True;
-        end;
-      end
-      else
-        raise Exception.Create('Unknow Edit Control');
+      Data.Value[FColumn - 1] := I;
+      Data.Changed := True;
+    end;
+  end
+  else
+  if FEdit is TCustomEdit then
+  begin
+    S := TCustomEdit(FEdit).Text;
+    if S <> Data.Value[FColumn - 1] then
+    begin
+      Data.Value[FColumn - 1] := S;
+      Data.Changed := True;
+    end;
+  end
+  else
+  if FEdit is TDateEdit then
+  begin
+    D := TDateEdit(FEdit).Date;
+    if D <> Data.Value[FColumn - 1] then
+    begin
+      Data.Value[FColumn - 1] := D;
+      Data.Changed := True;
+    end;
+  end
+  else
+    raise Exception.Create('Unknow Edit Control');
 
   if Data.Changed then
     FTree.InvalidateNode(FNode);
