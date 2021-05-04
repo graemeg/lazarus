@@ -250,30 +250,33 @@ procedure TScrollingWinControl.ScrollInView(AControl: TControl);
 var
   LRect: TRect;
   LPoint: TPoint;
+  LHorzVisible, LVertVisible: Boolean;
 begin
-  if AControl = nil then Exit;
+  if (AControl = nil) or not IsParentOf(AControl) then Exit;
+  LHorzVisible := HorzScrollBar.IsScrollBarVisible;
+  LVertVisible := VertScrollBar.IsScrollBarVisible;
+  if not LHorzVisible and not LVertVisible then Exit;
+  LRect := Rect(0, 0, AControl.Width, AControl.Height);
   LPoint := AControl.ClientToParent(Point(0, 0), Self);
-  LRect.Left := LPoint.x;
-  LRect.Top := LPoint.y;
-  LPoint := AControl.ClientToParent(Point(AControl.Width, AControl.Height), Self);
-  LRect.Right := LPoint.x;
-  LRect.Bottom := LPoint.y;
-  if LRect.Left < 0 then
-    HorzScrollBar.Position := HorzScrollBar.Position + LRect.Left
-  else if LRect.Right > ClientWidth then
-  begin
-    if LRect.Right - LRect.Left > ClientWidth then
-      LRect.Right := LRect.Left + ClientWidth;
-    HorzScrollBar.Position := HorzScrollBar.Position + LRect.Right - ClientWidth;
-  end;
-  if LRect.Top < 0 then
-    VertScrollBar.Position := VertScrollBar.Position + LRect.Top
-  else if LRect.Bottom > ClientHeight then
-  begin
-    if LRect.Bottom - LRect.Top > ClientHeight then
-      LRect.Bottom := LRect.Top + ClientHeight;
-    VertScrollBar.Position := VertScrollBar.Position + LRect.Bottom - ClientHeight;
-  end;
+  OffsetRect(LRect, LPoint.x, LPoint.y);
+  if LHorzVisible then
+    if LRect.Left < 0 then
+      HorzScrollBar.Position := HorzScrollBar.Position + LRect.Left
+    else if LRect.Right > ClientWidth then
+    begin
+      if LRect.Right - LRect.Left > ClientWidth then
+        LRect.Right := LRect.Left + ClientWidth;
+      HorzScrollBar.Position := HorzScrollBar.Position + LRect.Right - ClientWidth;
+    end;
+  if LVertVisible then
+    if LRect.Top < 0 then
+      VertScrollBar.Position := VertScrollBar.Position + LRect.Top
+    else if LRect.Bottom > ClientHeight then
+    begin
+      if LRect.Bottom - LRect.Top > ClientHeight then
+        LRect.Bottom := LRect.Top + ClientHeight;
+      VertScrollBar.Position := VertScrollBar.Position + LRect.Bottom - ClientHeight;
+    end;
 end;
 
 procedure TScrollingWinControl.Loaded;
