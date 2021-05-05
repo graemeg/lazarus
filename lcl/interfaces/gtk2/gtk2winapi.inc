@@ -6921,7 +6921,7 @@ begin
 
   // create the PointsArray, which is a copy of Points moved by the DCOrigin
   // only if needed
-  if (DevCtx.IsNullPen and (DevCtx.IsNullBrush or Winding)) then
+  if DevCtx.IsNullPen and DevCtx.IsNullBrush then
     PointArray := nil
   else
   begin
