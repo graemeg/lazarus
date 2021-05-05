@@ -1130,7 +1130,7 @@ type
     function  MoveNextSelectable(Relative:Boolean; DCol, DRow: Integer): Boolean; virtual;
     procedure MoveSelection; virtual;
     function  OffsetToColRow(IsCol,Fisical:Boolean; Offset:Integer;
-                             var Index,Rest:Integer): boolean;
+                             out Index,Rest:Integer): boolean;
     procedure Paint; override;
     procedure PickListItemSelected(Sender: TObject);
     procedure PrepareCanvas(aCol,aRow: Integer; aState:TGridDrawState); virtual;
@@ -1333,7 +1333,7 @@ type
     procedure LoadFromStream(AStream: TStream); virtual;
     function  MouseCoord(X,Y: Integer): TGridCoord;
     function  MouseToCell(const Mouse: TPoint): TPoint; overload;
-    procedure MouseToCell(X,Y: Integer; var ACol,ARow: Longint); overload;
+    procedure MouseToCell(X,Y: Integer; out ACol,ARow: Longint); overload;
     function  MouseToLogcell(Mouse: TPoint): TPoint;
     function  MouseToGridZone(X,Y: Integer): TGridZone;
     procedure SaveToFile(FileName: string); virtual;
@@ -6179,7 +6179,7 @@ end;
 
 
 function TCustomGrid.OffsetToColRow(IsCol, Fisical: Boolean; Offset: Integer;
-  var Index, Rest: Integer): boolean;
+  out Index, Rest: Integer): boolean;
 begin
   Index:=0;
   Rest:=0;
@@ -7681,7 +7681,7 @@ begin
   MouseToCell(Mouse.X, Mouse.Y, Result.X, Result.Y);
 end;
 
-procedure TCustomGrid.MouseToCell(X, Y: Integer; var ACol, ARow: Longint);
+procedure TCustomGrid.MouseToCell(X, Y: Integer; out ACol, ARow: Longint);
 var
   dummy: Integer;
 begin
