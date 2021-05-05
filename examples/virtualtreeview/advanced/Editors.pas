@@ -215,10 +215,17 @@ begin
   FTree.EndEditNode;
 end;
 
-procedure TPropertyEditLink.EditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+type
+  TVirtualStringTreeAccess = class(TVirtualStringTree);
 
+procedure TPropertyEditLink.EditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 var
   CanAdvance: Boolean;
+  node: PVirtualNode;
+  col: TColumnIndex;
+  GetStartColumn: function(ConsiderAllowFocus: Boolean = False): TColumnIndex of object;
+  GetNextColumn: function(Column: TColumnIndex; ConsiderAllowFocus: Boolean = False): TColumnIndex of object;
+  GetNextNode: TGetNextNodeProc;
 
 begin
   CanAdvance := true;
@@ -230,12 +237,29 @@ begin
         FTree.CancelEditNode;
         Key := 0;
       end;
+
+    VK_RETURN:
+      if CanAdvance then
+      begin
+        FTree.InvalidateNode(FNode);
+        if (ssShift in Shift) then
+          node := FTree.GetPreviousVisible(FNode, True)
+        else
+          node := FTree.GetNextVisible(FNode, True);
+        FTree.EndEditNode;
+        if node <> nil then FTree.FocusedNode := node;
+        Key := 0;
+        if FTree.CanEdit(FTree.FocusedNode, FTree.FocusedColumn) then
+          TVirtualStringTreeAccess(FTree).DoEdit;
+      end;
+    {
     VK_RETURN:
       if CanAdvance then
       begin
         FTree.EndEditNode;
         Key := 0;
       end;
+      }
 
     VK_UP,
     VK_DOWN:
@@ -255,6 +279,61 @@ begin
           Key := 0;
         end;
       end;
+
+    VK_TAB:
+      if CanAdvance then
+      begin
+        FTree.InvalidateNode(FNode);
+        if ssShift in Shift then
+        begin
+          GetStartColumn := FTree.Header.Columns.GetLastVisibleColumn;
+          GetNextColumn := FTree.Header.Columns.GetPreviousVisibleColumn;
+          GetNextNode := FTree.GetPreviousVisible;
+        end
+        else
+        begin
+          GetStartColumn := FTree.Header.Columns.GetFirstVisibleColumn;
+          GetNextColumn := FTree.Header.Columns.GetNextVisibleColumn;
+          GetNextNode := FTree.GetNextVisible;
+        end;
+
+        // Advance to next/previous visible column/node.
+        node := FNode;
+        col := GetNextColumn(FColumn, True);
+        repeat
+          // Find a column for the current node which can be focused.
+          while (col > NoColumn) and
+            not TVirtualStringTreeAccess(FTree).DoFocusChanging(FNode, node, FColumn, col)
+          do
+            col := GetNextColumn(col, True);
+
+          if col > NoColumn then
+          begin
+            // Set new node and column in one go.
+            TVirtualStringTreeAccess(FTree).SetFocusedNodeAndColumn(node, col);
+            Break;
+          end;
+
+          // No next column was accepted for the current node. So advance to next node and try again.
+          node := GetNextNode(node);
+          col := GetStartColumn();
+        until node = nil;
+
+        FTree.EndEditNode;
+        Key := 0;
+        if node <> nil then
+        begin
+          FTree.FocusedNode := node;
+          FTree.FocusedColumn := col;
+        end;
+        if FTree.CanEdit(FTree.FocusedNode, FTree.FocusedColumn) then
+          with TVirtualStringTreeAccess(FTree) do
+          begin
+            EditColumn := FocusedColumn;
+            DoEdit;
+          end;
+      end;
+
   end;
 end;
 
