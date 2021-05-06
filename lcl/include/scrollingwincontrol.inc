@@ -13,7 +13,10 @@ procedure TScrollingWinControl.SetAutoScroll(Value: Boolean);
 begin
   if FAutoScroll = Value then Exit;
   FAutoScroll := Value;
-  UpdateScrollBars;
+  if Value then
+    UpdateScrollBars
+  else
+    HideScrollbars;
 end;
 
 procedure TScrollingWinControl.CreateWnd;
@@ -140,6 +143,24 @@ end;
 procedure TScrollingWinControl.SetVertScrollBar(Value: TControlScrollBar);
 begin
   FVertScrollbar.Assign(Value);
+end;
+
+procedure TScrollingWinControl.HideScrollbars;
+begin
+  if Assigned(FHorzScrollBar) and FHorzScrollBar.HandleAllocated then
+  begin
+    ShowScrollBar(FHorzScrollBar.ControlHandle, SB_Horz, False);
+    FHorzScrollBar.Range := 0;
+    FHorzScrollBar.Page := 80;
+    FHorzScrollBar.Position := 0;
+  end;
+  if Assigned(FVertScrollBar) and FVertScrollBar.HandleAllocated then
+  begin
+    ShowScrollBar(FVertScrollBar.ControlHandle, SB_Vert, False);
+    FVertScrollBar.Range := 0;
+    FVertScrollBar.Page := 80;
+    FVertScrollBar.Position := 0;
+  end;
 end;
 
 procedure TScrollingWinControl.WMSize(var Message: TLMSize);

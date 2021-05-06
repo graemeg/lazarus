@@ -160,6 +160,7 @@ type
     FIsUpdating: Boolean;
     procedure SetHorzScrollBar(Value: TControlScrollBar);
     procedure SetVertScrollBar(Value: TControlScrollBar);
+    procedure HideScrollbars;
   protected
     class procedure WSRegisterClass; override;
     procedure AlignControls(AControl: TControl; var ARect: TRect); override;
