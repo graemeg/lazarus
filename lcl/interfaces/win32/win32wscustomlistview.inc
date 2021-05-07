@@ -115,23 +115,18 @@ var
         else
           txt := '';
       end;
-      if txt <> '' then
+      if DataInfo^.hdr.code = UInt(LVN_GETDISPINFOA) then
       begin
-        if DataInfo^.hdr.code = UInt(LVN_GETDISPINFOA) then
-        begin
-          LVInfo^.DispInfoTextA[LVInfo^.DispInfoIndex]:=Utf8ToAnsi(txt);
-          DataInfo^.item.pszText := @(LVInfo^.DispInfoTextA[LVInfo^.DispInfoIndex][1]);
-        end
-        else
-        begin
-          LVInfo^.DispInfoTextW[LVInfo^.DispInfoIndex]:=UTF8Decode(txt);
-          DataInfo^.item.pszText := @(LVInfo^.DispInfoTextW[LVInfo^.DispInfoIndex][1]);
-        end;
-        inc(LVInfo^.DispInfoIndex);
-        if LVInfo^.DispInfoIndex=LV_DISP_INFO_COUNT then LVInfo^.DispInfoIndex:=0;
+        LVInfo^.DispInfoTextA[LVInfo^.DispInfoIndex]:=Utf8ToAnsi(txt+#0);
+        DataInfo^.item.pszText := @(LVInfo^.DispInfoTextA[LVInfo^.DispInfoIndex][1]);
       end
       else
-        DataInfo^.item.pszText := nil;
+      begin
+        LVInfo^.DispInfoTextW[LVInfo^.DispInfoIndex]:=UTF8Decode(txt+#0);
+        DataInfo^.item.pszText := PChar(LVInfo^.DispInfoTextW[LVInfo^.DispInfoIndex]);
+      end;
+      inc(LVInfo^.DispInfoIndex);
+      if LVInfo^.DispInfoIndex=LV_DISP_INFO_COUNT then LVInfo^.DispInfoIndex:=0;
     end;
     if (DataInfo^.item.mask and LVIF_IMAGE) <> 0 then
     begin
