@@ -1174,7 +1174,8 @@ begin
     end;
   GDK_BUTTON_RELEASE:
     begin
-      //if not (csClickEvents in TGtk3Widget(Data).LCLObject.ControlStyle) then
+      if not ((csClickEvents in TGtk3Widget(Data).LCLObject.ControlStyle) and
+         (csClicked in TGtk3Widget(Data).LCLObject.ControlState)) then
         Result := TGtk3Widget(Data).GtkEventMouse(Widget , Event);
     end;
   GDK_KEY_PRESS:
@@ -2583,7 +2584,7 @@ end;
 
 procedure TGtk3Widget.DestroyWidget;
 begin
-  if IsWidgetOk and FOwnWidget and Assigned(fWidget) then
+  if IsValidHandle and FOwnWidget then
     FWidget^.destroy_;
   FWidget := nil;
 end;
@@ -2663,8 +2664,10 @@ begin
     fWidget^.get_preferred_height(@mh,@nh);
     fWidget^.get_preferred_width(@mw,@nw);
 
-    LCLObject.Constraints.MinHeight:=mh;
-    LCLObject.Constraints.MinWidth:=mw;
+    if mh>LCLObject.Constraints.MinHeight then
+      LCLObject.Constraints.MinHeight:=mh;
+    if mw>LCLObject.Constraints.MinWidth then
+      LCLObject.Constraints.MinWidth:=mw;
   end;
   LCLIntf.SetProp(HWND(Self),'lclwidget',Self);
 
@@ -3831,11 +3834,16 @@ end;
 function TGtk3TrackBar.CreateWidget(const Params: TCreateParams): PGtkWidget;
 var
   ATrack: TCustomTrackBar;
-  Alloc:TGtkAllocation;
 begin
   ATrack := TCustomTrackBar(LCLObject);
   FWidgetType := FWidgetType + [wtTrackBar];
-  Result := PGtkWidget(TGtkScale.new(Ord(ATrack.Orientation), nil));
+
+ { Result := TGtkHBox.new(1,0);
+  fCentralWidget:=PGtkWidget(TGtkScale.new(Ord(ATrack.Orientation), nil));
+  PgtkBox(Result)^.add(fCentralWidget);}
+
+  Result :=PGtkWidget(TGtkScale.new(Ord(ATrack.Orientation), nil));
+
   FOrientation := ATrack.Orientation;
   if ATrack.Reversed then
     PGtkScale(Result)^.set_inverted(True);
@@ -3861,7 +3869,8 @@ end;
 
 procedure TGtk3TrackBar.SetTickMarks(AValue: TTickMark; ATickStyle: TTickStyle);
 var
-  i: Integer;
+  i,cnt: Integer;
+  Track:TCustomTrackbar;
 begin
   if IsWidgetOK then
   begin
@@ -3870,7 +3879,12 @@ begin
       PGtkScale(FWidget)^.clear_marks
     else
     begin
-      for i := TCustomTrackbar(LCLObject).Min to TCustomTrackbar(LCLObject).Max do
+      Track:=TCustomTrackbar(LCLObject);
+      cnt:=round(abs(Track.max-Track.min)/Track.LineSize);
+      // highly-dense marks just enlarge GtkScale automatically
+      // it is up to user concent to do this
+      if cnt*4<Track.Width then
+      for i := Track.Min to Track.Max do
       begin
         if TCustomTrackbar(LCLObject).Orientation = trHorizontal then
         begin
@@ -6734,8 +6748,8 @@ end;
 
 procedure TGtk3Button.ButtonClicked(pData: pointer); cdecl;
 begin
-  if TObject(pdata) is TButton then
-  TButton(pdata).Click;
+  if TObject(pdata) is TCustomButton then
+  TCustomButton(pdata).Click;
 end;
 
 procedure TGtk3Button.SetImage(AImage: TBitmap);
