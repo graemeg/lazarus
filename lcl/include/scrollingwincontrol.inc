@@ -10,13 +10,18 @@
 }
 
 procedure TScrollingWinControl.SetAutoScroll(Value: Boolean);
+var
+  LOldBounds: TRect;
 begin
   if FAutoScroll = Value then Exit;
   FAutoScroll := Value;
+  LOldBounds := BoundsRect;
   if Value then
     UpdateScrollBars
   else
     HideScrollbars;
+  if LOldBounds <> BoundsRect then
+    BoundsRect := LOldBounds;
 end;
 
 procedure TScrollingWinControl.CreateWnd;
