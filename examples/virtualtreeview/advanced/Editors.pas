@@ -252,14 +252,6 @@ begin
         if FTree.CanEdit(FTree.FocusedNode, FTree.FocusedColumn) then
           TVirtualStringTreeAccess(FTree).DoEdit;
       end;
-    {
-    VK_RETURN:
-      if CanAdvance then
-      begin
-        FTree.EndEditNode;
-        Key := 0;
-      end;
-      }
 
     VK_UP,
     VK_DOWN:
