@@ -29484,11 +29484,9 @@ begin
               if Assigned(Result.PrevSibling) then
               begin
                 // No children anymore, so take the previous sibling.
-                if vsVisible in Result.PrevSibling.States then
-                begin
-                  Result := Result.PrevSibling;
+                Result := Result.PrevSibling;
+                if vsVisible in Result.States then
                   Break;
-                end;
               end
               else
               begin
