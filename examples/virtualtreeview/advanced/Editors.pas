@@ -250,7 +250,10 @@ begin
         if node <> nil then FTree.FocusedNode := node;
         Key := 0;
         if FTree.CanEdit(FTree.FocusedNode, FTree.FocusedColumn) then
+          {$PUSH}
+          {$OBJECTCHECKS OFF}
           TVirtualStringTreeAccess(FTree).DoEdit;
+          {$POP}
       end;
 
     VK_UP,
@@ -295,14 +298,20 @@ begin
         repeat
           // Find a column for the current node which can be focused.
           while (col > NoColumn) and
+          {$PUSH}
+          {$OBJECTCHECKS OFF}
             not TVirtualStringTreeAccess(FTree).DoFocusChanging(FNode, node, FColumn, col)
+          {$POP}
           do
             col := GetNextColumn(col, True);
 
           if col > NoColumn then
           begin
             // Set new node and column in one go.
+            {$PUSH}
+            {$OBJECTCHECKS OFF}
             TVirtualStringTreeAccess(FTree).SetFocusedNodeAndColumn(node, col);
+            {$POP}
             Break;
           end;
 
@@ -319,11 +328,14 @@ begin
           FTree.FocusedColumn := col;
         end;
         if FTree.CanEdit(FTree.FocusedNode, FTree.FocusedColumn) then
+          {$PUSH}
+          {$OBJECTCHECKS OFF}
           with TVirtualStringTreeAccess(FTree) do
           begin
             EditColumn := FocusedColumn;
             DoEdit;
           end;
+        {$POP}
       end;
 
   end;
