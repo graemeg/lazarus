@@ -97,7 +97,7 @@ type
     FGDIObjects: TDynHashArray;    // hasharray of PGdiObject
     FMessageQueue: TGtkMessageQueue; // queue of PMsg (must be thread safe!)
     WaitingForMessages: boolean;
-    MovedPaintMessageCount: integer;// how many paint messages moved to he end of the queue
+    MovedPaintMessageCount: integer;// how many paint messages moved to the end of the queue
 
     FRCFilename: string;
     FRCFileParsed: boolean;
