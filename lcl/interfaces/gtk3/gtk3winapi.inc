@@ -2779,13 +2779,19 @@ end;
 
 function TGtk3WidgetSet.GetWindowSize(Handle: hwnd; var Width, Height: integer
   ): boolean;
+var
+  aWidget: PGtkWidget;
 begin
   Result := False;
   if Handle <> 0 then
   begin
-    Width := TGtk3Widget(Handle).Widget^.get_allocated_width;
-    Height := TGtk3Widget(Handle).Widget^.get_allocated_Height;
-    Result := True;
+    aWidget:= TGtk3Widget(Handle).Widget;
+    if aWidget<>nil then
+    begin
+      Width := aWidget^.get_allocated_width;
+      Height := aWidget^.get_allocated_Height;
+      Result := True;
+    end;
   end;
 end;
 

@@ -2666,7 +2666,8 @@ begin
   LCLIntf.SetProp(HWND(Self),'lclwidget',Self);
 
   // move signal connections into attach events
-  FWidget^.set_events(GDK_DEFAULT_EVENTS_MASK);
+  if not gtk_widget_get_realized(FWidget) then
+    FWidget^.set_events(GDK_DEFAULT_EVENTS_MASK);
   g_signal_connect_data(FWidget, 'destroy', TGCallback(@TGtk3Widget.destroy_event), Self, nil, 0);
   g_signal_connect_data(FWidget, 'event', TGCallback(@Gtk3WidgetEvent), Self, nil, 0);
 
@@ -2931,34 +2932,39 @@ procedure TGtk3Widget.SetBounds(ALeft,ATop,AWidth,AHeight:integer);
 var
   ARect: TGdkRectangle;
   Alloc: TGtkAllocation;
-  AMinSize, ANaturalSize: gint;
+  AMinWidth, AMinHeight, ANaturalSize: gint;
 begin
-    if Self is TGtk3Button then
-    begin
-      dec(Awidth,4);
-      dec(Aheight,4);
-    end;
+  if (Widget=nil) then
+    exit;
+  if (not Widget^.get_visible) and (not Widget^.is_toplevel) then
+    exit;
 
-  ARect.x := ALeft;
-  ARect.y := ATop;
-  ARect.width := AWidth;
-  ARect.Height := AHeight;
-  with Alloc do
+  if Self is TGtk3Button then
   begin
-    x := ALeft;
-    y := ATop;
-    width := AWidth;
-    height := AHeight;
+    dec(AWidth,4);
+    dec(AHeight,4);
   end;
 
   BeginUpdate;
   try
     {fixes gtk3 assertion}
-    Widget^.get_preferred_width(@AMinSize, @ANaturalSize);
-    Widget^.get_preferred_height(@AMinSize, @ANaturalSize);
-
-
+    Widget^.get_preferred_width(@AMinWidth, @ANaturalSize);
+    Widget^.get_preferred_height(@AMinHeight, @ANaturalSize);
+    AWidth:=Max(AWidth,AMinWidth);
+    AHeight:=Max(AHeight,AMinHeight);
     Widget^.set_size_request(AWidth,AHeight);
+
+    ARect.x := ALeft;
+    ARect.y := ATop;
+    ARect.width := AWidth;
+    ARect.Height := AHeight;
+    with Alloc do
+    begin
+      x := ALeft;
+      y := ATop;
+      width := AWidth;
+      height := AHeight;
+    end;
 
     Widget^.size_allocate(@ARect);
     Widget^.set_allocation(@Alloc);
@@ -3142,6 +3148,7 @@ end;
 procedure TGtk3Widget.SetParent(AParent: TGtk3Widget; const ALeft, ATop: Integer
   );
 begin
+  if FWidget=nil then exit;;
   if wtLayout in AParent.WidgetType then
     PGtkLayout(AParent.GetContainerWidget)^.put(FWidget, ALeft, ATop)
   else
@@ -7299,11 +7306,12 @@ begin
     Result := TGtkWindow.new(GTK_WINDOW_TOPLEVEL);
     FWidget:=Result;
     //Result^.set_size_request(0,0);
+    FWidget^.set_events(GDK_DEFAULT_EVENTS_MASK);
     gtk_widget_realize(Result);
     decor:=decoration_flags(AForm);
     gdk_window_set_decorations(Result^.window, decor);
     if AForm.AlphaBlend then
-    gtk_widget_set_opacity(Result, TForm(LCLObject).AlphaBlendValue/255);
+      gtk_widget_set_opacity(Result, TForm(LCLObject).AlphaBlendValue/255);
 
     FWidgetType := [wtWidget, wtLayout, wtScrollingWin, wtWindow];
   end else
