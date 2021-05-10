@@ -220,7 +220,6 @@
           </p>
         </descr>
         <seealso/>
-        <notes><note>Free for user data?</note></notes>
       </element>
 
       <element name="TLvlGraphNode.Create">
@@ -2352,7 +2351,6 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
           </p>
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
 
       <element name="TLvlGraphControlFlag">
@@ -2451,11 +2449,73 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
           <p>
             <var>TCustomLvlGraphControl</var> is a <var>TCustomControl</var> descendant which impements the ancestor for <var>TLvlGraphControl</var>.
           </p>
+          <p>
+            It is used to render a level graph (also known as a edlayered graph). A level graph consists of nodes (or vertices) and edges  with an equidistant spacing beteen related nodes.
+          </p>
+          <p>
+            TCustomLvlGraphControl and TLvlGraphControl provide the following features:
+          </p>
+          <ul>
+            <li>
+              Offers automatic topological sorting, with an option to put nodes left-most or right-most.
+            </li>
+            <li>
+              Offers automatic topological sorting, with an option to put nodes left-most or right-most.
+            </li>
+            <li>
+              Edges can be automatically combined.
+            </li>
+            <li>
+              Long edges over multiple levels are combined into a single line with forks to related nodes.
+            </li>
+            <li>
+              Provides a heuristic to minimize line crossings.
+            </li>
+            <li>
+              Automatically prevents overlapping of display elements.
+            </li>
+            <li>
+              Nodes can be displayed as rectangles, ellipses or icons stored in a TImageList.
+            </li>
+            <li>
+              You can select nodes using the mouse.
+            </li>
+            <li>
+              You can select multiple nodes at once.
+            </li>
+            <li>
+              You can highlight nodes or edges under the mouse.
+            </li>
+            <li>
+              The control displays back edges in special colours, which facilitates quick visual identification of cycles (e.g. unit circles).
+            </li>
+            <li>
+              Edges can be drawn straight or as a curve (bezier).
+            </li>
+            <li>
+              There is a header caption.
+            </li>
+            <li>
+              Node captions can be shown to the left, to the right, above, or below nodes.
+            </li>
+            <li>
+              All colors can be set via published properties.
+            </li>
+            <li>
+              Events are provided to custom-draw and/or skip each part of the default drawing.
+            </li>
+          </ul>
+          <p>
+            There is a simple example in:
+            <file>($LazarusDir)/examples/levelgraph/lvlgraph_dependencies.lpi</file>.
+          </p>
+          <p>
+            TLvlGraphControl is used to display unit dependencies in the Package Graph for the Lazarus IDE.
+          </p>
         </descr>
         <seealso>
           <link id="TLvlGraphControl"/>
         </seealso>
-        <notes><note>Make this consistent with TLvlGraphicControl.</note></notes>
       </element>
 
       <!-- private -->

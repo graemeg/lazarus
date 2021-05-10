@@ -437,14 +437,14 @@
       Since the property value is a Pointer, it must be dereferenced to access the member values for a given hash item. For example:
     </p>
 <code>
-  // var AKey: Cardinal;
-  // var AHashValue: String;
-  // var AData: TObject;
-  // var AHashes: TStringHashList;
+// var AKey: Cardinal;
+// var AHashValue: String;
+// var AData: TObject;
+// var AHashes: TStringHashList;
 
-  AKey := AHashes.List[2]^.Key;
-  AHashValue := AHashes.List[2]^.HashValue;
-  AData := AHashes.List[2]^.Data;
+AKey := AHashes.List[2]^.Key;
+AHashValue := AHashes.List[2]^.HashValue;
+AData := AHashes.List[2]^.Data;
 </code>
   </descr>
   <seealso>

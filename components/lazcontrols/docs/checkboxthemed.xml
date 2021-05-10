@@ -27,14 +27,17 @@
       <element name="LazMethodList"/>
 
       <element name="TCheckBoxThemedActionLink">
-        <short/>
+        <short>Provides a link between a themed check box control and its action</short>
         <descr>
-          TCheckBoxThemedActionLink is a TWinControlActionLink descendant.
+          <p>
+            <var>TCheckBoxThemedActionLink</var> is a <var>TWinControlActionLink</var> descendant which maintains a link between a <var>TCustomCheckBoxThemed</var> class instance and its <var>Action</var>. It provides overridden methods that use TCustomCheckBoxThemed as the internal client for the link, and maintains the checked state for the client control when the Action is linked and executed.
+          </p>
         </descr>
         <seealso>
+          <link id="#lcl.actnlist.TCustomAction">TCustomAction</link>
           <link id="#lcl.controls.TWinControlActionLink">TWinControlActionLink</link>
+          <link id="#lcl.controls.TControlActionLink">TControlActionLink</link>
         </seealso>
-        <notes><note>?</note></notes>
       </element>
 
       <!-- protected members and methods -->

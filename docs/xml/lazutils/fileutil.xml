@@ -61,18 +61,31 @@
       </element>
 
       <element name="ComparePhysicalFilenames">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Compares file names after resolving symbolic links</short>
+        <descr>
+          <p>
+            <var>ComparePhysicalFilenames</var>, like <var>CompareFileNames</var>, is used to compare file name using the case-sensitivity enforced for file names on the platform.
+          </p>
+          <p>
+            Calls <var>GetPhysicalFilename</var> to ensure that values in <var>Filename1</var> and <var>Filename2</var> are resolved to the actual file names on the local file system. This is significant for UNIX-like platforms where the file name arguments may be symbolic links on the file system.
+          </p>
+          <p>
+            Calls CompareFileNames in <file>LazFileUtils</file> to perform the comparison and get the return value for the routine.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lazutils.LazFileUtils.CompareFileNames">CompareFileNames</link>
+          <link id="#lazutils.LazFileUtils.GetPhysicalFilename">GetPhysicalFilename</link>
+        </seealso>
       </element>
       <element name="ComparePhysicalFilenames.Result">
-        <short/>
+        <short>Relative sort order for the compared values</short>
       </element>
       <element name="ComparePhysicalFilenames.Filename1">
-        <short/>
+        <short>First file name resolved and used in the comparison</short>
       </element>
       <element name="ComparePhysicalFilenames.Filename2">
-        <short/>
+        <short>Second file name resolved and used in the comparison</short>
       </element>
 
       <element name="CompareFilenames">
@@ -200,7 +213,6 @@
             <var>ProgramDirectoryWithBundle</var> is a <var>String</var> function used to get the path to current executable on the MacOS operating system. It calls ProgramDirectory to get the return value,  and removes the bundle post-fix ('.app/Contents/MacOS') from the return value. The return value is not changed if it does not contain the bundle post-fix.
           </p>
         </descr>
-        <notes><note>Routine name is misleading.</note></notes>
         <seealso>
           <link id="ProgramDirectory"/>
         </seealso>
@@ -353,7 +365,9 @@
       <element name="CreateAbsolutePath">
         <short>Deprecated</short>
         <descr>
-          Deprecated. Use the function from the <file>LazFileUtils</file> unit.
+          <p>
+            Deprecated. Use the CreateAbsolutePath function from the <file>LazFileUtils</file> unit.
+          </p>
         </descr>
         <seealso>
           <link id="@lazutils.lazfileutils.CreateAbsolutePath">CreateAbsolutePath</link>
@@ -431,8 +445,7 @@
         <short>Do not search in BasePath, search only in SearchPath</short>
       </element>
       <element name="TSearchFileInPathFlag.sffSearchLoUpCase">
-        <short/>
-        <notes><note>I can guess the intent... but I cannot find an example of usage.</note></notes>
+        <short>Performs a case-insensitive search for file or directory names</short>
       </element>
       <element name="TSearchFileInPathFlag.sffFile">
         <short>Must be a file, and not a directory</short>
@@ -757,7 +770,7 @@
         <short>Contains file information for the current entry in the iterator</short>
         <descr>
           <p>
-            <var>FileInfo</var> is a read-only <var>TSearchRec</var> property with the file information for the current entry in the iterator. FileInfo is used in the IsDirectory method to determine the faDirectory file attribute exists in the file information. Values in the Path, FileName, and FileInfo properties are updated in descendent classes which perform the search operation.
+            <var>FileInfo</var> is a read-only <var>TSearchRec</var> property with the file information for the current entry in the iterator. FileInfo is used in the IsDirectory method to determine the faDirectory file attribute exists in the file information. Values in the <var>Path</var>, <var>FileName</var>, and FileInfo properties are updated in descendent classes which perform the search operation.
           </p>
         </descr>
         <seealso>
@@ -786,7 +799,7 @@
         <short>Contains the path to the current file or directory in the iterator</short>
         <descr>
           <p>
-            <var>Path</var> is a read-only <var>String</var> property which contains the fully-qualified path to the current file or directory in the <var>FileInfo</var> properties. Values in the Path, FileName, and FileInfo properties are updated in descendent classes which perform the search operation.
+            <var>Path</var> is a read-only <var>String</var> property which contains the fully-qualified path to the current file or directory in the <var>FileInfo</var> property. Values in the Path, <var>FileName</var>, and FileInfo properties are updated in descendent classes which perform the search operation.
           </p>
         </descr>
         <seealso>

@@ -597,15 +597,17 @@
         <seealso/>
       </element>
 
-
-      <element name="TSpinEditExBase.FinalizeWnd">
+      <element name="TSpinEditExBase.FinalizeWnd" link="#lcl.controls.TWinControl.FinalizeWnd">
         <short>Performs actions prior to freeing the handle for the control</short>
         <descr>
+          <p>
+            Ensures that the Value property is up-to-date before releasing the Handle for the control.
+          </p>
         </descr>
-        <seealso/>
-        <notes><note>?</note></notes>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.FinalizeWnd">TWinControl.FinalizeWnd</link>
+        </seealso>
       </element>
-
 
       <element name="TSpinEditExBase.Loaded">
         <short>
@@ -708,7 +710,6 @@
           <link id="#lcl.comctrls.TUpDown.MinRepeatInterval"/>
           <link id="DefMinRepeatValue"/>
         </seealso>
-        <notes><note>?</note></notes>
       </element>
 
       <!-- public methods and properties -->

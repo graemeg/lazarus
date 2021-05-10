@@ -9345,28 +9345,30 @@
       </element>
 
       <element name="TCustomGrid.OffsetToColRow">
-        <short>Moves to a column or row located at the specified offset ???</short>
+        <short>Moves to a column or row located at the specified offset</short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
+        <version>
+          Index and Rest arguments were changed to output parameters in LCL version 2.1 (revision 65087).
+        </version>
       </element>
       <element name="TCustomGrid.OffsetToColRow.Result">
-        <short/>
+        <short>True if a column and row number was identified for the specified offset</short>
       </element>
       <element name="TCustomGrid.OffsetToColRow.IsCol">
-        <short/>
+        <short>True if the offset is for a column, False for a row</short>
       </element>
       <element name="TCustomGrid.OffsetToColRow.Fisical">
-        <short/>
+        <short>True for a physical offset, False for a logical offset</short>
       </element>
       <element name="TCustomGrid.OffsetToColRow.Offset">
-        <short/>
+        <short>Offset in pixels for the column or row</short>
       </element>
       <element name="TCustomGrid.OffsetToColRow.Index">
-        <short/>
+        <short>Index position for the column or row in the specified offset</short>
       </element>
       <element name="TCustomGrid.OffsetToColRow.Rest">
-        <short/>
+        <short>Remaining pixels stating at the value in Index</short>
       </element>
 
       <element name="TCustomGrid.Paint">
@@ -12055,6 +12057,9 @@
         <short>Converts mouse coordinates to the grid coordinates for a cell in the grid</short>
         <descr/>
         <seealso/>
+        <version>
+          ACol and ARow arguments were changed to output parameters in LCL version 2.1 (revision 65087).
+        </version>
       </element>
       <element name="TCustomGrid.MouseToCell.Result">
         <short>TPoint instance with the grid coordinates for the cell</short>

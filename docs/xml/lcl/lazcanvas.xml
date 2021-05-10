@@ -48,7 +48,7 @@
         </seealso>
       </element>
       <element name="TLazCanvasImageFormat.clfOther">
-        <short></short>
+        <short>Images use a format other than those in this enumeration</short>
       </element>
       <element name="TLazCanvasImageFormat.clfRGB16_R5G6B5">
         <short>Images use 16-bit RGB colors</short>
@@ -74,7 +74,7 @@
 
       <!-- class Visibility: default -->
       <element name="TFPSharpInterpolation">
-        <short></short>
+        <short>Implements a very sharp and square interpolation</short>
         <descr>
           <p>
             TFPSharpInterpolation implements a very sharp and square interpolation for stretching, similar to StretchBlt from the Windows API.
@@ -305,13 +305,13 @@
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.SetColor.x">
-        <short></short>
+        <short>Horizontal pixel coordinate</short>
       </element>
       <element name="TLazCanvas.SetColor.y">
-        <short></short>
+        <short>Vertical pixel coordinate</short>
       </element>
       <element name="TLazCanvas.SetColor.AValue">
-        <short></short>
+        <short>Color for the pixel</short>
       </element>
 
       <!-- function Visibility: protected -->
@@ -354,7 +354,7 @@
 
       <!-- procedure Visibility: protected -->
       <element name="TLazCanvas.DoRectangleFill">
-        <short></short>
+        <short>Adjusts the FCL image rectangle to be LCL compatible</short>
         <descr>
           <p>
             Adjusts the fcl-image coordinate system to be compatible with coordinates used in <var>TCanvas</var>.
@@ -363,7 +363,7 @@
         <seealso/>
       </element>
       <element name="TLazCanvas.DoRectangleFill.Bounds">
-        <short></short>
+        <short>Rectangle bounds adjusted in the method</short>
       </element>
 
       <!-- procedure Visibility: protected -->
@@ -377,7 +377,7 @@
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.DoPolygonFill.points">
-        <short></short>
+        <short>Array with the TPoint instances for the polygon corners</short>
       </element>
 
       <!-- procedure Visibility: protected -->

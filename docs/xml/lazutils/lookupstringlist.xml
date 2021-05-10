@@ -26,13 +26,13 @@
         </short>
         <descr>
           <p>
-            TLookupStringList is a TStringList descendant that implements an unsorted StringList with a fast lookup feature. Internally it uses a map container to store the strings which are used in the Contains, IndexOf and Find methods. The map container does not reserve too much memory because the strings are reference counted and not copied.
+            <var>TLookupStringList</var> is a <var>TStringList</var> descendant that implements an unsorted string list with a fast lookup feature. Internally it uses a map container to store the strings which are used in the <var>Contains</var>, <var>IndexOf</var> and <var>Find</var> methods. The map container does not reserve too much memory because the strings are reference counted and not copied.
           </p>
           <p>
-            All Duplicates property values are fully supported, including dupIgnore and dupError, unlike in unsorted TStringList class.
+            All values for the Duplicates property are fully supported, including dupIgnore and dupError (unlike in unsorted TStringList class).
           </p>
           <p>
-            This class is useful only when you must preserve the order in list, but also need to do fast lookups to see if a string exists, or must prevent duplicates.
+            This class is useful when you must preserve the order in list, but also need to do fast lookups to see if a string exists, or must prevent duplicates.
           </p>
           <p>
             Authors: Juha Manninen / Antônio Galvão
@@ -51,7 +51,7 @@
         </short>
         <descr>
           <p>
-            InsertItem is an overridden method which ensures that the internal String map and the Duplicates property are used when an item value is inserted. When Sorted contains False, the value in Duplicates determines the actions taken.
+            <var>InsertItem</var> is an overridden method which ensures that the internal <var>String</var> map and the <var>Duplicates</var> property are used when an item value is inserted. When <var>Sorted</var> contains <b>False</b>, the value in Duplicates determines the actions taken.
           </p>
           <dl>
             <dt>dupAccept</dt>
@@ -68,12 +68,12 @@
             </dd>
           </dl>
           <p>
-            InsertItem calls the inherited method, and adds the value in S to the internal string map.
+            InsertItem calls the inherited method, and adds the value in <var>S</var> to the internal string map.
           </p>
         </descr>
         <errors>
           <p>
-            Raises an Exception when adding a duplicated value and Duplicates contains dupError. Raised with the message 'TLookupStringList.InsertItem: Duplicates are not allowed.'
+            Raises an <var>Exception</var> when adding a duplicated value and Duplicates contains <var>dupError</var>. Raised with the message 'TLookupStringList.InsertItem: Duplicates are not allowed.'
           </p>
         </errors>
         <seealso></seealso>
@@ -94,7 +94,7 @@
         </short>
         <descr>
           <p>
-            Create is the constructor for the class instance, and calls the inherited constructor. Create allocates the internal TStringMap instance used in the class.
+            <var>Create</var> is the constructor for the class instance, and calls the inherited constructor. Create allocates the internal <var>TStringMap</var> instance used in the class.
           </p>
         </descr>
         <seealso></seealso>
@@ -107,7 +107,7 @@
         </short>
         <descr>
           <p>
-            Destroy is the destructor for the class instance. Destroy frees the internal  TStringMap instance allocated in the constructor, and calls the inherited Destroy method.
+            <var>Destroy</var> is the destructor for the class instance. Destroy frees the internal  <var>TStringMap</var> instance allocated in the constructor, and calls the inherited Destroy method.
           </p>
         </descr>
         <seealso></seealso>
@@ -120,7 +120,7 @@
         </short>
         <descr>
           <p>
-            Assign is an overridden method which implements the object persistence mechanism in the class. Assign ensures that property values in Source are stored in the current class instance. Assign calls the inherited method. When Source is a TLookupStringList class instance, the values in its internal string map are also stored in the current class instance.
+            <var>Assign</var> is an overridden method which implements the object persistence mechanism in the class. Assign ensures that property values in <var>Source</var> are stored in the current class instance. Assign calls the inherited method. When Source is a <var>TLookupStringList</var> class instance, the values in its internal string map are also stored in the current class instance.
           </p>
         </descr>
         <seealso></seealso>
@@ -137,7 +137,7 @@
         </short>
         <descr>
           <p>
-            Clear is an overridden method used to clear the content stored in Strings, Objects, and the internal string map. Clear calls the inherited method, and calls the TStringMap.Clear method in the internal string map.
+            <var>Clear</var> is an overridden method used to clear the content stored in <var>Strings</var>, <var>Objects</var>, and the internal string map. Clear calls the inherited method, and calls the <var>TStringMap.Clear</var> method in the internal string map.
           </p>
         </descr>
         <seealso></seealso>
@@ -150,7 +150,7 @@
         </short>
         <descr>
           <p>
-            Delete is an overridden method which ensures that the internal string map is maintained when deleting the value stored at the specified position. The corresponding value in Strings is used to check for duplicates using IndexOf. When a duplicate exists, and Duplicates are not allowed, the value is also removed from the internal string map. Delete calls the inherited method to delete the values in Strings and Objects at the position in Index.
+            <var>Delete</var> is an overridden method which ensures that the internal string map is maintained when deleting the value stored at the specified position. The corresponding value in <var>Strings</var> is used to check for duplicates using <var>IndexOf</var>. When a duplicate exists, and <var>Duplicates</var> are not allowed, the value is also removed from the internal string map. Delete calls the inherited method to delete the values in Strings and Objects at the position in <var>Index</var>.
           </p>
         </descr>
         <seealso></seealso>
@@ -167,10 +167,10 @@
         </short>
         <descr>
           <p>
-            Add is an overridden Integer function used to enforce handling of Duplicates  when adding the specified value to Strings. Add checks the values in Sorted and Duplicates to see if duplicates are allowed in the unsorted String list.
+            <var>Add</var> is an overridden <var>Integer</var> function used to enforce handling of <var>Duplicates</var> when adding the specified value to <var>Strings</var>. Add checks the values in <var>Sorted</var> and Duplicates to see if duplicates are allowed in the unsorted string list.
           </p>
           <p>
-            The return value is -1 if the value in S already exists in the string map, and no actions are performed in the method. Otherwise, the inherited Add method is called to store the value in S. The return value is the position in Strings where the new value was stored.
+            The return value is <b>-1</b> if the value in <var>S</var> already exists in the string map, and no actions are performed in the method. Otherwise, the inherited Add method is called to store the value in S. The return value is the position in Strings where the new value was stored.
           </p>
         </descr>
         <seealso></seealso>
@@ -193,10 +193,10 @@
         </short>
         <descr>
           <p>
-            AddObject is an overridden Integer function used to add the specified values to the Strings and Objects in the list. AddObject calls the Add method to add the value in S to Strings.
+            <var>AddObject</var> is an overridden <var>Integer</var> function used to add the specified values to the <var>Strings</var> and <var>Objects</var> in the list. AddObject calls the <var>Add</var> method to add the value in <var>S</var> to Strings.
           </p>
           <p>
-            The return value contains the ordinal position in Strings where the value was stored, or -1 when duplicate values are not allowed. If the return value is not -1, the Objects property is updated to include the value in AObject at the specified position.
+            The return value contains the ordinal position in Strings where the value was stored, or <b>-1</b> when duplicate values are not allowed. If the return value is not <b>-1</b>, the Objects property is updated to include the value in <var>AObject</var> at the specified position.
           </p>
         </descr>
         <seealso></seealso>
@@ -223,10 +223,10 @@
         </short>
         <descr>
           <p>
-            Contains is a Boolean function used to determine if the specified value already exists in the internal string map for the string list. The return value is True when S is already stored in the TStringMap for the class.
+            <var>Contains</var> is a <var>Boolean</var> function used to determine if the specified value already exists in the internal string map for the string list. The return value is <b>True</b> when <var>S</var> is already stored in the <var>TStringMap</var> for the class.
           </p>
           <p>
-            Contains is called from the Add, InsertItem, and IndexOf methods.
+            Contains is called from the <var>Add</var>, <var>InsertItem</var>, and <var>IndexOf</var> methods.
           </p>
         </descr>
         <seealso></seealso>
@@ -247,7 +247,7 @@
         </short>
         <descr>
           <p>
-            Find is an overridden Boolean function used to locate the specified value in the Strings property. The value in Index contains the position in Strings where value was located using the IndexOf method. Index contains -1 if the value in S is not stored in Strings. The return value if True when Index contains a value other than -1.
+            <var>Find</var> is an overridden <var>Boolean</var> function used to locate the specified value in the <var>Strings</var> property. The value in <var>Index</var> contains the position in Strings where value was located using the <var>IndexOf</var> method. Index contains <b>-1</b> if the value in <var>S</var> is not stored in Strings. The return value if <b>True</b> when Index contains a value other than <b>-1</b>.
           </p>
           <p>
             Please note: Find does <b>NOT</b> call the inherited method.
@@ -275,10 +275,10 @@
         </short>
         <descr>
           <p>
-            IndexOf is an overridden Integer function used to get the position in Strings where the specified value is stored. IndexOf uses the internal String map to determine if the value in S is stored in the string list. If S already exists, the inherited method is called.
+            <var>IndexOf</var> is an overridden <var>Integer</var> function used to get the position in <var>Strings</var> where the specified value is stored. IndexOf uses the internal <var>String</var> map to determine if the value in <var>S</var> is stored in the string list. If S already exists, the inherited method is called.
           </p>
           <p>
-            The return value contains the ordinal position for the specified value, or -1 when S does not exist in the string map.
+            The return value contains the ordinal position for the specified value, or <b>-1</b> when S does not exist in the string map.
           </p>
         </descr>
         <seealso></seealso>
@@ -300,7 +300,7 @@
         </short>
         <descr>
           <p>
-            Removes duplicate strings (with case sensitivity) from AStrings. Deduplicate creates a TLookupStringList instance that is used to remove the duplicate values in AStrings. When AStrings owns and contains objects, the function will return False.
+            Removes duplicate strings (with case sensitivity) from <var>AStrings</var>. Deduplicate creates a <var>TLookupStringList</var> instance that is used to remove the duplicate values in AStrings. When AStrings owns and contains objects, the function will return <b>False</b>.
           </p>
         </descr>
         <seealso></seealso>

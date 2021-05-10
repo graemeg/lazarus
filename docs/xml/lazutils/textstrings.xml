@@ -601,16 +601,16 @@
         <short>Finishes an update process for the component</short>
         <descr>
           <p>
-            EndUpdate is a method used to finish an active update process for the component.
+            <var>EndUpdate</var> is a method used to finish an active update process for the component.
           </p>
           <p>
-            For each call to BeginUpdate, there needs to be a corresponding call to EndUpdate. The methods are used as a pair to consolidate <var>OnChanging</var> and <var>OnChange</var> event notifcations.
+            For each call to <var>BeginUpdate</var>, there needs to be a corresponding call to EndUpdate. The methods are used as a pair to consolidate <var>OnChanging</var> and <var>OnChange</var> event notifcations.
           </p>
           <p>
-            EndUpdate decrements the internal update counter incremented by calling BeginUpdate. When the update counter is a postive non-zero value, the Changed method is note called and the OnChange event handler is not signalled.
+            EndUpdate decrements the internal update counter incremented by calling BeginUpdate. When the update counter is a postive non-zero value, the <var>Changed</var> method is not called and the <var>OnChange</var> event handler is not signalled.
           </p>
            <p>
-             An Exception is raised if the internal update counter is &lt;= 0 when the method is called. When the counter value reaches 0, the Changed method is called to signal the OnChange event handler (when assigned).
+             An <var>Exception</var> is raised if the internal update counter is &lt;= 0 when the method is called. When the counter value reaches 0, the Changed method is called to signal the OnChange event handler (when assigned).
            </p>
            <p>
              Use BeginUpdate to start an update process by incrementing the value for the internal counter.
@@ -654,7 +654,7 @@
         <short>Appends the specified text to the values in Strings</short>
         <descr>
           <p>
-            Calls AddObject to append the value in S. Nil is used for the object parameter.
+            Calls <var>AddObject</var> to append the value in <var>S</var>. <b>Nil</b> is used as the value for the object parameter.
           </p>
         </descr>
         <seealso>
@@ -672,16 +672,16 @@
         <short>Adds a String and Object pair to the string list</short>
       <descr>
         <p>
-          Adds a LineEnding if they value in Text does not already end with one of the end-of-line characters.
+          Adds a <var>LineEnding</var> if the value in <var>Text</var> does not already end with one of the end-of-line characters.
         </p>
         <p>
-          Calls BuildArrays when an object instance has been assigned to AObject.
+          Calls <var>BuildArrays</var> when an object instance has been assigned to <var>AObject</var>.
         </p>
         <p>
           Recalculates the number of lines in the internal line ranges array. If the number of lines is larger than the current capacity for the array, the capacity is doubled. The memory for the line range array is re-allocated to the new capacity, and the unused portion is zero-filled.
         </p>
         <p>
-          The value in AObject is stored in the TTextLineRange instance for the new line. The start and end position, and the text are also stored in the line range information.
+          The value in AObject is stored in the <var>TTextLineRange</var> instance for the new line. The start and end positions, and the text are stored in the line range information.
         </p>
         <p>
           The internal line count is incremented prior to exiting from the method.
@@ -702,7 +702,9 @@
       <element name="TTextStrings.AddStrings" link="#rtl.classes.TStrings.AddStrings">
         <short/>
         <descr>
-          No actions are performed in the method when TheString does not have any lines of text.
+          <p>
+            No actions are performed in the method when <var>TheString</var> does not have any lines of text.
+          </p>
         </descr>
         <seealso>
           <link id="#rtl.classes.TStrings.AddStrings">TStrings.AddStrings</link>
@@ -716,7 +718,7 @@
         <short>Loads the content in the string list from the specified file name</short>
         <descr>
           <p>
-            Creates a temporary TFileStream instance for the FileName argument.  The file handle is opened for reading, and shared write access is denied. The inherited LoadFromStream method is called to load the values in the string list from the file stream.
+            Creates a temporary <var>TFileStream</var> instance for the <var>FileName</var> argument.  The file handle is opened for reading, and shared write access is denied. The inherited <var>LoadFromStream</var> method is called to load the values in the string list from the file stream.
           </p>
         </descr>
         <seealso>
@@ -732,7 +734,7 @@
         <short>Saves the content in the string list to the specified file name</short>
         <descr>
           <p>
-            Creates a temporary TFileStream instance for the FileName argument. The file is created if it does not already exist. The inherited SaveToStream method is called to store the content in the string list to the file stream.
+            Creates a temporary <var>TFileStream</var> instance for the <var>FileName</var> argument. The file is created if it does not already exist. The inherited <var>SaveToStream</var> method is called to store content in the string list to the file stream.
           </p>
         </descr>
         <seealso>
@@ -763,10 +765,10 @@
         </short>
         <descr>
           <p>
-            OnChange is a TNotifyEvent property with the event handler signalled when values in the Strings and/or Objects properties have been changed.
+            <var>OnChange</var> is a <var>TNotifyEvent</var> property with the event handler signalled when values in the <var>Strings</var> and/or <var>Objects</var> properties have been changed.
           </p>
           <p>
-            OnChange is signalled from the Changed method, and occurs after the property value(s) are stored in the component.
+            OnChange is signalled from the <var>Changed</var> method, and occurs after the property value(s) are stored in the component.
           </p>
         </descr>
         <seealso>
@@ -781,10 +783,10 @@
         <short>Event handler signalled before properties are updated in the component</short>
         <descr>
           <p>
-            OnChanging is a TNotifyEvent property with the event handler signalled before the  <var>Strings</var> or <var>Objects</var> properties are updated in the component.
+            <var>OnChanging</var> is a <var>TNotifyEvent</var> property with the event handler signalled before the  <var>Strings</var> or <var>Objects</var> properties are updated in the component.
           </p>
           <p>
-            OnChanging is signalled from the Changing method when an update process in not already active.
+            OnChanging is signalled from the <var>Changing</var> method when an update process in not already active.
           </p>
         </descr>
         <seealso>

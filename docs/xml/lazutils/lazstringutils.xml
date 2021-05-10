@@ -318,10 +318,10 @@
         </seealso>
       </element>
       <element name="ConvertLineEndings.Result">
-        <short/>
+        <short>Value after converting the line endings</short>
       </element>
       <element name="ConvertLineEndings.s">
-        <short/>
+        <short>Value with line endings to convert in the routine</short>
       </element>
 
       <element name="TabsToSpaces">
@@ -391,17 +391,19 @@
         <short>Creates a regular expression from a filter expression used in IDE dialogs</short>
         <descr>
           <p>
+            Ensures that characters in <var>Src</var> are converted to the notation needed for regular expressions, including '.', ',', ';', '*', '+', '?', and '\'. The return value is enclosed in a regex single line expression ('^(...)$').
+          </p>
+          <p>
             Used in the implementation of the Clean Directory and Change Encoding dialogs in the Lazarus IDE.
           </p>
         </descr>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="SimpleSyntaxToRegExpr.Result">
-        <short/>
+        <short>Regular expression for the value in Src</short>
       </element>
       <element name="SimpleSyntaxToRegExpr.Src">
-        <short/>
+        <short>Filter expression converted to a regular expression in the routine</short>
       </element>
 
       <element name="BinaryStrToText">
@@ -690,7 +692,6 @@
       </element>
       <element name="StringListToString.IgnoreEmptyLines">
         <short>Indicates if empty lines are excluded from the result</short>
-        <short/>
       </element>
 
       <element name="StringToStringList">

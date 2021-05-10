@@ -1031,10 +1031,10 @@
             <var>PopulateWithRoot</var> calls the internal <var>GetFilesInDir</var> helper to get a list of file system items for the path which match the <var>Mask</var> and <var>ObjectTypes</var> specified for the control. Each of the files in the list are passed to <var>DoAddItem</var> / <var>OnAddItem</var> to determine if they can be added to the <var>Items</var> in the control.
           </p>
           <p>
-            A <var>TListItem</var> instance is added to Items to represent the files or directories. The <var>Data</var> property in the list item is used to store a pointer to the file size. Values are added to SubItems with the string representation for the file size, and the file extension.
+            A <var>TListItem</var> instance is added to Items to represent the files or directories. The <var>Data</var> property in the list item is used to store a pointer to the file size. Values are added to <var>SubItems</var> with the string representation for the file size, and the file extension.
           </p>
           <p>
-            When <var>UseBuiltInIcons</var> is set to <b>True</b>, the <var>GetBuiltInImageIndex</var> method is called to get the <var>ImageIndex</var> for the built-in icon used for the list item. The value in <var>ViewStyle</var> determines the image size requested. When ViewStyle is <var>vsIcon</var>, LargeImages is checked for the index value. Otherwise, <var>SmalImages</var> is checked.
+            When <var>UseBuiltInIcons</var> is set to <b>True</b>, the <var>GetBuiltInImageIndex</var> method is called to get the <var>ImageIndex</var> for the built-in icon for a list item. This action is performed using the path to the current file name when LargeImages  and/or SmallImages have not been assigned. The value in <var>ViewStyle</var> determines the image size requested. When ViewStyle is <var>vsIcon</var>, LargeImages is checked (when assigned). Otherwise, <var>SmalImages</var> is checked (when assigned). If an imagelist exists in either LargeImages or SmallImages, the existing ImageIndex in the list item is used.
           </p>
           <p>
             The <var>OnFileAdded</var> event handler is signalled (when assigned) for each new entry added to Items.
@@ -1369,10 +1369,6 @@
       </element>
 
       <element name="TCustomShellListView.Items" link="#lcl.comctrls.TCustomListView.Items"/>
-      <element name="TCustomShellListView.SmallImages" link="#lcl.comctrls.TCustomListView.SmallImages"/>
-      <element name="TCustomShellListView.SmallImagesWidth" link="#lcl.comctrls.TCustomListView.SmallImagesWidth"/>
-      <element name="TCustomShellListView.LargeImages" link="#lcl.comctrls.TCustomListView.LargeImages"/>
-      <element name="TCustomShellListView.LargeImagesWidth" link="#lcl.comctrls.TCustomListView.LargeImagesWidth"/>
 
       <element name="TShellListView">
         <short>

@@ -22,9 +22,11 @@
       <element name="SysUtils"/>
 
       <element name="T2Pointer">
-        <short></short>
+        <short>Record type with pointers to members in the association</short>
         <descr>
-          T2Pointer is a record type used to maintain an association between the pointers to the members in the record.
+          <p>
+            <var>T2Pointer</var> is a record type used to maintain an association between the pointers to the members in the record.
+          </p>
         </descr>
         <seealso></seealso>
       </element>
@@ -44,7 +46,9 @@
       <element name="P2Pointer">
         <short>Pointer to the T2Pointer record type</short>
         <descr>
-          Used to implement the list of item and object associations in TObjectArray.
+          <p>
+            Used to implement the list of item / object associations in <var>TObjectArray</var>.
+          </p>
         </descr>
         <seealso>
           <link id="TObjectArray.Items"/>
@@ -54,7 +58,7 @@
 
       <element name="TObjectArray">
         <short>
-          Implement an array of items with their associated objects
+          Implements an array of items with their associated objects
         </short>
         <descr>
           <p>
@@ -539,7 +543,7 @@
         </short>
         <descr>
           <p>
-            <var>Pack</var> is a procedure used to remove all associations where the Item class instance is unassigned (contains <b>Nil</b>). Pack iterates over the allocated storage in <var>List</var> to determine if the <var>T2Pointer.Item</var> member is unassigned. When an an unassigned item is found, subsequent associations are moved into the storage position(s) for any unused items. Pack updates the value in the <var>Count</var> property to reflect the new number of associations in List.
+            <var>Pack</var> is a procedure used to remove all associations where the Item class instance is unassigned (contains <b>Nil</b>). Pack iterates over the allocated storage in <var>List</var> to determine if the <var>T2Pointer.Item</var> member is unassigned. When an an unassigned item is found, subsequent associations are moved to fill the storage position(s) for any unused items. Pack updates the value in the <var>Count</var> property to reflect the new number of associations in List.
           </p>
         </descr>
         <seealso>
@@ -637,7 +641,7 @@
           <p>
             <var>List</var> is a read-only <var>P2Pointer</var> property which provides access to the list which implements the storage for the class instance. It is organized as pointers to a sequence of T2Pointer records. To access the record, and its Item and Object properties, use a subscript in the range 0..Count-1. For example:
           </p>
-          <code>
+<code>
 // type TMyObjStrsArr = specialize TObjectArray&lt;TMyObject, TStrings&gt;;
 // var aObjArr: TMyObjStrsArr;
 // var lFound: Boolean;
@@ -649,7 +653,7 @@ begin
    if lFound then break;
 end;
 Exit(lFound);
-          </code>
+</code>
           <p>
             Content in the record can be accessed using the indexed Items and Objects properties as well.
           </p>

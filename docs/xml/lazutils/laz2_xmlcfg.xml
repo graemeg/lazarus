@@ -873,43 +873,46 @@
       </element>
 
       <element name="TXMLConfig.IsLegacyList">
-        <short></short>
+        <short>
+          Indicates if the specified list was written using the format from a previous LazUtils version
+        </short>
         <descr>
-          Not used in the current implementation.
+          <p>
+            In a previous LazUtils version, a Count value was written to indicate the number of items in the list. The return value is True if an entry named "Count" is found in APath with a value other than -1.
+          </p>
         </descr>
-        <notes>
-          <note>???</note>
-        </notes>
-        <seealso></seealso>
+        <seealso/>
       </element>
       <element name="TXMLConfig.IsLegacyList.Result">
-        <short></short>
+        <short>True when the path includes a Count value</short>
       </element>
       <element name="TXMLConfig.IsLegacyList.APath">
-        <short></short>
+        <short>Path the values examined in the method</short>
       </element>
 
       <element name="TXMLConfig.GetListItemCount">
-        <short></short>
+        <short>Gets the numer of values with the specified name found in the given path</short>
         <descr>
-          Not used in the current implementation.
+          <p>
+            <var>GetListItemCount</var> is an <var>Integer</var> function used to get the number of values with the name in <var>AItemName</var> found on the path in <var>APath</var>.
+          </p>
+          <p>
+            <var>ALegacyList</var> indicates whether the list includes a "Count" value from a previous LazUtils version. When ALegacyList is <b>True</b>, the "Count" value is used (or 0 as the default). When set to <b>False</b>, a list of XML nodes is retrieved from APath with the name in AItemName. The length of the resulting list node list is used as the return value, or 0 when no XML nodes are found with the specified name.
+          </p>
         </descr>
-        <notes>
-          <note>???</note>
-        </notes>
-        <seealso></seealso>
+        <seealso/>
       </element>
       <element name="TXMLConfig.GetListItemCount.Result">
-        <short></short>
+        <short>Number of items in the list identified by APath</short>
       </element>
       <element name="TXMLConfig.GetListItemCount.APath">
-        <short></short>
+        <short>Path the XML nodes for the list</short>
       </element>
       <element name="TXMLConfig.GetListItemCount.AItemName">
-        <short></short>
+        <short>Name for the list items in APath</short>
       </element>
       <element name="TXMLConfig.GetListItemCount.ALegacyList">
-        <short></short>
+        <short>True when the Count value from an older LazUtils version is used</short>
       </element>
 
       <element name="TXMLConfig.GetListItemXPath">
@@ -918,7 +921,7 @@
         </short>
         <descr>
           <p>
-            GetListItemXPath is a String class function used to get the path specifier used to access a list item at the specified position in the Document. The return value contains the path specifier constructed for the  list item. For example:
+            <var>GetListItemXPath</var> is a <var>String</var> class function used to get the path specifier used to access a list item at the specified position in the Document. The return value contains the path specifier constructed for the  list item. For example:
           </p>
           <code>
 'item0'
@@ -926,10 +929,7 @@
 'item[0]'
           </code>
         </descr>
-        <notes>
-          <note>???</note>
-        </notes>
-        <seealso></seealso>
+        <seealso/>
       </element>
       <element name="TXMLConfig.GetListItemXPath.Result">
         <short>Path specifier for the list item at the specified position</short>
@@ -950,29 +950,33 @@
       </element>
 
       <element name="TXMLConfig.SetListItemCount">
-        <short></short>
+        <short>Sets the value for the Count element in a legacy version of the class</short>
         <descr>
-          Not used in the current implementation.
+          <p>
+            <var>SetListItemCount</var> is a method used to store a Count element with the number of list items in APath. No actions are performed in the method when ALegacyList is set to <b>False</b>; the Count tag is not written or maintained in newer versions of the class.
+          </p>
+          <p>
+            SetListItemCount adds or updates the Count element to use the value in ACount. SetListItemCount deletes the Count element if its value is 0 (zero).
+          </p>
         </descr>
-        <notes>
-          <note>???</note>
-        </notes>
-        <seealso></seealso>
+        <seealso/>
       </element>
       <element name="TXMLConfig.SetListItemCount.APath">
-        <short></short>
+        <short>Path to the XML node where the list is stored</short>
       </element>
       <element name="TXMLConfig.SetListItemCount.ACount">
-        <short></short>
+        <short>Value for the Count element written in the method</short>
       </element>
       <element name="TXMLConfig.SetListItemCount.ALegacyList">
-        <short></short>
+        <short>True the Count element from an older LazUtils version is used</short>
       </element>
 
       <element name="TXMLConfig.Modified">
         <short>Indicates if the XML content in the class has been modified</short>
         <descr>
-          <var>Modified</var> is a <var>Boolean</var> property used to indicate if the XML content in <var>Document</var> has been altered since it was loaded or created. The value in <var>Modified</var> is updated in methods like <var>CreateClean</var>, <var>Flush</var>,  <var>SetValue</var>, <var>DeletePath</var>, <var>DeleteValue</var>, and <var>InternalCleanNode</var>.
+          <p>
+            <var>Modified</var> is a <var>Boolean</var> property used to indicate if the XML content in <var>Document</var> has been altered since it was loaded or created. The value in <var>Modified</var> is updated in methods like <var>CreateClean</var>, <var>Flush</var>,  <var>SetValue</var>, <var>DeletePath</var>, <var>DeleteValue</var>, and <var>InternalCleanNode</var>.
+          </p>
         </descr>
         <seealso>
           <link id="TXMLConfig.CreateClean"/>

@@ -97,9 +97,6 @@
             <var>AlignToInt</var> is a <var>Pointer</var> function used to adjust the pointer in <var>p</var> to the size needed for an <var>Integer</var> data type. <var>AlignToInt</var> is influenced by the <b>FPC_REQUIRES_PROPER_ALIGNMENT</b> compiler define; when it is defined, the <var>Align</var> routine is called to adjust the pointer size to the boundaries required for an <var>Integer</var> data type. When it is not defined, the pointer in <var>p</var> is used as the return value.
           </p>
         </descr>
-        <notes>
-          <note>Not currently used in any other units.</note>
-        </notes>
         <seealso>
           <link id="AlignToPtr"/>
         </seealso>
