@@ -27,7 +27,7 @@ uses
   Controls, StdCtrls, ExtCtrls, Buttons, ComCtrls, Graphics, Dialogs, Forms, Menus, ExtDlgs,
   Spin, CheckLst, PairSplitter, LCLType, LMessages, LCLMessageGlue, LCLIntf,
   // LazUtils
-  LazUtilities, LazLoggerBase, GraphType,
+  LazLoggerBase, GraphType,
   // GTK3
   LazGtk3, LazGdk3, LazGObject2, LazGLib2, LazCairo1, LazPango1, LazGdkPixbuf2,
   gtk3objects, gtk3procs, gtk3private, Gtk3CellRenderer;
@@ -514,8 +514,8 @@ type
   protected
     function getText: String; override;
     procedure setText(const AValue: String); override;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
-    function EatArrowKeys(const AKey: Word): Boolean; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
+    function EatArrowKeys(const {%H-}AKey: Word): Boolean; override;
   public
     function getHorizontalScrollbar: PGtkScrollbar; override;
     function getVerticalScrollbar: PGtkScrollbar; override;
@@ -538,8 +538,8 @@ type
     procedure SetListBoxStyle(AValue: TListBoxStyle);
     procedure SetMultiSelect(AValue: Boolean);
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
-    function EatArrowKeys(const AKey: Word): Boolean; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
+    function EatArrowKeys(const {%H-}AKey: Word): Boolean; override;
     procedure InitializeWidget; override;
   public
     function getHorizontalScrollbar: PGtkScrollbar; override;
@@ -560,7 +560,7 @@ type
 
   TGtk3CheckListBox = class(TGtk3ListBox)
   protected
-    function CreateWidget(const Params: TCreateParams): PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams): PGtkWidget; override;
   end;
 
   { TGtk3ListView }
@@ -571,8 +571,8 @@ type
     FImages: TFPList;
     FIsTreeView: Boolean;
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
-    function EatArrowKeys(const AKey: Word): Boolean; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
+    function EatArrowKeys(const {%H-}AKey: Word): Boolean; override;
   public
     destructor Destroy; override;
     {interface implementation}
@@ -583,21 +583,21 @@ type
     procedure ColumnDelete(AIndex: Integer);
     function ColumnGetWidth(AIndex: Integer): Integer;
     procedure ColumnInsert(AIndex: Integer; AColumn: TListColumn);
-    procedure SetAlignment(AIndex: Integer; AColumn: TListColumn; AAlignment: TAlignment);
-    procedure SetColumnAutoSize(AIndex: Integer; AColumn: TListColumn; AAutoSize: Boolean);
-    procedure SetColumnCaption(AIndex: Integer; AColumn: TListColumn; const ACaption: String);
-    procedure SetColumnMaxWidth(AIndex: Integer; AColumn: TListColumn; AMaxWidth: Integer);
-    procedure SetColumnMinWidth(AIndex: Integer; AColumn: TListColumn; AMinWidth: Integer);
-    procedure SetColumnWidth(AIndex: Integer; AColumn: TListColumn; AWidth: Integer);
-    procedure SetColumnVisible(AIndex: Integer; AColumn: TListColumn; AVisible: Boolean);
-    procedure ColumnSetSortIndicator(const AIndex: Integer; const AColumn: TListColumn; const ASortIndicator: TSortIndicator);
+    procedure SetAlignment(AIndex: Integer; {%H-}AColumn: TListColumn; AAlignment: TAlignment);
+    procedure SetColumnAutoSize(AIndex: Integer; {%H-}AColumn: TListColumn; AAutoSize: Boolean);
+    procedure SetColumnCaption(AIndex: Integer; {%H-}AColumn: TListColumn; const ACaption: String);
+    procedure SetColumnMaxWidth(AIndex: Integer; {%H-}AColumn: TListColumn; AMaxWidth: Integer);
+    procedure SetColumnMinWidth(AIndex: Integer; {%H-}AColumn: TListColumn; AMinWidth: Integer);
+    procedure SetColumnWidth(AIndex: Integer; {%H-}AColumn: TListColumn; AWidth: Integer);
+    procedure SetColumnVisible(AIndex: Integer; {%H-}AColumn: TListColumn; AVisible: Boolean);
+    procedure ColumnSetSortIndicator(const AIndex: Integer; const {%H-}AColumn: TListColumn; const ASortIndicator: TSortIndicator);
 
     procedure ItemDelete(AIndex: Integer);
     procedure ItemInsert(AIndex: Integer; AItem: TListItem);
     procedure ItemSetText(AIndex, ASubIndex: Integer; AItem: TListItem; const AText: String);
-    procedure ItemSetState(const AIndex: Integer; const AItem: TListItem; const AState: TListItemState;
+    procedure ItemSetState(const AIndex: Integer; const {%H-}AItem: TListItem; const AState: TListItemState;
       const AIsSet: Boolean);
-    function ItemGetState(const AIndex: Integer; const AItem: TListItem; const AState: TListItemState;
+    function ItemGetState(const AIndex: Integer; const {%H-}AItem: TListItem; const AState: TListItemState;
       out AIsSet: Boolean): Boolean;
 
     procedure UpdateImageCellsSize;
@@ -653,7 +653,7 @@ type
     procedure SetItemIndex(AValue: Integer);
     function GetDroppedDown: boolean;
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
     function EatArrowKeys(const AKey: Word): Boolean; override;
     function getText: String; override;
     procedure setText(const AValue: String); override;
@@ -689,7 +689,7 @@ type
     procedure SetImage(AImage:TBitmap);
     function getText: String; override;
     procedure setText(const AValue: String); override;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     destructor Destroy;override;
     function IsWidgetOk: Boolean; override;
@@ -704,7 +704,7 @@ type
 
   TGtk3ToggleButton = class(TGtk3Button)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     procedure InitializeWidget; override;
   end;
@@ -716,7 +716,7 @@ type
     function GetState: TCheckBoxState;
     procedure SetState(AValue: TCheckBoxState);
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     property State: TCheckBoxState read GetState write SetState;
   end;
@@ -726,7 +726,7 @@ type
   TGtk3RadioButton = class(TGtk3CheckBox)
   private
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
     procedure InitializeWidget; override;
   public
   end;
@@ -736,8 +736,8 @@ type
   TGtk3CustomControl = class(TGtk3ScrollableWin)
     private
     protected
-      function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
-      function EatArrowKeys(const AKey: Word): Boolean; override;
+      function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
+      function EatArrowKeys(const {%H-}AKey: Word): Boolean; override;
     public
       procedure InitializeWidget; override;
       function getClientRect: TRect; override;
@@ -750,7 +750,7 @@ type
 
   TGtk3ScrollingWinControl = class(TGtk3CustomControl)
     protected
-      function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+      function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   end;
 
   { TGtk3Splitter }
@@ -774,8 +774,8 @@ type
     procedure SetSkipTaskBarHint(AValue: Boolean);
     procedure SetTitle(const AValue: String);
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
-    function EatArrowKeys(const AKey: Word): Boolean; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
+    function EatArrowKeys(const {%H-}AKey: Word): Boolean; override;
     function getText: String; override;
     procedure setText(const AValue: String); override;
   public
@@ -807,7 +807,7 @@ type
   TGtk3HintWindow = class(TGtk3Window)
   private
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   end;
 
   { TGtk3Dialog }
@@ -823,7 +823,7 @@ type
     function response_handler(response_id:gint):boolean;virtual;
     function close_handler():boolean;virtual;
     procedure SetCallbacks;virtual;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     CommonDialog: TCommonDialog;
     procedure InitializeWidget; override;
@@ -835,7 +835,7 @@ type
   TGtk3FileDialog = class(TGtk3Dialog)
   private
   protected
-    function CreateWidget(const Params: TCreateParams): PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams): PGtkWidget; override;
   public
     constructor Create(const ACommonDialog: TCommonDialog); virtual; overload;
   end;
@@ -867,16 +867,16 @@ type
   public
     constructor Create(const ACommonDialog: TCommonDialog); virtual; overload;
     procedure InitializeWidget;override;
-    class procedure color_to_rgba(clr:TColor;var rgba:TgdkRGBA);
+    class procedure color_to_rgba(clr:TColor;out rgba:TgdkRGBA);
     class function rgba_to_color(const rgba:TgdkRGBA):TColor;
   end;
 
   { TGtk3GLArea }
   TGtk3GLArea = class(TGtk3Widget)
   protected
-    function CreateWidget(const Params: TCreateParams): PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams): PGtkWidget; override;
   public
-    procedure Update(ARect: PRect); override;
+    procedure Update({%H-}ARect: PRect); override;
   end;
 
 
@@ -4341,15 +4341,15 @@ begin
       end;
 
       case btn.Style of
-  	  tbsSeparator:
-    	  gtb:=TGtkSeparatorToolItem.new();
+      tbsSeparator:
+        gtb:=TGtkSeparatorToolItem.new();
       tbsDropDown:
         begin
-        	gtb:=TGtkMenuToolButton.new(wicon,PgChar(bs));
+          gtb:=TGtkMenuToolButton.new(wicon,PgChar(bs));
           if Assigned(btn.DropdownMenu) then
           begin
-          	wmenu:=TGtk3Menu(btn.DropdownMenu.Handle).Widget;
-          	PGtkMenuToolButton(gtb)^.set_menu(wmenu);
+            wmenu:=TGtk3Menu(btn.DropdownMenu.Handle).Widget;
+            PGtkMenuToolButton(gtb)^.set_menu(wmenu);
           end;
         end;
       tbsCheck:
@@ -4358,9 +4358,9 @@ begin
           PGtkToolButton(gtb)^.set_label(PgChar(bs));
           PGtkToolButton(gtb)^.set_icon_widget(wicon);
         end
-  	  else
-    	  gtb:=TGtkToolButton.new(wicon,PgChar(bs));
- 		  end;
+      else
+        gtb:=TGtkToolButton.new(wicon,PgChar(bs));
+      end;
       if not (btn.Style in [tbsSeparator,tbsDivider]) then
       begin
         gtb^.set_tooltip_text(PgChar(btn.Hint));
@@ -5267,6 +5267,7 @@ begin
   begin
     ABuffer := PGtkTextView(FCentralWidget)^.get_buffer;
     ABuffer^.set_text(PgChar(AValue), -1);
+    AIter:=nil;
     ABuffer^.get_start_iter(AIter);
     ABuffer^.place_cursor(AIter);
   end;
@@ -5279,7 +5280,7 @@ var
   Msg: TLMessage;
 begin
   // DebugLn('Gtk3ListBoxSelectionChanged ');
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
   Msg.Msg := LM_SELCHANGE;
   if not TGtk3Widget(AData).InUpdate then
     TGtk3Widget(AData).DeliverMessage(Msg, False);
@@ -5716,6 +5717,7 @@ end;
 function Gtk3WS_ListViewItemPreSelected({%H-}selection: PGtkTreeSelection; {%H-}model: PGtkTreeModel;
   path: PGtkTreePath; path_is_currently_selected: GBoolean; AData: GPointer): GBoolean; cdecl;
 begin
+  if path_is_currently_selected then ;
   // DebugLn('Gtk3WS_ListViewItemSelected ,path selected ',dbgs(path_is_currently_selected));
   // this function is called *before* the item is selected
   // The result should be True to allow the Item to change selection
@@ -5733,7 +5735,6 @@ end;
 
 procedure Gtk3WS_ListViewItemSelected(ASelection: PGtkTreeSelection; AData: GPointer); cdecl;
 var
-  ATreeView: PGtkTreeView;
   AList: PGList;
   Msg: TLMNotify;
   NM: TNMListView;
@@ -5746,7 +5747,7 @@ begin
     exit;
   if not Assigned(TGtk3ListView(AData).FPreselectedIndices) then
     exit;
-  ATreeView := gtk_tree_selection_get_tree_view(ASelection);
+  //ATreeView := gtk_tree_selection_get_tree_view(ASelection);
   AList := gtk_tree_selection_get_selected_rows(ASelection, nil);
   TGtk3Widget(AData).BeginUpdate; // dissalow entering Gtk3WS_ListViewItemPreSelected
   try
@@ -5914,7 +5915,7 @@ begin
 end;
 
 procedure Gtk3WSLV_ListViewGetPixbufDataFuncForColumn(tree_column: PGtkTreeViewColumn;
-  cell: PGtkCellRenderer; tree_model: PGtkTreeModel; iter: PGtkTreeIter; AData: GPointer); cdecl;
+  {%H-}cell: PGtkCellRenderer; tree_model: PGtkTreeModel; iter: PGtkTreeIter; AData: GPointer); cdecl;
 var
   ListItem: TListItem;
   Images: TFPList;
@@ -5954,12 +5955,11 @@ begin
     if ColumnIndex -1 <= ListItem.SubItems.Count-1 then
       ImageIndex := ListItem.SubItemImages[ColumnIndex-1];
 
-  (* TODO: set property
   if (ImageIndex > -1) and (ImageIndex <= Images.Count-1) then
-    PGtkCellRendererPixbuf(cell)^.pixbuf := PGdkPixbuf(Images.Items[ImageIndex])
+    // TODO: set property
+    //PGtkCellRendererPixbuf(cell)^.pixbuf := PGdkPixbuf(Images.Items[ImageIndex])
   else
-    PGtkCellRendererPixbuf(cell)^.pixbuf := nil;
-   *)
+    ; // PGtkCellRendererPixbuf(cell)^.pixbuf := nil;
 end;
 
 procedure Gtk3WS_ListViewColumnClicked(column: PGtkTreeViewColumn; AData: GPointer); cdecl;
@@ -6325,7 +6325,7 @@ begin
         AStr := gtk_tree_path_to_string(Path);
         AIsSet := (StrToIntDef(AStr,-1) = AIndex);
         if AStr <> nil then
-          g_free(AStr); 
+          g_free(AStr);
         gtk_tree_path_free(Path);
         Result := True;
       end;
@@ -6580,7 +6580,7 @@ begin
     inherited SetFocus;
 end;
 
-procedure Gtk3ComboBoxChanged(ACombo: PGtkComboBox; AData: gpointer); cdecl;
+procedure Gtk3ComboBoxChanged({%H-}ACombo: PGtkComboBox; AData: gpointer); cdecl;
 var
   Msg: TLMessage;
 begin
@@ -6588,7 +6588,7 @@ begin
   begin
     if TGtk3Widget(AData).InUpdate then
       Exit;
-    FillChar(Msg, SizeOf(Msg), #0);
+    FillChar(Msg{%H-}, SizeOf(Msg), #0);
     Msg.Msg := LM_CHANGED;
     TGtk3Widget(AData).DeliverMessage(Msg);
   end;
@@ -6815,7 +6815,7 @@ procedure Gtk3Toggled(AWidget: PGtkToggleButton; AData: gPointer); cdecl;
 var
   Msg: TLMessage;
 begin
-  FillChar(Msg, SizeOf(Msg), 0);
+  FillChar(Msg{%H-}, SizeOf(Msg), 0);
   Msg.Msg := LM_CHANGED;
   if (TGtk3Widget(AData).LCLObject <> nil) and not TGtk3Widget(AData).InUpdate then
     TGtk3Widget(AData).DeliverMessage(Msg, False);
@@ -7145,16 +7145,15 @@ function Gtk3WindowState(AWidget: PGtkWidget; AEvent: PGdkEvent; AData: gPointer
 var
   Msg: TLMSize;
   AState: TGdkWindowState;
-  AScreen: PGdkScreen;
-  ActiveWindow: PGdkWindow;
+  //AScreen: PGdkScreen;
   msk:integer;
 begin
   Result := False;
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
 
+  (*
   AScreen := AWidget^.window^.get_screen;
   ActiveWindow := AScreen^.get_active_window;
-  (*
   if ActiveWindow <> AWidget^.window then
     TGtk3Window(AData).Gtk3ActivateWindow(nil)
   else
@@ -7256,17 +7255,15 @@ begin
   case nstate of
   SW_SHOWNORMAL:
     begin
-       AState:=fWidget^.window^.get_state;
-       if AState and GDK_WINDOW_STATE_ICONIFIED<>0 then
-       PgtkWindow(fWidget)^.deiconify
-       else
-       if AState and GDK_WINDOW_STATE_MAXIMIZED<>0 then
-       PgtkWindow(fWidget)^.unmaximize
-       else
-       if AState and GDK_WINDOW_STATE_FULLSCREEN<>0 then
-       PgtkWindow(fWidget)^.unfullscreen
-       else
-       PgtkWindow(fWidget)^.show;
+      AState:=fWidget^.window^.get_state;
+      if AState and GDK_WINDOW_STATE_ICONIFIED<>0 then
+        PgtkWindow(fWidget)^.deiconify
+      else if AState and GDK_WINDOW_STATE_MAXIMIZED<>0 then
+        PgtkWindow(fWidget)^.unmaximize
+      else if AState and GDK_WINDOW_STATE_FULLSCREEN<>0 then
+        PgtkWindow(fWidget)^.unfullscreen
+      else
+        PgtkWindow(fWidget)^.show;
     end;
   SW_SHOWMAXIMIZED: PgtkWindow(fWidget)^.maximize;
   SW_MINIMIZE: PgtkWindow(fWidget)^.iconify;
@@ -7300,6 +7297,7 @@ begin
   if not Assigned(LCLObject.Parent) then
   begin
     Result := TGtkWindow.new(GTK_WINDOW_TOPLEVEL);
+    FWidget:=Result;
     //Result^.set_size_request(0,0);
     gtk_widget_realize(Result);
     decor:=decoration_flags(AForm);
@@ -7542,7 +7540,7 @@ var
 begin
   //gtk3 does not handle activate/deactivate at all
   //even cannot catch it via GDK_FOCUS event ?!?
-  FillChar(MsgActivate, SizeOf(MsgActivate), #0);
+  FillChar(MsgActivate{%H-}, SizeOf(MsgActivate), #0);
   MsgActivate.Msg := LM_ACTIVATE;
 
   if (AEvent <> nil) and PGtkWindow(Widget)^.is_active then
@@ -7573,7 +7571,7 @@ begin
   {$IFDEF GTK3DEBUGCORE}
     DebugLn('TGtk3Window.Gtk3CloseQuery');
   {$ENDIF}
-  FillChar(Msg, SizeOf(Msg), 0);
+  FillChar(Msg{%H-}, SizeOf(Msg), 0);
 
   Msg.Msg := LM_CLOSEQUERY;
 
@@ -7752,7 +7750,7 @@ class function TGtk3Dialog.CloseQueryCB(w:PGtkWidget;dlg:TGtk3Dialog): GBoolean;
 var
   theDialog : TCommonDialog;
   CanClose: boolean;
-  AHandle: HWND;
+  //AHandle: HWND;
 begin
   Result := False; // true = do nothing, false = destroy or hide window
   if (dlg=nil) then exit;
@@ -8015,8 +8013,8 @@ begin
   Self.SetCallbacks;
 end;
 
-class procedure TGtk3newColorSelectionDialog.color_to_rgba(clr: TColor;
-  var rgba: TgdkRGBA);
+class procedure TGtk3newColorSelectionDialog.color_to_rgba(clr: TColor; out
+  rgba: TgdkRGBA);
 begin
   clr:=ColorToRgb(clr);
   rgba.red:=Red(clr)/255;

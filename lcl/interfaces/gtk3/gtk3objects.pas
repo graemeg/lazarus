@@ -324,8 +324,8 @@ var
 
   function create_stipple(stipple_data:pbyte;width,height:integer):pcairo_pattern_t;forward;
 
-  const clr_A = $FF008000;//$3093BA52;
-  const clr_B = $FFFFFFFF;//$30FFFFFF;
+  const clr_A = $FF008000;// $3093BA52;
+  const clr_B = $FFFFFFFF;// $30FFFFFF;
 
   const
         (* the stipple patten should look like that
@@ -572,7 +572,6 @@ constructor TGtk3Region.CreateEllipse(X1,Y1,X2,Y2: Integer);
 var
   ASurface: pcairo_surface_t;
   cr:Pcairo_t;
-  rr:double;
   w,h:integer;
   save_matrix:cairo_matrix_t;
 begin
@@ -1048,7 +1047,6 @@ end;
 function TGtk3Image.depth: Integer;
 var
   AOption: Pgchar;
-  i: Integer;
 begin
   Result := 32;
   AOption := FHandle^.get_option('depth');
@@ -1369,6 +1367,8 @@ begin
     AFont := FCurrentFont
   else
     AFont := FFont;
+  if AFont<>nil then ;
+  debugln(['TGtk3DeviceContext.ApplyFont ToDo']);
 end;
 
 procedure TGtk3DeviceContext.ApplyPen;
@@ -1457,9 +1457,6 @@ var
   H: gint;
   ACairo:pcairo_t;
   ARect: TGdkRectangle;
-  AWindow: PGdkWindow;
-  x: gint;
-  y: gint;
 begin
   {$ifdef VerboseGtk3DeviceContext}
     WriteLn('TGtk3DeviceContext.Create (',
@@ -1534,8 +1531,6 @@ end;
 
 constructor TGtk3DeviceContext.Create(AWindow: PGdkWindow;
   const APaintEvent: Boolean);
-var
-  x, y, w, h: gint;
 begin
   {$ifdef VerboseGtk3DeviceContext}
     WriteLn('TGtk3DeviceContext.Create (',
@@ -1864,7 +1859,6 @@ end;
 
 procedure TGtk3DeviceContext.drawPixmap(p: PPoint; pm: PGdkPixbuf; sr: PRect);
 var
-  AImage: PGtkImage;
   ASurface: Pcairo_surface_t;
   AData: PByte;
 begin
@@ -2108,10 +2102,8 @@ end;
 function TGtk3DeviceContext.drawFrameControl(arect:TRect;uType,uState:cardinal):boolean;
 var
   Context: PGtkStyleContext;
-  AValue: TGValue;
   pw:PGtkWidget;
   path:PGtkwIdgetPath;
-  pc:pgchar;
   w:PgtkWidget;
 begin
 
@@ -2181,7 +2173,7 @@ end;
 function TGtk3DeviceContext.drawFocusRect(const aRect: TRect): boolean;
 var
   Context: PGtkStyleContext;
-  AValue: TGValue;
+  //AValue: TGValue;
 begin
   Result := False;
 
@@ -2446,6 +2438,10 @@ var
   AMetrics: PPangoFontMetrics;
   {ACharWidth,}ATextWidth,ATextHeight: gint;
 begin
+  if lbearing<>nil then
+    lbearing^:=0;
+  if rbearing<>nil then
+    rbearing^:=0;
   // check if Str contains an ampersand before removing them all.
   if StrLScan(Str, '&', StrLength) <> nil then
     NewStr := RemoveAmpersands(Str, StrLength)

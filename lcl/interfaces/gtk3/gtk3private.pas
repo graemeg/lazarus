@@ -24,7 +24,7 @@ interface
 uses
   Classes, SysUtils,
   // LCL
-  Controls, LazGtk3, LazGObject2, LazGLib2;
+  Controls, LazGtk3, LazGLib2;
 
 type
 

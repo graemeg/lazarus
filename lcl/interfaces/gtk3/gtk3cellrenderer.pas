@@ -562,7 +562,7 @@ begin
   //DebugLn(['LCLIntfCellRenderer_Render END ',DbgSName(LCLObject)]);
 end;
 
-procedure LCLIntfCellRenderer_ClassInit(aClass: gpointer; class_data: gpointer); cdecl;
+procedure LCLIntfCellRenderer_ClassInit(aClass: gpointer; {%H-}class_data: gpointer); cdecl;
 //aClass: PLCLIntfCellRendererClass
 var
   LCLClass: PLCLIntfCellRendererClass;
@@ -599,7 +599,7 @@ begin
   RendererClass^.render := @LCLIntfCellRenderer_Render;
 end;
 
-procedure LCLIntfCellRenderer_ClassFinalize(g_class: gpointer; class_data: gpointer); cdecl;
+procedure LCLIntfCellRenderer_ClassFinalize({%H-}g_class: gpointer; {%H-}class_data: gpointer); cdecl;
 begin
   // DebugLn('LCLIntfCellRenderer_ClassFinalize: finalization');
 end;
@@ -655,8 +655,6 @@ var
   ListColumn: TListColumn;
   ListItem: TListItem;
   Value: TGValue;
-  AMinH: gint;
-  ANatH: gint;
 begin
   if not Gtk3IsObject(cell) then
     exit;
