@@ -864,12 +864,12 @@ type
     FSrc: string;
     FWidth: TIpHtmlLength;
     FFrame : TIpHtmlFrame;
-    procedure SetAlign(const Value: TIpHtmlAlign); override;
     procedure SetFrameBorder(const Value: Integer);
     procedure SetMarginHeight(const Value: Integer);
     procedure SetMarginWidth(const Value: Integer);
     procedure SetScrolling(const Value: TIpHtmlFrameScrolling);
   protected
+    procedure SetAlign(const Value: TIpHtmlAlign); override;
     procedure CreateControl(Parent : TWinControl); override;
     function Successful: Boolean; override;
     procedure AddValues(NameList, ValueList : TStringList); override;
