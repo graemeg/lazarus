@@ -199,7 +199,7 @@ var
   ImageFormat: cairo_format_t;
   ARowStride: PtrUInt;
   x,y:integer;
-  src,dst,pdst,psrc,SrcRowPtr,DstRowPtr:pbyte;
+  src,dst,SrcRowPtr,DstRowPtr:pbyte;
   ridx,gidx,bidx,aidx:byte;
 begin
   Result := False;
@@ -420,7 +420,7 @@ function TGtk3WidgetSet.RawImage_DescriptionFromDevice(ADC: HDC; out
 begin
   Result := true;
 
-  FillStandardDescription(ADesc);
+  FillStandardDescription(ADesc{%H-});
   (*
   if IsValidDC(ADC)
   then begin
@@ -525,7 +525,7 @@ function RawImage_DescriptionFromDrawable(out
 var
   Visual: PGdkVisual;
   Image: PGdkPixbuf;
-  Width, Height, Depth: integer;
+  Width, Height: integer;
   IsBitmap: Boolean;
   AMask: guint32;
   AShift: gint;
@@ -1193,8 +1193,8 @@ function TGtk3WidgetSet.AddEventHandler(AHandle: THandle; AFlags: dword;
   //lEventHandler: PWaitHandleEventHandler;
 begin
   Result := nil;
-  (*
   if AEventHandler = nil then exit;
+  (*
   New(lEventHandler);
   giochannel := g_io_channel_unix_new(AHandle);
   lEventHandler^.Handle := AHandle;
@@ -1310,8 +1310,8 @@ function TGtk3WidgetSet.AddProcessEventHandler(AHandle: THandle;
 //  lHandler: PChildSignalEventHandler;
 begin
   Result := nil;
-  (*
   if AEventHandler = nil then exit(nil);
+  (*
   New(lHandler);
   lHandler^.PID := TPid(AHandle);
   lHandler^.UserData := AData;
@@ -1329,8 +1329,8 @@ procedure TGtk3WidgetSet.RemoveProcessEventHandler(var AHandler: PProcessEventHa
 // var
 //  lHandler: PChildSignalEventHandler absolute AHandler;
 begin
-  (*
   if AHandler = nil then exit;
+  (*
   if lHandler^.PrevHandler = nil then
     FChildSignalHandlers := lHandler^.NextHandler
   else

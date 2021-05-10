@@ -159,7 +159,6 @@ function TGtk3WidgetSet.ClipboardGetOwnerShip(ClipboardType: TClipboardType;
   Formats: PClipboardFormat): boolean;
 var
   pclp:PGtkClipboard;
-  pc:pgchar;
   pcname:PgdkAtom;
 begin
   case ClipboardType of
@@ -180,7 +179,7 @@ end;
 function TGtk3WidgetSet.ClipboardRegisterFormat(const AMimeType: string): TClipboardFormat;
 begin
   if Assigned(Application) then
-    Result := TClipboardFormat(TGdkAtom.intern(PChar(AMimeType), False))
+    Result := {%H-}TClipboardFormat(TGdkAtom.intern(PChar(AMimeType), False))
   else
     RaiseGDBException(
       'ERROR: TGtk3WidgetSet.ClipboardRegisterFormat gdk not initialized');
@@ -310,7 +309,6 @@ end;
 function TGtk3WidgetSet.CreateBrushIndirect(const LogBrush: TLogBrush): HBRUSH;
 var
   ABrush: TGtk3Brush;
-  Color: TColor;
 begin
   Result := 0;
   // DebugLn('TGtk3WidgetSet.CreateBrushIndirect color=',dbgs(logBrush.lbColor),' style=',dbgs(logBrush.lbStyle));
@@ -412,10 +410,6 @@ begin
 end;
 
 function TGtk3WidgetSet.CreateIconIndirect(IconInfo: PIconInfo): HICON;
-var
-  PixBuf: PGdkPixBuf;
-  W: gint;
-  H: gint;
 begin
   Result := 0;
   if IsValidGDIObject(IconInfo^.hbmColor) then
@@ -658,13 +652,13 @@ var
   procedure DoCalcRect;
   var
     AP: TSize;
-    J, MaxWidth, DefHeight,
+    J, MaxWidth,
     LineWidth, LineHeight: Integer;
   begin
     theRect := Rect;
 
     MaxWidth := theRect.Right - theRect.Left;
-    DefHeight := theRect.Bottom - theRect.Top;
+    //DefHeight := theRect.Bottom - theRect.Top;
 
     (*
     if Flags and DT_CENTER  <> 0then
@@ -728,7 +722,7 @@ var
         // do not break at word boundaries
         TextExtentPoint(PChar(AStr), length(AStr), AP);
         MaxWidth := AP.cX;
-        DefHeight := AP.cY;
+        //DefHeight := AP.cY;
       end;
 
       Gtk3WordWrap(DC, PChar(AStr), MaxWidth, Lines, NumLines);
@@ -949,7 +943,7 @@ begin
       Exit;
     end;
 
-    SetLength(AStr,Count);
+    SetLength(AStr{%H-},Count);
     if Count>0 then
       System.Move(Str^,AStr[1],Count);
 
@@ -1012,6 +1006,7 @@ begin
         l:=StrLen(Lines[i]);
         DrawLine(Lines[i], l, theRect.Top);
         dec(pIndex,l+length(LineEnding));
+        Size:=default(TSize);
         GetTextExtentPoint(DC, Lines[i], l, Size);
         LineHeight := Size.cY;
       end
@@ -1355,7 +1350,6 @@ end;
 
 function TGtk3WidgetSet.IntersectClipRect(dc: hdc; Left, Top, Right,Bottom: Integer): Integer;
 var
-  ncorg,dcOrigin:TPoint;
   rgn,clip:HRGN;
 begin
   {$IFDEF GTK3DEBUGNOTIMPLEMENTED}
@@ -1373,6 +1367,7 @@ begin
  { ncorg:=Tgtk3DeviceContext(dc).fncOrigin;
   GetWindowOrgEx(DC, @DCOrigin);
   Result:=inherited IntersectClipRect(dc, Left, Top, Right, Bottom);}
+  Result:=0;
 end;
 
 
@@ -1684,7 +1679,7 @@ begin
     begin
       AData := g_object_get_data(AWidget, 'lclwidget');
       // DebugLn('TGtk3WidgetSet.GetActiveWindow found window from data ...',dbgsName(TGtk3Widget(AData).LCLObject));
-      exit(HWND(AData));
+      exit({%H-}HWND(AData));
     end;
     for i := 0 to Screen.FormCount - 1 do
     begin
@@ -1921,11 +1916,11 @@ begin
     end;
 
     HORZSIZE : { Horizontal size in millimeters }
-      Result := RoundToInt((GetDeviceCaps(DC, HORZRES) * 100) /
+      Result := LazUtilities.RoundToInt((GetDeviceCaps(DC, HORZRES) * 100) /
                     (GetDeviceCaps(DC, LOGPIXELSX) * 25.4));
 
     VERTSIZE : { Vertical size in millimeters }
-      Result := RoundToInt((GetDeviceCaps(DC, VERTRES) * 100) /
+      Result := LazUtilities.RoundToInt((GetDeviceCaps(DC, VERTRES) * 100) /
                     (GetDeviceCaps(DC, LOGPIXELSY) * 25.4));
 
     BITSPIXEL:
@@ -1939,12 +1934,12 @@ begin
     SIZEPALETTE: Result := gdk_window_get_visual(gdk_get_default_root_window)^.get_colormap_size;
     LOGPIXELSX : { Logical pixels per inch in X }
     begin
-      Result := RoundToInt(gdk_screen_width / (gdk_screen_width_mm / 25.4));
+      Result := LazUtilities.RoundToInt(gdk_screen_width / (gdk_screen_width_mm / 25.4));
     end;
 
     LOGPIXELSY : { Logical pixels per inch in Y }
     begin
-      Result := RoundToInt(gdk_screen_height / (gdk_screen_height_mm / 25.4));
+      Result := LazUtilities.RoundToInt(gdk_screen_height / (gdk_screen_height_mm / 25.4));
     end;
   end;
 
@@ -2013,6 +2008,7 @@ begin
   dpiY:=round(25.4*h/h_mm);
 
   rr:=TGdkScreen.get_default^.get_resolution();
+
   Result:=0;
   //Result:=inherited GetDpiForMonitor(hmonitor, dpiType, dpiX, dpiY);
 end;
@@ -2612,7 +2608,6 @@ var
   APangoMetrics: PPangoFontMetrics;
   aRect: TPangoRectangle;
   APangoWeight: TPangoWeight;
-  AList: PPangoAttrList;
 begin
   Result := False;
   if IsValidDC(DC) then
@@ -2772,10 +2767,14 @@ var
   AWidget: TGtk3Widget;
   APos: TPoint;
 begin
+  Left:=0;
+  Top:=0;
   if Handle = 0 then
     exit(False);
   AWidget := TGtk3Widget(Handle);
   Result := AWidget.GetPosition(APos);
+  Left:=APos.X;
+  Top:=APos.Y;
 end;
 
 function TGtk3WidgetSet.GetWindowSize(Handle: hwnd; var Width, Height: integer
@@ -3041,7 +3040,7 @@ begin
     AMsg := TCustomGtk3Message(user_data^);
     if AMsg.Handle <> 0 then
     begin
-      FillChar(AMessage, SizeOf(AMessage), #0);
+      FillChar(AMessage{%H-}, SizeOf(AMessage), #0);
       AMessage.Msg := AMsg.Msg;
       AMessage.WParam := AMsg.AwParam;
       AMessage.LParam := AMsg.AlParam;

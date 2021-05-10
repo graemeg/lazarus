@@ -140,8 +140,8 @@ type
     FHandle: Pcairo_region_t;
   public
     property Handle: Pcairo_region_t read FHandle write FHandle;
-    constructor Create(CreateHandle: Boolean); virtual; overload;
-    constructor Create(CreateHandle: Boolean; X1,Y1,X2,Y2: Integer); virtual; overload;
+    constructor Create({%H-}CreateHandle: Boolean); virtual; overload;
+    constructor Create({%H-}CreateHandle: Boolean; X1,Y1,X2,Y2: Integer); virtual; overload;
     constructor Create(X1,Y1,X2,Y2,nW,nH: Integer); virtual; overload;
     constructor CreateEllipse(X1,Y1,X2,Y2: Integer); virtual; overload;
     function Select(ACtx:TGtk3DeviceContext):TGtk3ContextObject;override;

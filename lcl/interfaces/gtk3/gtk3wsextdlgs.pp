@@ -29,7 +29,7 @@ uses
 //  ExtDlgs,
 ////////////////////////////////////////////////////
   Controls, LCLType,
-  gtk3int, gtk3widgets,
+  gtk3widgets,
   WSExtDlgs, WSLCLClasses;
 
 type

@@ -20,7 +20,7 @@ begin
 end;
 
 {hook into gtk3 main event loop, used for testing purposes only atm.}
-procedure Gtk3MainEventLoop(AEvent: PGdkEvent; AData: gPointer); cdecl;
+procedure Gtk3MainEventLoop(AEvent: PGdkEvent; {%H-}AData: gPointer); cdecl;
 var
   AList: PGList;
   APt: TPoint;
@@ -33,7 +33,6 @@ var
   x2: Double;
   y2: Double;
   ARegion: Pcairo_region_t;
-  ARect: Tcairo_rectangle_int_t;
 begin
   {$IFDEF GTK3DEBUGCORE}
   DebugLn('** TGtk3WidgetSet.Gtk3MainEventLoop **');
@@ -70,7 +69,7 @@ begin
         ' window ',dbgHex(PtrUInt(AEvent^.expose.window)),
         ' extents ',Format('x %d y %d x2 %d y2 %d',[ARect.x, ARect.y, ARect.width, ARect.height]));
 
-      (* do not use this otherwise painting is corrupted !!!! testing purposes only
+      { do not use this otherwise painting is corrupted !!!! testing purposes only
       AContext := gdk_cairo_create(AEvent^.expose.window);
       cairo_clip_extents(AContext, @x, @y, @x2, @y2);
       DebugLn('Gtk3MainEventLoop*** EXPOSED ',dbgsName(TGtk3Widget(AWidget).LCLObject),
@@ -79,7 +78,7 @@ begin
       cairo_surface_flush(cairo_get_target(AContext));
       cairo_surface_mark_dirty(cairo_get_target(AContext));
       cairo_destroy(AContext);
-      *)
+      }
     end;
   end;
   *)
@@ -97,7 +96,7 @@ begin
   AGtkThread := g_thread_self();
   if not IsLibrary then
   begin
-  AId := 'org.lcl.thread_' + dbgHex(PtrUInt(AGtkThread));
+  AId := 'org.lcl.thread_' + dbgHex({%H-}PtrUInt(AGtkThread));
   FGtk3Application := TGtkApplication.new(PgChar(AId), G_APPLICATION_NON_UNIQUE);
   // FGtk3Application^.set_application_id(PgChar(AId));
   FGtk3Application^.register(nil, nil);
@@ -120,7 +119,7 @@ procedure TGtk3WidgetSet.SetDefaultAppFontName;
 var
   AValue: TGValue;
 begin
-  FillByte(AValue, SizeOf(AValue), 0);
+  FillByte(AValue{%H-}, SizeOf(AValue), 0);
   AValue.init(G_TYPE_STRING);
   g_object_get_property(gtk_settings_get_default, 'gtk-font-name', @AValue);
   FDefaultAppFontName := AValue.get_string;
@@ -185,8 +184,6 @@ begin
 end;
 
 procedure TGtk3WidgetSet.AddWindow(AWindow: PGtkWindow);
-var
-  AList: PGList;
 begin
   if Assigned(FGtk3Application) then
     FGtk3Application^.add_window(AWindow);
@@ -319,7 +316,7 @@ begin
   {$ENDIF}
   CharSetEncodingList := TList.Create;
   CreateDefaultCharsetEncodings;
-  FillByte(AValue, SizeOf(AValue), 0);
+  FillByte(AValue{%H-}, SizeOf(AValue), 0);
   AValue.init(G_TYPE_BOOLEAN);
   AValue.set_boolean(True);
   g_object_set_property(gtk_settings_get_default,'gtk-button-images',@AValue);
@@ -407,7 +404,7 @@ var
   AValue: TGValue;
 begin
   ASettings := gtk_settings_get_default;
-  FillByte(AValue, SizeOf(AValue), 0);
+  FillByte(AValue{%H-}, SizeOf(AValue), 0);
   AValue.init(G_TYPE_STRING);
   ASettings^.get_property('gtk-theme-name', @AValue);
   FThemeName := AValue.get_string;
@@ -739,7 +736,7 @@ var
   LogBrush: TLogBrush;
   logPen : TLogPen;
 begin
-  FillChar(LogBrush,SizeOf(TLogBrush),0);
+  FillChar(LogBrush{%H-},SizeOf(TLogBrush),0);
   LogBrush.lbStyle := BS_NULL;
   FStockNullBrush := CreateBrushIndirect(LogBrush);
   TGtk3Brush(FStockNullBrush).Shared := True;

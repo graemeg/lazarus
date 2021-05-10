@@ -21,8 +21,8 @@ unit Gtk3WSMenus;
 interface
 
 uses
-  Classes, InterfaceBase, Types, LCLProc, LCLType,
-  LazGObject2, LazGlib2, LazGdk3, LazGtk3, gtk3int, gtk3procs,
+  Classes, Types, LCLProc, LCLType,
+  LazGObject2, LazGlib2, LazGdk3, LazGtk3, gtk3procs,
   WSLCLClasses, WSMenus,
   LMessages, Graphics, Menus, Forms, LCLIntf;
 

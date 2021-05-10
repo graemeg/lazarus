@@ -98,16 +98,16 @@ type
     procedure btnPropCLICK(Sender: TObject);
     procedure btnReducCLICK(Sender: TObject);
     procedure cbPrintersCHANGE(Sender: TObject);
-    procedure cbPrintersDrawItem(Control: TWinControl; Index: Integer;
+    procedure cbPrintersDrawItem({%H-}Control: TWinControl; Index: Integer;
       ARect: TRect; State: TOwnerDrawState);
-    procedure cbPrintersKEYPRESS(Sender: TObject; var Key: Char);
+    procedure cbPrintersKEYPRESS(Sender: TObject; var {%H-}Key: Char);
     procedure cbReverseCLICK(Sender: TObject);
     procedure cbTasktimeCHANGE(Sender: TObject);
     procedure dlgSelectPrinterCREATE(Sender: TObject);
     procedure dlgSelectPrinterSHOW(Sender: TObject);
     procedure edCopiesChange(Sender: TObject);
     procedure edRangeEnter(Sender: TObject);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormClose(Sender: TObject; var {%H-}CloseAction: TCloseAction);
     procedure FormDestroy(Sender: TObject);
     procedure tkbPriorityCHANGE(Sender: TObject);
   private

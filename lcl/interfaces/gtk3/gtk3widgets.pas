@@ -116,7 +116,7 @@ type
     procedure InitializeWidget; virtual;
     procedure DeInitializeWidget;
     procedure RecreateWidget;
-    procedure DestroyNotify(AWidget: PGtkWidget); virtual;
+    procedure DestroyNotify({%H-}AWidget: PGtkWidget); virtual;
     destructor Destroy; override;
 
     function CanFocus: Boolean; virtual;
@@ -4894,7 +4894,7 @@ begin
   InitializeWidget;
 end;
 
-procedure Gtk3MenuItemActivated(AItem: PGtkMenuItem; AData: GPointer); cdecl;
+procedure Gtk3MenuItemActivated({%H-}AItem: PGtkMenuItem; AData: GPointer); cdecl;
 var
   Msg: TLMessage;
 begin
@@ -4903,7 +4903,7 @@ begin
   begin
     inc(TGtk3MenuItem(AData).Lock);
     try
-      FillChar(Msg, SizeOf(Msg), #0);
+      FillChar(Msg{%H-}, SizeOf(Msg), #0);
       Msg.Msg := LM_ACTIVATE;
       TGtk3MenuItem(AData).MenuItem.Dispatch(Msg);
     finally
@@ -5275,7 +5275,7 @@ end;
 
 { TGtk3ListBox }
 
-procedure Gtk3ListBoxSelectionChanged(ASelection: PGtkTreeSelection; AData: GPointer); cdecl;
+procedure Gtk3ListBoxSelectionChanged({%H-}ASelection: PGtkTreeSelection; AData: GPointer); cdecl;
 var
   Msg: TLMessage;
 begin
@@ -5729,8 +5729,8 @@ begin
   if not Assigned(TGtk3ListView(AData).FPreselectedIndices) then
     TGtk3ListView(AData).FPreselectedIndices := TFPList.Create;
 
-  if TGtk3ListView(AData).FPreselectedIndices.IndexOf(Pointer(PtrInt(gtk_tree_path_get_indices(path)^))) = -1 then
-    TGtk3ListView(AData).FPreselectedIndices.Add(Pointer(PtrInt(gtk_tree_path_get_indices(path)^)));
+  if TGtk3ListView(AData).FPreselectedIndices.IndexOf({%H-}Pointer(PtrInt(gtk_tree_path_get_indices(path)^))) = -1 then
+    TGtk3ListView(AData).FPreselectedIndices.Add({%H-}Pointer(PtrInt(gtk_tree_path_get_indices(path)^)));
 end;
 
 procedure Gtk3WS_ListViewItemSelected(ASelection: PGtkTreeSelection; AData: GPointer); cdecl;
@@ -5758,7 +5758,7 @@ begin
       FillChar(NM{%H-}, SizeOf(NM), 0);
       NM.hdr.hwndfrom := HWND(TGtk3Widget(AData));
       NM.hdr.code := LVN_ITEMCHANGED;
-      NM.iItem := PtrInt(TGtk3ListView(AData).FPreselectedIndices.Items[i]);
+      NM.iItem := {%H-}PtrInt(TGtk3ListView(AData).FPreselectedIndices.Items[i]);
       NM.iSubItem := 0;
       B := False;
       for j := 0 to g_list_length(AList) - 1 do
@@ -5767,7 +5767,7 @@ begin
         if Path <> nil then
         begin
           Indices := gtk_tree_path_get_indices(Path)^;
-          B := Indices = PtrInt(TGtk3ListView(AData).FPreselectedIndices.Items[i]);
+          B := Indices = {%H-}PtrInt(TGtk3ListView(AData).FPreselectedIndices.Items[i]);
           if B then
             break;
         end;
@@ -6527,7 +6527,7 @@ begin
   AComboWidget := PGtkComboBox(GetContainerWidget);
   APrivate := PGtkComboBoxPrivate(AComboWidget^.priv3);
   DebugLn('** COMBO DUMP OF PGtkComboBoxPrivate struct EVENT=',ADbgEvent);
-  DebugLn('BUTTON=',dbgHex(PtrUInt(APrivate^.button)),' ARROW=',dbgHex(PtrUInt(APrivate^.arrow)),
+  DebugLn('BUTTON=',dbgHex({%H-}PtrUInt(APrivate^.button)),' ARROW=',dbgHex({%H-}PtrUInt(APrivate^.arrow)),
     ' SCROLLEDWINDOW=',dbgHex({%H-}PtrUInt(APrivate^.scrolled_window)),
     ' CELLVIEW=',dbgHex({%H-}PtrUInt(APrivate^.cell_view)),
     ' CELLAREA=',dbgHex({%H-}PtrUInt(APrivate^.area)));

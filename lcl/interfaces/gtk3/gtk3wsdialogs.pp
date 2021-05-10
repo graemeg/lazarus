@@ -25,7 +25,7 @@ uses
   LazGtk3, LazGlib2, LazGdk3, LazGObject2, LazPango1,
   // RTL, FCL and LCL
   SysUtils, Classes, Graphics, Controls, Dialogs, ExtDlgs, LCLType,
-  LazFileUtils, LCLStrConsts, LCLProc, InterfaceBase,
+  LazFileUtils, LCLStrConsts, LCLProc,
   // Widgetset
   gtk3int, gtk3widgets,
   WSDialogs;
@@ -542,8 +542,8 @@ end;
 
   This function is called, whenever a row is selected in a commondialog
 -------------------------------------------------------------------------------}
-function gtkDialogSelectRowCB(widget: PGtkWidget; Row, Column: gInt;
-  bevent: pgdkEventButton; data: gPointer): GBoolean; cdecl;
+function gtkDialogSelectRowCB({%H-}widget: PGtkWidget; {%H-}Row, {%H-}Column: gInt;
+  {%H-}bevent: pgdkEventButton; {%H-}data: gPointer): GBoolean; cdecl;
 (*
 var
   theDialog: TCommonDialog;
@@ -786,7 +786,7 @@ begin
             Files.Add(CurFilename);
           end;
           // inc(FileList);
-          // inc(rowNum);
+          inc(rowNum);
         end;
         // Dec(FileList, rowNum);
         g_slist_free(FileList);
@@ -1370,6 +1370,8 @@ begin
     Button1 := GTK_STOCK_OPEN;
   end;
 
+  if Button1<>'' then ;
+  if Action=0 then ;
 
   Result := THandle(TGtk3FileDialog.Create(ACommonDialog));
   // AFileDialog := PGtkFileChooserDialog(ADialog.Widget);
@@ -1521,7 +1523,7 @@ begin
   if not ACommonDialog.HandleAllocated then
     exit;
   AGtkWindow := TGtk3Dialog(ACommonDialog.Handle).Widget;
-  DebugLn('TGtk3WSCommonDialog.ShowModal widget ',dbgHex(PtrUInt(AGtkWindow)));
+  DebugLn('TGtk3WSCommonDialog.ShowModal widget ',dbgHex({%H-}PtrUInt(AGtkWindow)));
   if not Gtk3IsWidget(AGtkWindow) then
     raise Exception.Create('TGtk3WSCommonDialog.ShowModal error');
   // ReleaseMouseCapture;

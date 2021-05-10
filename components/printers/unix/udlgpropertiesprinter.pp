@@ -73,7 +73,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure rbPortraitClick(Sender: TObject);
-    procedure cbPaperSizeKeypress(Sender: TObject; var Key: Char);
+    procedure cbPaperSizeKeypress(Sender: TObject; var {%H-}Key: Char);
     procedure dlgpropertiesprinterCreate(Sender: TObject);
     procedure dlgpropertiesprinterShow(Sender: TObject);
   private
