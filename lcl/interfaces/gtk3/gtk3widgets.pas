@@ -27,7 +27,7 @@ uses
   Controls, StdCtrls, ExtCtrls, Buttons, ComCtrls, Graphics, Dialogs, Forms, Menus, ExtDlgs,
   Spin, CheckLst, PairSplitter, LCLType, LMessages, LCLMessageGlue, LCLIntf,
   // LazUtils
-  LazLoggerBase, GraphType,
+  LazLoggerBase, GraphType, LazUtilities,
   // GTK3
   LazGtk3, LazGdk3, LazGObject2, LazGLib2, LazCairo1, LazPango1, LazGdkPixbuf2,
   gtk3objects, gtk3procs, gtk3private, Gtk3CellRenderer;
@@ -89,7 +89,7 @@ type
     procedure SetFont(AValue: PPangoFontDescription);
     procedure SetVisible(AValue: Boolean);
     procedure SetStyleContext(AValue: PGtkStyleContext);
-    class procedure destroy_event(w:Tgtk3Widget;data:gpointer);cdecl;
+    class procedure destroy_event(w:Tgtk3Widget;{%H-}data:gpointer);cdecl;
   protected
     // IUnknown implementation
     function QueryInterface(constref iid: TGuid; out obj): LongInt; {$IFDEF WINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
@@ -99,7 +99,7 @@ type
     function getText: String; virtual;
     procedure setText(const AValue: String); virtual;
     function GetContext: HDC; virtual;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; virtual;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; virtual;
     procedure DestroyWidget; virtual;
     procedure DoBeforeLCLPaint; virtual;
 
@@ -168,7 +168,7 @@ type
     function GetWindow: PGdkWindow; virtual;
     procedure Move(ALeft, ATop: Integer);
     procedure Activate; virtual;
-    procedure preferredSize(var PreferredWidth, PreferredHeight: integer; WithThemeSpace: Boolean); virtual;
+    procedure preferredSize(var PreferredWidth, PreferredHeight: integer; {%H-}WithThemeSpace: Boolean); virtual;
     procedure SetCursor(ACursor: HCURSOR);
     procedure SetFocus; virtual;
     procedure SetParent(AParent: TGtk3Widget; const ALeft, ATop: Integer); virtual;
@@ -221,7 +221,7 @@ type
     procedure InsertText(const atext:pchar;len:gint;var pos:gint;edt:TGtk3Entry);cdecl;
     function getText: String; override;
     procedure setText(const AValue: String); override;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     procedure InitializeWidget; override;
     procedure SetEchoMode(AVisible: Boolean);
@@ -250,8 +250,8 @@ type
     procedure SetStep(AValue: Double);
     procedure SetValue(AValue: Double);
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
-    function EatArrowKeys(const AKey: Word): Boolean; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
+    function EatArrowKeys(const {%H-}AKey: Word): Boolean; override;
   public
     function IsWidgetOk: Boolean; override;
     procedure SetRange(AMin, AMax: Double);
@@ -286,7 +286,7 @@ type
     function GetReversed: Boolean;
     procedure SetReversed(AValue: Boolean);
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     procedure SetBounds(ALeft,ATop,AWidth,AHeight:integer);override;
     function GetTrackBarOrientation: TTrackBarOrientation;
@@ -300,7 +300,7 @@ type
   TGtk3ScrollBar = class(TGtk3Range)
   protected
     class procedure value_changed (bar:TGtk3Scrollbar);cdecl;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     procedure SetParams;
   end;
@@ -318,7 +318,7 @@ type
     procedure SetShowText(AValue: Boolean);
     procedure SetStyle(AValue: TProgressBarStyle);
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     procedure InitializeWidget; override;
     property Orientation: TProgressBarOrientation read GetOrientation write SetOrientation;
@@ -331,7 +331,7 @@ type
 
   TGtk3Calendar = class(TGtk3Widget)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     procedure GetDate(out AYear, AMonth, ADay: Word);
     procedure SetDate(const AYear, AMonth, ADay: Word);
@@ -349,7 +349,7 @@ type
   protected
     function getText: String; override;
     procedure setText(const AValue: String); override;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     property Alignment: TAlignment read GetAlignment write SetAlignment;
     property StaticBorderStyle: TStaticBorderStyle read GetStaticBorderStyle write SetStaticBorderStyle;
@@ -381,7 +381,7 @@ type
 
   TGtk3NoteBook = class (TGtk3Container)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     procedure InitializeWidget;override;
     function getClientRect: TRect; override;
@@ -407,14 +407,14 @@ type
 
   TGtk3Paned = class(TGtk3Container)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   end;
 
   { TGtk3SplitterSide }
 
   TGtk3SplitterSide = class(TGtk3Container)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   end;
 
 
@@ -432,14 +432,14 @@ type
 
   TGtk3MenuBar = class(TGtk3MenuShell)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   end;
 
   { TGtk3Menu }
 
   TGtk3Menu = class(TGtk3MenuShell)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     PopupPoint: TPoint;
     constructor CreateFromMenuItem(const AMenuItem: TMenuItem); virtual; overload;
@@ -452,7 +452,7 @@ type
     function GetCaption: string;
     procedure SetCaption(const AValue: string);
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
     Lock:integer;
     MenuItem: TMenuItem;
@@ -496,7 +496,7 @@ type
     procedure ClearGlyphs;
   public
     destructor Destroy;override;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   end;
 
   { TGtk3Memo }
@@ -616,7 +616,7 @@ type
 
   TGtk3StatusBar = class(TGtk3Box)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   end;
 
   { TGtk3Panel }
@@ -626,7 +626,7 @@ type
     FBorderStyle: TBorderStyle;
   protected
     procedure SetColor(AValue: TColor); override;
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
     procedure DoBeforeLCLPaint; override;
     procedure setText(const AValue: String); override;
   public
@@ -637,7 +637,7 @@ type
 
   TGtk3GroupBox = class(TGtk3Bin)
   protected
-    function CreateWidget(const Params: TCreateParams):PGtkWidget; override;
+    function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
     function getText: String; override;
     procedure setText(const AValue: String); override;
   public
@@ -1652,7 +1652,7 @@ begin
   if AEvent^.scroll.send_event = NO_PROPAGATION_TO_PARENT then
     exit;
 
-  EventXY := Point(TruncToInt(AEvent^.Scroll.X),TruncToInt(AEvent^.scroll.Y));
+  EventXY := Point(LazUtilities.TruncToInt(AEvent^.Scroll.X),LazUtilities.TruncToInt(AEvent^.scroll.Y));
   AState := GtkModifierStateToShiftState(AEvent^.scroll.state, False);
   ShiftState := [];
   if AState and MK_SHIFT <> 0 then
@@ -1724,7 +1724,7 @@ var
   {$ENDIF}
 begin
   Result := False;
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
   if Event^.type_ = GDK_ENTER_NOTIFY then
   begin
     Msg.Msg := LM_MOUSEENTER;
@@ -1767,7 +1767,7 @@ begin
   if Event^.motion.send_event = NO_PROPAGATION_TO_PARENT then
     exit;
 
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
 
   MousePos.x := Round(Event^.motion.x);
   MousePos.y := Round(Event^.motion.y);
@@ -1803,11 +1803,11 @@ begin
   if not FHasPaint then
     exit;
 
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
 
   Msg.Msg := LM_PAINT;
   //New(AStruct);
-  FillChar(AStruct, SizeOf(TPaintStruct), 0);
+  FillChar(AStruct{%H-}, SizeOf(TPaintStruct), 0);
   Msg.PaintStruct := @AStruct;
 
   with PaintData do
@@ -1853,7 +1853,6 @@ end;
 
 function TGtk3Widget.GtkEventResize(Sender: PGtkWidget; Event: PGdkEvent
   ): Boolean; cdecl;
-var alloc:TGtkAllocation;
 begin
   {-$IF DEFINED(GTK3DEBUGEVENTS) OR DEFINED(GTK3DEBUGSIZE)}
   DebugLn('GtkEventResize: ',dbgsName(LCLObject),' Send=',dbgs(Event^.configure.send_event),
@@ -1873,7 +1872,7 @@ begin
   {$IF DEFINED(GTK3DEBUGEVENTS) OR DEFINED(GTK3DEBUGFOCUS)}
   DebugLn('TGtk3Widget.GtkEventFocus ',dbgsName(LCLObject),' FocusIn ',dbgs(Event^.focus_change.in_ <> 0));
   {$ENDIF}
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
   if Event^.focus_change.in_ <> 0 then
     Msg.Msg := LM_SETFOCUS
   else
@@ -1885,7 +1884,7 @@ procedure TGtk3Widget.GtkEventDestroy; cdecl;
 var
   Msg: TLMessage;
 begin
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
   Msg.Msg := LM_DESTROY;
   DeliverMessage(Msg);
   Release;
@@ -1900,7 +1899,7 @@ begin
   // gtk3 have ugly bug with scroll-event
   // https://bugzilla.gnome.org/show_bug.cgi?id=675959
   Result := False;
-  EventXY := Point(TruncToInt(Event^.scroll.x), TruncToInt(Event^.scroll.y));
+  EventXY := Point(LazUtilities.TruncToInt(Event^.scroll.x), LazUtilities.TruncToInt(Event^.scroll.y));
   FillChar(Msg{%H-},SizeOf(Msg),0);
   Msg.Msg := LM_MOUSEWHEEL;
   //DebugLn('Scroll ',Format('deltaX %2.2n deltaY %2.2n x %2.2n y %2.2n rootx %2.2n rooty %2.2n',
@@ -2001,8 +2000,6 @@ var
   AEvent: TGdkEventKey;
   Msg: TLMKey;
   CharMsg: TLMChar;
-  KeyCode: Word;
-  AShiftState: TShiftState;
   AEventString: String;
   KeyValue, ACharCode: Word;
   LCLModifiers: Word;
@@ -2014,7 +2011,7 @@ begin
   //TODO: finish LCL messaging
   Result := False;
   AEvent := Event^.key;
-  FillChar(Msg, SizeOf(Msg), 0);
+  FillChar(Msg{%H-}, SizeOf(Msg), 0);
   AEventString := AEvent.string_;
 
   if gdk_keyval_is_lower(AEvent.keyval) then
@@ -2149,7 +2146,7 @@ begin
     end;
 
     // create the CN_CHAR / CN_SYSCHAR message
-    FillChar(CharMsg, SizeOf(CharMsg), 0);
+    FillChar(CharMsg{%H-}, SizeOf(CharMsg), 0);
     CharMsg.Msg := CN_CharMsg[IsSysKey];
     CharMsg.KeyData := Msg.KeyData;
     AChar := AEventString[1];
@@ -2213,7 +2210,7 @@ begin
   if Event^.button.send_event = NO_PROPAGATION_TO_PARENT then
     exit;
 
-  FillChar(Msg, SizeOf(Msg), #0);
+  FillChar(Msg{%H-}, SizeOf(Msg), #0);
 
   MousePos.x := Round(Event^.button.x);
   MousePos.y := Round(Event^.button.y);
@@ -2363,9 +2360,6 @@ var
   AColor: TGdkRGBA;
   i: TGtkStateType;
   ARgba: TGdkRGBA;
-  R: Double;
-  G: Double;
-  B: Double;
 begin
   // new way (gtk3) but still buggy
   if IsWidgetOK and (0 > 1) then
@@ -3209,7 +3203,7 @@ end;
 procedure TGtk3Panel.SetColor(AValue: TColor);
 var
   AGdkRGBA: TGdkRGBA;
-  AColor: TGdkColor;
+  //AColor: TGdkColor;
 begin
   inherited SetColor(AValue);
   exit;
@@ -3235,7 +3229,7 @@ begin
     FWidget^.override_background_color(GTK_STATE_FLAG_SELECTED, @AGdkRGBA);
   end else
   begin
-    AColor := TColorToTGDKColor(AValue);
+    //AColor := TColorToTGDKColor(AValue);
     // writeln('ACOLOR R=',AColor.Red,' G=',AColor.green,' B=',AColor.blue);
     //inherited SetColor(AValue);
   end;
@@ -3477,29 +3471,29 @@ end;
 
 { TGtk3Entry }
 
-procedure Gtk3EntryDeletedText(AEntry: PGtkEntryBuffer; APosition: guint; ANumChars: guint; AData: GPointer); cdecl;
+procedure Gtk3EntryDeletedText({%H-}AEntry: PGtkEntryBuffer; {%H-}APosition: guint; {%H-}ANumChars: guint; AData: GPointer); cdecl;
 var
   Msg: TLMessage;
 begin
-  FillChar(Msg, SizeOf(Msg), 0);
+  FillChar(Msg{%H-}, SizeOf(Msg), 0);
   Msg.Msg := CM_TEXTCHANGED;
   TGtk3Widget(AData).DeliverMessage(Msg);
 end;
 
-procedure Gtk3EntryInsertedText(AEntry: PGtkEntryBuffer; APosition: guint; AChars: PGChar; ANumChars: guint; AData: GPointer); cdecl;
+procedure Gtk3EntryInsertedText({%H-}AEntry: PGtkEntryBuffer; {%H-}APosition: guint; {%H-}AChars: PGChar; {%H-}ANumChars: guint; AData: GPointer); cdecl;
 var
   Msg: TLMessage;
 begin
-  FillChar(Msg, SizeOf(Msg), 0);
+  FillChar(Msg{%H-}, SizeOf(Msg), 0);
   Msg.Msg := CM_TEXTCHANGED;
   TGtk3Widget(AData).DeliverMessage(Msg);
 end;
 
-procedure Gtk3EntryChanged(AEntry: PGtkEntryBuffer; AData: GPointer); cdecl;
+procedure Gtk3EntryChanged({%H-}AEntry: PGtkEntryBuffer; AData: GPointer); cdecl;
 var
   Msg: TLMessage;
 begin
-  FillChar(Msg, SizeOf(Msg), 0);
+  FillChar(Msg{%H-}, SizeOf(Msg), 0);
   Msg.Msg := CM_TEXTCHANGED;
   TGtk3Widget(AData).DeliverMessage(Msg);
 end;
@@ -3758,7 +3752,7 @@ end;
 
 { TGtk3Range }
 
-procedure Gtk3RangeChanged(ARange: PGtkRange; AData: gPointer); cdecl;
+procedure Gtk3RangeChanged({%H-}ARange: PGtkRange; AData: gPointer); cdecl;
 var
   Msg: TLMessage;
 begin
@@ -3766,7 +3760,7 @@ begin
   begin
     if TGtk3Widget(AData).InUpdate then
       Exit;
-    FillChar(Msg, SizeOf(Msg), #0);
+    FillChar(Msg{%H-}, SizeOf(Msg), #0);
     Msg.Msg := LM_CHANGED;
     TGtk3Widget(AData).DeliverMessage(Msg);
   end;
@@ -4172,7 +4166,7 @@ procedure TGtk3ProgressBar.SetStyle(AValue: TProgressBarStyle);
 begin
   if IsWidgetOk then
   begin
-    g_object_set_data(GetContainerWidget,'lclprogressbarstyle', Pointer(PtrUInt(Ord(AValue))));
+    g_object_set_data(GetContainerWidget,'lclprogressbarstyle', {%H-}Pointer(PtrUInt(Ord(AValue))));
     if AValue = pbstNormal then
     begin
       Position := TCustomProgressBar(LCLObject).Position;
@@ -4225,9 +4219,10 @@ end;
 
 function TGtk3ProgressBar.CreateWidget(const Params: TCreateParams): PGtkWidget;
 var
-  AProgres: TCustomProgressBar;
+  AProgress: TCustomProgressBar;
 begin
-  AProgres := TCustomProgressBar(LCLObject);
+  AProgress := TCustomProgressBar(LCLObject);
+  if AProgress=nil then ;
   FWidgetType := FWidgetType + [wtProgressBar];
   Result := TGtkEventBox.new;
   FCentralWidget := TGtkProgressBar.new;
@@ -4474,6 +4469,7 @@ var
   NMHdr: tagNMHDR;
   LCLPageIndex: Integer;
 begin
+  if widget=nil then ;
   if TGtk3Widget(Data).InUpdate then
     exit;
   {page is deleted}
@@ -4507,10 +4503,11 @@ begin
   if g_object_get_data(AWidget,'switch-page-signal-stopped') <> nil then
   begin
     Result := True;
-    APageNum := PtrInt(g_object_get_data(AWidget,'switch-page-signal-stopped'));
+    APageNum := {%H-}PtrInt(g_object_get_data(AWidget,'switch-page-signal-stopped'));
     ACurrentPage := AWidget^.get_current_page;
     g_object_set_data(AWidget,'switch-page-signal-stopped', nil);
     DebugLn('BackNoteBookSignal back notebook switch-page signal currpage=',dbgs(AWidget^.get_current_page),' blockedPage ',dbgs(APageNum));
+    if ACurrentPage<0 then ;
     // must hook into notebook^.priv to unlock APageNum
     // AWidget^.set_current_page(AWidget^.get_current_page);
     // g_object_thaw_notify(AWidget^.get_nth_page(AWidget^.get_current_page));
@@ -4531,7 +4528,7 @@ begin
   if TGtk3Widget(Data).InUpdate then
     exit;
 
-  DebugLn('GtkNotebookSwitchPage Data ',dbgHex(PtrUInt(Data)),' Realized ',dbgs(Widget^.get_realized),' pageNum=',dbgs(pageNum));
+  DebugLn('GtkNotebookSwitchPage Data ',dbgHex({%H-}PtrUInt(Data)),' Realized ',dbgs(Widget^.get_realized),' pageNum=',dbgs(pageNum));
 
   {page is deleted}
   if TGtk3NoteBook(Data).getPagesCount < TCustomTabControl(TGtk3NoteBook(Data).LCLObject).PageCount then
@@ -4553,7 +4550,7 @@ begin
   TGtk3Widget(Data).DeliverMessage(Mess);
   if Mess.Result <> 0 then
   begin
-    g_object_set_data(Widget,'switch-page-signal-stopped', GPointer(pageNum));
+    g_object_set_data(Widget,'switch-page-signal-stopped', {%H-}GPointer(pageNum));
     g_signal_stop_emission_by_name(PGObject(Widget), 'switch-page');
     // GtkNotebookAfterSwitchPage(Widget, page, pagenum, data);
     g_idle_add(@BackNoteBookSignal, Widget);
@@ -4564,7 +4561,11 @@ end;
 function GtkNotebookSelectPage(ANoteBook: PGtkNotebook; p1: gboolean; Data: gPointer): GBoolean; cdecl;
 begin
   // does not trigger for some reason
+  if ANoteBook=nil then ;
+  if p1 then ;
+  if Data=nil then ;
   DebugLn('GtkNotebookSelectPage ');
+  Result:=true;
 end;
 
 function TGtk3NoteBook.CreateWidget(const Params: TCreateParams): PGtkWidget;
@@ -4636,7 +4637,6 @@ var
   i: Integer;
   AWidget: PGtkWidget;
   AMinimumH, ANaturalH, ANaturalW, AMinimumW: gint;
-  AChild: PGtkWidget;
 begin
   AList := ANoteBook^.get_children;
   for i := 0 to g_list_length(AList) - 1 do
@@ -4644,7 +4644,6 @@ begin
     AWidget := PGtkWidget(g_list_nth_data(AList, I));
     AWidget^.get_preferred_height(@AMinimumH, @ANaturalH);
     AWidget^.get_preferred_width(@AMinimumW, @ANaturalW);
-    AChild := nil;
     DebugLn(Format('Child[%d] MinH %d NatH %d MinW %d NatW %d ALLOCW %d ALLOCH %d child_type %s',
       [I, AMinimumH, ANaturalH, AMinimumW, ANaturalW,
       AWidget^.get_allocated_width, AWidget^.get_allocated_height, g_type_name(ANotebook^.child_type)]));
@@ -4846,7 +4845,7 @@ begin
       if (ndx>0) then
       begin
         ParentMenu:=menuItem.Parent.Items[ndx-1];
-        if (MenuItem.GroupIndex>=0) and (ParentMenu.GroupIndex=MenuItem.GroupIndex) then
+        if (ParentMenu.GroupIndex=MenuItem.GroupIndex) then
         begin
           pl:=PGtkRadioMenuItem(TGtk3MenuItem(ParentMenu.Handle).Widget)^.get_group;
           PGtkRadioMenuItem(Result)^.set_group(pl);
