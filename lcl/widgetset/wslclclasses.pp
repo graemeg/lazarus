@@ -335,7 +335,6 @@ begin
   Vvmt := ANode^.VClass + vmtMethodStart;
   Pvmt := ParentWSNode^.VClass + vmtMethodStart;
   SetLength(Processed, VvmtCount);
-  FillChar(Processed[0], SizeOf(Processed), 0);
 
   while CommonClass <> nil do begin
     Cmnt := PPointer(Pointer(CommonClass) + vmtMethodTable)^;
