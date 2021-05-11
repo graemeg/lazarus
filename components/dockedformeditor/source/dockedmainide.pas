@@ -228,16 +228,12 @@ end;
 procedure TDockedTabMaster.OptionsModified;
 var
   LPageCtrl: TSourcePageControl;
-  LPageIndex: Integer;
 begin
   LPageCtrl := SourceWindows.LastActivePageControl;
-  LPageIndex := LPageCtrl.PageIndex;
   DesignForms.RemoveAllAnchorDesigner;
   SourceWindows.ShowCodeTabSkipCurrent(nil, nil);
   SourceWindows.RefreshAllPageControls;
   TDockedMainIDE.EditorActivated(SourceWindows.LastActiveSourceEditor);
-  if LPageIndex = 0 then Exit;
-  LPageCtrl.TabIndex := LPageIndex;
   LPageCtrl.OnChange(LPageCtrl);
 end;
 

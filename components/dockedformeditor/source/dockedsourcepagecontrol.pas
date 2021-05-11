@@ -61,6 +61,7 @@ type
     function  DesignerPageActive: Boolean;
     function  FormPageActive: Boolean;
     procedure RemoveDesignPages;
+    procedure RemoveTabSheetAnchors;
     procedure InitPage;
     procedure RefreshResizer;
     procedure ShowCode;
@@ -240,9 +241,15 @@ end;
 procedure TSourcePageControl.RemoveDesignPages;
 begin
   {$IFDEF DEBUGDOCKEDFORMEDITOR} DebugLn('TSourcePageControls.RemoveDesignPages'); {$ENDIF}
-  FreeAndNil(FTabSheetAnchors);
+  RemoveTabSheetAnchors;
   FreeAndNil(FTabSheetDesigner);
   ShowTabs := False;
+end;
+
+procedure TSourcePageControl.RemoveTabSheetAnchors;
+begin
+  if not Assigned(FTabSheetAnchors) then Exit;
+  FreeAndNil(FTabSheetAnchors);
 end;
 
 procedure TSourcePageControl.InitPage;

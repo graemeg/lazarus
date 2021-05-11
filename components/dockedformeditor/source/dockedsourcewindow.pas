@@ -435,6 +435,8 @@ begin
     begin
       LPageCtrl.TabPosition := DockedOptions.TabPosition;
       LPageCtrl.RefreshResizer;
+      if not DockedOptions.AnchorTabVisible then
+        LPageCtrl.RemoveTabSheetAnchors;
     end;
 end;
 
