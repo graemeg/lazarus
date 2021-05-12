@@ -2533,14 +2533,13 @@ var
   function TryGetDesignerFromForm(AForm: TCustomForm;
     out ADesigner: TComponentEditorDesigner): Boolean;
   begin
-    if Assigned(IDETabMaster) and (AForm is TSourceEditorWindowInterface)
-      and (IDETabMaster.TabDisplayState=tdsDesign)
-    then
-      ADesigner := TComponentEditorDesigner(TSourceEditorWindowInterface(AForm).
-        ActiveEditor.GetDesigner(True))
+    if Assigned(IDETabMaster) and (AForm is TSourceEditorWindowInterface) then
+      ADesigner := TComponentEditorDesigner(
+                     IDETabMaster.GetDesigner(
+                       TSourceEditorWindowInterface(AForm).ActiveEditor,
+                       IDETabMaster.TabDisplayState))
     else
       ADesigner := nil;
-
     Result := ADesigner <> nil;
   end;
 
@@ -3964,6 +3963,8 @@ var
 begin
   GetCurrentUnit(ASrcEdit, AnUnitInfo);
   ActiveDesigner := GetActiveDesignerSkipMainBar;
+  if not (ActiveDesigner is TDesigner) then
+    Exit;
   if not UpdateEditorCommandsStamp.Changed(ASrcEdit, ActiveDesigner as TDesigner, DisplayState) then
     Exit;
 

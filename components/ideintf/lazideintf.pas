@@ -578,16 +578,15 @@ type
     function GetTabDisplayStateEditor(Index: TSourceEditorInterface): TTabDisplayState; virtual; abstract;
   public
     function AutoSizeInShowDesigner(AControl: TControl): Boolean; virtual; abstract;
+    function GetDesigner(ASourceEditor: TSourceEditorInterface; ATabDisplayState: TTabDisplayState): TIDesigner; virtual;
     procedure ToggleFormUnit; virtual; abstract;
     procedure JumpToCompilerMessage(ASourceEditor: TSourceEditorInterface); virtual; abstract;
-
-    property TabDisplayState: TTabDisplayState read GetTabDisplayState;
-    property TabDisplayStateEditor[Index: TSourceEditorInterface]: TTabDisplayState read GetTabDisplayStateEditor;
-
     procedure ShowCode(ASourceEditor: TSourceEditorInterface); virtual; abstract;
     procedure ShowDesigner(ASourceEditor: TSourceEditorInterface; AIndex: Integer = 0); virtual; abstract;
-
     procedure ShowForm(AForm: TCustomForm); virtual; abstract;
+  public
+    property TabDisplayState: TTabDisplayState read GetTabDisplayState;
+    property TabDisplayStateEditor[Index: TSourceEditorInterface]: TTabDisplayState read GetTabDisplayStateEditor;
   end;
 
 var
@@ -624,6 +623,19 @@ var
 begin
   for i:=0 to length(BootHandlers[ht])-1 do
     BootHandlers[ht][i]();
+end;
+
+{ TIDETabMaster }
+
+function TIDETabMaster.GetDesigner(ASourceEditor: TSourceEditorInterface;
+  ATabDisplayState: TTabDisplayState): TIDesigner;
+begin
+  case ATabDisplayState of
+    tdsDesign:
+      Result := ASourceEditor.GetDesigner(True);
+    else
+      Result := nil;
+  end;
 end;
 
 { TLazIDEInterface }
