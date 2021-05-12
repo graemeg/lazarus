@@ -3963,9 +3963,7 @@ var
 begin
   GetCurrentUnit(ASrcEdit, AnUnitInfo);
   ActiveDesigner := GetActiveDesignerSkipMainBar;
-  if not (ActiveDesigner is TDesigner) then
-    Exit;
-  if not UpdateEditorCommandsStamp.Changed(ASrcEdit, ActiveDesigner as TDesigner, DisplayState) then
+  if (ActiveDesigner is TDesigner) and not UpdateEditorCommandsStamp.Changed(ASrcEdit, ActiveDesigner as TDesigner, DisplayState) then
     Exit;
 
   Editable := Assigned(ASrcEdit) and not ASrcEdit.ReadOnly;
@@ -11496,7 +11494,15 @@ begin
   {$IFDEF VerboseIDEDisplayState}
   debugln(['TMainIDE.SrcNoteBookActivated']);
   {$ENDIF}
-  DisplayState:=dsSource;
+  if not Assigned(IDETabMaster) then
+    DisplayState := dsSource
+  else
+    case IDETabMaster.TabDisplayState of
+      tdsDesign, tdsOther:
+        DisplayState := dsForm;
+      else
+        DisplayState := dsSource;
+    end;
 end;
 
 procedure TMainIDE.DesignerActivated(Sender: TObject);
