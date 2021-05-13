@@ -198,7 +198,9 @@ var
   procedure AddAll;
   var
     i: Integer;
+    oldPageSize: QPagedPaintDevicePageSize;
   begin
+    oldPageSize := QtDefaultPrinter.PageSize;
     {$IFDEF LCLQt5}
     for i:=QPagedPaintDeviceA4 to QPagedPaintDeviceCustom do
       Add(ArrPapers[i], i);
@@ -206,6 +208,7 @@ var
     for i:=QPrinterA4 to QPrinterCustom do
       Add(ArrPapers[i], i);
     {$ENDIF}
+    QtDefaultPrinter.PageSize := oldPageSize;
   end;
 
 begin
