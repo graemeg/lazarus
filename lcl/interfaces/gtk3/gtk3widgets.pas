@@ -3866,13 +3866,18 @@ end;
 procedure TGtk3TrackBar.SetScalePos(AValue: TTrackBarScalePos);
 begin
   if IsWidgetOK then
-    PGtkScale(FWidget)^.set_value_pos(Ord(AValue));
+    PGtkScale(FWidget)^.set_value_pos(TGtkPositionType(AValue));
 end;
 
 procedure TGtk3TrackBar.SetTickMarks(AValue: TTickMark; ATickStyle: TTickStyle);
 var
-  i,cnt: Integer;
+  i,cnt,fldw: Integer;
   Track:TCustomTrackbar;
+const
+  tick_map:array[TTrackBarOrientation,0..1] of TGtkPositionType =
+    ((GTK_POS_TOP,GTK_POS_BOTTOM), // trHorizontal
+     (GTK_POS_LEFT,GTK_POS_RIGHT) // trVertical
+    );
 begin
   if IsWidgetOK then
   begin
@@ -3881,26 +3886,22 @@ begin
       PGtkScale(FWidget)^.clear_marks
     else
     begin
+      PGtkScale(FWidget)^.clear_marks;
       Track:=TCustomTrackbar(LCLObject);
       cnt:=round(abs(Track.max-Track.min)/Track.LineSize);
       // highly-dense marks just enlarge GtkScale automatically
       // it is up to user concent to do this
-      if cnt*4<Track.Width then
+      if Track.Orientation=trHorizontal then
+        fldw:=Track.Width
+      else
+        fldw:=Track.Height;
+      if cnt*Track.LineSize<fldw then
       for i := Track.Min to Track.Max do
       begin
-        if TCustomTrackbar(LCLObject).Orientation = trHorizontal then
-        begin
-          if AValue in [tmBoth, tmTopLeft] then
-            PGtkScale(FWidget)^.add_mark(gDouble(i), GTK_POS_TOP, nil);
-          if AValue in [tmBoth, tmBottomRight] then
-            PGtkScale(FWidget)^.add_mark(gDouble(i), GTK_POS_BOTTOM, nil);
-        end else
-        begin
-          if AValue in [tmBoth, tmTopLeft] then
-            PGtkScale(FWidget)^.add_mark(gDouble(i), GTK_POS_LEFT, nil);
-          if AValue in [tmBoth, tmBottomRight] then
-            PGtkScale(FWidget)^.add_mark(gDouble(i), GTK_POS_RIGHT, nil);
-        end;
+        if AValue in [tmBoth, tmTopLeft] then
+          PGtkScale(FWidget)^.add_mark(gDouble(i), tick_map[Track.Orientation,0], nil);
+        if AValue in [tmBoth, tmBottomRight] then
+          PGtkScale(FWidget)^.add_mark(gDouble(i), tick_map[Track.Orientation,1], nil);
       end;
     end;
   end;
@@ -4712,10 +4713,10 @@ procedure TGtk3NoteBook.SetTabPosition(const ATabPosition: TTabPosition);
 const
   GtkPositionTypeMap: array[TTabPosition] of TGtkPositionType =
   (
-    2, // { tpTop    } GTK_POS_TOP,
-    3, // { tpBottom } GTK_POS_BOTTOM,
-    0, // { tpLeft   } GTK_POS_LEFT,
-    1 // { tpRight  } GTK_POS_RIGHT
+    { tpTop    } GTK_POS_TOP,
+    { tpBottom } GTK_POS_BOTTOM,
+    { tpLeft   } GTK_POS_LEFT,
+    { tpRight  } GTK_POS_RIGHT
   );
 begin
   if IsWidgetOK then
@@ -6705,7 +6706,7 @@ begin
   FLayout := AValue;
   if IsWidgetOk then
   begin
-    PGtkButton(FWidget)^.set_image_position(AValue);
+    PGtkButton(FWidget)^.set_image_position(TGtkPositionType(AValue));
     // set margin and spacing when layout is changed
     SetMargin(FMargin);
   end;
@@ -6796,7 +6797,7 @@ begin
   LCLObject.ControlStyle:=LCLObject.ControlStyle+[csClickEvents];
 
   FMargin := -1;
-  FLayout := GTK_POS_LEFT;
+  FLayout := ord(GTK_POS_LEFT);
   FSpacing := 2; // default gtk3 spacing is 2
 end;
 

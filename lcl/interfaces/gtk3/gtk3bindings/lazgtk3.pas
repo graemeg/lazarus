@@ -539,13 +539,13 @@ const
   GTK_BUILDER_ERROR_DUPLICATE_ID: TGtkBuilderError = 8;
 
 type
-  TGtkPositionType = Integer;
-const
+  TGtkPositionType = (
   { GtkPositionType }
-  GTK_POS_LEFT: TGtkPositionType = 0;
-  GTK_POS_RIGHT: TGtkPositionType = 1;
-  GTK_POS_TOP: TGtkPositionType = 2;
-  GTK_POS_BOTTOM: TGtkPositionType = 3;
+  GTK_POS_LEFT = 0,
+  GTK_POS_RIGHT = 1,
+  GTK_POS_TOP = 2,
+  GTK_POS_BOTTOM = 3
+  );
 
 type
   TGtkReliefStyle = Integer;
