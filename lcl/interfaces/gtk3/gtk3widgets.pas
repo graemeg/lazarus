@@ -2932,11 +2932,9 @@ procedure TGtk3Widget.SetBounds(ALeft,ATop,AWidth,AHeight:integer);
 var
   ARect: TGdkRectangle;
   Alloc: TGtkAllocation;
-  AMinWidth, AMinHeight, ANaturalSize: gint;
+  AMinSize, ANaturalSize: gint;
 begin
   if (Widget=nil) then
-    exit;
-  if (not Widget^.get_visible) and (not Widget^.is_toplevel) then
     exit;
 
   if Self is TGtk3Button then
@@ -2945,26 +2943,25 @@ begin
     dec(AHeight,4);
   end;
 
+  ARect.x := ALeft;
+  ARect.y := ATop;
+  ARect.width := AWidth;
+  ARect.Height := AHeight;
+  with Alloc do
+  begin
+    x := ALeft;
+    y := ATop;
+    width := AWidth;
+    height := AHeight;
+  end;
   BeginUpdate;
   try
     {fixes gtk3 assertion}
-    Widget^.get_preferred_width(@AMinWidth, @ANaturalSize);
-    Widget^.get_preferred_height(@AMinHeight, @ANaturalSize);
-    AWidth:=Max(AWidth,AMinWidth);
-    AHeight:=Max(AHeight,AMinHeight);
-    Widget^.set_size_request(AWidth,AHeight);
+    Widget^.get_preferred_width(@AMinSize, @ANaturalSize);
+    Widget^.get_preferred_height(@AMinSize, @ANaturalSize);
 
-    ARect.x := ALeft;
-    ARect.y := ATop;
-    ARect.width := AWidth;
-    ARect.Height := AHeight;
-    with Alloc do
-    begin
-      x := ALeft;
-      y := ATop;
-      width := AWidth;
-      height := AHeight;
-    end;
+
+    Widget^.set_size_request(AWidth,AHeight);
 
     Widget^.size_allocate(@ARect);
     Widget^.set_allocation(@Alloc);
