@@ -25,7 +25,7 @@ uses
   // LCL
   Forms, ComCtrls, Controls, LCLProc,
   // IDEIntf
-  SrcEditorIntf, FormEditingIntf,
+  SrcEditorIntf, FormEditingIntf, LazIDEIntf,
   // DockedFormEditor
   DockedDesignForm, DockedResizer, DockedOptionsIDE, DockedAnchorDesigner,
   {%H-}DockedTools, DockedStrConsts;
@@ -44,6 +44,7 @@ type
     FTabSheetCode: TTabSheet;
     FTabSheetDesigner: TTabSheet;
     procedure AsyncDesignerSetFocus({%H-}Data: PtrInt);
+    function  GetActiveTabDisplayState: TTabDisplayState;
     procedure SourcePageControlMouseUp(Sender: TObject; {%H-}Button: TMouseButton; {%H-}Shift: TShiftState; {%H-}X, {%H-}Y: Integer);
     procedure OnAdjustPage(Sender: TObject);
   protected
@@ -67,6 +68,7 @@ type
     procedure ShowCode;
     procedure ShowDesigner(AIndex: Integer = 0);
   public
+    property ActiveTabDisplayState: TTabDisplayState read GetActiveTabDisplayState;
     property DesignForm: TDesignForm read FDesignForm write SetDesignForm;
     property Resizer: TResizer read FResizer;
     property SourceEditor: TSourceEditorInterface read FSourceEditor;
@@ -110,6 +112,14 @@ begin
   {$IFDEF DEBUGDOCKEDFORMEDITOR} DebugLn('TSourcePageControl.AsyncDesignerSetFocus'); {$ENDIF}
   DesignerSetFocus;
   FDesignerSetFocusAsyncCount := 0;
+end;
+
+function TSourcePageControl.GetActiveTabDisplayState: TTabDisplayState;
+begin
+  Result := tdsNone;
+  if ActivePage = FTabSheetCode then Exit(tdsCode)
+  else if Assigned(FTabSheetDesigner) and (ActivePage = FTabSheetDesigner) then Exit(tdsDesign)
+  else if Assigned(FTabSheetAnchors)  and (ActivePage = FTabSheetAnchors)  then Exit(tdsOther);
 end;
 
 procedure TSourcePageControl.SetDesignForm(const AValue: TDesignForm);
@@ -272,7 +282,7 @@ begin
       DesignForm.AnchorDesigner := TAnchorDesigner.Create(DesignForm, Resizer.ResizeControl.AnchorContainer);
       DesignForm.AnchorDesigner.OnDesignerSetFocus := @DesignerSetFocus;
     end;
-    DesignForm.AnchorDesigner.Refresh;
+//    DesignForm.AnchorDesigner.Refresh;
   end;
 end;
 

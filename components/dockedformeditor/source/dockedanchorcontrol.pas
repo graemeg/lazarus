@@ -135,9 +135,10 @@ type
     procedure CheckAnchors;
     procedure CheckParents;
     procedure CheckProperties;
+    procedure DeleteIndexAndAbove(AIndex: Integer);
     function  IndexOf(AControl: TControl): Integer; overload;
     procedure Invalid;
-    procedure RemoveInvalid;
+    function  RemoveInvalid: Boolean;
   end;
 
   { TBorderControl }
@@ -676,6 +677,12 @@ begin
     end;
 end;
 
+procedure TAnchorControls.DeleteIndexAndAbove(AIndex: Integer);
+begin
+  while Count > AIndex do
+    Delete(Count - 1);
+end;
+
 function TAnchorControls.IndexOf(AControl: TControl): Integer;
 var
   i: Integer;
@@ -694,13 +701,17 @@ begin
     Self[i].Invalid;
 end;
 
-procedure TAnchorControls.RemoveInvalid;
+function TAnchorControls.RemoveInvalid: Boolean;
 var
   i: Integer;
 begin
+  Result := False;
   for i := Count - 1 downto 1 do
     if Self[i].IsInvalid then
+    begin
       Delete(i);
+      Result := True;
+    end;
 end;
 
 { TBorderControl }

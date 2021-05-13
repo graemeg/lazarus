@@ -18,7 +18,6 @@
     - designer: mouse wheel to scroll content doesn't work - csDesigning is set and
       form doesn't get a LM_MOUSEWHEEL message
   TODO:
-    - Undo
 
 }
 
@@ -56,8 +55,9 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-    function AutoSizeInShowDesigner(AControl: TControl): Boolean; override;
+    function  AutoSizeInShowDesigner(AControl: TControl): Boolean; override;
     procedure EnableAutoSizing(AControl: TControl);
+    function  GetDesigner(ASourceEditor: TSourceEditorInterface; ATabDisplayState: TTabDisplayState): TIDesigner; override;
     procedure ToggleFormUnit; override;
     procedure JumpToCompilerMessage(ASourceEditor: TSourceEditorInterface); override;
     procedure ShowCode(ASourceEditor: TSourceEditorInterface); override;
@@ -117,17 +117,10 @@ function TDockedTabMaster.GetTabDisplayStateEditor(ASourceEditor: TSourceEditorI
 var
   LPageCtrl: TSourcePageControl;
 begin
-  if ASourceEditor = nil then
-    Exit(tdsNone);
+  if ASourceEditor = nil then Exit(tdsNone);
   LPageCtrl := SourceWindows.FindPageControl(ASourceEditor);
   if LPageCtrl = nil then Exit(tdsNone);
-  case LPageCtrl.PageIndex of
-    0: Exit(tdsCode);
-    1: Exit(tdsDesign);
-    2: Exit(tdsDesign);
-    else
-      Exit(tdsNone);
-  end;
+  Result := LPageCtrl.ActiveTabDisplayState;
 end;
 
 constructor TDockedTabMaster.Create;
@@ -175,13 +168,31 @@ begin
   end;
 end;
 
+function TDockedTabMaster.GetDesigner(ASourceEditor: TSourceEditorInterface; ATabDisplayState: TTabDisplayState): TIDesigner;
+var
+  LPageCtrl: TSourcePageControl;
+begin
+  if ASourceEditor = nil then Exit(nil);
+  LPageCtrl := SourceWindows.FindPageControl(ASourceEditor);
+  if LPageCtrl = nil then Exit(nil);
+  if LPageCtrl.DesignForm = nil then Exit(nil);
+  case ATabDisplayState of
+    tdsDesign:
+      Result := LPageCtrl.DesignForm.Designer;
+    tdsOther:
+      Result := LPageCtrl.DesignForm.AnchorDesigner;
+    else
+      Result := nil;
+  end;
+end;
+
 procedure TDockedTabMaster.ToggleFormUnit;
 begin
   {$IFDEF DEBUGDOCKEDFORMEDITOR} DebugLn('TDockedTabMaster.ToggleFormUnit'); {$ENDIF}
   case TabDisplayState of
     tdsCode:
       ShowDesigner(SourceEditorManagerIntf.ActiveEditor);
-    tdsDesign:
+    else
       ShowCode(SourceEditorManagerIntf.ActiveEditor);
   end;
 end;
