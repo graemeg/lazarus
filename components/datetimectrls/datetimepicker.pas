@@ -45,7 +45,7 @@ uses
   {$ifdef unix}
   clocale, // needed to initialize default locale settings on Linux.
   {$endif}
-  Classes, SysUtils, Controls, LCLType, Graphics, Math, StdCtrls, Buttons,
+  Classes, SysUtils, Controls, LCLType, Graphics, Math, Buttons,
   ExtCtrls, Forms, ComCtrls, Types, LMessages, LazUTF8, LCLIntf,
   LCLProc, Themes, CalControlWrapper;
 
