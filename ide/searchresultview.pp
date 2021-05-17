@@ -935,9 +935,9 @@ begin
   if FClosingTabs then
     exit;
   if FAsyncUpdateCloseButtons=svcbNone then exit;
+  aEnable:=FAsyncUpdateCloseButtons=svcbEnable;
   FAsyncUpdateCloseButtons:=svcbNone;
 
-  aEnable:=FAsyncUpdateCloseButtons=svcbEnable;
   if aEnable and (ResultsNoteBook.PageCount>0) then begin
     lPageList := GetPagesOnActiveLine;
     if Assigned(lPageList) and (lPageList.Count>0) then
@@ -1277,7 +1277,7 @@ begin
       begin
         if ThePage.Components[i] is TLazSearchResultTV then
         begin
-          result:= TLazSearchResultTV(ThePage.Components[i]);
+          Result:= TLazSearchResultTV(ThePage.Components[i]);
           break;
         end;
       end;
