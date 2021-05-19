@@ -89,7 +89,7 @@ type
     FDBGInfo: TDBGType;
     FGridData: TStringGrid;
     FGridMethods: TStringGrid;
-    FUpdateLock, FUpdateNeeded: Boolean;
+    FUpdateLock, FUpdateNeeded, FExpressionWasEvaluated: Boolean;
     FTestUpdateLock: Boolean;
     FRowClicked: Integer;
     FHistory: TStringList;
@@ -851,7 +851,7 @@ begin
   btnBackward.Enabled := FHistoryIndex > 0;
   btnForward.Enabled := FHistoryIndex < FHistory.Count - 1;
 
-  if (FExpression=FHistory[FHistoryIndex]) then
+  if (FExpression=FHistory[FHistoryIndex]) and FExpressionWasEvaluated then
     exit;
 
   FExpression:=FHistory[FHistoryIndex];
@@ -863,6 +863,7 @@ procedure TIDEInspectDlg.EvaluateCallback(Sender: TObject; ASuccess: Boolean;
   ResultText: String; ResultDBGType: TDBGType);
 begin
   FUpdateLock := False;
+  FExpressionWasEvaluated := True;
 
   FHumanReadable := ResultText;
   FDBGInfo := ResultDBGType;
@@ -887,6 +888,7 @@ begin
     skCardinal, skBoolean, skChar, skFloat: InspectSimple();
     skArray: InspectSimple();
     skPointer: InspectPointer();
+    skString, skAnsiString, skWideString: InspectSimple;
   //  skDecomposable: ;
     else begin
         Clear;
@@ -899,6 +901,7 @@ procedure TIDEInspectDlg.UpdateData;
 var
   Opts: TDBGEvaluateFlags;
 begin
+  FExpressionWasEvaluated := False;
   if DebugBoss.State in [dsRun, dsStop, dsIdle] then begin
     // No request can be running
     FUpdateLock := False;
