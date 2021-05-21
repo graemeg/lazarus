@@ -5929,16 +5929,20 @@ var
   ImageIndex: Integer;
   ColumnIndex: Integer;
   APath: PGtkTreePath;
+  gv:TGValue;
+  pb:PgdkPixbuf;
 begin
-  // TODO: set_property('pixbuf', TGValue);
-  // PGtkCellRendererPixbuf(cell)^.pixbuf := nil;
+  fillchar(gv,sizeof(gv),0);
+  gv.init(G_TYPE_OBJECT);
+  gv.set_instance(nil);
+  PGtkCellRendererPixbuf(cell)^.set_property('pixbuf',@gv);
+
   gtk_tree_model_get(tree_model, iter, [0, @ListItem, -1]);
 
   ListColumn := TListColumn(g_object_get_data(tree_column, 'TListColumn'));
   if ListColumn = nil then
     Exit;
   ColumnIndex := ListColumn.Index;
-  // Images := Widgets^.Images;
   Images := TGtk3ListView(AData).Images;
   if Images = nil then
     Exit;
@@ -5961,10 +5965,13 @@ begin
       ImageIndex := ListItem.SubItemImages[ColumnIndex-1];
 
   if (ImageIndex > -1) and (ImageIndex <= Images.Count-1) then
-    // TODO: set property
-    //PGtkCellRendererPixbuf(cell)^.pixbuf := PGdkPixbuf(Images.Items[ImageIndex])
+    pb:=TGtk3Image(TBitmap(Images.Items[ImageIndex]).Handle).Handle
   else
-    ; // PGtkCellRendererPixbuf(cell)^.pixbuf := nil;
+    pb:=nil;
+
+  gv.set_instance(pb);
+  PGtkCellRendererPixbuf(cell)^.set_property('pixbuf',@gv)
+
 end;
 
 procedure Gtk3WS_ListViewColumnClicked(column: PGtkTreeViewColumn; AData: GPointer); cdecl;
