@@ -11,6 +11,7 @@ unit UnityWSCtrls;
 interface
 
 {$mode delphi}
+{$I gtk2defines.inc}
 
 uses
   GLib2, Gtk2, Gdk2Pixbuf,
@@ -75,6 +76,9 @@ type
 function UnityAppIndicatorInit: Boolean;
 
 implementation
+
+// X is needed to test for traditional SysTray being available
+{$IFDEF HASX}uses gtk2extra, x, xlib;{$ENDIF}
 
 const
   libappindicator_3 = 'libappindicator3.so.1';              // Canonical's Unity Appindicator3 library
@@ -278,16 +282,19 @@ var
   UseAppInd : string;
 
   function NeedAppIndicator: boolean;
+  {$IFDEF HASX}
+  // Here we assume if no X, its pure eg wayland so no traditional SysTray either.
   var
-    DeskTop : String;
+    A : TAtom;
+    XDisplay: PDisplay;
+  {$endif}
   begin
-    DeskTop := GetEnvironmentVariableUTF8('XDG_CURRENT_DESKTOP');
-    // See the wiki for details of what extras these desktops require !!
-    if (Desktop = 'GNOME')
-      or (DeskTop = 'Unity')
-      or (Desktop = 'Enlightenment')
-      or (Desktop = 'ubuntu:GNOME') then exit(True);
-    Result := False;
+    Result := True;
+    {$IFDEF HASX}
+    XDisplay := gdk_display;
+    A := XInternAtom(XDisplay, '_NET_SYSTEM_TRAY_S0', False);
+    result := (XGetSelectionOwner(XDisplay, A) = 0);
+    {$endif}
   end;
 
   function TryLoad(const ProcName: string; var Proc: Pointer): Boolean;
