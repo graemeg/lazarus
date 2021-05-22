@@ -2809,6 +2809,9 @@
         </seealso>
       </element>
 
+      <element name="TSpeedButton.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TSpeedButton.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
+      <element name="TSpeedButton.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
       <element name="TSpeedButton.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
       <element name="TSpeedButton.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
       <element name="TSpeedButton.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
@@ -2819,28 +2822,14 @@
       <element name="TSpeedButton.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element name="TSpeedButton.OnPaint" link="#lcl.controls.TGraphicControl.OnPaint"/>
       <element name="TSpeedButton.OnResize" link="#lcl.controls.TControl.OnResize"/>
+      <element name="TSpeedButton.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
       <element name="TSpeedButton.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds"/>
       <element name="TSpeedButton.ShowCaption" link="#lcl.buttons.TCustomSpeedButton.ShowCaption"/>
-
-      <element name="TSpeedButton.ShowHint" link="#lcl.controls.TControl.ShowHint">
-        <descr>
-          <p>
-            Standard properties, which should be supported by all descendants. Reads flag or writes one to determine if a hint is to be shown when mouse hovers over this control. If value is stored, a storage flag is set. Display of the actual hint is controlled by OnShowHint.
-          </p>
-        </descr>
-        <seealso></seealso>
-      </element>
-
+      <element name="TSpeedButton.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
       <element name="TSpeedButton.ParentBidiMode" link="#lcl.controls.TControl.ParentBidiMode"/>
       <element name="TSpeedButton.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TSpeedButton.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
-
-      <element name="TSpeedButton.PopupMenu" link="#lcl.controls.TControl.PopupMenu">
-        <descr>
-          Standard properties, which should be supported by all descendants. Reads the details of the pop-up menu, or stores them. Properties are defined in the <link id="#lcl.Menus.TPopupMenu">TPopupMenu</link> parent class.
-        </descr>
-        <seealso></seealso>
-      </element>
+      <element name="TSpeedButton.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
 
       <element name="TGetDefaultBitBtnGlyph">
         <short>

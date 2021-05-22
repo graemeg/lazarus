@@ -35,7 +35,6 @@
         </p>
       </descr>
 
-
       <element name="Classes"/>
       <element name="SysUtils"/>
       <element name="Types"/>
@@ -376,24 +375,48 @@
         <short>Value for the property</short>
       </element>
 
-      <element name="TControlScrollBar.GetPosition" link="#lcl.forms.TControlScrollBar.Position"/>
+      <element name="TControlScrollBar.GetPosition">
+        <short>Gets the value for the Position property</short>
+        <descr/>
+        <seealso>
+          <link id="TControlScrollBar.Position"/>
+        </seealso>
+      </element>
       <element name="TControlScrollBar.GetPosition.Result">
-        <short/>
+        <short>Value for the property</short>
       </element>
 
-      <element name="TControlScrollBar.GetRange" link="#lcl.forms.TControlScrollBar.Range"/>
+      <element name="TControlScrollBar.GetRange">
+        <short>Gets the value for the Range property</short>
+        <descr/>
+        <seealso>
+          <link id="TControlScrollBar.Range"/>
+        </seealso>
+      </element>
       <element name="TControlScrollBar.GetRange.Result">
-        <short/>
+        <short>Value for the property</short>
       </element>
 
-      <element name="TControlScrollBar.GetSize" link="#lcl.forms.TControlScrollBar.Size"/>
+      <element name="TControlScrollBar.GetSize">
+        <short>Gets the value for the Size property</short>
+        <descr/>
+        <seealso>
+          <link id="TControlScrollBar.Size"/>
+        </seealso>
+      </element>
       <element name="TControlScrollBar.GetSize.Result">
-        <short/>
+        <short>Value for the property</short>
       </element>
 
-      <element name="TControlScrollBar.GetSmooth" link="#lcl.forms.TControlScrollBar.Smooth"/>
+      <element name="TControlScrollBar.GetSmooth">
+        <short>Gets the value for the Smooth property</short>
+        <descr/>
+        <seealso>
+          <link id="TControlScrollBar.Smooth"/>
+        </seealso>
+      </element>
       <element name="TControlScrollBar.GetSmooth.Result">
-        <short/>
+        <short>Value for the property</short>
       </element>
 
       <element name="TControlScrollBar.HandleAllocated">
@@ -580,15 +603,16 @@
       </element>
 
       <element name="TControlScrollBar.GetHorzScrollBar">
-        <short>Get the horizontal scroll bar for the Control</short>
+        <short>Gets the horizontal scroll bar for the control</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControlScrollBar.GetHorzScrollBar.Result">
         <short>TControlScrollBar instance representing the scroll bar</short>
       </element>
+
       <element name="TControlScrollBar.GetVertScrollBar">
-        <short>Get the vertical scroll bar for the Control</short>
+        <short>Get the vertical scroll bar for the control</short>
         <descr/>
         <seealso/>
       </element>
@@ -601,7 +625,11 @@
       <element name="TControlScrollBar.ScrollBarShouldBeVisible">
         <short>Determines whether a scroll bar is required</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TControlScrollBar.Page"/>
+          <link id="TControlScrollBar.Range"/>
+          <link id="TControlScrollBar.Visible"/>
+        </seealso>
       </element>
       <element name="TControlScrollBar.ScrollBarShouldBeVisible.Result">
         <short>True when Visible, and Range is larger than the Page size</short>
@@ -614,7 +642,7 @@
             Create is the constructor for the class instance, and calls the inherited constructor on entry.
           </p>
           <p>
-            Create sets the Control and Kind properties to the values specified in the AControl and AKind arguments. Create sets the default values for properties, including:
+            Create sets the assocaited control for the class instance and the Kind property to the values specified in the AControl and AKind arguments. Create sets the default values for properties, including:
           </p>
           <dl>
             <dt>Page</dt>
@@ -663,32 +691,68 @@
       </element>
 
       <element name="TControlScrollBar.IsScrollBarVisible">
-        <short>Determines the current widget state</short>
-        <descr/>
+        <short>
+          Determines if the scroll bar is visible using the state from the widgetset class
+        </short>
+        <descr>
+          <p>
+            <var>IsScrollBarVisible</var> is a <var>Boolean</var> function used to determine if the scroll bar for the associatied control is visible. The return value defaults to the value in the <var>Visible</var> property. If the handle has been allocated for the control, the <var>GetScrollbarVisible</var> routine from the LCL interface is used to get the visiblity for the scroll bar <var>Kind</var>.
+          </p>
+          <p>
+            IsScrollBarVisible is used in the implementation of the <var>ClientSizeWithBar</var> and <var>ClientSizeWithoutBar</var> methods.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TControlScrollBar.IsScrollBarVisible.Result">
-        <short>True if scroll bar is visible</short>
+        <short>True if the scroll bar is visible</short>
       </element>
 
       <element name="TControlScrollBar.ScrollPos">
-        <short>The scroll Position, zero if not Visible</short>
+        <short>The Position for the scroll bar, or zero if not Visible</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControlScrollBar.ScrollPos.Result">
-        <short>The scroll Position, zero if not Visible</short>
+        <short>The scroll bar Position, or zero if not Visible</short>
       </element>
 
       <element name="TControlScrollBar.GetOtherScrollBar">
         <short>
-          Gets the scroll bar with the opposite orientation (horz/vert) for the current instance
+          Gets the scroll bar with the opposite orientation (horz/vert) of the current instance
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControlScrollBar.GetOtherScrollBar.Result">
         <short>TControlScrollBar instance for the opposite orientation</short>
+      </element>
+
+      <element name="TControlScrollBar.Size">
+        <short>The adjustable size of the scroll bar</short>
+        <descr>
+          <p>
+            The length of the bar is the Width (or Height) of the Parent Control, the Size is the other (free) coordinate.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
+      <element name="TControlScrollBar.ControlSize">
+        <short>Returns the size for the associated control</short>
+        <descr>
+          <p>
+            <var>ControlSize</var> is an <var>Integer</var> function used to get the size for the associated control in the class instance. Uses the value in <var>Kind</var> to determine the control property used as the return value. When Kind is <var>sbVertical</var>, the <var>Width</var> for the associated Control is used. When Kind is <var>sbHorizontal</var>, the <var>Height</var> for the associated Control is used.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControlScrollBar.Kind"/>
+          <link id="TControlScrollBar.Create"/>
+          <link id="TScrollBarKind"/>
+        </seealso>
+      </element>
+      <element name="TControlScrollBar.ControlSize.Result">
+        <short>Size for the associated control</short>
       </element>
 
       <element name="TControlScrollBar.ClientSize">
@@ -832,16 +896,6 @@
         <seealso/>
       </element>
 
-      <element name="TControlScrollBar.Position">
-        <short>Position of the slider, 0..Range-Page</short>
-        <descr>
-          <p>
-            The Position reflects the top coordinate of the slider, which is Range-Page when the slider is at the bottom of the bar.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
       <element name="TControlScrollBar.Smooth">
         <short>
           Enables smooth scrolling, with automatic adjustment of Increment and Page
@@ -864,9 +918,15 @@
           <link id="TScrollingWinControl"/>
         </seealso>
       </element>
-      <element name="TControlScrollBar.SmoothIsStored" link="#lcl.forms.TControlScrollBar.Smooth"/>
-      <element name="TControlScrollBar.SmoothIsStored.Result">
-        <short/>
+
+      <element name="TControlScrollBar.Position">
+        <short>Position of the slider, 0..Range-Page</short>
+        <descr>
+          <p>
+            The Position reflects the top coordinate of the slider, which is Range-Page when the slider is at the bottom of the bar.
+          </p>
+        </descr>
+        <seealso/>
       </element>
 
       <element name="TControlScrollBar.Range">
@@ -876,21 +936,11 @@
         <seealso/>
       </element>
 
-      <element name="TControlScrollBar.Size">
-        <short>The adjustable size of the scroll bar</short>
-        <descr>
-          <p>
-            The length of the bar is the Width (or Height) of the Parent Control, the Size is the other (free) coordinate.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
       <element name="TControlScrollBar.Tracking">
         <short>Gives feedback while the slider is dragged</short>
         <descr>
           <p>
-            When it takes an significant amount of time, to repaint the parent control at a new position, Tracking should be False to prevent flicker; then the control is updated only when the slider is released.
+            When it takes a significant amount of time to repaint the parent control at a new position, Tracking should be False to prevent flicker. This causes the control to be updated only when the slider is released.
           </p>
         </descr>
         <seealso>
@@ -936,26 +986,19 @@
         </seealso>
       </element>
 
-
-      <element name="TScrollingWinControl.FHorzScrollBar" link="#lcl.forms.TScrollingWinControl.HorzScrollBar"/>
-      <element name="TScrollingWinControl.FVertScrollBar" link="#lcl.forms.TScrollingWinControl.VertScrollBar"/>
-      <element name="TScrollingWinControl.FAutoScroll" link="#lcl.forms.TScrollingWinControl.AutoScroll"/>
+      <element name="TScrollingWinControl.FHorzScrollBar"/>
+      <element name="TScrollingWinControl.FVertScrollBar"/>
+      <element name="TScrollingWinControl.FAutoScroll"/>
 
       <element name="TScrollingWinControl.FIsUpdating">
         <short>Prevents recursive updates, True while an update is already in progress</short>
-        <descr/>
-        <seealso/>
       </element>
 
-      <element name="TScrollingWinControl.SetHorzScrollBar" link="#lcl.forms.TScrollingWinControl.HorzScrollBar"/>
-      <element name="TScrollingWinControl.SetHorzScrollBar.Value">
-        <short/>
-      </element>
+      <element name="TScrollingWinControl.SetHorzScrollBar"/>
+      <element name="TScrollingWinControl.SetHorzScrollBar.Value"/>
 
-      <element name="TScrollingWinControl.SetVertScrollBar" link="#lcl.forms.TScrollingWinControl.VertScrollBar"/>
-      <element name="TScrollingWinControl.SetVertScrollBar.Value">
-        <short/>
-      </element>
+      <element name="TScrollingWinControl.SetVertScrollBar"/>
+      <element name="TScrollingWinControl.SetVertScrollBar.Value"/>
 
       <element name="TScrollingWinControl.HideScrollbars">
         <short>Hides scroll bars with valid handles</short>
@@ -964,18 +1007,26 @@
       <element name="TScrollingWinControl.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TScrollingWinControl.AlignControls" link="#lcl.controls.TWinControl.AlignControls">
-        <short>Also calculates sizes for the scroll bars if required</short>
-        <descr/>
+        <short/>
+        <descr>
+          <p>
+            Calls the inherited method to align the specified control and its children to the parent control. Ensures that the page, range, and position in the scroll bars are recalculated when <var>AutoScroll</var> is enabled and both <var>HorzScrollBar</var> and <var>VertScrollBar</var> are in use.
+          </p>
+        </descr>
         <seealso>
+          <link id="TScrollingWinControl.AutoScroll"/>
+          <link id="TScrollingWinControl.HorzScrollBar"/>
+          <link id="TScrollingWinControl.VertScrollBar"/>
           <link id="#LCL.Controls.TWinControl.AlignControls">TWinControl.AlignControls</link>
         </seealso>
       </element>
       <element name="TScrollingWinControl.AlignControls.AControl">
-        <short/>
+        <short>Control aligned in the method</short>
       </element>
       <element name="TScrollingWinControl.AlignControls.ARect">
-        <short/>
+        <short>Client rectangle used in the operation</short>
       </element>
+
       <element name="TScrollingWinControl.AutoScrollEnabled">
         <short>Indicates if automatic scrolling is enabled for the control</short>
         <descr>
@@ -1005,10 +1056,20 @@
         </seealso>
       </element>
 
-      <element name="TScrollingWinControl.CreateWnd" link="#lcl.controls.TWinControl.CreateWnd"/>
+      <element name="TScrollingWinControl.CreateWnd" link="#lcl.controls.TWinControl.CreateWnd">
+        <short/>
+        <descr>
+          <p>
+            Ensures that the scroll bar page, range, and visibiity are established when the handles for the windowed control are created. Temporarily disables auto-sizing in the method, and re-enables auto-sizing prior to exit. Calls the inherited method to create the window and its handles.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScrollingWinControl.UpdateScrollBars"/>
+        </seealso>
+      </element>
 
       <element name="TScrollingWinControl.GetClientScrollOffset">
-        <short>The virtual origin of the physical client area</short>
+        <short>The origin for the physical client area</short>
         <descr/>
         <seealso>
           <link id="#LCL.Controls.TControl.GetClientScrollOffset">TControl.GetClientScrollOffset</link>
@@ -1019,8 +1080,7 @@
       </element>
 
       <element name="TScrollingWinControl.GetLogicalClientRect" link="#lcl.controls.TControl.GetLogicalClientRect">
-        <short>Returns the full virtual ClientRect.
-        </short>
+        <short>Returns the full virtual ClientRect</short>
         <descr/>
         <seealso>
           <link id="#LCL.Controls.TControl.GetLogicalClientRect">TControl.GetLogicalClientRect</link>
@@ -1114,7 +1174,7 @@
         <short>Sets the value for the AutoScroll property</short>
         <descr>
           <p>
-            When the property is changed to <b>True</b>, the <var>UpdateScrollBars</var> method is called to calculate the page, range, and visibility for <var>HorzScrollBar</var> and <var>VertScrollBar</var>. When changed to <b>False</b>, the <var>HideScrollbars</var> method is called to reset the page, range, and visibility for the scroll bars. If the BoundsRect is updated in either method, the original valueis restored prior to exit.
+            When the property is changed to <b>True</b>, the <var>UpdateScrollBars</var> method is called to calculate the page, range, and visibility for <var>HorzScrollBar</var> and <var>VertScrollBar</var>. When changed to <b>False</b>, the <var>HideScrollbars</var> method is called to reset the page, range, and visibility for the scroll bars. If the BoundsRect is updated in either method, the original value is restored prior to exit.
           </p>
         </descr>
         <seealso>
@@ -1153,7 +1213,7 @@
         </short>
         <descr>
           <p>
-            Resizing is an empty implementation in TScrollingWinControl. It must be implemented in descendent classes.
+            Resizing is an empty implementation in TScrollingWinControl. It must be implemented in a descendent class.
           </p>
         </descr>
         <seealso/>
@@ -1164,13 +1224,31 @@
 
       <element name="TScrollingWinControl.AutoScroll">
         <short>
-          Indicates whether scroll bars are automatically displayed when needed
+          Indicates whether scroll bars are automatically displayed or hidden when needed
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>AutoScroll</var> is a <var>Boolean</var> property which indicates if scroll bars are automatically displayed or hidden on the control as needed. The default value for the property is <b>False</b>.
+          </p>
+          <p>
+            Changing the value for the property causes the <var>Visible</var> property in both <var>HorzScrollBar</var> and <var>VertScrollBar</var> to be updated (if needed). When set to <b>True</b>, the <var>UpdateScrollBars</var> method is called to calculate the page, range, and visibiity for the scroll bars. When set to <var>False</var>, the <var>HideScrollbars</var> method is called to reset and hide the scroll bars (when assigned).
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScrollingWinControl.UpdateScrollbars"/>
+          <link id="TScrollingWinControl.HideScrollbars"/>
+          <link id="TScrollingWinControl.HorzScrollBar"/>
+          <link id="TScrollingWinControl.VertScrollBar"/>
+        </seealso>
       </element>
 
-      <element name="TScrollingWinControl.SetAutoSize" link="#lcl.controls.TControl.AutoSize"/>
+      <element name="TScrollingWinControl.SetAutoSize">
+        <short>Sets the value for the AutoSize property</short>
+        <descr/>
+        <seealso>
+          <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
+        </seealso>
+      </element>
       <element name="TScrollingWinControl.SetAutoSize.Value">
         <short>New value for the property</short>
       </element>
@@ -2752,10 +2830,10 @@
             Re-implements the method from the ancestor class.
           </p>
           <p>
-            Ensures that auto-sizing is disabled for a size message for a top-level form (where Parent is not assigned) or from the LCL interface. This is done by including the value fsDisableAutoSize in the FormState property.
+            Ensures that auto-sizing is disabled for a size message for a top-level form (where <var>Parent</var> is not assigned) or from the LCL interface. This is done by including the value <var>fsDisableAutoSize</var> in the <var>FormState</var> property.
           </p>
           <p>
-            Calls the inherited method to apply the width, height, and window state values in Message.
+            Calls the inherited method to apply the width, height, and window state values in <var>Message</var>.
           </p>
         </descr>
         <seealso/>
@@ -2771,7 +2849,7 @@
             Re-implements the method from the ancestor class.
           </p>
           <p>
-            Ensures that auto-sizing is disabled for a position message to a top-level form (where Parent is not assigned), or from the LCL interface when new height or width values are provided. This is done by including the value fsDisableAutoSize in the FormState property.
+            Ensures that auto-sizing is disabled for a position message to a top-level form (where <var>Parent</var> is not assigned), or from the LCL interface when new height or width values are provided. This is done by including the value <var>fsDisableAutoSize</var> in the <var>FormState</var> property.
           </p>
           <p>
             Calls the inherited method prior to exit to apply the position and bounds for the form.
@@ -3176,7 +3254,7 @@
         <short>Signals the OnHide event handler for the form instance</short>
         <descr>
           <p>
-            Called from the CMShowingChanged method when Showing is set to False.
+            Called from the <var>CMShowingChanged</var> method when <var>Showing</var> is set to <b>False</b>.
           </p>
         </descr>
         <seealso/>
@@ -3247,7 +3325,6 @@
           <link id="TApplication.CaptureExceptions"/>
         </seealso>
       </element>
-
       <element name="TCustomForm.HandleShowHideException.Result">
         <short>True when the exception was handled</short>
       </element>
@@ -3528,7 +3605,7 @@
         <short>Notifies all <var>VisibleChanging</var> handlers</short>
         <descr>
           <p>
-            Calls the inherited method prior to exit.
+            Calls the inherited method prior to exit. Called prior to setting the new value for  the Visible property in a control (or form) in the SetVisible method.
           </p>
         </descr>
         <seealso>
@@ -3545,6 +3622,9 @@
           <p>
             When the <var>Screen</var> singleton has been assigned,  its <var>NotifyScreenFormHandler</var> method is called to signal all <var>snFormVisibleChanged</var> handlers in the class instance.
           </p>
+          <p>
+            Called after a new value has been assigned to the <var>Visible</var> property for the control (or form).
+          </p>
         </descr>
         <seealso>
           <link id="Screen"/>
@@ -3560,7 +3640,7 @@
         </short>
         <descr>
           <p>
-            <var>WndProc</var> is an overridden method which implements the processing loop for window and control messags received for the form instance. It extends the method from the ancestor class to provide form-specific support for messages including:
+            <var>WndProc</var> is an overridden method which implements the processing loop for window and control messages received for the form instance. It extends the method from the ancestor class to provide form-specific support for messages including:
           </p>
           <dl>
             <dt>LM_SETFOCUS</dt>
@@ -3569,7 +3649,7 @@
             </dd>
             <dt>CM_EXIT</dt>
             <dd>
-              Deactivates a HostDockSite (when asssigned) when the form loses focus.
+              Deactivates a HostDockSite (when assigned) when the form loses focus.
             </dd>
             <dt>CM_ENTER</dt>
             <dd>
@@ -3763,7 +3843,7 @@
       </element>
 
       <element name="TCustomForm.GetFloating" link="#lcl.controls.TControl.GetFloating">
-        <short>Gets the value for the Floating properting</short>
+        <short>Gets the value for the Floating properties</short>
         <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.Floating">TControl.Floating</link>
@@ -4835,7 +4915,6 @@
           </dl>
         </descr>
         <seealso/>
-        <notes><note>How is it different than Monitor? Design-time setting?</note></notes>
       </element>
 
       <element name="TCustomForm.Designer">
@@ -5555,7 +5634,7 @@
             Cascade is a method used to arrange MDI Chid forms so that they overlap in a cascading fashion.
           </p>
           <p>
-            No actions are performed in the method when FormStyle has a value other than fsMDIForm. At run-time, the Cascade method in th widgetset class is called when its Handle has been allocated.
+            No actions are performed in the method when FormStyle has a value other than fsMDIForm. At run-time, the Cascade method in the widgetset class is called when its Handle has been allocated.
           </p>
           <p>
             Use Tile to arrange MDI child forms in a grid format.
@@ -5701,7 +5780,7 @@
         </short>
         <descr>
           <p>
-            DoAddDockClient is an overridden method used to add the control in Client to the docked form. It calls the inherited method on entry to set the Parent in Client to the current class instance. It sets the Align property in Client to alAlign to align the control to the bounds for the docked form. Values in the BorderSpacing property in Client are reset to 0; the current class instance provides the BorderSpacing values for the docked control. At run-time, the VIsible property is set to True to display the docked form after the Client has been added.
+            DoAddDockClient is an overridden method used to add the control in Client to the docked form. It calls the inherited method on entry to set the Parent in Client to the current class instance. It sets the Align property in Client to alAlign to align the control to the bounds for the docked form. Values in the BorderSpacing property in Client are reset to 0; the current class instance provides the BorderSpacing values for the docked control. At run-time, the Visible property is set to True to display the docked form after the Client has been added.
           </p>
         </descr>
         <seealso/>
@@ -5781,33 +5860,32 @@
 
       <element name="THintWindow.FActivating">
         <short>True during ActivateHint</short>
-        <descr/>
-        <seealso/>
       </element>
 
-      <element name="THintWindow.FAlignment" link="#lcl.forms.THintWindow.Alignment"/>
+      <element name="THintWindow.FAlignment"/>
       <element name="THintWindow.FHintRect"/>
       <element name="THintWindow.FHintData"/>
-      <element name="THintWindow.FAutoHide" link="#lcl.forms.THintWindow.AutoHide"/>
+      <element name="THintWindow.FAutoHide"/>
 
       <element name="THintWindow.FAutoHideTimer">
         <short>The timer used to make the hint disappear</short>
-        <descr/>
-        <seealso/>
       </element>
 
-      <element name="THintWindow.FHideInterval" link="#lcl.forms.THintWindow.HideInterval"/>
+      <element name="THintWindow.FHideInterval"/>
 
       <element name="THintWindow.AdjustBoundsForMonitor">
         <short>Adjusts HintRect to fit on the current monitor</short>
-        <descr>Used in the implementation of the OffsetHintRect method.</descr>
+        <descr>
+          <p>
+            Used in the implementation of the <var>OffsetHintRect</var> method.
+          </p>
+        </descr>
         <seealso>
           <link id="THintWindow.HintRect"/>
           <link id="THintWindow.HintRectAdjust"/>
           <link id="THintWindow.OffsetHintRect"/>
         </seealso>
       </element>
-
       <element name="THintWindow.AdjustBoundsForMonitor.KeepWidth">
         <short>Indicates that the width for HintRect should not be decreased</short>
       </element>
@@ -5831,7 +5909,13 @@
         <short>Draw Text flags for the hint window</short>
       </element>
 
-      <element name="THintWindow.SetAutoHide" link="#lcl.forms.THintWindow.AutoHide"/>
+      <element name="THintWindow.SetAutoHide">
+        <short>Sets the value for the AutoHide property</short>
+        <descr/>
+        <seealso>
+          <link id="#lcl.forms.THintWindow.AutoHide">THintWindow.AutoHide</link>
+        </seealso>
+      </element>
       <element name="THintWindow.SetAutoHide.Value">
         <short>New value for the property</short>
       </element>
@@ -5849,10 +5933,16 @@
         </seealso>
       </element>
       <element name="THintWindow.AutoHideHint.Sender">
-        <short/>
+        <short>Not used in the method</short>
       </element>
 
-      <element name="THintWindow.SetHideInterval" link="#lcl.forms.THintWindow.HideInterval"/>
+      <element name="THintWindow.SetHideInterval">
+        <short>Sets the value for the HideInterval property</short>
+        <descr/>
+        <seealso>
+          <link id="THintWindow.HideInterval"/>
+        </seealso>
+      </element>
       <element name="THintWindow.SetHideInterval.Value">
         <short>New value for the property</short>
       </element>
@@ -5871,12 +5961,16 @@
       <element name="THintWindow.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="THintWindow.WMNCHitTest">
-        <short>Treats the whole window as transparent</short>
-        <descr/>
+        <short>Handles the WM_NCHITTEST window message for the hint window</short>
+        <descr>
+          <p>
+            Sets the result in <var>Message</var> to <var>HTTRANSPARENT</var>. This forces the message to be forwarded to other windowed controls in the Z-Order until a value other than HTTRANSPARENT is returned.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="THintWindow.WMNCHitTest.Message">
-        <short/>
+        <short>Window message examined and updated in the method</short>
       </element>
 
       <element name="THintWindow.ActivateSub">
@@ -5944,7 +6038,11 @@
         <short>
           Indicates if theme services are used for the foreground rendered for the hint window
         </short>
-        <descr/>
+        <descr>
+          <p>
+            The return value is <b>True</b> when the <var>Font</var> used on the hint window is the stock system font for the platform.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="THintWindow.UseFGThemes.Result">
@@ -5953,7 +6051,17 @@
         </short>
       </element>
 
-      <element name="THintWindow.Paint" link="#lcl.controls.TCustomControl.Paint"/>
+      <element name="THintWindow.Paint">
+        <short>Draws the content in the hint window</short>
+        <descr>
+          <p>
+            <var>Paint</var> is an overridden method in <var>THintWindow</var>. It extends the inherited method to implement default drawing using the <var>Canvas</var> and the settings enabled for theme services. When <var>CountrolCount</var> is <b>0</b>, the internal routine is used to render the content.When CountrolCount indicates that child controls are present on the hint window, the inherited Paint method is called to render the content.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TCustomControl.Paint">TCustomControl.Paint</link>
+        </seealso>
+      </element>
 
       <element name="THintWindow.FSysHintFont"/>
 
@@ -5970,10 +6078,12 @@
         <short>Destructor for the class instance</short>
         <descr>
           <p>
-            Destroy is a class destructor. Destroy ensures a reference to the System Font used for hint windows is freed.
+            Destroy is a class method used as the destructor for the class. Destroy ensures that the reference to the System Font used for hint windows is freed.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="THintWindow.SysHintFont"/>
+        </seealso>
       </element>
 
       <element name="THintWindow.Create" link="#rtl.classes.TComponent.Create">
@@ -6133,35 +6243,61 @@
 
       <element name="THintWindow.IsHintMsg">
         <short>Indicates if the specified message is relevant to a hint window display</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>IsHintMsg</var> is a <var>Boolean</var> function used to deterime if the message instance in <var>Msg</var> is recognized in <var>THintWindow</var>.
+          </p>
+          <remark>
+            Not used in the current LCL implementation.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#lcl.lcltype.TMsg">TMsg</link>
+        </seealso>
       </element>
       <element name="THintWindow.IsHintMsg.Result">
-        <short/>
+        <short>
+          True if the message is used for hint windows, False for all other messages
+        </short>
       </element>
       <element name="THintWindow.IsHintMsg.Msg">
-        <short/>
+        <short>TMsg instance with the message examined in the method</short>
       </element>
 
       <element name="THintWindow.ReleaseHandle">
         <short>Destroys an allocated handle for the widget</short>
+        <descr>
+          <p>
+            ReleaseHandle is a method used to free the Handle allocated for the control in the widgetset class. It calls the DestroyHandle method if the Handle has been allocated for the class instance. ReleaseHandle is called by methods in the widgetset class to ensure that the Handle is set 0 (the un-initialized value).
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.controls.TWinControl.DestroyHandle">TWinControl.DestroyHandle</link>
         </seealso>
       </element>
 
-      <element name="THintWindow.SetBounds" link="#lcl.controls.TControl.InitializeWnd"/>
+      <element name="THintWindow.SetBounds">
+        <short>Applies the argument values to the bounds for the control</short>
+        <descr>
+          <p>
+            <var>SetBounds</var> is an overridden method in <var>THintWindow</var>. It calls the inherited method on entry to apply the argument values to the bounds for the class instance. It calls the UpdateRegion method to set the window region, or apply a background theme when enabled.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.InitializeWnd">TControl.InitializeWnd</link>
+        </seealso>
+      </element>
       <element name="THintWindow.SetBounds.ALeft">
-        <short/>
+        <short>Value for the Left proprety</short>
       </element>
       <element name="THintWindow.SetBounds.ATop">
-        <short/>
+        <short>Value for the Top property</short>
       </element>
       <element name="THintWindow.SetBounds.AWidth">
-        <short/>
+        <short>Value for the Width property</short>
       </element>
       <element name="THintWindow.SetBounds.AHeight">
-        <short/>
+        <short>Value for the Height property</short>
       </element>
 
       <element name="THintWindow.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize"/>
@@ -6206,7 +6342,7 @@
       </element>
 
       <element name="THintWindow.HintRectAdjust">
-        <short>Contains the bounds with additional space used for the hint display</short>
+        <short>Contains the bounds with additional space needed for the hint display</short>
         <descr/>
         <seealso/>
       </element>
@@ -7024,7 +7160,7 @@
         <short>Gets the value for the IconFont property</short>
         <descr>
           <p>
-            Ensures that a TFont instance exists for the member, that it has been initialized to the stock ison font for the WidgetSet class, or uses the default font and the color in clDefault or clWIndowText (depends on the UseCLDefault define for the platform).
+            Ensures that a TFont instance exists for the member, that it has been initialized to the stock icon font for the WidgetSet class, or uses the default font and the color in clDefault or clWindowText (depends on the UseCLDefault define for the platform).
           </p>
         </descr>
         <seealso>
@@ -7083,7 +7219,7 @@
       </element>
 
       <element name="TScreen.Destroy">
-        <short>Destructor for the class insrtance</short>
+        <short>Destructor for the class instance</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that screen handlers registered using <var>AddHandler</var> are freed. Destroy also frees resource allocated for the class instance in the <var>Create</var> constructor. It calls the inherited method prior to exit.
@@ -7095,7 +7231,7 @@
       </element>
 
       <element name="TScreen.CustomFormIndex" link="#lcl.forms.TScreen.CustomForms">
-        <short>Gets the ordinal position in CustomForms the requested form</short>
+        <short>Gets the ordinal position in CustomForms for the requested form</short>
         <descr>
           <p>
             <var>CustomFormIndex</var> is an <var>Integer</var> function used to get the position in <var>CustomForms</var> for the specified <var>TCustomForm</var> instance. It iterates over the values in CustomForms in reverse order. The return value contains the ordinal position in CustomForms where the TCustomForm instance in <var>AForm</var> was found, or -1 when AForm does not exist in CustomForms.
@@ -7111,7 +7247,7 @@
         </seealso>
       </element>
       <element name="TScreen.CustomFormIndex.Result">
-        <short>The ordinal postion for the form in CustomForms, or -1 when not found</short>
+        <short>The ordinal position for the form in CustomForms, or -1 when not found</short>
       </element>
       <element name="TScreen.CustomFormIndex.AForm">
         <short>The form instance to locate in CustomForms</short>
@@ -7154,19 +7290,35 @@
 
       <element name="TScreen.MoveFormToFocusFront">
         <short>Moves the specified form to the front of all other forms</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>MoveFormToFocusFront</var> is a method used to move the form specified in <var>ACustomForm</var> to the top of the Z-order. This means that it appears on top of all other visible forms for the application.
+          </p>
+          <p>
+            MoveFormToFocusFront is called when the focused control is changed in the  <var>TCustomForm</var> instance. It is also called from the <var>ShowModal</var> method in TCustomForm.
+          </p>
+          <p>
+            It ensures that ACustomForm is moved to the first position in <var>CustomForms</var> (the top of the Z-order). When ACustomForm is a <var>TForm</var> instance, it is also moved to the first position in the <var>Forms</var> property. Calls <var>MoveFormToZFront</var> to ensure that the form is moved to the first position in the <var>CustomFormsZOrdered</var> property.
+          </p>
+        </descr>
         <errors>
-          Raises a GDB exception when the form is being destroyed, or the application is shutting down.
+          Raises a catchable GDB exception if the form or screen classes are being destroyed, or when ACustomForm is not assigned or not present in the CustomForms property.
         </errors>
         <seealso/>
       </element>
       <element name="TScreen.MoveFormToFocusFront.ACustomForm">
-        <short/>
+        <short>Form instance to move to the top of the Z-order</short>
       </element>
 
       <element name="TScreen.MoveFormToZFront">
-        <short>Moves the form to the front of the Z-order (notification only)</short>
-        <descr/>
+        <short>
+          Moves the form to the front of the Z-order in the CustomFormsZOrdered property
+        </short>
+        <descr>
+          <p>
+            <var>MoveFormToZFront</var> is a method used to ensure that the form in <var>ACustomForm</var> is at the top of the Z-order in the <var>CustomFormsZOrdered</var> property. MoveFormToZFront is called from the <var>MoveFormToFocusFront</var> method.
+          </p>
+        </descr>
         <errors>
           Raises a GDB exception when the form is being destroyed, or the application is shutting down.
         </errors>
@@ -7175,15 +7327,22 @@
         </seealso>
       </element>
       <element name="TScreen.MoveFormToZFront.ACustomForm">
-        <short/>
+        <short>Form instance to move to the top of the Z-order</short>
       </element>
 
       <element name="TScreen.GetCurrentModalForm">
         <short>
-          Returns the top-most Modal form (i. e. the form that is awaiting a user response).
+          Returns the Modal form at the top of the Z-order for the screen
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Calls <var>GetCurrentModalFormZIndex</var> to find the first form instance in <var>CustomFormsZOrdered</var> with the value <var>fsModal</var> in its <var>FormState</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomForm.FormState"/>
+          <link id="TFormState"/>
+        </seealso>
       </element>
       <element name="TScreen.GetCurrentModalForm.Result">
         <short>The modal form, or Nil if a modal form is not active</short>
@@ -7191,7 +7350,17 @@
 
       <element name="TScreen.GetCurrentModalFormZIndex">
         <short>Returns the index of the top-most modal form in CustomFormsZOrdered</short>
-        <descr/>
+        <descr>
+          <p>
+            Visits the form instances in <var>CustomFormsZOrdered</var> to find the first <var>TCustomForm</var> instance with the value <var>fsModal</var> in its <var>FormState</var> property.
+          </p>
+          <p>
+            Returns <b>-1</b> if a modal form is not found in the CustomFormsZOrdered property.
+          </p>
+          <p>
+            Called from the <var>GetCurrentModalForm</var> method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TScreen.GetCurrentModalFormZIndex.Result">
@@ -7200,69 +7369,109 @@
 
       <element name="TScreen.CustomFormBelongsToActiveGroup">
         <short>
-          Checks whether the form is visible, and whether modal or not blocked by
-          another modal form
+          Checks whether the specified form is present in the Z-ordered list of forms
         </short>
-        <descr/>
+        <descr>
+          <p>
+            The return value is <b>True</b> when <var>ACustomForm</var> is found in the <var>CustomFormsZOrdered</var> property and is not displayed as a modal form (<var>FormState</var> contains <var>fsModal</var>). The return value is <b>False</b> if ACustomForm is not found in CustomFormsZOrdered.
+          </p>
+          <p>
+            Used in widgetset classes to determine if a form is used and enabled on the screen.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TScreen.CustomFormBelongsToActiveGroup.Result">
-        <short/>
+        <short>True if the form is used on the screen</short>
       </element>
       <element name="TScreen.CustomFormBelongsToActiveGroup.AForm">
-        <short/>
+        <short>Form instance to locate in the Z-ordered forms for the screen</short>
       </element>
 
       <element name="TScreen.FindNonDesignerForm">
         <short>Finds the form with the specified name, excluding designer forms</short>
-        <descr/>
+        <descr>
+          <p>
+            Used when an Application loads its components using the LCL streaming mechanism. Ignores the designer forms and data modules (where ComponentState contains csDesigning) handled by the Lazarus IDE.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.FindForm"/>
         </seealso>
       </element>
       <element name="TScreen.FindNonDesignerForm.Result">
-        <short/>
+        <short>Application form instance in CustomForms with the specified name, or Nil</short>
       </element>
       <element name="TScreen.FindNonDesignerForm.FormName">
         <short>Name of the form to locate in the method</short>
       </element>
 
       <element name="TScreen.FindForm">
-        <short>Finds a form by its name</short>
-        <descr/>
+        <short>Finds a form on the screen by its name</short>
+        <descr>
+          <p>
+            Visits the form instances in the CustomForms property, and compares the text in the Name properties to the value in FormName. CompareText is called to perform a case-insensitive comparison for the values.
+          </p>
+          <p>
+            The return value is the TCustomForm instance which matches the name in FormName, or Nil when CustomFormCount is 0 or FormName is not found in CustomForms.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.FindNonDesignerForm"/>
         </seealso>
       </element>
       <element name="TScreen.FindForm.Result">
-        <short>Form instance with the specified name</short>
+        <short>Form instance with the specified name, or Nil</short>
       </element>
       <element name="TScreen.FindForm.FormName">
         <short>Name for the form to locate in the method</short>
       </element>
 
       <element name="TScreen.FindNonDesignerDataModule">
-        <short>Finds the named DataModule, excluding designer modules</short>
-        <descr/>
+        <short>
+          Finds a data module with the specified name, excluding designer data modules
+        </short>
+        <descr>
+          <p>
+            Visits the data module instances in the internal list, and compares the Name property for the TDataModule instances to the value in DataModuleName. CompareText text is called to perform a case-insensitive comparison for the values. TDataModule instances with csDesigning in the ComponentState property are ignored; these are design-time data modules used by the Lazarus IDE.
+          </p>
+          <p>
+            The return value contains the TDataModule instance with the name in DataModuleName, or Nil when the data module list is empty or the name in DataModuleName is not found in the list.
+          </p>
+          <p>
+            Used when an Application loads its components using the LCL streaming mechanism. Ignores the designer forms and data modules (where ComponentState contains csDesigning) handled by the Lazarus IDE.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.FindDataModule"/>
         </seealso>
       </element>
       <element name="TScreen.FindNonDesignerDataModule.Result">
-        <short>Data module with the specified name</short>
+        <short>Data module with the specified name, or Nil</short>
       </element>
       <element name="TScreen.FindNonDesignerDataModule.DataModuleName">
-        <short>Name for the data module to locate in the method</short>
+        <short>Name of the data module to locate in the method</short>
       </element>
 
       <element name="TScreen.FindDataModule">
-        <short>Finds the DataModule with the specified name</short>
+        <short>Finds the data module with the specified name</short>
+        <descr>
+          <p>
+            <var>FindDataModule</var> is a <var>TDataModule</var> function used to get the data module with the name specified in <var>DataModuleName</var>.
+          </p>
+          <p>
+            FindDataModule visits each of the data modules in the internal list to find the TDataModule instance with the specified name in its <var>Name</var> property. <var>CompareText</var> is called to perform a case-insensitive comparison for the values.
+          </p>
+          <p>
+            The return value is the TDataModule instance with the name in DataModuleName, or <b>Nil</b> when the internal list is empty or DataModuleName is not found in the list.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.FindNonDesignerDataModule"/>
         </seealso>
       </element>
       <element name="TScreen.FindDataModule.Result">
-        <short>TDataModule instance with the specified name</short>
+        <short>TDataModule instance with the specified name, or Nil</short>
       </element>
       <element name="TScreen.FindDataModule.DataModuleName">
         <short>Name for the data module to locate in the method</short>
@@ -7282,16 +7491,33 @@
       </element>
 
       <element name="TScreen.UpdateScreen">
-        <short>Updates the <link id="TScreen.PixelsPerInch"/> property</short>
+        <short>Updates the value for the PixelsPerInch property</short>
         <descr>
           <p>
-            Updates the value for the PixelsPerInch property from the ScreenInfo in the LCL interface.
+            Updates the value for the <var>PixelsPerInch</var> property from the ScreenInfo in the LCL interface.
           </p>
         </descr>
         <seealso/>
       </element>
 
-      <element name="TScreen.RemoveAllHandlersOfObject" link="#lcl.lclclasses.TLCLComponent.RemoveAllHandlersOfObject"/>
+      <element name="TScreen.RemoveAllHandlersOfObject">
+        <short>
+          Removes all handler routines for the specified object regardless of notification type
+        </short>
+        <descr>
+          <p>
+            <var>RemoveAllHandlersOfObject</var> is a method used to remove all handler routines for the specified object, regardless of the <var>TScreenNotification</var> type. RemoveAllHandlersOfObject iterates over the method lists in the internal array, and calls the <var>RemoveAllMethodsOfObject</var> method for the object instance specified in <var>AnObject</var>. It calls the virtual inherited method prior to exit.
+          </p>
+          <p>
+            Called when the Lazarus IDE is terminated.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreenNotification"/>
+          <link id="#lazutils.lazmethodlist.TMethodList.RemoveAllMethodsOfObject">TMethodList.RemoveAllMethodsOfObject</link>
+          <link id="#lcl.lclclasses.TLCLComponent.RemoveAllHandlersOfObject">TLCLComponent.RemoveAllHandlersOfObject</link>
+        </seealso>
+      </element>
       <element name="TScreen.RemoveAllHandlersOfObject.AnObject">
         <short/>
       </element>
@@ -7316,7 +7542,7 @@
         <seealso/>
       </element>
       <element name="TScreen.RemoveHandlerFormAdded.OnFormAdded">
-        <short/>
+        <short>Form added handler removed in the method</short>
       </element>
 
       <element name="TScreen.AddHandlerRemoveForm">
@@ -7325,10 +7551,10 @@
         <seealso/>
       </element>
       <element name="TScreen.AddHandlerRemoveForm.OnRemoveForm">
-        <short/>
+        <short>Form remove handler added in the method</short>
       </element>
       <element name="TScreen.AddHandlerRemoveForm.AsFirst">
-        <short/>
+        <short>True if the handler should be stored as the first routine for the type</short>
       </element>
 
       <element name="TScreen.RemoveHandlerRemoveForm">
@@ -7337,7 +7563,7 @@
         <seealso/>
       </element>
       <element name="TScreen.RemoveHandlerRemoveForm.OnRemoveForm">
-        <short/>
+        <short>Form remove handler routine removed in the method</short>
       </element>
 
       <element name="TScreen.AddHandlerActiveControlChanged">
@@ -7346,10 +7572,10 @@
         <seealso/>
       </element>
       <element name="TScreen.AddHandlerActiveControlChanged.OnActiveControlChanged">
-        <short/>
+        <short>Active control changed notification handler added in the method</short>
       </element>
       <element name="TScreen.AddHandlerActiveControlChanged.AsFirst">
-        <short/>
+        <short>True if the handler should be the first in the list for the type</short>
       </element>
 
       <element name="TScreen.RemoveHandlerActiveControlChanged">
@@ -7358,7 +7584,7 @@
         <seealso/>
       </element>
       <element name="TScreen.RemoveHandlerActiveControlChanged.OnActiveControlChanged">
-        <short/>
+        <short>Active control changed handler removed in the method</short>
       </element>
 
       <element name="TScreen.AddHandlerActiveFormChanged">
@@ -7367,10 +7593,10 @@
         <seealso/>
       </element>
       <element name="TScreen.AddHandlerActiveFormChanged.OnActiveFormChanged">
-        <short/>
+        <short>Active form changed handler added in the method</short>
       </element>
       <element name="TScreen.AddHandlerActiveFormChanged.AsFirst">
-        <short/>
+        <short>True if the handler should be the first in the list for the type</short>
       </element>
 
       <element name="TScreen.RemoveHandlerActiveFormChanged">
@@ -7379,7 +7605,7 @@
         <seealso/>
       </element>
       <element name="TScreen.RemoveHandlerActiveFormChanged.OnActiveFormChanged">
-        <short/>
+        <short>Active form changed handler removed in the method</short>
       </element>
 
       <element name="TScreen.AddHandlerFormVisibleChanged">
@@ -7388,10 +7614,10 @@
         <seealso/>
       </element>
       <element name="TScreen.AddHandlerFormVisibleChanged.OnFormVisibleChanged">
-        <short/>
+        <short>Form visible changed handler added in the method</short>
       </element>
       <element name="TScreen.AddHandlerFormVisibleChanged.AsFirst">
-        <short/>
+        <short>True if the handler should be the first in the list for the type</short>
       </element>
 
       <element name="TScreen.RemoveHandlerFormVisibleChanged">
@@ -7400,7 +7626,7 @@
         <seealso/>
       </element>
       <element name="TScreen.RemoveHandlerFormVisibleChanged.OnFormVisibleChanged">
-        <short/>
+        <short>From visible changed handler removed in the method</short>
       </element>
 
       <element name="TScreen.DisableForms">
@@ -7409,10 +7635,10 @@
         </short>
         <descr>
           <p>
-            Used to show modal forms or dialogs.
+            Used to disable forms when a modal form or dialog is displayed.
           </p>
           <p>
-            The enabled state for the forms is determined from the widgetset class, and not from LCL properties. If <var>DisabledList</var> is Nil, a new list is created. All forms disabled in the method are added to the list. When the modal form returns, EnableForms is called to restore forms disabled in the method.
+            The enabled state for forms is determined by the widgetset class, and not from LCL properties. If <var>DisabledList</var> is Nil, a new list is created. All forms disabled in the method are added to the list. When the modal form returns, EnableForms is called to restore the list of forms disabled in the method.
           </p>
         </descr>
         <seealso>
@@ -7449,6 +7675,21 @@
       <element name="TScreen.MonitorFromPoint">
         <short>Finds the monitor containing the given screen coordinates</short>
         <descr>
+          <p>
+            <var>MonitorFromPoint</var> is a <var>TMonitor</var> function used to get the monitor with the coordinates in the <var>Point</var> argument.
+          </p>
+          <p>
+            <var>MonitorDefault</var> is a <var>TMonitorDefaultTo</var> enumeration value which indicates which monitor to use when the coordinates in Point cannot be located on a screen. See TMonitorDefaultTo for more information about the enumeration values and their meanings.
+          </p>
+          <p>
+            MonitorFromPoint calls the corresponding method in the widgetset class to get the <var>Handle</var> for the monitor. Values in the <var>Monitors</var> property are checked for the Handle, and the return value is set to the TMonitor instance with the given Handle.
+          </p>
+          <p>
+            If the Handle is <b>-1</b> (<var>MONITOR_UNIMPL</var>), the <var>MonitorFromRect</var> method is called to locate a monitor with the origin in Point. Otherwise, the values in Monitors are refreshed to ensure that existing monitors and their handles are up-to-date in the class instance.
+          </p>
+          <p>
+            MonitorFromPoint is called from the <var>GetMonitor</var> method in <var>TCustomForm</var>, and the <var>AdjustBoundsForMonitor</var> method in <var>THintWindow</var>.
+          </p>
         </descr>
         <seealso>
           <link id="TScreen.MonitorFromRect"/>
@@ -7465,28 +7706,53 @@
       </element>
 
       <element name="TScreen.MonitorFromRect">
-        <short>Find the monitor containing (most of) the given screen coordinates</short>
+        <short>Finds the monitor where the specified rectangle is located</short>
         <descr>
+          <p>
+            <var>MonitorFromRect</var> is a <var>TMonitor</var> function used to get the monitor where the coordinates in the specified rectangle are located.
+          </p>
+          <p>
+            <var>MonitorDefault</var> is a <var>TMonitorDefaultTo</var> enumeration value which indicates the monitor used when the coordinates in Rect are not found on a monitor. See TMonitorDefaultTo for more information about the values in the enumeration and their meanings.
+          </p>
+          <p>
+            MonitorFromRect calls the corresponding method in the widgetset class to get the <var>Handle</var> for the monitor where <var>Rect</var> is located. It searches <var>Monitors</var> for the <var>TMonitor</var> instance with the Handle value, and uses the TMonitor instance when the Handle is found. The <var>UpdatedMonitor</var> method is called to ensure that the value in Monitors are up-to-date.
+          </p>
+          <p>
+            When the Handle contains <b>-1</b> (<var>MONITOR_UNIMPL</var>), the value in MonitorDefault us used to locate a monitor which intersects the coordinates in Rect. The return value is set to the TMonitor instance in Monitors which corresponds to the value in MonitorDefault. If a monitor is not found, the return value is set to PrimaryMonitor or the closest match as needed for MonitorDefault.
+          </p>
         </descr>
         <seealso>
           <link id="TScreen.MonitorFromPoint"/>
         </seealso>
       </element>
       <element name="TScreen.MonitorFromRect.Result">
-        <short>The monitor found</short>
+        <short>The TMonitor instance where the rectangle is located</short>
       </element>
       <element name="TScreen.MonitorFromRect.Rect">
-        <short>The screen coordinates to find</short>
+        <short>Rectangle with the screen coordinates to locate in the method</short>
       </element>
       <element name="TScreen.MonitorFromRect.MonitorDefault">
-        <short>What to return when no monitor was found</short>
+        <short>Monitor use when the specified rectangle is not found on a monitor</short>
       </element>
 
       <element name="TScreen.MonitorFromWindow">
         <short>
-          Finds the monitor containing (most of) the form with the given window handle
+          Finds the monitor containing the form with the given window handle
         </short>
-        <descr/>
+        <descr>
+          <p>
+            MonitorFromWindow is a TMonitor function used to locate monitor where the form represented by the specified window Handle is displayed.
+          </p>
+          <p>
+            <var>MonitorDefault</var> is a <var>TMonitorDefaultTo</var> enumeration value which indicates the monitor used when the display area for the form is not found  on a monitor. See TMonitorDefaultTo for more information about the values in the enumeration and their meanings.
+          </p>
+          <p>
+            MonitorFromWindow calls MonitorFromWindow in the widgetset class to get a monitor handle used to locate the monitor in the Monitors property. The UpdatedMonitor method is called to ensure that Monitors contains up-to-date values for the available monitors.
+          </p>
+          <p>
+            If a monitor with the Handle is not found, GetWindowRect is called to get the display areas for the monitor Handle. MonitorFromRect is called to locate the monitor which contains the rectangle.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TScreen.MonitorFromWindow.Result">
@@ -7503,87 +7769,203 @@
         <short>
           Sets the Cursor property to a temporary shape. Use EndTempCursor to release it.
         </short>
+        <descr>
+          <p>
+            <var>BeginTempCursor</var> is a method used to change the cursor shape to the temporary cursor in the <var>ACursor</var> argument. It adds the value in ACursor to an internal list of temporary cursors. The cursor shape is removed when the <var>EndTempCursor</var> method is called.
+          </p>
+          <p>
+            BeginTempCursor calls <var>SetCursor</var> in the widgetset class to change the cursor shape to the value in <var>Cursors</var> stored at the index in ACursor.
+          </p>
+          <p>
+            Use EndTempCursor to remove a given cursor shape, and restore the cursor to a previous value.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.EndTempCursor"/>
+          <link id="TScreen.Cursors"/>
+          <link id="#lcl.controls.TCursor">TCursor</link>
+        </seealso>
       </element>
       <element name="TScreen.BeginTempCursor.aCursor">
-        <short/>
+        <short>Identifies the temporary cursor shape to apply to the screen</short>
       </element>
 
       <element name="TScreen.EndTempCursor">
-        <short>Release the temporary cursor set with BeginTempCursor.</short>
+        <short>Releases a temporary cursor set with BeginTempCursor</short>
+        <descr>
+          <p>
+            <var>EndTempCursor</var> is a method used to release the temporary cursor shape in <var>ACursor</var>. It removes the value from the internal list of temporary cursors updated in the <var>BeginTempCursor</var> method. Only the cursor shape in ACursor is removed from the list; other values are left intact.
+          </p>
+          <p>
+            EndTempCursor calls <var>SetCursor</var> in the widgetset class to apply the cursor shape in <var>RealCursor</var>.
+          </p>
+          <p>
+            An <var>Exception</var> is raised with the message 'Unbalanced BeginTempCursor/EndTempCursor calls for cursor' if ACursor is not found in the list of temporary cursors.
+          </p>
+          <p>
+            Use BeginTempCursor to display and store a temporary cursor shape.
+          </p>
+        </descr>
+        <errors>
+          Raises an Exception with the message 'Unbalanced BeginTempCursor/EndTempCursor calls for cursor' if ACursor is not found in the list of temporary cursors.
+        </errors>
+        <seealso>
+          <link id="TScreen.RealCursor"/>
+          <link id="TScreen.Cursors"/>
+          <link id="TScreen.BeginTempCursor"/>
+          <link id="TCursor"/>
+        </seealso>
       </element>
       <element name="TScreen.EndTempCursor.aCursor">
-        <short/>
+        <short>Identifies the cursor shape released in the method</short>
       </element>
 
       <element name="TScreen.BeginWaitCursor">
         <short>Sets the cursor to the shape in crHourGlass</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Calls <var>BeginTempCursor</var> using the cursor shape in <var>crHourGlass</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.BeginTempCursor"/>
+          <link id="#lcl.controls.crHourGlass">crHourGlass</link>
+        </seealso>
       </element>
 
       <element name="TScreen.EndWaitCursor">
         <short>Removes the crHourGlass cursor shape</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Calls <var>EndTempCursor</var> to remove the <var>crHourGlass</var> cursor shape.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.EndTempCursor"/>
+          <link id="#lcl.controls.crHourGlass">crHourGlass</link>
+        </seealso>
       </element>
 
       <element name="TScreen.ActiveControl">
-        <short>The control which has the Focus for the screen</short>
-        <descr/>
+        <short>The control which has the focus on the active form for the screen</short>
+        <descr>
+          <p>
+            <var>ActiveControl</var> is a read-only <var>TWinControl</var> property which indicates the form or control that has focus on the screen, and gets input entered using the keyboard. The property value is updated when the <var>SetFocusedControl</var> method in <var>TCustomForm</var> sets the active control for the form and calls the <var>UpdateLastActive</var> method for the screen.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.ActiveForm"/>
           <link id="TScreen.ActiveCustomForm"/>
+          <link id="TScreen.UpdateLastActive"/>
+          <link id="#lcl.forms.TCustomForm.SetFocusedControl">TCustomForm.SetFocusedControl</link>
         </seealso>
       </element>
 
       <element name="TScreen.ActiveCustomForm">
-        <short>The TCustomForm instance which has the Focus</short>
+        <short>The TCustomForm instance which has the focus</short>
+        <descr>
+          <p>
+            <var>ActiveCustomForm</var> is a read-only <var>TCustomForm</var> property which contains the active custom form instance which has focus on the screen. The property value is updated in TCustomForm methods like <var>SetFocusedControl</var> and <var>MoveToDefaultPosition</var>. It is also updated  in <var>TApplication</var> methods like <var>ControlDestroyed</var>.
+          </p>
+          <p>
+            Use <var>ActiveForm</var> to get the <var>TForm</var> instance that has focus on the screen.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.ActiveForm"/>
           <link id="TScreen.ActiveControl"/>
+          <link id="TCustomForm.SetFocusedControl"/>
+          <link id="TCustomForm.MoveToDefaultPosition"/>
+          <link id="TApplication.ControlDestroyed"/>
         </seealso>
       </element>
 
       <element name="TScreen.ActiveForm">
-        <short>The TForm instance which has the Focus</short>
+        <short>The TForm instance which has the focus</short>
+        <descr>
+          <p>
+            <var>ActiveForm</var> is a read-only <var>TForm</var> property which contains the form instance in the application which has focus on the screen. The property value is updated from methods in <var>TCustomForm</var> like <var>SetFocusedControl</var> and <var>MoveToDefaultPosition</var>. It is also updated from methods in TApplication like <var>ControlDestroyed</var>.
+          </p>
+          <p>
+            Use <var>ActiveCustomForm</var> to get a form instance derived from <var>TCustomForm</var>, including: <var>THintWindow</var>, <var>TCustomDockForm</var>, and <var>TLazDockForm</var>. These class types are not available in ActiveForm.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.ActiveControl"/>
           <link id="TScreen.ActiveCustomForm"/>
+          <link id="TCustomForm.SetFocusedControl"/>
+          <link id="TCustomForm.MoveToDefaultPosition"/>
+          <link id="TApplication.ControlDestroyed"/>
         </seealso>
       </element>
 
       <element name="TScreen.Cursor">
-        <short>The current mouse cursor shape</short>
+        <short>Indicates the current mouse cursor shape</short>
         <descr>
-          Use one of the predefined cursor styles, e.g. crHourGlass.
+          <p>
+            <var>Cursor</var> is a <var>TCursor</var> property which identifies the current cursor shape drawn on the screen. The numeric value is the <var>HCURSOR</var> handle for the image drawn as the cursor shape. Cursor constants (like <var>crHourGlass</var>) defined in the <file>controls.pp</file> unit can be used instead of the numeric value.
+          </p>
+          <p>
+            Cursor is used as an index into the values in the <var>Cursors</var> property where the handle for the <var>TCursorImage</var> resources are stored. Changing the value for the property causes the <var>SetCursor</var> method in the widgetset class to be called to apply the handle in Cursors at the position in Cursor.
+          </p>
         </descr>
         <seealso>
+          <link id="TScreen.Cursors"/>
+          <link id="TScreen.RealCursor"/>
           <link id="Controls.crDefault"/>
         </seealso>
       </element>
+
       <element name="TScreen.RealCursor">
         <short>
           Gets the value for the Cursor property taking temporary cursors into account
         </short>
+        <descr>
+          <p>
+            <var>RealCursor</var> is a read-only <var>TCursor</var> property which provides the current shape for the cursor taking temporary cursors into account.
+          </p>
+          <p>
+            Temporary cursors are added and removed using the <var>BeginTempCursor</var> and <var>EndTempCursor</var> methods. When a temporary cursor exists, RealCursor returns the most recent cursor shape added to the internal list using BeginTempCursor. If the internal list is empty, the value in Cursor is returned  as the property value.
+          </p>
+          <p>
+            The value from RealCursor is used in the <var>SetCursor</var> method to determine the value stored in the <var>Cursor</var> property, and passed as an argument to SetCursor in the widgetset class.
+          </p>
+        </descr>
       </element>
 
       <element name="TScreen.Cursors">
         <short>Provides indexed access to the available cursor shapes for the screen</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>Cursors</var> is an indexed <var>HCURSOR</var> property which provides access to the handle for a cursor shape by its numeric value. The cursor constants (like <var>crHourGlass</var>) defined in the <file>controls.pp</file> unit can be used instead of the numeric value.
+          </p>
+          <p>
+            Cursors uses an internal <var>TMap</var> instance to store the handle values and provides access using the index values. When the value for the property is read, <var>CreateStandardCursor</var> in the widgetset class is called to retrieve the handle. If it has not been assigned, a temporary <var>TCursorImage</var> is created for the cursor resource and its handle is added to the internal map.
+          </p>
+          <p>
+            Setting a new value for the indexed property causes an existing handle in the internal map to be re-created.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.Cursor"/>
+          <link id="TScreen.SetCursor"/>
+          <link id="TScreen.RealCursor"/>
+        </seealso>
       </element>
-
       <element name="TScreen.Cursors.Index">
-        <short>Ordinal position for the value requested</short>
-        <descr/>
-        <seealso/>
+        <short>Ordinal position for the requested cursor shape</short>
       </element>
 
       <element name="TScreen.CustomFormCount">
-        <short>Number of form instances in the CustomForms property</short>
-        <descr/>
+        <short>Number of TCustomForm form instances in the CustomForms property</short>
+        <descr>
+          <p>
+            <var>CustomFormCount</var> is a read-only <var>Integer</var> property which contains the number of <var>TCustomForm</var> instances stored in the <var>CustomForms</var> property. Read access for the property value is redirected to the <var>Count</var> property in CustomForms.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.CustomForms"/>
+          <link id="TCustomForm"/>
         </seealso>
       </element>
 
@@ -7591,9 +7973,24 @@
         <short>
           Provides indexed access to the TCustomForm instances on the screen
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>CustomForms</var> is a read-only indexed <var>TCustomForm</var> property which provides access to a custom form instance in the list by its ordinal position.
+          </p>
+          <p>
+            Values in the CustomForms property are added and removed when the <var>CreateNew</var> and <var>Destroy</var> methods in TCustomForm are executed.
+          </p>
+          <p>
+            Use <var>CustomFormsZOrdered</var> to access a custom form instance by its Z-order on the screen.
+          </p>
+          <p>
+            Use the <var>Forms</var> property to access a <var>TForm</var> instance on the screen by its ordinal position.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.CustomFormCount"/>
+          <link id="TScreen.CustomFormsZOrdered"/>
+          <link id="TScreen.Forms"/>
         </seealso>
       </element>
       <element name="TScreen.CustomForms.Index">
@@ -7602,76 +7999,203 @@
 
       <element name="TScreen.CustomFormsZOrdered">
         <short>The list of Custom Forms, indexed by Z-order (zero is top-most)</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>CustomFormsZOrdered</var> is a read-only indexed <var>TCustomForm</var> property which provides access to a custom form by its ordinal position in the Z-Order for the screen. The form at position <b>0</b> (<b>zero</b>) is displayed at the top of the Z-Order, and overlaps any form with a higher Z-Order value.
+          </p>
+          <p>
+            Values in the property are added and removed in the <var>AddForm</var> and <var>RemoveForm</var> methods.
+          </p>
+          <p>
+            CustomFormsZOrdered is used in widgetset classes when an application on the screen is minimized or maximized, or when a form is hidden or displayed using the <var>ShowHide</var> method in its widgetset class.
+          </p>
+          <p>
+            Use <var>CustomFormZOrderCount</var> to get the number of custom form instances in CustomFormsZOrdered.
+          </p>
+          <p>
+            Use <var>CustomForms</var> or <var>Forms</var> to access a form instance by its ordinal position in the list of forms on the screen.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.CustomFormZOrderCount"/>
+          <link id="TScreen.CustomForms"/>
+          <link id="TScreen.Forms"/>
+          <link id="TScreen.AddForm"/>
+          <link id="TScreen.RemoveForm"/>
+          <link id="TCustomForm.Visible"/>
+          <link id="TCustomForm.Showing"/>
+          <link id="TCustomForm.Show"/>
+          <link id="TCustomForm.Hide"/>
         </seealso>
       </element>
       <element name="TScreen.CustomFormsZOrdered.Index">
-        <short/>
+        <short>Ordinal position in the Z-Order (0 is top-most)</short>
       </element>
 
       <element name="TScreen.CustomFormZOrderCount">
         <short>
-          <var>CustomFormZOrderCount</var> - the number of forms arranged in Z-plane order (i.e. Front to Back)
+          Number of custom forms instances in the CustomFormsZOrdered property
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>CustomFormZOrderCount</var> is a read-only <var>Integer</var> property which contains the number of <var>TCustomForm</var> instances stored in the <var>CustomFormsZOrdered</var> property. Read access for the property value is re-directed to the <var>Count</var> property in the list used for CustomFormsZOrdered.
+          </p>
+          <p>
+            Use <var>CustomForms</var> and <var>CustomFormCount</var> to access TCustomForm instances on the screen regardless of their Z-Order.
+          </p>
+          <p>
+            Use <var>Forms</var> and <var>FormCount</var> to access <var>TForm</var> instances on the screen regardless of their Z-Order.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.CustomFormsZOrdered"/>
+          <link id="TScreen.CustomForms"/>
+          <link id="TScreen.CustomFormCount"/>
+          <link id="TScreen.Forms"/>
+          <link id="TScreen.FormCount"/>
         </seealso>
       </element>
 
-      <element name="TScreen.DesktopLeft" link="#lcl.forms.TScreen.DesktopRect">
-        <short>The leftmost coordinate of the desktop</short>
-        <descr/>
-        <seealso/>
+      <element name="TScreen.DesktopLeft">
+        <short>The left-most coordinate of the desktop</short>
+        <descr>
+          <p>
+            <var>DesktopLeft</var> is a read-only <var>Integer</var> property with the left coordinate for the desktop. The property value contains the virtual screen size returned from <var>GetSystemMetrics</var> for the <var>SM_XVIRTUALSCREEN</var> parameter.
+          </p>
+          <p>
+            DesktopLeft is used in the <var>MoveToDefaultPosition</var> method in <var>TCustomForm</var>. The values in <var>DesktopLeft</var>, <var>DesktopTop</var>, <var>DesktopWidth</var> and <var>DesktopHeight</var> are also assigned to members in the <var>DesktopRect</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.DesktopRect"/>
+          <link id="TCustomForm.MoveToDefaultPosition"/>
+        </seealso>
       </element>
 
-      <element name="TScreen.DesktopTop" link="#lcl.forms.TScreen.DesktopRect">
-        <short>The top-most coordinate of the desktop</short>
-        <descr/>
-        <seealso/>
+      <element name="TScreen.DesktopTop">
+        <short>The top-most coordinate for the desktop</short>
+        <descr>
+          <p>
+            <var>DesktopTop</var> is a read-only <var>Integer</var> property with the top coordinate for the desktop. The property value contains the virtual screen size returned from <var>GetSystemMetrics</var> for the <var>SM_YVIRTUALSCREEN</var> parameter.
+          </p>
+          <p>
+            DesktopTop is used in the <var>MoveToDefaultPosition</var> method in <var>TCustomForm</var>. The values in <var>DesktopLeft</var>, <var>DesktopTop</var>, <var>DesktopWidth</var> and <var>DesktopHeight</var> are also assigned to members in the <var>DesktopRect</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.DesktopRect"/>
+          <link id="TCustomForm.MoveToDefaultPosition"/>
+        </seealso>
       </element>
 
-      <element name="TScreen.DesktopHeight" link="#lcl.forms.TScreen.DesktopRect">
-        <short>The total vertical size of the desktop</short>
-        <descr/>
-        <seealso/>
+      <element name="TScreen.DesktopHeight">
+        <short>The total vertical size for the desktop</short>
+        <descr>
+          <p>
+            <var>DesktopHeight</var> is a read-only <var>Integer</var> property with the total height for the desktop. The property values is the result from <var>GetSystemMetrics</var> using the <var>SM_CYVIRTUALSCREEN</var> parameter.
+          </p>
+          <p>
+            DesktopHeight is used in the <var>MoveToDefaultPosition</var> method in <var>TCustomForm</var>. The values in <var>DesktopLeft</var>, <var>DesktopTop</var>, <var>DesktopWidth</var> and <var>DesktopHeight</var> are also assigned to members in the <var>DesktopRect</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.DesktopRect"/>
+          <link id="TCustomForm.MoveToDefaultPosition"/>
+        </seealso>
       </element>
 
-      <element name="TScreen.DesktopWidth" link="#lcl.forms.TScreen.DesktopRect">
-        <short>The total horizontal size of the display</short>
-        <descr/>
-        <seealso/>
+      <element name="TScreen.DesktopWidth">
+        <short>The total horizontal size for the desktop</short>
+        <descr>
+          <p>
+            <var>DesktopWidth</var> is a read-only <var>Integer</var> property with the total width for the desktop. The property values is the result from <var>GetSystemMetrics</var> using the <var>SM_CXVIRTUALSCREEN</var> parameter.
+          </p>
+          <p>
+            DesktopWidth is used in the <var>MoveToDefaultPosition</var> method in <var>TCustomForm</var>. The values in <var>DesktopLeft</var>, <var>DesktopTop</var>, <var>DesktopWidth</var> and <var>DesktopHeight</var> are also assigned to members in the <var>DesktopRect</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.DesktopRect"/>
+          <link id="TCustomForm.MoveToDefaultPosition"/>
+        </seealso>
       </element>
 
       <element name="TScreen.DesktopRect">
-        <short>The total width for the desktop, spanning all monitors</short>
-        <descr/>
-        <seealso/>
+        <short>Bounds rectangle for the desktop spanning all monitors</short>
+        <descr>
+          <p>
+            <var>DesktopRect</var> is a read-only <var>TRect</var> property with the bounds for the desktop spanning all monitors. Member values in the property are derived from the <var>DesktopLeft</var>, <var>DesktopTop</var>, <var>DesktopWidth</var>, and <var>DesktopHeight</var> properties.
+          </p>
+          <p>
+            DesktopRect is provided as a convenience property; it is not used directly in the LCL.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.DesktopLeft"/>
+          <link id="TScreen.DesktopTop"/>
+          <link id="TScreen.DesktopBottom"/>
+          <link id="TScreen.DesktopWidth"/>
+        </seealso>
       </element>
 
       <element name="TScreen.FocusedForm">
-        <short>The form that holds Focus</short>
-        <descr/>
+        <short>The form that has Focus on the screen</short>
+      <descr>
+        <p>
+          <var>FocusedForm</var> is a read-only <var>TCustomForm</var> property which contains the form which has focus on the screen. The value for the property is maintained in the <var>SetFocusedForm</var> method, which ensures that the previously focused form is deactivated before setting the value in the property. It is also updated in the <var>RemoveForm</var> method when the freed form instance is the current value for the property.
+        </p>
+        <p>
+          FocusedForm is updated in the <var>ShowModal</var> method in <var>TCustomForm</var> when the focus is changed to a modal form. It is also updated in the <var>ControlDestroyed</var> method in <var>TApplication</var> when the freed control is also the current value for the property.
+        </p>
+        <p>
+          The value in the property is used to prevent hint windows from being displayed for other forms when a modal form is active.
+        </p>
+      </descr>
         <seealso>
           <link id="TScreen.ActiveForm"/>
           <link id="TScreen.ActiveCustomForm"/>
         </seealso>
       </element>
 
-      <element name="TScreen.FormCount" link="#lcl.forms.TScreen.Forms">
+      <element name="TScreen.FormCount">
         <short>The number of Forms on the screen</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>FormCount</var> is a read-only <var>Integer</var> property with the number of <var>TForm</var> instances stored in the <var>Forms</var> property. Read access to the property value is redirected to the <var>Count</var> property in Forms.
+          </p>
+          <p>
+            Use <var>CustomFormCount</var> to get the number of <var>TCustomForm</var> instances in the <var>CustomForms</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.Forms"/>
+          <link id="TScreen.CustomFormCount"/>
+          <link id="TScreen.CustomForms"/>
+        </seealso>
       </element>
 
       <element name="TScreen.Forms">
         <short>Provides indexed access to TForm instances on the screen</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>Forms</var> is a read-only indexed <var>TForm</var> property which provides access to the TForm instances on the screen by their ordinal position in the list of forms. <var>Index</var> values must be in the range <b>0..<var>FormCount</var>-1</b>. An <var>EListError</var> exception is raised when Index contains an invalid position for the list.
+          </p>
+          <p>
+            Values are added to and removed from Forms in the <var>AddForm</var> and <var>RemoveForm</var> methods. These methods are called when the <var>CreateNew</var> or <var>Destroy</var> method in TForm is executed. Forms is used in widgetset classes to get the form instance with a given <var>Handle</var> in the widgetset.
+          </p>
+          <p>
+            Use <var>CustomForms</var> and <var>CustomFormCount</var> to access the <var>TCustomForm</var> instances on the screen.
+          </p>
+        </descr>
+        <errors>
+          Raises an EListError exception when Index contains an invalid position for the list.
+        </errors>
         <seealso>
           <link id="TScreen.FormCount"/>
           <link id="TScreen.CustomForms"/>
+          <link id="TScreen.CustomFormCount"/>
+          <link id="TCustomForm.CreateNew"/>
+          <link id="TCustomForm.Destroy"/>
         </seealso>
       </element>
       <element name="TScreen.Forms.Index">
@@ -7680,6 +8204,14 @@
 
       <element name="TScreen.DataModuleCount">
         <short>The number of data modules for the screen</short>
+        <descr>
+          <p>
+            <var>DataModuleCount</var> is a read-only <var>Integer</var> property with the number of <var>TDataModule</var> instances stored in the <var>DataModules</var> property. Read access for the property value is redirected to the <var>Count</var> property in DataModules.
+          </p>
+          <p>
+            Use DataModules to access a TDataModule instance by its ordinal position in the list of data modules.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.DataModules"/>
         </seealso>
@@ -7687,8 +8219,20 @@
 
       <element name="TScreen.DataModules">
         <short>Provides indexed access to data modules on the screen</short>
+        <descr>
+          <p>
+            <var>DataModules</var> is a read-only indexed <var>TDataModule</var> property which provides access to a data module by its ordinal position in the list. Data modules are a non-visual component at run-time, and are provided to maintain compatibility with the Delphi VCL equivalent.
+          </p>
+          <p>
+            <var>Index</var> contains the ordinal position in the list for the property value, and must be in the range <b>0..<var>DataModuleCount</var>-1</b>. An <var>EListError</var> exception is raised if Index has an invalid position for the list.
+          </p>
+          <p>
+            Use <var>DataModuleCount</var> to get the number of data module instances in the property.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.DataModuleCount"/>
+          <link id="#rtl.classes.TDataModule">TDataModule</link>
         </seealso>
       </element>
       <element name="TScreen.DataModules.Index">
@@ -7697,16 +8241,26 @@
 
       <element name="TScreen.HintFont">
         <short>The font used to display Hints</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>HintFont</var> is a <var>TFont</var> property with the font used to display hint text for forms and controls. Reading the property value causes the <var>InitStockFont</var> method in the widgetset class to be called. If the hint font is not initialized in the widgetset class, default font attributes are assigned to the font instance using the color in <var>clInfoText</var>.
+          </p>
+          <p>
+            The value in HintFont is used to set the default font for <var>THintWindow</var> instances, It can be used in controls which display their own custom hint windows and hint text should be displayed in the default font for the platform.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TScreen.IconFont">
-        <short>The Icon font, used for desktop icons</short>
+        <short>The Icon font used for desktop icons</short>
         <descr>
           <p>
-            IconFont is passed to the InitStockFont method in the widgetset to load the font required.
+            IconFont is passed to the InitStockFont method in the widgetset to initialize the font.
           </p>
+          <remark>
+            Not used in the current LCL implementation.
+          </remark>
         </descr>
         <seealso>
         </seealso>
@@ -7716,6 +8270,9 @@
         <short>The font used in menus</short>
         <descr/>
         <seealso/>
+        <notes>
+          <note>Currently used only in FindFontName in the TurboPower IPro package.</note>
+        </notes>
       </element>
 
       <element name="TScreen.SystemFont">
@@ -7727,7 +8284,7 @@
       </element>
 
       <element name="TScreen.Fonts">
-        <short>The names of the available (installed) fonts</short>
+        <short>The names for the available (installed) fonts</short>
         <descr>
           <p>
             <var>Fonts</var> is a read-only <var>TStrings</var> property which contains the names for the fonts available using the <var>EnumFontFamiliesEx</var> routine for the widgetset. Values in Fonts are sorted alphabetically in ascending order.
@@ -7738,7 +8295,14 @@
 
       <element name="TScreen.Height">
         <short>The height of the primary monitor</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>Height</var> is a read-only <var>Integer</var> property with the height of the primary monitor for the system. The property value contains the result from <var>GetSystemMetrics</var> using the <var>SM_CYSCREEN</var> parameter.
+          </p>
+          <p>
+            Values in <var>Height</var> and <var>Width</var> are used when setting the position for forms or other dialogs to ensure that they are visible on the monitor. They are also used when LCL coordinates are converted to screen coordinates to ensure that the positions are valid for the monitor.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.PrimaryMonitor"/>
         </seealso>
@@ -7746,14 +8310,36 @@
 
       <element name="TScreen.MonitorCount" link="#lcl.forms.TScreen.Monitors">
         <short>The number of available Monitors</short>
+        <descr>
+          <p>
+            <var>MonitorCount</var> is a read-only <var>Integer</var> property with the number of <var>TMonitor</var> instances stored in the <var>Monitors</var> property. Reading value for the property causes the <var>UpdateMonitors</var> method to be called when Monitors is empty. The property value is redirected to the <var>Count</var> property in Monitors.
+          </p>
+          <p>
+            Use <var>Monitors</var> to access a <var>TMonitor</var> instance by its ordinal position in the list.
+          </p>
+        </descr>
+        <seealso/>
       </element>
 
       <element name="TScreen.Monitors">
         <short>
           Provides indexed access to the available monitors in the class instance
         </short>
+        <descr>
+          <p>
+            <var>Monitors</var> is a read-only indexed <var>TMonitor</var> property which provides access to the available monitors in the class instance by their ordinal position in the list.
+          </p>
+          <p>
+            Reading a value for the property causes the <var>UpdateMonitors</var> method to be called when the number of monitors in the <var>TMonitorList</var> instance is <b>0</b> (<b>zero</b>). The property value is the TMonitor instance in the list at the specified ordinal position.
+          </p>
+          <p>
+            Use <var>MonitorCount</var> to get the number of entries stored in the Monitors property.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.MonitorCount"/>
+          <link id="TMonitor"/>
+          <link id="TMonitorList"/>
         </seealso>
       </element>
       <element name="TScreen.Monitors.Index">
@@ -7762,30 +8348,60 @@
 
       <element name="TScreen.PixelsPerInch">
         <short>
-          The number of screen pixels per virtual inch (Dots Per Inch)(DPI), in the vertical direction.
+          The number of screen pixels per virtual inch (DPI) for the screen
         </short>
         <descr>
           <p>
-            The display uses virtual inches, which typically are bigger than physical inches. This requires that text appear bigger on a screen than on a printer.
+            PixelsPerInch is a read-only Integer property which contains the number of screen pixels per inch for the display device. The display uses virtual inches, which typically are bigger than physical inches. This requires that text appear bigger on a screen than on a printer.
+          </p>
+          <p>
+            The default value for the property is set in the constructor for the class instance using the horizontal pixels per inch from the <var>ScreenInfo</var> variable in the <file>graphics</file> unit. The value is updated (from the same source) when the <var>UpdateScreen</var> method is called.
+          </p>
+          <p>
+            The property value is used at run-time to detected when scaling is needed in forms, controls, and fonts to adjust for different design-time PPI settings.
           </p>
         </descr>
         <seealso/>
       </element>
 
       <element name="TScreen.PrimaryMonitor">
-        <short>The primary monitor typically shows the taskbar</short>
+        <short>The primary monitor which typically includes the task bar area</short>
+        <descr>
+          <p>
+            <var>PrimaryMonitor</var> is a read-only <var>TMonitor</var> property with the primary monitor for the system. The property value is determined by checking for the <var>TMonitor</var> instance in <var>Monitors</var> with its <var>Primary</var> property set to <b>True</b>. The property value is <b>Nil</b> if a monitor is not found with its Primary property set to <b>True</b>.
+          </p>
+          <p>
+            The property value is used in the <var>MoveToDefaultPosition</var> method in <var>TCustomForm</var>. It is also used in widgetset classes to select the  monitor for a dialog when the main form for an application has not been assigned.
+          </p>
+        </descr>
         <seealso>
-          <link id="TScreen.WorkareaRect"/>
+          <link id="TScreen.Monitors"/>
+          <link id="TCustomForm.MoveToDefaultPosition"/>
+          <link id="TMonitor"/>
         </seealso>
       </element>
 
       <element name="TScreen.Width">
         <short>The width of the primary monitor</short>
-        <seealso/>
+        <descr>
+          <p>
+            <var>Width</var> is a read-only <var>Integer</var> property with the width for the primary monitor. The property value is the result from <var>GetSystemMetrics</var> using the <var>SM_CXSCREEN</var> parameter.
+          </p>
+          <p>
+            Use <var>Height</var> to get height for the primary monitor.
+          </p>
+          <p>
+            Use <var>DesktopWidth</var> to get the usable width for the desktop minus the area reserved for a task bar.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScreen.Height"/>
+          <link id="TScreen.DesktopWidth"/>
+        </seealso>
       </element>
 
       <element name="TScreen.WorkAreaRect">
-        <short>The usable display area on the primary monitor excluding the taskbar</short>
+        <short>The usable display area on the primary monitor excluding the task bar</short>
         <descr>
         </descr>
         <seealso>
@@ -7793,61 +8409,105 @@
         </seealso>
       </element>
 
-      <element name="TScreen.WorkAreaHeight" link="#lcl.forms.TScreen.WorkareaRect">
-        <short>The usable height of the primary monitor exclusing the task bar</short>
+      <element name="TScreen.WorkAreaHeight">
+        <short>The usable height of the primary monitor excluding the task bar</short>
         <descr>
         </descr>
         <seealso>
         </seealso>
       </element>
 
-      <element name="TScreen.WorkAreaLeft" link="#lcl.forms.TScreen.WorkareaRect">
+      <element name="TScreen.WorkAreaLeft">
         <short>The usable left coordinate on the primary monitor</short>
         <descr>
         </descr>
         <seealso>
+          <link id="TScreen.WorkareaRect"/>
         </seealso>
       </element>
 
-      <element name="TScreen.WorkAreaTop" link="#lcl.forms.TScreen.WorkareaRect">
+      <element name="TScreen.WorkAreaTop">
         <short>The usable top coordinate on the primary monitor</short>
         <descr>
+          <p>
+            Returns the value for the <var>Top</var> member in <var>WorkAreaRect</var>, which omits the task bar area if aligned to the top of the screen.
+          </p>
+          <p>
+            Use the <var>Top</var> property to get the coordinate for the top of the primary monitor.
+          </p>
         </descr>
         <seealso>
+          <link id="TScreen.WorkAreaRect"/>
+          <link id="TScreen.Top"/>
         </seealso>
       </element>
 
-      <element name="TScreen.WorkAreaWidth" link="#lcl.forms.TScreen.WorkareaRect">
-        <short>The usable width of the primary monitor</short>
+      <element name="TScreen.WorkAreaWidth">
+        <short>The usable width for the WorkAreaRect</short>
         <descr>
+          <p>
+            Returns the difference between the <var>Right</var> and <var>Left</var> members in <var>WorkAreaRect</var>.
+          </p>
+          <p>
+            Use <var>Width</var> to get the width for the primary monitor including the task bar area.
+          </p>
         </descr>
         <seealso>
+          <link id="TScreen.WorkAreaRect"/>
+          <link id="TScreen.Width"/>
         </seealso>
       </element>
 
       <element name="TScreen.OnActiveControlChange">
-        <short>Handler for a focus changed notification</short>
-        <descr/>
+        <short>
+          Event handler signalled when the active form control for the screen has been changed
+        </short>
+        <descr>
+          <p>
+            <var>OnActiveControlChange</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the active control on the screen has been changed. The <var>Sender</var> argument contains the <var>TScreen</var> instance for the change notification.
+          </p>
+          <p>
+            OnActiveControlChange is signalled (when assigned) from the <var>UpdateLastActive</var> method, and occurs after the <var>OnActiveFormChange</var> event has been signalled (when assigned).
+          </p>
+        </descr>
         <seealso>
+          <link id="TScreen.UpdateLastActive"/>
           <link id="TScreen.AddHandlerActiveControlChanged"/>
+          <link id="#rtl.classes.TNotifyEvent">TNotifyEvent</link>
         </seealso>
       </element>
 
       <element name="TScreen.OnActiveFormChange">
-        <short>Handler for a form changed notification</short>
-        <descr/>
+        <short>
+          Event handler signalled when the active form on the screen has been changed
+        </short>
+        <descr>
+          <p>
+            <var>OnActiveFormChange</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the active form on the screen has been changed. <var>Sender</var> contains the <var>TScreen</var> instance for the change notification.
+          </p>
+          <p>
+            OnActiveFormChange is signalled (when assigned) from the <var>UpdateLastActive</var> method, and occurs before the <var>OnActiveControlChange</var> event handler.
+          </p>
+        </descr>
         <seealso>
           <link id="TScreen.AddHandlerActiveFormChanged"/>
+          <link id="TScreen.UpdateLastActive"/>
+          <link id="TScreen.AddHandlerActiveFormChanged"/>
+          <link id="#rtl.classes.TNotifyEvent">TNotifyEvent</link>
         </seealso>
       </element>
 
       <element name="TQueryEndSessionEvent">
-        <short>The type of an <link id="TApplication.OnQueryEndSession"/> handler</short>
+        <short>
+          Specifies an event type used to handle a WM_QUERYENDSESSION window message in an application
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TApplication.OnQueryEndSession"/>
+        </seealso>
       </element>
       <element name="TQueryEndSessionEvent.Cancel">
-        <short>Set Cancel to True to prevent a logoff</short>
+        <short>Set Cancel to True to prevent the session from ending</short>
       </element>
 
       <element name="TExceptionEvent">
@@ -7895,19 +8555,33 @@
       </element>
 
       <element name="TIdleEvent">
-        <short>Type of an Idle event handler</short>
+        <short>Specifies an event handler signalled when an application becomes idle</short>
         <descr>
           <p>
-            Lengthy operations should be broken into smaller parts, to ensure that the application remains responsive. The handlers are called repeatedly, until all signal Done.
+            <p>
+              <var>TIdleEvent</var> is an object procedure type which specifies an event handler signalled when an application becomes idle.
+            </p>
+            <p>
+              <var>Sender</var> is the object for the event notification and normally contains the <var>Application</var> singleton.
+            </p>
+            <p>
+              <var>Done</var> is a variable <var>Boolean</var> parameter which indicates if the event handler has finished processing. When set to <b>False</b>, subsequent idle event handlers can be called. When set to <b>True</b>, the idle state processing has been completed.
+            </p>
+            <p>
+              TIdleEvent is the type used for the <var>OnIdle</var> event handler in <var>TApplication</var>. The event handler is signalled when the application becomes idle. The event handler can return False in Done to allow other idle event handlers to be signalled. The idle event handlers are called repeatedly until Done is set to True.
+            </p>
+            <p>
+              Use the TIdleEvent event handler type to provide short duration event handlers which ensure that the application remains responsive.
+            </p>
           </p>
         </descr>
         <seealso/>
       </element>
       <element name="TIdleEvent.Sender">
-        <short/>
+        <short>Object for the event notification</short>
       </element>
       <element name="TIdleEvent.Done">
-        <short>Set to True when everything is done</short>
+        <short>Set to True when processing is done</short>
       </element>
 
       <element name="TOnUserInputEvent">
@@ -7930,92 +8604,76 @@
         </seealso>
       </element>
       <element name="TOnUserInputEvent.Sender">
-        <short/>
+        <short>Object for the event notification</short>
       </element>
       <element name="TOnUserInputEvent.Msg">
-        <short/>
+        <short>Message with the user input for the event</short>
       </element>
 
       <element name="TDataEvent">
-        <short>The type of an asynchronous callback method</short>
+        <short>Specifies the type used for an asynchronous callback method</short>
         <descr/>
         <seealso>
           <link id="TApplication.QueueAsyncCall"/>
         </seealso>
       </element>
       <element name="TDataEvent.Data">
-        <short>The argument passed to the method</short>
+        <short>PtrInt type with the argument passed to the method</short>
       </element>
 
       <element name="TCMHintShow">
         <short>Provides access to members in a CM_HINTSHOW control message</short>
         <descr>
-          TCMHintShow is a record type used to represent a CM_HINTSHOW control message passed as an argument to control methods.
+          <p>
+            TCMHintShow is a record type used to represent a CM_HINTSHOW control message passed as an argument to methods in a control.
+          </p>
         </descr>
         <seealso>
           <link id="#lcl.controls.TControl.CMHintShow">TControl.CMHintShow</link>
         </seealso>
       </element>
-
       <element name="TCMHintShow.Msg">
         <short>Cardinal value representing the control message</short>
-        <descr/>
-        <seealso/>
       </element>
-
       <element name="TCMHintShow.Reserved">
         <short>Reserved parameter values for the message</short>
-        <descr/>
-        <seealso/>
       </element>
-
       <element name="TCMHintShow.HintInfo">
         <short>Pointer to the hint information for the control message</short>
-        <descr/>
-        <seealso/>
       </element>
-
       <element name="TCMHintShow.Result">
         <short>Result returned for the control message</short>
-        <descr/>
-        <seealso/>
       </element>
 
       <element name="TCMHintShowPause">
         <short/>
         <descr>
-          TCMHintShowPause is not used in the current LCL implementation.
+          <p>
+            TCMHintShowPause is not used in the current LCL implementation.
+          </p>
         </descr>
         <seealso/>
       </element>
-
       <element name="TCMHintShowPause.Msg">
         <short/>
-        <descr/>
-        <seealso/>
       </element>
-
       <element name="TCMHintShowPause.WasActive">
         <short/>
-        <descr/>
-        <seealso/>
       </element>
-
       <element name="TCMHintShowPause.Pause">
         <short/>
-        <descr/>
-        <seealso/>
       </element>
-
       <element name="TCMHintShowPause.Result">
         <short/>
-        <descr/>
-        <seealso/>
       </element>
 
       <element name="TAppHintTimerType">
-        <short>The TApplication hint timer state</short>
-        <descr/>
+        <short>Represents TApplication hint timer states</short>
+        <descr>
+          <p>
+            <var>TAppHintTimerType</var> is used in the implementation of the <var>TApplication</var> class, and passed as an argument to its <var>StartHintTime</var> method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TAppHintTimerType.ahttNone">
@@ -8047,13 +8705,13 @@
         </seealso>
       </element>
       <element name="TShowHintEvent.HintStr">
-        <short/>
+        <short>Text for hint display event</short>
       </element>
       <element name="TShowHintEvent.CanShow">
-        <short/>
+        <short>True if the hint can be displayed</short>
       </element>
       <element name="TShowHintEvent.HintInfo">
-        <short/>
+        <short>Hint info structure for the hint</short>
       </element>
 
       <element name="THintInfoAtMouse">
@@ -8075,7 +8733,7 @@
         </seealso>
       </element>
       <element name="THintInfoAtMouse.MousePos">
-        <short>POsition of the mouse cursor for the hint display</short>
+        <short>Position of the mouse cursor for the hint display</short>
       </element>
       <element name="THintInfoAtMouse.Control">
         <short>Control for the hint display</short>
@@ -8131,7 +8789,18 @@
         <short>Application has been initialized</short>
       </element>
 
-      <element name="TApplicationFlags" link="#lcl.forms.TApplicationFlag"/>
+      <element name="TApplicationFlags">
+        <short>Set type used to store values from the TApplicationFlag enumeration</short>
+        <descr>
+          <p>
+            <var>TApplicationFlags</var> is the type used for the <var>Flags</var> property in <var>TApplication</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplicationFlag"/>
+          <link id="TApplication.Flags"/>
+        </seealso>
+      </element>
 
       <element name="TApplicationNavigationOption">
         <short>Which keys can be used for the navigation within a form</short>
@@ -8250,32 +8919,31 @@
       </element>
 
       <element name="TAsyncCallQueueItem">
-        <short>A queued asynchronous callback request node</short>
+        <short>Record used for a queued asynchronous callback request</short>
         <descr/>
         <seealso>
           <link id="TApplication.QueueAsyncCall"/>
         </seealso>
       </element>
       <element name="TAsyncCallQueueItem.Method">
-        <short>The callback method</short>
+        <short>Object procedure with the callback method</short>
         <descr/>
       </element>
       <element name="TAsyncCallQueueItem.Data">
-        <short>The method call argument</short>
+        <short>Pointer to the callback method argument</short>
         <descr/>
       </element>
       <element name="TAsyncCallQueueItem.NextItem">
-        <short>The next list node</short>
+        <short>Pointer to the next item in the callback queue</short>
         <descr/>
       </element>
       <element name="TAsyncCallQueueItem.PrevItem">
-        <short>The preceding list node</short>
-        <descr>
-        </descr>
+        <short>Pointer to the previous item in the callback queue</short>
+        <descr/>
       </element>
 
       <element name="TAsyncCallQueue">
-        <short>The queue head for asynchronous callbacks</short>
+        <short>Represents an asynchronous callback queue</short>
         <descr>
         </descr>
         <seealso>
@@ -8283,10 +8951,10 @@
         </seealso>
       </element>
       <element name="TAsyncCallQueue.Top">
-        <short>The first queued method</short>
+        <short>The first queued callback request</short>
       </element>
       <element name="TAsyncCallQueue.Last">
-        <short>The last queued method</short>
+        <short>The last queued callback request</short>
       </element>
 
       <element name="TAsyncCallQueues">
@@ -8303,23 +8971,17 @@
           <link id="TApplication.QueueAsyncCall"/>
         </seealso>
       </element>
-
       <element name="TAsyncCallQueues.CritSec">
         <short>The critical section for adding and removing queue elements</short>
-        <descr>
-        </descr>
+        <descr/>
       </element>
-
       <element name="TAsyncCallQueues.Cur">
         <short>The currently processed queue. Processed entries are removed</short>
-        <descr>
-        </descr>
+        <descr/>
       </element>
-
       <element name="TAsyncCallQueues.Next">
         <short>New calls are added to this queue</short>
-        <descr>
-        </descr>
+        <descr/>
       </element>
 
       <element name="TApplicationType">
@@ -8416,23 +9078,26 @@
       <element name="TTaskBarBehavior.tbSingleButton">
         <short>Hide buttons for Forms with ShowInTaskBar=stDefault</short>
       </element>
+
       <element name="TApplicationDoubleBuffered">
         <short>
           Enumeration with values used in the DoubleBuffered property in TApplication
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TApplication.DoubleBuffered"/>
+        </seealso>
       </element>
       <element name="TApplicationDoubleBuffered.adbDefault">
         <short>
-          Widgetset dependent; for LCL/Win32 it is True,  unless in a remote desktop connection. For other widgetsets it is False.
+          Widgetset dependent. For Windows, it is True unless in a remote desktop connection. For other widgetsets it is False.
         </short>
       </element>
       <element name="TApplicationDoubleBuffered.adbFalse">
-        <short/>
+        <short>DoubleBuffered is not used on the platform</short>
       </element>
       <element name="TApplicationDoubleBuffered.adbTrue">
-        <short/>
+        <short>DoubleBuffered is used on the platform</short>
       </element>
 
       <element name="TApplication">
@@ -8586,14 +9251,12 @@
 
       <element name="TApplication.DoOnIdleEnd">
         <short>
-          Notifies the OnIdleEnd handlers; called when the application exits Idle state
+          Notifies the OnIdleEnd handlers when the application exits Idle state
         </short>
       </element>
 
-      <element name="TApplication.GetActive" link="#lcl.forms.TApplication.Active"/>
-      <element name="TApplication.GetActive.Result">
-        <short/>
-      </element>
+      <element name="TApplication.GetActive"/>
+      <element name="TApplication.GetActive.Result"/>
 
       <element name="TApplication.GetCurrentHelpFile">
         <short>Gets the HelpFile name for the active form, or the Application</short>
@@ -8690,37 +9353,97 @@
       </element>
 
       <element name="TApplication.IconChanged">
-        <short>Loads the new application icons, notifies the widgetset and all forms</short>
-        <descr/>
+        <short>
+          Implements the OnChange event handler used for the Icon in the application
+        </short>
+        <descr>
+          <p>
+            <var>IconChanged</var> is a method used to load the new application icon, and to notify the widgetset and all forms of the change. It implements the <var>OnChange</var> event handler assigned to the <var>Icon</var> for the application.
+          </p>
+          <p>
+            It frees existing handles both the small and large versions of the Icon for the application, and calls the <var>AppSetIcon</var> method in the widgetset class to re-create the handles.
+          </p>
+          <p>
+            IconChanged posts a <var>CM_ICONCHANGED</var> control message to each of the <var>TCustomForm</var> instances in the <var>Screen</var> singleton. Unassigned handle values are provided for both the small and large icons on the form.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TApplication.IconChanged.Sender">
-        <short/>
+        <short>Object for the event notification</short>
       </element>
 
-      <element name="TApplication.SetBidiMode" link="#lcl.forms.TApplication.BiDiMode"/>
+      <element name="TApplication.SetBidiMode">
+        <short>Sets the value for the BiDiMode property</short>
+        <descr>
+          <p>
+            <var>SetBidiMode</var> is a method used to set value for the <var>BiDiMode</var> property. It updates the property value, and calls <var>NotifyCustomForms</var> to post a <var>CM_PARENTBIDIMODECHANGED</var> control message to all <var>TCustomForm</var> instances on the <var>Screen</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.BiDiMode"/>
+          <link id="TApplication.NotifyCustomForms"/>
+        </seealso>
+      </element>
       <element name="TApplication.SetBidiMode.AValue">
-      <short/>
+      <short>New value for the property</short>
       </element>
 
-      <element name="TApplication.SetFlags" link="#lcl.forms.TApplication.Flags"/>
+      <element name="TApplication.SetFlags">
+        <short>Sets the value for the Flags property</short>
+        <descr>
+          <p>
+            SetFlags allows the value AppNoExceptionMessages to be added to or removed from the values in the TApplicationFlags set type. All other existing values in Flags are not modified.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.Flags"/>
+          <link id="TApplicationFlags"/>
+        </seealso>
+      </element>
       <element name="TApplication.SetFlags.AValue">
-        <short/>
+        <short>New value for the property</short>
       </element>
 
-      <element name="TApplication.SetMainFormOnTaskBar" link="#lcl.forms.TApplication.MainFormOnTaskBar"/>
+      <element name="TApplication.SetMainFormOnTaskBar">
+        <short>Sets the value for the MainFormOnTaskBar property</short>
+        <descr>
+          <p>
+            Calls the <var>AppSetMainFormOnTaskBar</var> method in the widgetset class to apply the new value for the property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.MainFormOnTaskBar"/>
+        </seealso>
+      </element>
       <element name="TApplication.SetMainFormOnTaskBar.AValue">
-        <short/>
+        <short>New value for the property</short>
       </element>
 
-      <element name="TApplication.SetNavigation" link="#lcl.forms.TApplication.Navigation"/>
+      <element name="TApplication.SetNavigation">
+        <short>Sets the value for the Navigation property</short>
+        <descr/>
+        <seealso>
+          <link id="TApplication.Navigation"/>
+        </seealso>
+      </element>
       <element name="TApplication.SetNavigation.AValue">
-        <short/>
+        <short>New value for the property</short>
       </element>
 
-      <element name="TApplication.SetShowButtonGlyphs" link="#lcl.forms.TApplication.ShowButtonGlyphs"/>
+      <element name="TApplication.SetShowButtonGlyphs">
+        <short>Sets the value for the ShowButtonGlyphs property</short>
+        <descr>
+          <p>
+            Updates the property value, and calls the <var>NotifyCustomForms</var> method to post a <var>CM_APPSHOWBTNGLYPHCHANGED</var> control message to <var>TCustomForm</var> instances for the application.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.ShowButtonGlyphs"/>
+        </seealso>
+      </element>
       <element name="TApplication.SetShowButtonGlyphs.AValue">
-        <short/>
+        <short>New value for the property</short>
       </element>
 
       <element name="TApplication.SetShowMenuGlyphs" link="#lcl.forms.TApplication.ShowMenuGlyphs"/>
@@ -8734,7 +9457,7 @@
       </element>
 
       <element name="TApplication.UpdateMouseControl">
-        <short>Handles mouse moving onto a new control</short>
+        <short>Handles mouse movement to a new control</short>
         <descr/>
         <seealso/>
       </element>
@@ -8866,8 +9589,7 @@
       </element>
 
       <element name="TApplication.GetConsoleApplication">
-        <short>Here: returns False, because this is a GUI application.
-        </short>
+        <short>Always returns False for a GUI application</short>
         <descr/>
         <seealso/>
       </element>
@@ -8876,10 +9598,21 @@
       </element>
 
       <element name="TApplication.NotifyIdleHandler">
-        <short>Notifies all Idle handlers</short>
-        <descr/>
+        <short>Signals all idle handlers for the application</short>
+        <descr>
+          <p>
+            <var>NotifyIdleHandler</var> is a method used to signal event handlers using the <var>ahtIdle</var> application handler type.
+          </p>
+          <p>
+            The internal array of handlers is checked for a <var>TMethodList</var> which uses the application handler type. If it exists, each of the methods in the list are signalled, in reverse order, using the value in <var>Done</var> as a control flag. While Done is <b>True</b>, the handlers are continuously called in the loop. If any handler in the list sets Done to <b>False</b>, the method is exited.
+          </p>
+          <p>
+            NotifyIdleHandler is called from the <var>Idle</var> method. It occurs after the <var>ReleaseComponents</var> and  <var>ProcessAsyncCallQueue</var> methods have been called. It is also called after the <var>OnIdle</var> event handler in the TApplication has been signalled (when assigned) and when the Done argument to the event handler is <b>True</b>.
+          </p>
+        </descr>
         <seealso>
           <link id="TApplication.OnIdle"/>
+          <link id="TApplication.Idle"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
@@ -8888,7 +9621,7 @@
       </element>
 
       <element name="TApplication.NotifyIdleEndHandler">
-        <short>Notifies all Idle End handlers, when a new message arrived</short>
+        <short>Notifies all Idle End handlers when a new message has arrived</short>
         <descr/>
         <seealso>
           <link id="TApplication.OnIdleEnd"/>
@@ -8897,7 +9630,7 @@
       </element>
 
       <element name="TApplication.NotifyActivateHandler">
-        <short>Notifies all Activation handlers</short>
+        <short>Notifies all Activation handlers for the application</short>
         <descr/>
         <seealso>
           <link id="TApplication.OnActivate"/>
@@ -8906,7 +9639,7 @@
       </element>
 
       <element name="TApplication.NotifyDeactivateHandler">
-        <short>Notifies all Deactivation handlers</short>
+        <short>Notifies all Deactivation handlers for the application</short>
         <descr/>
         <seealso>
           <link id="TApplication.OnDeactivate"/>
@@ -8915,33 +9648,49 @@
       </element>
 
       <element name="TApplication.NotifyCustomForms">
-        <short>Notifies all CustomForms of Msg arrived</short>
+        <short>Performs the specified message for all custom forms in the application</short>
         <descr>
+          <p>
+            Calls the <var>Perform</var> method for custom forms in the application using <var>Msg</var> as an argument.
+          </p>
         </descr>
         <seealso>
+          <link id="Screen"/>
+          <link id="TScreen.CustomForms"/>
+          <link id="#lcl.controls.TControl.Perform">TControl.Perform</link>
         </seealso>
       </element>
       <element name="TApplication.NotifyCustomForms.Msg">
-        <short>The message to process</short>
+        <short>The message sent to the forms</short>
       </element>
 
       <element name="TApplication.IsHintMsg">
-        <short>NOP, exists for Delphi compatibility only</short>
-        <descr/>
+        <short>Exists for Delphi compatibility only</short>
+        <descr>
+          <p>
+            Always returns <var>False</var> in <var>TApplication</var>. Provided for Delphi code compatibility only.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TApplication.IsHintMsg.Result">
-        <short>Always False</short>
+        <short>Always returns False</short>
       </element>
       <element name="TApplication.IsHintMsg.Msg">
-        <short/>
+        <short>Not used in the implementation</short>
       </element>
 
       <element name="TApplication.DoOnHelp">
         <short>
-          OnHelp message handler. Tries the OnHelp handlers for the active form, and the Application,  as well as application Help handlers.
+          Signals an OnHelp event handler
         </short>
         <descr>
+          <p>
+            Signals the OnHelp message handler. Tries the OnHelp handlers for the active form and the Application, as well as handler routines added for the ahtHelp handler type.
+          </p>
+          <p>
+            DoOnHelp is called from the HelpCommand method.
+          </p>
         </descr>
         <seealso>
           <link id="TApplication.OnHelp"/>
@@ -8985,9 +9734,19 @@
         <short/>
       </element>
 
-      <element name="TApplication.SetTitle" link="#lcl.forms.TApplication.Title"/>
+      <element name="TApplication.SetTitle">
+        <short>Sets the value for the Title property</short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Calls the <var>AppSetTitle</var> method in the widgetset class to apply the new value for the property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.Title"/>
+        </seealso>
+      </element>
       <element name="TApplication.SetTitle.AValue">
-        <short/>
+        <short>New value for the property</short>
       </element>
 
       <element name="TApplication.StartHintTimer">
@@ -9005,28 +9764,37 @@
       </element>
 
       <element name="TApplication.UpdateVisible">
-        <short>Asks the widgetset to update the TaskBar entries</short>
+        <short>Asks the widgetset to update the task bar entries</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TApplication.DoIdleActions">
-        <short>Updates all Actions, hides splash screens</short>
+        <short>Updates all Actions and hides splash screens</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TApplication.MenuPopupHandler">
-        <short>Hides the Hint window</short>
-        <descr/>
-        <seealso/>
+        <short>Implements the OnMenuPopupHandler for the application</short>
+        <descr>
+          <p>
+            Assigned as the handler routine for the OnMenuPopupHandler variable in the LCL when the application instance is created.
+          </p>
+          <p>
+            Calls the <var>HideHint</var> method to manage values in <var>HintWindow</var>, <var>HintControl</var>, and <var>HintRect</var> (when needed).
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.menus.OnMenuPopupHandler">OnMenuPopupHandler</link>
+        </seealso>
       </element>
       <element name="TApplication.MenuPopupHandler.Sender">
-        <short/>
+        <short>Object for the event notification</short>
       </element>
 
       <element name="TApplication.ProcessAsyncCallQueue">
-        <short>Calls all methods queued by QueueAsyncCall</short>
+        <short>Calls all methods queued in QueueAsyncCall</short>
         <descr/>
         <seealso/>
       </element>
@@ -9054,15 +9822,50 @@
 
       <element name="TApplication.GetParams">
         <short>Returns the command line argument at the specified position</short>
+        <descr>
+          <p>
+            <var>GetParams</var> is an overridden <var>String</var> function in <var>TApplication</var> used to get the argument at the specified position in the command line.  It re-implements the read access specifier for the property from the ancestor class, and does not call the inherited method.
+          </p>
+          <p>
+            <var>Index</var> is the ordinal position for the requested parameter value. Index must be in the range <b>0..<var>ParamCount</var>-1</b> or an <var>EListError</var> exception is raised. Position <b>0</b> contains the name of the executable file for the application.
+          </p>
+          <p>
+            The return value contains the UTF-8-encoded <var>String</var> with the value for the parameter at the specified position. It is retrieved using the <var>ParamStrUTF8</var> routine for the position in Index.
+          </p>
+        </descr>
+        <seealso>
+          <link id="lazutils.lazutf8.ParamStrUTF8">ParamStrUTF8</link>
+          <link id="#fcl.custapp.TCustomApplication.Params">TCustomApplication.Params</link>
+          <link id="#fcl.custapp.TCustomApplication.ParamCount">TCustomApplication.ParamCount</link>
+        </seealso>
       </element>
       <element name="TApplication.GetParams.Result">
-        <short/>
+        <short>String with the parameter value, or an empty string</short>
       </element>
       <element name="TApplication.GetParams.Index">
-        <short/>
+        <short>Ordinal position for the requested parameter value</short>
       </element>
 
-      <element name="TApplication.Create" link="#rtl.classes.TComponent.Create"/>
+      <element name="TApplication.Create">
+        <short>Constructor for the class instance</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance.
+          </p>
+          <p>
+            It ensures that the LCL is configured to use the private <var>WndProc</var> method to handle messages dispatched for the application instance.
+          </p>
+          <p>
+            Create allocates resources needed in the class instance, and sets the default values for properties. Event handler routines implemented in <var>TApplication</var> are assigned as needed.
+          </p>
+          <p>
+            Create calls the inherited constructor prior to exiting from the method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent.Create">TComponent.Create</link>
+        </seealso>
+      </element>
       <element name="TApplication.Create.AOwner">
         <short>The Owner object that invoked this instance of TApplication</short>
       </element>
@@ -9131,25 +9934,59 @@
       </element>
 
       <element name="TApplication.GetControlAtMouse">
-        <short>Finds the control under the mouse</short>
-        <descr>Updates the LastMouse... info.</descr>
+        <short>Gets the control under the mouse pointer</short>
+        <descr>
+          <p>
+            <var>GetControlAtMouse</var> is a <var>TControl</var> function used to get the control under the mouse pointer. The return value contains the form or control at the position where the mouse pointer is located. The return value is <b>Nil</b> at design-time.
+          </p>
+          <p>
+            GetControlAtMouse updates internal members used to track the control and its position.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TApplication.GetControlAtMouse.Result">
-        <short>The control, or Nil if no control is found</short>
+        <short>The control under the mouse pointer, or Nil at design-time</short>
       </element>
 
       <element name="TApplication.ControlDestroyed">
         <short>Clears all references to the destroyed control</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>ControlDestroyed</var> is a method used to update the application when the control in <var>AControl</var> is freed. ControlDestroyed ensures that any property in the application that contains a reference to AControl is set to <b>Nil</b>, including:
+          </p>
+          <ul>
+            <li>MainForm</li>
+            <li>MouseControl</li>
+            <li>HintControl</li>
+            <li>CreatingForm (internal)</li>
+          </ul>
+          <p>
+            Properties in the <var>Screen</var> singleton are also updated to remove any references to AControl, including:
+          </p>
+          <ul>
+            <li>ActiveControl</li>
+            <li>ActiveCustomForm</li>
+            <li>ActiveForm</li>
+            <li>FocusedForm</li>
+          </ul>
+          <p>
+            The <var>UpdateLastActive</var> method in Screen is called to perform change notification for the forms and / or controls.
+          </p>
+          <p>
+            ControlDestroyed is called from the <var>Destroy</var> method in <var>TControl</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Destroy">TControl.Destroy</link>
+        </seealso>
       </element>
       <element name="TApplication.ControlDestroyed.AControl">
-        <short/>
+        <short>Control instance which is being freed</short>
       </element>
 
       <element name="TApplication.BigIconHandle">
-        <short>The Handle of the large application Icon</short>
+        <short>The Handle for the large application Icon</short>
         <seealso>
           <link id="TApplication.Icon"/>
         </seealso>
@@ -9159,7 +9996,7 @@
       </element>
 
       <element name="TApplication.SmallIconHandle">
-        <short>The Handle of the small application Icon</short>
+        <short>The Handle for the small application Icon</short>
         <seealso>
           <link id="TApplication.Icon"/>
         </seealso>
@@ -9169,9 +10006,14 @@
       </element>
 
       <element name="TApplication.BringToFront">
-        <short>Asks the widgetset to bring the application's form(s) to the front
+        <short>
+          Asks the widgetset to bring the last form for the application in front of all other programs
         </short>
-        <descr/>
+        <descr>
+          <p>
+            Calls the AppBringToFront method in the widgetset class.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
@@ -9179,10 +10021,10 @@
         <short>Creates a Form or component, owned by Application</short>
         <descr>
           <remark>
-            The method name is confusing and kept only for Delphi compatibility. The method can actually create any kind of component.
+            The method name is slightly misleading, and kept only for Delphi compatibility. The method can actually create any kind of component.
           </remark>
           <p>
-            CreateForm creates a Component instance of the given class, and sets the pointer to the component variable. If it is a form, it will be added to the form list in the application.
+            CreateForm creates a Component instance of the given class, and sets the pointer to the component variable. If it is a form, it will be added to the list of forms  in the application.
           </p>
           <p>
             A splash form is shown immediately.
@@ -9191,17 +10033,32 @@
         <seealso/>
       </element>
       <element name="TApplication.CreateForm.InstanceClass">
-        <short>The component class</short>
+        <short>The class type used to create the new instance</short>
       </element>
       <element name="TApplication.CreateForm.Reference">
-        <short>The variable receiving the new component reference</short>
+        <short>The variable for the new component reference</short>
       </element>
 
       <element name="TApplication.UpdateMainForm">
         <short>
-          Makes the specified form the MainForm in the Application (when not already assigned)
+          Makes the specified form the MainForm in the Application
         </short>
-        <descr/>
+        <descr>
+          <p>
+            UpdateMainForm is a method used to make the form instance in AForm the main form for the application. It stores the value in AForm to the MainForm property. No actions are performed in the method for the following conditions:
+          </p>
+          <ul>
+            <li>MainForm is already assigned.</li>
+            <li>AForm is marked for release.</li>
+            <li>The Handle for AForm has not yet been allocated.</li>
+            <li>
+              AForm is a MDI Child form (FormStyle contains fsMDIChild) or a splash screen form (FormStyle contains fsSplash).
+            </li>
+          </ul>
+          <p>
+            UpdateMainForm is called from the CreateForm method, and occurs before the form calls its HandleNeeded method. It is also called when the Handle for a form is created (or re-created) in the CreateWnd method in TForm.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TApplication.UpdateMainForm.AForm">
@@ -9211,7 +10068,8 @@
       <element name="TApplication.QueueAsyncCall">
         <short>Inserts an asynchronous call into the queue</short>
         <descr>This is thread safe.</descr>
-        <errors>Exceptions on various inconsistencies of the queue.
+        <errors>
+          Exceptions on various inconsistencies of the queue.
         </errors>
         <seealso/>
         <example file="forms/tapplication_queueasynccall.pas"/>
@@ -9226,7 +10084,9 @@
       <element name="TApplication.RemoveAsyncCalls">
         <short>Removes all calls added via QueueAsyncCall</short>
         <descr>This is thread safe.</descr>
-        <errors>Exceptions on various inconsistencies of the queue.</errors>
+        <errors>
+          Exceptions on various inconsistencies of the queue.
+        </errors>
       </element>
       <element name="TApplication.RemoveAsyncCalls.AnObject">
         <short/>
@@ -9234,11 +10094,20 @@
 
       <element name="TApplication.ReleaseComponent">
         <short>
-          Safely destroys a component; can be requested by the component itself
+          Safely destroys a component used in the application
         </short>
         <descr>
           <p>
-            Unless the application is shutting down, all requests are queued. Queued requests are processed when the application is not currently processing a message.
+            <var>ReleaseComponent</var> is a method used to ensure that the component in AComponent is freed in the application. During normal processing, ReleaseComponent adds the <var>TComponent</var> instance to a list and queues an asynchronously call to <var>FreeComponent</var>. This allows the component to be freed when the application enters an idle state.
+          </p>
+          <p>
+            If the Application <var>Flags</var> contains <var>AppDestroying</var>, the <var>Free</var> method for AComponent is called immediately.
+          </p>
+          <p>
+            No actions are performed in the method if <var>Destroy</var> has already been called for AComponent (<var>ComponentState</var> contains <var>csDestroying</var>).
+          </p>
+          <p>
+            ReleaseComponent is called from the <var>ReleaseComponents</var> method in <var>TApplication</var>, and from the <var>Release</var> method in <var>TCustomForm</var>. It may also be used in the implementation of controls to ensure that its resources are freed as needed.
           </p>
         </descr>
         <seealso/>
@@ -9248,31 +10117,45 @@
       </element>
 
       <element name="TApplication.ExecuteAction">
-        <short>Signals the <var>OnActionExecute</var> handler</short>
-        <descr/>
+        <short>Signals the OnActionExecute handler (when assigned)</short>
+        <descr>
+          <p>
+            <var>ExecuteAction</var> is an overridden <var>Boolean</var> function used to signal the <var>OnActionExecute</var> (when assigned) using <var>ExeAction</var> as the action executed in the event handler. It sets the default value for the <var>Handled</var> argument to the event handler to <b>False</b>. The argument can be updated in the event handler, and is used as the return value for the method.
+          </p>
+          <p>
+            ExecuteAction re-implements the method defined in the ancestor, and does <b>not</b> call the inherited method.
+          </p>
+        </descr>
         <seealso>
           <link id="#rtl.classes.TComponent.ExecuteAction">TComponent.ExecuteAction</link>
         </seealso>
       </element>
       <element name="TApplication.ExecuteAction.Result">
-        <short>True when the Action was handled</short>
+        <short>True when the Action was handled in the event handler</short>
       </element>
       <element name="TApplication.ExecuteAction.ExeAction">
-        <short>The Action to execute</short>
+        <short>The Action to execute in the event handler</short>
       </element>
 
       <element name="TApplication.UpdateAction">
-        <short>Signals the <var>OnActionUpdate</var> handler</short>
-        <descr/>
+        <short>Signals the OnActionUpdate handler (when assigned)</short>
+        <descr>
+          <p>
+            <var>UpdateAction</var> is an overridden <var>Boolean</var> function used to signal the <var>OnActionUpdate</var> event handler (when assigned) to update the settings for the action in <var>TheAction</var>. It sets the default value for the <var>Handled</var> argument to the event handler to <b>False</b>. The argument can be updated in the event handler, and is used as the return value for the method.
+          </p>
+          <p>
+            UpdateAction re-implements the method defined in the ancestor, and does <b>not</b> call the inherited method.
+          </p>
+        </descr>
         <seealso>
           <link id="#rtl.Classes.TComponent.UpdateAction">TComponent.UpdateAction</link>
         </seealso>
       </element>
       <element name="TApplication.UpdateAction.Result">
-        <short/>
+        <short>True if the action was updated in the event handler</short>
       </element>
       <element name="TApplication.UpdateAction.TheAction">
-        <short/>
+        <short>The action updated in the event handler</short>
       </element>
 
       <element name="TApplication.HandleException">
@@ -9294,14 +10177,28 @@
       </element>
 
       <element name="TApplication.HandleMessage">
-        <short>Handles all messages, and enters the Idle state</short>
-        <descr/>
+        <short>Handles pending messages, and enters the Idle state</short>
+        <descr>
+          <p>
+            <var>HandleMessage</var> is a method used to process pending window or control messages in the application. It calls the <var>AppProcessMessages</var> method in the widgetset class to handle pending messages. It calls the <var>Idle</var> method to enter the idle state where queued asynchronous callbacks can be handled and idle handlers can be signalled.
+          </p>
+          <p>
+            It is very similar to the <var>ProcessMessages</var> method, which does not signal idle handlers for the application or wait for a new message before exit.
+          </p>
+          <p>
+            HandleMessage is called from the <var>RunLoop</var> method in <var>TApplication</var>.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TApplication.HelpCommand">
         <short>Show help</short>
-        <descr>Currently relies on OnHelp handlers. CallHelp is not implemented.</descr>
+        <descr>
+          <p>
+            Currently relies on OnHelp handlers. CallHelp is not implemented.
+          </p>
+        </descr>
         <seealso>
         </seealso>
       </element>
@@ -9316,19 +10213,29 @@
       </element>
 
       <element name="TApplication.HelpContext">
-        <short>Show context sensitive help</short>
-        <descr/>
+        <short>Shows context-sensitive help for the application</short>
+        <descr>
+          <p>
+            HelpContext is a Boolean function used to display context-sensitive help for the specified help context. It calls the DoOnHelp method to select and execute a help handler routine for the specified help context. The routine may be one of the OnHelp event handlers found in the active form or in TApplication. If neither are assigned, the application handlers are checked for a routine using the ahtHelp handler type.
+          </p>
+          <p>
+            If the help context was handled in DoOnHelp, not additional actions are performed in the method. Otherwise, the ShowHelpOrErrorForContext is called to handle the help request.
+          </p>
+          <p>
+            The return value is False if the help context could not be handled using any of these options.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TApplication.HelpContext.Result">
-        <short>Request handled</short>
+        <short>True if the help request was handled in the method</short>
       </element>
       <element name="TApplication.HelpContext.Context">
-        <short/>
+        <short>Help context displayed in the method</short>
       </element>
 
       <element name="TApplication.HelpKeyword">
-        <short>Show help for a keyword</short>
+        <short>Shows help for the specified keyword</short>
         <descr/>
         <seealso/>
       </element>
@@ -9350,9 +10257,10 @@
 
       <element name="TApplication.RemoveStayOnTop">
         <short>
-          Remove StayOnTop from all forms. Builds a form list for use in RestoreStayOnTop.
+          Removes the StayOnTop attribute from all forms in the application
         </short>
         <descr>
+          Builds a list of forms for use in the RestoreStayOnTop method.
         </descr>
         <seealso>
           <link id="TApplication.RestoreStayOnTop"/>
@@ -9375,8 +10283,12 @@
       </element>
 
       <element name="TApplication.IsWaiting">
-        <short>True if the application is awaiting an event</short>
-        <descr/>
+        <short>True if the application is waiting for a message event</short>
+        <descr>
+          <p>
+            The return value is <b>True</b> when <var>AppWaiting</var> has been included in the <var>Flags</var> for the application.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TApplication.IsWaiting.Result">
@@ -9436,7 +10348,7 @@
       </element>
 
       <element name="TApplication.MessageBox">
-        <short>Display an message dialog with several response buttons</short>
+        <short>Display an message dialog with response buttons</short>
         <descr>
           <p>
             The function is used internally to display messages during the handling of <var>Exceptions</var>, but is also available to application programmers as an alternative to some of the message dialogs found in the <file>Dialogs</file> unit.
@@ -9476,7 +10388,8 @@
         <descr/>
       </element>
       <element name="TApplication.MessageBox.Flags">
-        <short>The icon and buttons appearing in the box.
+        <short>
+          The icon and buttons appearing in the message box
         </short>
         <descr>
           <p>
@@ -9509,7 +10422,8 @@
       </element>
 
       <element name="TApplication.Minimize">
-        <short>Asks the widgetset to minimize the application.
+        <short>
+          Asks the widgetset to minimize the application
         </short>
         <descr/>
         <seealso/>
@@ -9517,7 +10431,8 @@
 
       <element name="TApplication.ModalStarted">
         <short>Called when a form is shown modally</short>
-        <descr>Invokes all OnModalBegin handlers when entering Modal state.
+        <descr>
+          Invokes all OnModalBegin handlers when entering Modal state.
         </descr>
         <seealso>
           <link id="TApplication.ModalFinished"/>
@@ -9526,7 +10441,8 @@
 
       <element name="TApplication.ModalFinished">
         <short>Called when a modal form is closed</short>
-        <descr>Invokes all OnModalEnd handlers when exiting Modal state.
+        <descr>
+          Invokes all OnModalEnd handlers when exiting Modal state.
         </descr>
         <seealso>
           <link id="TApplication.ModalStarted"/>
@@ -9534,8 +10450,7 @@
       </element>
 
       <element name="TApplication.Restore">
-        <short>Restores the previously minimized application.
-        </short>
+        <short>Restores a previously minimized application</short>
         <descr/>
         <seealso>
           <link id="TApplication.Minimize"/>
@@ -9543,11 +10458,12 @@
       </element>
 
       <element name="TApplication.Notification">
-        <short>Invokes the notification handlers.
+        <short>
+          Performs actions when a component is added to or removed from the application
         </short>
         <descr>
           <p>
-            Special handling, here: Clears the reference to a removed component, terminates the application when the MainForm is removed.
+            <var>Notification</var> is an overridden method in <var>TApplication</var> used to perform actions needed when a component is added to or removed from the application. Notification provides special handling when component references are removed. It ensures that the internal member for a given component is set to <var>Nil</var> when the reference is freed. If the freed component is the MainForm for the application, the Terminate method is called to shut down the application and update the OS-level ExitCode.
           </p>
         </descr>
         <seealso>
@@ -9555,33 +10471,53 @@
         </seealso>
       </element>
       <element name="TApplication.Notification.AComponent">
-        <short/>
+        <short>Component for the notification</short>
       </element>
       <element name="TApplication.Notification.Operation">
-        <short/>
+        <short>Operation performed for the component reference</short>
       </element>
 
       <element name="TApplication.ProcessMessages">
         <short>
-          Call this method during lengthy operations, to keep the GUI responsive
+          Call this method during lengthy operations to ensure the GUI remains responsive
         </short>
         <descr>
-          Processes all waiting messages, then the queued asynchronous callbacks.
+          <p>
+            Calls <var>AppProcessMessages</var> in the widgetset class to processes pending messages, and calls <var>ProcessAsyncCallQueue</var> to handle any queued asynchronous callbacks.
+          </p>
         </descr>
         <seealso/>
       </element>
 
       <element name="TApplication.Idle">
-        <short>Invoked when the application enters the idle state</short>
-        <descr/>
+        <short>Called when the application enters the idle state</short>
+        <descr>
+          <p>
+            Idle is a method used to perform actions when the application enters an idle state. It allows the application to free components pending release, and handle any queued asynchronous requests.
+          </p>
+          <p>
+            In addition, Idle calls event and application handlers assigned in the class instance. OnIdle is signalled (when assigned). NotifyIdleHandler is called to signal any application handler(s) using the ahtIdle handler type.
+          </p>
+          <p>
+            The DoIdleActions method is called to update the actions for Visible and Enabled forms, and to hide visible splash screen forms (FormStyle is fsSplash).
+          </p>
+          <p>
+            When the Wait argument is set to True, the AppWaitMessage method in the widgetset class is called to capture an message on the handles for the application. This action is not performed when Wait is False.
+          </p>
+          <p>
+            Idle calls the DoOnIdleEnd method to signal the OnIdleEnd event handler and any application handlers using the ahtIdleEnd handler type.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TApplication.Idle.Wait">
-        <short>Wait for next message?</short>
+        <short>Indicates if the method waits for the next message</short>
       </element>
 
       <element name="TApplication.Run" link="#fcl.CustApp.TCustomApplication.Run">
-        <short>MainForm is loaded and control is passed to the event loop</short>
+        <short>
+          Loads the MainForm and passes control to the event loop for the application
+        </short>
         <descr>
         </descr>
         <seealso>
@@ -9609,9 +10545,10 @@
 
       <element name="TApplication.DisableIdleHandler">
         <short>
-          Blocks Idle handling. Can be called more often, every call must be followed by EnableIdleHandler.
         </short>
-        <descr/>
+        <descr>
+          Blocks Idle handling. Can be called more often, every call must be followed by EnableIdleHandler.
+        </descr>
         <seealso>
           <link id="TApplication.EnableIdleHandler"/>
         </seealso>
@@ -9620,7 +10557,9 @@
       <element name="TApplication.EnableIdleHandler">
         <short>Resume Idle handling</short>
         <descr/>
-        <errors>GDB exception when not previously disabled.</errors>
+        <errors>
+          Raises a catchable GDB Exception if the idle handler has not already been disabled.
+        </errors>
         <seealso>
           <link id="TApplication.DisableIdleHandler"/>
         </seealso>
@@ -10404,16 +11343,19 @@
         <descr/>
         <seealso/>
       </element>
+
       <element name="TApplication.DoubleBuffered">
         <short>Indicates if the application uses double buffering</short>
         <descr>Default value is adbDefault. Hint: platform specific.</descr>
         <seealso/>
       </element>
+
       <element name="TApplication.ExtendedKeysSupport">
         <short/>
         <descr>See VK_LSHIFT in LCLType for more details.</descr>
         <seealso/>
       </element>
+
       <element name="TApplication.ExceptionDialog">
         <short>Indicates the dialog type used for an exception in the application</short>
         <descr>
@@ -10442,6 +11384,7 @@
         <descr/>
         <seealso/>
       </element>
+
       <element name="TApplication.Handle">
         <short>Provides access to the widgetset handle for the application instance</short>
         <descr>
@@ -10621,21 +11564,39 @@
 
       <element name="TApplication.ModalLevel">
         <short>The number of modal forms shown</short>
-        <descr>Tracks modal forms showing another form modally.
+        <descr>
+          <p>
+            <var>ModalLevel</var> is a read-only <var>Integer</var> property with the number of forms displayed modally in the application.
+          </p>
+          <p>
+            The value in ModalLevel is incremented in the <var>ModalStarted</var> method. It causes the <var>OnModalBegin</var> event handler and application handlers for the <var>ahtModalBegin</var> handler type to be signalled (when assigned) when its value is <b>1</b> following the increment.
+          </p>
+          <p>
+            The value in ModalLevel is decremented in the <var>ModalFinished</var> method. It causes the <var>OnModalEnd</var> event handler and application handlers for the <var>ahtModalEnd</var> handler type to be signalled (when assigned) when its value is <b>0</b> following the decrement.
+          </p>
         </descr>
         <seealso>
+          <link id="TApplication.ModalStarted"/>
+          <link id="TApplication.ModalFinished"/>
+          <link id="TApplication.OnModalBegin"/>
+          <link id="TApplication.OnModalEnd"/>
+          <link id="#lazutils.lazmethodlist.TMethodList.CallNotifyEvents">
+            TMethodList.CallNotifyEvents</link>
         </seealso>
       </element>
+
       <element name="TApplication.MoveFormFocusToChildren">
         <short>Indicates if an active control is focused when a form receives focus</short>
         <descr>
           <p>
-            MoveFormFocusToChildren is a Boolean property which indicates if an active control is focused when a form receives focus in the application.
+            <var>MoveFormFocusToChildren</var> is a <var>Boolean</var> property which indicates if an active control is focused when a form receives focus in the application.
           </p>
           <p>
-            The default value is True. When set to False, the window or form will still receive focus, but a child control is not selected.
+            The default value is <b>True</b>. When set to <b>False</b>, the window or form will still receive focus, but a child control is not selected.
           </p>
-           <p>Used in TCustomForm.SetActive.</p>
+           <p>
+             Used in the <var>SetActive</var> method in <var>TCustomForm</var>.
+           </p>
         </descr>
         <seealso>
           <link id="TCustomForm.Active"/>
@@ -10644,173 +11605,432 @@
 
       <element name="TApplication.MouseControl">
         <short>The control currently under the mouse</short>
-        <descr>Used to detect mouse entering and leaving a control.
+        <descr>
+          <p>
+            Used to detect when the mouse enters and leaves a control.
+          </p>
         </descr>
         <seealso>
         </seealso>
       </element>
+
       <element name="TApplication.TaskBarBehavior">
-        <short>How forms are represented in the TaskBar</short>
-        <descr/>
+        <short>Indicates how forms are represented in the task bar</short>
+        <descr>
+          <p>
+            <var>TaskBarBehavior</var> is a <var>TTaskBarBehavior</var> property which indicates how forms in the application are represented in the task bar. The property value is used in conjunction with the <var>ShowInTaskBar</var> property for the TCustomForm instances in the application. For example:
+          </p>
+          <dl>
+            <dt>tbDefault</dt>
+            <dd>
+              Shows task bar buttons according to the default behavior for the platform.
+            </dd>
+            <dt>tbMultiButton</dt>
+            <dd>
+              Shows a task bar button for each form with stDefault in its ShowInTaskBar property.
+            </dd>
+            <dt>tbSingleButton</dt>
+            <dd>
+              Hide buttons for Forms with stDefault in its ShowInTaskBar property.
+            </dd>
+          </dl>
+          <p>
+            When the property value is changed, the <var>UpdateShowInTaskBar</var> for each TCustomForm instance is called when its ShowInTaskBar property is <var>stDefault</var>.
+          </p>
+        </descr>
         <seealso/>
       </element>
+
       <element name="TApplication.UpdateFormatSettings">
         <short>
           Indicates if application format settings are updated when changed in a widgetset class
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>UpdateFormatSettings</var> is a platform-specific <var>Boolean</var> property which indicates if application format settings are updated when changed in a widgetset class. The default value for the property is <b>True</b>, as assigned in the <var>Create</var> constructor.
+          </p>
+          <p>
+            The property value is used in the <var>IntfSettingsChange</var> method to determine if the <var>GetFormatSettings</var> or <var>GetFormatSettingsUTF8</var> method is called for the Windows platform. GetFormatSettings is called when <b>DisableUTF8RTL</b> is defined for the compiler. Other platforms are not affected, and do not call either method.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TApplication.OnActionExecute">
         <short>Default handler for unhandled Actions</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>OnActionExecute</var> is a <var>TActionEvent</var> property with the event handler signalled (when assigned) from the <var>ExecuteAction</var> method.
+          </p>
+          <p>
+            The <var>AAction</var> argument contains the <var>TBasicAction</var> instance executed in the event handler. <var>Handled</var> indicates whether the action was executed in the event handler. Set Handled to <b>False</b> if the action was not executed.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.ExecuteAction"/>
+          <link id="#lcl.actnlist.TActionEvent">TActionEvent</link>
+          <link id="#rtl.classes.TBasicAction">TBasicAction</link>
+        </seealso>
       </element>
 
       <element name="TApplication.OnActionUpdate">
-        <short>Default handler for unhandled Action updates</short>
-        <descr/>
+        <short>Event handler signalled to update actions used in the application</short>
+        <descr>
+          <p>
+            <var>OnActionUpdate</var> is a <var>TActionEvent</var> property with the event handler signalled to update actions used in the application. OnActionUpdate is signalled from the <var>UpdateAction</var> method called when the  <var>CM_UPDATEACTIONS</var> control message is handled in the application.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TApplication.OnActivate">
-        <short>Event handler for activation of the application</short>
+        <short>
+          Event handler signalled when an Activate message is handled in the application
+        </short>
+        <descr>
+          <p>
+            <var>OnActivate</var> is a <var>TNotifyEvent</var> property with the event handler signalled when an <var>Activate</var> message is handled for the application.
+          </p>
+          <p>
+            OnActivate is signalled from the <var>NotifyActivateHandler</var> method, which occurs when the Activate method is called for the application. The event handler is also signalled (via Activate) from the <var>WMActivate</var> method in <var>TCustomForm</var> to ensure that the application is activated before one of its forms is updated in the task bar.
+          </p>
+          <p>
+            Use the <var>OnDeactivate</var> event handler to perform actions needed when the main form in an application is de-activated.
+          </p>
+          <p>
+            Use the <var>TApplicationProperties</var> class to assign properties and event handlers at design-time that are applied to the application instance at run-time.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.Activate"/>
+          <link id="TApplication.NotifyActivateHandler"/>
+          <link id="TApplication.AddOnActivateHandler"/>
+          <link id="TApplication.RemoveOnActivateHandler"/>
+          <link id="TApplication.OnDeactivate"/>
           <link id="TApplicationHandlerType"/>
+          <link id="TApplicationProperties"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnDeactivate">
-        <short>Event handler for deactivation of the application</short>
+        <short>
+          Event handler signalled when a Deactivate message is handled in the application
+        </short>
+        <descr>
+          <p>
+            <var>OnDeactivate</var> is a <var>TNotifyEvent</var> property with the event handler signalled when a <var>Deactivate</var> message is handled in the application.
+          </p>
+          <p>
+            It is signalled from the <var>NotifyDeactivateHandler</var> method, and occurs when the Deactivate method is called for the application. The event handler is also signalled (via Deactivate) from the <var>WMActivate</var> method in <var>TCustomForm</var> to ensure that the application is de-activated when its main form is de-activated.
+          </p>
+          <p>
+            Use the <var>OnActivate</var> event handler to perform actions needed when the application is activated.
+          </p>
+          <p>
+            Use the <var>TApplicationProperties</var> class to assign properties and event handlers at design-time that are applied to the application instance at run-time.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.Deactivate"/>
+          <link id="TApplication.NotifyDeactivateHandler"/>
+          <link id="TApplication.AddOnDeactivateHandler"/>
+          <link id="TApplication.RemoveOnDeactivateHandler"/>
           <link id="TApplicationHandlerType"/>
+          <link id="TApplicationProperties"/>
         </seealso>
       </element>
+
       <element name="TApplication.OnGetMainFormHandle">
         <short>
           Event handler used to provide a value for the MainFormHandle property
         </short>
         <descr>
           <p>
-            Used in the implementation of the <var>GetMainFormHandle</var> method. Provides the first opportunity to set the handle value before calling the other handlers added to the application.
+            Used in the implementation of the <var>GetMainFormHandle</var> method. Provides the first opportunity to set the value for <var>MainFormHandle</var> before calling the other handlers added to the application.
           </p>
         </descr>
         <seealso>
+          <link id="TApplication.GetMainFormHandle"/>
           <link id="TApplication.MainFormHandle"/>
           <link id="TApplication.MainForm"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
+
       <element name="TApplication.OnIdle">
-        <short>Event handler for application entering Idle state</short>
-        <descr/>
+        <short>Event handler signalled when the application enters the idle state</short>
+        <descr>
+          <p>
+            <var>OnIdle</var> is a <var>TIdleEvent</var> property with the event handler signalled when the application enters the idle state. Assign an object procedure to the event handler to perform actions needed when other window or control messages are not present.
+          </p>
+          <p>
+            It is signalled from the <var>Idle</var> method, and occurs after released components and asynchronous callbacks have been processed for the application. It occurs before the <var>NotifyIdleHandler</var> method is called to process other application handlers using the <var>ahtIdle</var> type.
+          </p>
+          <p>
+            Any actions performed in the event handler should have a short duration, and relatively low resource requirements. This will ensure that system performance is not adversely affected, and the application is responsive.
+          </p>
+          <p>
+            Use <var>OnIdleEnd</var> to perform actions needed when the application leaves the idle state.
+          </p>
+          <p>
+            Use the <var>TApplicationProperties</var> class to assign properties and event handlers for an application instance at design-time that are applied at run-time.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.Idle"/>
+          <link id="TApplication.NotifyIdleHandler"/>
+          <link id="TApplication.OnIdleEnd"/>
           <link id="TApplicationHandlerType"/>
+          <link id="TApplicationProperties"/>
         </seealso>
       </element>
+
       <element name="TApplication.OnIdleEnd">
-        <short>Event handler for application leaving Idle state</short>
-        <descr/>
+        <short>Event handler signalled when the application leaves the Idle state</short>
+        <descr>
+          <p>
+            <var>OnIdleEnd</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the application leaves the <var>Idle</var> state.
+          </p>
+          <p>
+            It is signalled from the <var>DoOnIdleEnd</var> method,  and occurs after the <var>AppWaitMessage</var> method in the widgetset class has been completed. It occurs before the <var>NotifyIdleEndHandler</var> method is called to process other application handlers using the <var>ahtIdleEnd</var> type.
+          </p>
+          <p>
+            Use <var>OnIdle</var> to perform actions needed when the application enters the idle state.
+          </p>
+          <p>
+            Use the <var>TApplicationProperties</var> class to assign properties and event handlers for an application instance at design-time that are applied at run-time.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.DoOnIdleEnd"/>
+          <link id="TApplication.Idle"/>
+          <link id="TApplication.NotifyIdleEndHandler"/>
+          <link id="TApplication.OnIdle"/>
           <link id="TApplicationHandlerType"/>
+          <link id="TApplicationProperties"/>
         </seealso>
       </element>
+
       <element name="TApplication.OnEndSession">
-        <short>Event handler for ending a session of the application</short>
+        <short>Event handler signalled when a session is ended in the application</short>
+        <descr>
+          <p>
+            <var>OnEndSession</var> is a <var>TNotifyEvent</var> property with the event handler signalled when a session is ended in the application. It is called from the <var>IntfEndSession</var> method, and occurs when the <var>WM_ENDSESSION</var> message is handled in the widget class. It is signalled before other application handlers using the <var>ahtEndSession</var> type.
+          </p>
+          <remark>
+            OnEndSession may not work reliably on all platforms supported supported for Lazarus. Some environments / window managers do not post a WM_ENDSESSION message when the process is killed.
+          </remark>
+        </descr>
         <seealso>
+          <link id="TApplication.IntfEndSession"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
+
       <element name="TApplication.OnQueryEndSession">
         <short>This event handler can deny to end the session</short>
         <descr/>
         <seealso>
+          <link id="TApplication.IntfQueryEndSession"/>
+          <link id="TQueryEndSessionEvent"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
+
       <element name="TApplication.OnMinimize">
-        <short>Event handler for application minimized</short>
+        <short>Event handler signalled when the application is minimized</short>
+        <descr>
+          <p>
+            <var>OnMinimize</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the application has been minimized (iconified in GTK terminology). The application is minimized when its main form is also minimized.
+          </p>
+          <p>
+            OnMinimize is signalled when the <var>IntfAppMinimize</var> method is called by the widgetset class, and occurs before other application handlers using the <var>ahtMinimize</var> type are notified.
+          </p>
+          <p>
+            Use <var>OnRestore</var> to perform actions when the main form is restored from its minimized state.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.IntfAppMinimize"/>
+          <link id="TApplication.OnRestore"/>
+          <link id="TApplicationHandlerType"/>
+        </seealso>
       </element>
+
       <element name="TApplication.OnMessageDialogFinished">
         <short>
           Event handler signalled when a message dialog in the application has been completed
         </short>
-        <descr>Used in the CustomDraw interface.</descr>
+        <descr>
+          Used in the CustomDraw interface.
+        </descr>
         <seealso/>
       </element>
 
       <element name="TApplication.OnModalBegin">
-        <short>Event handler for a modal form opened (application entering modal mode)</short>
+        <short>
+          Event handler signalled a form in the application is displayed as a modal form
+        </short>
         <descr>
+          <p>
+            <var>OnModalBegin</var> is a <var>TNotifyEvent</var> property with the event handler signalled when a form in the application is displayed as a modal form.
+          </p>
+          <p>
+            OnModalBegin is signalled from the <var>ModalStarted</var> method, which is called when the form instance calls its <var>ShowModal</var> method. It occurs only once - when the first modal form is displayed. Subsequent events are ignored in ModalStarted when a modal form is already active.
+          </p>
+          <p>
+            Use <var>OnModalEnd</var> to perform actions needed when the number of modal forms for the application reaches <b>0</b> (<b>zero</b>).
+          </p>
         </descr>
         <seealso>
+          <link id="TApplication.ModalStarted"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnModalEnd">
-        <short>Event handler for closing modal forms (application exiting modal mode)</short>
+        <short>
+          Event handler signalled when the last modal form for the application has been exited
+        </short>
         <descr>
+          <p>
+            <var>OnModalEnd</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the last modal form or dialog in the application has been exited.
+          </p>
+          <p>
+            It is signalled from the <var>ModalFinished</var> method if the number of modal forms in the application is <b>0</b> (<b>zero</b>). It is signalled prior to other application handlers using the <var>ahtModalEnd</var> handler type.
+          </p>
+          <p>
+            Use <var>OnModalBegin</var> to perform actions needed when the first modal form is displayed for the application.
+          </p>
         </descr>
         <seealso>
+          <link id="TApplication.ModalFinished"/>
+          <link id="TCustomForm.ShowModal"/>
+          <link id="#lcl.dialogs.TCommonDialog.Execute">TCommonDialog.Execute</link>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnRestore">
-        <short>Event handler for application restored (from minimized/maximized state)</short>
+        <short>
+          Event handler signalled when the application is restored from a minimized / maximized state
+        </short>
+        <descr>
+          <p>
+            <var>OnRestore</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the application is restored from a minimized / maximized state. It is signalled from the <var>IntfAppRestore</var> method, and occurs before other application handlers using the <var>ahtRestore</var> type are notified.
+          </p>
+          <p>
+            Use OnMinimize to respond to the notification when the application is minimized.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.IntfAppRestore"/>
+          <link id="TApplication.AddHandler"/>
+          <link id="TApplication.AddOnRestoreHandler"/>
+          <link id="TApplication.RemoveOnRestoreHandler"/>
+          <link id="TApplication.OnMinimize"/>
+          <link id="TApplicationHandlerType"/>
+        </seealso>
       </element>
 
       <element name="TApplication.OnDropFiles">
-        <short>The default handler for dropped files</short>
+        <short>
+          Event handler signalled when file(s) are dropped into the application
+        </short>
+        <descr>
+          <p>
+            <var>OnDropFiles</var> is a <var>TDropFilesEvent</var> property with the event handler signalled when one or more files are dropped onto a form in the application. It is signalled from the <var>IntfDropFiles</var> method, and occurs after the corresponding method for the form that is the drop target has been notified from the window processing loop.
+          </p>
+        </descr>
         <seealso>
-          <link id="TCustomForm.OnDropFiles"/>
+          <link id="TApplication.IntfDropFiles"/>
+          <link id="TCustomForm.IntfDropFiles"/>
           <link id="TCustomForm.AllowDropFiles"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnHelp">
-        <short>Event handler when help is requested</short>
-        <descr/>
+        <short>Event handler signalled when help is requested in the application</short>
+        <descr>
+          <p>
+            <var>OnHelp</var> is a <var>THelpEvent</var> property with the event handler signalled (if assigned) when help is requested in the application. It is signalled from the <var>DoOnHelp</var> method when the <var>ActiveForm</var> does not have an assigned <var>OnHelp</var> event handler or does not respond the specified help command. It occurs before other application handlers using the <var>ahtHelp</var> handler type are notified.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.DoOnHelp"/>
+          <link id="TApplication.HelpContext"/>
+          <link id="TApplication.HelpKeyword"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnHint">
-        <short>Event handler when a hint is requested</short>
-        <descr/>
+        <short>Event handler signalled when a hint is requested in the application</short>
+        <descr>
+          <p>
+            <var>OnHint</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the value for the <var>Hint</var> property has been changed in the application. It is signalled (when assigned) from the <var>SetHint</var> method, and occurs before other application handlers using the <var>ahtHint</var> handler type are notified.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.Hint"/>
+          <link id="TApplication.SetHint"/>
+          <link id="TApplication.AddOnHintHandler"/>
+          <link id="TApplication.RemoveOnHintHandler"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnShortcut">
-        <short>This event handler can interpret keystrokes as shortcuts,
-          before the normal target handles the key</short>
-        <descr/>
+        <short>
+          Event handler signalled to determine if a keystroke message is a shortcut key in the application
+        </short>
+        <descr>
+          <p>
+            <var>OnShortcut</var> is a <var>TShortcutEvent</var> property with the event handler signalled to determine if a keystroke message is a shortcut (or accelerator) key in the application. It is signalled (when assigned) from the <var>IsShortcut</var> method, and occurs before the OnShortcut event handlers for other forms are checked.
+          </p>
+          <p>
+            This event handler can interpret keystrokes as shortcuts, before the normal target handles the key. The event handler can set its <var>Handled</var> argument to <b>True</b> when the <var>Msg</var> argument contains a shortcut keystroke specific to the application. This prevents the OnShortcut event handlers in the application forms from being notified.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.IsShortcut"/>
+          <link id="TShortCutEvent"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnShowHint">
-        <short>Event handler for showing an Hint</short>
-        <descr/>
+        <short>Event handler signalled prior to displaying a hint window</short>
+        <descr>
+          <p>
+            <var>OnShowHint</var> is a <var>TShowHintEvent</var> property with the event handler signalled prior to displaying a hint window for the application.
+          </p>
+          <p>
+            It is signalled (when assigned) from the <var>ShowHintWindow</var> method when <var>ShowHint</var> has been enabled in the application. It occurs after <var>HintControl</var> has been assigned to the hint window, and the position for the hint window relative to HintControl has been calculated. It occurs before other application handlers using the ahtShowHint type are notified, and the hint window is made visible and activated.
+          </p>
+        </descr>
         <seealso>
+          <link id="TApplication.ShowHintWindow"/>
+          <link id="TApplication.AddOnShowHintHandler"/>
+          <link id="TApplication.RemoveOnShowHintHandler"/>
+          <link id="TShowHintEvent"/>
           <link id="TApplicationHandlerType"/>
         </seealso>
       </element>
 
       <element name="TApplication.OnUserInput">
         <short>
-          Event handler signalled for application handler notifications for user input messages
+          Event handler signalled to handle user input messages
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>OnUserInput</var> is a <var>TOnUserInputEvent</var> property with the event handler signalled when an input message is available in the processing loop for the widgetset class. It is signalled (when assigned) from the <var>NotifyUserInputHandler</var> method, and occurs before other application handlers using the <var>ahtUserInput</var> type are notififed.
+          </p>
+        </descr>
         <seealso>
           <link id="TApplicationHandlerType"/>
           <link id="TApplication.NotifyUserInputHandler"/>
+          <link id="TOnUserInputEvent"/>
         </seealso>
       </element>
 
@@ -10827,17 +12047,31 @@
           <link id="TApplicationFlags"/>
         </seealso>
     </element>
+
     <element name="TApplication.OnCircularException">
       <short>
-        Handler invoked when there a circular exception occurs before the application is halted.
+        Event handler signalled when a circular exception occurs before the application is halted
       </short>
-      <descr/>
-      <seealso/>
+      <descr>
+        <p>
+          <var>OnCircularException</var> is a <var>TExceptionEvent</var> property with the event handler signalled when a circular exception occurs in an application. It is signalled from the <var>HandleException</var> method when another Exception occurs within the exception handler.
+        </p>
+      </descr>
+      <seealso>
+        <link id="TApplication.HandleException"/>
+        <link id="TExceptionEvent"/>
+      </seealso>
     </element>
 
       <element name="TApplication.ShowButtonGlyphs">
-        <short>Allows to override the platform default for glyphs on buttons</short>
-        <descr>Some platforms show glyphs on all buttons, others don't.</descr>
+        <short>
+          Allows the platform defaults for glyphs on buttons to be overridden
+        </short>
+        <descr>
+          <p>
+            Some platforms always show glyphs on buttons, while others do not.
+          </p>
+        </descr>
         <seealso>
         </seealso>
       </element>
@@ -10870,28 +12104,62 @@
 
       <element name="TApplication.ShowMainForm">
         <short>
-          Allows the main form to be shown or hidden when an application is started.
-          Default is True.
+          Allows the main form to be shown or hidden when an application is started
         </short>
-        <descr/>
+        <descr>
+          <p>
+            Allows the main form to be shown or hidden when an application is started. The default value for the property is <b>True</b> as assigned in the <var>Create</var> constructor.
+          </p>
+          <p>
+            The property value is updated at run-time when a new value is assigned to the <var>ShowMainFrom</var> property in <var>TApplicationProperties</var>.
+          </p>
+          <p>
+            ShowMainForm is used in the <var>Run</var> method to determine if the <var>Show</var> method is called for an assigned <var>MainForm</var> instance. The form is displayed prior to calling the <var>AppRun</var> method in the widgetset class.
+          </p>
+        </descr>
         <seealso/>
       </element>
-      <element name="TApplication.Title" link="#fcl.CustApp.TCustomApplication.Title"/>
+
+      <element name="TApplication.Title" link="#fcl.CustApp.TCustomApplication.Title">
+        <short>Contains the title for the application</short>
+        <descr>
+          <p>
+            The read and write access specifiers for the property are overridden in <var>TApplication</var>. Read access ensures that an empty title defaults to the file name (without path information) for the application executable file. Write access ensures that a new value for the property is applied to the widgetset class using its <var>AppSetTitle</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TApplication.GetExeName"/>
+          <link id="#fcl.CustApp.TCustomApplication.Title">TCustomApplication.Title</link>
+        </seealso>
+      </element>
+
       <element name="TApplication.Scaled">
         <short>
           Indicates if forms and controls in the application can be scaled to different display densities (Pixels per Inch)
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>Scaled</var> is a <var>Boolean</var> property which indicates if the application can be scaled between differing display densities (Pixels per Inch) at run-time. The default value for the property is normally set in the project file used to compile the application and its forms and controls.
+          </p>
+          <p>
+            When Scaled is set to <b>True</b>,  the application allows the design-time PixelsPerInch value to be adjusted to reflect the run-time value. Forms, frames, image lists, and other controls also have a Scaled property which determines if the feature is enabled for that particular class type. If Scaled is set to <b>False</b> in TApplication, the feature is disabled for all of the other class types. Scaled (at the application-level) is normally checked before the component- or control-level setting.
+          </p>
+        </descr>
         <seealso/>
       </element>
+
       <element name="DefaultApplicationBiDiMode">
         <short>Contains the default BiDiMode value used for the current LCL version</short>
-        <descr>Default value is bdLeftToRight. </descr>
+        <descr>
+          <p>
+            The default value is <var>bdLeftToRight</var>.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="DefHintColor">
-        <short>The default hint window color</short>
+        <short>The default hint window background color</short>
         <descr/>
         <seealso/>
       </element>
@@ -10926,7 +12194,7 @@
         </short>
         <descr>
           <p>
-            <var>TApplicationProperties</var> is a non-visual component that provides access to a number of application properties, including:
+            <var>TApplicationProperties</var> is a non-visual component used to provide design-time settings that are applied at run-time to an application, including:
           </p>
           <ul>
             <li>CaptureExceptions</li>
@@ -10959,10 +12227,10 @@
             <li>OnUserInput</li>
           </ul>
           <p>
-            Values for the properties are assigned in the constructor to the currently assigned values in the <var>Application</var> singleton.
+            Values for the properties are assigned in the constructor using the currently assigned values in the <var>Application</var> singleton. The assignments can be maintained at design-time.
           </p>
           <p>
-            At run-time, changes to the properties are also assigned to the <var>Application</var> singleton. For event handler properties, the previous routine is removed as a handler and the new handler is added to the <var>Application</var> singleton. When the component is freed, the event handlers are removed from the <var>Application</var> singleton. The changed properties are not assigned to <var>Application</var> at design-time.
+            At run-time, changes to the properties are also assigned to the <var>Application</var> singleton. For event handler properties, the previous routine is removed as a handler and the new handler is added to the <var>Application</var> singleton. When the component is freed, the event handlers are removed from the <var>Application</var> singleton. The changed properties are not assigned to the <var>Application</var> singleton at design-time.
           </p>
           <p>
             <var>TApplicationProperties</var> is available on the <b>Additional</b> tab in the Lazarus IDE Component Palette. <var>TApplicationProperties</var> is similar to the TApplicationEvents class in Delphi.
@@ -11516,17 +12784,19 @@
 
       <element name="TIDesigner.GetShiftState">
         <short>
-          <var>GetShiftState</var> - returns the value of the shift state (whether shifted, Cntl key, Alt key etc)</short>
+          Gets the value for the shift state (whether Shift, Ctrl, or Alt key)
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIDesigner.GetShiftState.Result">
-        <short/>
+        <short>Shift, Ctrl, Alt modifier for the designer</short>
       </element>
 
       <element name="TIDesigner.SelectOnlyThisComponent">
         <short>
-          <var>SelectOnlyThisComponent</var> - method to select only the current component in the designer</short>
+          Method to select only the current component in the designer
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11536,7 +12806,8 @@
 
       <element name="TIDesigner.UniqueName">
         <short>
-          <var>UniqueName</var> - returns a Unique name for the designer, using the BaseName as a starting point</short>
+          Returns a Unique name for the designer, using the BaseName as a starting point
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11562,7 +12833,9 @@
 
       <element name="TFormPropertyStorage.FormCreate">
         <short/>
-        <descr>Calls the Restore method.</descr>
+        <descr>
+          Calls the Restore method.
+        </descr>
         <seealso/>
       </element>
       <element name="TFormPropertyStorage.FormCreate.Sender">
@@ -11685,7 +12958,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#Lazutils.lazutilities.GetEnumName"/>
+          <link id="#lazutils.lazutilities.GetEnumName"/>
         </seealso>
       </element>
       <element name="WindowStateToStr.Result">
@@ -12000,9 +13273,17 @@
 
       <element name="Application">
         <short>The TApplication singleton</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>Application</var> is a unit global variable with the <var>TApplication</var> instance representing the currently executing application. The value for the variable is assigned in the initialization section for the unit when the application is started. It is freed in the finalization section when the application is terminated.
+          </p>
+          <p>
+            Use the <var>TApplicationProperties</var> component to provide design-time configuration settings for properties (including event handlers) which are automatically applied to Application at run-time.
+          </p>
+        </descr>
         <seealso>
           <link id="TApplication"/>
+          <link id="TApplicationProperties"/>
         </seealso>
       </element>
 
@@ -12027,7 +13308,7 @@
       </element>
 
       <element name="HintWindowClass">
-        <short>The class used to create hint window instances for an application</short>
+        <short>The class type used to create hint window instances for an application</short>
         <descr/>
         <seealso/>
       </element>
