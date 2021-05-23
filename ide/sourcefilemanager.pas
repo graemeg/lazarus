@@ -6848,8 +6848,7 @@ begin
     if not CodeToolBoss.FindUsedUnitFiles(AnUnitInfo.Source,UsedUnitFilenames)
     then begin
       MainIDE.DoJumpToCodeToolBossError;
-      Result:=mrCancel;
-      exit;
+      exit(mrCancel);
     end;
 
     {$IFDEF VerboseLFMSearch}
@@ -6873,19 +6872,22 @@ begin
     UsedUnitFilenames.Free;
   end;
 
+  // no 100% loadable match found, did we at least get a ComponentUnitInfo?
+  if Assigned(ComponentUnitInfo) then
+    // Return "located, but not loaded" information
+    Result:= mrOK
+  else
+    Result:= mrCancel;
+
   // not found
-  if Quiet then exit(mrCancel);
+  if Quiet then exit;
 
   // show codetool error
-  if (CTErrorMsg<>'') and (not Quiet) then begin
+  if CTErrorMsg<>'' then begin
     CodeToolBoss.SetError(20170421203251,CTErrorCode,CTErrorLine,CTErrorCol,CTErrorMsg);
     MainIDE.DoJumpToCodeToolBossError;
     Result:=mrAbort;
-    exit;
   end;
-
-  // just not found
-  Result:=mrCancel;
 end;
 
 function LoadComponentDependencyHidden(AnUnitInfo: TUnitInfo;
