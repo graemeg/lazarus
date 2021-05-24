@@ -611,6 +611,8 @@ type
     procedure Init; override;
   end;
 
+  TFpSymbolDwarfThirdPartyExtension = class(TFpSymbolDwarf)
+  end;
 
   { TFpSymbolDwarfType }
 
@@ -1183,6 +1185,8 @@ begin
     //
     DW_TAG_compile_unit:     Result := TFpSymbolDwarfUnit;
 
+    DW_TAG_lo_user
+     ..DW_TAG_hi_user:      Result := TFpSymbolDwarfThirdPartyExtension;
     else
       Result := TFpSymbolDwarf;
   end;
@@ -3925,7 +3929,8 @@ var
   sym: TFpSymbol;
 begin
   sym := GetNestedSymbolExByName(AIndex, OuterSym);
-  if sym <> nil then begin
+  // Ignore third-party extensions that are not supported
+  if (sym <> nil) and not (sym is TFpSymbolDwarfThirdPartyExtension) then begin
     assert(sym is TFpSymbolDwarfData, 'TFpSymbolDwarf.GetNestedValueByName: sym is TFpSymbolDwarfData');
     Result := TFpValueDwarf(sym.Value);
     if Result <> nil then
