@@ -2867,7 +2867,7 @@ begin
   else
     Result := Nil;
 
-  Handled := (Result <> Nil);
+  Handled := (Result &lt;&gt; Nil);
 end;
 
 // assign the routine to the GetDefaultBitBtnGlyph variable
