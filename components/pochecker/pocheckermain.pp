@@ -30,6 +30,7 @@ uses
   {$IFnDEF POCHECKERSTANDALONE}
   MenuIntf,
   {$ENDIF}
+  LCLTranslator,
   PoFamilies, ResultDlg, pocheckerconsts, PoCheckerSettings,
   PoFamilyLists, PoCheckerMemoDlg;
 
