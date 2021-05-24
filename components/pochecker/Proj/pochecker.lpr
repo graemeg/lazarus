@@ -14,6 +14,8 @@ uses
 
 begin
   RequireDerivedFormResource := True;
+  Application.Scaled := True;
+  Application.Title := '';
   Application.Initialize;
   Application.CreateForm(TPoCheckerForm, PoCheckerForm);
   Application.Run;
