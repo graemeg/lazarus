@@ -521,14 +521,19 @@ begin
           // at an actual breakpoint.
           FCallContext.SetError('The function stopped unexpectedly. (Breakpoint, Exception, etc)')
         else
+          begin
+          // Clear any (pending) signals that were sent to the application during
+          // the function-call.
+          AnEventThread.ClearExceptionSignal;
           FCallContext.SetError('The function stopped due to an exception.')
+          end;
         end
       else
+        // We are at the return-adres. (Phew...)
         // Store the necessary data into the context to obtain the function-result
         // later
         StoreRoutineResult();
 
-      // We are at the return-adres. (Phew...)
       //remove the hidden breakpoint.
       RemoveHiddenBreakpointAtReturnAddress;
 

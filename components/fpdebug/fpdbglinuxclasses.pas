@@ -272,6 +272,7 @@ type
     procedure SetRegisterValue(AName: string; AValue: QWord); override;
     procedure StoreRegisters; override;
     procedure RestoreRegisters; override;
+    procedure ClearExceptionSignal; override;
 
     function GetInstructionPointerRegisterValue: TDbgPtr; override;
     function GetStackBasePointerRegisterValue: TDbgPtr; override;
@@ -548,7 +549,7 @@ procedure TDbgLinuxThread.ResetPauseStates;
 begin
   FIsInInternalPause := False;
   FIsPaused := False;
-  FExceptionSignal := 0;
+  ClearExceptionSignal;
   FHasThreadState := False;
   FDidResetInstructionPointer := False;
 end;
@@ -773,6 +774,11 @@ procedure TDbgLinuxThread.StoreRegisters;
 begin
   Assert(FHasThreadState);
   FStoredUserRegs := FUserRegs;
+end;
+
+procedure TDbgLinuxThread.ClearExceptionSignal;
+begin
+  FExceptionSignal := 0;
 end;
 
 { TDbgLinuxProcess }

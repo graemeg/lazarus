@@ -238,6 +238,11 @@ type
     // situation after calling functions inside the debugee)
     procedure StoreRegisters; virtual; abstract;
     procedure RestoreRegisters; virtual; abstract;
+    // It could be that an signal led to an exception, and that this
+    // signal is stored to be send to the debuggee again upon continuation.
+    // Use ClearExceptionSignal to remove/eat this signal.
+    procedure ClearExceptionSignal; virtual;
+
     destructor Destroy; override;
     function CompareStepInfo(AnAddr: TDBGPtr = 0; ASubLine: Boolean = False): TFPDCompareStepInfo;
     function IsAtStartOfLine: boolean;
@@ -2957,6 +2962,11 @@ begin
   ClearCallStack;
   FreeAndNil(FCallStackEntryList);
   inherited;
+end;
+
+procedure TDbgThread.ClearExceptionSignal;
+begin
+  // To be implemented in sub-classes
 end;
 
 { TFpWatchPointData }
