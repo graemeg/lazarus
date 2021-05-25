@@ -44,11 +44,13 @@ type
     procedure FillCollectionListBox;
     procedure ClearSelectionInObjectInspector;
     procedure SelectInObjectInspector(ForceUpdate: Boolean);
+    procedure SelectionChanged(NewOwnerPersistent: TPersistent);
     procedure Modified;
   protected
     procedure UpdateCaption;
     procedure PersistentAdded({%H-}APersistent: TPersistent; {%H-}Select: boolean);
     procedure ComponentRenamed(AComponent: TComponent);
+    procedure GlobalSetSelection(const ASelection: TPersistentSelectionList);
     procedure PersistentDeleting(APersistent: TPersistent);
     procedure RefreshPropertyValues;
   public
@@ -66,7 +68,7 @@ implementation
 {$R *.lfm}
 
 uses
-  PropEdits;
+  PropEdits, FormEditingIntf, ObjectInspector;
 
 type
   TPersistentAccess = class(TPersistent)
@@ -253,6 +255,18 @@ begin
     UpdateCaption;
 end;
 
+procedure TCollectionPropertyEditorForm.GlobalSetSelection(const ASelection: TPersistentSelectionList);
+begin
+  // When a control of the same class is changed in OI or Designer, the properties
+  // of the current control has to be shown. See issue #38910
+  if not Visible then Exit;
+  if not Assigned(ASelection) then Exit;
+  if ASelection.Count = 0 then Exit;
+  if ASelection[0] = OwnerPersistent then Exit;
+  if ASelection[0].ClassType <> OwnerPersistent.ClassType then Exit;
+  SelectionChanged(ASelection[0]);
+end;
+
 procedure TCollectionPropertyEditorForm.PersistentDeleting(APersistent: TPersistent);
 begin
   // For some reason this is called only when the whole collection is deleted,
@@ -345,6 +359,22 @@ begin
   end;
 end;
 
+procedure TCollectionPropertyEditorForm.SelectionChanged(NewOwnerPersistent: TPersistent);
+var
+  AGrid: TOICustomPropertyGrid;
+  AEditor: TPropertyEditor;
+  NewCollection: TCollection;
+begin
+//  DebugLn('TCollectionPropertyEditorForm.SelectionChanged Old: ', DbgSName(OwnerPersistent), ' New: ', DbgSName(NewOwnerPersistent));
+  AGrid := FormEditingHook.GetCurrentObjectInspector.GridControl[oipgpProperties];
+  AEditor := AGrid.PropertyEditorByName(PropertyName);
+  if not Assigned(AEditor) then Exit;
+  NewCollection := TCollection(AEditor.GetObjectValue);
+  if NewCollection = nil then
+    raise Exception.Create('NewCollection=nil');
+  SetCollection(NewCollection, NewOwnerPersistent, PropertyName);
+end;
+
 procedure TCollectionPropertyEditorForm.SetCollection(NewCollection: TCollection;
   NewOwnerPersistent: TPersistent; const NewPropName: String);
 begin
@@ -365,6 +395,7 @@ begin
       GlobalDesignHook.AddHandlerComponentRenamed(@ComponentRenamed);
       GlobalDesignHook.AddHandlerPersistentDeleting(@PersistentDeleting);
       GlobalDesignHook.AddHandlerRefreshPropertyValues(@RefreshPropertyValues);
+      GlobalDesignHook.AddHandlerSetSelection(@GlobalSetSelection);
     end;
   end;
 

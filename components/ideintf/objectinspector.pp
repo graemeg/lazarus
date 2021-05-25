@@ -470,6 +470,7 @@ type
     function MouseToIndex(y: integer; MustExist: boolean): integer;
     function PropertyPath(Index: integer):string;
     function PropertyPath(Row: TOIPropertyGridRow):string;
+    function PropertyEditorByName(const PropName: string): TPropertyEditor;
     function TopMax: integer;
     procedure BuildPropertyList(OnlyIfNeeded: Boolean = False; FocusEditor: Boolean = True);
     procedure Clear;
@@ -1433,6 +1434,20 @@ begin
   while Row<>nil do begin
     Result:=Row.Name+'.'+Result;
     Row:=Row.Parent;
+  end;
+end;
+
+function TOICustomPropertyGrid.PropertyEditorByName(const PropName: string): TPropertyEditor;
+var
+  AOIPropertyGridRow: TOIPropertyGridRow;
+  i: Integer;
+begin
+  Result := nil;
+  for i := 0 to FRows.Count - 1 do
+  begin
+    AOIPropertyGridRow := TOIPropertyGridRow(FRows[i]);
+    if Assigned(AOIPropertyGridRow.Editor) and (AOIPropertyGridRow.Editor.GetName = PropName) then
+      Exit(AOIPropertyGridRow.Editor);
   end;
 end;
 
