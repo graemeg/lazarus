@@ -28,13 +28,19 @@
         </short>
         <descr>
           <p>
-            TMsgDlgType is an enumeration type that defines the type of dialog implemented in a message box. Values in the enumeration determine the caption, icon, string literals, and buttons displayed in various dialog types.
+            <var>TMsgDlgType</var> is an enumeration type that defines the type of dialog implemented in a message box. Values in the enumeration determine the caption, icon, string literals, and buttons displayed in various dialog types.
           </p>
           <p>
-            TMsgDlgType is used in several routines, such as: MessageDlg, MessageDlgPos, MessageDlgPosHelp, CreateMessageDialog, QuestionDlg, and LazMessageDlg.
+            TMsgDlgType is used in several routines, such as: <var>MessageDlg</var>, <var>MessageDlgPos</var>,<var> MessageDlgPosHelp</var>, <var>CreateMessageDialog</var>, <var>QuestionDlg</var>, and <var>LazMessageDlg</var>.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
+          <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
+          <link id="#lcl.dialogs.CreateMessageDialog">CreateMessageDialog</link>
+          <link id="#lcl.dialogs.QuestionDlg">QuestionDlg</link>
+          <link id="#lcl.lazdialogs.LazMessageDlg">LazMessageDlg</link>
+        </seealso>
       </element>
       <element name="TMsgDlgType.mtWarning">
         <short>
@@ -51,7 +57,6 @@
           Information message box with an Info icon
         </short>
       </element>
-
       <element name="TMsgDlgType.mtConfirmation">
         <short>
           Confirmation message box with a Question mark icon
@@ -69,13 +74,20 @@
         </short>
         <descr>
           <p>
-            TMsgDlgBtn is an enumeration type with values that define the buttons that can be displayed in a message dialog. TMsgDlgBtn values also determine the modal result returned from the dialog when the corresponding button is clicked.
+            <var>TMsgDlgBtn</var> is an enumeration type with values that define the buttons that can be displayed in a message dialog. TMsgDlgBtn values also determine the modal result returned from the dialog when the corresponding button is clicked.
           </p>
           <p>
-            Values in the enumeration are used in various routines, such as: MessageDlg, MessageDlgPos, MessageDlgPosHelp, CreateMessageDialog, QuestionDlg, and LazMessageDlg.
+            Values in the enumeration are used in various routines, such as: <var>MessageDlg</var>, <var>MessageDlgPos</var>, <var>MessageDlgPosHelp</var>, <var>CreateMessageDialog</var>, <var>QuestionDlg</var>, and <var>LazMessageDlg</var>.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
+          <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
+          <link id="#lcl.dialogs.MessageDlgPosHelp">MessageDlgPosHep</link>
+          <link id="#lcl.dialogs.CreateMessageDialog">CreateMessageDialog</link>
+          <link id="#lcl.dialogs.QuestionDlg">QuestionDlg</link>
+          <link id="#lcl.lazdialogs.LazMessageDlg">LazMessageDlg</link>
+        </seealso>
       </element>
       <element name="TMsgDlgBtn.mbYes">
         <short>
@@ -144,10 +156,17 @@
         </short>
         <descr>
           <p>
-            TMsgDlgButtons is a set type used to store zero or more values from the TMsgDlgBtn enumeration. TMsgDlgButtons is passed as an argument to routines like: MessageDlg, MessageDlgPos, MessageDlgPosHelp, CreateMessageDialog, QuestionDlg, and LazMessageDlg.
+            <var>TMsgDlgButtons</var> is a set type used to store zero or more values from the TMsgDlgBtn enumeration. TMsgDlgButtons is passed as an argument to routines like: <var>MessageDlg</var>, <var>MessageDlgPos</var>, <var>MessageDlgPosHelp</var>, <var>CreateMessageDialog</var>, <var>QuestionDlg</var>, and <var>LazMessageDlg</var>.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
+          <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
+          <link id="#lcl.dialogs.MessageDlgPosHelp">MessageDlgPosHelp</link>
+          <link id="#lcl.dialogs.CreateMessageDialog">CreateMessageDialog</link>
+          <link id="#lcl.dialogs.QuestionDlg">QuestionDlg</link>
+          <link id="#lcl.lazdialogs.LazMessageDlg">LazMessageDlg</link>
+        </seealso>
       </element>
 
       <element name="TModalResult">
@@ -156,7 +175,7 @@
         </short>
         <descr>
           <p>
-            TModalResult is an Integer type with a value in the range low(Integer)..high(Integer). TModalResult is the type returned by routines that display modal dialog boxes, such as: MessageDlg, MessageDlgPos, MessageDlgPosHelp, QuestionDlg, and LazMessageDlg.
+            <var>TModalResult</var> is an Integer type with a value in the range <b>low(Integer)..high(Integer)</b>. TModalResult is the type returned by routines that display modal dialog boxes, such as: <var>MessageDlg</var>, <var>MessageDlgPos</var>, <var>MessageDlgPosHelp</var>, <var>QuestionDlg</var>, and <var>LazMessageDlg</var>.
           </p>
           <p>
             The value in TModalResult indicates the button clicked to close the modal dialog, and contains one of the constant values:
@@ -177,7 +196,14 @@
             <li>mrLast</li>
           </ul>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
+          <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
+          <link id="#lcl.dialogs.MessageDlgPosHelp">MessageDlgPosHelp</link>
+          <link id="#lcl.dialogs.CreateMessageDialog">CreateMessageDialog</link>
+          <link id="#lcl.dialogs.QuestionDlg">QuestionDlg</link>
+          <link id="#lcl.lazdialogs.LazMessageDlg">LazMessageDlg</link>
+        </seealso>
       </element>
 
       <element name="PModalResult">
@@ -186,10 +212,10 @@
         </short>
         <descr>
           <p>
-            PModalResult is a pointer type to a TModalResult value.
+            <var>PModalResult</var> is a pointer type to a <var>TModalResult</var> value.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso/>
       </element>
 
       <element name="mrNone">
@@ -238,11 +264,11 @@
         </short>
         <descr>
           <p>
-            ModalResultStr is an array of ShortString values that contains the string representations for the values in TModalResult. ModalResultStr values can be accessed using the corresponding numeric modal result value. For example:
+            <var>ModalResultStr</var> is an array of <var>ShortString</var> values that contains the string representations for the values in <var>TModalResult</var>. ModalResultStr values can be accessed using the corresponding numeric modal result value. For example:
           </p>
-          <code>
-            sResult := ModalResultStr[mrNone]; // returns 'mrNone'
-          </code>
+<code>
+sResult := ModalResultStr[mrNone]; // returns 'mrNone'
+</code>
           <p>
             ModalResultStr contains the following values:
           </p>
@@ -260,8 +286,13 @@
             <li>'mrYesToAll'</li>
             <li>'mrClose'</li>
           </ul>
+          <p>
+            ModalResultStr is used in the implementation of the <var>GetModalResultStr</var> routine in the <file>controls.pp</file> unit.
+          </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.controls.GetModalResultStr">GetModalResultStr</link>
+        </seealso>
       </element>
     </module>
     <!-- UITypes -->

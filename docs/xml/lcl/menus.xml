@@ -103,7 +103,6 @@
         </descr>
         <seealso>
           <link id="TMenu.OnChange"/>
-          <link id="TMenuItem.OnChange"/>
           <link id="TMenu.MenuChanged"/>
           <link id="TMenuItem.MenuChanged"/>
         </seealso>
@@ -516,7 +515,6 @@
         </descr>
         <seealso>
           <link id="TMenuItem.MergedItems"/>
-          <link id="TMenuItem.MergeWith"/>
           <link id="TMainMenu.Merge"/>
         </seealso>
       </element>
@@ -850,7 +848,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classes.TPersistent.AssignTo">TPersistent.AssignTo</link>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
         </seealso>
       </element>
       <element name="TMenuItem.AssignTo.Dest">
@@ -1527,7 +1525,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="TMenuItems.IndexOf"/>
+          <link id="TMenuItem.Items"/>
         </seealso>
       </element>
       <element name="TMenuItem.IndexOf.Result">
@@ -1568,7 +1566,6 @@
         <descr/>
         <seealso>
           <link id="TMenuItem.MergedItems"/>
-          <link id="TMenuItem.MergeWith"/>
           <link id="TMenuItem.Visible"/>
         </seealso>
       </element>
@@ -1783,7 +1780,7 @@
         <seealso>
           <link id="TMenuItem.MergedParent"/>
           <link id="TMenuItem.Menu"/>
-          <link id="TMainMenuItem"/>
+          <link id="TMainMenu"/>
         </seealso>
       </element>
       <element name="TMenuItem.IsInMenuBar.Result">
@@ -1940,7 +1937,7 @@
         </descr>
         <seealso>
           <link id="TMenuItem.Items"/>
-          <link id="TMenuItems.Count"/>
+          <link id="#rtl.classes.TList.Count">TList.Count</link>
         </seealso>
       </element>
 
@@ -2388,11 +2385,11 @@
       <!-- private methods -->
       <element name="TMenu.CMParentBiDiModeChanged">
         <short>
-          Handles the CM_PARENTBIDIMODECHANGED control message for the menu
+          Handles the CM_PARENTBIDIMODECHANGED control message
         </short>
         <descr>
           <p>
-            See TCustomForm.CMBiDiModeChanged for more information.
+            See <var>TCustomForm.CMBiDiModeChanged</var> for more information.
           </p>
         </descr>
         <seealso/>
@@ -2583,7 +2580,6 @@
         </descr>
         <seealso>
           <link id="TMenu.DoChange"/>
-          <link id="TMenuItem.OnChange"/>
           <link id="TMenuChangeEvent"/>
         </seealso>
       </element>
@@ -2610,7 +2606,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classes.TPersistent.AssignTo">TPersistent.AssignTo</link>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
         </seealso>
       </element>
       <element name="TMenu.AssignTo.Dest">
@@ -2620,15 +2616,15 @@
       <element name="TMenu.Notification" link="#rtl.classes.TComponent.Notification"/>
 
       <element name="TMenu.ParentBidiModeChanged">
-        <short>
+        <short>Performs action when ParentBiDiMode has been changed</short>
+        <descr>
           <p>
             Performs actions needed when the value in <var>ParentBiDiMode</var> has been changed. When Parent   BiDiMode   is set to <b>True</b>, ParentBidiModeChanged ensures the <var>BiDiMode</var> from the <var>TCustomForm</var> instance in <var>AOwner</var> is used in the menu.
           </p>
           <p>
             ParentBidiModeChanged is called from the <var>Create</var> constructor, and when a new value is assigned to the <var>ParentBiDiMode</var> property.
           </p>
-        </short>
-        <descr/>
+        </descr>
         <seealso/>
       </element>
       <element name="TMenu.ParentBidiModeChanged.AOwner">
@@ -2895,7 +2891,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TMenu.SetParent"/>
           <link id="TMenu.DestroyHandle"/>
           <link id="TMenuItem.Items"/>
           <link id="TMenuItem.Handle"/>
@@ -3130,11 +3125,10 @@
           </p>
         </descr>
         <seealso>
+          <link id="TMainMenu.Unmerge"/>
           <link id="TMenu.Items"/>
-          <link id="TMenuItem.MergeWith"/>
-          <link id="TMenuItem.MergesItems"/>
+          <link id="TMenuItem.MergedItems"/>
           <link id="TMenuItem.Merged"/>
-          <link id="TMenu.Unmerge"/>
         </seealso>
       </element>
       <element name="TMainMenu.Merge.Menu">

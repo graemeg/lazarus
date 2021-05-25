@@ -344,7 +344,7 @@
           </remark>
         </descr>
         <seealso>
-          <link id="TControlScrollBar.AutoScroll"/>
+          <link id="TScrollingWinControl.AutoScroll"/>
         </seealso>
       </element>
       <element name="TControlScrollBar.GetAutoScroll.Result">
@@ -437,7 +437,7 @@
         <descr/>
         <seealso>
           <link id="TControlScrollBar.Range"/>
-          <link id="TControlScrollBar.AutoScroll"/>
+          <link id="TScrollingWinControl.AutoScroll"/>
         </seealso>
       </element>
       <element name="TControlScrollBar.IsRangeStored.Result">
@@ -1181,7 +1181,6 @@
           <link id="TScrollingWinControl.HorzScrollBar"/>
           <link id="TScrollingWinControl.VertScrollBar"/>
           <link id="TScrollingWinControl.UpdateScrollBars"/>
-          <link id="TScrollingWinControl.HideScrollbars"/>
           <link id="#lcl.forms.TScrollingWinControl.AutoScroll"/>
         </seealso>
       </element>
@@ -1236,7 +1235,6 @@
         </descr>
         <seealso>
           <link id="TScrollingWinControl.UpdateScrollbars"/>
-          <link id="TScrollingWinControl.HideScrollbars"/>
           <link id="TScrollingWinControl.HorzScrollBar"/>
           <link id="TScrollingWinControl.VertScrollBar"/>
         </seealso>
@@ -2790,12 +2788,10 @@
         <short>Handles the LM_HELP window message for the form</short>
         <descr>
           <p>
-            <p>
-              No actions are performed in the method at design-time, or when values have not been assigned to the HelpInfo member in Message.
-            </p>
-            <p>
-              When HelpInfo has a HELPINFO_WINDOW context type, FindControl is called to locate and display the help for the control with the item handle in Message. When HELPINFO_MENUITEM is the context type, GetHelpContext in Menu is called to locate the control ID in Message. If not found, the item handle in Message is used. As a default, the value in the Context property is used to display the context help.
-            </p>
+            No actions are performed in the method at design-time, or when values have not been assigned to the HelpInfo member in Message.
+          </p>
+          <p>
+            When HelpInfo has a HELPINFO_WINDOW context type, FindControl is called to locate and display the help for the control with the item handle in Message. When HELPINFO_MENUITEM is the context type, GetHelpContext in Menu is called to locate the control ID in Message. If not found, the item handle in Message is used. As a default, the value in the Context property is used to display the context help.
           </p>
         </descr>
         <seealso/>
@@ -3106,9 +3102,9 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomForm.DisableAutoSizing"/>
-          <link id="TCustomForm.EnableAutoSizing"/>
           <link id="TCustomForm.EndFormUpdate"/>
+          <link id="#lcl.controls.TControl.DisableAutoSizing">TControl.DisableAutoSizing</link>
+          <link id="#lcl.controls.TControl.EnableAutoSizing">TControl.EnableAutoSizing</link>
         </seealso>
       </element>
 
@@ -3193,7 +3189,7 @@
           <link id="TCustomForm.OnCloseQuery"/>
           <link id="TCustomForm.FormState"/>
           <link id="TCustomForm.FormStyle"/>
-          <link id="TFormHandlerType.fhtClose"/>
+          <link id="TFormHandlerType"/>
           <link id="TCloseEvent"/>
         </seealso>
       </element>
@@ -3220,10 +3216,10 @@
         <seealso>
           <link id="TCustomForm.OnCreate"/>
           <link id="TCustomForm.HandleCreateException"/>
-          <link id="TCustomForm.LockRealizeBounds"/>
           <link id="TCustomForm.AfterConstruction"/>
-          <link id="TCustomForm.UnlockRealizeBounds"/>
-          <link id="TFormHandlerType.fhtCreate"/>
+          <link id="TFormHandlerType"/>
+          <link id="#lcl.controls.TWinControl.LockRealizeBounds">TWinControl.LockRealizeBounds</link>
+          <link id="#lcl.controls.TWinControl.UnlockRealizeBounds">TWinControl.UnlockRealizeBounds</link>
         </seealso>
       </element>
 
@@ -3527,7 +3523,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#LCL.Controls.TWinControl.UpdateShowing">TWinControl.UpdateShowing</link>
+          <link id="#lcl.controls.TWinControl.UpdateShowing">TWinControl.UpdateShowing</link>
         </seealso>
       </element>
 
@@ -3561,10 +3557,10 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomForm.Showing"/>
           <link id="TCustomForm.Visible"/>
           <link id="TCustomForm.MoveToDefaultPosition"/>
           <link id="TCustomForm.Position"/>
+          <link id="#lcl.controls.TWinControl.Showing">TWinControl.Showing</link>
           <link id="#lcl.controls.TWinControl.AllAutoSize">TWinControl.AllAutoSize</link>
           <link id="#lcl.controls.TWinControl.DoAllAutoSize">TWinControl.DoAllAutoSize</link>
         </seealso>
@@ -3583,11 +3579,11 @@
         <seealso>
           <link id="TCustomForm.UpdateShowing"/>
           <link id="TCustomForm.Visible"/>
-          <link id="TCustomForm.Showing"/>
           <link id="TCustomForm.MoveToDefaultPosition"/>
           <link id="TCustomForm.FormState"/>
-          <link id="TFormHandlerType.fhtFirstShow"/>
-          <link id="TFormStateType.fsFirstShow"/>
+          <link id="TFormHandlerType"/>
+          <link id="TFormStateType"/>
+          <link id="#lcl.controls.TWinControl.Showing">TWinControl.Showing</link>
         </seealso>
       </element>
 
@@ -3629,7 +3625,6 @@
         <seealso>
           <link id="Screen"/>
           <link id="TScreenNotification"/>
-          <link id="TScreen.NotifyScreenFormHandler"/>
         </seealso>
       </element>
 
@@ -3697,8 +3692,8 @@
       </descr>
         <seealso>
           <link id="TScrollingWinControl.SetAutoSize"/>
-          <link id="TScrollingWinControl.FormState"/>
-          <link id="TScrollingWinControl.Position"/>
+          <link id="TCustomForm.FormState"/>
+          <link id="TCustomForm.Position"/>
           <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
         </seealso>
       </element>
@@ -3731,7 +3726,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="'TCustomForm.AutoScale'"/>
+          <link id="TCustomForm.AutoScale"/>
           <link id="TCustomDesignControl.Scaled"/>
           <link id="TCustomDesignControl.SetScaled"/>
           <link id="TApplication.Scaled"/>
@@ -3866,7 +3861,6 @@
         </descr>
         <seealso>
           <link id="TCustomForm.Caption"/>
-          <link id="TCustomForm.UpdateCaption"/>
           <link id="#lcl.controls.TWinControl.GetDockCaption">TWinControl.GetDockCaption</link>
           <link id="#lcl.controls.TWinControl.OnGetDockCaption">TWinControl.OnGetDockCaption</link>
         </seealso>
@@ -6239,7 +6233,7 @@
         <short>Indicates the height for the hint rectangle must be maintained</short>
       </element>
 
-      <element name="THintWindow.InitializeWnd" link="#lcl.controls.TControl.InitializeWnd"/>
+      <element name="THintWindow.InitializeWnd" link="#lcl.forms.TCustomForm.InitializeWnd"/>
 
       <element name="THintWindow.IsHintMsg">
         <short>Indicates if the specified message is relevant to a hint window display</short>
@@ -7856,7 +7850,6 @@
         <seealso>
           <link id="TScreen.ActiveForm"/>
           <link id="TScreen.ActiveCustomForm"/>
-          <link id="TScreen.UpdateLastActive"/>
           <link id="#lcl.forms.TCustomForm.SetFocusedControl">TCustomForm.SetFocusedControl</link>
         </seealso>
       </element>
@@ -7948,8 +7941,8 @@
         </descr>
         <seealso>
           <link id="TScreen.Cursor"/>
-          <link id="TScreen.SetCursor"/>
           <link id="TScreen.RealCursor"/>
+          <link id="TScreen.Cursors"/>
         </seealso>
       </element>
       <element name="TScreen.Cursors.Index">
@@ -8020,8 +8013,6 @@
           <link id="TScreen.CustomFormZOrderCount"/>
           <link id="TScreen.CustomForms"/>
           <link id="TScreen.Forms"/>
-          <link id="TScreen.AddForm"/>
-          <link id="TScreen.RemoveForm"/>
           <link id="TCustomForm.Visible"/>
           <link id="TCustomForm.Showing"/>
           <link id="TCustomForm.Show"/>
@@ -8133,7 +8124,7 @@
         <seealso>
           <link id="TScreen.DesktopLeft"/>
           <link id="TScreen.DesktopTop"/>
-          <link id="TScreen.DesktopBottom"/>
+          <link id="TScreen.DesktopHeight"/>
           <link id="TScreen.DesktopWidth"/>
         </seealso>
       </element>
@@ -8433,12 +8424,12 @@
             Returns the value for the <var>Top</var> member in <var>WorkAreaRect</var>, which omits the task bar area if aligned to the top of the screen.
           </p>
           <p>
-            Use the <var>Top</var> property to get the coordinate for the top of the primary monitor.
+            Use the <var>DesktopTop</var> property to get the coordinate for the top of the primary monitor.
           </p>
         </descr>
         <seealso>
           <link id="TScreen.WorkAreaRect"/>
-          <link id="TScreen.Top"/>
+          <link id="TScreen.DesktopTop"/>
         </seealso>
       </element>
 
@@ -8449,12 +8440,12 @@
             Returns the difference between the <var>Right</var> and <var>Left</var> members in <var>WorkAreaRect</var>.
           </p>
           <p>
-            Use <var>Width</var> to get the width for the primary monitor including the task bar area.
+            Use <var>DesktopWidth</var> to get the width for the primary monitor including the task bar area.
           </p>
         </descr>
         <seealso>
           <link id="TScreen.WorkAreaRect"/>
-          <link id="TScreen.Width"/>
+          <link id="TScreen.DesktopWidth"/>
         </seealso>
       </element>
 
@@ -8471,7 +8462,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TScreen.UpdateLastActive"/>
           <link id="TScreen.AddHandlerActiveControlChanged"/>
           <link id="#rtl.classes.TNotifyEvent">TNotifyEvent</link>
         </seealso>
@@ -8491,7 +8481,6 @@
         </descr>
         <seealso>
           <link id="TScreen.AddHandlerActiveFormChanged"/>
-          <link id="TScreen.UpdateLastActive"/>
           <link id="TScreen.AddHandlerActiveFormChanged"/>
           <link id="#rtl.classes.TNotifyEvent">TNotifyEvent</link>
         </seealso>
@@ -8558,21 +8547,19 @@
         <short>Specifies an event handler signalled when an application becomes idle</short>
         <descr>
           <p>
-            <p>
-              <var>TIdleEvent</var> is an object procedure type which specifies an event handler signalled when an application becomes idle.
-            </p>
-            <p>
-              <var>Sender</var> is the object for the event notification and normally contains the <var>Application</var> singleton.
-            </p>
-            <p>
-              <var>Done</var> is a variable <var>Boolean</var> parameter which indicates if the event handler has finished processing. When set to <b>False</b>, subsequent idle event handlers can be called. When set to <b>True</b>, the idle state processing has been completed.
-            </p>
-            <p>
-              TIdleEvent is the type used for the <var>OnIdle</var> event handler in <var>TApplication</var>. The event handler is signalled when the application becomes idle. The event handler can return False in Done to allow other idle event handlers to be signalled. The idle event handlers are called repeatedly until Done is set to True.
-            </p>
-            <p>
-              Use the TIdleEvent event handler type to provide short duration event handlers which ensure that the application remains responsive.
-            </p>
+            <var>TIdleEvent</var> is an object procedure type which specifies an event handler signalled when an application becomes idle.
+          </p>
+          <p>
+            <var>Sender</var> is the object for the event notification and normally contains the <var>Application</var> singleton.
+          </p>
+          <p>
+            <var>Done</var> is a variable <var>Boolean</var> parameter which indicates if the event handler has finished processing. When set to <b>False</b>, subsequent idle event handlers can be called. When set to <b>True</b>, the idle state processing has been completed.
+          </p>
+          <p>
+            TIdleEvent is the type used for the <var>OnIdle</var> event handler in <var>TApplication</var>. The event handler is signalled when the application becomes idle. The event handler can return False in Done to allow other idle event handlers to be signalled. The idle event handlers are called repeatedly until Done is set to True.
+          </p>
+          <p>
+            Use the TIdleEvent event handler type to provide short duration event handlers which ensure that the application remains responsive.
           </p>
         </descr>
         <seealso/>
@@ -9286,7 +9273,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="LazUtils.LazUTF8.ParamStrUTF8"/>
+          <link id="#LazUtils.LazUTF8.ParamStrUTF8"/>
         </seealso>
       </element>
       <element name="TApplication.GetExename.Result">
@@ -9834,7 +9821,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="lazutils.lazutf8.ParamStrUTF8">ParamStrUTF8</link>
+          <link id="#lazutils.lazutf8.ParamStrUTF8">ParamStrUTF8</link>
           <link id="#fcl.custapp.TCustomApplication.Params">TCustomApplication.Params</link>
           <link id="#fcl.custapp.TCustomApplication.ParamCount">TCustomApplication.ParamCount</link>
         </seealso>
@@ -11702,7 +11689,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TApplication.Activate"/>
           <link id="TApplication.NotifyActivateHandler"/>
           <link id="TApplication.AddOnActivateHandler"/>
           <link id="TApplication.RemoveOnActivateHandler"/>
@@ -11731,7 +11717,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TApplication.Deactivate"/>
           <link id="TApplication.NotifyDeactivateHandler"/>
           <link id="TApplication.AddOnDeactivateHandler"/>
           <link id="TApplication.RemoveOnDeactivateHandler"/>
@@ -11750,7 +11735,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TApplication.GetMainFormHandle"/>
           <link id="TApplication.MainFormHandle"/>
           <link id="TApplication.MainForm"/>
           <link id="TApplicationHandlerType"/>
@@ -11802,7 +11786,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TApplication.DoOnIdleEnd"/>
           <link id="TApplication.Idle"/>
           <link id="TApplication.NotifyIdleEndHandler"/>
           <link id="TApplication.OnIdle"/>
@@ -11925,7 +11908,6 @@
         </descr>
         <seealso>
           <link id="TApplication.IntfAppRestore"/>
-          <link id="TApplication.AddHandler"/>
           <link id="TApplication.AddOnRestoreHandler"/>
           <link id="TApplication.RemoveOnRestoreHandler"/>
           <link id="TApplication.OnMinimize"/>
@@ -11973,7 +11955,6 @@
         </descr>
         <seealso>
           <link id="TApplication.Hint"/>
-          <link id="TApplication.SetHint"/>
           <link id="TApplication.AddOnHintHandler"/>
           <link id="TApplication.RemoveOnHintHandler"/>
           <link id="TApplicationHandlerType"/>
@@ -12958,7 +12939,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lazutils.lazutilities.GetEnumName"/>
+          <link id="#rtl.typinfo.GetEnumName">GetEnumName</link>
         </seealso>
       </element>
       <element name="WindowStateToStr.Result">

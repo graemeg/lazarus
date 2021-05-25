@@ -2943,12 +2943,12 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
             <var>LoadGlyphFromStock</var> is a procedure used to load a <var>TBitmap</var> into the <var>AGlyph</var> argument with the image used for the button identifier in <var>idButton</var>. LoadGlyphFromStock calls the <var>GetButtonIcon</var> routine to load the graphic image for the button identifier.
           </p>
           <p>
-            Used in the implementation of the <var>LoadGlyphFromStock</var> method in both <var>TCustomBitBtn</var> and <var>TCustomSpeedButton</var>.
+            Used in the implementation of the <var>LoadGlyphFromStock</var> method in both <var>TCustomBitBtn</var>.
           </p>
         </descr>
         <seealso>
-          <link id="CustomBitBtn.LoadGlyphFromStock"/>
-          <link id="TCustomSpeedButton.LoadGlyphFromStock"/>
+          <link id="TCustomBitBtn.LoadGlyphFromStock"/>
+          <link id="LoadGlyphFromStock"/>
           <link id="GetButtonIcon"/>
         </seealso>
       </element>
@@ -3085,7 +3085,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
         </descr>
         <seealso>
           <link id="BitBtnImages"/>
-          <link id="TCustomBitBtn.RealizeKind"/>
+          <link id="TCustomBitBtn"/>
         </seealso>
       </element>
 

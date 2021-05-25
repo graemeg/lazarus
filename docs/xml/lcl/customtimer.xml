@@ -166,7 +166,7 @@
           <link id="TCustomTimer.Interval"/>
           <link id="TCustomTimer.OnStartTimer"/>
           <link id="TCustomTimer.OnTimer"/>
-          <link id="TCustomTimer.Loaded"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
         </seealso>
       </element>
       <element name="TCustomTimer.KillTimer">
@@ -185,7 +185,7 @@
           <link id="TCustomTimer.Destroy"/>
         </seealso>
       </element>
-      <element name="TCustomTimer.Loaded" link="#rtl.Classes.TComponent.Loaded"/>
+      <element name="TCustomTimer.Loaded" link="#rtl.classes.TComponent.Loaded"/>
       <element name="TCustomTimer.Create">
         <short>
           <var>Create</var> - constructor for <var>TCustomTimer</var>: calls inherited <var>Create</var>, sets up handle and initializes timer interval</short>

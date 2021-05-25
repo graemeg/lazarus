@@ -318,7 +318,7 @@
         <short>Ordinal position for the page requested in the method</short>
       </element>
 
-      <element name="TUNBPages.GetCount" link="#rtl.classes.TStrings.GetCount">
+      <element name="TUNBPages.GetCount">
         <short>Gets the number of pages defined in the page list</short>
         <descr/>
         <seealso/>
@@ -421,7 +421,6 @@
         </descr>
         <seealso>
           <link id="TUNBPages.Delete"/>
-          <link id="TUNBPages.GetCount"/>
           <link id="TPage"/>
         </seealso>
       </element>
@@ -990,7 +989,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classes.TComponent.Loaded">TComponent.Loaded</link>
+          <link id="#rtl.classes.TComponent">TComponent</link>
         </seealso>
       </element>
 
@@ -3898,7 +3897,7 @@
           <var>DefineProperties</var> - overrides the method inherited from TComponent, defines the top, left properties</short>
         <descr/>
         <seealso>
-          <link id="#rtl.Classes.TComponent.DefineProperties">TComponent.DefineProperties</link>
+          <link id="#rtl.Classes.TComponent">TComponent</link>
         </seealso>
       </element>
       <element name="TCustomCheckGroup.DefineProperties.Filer">
@@ -5647,10 +5646,13 @@
           <link id="TCustomFlowPanel.ControlList"/>
           <link id="TFlowPanelControlList.IndexOf"/>
           <link id="TFlowPanelControl.Index"/>
+          <link id="#rtl.classes.TCollectionItem.Index">TCollectionItem.Index</link>
         </seealso>
       </element>
       <element name="TCustomFlowPanel.GetControlIndex.Result">
-        <short>Position in the control list for the specified controlm, or -1 when not found</short>
+        <short>
+          Position in the control list for the specified control, or -1 when not found
+        </short>
       </element>
       <element name="TCustomFlowPanel.GetControlIndex.AControl">
         <short>Flowed control to locate in ControlList</short>
@@ -6053,7 +6055,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classes.TComponent.Loaded">TComponent.Loaded</link>
+          <link id="#rtl.classes.TComponent">TComponent</link>
         </seealso>
       </element>
 

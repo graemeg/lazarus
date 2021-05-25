@@ -610,7 +610,6 @@
         <descr/>
         <seealso>
           <link id="#lcl.forms.TApplication.HelpContext">TApplication.HelpContext</link>
-          <link id="#lcl.forms.TCustomApplication.HelpFile">TCustomApplication.HelpFile</link>
           <link id="#lcl.forms.TCustomForm.HelpFile">TCustomForm.HelpFile</link>
         </seealso>
       </element>
@@ -971,11 +970,11 @@
           </p>
         </descr>
         <seealso>
-          <link id="TOpenDialog.Filename"/>
-          <link id="TOpenDialog.Files"/>
           <link id="TOpenDialog.DoExecute"/>
           <link id="TOpenDialog.DereferenceLinks"/>
           <link id="TOpenDialog.Options"/>
+          <link id="TFileDialog.Filename"/>
+          <link id="TFileDialog.Files"/>
           <link id="TOpenOption"/>
         </seealso>
       </element>
@@ -1481,7 +1480,7 @@
         <seealso>
           <link id="TColorButton.ButtonColor"/>
           <link id="TColorButton.ColorDialog"/>
-          <link id="TColorDialog.Execute"/>
+          <link id="TCommonDialog.Execute"/>
         </seealso>
       </element>
 
@@ -3718,7 +3717,7 @@ end;
         <short>Widgetset-independent implementation</short>
         <descr/>
         <seealso>
-          <link id="#lcl.interfacebase.MessageBoxFunction">MessageBoxFunction</link>
+          <link id="MessageDlg">MessageDlg</link>
         </seealso>
       </element>
       <element name="DefaultMessageBox.Result">

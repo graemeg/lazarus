@@ -676,8 +676,7 @@
           <link id="TPrinterCanvas.PageHeight"/>
           <link id="TPrinterCanvas.YDPI"/>
           <link id="TPrinter.YDPI"/>
-          <link id="TPaperRect.PhysicalRect"/>
-          <link id="TPaperRect.WorkRect"/>
+          <link id="TPaperRect"/>
         </seealso>
       </element>
 
@@ -704,8 +703,7 @@
           <link id="TPrinterCanvas.PageWidth"/>
           <link id="TPrinterCanvas.XDPI"/>
           <link id="TPrinter.XDPI"/>
-          <link id="TPaperRect.PhysicalRect"/>
-          <link id="TPaperRect.WorkRect"/>
+          <link id="TPaperRect"/>
         </seealso>
       </element>
 
@@ -732,8 +730,7 @@
           <link id="TPrinterCanvas.PageHeight"/>
           <link id="TPrinterCanvas.YDPI"/>
           <link id="TPrinter.YDPI"/>
-          <link id="TPaperRect.PhysicalRect"/>
-          <link id="TPaperRect.WorkRect"/>
+          <link id="TPaperRect"/>
         </seealso>
       </element>
 
@@ -760,8 +757,7 @@
           <link id="TPrinterCanvas.PageWidth"/>
           <link id="TPrinterCanvas.XDPI"/>
           <link id="TPrinter.XDPI"/>
-          <link id="TPaperRect.PhysicalRect"/>
-          <link id="TPaperRect.WorkRect"/>
+          <link id="TPaperRect"/>
         </seealso>
       </element>
 
@@ -1177,9 +1173,7 @@
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy frees resources allocated to internal members in the class instance, and calls the inherited destructor.
           </p>
         </descr>
-        <seealso>
-          <link id="#rtl.objects.TObject.Destroy">TObject.Destroy</link>
-        </seealso>
+        <seealso/>
       </element>
 
       <element name="TPaperSize.DefaultPapers">
@@ -1706,7 +1700,6 @@
         <seealso>
           <link id="TPrinter.PaperSize"/>
           <link id="TPaperSize"/>
-          <link id="TPaperSize.CheckSupportedPapers"/>
         </seealso>
       </element>
       <element name="TPrinter.DoEnumPapers.Lst">
@@ -2755,9 +2748,9 @@
           <link id="TPrinter.PaperSize"/>
           <link id="TPrinter.Printers"/>
           <link id="TPaperSize.PaperRect"/>
-          <link id="TPaperRect.WorkRect"/>
           <link id="TPrinterCanvas.Printer"/>
           <link id="TPrinterCanvas.PageHeight"/>
+          <link id="TPaperRect"/>
         </seealso>
       </element>
 
@@ -2781,9 +2774,9 @@
           <link id="TPrinter.PaperSize"/>
           <link id="TPrinter.Printers"/>
           <link id="TPaperSize.PaperRect"/>
-          <link id="TPaperRect.WorkRect"/>
           <link id="TPrinterCanvas.Printer"/>
           <link id="TPrinterCanvas.PageWidth"/>
+          <link id="TPaperRect"/>
         </seealso>
       </element>
 

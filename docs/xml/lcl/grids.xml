@@ -241,19 +241,14 @@
       </element>
       <element name="TGridOption.goEditing">
         <short>Allows editing in grid cells</short>
-        <seealso>
-          <link id="TGridOption.goAlwaysShowEditor"/>
-        </seealso>
+        <seealso/>
       </element>
       <element name="TGridOption.goAutoAddRows">
         <short>Automatically add new rows</short>
         <descr>
-          Does not add rows if the last cell is empty and
-          <link id="TGridOption.goAutoAddRowsSkipContentCheck">goAutoAddRowsSkipContentCheck</link> is not set.
+          Does not add rows if the last cell is empty and <var>goAutoAddRowsSkipContentCheck</var> is not set.
         </descr>
-        <seealso>
-          <link id="TGridOption.goAutoAddRowsSkipContentCheck"/>
-        </seealso>
+        <seealso/>
       </element>
       <element name="TGridOption.goTabs">
         <short>Controls Tab key behavior in the grid</short>
@@ -325,9 +320,7 @@
       </element>
       <element name="TGridOption.goFixedColSizing">
         <short>Allow to resize fixed columns</short>
-        <seealso>
-          <link id="TGridOption.goColSizing"/>
-        </seealso>
+        <seealso/>
       </element>
       <element name="TGridOption.goDontScrollPartCell">
         <short>Selecting a partially visible cell will not scroll the grid content</short>
@@ -357,12 +350,10 @@
       </element>
       <element name="TGridOption.goAutoAddRowsSkipContentCheck">
         <short>Also add a row if last row is empty</short>
-        <seealso>
-          <link id="TGridOption.goAutoAddRows"/>
-        </seealso>
         <descr>
-          <link id="TGridOption.goAutoAddRows">goAutoAddRows</link> must also be set. Otherwise this option does not take effect at all.
+          <var>goAutoAddRows</var> must also be set. Otherwise this option does not take effect at all.
         </descr>
+        <seealso/>
       </element>
       <element name="TGridOption.goRowHighlight">
         <short>Highlights the current Row in a grid control</short>
@@ -2609,7 +2600,7 @@
           <link id="TGridColumnTitle.Font"/>
           <link id="TGridColumn.Grid"/>
           <link id="TGridColumn.Font"/>
-          <link id="TGrid.TitleFont"/>
+          <link id="TCustomGrid.TitleFont"/>
         </seealso>
       </element>
 
@@ -2673,7 +2664,7 @@
           <link id="TGridColumn.IsDefault"/>
           <link id="TGridColumn.Title"/>
           <link id="TGridColumns"/>
-          <link id="TGrid.Columns"/>
+          <link id="TCustomGrid.Columns"/>
         </seealso>
       </element>
       <element name="TGridColumnTitle.IsDefault.Result">
@@ -6012,7 +6003,7 @@
         </descr>
         <seealso>
           <link id="TCustomGrid.Options"/>
-          <link id="TGridOption.goTabs"/>
+          <link id="TGridOption"/>
         </seealso>
       </element>
       <element name="TCustomGrid.WMGetDlgCode.Msg">
@@ -6075,7 +6066,7 @@
             Calls <var>SetColRow</var> to update the values in the <var>Col</var> and <var>Row</var> properties. Values in <var>NewCol</var> and <var>NewRow</var> are stored in the corresponding property.
           </p>
           <p>
-            When <var>EditorMode</var> is set to <b>True</b>, the <var>EditorPos</var> method is called to position the <var>Editor</var> to the new cell selection.
+            When <var>EditorMode</var> is set to <b>True</b>, the private <var>EditorPos</var> method is called to position the <var>Editor</var> to the new cell selection.
           </p>
         </descr>
         <seealso>
@@ -6083,7 +6074,6 @@
           <link id="TCustomGrid.Row"/>
           <link id="TCustomGrid.Editor"/>
           <link id="TCustomGrid.EditorMode"/>
-          <link id="TCustomGrid.EditorPos"/>
           <link id="TCustomGrid.SetColRow"/>
         </seealso>
       </element>
@@ -6231,10 +6221,8 @@
         <seealso>
           <link id="TCustomGrid.Options"/>
           <link id="TCustomGrid.CursorState"/>
-          <link id="TGridOption.goColSizing"/>
-          <link id="TGridOption.goRowSizing"/>
-          <link id="TGridCursorState.gcsColWidthChanging"/>
-          <link id="TGridCursorState.gcsRowHeightChanging"/>
+          <link id="TGridOption"/>
+          <link id="TGridCursorState"/>
         </seealso>
       </element>
 
@@ -7525,10 +7513,10 @@
         </descr>
         <seealso>
           <link id="TCustomGrid.Columns"/>
-          <link id="TCustomGrid.DefaultDrawCell"/>
           <link id="TCustomGrid.GetImageForCheckBox"/>
           <link id="TCustomGrid.OnUserCheckBoxImage"/>
           <link id="TCustomGrid.OnUserCheckBoxBitmap"/>
+          <link id="TCustomDrawGrid.DefaultDrawCell"/>
         </seealso>
       </element>
       <element name="TCustomGrid.DrawGridCheckboxBitmaps.aCol">
@@ -10663,7 +10651,7 @@
           <link id="TCustomGrid.ShowCellHintWindow"/>
           <link id="TCustomGrid.PrepareCanvas"/>
           <link id="TCustomGrid.DrawRow"/>
-          <link id="TCustomGrid.OnMouseWheel"/>
+          <link id="TCustomDrawGrid.OnMouseWheel"/>
         </seealso>
       </element>
 
@@ -11585,7 +11573,7 @@
          </p>
        </descr>
        <seealso>
-         <link id="TGridOption.goCellHints"/>
+         <link id="TGridOption"/>
          <link id="TCustomGrid.Options"/>
          <link id="TCustomGrid.CellHintPriority"/>
          <link id="TCustomGrid.GetCellHintText"/>

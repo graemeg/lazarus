@@ -628,8 +628,8 @@
         </short>
       </element>
 
-      <element  name="TCMHitTest" link="#LCL.LMessages.TLMNCHitTest"/>
-      <element  name="TCMDesignHitTest" link="#LCL.LMessages.TLMMouse"/>
+      <element  name="TCMHitTest" link="#lcl.lmessages.TLMNCHitTest"/>
+      <element  name="TCMDesignHitTest" link="#lcl.lmessages.TLMMouse"/>
 
       <element name="TCMControlChange">
         <short>Contains values representing a Control Change Message</short>
@@ -639,7 +639,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.extctrls.TCustomFlowPanel">TCustomFlowPanel</link>
+          <link id="#lcl.extctrls.TCustomFlowPanel.CMControlChange">TCustomFlowPanel.CMControlChange</link>
         </seealso>
       </element>
       <element name="TCMControlChange.Msg">
@@ -1433,7 +1433,7 @@
         <short>New value for the property</short>
       </element>
 
-      <element name="TControlCanvas.CreateHandle" link="#LCL.Graphics.TCanvas.CreateHandle"/>
+      <element name="TControlCanvas.CreateHandle" link="#lcl.graphics.TCanvas.CreateHandle"/>
 
       <element name="TControlCanvas.GetDefaultColor" link="#lcl.graphics.TCanvas.GetDefaultColor">
         <short/>
@@ -1481,7 +1481,7 @@
         </seealso>
       </element>
 
-      <element name="TControlCanvas.FreeHandle" link="#LCL.Graphics.TCanvas.FreeHandle"/>
+      <element name="TControlCanvas.FreeHandle" link="#lcl.graphics.TCanvas.FreeHandle"/>
 
       <element name="TControlCanvas.ControlIsPainting">
         <short>Indicates if the Control has called but not completed its Paint method</short>
@@ -1758,7 +1758,7 @@
         <short>Value for the property</short>
       </element>
 
-      <element name="TDragImageListResolution.WSRegisterClass"  link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass"/>
+      <element name="TDragImageListResolution.WSRegisterClass"  link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TDragImageListResolution.ImageList">
         <short>List with images used in Drag and Drop operations</short>
@@ -1962,9 +1962,9 @@
         <short/>
       </element>
 
-      <element name="TDragImageList.WSRegisterClass"  link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass"/>
+      <element name="TDragImageList.WSRegisterClass"  link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
-      <element name="TDragImageList.Initialize" link="#LCL.ImgList.TCustomImageList.Initialize"/>
+      <element name="TDragImageList.Initialize" link="#lcl.imglist.TCustomImageList.Initialize"/>
 
       <element name="TDragImageList.BeginDrag">
         <short>Start dragging an image; returns True if successful</short>
@@ -2035,7 +2035,7 @@
       </element>
 
       <element name="TDragImageList.GetHotSpot"
-        link="#LCL.ImgList.TCustomImageList.GetHotSpot"/>
+        link="#lcl.imglist.TCustomImageList.GetHotSpot"/>
       <element name="TDragImageList.GetHotSpot.Result">
         <short/>
       </element>
@@ -2674,7 +2674,7 @@
       <element name="TDragObjectClass">
         <short>A <link id="TDragObject"/> class type</short>
       </element>
-      <element name="TDragObjectEx" link="#LCL.Controls.TDragObject">
+      <element name="TDragObjectEx" link="#lcl.controls.TDragObject">
         <short>A drag object that is automatically destroyed after use</short>
       </element>
 
@@ -2737,7 +2737,7 @@
       <element name="TDragControlObject.GetDragImages.Result">
         <short>The Image list to be used in dragging this control</short>
       </element>
-      <element name="TDragControlObjectEx" link="#LCL.Controls.TDragControlObject"/>
+      <element name="TDragControlObjectEx" link="#lcl.controls.TDragControlObject"/>
       <element name="TDragControlObjectEx.Create">
         <short>Creates an object to be destroyed after use</short>
       </element>
@@ -2971,7 +2971,7 @@
         <short>Useless, please ignore it!</short>
       </element>
 
-      <element name="TDragDockObject.GetDragCursor" link="#LCL.Controls.TDragObject.GetDragCursor"/>
+      <element name="TDragDockObject.GetDragCursor" link="#lcl.controls.TDragObject.GetDragCursor"/>
       <element name="TDragDockObject.GetDragCursor.Result">
         <short/>
       </element>
@@ -4249,12 +4249,12 @@
         <short>Pointer to an record with default settings; can be <b>Nil</b> for all zero defaults</short>
       </element>
 
-      <element link="#rtl.Classes.TPersistent.Assign" name="TControlBorderSpacing.Assign"/>
+      <element link="#rtl.classes.TPersistent.Assign" name="TControlBorderSpacing.Assign"/>
       <element name="TControlBorderSpacing.Assign.Source">
         <short/>
       </element>
 
-      <element link="#rtl.Classes.TPersistent.Assign" name="TControlBorderSpacing.AssignTo"/>
+      <element link="#rtl.classes.TPersistent.Assign" name="TControlBorderSpacing.AssignTo"/>
       <element name="TControlBorderSpacing.AssignTo.Dest">
         <short/>
       </element>
@@ -4636,7 +4636,7 @@
         <short>New value for the property</short>
       </element>
 
-      <element name="TAnchorSide.GetOwner" link="#RTL.Classes.TPersistent.GetOwner"/>
+      <element name="TAnchorSide.GetOwner" link="#rtl.classes.TPersistent.GetOwner"/>
       <element name="TAnchorSide.GetOwner.Result">
         <short/>
       </element>
@@ -4710,7 +4710,7 @@
         <short>Position of the side to anchor to</short>
       </element>
 
-      <element link="#rtl.Classes.TPersistent.Assign" name="TAnchorSide.Assign"/>
+      <element link="#rtl.classes.TPersistent.Assign" name="TAnchorSide.Assign"/>
       <element name="TAnchorSide.Assign.Source">
         <short/>
       </element>
@@ -4806,7 +4806,7 @@
         <descr>It can be assumed that FClient is not Nil.</descr>
       </element>
 
-      <element link="#rtl.Classes.TBasicActionLink.AssignClient" name="TControlActionLink.AssignClient">
+      <element link="#rtl.classes.TBasicActionLink.AssignClient" name="TControlActionLink.AssignClient">
         <short>Called during construction, sets FClient to the given control</short>
       </element>
       <element name="TControlActionLink.AssignClient.AClient">
@@ -4910,17 +4910,17 @@
         <short>The hint to show</short>
       </element>
 
-      <element link="#LCL.ActnList.TActionLink.IsCaptionLinked" name="TControlActionLink.IsCaptionLinked"/>
+      <element link="#lcl.actnlist.TActionLink.IsCaptionLinked" name="TControlActionLink.IsCaptionLinked"/>
       <element name="TControlActionLink.IsCaptionLinked.Result">
         <short/>
       </element>
 
-      <element link="#LCL.ActnList.TActionLink.IsEnabledLinked" name="TControlActionLink.IsEnabledLinked"/>
+      <element link="#lcl.actnlist.TActionLink.IsEnabledLinked" name="TControlActionLink.IsEnabledLinked"/>
       <element name="TControlActionLink.IsEnabledLinked.Result">
         <short/>
       </element>
 
-      <element link="#LCL.ActnList.TActionLink.IsHelpLinked" name="TControlActionLink.IsHelpLinked">
+      <element link="#lcl.actnlist.TActionLink.IsHelpLinked" name="TControlActionLink.IsHelpLinked">
         <short>Help properties are assumed linked only when all these properties match</short>
         <descr>Compares the HelpContext, HelpKeyword and HelpType properties.</descr>
       </element>
@@ -4928,12 +4928,12 @@
         <short>True only if all three Control properties match the Action properties</short>
       </element>
 
-      <element link="#LCL.ActnList.TActionLink.IsHintLinked" name="TControlActionLink.IsHintLinked"/>
+      <element link="#lcl.actnlist.TActionLink.IsHintLinked" name="TControlActionLink.IsHintLinked"/>
       <element name="TControlActionLink.IsHintLinked.Result">
         <short/>
       </element>
 
-      <element link="#LCL.ActnList.TActionLink.IsVisibleLinked" name="TControlActionLink.IsVisibleLinked"/>
+      <element link="#lcl.actnlist.TActionLink.IsVisibleLinked" name="TControlActionLink.IsVisibleLinked"/>
       <element name="TControlActionLink.IsVisibleLinked.Result">
         <short/>
       </element>
@@ -5370,7 +5370,7 @@
       <element name="TLazAccessibleObject.FAccessibleValue"/>
       <element name="TLazAccessibleObject.FAccessibleRole"/>
 
-      <element name="TLazAccessibleObject.WSRegisterClass"  link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass"/>
+      <element name="TLazAccessibleObject.WSRegisterClass"  link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TLazAccessibleObject.GetAccessibleValue">
          <short>Gets the value for the AccessibleValue property</short>
@@ -6078,7 +6078,7 @@
       <element name="TControl.FAccessibleObject"/>
       <element link="#lcl.controls.TControl.ControlState" name="TControl.FControlState"/>
       <element link="#lcl.controls.TControl.Cursor" name="TControl.FCursor"/>
-      <element link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass" name="TControl.WSRegisterClass"/>
+      <element link="#lcl.lclclasses.TLCLComponent.WSRegisterClass" name="TControl.WSRegisterClass"/>
 
       <element link="#lcl.controls.TControl.Cursor" name="TControl.GetCursor"/>
       <element name="TControl.GetCursor.Result">
@@ -7504,12 +7504,12 @@
         <short>The class type of the child control</short>
       </element>
 
-      <element link="#rtl.Classes.TComponent.ReadState" name="TControl.ReadState"/>
+      <element link="#rtl.classes.TComponent.ReadState" name="TControl.ReadState"/>
       <element name="TControl.ReadState.Reader">
         <short/>
       </element>
 
-      <element link="#rtl.Classes.TComponent.Loaded" name="TControl.Loaded"/>
+      <element name="TControl.Loaded" link="#rtl.classes.TComponent.Loaded"/>
 
       <element name="TControl.LoadedAll">
         <short>
@@ -8758,7 +8758,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="TControls.AutoSize"/>
+          <link id="TControl.AutoSize"/>
         </seealso>
       </element>
 
@@ -9871,7 +9871,7 @@
         <short/>
       </element>
 
-      <element link="#LCL.LCLClasses.TLCLComponent.RemoveAllHandlersOfObject" name="TControl.RemoveAllHandlersOfObject"/>
+      <element link="#lcl.lclclasses.TLCLComponent.RemoveAllHandlersOfObject" name="TControl.RemoveAllHandlersOfObject"/>
       <element name="TControl.RemoveAllHandlersOfObject.AnObject">
         <short/>
       </element>
@@ -10829,7 +10829,7 @@
         <short>Control which owns the class instance</short>
       </element>
 
-      <element link="#rtl.Classes.TPersistent.Assign" name="TControlChildSizing.Assign"/>
+      <element link="#rtl.classes.TPersistent.Assign" name="TControlChildSizing.Assign"/>
       <element name="TControlChildSizing.Assign.Source">
         <short/>
       </element>
@@ -11628,7 +11628,7 @@
         <seealso/>
       </element>
 
-      <element link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass" name="TWinControl.WSRegisterClass"/>
+      <element link="#lcl.lclclasses.TLCLComponent.WSRegisterClass" name="TWinControl.WSRegisterClass"/>
 
       <element name="TWinControl.AdjustClientRect">
         <short>
@@ -11653,7 +11653,7 @@
         <seealso>
           <link id="TControl.ClientRect"/>
           <link id="TWinControl.AdjustClientRect"/>
-          <link id="TWinControlFlag.wcfAdjustedLogicalClientRectValid"/>
+          <link id="TWinControlFlag"/>
         </seealso>
       </element>
       <element name="TWinControl.GetAdjustedLogicalClientRect.ARect">
@@ -11664,7 +11664,7 @@
         <short>Aligns all child controls</short>
         <descr/>
         <seealso>
-          <link id="TWinControlFlag.wcfAligningControls"/>
+          <link id="TWinControlFlag"/>
         </seealso>
       </element>
       <element name="TWinControl.AlignControls.AControl">
@@ -11771,13 +11771,12 @@
       <element name="TWinControl.InvalidatePreferredChildSizes">
         <short>Flags the preferred sizes of all child controls as invalid (recursively)</short>
         <seealso>
-          <link id="TControlFlag.cfPreferredSizeValid"/>
-          <link id="TControlFlag.cfPreferredMinSizeValid"/>
-          <link id="TWinControlFlag.wcfAdjustedLogicalClientRectValid"/>
+          <link id="TWinControlFlag"/>
+          <link id="TControlFlag"/>
         </seealso>
       </element>
 
-      <element link="#LCL.Controls.TControl.CanTab" name="TWinControl.CanTab"/>
+      <element link="#lcl.controls.TControl.CanTab" name="TWinControl.CanTab"/>
       <element name="TWinControl.CanTab.Result">
         <short/>
       </element>
@@ -11808,7 +11807,7 @@
         <short>Sends the control's new bounds to the widget</short>
         <descr>Called by RealizeBounds.</descr>
         <seealso>
-          <link id="TWinControlFlag.wcfBoundsRealized"/>
+          <link id="TWinControlFlag"/>
         </seealso>
       </element>
 
@@ -11827,7 +11826,7 @@
         <descr/>
         <seealso>
           <link id="TWinControl.RealizeBounds"/>
-          <link id="TWinControlFlag.wcfRealizingBounds"/>
+          <link id="TWinControlFlag"/>
         </seealso>
       </element>
 
@@ -12188,7 +12187,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="TWinControlFlag.wcfEraseBackground"/>
+          <link id="TWinControlFlag"/>
         </seealso>
       </element>
       <element name="TWinControl.WMEraseBkgnd.Message">
@@ -12871,7 +12870,7 @@
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.DialogChar" name="TWinControl.DialogChar"/>
+      <element link="#lcl.controls.TControl.DialogChar" name="TWinControl.DialogChar"/>
       <element name="TWinControl.DialogChar.Result">
         <short>True if the key was handled</short>
       </element>
@@ -13038,7 +13037,7 @@
         <seealso/>
       </element>
 
-      <element link="#LCL.Controls.TControl.RealGetText" name="TWinControl.RealGetText"/>
+      <element link="#lcl.controls.TControl.RealGetText" name="TWinControl.RealGetText"/>
       <element name="TWinControl.RealGetText.Result">
         <short/>
       </element>
@@ -13048,17 +13047,17 @@
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.GetClientOrigin" name="TWinControl.GetClientOrigin"/>
+      <element link="#lcl.controls.TControl.GetClientOrigin" name="TWinControl.GetClientOrigin"/>
       <element name="TWinControl.GetClientOrigin.Result">
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.GetClientRect" name="TWinControl.GetClientRect"/>
+      <element link="#lcl.controls.TControl.GetClientRect" name="TWinControl.GetClientRect"/>
       <element name="TWinControl.GetClientRect.Result">
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.GetControlOrigin" name="TWinControl.GetControlOrigin">
+      <element link="#lcl.controls.TControl.GetControlOrigin" name="TWinControl.GetControlOrigin">
         <short>The screen coordinates for the control</short>
         <descr>
           <p>
@@ -13073,7 +13072,7 @@
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.GetDeviceContext" name="TWinControl.GetDeviceContext"/>
+      <element link="#lcl.controls.TControl.GetDeviceContext" name="TWinControl.GetDeviceContext"/>
       <element name="TWinControl.GetDeviceContext.Result">
         <short/>
       </element>
@@ -13187,7 +13186,7 @@
         <seealso/>
       </element>
 
-      <element link="#LCL.Controls.TControl.FontChanged" name="TWinControl.FontChanged"/>
+      <element link="#lcl.controls.TControl.FontChanged" name="TWinControl.FontChanged"/>
       <element name="TWinControl.FontChanged.Sender">
         <short/>
       </element>
@@ -13259,7 +13258,7 @@
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.RealSetText" name="TWinControl.RealSetText"/>
+      <element link="#lcl.controls.TControl.RealSetText" name="TWinControl.RealSetText"/>
       <element name="TWinControl.RealSetText.AValue">
         <short/>
       </element>
@@ -13273,7 +13272,7 @@
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.SendMoveSizeMessages" name="TWinControl.SendMoveSizeMessages"/>
+      <element link="#lcl.controls.TControl.SendMoveSizeMessages" name="TWinControl.SendMoveSizeMessages"/>
       <element name="TWinControl.SendMoveSizeMessages.SizeChanged">
         <short/>
       </element>
@@ -13286,7 +13285,7 @@
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.SetColor" name="TWinControl.SetColor"/>
+      <element link="#lcl.controls.TControl.SetColor" name="TWinControl.SetColor"/>
       <element name="TWinControl.SetColor.Value">
         <short/>
       </element>
@@ -13847,7 +13846,7 @@
       </element>
 
       <element name="TWinControl.AutoSizeDelayed"
-        link="#LCL.Controls.TControl.AutoSizeDelayed"/>
+        link="#lcl.controls.TControl.AutoSizeDelayed"/>
       <element name="TWinControl.AutoSizeDelayed.Result">
         <short/>
       </element>
@@ -13980,7 +13979,7 @@
         <short>True if update needed</short>
       </element>
 
-      <element link="#LCL.Controls.TControl.SetBounds" name="TWinControl.SetBounds">
+      <element link="#lcl.controls.TControl.SetBounds" name="TWinControl.SetBounds">
         <short>Sets the control bounds and adjusts child and docked controls</short>
       </element>
       <element name="TWinControl.SetBounds.aLeft">
@@ -13996,7 +13995,7 @@
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.GetChildsRect" name="TWinControl.GetChildsRect"/>
+      <element link="#lcl.controls.TControl.GetChildsRect" name="TWinControl.GetChildsRect"/>
       <element name="TWinControl.GetChildsRect.Result">
         <short/>
       </element>
@@ -14037,7 +14036,7 @@
         <short>Increment for Top</short>
       </element>
 
-      <element link="#LCL.Controls.TControl.WriteLayoutDebugReport" name="TWinControl.WriteLayoutDebugReport"/>
+      <element link="#lcl.controls.TControl.WriteLayoutDebugReport" name="TWinControl.WriteLayoutDebugReport"/>
       <element name="TWinControl.WriteLayoutDebugReport.Prefix">
         <short/>
       </element>
@@ -14325,7 +14324,7 @@ if MyControl.CanSetFocus then
         <short>When True, only select a control that can receive the focus</short>
       </element>
 
-      <element link="#LCL.Controls.TControl.SetTempCursor" name="TWinControl.SetTempCursor"/>
+      <element link="#lcl.controls.TControl.SetTempCursor" name="TWinControl.SetTempCursor"/>
       <element name="TWinControl.SetTempCursor.Value">
         <short/>
       </element>
@@ -14371,7 +14370,7 @@ if MyControl.CanSetFocus then
         <short>The message to process</short>
       </element>
 
-      <element link="#LCL.Controls.TControl.GetTextLen" name="TWinControl.GetTextLen"/>
+      <element link="#lcl.controls.TControl.GetTextLen" name="TWinControl.GetTextLen"/>
       <element name="TWinControl.GetTextLen.Result">
         <short/>
       </element>
@@ -14428,8 +14427,8 @@ if MyControl.CanSetFocus then
         <short>The TWinControlEnumerator instance</short>
       </element>
 
-      <element link="#LCL.Controls.TControl.Repaint" name="TWinControl.Repaint"/>
-      <element link="#LCL.Controls.TControl.Update" name="TWinControl.Update"/>
+      <element link="#lcl.controls.TControl.Repaint" name="TWinControl.Repaint"/>
+      <element link="#lcl.controls.TControl.Update" name="TWinControl.Update"/>
 
       <element name="TWinControl.SetFocus">
         <short>
@@ -14517,7 +14516,7 @@ if MyControl.CanSetFocus then
         <short>True when a widget exists (Handle is not Nil)</short>
       </element>
 
-      <element link="#LCL.Controls.TControl.ParentHandlesAllocated" name="TWinControl.ParentHandlesAllocated"/>
+      <element link="#lcl.controls.TControl.ParentHandlesAllocated" name="TWinControl.ParentHandlesAllocated"/>
       <element name="TWinControl.ParentHandlesAllocated.Result">
         <short/>
       </element>
@@ -14676,9 +14675,9 @@ if MyControl.CanSetFocus then
         <short/>
       </element>
 
-      <element link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass" name="TGraphicControl.WSRegisterClass"/>
+      <element link="#lcl.lclclasses.TLCLComponent.WSRegisterClass" name="TGraphicControl.WSRegisterClass"/>
 
-      <element link="#LCL.Controls.TControl.FontChanged" name="TGraphicControl.FontChanged"/>
+      <element link="#lcl.controls.TControl.FontChanged" name="TGraphicControl.FontChanged"/>
       <element name="TGraphicControl.FontChanged.Sender">
         <short/>
       </element>
@@ -14695,7 +14694,7 @@ if MyControl.CanSetFocus then
         </seealso>
       </element>
 
-      <element link="#LCL.Controls.TControl.DoOnChangeBounds" name="TGraphicControl.DoOnChangeBounds"/>
+      <element link="#lcl.controls.TControl.DoOnChangeBounds" name="TGraphicControl.DoOnChangeBounds"/>
 
       <element name="TGraphicControl.DoOnParentHandleDestruction">
         <short/>
@@ -14773,7 +14772,7 @@ if MyControl.CanSetFocus then
       <element link="#lcl.controls.TCustomControl.Canvas" name="TCustomControl.FCanvas"/>
       <element link="#lcl.controls.TCustomControl.OnPaint" name="TCustomControl.FOnPaint"/>
 
-      <element link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass" name="TCustomControl.WSRegisterClass"/>
+      <element link="#lcl.lclclasses.TLCLComponent.WSRegisterClass" name="TCustomControl.WSRegisterClass"/>
 
       <element name="TCustomControl.WMPaint">
         <short>Event handler for paint messages</short>
@@ -14782,9 +14781,9 @@ if MyControl.CanSetFocus then
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TWinControl.DestroyWnd" name="TCustomControl.DestroyWnd"/>
+      <element link="#lcl.controls.TWinControl.DestroyWnd" name="TCustomControl.DestroyWnd"/>
 
-      <element link="#LCL.Controls.TWinControl.PaintWindow" name="TCustomControl.PaintWindow">
+      <element link="#lcl.controls.TWinControl.PaintWindow" name="TCustomControl.PaintWindow">
         <short>The Paint handler plug-in, intercepting paint requests</short>
         <descr>
           <p>
@@ -14799,12 +14798,12 @@ if MyControl.CanSetFocus then
         <short>The Device Context in which to paint</short>
       </element>
 
-      <element link="#LCL.Controls.TControl.FontChanged" name="TCustomControl.FontChanged"/>
+      <element link="#lcl.controls.TControl.FontChanged" name="TCustomControl.FontChanged"/>
       <element name="TCustomControl.FontChanged.Sender">
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TControl.SetColor" name="TCustomControl.SetColor"/>
+      <element link="#lcl.controls.TControl.SetColor" name="TCustomControl.SetColor"/>
       <element name="TCustomControl.SetColor.Value">
         <short/>
       </element>
@@ -15505,7 +15504,7 @@ if MyControl.CanSetFocus then
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TDockManager.GetControlBounds" name="TDockTree.GetControlBounds"/>
+      <element link="#lcl.controls.TDockManager.GetControlBounds" name="TDockTree.GetControlBounds"/>
       <element name="TDockTree.GetControlBounds.AControl">
         <short/>
       </element>
@@ -15592,7 +15591,7 @@ if MyControl.CanSetFocus then
         <short/>
       </element>
 
-      <element link="#LCL.Controls.TDockManager.PaintSite" name="TDockTree.PaintSite"/>
+      <element link="#lcl.controls.TDockManager.PaintSite" name="TDockTree.PaintSite"/>
       <element name="TDockTree.PaintSite.DC">
         <short/>
       </element>
@@ -15624,7 +15623,7 @@ if MyControl.CanSetFocus then
         <seealso/>
       </element>
 
-      <element name="TDockTree.MouseMessage" link="#LCL.Controls.TDockManager.MouseMessage"/>
+      <element name="TDockTree.MouseMessage" link="#lcl.controls.TDockManager.MouseMessage"/>
 
       <element name="DockSplitterClass">
         <short/>

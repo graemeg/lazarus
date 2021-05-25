@@ -1156,7 +1156,7 @@
         </descr>
         <seealso>
           <link id="TComponentDataLink.OnRecordChanged"/>
-          <link id="#fcl.db.TDataLink.RecordChanged">TDataLink.RecordChanged</link>
+          <link id="#fcl.db.TDataLink">TDataLink</link>
         </seealso>
       </element>
       <element name="TComponentDataLink.RecordChanged.Field">
@@ -1173,7 +1173,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#fcl.db.TDataLink.DatasetChanged">TDataLink.DatasetChanged</link>
+          <link id="#fcl.db.TDataLink">TDataLink</link>
           <link id="TComponentDataLink.OnDatasetChanged">TComponentDataLink.OnDatasetChanged</link>
         </seealso>
       </element>
@@ -1194,7 +1194,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#fcl.db.TDataLink.ActiveChanged">TDataLink.ActiveChanged</link>
+          <link id="#fcl.db.TDataLink">TDataLink</link>
         </seealso>
       </element>
 
@@ -1209,7 +1209,7 @@
         </descr>
         <seealso>
           <link id="TCustomDBGrid.LayoutChanged"/>
-          <link id="#fcl.db.TDataLink.LayoutChanged">TDataLink.LayoutChanged</link>
+          <link id="#fcl.db.TDataLink">TDataLink</link>
         </seealso>
       </element>
 
@@ -1224,7 +1224,6 @@
         </descr>
         <seealso>
           <link id="#fcl.db.TDataLink.ActiveRecord">TDataLink.ActiveRecord</link>
-          <link id="#fcl.db.TDataLink.DatasetScrolled">TDataLink.DatasetScrolled</link>
         </seealso>
       </element>
       <element name="TComponentDataLink.DatasetScrolled.Distance">
@@ -1268,7 +1267,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#fcl.db.TDataLink.EditingChanged">TDataLink.EditingChanged</link>
+          <link id="#fcl.db.TDataLink">TDataLink</link>
         </seealso>
       </element>
 
@@ -1282,7 +1281,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#fcl.db.TDataLink.UpdateData">TDataLink.UpdateData</link>
+          <link id="#fcl.db.TDataLink">TDataLink</link>
         </seealso>
       </element>
 
@@ -2154,8 +2153,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.grids.TGridColumns.Update">TGridColumns.Update</link>
-          <link id="#rtl.classes.TCollection.Update">TCollection.Update</link>
+          <link id="#lcl.grids.TGridColumns">TGridColumns</link>
+          <link id="#rtl.classes.TCollection">TCollection</link>
         </seealso>
       </element>
       <element name="TDBGridColumns.Update.Item">
@@ -3383,7 +3382,7 @@
           </remark>
         </descr>
         <seealso>
-          <link id="#lcl.grids.TCustomGrid.DefineProperties">TCustomGrid.DefineProperties</link>
+          <link id="#lcl.grids.TCustomGrid">TCustomGrid</link>
         </seealso>
       </element>
       <element name="TCustomDBGrid.DefineProperties.Filer">
@@ -3927,12 +3926,12 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomDBGrid.BeginLayout">TCustomDBGrid.BeginLayout</link>
-          <link id="TCustomDBGrid.LayoutChanged">TCustomDBGrid.LayoutChanged</link>
-          <link id="TCustomDBGrid.Options">TCustomDBGrid.Options</link>
-          <link id="TCustomDBGrid.AutoAdjustColumn">TCustomDBGrid.AutoAdjustColumn</link>
-          <link id="TDBGridColumns.LinkFields">TDBGridColumns.LinkFields</link>
-          <link id="TDBGridColumns.Update">TDBGridColumns.Update</link>
+          <link id="TCustomDBGrid.BeginLayout"/>
+          <link id="TCustomDBGrid.LayoutChanged"/>
+          <link id="TCustomDBGrid.Options"/>
+          <link id="TCustomDBGrid.AutoAdjustColumn"/>
+          <link id="TDBGridColumns.LinkFields"/>
+          <link id="TDBGridColumns.Update"/>
         </seealso>
       </element>
 

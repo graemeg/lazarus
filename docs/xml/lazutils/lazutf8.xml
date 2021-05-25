@@ -124,8 +124,7 @@
             <var>ConsoleToUTF8</var> is a <var>String</var> function used to converts an OEM-encoded string to UTF8. The implementation of ConsoleToUTF8 is OS-specific, and essentially handles differences between various Windows platforms where use of <var>OemToChar</var> and <var>WinCPToUTF8</var> are required. For UNIX-like environments, the value in s is converted by calling <var>SysToUTF8</var>.
           </p>
           <p>
-            ConsoleToUTF8 is used in the implementation of the <var>GetEnvironmentStringUTF8</var> and
-            <var>GetEnvironmentVariableUTF8</var> functions.
+            ConsoleToUTF8 is used in the implementation of the <var>GetEnvironmentStringUTF8</var> and <var>GetEnvironmentVariableUTF8</var> functions.
           </p>
         </descr>
         <seealso>
@@ -133,7 +132,6 @@
           <link id="WinCPToUTF8"/>
           <link id="GetEnvironmentStringUTF8"/>
           <link id="GetEnvironmentVariableUTF8"/>
-          <link id="#rtl.system.OemToChar">OemToChar</link>
         </seealso>
       </element>
       <element name="ConsoleToUTF8.Result">
@@ -158,7 +156,6 @@
         <seealso>
           <link id="UTF8ToSys"/>
           <link id="UTF8ToWinCP"/>
-          <link id="#rtl.system.CharToOem">CharToOem</link>
         </seealso>
       </element>
       <element name="UTF8ToConsole.Result">

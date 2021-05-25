@@ -213,7 +213,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classes.TPersistent.AssignTo">TPersistent.AssignTo</link>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
         </seealso>
       </element>
       <element name="TItemProp.AssignTo.Dest">
@@ -754,7 +754,7 @@
         </descr>
         <seealso>
           <link id="TItemPropList.Insert"/>
-          <link id="#rtl.classes.TStringList.InsertItem">TStringList.InsertItem</link>
+          <link id="#rtl.classes.TStringList">TStringList</link>
         </seealso>
       </element>
       <element name="TValueListStrings.InsertItem.Index">
@@ -777,8 +777,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classes.TStringList.Put">TStringList.Put</link>
           <link id="#rtl.classes.TStrings.Strings">TStrings.Strings</link>
+          <link id="#rtl.classes.TStringList">TStringList</link>
         </seealso>
       </element>
       <element name="TValueListStrings.Put.Index">
@@ -866,7 +866,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="TValueListStrings.QuickSortStringsAndItemProps"/>
+          <link id="TValueListStrings.CustomSort"/>
         </seealso>
       </element>
       <element name="TValueListStrings.CustomSort.Compare">
@@ -1378,10 +1378,10 @@
           </p>
         </descr>
         <seealso>
-          <link id="TValueListEditor.Cells"/>
           <link id="TValueListEditor.DisplayOptions"/>
           <link id="TValueListEditor.TitleCaptions"/>
           <link id="TDisplayOption"/>
+          <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
         </seealso>
       </element>
 
@@ -1402,7 +1402,7 @@
           <link id="TValueListEditor.TitleCaptions"/>
           <link id="TValueListEditor.DisplayOptions"/>
           <link id="TValueListEditor.RowCount"/>
-          <link id="TValueListEditor.Row"/>
+          <link id="#lcl.grids.TCustomDrawGrid.Row">TCustomDrawGrid.Row</link>
         </seealso>
       </element>
 
@@ -1710,9 +1710,9 @@
           </p>
         </descr>
         <seealso>
-          <link id="TValueListEditor.Cells">TValueListEditor.Cells</link>
           <link id="TValueListEditor.Strings">TValueListEditor.Strings</link>
           <link id="TValueListEditor.DisplayOptions">TValueListEditor.DisplayOptions</link>
+          <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
         </seealso>
       </element>
       <element name="TValueListEditor.SetCells.ACol">
@@ -1735,7 +1735,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="TValueListEditor.Cells"/>
+          <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
         </seealso>
       </element>
       <element name="TValueListEditor.SetEditText.ACol">
@@ -1767,9 +1767,9 @@
           </p>
         </descr>
         <seealso>
-          <link id="TValueListEditor.FixedRows"/>
           <link id="TValueListEditor.DisplayOptions"/>
           <link id="TValueListEditor.TitleCaptions"/>
+          <link id="#lcl.grids.TCustomDrawGrid.FixedRows">TCustomDrawGrid.FixedRows</link>
         </seealso>
       </element>
       <element name="TValueListEditor.SetFixedRows.AValue">
@@ -1802,7 +1802,6 @@
           <link id="TValueListEditor.Strings"/>
           <link id="#lcl.grids.TCustomDrawGrid.FixedRows">TCustomDrawGrid.FixedRows</link>
           <link id="#lcl.grids.TCustomDrawGrid.RowCount">TCustomDrawGrid.RowCount</link>
-          <link id="#lcl.grids.TCustomDrawGrid.SetRowCount">TCustomDrawGrid.SetRowCount</link>
           <link id="#lcl.grids.EGridException">EGridException</link>
         </seealso>
       </element>
@@ -1987,8 +1986,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="TValueListEditor.FixedRows"/>
           <link id="TValueListEditor.Strings"/>
+          <link id="#lcl.grids.TCustomDrawGrid.FixedRows">TCustomDrawGrid.FixedRows</link>
           <link id="#lcl.grids.TCustomDrawGrid.DeleteRow">TCustomDrawGrid.DeleteRow</link>
         </seealso>
       </element>
@@ -2040,7 +2039,7 @@
         </descr>
         <seealso>
           <link id="TValueListEditor.Strings"/>
-          <link id="TValueListEditor.FixedRows"/>
+          <link id="#lcl.grids.TCustomDrawGrid.FixedRows">TCustomDrawGrid.FixedRows</link>
           <link id="#rtl.classes.TStrings.IndexOfName">TStrings.IndexOfName</link>
         </seealso>
       </element>
@@ -2075,9 +2074,9 @@
           </p>
         </errors>
         <seealso>
-          <link id="TValueListEditor.FixedRows"/>
           <link id="TValueListEditor.Strings"/>
           <link id="TValueListStrings.InsertItem"/>
+          <link id="#lcl.grids.TCustomDrawGrid.FixedRows">TCustomDrawGrid.FixedRows</link>
         </seealso>
       </element>
       <element name="TValueListEditor.InsertColRow.IsColumn">
@@ -2107,11 +2106,11 @@
         </descr>
         <seealso>
           <link id="TValueListEditor.Strings"/>
-          <link id="TValueListEditor.Cells"/>
-          <link id="TValueListEditor.Row"/>
-          <link id="TValueListEditor.FixedRows"/>
           <link id="TValueListEditor.InsertRowWithValues"/>
           <link id="TValueListStrings.InsertItem"/>
+          <link id="#lcl.grids.TCustomDrawGrid.FixedRows">TCustomDrawGrid.FixedRows</link>
+          <link id="#lcl.grids.TCustomDrawGrid.Row">TCustomDrawGrid.Row</link>
+          <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
         </seealso>
       </element>
       <element name="TValueListEditor.InsertRow.KeyName">
@@ -2203,8 +2202,8 @@
         </descr>
         <seealso>
           <link id="TValueListEditor.Strings"/>
-          <link id="TValueListEditor.Cells"/>
-          <link id="TValueListEditor.Row"/>
+          <link id="#lcl.grids.TCustomDrawGrid.Row">TCustomDrawGrid.Row</link>
+          <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
         </seealso>
       </element>
       <element name="TValueListEditor.IsEmptyRow.aRow">
@@ -2313,9 +2312,9 @@
           </p>
         </descr>
         <seealso>
-          <link id="TValueListEditor.SortColRow"/>
           <link id="TVleSortCol"/>
           <link id="#lcl.grids.TCustomGrid.Sort">TCustomGrid.Sort</link>
+          <link id="#lcl.grids.TCustomDrawGrid.SortColRow">TCustomDrawGrid.SortColRow</link>
         </seealso>
       </element>
       <element name="TValueListEditor.Sort.Index">
@@ -2372,8 +2371,8 @@
         </descr>
         <seealso>
           <link id="TValueListEditor.Values"/>
-          <link id="TValueListEditor.Cells"/>
           <link id="TValueListEditor.Strings"/>
+          <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
         </seealso>
       </element>
       <element name="TValueListEditor.Keys.Index">
@@ -2398,7 +2397,7 @@
         <seealso>
           <link id="TValueListEditor.Keys"/>
           <link id="TValueListEditor.Strings"/>
-          <link id="TValueListEditor.Cells"/>
+          <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
         </seealso>
       </element>
       <element name="TValueListEditor.Values.Key">
@@ -2587,9 +2586,9 @@
         </descr>
         <seealso>
           <link id="TValueListEditor.RowCount"/>
-          <link id="TValueListEditor.FixedRows"/>
           <link id="TDisplayOptions"/>
           <link id="TDisplayOption"/>
+          <link id="#lcl.grids.TCustomDrawGrid.FixedRows">TCustomDrawGrid.FixedRows</link>
           <link id="#lcl.grids.TCustomDrawGrid.AutoFillColumns">TCustomDrawGrid.AutoFillColumns</link>
         </seealso>
       </element>

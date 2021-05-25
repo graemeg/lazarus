@@ -2148,7 +2148,6 @@
         <seealso>
           <link id="TFont.Color"/>
           <link id="FPColorToTColor"/>
-          <link id="TFPColor"/>
         </seealso>
       </element>
       <element name="TFont.SetFPColor.AValue">
@@ -5506,8 +5505,7 @@
         <short>Implements a drawing surface for a visual control or bitmap image</short>
         <descr>
           <p>
-            <var>TCanvas</var> is a desendant of the
-            <var>TFPCustomCanvas</var> class in the FCL (Free Pascal Component Library). TCanvas implements a drawing surface which can be used to display a visual control or render output to a bitmap. TCanvas provides drawing tools like Brush, Pen, and Font needed to draw on the surface. Events are provided to respond to change notifications and progress events. Methods are provided to implement common drawing operations, such as:
+            <var>TCanvas</var> is a desendant of the <var>TFPCustomCanvas</var> class in the FCL (Free Pascal Component Library). TCanvas implements a drawing surface which can be used to display a visual control or render output to a bitmap. TCanvas provides drawing tools like Brush, Pen, and Font needed to draw on the surface. Events are provided to respond to change notifications and progress events. Methods are provided to implement common drawing operations, such as:
           </p>
           <ul>
             <li>Pen, Brush, and Color selection</li>
@@ -7679,8 +7677,7 @@
         <short>The <var>Pen</var> to be used for writing in this canvas</short>
         <descr>
           <p>
-            <var>Pen</var> is a
-            <var>TPen</var> property which contains settings used when drawing lines, shapes, gradients, or generally changing pixels on the canvas.  The available properties include:
+            <var>Pen</var> is a <var>TPen</var> property which contains settings used when drawing lines, shapes, gradients, or generally changing pixels on the canvas.  The available properties include:
           </p>
           <ul>
             <li>Color</li>
@@ -7691,12 +7688,14 @@
             <li>EndCap</li>
             <li>JoinStyle</li>
           </ul>
-          <p>See <link id="TPen">TPen</link> for more information about properties, methods, and events in the class. See <link id="TFPCustomCanvas"/> for information about the pen used in the FCL ancestor class.
+          <p>
+            See <link id="TPen">TPen</link> for more information about properties, methods, and events in the class. See <var>TFPCustomCanvas</var> for information about the pen used in the FCL ancestor class.
           </p>
-          <p>The Pen property is used in the implementation of <var>TCanvas</var> drawing methods, like:
-            SetPixel, MoveTo, LineTo, Arc, ArcTo, Chord, GradientFill, RadialPie, PolyBezier, Polygon, Polyline, Ellipse, Frame, Frame3D, Rectangle, and RoundRect.
+          <p>
+            The Pen property is used in the implementation of <var>TCanvas</var> drawing methods, like: SetPixel, MoveTo, LineTo, Arc, ArcTo, Chord, GradientFill, RadialPie, PolyBezier, Polygon, Polyline, Ellipse, Frame, Frame3D, Rectangle, and RoundRect.
           </p>
-          <p>Use <var>Brush</var> to access settings used to fill enclosed areas on the drawing surface.
+          <p>
+            Use <var>Brush</var> to access settings used to fill enclosed areas on the drawing surface.
           </p>
         </descr>
         <seealso>
@@ -12439,7 +12438,7 @@
           <link id="TCustomIcon.Assign"/>
           <link id="TCustomIcon.AssignImage"/>
           <link id="TCustomIcon.MaskHandleNeeded"/>
-          <link id="TTRasterImage.BitmapHandle"/>
+          <link id="TRasterImage.BitmapHandle"/>
           <link id="TRasterImage.Mask"/>
           <link id="TRasterImage.MaskHandle"/>
           <link id="TRasterImage.MaskHandleAllocated"/>

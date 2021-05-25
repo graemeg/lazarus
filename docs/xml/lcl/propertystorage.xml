@@ -119,7 +119,6 @@
           <link id="TStoredValues"/>
           <link id="#rtl.classes.TCollectionItem.DisplayName">TCollectionItem.DisplayName</link>
           <link id="#rtl.classes.TCollectionItem.Collection">TCollectionItem.Collection</link>
-          <link id="#rtl.classes.TCollectionItem.SetDisplayName">TCollectionItem.SetDisplayName</link>
         </seealso>
       </element>
       <element name="TStoredValue.SetDisplayName.AValue">
@@ -136,7 +135,7 @@
         <seealso>
           <link id="TStoredValue.Value"/>
           <link id="#rtl.classes.TCollectionItem.Create">TCollectionItem.Create</link>
-          <link id="#rtl.classes.TCollectionItem.Collction">TCollectionItem.Collection</link>
+          <link id="#rtl.classes.TCollectionItem.Collection">TCollectionItem.Collection</link>
         </seealso>
       </element>
       <element name="TStoredValue.Create.ACollection">
@@ -267,9 +266,7 @@
         <short>XOR encoding key, empty for encoding is not used</short>
         <descr>
           <p>
-            <p>
-              <var>KeyString</var> is a <var>String</var> property which contains the key used to XOR encode/decode the <var>Value</var> for the collection item. XOR encoding is performed in the <var>Save</var> method when the collection item is written to the storage container for the collection. XOR decoding is performed in the <var>Restore</var> method when the value is read from the storage container. XOR encoding/decoding is not performed when KeyString is an empty string (<b>''</b>).
-            </p>
+            <var>KeyString</var> is a <var>String</var> property which contains the key used to XOR encode/decode the <var>Value</var> for the collection item. XOR encoding is performed in the <var>Save</var> method when the collection item is written to the storage container for the collection. XOR decoding is performed in the <var>Restore</var> method when the value is read from the storage container. XOR encoding/decoding is not performed when KeyString is an empty string (<b>''</b>).
           </p>
         </descr>
         <seealso/>
@@ -405,7 +402,7 @@
         <seealso>
           <link id="TStoredValues.Items"/>
           <link id="TStoredValue.Name"/>
-          <link id="#rtl.system.AnsiCompareText">AnsiCompareText</link>
+          <link id="#rtl.sysutils.AnsiCompareText">AnsiCompareText</link>
         </seealso>
       </element>
       <element name="TStoredValues.IndexOf.Result">
@@ -516,11 +513,11 @@
           </p>
         </descr>
         <seealso>
-          <link id="TStoreValues.Items"/>
-          <link id="TStoreValues.IndexOf"/>
-          <link id="TStoreValues.StoredValue"/>
-          <link id="TStoreValue.Assign"/>
-          <link id="TStoreValue.Name"/>
+          <link id="TStoredValues.Items"/>
+          <link id="TStoredValues.IndexOf"/>
+          <link id="TStoredValues.StoredValue"/>
+          <link id="TStoredValue.Assign"/>
+          <link id="TStoredValue.Name"/>
         </seealso>
       </element>
       <element name="TStoredValues.Values.Name">
@@ -903,7 +900,7 @@
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. It calls the <var>FreeStorage</var> method to free any items in the collection, and frees the <var>TStoredValues</var> instance in the <var>StoredValues</var> property. <var>TPropertyStorageLink</var> instances in the internal list are freed, and the list itself is also freed. Destroy calls the inherited method prior to exit.
-          </p>.
+          </p>
         </descr>
         <seealso/>
       </element>
@@ -1189,7 +1186,7 @@
         <seealso>
           <link id="TCustomPropertyStorage.Save"/>
           <link id="TCustomPropertyStorage.Restore"/>
-          <link id="TCustomPropertyStorage.StoreValue"/>
+          <link id="TCustomPropertyStorage.StoredValue"/>
           <link id="TStoredValues"/>
         </seealso>
       </element>

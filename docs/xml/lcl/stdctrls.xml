@@ -837,7 +837,7 @@
         </descr>
         <seealso>
           <link id="TCustomGroupBox.ParentBackground"/>
-          <link id="#lcl.controls.TWinControl.Color">TWinControl.Color</link>
+          <link id="#lcl.controls.TControl.Color">TControl.Color</link>
         </seealso>
       </element>
       <element name="TCustomGroupBox.SetColor.Value">
@@ -863,8 +863,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomGroupBox.ParentColor"/>
           <link id="TCustomGroupBox.UpdateOpaque"/>
+          <link id="#lcl.controls.TControl.ParentColor">TControl.ParentColor</link>
           <link id="#lcl.controls.TControl.CMParentColorChanged">TControl.CMParentColorChanged</link>
         </seealso>
       </element>
@@ -4425,8 +4425,7 @@
           <link id="TDrawItemEvent"/>
           <link id="#lcl.controls.TControl.Color">TControl.Color</link>
           <link id="#lcl.graphics.TCanvas.TextStyle">TCanvas.TextStyle</link>
-          <link id="#lcl.graphics.TTextStyle.Alignment">TTextStyle.Alignment</link>
-          <link id="#lcl.graphics.TTextStyle.Layout">TTextStyle.Layout</link>
+          <link id="#lcl.graphics.TTextStyle">TTextStyle</link>
         </seealso>
       </element>
 
@@ -4816,9 +4815,9 @@
         </descr>
         <seealso>
           <link id="TCustomEdit.CreateEmulatedTextHintFont"/>
-          <link id="TCustomEdit.ShowEmulatedTextHintIfYouCan"/>
           <link id="TCustomEdit.TextHint"/>
           <link id="TCustomEdit.Text"/>
+          <link id="TCustomEdit.InitializeWnd"/>
         </seealso>
       </element>
 
@@ -5514,9 +5513,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomEdit.ShowEmulatedTextHintIfYouCan"/>
           <link id="TCustomEdit.CanShowEmulatedTextHint"/>
-          <link id="TCustomEdit.ShowEmulatedTextHint"/>
           <link id="TCustomEdit.TextHint"/>
           <link id="TCustomEdit.EditingDone"/>
           <link id="#lcl.controls.TWinControl.WMKillFocus">TWinControl.WMKillFocus</link>
@@ -5838,9 +5835,7 @@
             The property value is <b>False</b> if a handle has not been allocated for the widgetset class. Otherwise, the property value is determined by calling the <var>GetCanUndo</var> method in the widgetset class.
           </p>
         </descr>
-        <seealso>
-          <link id="TCustomEdit.GetCanUndo"/>
-        </seealso>
+        <seealso/>
       </element>
 
       <element name="TCustomEdit.CaretPos">
@@ -6003,11 +5998,10 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomComboBox.OnChange"/>
-          <link id="TCustomComboBox.Change"/>
-          <link id="TCustomComboBox.Changed"/>
-          <link id="TCustomComboBox.Text"/>
-          <link id="TCustomComboBox.Modified"/>
+          <link id="TCustomEdit.Change"/>
+          <link id="TCustomEdit.Text"/>
+          <link id="TCustomEdit.Modified"/>
+          <link id="#lcl.controls.TControl.Changed">TControl.Changed</link>
         </seealso>
       </element>
 
@@ -7426,9 +7420,7 @@ end;
         <short>Indicates the checked state for the control</short>
         <descr>
           <p>
-            <p>
-              <var>Checked</var> is a <var>Boolean</var> property which indicates if the control is displayed using its "checked" or "unchecked" state. The value for the property is always <b>False</b> in <var>TButtonControl</var>, and is overridden in a descendent class.
-            </p>
+            <var>Checked</var> is a <var>Boolean</var> property which indicates if the control is displayed using its "checked" or "unchecked" state. The value for the property is always <b>False</b> in <var>TButtonControl</var>, and is overridden in a descendent class.
           </p>
         </descr>
       </element>
@@ -7706,10 +7698,10 @@ end;
           </p>
         </descr>
         <seealso>
-          <link id="TCustomButton.Caption"/>
           <link id="TCustomButton.Click"/>
-          <link id="TCustomButton.OnClick"/>
           <link id="#lcl.controls.TControl.DialogChar">TControl.DialogChar</link>
+          <link id="#lcl.controls.TControl.Caption">TControl.Caption</link>
+          <link id="#lcl.controls.TControl.OnClick">TControl.OnClick</link>
         </seealso>
       </element>
       <element name="TCustomButton.DialogChar.Result">
@@ -7851,7 +7843,7 @@ end;
           <link id="TCustomButton.Active"/>
           <link id="TCustomButton.WSSetDefault"/>
           <link id="#lcl.forms.GetParentForm">GetParentForm</link>
-          <link id="'#lcl.forms.TCustomForm.CancelControl'"/>
+          <link id="#lcl.forms.TCustomForm.CancelControl"/>
           <link id="#lcl.forms.TCustomForm.DefaultControl">TCustomForm.DefaultControl</link>
         </seealso>
       </element>
@@ -8009,7 +8001,6 @@ end;
         </descr>
         <seealso>
           <link id="TCustomButton.ActiveDefaultControlChanged"/>
-          <link id="TCustomButton.UpdateFocus"/>
           <link id="TCustomButton.Default"/>
           <link id="#lcl.forms.TCustomForm.ActiveDefaultControl">TCustomForm.ActiveDefaultControl</link>
         </seealso>
@@ -9400,10 +9391,10 @@ end;
           </p>
         </descr>
         <seealso>
-          <link id="TCustomLabel.AdjustSize"/>
           <link id="TCustomLabel.AutoSize"/>
-          <link id="TCustomLabel.AutoSizeDelayed"/>
           <link id="#lcl.controls.TControl.Loaded">TControl.Loaded</link>
+          <link id="#lcl.controls.TControl.AdjustSize">TControl.AdjustSize</link>
+          <link id="#lcl.controls.TControl.AutoSizeDelayed">TControl.AutoSizeDelayed</link>
         </seealso>
       </element>
 
@@ -9716,7 +9707,7 @@ end;
         </descr>
         <seealso>
           <link id="TCustomLabel.FocusControl"/>
-          <link id="TCustomLabel.Caption"/>
+          <link id="#lcl.controls.TControl.Caption">TControl.Caption</link>
         </seealso>
       </element>
 

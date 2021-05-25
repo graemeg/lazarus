@@ -470,7 +470,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TPersistent.GetOwner">TPersistent.GetOwner</link>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
         </seealso>
       </element>
       <element name="TStatusPanels.GetOwner.Result">
@@ -1015,12 +1015,11 @@
             Setting a new value for the property causes the widgetset class to be notified of the change if the handle has been allocated for the control.
           </p>
           <p>
-            Use <var>SizingGripEnabled</var> to determine if the sizing grip is enabled in the control.
+            Use <var>SizeGripEnabled</var> to determine if the sizing grip is enabled in the control.
           </p>
         </descr>
         <seealso>
-          <link id="TStatusBar.Align"/>
-          <link id="TStatusBar.SizingGripEnabled"/>
+          <link id="TStatusBar.SizeGripEnabled"/>
           <link id="#lcl.forms.TCustomForm.BorderStyle">TCustomForm.BorderStyle</link>
           <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
         </seealso>
@@ -1340,12 +1339,11 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomPage.Handle"/>
           <link id="TCustomPage.Flags"/>
           <link id="TPageFlags"/>
           <link id="TPageFlag"/>
-          <link id="#lcl.controls.TWinControl.DestroyHandle">TWinControl.DestroyHandle</link>
           <link id="#lcl.controls.TWinControl.Handle">TWinControl.Handle</link>
+          <link id="#lcl.controls.TWinControl.DestroyHandle">TWinControl.DestroyHandle</link>
         </seealso>
       </element>
 
@@ -2854,12 +2852,11 @@
         <seealso>
           <link id="TCustomTabControl.Page"/>
           <link id="TCustomTabControl.PageIndex"/>
-          <link id="TCustomTabControl.SetPageIndex"/>
           <link id="TCustomTabControl.Options"/>
           <link id="TCustomTabControl.OnChange"/>
           <link id="TCustomTabControl.ActivePageComponent"/>
           <link id="TCustomTabControl.Tabs"/>
-          <link id="TCustomPage.Caption"/>
+          <link id="#lcl.controls.TControl.Caption">TControl.Caption</link>
         </seealso>
       </element>
 
@@ -2982,7 +2979,6 @@
         </descr>
         <seealso>
           <link id="TCustomTabControl.Change"/>
-          <link id="TCustomTabControl.MoveTab"/>
           <link id="TCustomTabControl.Options"/>
           <link id="TCustomTabControl.PageIndex"/>
           <link id="TCustomTabControl.TabIndex"/>
@@ -4380,7 +4376,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TStringList.Get">TStringList.Get</link>
+          <link id="#rtl.classes.TStringList">TStringList</link>
         </seealso>
       </element>
       <element name="TTabControlNoteBookStrings.Get.Result">
@@ -4405,7 +4401,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TStringList.GetObject">TStringList.GetObject</link>
+          <link id="#rtl.classes.TStrings.Objects">TStrings.Objects</link>
         </seealso>
       </element>
       <element name="TTabControlNoteBookStrings.GetObject.Result">
@@ -4490,7 +4486,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TStringList.Put">TStringList.Put</link>
+          <link id="#rtl.classes.TStringList">TStringList</link>
         </seealso>
       </element>
       <element name="TTabControlNoteBookStrings.Put.Index">
@@ -4506,7 +4502,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TStringList.PutObject">TStringList.PutObject</link>
+          <link id="#rtl.classes.TStrings.Objects">TStrings.Objects</link>
         </seealso>
       </element>
       <element name="TTabControlNoteBookStrings.PutObject.Index">
@@ -4552,7 +4548,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TStringList.SetUpdateState">TStringList.SetUpdateState</link>
+          <link id="#rtl.classes.TStringList">TStringList</link>
         </seealso>
       </element>
       <element name="TTabControlNoteBookStrings.SetUpdateState.Updating">
@@ -5516,7 +5512,8 @@
         </descr>
         <seealso>
           <link id="TCustomTreeView.SortType"/>
-          <link id="TCustomTreeView.Sort"/>
+          <link id="TCustomTreeView.AlphaSort"/>
+          <link id="TCustomTreeView.CustomSort"/>
           <link id="TCustomListView.SortType"/>
           <link id="TCustomListView.Sort"/>
         </seealso>
@@ -5548,7 +5545,7 @@
         </descr>
         <seealso>
           <link id="TListItemStates"/>
-          <link id="TListItem.States"/>
+          <link id="TListItem.StateIndex"/>
         </seealso>
       </element>
       <element name="TListItemState.lisCut">
@@ -5578,7 +5575,7 @@
           <link id="TListItem.DropTarget"/>
           <link id="TListItem.Focused"/>
           <link id="TListItem.Selected"/>
-          <link id="TListItem.FStates"/>
+          <link id="TListItem.StateIndex"/>
         </seealso>
       </element>
 
@@ -5747,7 +5744,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classs.TPersistent.AssignTo">TPersistent.AssignTo</link>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
         </seealso>
       </element>
       <element name="TIconOptions.AssignTo.Dest">
@@ -6225,7 +6222,7 @@
         </descr>
         <seealso>
           <link id="TListItem.Owner"/>
-          <link id="#rtl.classes.TPersistent.GetOwner">TPersistent.GetOwner</link>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
         </seealso>
       </element>
       <element name="TListItem.GetOwner.Result">
@@ -6292,7 +6289,6 @@
         </descr>
         <seealso>
           <link id="TListItem.SubItems"/>
-          <link id="TListItems.ItemDestroying"/>
           <link id="#rtl.classes.TPersistent.Destroy">TPersistent.Destroy</link>
         </seealso>
       </element>
@@ -6365,7 +6361,6 @@
         <seealso>
           <link id="TCustomListView.Selected"/>
           <link id="TCustomListView.ReadOnly"/>
-          <link id="TCustomListView.ShowEditor"/>
         </seealso>
       </element>
       <element name="TListItem.EditCaption.Result">
@@ -6473,10 +6468,7 @@
             Setting a new value for the property causes the value lisSelected to be included in or removed from the internal set. AIsSet indicates whether the state value is set. When True, the state value is included in the set. Otherwise, the state value is excluded.
           </p>
         </descr>
-        <seealso>
-          <link id="TListItem.GetState"/>
-          <link id="TListItem.SetState"/>
-        </seealso>
+        <seealso/>
       </element>
 
       <element name="TListItem.StateIndex">
@@ -6778,7 +6770,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TPersistent.DefineProperties">TPersistent.DefineProperties</link>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
         </seealso>
       </element>
       <element name="TListItems.DefineProperties.Filer">
@@ -7544,7 +7536,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TCollection.Update">TCollection.Update</link>
+          <link id="#rtl.classes.TCollection">TCollection</link>
         </seealso>
       </element>
 
@@ -8237,9 +8229,7 @@
         </short>
         <descr>
           <p>
-            <p>
-              <var>TListViewFlags</var> is the type used to implement the internal flags for the <var>TCustomListView</var> control.
-            </p>
+            <var>TListViewFlags</var> is the type used to implement the internal flags for the <var>TCustomListView</var> control.
           </p>
         </descr>
         <seealso>
@@ -8274,8 +8264,6 @@
         </descr>
         <seealso>
           <link id="TCustomListView.Edit"/>
-          <link id="TCustomListView.ShowEditor"/>
-          <link id="TCustomListView.HideEditor"/>
         </seealso>
       </element>
 
@@ -8312,7 +8300,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomListView.HideEditor"/>
           <link id="#lcl.stdctrls.TCustomEdit.DoExit"/>
         </seealso>
       </element>
@@ -8337,9 +8324,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomListViewEdsitor.DoExit"/>
-          <link id="TCustomListView.ShowEditor"/>
-          <link id="TCustomListView.HideEditor"/>
+          <link id="TCustomListViewEditor.DoExit"/>
           <link id="TListItem"/>
         </seealso>
       </element>
@@ -9123,7 +9108,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomListView.ShowEditor"/>
           <link id="TCustomListView.DoEndEdit"/>
           <link id="TCustomListView.DoExit"/>
           <link id="TCustomListView.ColClick"/>
@@ -10697,15 +10681,13 @@
         <short>Implements the base class for progress bar controls</short>
         <descr>
           <p>
-            <p>
-              <var>TCustomProgressBar</var> is a <var>TWinControl</var> descendant which implements a progress bar control.
-            </p>
-            <p>
-              A progress bar is used to indicate the progress for a lengthy operation. It contains an indicator bar that is updated with the completion percentage for the task. A progress bar can use either horizontal or vertical orientations. The visual appearance of the control can be configured using drawing styles, themes, and other property settings.
-            </p>
-            <p>
-              TCustomProgressBar is the ancestor for <var>TProgressBar</var>.
-            </p>
+            <var>TCustomProgressBar</var> is a <var>TWinControl</var> descendant which implements a progress bar control.
+          </p>
+          <p>
+            A progress bar is used to indicate the progress for a lengthy operation. It contains an indicator bar that is updated with the completion percentage for the task. A progress bar can use either horizontal or vertical orientations. The visual appearance of the control can be configured using drawing styles, themes, and other property settings.
+          </p>
+          <p>
+            TCustomProgressBar is the ancestor for <var>TProgressBar</var>.
           </p>
         </descr>
         <seealso>
@@ -10984,7 +10966,6 @@
         <seealso>
           <link id="TCustomProgressBar.Min"/>
           <link id="TCustomProgressBar.Position"/>
-          <link id="TCustomProgressBar.SetParams"/>
           <link id="TCustomProgressBar.ApplyChanges"/>
         </seealso>
       </element>
@@ -11005,7 +10986,6 @@
         <seealso>
           <link id="TCustomProgressBar.Max"/>
           <link id="TCustomProgressBar.Position"/>
-          <link id="TCustomProgressBar.SetParams"/>
           <link id="TCustomProgressBar.ApplyChanges"/>
         </seealso>
       </element>
@@ -11051,14 +11031,14 @@
           </p>
         </descr>
         <seealso>
-          <link id="TProgressBar.Min"/>
-          <link id="TProgressBar.Max"/>
-          <link id="TProgressBar.Style"/>
-          <link id="TProgressBar.ApplyChanges"/>
-          <link id="'TProgressBar.StepIt'"/>
-          <link id="'TProgressBar.StepBy'"/>
-          <link id="'TProgressBar.Step'"/>
-          <link id="'TProgressBarStyle'"/>
+          <link id="TCustomProgressBar.Min"/>
+          <link id="TCustomProgressBar.Max"/>
+          <link id="TCustomProgressBar.Style"/>
+          <link id="'TCustomProgressBar.StepBy'"/>
+          <link id="'TCustomProgressBar.Step'"/>
+          <link id="'TCustomProgressBar.StepIt'"/>
+          <link id="TCustomProgressBar.ApplyChanges"/>
+          <link id="TProgressBarStyle"/>
         </seealso>
       </element>
 
@@ -12087,7 +12067,7 @@
         </short>
         <descr/>
         <seealso>
-          <link id="#rtl.classes.TBasicActionLink.AssignClient">TBasicActionLink.AssignClient</link>
+          <link id="#rtl.classes.TBasicActionLink">TBasicActionLink</link>
         </seealso>
       </element>
       <element name="TToolButtonActionLink.AssignClient.AClient">
@@ -12439,8 +12419,7 @@
         </short>
         <descr/>
         <seealso>
-          <!-- Protected method excluded in RTL docs.... for some reason.-->
-          <link id="#rtl.classes.TPersistent.AssignTo">TPersistent.AssignTo</link>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
           <link id="#lcl.controls.TControl.AssignTo">TControl.AssignTo</link>
         </seealso>
       </element>
@@ -16313,10 +16292,7 @@
             <var>ETreeNodeError</var> is an <var>Exception</var> descendant with the base exception type raised for errors that occur when <var>TTreeNode</var> instances are retrieved. It is the ancestor for the <var>ETreeViewError</var> exception.
           </p>
         </descr>
-        <seealso>
-          <link id="TreeNodeError"/>
-          <link id="TreeNodeErrorFmt"/>
-        </seealso>
+        <seealso/>
       </element>
 
       <element name="ETreeViewError">
@@ -16326,10 +16302,7 @@
             <var>ETreeViewError</var> is a <var>ETreeNodeError</var> descendant and the exception raised for errors in a tree structure.
           </p>
         </descr>
-        <seealso>
-          <link id="TreeViewError"/>
-          <link id="TreeViewErrorFmt"/>
-        </seealso>
+        <seealso/>
       </element>
 
       <element name="TTreeNodeChangeReason">
@@ -17364,7 +17337,7 @@
           <link id="TTreeNode.GetFirstChild"/>
           <link id="TTreeNode.GetNextSibling"/>
           <link id="TTreeNodes.FindNodeWithText"/>
-          <link id="TTreeNodes.FindNodeWithPath"/>
+          <link id="TTreeNodes.FindNodeWithTextPath"/>
         </seealso>
       </element>
       <element name="TTreeNode.FindNode.Result">
@@ -19234,7 +19207,7 @@
         <seealso>
           <link id="TTreeNodes.ClearMultiSelection"/>
           <link id="TTreeNodes.Owner"/>
-          <link id="`TTreeNode.MultiSelected`"/>
+          <link id="TTreeNode.MultiSelected"/>
           <link id="TCustomTreeView.MultiSelectStyle"/>
           <link id="TMultiSelectStyle"/>
         </seealso>
@@ -20519,7 +20492,6 @@
           <link id="TCustomTreeView.Expand"/>
           <link id="TTreeNode.Expanded"/>
           <link id="TTreeNode.Collapse"/>
-          <link id="TTreeNode.ExpandItem"/>
         </seealso>
       </element>
       <element name="TCustomTreeView.Collapse.Node">
@@ -21138,9 +21110,9 @@
         <seealso>
           <link id="TCustomTreeView.DefaultItemHeight"/>
           <link id="TCustomTreeView.Images"/>
+          <link id="TCustomTreeView.ImagesWidth"/>
           <link id="TCustomTreeView.StateImages"/>
-          <link id="TCustomTreeView.ImageSize"/>
-          <link id="TCustomTreeView.StateImageSize"/>
+          <link id="TCustomTreeView.StateImagesWidth"/>
           <link id="TCustomTreeView.States"/>
         </seealso>
       </element>
@@ -22289,7 +22261,6 @@
         </descr>
         <seealso>
           <link id="TCustomTreeView.Options"/>
-          <link id="TCustomTreeView.Font"/>
           <link id="TCustomTreeView.Images"/>
           <link id="TCustomTreeView.StateImages"/>
           <link id="TCustomTreeView.Items"/>
@@ -22297,6 +22268,7 @@
           <link id="TTreeNode.Height"/>
           <link id="TTreeNodes"/>
           <link id="DefaultTreeNodeHeight"/>
+          <link id="#lcl.controls.TControl.Font">TControl.Font</link>
         </seealso>
       </element>
 
@@ -23211,7 +23183,7 @@ OldExpanded.Free;
           Gets the Owner of the class instance
         </short>
         <seealso>
-          <link id="#rtl.classes.TPersistent.GetOwner">TPersistent.GetOwner</link>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
         </seealso>
       </element>
       <element name="THeaderSections.GetOwner.Result">
@@ -23559,7 +23531,6 @@ OldExpanded.Free;
           </p>
         </descr>
         <seealso>
-          <link id="TCustomHeaderControl.Tracking"/>
           <link id="TCustomHeaderControl.MouseDown"/>
           <link id="TCustomHeaderControl.MouseMove"/>
           <link id="TCustomHeaderControl.MouseUp"/>
@@ -23789,8 +23760,6 @@ OldExpanded.Free;
         </descr>
         <seealso>
           <link id="TCustomHeaderControl.Sections"/>
-          <link id="TCustomHeaderControl.BeginUpdate"/>
-          <link id="TCustomHeaderControl.EndUpdate"/>
           <link id="THeaderSection"/>
           <link id="#lcl.controls.TWinControl.ChangeScale">TWinControl.ChangeScale</link>
         </seealso>

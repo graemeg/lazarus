@@ -540,7 +540,6 @@
         <descr/>
         <seealso>
           <link id="TDialogButtons.Items"/>
-          <link id="#rtl.classes.TCollection.GetItem">TCollection.GetItem</link>
         </seealso>
       </element>
       <element name="TDialogButtons.GetItem.Result">
@@ -672,7 +671,9 @@
           <p>
             Use <var>Add</var> to create and store a new TDialogButtoon instance in Items.
           </p>
-          Use <var>Delete</var> to remove a collection item at a specific position in Items.
+          <p>
+            Use <var>Delete</var> to remove a collection item at a specific position in Items.
+          </p>
           <p>
             Use <var>Clear</var> to remove all Items in the collection.
           </p>
@@ -681,8 +682,6 @@
           <link id="TDialogButtons.GetItem"/>
           <link id="TDialogButtons.SetItem"/>
           <link id="TDialogButtons.Add"/>
-          <link id="#rtl.classes.TCollection.GetItem">TCollection.GetItem</link>
-          <link id="#rtl.classes.TCollection.SetItem">TCollection.SetItem</link>
           <link id="#rtl.classes.TCollection.Clear">TCollection.Clear</link>
           <link id="#rtl.classes.TCollection.Count">TCollection.Count</link>
           <link id="#rtl.classes.TCollection.Delete">TCollection.Delete</link>
@@ -762,7 +761,7 @@
         </descr>
         <seealso>
           <link id="TWidgetSet.ThemeServices"/>
-          <link id="#rtl.objects.TObject.BeforeDestruction">TObject.BeforeDestruction</link>
+          <link id="#rtl.objects.TObject">TObject</link>
         </seealso>
       </element>
 
