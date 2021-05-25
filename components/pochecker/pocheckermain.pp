@@ -79,6 +79,7 @@ type
     procedure AddToMasterPoList(S: TStrings);
     procedure SetSelectedMasterFiles(S: TStrings);
     procedure ApplyConfig;
+    procedure ApplyGeometry;
     procedure SaveConfig;
     function LangFilterIndexToLangID(Index: Integer): TLangID;
     function LangIdToLangFilterIndex(LangID: TLangID): Integer;
@@ -175,6 +176,7 @@ end;
 
 procedure TPoCheckerForm.FormShow(Sender: TObject);
 begin
+  ApplyGeometry;
   WindowState := FPoCheckerSettings.MainFormWindowState;
   SetSelectedMasterFiles(FPoCheckerSettings.MasterPoSelList);
 end;
@@ -513,18 +515,9 @@ end;
 
 procedure TPoCheckerForm.ApplyConfig;
 var
-  ARect: TRect;
   Abbr: String;
   ID: TLangID;
 begin
-  ARect := FPoCheckerSettings.MainFormGeometry;
-  if not IsDefaultRect(ARect) and IsValidRect(ARect) then
-  begin
-    ARect.Width := Scale96ToForm(ARect.Width);
-    ARect.Height := Scale96ToForm(ARect.Height);
-    ARect := FitToRect(ARect, Screen.WorkAreaRect);
-    BoundsRect := ARect;
-  end;
   SetTestTypeCheckBoxes(FPoCheckerSettings.TestTypes);
   SelectDirectoryDialog.Filename := FPoCheckerSettings.SelectDirectoryFilename;
   Abbr := FPoCheckerSettings.LangFilterLanguageAbbr;
@@ -533,11 +526,22 @@ begin
   AddToMasterPoList(FPoCheckerSettings.MasterPoList);
 end;
 
+procedure TPoCheckerForm.ApplyGeometry;
+var
+  ARect: TRect;
+begin
+  ARect := FPoCheckerSettings.MainFormGeometry;
+  if not IsDefaultRect(ARect) and IsValidRect(ARect) then
+  begin
+    ARect := FitToRect(ARect, Screen.WorkAreaRect);
+    BoundsRect := ARect;
+  end;
+end;
+
 procedure TPoCheckerForm.SaveConfig;
 var
   SL: TStringList;
   ID: TLangID;
-  R: TRect;
 begin
   FPoCheckerSettings.SelectDirectoryFilename := SelectDirectoryDialog.Filename;
   //FPoCheckerSettings.LangFilterIndex := LangFilter.ItemIndex;
@@ -546,18 +550,9 @@ begin
   FPoCheckerSettings.TestTypes := GetTestTypesFromListBox;
   FPoCheckerSettings.MainFormWindowState := WindowState;
   if (WindowState = wsNormal) then
-  begin
-    R := BoundsRect;
-    R.Width := ScaleFormTo96(R.Width);
-    R.Height := ScaleFormTo96(R.Height);
-    FPoCheckerSettings.MainFormGeometry := R;
-  end
+    FPoCheckerSettings.MainFormGeometry := BoundsRect
   else
-  begin
-    R := Rect(0, 0, ScaleFormTo96(RestoredWidth), ScaleFormTo96(RestoredHeight));
-    OffsetRect(R, RestoredLeft, RestoredTop);
-    FPoCheckerSettings.MainFormGeometry := R;
-  end;
+    FPoCheckerSettings.MainFormGeometry := Rect(RestoredLeft, RestoredTop, RestoredLeft+RestoredWidth, RestoredTop+RestoredHeight);
   FPoCheckerSettings.MasterPoList := MasterPoListBox.Items;
   SL := GetSelectedMasterFiles;
   try
