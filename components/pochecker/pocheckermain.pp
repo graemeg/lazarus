@@ -80,7 +80,6 @@ type
     procedure AddToMasterPoList(S: TStrings);
     procedure SetSelectedMasterFiles(S: TStrings);
     procedure ApplyConfig;
-    procedure ApplyGeometry;
     procedure SaveConfig;
     function LangFilterIndexToLangID(Index: Integer): TLangID;
     function LangIdToLangFilterIndex(LangID: TLangID): Integer;
@@ -111,6 +110,7 @@ procedure ShowPoCheckerForm();
 begin
   if not Assigned(PoCheckerForm) then
     PoCheckerForm := TPoCheckerForm.Create(Application);
+  PoCheckerForm.PixelsPerInch := Screen.PixelsPerInch;
   PoCheckerForm.Show;
 end;
 
@@ -177,7 +177,6 @@ end;
 
 procedure TPoCheckerForm.FormShow(Sender: TObject);
 begin
-  ApplyGeometry;
   WindowState := FPoCheckerSettings.MainFormWindowState;
   SetSelectedMasterFiles(FPoCheckerSettings.MasterPoSelList);
 end;
@@ -516,9 +515,19 @@ end;
 
 procedure TPoCheckerForm.ApplyConfig;
 var
+  ARect: TRect;
   Abbr: String;
   ID: TLangID;
 begin
+  ARect := FPoCheckerSettings.MainFormGeometry;
+  if not IsDefaultRect(ARect) and IsValidRect(ARect) then
+  begin
+    // Main form size is stored in config at 96ppi.
+    ARect.Width := Scale96ToForm(ARect.Width);
+    ARect.Height := Scale96ToForm(ARect.Height);
+    ARect := FitToRect(ARect, Screen.WorkAreaRect);
+    BoundsRect := ARect;
+  end;
   SetTestTypeCheckBoxes(FPoCheckerSettings.TestTypes);
   SelectDirectoryDialog.Filename := FPoCheckerSettings.SelectDirectoryFilename;
   Abbr := FPoCheckerSettings.LangFilterLanguageAbbr;
@@ -527,22 +536,11 @@ begin
   AddToMasterPoList(FPoCheckerSettings.MasterPoList);
 end;
 
-procedure TPoCheckerForm.ApplyGeometry;
-var
-  ARect: TRect;
-begin
-  ARect := FPoCheckerSettings.MainFormGeometry;
-  if not IsDefaultRect(ARect) and IsValidRect(ARect) then
-  begin
-    ARect := FitToRect(ARect, Screen.WorkAreaRect);
-    BoundsRect := ARect;
-  end;
-end;
-
 procedure TPoCheckerForm.SaveConfig;
 var
   SL: TStringList;
   ID: TLangID;
+  R: TRect;
 begin
   FPoCheckerSettings.SelectDirectoryFilename := SelectDirectoryDialog.Filename;
   //FPoCheckerSettings.LangFilterIndex := LangFilter.ItemIndex;
@@ -550,10 +548,19 @@ begin
   FPoCheckerSettings.LangFilterLanguageAbbr := LanguageAbbr[ID];
   FPoCheckerSettings.TestTypes := GetTestTypesFromListBox;
   FPoCheckerSettings.MainFormWindowState := WindowState;
+  // Store main form size in config at 96 ppi to avoid double scaling
   if (WindowState = wsNormal) then
-    FPoCheckerSettings.MainFormGeometry := BoundsRect
+  begin
+    R := BoundsRect;
+    R.Width := ScaleFormTo96(R.Width);
+    R.Height := ScaleFormTo96(R.Height);
+  end
   else
-    FPoCheckerSettings.MainFormGeometry := Rect(RestoredLeft, RestoredTop, RestoredLeft+RestoredWidth, RestoredTop+RestoredHeight);
+  begin
+    R := Rect(0, 0, ScaleFormTo96(RestoredWidth), ScaleFormTo96(RestoredHeight));
+    OffsetRect(R, RestoredLeft, RestoredTop);
+  end;
+  FPoCheckerSettings.MainFormGeometry := R;
   FPoCheckerSettings.MasterPoList := MasterPoListBox.Items;
   SL := GetSelectedMasterFiles;
   try
