@@ -1206,7 +1206,8 @@ procedure Register;
 begin
   RegisterDebugger(TFpGDBMIDebugger);
 
-  MenuCmd := RegisterIDEMenuCommand(itmRunDebugging, 'fpGdbmiToggleGDB', 'Display GDB instead of FpDebug Watches', nil,
+  MenuCmd := RegisterIDEMenuCommand(itmRunDebugging, 'fpGdbmiToggleGDB',
+    fpgdbmiDisplayGDBInsteadOfFpDebugWatches, nil,
     @IDEMenuClicked);
   MenuCmd.AutoCheck := True;
   MenuCmd.Checked := False;
