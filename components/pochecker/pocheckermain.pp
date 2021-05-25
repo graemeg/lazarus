@@ -27,10 +27,11 @@ uses
   Classes, SysUtils, FileUtil, LazFileUtils, Forms, Controls, Graphics, Dialogs,
   StdCtrls, CheckLst, Buttons, ExtCtrls, ComCtrls, Types,
   LCLType, LazUTF8,
-  {$IFnDEF POCHECKERSTANDALONE}
+  {$IFDEF POCHECKERSTANDALONE}
+  LCLTranslator,
+  {$ELSE}
   MenuIntf,
   {$ENDIF}
-  LCLTranslator,
   PoFamilies, ResultDlg, pocheckerconsts, PoCheckerSettings,
   PoFamilyLists, PoCheckerMemoDlg;
 
