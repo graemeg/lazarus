@@ -10708,8 +10708,8 @@ var
   XML: TLrXMLConfig;
 begin
   XML := TLrXMLConfig.Create(nil);
-  XML.LoadFromStream(Stream);
   try
+    XML.LoadFromStream(Stream);
     LoadFromXML(XML, 'LazReport/');
     FileName := '-stream-';
   finally
