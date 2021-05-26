@@ -118,6 +118,8 @@ end;
 { TPoCheckerForm }
 
 procedure TPoCheckerForm.FormCreate(Sender: TObject);
+var
+  MonPPI: Integer;
 begin
   FPoCheckerSettings := TPoCheckerSettings.Create;
   FPoCheckerSettings.LoadConfig;
@@ -131,6 +133,12 @@ begin
   FillTestListBox;
   ClearStatusBar;
   PopulateLangFilter;
+
+  MonPPI := Monitor.PixelsPerInch;
+  AutoAdjustLayout(lapAutoAdjustForDPI, PixelsPerInch, MonPPI,
+                   MulDiv(Width, MonPPI, PixelsPerInch),
+                   MulDiv(Height, MonPPI, PixelsPerInch));
+
   ApplyConfig;
   LangFilter.Invalidate; //Items[0] may have been changed
 end;
@@ -521,13 +529,7 @@ var
 begin
   ARect := FPoCheckerSettings.MainFormGeometry;
   if not IsDefaultRect(ARect) and IsValidRect(ARect) then
-  begin
-    // Main form size is stored in config at 96ppi.
-    ARect.Width := Scale96ToForm(ARect.Width);
-    ARect.Height := Scale96ToForm(ARect.Height);
-    ARect := FitToRect(ARect, Screen.WorkAreaRect);
-    BoundsRect := ARect;
-  end;
+    BoundsRect := FitToRect(ARect, Screen.WorkAreaRect);
   SetTestTypeCheckBoxes(FPoCheckerSettings.TestTypes);
   SelectDirectoryDialog.Filename := FPoCheckerSettings.SelectDirectoryFilename;
   Abbr := FPoCheckerSettings.LangFilterLanguageAbbr;
@@ -540,7 +542,6 @@ procedure TPoCheckerForm.SaveConfig;
 var
   SL: TStringList;
   ID: TLangID;
-  R: TRect;
 begin
   FPoCheckerSettings.SelectDirectoryFilename := SelectDirectoryDialog.Filename;
   //FPoCheckerSettings.LangFilterIndex := LangFilter.ItemIndex;
@@ -550,17 +551,9 @@ begin
   FPoCheckerSettings.MainFormWindowState := WindowState;
   // Store main form size in config at 96 ppi to avoid double scaling
   if (WindowState = wsNormal) then
-  begin
-    R := BoundsRect;
-    R.Width := ScaleFormTo96(R.Width);
-    R.Height := ScaleFormTo96(R.Height);
-  end
+    FPoCheckerSettings.MainFormGeometry := BoundsRect
   else
-  begin
-    R := Rect(0, 0, ScaleFormTo96(RestoredWidth), ScaleFormTo96(RestoredHeight));
-    OffsetRect(R, RestoredLeft, RestoredTop);
-  end;
-  FPoCheckerSettings.MainFormGeometry := R;
+    FPoCheckerSettings.MainFormGeometry := Rect(RestoredLeft, RestoredTop, RestoredLeft + RestoredWidth, RestoredTop + RestoredHeight);
   FPoCheckerSettings.MasterPoList := MasterPoListBox.Items;
   SL := GetSelectedMasterFiles;
   try
