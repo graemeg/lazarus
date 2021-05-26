@@ -147,7 +147,6 @@ begin
   ScrollPastEndLineCheckBox.Caption := dlgScrollPastEndLine;
   chkScrollHint.Caption := dlgScrollHint;
 
-
   // caret + key navigation
   CaretGroupDivider.Caption := dlgCaretGroupOptions;
   KeepCursorXCheckBox.Caption := dlgKeepCursorX;

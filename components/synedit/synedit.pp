@@ -1093,7 +1093,7 @@ type
     procedure CodeFoldAction(iLine: integer); deprecated;
     procedure UnfoldAll; deprecated;
     procedure FoldAll(StartLevel : Integer = 0; IgnoreNested : Boolean = False); deprecated;
-    property FoldState: String read GetFoldState write SetFoldState; deprecated;
+    property FoldState: String read GetFoldState write SetFoldState;
 
     procedure AddKey(Command: TSynEditorCommand; Key1: word; SS1: TShiftState;
       Key2: word; SS2: TShiftState);
