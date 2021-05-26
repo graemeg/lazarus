@@ -869,7 +869,7 @@ end;
 
 procedure TCustomListView.QueuedShowEditor(Data: PtrInt);
 begin
-  if fShowEditorQueued then
+  if fShowEditorQueued and IsVisible then
   begin
     fShowEditorQueued:=false;
     ShowEditor;
