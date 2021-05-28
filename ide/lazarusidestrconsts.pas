@@ -559,6 +559,7 @@ resourcestring
   lisInspectClassInherit = '%s: class %s inherits from %s';
   lisInspectUnavailableError = '%s: unavailable (error: %s)';
   lisInspectPointerTo = 'Pointer to %s';
+  lisInspectAddWatch = 'Add watch';
   lisColClass = 'Class';
   lisColVisibility = 'Visibility';
   lisColReturns = 'Returns';

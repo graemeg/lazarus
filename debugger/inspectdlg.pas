@@ -60,12 +60,15 @@ type
     ToolBar1: TToolBar;
     btnUseInstance: TToolButton;
     btnBackward: TToolButton;
+    BtnAddWatch: TToolButton;
     ToolButton2: TToolButton;
     btnColClass: TToolButton;
     btnColType: TToolButton;
     btnColVisibility: TToolButton;
     btnForward: TToolButton;
+    ToolButton3: TToolButton;
     ToolButton4: TToolButton;
+    procedure BtnAddWatchClick(Sender: TObject);
     procedure btnBackwardClick(Sender: TObject);
     procedure btnColClassClick(Sender: TObject);
     procedure btnForwardClick(Sender: TObject);
@@ -298,6 +301,27 @@ end;
 procedure TIDEInspectDlg.btnBackwardClick(Sender: TObject);
 begin
   GotoHistory(FHistoryIndex - 1);
+end;
+
+procedure TIDEInspectDlg.BtnAddWatchClick(Sender: TObject);
+var
+  w: TCurrentWatch;
+begin
+  if DebugBoss = nil then
+    exit;
+  DebugBoss.Watches.CurrentWatches.BeginUpdate;
+  try
+    w := DebugBoss.Watches.CurrentWatches.Find(FExpression);
+    if w = nil then
+      w := DebugBoss.Watches.CurrentWatches.Add(FExpression);
+    if (w <> nil) then begin
+      w.Enabled := True;
+      DebugBoss.ViewDebugDialog(ddtWatches, False);
+    end;
+  finally
+    DebugBoss.Watches.CurrentWatches.EndUpdate;
+  end;
+
 end;
 
 procedure TIDEInspectDlg.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -797,6 +821,7 @@ begin
   btnBackward.Caption := '';
   btnForward.ImageIndex := IDEImages.LoadImage('arrow_right');
   btnForward.Caption := '';
+  BtnAddWatch.Caption:=lisInspectAddWatch;
 
   btnUseInstance.Enabled := False;
   btnColClass.Enabled := False;

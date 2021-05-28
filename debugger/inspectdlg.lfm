@@ -154,5 +154,18 @@ object IDEInspectDlg: TIDEInspectDlg
       Caption = 'ToolButton4'
       Style = tbsDivider
     end
+    object BtnAddWatch: TToolButton
+      Left = 188
+      Top = 2
+      Caption = 'Add Watch'
+      OnClick = BtnAddWatchClick
+    end
+    object ToolButton3: TToolButton
+      Left = 180
+      Height = 22
+      Top = 2
+      Caption = 'ToolButton3'
+      Style = tbsSeparator
+    end
   end
 end
