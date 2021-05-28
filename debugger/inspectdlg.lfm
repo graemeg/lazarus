@@ -14,22 +14,23 @@ object IDEInspectDlg: TIDEInspectDlg
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
+  OnMouseDown = DataGridMouseDown
   LCLVersion = '2.1.0.0'
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 19
-    Top = 387
+    Height = 23
+    Top = 383
     Width = 295
     Panels = <>
   end
   object PageControl: TPageControl
     Left = 0
-    Height = 338
+    Height = 334
     Top = 49
     Width = 295
-    ActivePage = DataPage
+    ActivePage = ErrorPage
     Align = alClient
-    TabIndex = 0
+    TabIndex = 3
     TabOrder = 1
     OnMouseDown = DataGridMouseDown
     object DataPage: TTabSheet
@@ -38,9 +39,27 @@ object IDEInspectDlg: TIDEInspectDlg
     end
     object PropertiesPage: TTabSheet
       Caption = 'PropertiesPage'
+      OnMouseDown = DataGridMouseDown
     end
     object MethodsPage: TTabSheet
       Caption = 'MethodsPage'
+      OnMouseDown = DataGridMouseDown
+    end
+    object ErrorPage: TTabSheet
+      Caption = 'ErrorPage'
+      ClientHeight = 306
+      ClientWidth = 287
+      OnMouseDown = DataGridMouseDown
+      TabVisible = False
+      object ErrorLabel: TLabel
+        Left = 0
+        Height = 1
+        Top = 0
+        Width = 287
+        Align = alTop
+        ParentColor = False
+        OnMouseDown = DataGridMouseDown
+      end
     end
   end
   object EdInspect: TComboBox
@@ -49,7 +68,7 @@ object IDEInspectDlg: TIDEInspectDlg
     Top = 0
     Width = 295
     Align = alTop
-    ItemHeight = 14
+    ItemHeight = 15
     OnEditingDone = EdInspectEditingDone
     OnKeyDown = EdInspectKeyDown
     TabOrder = 2
@@ -65,7 +84,7 @@ object IDEInspectDlg: TIDEInspectDlg
     ShowCaptions = True
     TabOrder = 3
     object btnUseInstance: TToolButton
-      Left = 52
+      Left = 54
       Hint = 'Use Instance class'
       Top = 2
       AllowAllUp = True
@@ -76,14 +95,14 @@ object IDEInspectDlg: TIDEInspectDlg
       Style = tbsCheck
     end
     object ToolButton2: TToolButton
-      Left = 105
+      Left = 106
       Height = 22
       Top = 2
       Caption = 'ToolButton2'
       Style = tbsDivider
     end
     object btnColClass: TToolButton
-      Left = 110
+      Left = 111
       Hint = 'Show Class Column'
       Top = 2
       AllowAllUp = True
@@ -95,7 +114,7 @@ object IDEInspectDlg: TIDEInspectDlg
       Style = tbsCheck
     end
     object btnColType: TToolButton
-      Left = 133
+      Left = 134
       Top = 2
       AllowAllUp = True
       Caption = 'T'
@@ -106,7 +125,7 @@ object IDEInspectDlg: TIDEInspectDlg
       Style = tbsCheck
     end
     object btnColVisibility: TToolButton
-      Left = 156
+      Left = 157
       Top = 2
       AllowAllUp = True
       Caption = 'V'
@@ -123,13 +142,13 @@ object IDEInspectDlg: TIDEInspectDlg
       OnClick = btnBackwardClick
     end
     object btnForward: TToolButton
-      Left = 24
+      Left = 25
       Top = 2
       Caption = '>>'
       OnClick = btnForwardClick
     end
     object ToolButton4: TToolButton
-      Left = 47
+      Left = 49
       Height = 22
       Top = 2
       Caption = 'ToolButton4'

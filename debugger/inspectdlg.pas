@@ -50,11 +50,13 @@ type
 
   TIDEInspectDlg = class(TDebuggerDlg)
     EdInspect: TComboBox;
+    ErrorLabel: TLabel;
     PageControl: TPageControl;
     StatusBar1: TStatusBar;
     DataPage: TTabSheet;
     PropertiesPage: TTabSheet;
     MethodsPage: TTabSheet;
+    ErrorPage: TTabSheet;
     ToolBar1: TToolBar;
     btnUseInstance: TToolButton;
     btnBackward: TToolButton;
@@ -112,6 +114,7 @@ type
     procedure GridMethodsSetup(Initial: Boolean = False);
     procedure ShowDataFields;
     procedure ShowMethodsFields;
+    //procedure ShowError;
     procedure Clear;
     procedure GotoHistory(AIndex: Integer);
   protected
@@ -722,6 +725,7 @@ begin
   DataPage.TabVisible:=false;
   PropertiesPage.TabVisible:=false;
   MethodsPage.TabVisible:=false;
+  ErrorPage.TabVisible:=false;
   GridDataSetup;
   FGridData.Visible := False;
   StatusBar1.SimpleText:='';
@@ -786,6 +790,7 @@ begin
 
   FGridData.OnDblClick := @DataGridDoubleClick;
   FGridData.OnMouseDown := @DataGridMouseDown;
+  FGridMethods.OnMouseDown := @DataGridMouseDown;
 
   ToolBar1.Images := IDEImages.Images_16;
   btnBackward.ImageIndex := IDEImages.LoadImage('arrow_left');
@@ -873,6 +878,8 @@ begin
     FreeAndNil(FDBGInfo);
     Clear;
     StatusBar1.SimpleText:=Format(lisInspectUnavailableError, [ShortenedExpression, FHumanReadable]);
+    ErrorLabel.Caption :=Format(lisInspectUnavailableError, [ShortenedExpression, FHumanReadable]);
+    PageControl.ActivePage := ErrorPage;
     Exit;
   end;
   case FDBGInfo.Kind of
@@ -893,6 +900,8 @@ begin
     else begin
         Clear;
         StatusBar1.SimpleText:=Format(lisInspectUnavailableError, [ShortenedExpression, FHumanReadable]);
+        ErrorLabel.Caption :=Format(lisInspectUnavailableError, [ShortenedExpression, FHumanReadable]);
+        PageControl.ActivePage := ErrorPage;
       end;
   end;
 end;
