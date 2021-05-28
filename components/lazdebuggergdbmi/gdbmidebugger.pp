@@ -956,7 +956,7 @@ type
     FGDBCPU: String;
     FGDBPtrSize: integer; // PointerSize of the GDB-cpu
     FGDBOS: String;
-    FIsCygWin: Boolean;
+    FIsCygWin, FIsUnicodeBuild: Boolean;
 
     // Target info (move to record ?)
     FTargetInfo: TGDBMITargetInfo;
@@ -3464,7 +3464,7 @@ begin
 
   if ct = gdceDefault then begin
     {$IFDEF WINDOWS}
-    if FIsCygWin then
+    if FIsCygWin or FIsUnicodeBuild then
       ct := gdceUtf8
     else
       ct := gdceLocale;
@@ -3606,6 +3606,14 @@ function TGDBMIDebuggerCommandInitDebugger.DoExecute: Boolean;
       FTheDebugger.FGDBFullTarget := GetPart('--target=', '', S);
     ParseTarget;
 
+
+    FTheDebugger.FIsUnicodeBuild := False;
+    {$IFDEF WINDOWS}
+    FTheDebugger.FGDBVersion := GetPart(['GNU gdb unicode (GDB)'], [#10, #13], R.Values, False, False);
+    if FTheDebugger.FGDBVersion <> '' then
+      FTheDebugger.FIsUnicodeBuild := True;
+    {$ENDIF}
+    if StoreGdbVersionAsNumber then Exit;
 
     FTheDebugger.FGDBVersion := GetPart(['GNU gdb (GDB)'], [#10, #13], R.Values, False, False);
     if StoreGdbVersionAsNumber then Exit;
