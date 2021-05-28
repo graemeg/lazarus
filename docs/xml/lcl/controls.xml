@@ -7509,7 +7509,13 @@
         <short/>
       </element>
 
-      <element name="TControl.Loaded" link="#rtl.classes.TComponent.Loaded"/>
+      <element name="TControl.Loaded">
+        <short>Performs actions needed when LCL component streaming has been completed</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
+      </element>
 
       <element name="TControl.LoadedAll">
         <short>
@@ -14003,8 +14009,18 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TWinControl.DisableAutoSizing" name="TWinControl.DisableAlign"/>
-      <element link="#lcl.controls.TWinControl.EnableAutoSizing" name="TWinControl.EnableAlign"/>
+      <element name="TWinControl.DisableAlign">
+        <short/>
+        <descr/>
+        <seealso/>
+      </element>
+
+      <element name="TWinControl.EnableAlign">
+        <short/>
+        <descr/>
+        <seealso/>
+      </element>
+
       <element link="#lcl.controls.TControl.AdjustSize" name="TWinControl.ReAlign"/>
 
       <element name="TWinControl.ScrollBy_WS">

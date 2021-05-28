@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fpdoc-descriptions>
-  <package name="lcl">
+  <package name="lazutils">
     <!--
     ====================================================================
       TextStrings
@@ -178,10 +178,6 @@
         <seealso>
           <link id="TTextStrings.ClearArrays"/>
           <link id="TTextStrings.Text"/>
-          <link id="TTextStrings.Get"/>
-          <link id="TTextStrings.GetObject"/>
-          <link id="TTextStrings.Put"/>
-          <link id="TTextStrings.PutObject"/>
           <link id="TTextStrings.GetCount"/>
           <link id="TTextStrings.GetLineEnd"/>
           <link id="TTextStrings.Insert"/>
@@ -590,10 +586,10 @@
         <seealso>
           <link id="TTextStrings.OnChanging"/>
           <link id="TTextStrings.OnChange"/>
+          <link id="TTextStrings.Changing"/>
+          <link id="TTextStrings.Changed"/>
           <link id="TTextStrings.EndUpdate"/>
           <link id="#rtl.classes.TStrings.BeginUpdate">TStrings.BeginUpdate</link>
-          <link id="#rtl.classes.TStrings.Changing">TStrings.Changing</link>
-          <link id="#rtl.classes.TStrings.Change">TStrings.Change</link>
         </seealso>
       </element>
 

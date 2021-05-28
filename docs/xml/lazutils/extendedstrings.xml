@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fpdoc-descriptions>
-  <package name="lcl">
+  <package name="lazutils">
     <!--
     ====================================================================
       ExtendedStrings
@@ -12,7 +12,7 @@
       </short>
       <descr>
         <p>
-          <file>extendedstrings.pas</file> implements <var>TExtendedStrings</var>, which is a <var>TStringList</var> that allows its <var>Objects</var> property to hold any type of records.
+          <file>extendedstrings.pas</file> implements <var>TExtendedStrings</var>, which is a <var>TStringList</var> that allows its <var>Objects</var> property to hold any type of record.
         </p>
         <p>
           This file is part of the <file>LazUtils</file> package.
@@ -36,7 +36,10 @@
             <var>TExtStringsOption</var> is an enumeration type with values that define actions needed when creating or freeing records in TExtendedStringList. Values from TExtStringsOption are stored in the <var>TExtStringsOptions</var> type.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TExtStringsOption"/>
+          <link id="TExtStringsOptions"/>
+        </seealso>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TExtStringsOption.esoClearRecordsOnCreate">
@@ -65,7 +68,7 @@
         </short>
         <descr>
           <p>
-            <var>TExtendedStringList</var> is a TStringList descendant that provides support for using Records in the class. The Records property allows access to records stored in the class. TExtendedStringList provides overridden methods to maintain values in the Objects property. New properties and methods are included to control actions needed when adding or freeing Records stored in the Objects property.
+            <var>TExtendedStringList</var> is a <var>TStringList</var> descendant that provides support for using records in the class. The <var>Records</var> property allows access to records stored in the class. TExtendedStringList provides overridden methods to maintain values in the <var>Objects</var> property. New properties and methods are included to control actions needed when adding or freeing Records stored in the Objects property.
           </p>
         </descr>
         <seealso></seealso>
@@ -148,10 +151,12 @@
         </short>
         <descr>
           <p>
-            <var>ResizeRecord</var> is a procedure used to change the memory allocation size for the specified record. ResizeRecord calls ReAllocMem to change the allocated memory size to the value in NewSize. ResizeRecord is called when the value in the RecordSize property is changed.
+            <var>ResizeRecord</var> is a procedure used to change the memory allocation size for the specified record. ResizeRecord calls <var>ReAllocMem</var> to change the allocated memory size to the value in <var>NewSize</var>. ResizeRecord is called when the value in the <var>RecordSize</var> property is changed.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TExtendedStringList.RecordSize"/>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TExtendedStringList.ResizeRecord.ARecord">
@@ -173,11 +178,11 @@
       <!-- function Visibility: protected -->
       <element name="TExtendedStringList.GetObject">
         <short>
-          Reimplements the read access specifier for Objects
+          Re-implements the read access specifier for the Objects property
         </short>
         <descr>
           <p>
-            <var>GetObject</var> is an overridden TObject function which reimplements the read access specifier for the Objects property. GetObject calls the inherited method to retrieve the value at the position in Index. GetObject ensures that the return value is cast to a TObject instance when assigned, or <var>Nil</var> when unassigned.
+            <var>GetObject</var> is an overridden TObject function which re-implements the read access specifier for the Objects property. GetObject calls the inherited method to retrieve the value at the position in Index. GetObject ensures that the return value is cast to a TObject instance when assigned, or <var>Nil</var> when unassigned.
           </p>
           <p>
             GetObject and PutObject are called directly (as opposed to using the Objects property) in methods which maintain values in Records.
@@ -290,7 +295,7 @@
       <!-- procedure Visibility: public -->
       <element name="TExtendedStringList.CreateRecord">
         <short>
-          Allocates memory for a new record
+          Allocates memory for a new record instance
         </short>
         <descr>
           <p>
@@ -310,7 +315,7 @@
       <!-- procedure Visibility: public -->
       <element name="TExtendedStringList.FreeRecord">
         <short>
-          Frees memory allocated for the specified record
+          Frees memory allocated for the record at the specified position
         </short>
         <descr>
           <p>
@@ -330,7 +335,7 @@
       <!-- procedure Visibility: public -->
       <element name="TExtendedStringList.FreeAllRecords">
         <short>
-          Frees memory allocated for Records in the class
+          Frees memory allocated for all Records in the class
         </short>
         <descr>
           <p>
@@ -411,7 +416,7 @@
         </short>
         <descr>
           <p>
-            <var>Options</var> is a TExtStringsOptions property that contains the record options enabled for the class. Options can contains values from the TExtStringsOption enumeration, including:
+            <var>Options</var> is a <var>TExtStringsOptions</var> property that contains the record options enabled for the class. Options can contains values from the <var>TExtStringsOption</var> enumeration, including:
           </p>
           <dl>
             <dt><var>esoClearRecordsOnCreate</var></dt>
@@ -427,7 +432,10 @@
             The default value for the property is <var>[ esoClearRecordsOnCreate ]</var> as set in the constructor for the class.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TExtStringsOptions"/>
+          <link id="TExtStringsOption"/>
+        </seealso>
       </element>
     </module>
     <!-- ExtendedStrings -->

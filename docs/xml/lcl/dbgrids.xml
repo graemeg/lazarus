@@ -3221,10 +3221,23 @@
         <short/>
       </element>
 
-      <element name="TCustomDBGrid.BeforeMoveSelection" link="#lcl.Grids.TCustomGrid.BeforeMoveSelection">
+        <element name="TCustomDBGrid.AutoAdjustColumn">
+          <short/>
+          <descr/>
+          <seealso>
+            <link id="#lcl.grids.TCustomGrid.AutoAdjustColumn">TCustomGrid.AutoAdjustColumn</link>
+          </seealso>
+        </element>
+        <element name="TCustomDBGrid.AutoAdjustColumn.ACol">
+          <short/>
+        </element>
+
+      <element name="TCustomDBGrid.BeforeMoveSelection">
         <short></short>
         <descr></descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.grids.TCustomGrid.BeforeMoveSelection">TCustomGrid.BeforeMoveSelection</link>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.BeforeMoveSelection.DCol">
         <short></short>

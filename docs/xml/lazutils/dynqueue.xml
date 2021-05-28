@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fpdoc-descriptions>
-  <package name="lcl">
+  <package name="LazUtils">
     <!--
     ====================================================================
       DynQueue
@@ -161,7 +161,6 @@
         </errors>
         <seealso>
           <link id="TDynamicQueue.GrowItems"/>
-          <link id="TDynamicQueue.PushInternal"/>
           <link id="TDynamicQueue.Push"/>
           <link id="TDynamicQueueItem"/>
         </seealso>
@@ -180,13 +179,12 @@
           <var>ItemSize</var> contains the size requested for the data structure and its arbitrary content, and is used by default as the return value for the method.  CalculateItemSize ensures that the return value is in the range defined by the  <var>MinimumBlockSize</var> and <var>MaximumBlockSize</var> properties.
           </p>
           <p>
-            CalculateItemSize is used in the implementation of the <var>PushInternal</var> method.
+            CalculateItemSize is used in the implementation of the private <var>PushInternal</var> method.
           </p>
         </descr>
         <seealso>
           <link id="TDynamicDataQueue.MinimumBlockSize"/>
           <link id="TDynamicDataQueue.MaximumBlockSize"/>
-          <link id="TDynamicDataQueue.PushInternal"/>
           <link id="TDynamicDataQueue.Push"/>
         </seealso>
       </element>
@@ -383,7 +381,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TDynamicDataQueue.PushInternal"/>
           <link id="TDynamicDataQueue.Pop"/>
           <link id="TDynamicDataQueue.Top"/>
           <link id="TDynamicDataQueue.Size"/>
@@ -423,7 +420,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TDynamicDataQueue.PopTopInternal"/>
           <link id="TDynamicDataQueue.Push"/>
           <link id="TDynamicDataQueue.Top"/>
           <link id="TDynamicDataQueue.Size"/>
@@ -465,7 +461,6 @@
           </p>
         </descr>
         <seealso>
-          <link id="TDynamicDataQueue.PopTopInternal"/>
           <link id="TDynamicDataQueue.Push"/>
           <link id="TDynamicDataQueue.Pop"/>
           <link id="TDynamicDataQueue.Size"/>
@@ -493,9 +488,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="TDynamicDataQueue.PushInternal"/>
           <link id="TDynamicDataQueue.Push"/>
-          <link id="TDynamicDataQueue.PopTopInternal"/>
           <link id="TDynamicDataQueue.Pop"/>
         </seealso>
       </element>
@@ -515,7 +508,6 @@
         </descr>
         <seealso>
           <link id="TDynamicDataQueue.MaximumBlockSize"/>
-          <link id="TDynamicDataQueue.CalculateItemSize"/>
           <link id="TDynamicDataQueue.Create"/>
         </seealso>
       </element>
@@ -535,7 +527,6 @@
         </descr>
         <seealso>
           <link id="TDynamicDataQueue.MinimumBlockSize"/>
-          <link id="TDynamicDataQueue.CalculateItemSize"/>
           <link id="TDynamicDataQueue.Create"/>
         </seealso>
       </element>

@@ -3325,10 +3325,12 @@
         <short>True when the exception was handled</short>
       </element>
 
-      <element name="TCustomForm.InitializeWnd" link="#lcl.controls.TControl.InitializeWnd">
+      <element name="TCustomForm.InitializeWnd">
         <short>Initializes the widget, also for AlphaBlend and AllowDropFiles</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.InitializeWnd">TWinControl.InitializeWnd</link>
+        </seealso>
       </element>
 
       <element name="TCustomForm.Loaded">
@@ -3348,7 +3350,7 @@
         </descr>
         <seealso>
           <link id="TScrollingWinControl.Loaded"/>
-          <link id="#rtl.classes.TComponent.Loaded">TComponent.Loaded</link>
+          <link id="#rtl.classes.TComponent">TComponent</link>
         </seealso>
       </element>
 
@@ -6278,7 +6280,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.controls.TControl.InitializeWnd">TControl.InitializeWnd</link>
+          <link id="#lcl.controls.TWinControl.InitializeWnd">TWinControl.InitializeWnd</link>
         </seealso>
       </element>
       <element name="THintWindow.SetBounds.ALeft">
@@ -8014,9 +8016,9 @@
           <link id="TScreen.CustomForms"/>
           <link id="TScreen.Forms"/>
           <link id="TCustomForm.Visible"/>
-          <link id="TCustomForm.Showing"/>
           <link id="TCustomForm.Show"/>
           <link id="TCustomForm.Hide"/>
+          <link id="#lcl.controls.TWinControl.Showing">TWinControl.Showing</link>
         </seealso>
       </element>
       <element name="TScreen.CustomFormsZOrdered.Index">
@@ -12648,7 +12650,15 @@
         <descr>The default value is aedOkCancelDialog.</descr>
         <seealso/>
       </element>
-      <element name="TApplicationProperties.HelpFile" link="#lcl.forms.TApplication.HelpFile"/>
+
+      <element name="TApplicationProperties.HelpFile">
+        <short/>
+        <descr/>
+        <seealso>
+          <link id="TCustomForm.HelpFile"/>
+        </seealso>
+      </element>
+
       <element name="TApplicationProperties.Hint" link="#lcl.forms.TApplication.Hint"/>
       <element name="TApplicationProperties.HintColor" link="#lcl.forms.TApplication.HintColor"/>
       <element name="TApplicationProperties.HintHidePause" link="#lcl.forms.TApplication.HintHidePause"/>
@@ -12670,7 +12680,15 @@
         <descr/>
         <seealso/>
       </element>
-      <element name="TApplicationProperties.OnException" link="#lcl.forms.TApplication.OnException"/>
+
+      <element name="TApplicationProperties.OnException">
+        <short/>
+        <descr/>
+        <seealso>
+          <link id="#fcl.custapp.TCustomApplication.OnException">TCustomApplication.OnException</link>
+        </seealso>
+      </element>
+
       <element name="TApplicationProperties.OnGetMainFormHandle" link="#lcl.forms.TApplication.OnGetMainFormHandle"/>
       <element name="TApplicationProperties.OnIdle" link="#lcl.forms.TApplication.OnIdle"/>
       <element name="TApplicationProperties.OnIdleEnd" link="#lcl.forms.TApplication.OnIdleEnd"/>

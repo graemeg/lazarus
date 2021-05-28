@@ -132,7 +132,7 @@
         </descr>
         <seealso>
           <link id="#lcl.StdCtrls.HowToUseStdCtrls">HowToUseStdCtrls</link>
-          <link id="#lcl.ExtCtrls.Multi-PageControls">Multi-PageControls</link>
+          <link id="#lcl.ExtCtrls.MultiPageControls">Multi-Page Controls</link>
         </seealso>
       </element>
 
@@ -514,7 +514,7 @@
         </descr>
         <seealso>
           <link id="#lcl.extctrls.TPage">TPage</link>
-          <link id="#lcl.extctrls.Multi-PageControls">Multi-Page Controls</link>
+          <link id="#lcl.extctrls.MultiPageControls">Multi-Page Controls</link>
           <link id="#lcl.stdctrls.HowToUseStdCtrls">How To Use Standard Controls</link>
         </seealso>
       </element>
@@ -3380,12 +3380,14 @@
         <seealso/>
       </element>
 
-      <element name="TCustomRadioGroup.ItemIndex" link="#lcl.extctrls.TCustomRadioGroup.ItemIndex">
+      <element name="TCustomRadioGroup.ItemIndex">
         <short>
           The Index value in the list of Items (a stringlist with the names of the selections for radio buttons)
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.extctrls.TCustomRadioGroup.ItemIndex">TCustomRadioGroup.ItemIndex</link>
+        </seealso>
       </element>
 
       <element name="TCustomRadioGroup.Items">
@@ -5341,7 +5343,7 @@
         </descr>
       </element>
 
-      <element name="TFlowPanelControl.Index" link="#LCL.Classes.TCollectionItem.Index">
+      <element name="TFlowPanelControl.Index">
         <short>
           Ordinal position for the flowed control in the TFlowPanelControlList collection
         </short>
@@ -5351,10 +5353,10 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomFlowPanel.ComponentState"/>
-          <link id="TCustomFlowPanel.Realign"/>
-          <link id="TCustomFlowPanel.Realign"/>
           <link id="TFlowPanelControlList"/>
+          <link id="#lcl.controls.TWinControl.Realign">TWinControl.Realign</link>
+          <link id="#rtl.classes.TCollectionItem.Index">TCollectionItem.Index</link>
+          <link id="#rtl.classes.TComponent.ComponentState">TComponent.ComponentState</link>
         </seealso>
       </element>
 
@@ -7758,13 +7760,13 @@
         <seealso/>
       </element>
 
-      <topic name="Multi-PageControls">
+      <topic name="MultiPageControls">
         <short>
-          <var>Multi-PageControls</var> - controls that offer a selection of alternative pages for display
+          <var>MultiPageControls</var> - controls that offer a selection of alternative pages for display
         </short>
         <descr>
           <p>
-            <var>Multi-PageControls</var> - controls that offer a selection of alternative pages for display.
+            <var>MultiPageControls</var> - controls that offer a selection of alternative pages for display.
           </p>
           <p>
             A number of controls, found in Units <var>ExtCtrls</var> and <var>ComCtrls</var>, offer the ability to create multi-page forms with a series of <var>Tabs</var> along one edge that allow the user to select one of the <var>Pages</var> for display and interaction.
