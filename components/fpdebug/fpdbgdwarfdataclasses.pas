@@ -3000,6 +3000,8 @@ end;
 function TDwarfInformationEntry.DoReadReference(
   InfoIdx: Integer; InfoData: pointer; out AValue: Pointer; out
   ACompUnit: TDwarfCompilationUnit): Boolean;
+const
+  CU_HEADER_SIZE: array [boolean] of QWord = (SizeOf(TDwarfCUHeader32), SizeOf(TDwarfCUHeader64));
 var
   Form: Cardinal;
   Offs: QWord;
@@ -3022,9 +3024,14 @@ begin
     if not Result then
       exit;
     ACompUnit := FCompUnit;
-    if ACompUnit.FIsDwarf64
-    then AValue := ACompUnit.FScope.Entry + Offs - SizeOf(TDwarfCUHeader64)
-    else AValue := ACompUnit.FScope.Entry + Offs - SizeOf(TDwarfCUHeader32);
+    {$PUSH}{$R-}
+    AValue := ACompUnit.FScope.Entry - CU_HEADER_SIZE[ACompUnit.FIsDwarf64] + Offs;
+    {$POP}
+    if (AValue < ACompUnit.FInfoData) or (AValue >= ACompUnit.FInfoData + ACompUnit.FLength) then begin
+      DebugLn(FPDBG_DWARF_ERRORS, 'Error: Reference to invalid location. Offset %d is outsize the CU of size %d', [Offs, ACompUnit.FLength]);
+      AValue := nil;
+      Result := False;
+    end;
   end
   else
   if (Form = DW_FORM_ref_addr) then begin
@@ -3554,6 +3561,7 @@ var
   CUClass: TDwarfCompilationUnitClass;
   inf: TDwarfSectionInfo;
   i: integer;
+  DataOffs, DataLen: QWord;
 begin
   CUClass := GetCompilationUnitClass;
   for i := 0 to high(FFiles) do
@@ -3567,11 +3575,17 @@ begin
       then begin
         if CU64^.Version < 3 then
           DebugLn(FPDBG_DWARF_WARNINGS, ['Unexpected 64 bit signature found for DWARF version 2']); // or version 1...
+        DataOffs := PtrUInt(CU64 + 1) - PtrUInt(inf.RawData);
+        DataLen := CU64^.Length - SizeOf(CU64^) + SizeOf(CU64^.Signature) + SizeOf(CU64^.Length);
+        if DataOffs + DataLen > inf.Size then begin
+          DebugLn(FPDBG_DWARF_ERRORS, 'Error: Invalid size for compilation unit at offest %d with size %d exceeds section size %d', [DataOffs, DataLen, inf.Size]);
+          break; // Do not process invalid data
+        end;
         CU := CUClass.Create(
                 Self,
                 @FFiles[i],
-                PtrUInt(CU64 + 1) - PtrUInt(inf.RawData),
-                CU64^.Length - SizeOf(CU64^) + SizeOf(CU64^.Signature) + SizeOf(CU64^.Length),
+                DataOffs,
+                DataLen,
                 CU64^.Version,
                 CU64^.AbbrevOffset,
                 CU64^.AddressSize,
@@ -3580,11 +3594,17 @@ begin
       end
       else begin
         if CU32^.Length = 0 then Break;
+        DataOffs := PtrUInt(CU32 + 1) - PtrUInt(inf.RawData);
+        DataLen := CU32^.Length - SizeOf(CU32^) + SizeOf(CU32^.Length);
+        if DataOffs + DataLen > inf.Size then begin
+          DebugLn(FPDBG_DWARF_ERRORS, 'Error: Invalid size for compilation unit at offest %d with size %d exceeds section size %d', [DataOffs, DataLen, inf.Size]);
+          break; // Do not process invalid data
+        end;
         CU := CUClass.Create(
                 Self,
                 @FFiles[i],
-                PtrUInt(CU32 + 1) - PtrUInt(inf.RawData),
-                CU32^.Length - SizeOf(CU32^) + SizeOf(CU32^.Length),
+                DataOffs,
+                DataLen,
                 CU32^.Version,
                 CU32^.AbbrevOffset,
                 CU32^.AddressSize,
