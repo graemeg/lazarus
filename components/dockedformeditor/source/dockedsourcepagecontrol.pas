@@ -282,7 +282,7 @@ begin
       DesignForm.AnchorDesigner := TAnchorDesigner.Create(DesignForm, Resizer.ResizeControl.AnchorContainer);
       DesignForm.AnchorDesigner.OnDesignerSetFocus := @DesignerSetFocus;
     end;
-//    DesignForm.AnchorDesigner.Refresh;
+    DesignForm.AnchorDesigner.Refresh;
   end;
 end;
 
