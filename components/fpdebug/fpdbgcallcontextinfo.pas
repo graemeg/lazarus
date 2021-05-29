@@ -17,14 +17,15 @@ type
 
   TFpDbgInfoCallContext = class(TFpDbgAbstractCallContext)
   public
-    function CreateParamSymbol(AParamIndex: Integer; ASymbolType: TFpSymbol; ADbgProcess: TDbgProcess): TFpValue; virtual;
+    function CreateParamSymbol(AParamIndex: Integer; ASymbolType: TFpSymbol; ADbgProcess: TDbgProcess; AName: String = ''): TFpValue; virtual;
   end;
 
 implementation
 
 { TFpDbgInfoCallContext }
 
-function TFpDbgInfoCallContext.CreateParamSymbol(AParamIndex: Integer; ASymbolType: TFpSymbol; ADbgProcess: TDbgProcess): TFpValue;
+function TFpDbgInfoCallContext.CreateParamSymbol(AParamIndex: Integer;
+  ASymbolType: TFpSymbol; ADbgProcess: TDbgProcess; AName: String): TFpValue;
 var
   ParameterMemLocation: TFpDbgMemLocation;
   TypeSymbol: TFpSymbol;
@@ -32,7 +33,9 @@ var
 begin
   ParameterMemLocation := ADbgProcess.CallParamDefaultLocation(AParamIndex);
   TypeSymbol := ASymbolType.TypeInfo;
-  ParamSymbol := TFpSymbolDwarfFunctionResult.Create(ASymbolType.Name, TDbgDwarfSymbolBase(ASymbolType).InformationEntry, TypeSymbol.Kind, ParameterMemLocation);
+  if AName = '' then
+    AName := ASymbolType.Name;
+  ParamSymbol := TFpSymbolDwarfFunctionResult.Create(AName, TDbgDwarfSymbolBase(ASymbolType).InformationEntry, TypeSymbol.Kind, ParameterMemLocation);
   try
     Result := ParamSymbol.Value;
   finally

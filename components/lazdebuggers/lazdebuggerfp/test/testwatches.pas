@@ -19,6 +19,7 @@ type
   published
     procedure TestWatchesScope;
     procedure TestWatchesValue;
+    procedure TestWatchesFunctions;
     procedure TestWatchesAddressOf;
     procedure TestWatchesTypeCast;
     procedure TestWatchesExpression;
@@ -28,7 +29,7 @@ type
 implementation
 
 var
-  ControlTestWatch, ControlTestWatchScope, ControlTestWatchValue,
+  ControlTestWatch, ControlTestWatchScope, ControlTestWatchValue, ControlTestWatchFunct,
   ControlTestWatchAddressOf, ControlTestWatchTypeCast,
   ControlTestExpression, ControlTestErrors: Pointer;
 
@@ -1329,6 +1330,64 @@ if Compiler.Version < 030300 then
   end;
 end;
 
+procedure TTestWatches.TestWatchesFunctions;
+var
+  ExeName: String;
+  t: TWatchExpectationList;
+  Src: TCommonSource;
+  BrkPrg: TDBGBreakPoint;
+begin
+  if SkipTest then exit;
+  if not TestControlCanTest(ControlTestWatchFunct) then exit;
+  t := nil;
+
+  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  TestCompile(Src, ExeName);
+
+  AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
+
+  try
+    t := TWatchExpectationList.Create(Self);
+    t.AcceptSkSimple := [skInteger, skCardinal, skBoolean, skChar, skFloat,
+      skString, skAnsiString, skCurrency, skVariant, skWideString,
+      skInterface, skEnumValue];
+    t.AddTypeNameAlias('integer', 'integer|longint');
+
+
+    BrkPrg         := Debugger.SetBreakPoint(Src, 'Prg');
+    AssertDebuggerNotInErrorState;
+
+    (* ************ Nested Functions ************* *)
+
+    RunToPause(BrkPrg);
+    t.Clear;
+
+    t.Add('SomeFuncIntRes()',     weInteger(0)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('SomeFuncInt()',     weInteger(0)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('SomeFuncInt()',     weInteger(1)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('SomeFuncInt()',     weInteger(2)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('FuncIntAdd(3,5)',     weInteger(8)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('FuncIntAdd(3,15)',     weInteger(18)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('FuncIntAdd(3,FuncIntAdd(4,5))',     weInteger(12)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('FuncIntAdd(3,4) + FuncIntAdd(4,5)',     weInteger(16)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('FuncTooManyArg(3,4,3,4,3,4,3,4,3,4,3,4)',     weInteger(16)).AddEvalFlag([defAllowFunctionCall])^.AddFlag(ehExpectError);
+
+    t.Add('MyClass1.SomeFuncIntResAdd(3)',     weInteger(80)).AddEvalFlag([defAllowFunctionCall]);
+    t.Add('MyClass1.SomeFuncIntRes()',     weInteger(80+999)).AddEvalFlag([defAllowFunctionCall]);
+
+    t.EvaluateWatches;
+    t.CheckResults;
+
+
+  finally
+    t.Free;
+    Debugger.ClearDebuggerMonitors;
+    Debugger.FreeDebugger;
+
+    AssertTestErrors;
+  end;
+end;
+
 procedure TTestWatches.TestWatchesAddressOf;
 
   type
@@ -2417,6 +2476,7 @@ initialization
   ControlTestWatch          := TestControlRegisterTest('TTestWatch');
   ControlTestWatchScope     := TestControlRegisterTest('Scope', ControlTestWatch);
   ControlTestWatchValue     := TestControlRegisterTest('Value', ControlTestWatch);
+  ControlTestWatchFunct     := TestControlRegisterTest('Function', ControlTestWatch);
   ControlTestWatchAddressOf := TestControlRegisterTest('AddressOf', ControlTestWatch);
   ControlTestWatchTypeCast  := TestControlRegisterTest('TypeCast', ControlTestWatch);
   ControlTestExpression     := TestControlRegisterTest('Expression', ControlTestWatch);

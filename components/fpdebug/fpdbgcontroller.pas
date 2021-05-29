@@ -419,11 +419,15 @@ begin
   inherited Create(AController);
 
   {$IFNDEF Linux}
+  {$IFNDEF Windows}
   raise Exception.Create('Calling functions is only supported on Linux');
   {$ENDIF}
+  {$ENDIF}
 
+  {$IFDEF Linux}
   if FController.CurrentProcess.Mode <> dm64 then
     raise Exception.Create('Calling functions is only supported on 64-bits (x86_64)');
+  {$ENDIF}
 
   FRoutineAddress := LocToAddr(ARoutineAddress);
   FCallContext := ACallContext;
@@ -565,7 +569,14 @@ end;
 
 procedure TDbgControllerCallRoutineCmd.RestoreInstructionPointer;
 begin
-  FController.CurrentThread.SetRegisterValue('rip', FOriginalInstructionPointer);
+  {$ifdef cpui386}
+  FController.CurrentThread.SetRegisterValue('eip', FOriginalInstructionPointer);
+  {$else}
+  if FController.CurrentProcess.Mode <> dm64 then
+    FController.CurrentThread.SetRegisterValue('eip', FOriginalInstructionPointer)
+  else
+    FController.CurrentThread.SetRegisterValue('rip', FOriginalInstructionPointer);
+  {$endif}
 end;
 
 procedure TDbgControllerCallRoutineCmd.StoreRoutineResult;

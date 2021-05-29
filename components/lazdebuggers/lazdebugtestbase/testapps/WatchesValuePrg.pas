@@ -21,6 +21,24 @@ begin result := SomeValue = 0; end;
 procedure SomeProc1();
 begin SomeFunc1(2,2,2,2); end;
 
+var ValSomeFuncInt: integer;
+function SomeFuncInt(): Integer;
+begin
+  result := ValSomeFuncInt;
+  inc(ValSomeFuncInt);
+end;
+function SomeFuncIntRes(): Integer;
+begin
+  result := ValSomeFuncInt;
+  ValSomeFuncInt := 0;
+end;
+function FuncIntAdd(a, b: Integer): Integer;
+begin
+  result := a+b;
+end;
+function FuncTooManyArg(a, b, c, d, e, f, g, h, i, j, k, l: Integer): Integer; // not enough registers to call in watch eval
+begin result := 123; end;
+
 const
   MaxListSize = high(longword) div 16;
 
@@ -288,11 +306,16 @@ type
   PMyBaseClass = ^TMyBaseClass;
 
   TMyClass = class(TMyBaseClass)
+  protected
+    FFunctInt, FFunctIntConst: Integer;
   public
     (* LOCATION: field in class *)
     // mcByte: Byte;
     TEST_PREPOCESS(WatchesValuePrgIdent.inc, pre__=mc, _OP_=:, (=;//, _O2_=:, _EQ_=, _BLOCK_=TestVar )
     FMyStringList: TMyStringList;
+
+    function SomeFuncIntRes(): Integer;
+    function SomeFuncIntResAdd(a: integer): Integer;
   end;
   PMyClass = ^TMyClass;
 
@@ -472,6 +495,16 @@ begin // TEST_BREAKPOINT=FooConstRefBegin
   BreakDummy:= 1; // TEST_BREAKPOINT=FooConstRef
 end;
 
+function TMyClass.SomeFuncIntRes(): Integer;
+begin
+  result := FFunctInt + FFunctIntConst;
+end;
+function TMyClass.SomeFuncIntResAdd(a: integer): Integer;
+begin
+  result := 77 + a;
+  FFunctInt := result;
+end;
+
 begin
   U8Data1 := #$2267; //#$E2#$89#$A7;
   U8Data2 := #$2267'X';
@@ -486,6 +519,10 @@ begin
   pw := nil;
   SomeFunc1(1,1,1,1);
   SomeProc1();
+  SomeFuncInt;
+  SomeFuncIntRes;
+  FuncIntAdd(1,1);
+  FuncTooManyArg(1,1,1,1,1,1,1,1,1,1,1,1);
   {$if FPC_FULLVERSION >= 30000}
   dummy1 := nil;
   {$ENDIF}
@@ -526,7 +563,10 @@ begin
 
 (* INIT: field in class / baseclass *)
   MyClass1 := TMyClass.Create;
+  MyClass1.FFunctIntConst := 999;
   MyClass1.SomeMeth1(1);
+  MyClass1.SomeFuncIntRes();
+  MyClass1.SomeFuncIntResAdd(1);
   MyPClass1 := @MyClass1;
   TEST_PREPOCESS(WatchesValuePrgIdent.inc,pre__=MyClass1.mbc, ADD=3, CHR1='D', _OP_=:=, _O2_={, _EQ_=}:=, _pre2_=gc, _BLOCK_=TestAssign)
   TEST_PREPOCESS(WatchesValuePrgIdent.inc,pre__=MyClass1.mc, ADD=2, CHR1='C', _OP_=:=, _O2_={, _EQ_=}:=, _pre2_=gc, _BLOCK_=TestAssign)

@@ -290,8 +290,6 @@ type
     FWorkerThreadId: TThreadID;
     FEvalWorkItem: TFpThreadWorkerCmdEval;
     FQuickPause, FPauseForEvent, FSendingEvents: boolean;
-    FMemConverter: TFpDbgMemConvertorLittleEndian;
-    FMemReader: TDbgMemReader;
     FExceptionStepper: TFpDebugExceptionStepping;
     FConsoleOutputThread: TThread;
     // Helper vars to run in debug-thread

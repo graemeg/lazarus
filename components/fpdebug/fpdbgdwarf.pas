@@ -263,6 +263,7 @@ type
     function GetAsCardinal: QWord; override;
     function GetAsInteger: Int64; override;
     procedure SetAsInteger(AValue: Int64); override;
+    procedure SetAsCardinal(AValue: QWord); override;
   end;
 
   { TFpValueDwarfCardinal }
@@ -2139,6 +2140,11 @@ begin
     SetLastError(Context.LastMemError);
   end;
   Exclude(FEvaluated, doneUInt);
+end;
+
+procedure TFpValueDwarfInteger.SetAsCardinal(AValue: QWord);
+begin
+  SetAsInteger(int64(AValue));
 end;
 
 { TDbgDwarfCardinalSymbolValue }
@@ -5864,8 +5870,10 @@ function TFpSymbolDwarfTypeProc.DoReadSize(const AValueObj: TFpValue; out
   ASize: TFpDbgValueSize): Boolean;
 begin
   ASize := ZeroSize;
-  ASize.Size := FAddressInfo^.EndPC - FAddressInfo^.StartPC;
-  Result := True;
+  Result := FAddressInfo <> nil;
+  DebugLn(FPDBG_DWARF_WARNINGS, 'function has no address info');
+  if Result then
+    ASize.Size := FAddressInfo^.EndPC - FAddressInfo^.StartPC;
 end;
 
 function TFpSymbolDwarfTypeProc.GetNestedSymbolEx(AIndex: Int64; out

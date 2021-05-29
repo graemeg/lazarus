@@ -124,6 +124,8 @@ uses
 type
 
   TFpWinCtxFlags = (cfSkip, cfControl, cfFull);
+  TFpContextChangeFlag = (ccfControl, ccfInteger);
+  TFpContextChangeFlags = set of TFpContextChangeFlag;
 
   { TDbgWinThread }
 
@@ -134,8 +136,10 @@ type
     FIsSkippingBreakPointAddress: TDBGPtr;
   protected
     FThreadContextChanged: boolean;
+    FThreadContextChangeFlags: TFpContextChangeFlags;
     FCurrentContext: PFpContext; // FCurrentContext := Pointer((PtrUInt(@_UnAligendContext) + 15) and not PtrUInt($F));
     _UnAligendContext: TFpContext;
+    _StoredContext: TFpContext;
     procedure LoadRegisterValues; override;
     function GetFpThreadContext(var AStorage: TFpContext; out ACtxPtr: PFpContext; ACtxFlags: TFpWinCtxFlags): Boolean;
     function SetFpThreadContext(ACtxPtr: PFpContext; ACtxFlags: TFpWinCtxFlags = cfSkip): Boolean;
@@ -153,6 +157,8 @@ type
     function ReadThreadState: boolean;
 
     procedure SetRegisterValue(AName: string; AValue: QWord); override;
+    procedure StoreRegisters; override;
+    procedure RestoreRegisters; override;
     function GetInstructionPointerRegisterValue: TDbgPtr; override;
     function GetStackBasePointerRegisterValue: TDbgPtr; override;
     function GetStackPointerRegisterValue: TDbgPtr; override;
@@ -557,11 +563,13 @@ begin
   Result := InvalidLoc;
   case Mode of
     dm32: case AParamIdx of
+       -1: Result := RegisterLoc(0); // EAX
         0: Result := RegisterLoc(0); // EAX
         1: Result := RegisterLoc(2); // EDX
         2: Result := RegisterLoc(1); // ECX
       end;
     dm64: case AParamIdx of
+       -1: Result := RegisterLoc(0); // RAX
         0: Result := RegisterLoc(2); // RCX
         1: Result := RegisterLoc(1); // RDX
         2: Result := RegisterLoc(8); // R8
@@ -1510,6 +1518,10 @@ begin
       cfControl: ACtxPtr^.WOW.ContextFlags := WOW64_CONTEXT_CONTROL;
       cfFull:    ACtxPtr^.WOW.ContextFlags := WOW64_CONTEXT_SEGMENTS or WOW64_CONTEXT_INTEGER or WOW64_CONTEXT_CONTROL or WOW64_CONTEXT_DEBUG_REGISTERS;
     end;
+    if ccfControl in FThreadContextChangeFlags then
+      ACtxPtr^.def.ContextFlags := ACtxPtr^.def.ContextFlags or WOW64_CONTEXT_CONTROL;
+    if ccfInteger in FThreadContextChangeFlags then
+      ACtxPtr^.def.ContextFlags := ACtxPtr^.def.ContextFlags or WOW64_CONTEXT_INTEGER;
     Result := (_Wow64SetThreadContext <> nil) and _Wow64SetThreadContext(Handle, ACtxPtr^.WOW);
   end
   else begin
@@ -1518,6 +1530,10 @@ begin
       cfControl: ACtxPtr^.def.ContextFlags := CONTEXT_CONTROL;
       cfFull:    ACtxPtr^.def.ContextFlags := CONTEXT_SEGMENTS or CONTEXT_INTEGER or CONTEXT_CONTROL or CONTEXT_DEBUG_REGISTERS;
     end;
+    if ccfControl in FThreadContextChangeFlags then
+      ACtxPtr^.def.ContextFlags := ACtxPtr^.def.ContextFlags or CONTEXT_CONTROL;
+    if ccfInteger in FThreadContextChangeFlags then
+      ACtxPtr^.def.ContextFlags := ACtxPtr^.def.ContextFlags or CONTEXT_INTEGER;
     Result := SetThreadContext(Handle, ACtxPtr^.def);
   {$ifdef cpux86_64}
   end;
@@ -1680,6 +1696,7 @@ begin
       debugln(['Failed to SetFpThreadContext()']);
   end;
   FThreadContextChanged := False;
+  FThreadContextChangeFlags := [];
   FCurrentContext := nil;
 end;
 
@@ -1718,18 +1735,22 @@ begin
     exit;
 
   Result := GetFpThreadContext(_UnAligendContext, FCurrentContext, cfFull);
+  //FThreadContextChanged := False; TODO: why was that not here?
+  FThreadContextChangeFlags := [];
   FRegisterValueListValid:=False;
 end;
 
 procedure TDbgWinThread.SetRegisterValue(AName: string; AValue: QWord);
 begin
-  if ReadThreadState then
+  if not ReadThreadState then
     exit;
 
   {$ifdef cpui386}
     case AName of
       'eip': FCurrentContext^.def.Eip := AValue;
       'eax': FCurrentContext^.def.Eax := AValue;
+      'ecx': FCurrentContext^.def.Ecx := AValue;
+      'edx': FCurrentContext^.def.Edx := AValue;
     else
       raise Exception.CreateFmt('Setting the [%s] register is not supported', [AName]);
     end;
@@ -1738,20 +1759,38 @@ begin
     case AName of
       'eip': FCurrentContext^.WOW.Eip := AValue;
       'eax': FCurrentContext^.WOW.Eax := AValue;
+      'ecx': FCurrentContext^.WOW.Ecx := AValue;
+      'edx': FCurrentContext^.WOW.Edx := AValue;
     else
       raise Exception.CreateFmt('Setting the [%s] register is not supported', [AName]);
     end;
   end
   else begin
     case AName of
-      'eip': FCurrentContext^.def.Rip := AValue;
-      'eax': FCurrentContext^.def.Rax := AValue;
+      'rip': FCurrentContext^.def.Rip := AValue;
+      'rax': FCurrentContext^.def.Rax := AValue;
+      'rcx': FCurrentContext^.def.Rcx := AValue;
+      'rdx': FCurrentContext^.def.Rdx := AValue;
     else
       raise Exception.CreateFmt('Setting the [%s] register is not supported', [AName]);
     end;
   end;
   {$endif}
   FThreadContextChanged:=True;
+  case AName of
+    'eip', 'rip': Include(FThreadContextChangeFlags, ccfControl);
+    else          Include(FThreadContextChangeFlags, ccfInteger);
+  end;
+end;
+
+procedure TDbgWinThread.StoreRegisters;
+begin
+  _StoredContext := _UnAligendContext;
+end;
+
+procedure TDbgWinThread.RestoreRegisters;
+begin
+  _UnAligendContext := _StoredContext;
 end;
 
 function TDbgWinThread.GetInstructionPointerRegisterValue: TDbgPtr;

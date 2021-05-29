@@ -162,6 +162,8 @@ type
     function AddFlag(AFlag: TWatchExpErrorHandlingFlag; ACond: Boolean): PWatchExpectation;
     function AddFlag(AFlags: TWatchExpErrorHandlingFlags; ACond: Boolean): PWatchExpectation;
 
+    function AddEvalFlag(AFlags: TDBGEvaluateFlags; ACond: Boolean = True): PWatchExpectation;
+
     function Skip(ASymTypes: TSymbolTypes = []): PWatchExpectation;
     function SkipIf(ACond: Boolean; ASymTypes: TSymbolTypes = []): PWatchExpectation;
 
@@ -940,6 +942,17 @@ begin
     Result := Self^.AddFlag(AFlags, [])
   else
     Result := Self;
+end;
+
+function TWatchExpectationHelper.AddEvalFlag(AFlags: TDBGEvaluateFlags;
+  ACond: Boolean): PWatchExpectation;
+begin
+  Result := Self;
+  if not ACond then
+    exit;
+
+  Self^.TstWatch.EvaluateFlags := Self^.TstWatch.EvaluateFlags + AFlags;
+  Self^.EvalCallTestFlags := Self^.EvalCallTestFlags + AFlags;
 end;
 
 function TWatchExpectationHelper.Skip(ASymTypes: TSymbolTypes

@@ -47,7 +47,8 @@ interface
 uses
   FpDebugDebuggerUtils, DbgIntfDebuggerBase, DbgIntfBaseTypes, FpDbgClasses,
   FpDbgUtil, FPDbgController, FpPascalBuilder, FpdMemoryTools, FpDbgInfo,
-  FpPascalParser, FpErrorMessages, Forms, fgl, math, Classes, sysutils, LazLoggerBase;
+  FpPascalParser, FpErrorMessages, FpDbgCallContextInfo, FpDbgDwarf,
+  FpDbgDwarfDataClasses, Forms, fgl, math, Classes, sysutils, LazLoggerBase;
 
 type
 
@@ -57,6 +58,8 @@ type
   protected
     FDbgController: TDbgController;
     FMemManager: TFpDbgMemManager;
+    FMemReader: TDbgMemReader;
+    FMemConverter: TFpDbgMemConvertorLittleEndian;
     FLockList: TFpDbgLockList;
     FWorkQueue: TFpThreadPriorityWorkerQueue;
   end;
@@ -210,6 +213,13 @@ type
   { TFpThreadWorkerEvaluate }
 
   TFpThreadWorkerEvaluate = class(TFpDbgDebggerThreadWorkerLinkedItem)
+  private
+    FAllowFunctions: Boolean;
+    FExpressionScope: TFpDbgSymbolScope;
+
+    function DoWatchFunctionCall(AnExpressionPart: TFpPascalExpressionPartBracketArgumentList;
+      AFunctionValue, ASelfValue: TFpValue; out AResult: TFpValue;
+  var AnError: TFpError): boolean;
   protected
     function EvaluateExpression(const AnExpression: String;
                                 AStackFrame, AThreadId: Integer;
@@ -684,12 +694,179 @@ end;
 
 { TFpThreadWorkerEvaluate }
 
+function TFpThreadWorkerEvaluate.DoWatchFunctionCall(
+  AnExpressionPart: TFpPascalExpressionPartBracketArgumentList; AFunctionValue,
+  ASelfValue: TFpValue; out AResult: TFpValue; var AnError: TFpError): boolean;
+var
+  FunctionSymbolData, FunctionSymbolType, FunctionResultSymbolType,
+  TempSymbol: TFpSymbol;
+  ParamSymbol, ExprParamVal: TFpValue;
+  ProcAddress: TFpDbgMemLocation;
+  FunctionResultDataSize: TFpDbgValueSize;
+  ParameterSymbolArr: array of TFpSymbol;
+  CallContext: TFpDbgInfoCallContext;
+  PCnt, i, FoundIdx, ItemsOffs: Integer;
+  rk: TDbgSymbolKind;
+begin
+  Result := False;
+  if FExpressionScope = nil then
+    exit;
+(*
+   AFunctionValue =>  TFpValueDwarfSubroutine  // gotten from <== TFpSymbolDwarfDataProc.GetValueObject;
+                   .DataSympol = TFpSymbolDwarfDataProc  from which we were created
+                   .TypeSymbol = TFpSymbolDwarfTypeProc.TypeInfo : TFpSymbolDwarfType
+
+   AFunctionFpSymbol => TFpSymbolDwarfTypeProc;
+   val
+*)
+
+  FunctionSymbolData := AFunctionValue.DbgSymbol;  // AFunctionValue . FDataSymbol
+  FunctionSymbolType := FunctionSymbolData.TypeInfo;
+  FunctionResultSymbolType := FunctionSymbolType.TypeInfo;
+
+  if not (FunctionResultSymbolType.Kind in [skInteger, skCurrency, skPointer, skEnum,
+      skCardinal, skBoolean, skChar, skClass])
+  then begin
+    DebugLn(['Error result kind  ', dbgs(FunctionSymbolType.Kind)]);
+    AnError := CreateError(fpErrAnyError, ['Result type of function not supported']);
+    exit;
+  end;
+
+  // TODO: pass a value object
+  if (not FunctionResultSymbolType.ReadSize(nil, FunctionResultDataSize)) or
+     (FunctionResultDataSize >  FDebugger.FMemManager.RegisterSize(0))
+  then begin
+    DebugLn(['Error result size', dbgs(FunctionResultDataSize)]);
+    //ReturnMessage := 'Unable to call function. The size of the function-result exceeds the content-size of a register.';
+    AnError := CreateError(fpErrAnyError, ['Result type of function not supported']);
+    exit;
+  end;
+
+  // check params
+
+  ProcAddress := AFunctionValue.DataAddress;
+  if not IsReadableLoc(ProcAddress) then begin
+    DebugLn(['Error proc addr']);
+    AnError := CreateError(fpErrAnyError, ['Unable to calculate function address']);
+    exit;
+  end;
+
+  // AnExpressionPart.Items[0] is the function // 1..Count are params
+  PCnt := AnExpressionPart.Count - 1;
+  ItemsOffs := 1; // skip the function entry in AnExpressionPart.Items
+  if ASelfValue <> nil then begin
+    inc(PCnt);
+    ItemsOffs := 0; // the function entry in AnExpressionPart.Items mapps to ASelfValue and is ignored
+  end;
+
+  SetLength(ParameterSymbolArr, PCnt);
+    for i := 0 to High(ParameterSymbolArr) do
+      ParameterSymbolArr[i] := nil;
+  FoundIdx := 0;
+  try
+    for i := 0 to FunctionSymbolType.NestedSymbolCount - 1 do begin
+      TempSymbol := FunctionSymbolType.NestedSymbol[i];
+      if sfParameter in TempSymbol.Flags then begin
+        if FoundIdx >= PCnt then begin
+          DebugLn(['Error param count']);
+          AnError := CreateError(fpErrAnyError, ['wrong amount of parameters']);
+          exit;
+          //ReturnMessage := Format('Unable to call function%s. Not enough parameters supplied.', [OutputFunctionName]);
+        end;
+        // Type Compatibility
+        // TODO: more checks for type compatibility
+        if (ASelfValue <> nil) and (FoundIdx = 0) then begin
+          // TODO: check self param
+        end
+        else begin
+          ExprParamVal := AnExpressionPart.Items[FoundIdx + ItemsOffs].ResultValue;
+          if (ExprParamVal = nil) then begin
+            DebugLn('Internal error for arg %d ', [FoundIdx]);
+            AnError := AnExpressionPart.Expression.Error;
+            if not IsError(AnError) then
+              AnError := CreateError(fpErrAnyError, ['internal error, computing parameter']);
+            exit;
+          end;
+          rk := ExprParamVal.Kind;
+          if not (rk in [skInteger, {skCurrency,} skPointer, skEnum, skCardinal, skBoolean, skChar, skClass]) then begin
+            DebugLn('Error not supported kind arg %d : %s ', [FoundIdx, dbgs(rk)]);
+            AnError := CreateError(fpErrAnyError, ['parameter type not supported']);
+            exit;
+          end;
+          if (TempSymbol.Kind <> rk) and
+             ( (TempSymbol.Kind in [skInteger, skCardinal]) <> (rk in [skInteger, skCardinal]) )
+          then begin
+            DebugLn('Error kind mismatch for arg %d : %s <> %s', [FoundIdx, dbgs(TempSymbol.Kind), dbgs(rk)]);
+            AnError := CreateError(fpErrAnyError, ['wrong type for parameter']);
+            exit;
+          end;
+        end;
+        if not IsTargetOrRegNotNil(FDebugger.FDbgController.CurrentProcess.CallParamDefaultLocation(FoundIdx)) then begin
+          DebugLn('error to many args / not supported / arg > %d ', [FoundIdx]);
+          AnError := CreateError(fpErrAnyError, ['too many parameter / not supported']);
+          exit;
+        end;
+        TempSymbol.AddReference;
+        ParameterSymbolArr[FoundIdx] := TempSymbol;
+        inc(FoundIdx)
+      end;
+    end;
+    if FoundIdx <> PCnt then begin
+      DebugLn(['Error param count']);
+      AnError := CreateError(fpErrAnyError, ['wrong amount of parameters']);
+      exit;
+    end;
+
+
+    CallContext := FDebugger.FDbgController.Call(ProcAddress, FExpressionScope.LocationContext,
+      FDebugger.FMemReader, FDebugger.FMemConverter);
+
+    try
+      for i := 0 to High(ParameterSymbolArr) do begin
+        ParamSymbol := CallContext.CreateParamSymbol(i, ParameterSymbolArr[i], FDebugger.FDbgController.CurrentProcess);
+        try
+          if (ASelfValue <> nil) and (i = 0) then
+            ParamSymbol.AsCardinal := ASelfValue.AsCardinal
+          else
+            ParamSymbol.AsCardinal := AnExpressionPart.Items[i + ItemsOffs].ResultValue.AsCardinal;
+          if IsError(ParamSymbol.LastError) then begin
+            DebugLn('Internal error for arg %d ', [i]);
+            AnError := ParamSymbol.LastError;
+            exit;
+          end;
+        finally
+          ParamSymbol.ReleaseReference;
+        end;
+      end;
+
+      FDebugger.FDbgController.ProcessLoop;
+
+      if not CallContext.IsValid then begin
+        DebugLn(['Error in call ',CallContext.Message]);
+        //ReturnMessage := CallContext.Message;
+        exit;
+      end;
+
+      AResult := CallContext.CreateParamSymbol(-1, FunctionSymbolType,
+        FDebugger.FDbgController.CurrentProcess, FunctionSymbolData.Name);
+      Result := AResult <> nil;
+    finally
+      CallContext.ReleaseReference;
+    end;
+  finally
+    for i := 0 to High(ParameterSymbolArr) do
+      if ParameterSymbolArr[i] <> nil then
+        ParameterSymbolArr[i].ReleaseReference;
+  end;
+
+
+end;
+
 function TFpThreadWorkerEvaluate.EvaluateExpression(const AnExpression: String;
   AStackFrame, AThreadId: Integer; ADispFormat: TWatchDisplayFormat;
   ARepeatCnt: Integer; AnEvalFlags: TDBGEvaluateFlags; out AResText: String;
   out ATypeInfo: TDBGType): Boolean;
 var
-  WatchScope: TFpDbgSymbolScope;
   APasExpr, PasExpr2: TFpPascalExpression;
   PrettyPrinter: TFpPascalPrettyPrinter;
   ResValue: TFpValue;
@@ -699,14 +876,15 @@ begin
   AResText := '';
   ATypeInfo := nil;
 
-  WatchScope := FDebugger.FDbgController.CurrentProcess.FindSymbolScope(AThreadId, AStackFrame);
-  if WatchScope = nil then
+  FExpressionScope := FDebugger.FDbgController.CurrentProcess.FindSymbolScope(AThreadId, AStackFrame);
+  if FExpressionScope = nil then
     exit;
 
-  APasExpr := nil;
   PrettyPrinter := nil;
+  APasExpr := TFpPascalExpression.Create(AnExpression, FExpressionScope);
   try
-    APasExpr := TFpPascalExpression.Create(AnExpression, WatchScope);
+    if FAllowFunctions then
+      APasExpr.OnFunctionCall  := @DoWatchFunctionCall;
     APasExpr.ResultValue; // trigger full validation
     if not APasExpr.Valid then begin
       AResText := ErrorHandler.ErrorAsString(APasExpr.Error);
@@ -725,7 +903,7 @@ begin
        (not IsError(ResValue.LastError)) and (defClassAutoCast in AnEvalFlags)
     then begin
       if ResValue.GetInstanceClassName(CastName) then begin
-        PasExpr2 := TFpPascalExpression.Create(CastName+'('+AnExpression+')', WatchScope);
+        PasExpr2 := TFpPascalExpression.Create(CastName+'('+AnExpression+')', FExpressionScope);
         PasExpr2.ResultValue;
         if PasExpr2.Valid then begin
           APasExpr.Free;
@@ -744,8 +922,8 @@ begin
     if StopRequested then
       exit;
 
-    PrettyPrinter := TFpPascalPrettyPrinter.Create(WatchScope.SizeOfAddress);
-    PrettyPrinter.Context := WatchScope.LocationContext;
+    PrettyPrinter := TFpPascalPrettyPrinter.Create(FExpressionScope.SizeOfAddress);
+    PrettyPrinter.Context := FExpressionScope.LocationContext;
 
     if defNoTypeInfo in AnEvalFlags then
       Result := PrettyPrinter.PrintValue(AResText, ResValue, ADispFormat, ARepeatCnt)
@@ -773,7 +951,7 @@ begin
   finally
     PrettyPrinter.Free;
     APasExpr.Free;
-    WatchScope.ReleaseReference;
+    FExpressionScope.ReleaseReference;
   end;
 end;
 
@@ -797,6 +975,8 @@ begin
   FDispFormat := ADispFormat;
   FRepeatCnt := ARepeatCnt;
   FEvalFlags := AnEvalFlags;
+  if defAllowFunctionCall in AnEvalFlags then
+    FAllowFunctions := True;
   FRes := False;
 end;
 

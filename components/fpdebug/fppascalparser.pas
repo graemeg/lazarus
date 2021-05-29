@@ -39,12 +39,17 @@ type
   TFpPascalExpressionPartContainer = class;
   TFpPascalExpressionPartWithPrecedence = class;
   TFpPascalExpressionPartBracket = class;
+  TFpPascalExpressionPartBracketArgumentList = class;
   TFpPascalExpressionPartOperator = class;
 
   TFpPascalExpressionPartClass = class of TFpPascalExpressionPart;
   TFpPascalExpressionPartBracketClass = class of TFpPascalExpressionPartBracket;
 
   TSeparatorType = (ppstComma);
+
+  TFpPascalParserCallFunctionProc = function (AnExpressionPart: TFpPascalExpressionPartBracketArgumentList;
+    AFunctionValue: TFpValue; ASelfValue: TFpValue;
+    out AResult: TFpValue; var AnError: TFpError): boolean of object;
 
   { TFpPascalExpression }
 
@@ -54,6 +59,7 @@ type
     FContext: TFpDbgSymbolScope;
     FFixPCharIndexAccess: Boolean;
     FHasPCharIndexAccess: Boolean;
+    FOnFunctionCall: TFpPascalParserCallFunctionProc;
     FTextExpression: String;
     FExpressionPart: TFpPascalExpressionPart;
     FValid: Boolean;
@@ -62,6 +68,7 @@ type
     procedure Parse;
     procedure SetError(AMsg: String);  // deprecated;
     procedure SetError(AnErrorCode: TFpErrorCode; AData: array of const);
+    procedure SetError(const AnErr: TFpError);
     function PosFromPChar(APChar: PChar): Integer;
   protected
     function GetDbgSymbolForIdentifier({%H-}AnIdent: String): TFpValue;
@@ -83,6 +90,7 @@ type
     // - May be a type, if expression is a type
     // - Only valid, as long as the expression is not destroyed
     property ResultValue: TFpValue read GetResultValue;
+    property OnFunctionCall: TFpPascalParserCallFunctionProc read FOnFunctionCall write FOnFunctionCall;
   end;
 
 
@@ -127,7 +135,6 @@ type
                                              TFpPascalExpressionPart; virtual;
     function CanHaveOperatorAsNext: Boolean; virtual; // True
     function HandleSeparator(ASeparatorType: TSeparatorType): Boolean; virtual; // False
-    property Expression: TFpPascalExpression read FExpression;
   public
     constructor Create(AExpression: TFpPascalExpression; AStartChar: PChar; AnEndChar: PChar = nil);
     destructor Destroy; override;
@@ -141,6 +148,7 @@ type
     property TopParent: TFpPascalExpressionPart read GetTopParent; // or self
     property SurroundingBracket: TFpPascalExpressionPartBracket read GetSurroundingOpenBracket; // incl self
     property ResultValue: TFpValue read GetResultValue;
+    property Expression: TFpPascalExpression read FExpression;
   end;
 
   { TFpPascalExpressionPartContainer }
@@ -1383,7 +1391,10 @@ end;
 
 function TFpPascalExpressionPartBracketArgumentList.DoGetResultValue: TFpValue;
 var
-  tmp, tmp2: TFpValue;
+  tmp, tmp2, tmpSelf: TFpValue;
+  err: TFpError;
+  Itm0: TFpPascalExpressionPart;
+  ItmMO: TFpPascalExpressionPartOperatorMemberOf absolute Itm0;
 begin
   Result := nil;
 
@@ -1392,9 +1403,40 @@ begin
     exit;
   end;
 
-  tmp := Items[0].ResultValue;
+  Itm0 := Items[0];
+  tmp := Itm0.ResultValue;
   if (tmp = nil) or (not Expression.Valid) then
     exit;
+
+  if (tmp.DbgSymbol <> nil) and (tmp.DbgSymbol.Kind = skFunction) then begin
+    if not Assigned(Expression.OnFunctionCall) then begin
+      SetError('calling functions not allowed');
+      exit;
+    end;
+
+    tmpSelf := nil;
+    if (Itm0 is TFpPascalExpressionPartOperatorMemberOf) then begin
+      if ItmMO.Count = 2 then
+        tmpSelf := ItmMO.Items[0].ResultValue;
+      if tmpSelf = nil then begin
+        SetError('internal error evaluating method call');
+        exit;
+      end;
+    end;
+
+    err := NoError;
+//TODO: pass self-object
+    if not Expression.OnFunctionCall(Self, tmp, tmpSelf, Result, err) then begin
+      if not IsError(err) then
+        SetError('unknown error calling function')
+      else
+        Expression.SetError(err);
+      Result := nil;
+    end;
+    {$IFDEF WITH_REFCOUNT_DEBUG}if Result <> nil then Result.DbgRenameReference(nil, 'DoGetResultValue'){$ENDIF};
+
+    exit;
+  end;
 
   if (Count = 2) then begin
     //TODO if tmp is TFpPascalExpressionPartOperatorMakeRef then
@@ -1415,8 +1457,8 @@ begin
     end;
   end;
 
-  // Must be function call
-  SetError('No support for calling functions');
+  // Must be function call // skProcedure is not handled
+  SetError('unknown type or function');
 end;
 
 function TFpPascalExpressionPartBracketArgumentList.DoGetIsTypeCast: Boolean;
@@ -1989,6 +2031,13 @@ procedure TFpPascalExpression.SetError(AnErrorCode: TFpErrorCode; AData: array o
 begin
   FValid := False;
   FError := ErrorHandler.CreateError(AnErrorCode, AData);
+  DebugLn(['Setting error ', ErrorHandler.ErrorAsString(FError)]);
+end;
+
+procedure TFpPascalExpression.SetError(const AnErr: TFpError);
+begin
+  FValid := False;
+  FError := AnErr;
   DebugLn(['Setting error ', ErrorHandler.ErrorAsString(FError)]);
 end;
 

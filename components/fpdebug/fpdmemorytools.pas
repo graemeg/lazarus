@@ -427,6 +427,8 @@ type
     destructor Destroy; override;
     procedure ClearLastError;
 
+    function RegisterSize(ARegNum: Cardinal): Integer; // This is not context dependent
+
     function SetLength(var ADest: TByteDynArray; ALength: Int64): Boolean; overload;
     function SetLength(var ADest: RawByteString; ALength: Int64): Boolean; overload;
     function SetLength(var ADest: AnsiString; ALength: Int64): Boolean; overload;
@@ -458,8 +460,10 @@ function IsValidLoc(const ALocation: TFpDbgMemLocation): Boolean; inline;     //
 function IsReadableLoc(const ALocation: TFpDbgMemLocation): Boolean; inline;  // Valid and not Nil // can be const or reg
 function IsReadableMem(const ALocation: TFpDbgMemLocation): Boolean; inline;  // Valid and target or sel <> nil
 function IsNilLoc(const ALocation: TFpDbgMemLocation): Boolean; inline;    // Valid AND NIL // Does not check mlfTargetRegister
+// TODO: registers should be targed.... // May have to rename some of those
 function IsTargetNil(const ALocation: TFpDbgMemLocation): Boolean; inline;    // valid targed = nil
 function IsTargetNotNil(const ALocation: TFpDbgMemLocation): Boolean; inline; // valid targed <> nil
+function IsTargetOrRegNotNil(const ALocation: TFpDbgMemLocation): Boolean; inline; // valid targed <> nil
 
 function ZeroSize: TFpDbgValueSize; inline;
 function SizeVal(const ASize: Int64): TFpDbgValueSize; inline;
@@ -615,6 +619,12 @@ end;
 function IsTargetNotNil(const ALocation: TFpDbgMemLocation): Boolean;
 begin
   Result := (ALocation.MType = mlfTargetMem) and (ALocation.Address <> 0);
+end;
+
+function IsTargetOrRegNotNil(const ALocation: TFpDbgMemLocation): Boolean;
+begin
+  Result := ((ALocation.MType = mlfTargetMem) and (ALocation.Address <> 0)) or
+            (ALocation.MType = mlfTargetRegister);
 end;
 
 function ZeroSize: TFpDbgValueSize;
@@ -1724,6 +1734,11 @@ end;
 procedure TFpDbgMemManager.ClearLastError;
 begin
   FLastError := NoError;
+end;
+
+function TFpDbgMemManager.RegisterSize(ARegNum: Cardinal): Integer;
+begin
+  Result := FMemReader.RegisterSize(ARegNum);
 end;
 
 function TFpDbgMemManager.ReadMemoryEx(
