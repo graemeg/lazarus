@@ -46,7 +46,7 @@ uses
   // DebuggerIntf
   DbgIntfDebuggerBase,
   // IDE
-  DebuggerStrConst, BaseDebugManager, Debugger, DebuggerDlg;
+  DebuggerStrConst, BaseDebugManager, EnvironmentOpts, Debugger, DebuggerDlg;
 
 type
 
@@ -324,6 +324,8 @@ begin
     try
       Watch := DebugBoss.Watches.CurrentWatches.Add(S);
       Watch.Enabled := True;
+      if EnvironmentOptions.DebuggerAutoSetInstanceFromClass then
+        Watch.EvaluateFlags := Watch.EvaluateFlags + [defClassAutoCast];
     finally
       DebugBoss.Watches.CurrentWatches.EndUpdate;
     end;

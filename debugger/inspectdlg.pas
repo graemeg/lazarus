@@ -316,6 +316,10 @@ begin
       w := DebugBoss.Watches.CurrentWatches.Add(FExpression);
     if (w <> nil) then begin
       w.Enabled := True;
+      if EnvironmentOptions.DebuggerAutoSetInstanceFromClass or
+         btnUseInstance.Down
+      then
+        w.EvaluateFlags := w.EvaluateFlags + [defClassAutoCast];
       DebugBoss.ViewDebugDialog(ddtWatches, False);
     end;
   finally
@@ -824,6 +828,7 @@ begin
   BtnAddWatch.Caption:=lisInspectAddWatch;
 
   btnUseInstance.Enabled := False;
+  btnUseInstance.Down := EnvironmentOptions.DebuggerAutoSetInstanceFromClass;
   btnColClass.Enabled := False;
   btnColType.Enabled := False;
   btnColVisibility.Enabled := False;

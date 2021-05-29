@@ -543,6 +543,8 @@ type
     XML_PATH_DEBUGGER_CONF_OLD = 'EnvironmentOptions/Debugger/Class%s/%s/';
   private
     FCurrentDebuggerPropertiesConfig: TDebuggerPropertiesConfig;
+    FDebuggerAllowFunctionCalls: boolean;
+    FDebuggerAutoSetInstanceFromClass: boolean;
     FDebuggerShowExitCodeMessage: boolean;
     FHasActiveDebuggerEntry: Boolean;
     fRegisteredSubConfig: TObjectList;
@@ -911,6 +913,8 @@ type
     property DebuggerShowExitCodeMessage: boolean read FDebuggerShowExitCodeMessage write FDebuggerShowExitCodeMessage;
     property DebuggerResetAfterRun: boolean read FDebuggerResetAfterRun write FDebuggerResetAfterRun;
     property DebuggerAutoCloseAsm: boolean read FDebuggerAutoCloseAsm write FDebuggerAutoCloseAsm;
+    property DebuggerAutoSetInstanceFromClass: boolean read FDebuggerAutoSetInstanceFromClass write FDebuggerAutoSetInstanceFromClass;
+    property DebuggerAllowFunctionCalls: boolean read FDebuggerAllowFunctionCalls write FDebuggerAllowFunctionCalls;
     property FppkgConfigFile: string read GetFppkgConfigFile write SetFppkgConfigFile;
     property FppkgConfigFileHistory: TStringList read FFppkgConfigFileHistory write FFppkgConfigFileHistory;
     // ShowCompileDialog and AutoCloseCompileDialog are currently not used.
@@ -2492,6 +2496,8 @@ begin
   DebuggerShowExitCodeMessage:=FXMLCfg.GetValue(Path+'DebuggerOptions/DebuggerShowExitCodeMessage/Value', True);
   DebuggerResetAfterRun :=FXMLCfg.GetValue(Path+'DebuggerOptions/DebuggerResetAfterRun/Value', False);
   FDebuggerAutoCloseAsm :=FXMLCfg.GetValue(Path+'DebuggerOptions/DebuggerAutoCloseAsm/Value', False);
+  FDebuggerAutoSetInstanceFromClass :=FXMLCfg.GetValue(Path+'DebuggerOptions/DebuggerAutoSetInstanceFromClass/Value', False);
+  FDebuggerAllowFunctionCalls :=FXMLCfg.GetValue(Path+'DebuggerOptions/DebuggerAllowFunctionCalls/Value', False);
   FDebuggerEventLogClearOnRun := FXMLCfg.GetValue(Path+'Debugger/EventLogClearOnRun', True);
   FDebuggerEventLogCheckLineLimit := FXMLCfg.GetValue(Path+'Debugger/EventLogCheckLineLimit', False);
   FDebuggerEventLogLineLimit := FXMLCfg.GetValue(Path+'Debugger/EventLogLineLimit', 1000);
@@ -2889,6 +2895,10 @@ begin
       FDebuggerResetAfterRun, False);
   FXMLCfg.SetDeleteValue(Path+'DebuggerOptions/DebuggerAutoCloseAsm/Value',
       FDebuggerAutoCloseAsm, False);
+  FXMLCfg.SetDeleteValue(Path+'DebuggerOptions/DebuggerAutoSetInstanceFromClass/Value',
+      FDebuggerAutoSetInstanceFromClass, False);
+  FXMLCfg.SetDeleteValue(Path+'DebuggerOptions/DebuggerAllowFunctionCalls/Value',
+      FDebuggerAllowFunctionCalls, False);
   for i := 0 to FDebuggerFileHistory.Count -1 do
     if FDebuggerFileHistory[i] = '' then
       SaveRecentList(FXMLCfg,TStrings(FDebuggerFileHistory.Objects[i]),Path+'DebuggerFilename/History/')

@@ -39,8 +39,9 @@ unit WatchPropertyDlg;
 interface
 
 uses
-  Classes, SysUtils, Forms, StdCtrls, Extctrls, ButtonPanel, LazarusIDEStrConsts,
-  IDEHelpIntf, DbgIntfDebuggerBase, Debugger, BaseDebugManager, DebuggerStrConst;
+  Classes, SysUtils, Forms, StdCtrls, Extctrls, ButtonPanel,
+  LazarusIDEStrConsts, IDEHelpIntf, DbgIntfDebuggerBase, Debugger,
+  BaseDebugManager, EnvironmentOpts, DebuggerStrConst;
 
 type
 
@@ -103,6 +104,9 @@ begin
     if chkUseInstanceClass.Checked
     then FWatch.EvaluateFlags := [defClassAutoCast]
     else FWatch.EvaluateFlags := [];
+    if chkAllowFunc.Checked
+    then FWatch.EvaluateFlags := FWatch.EvaluateFlags + [defAllowFunctionCall]
+    else FWatch.EvaluateFlags := [];
     FWatch.RepeatCount := StrToIntDef(txtRepCount.Text, 0);
 
     FWatch.Enabled := chkEnabled.Checked;
@@ -140,21 +144,23 @@ begin
     chkEnabled.Checked := True;
     txtExpression.Text := AWatchExpression;
     rgStyle.ItemIndex := 7;
-    chkUseInstanceClass.Checked := False;
+    chkUseInstanceClass.Checked := EnvironmentOptions.DebuggerAutoSetInstanceFromClass;
     txtRepCount.Text := '0';
   end
   else begin
-    txtExpression.Text := FWatch.Expression;
-    chkEnabled.Checked := FWatch.Enabled;
-    rgStyle.ItemIndex := DispFormatToStyle[FWatch.DisplayFormat];
+    txtExpression.Text          := FWatch.Expression;
+    chkEnabled.Checked          := FWatch.Enabled;
+    rgStyle.ItemIndex           := DispFormatToStyle[FWatch.DisplayFormat];
     chkUseInstanceClass.Checked := defClassAutoCast in FWatch.EvaluateFlags;
-    txtRepCount.Text := IntToStr(FWatch.RepeatCount);
+    chkAllowFunc.Checked        := defAllowFunctionCall in FWatch.EvaluateFlags;
+    txtRepCount.Text            := IntToStr(FWatch.RepeatCount);
   end;
   txtExpressionChange(nil);
 
   lblDigits.Enabled := False;
   txtDigits.Enabled := False;
-  chkAllowFunc.Enabled := False;
+  chkAllowFunc.Enabled := EnvironmentOptions.DebuggerAllowFunctionCalls and
+    (dfEvalFunctionCalls in DebugBoss.DebuggerClass.SupportedFeatures);
 
   Caption:= lisWatchPropert;
   lblExpression.Caption:= lisExpression;

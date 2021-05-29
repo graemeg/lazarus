@@ -5129,6 +5129,10 @@ begin
   // reload lazarus packages
   if LazarusSrcDirChanged then
     PkgBoss.LazarusSrcDirChanged;
+
+  if DebugBoss <> nil then
+    DebugBoss.EnvironmentOptsChanged;
+
   UpdateCaption;
 end;
 

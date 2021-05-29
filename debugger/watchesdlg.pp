@@ -42,7 +42,7 @@ uses
   IDEWindowIntf, Menus, ComCtrls, ActnList, ExtCtrls, StdCtrls, LCLType,
   IDEImagesIntf, LazarusIDEStrConsts, DebuggerStrConst, Debugger, DebuggerDlg,
   DbgIntfBaseTypes, DbgIntfDebuggerBase, DbgIntfMiscClasses, SynEdit,
-  BaseDebugManager;
+  BaseDebugManager, EnvironmentOpts;
 
 type
 
@@ -431,8 +431,9 @@ begin
     try
       NewWatch := DebugBoss.Watches.CurrentWatches.Add(s);
       NewWatch.DisplayFormat := wdfDefault;
-      NewWatch.EvaluateFlags := [defClassAutoCast];
       NewWatch.Enabled       := True;
+      if EnvironmentOptions.DebuggerAutoSetInstanceFromClass then
+        NewWatch.EvaluateFlags := [defClassAutoCast];
     finally
       DebugBoss.Watches.CurrentWatches.EndUpdate;
     end;
@@ -465,8 +466,9 @@ begin
       try
         NewWatch := DebugBoss.Watches.CurrentWatches.Add(s);
         NewWatch.DisplayFormat := wdfDefault;
-        NewWatch.EvaluateFlags := [defClassAutoCast];
         NewWatch.Enabled       := True;
+        if EnvironmentOptions.DebuggerAutoSetInstanceFromClass then
+          NewWatch.EvaluateFlags := [defClassAutoCast];
       finally
         DebugBoss.Watches.CurrentWatches.EndUpdate;
       end;

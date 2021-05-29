@@ -202,6 +202,7 @@ type
     procedure SetupSourceMenuShortCuts; override;
     procedure UpdateButtonsAndMenuItems; override;
     procedure UpdateToolStatus; override;
+    procedure EnvironmentOptsChanged; override;
 
     procedure LoadProjectSpecificInfo(XMLConfig: TXMLConfig;
                                       Merge: boolean); override;
@@ -1145,6 +1146,8 @@ begin
         if (w <> nil)
         then begin
           w.Enabled := True;
+          if EnvironmentOptions.DebuggerAutoSetInstanceFromClass then
+            w.EvaluateFlags := w.EvaluateFlags + [defClassAutoCast];
           ViewDebugDialog(ddtWatches, False);
           Exit;
         end;
@@ -2182,6 +2185,16 @@ begin
       MainIDE.ToolStatus := itNone
     else
       MainIDE.ToolStatus := TOOLSTATEMAP[FDebugger.State];
+  end;
+end;
+
+procedure TDebugManager.EnvironmentOptsChanged;
+begin
+  if FDebugger <> nil then begin
+    if EnvironmentOptions.DebuggerAllowFunctionCalls then
+      FDebugger.EnabledFeatures := FDebugger.EnabledFeatures + [dfEvalFunctionCalls]
+    else
+      FDebugger.EnabledFeatures := FDebugger.EnabledFeatures - [dfEvalFunctionCalls];
   end;
 end;
 

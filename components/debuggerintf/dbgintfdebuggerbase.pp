@@ -59,6 +59,11 @@ type
   EDebuggerException = class(Exception);
   EDBGExceptions = class(EDebuggerException);
 
+  TDBGFeature = (
+    dfEvalFunctionCalls   // The debugger supports calling functions in watches/expressions. defAllowFunctionCall in TDBGEvaluateFlag
+  );
+  TDBGFeatures = set of TDBGFeature;
+
   TDBGCommand = (
     dcRun,
     dcPause,
@@ -1832,6 +1837,7 @@ type
     FDebuggerEnvironment: TStrings;
     FCurEnvironment: TStrings;
     FDisassembler: TDBGDisassembler;
+    FEnabledFeatures: TDBGFeatures;
     FEnvironment: TStrings;
     FErrorStateInfo: String;
     FErrorStateMessage: String;
@@ -1877,6 +1883,7 @@ type
                      const AParams: array of const;
                      const ACallback: TMethod): Boolean;
     procedure SetDebuggerEnvironment (const AValue: TStrings ); overload;
+    procedure SetEnabledFeatures(AValue: TDBGFeatures);
     procedure SetEnvironment(const AValue: TStrings);
     procedure SetFileName(const AValue: String);
   protected
@@ -1929,6 +1936,7 @@ type
     class function HasExePath: boolean; virtual; deprecated; // use NeedsExePath instead
     class function NeedsExePath: boolean; virtual;        // If the debugger needs to have an exe path
     class function RequiredCompilerOpts(ATargetCPU, ATargetOS: String): TDebugCompilerRequirements; virtual;
+    class function SupportedFeatures: TDBGFeatures; virtual;
 
     // debugger properties
     class function CreateProperties: TDebuggerProperties; virtual;         // Creates debuggerproperties
@@ -2012,6 +2020,7 @@ type
     property ErrorStateMessage: String read FErrorStateMessage;
     property ErrorStateInfo: String read FErrorStateInfo;
     property SkipStopMessage: Boolean read FSkipStopMessage;
+    property EnabledFeatures: TDBGFeatures read FEnabledFeatures write SetEnabledFeatures;
     //property UnitInfoProvider: TDebuggerUnitInfoProvider                        // Provided by DebugBoss, to map files to packages or project
     //         read GetUnitInfoProvider write FUnitInfoProvider;
     // Events
@@ -5824,6 +5833,8 @@ var
   nr: TDebuggerNotifyReason;
 begin
   inherited Create;
+  FEnabledFeatures := SupportedFeatures;
+
   for nr := low(TDebuggerNotifyReason) to high(TDebuggerNotifyReason) do
     FDestroyNotificationList[nr] := TMethodList.Create;
   FOnState := nil;
@@ -6234,6 +6245,11 @@ begin
   Result := [];
 end;
 
+class function TDebuggerIntf.SupportedFeatures: TDBGFeatures;
+begin
+  Result := [];
+end;
+
 function TDebuggerIntf.GetCommands: TDBGCommands;
 begin
   Result := COMMANDMAP[State] * GetSupportedCommands;
@@ -6361,6 +6377,13 @@ end;
 procedure TDebuggerIntf.SetDebuggerEnvironment (const AValue: TStrings );
 begin
   FDebuggerEnvironment.Assign(AValue);
+end;
+
+procedure TDebuggerIntf.SetEnabledFeatures(AValue: TDBGFeatures);
+begin
+  AValue := AValue * SupportedFeatures;
+  if FEnabledFeatures = AValue then Exit;
+  FEnabledFeatures := AValue;
 end;
 
 procedure TDebuggerIntf.SetEnvironment(const AValue: TStrings);

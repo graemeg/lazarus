@@ -883,7 +883,7 @@ begin
   PrettyPrinter := nil;
   APasExpr := TFpPascalExpression.Create(AnExpression, FExpressionScope);
   try
-    if FAllowFunctions then
+    if FAllowFunctions and (dfEvalFunctionCalls in FDebugger.EnabledFeatures) then
       APasExpr.OnFunctionCall  := @DoWatchFunctionCall;
     APasExpr.ResultValue; // trigger full validation
     if not APasExpr.Valid then begin
@@ -975,7 +975,7 @@ begin
   FDispFormat := ADispFormat;
   FRepeatCnt := ARepeatCnt;
   FEvalFlags := AnEvalFlags;
-  if defAllowFunctionCall in AnEvalFlags then
+  if (defAllowFunctionCall in AnEvalFlags) then
     FAllowFunctions := True;
   FRes := False;
 end;

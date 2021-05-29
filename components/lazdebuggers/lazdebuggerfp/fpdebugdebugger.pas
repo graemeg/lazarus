@@ -392,6 +392,7 @@ type
     class function CreateProperties: TDebuggerProperties; override;
     class function  GetSupportedCommands: TDBGCommands; override;
     class function SupportedCommandsFor(AState: TDBGState): TDBGCommands; override;
+    class function SupportedFeatures: TDBGFeatures; override;
   end;
 
   { TFpLineInfo }
@@ -3806,6 +3807,11 @@ begin
   Result := inherited SupportedCommandsFor(AState);
   if AState = dsStop then
     Result := Result - [dcStepInto, dcStepOver, dcStepOut, dcStepIntoInstr, dcStepOverInstr];
+end;
+
+class function TFpDebugDebugger.SupportedFeatures: TDBGFeatures;
+begin
+  Result := [dfEvalFunctionCalls];
 end;
 
 initialization

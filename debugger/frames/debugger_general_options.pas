@@ -86,6 +86,8 @@ begin
   gcbDebuggerGeneralOptions.Checked[1] := EnvironmentOptions.DebuggerShowExitCodeMessage;
   gcbDebuggerGeneralOptions.Checked[2] := EnvironmentOptions.DebuggerResetAfterRun;
   gcbDebuggerGeneralOptions.Checked[3] := EnvironmentOptions.DebuggerAutoCloseAsm;
+  gcbDebuggerGeneralOptions.Checked[4] := EnvironmentOptions.DebuggerAutoSetInstanceFromClass;
+  gcbDebuggerGeneralOptions.Checked[5] := EnvironmentOptions.DebuggerAllowFunctionCalls;
   txtAdditionalPath.Text:=EnvironmentOptions.GetParsedDebuggerSearchPath;
 end;
 
@@ -103,10 +105,12 @@ procedure TDebuggerGeneralOptionsFrame.Setup(ADialog: TAbstractOptionsEditorDial
 begin
   gbAdditionalSearchPath.Caption := lisDebugOptionsFrmAdditionalSearchPath;
   gcbDebuggerGeneralOptions.Caption := lisDebugOptionsFrmDebuggerGeneralOptions;
-  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmShowMessageOnStop);
-  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmShowExitCodeOnStop);
-  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmResetDebuggerOnEachRun);
-  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmAutoCloseAsm);
+  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmShowMessageOnStop);      // 0 Message on stop
+  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmShowExitCodeOnStop);     // 1 Exit-code on stop
+  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmResetDebuggerOnEachRun); // 2 reset dbg after each run
+  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmAutoCloseAsm);           // 3 auto close asm
+  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmAutoInstanceClass);      // 4 auto set class-from-instance
+  gcbDebuggerGeneralOptions.Items.Add(lisDebugOptionsFrmAllowFunctionCalls);     // 5 allow function calls
 end;
 
 procedure TDebuggerGeneralOptionsFrame.ReadSettings(AOptions: TAbstractIDEOptions);
@@ -125,10 +129,12 @@ begin
   begin
     DebuggerSearchPath := TrimSearchPath(txtAdditionalPath.Text,'');
     // IMPORTANT if more items are added the indexes must be updated here!
-    DebuggerShowStopMessage     := gcbDebuggerGeneralOptions.Checked[0];
-    DebuggerShowExitCodeMessage := gcbDebuggerGeneralOptions.Checked[1];
-    DebuggerResetAfterRun       := gcbDebuggerGeneralOptions.Checked[2];
-    DebuggerAutoCloseAsm        := gcbDebuggerGeneralOptions.Checked[3];
+    DebuggerShowStopMessage          := gcbDebuggerGeneralOptions.Checked[0];
+    DebuggerShowExitCodeMessage      := gcbDebuggerGeneralOptions.Checked[1];
+    DebuggerResetAfterRun            := gcbDebuggerGeneralOptions.Checked[2];
+    DebuggerAutoCloseAsm             := gcbDebuggerGeneralOptions.Checked[3];
+    DebuggerAutoSetInstanceFromClass := gcbDebuggerGeneralOptions.Checked[4];
+    DebuggerAllowFunctionCalls       := gcbDebuggerGeneralOptions.Checked[5];
   end;
 end;
 

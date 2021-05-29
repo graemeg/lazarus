@@ -5449,6 +5449,9 @@ begin
   if AConfig.GetValue(APath + 'ClassAutoCast', False)
   then Include(FEvaluateFlags, defClassAutoCast)
   else Exclude(FEvaluateFlags, defClassAutoCast);
+  if AConfig.GetValue(APath + 'AllowFunctionCall', False)
+  then Include(FEvaluateFlags, defAllowFunctionCall)
+  else Exclude(FEvaluateFlags, defAllowFunctionCall);
   try    ReadStr(AConfig.GetValue(APath + 'DisplayFormat', 'wdfDefault'), FDisplayFormat);
   except FDisplayFormat := wdfDefault; end;
   FRepeatCount := AConfig.GetValue(APath + 'RepeatCount', 0);
@@ -5465,6 +5468,7 @@ begin
   WriteStr(s{%H-}, FDisplayFormat);
   AConfig.SetDeleteValue(APath + 'DisplayFormat', s, 'wdfDefault');
   AConfig.SetDeleteValue(APath + 'ClassAutoCast', defClassAutoCast in FEvaluateFlags, False);
+  AConfig.SetDeleteValue(APath + 'AllowFunctionCall', defAllowFunctionCall in FEvaluateFlags, False);
   AConfig.SetDeleteValue(APath + 'RepeatCount', FRepeatCount, 0);
 
   TIdeWatchValueList(FValueList).SaveDataToXMLConfig(AConfig, APath + 'ValueList/');
@@ -5533,6 +5537,9 @@ begin
   if AConfig.GetValue(APath + 'ClassAutoCast', False)
   then Include(FEvaluateFlags, defClassAutoCast)
   else Exclude(FEvaluateFlags, defClassAutoCast);
+  if AConfig.GetValue(APath + 'AllowFunctionCall', False)
+  then Include(FEvaluateFlags, defAllowFunctionCall)
+  else Exclude(FEvaluateFlags, defAllowFunctionCall);
   i := StringCase
     (AConfig.GetValue(APath + 'DisplayStyle/Value', TWatchDisplayFormatNames[wdfDefault]),
     TWatchDisplayFormatNames);
@@ -5549,6 +5556,7 @@ begin
   AConfig.SetDeleteValue(APath + 'DisplayStyle/Value',
     TWatchDisplayFormatNames[DisplayFormat], TWatchDisplayFormatNames[wdfDefault]);
   AConfig.SetDeleteValue(APath + 'ClassAutoCast', defClassAutoCast in FEvaluateFlags, False);
+  AConfig.SetDeleteValue(APath + 'AllowFunctionCall', defAllowFunctionCall in FEvaluateFlags, False);
   AConfig.SetDeleteValue(APath + 'RepeatCount', FRepeatCount, 0);
 end;
 
