@@ -1060,6 +1060,10 @@ procedure TPasParserSymbolPointer.TypeInfoNeeded;
 var
   t: TPasParserSymbolPointer;
 begin
+  if FPointerLevels = 0 then begin
+    SetTypeInfo(FPointedTo);
+    exit;
+  end;
   assert(FPointerLevels > 1, 'TPasParserSymbolPointer.TypeInfoNeeded: FPointerLevels > 1');
   t := TPasParserSymbolPointer.Create(FPointedTo, FContext, FPointerLevels-1);
   SetTypeInfo(t);
@@ -2738,12 +2742,50 @@ function TFpPascalExpressionPartOperatorPlusMinus.DoGetResultValue: TFpValue;
 {$PUSH}{$R-}{$Q-}
   function AddSubValueToPointer(APointerVal, AOtherVal: TFpValue; ADoSubtract: Boolean = False): TFpValue;
   var
-    Idx: Int64;
+    Idx, m: Int64;
     TmpVal: TFpValue;
+    s1, s2: TFpDbgValueSize;
   begin
     Result := nil;
     case AOtherVal.Kind of
-    //  skPointer:  Result := nil;
+      skPointer: if ADoSubtract then begin
+          if ( (APointerVal.TypeInfo = nil) or (APointerVal.TypeInfo.TypeInfo = nil) ) and
+             ( (AOtherVal.TypeInfo = nil)   or (AOtherVal.TypeInfo.TypeInfo = nil) )
+          then begin
+            Idx := APointerVal.AsCardinal - AOtherVal.AsCardinal;
+            Result := TFpValueConstNumber.Create(Idx, True);
+            exit;
+          end
+          else
+          if (APointerVal.TypeInfo <> nil) and (APointerVal.TypeInfo.TypeInfo <> nil) and
+             (AOtherVal.TypeInfo <> nil)   and (AOtherVal.TypeInfo.TypeInfo <> nil) and
+             (APointerVal.TypeInfo.TypeInfo.Kind = AOtherVal.TypeInfo.TypeInfo.Kind) and
+             (APointerVal.TypeInfo.TypeInfo.ReadSize(nil, s1)) and
+             (AOtherVal.TypeInfo.TypeInfo.ReadSize(nil, s2)) and
+             (s1 = s2)
+          then begin
+            if s1 <> (APointerVal.Member[1].DataAddress.Address - APointerVal.DataAddress.Address) then begin
+              debugln('Size mismatch for pointer math');
+              exit;
+            end;
+            Idx := APointerVal.AsCardinal - AOtherVal.AsCardinal;
+            if SizeToFullBytes(s1) > 0 then begin
+              m := Idx mod SizeToFullBytes(s1);
+              Idx := Idx div SizeToFullBytes(s1);
+              if m <> 0 then begin
+                debugln('Size mismatch for pointer math');
+                exit;
+              end;
+            end;
+
+            Result := TFpValueConstNumber.Create(Idx, True);
+            exit;
+          end
+          else
+            exit;
+        end
+        else
+          exit;
       skInteger:  Idx := AOtherVal.AsInteger;
       skCardinal: begin
           Idx := AOtherVal.AsInteger;

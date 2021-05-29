@@ -53,6 +53,7 @@ var
   BreakDummy: PtrUInt;
   PByteDummy: PByte;
   p: Pointer;
+  pw: PWord; // ensure we have the type
   InterfacedObject, InterfacedObject2: TInterfacedObject;
 
 type
@@ -482,6 +483,7 @@ begin
   BreakDummy := ord(gcWCharStatArray[1]);
   p := nil;
   PByteDummy := nil;
+  pw := nil;
   SomeFunc1(1,1,1,1);
   SomeProc1();
   {$if FPC_FULLVERSION >= 30000}

@@ -2325,6 +2325,18 @@ begin
 
     t.Add('Pointer-Op: ', 'LongInt(Pointer(10)+4)',     weInteger(14));
 
+    t.Add('Pointer-Op: ', 'Pointer(10)-Pointer(4)',     weInteger(6));
+    t.Add('Pointer-Op: ', 'PWord(10)-PWord(4)',     weInteger(3));
+    t.Add('Pointer-Op: ', '^Word(10)-^Word(4)',     weInteger(3));
+    t.Add('Pointer-Op: ', '^Word(10)-Pointer(4)',     weInteger(3)).ExpectError();
+
+    t.Add('Pointer-Op: ', 'gcPtr2 - gcPtr1',     weInteger(1000));
+    t.Add('Pointer-Op: ', 'gcPtr2 - gvPtr1',     weInteger(1000));
+    t.Add('Pointer-Op: ', 'gvPtr2 - gcPtr2',     weInteger(1));
+    t.Add('Pointer-Op: ', 'gvPtr2 - gvPtr1',     weInteger(1001));
+    t.Add('Pointer-Op: ', '@gv_sa_Word[2] - @gv_sa_Word[1]',     weInteger(1));
+    t.Add('Pointer-Op: ', 'pointer(@gv_sa_Word[2]) - pointer(@gv_sa_Word[1])',     weInteger(2));
+
     AddWatches(t, 'glob',   'gv', 001, 'B', '', tlAny,     'gv', 001, 'B', '', tlAny);
     AddWatches(t, 'glob',   'gc', 000, 'A', '', tlConst,   'gv', 001, 'B', '', tlAny);
     AddWatches(t, 'glob',   'gv', 001, 'B', '', tlAny,     'gc', 000, 'A', '', tlConst);
