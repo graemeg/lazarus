@@ -236,6 +236,9 @@ type
     property Constraints;
     property Default;
     property DefaultCaption;
+    property DragCursor;
+    property DragKind;
+    property DragMode;
     property Enabled;
     property Font;
     property Glyph;
@@ -423,6 +426,9 @@ type
     property Caption;
     property Color;
     property Down;
+    property DragCursor;
+    property DragKind;
+    property DragMode;
     property Enabled;
     property Flat;
     property Font;
