@@ -5408,7 +5408,7 @@ resourcestring
   lisDebugOptionsFrmShowExitCodeOnStop = 'Show message on stop with Error (Exit-code <> 0)';
   lisDebugOptionsFrmResetDebuggerOnEachRun = 'Reset Debugger after each run';
   lisDebugOptionsFrmAutoCloseAsm = 'Automatically close the assembler window, after source not found';
-  lisDebugOptionsFrmAutoInstanceClass = 'Automatically set "use instance class" for new watches';
+  lisDebugOptionsFrmAutoInstanceClass = 'Automatically set "use instance class type" for new watches';
   lisDebugOptionsFrmAllowFunctionCalls = 'BETA: Allow function calls in watches (if supported by backend)';
   lisDebugOptionsFrmDebuggerSpecific = 'Debugger specific options (depends on '
     +'type of debugger)';
