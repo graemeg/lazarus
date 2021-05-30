@@ -2166,7 +2166,7 @@ begin
           LRSFilename:=ChangeFileExt(NewUnitInfo.Filename,'.lrs');
           CodeToolBoss.CreateFile(LRSFilename);
         end;
-        if (NewUnitInfo.Component is TCustomForm)
+        if ((NewUnitInfo.Component is TCustomForm) or (NewUnitInfo.Component is TDataModule))
         and NewFileDescriptor.UseCreateFormStatements
         and NewUnitInfo.IsPartOfProject
         and AProject.AutoCreateForms
@@ -4487,7 +4487,8 @@ begin
 
   NewUnitInfo.ComponentName:=NewComponent.Name;
   NewUnitInfo.ComponentResourceName:=NewUnitInfo.ComponentName;
-  if UseCreateFormStatements and (NewComponent is TCustomForm)
+  if UseCreateFormStatements
+  and ((NewComponent is TCustomForm) or (NewComponent is TDataModule))
   and NewUnitInfo.IsPartOfProject
   and Project1.AutoCreateForms
   and (pfMainUnitHasCreateFormStatements in Project1.Flags) then
