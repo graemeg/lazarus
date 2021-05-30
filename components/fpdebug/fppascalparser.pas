@@ -35,11 +35,12 @@ uses
 
 type
 
+  TFpPascalExpressionPartList= class;
+
   TFpPascalExpressionPart = class;
   TFpPascalExpressionPartContainer = class;
   TFpPascalExpressionPartWithPrecedence = class;
   TFpPascalExpressionPartBracket = class;
-  TFpPascalExpressionPartBracketArgumentList = class;
   TFpPascalExpressionPartOperator = class;
 
   TFpPascalExpressionPartClass = class of TFpPascalExpressionPart;
@@ -47,8 +48,8 @@ type
 
   TSeparatorType = (ppstComma);
 
-  TFpPascalParserCallFunctionProc = function (AnExpressionPart: TFpPascalExpressionPartBracketArgumentList;
-    AFunctionValue: TFpValue; ASelfValue: TFpValue;
+  TFpPascalParserCallFunctionProc = function (AnExpressionPart: TFpPascalExpressionPart;
+    AFunctionValue: TFpValue; ASelfValue: TFpValue; AParams: TFpPascalExpressionPartList;
     out AResult: TFpValue; var AnError: TFpError): boolean of object;
 
   { TFpPascalExpression }
@@ -93,6 +94,17 @@ type
     property OnFunctionCall: TFpPascalParserCallFunctionProc read FOnFunctionCall write FOnFunctionCall;
   end;
 
+
+  { TFpPascalExpressionPartList }
+
+  TFpPascalExpressionPartList = class
+  protected
+    function GetItems(AIndex: Integer): TFpPascalExpressionPart; virtual; abstract;
+    function GetCount: Integer; virtual; abstract;
+  public
+    property Count: Integer read GetCount;
+    property Items[AIndex: Integer]: TFpPascalExpressionPart read GetItems;
+  end;
 
   { TFpPascalExpressionPart }
 
@@ -463,6 +475,19 @@ const
 
 type
 
+  { TFpPascalExpressionPartListForwarder }
+
+  TFpPascalExpressionPartListForwarder = class(TFpPascalExpressionPartList)
+  private
+    FExpressionPart: TFpPascalExpressionPartContainer;
+    FListOffset, FCount: Integer;
+  protected
+    function GetCount: Integer; override;
+    function GetItems(AIndex: Integer): TFpPascalExpressionPart; override;
+  public
+    constructor Create(AnExpressionPart: TFpPascalExpressionPartContainer; AListOffset, ACount: Integer);
+  end;
+
   {%region  DebugSymbol }
 
   { TPasParserSymbolPointer
@@ -620,6 +645,28 @@ end;
 function DbgsSymbol(AVal: TFpSymbol; {%H-}AIndent: String): String;
 begin
   Result := DbgSName(AVal);
+end;
+
+{ TFpPascalExpressionPartListForwarder }
+
+function TFpPascalExpressionPartListForwarder.GetCount: Integer;
+begin
+  Result := FCount;
+end;
+
+function TFpPascalExpressionPartListForwarder.GetItems(AIndex: Integer
+  ): TFpPascalExpressionPart;
+begin
+  Result := FExpressionPart.Items[AIndex + FListOffset];
+end;
+
+constructor TFpPascalExpressionPartListForwarder.Create(
+  AnExpressionPart: TFpPascalExpressionPartContainer; AListOffset,
+  ACount: Integer);
+begin
+  FExpressionPart := AnExpressionPart;
+  FListOffset := AListOffset;
+  FCount := ACount;
 end;
 
 function TFpPasParserValue.DebugText(AIndent: String): String;
@@ -1395,6 +1442,7 @@ var
   err: TFpError;
   Itm0: TFpPascalExpressionPart;
   ItmMO: TFpPascalExpressionPartOperatorMemberOf absolute Itm0;
+  Params: TFpPascalExpressionPartListForwarder;
 begin
   Result := nil;
 
@@ -1425,13 +1473,17 @@ begin
     end;
 
     err := NoError;
-//TODO: pass self-object
-    if not Expression.OnFunctionCall(Self, tmp, tmpSelf, Result, err) then begin
-      if not IsError(err) then
-        SetError('unknown error calling function')
-      else
-        Expression.SetError(err);
-      Result := nil;
+    Params := TFpPascalExpressionPartListForwarder.Create(Self, 1, Count - 1);
+    try
+      if not Expression.OnFunctionCall(Self, tmp, tmpSelf, Params, Result, err) then begin
+        if not IsError(err) then
+          SetError('unknown error calling function')
+        else
+          Expression.SetError(err);
+        Result := nil;
+      end;
+    finally
+      Params.Free;
     end;
     {$IFDEF WITH_REFCOUNT_DEBUG}if Result <> nil then Result.DbgRenameReference(nil, 'DoGetResultValue'){$ENDIF};
 

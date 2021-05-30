@@ -237,9 +237,9 @@ type
     FAllowFunctions: Boolean;
     FExpressionScope: TFpDbgSymbolScope;
 
-    function DoWatchFunctionCall(AnExpressionPart: TFpPascalExpressionPartBracketArgumentList;
-      AFunctionValue, ASelfValue: TFpValue; out AResult: TFpValue;
-  var AnError: TFpError): boolean;
+    function DoWatchFunctionCall(AnExpressionPart: TFpPascalExpressionPart;
+      AFunctionValue, ASelfValue: TFpValue; AParams: TFpPascalExpressionPartList;
+      out AResult: TFpValue; var AnError: TFpError): boolean;
   protected
     function EvaluateExpression(const AnExpression: String;
                                 AStackFrame, AThreadId: Integer;
@@ -779,8 +779,9 @@ end;
 { TFpThreadWorkerEvaluate }
 
 function TFpThreadWorkerEvaluate.DoWatchFunctionCall(
-  AnExpressionPart: TFpPascalExpressionPartBracketArgumentList; AFunctionValue,
-  ASelfValue: TFpValue; out AResult: TFpValue; var AnError: TFpError): boolean;
+  AnExpressionPart: TFpPascalExpressionPart; AFunctionValue,
+  ASelfValue: TFpValue; AParams: TFpPascalExpressionPartList; out
+  AResult: TFpValue; var AnError: TFpError): boolean;
 var
   FunctionSymbolData, FunctionSymbolType, FunctionResultSymbolType,
   TempSymbol: TFpSymbol;
@@ -835,12 +836,11 @@ begin
     exit;
   end;
 
-  // AnExpressionPart.Items[0] is the function // 1..Count are params
-  PCnt := AnExpressionPart.Count - 1;
-  ItemsOffs := 1; // skip the function entry in AnExpressionPart.Items
+  PCnt := AParams.Count;
+  ItemsOffs := 0;
   if ASelfValue <> nil then begin
     inc(PCnt);
-    ItemsOffs := 0; // the function entry in AnExpressionPart.Items mapps to ASelfValue and is ignored
+    ItemsOffs := -1; // In the loop "i = 0" is the self object. So "i = 1" should be AParams[0]
   end;
 
   SetLength(ParameterSymbolArr, PCnt);
@@ -863,7 +863,7 @@ begin
           // TODO: check self param
         end
         else begin
-          ExprParamVal := AnExpressionPart.Items[FoundIdx + ItemsOffs].ResultValue;
+          ExprParamVal := AParams.Items[FoundIdx + ItemsOffs].ResultValue;
           if (ExprParamVal = nil) then begin
             DebugLn('Internal error for arg %d ', [FoundIdx]);
             AnError := AnExpressionPart.Expression.Error;
@@ -912,7 +912,7 @@ begin
           if (ASelfValue <> nil) and (i = 0) then
             ParamSymbol.AsCardinal := ASelfValue.AsCardinal
           else
-            ParamSymbol.AsCardinal := AnExpressionPart.Items[i + ItemsOffs].ResultValue.AsCardinal;
+            ParamSymbol.AsCardinal := AParams.Items[i + ItemsOffs].ResultValue.AsCardinal;
           if IsError(ParamSymbol.LastError) then begin
             DebugLn('Internal error for arg %d ', [i]);
             AnError := ParamSymbol.LastError;
