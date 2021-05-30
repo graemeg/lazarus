@@ -123,6 +123,7 @@ type
 type
 
   TFpThreadWorkerPriority = (
+    twpModify, // this is a user actions
     twpUser,
     twpThread, twpStack, twpLocal, twpWatch,
     twpContinue

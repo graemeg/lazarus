@@ -121,6 +121,13 @@ type
     constructor Create(ADebugger: TFpDebugDebuggerBase; ALocals: TLocals);
   end;
 
+  { TFpThreadWorkerModifyUpdate }
+
+  TFpThreadWorkerModifyUpdate = class(TFpThreadWorkerModify)
+  protected
+    procedure DoCallback_DecRef(Data: PtrInt = 0); override;
+  end;
+
   { TFpThreadWorkerWatchValueEvalUpdate }
 
   TFpThreadWorkerWatchValueEvalUpdate = class(TFpThreadWorkerWatchValueEval)
@@ -555,6 +562,7 @@ type
     function ReadMemoryEx(AnAddress, AnAddressSpace: TDbgPtr; ASize: Cardinal; ADest: Pointer): Boolean; override;
     function ReadRegister(ARegNum: Cardinal; out AValue: TDbgPtr;
       AContext: TFpDbgLocationContext): Boolean; override;
+    //WriteMemory is not overwritten. It must ONLY be called in the debug-thread
   end;
 
   { TFpWaitForConsoleOutputThread }
@@ -574,6 +582,18 @@ type
 procedure Register;
 begin
   RegisterDebugger(TFpDebugDebugger);
+end;
+
+{ TFpThreadWorkerModifyUpdate }
+
+procedure TFpThreadWorkerModifyUpdate.DoCallback_DecRef(Data: PtrInt);
+begin
+  //
+  FDebugger.Locals.CurrentLocalsList.Clear;
+  FDebugger.Watches.CurrentWatches.ClearValues;
+  FDebugger.CallStack.CurrentCallStackList.Clear;
+
+  UnQueue_DecRef;
 end;
 
 { TFpDbgDebggerThreadWorkerItemHelper }
@@ -3083,6 +3103,7 @@ var
   WorkItem: TFpThreadWorkerControllerRun;
   AThreadId, AStackFrame: Integer;
   EvalWorkItem: TFpThreadWorkerCmdEval;
+  WorkItemModify: TFpThreadWorkerModifyUpdate;
 begin
   result := False;
   if assigned(FDbgController) then
@@ -3252,6 +3273,15 @@ begin
           FEvalWorkItem := TFpThreadWorkerCmdEval.Create(Self, twpUser, String(AParams[0].VAnsiString),
             AStackFrame, AThreadId, EvalFlags, TDBGEvaluateResultCallback(ACallback));
         FWorkQueue.PushItem(FEvalWorkItem);
+        Result := True;
+      end;
+    dcModify:
+      begin
+        GetCurrentThreadAndStackFrame(AThreadId, AStackFrame);
+        WorkItemModify := TFpThreadWorkerModifyUpdate.Create(Self, AnsiString(AParams[0].VAnsiString), AnsiString(AParams[1].VAnsiString),
+          AStackFrame, AThreadId);
+        FWorkQueue.PushItem(WorkItemModify);
+        WorkItemModify.DecRef;
         Result := True;
       end;
     dcSendConsoleInput:
@@ -3795,7 +3825,8 @@ end;
 class function TFpDebugDebugger.GetSupportedCommands: TDBGCommands;
 begin
   Result:=[dcRun, dcStop, dcStepIntoInstr, dcStepOverInstr, dcStepOver,
-           dcStepTo, dcRunTo, dcPause, dcStepOut, dcStepInto, dcEvaluate, dcSendConsoleInput
+           dcStepTo, dcRunTo, dcPause, dcStepOut, dcStepInto, dcEvaluate, dcModify,
+           dcSendConsoleInput
            {$IFDEF windows} , dcAttach, dcDetach {$ENDIF}
            {$IFDEF linux} , dcAttach, dcDetach {$ENDIF}
           ];

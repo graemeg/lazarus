@@ -146,6 +146,8 @@ type
     //                         AnOpts: TFpDbgMemReadOptions): Boolean; inline;
     function ReadSet        (const ALocation: TFpDbgMemLocation; ASize: TFpDbgValueSize;
                              out AValue: TBytes): Boolean; inline;
+    function WriteSet        (const ALocation: TFpDbgMemLocation; ASize: TFpDbgValueSize;
+                             const AValue: TBytes): Boolean; inline;
     //function ReadSet        (const ALocation: TFpDbgMemLocation; ASize: TFpDbgValueSize;
     //                         out AValue: TBytes;
     //                         AnOpts: TFpDbgMemReadOptions): Boolean; inline;
@@ -168,6 +170,7 @@ type
     // inherited Memreaders should implement partial size ReadMemory, and forward it to the TDbgProcess class
     function ReadMemory(AnAddress: TDbgPtr; ASize: Cardinal; ADest: Pointer; out ABytesRead: Cardinal): Boolean; virtual; overload;
     function ReadMemoryEx(AnAddress, AnAddressSpace: TDbgPtr; ASize: Cardinal; ADest: Pointer): Boolean; virtual; abstract;
+    function WriteMemory(AnAddress: TDbgPtr; ASize: Cardinal; ASource: Pointer): Boolean; virtual; abstract; overload;
     // ReadRegister may need TargetMemConvertor
     // Register with reduced size are treated as unsigned
     // TODO: ReadRegister should only take THREAD-ID, not context
@@ -975,6 +978,12 @@ begin
     Result := MemManager.ReadMemory(rdtSet, ALocation, ASize, @AValue[0], Length(AValue), Self);
 end;
 
+function TFpDbgLocationContext.WriteSet(const ALocation: TFpDbgMemLocation;
+  ASize: TFpDbgValueSize; const AValue: TBytes): Boolean;
+begin
+  Result := MemManager.WriteMemory(rdtSet, ALocation, ASize, @AValue[0], Length(AValue), Self);
+end;
+
 function TFpDbgLocationContext.ReadFloat(const ALocation: TFpDbgMemLocation;
   ASize: TFpDbgValueSize; out AValue: Extended): Boolean;
 begin
@@ -1688,6 +1697,12 @@ begin
           exit; // failed
 
         Result := True;
+      end;
+    mlfTargetMem:
+      begin
+        if (BitOffset = 0) and (ADestSize.BitSize = 0) and (ADestSize.Size > 0) then begin
+          FMemReader.WriteMemory(LocToAddr(ADestLocation), SizeToFullBytes(ADestSize), ASource);
+        end;
       end;
   end;
 

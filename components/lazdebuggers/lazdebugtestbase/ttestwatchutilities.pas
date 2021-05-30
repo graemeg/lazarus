@@ -13,7 +13,7 @@ uses
 
 type
   TWatchExpectationResultKind = (
-    rkMatch, rkInteger, rkCardinal, rkFloat, rkBool, rkEnum, rkSet,
+    rkMatch, rkInteger, rkCardinal, rkFloat, rkBool, rkSizedBool, rkEnum, rkSet,
     rkChar, rkAnsiString, rkShortString, rkWideString, rkPointer, rkPointerAddr,
     rkClass, rkObject, rkRecord, rkInterface, rkField,
     rkStatArray, rkDynArray
@@ -106,7 +106,7 @@ type
       rkFloat: (
         ExpFloatValue: Extended;
       );
-      rkBool: (
+      rkBool, rkSizedBool: (
         ExpBoolValue: Boolean;
       );
       rkPointerAddr: (
@@ -301,6 +301,7 @@ function weDouble(AExpVal: Extended; ATypeName: String=#1): TWatchExpectationRes
 function weFloat(AExpVal: Extended; ATypeName: String=''): TWatchExpectationResult;
 
 function weBool(AExpVal: Boolean; ATypeName: String=#1): TWatchExpectationResult;
+function weSizedBool(AExpVal: Boolean; ATypeName: String=''): TWatchExpectationResult; // Display as True(255) etc
 function weEnum(AExpVal: string; ATypeName: String=#1): TWatchExpectationResult;
 function weSet(const AExpVal: Array of string; ATypeName: String=#1): TWatchExpectationResult;
 
@@ -473,6 +474,16 @@ begin
   Result := Default(TWatchExpectationResult);
   if ATypeName = #1 then ATypeName := 'Boolean';
   Result.ExpResultKind := rkBool;
+  Result.ExpSymKind := skBoolean;
+  Result.ExpTypeName := ATypeName;
+  Result.ExpBoolValue := AExpVal;
+end;
+
+function weSizedBool(AExpVal: Boolean; ATypeName: String
+  ): TWatchExpectationResult;
+begin
+  Result := Default(TWatchExpectationResult);
+  Result.ExpResultKind := rkSizedBool;
   Result.ExpSymKind := skBoolean;
   Result.ExpTypeName := ATypeName;
   Result.ExpBoolValue := AExpVal;
@@ -1353,7 +1364,7 @@ begin
     rkMatch:       Result := CheckResultMatch(AContext, AnIgnoreRsn);
     rkInteger:     Result := CheckResultNum(AContext, False, AnIgnoreRsn);
     rkCardinal:    Result := CheckResultNum(AContext, True, AnIgnoreRsn);
-    rkBool:        Result := CheckResultBool(AContext, AnIgnoreRsn);
+    rkBool, rkSizedBool: Result := CheckResultBool(AContext, AnIgnoreRsn);
     rkFloat:       Result := CheckResultFloat(AContext, AnIgnoreRsn);
     rkEnum:        Result := CheckResultEnum(AContext, AnIgnoreRsn);
     rkSet:         Result := CheckResultSet(AContext, AnIgnoreRsn);
@@ -1526,14 +1537,21 @@ function TWatchExpectationList.CheckResultBool(
   AContext: TWatchExpTestCurrentData; AnIgnoreRsn: String): Boolean;
 var
   Expect: TWatchExpectationResult;
-  s: String;
+  s, v: String;
+  i: SizeInt;
 begin
   with AContext.WatchExp do begin
     Result := True;
     Expect := AContext.Expectation;
 
     WriteStr(s, Expect.ExpBoolValue);
-    Result := TestEquals('Data', s, AContext.WatchVal.Value, False, AContext, AnIgnoreRsn);
+    v := AContext.WatchVal.Value;
+    if AContext.Expectation.ExpResultKind = rkSizedBool then begin
+      i := pos('(', v);
+      if i > 1 then
+        delete(v, i, 99); // remove the int value in brackets
+    end;
+    Result := TestEquals('Data', s, v, False, AContext, AnIgnoreRsn);
 
   end;
 end;

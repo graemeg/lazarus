@@ -30,6 +30,20 @@
 
   pre__Bool1{e}         _OP_ Boolean     (False);          //@@ _pre3_Bool1{e3};
   pre__Bool2{e}         _OP_ Boolean     (True);           //@@ _pre3_Bool2{e3};
+  pre__WBool1{e}        _OP_ Boolean16   (False);          //@@ _pre3_WBool1{e3};
+  pre__WBool2{e}        _OP_ Boolean16   (True);           //@@ _pre3_WBool2{e3};
+  pre__LBool1{e}        _OP_ Boolean32   (False);          //@@ _pre3_LBool1{e3};
+  pre__LBool2{e}        _OP_ Boolean32   (True);           //@@ _pre3_LBool2{e3};
+  pre__QBool1{e}        _OP_ Boolean64   (False);          //@@ _pre3_QBool1{e3};
+  pre__QBool2{e}        _OP_ Boolean64   (True);           //@@ _pre3_QBool2{e3};
+  pre__ByteBool1{e}     _OP_ ByteBool    (False);          //@@ _pre3_ByteBool1{e3};
+  pre__ByteBool2{e}     _OP_ ByteBool    (True);           //@@ _pre3_ByteBool2{e3};
+  pre__WordBool1{e}     _OP_ WordBool    (False);          //@@ _pre3_WordBool1{e3};
+  pre__WordBool2{e}     _OP_ WordBool    (True);           //@@ _pre3_WordBool2{e3};
+  pre__LongBool1{e}     _OP_ LongBool    (False);          //@@ _pre3_LongBool1{e3};
+  pre__LongBool2{e}     _OP_ LongBool    (True);           //@@ _pre3_LongBool2{e3};
+  pre__QWordBool1{e}    _OP_ QWordBool   (False);          //@@ _pre3_QWordBool1{e3};
+  pre__QWordBool2{e}    _OP_ QWordBool   (True);           //@@ _pre3_QWordBool2{e3};
 
   pre__Real{e}          _OP_ Real        (50.25                + ADD);          //@@ _pre3_Real{e3};
   pre__Single{e}        _OP_ Single      (100.125              + ADD);          //@@ _pre3_Single{e3};
@@ -373,9 +387,17 @@
   pre__Enum2{e} _OP_ TEnum2(EnVal21);          //@@ _pre3_Enum2{e3};
   pre__Enum3{e} _OP_ TEnum2(EnVal25);          //@@ _pre3_Enum3{e3};
 
+  pre__Enum16{e}  _OP_ TEnum16(ExVal23);         //@@ _pre3_Enum16{e3};
+  pre__Enum16A{e} _OP_ TEnum16(ExValX5);         //@@ _pre3_Enum16A{e3};
+
   pre__Set{e}      _OP_ TSet([EnVal2, EnVal4]);          //@@ _pre3_Set{e3};
   pre__SmallSet{e} _OP_ TSmallRangeSet([22, 24,25]);     //@@ _pre3_SmallSet{e3};
 
+  pre__Set4{e}      _OP_ TSet4([E4Val02, E4Val0A]);          //@@ _pre3_Set4{e3};
+  pre__Set5{e}      _OP_ TSet5([E5Val02, E5Val12]);          //@@ _pre3_Set5{e3};
+  pre__Set6{e}      _OP_ TSet6([E6Val02, E6Val1A]);          //@@ _pre3_Set6{e3};
+  pre__Set7{e}      _OP_ TSet7([E7Val02, E7Val3A]);          //@@ _pre3_Set7{e3};
+  pre__Set8{e}      _OP_ TSet8([E8Val02, E8Val5B]);          //@@ _pre3_Set8{e3};
 
   {$IFnDEF TestAssign}
   pre__BitPackBoolArray{e}      _O2_ TBitPackBoolArray    _EQ_ (True, False, True, True);          //@@ _pre3_BitPackBoolArray{e3}; // }}

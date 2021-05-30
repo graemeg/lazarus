@@ -146,6 +146,7 @@ type
     function ReadMemory(AnAddress: TDbgPtr; ASize: Cardinal; ADest: Pointer): Boolean; override; overload;
     function ReadMemory(AnAddress: TDbgPtr; ASize: Cardinal; ADest: Pointer; out ABytesRead: Cardinal): Boolean; override; overload;
     function ReadMemoryEx(AnAddress, AnAddressSpace: TDbgPtr; ASize: Cardinal; ADest: Pointer): Boolean; override;
+    function WriteMemory(AnAddress: TDbgPtr; ASize: Cardinal; ASource: Pointer): Boolean; override; overload;
     function ReadRegister(ARegNum: Cardinal; out AValue: TDbgPtr; AContext: TFpDbgLocationContext): Boolean; override;
     function RegisterSize(ARegNum: Cardinal): Integer; override;
 
@@ -1301,6 +1302,12 @@ function TDbgMemReader.ReadMemoryEx(AnAddress, AnAddressSpace: TDbgPtr; ASize: C
 begin
   Assert(AnAddressSpace>0,'TDbgMemReader.ReadMemoryEx ignores AddressSpace');
   result := GetDbgProcess.ReadData(AnAddress, ASize, ADest^);
+end;
+
+function TDbgMemReader.WriteMemory(AnAddress: TDbgPtr; ASize: Cardinal;
+  ASource: Pointer): Boolean;
+begin
+  result := GetDbgProcess.WriteData(AnAddress, ASize, ASource^);
 end;
 
 function TDbgMemReader.ReadRegister(ARegNum: Cardinal; out AValue: TDbgPtr; AContext: TFpDbgLocationContext): Boolean;

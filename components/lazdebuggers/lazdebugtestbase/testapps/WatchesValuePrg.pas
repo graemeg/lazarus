@@ -175,12 +175,63 @@ type
 
 
   TEnum  = (EnVal1, EnVal2, EnVal3, EnVal4);
+  // TEnum16 more than 256 values => wordsized
+  TEnum16  = (
+    ExVal00, ExVal01, ExVal02, ExVal03, ExVal04, ExVal05, ExVal06, ExVal07, ExVal08, ExVal09, ExVal0A, ExVal0B, ExVal0C, ExVal0D, ExVal0E, ExVal0F,
+    ExVal10, ExVal11, ExVal12, ExVal13, ExVal14, ExVal15, ExVal16, ExVal17, ExVal18, ExVal19, ExVal1A, ExVal1B, ExVal1C, ExVal1D, ExVal1E, ExVal1F,
+    ExVal20, ExVal21, ExVal22, ExVal23, ExVal24, ExVal25, ExVal26, ExVal27, ExVal28, ExVal29, ExVal2A, ExVal2B, ExVal2C, ExVal2D, ExVal2E, ExVal2F,
+    ExVal30, ExVal31, ExVal32, ExVal33, ExVal34, ExVal35, ExVal36, ExVal37, ExVal38, ExVal39, ExVal3A, ExVal3B, ExVal3C, ExVal3D, ExVal3E, ExVal3F,
+    ExVal40, ExVal41, ExVal42, ExVal43, ExVal44, ExVal45, ExVal46, ExVal47, ExVal48, ExVal49, ExVal4A, ExVal4B, ExVal4C, ExVal4D, ExVal4E, ExVal4F,
+    ExVal50, ExVal51, ExVal52, ExVal53, ExVal54, ExVal55, ExVal56, ExVal57, ExVal58, ExVal59, ExVal5A, ExVal5B, ExVal5C, ExVal5D, ExVal5E, ExVal5F,
+    ExVal60, ExVal61, ExVal62, ExVal63, ExVal64, ExVal65, ExVal66, ExVal67, ExVal68, ExVal69, ExVal6A, ExVal6B, ExVal6C, ExVal6D, ExVal6E, ExVal6F,
+    ExVal70, ExVal71, ExVal72, ExVal73, ExVal74, ExVal75, ExVal76, ExVal77, ExVal78, ExVal79, ExVal7A, ExVal7B, ExVal7C, ExVal7D, ExVal7E, ExVal7F,
+    ExVal80, ExVal81, ExVal82, ExVal83, ExVal84, ExVal85, ExVal86, ExVal87, ExVal88, ExVal89, ExVal8A, ExVal8B, ExVal8C, ExVal8D, ExVal8E, ExVal8F,
+    ExVal90, ExVal91, ExVal92, ExVal93, ExVal94, ExVal95, ExVal96, ExVal97, ExVal98, ExVal99, ExVal9A, ExVal9B, ExVal9C, ExVal9D, ExVal9E, ExVal9F,
+    ExValA0, ExValA1, ExValA2, ExValA3, ExValA4, ExValA5, ExValA6, ExValA7, ExValA8, ExValA9, ExValAA, ExValAB, ExValAC, ExValAD, ExValAE, ExValAF,
+    ExValB0, ExValB1, ExValB2, ExValB3, ExValB4, ExValB5, ExValB6, ExValB7, ExValB8, ExValB9, ExValBA, ExValBB, ExValBC, ExValBD, ExValBE, ExValBF,
+    ExValC0, ExValC1, ExValC2, ExValC3, ExValC4, ExValC5, ExValC6, ExValC7, ExValC8, ExValC9, ExValCA, ExValCB, ExValCC, ExValCD, ExValCE, ExValCF,
+    ExValD0, ExValD1, ExValD2, ExValD3, ExValD4, ExValD5, ExValD6, ExValD7, ExValD8, ExValD9, ExValDA, ExValDB, ExValDC, ExValDD, ExValDE, ExValDF,
+    ExValE0, ExValE1, ExValE2, ExValE3, ExValE4, ExValE5, ExValE6, ExValE7, ExValE8, ExValE9, ExValEA, ExValEB, ExValEC, ExValED, ExValEE, ExValEF,
+    ExValF0, ExValF1, ExValF2, ExValF3, ExValF4, ExValF5, ExValF6, ExValF7, ExValF8, ExValF9, ExValFA, ExValFB, ExValFC, ExValFD, ExValFE, ExValFF,
+    ExValX0, ExValX1, ExValX2, ExValX3, ExValX4, ExValX5, ExValX6, ExValX7, ExValX8, ExValX9, ExValXA, ExValXB, ExValXC, ExValXD, ExValXE, ExValXF
+  );
   TEnumSub =  EnVal1..EnVal2;
   TEnum2 = (EnVal21= 3, EnVal22=4, EnVal23=7, EnVal24=10, EnVal25=30);
   TEnum3  = (EnVal31, EnVal32);
+  TEnum4  = ( // 12 values for 16 bit set  (leave some unused)
+    E4Val00, E4Val01, E4Val02, E4Val03, E4Val04, E4Val05, E4Val06, E4Val07, E4Val08, E4Val09, E4Val0A, E4Val0B
+  );
+  TEnum5  = ( // 20 values for 24 bit set  (leave some unused)
+    E5Val00, E5Val01, E5Val02, E5Val03, E5Val04, E5Val05, E5Val06, E5Val07, E5Val08, E5Val09, E5Val0A, E5Val0B, E5Val0C, E5Val0D, E5Val0E, E5Val0F,
+    E5Val10, E5Val11, E5Val12, E5Val13
+  );
+  TEnum6  = ( // 28 values for 32 bit set  (leave some unused)
+    E6Val00, E6Val01, E6Val02, E6Val03, E6Val04, E6Val05, E6Val06, E6Val07, E6Val08, E6Val09, E6Val0A, E6Val0B, E6Val0C, E6Val0D, E6Val0E, E6Val0F,
+    E6Val10, E6Val11, E6Val12, E6Val13, E6Val14, E6Val15, E6Val16, E6Val17, E6Val18, E6Val19, E6Val1A, E6Val1B
+  );
+  TEnum7  = ( // 60 values for 8 byte set  (leave some unused)
+    E7Val00, E7Val01, E7Val02, E7Val03, E7Val04, E7Val05, E7Val06, E7Val07, E7Val08, E7Val09, E7Val0A, E7Val0B, E7Val0C, E7Val0D, E7Val0E, E7Val0F,
+    E7Val10, E7Val11, E7Val12, E7Val13, E7Val14, E7Val15, E7Val16, E7Val17, E7Val18, E7Val19, E7Val1A, E7Val1B, E7Val1C, E7Val1D, E7Val1E, E7Val1F,
+    E7Val20, E7Val21, E7Val22, E7Val23, E7Val24, E7Val25, E7Val26, E7Val27, E7Val28, E7Val29, E7Val2A, E7Val2B, E7Val2C, E7Val2D, E7Val2E, E7Val2F,
+    E7Val30, E7Val31, E7Val32, E7Val33, E7Val34, E7Val35, E7Val36, E7Val37, E7Val38, E7Val39, E7Val3A, E7Val3B
+  );
+  TEnum8  = ( // 92 values for 10 byte set  (leave some unused)
+    E8Val00, E8Val01, E8Val02, E8Val03, E8Val04, E8Val05, E8Val06, E8Val07, E8Val08, E8Val09, E8Val0A, E8Val0B, E8Val0C, E8Val0D, E8Val0E, E8Val0F,
+    E8Val10, E8Val11, E8Val12, E8Val13, E8Val14, E8Val15, E8Val16, E8Val17, E8Val18, E8Val19, E8Val1A, E8Val1B, E8Val1C, E8Val1D, E8Val1E, E8Val1F,
+    E8Val20, E8Val21, E8Val22, E8Val23, E8Val24, E8Val25, E8Val26, E8Val27, E8Val28, E8Val29, E8Val2A, E8Val2B, E8Val2C, E8Val2D, E8Val2E, E8Val2F,
+    E8Val30, E8Val31, E8Val32, E8Val33, E8Val34, E8Val35, E8Val36, E8Val37, E8Val38, E8Val39, E8Val3A, E8Val3B, E8Val3C, E8Val3D, E8Val3E, E8Val3F,
+    E8Val40, E8Val41, E8Val42, E8Val43, E8Val44, E8Val45, E8Val46, E8Val47, E8Val48, E8Val49, E8Val4A, E8Val4B, E8Val4C, E8Val4D, E8Val4E, E8Val4F,
+    E8Val50, E8Val51, E8Val52, E8Val53, E8Val54, E8Val55, E8Val56, E8Val57, E8Val58, E8Val59, E8Val5A, E8Val5B
+  );
+
   TSet   = set of TEnum;
   TSet3  = set of TEnum3;
   TSmallRangeSet = set of TSmallRange;
+  TSet4  = set of TEnum4; // 2 byte
+  TSet5  = set of TEnum5; // 3 byte
+  TSet6  = set of TEnum6; // 4 byte
+  TSet7  = set of TEnum7; // 8 byte
+  TSet8  = set of TEnum8; // 10 byte
 
   TArrayEnum = array [TEnum] of word;
   TArrayEnumSub = array [TEnumSub] of word;
@@ -428,7 +479,6 @@ begin end;
 function TMyBaseClass.SomeMeth1(SomeValue: Integer): Boolean;
 begin result := SomeValue = 0; end;
 
-
 procedure Foo(
 (* LOCATION: param *)
   TEST_PREPOCESS(WatchesValuePrgIdent.inc, pre__=arg, _OP_=:, (=;//, _O2_=:, _EQ_= , _BLOCK_=TestArg)
@@ -505,6 +555,109 @@ begin
   FFunctInt := result;
 end;
 
+var
+  ModifyTestByte: record
+    pre: qword; // padding, must not be changed
+    val: byte;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestWord: record
+    pre: qword; // padding, must not be changed
+    val: word;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestCardinal: record
+    pre: qword; // padding, must not be changed
+    val: Cardinal;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestqword: record
+    pre: qword; // padding, must not be changed
+    val: qword;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestint: record
+    pre: qword; // padding, must not be changed
+    val: integer;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestInt64: record
+    pre: qword; // padding, must not be changed
+    val: int64;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestPointer: record
+    pre: qword; // padding, must not be changed
+    val: Pointer;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestPWord: record
+    pre: qword; // padding, must not be changed
+    val: PWord;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestBool: record
+    pre: qword; // padding, must not be changed
+    val: Boolean;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestByteBool: record
+    pre: qword; // padding, must not be changed
+    val: ByteBool;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestChar: record
+    pre: qword; // padding, must not be changed
+    val: Char;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestWideChar: record
+    pre: qword; // padding, must not be changed
+    val: WideChar;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestEnum: record
+    pre: qword; // padding, must not be changed
+    val: TEnum;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestEnum16: record
+    pre: qword; // padding, must not be changed
+    val: TEnum16;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestSet: record
+    pre: qword; // padding, must not be changed
+    val: TSet;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestSet4: record
+    pre: qword; // padding, must not be changed
+    val: TSet4;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestSet6: record
+    pre: qword; // padding, must not be changed
+    val: TSet6;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestSet7: record
+    pre: qword; // padding, must not be changed
+    val: TSet7;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestSet8: record
+    pre: qword; // padding, must not be changed
+    val: TSet8;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyTestSRangeSet: record
+    pre: qword; // padding, must not be changed
+    val: TSmallRangeSet;
+    post: byte; // padding, must not be changed
+  end;
+
+
 begin
   U8Data1 := #$2267; //#$E2#$89#$A7;
   U8Data2 := #$2267'X';
@@ -526,6 +679,27 @@ begin
   {$if FPC_FULLVERSION >= 30000}
   dummy1 := nil;
   {$ENDIF}
+
+  with ModifyTestByte      do begin pre := qword($9696969696969696); post := $69; val := $01; end;
+  with ModifyTestWord      do begin pre := qword($9696969696969696); post := $69; val := $0101; end;
+  with ModifyTestCardinal  do begin pre := qword($9696969696969696); post := $69; val := $81020102; end;
+  with ModifyTestQword     do begin pre := qword($9696969696969696); post := $69; val := qword($8102010201020102); end;
+  with ModifyTestInt       do begin pre := qword($9696969696969696); post := $69; val := -$01030103; end;
+  with ModifyTestInt64     do begin pre := qword($9696969696969696); post := $69; val := -$0103010301030103; end;
+  with ModifyTestPointer   do begin pre := qword($9696969696969696); post := $69; val := pointer(30); end;
+  with ModifyTestPWord     do begin pre := qword($9696969696969696); post := $69; val := pointer(40); end;
+  with ModifyTestBool      do begin pre := qword($9696969696969696); post := $69; val := True; end;
+  with ModifyTestByteBool  do begin pre := qword($9696969696969696); post := $69; val := False; end;
+  with ModifyTestChar      do begin pre := qword($9696969696969696); post := $69; val := 'B'; end;
+  with ModifyTestWideChar  do begin pre := qword($9696969696969696); post := $69; val := 'B'; end;
+  with ModifyTestEnum      do begin pre := qword($9696969696969696); post := $69; val := EnVal2; end;
+  with ModifyTestEnum16    do begin pre := qword($9696969696969696); post := $69; val := ExValX2; end;
+  with ModifyTestSet       do begin pre := qword($9696969696969696); post := $69; val := [EnVal2, EnVal4]; end;
+  with ModifyTestSet4      do begin pre := qword($9696969696969696); post := $69; val := [E4Val02, E4Val09]; end;
+  with ModifyTestSet6      do begin pre := qword($9696969696969696); post := $69; val := [E6Val02, E6Val1A]; end;
+  with ModifyTestSet7      do begin pre := qword($9696969696969696); post := $69; val := [E7Val02, E7Val3A]; end;
+  with ModifyTestSet8      do begin pre := qword($9696969696969696); post := $69; val := [E8Val02, E8Val59]; end;
+  with ModifyTestSRangeSet do begin pre := qword($9696969696969696); post := $69; val := [20,23,28]; end;
 
 (* use global const / value in "gv" will be overriden... *)
   TEST_PREPOCESS(WatchesValuePrgIdent.inc,pre__=gv, {e}={, "//@@=} :=", _pre3_=gc, _BLOCK_=TestAssignGC)

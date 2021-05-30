@@ -210,6 +210,26 @@ type
     destructor Destroy; override;
   end;
 
+  { TFpThreadWorkerModify }
+
+  TFpThreadWorkerModify = class(TFpDbgDebggerThreadWorkerLinkedItem)
+  private
+    FExpression, FNewVal: String;
+    FStackFrame, FThreadId: Integer;
+    FSuccess: Boolean;
+  protected
+    procedure DoCallback_DecRef(Data: PtrInt = 0); virtual; abstract;
+    procedure DoExecute; override;
+    property Success: Boolean read FSuccess;
+  public
+    constructor Create(ADebugger: TFpDebugDebuggerBase;
+                       //APriority: TFpThreadWorkerPriority;
+                       const AnExpression, ANewValue: String;
+                       AStackFrame, AThreadId: Integer
+                      );
+    function DebugText: String; override;
+  end;
+
   { TFpThreadWorkerEvaluate }
 
   TFpThreadWorkerEvaluate = class(TFpDbgDebggerThreadWorkerLinkedItem)
@@ -690,6 +710,70 @@ destructor TFpThreadWorkerLocals.Destroy;
 begin
   FResults.Free;
   inherited Destroy;
+end;
+
+{ TFpThreadWorkerModify }
+
+procedure TFpThreadWorkerModify.DoExecute;
+var
+  APasExpr: TFpPascalExpression;
+  ResValue: TFpValue;
+  ExpressionScope: TFpDbgSymbolScope;
+  i64: int64;
+  c64: QWord;
+begin
+  FSuccess := False;
+  ExpressionScope := FDebugger.FDbgController.CurrentProcess.FindSymbolScope(FThreadId, FStackFrame);
+  if ExpressionScope = nil then
+    exit;
+
+  APasExpr := TFpPascalExpression.Create(FExpression, ExpressionScope);
+  try
+    APasExpr.ResultValue; // trigger full validation
+    if not APasExpr.Valid then
+      exit;
+
+    ResValue := APasExpr.ResultValue;
+    if ResValue = nil then
+      exit;
+
+    case ResValue.Kind of
+      skInteger:   if TryStrToInt64(FNewVal, i64) then ResValue.AsInteger := i64;
+      skCardinal:  if TryStrToQWord(FNewVal, c64) then ResValue.AsCardinal := c64;
+      skBoolean:   case LowerCase(trim(FNewVal)) of
+          'true':  ResValue.AsBool := True;
+          'false': ResValue.AsBool := False;
+        end;
+      skChar:      ResValue.AsString := FNewVal;
+      skEnum:      ResValue.AsString := FNewVal;
+      skSet:       ResValue.AsString := FNewVal;
+      skPointer:   if TryStrToQWord(FNewVal, c64) then ResValue.AsCardinal := c64;
+      skFloat: ;
+      skCurrency: ;
+      skVariant: ;
+    end;
+
+
+  finally
+    APasExpr.Free;
+    ExpressionScope.ReleaseReference;
+    Queue(@DoCallback_DecRef);
+  end;
+end;
+
+constructor TFpThreadWorkerModify.Create(ADebugger: TFpDebugDebuggerBase;
+  const AnExpression, ANewValue: String; AStackFrame, AThreadId: Integer);
+begin
+  inherited Create(ADebugger, twpModify);
+  FExpression := AnExpression;
+  FNewVal := ANewValue;
+  FStackFrame := AStackFrame;
+  FThreadId := AThreadId;
+end;
+
+function TFpThreadWorkerModify.DebugText: String;
+begin
+  Result := inherited DebugText;
 end;
 
 { TFpThreadWorkerEvaluate }

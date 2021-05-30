@@ -306,13 +306,14 @@ type
     function GetFieldFlags: TFpValueFieldFlags; override;
     function GetAsString: AnsiString; override;
     function GetAsWideString: WideString; override;
+    procedure SetAsString(AValue: AnsiString); override;
   end;
 
   { TFpValueDwarfPointer }
 
   TFpValueDwarfPointer = class(TFpValueDwarfNumeric)
   private
-    FPointetToAddr: TFpDbgMemLocation;
+    FPointedToAddr: TFpDbgMemLocation;
     function GetDerefAddress: TFpDbgMemLocation;
   protected
     function GetAsCardinal: QWord; override;
@@ -384,6 +385,7 @@ type
     function GetMember(AIndex: Int64): TFpValue; override;
     function GetAsCardinal: QWord; override; // only up to qmord
     function IsValidTypeCast: Boolean; override;
+    procedure SetAsString(AValue: AnsiString); override;
   public
     destructor Destroy; override;
   end;
@@ -2133,13 +2135,18 @@ procedure TFpValueDwarfInteger.SetAsInteger(AValue: Int64);
 var
   Size: TFpDbgValueSize;
 begin
-  if (not GetSize(Size)) or (Size <= 0) or (Size > SizeOf(AValue)) then
-    inherited SetAsCardinal(AValue)
+  if (not GetSize(Size)) or (Size <= 0) or (Size > SizeOf(AValue)) then begin
+    inherited SetAsCardinal(AValue);
+  end
   else
   if not Context.WriteSignedInt(OrdOrDataAddr, Size, AValue) then begin
     SetLastError(Context.LastMemError);
+    Exclude(FEvaluated, doneInt);
+  end
+  else begin
+    FIntValue := AValue;
+    Include(FEvaluated, doneInt);
   end;
-  Exclude(FEvaluated, doneUInt);
 end;
 
 procedure TFpValueDwarfInteger.SetAsCardinal(AValue: QWord);
@@ -2185,13 +2192,18 @@ procedure TFpValueDwarfCardinal.SetAsCardinal(AValue: QWord);
 var
   Size: TFpDbgValueSize;
 begin
-  if (not GetSize(Size)) or (Size <= 0) or (Size > SizeOf(AValue)) then
-    inherited SetAsCardinal(AValue)
+  if (not GetSize(Size)) or (Size <= 0) or (Size > SizeOf(AValue)) then begin
+    inherited SetAsCardinal(AValue);
+  end
   else
   if not Context.WriteUnsignedInt(OrdOrDataAddr, Size, AValue) then begin
     SetLastError(Context.LastMemError);
+    Exclude(FEvaluated, doneUInt);
+  end
+  else begin
+    FValue := AValue;
+    Include(FEvaluated, doneUInt);
   end;
-  Exclude(FEvaluated, doneUInt);
 end;
 
 { TFpValueDwarfFloat }
@@ -2289,6 +2301,32 @@ begin
     Result := WideChar(Word(GetAsCardinal));
 end;
 
+procedure TFpValueDwarfChar.SetAsString(AValue: AnsiString);
+var
+  Size: TFpDbgValueSize;
+  u: UnicodeString;
+begin
+  if not GetSize(Size) then
+    Size := ZeroSize;
+  if Size.Size > 2 then begin
+    inherited SetAsString(AValue);
+  end
+  else
+  if Size.Size = 2 then begin
+    u := UTF8Decode(AValue);
+    if Length(u) <> 1 then
+      inherited SetAsString(AValue) // error
+    else
+      SetAsCardinal(Word(u[1]));
+  end
+  else begin
+    if Length(AValue) <> 1 then
+      inherited SetAsString(AValue) // error
+    else
+      SetAsCardinal(Byte(AValue[1]));
+  end;
+end;
+
 { TFpValueDwarfPointer }
 
 function TFpValueDwarfPointer.GetDerefAddress: TFpDbgMemLocation;
@@ -2297,7 +2335,7 @@ var
   Addr: TFpDbgMemLocation;
 begin
   if doneAddr in FEvaluated then begin
-    Result := FPointetToAddr;
+    Result := FPointedToAddr;
     exit;
   end;
   Include(FEvaluated, doneAddr);
@@ -2312,7 +2350,7 @@ begin
         SetLastError(Context.LastMemError);
     end;
   end;
-  FPointetToAddr := Result;
+  FPointedToAddr := Result;
 end;
 
 function TFpValueDwarfPointer.GetAsCardinal: QWord;
@@ -2493,8 +2531,14 @@ end;
 
 procedure TFpValueDwarfPointer.SetAsCardinal(AValue: QWord);
 begin
-  if not Context.WriteSignedInt(OrdOrDataAddr, SizeVal(Context.SizeOfAddress), AValue) then
+  if not Context.WriteSignedInt(OrdOrDataAddr, SizeVal(Context.SizeOfAddress), AValue) then begin
     SetLastError(Context.LastMemError);
+    Exclude(FEvaluated, doneAddr);
+  end
+  else begin
+    FPointedToAddr := TargetLoc(TDBGPtr(AValue));
+    Include(FEvaluated, doneAddr);
+  end;
 end;
 
 { TFpValueDwarfEnum }
@@ -2554,13 +2598,18 @@ procedure TFpValueDwarfEnum.SetAsCardinal(AValue: QWord);
 var
   Size: TFpDbgValueSize;
 begin
-  if (not GetSize(Size)) or (Size <= 0) or (Size > SizeOf(AValue)) then
-    inherited SetAsCardinal(AValue)
+  if (not GetSize(Size)) or (Size <= 0) or (Size > SizeOf(AValue)) then begin
+    inherited SetAsCardinal(AValue);
+  end
   else
   if not Context.WriteEnum(OrdOrDataAddr, Size, AValue) then begin
     SetLastError(Context.LastMemError);
+    Exclude(FEvaluated, doneUInt);
+  end
+  else begin
+    FValue := AValue;
+    Include(FEvaluated, doneUInt);
   end;
-  Exclude(FEvaluated, doneUInt);
 end;
 
 function TFpValueDwarfEnum.GetAsString: AnsiString;
@@ -2811,8 +2860,9 @@ var
   Size: TFpDbgValueSize;
 begin
   Result := 0;
-  if not GetSize(Size) then
+  if (not GetSize(Size)) or (Size < 0) or (Size > SizeOf(QWord)) then
     exit;
+  InitMap;
   if (Size <= SizeOf(Result)) and (length(FMem) > 0) then
     move(FMem[0], Result, Min(SizeOf(Result), SizeToFullBytes(Size)));
 end;
@@ -2847,6 +2897,159 @@ begin
   end;
 
   Result := False;
+end;
+
+procedure TFpValueDwarfSet.SetAsString(AValue: AnsiString);
+type
+  TCharSet = set of char;
+  function CheckInChar(var p: PChar; c: TCharSet): Boolean;
+  begin
+    Result := p^ in c;
+    if Result then
+      inc(p)
+    else
+      SetLastError(CreateError(fpErrFailedWriteMem));
+  end;
+  procedure SkipSpaces(var p: Pchar);
+  begin
+    while p^ in [' ', #9] do inc(p);
+  end;
+  function CopySubString(PEnd, PStart: PChar): String;
+  begin
+    SetLength(Result, PEnd - PStart);
+    move(PStart^, Result[1], PEnd - PStart);
+  end;
+var
+  Size: TFpDbgValueSize;
+  WriteMem: array of Byte;
+  p, p2: PChar;
+  s: String;
+  idx: Integer;
+  t: TFpSymbolDwarfType;
+  nest: TFpSymbol;
+  v, lb, hb, MemIdx, Bit: Int64;
+  DAddr: TFpDbgMemLocation;
+begin
+  if not GetSize(Size) then
+    Size := ZeroSize;
+  if (Size <= 0) then begin
+    SetLastError(CreateError(fpErrFailedWriteMem));
+    exit;
+  end;
+  InitMap;
+  t := TypeInfo;
+  if t = nil then exit;
+  t := t.TypeInfo;
+  if t = nil then exit;
+  assert(t is TFpSymbolDwarfType, 'TDbgDwarfSetSymbolValue.GetMember t');
+
+  SetLength(WriteMem, SizeToFullBytes(Size));
+
+  p := Pchar(AValue);
+  SkipSpaces(p);
+  if not CheckInChar(p, ['[']) then
+    exit;
+
+  SkipSpaces(p);
+  if p^ <> ']' then begin // not an empty set
+
+    if t.Kind = skEnum then begin
+      while p^ in ['a'..'z', 'A'..'Z', '_'] do begin
+        p2 := p;
+        inc(p);
+        while p^ in ['a'..'z', 'A'..'Z', '_', '0'..'9'] do
+          inc(p);
+        s := LowerCase(CopySubString(p, p2));
+
+        idx := t.GetNestedSymbolCount - 1;
+        while idx >= 0 do begin
+          nest := t.GetNestedSymbol(idx);
+          if (nest <> nil) and (LowerCase(nest.Name) = s) then
+            break;
+          dec(idx);
+        end;
+        if (idx >= 0) then begin
+          v := nest.OrdinalValue;
+          if (v >= 0) and (v < Length(WriteMem) * 8) then begin
+            MemIdx := v shr 3;
+            Bit := 1 shl (v and 7);
+            WriteMem[MemIdx] := WriteMem[MemIdx] or Bit;
+          end
+          else
+            idx := -1;
+        end;
+        if idx < 0 then begin
+          SetLastError(CreateError(fpErrFailedWriteMem));
+          exit;
+        end;
+
+        SkipSpaces(p);
+        if p^ = ']' then
+          break;
+        if not CheckInChar(p, [',']) then
+          exit;
+        SkipSpaces(p);
+      end;
+      SkipSpaces(p);
+    end
+    else begin // set of 1..9
+      if not t.GetValueBounds(nil, lb, hb) then begin
+        SetLastError(CreateError(fpErrFailedWriteMem));
+        exit;
+      end;
+
+      while p^ in ['0'..'9', '$', '%', '&'] do begin
+        p2 := p;
+        inc(p);
+        case p[-1] of
+          '$': while p^ in ['a'..'f', 'A'..'F', '0'..'9'] do inc(p);
+          '&': while p^ in ['0'..'7'] do inc(p);
+          '%': while p^ in ['0'..'1'] do inc(p);
+          else while p^ in ['0'..'9'] do inc(p);
+        end;
+        if not TryStrToInt(CopySubString(p, p2), idx) then begin
+          SetLastError(CreateError(fpErrFailedWriteMem));
+          exit;
+        end;
+        idx := idx - lb;
+
+        if (idx >= 0) and (idx < Length(WriteMem) * 8) then begin
+          MemIdx := idx shr 3;
+          Bit := 1 shl (idx and 7);
+          WriteMem[MemIdx] := WriteMem[MemIdx] or Bit;
+        end
+        else begin
+          SetLastError(CreateError(fpErrFailedWriteMem));
+          exit;
+        end;
+
+        SkipSpaces(p);
+        if p^ = ']' then
+          break;
+        if not CheckInChar(p, [',']) then
+          exit;
+        SkipSpaces(p);
+      end;
+      SkipSpaces(p);
+    end;
+
+  end;
+  if not CheckInChar(p, [']']) then
+    exit;
+  SkipSpaces(p);
+  if not CheckInChar(p, [#0]) then
+    exit;
+
+  // we got the value
+  FMem := nil;
+
+  // todo writeset
+  GetDwarfDataAddress(DAddr);
+  if not Context.WriteSet(DAddr, Size, WriteMem) then begin
+    SetLastError(Context.LastMemError);
+    exit; // TODO: error
+  end;
+
 end;
 
 destructor TFpValueDwarfSet.Destroy;
@@ -3649,12 +3852,16 @@ begin
   if Form in [DW_FORM_data1, DW_FORM_data2, DW_FORM_data4, DW_FORM_data8,
               DW_FORM_sdata, DW_FORM_udata]
   then begin
-    if AReadState <> nil then
-      AReadState^ := rfConst;
-
     Result := InformationEntry.ReadValue(AnAttribData, AValue);
-    if not Result then
+    if Result then begin
+      if AReadState <> nil then
+        AReadState^ := rfConst;
+    end
+    else begin
+      if AReadState <> nil then
+        AReadState^ := rfError;
       SetLastError(AValueObj, CreateError(fpErrAnyError));
+    end;
   end
 
   else
@@ -3682,6 +3889,8 @@ begin
           AValue := ValObj.AsInteger;
           if IsError(ValObj.LastError) then begin
             Result := False;
+            if AReadState <> nil then
+              AReadState^ := rfError;
             SetLastError(AValueObj, ValObj.LastError);
           end;
           ValObj.ReleaseReference;
@@ -3695,8 +3904,11 @@ begin
           RefSymbol.ReleaseReference;
       end;
     end;
-    if (not Result) and (not HasError(AValueObj)) then
+    if (not Result) and (not HasError(AValueObj)) then begin
+      if AReadState <> nil then
+        AReadState^ := rfError;
       SetLastError(AValueObj, CreateError(fpErrAnyError));
+    end;
   end
 
   else
@@ -3720,13 +3932,19 @@ begin
       InitLocParserData.ObjectDataAddress := AValueObj.OrdOrAddress;
     InitLocParserData.ObjectDataAddrPush := False;
     Result := LocationFromAttrData(AnAttribData, AValueObj, t, @InitLocParserData);
-    if Result then
-      AValue := Int64(t.Address)
-    else
+    if Result then begin
+      AValue := Int64(t.Address);
+    end
+    else begin
+      if AReadState <> nil then
+        AReadState^ := rfError;
       SetLastError(AValueObj, CreateError(fpErrLocationParser));
+    end;
   end
 
   else begin
+    if AReadState <> nil then
+      AReadState^ := rfError;
     SetLastError(AValueObj, CreateError(fpErrAnyError));
   end;
 
