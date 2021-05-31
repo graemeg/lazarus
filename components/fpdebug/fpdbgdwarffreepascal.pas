@@ -126,9 +126,9 @@ type
     function GetNextTypeInfoForDataAddress(ATargetType: TFpSymbolDwarfType): TFpSymbolDwarfType; override;
     function GetDataAddressNext(AValueObj: TFpValueDwarf; var AnAddress: TFpDbgMemLocation;
       out ADoneWork: Boolean; ATargetType: TFpSymbolDwarfType): Boolean; override;
-    function GetTypedValueObject(ATypeCast: Boolean; AnOuterType: TFpSymbolDwarfType = nil): TFpValueDwarf; override;
     function DoReadDataSize(const AValueObj: TFpValue; out ADataSize: TFpDbgValueSize): Boolean; override;
   public
+    function GetTypedValueObject(ATypeCast: Boolean; AnOuterType: TFpSymbolDwarfType = nil): TFpValueDwarf; override;
     property IsInternalPointer: Boolean read GetIsInternalPointer write FIsInternalPointer; // Class (also DynArray, but DynArray is handled without this)
   end;
 
@@ -155,10 +155,11 @@ type
     FIsShortString: (issUnknown, issShortString, issStructure);
     function IsShortString: Boolean;
   protected
-    function GetTypedValueObject(ATypeCast: Boolean; AnOuterType: TFpSymbolDwarfType = nil): TFpValueDwarf; override;
     procedure KindNeeded; override;
     function GetNestedSymbolCount: Integer; override;
     //function GetNestedSymbolByName(AIndex: String): TFpSymbol; override;
+  public
+    function GetTypedValueObject(ATypeCast: Boolean; AnOuterType: TFpSymbolDwarfType = nil): TFpValueDwarf; override;
   end;
 
   { TFpValueDwarfV2FreePascalShortString }
@@ -480,7 +481,7 @@ end;
 { TFpDwarfFreePascalSymbolScope }
 
 var
-  ParentFpLowerNameInfo, ParentFp2LowerNameInfo, SelfLowerNameInfo: TNameSearchInfo; // case sensitive
+  ParentFpLowerNameInfo, ParentFp2LowerNameInfo: TNameSearchInfo; // case sensitive
 function TFpDwarfFreePascalSymbolScope.FindLocalSymbol(const AName: String;
   const ANameInfo: TNameSearchInfo; InfoEntry: TDwarfInformationEntry; out
   ADbgValue: TFpValue): Boolean;
