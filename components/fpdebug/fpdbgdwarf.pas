@@ -409,19 +409,6 @@ type
     function GetAsCardinal: QWord; override;
     procedure SetAsCardinal(AValue: QWord); override;
     function GetDataSize: TFpDbgValueSize; override;
-  end;
-
-  { TFpValueDwarfStructTypeCast }
-
-  TFpValueDwarfStructTypeCast = class(TFpValueDwarfStructBase)
-  private
-    FDataAddressDone: Boolean;
-  protected
-    procedure Reset; override;
-    function GetFieldFlags: TFpValueFieldFlags; override;
-    function GetKind: TDbgSymbolKind; override;
-    function GetAsCardinal: QWord; override;
-    function GetDataSize: TFpDbgValueSize; override;
     function IsValidTypeCast: Boolean; override;
   end;
 
@@ -3074,7 +3061,9 @@ begin
   //TODO: svfDataAddress should depend on (hidden) Pointer or Ref in the TypeInfo
   if Kind in [skClass] then begin
     Result := Result + [svfOrdinal, svfDataAddress, svfDataSize]; // svfDataSize
-    if (FDataSymbol <> nil) and FDataSymbol.HasAddress then
+    if ((FDataSymbol <> nil) and FDataSymbol.HasAddress) or
+       (HasTypeCastInfo and (Kind = skClass))
+    then
       Result := Result + [svfSizeOfPointer];
   end
   else begin
@@ -3106,120 +3095,81 @@ begin
 end;
 
 function TFpValueDwarfStruct.GetDataSize: TFpDbgValueSize;
+var
+  ti: TFpSymbolDwarf;
 begin
-  Assert((FDataSymbol = nil) or (FDataSymbol.TypeInfo is TFpSymbolDwarf));
-  if (FDataSymbol <> nil) and (FDataSymbol.TypeInfo <> nil) then begin
-    if FDataSymbol.TypeInfo.Kind = skClass then begin
-      if not TFpSymbolDwarf(FDataSymbol.TypeInfo).DoReadDataSize(Self, Result) then
-        Result := ZeroSize;
-    end
-    else
-      if not GetSize(Result) then
-        Result := ZeroSize;
+  Result := ZeroSize;
+  ti := nil;
+  if HasTypeCastInfo then begin
+    Assert((FTypeSymbol = nil) or (FTypeSymbol is TFpSymbolDwarf));
+    ti := FTypeSymbol;
+  end
+  else begin
+    Assert((FDataSymbol = nil) or (FDataSymbol.TypeInfo is TFpSymbolDwarf));
+    if (FDataSymbol <> nil) then
+      ti := TFpSymbolDwarf(FDataSymbol.TypeInfo);
+  end;
+
+  if (ti <> nil) and (ti.Kind = skClass) then begin
+    if not ti.DoReadDataSize(Self, Result) then
+      Result := ZeroSize;
   end
   else
-    Result := ZeroSize;
+    if not GetSize(Result) then
+      Result := ZeroSize;
 end;
 
-{ TFpValueDwarfStructTypeCast }
-
-procedure TFpValueDwarfStructTypeCast.Reset;
-begin
-  inherited Reset;
-  FDataAddressDone := False;
-end;
-
-function TFpValueDwarfStructTypeCast.GetFieldFlags: TFpValueFieldFlags;
-begin
-  Result := inherited GetFieldFlags;
-  Result := Result + [svfMembers];
-  if kind = skClass then // todo detect hidden pointer
-    Result := Result + [svfDataSize]
-  else
-    Result := Result + [svfSize];
-
-  //TODO: svfDataAddress should depend on (hidden) Pointer or Ref in the TypeInfo
-  if Kind in [skClass] then
-    Result := Result + [svfOrdinal, svfDataAddress, svfSizeOfPointer]; // svfDataSize
-end;
-
-function TFpValueDwarfStructTypeCast.GetKind: TDbgSymbolKind;
-begin
-  Result := FTypeSymbol.Kind;
-end;
-
-function TFpValueDwarfStructTypeCast.GetAsCardinal: QWord;
-var
-  Addr: TFpDbgMemLocation;
-begin
-  if not GetDwarfDataAddress(Addr) then
-    Result := 0
-  else
-    Result := QWord(LocToAddrOrNil(Addr));
-end;
-
-function TFpValueDwarfStructTypeCast.GetDataSize: TFpDbgValueSize;
-begin
-  Assert((FTypeSymbol = nil) or (FTypeSymbol is TFpSymbolDwarf));
-  if FTypeSymbol <> nil then begin
-    if FTypeSymbol.Kind = skClass then begin
-      if not TFpSymbolDwarf(FTypeSymbol).DoReadDataSize(Self, Result) then
-        Result := ZeroSize;
-    end
-    else
-      if not GetSize(Result) then
-        Result := ZeroSize;
-    end
-  else
-    Result := ZeroSize;
-end;
-
-function TFpValueDwarfStructTypeCast.IsValidTypeCast: Boolean;
+function TFpValueDwarfStruct.IsValidTypeCast: Boolean;
 var
   f: TFpValueFieldFlags;
   SrcSize, TypeSize: TFpDbgValueSize;
 begin
-  Result := HasTypeCastInfo;
-  if not Result then
-    exit;
-
-  if FTypeSymbol.Kind in [skClass, skInstance] then begin
-    f := FTypeCastSourceValue.FieldFlags;
-    // skClass: Valid if Source has Ordinal
-    Result := (svfOrdinal in f); // ordinal is prefered in GetDataAddress
-    if Result then
-      exit;
-    // skClass: Valid if Source has Address, and (No Size) OR (same Size)
-    if not (svfAddress in f) then
-      exit;
-    Result := not(svfSize in f);  // either svfSizeOfPointer or a void type, e.g. pointer(1)^
-    if Result then
-      exit;
-    if not GetSizeFor(FTypeCastSourceValue, SrcSize) then
-      exit;
-    Result := SrcSize = AddressSize;
+  if not HasTypeCastInfo then begin
+    Result := inherited IsValidTypeCast;
   end
   else begin
-    f := FTypeCastSourceValue.FieldFlags;
-    // skRecord: ONLY  Valid if Source has Address
-    if (f * [{svfOrdinal, }svfAddress] = [svfAddress]) then begin
-      // skRecord: AND either ... if Source has same Size
-      if (f * [svfSize, svfSizeOfPointer]) = [svfSize] then begin
-        Result := GetSize(TypeSize) and GetSizeFor(FTypeCastSourceValue, SrcSize);
-        Result := Result and (TypeSize = SrcSize)
-      end
-      else
-      // skRecord: AND either ... if Source has same Size (pointer size)
-      if (f * [svfSize, svfSizeOfPointer]) = [svfSizeOfPointer] then begin
-        Result := GetSize(TypeSize);
-        Result := Result and (TypeSize = AddressSize);
-      end
-      // skRecord: AND either ... if Source has NO Size
-      else
-        Result := (f * [svfSize, svfSizeOfPointer]) = []; // source is a void type, e.g. pointer(1)^
+    Result := HasTypeCastInfo;
+    if not Result then
+      exit;
+
+    if FTypeSymbol.Kind in [skClass, skInstance] then begin
+      f := FTypeCastSourceValue.FieldFlags;
+      // skClass: Valid if Source has Ordinal
+      Result := (svfOrdinal in f); // ordinal is prefered in GetDataAddress
+      if Result then
+        exit;
+      // skClass: Valid if Source has Address, and (No Size) OR (same Size)
+      if not (svfAddress in f) then
+        exit;
+      Result := not(svfSize in f);  // either svfSizeOfPointer or a void type, e.g. pointer(1)^
+      if Result then
+        exit;
+      if not GetSizeFor(FTypeCastSourceValue, SrcSize) then
+        exit;
+      Result := SrcSize = AddressSize;
     end
-    else
-      Result := False;
+    else begin
+      f := FTypeCastSourceValue.FieldFlags;
+      // skRecord: ONLY  Valid if Source has Address
+      if (f * [{svfOrdinal, }svfAddress] = [svfAddress]) then begin
+        // skRecord: AND either ... if Source has same Size
+        if (f * [svfSize, svfSizeOfPointer]) = [svfSize] then begin
+          Result := GetSize(TypeSize) and GetSizeFor(FTypeCastSourceValue, SrcSize);
+          Result := Result and (TypeSize = SrcSize)
+        end
+        else
+        // skRecord: AND either ... if Source has same Size (pointer size)
+        if (f * [svfSize, svfSizeOfPointer]) = [svfSizeOfPointer] then begin
+          Result := GetSize(TypeSize);
+          Result := Result and (TypeSize = AddressSize);
+        end
+        // skRecord: AND either ... if Source has NO Size
+        else
+          Result := (f * [svfSize, svfSizeOfPointer]) = []; // source is a void type, e.g. pointer(1)^
+      end
+      else
+        Result := False;
+    end;
   end;
 end;
 
@@ -5503,9 +5453,6 @@ function TFpSymbolDwarfTypeStructure.GetTypedValueObject(ATypeCast: Boolean;
 begin
   if AnOuterType = nil then
     AnOuterType := Self;
-  if ATypeCast then
-    Result := TFpValueDwarfStructTypeCast.Create(AnOuterType)
-  else
     Result := TFpValueDwarfStruct.Create(AnOuterType);
 end;
 
