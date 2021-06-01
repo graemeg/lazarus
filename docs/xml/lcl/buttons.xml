@@ -783,9 +783,38 @@
           Contains a reference to an existing list of images available for use in the Glyph property
         </short>
         <descr>
-          <!-- TODO:  -->
+          <p>
+            <var>ExternalImages</var> is a <var>TCustomImageList</var> property with a list of images that can be used to set the glyph for  the class instance.
+          </p>
+          <p>
+            TButtonGlyph can use images that originate from one of several properties: Images, ExternalImages, or Glyph. Images is a cached imaged list which may be refreshed  when the cached images are changed. ExternalImages is an image list explicitly assigned to the property which does not use the image cache. Glyph is the bitmap to use for the glyph, and can originate from an LCL resource.
+          </p>
+          <p>
+            These image sources are used in the GetImageIndexAndEffect method to determine the image resolution and bitmap used for the glyph and the button state.
+          </p>
+          <p>
+            Setting a new value for the property causes the Glyph property to be cleared, and the OnChange event handler is signalled.
+          </p>
+          <p>
+            Setting a value for the Glyph or LCLGlyphName properties causes the image list in ExternalImages to be discarded.
+          </p>
+          <p>
+            Use ExternalImageWidth to specify the width of the images in ExternalImages.
+          </p>
+          <p>
+            Use ExternalImageIndex to specify the position in ExternalImages for the bitmap displayed as the button glyph.
+          </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TButtonGlyph.ExternalImageIndex"/>
+          <link id="TButtonGlyph.ExternalImageWidth"/>
+          <link id="TButtonGlyph.GetImageIndexAndEffect"/>
+          <link id="TButtonGlyph.Images"/>
+          <link id="TButtonGlyph.Glyph"/>
+          <link id="TButtonGlyph.NumGlyphs"/>
+          <link id="TButtonGlyph.GlyphChanged"/>
+          <link id="TButtonGlyph.CanShowGlyph"/>
+        </seealso>
       </element>
 
       <element name="TButtonGlyph.ExternalImageIndex">
@@ -1542,7 +1571,12 @@
       <element name="TBitBtn">
         <short>A Button with a small image attached</short>
         <descr>
-          Bit Button: a push button control on a toolbar causing a particular action to be executed. It often displays a glyph or small graphic to denote its function.
+          <p>
+            TBitBtn is a TCustomBitBtn descendant which provides the interface used to display a button with a glyph (or image) and a caption. It performs an action when the button is clicked.
+          </p>
+          <p>
+            TBitBtn sets the visibility for properties introduced in ancestor classes.
+          </p>
         </descr>
         <seealso>
           <link id="#lcl.stdctrls.HowToUseStdCtrls">How To Use Standard Controls</link>
@@ -1594,7 +1628,7 @@
         </descr>
       </element>
 
-      <element name="TBitBtn.Caption" link="#lcl.controls.TControl.Caption">
+      <element name="TBitBtn.Caption">
         <descr>
           <p>
             Gets caption as a text-string (<var>GetText</var>), or stores the new caption (<var>SetText</var>). Shows flag if caption is stored (<var>IsCaptionStored</var>).
@@ -1615,6 +1649,9 @@
             To keep things optimal, LCL implementations should always override RealGet/SetText. Get/SetTextBuf is only kept for compatibility.
           </p>
         </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Caption">TControl.Caption</link>
+        </seealso>
       </element>
 
       <element name="TBitBtn.Color" link="#lcl.controls.TControl.Color"/>
@@ -1633,6 +1670,11 @@
           </p>
         </descr>
       </element>
+
+      <element name="TBitBtn.DefaultCaption" link="#lcl.buttons.TCustomBitBtn.DefaultCaption"/>
+      <element name="TBitBtn.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TBitBtn.DragKind" link="#lcl.controls.TControl.DragKind"/>
+      <element name="TBitBtn.DragMode" link="#lcl.controls.TControl.DragMode"/>
 
       <element name="TBitBtn.Enabled" link="#lcl.controls.TControl.Enabled">
         <descr>
@@ -2738,6 +2780,10 @@
       </element>
 
       <element name="TSpeedButton.Down" link="#lcl.buttons.TCustomSpeedButton.Down"/>
+
+      <element name="TSpeedButton.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TSpeedButton.DragKind" link="#lcl.controls.TControl.DragKind"/>
+      <element name="TSpeedButton.DragMode" link="#lcl.controls.TControl.DragMode"/>
 
       <element name="TSpeedButton.Enabled" link="#lcl.controls.TControl.Enabled">
         <descr>
