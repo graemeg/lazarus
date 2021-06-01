@@ -92,6 +92,8 @@ begin
   t(UnicodeToUTF8($10000),-1,'unicode($10000)');
   t(UnicodeToUTF8($10900),-1,'unicode($10900)');
   t(UnicodeToUTF8($10ffff),-1,'unicode($10ffff)');
+  t(#$F4#$8F#$BF#$BF,-1,'unicode($10ffff)');
+  t(#$F4#$90#$80#$80,0,'unicode($110000)');
   t(#$c0#0,0,'invalid second byte of 2 byte');
   t(#$e0#0,0,'invalid second byte of 3 byte');
   t(#$e0#$80#0,0,'invalid third byte of 3 byte');
@@ -106,6 +108,7 @@ begin
   t(#$e0#$9f#$bf,0,'invalid: $7ff encoded as 3 byte');
   t(#$f0#$80#$80#$80,0,'invalid: 0 encoded as 4 byte');
   t(#$f0#$8f#$bf#$bf,0,'invalid: $ffff encoded as 4 byte');
+  t(#$F7#$BF#$BF#$BF,0,'invalid 4 byte out of range');
 end;
 
 procedure TTestLazUTF8.TestFindUnicodeToUTF8;
