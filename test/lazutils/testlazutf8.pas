@@ -30,6 +30,7 @@ type
     procedure TestFindInvalidUTF8;
     procedure TestFindUnicodeToUTF8;
     procedure TestUTF8QuotedStr;
+    procedure TestUTF8FixBroken;
   end;
 
 implementation
@@ -95,6 +96,7 @@ begin
   t(#$F4#$8F#$BF#$BF,-1,'unicode($10ffff)');
   t(#$F4#$90#$80#$80,0,'unicode($110000)');
   t(#$c0#0,0,'invalid second byte of 2 byte');
+  t(#$c2#0,0,'valid 2 byte');
   t(#$e0#0,0,'invalid second byte of 3 byte');
   t(#$e0#$80#0,0,'invalid third byte of 3 byte');
   t(#$f0#0,0,'invalid second byte of 4 byte');
@@ -158,6 +160,55 @@ begin
   t('A','A','AAAA');
   t('bAb','A','AbAAbA');
   t('cABc','AB','ABcABABcAB');
+end;
+
+procedure TTestLazUTF8.TestUTF8FixBroken;
+
+  procedure t(const S, Expected: string);
+  var
+    Actual: String;
+  begin
+    Actual:=S;
+    UTF8FixBroken(Actual);
+    AssertEquals('S: '+dbgMemRange(PChar(S),length(S)),
+      dbgMemRange(PChar(Expected),length(Expected)),
+      dbgMemRange(PChar(Actual),length(Actual)));
+  end;
+
+begin
+  t(#$0,#$0);
+  t(#$1,#$1);
+  t(#$7F,#$7F);
+  t(#$80,' ');
+  t(#$BF,' ');
+  t(#$C0#$0,' '#$0);
+  t(#$C0#$7F,' '#$7F);
+  t(#$C0#$80,'  ');
+  t(#$C0#$CF,'  ');
+  t(#$C1#$80,'  ');
+  t(#$C2#$7F,' '#$7F);
+  t(#$C2#$80,#$C2#$80);
+  t(#$DF#$80,#$DF#$80);
+  t(#$DF#$BF,#$DF#$BF);
+  t(#$DF#$C0,'  ');
+  t(#$DF#$70,' '#$70);
+  t(#$E0#$80,'  ');
+  t(#$E0#$80#$80,'   ');
+  t(#$E0#$9F#$BF,'   ');
+  t(#$E0#$A0#$80,#$E0#$A0#$80);
+  t(#$E0#$80#$70,'  '#$70);
+  t(#$EF#$BF#$BF,#$EF#$BF#$BF);
+  t(#$EF#$BF#$7F,'  '#$7F);
+  t(#$EF#$BF#$C0,'   ');
+  t(#$EF#$7F#$80,' '#$7F' ');
+  t(#$F0#$80#$80#$80,'    ');
+  t(#$F0#$8F#$BF#$BF,'    ');
+  t(#$F0#$9F#$BF#$BF,#$F0#$9F#$BF#$BF);
+  t(#$F0#$9F#$BF#$CF,'    ');
+  t(#$F0#$9F#$CF#$BF,'  '#$CF#$BF);
+  t(#$F0#$CF#$BF#$BF,' '#$CF#$BF' ');
+  t(#$F4#$8F#$BF#$BF,#$F4#$8F#$BF#$BF);
+  t(#$F4#$90#$80#$80,'    ');
 end;
 
 initialization
