@@ -613,6 +613,9 @@ begin
         if Result<(1 shl 16) then begin
           // wrong encoded, could be an XSS attack
           Result:=0;
+        end else if Result>$10FFFF then begin
+          // out of range
+          Result:=0;
         end;
       end else begin
         Result:=ord(p^);
@@ -3662,12 +3665,18 @@ begin
           begin // 4 byte UTF-8 char
             C := ((B1 and %00011111) shl 18) or ((B2 and %00111111) shl 12)
               or ((B3 and %00111111) shl 6)  or (B4 and %00111111);
-            // to double wide char UTF-16 char
-            Dest[DestI] := System.WideChar($D800 or ((C - $10000) shr 10));
-            Inc(DestI);
-            if DestI >= DestWideCharCount then Break;
-            Dest[DestI] := System.WideChar($DC00 or ((C - $10000) and %0000001111111111));
-            Inc(DestI);
+            if C>$10FFFF then
+            begin
+              if InvalidCharError(4) then Exit(trInvalidChar);
+            end else
+            begin
+              // to double wide char UTF-16 char
+              Dest[DestI] := System.WideChar($D800 or ((C - $10000) shr 10));
+              Inc(DestI);
+              if DestI >= DestWideCharCount then Break;
+              Dest[DestI] := System.WideChar($DC00 or ((C - $10000) and %0000001111111111));
+              Inc(DestI);
+            end;
           end
           else // invalid character, assume triple byte UTF-8 char
             if InvalidCharError(3) then Exit(trInvalidChar);
