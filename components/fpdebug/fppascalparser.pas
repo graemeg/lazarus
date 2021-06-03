@@ -2865,10 +2865,13 @@ function TFpPascalExpressionPartOperatorPlusMinus.DoGetResultValue: TFpValue;
              (AOtherVal.TypeInfo.TypeInfo.ReadSize(nil, s2)) and
              (s1 = s2)
           then begin
-            if s1 <> (APointerVal.Member[1].DataAddress.Address - APointerVal.DataAddress.Address) then begin
+            TmpVal := APointerVal.Member[1];
+            if s1 <> (TmpVal.DataAddress.Address - APointerVal.DataAddress.Address) then begin
+              TmpVal.ReleaseReference;
               debugln('Size mismatch for pointer math');
               exit;
             end;
+            TmpVal.ReleaseReference;
             Idx := APointerVal.AsCardinal - AOtherVal.AsCardinal;
             if SizeToFullBytes(s1) > 0 then begin
               m := Idx mod SizeToFullBytes(s1);
