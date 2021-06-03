@@ -2323,20 +2323,15 @@ end;
 
 destructor TExtToolView.Destroy;
 begin
-  // wait for other threads to finish their access
-  EnterCriticalSection;
-  try
-    if (Tool<>nil) and (not (csDestroying in Tool.ComponentState)) then
-      Tool.RemoveView(Self);
-    RemoveAsyncOnChanged;
-    ClearLines;
-    FreeAndNil(FProgressLine);
-    FreeAndNil(FPendingLines);
-    FreeAndNil(FPendingProgressLine);
-    inherited Destroy;
-  finally
-    LeaveCriticalSection;
-  end;
+  if (Tool<>nil) and (not (csDestroying in Tool.ComponentState)) then
+    Tool.RemoveView(Self);
+  // no need for EnterCriticalSection, issue 38959
+  RemoveAsyncOnChanged;
+  ClearLines;
+  FreeAndNil(FProgressLine);
+  FreeAndNil(FPendingLines);
+  FreeAndNil(FPendingProgressLine);
+  inherited Destroy;
   FreeAndNil(FLines);
 end;
 
