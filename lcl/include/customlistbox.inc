@@ -267,10 +267,10 @@ end;
 
 function TCustomListBox.GetScrollWidth: Integer;
 begin
+  Result := FScrollWidth;
+  if (Result > 0) or (csDesigning in ComponentState) then Exit;
   if HandleAllocated then
-    Result := TWSCustomListBoxClass(WidgetSetClass).GetScrollWidth(Self)
-  else
-    Result := FScrollWidth;
+    Result := TWSCustomListBoxClass(WidgetSetClass).GetScrollWidth(Self);
 end;
 
 {------------------------------------------------------------------------------
