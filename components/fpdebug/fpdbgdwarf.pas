@@ -121,7 +121,7 @@ type
     function FindExportedSymbolInUnit(CU: TDwarfCompilationUnit; const ANameInfo: TNameSearchInfo;
       out AnInfoEntry: TDwarfInformationEntry; out AnIsExternal: Boolean): Boolean; inline;
     function FindExportedSymbolInUnits(const AName: String; const ANameInfo: TNameSearchInfo;
-      SkipCompUnit: TDwarfCompilationUnit; out ADbgValue: TFpValue): Boolean;
+      SkipCompUnit: TDwarfCompilationUnit; out ADbgValue: TFpValue; const OnlyUnitNameLower: String = ''): Boolean;
     function FindSymbolInStructure(const AName: String; const ANameInfo: TNameSearchInfo;
       InfoEntry: TDwarfInformationEntry; out ADbgValue: TFpValue): Boolean; inline;
     // FindLocalSymbol: for the subroutine itself
@@ -130,7 +130,7 @@ type
   public
     constructor Create(ALocationContext: TFpDbgLocationContext; ASymbol: TFpSymbol; ADwarf: TFpDwarfInfo);
     destructor Destroy; override;
-    function FindSymbol(const AName: String): TFpValue; override;
+    function FindSymbol(const AName: String; const OnlyUnitName: String = ''): TFpValue; override;
   end;
 
   TFpSymbolDwarfType = class;
@@ -1357,7 +1357,7 @@ end;
 
 function TFpDwarfInfoSymbolScope.FindExportedSymbolInUnits(const AName: String;
   const ANameInfo: TNameSearchInfo; SkipCompUnit: TDwarfCompilationUnit; out
-  ADbgValue: TFpValue): Boolean;
+  ADbgValue: TFpValue; const OnlyUnitNameLower: String): Boolean;
 const
   PER_WORKER_CNT = 20;
 var
@@ -1383,6 +1383,8 @@ begin
       dec(i);
       CU := FDwarf.CompilationUnits[i];
 
+      if (OnlyUnitNameLower <> '') and (OnlyUnitNameLower <> LowerCase(CU.UnitName)) then
+        continue;
       if (CU = SkipCompUnit) or
          (not CU.KnownNameHashes^[ANameInfo.NameHash and KnownNameHashesBitMask])
       then
@@ -1559,7 +1561,8 @@ begin
   inherited Destroy;
 end;
 
-function TFpDwarfInfoSymbolScope.FindSymbol(const AName: String): TFpValue;
+function TFpDwarfInfoSymbolScope.FindSymbol(const AName: String;
+  const OnlyUnitName: String): TFpValue;
 var
   SubRoutine: TFpSymbolDwarfDataProc; // TDbgSymbol;
   CU: TDwarfCompilationUnit;
@@ -1575,11 +1578,18 @@ begin
   if (AName = '') then
     exit;
 
+  NameInfo := NameInfoForSearch(AName);
+
+  if OnlyUnitName <> '' then begin
+    // TODO: dwarf info for libraries
+    FindExportedSymbolInUnits(AName, NameInfo, nil, Result, LowerCase(OnlyUnitName));
+    exit;
+  end;
+
   if FSymbol is TFpSymbolDwarfDataProc then
     SubRoutine := TFpSymbolDwarfDataProc(FSymbol)
   else
     SubRoutine := nil;
-  NameInfo := NameInfoForSearch(AName);
 
   if Symbol = nil then begin
     FindExportedSymbolInUnits(AName, NameInfo, nil, Result);

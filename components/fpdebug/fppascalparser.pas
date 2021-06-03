@@ -3550,7 +3550,8 @@ begin
   if Count <> 2 then exit;
 
   tmp := Items[0].ResultValue;
-  if (tmp = nil) then exit;
+  if (tmp = nil) then
+    exit;
 
   MemberName := Items[1].GetText;
 
@@ -3605,14 +3606,26 @@ begin
         end;
       end;
     end;
-    SetError(fpErrNoMemberWithName, [Items[1].GetText]);
+    SetError(fpErrNoMemberWithName, [MemberName]);
     exit
   end;
 
-  // Todo unit
+  if (tmp.Kind = skUnit) or
+     ( (tmp.DbgSymbol <> nil) and (tmp.DbgSymbol.Kind = skUnit) )
+  then begin
+    (* If a class/record/object matches the typename, but did not have the member,
+       then this could still be a unit.
+       If the class/record/object is in the same unit as the current contexct (selected function)
+       then it would hide the unitname, but otherwise a unit in the uses clause would
+       hide the structure.
+    *)
+    Result := Expression.FContext.FindSymbol(MemberName, Items[0].GetText);
+    if Result <> nil then
+      exit;
+  end;
 
-  SetError(fpErrorNotAStructure, [Items[1].GetText, Items[0].GetText]);
 
+  SetError(fpErrorNotAStructure, [MemberName, Items[0].GetText]);
 end;
 
 end.

@@ -36,7 +36,7 @@ type
     function GetSizeOfAddress: Integer; override;
   public
     constructor Create(ALocationContext: TFpDbgLocationContext; AFpSymbolInfo: TFpSymbolInfo);
-    function FindSymbol(const AName: String): TFpValue; override;
+    function FindSymbol(const AName: String; const OnlyUnitName: String = ''): TFpValue; override;
   end;
 
   { TFpSymbolInfo }
@@ -80,7 +80,8 @@ begin
   FFpSymbolInfo:=AFpSymbolInfo;
 end;
 
-function TFpSymbolContext.FindSymbol(const AName: String): TFpValue;
+function TFpSymbolContext.FindSymbol(const AName: String;
+  const OnlyUnitName: String): TFpValue;
 var
   i: integer;
   val: TFpDbgMemLocation;

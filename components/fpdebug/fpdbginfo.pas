@@ -499,7 +499,7 @@ type
     property SymbolAtAddress: TFpSymbol read GetSymbolAtAddress;
     property ProcedureAtAddress: TFpValue read GetProcedureAtAddress;
     // search this, and all parent context
-    function FindSymbol(const {%H-}AName: String): TFpValue; virtual;
+    function FindSymbol(const {%H-}AName: String; const OnlyUnitName: String = ''): TFpValue; virtual;
     property MemManager: TFpDbgMemManager read GetMemManager;
     property SizeOfAddress: Integer read GetSizeOfAddress;
     property LocationContext: TFpDbgLocationContext read FLocationContext;
@@ -1201,7 +1201,8 @@ begin
   Result := nil;
 end;
 
-function TFpDbgSymbolScope.FindSymbol(const AName: String): TFpValue;
+function TFpDbgSymbolScope.FindSymbol(const AName: String;
+  const OnlyUnitName: String): TFpValue;
 begin
   Result := nil;
 end;
