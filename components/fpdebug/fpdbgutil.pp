@@ -912,8 +912,8 @@ var
   i: Integer;
   mt: Boolean;
 begin
-  Lock;
   FThreadMonitor.Enter;
+  Lock;
   try
     ThreadCount := 0;
 
@@ -926,8 +926,8 @@ begin
       WorkItem.DecRef;
     end;
   finally
-    FThreadMonitor.Leave;
     Unlock;
+    FThreadMonitor.Leave;
   end;
 
   ThreadCount := 0;
