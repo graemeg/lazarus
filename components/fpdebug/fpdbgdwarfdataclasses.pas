@@ -4281,13 +4281,6 @@ begin
   end;
   FValid := True;
 
-  FComputeNameHashesWorker := TFpThreadWorkerComputeNameHashes.Create(Self);
-  FComputeNameHashesWorker.AddRef;
-
-  FScanAllWorker := TFpThreadWorkerScanAll.Create(Self, FComputeNameHashesWorker);
-  FScanAllWorker.AddRef;
-  FOwner.WorkQueue.PushItem(FScanAllWorker);
-
   AttribList.EvalCount := 0;
   /// TODO: (dafHasName in Abbrev.flags)
   if LocateAttribute(Scope.Entry, DW_AT_name, AttribList, Attrib, Form)
@@ -4332,6 +4325,14 @@ begin
 
   if FMinPC = 0 then FMinPC := FMaxPC;
   if FMaxPC = 0 then FMAxPC := FMinPC;
+
+  // FScope and FScopeList  *MUST NOT*  be accessed while the worker is running
+  FComputeNameHashesWorker := TFpThreadWorkerComputeNameHashes.Create(Self);
+  FComputeNameHashesWorker.AddRef;
+
+  FScanAllWorker := TFpThreadWorkerScanAll.Create(Self, FComputeNameHashesWorker);
+  FScanAllWorker.AddRef;
+  FOwner.WorkQueue.PushItem(FScanAllWorker);
 end;
 
 destructor TDwarfCompilationUnit.Destroy;
