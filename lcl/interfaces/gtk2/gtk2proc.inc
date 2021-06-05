@@ -1953,7 +1953,11 @@ var
       end;
       Exit;
     end;
+{$IFDEF WITH_GTK2_IM}
+    Result := ((not im_context_use) and (AEvent^.Length > 0)) or (GetSpecialChar <> #0);
+{$ELSE}
     Result := (AEvent^.Length > 0) or (GetSpecialChar <> #0);
+{$ENDIF}
   end;
   
   function KeyAlreadyHandledByGtk: boolean;
@@ -2405,7 +2409,14 @@ begin
     end;
 
     // send keypresses
+    // im_context_string checking be used for process when non-composition state
+    // without checking, non-composite keys(number backspace enter, and etc) doesn't input.
+    // (check with press number keys or backspace without candidate window in cjk input state)
+{$IFDEF WITH_GTK2_IM}
+    if not EventStopped and (AHandleDown or (im_context_string<>'')) then
+{$ELSE}
     if not EventStopped and AHandleDown then
+{$ENDIF}
     begin
       // send the UTF8 keypress
       PassUTF8AsKeyPress := False;

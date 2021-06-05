@@ -99,6 +99,14 @@ const
   LM_INTERFACELAST  = LM_LCL + 199;
   
   LM_UNKNOWN        = LM_INTERFACELAST + 1;
+  LM_IM_COMPOSITION = LM_USER + $FFF0; // gtk IM
+
+  // GTK IM Flags
+  GTK_IM_FLAG_START       = 1;
+  GTK_IM_FLAG_PREEDIT     = 2;
+  GTK_IM_FLAG_END         = 4;
+  GTK_IM_FLAG_COMMIT      = 8;
+  GTK_IM_FLAG_REPLACE     = 16;
 
   //-------------
   //end of messages that are sent to the interface

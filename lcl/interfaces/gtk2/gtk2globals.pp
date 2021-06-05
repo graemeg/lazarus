@@ -63,9 +63,16 @@ var
 var
   im_context: PGtkIMContext = nil;
   im_context_widget: PGtkWidget = nil;
+  im_context_skipdelete: Boolean = False;
+  im_context_use: Boolean = False;
   im_context_string: string = '';
+  im_context_string_commit: string = '';
+  im_context_string_preedit: string = '';
 
 procedure ResetDefaultIMContext;
+{$IFDEF WITH_GTK2_IM}
+procedure IM_Context_Set_Cursor_Pos(X, Y: gint);
+{$ENDIF}
 
 var
   LastFileSelectRow : gint;
@@ -421,8 +428,24 @@ begin
     gtk_im_context_set_client_window(im_context,nil);
   end;
   im_context_widget:=nil;
+  im_context_use:=False;
+  im_context_skipdelete:=True;
   im_context_string:='';
+  im_context_string_commit:='';
 end;
+
+{$IFDEF WITH_GTK2_IM}
+procedure IM_Context_Set_Cursor_Pos(X, Y: gint);
+var
+  CurPos: TGdkRectangle;
+begin
+  CurPos.x:=X;
+  CurPos.y:=Y;
+  CurPos.width:=0; // fix invalid candidate window position
+  CurPos.height:=0;
+  gtk_im_context_set_cursor_location(im_context,@CurPos);
+end;
+{$ENDIF}
 
 procedure AddCharsetEncoding(CharSet: Byte; CharSetReg, CharSetCod: CharSetStr;
   ToEnum:boolean=true; CrPart:boolean=false; CcPart:boolean=false);

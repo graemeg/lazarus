@@ -46,6 +46,7 @@ begin
 end;
 {$ENDIF}
 
+// To do: eat 2 key stroke after re-focus.
 function GTK2FocusCB( widget: PGtkWidget; event:PGdkEventFocus;
   data: gPointer) : GBoolean; cdecl;
 var
@@ -54,7 +55,14 @@ begin
   Status := GTKFocusCB(Widget, Event, Data);
 
   if GtkWidgetIsA(Widget,GTK_APIWIDGETCLIENT_TYPE) then
-    Result := Status
+  begin
+    Result := Status;
+    {$IFDEF WITH_GTK2_IM}
+    gtk_im_context_set_client_window(im_context,GetControlWindow(widget));
+    gtk_im_context_focus_in(im_context);
+    im_context_widget:=widget;
+    {$ENDIF}
+  end
   else
     Result := False;
 end;
@@ -79,7 +87,15 @@ begin
   Status := GTKKillFocusCB(Widget, Event, Data);
 
   if GtkWidgetIsA(Widget,GTK_APIWIDGETCLIENT_TYPE) then
-    Result := Status
+  begin
+    Result := Status;
+    {$IFDEF WITH_GTK2_IM}
+    gtk_im_context_focus_out(im_context);
+    gtk_im_context_set_client_window(im_context,nil);
+    im_context_widget:=nil;
+    ResetDefaultIMContext;
+    {$ENDIF}
+  end
   else
     Result := False;
 end;
@@ -216,10 +232,98 @@ end;
 
 procedure gtk_commit_cb ({%H-}context: PGtkIMContext; const Str: Pgchar;
   {%H-}Data: Pointer); cdecl;
+{$IFDEF WITH_GTK2_IM}
+var
+  control:TWinControl;
+  i:Integer;
+{$ENDIF}
 begin
+  {$IFDEF WITH_GTK2_IM}
   //DebugLn(['gtk_commit_cb ',dbgstr(Str),'="',Str,'"']);
+  { fix double normal character input }
+  if not im_context_use then
+    im_context_string:=Str // key at non-composition
+    else
+      im_context_string_commit:=Str; // key at composition
+  { commit composition string, not key }
+  if (im_context_widget<>nil) then
+      begin
+        im_context_skipdelete:=True;
+        Control:=TWinControl(GetNearestLCLObject(im_context_widget));
+        SendMessage(control.Handle,LM_IM_COMPOSITION,GTK_IM_FLAG_COMMIT,LPARAM(pchar(im_context_string_commit)));
+        im_context_string_commit:='';
+      end;
+  {$ELSE}
   im_context_string:=Str;
+  {$ENDIF}
 end;
+
+{$IFDEF WITH_GTK2_IM}
+procedure gtk_preedit_start_cb({%H-}context: PGtkIMContext; {%H-}Data: Pointer); cdecl;
+var
+  control:TWinControl;
+  Flag:WPARAM;
+begin
+  if (im_context_widget<>nil) and
+     (GetNearestLCLObject(im_context_widget) is TCustomControl) then
+  begin
+    im_context_use:=True;
+    im_context_skipDelete:=True;
+    control:=TWinControl(GetNearestLCLObject(im_context_widget));
+    SendMessage(control.Handle,LM_IM_COMPOSITION,GTK_IM_FLAG_START,LPARAM(context));
+  end;
+end;
+
+procedure gtk_preedit_end_cb({%H-}context: PGtkIMContext; {%H-}Data: Pointer); cdecl;
+var
+  control:TWinControl;
+  Flag:WPARAM;
+begin
+  if (im_context_widget<>nil) and
+     (GetNearestLCLObject(im_context_widget) is TCustomControl) then
+  begin
+    im_context_use:=False;
+    im_context_skipDelete:=False;
+    control:=TWinControl(GetNearestLCLObject(im_context_widget));
+    SendMessage(control.Handle,LM_IM_COMPOSITION,GTK_IM_FLAG_END,LPARAM(context));
+  end;
+end;
+
+procedure gtk_preedit_changed_cb({%H-}context:PGtkIMContext; {%H-}Data:Pointer); cdecl;
+var
+  control:TWinControl;
+  Flag:WPARAM;
+  str:Pgchar;
+  pangoattr:PPangoAttrList;
+  curpos:gint;
+begin
+  if (im_context_widget<>nil) then
+  begin
+    im_context_use:=True;
+    gtk_im_context_get_preedit_string(context,@str,pangoattr,@curpos);
+    im_context_string_preedit:=str;
+    g_free(str);
+    pango_attr_list_unref(pangoattr);
+    control:=TWinControl(GetNearestLCLObject(im_context_widget));
+    Flag:=GTK_IM_FLAG_PREEDIT;
+    if (not im_context_skipDelete) then begin
+      Flag:=Flag or GTK_IM_FLAG_REPLACE;
+    end else
+      im_context_skipDelete:=False;
+    SendMessage(control.Handle,LM_IM_COMPOSITION,Flag,LPARAM(pchar(im_context_string_preedit)));
+  end;
+end;
+
+function gtk_retrieve_surrounding_cb({%H-}context: PGtkIMContext; {%H-}Data: Pointer):gboolean; cdecl;
+var
+  control:TWinControl;
+  Flag:WPARAM;
+begin
+  Result:=False;
+  //im_context_use:=True;
+end;
+{$ENDIF}
+
 
 {------------------------------------------------------------------------------
   Function: TGtk2WidgetSet._SetCallbackEx
@@ -963,6 +1067,17 @@ begin
   im_context:=gtk_im_multicontext_new;
   g_signal_connect (G_OBJECT (im_context), 'commit',
     G_CALLBACK (@gtk_commit_cb), nil);
+  {$IFDEF WITH_GTK2_IM}
+  // Input method
+  g_signal_connect (G_OBJECT (im_context), 'preedit-start',
+    G_CALLBACK (@gtk_preedit_start_cb), nil);
+  g_signal_connect (G_OBJECT (im_context), 'preedit-end',
+    G_CALLBACK (@gtk_preedit_end_cb), nil);
+  g_signal_connect (G_OBJECT (im_context), 'preedit-changed',
+    G_CALLBACK (@gtk_preedit_changed_cb), nil);
+  g_signal_connect (G_OBJECT (im_context), 'retrieve_surrounding',
+    G_CALLBACK (@gtk_retrieve_surrounding_cb), nil);
+  {$ENDIF}
   {$IFDEF HASX}
   if IsNoTransientWM then
   begin
