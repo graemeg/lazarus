@@ -49,6 +49,7 @@ unit SynEdit;
     {$DEFINE WinIMEFull}
   {$ENDIF}
 {$ENDIF}
+{..$DEFINE Gtk2IME}
 
 {$I synedit.inc}
 
@@ -102,8 +103,12 @@ interface
 {$ENDIF}
 
 uses
+  LazSynIMMBase,
   {$IFDEF WinIME}
   LazSynIMM,
+  {$ENDIF}
+  {$IFDEF Gtk2IME}
+  LazSynGtk2IMM,
   {$ENDIF}
   {$IFDEF USE_UTF8BIDI_LCL}
   FreeBIDI, utf8bidi,
@@ -426,19 +431,25 @@ type
 
   TCustomSynEdit = class(TSynEditBase)
     procedure SelAvailChange(Sender: TObject);
-  {$IFDEF WinIME}
   private
     FImeHandler: LazSynIme;
-    procedure SetImeHandler(AValue: LazSynIme);
+  {$IFDEF Gtk2IME}
+  protected
+    procedure GTK_IMComposition(var Message: TMessage); message LM_IM_COMPOSITION;
+  {$ENDIF}
+  {$IFDEF WinIME}
+  private
     procedure WMImeRequest(var Msg: TMessage); message WM_IME_REQUEST;
     procedure WMImeNotify(var Msg: TMessage); message WM_IME_NOTIFY;
     procedure WMImeStartComposition(var Msg: TMessage); message WM_IME_STARTCOMPOSITION;
     procedure WMImeComposition(var Msg: TMessage); message WM_IME_COMPOSITION;
     procedure WMImeEndComposition(var Msg: TMessage); message WM_IME_ENDCOMPOSITION;
+  {$ENDIF}
+  private
+    procedure SetImeHandler(AValue: LazSynIme);
   protected
     // SynEdit takes ownership
     property ImeHandler: LazSynIme read FImeHandler write SetImeHandler;
-  {$ENDIF}
   private
     procedure WMDropFiles(var Msg: TMessage); message WM_DROPFILES;
     procedure WMEraseBkgnd(var Msg: TMessage); message WM_ERASEBKGND;
@@ -2323,6 +2334,10 @@ begin
   {$ENDIF}
   FImeHandler.InvalidateLinesMethod := @InvalidateLines;
   {$ENDIF}
+  {$IFDEF Gtk2IME}
+  FImeHandler := LazSynImeGtk2 .Create(Self);
+  FImeHandler.InvalidateLinesMethod := @InvalidateLines;
+  {$ENDIF}
 
   fFontDummy.Name := SynDefaultFontName;
   fFontDummy.Height := SynDefaultFontHeight;
@@ -2654,9 +2669,7 @@ begin
   FreeAndNil(FRightGutterArea);
   FreeAndNil(FTextArea);
   FreeAndNil(fTSearch);
-  {$IFDEF WinIME}
   FreeAndNil(FImeHandler);
-  {$ENDIF}
   FreeAndNil(fMarkupManager);
   FreeAndNil(fKeyStrokes);
   FreeAndNil(FMouseActionSearchHandlerList);
@@ -2894,17 +2907,24 @@ begin
     Result := '';
 end;
 
-{$IFDEF WinIME}
-procedure TCustomSynEdit.WMImeRequest(var Msg: TMessage);
-begin
-  FImeHandler.WMImeRequest(Msg);
-end;
-
 procedure TCustomSynEdit.SetImeHandler(AValue: LazSynIme);
 begin
   if FImeHandler = AValue then Exit;
   FreeAndNil(FImeHandler);
   FImeHandler := AValue;
+end;
+
+{$ifdef Gtk2IME}
+procedure TCustomSynEdit.GTK_IMComposition(var Message: TMessage);
+begin
+  FImeHandler.WMImeComposition(Message);
+end;
+{$endif}
+
+{$IFDEF WinIME}
+procedure TCustomSynEdit.WMImeRequest(var Msg: TMessage);
+begin
+  FImeHandler.WMImeRequest(Msg);
 end;
 
 procedure TCustomSynEdit.WMImeNotify(var Msg: TMessage);
@@ -5133,9 +5153,8 @@ begin
   UpdateScreenCaret;
   if HideSelection and SelAvail then
     Invalidate;
-  {$IFDEF WinIME}
-  FImeHandler.FocusKilled;
-  {$ENDIF}
+  if FImeHandler <> nil then
+    FImeHandler.FocusKilled;
   inherited;
   StatusChanged([scFocus]);
 end;

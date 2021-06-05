@@ -43,6 +43,7 @@ interface
 {$I ide.inc}
 
 uses
+  LazSynIMMBase,
   {$IFDEF WinIME}
   LazSynIMM,
   {$ENDIF}

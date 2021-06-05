@@ -9,7 +9,7 @@ unit LazSynIMM;
 interface
 
 uses
-  windows, imm, Classes, SysUtils, Controls, LazLoggerBase, LCLType, LazUTF8, Graphics,
+  windows, imm, LazSynIMMBase, Classes, SysUtils, Controls, LazLoggerBase, LCLType, LazUTF8, Graphics,
   SynEditMiscClasses, SynTextDrawer, SynEditPointClasses, SynEditMarkupSelection,
   SynEditMarkup, SynEditTypes, SynEditKeyCmds, LazSynEditText, SynEditTextBase;
 
@@ -20,36 +20,16 @@ const
 {$ENDIF}{$ENDIF}
 type
 
-  { LazSynIme }
+  { LazSynWinIme }
 
-  LazSynIme = class(TSynEditFriend)
-  private
-    FInvalidateLinesMethod: TInvalidateLines;
-    FOnIMEEnd: TNotifyEvent;
-    FOnIMEStart: TNotifyEvent;
-    FIMEActive: Boolean;
+  LazSynWinIme = class(LazSynIme)
   protected
-    FInCompose: Boolean;
-    procedure InvalidateLines(FirstLine, LastLine: integer);
-    procedure StopIme(Success: Boolean); virtual;
-    procedure DoIMEStarted;
-    procedure DoIMEEnded;
-  public
-    constructor Create(AOwner: TSynEditBase); reintroduce;
-    procedure WMImeRequest(var Msg: TMessage); virtual;
-    procedure WMImeNotify(var Msg: TMessage); virtual;
-    procedure WMImeComposition(var Msg: TMessage); virtual;
-    procedure WMImeStartComposition(var Msg: TMessage); virtual;
-    procedure WMImeEndComposition(var Msg: TMessage); virtual;
-    procedure FocusKilled; virtual;
-    property InvalidateLinesMethod : TInvalidateLines write FInvalidateLinesMethod;
-    property OnIMEStart: TNotifyEvent read FOnIMEStart write FOnIMEStart;
-    property OnIMEEnd: TNotifyEvent read FOnIMEEnd write FOnIMEEnd;
+    procedure StopIme(Success: Boolean); override;
   end;
 
   { LazSynImeSimple }
 
-  LazSynImeSimple = class(LazSynIme)
+  LazSynImeSimple = class(LazSynWinIme)
   private
     FImeBlockSelection: TSynEditSelection;
     FImeWinX, FImeWinY: Integer;
@@ -77,7 +57,7 @@ type
 
   { LazSynImeFull }
 
-  LazSynImeFull = class(LazSynIme)
+  LazSynImeFull = class(LazSynWinIme)
   private
     FAdjustLeftCharForTargets: Boolean;
     FLeftPosForTarget, FRightPosForTarget: Integer;
@@ -116,14 +96,9 @@ type
 
 implementation
 
-{ LazSynIme }
+{ LazSynWinIme }
 
-procedure LazSynIme.InvalidateLines(FirstLine, LastLine: integer);
-begin
-  FInvalidateLinesMethod(FirstLine, LastLine);
-end;
-
-procedure LazSynIme.StopIme(Success: Boolean);
+procedure LazSynWinIme.StopIme(Success: Boolean);
 var
   imc: HIMC;
 begin
@@ -137,54 +112,7 @@ begin
       ImmNotifyIME(imc, NI_COMPOSITIONSTR, CPS_CANCEL, 0);
     ImmReleaseContext(FriendEdit.Handle, imc);
   end;
-  DoIMEEnded;
-end;
-
-procedure LazSynIme.DoIMEStarted;
-begin
-  if FIMEActive then
-    exit;
-  FIMEActive := True;
-  if FOnIMEStart <> nil then
-    FOnIMEStart(FriendEdit);
-end;
-
-procedure LazSynIme.DoIMEEnded;
-begin
-  if not FIMEActive then
-    exit;
-  FIMEActive := False;
-  if FOnIMEEnd <> nil then
-    FOnIMEEnd(FriendEdit);
-end;
-
-constructor LazSynIme.Create(AOwner: TSynEditBase);
-begin
-  FriendEdit := AOwner;
-end;
-
-procedure LazSynIme.WMImeRequest(var Msg: TMessage);
-begin
-end;
-
-procedure LazSynIme.WMImeComposition(var Msg: TMessage);
-begin
-end;
-
-procedure LazSynIme.WMImeNotify(var Msg: TMessage);
-begin
-end;
-
-procedure LazSynIme.WMImeStartComposition(var Msg: TMessage);
-begin
-end;
-
-procedure LazSynIme.WMImeEndComposition(var Msg: TMessage);
-begin
-end;
-
-procedure LazSynIme.FocusKilled;
-begin
+  inherited StopIme(Success);
 end;
 
 { LazSynImeSimple }
