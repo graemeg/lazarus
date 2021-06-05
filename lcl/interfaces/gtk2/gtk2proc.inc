@@ -2238,9 +2238,11 @@ begin
     ' Widget=',GetWidgetClassName(AWidget),
     ' Before=',ABeforeEvent,' Down=',AHandleDown,' HandledByLCL=',HandledByLCL<>nil]);
   {$ENDIF}
-  
+
   // handle every key event only once
+  {$IFnDEF WITHOUT_GTK_DOUBLEKEYPRESS_CHECK}
   if EventHandledByLCL<>nil then exit;
+  {$ENDIF}
 
   while (not GtkWidgetIsA(AWidget, gtk_window_get_type)) and (AWidget^.parent <> nil) do
     AWidget := AWidget^.parent;
