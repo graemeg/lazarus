@@ -709,7 +709,9 @@ begin
         GetMem(p, ImeCount + 2);
         try
           ImmGetCompositionStringW(imc, GCS_COMPATTR, p, ImeCount + 2);
+          {$IFDEF WinIMEDebug}
           DebugLn(dbgMemRange(PByte( p), ImeCount));
+          {$ENDIF}
           i := 0;
           while longword(i) < ImeCount do begin
             if ord(p[i]) = ATTR_TARGET_CONVERTED then begin
