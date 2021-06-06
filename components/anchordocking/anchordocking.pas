@@ -1385,6 +1385,12 @@ end;
 procedure TAnchorDockSettings.SetHeaderStyle(AValue: THeaderStyleName);
 begin
   if FHeaderStyle=AValue then Exit;
+
+  // the next two lines can be removed in Lazarus 2.4.0 upwards - there should no old
+  // environmentoptions.xml be out there anymore - see https://bugs.freepascal.org/view.php?id=38960
+  if AValue='Themed caption' then AValue:='ThemedCaption';
+  if AValue='Themed button' then AValue:='ThemedButton';
+
   FHeaderStyle:=AValue;
   IncreaseChangeStamp;
 end;
