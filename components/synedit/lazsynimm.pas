@@ -71,6 +71,7 @@ type
     {$IFDEF WinIMEFullDeferOverwrite}
     FHasPersistLock: Boolean;
     {$ENDIF}
+    FHadQueryCharPos: boolean;
     procedure SetImeTempText(const s: string);
     procedure DoOnCommand(Sender: TObject; AfterProcessing: boolean; var Handled: boolean;
       var Command: TSynEditorCommand; var AChar: TUTF8Char; Data: pointer;
@@ -353,6 +354,13 @@ end;
 procedure LazSynImeFull.DoStatusChanged(Sender: TObject; Changes: TSynStatusChanges);
 begin
   if FInImeMsg then exit;
+  if FHadQueryCharPos then begin
+    FHadQueryCharPos := False;
+    if FriendEdit.Focused then begin
+      windows.SetFocus(0);
+      windows.SetFocus(FriendEdit.Handle);
+    end;
+  end;
   StopIme(True);
 end;
 
@@ -494,6 +502,7 @@ begin
 
   case msg.wParam of
     IMR_QUERYCHARPOSITION: begin
+        FHadQueryCharPos := True;
         cp := PIMECHARPOSITION(Msg.lParam);
         p1 := FImeBlockSelection.StartLineBytePos;
         if not FInCompose then
