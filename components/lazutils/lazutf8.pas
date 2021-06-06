@@ -3663,7 +3663,7 @@ begin
           if ((B1 and %11111000) = %11110000) and ((B2 and %11000000) = %10000000)
             and ((B3 and %11000000) = %10000000) and ((B4 and %11000000) = %10000000) then
           begin // 4 byte UTF-8 char
-            C := ((B1 and %00011111) shl 18) or ((B2 and %00111111) shl 12)
+            C := ((B1 and %00000111) shl 18) or ((B2 and %00111111) shl 12)
               or ((B3 and %00111111) shl 6)  or (B4 and %00111111);
             if C>$10FFFF then
             begin
@@ -3671,10 +3671,11 @@ begin
             end else
             begin
               // to double wide char UTF-16 char
-              Dest[DestI] := System.WideChar($D800 or ((C - $10000) shr 10));
+              C:=C-$10000;
+              Dest[DestI] := System.WideChar($D800 or (C shr 10));
               Inc(DestI);
               if DestI >= DestWideCharCount then Break;
-              Dest[DestI] := System.WideChar($DC00 or ((C - $10000) and %0000001111111111));
+              Dest[DestI] := System.WideChar($DC00 or (C and %0000001111111111));
               Inc(DestI);
             end;
           end

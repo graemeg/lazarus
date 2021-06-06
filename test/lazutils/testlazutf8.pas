@@ -27,6 +27,7 @@ type
   published
     procedure TestUTF8Trim;
     procedure TestUTF8Pos;
+    procedure TestUTF8ToUTF16;
     procedure TestFindInvalidUTF8;
     procedure TestFindUnicodeToUTF8;
     procedure TestUTF8QuotedStr;
@@ -34,6 +35,15 @@ type
   end;
 
 implementation
+
+function dbgUnicodeStr(S: UnicodeString): string;
+var
+  i: Integer;
+begin
+  Result:='';
+  for i:=1 to length(S) do
+    Result:=Result+'$'+HexStr(ord(S[i]),4);
+end;
 
 { TTestLazUTF8 }
 
@@ -59,6 +69,48 @@ begin
   AssertEquals('Skip first occurence',4,UTF8Pos('ab','abcabc',2));
   AssertEquals('Not found',0,UTF8Pos('abc'#0,'abcabc'));
   AssertEquals('Check #0',2,UTF8Pos('bc'#0,'abc'#0'abc'));
+end;
+
+procedure TTestLazUTF8.TestUTF8ToUTF16;
+
+  procedure t(theUTF8: string; Expected: UnicodeString);
+  var
+    Actual: UnicodeString;
+  begin
+    Actual:=LazUTF8.UTF8ToUTF16(theUTF8);
+    //writeln('TTestLazUTF8.TestUTF8ToUTF16 ','UTF8='+dbgMemRange(PChar(theUTF8),length(theUTF8)));
+    AssertEquals('UTF8='+dbgMemRange(PChar(theUTF8),length(theUTF8)),
+      dbgUnicodeStr(Expected),
+      dbgUnicodeStr(Actual));
+  end;
+
+begin
+  t(#0,#0);
+  t(#1,#1);
+  t(#$20,' ');
+  t(#$7f,#$7f);
+  t(#$80,'');
+  t(#$C2#$80,#$0080);
+  t(#$DF#$BF,#$07FF);
+  t(#$E0#$A0#$80,#$0800);
+  t(#$E0#$BF#$BF,#$0FFF);
+  t(#$E1#$BF#$BF,#$1FFF);
+  t(#$E3#$BF#$BF,#$3FFF);
+  t(#$E7#$BF#$BF,#$7FFF);
+  t(#$ED#$9F#$BF,#$D7FF);
+  t(#$ED#$A0#$80,'?'); // U+D800 is not Unicode standard conform, but many en/decoders support it anyway
+  t(#$ED#$BF#$BF,'?'); // U+DFFF is not Unicode standard conform, but many en/decoders support it anyway
+  t(#$EE#$80#$80,#$E000);
+  t(#$EF#$80#$80,#$F000);
+  t(#$EF#$BF#$BF,#$FFFF);
+  t(#$F0#$9F#$98#$80,#$D83D#$DE00); // U+1F600
+  t(#$F0#$9F#$BF#$BF,#$D83F#$DFFF); // U+1FFFF
+  t(#$F0#$AF#$BF#$BF,#$D87F#$DFFF); // U+2FFFF
+  t(#$F0#$BF#$BF#$BF,#$D8BF#$DFFF); // U+3FFFF
+  t(#$F1#$BF#$BF#$BF,#$D9BF#$DFFF); // U+7FFFF
+  t(#$F2#$BF#$BF#$BF,#$DABF#$DFFF); // U+8FFFF
+  t(#$F3#$BF#$BF#$BF,#$DBBF#$DFFF); // U+FFFFF
+  t(#$F4#$8F#$BF#$BF,#$DBFF#$DFFF); // U+FFFFF
 end;
 
 procedure TTestLazUTF8.TestFindInvalidUTF8;
@@ -138,6 +190,7 @@ begin
   t($3fff,#$E3#$BF#$BF);
   t($7fff,#$E7#$BF#$BF);
   t($ffff,#$EF#$BF#$BF);
+  t($1f600,#$F0#$9F#$98#$80);
   t($1ffff,#$F0#$9F#$BF#$BF);
   t($3ffff,#$F0#$BF#$BF#$BF);
   t($7ffff,#$F1#$BF#$BF#$BF);
