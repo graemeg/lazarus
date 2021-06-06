@@ -90,6 +90,7 @@ begin
   t(#$20,' ');
   t(#$7f,#$7f);
   t(#$80,'');
+  t(#$C0#0,'?'#0); // invalid 2-byte UTF8
   t(#$C2#$80,#$0080);
   t(#$DF#$BF,#$07FF);
   t(#$E0#$A0#$80,#$0800);
@@ -110,7 +111,8 @@ begin
   t(#$F1#$BF#$BF#$BF,#$D9BF#$DFFF); // U+7FFFF
   t(#$F2#$BF#$BF#$BF,#$DABF#$DFFF); // U+8FFFF
   t(#$F3#$BF#$BF#$BF,#$DBBF#$DFFF); // U+FFFFF
-  t(#$F4#$8F#$BF#$BF,#$DBFF#$DFFF); // U+FFFFF
+  t(#$F4#$8F#$BF#$BF,#$DBFF#$DFFF); // U+10FFFF
+  t(#$F7#$BF#$BF#$BF,'?'); // invalid 4 byte out of range
 end;
 
 procedure TTestLazUTF8.TestFindInvalidUTF8;

@@ -3667,7 +3667,7 @@ begin
               or ((B3 and %00111111) shl 6)  or (B4 and %00111111);
             if C>$10FFFF then
             begin
-              if InvalidCharError(4) then Exit(trInvalidChar);
+              if InvalidCharError(3) then Exit(trInvalidChar);
             end else
             begin
               // to double wide char UTF-16 char
