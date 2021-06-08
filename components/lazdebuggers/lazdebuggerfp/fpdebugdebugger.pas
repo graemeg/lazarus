@@ -81,6 +81,7 @@ type
     procedure DoCallstackFreed_DecRef(Sender: TObject);
   protected
     procedure UpdateCallstack_DecRef(Data: PtrInt = 0); override;
+    procedure DoRemovedFromLinkedList; override;
   public
     constructor Create(ADebugger: TFpDebugDebugger; ACallstack: TCallStackBase; ARequiredMinCount: Integer);
     //procedure RemoveCallStack_DecRef;
@@ -94,6 +95,7 @@ type
     FCallstackEntry: TCallStackEntry;
     procedure DoCallstackFreed_DecRef(Sender: TObject);
     procedure DoCallstackEntryFreed_DecRef(Sender: TObject);
+    procedure DoRemovedFromLinkedList; override;
   protected
     procedure UpdateCallstackEntry_DecRef(Data: PtrInt = 0); override;
   public
@@ -684,6 +686,11 @@ begin
   TFPCallStackSupplier(dbg.CallStack).FCallStackWorkers.ClearFinishedWorkers;
 end;
 
+procedure TFpThreadWorkerCallStackCountUpdate.DoRemovedFromLinkedList;
+begin
+  UpdateCallstack_DecRef;  // This trigger PrepareRange => but that still needs to be exec in thread? (or wait for lock)
+end;
+
 procedure TFpThreadWorkerCallStackCountUpdate.DoCallstackFreed_DecRef(
   Sender: TObject);
 begin
@@ -740,6 +747,11 @@ begin
   FCallstackEntry := nil;
   RequestStop;
   UnQueue_DecRef;
+end;
+
+procedure TFpThreadWorkerCallEntryUpdate.DoRemovedFromLinkedList;
+begin
+  UpdateCallstackEntry_DecRef;
 end;
 
 procedure TFpThreadWorkerCallEntryUpdate.UpdateCallstackEntry_DecRef(
@@ -907,7 +919,6 @@ end;
 
 procedure TFpThreadWorkerLocalsUpdate.DoRemovedFromLinkedList;
 begin
-  inherited DoRemovedFromLinkedList;
   if FLocals <> nil then begin
     if FHasQueued = hqQueued then begin
       UpdateLocals_DecRef;
@@ -976,7 +987,6 @@ end;
 
 procedure TFpThreadWorkerWatchValueEvalUpdate.DoRemovedFromLinkedList;
 begin
-  inherited DoRemovedFromLinkedList;
   if FWatchValue <> nil then begin
     FWatchValue.RemoveFreeNotification(@DoWatchFreed_DecRef);
     if FRes then begin

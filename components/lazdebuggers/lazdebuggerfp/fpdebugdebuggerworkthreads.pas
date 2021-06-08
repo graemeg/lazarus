@@ -96,6 +96,7 @@ type
   TFpDbgDebggerThreadWorkerLinkedList = object
   private
     FNextWorker: TFpDbgDebggerThreadWorkerLinkedItem;
+    FLocked: Boolean;
   public
     procedure Add(AWorkItem: TFpDbgDebggerThreadWorkerLinkedItem); // Does not add ref / uses existing ref
     procedure ClearFinishedWorkers;
@@ -167,7 +168,6 @@ type
   protected
     procedure UpdateCallstack_DecRef(Data: PtrInt = 0); virtual; abstract;
     procedure DoExecute; override;
-    procedure DoRemovedFromLinkedList; override; // _DecRef
   end;
 
   { TFpThreadWorkerCallEntry }
@@ -179,7 +179,6 @@ type
     FParamAsString: String;
     procedure UpdateCallstackEntry_DecRef(Data: PtrInt = 0); virtual; abstract;
     procedure DoExecute; override;
-    procedure DoRemovedFromLinkedList; override; // _DecRef
   end;
 
   { TFpThreadWorkerThreads }
@@ -406,7 +405,7 @@ end;
 
 procedure TFpDbgDebggerThreadWorkerLinkedItem.DoRemovedFromLinkedList;
 begin
-  //
+  UnQueue_DecRef;
 end;
 
 { TFpDbgDebggerThreadWorkerLinkedList }
@@ -423,14 +422,18 @@ var
   WorkItem, w: TFpDbgDebggerThreadWorkerLinkedItem;
 begin
   assert(system.ThreadID = classes.MainThreadID, 'TFpDbgDebggerThreadWorkerLinkedList.ClearFinishedCountWorkers: system.ThreadID = classes.MainThreadID');
+  if FLocked then
+    exit;
+  FLocked := True;
   WorkItem := FNextWorker;
   while (WorkItem <> nil) and (WorkItem.RefCount = 1) do begin
     w := WorkItem;
     WorkItem := w.FNextWorker;
-    //w.DoRemovedFromLinkedList;
+    w.DoRemovedFromLinkedList;
     w.DecRef;
   end;
   FNextWorker := WorkItem;
+  FLocked := False;
 end;
 
 procedure TFpDbgDebggerThreadWorkerLinkedList.RequestStopForWorkers;
@@ -449,9 +452,11 @@ var
   WorkItem, w: TFpDbgDebggerThreadWorkerLinkedItem;
 begin
   assert(system.ThreadID = classes.MainThreadID, 'TFpDbgDebggerThreadWorkerLinkedList.WaitForWorkers: system.ThreadID = classes.MainThreadID');
+  assert(not FLocked, 'TFpDbgDebggerThreadWorkerLinkedList.WaitForWorkers: not FLocked');
   if AStop then
     RequestStopForWorkers;
 
+  FLocked := True;
   WorkItem := FNextWorker;
   FNextWorker := nil;
   while (WorkItem <> nil) do begin
@@ -464,6 +469,7 @@ begin
     w.DoRemovedFromLinkedList;
     w.DecRef;
   end;
+  FLocked := False;
 end;
 
 { TFpThreadWorkerControllerRun }
@@ -593,12 +599,6 @@ begin
   Queue(@UpdateCallstack_DecRef);
 end;
 
-procedure TFpThreadWorkerCallStackCount.DoRemovedFromLinkedList;
-begin
-  inherited DoRemovedFromLinkedList;
-  UpdateCallstack_DecRef;  // This trigger PrepareRange => but that still needs to be exec in thread? (or wait for lock)
-end;
-
 { TFpThreadWorkerCallEntry }
 
 procedure TFpThreadWorkerCallEntry.DoExecute;
@@ -627,12 +627,6 @@ begin
   end;
 
   Queue(@UpdateCallstackEntry_DecRef);
-end;
-
-procedure TFpThreadWorkerCallEntry.DoRemovedFromLinkedList;
-begin
-  inherited DoRemovedFromLinkedList;
-  UpdateCallstackEntry_DecRef;
 end;
 
 { TFpThreadWorkerThreads }
