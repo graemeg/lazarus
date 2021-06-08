@@ -44,9 +44,9 @@ var
 
 
 
-debugln([
+debugln([AName, ' // ',
 codeBytes, '  ', asmInstr,
-'  ', p-@s[1]
+'  ', p-@s[1] ,' == ',Length(AData)
 ]);
 
     AssertEquals(AName+' Cnt bytes', Length(AData), p-@s[1]);
@@ -61,6 +61,7 @@ codeBytes, '  ', asmInstr,
     AExp := StringReplace(AExp, '  ', ' ', [rfReplaceAll]);  // space
     AExp := StringReplace(AExp, ',  ', ',', [rfReplaceAll]); // space
     AExp := r.Replace(AExp, '$1$2', True);
+    AExp := LowerCase(AExp);
     r.Free;
     AssertEquals(AName+' asm ', AExp, s);
 
@@ -73,7 +74,12 @@ begin
   DisAss := TX86AsmDecoder.Create(Process);
   try
 
-
+  TestDis('callq  0x7ffbf0250860',       #$e8#$99#$da#$04#$00        ,  'call +$0004DA99');
+  TestDis('callq  *0x6c1ec(%rip)',       #$ff#$15#$ec#$c1#$06#$00    ,  'call dword ptr [rip+$0006C1EC]');
+  TestDis('rex.W callq *0x724f2(%rip)',  #$48#$ff#$15#$f2#$24#$07#$00,  'call qword ptr [rip+$000724F2]');
+  TestDis('callq  0x100001f70',          #$e8#$7a#$48#$dc#$ff        ,  'call -$0023B786');
+  TestDis('callq  *0x100(%rbx)',         #$ff#$93#$00#$01#$00#$00    ,  'call dword ptr [rbx+$00000100]');
+  TestDis('callq  *(%rax)',              #$ff#$10                    ,  'call dword ptr [rax]');
 
   TestDis('add al,$05',                  #$04#$05,                             'add al,$05');
   TestDis('add ah,$05',                  #$80#$c4#$05,                         'add ah,$05');
@@ -229,6 +235,14 @@ begin
 
 
   Process.NewMode := dm32;
+
+  TestDis('call   0x77cf4d10',           #$e8#$67#$70#$fc#$ff        ,  'call -$00038F99');
+  TestDis('call   *0x7718202c',          #$ff#$15#$2c#$20#$18#$77    ,  'call dword ptr [$7718202C]');
+  TestDis('call   *%esi',                #$ff#$d6                    ,  'call esi');
+  TestDis('call   *0x80(%ebx)',          #$ff#$93#$80#$00#$00#$00    ,  'call dword ptr [ebx+$00000080]');
+  TestDis('call   0x4301a0',             #$e8#$c2#$de#$ff#$ff        ,  'call -$0000213E');
+  TestDis('call   *(%edx)',              #$ff#$12                    ,  'call dword ptr [edx]');
+  TestDis('call   *0x7c(%ebx)',          #$ff#$53#$7c                ,  'call dword ptr [ebx+$7C]');
 
   TestDis('add al,$05',                  #$04#$05,                             'add al,$05');
   TestDis('add ah,$05',                  #$80#$c4#$05,                         'add ah,$05');

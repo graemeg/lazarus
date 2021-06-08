@@ -589,6 +589,7 @@ begin
     t.CheckResults;
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     Debugger.ClearDebuggerMonitors;
     Debugger.FreeDebugger;
@@ -1358,6 +1359,7 @@ if Compiler.Version < 030300 then
 
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     Debugger.ClearDebuggerMonitors;
     Debugger.FreeDebugger;
@@ -1416,6 +1418,7 @@ begin
 
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     Debugger.ClearDebuggerMonitors;
     Debugger.FreeDebugger;
@@ -1744,6 +1747,7 @@ begin
 
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     tp.Free;
     Debugger.ClearDebuggerMonitors;
@@ -2126,6 +2130,7 @@ begin
 
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     t2.Free;
     Debugger.ClearDebuggerMonitors;
@@ -2442,6 +2447,7 @@ begin
 
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     Debugger.ClearDebuggerMonitors;
     Debugger.FreeDebugger;
@@ -2857,6 +2863,7 @@ begin
     end;
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     Debugger.ClearDebuggerMonitors;
     Debugger.FreeDebugger;
@@ -2913,6 +2920,7 @@ begin
 
 
   finally
+    Debugger.RunToNextPause(dcStop);
     t.Free;
     Debugger.ClearDebuggerMonitors;
     Debugger.FreeDebugger;

@@ -429,11 +429,12 @@ begin
     dcStepOut:  LazDebugger.StepOut;
     dcStepOverInstr: LazDebugger.StepOverInstr;
     dcStepIntoInstr: LazDebugger.StepIntoInstr;
+    dcStop:     LazDebugger.Stop;
     else
       exit;
   end;
   Result := WaitForFinishRun(ATimeOut, AWaitForInternal);
-  if LazDebugger.State = dsPause then
+  if (LazDebugger.State = dsPause) and (ACmd <> dcStop) then
     with LazDebugger.GetLocation do begin
       DebugLnExit('<<< RunToNextPause Ending at %s %d @ %x %s', [SrcFile, SrcLine, Address, dbgs(LazDebugger.State)]);
       TestLogger.DebugLn('at %s %d @ %x %s', [SrcFile, SrcLine, Address, dbgs(LazDebugger.State)]);
