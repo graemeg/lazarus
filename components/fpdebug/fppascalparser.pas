@@ -3620,8 +3620,10 @@ begin
        hide the structure.
     *)
     Result := Expression.FContext.FindSymbol(MemberName, Items[0].GetText);
-    if Result <> nil then
+    if Result <> nil then begin
+      {$IFDEF WITH_REFCOUNT_DEBUG}Result.DbgRenameReference(nil, 'DoGetResultValue'){$ENDIF};
       exit;
+    end;
   end;
 
 
