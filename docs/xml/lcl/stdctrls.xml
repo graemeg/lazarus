@@ -4493,7 +4493,16 @@
         <short>The virtual width of the list box, in pixels</short>
         <descr>
           <p>
-            This property determines, how far the list box can be scrolled horizontally. In a multi-column list box it also determines the total number of vertical columns, together with the <var>Columns</var> property.
+            <var>ScrollWidth</var> is an <var>Integer</var> property with the logical horizontal extent for the list box, or the scrollable area inside the control.  When ScrollWidth is set to a value larger than <var>ClientWidth</var>, the horizontal scrollbar is displayed for the control.
+          </p>
+          <p>
+            The value for ScrollWidth is read from the widgetset class (at run-time) when a Handle has been allocated for the control. Changing the value for the property causes the value in the widgetset class to be updated.
+          </p>
+          <p>
+            The default value for the property is <b>0</b> (<b>zero</b>).
+          </p>
+          <p>
+            Use <var>Columns</var> to set the number of adjacent vertical columns used to display the items in the control.
           </p>
         </descr>
         <seealso>

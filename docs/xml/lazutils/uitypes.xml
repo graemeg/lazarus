@@ -17,14 +17,193 @@
         <p>
           This file is part of the <file>lazutils</file> package.
         </p>
+        <remark>
+          The <file>UITypes</file> unit has been marked as deprecated in versions after 2.0.12. Use the <file>System.UITypes</file> unit from the FPC 3.2.0 (or higher) Run-time Library (RTL).
+        </remark>
       </descr>
 
-      <element name="Classes"/>
-      <element name="SysUtils"/>
+      <!-- unresolved external references -->
+      <element name="System.UITypes"/>
+
+      <element name="mtWarning">
+        <short>Alias to TMsgDlgType.mtWarning in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgType.mtWarning"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mtError">
+        <short>Alias to TMsgDlgType.mtError in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgType.mtError"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mtInformation">
+        <short>
+          Alias to TMsgDlgType.mtInformation in the System.UITypes unit for the FPC RTL
+        </short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgType.mtInformation"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mtConfirmation">
+        <short>
+          Alias to TMsgDlgType.mtConfirmation in the System.UITypes unit for the FPC RTL
+        </short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgType.mtConfirmation"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mtCustom">
+        <short>
+          Alias to TMsgDlgType.mtCustom in the System.UITypes unit for the FPC RTL
+        </short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgType.mtCustom"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbYes">
+        <short>Alias to TMsgDlgBtn.mbYes in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbYes"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbNo">
+        <short>Alias to TMsgDlgBtn.mbNo in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbNo"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbOK">
+        <short>Alias to TMsgDlgBtn.mbOK in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbOK"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbCancel">
+        <short>Alias to TMsgDlgBtn.mbCancel in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbCancel"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbAbort">
+        <short>Alias to TMsgDlgBtn.mbAbort in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbAbort"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbRetry">
+        <short>Alias to TMsgDlgBtn.mbRetry in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbRetry"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbIgnore">
+        <short>Alias to TMsgDlgBtn.mbIgnore in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbIgnore"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbAll">
+        <short>Alias to TMsgDlgBtn.mbAll in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbAll"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbNoToAll">
+        <short>Alias to TMsgDlgBtn.mbNoToAll in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbNoToAll"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbYesToAll">
+        <short>Alias to TMsgDlgBtn.mbYesToAll in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbYesToAll"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbHelp">
+        <short>Alias to TMsgDlgBtn.mbHelp in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbHelp"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
+
+      <element name="mbClose">
+        <short>Alias to TMsgDlgBtn.mbClose in the System.UITypes unit for the FPC RTL</short>
+        <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn.mbClose"/>
+        </seealso>
+        <version>
+          Available in FPC 3.2.0 and Lazarus versions after 2.0.12.
+        </version>
+      </element>
 
       <element name="TMsgDlgType">
         <short>
-          Defines the type of dialog implemented in a message box
+          Alias to the TMsgDlgType type in the FPC RTL
         </short>
         <descr>
           <p>
@@ -33,8 +212,12 @@
           <p>
             TMsgDlgType is used in several routines, such as: <var>MessageDlg</var>, <var>MessageDlgPos</var>,<var> MessageDlgPosHelp</var>, <var>CreateMessageDialog</var>, <var>QuestionDlg</var>, and <var>LazMessageDlg</var>.
           </p>
+          <remark>
+            TMsgDlgType has been deprecated in the UITypes unit for Lazarus versions after 2.0.12. Use the TMsgDlgType type from the System.UITypes unit in the FPC 3.2.0 RTL instead.
+          </remark>
         </descr>
         <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgType"/>
           <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
           <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
           <link id="#lcl.dialogs.CreateMessageDialog">CreateMessageDialog</link>
@@ -70,7 +253,7 @@
 
       <element name="TMsgDlgBtn">
         <short>
-          Defines the buttons that can be displayed in a message box
+          Alias to the TMsgDlgBtn type in the FPC RTL
         </short>
         <descr>
           <p>
@@ -79,8 +262,12 @@
           <p>
             Values in the enumeration are used in various routines, such as: <var>MessageDlg</var>, <var>MessageDlgPos</var>, <var>MessageDlgPosHelp</var>, <var>CreateMessageDialog</var>, <var>QuestionDlg</var>, and <var>LazMessageDlg</var>.
           </p>
+          <remark>
+            TMsgDlgBtn has been deprecated in the UITypes unit for Lazarus versions after 2.0.12. Use the TMsgDlgBtn type from the System.UITypes unit in the FPC 3.2.0 RTL instead.
+          </remark>
         </descr>
         <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgBtn"/>
           <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
           <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
           <link id="#lcl.dialogs.MessageDlgPosHelp">MessageDlgPosHep</link>
@@ -152,14 +339,18 @@
 
       <element name="TMsgDlgButtons">
         <short>
-          Stores values from the TMsgDlgBtn enumeration
+          Alias to the TMsgDlgButtons type in the FPC RTL
         </short>
         <descr>
           <p>
             <var>TMsgDlgButtons</var> is a set type used to store zero or more values from the TMsgDlgBtn enumeration. TMsgDlgButtons is passed as an argument to routines like: <var>MessageDlg</var>, <var>MessageDlgPos</var>, <var>MessageDlgPosHelp</var>, <var>CreateMessageDialog</var>, <var>QuestionDlg</var>, and <var>LazMessageDlg</var>.
           </p>
+          <remark>
+            TMsgDlgButtons has been deprecated in the UITypes unit for Lazarus versions after 2.0.12. Use the TMsgDlgButtons type from the System.UITypes unit in the FPC 3.2.0 RTL instead.
+          </remark>
         </descr>
         <seealso>
+          <link id="#rtl.system.uitypes.TMsgDlgButtons"/>
           <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
           <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
           <link id="#lcl.dialogs.MessageDlgPosHelp">MessageDlgPosHelp</link>
@@ -171,7 +362,7 @@
 
       <element name="TModalResult">
         <short>
-          Value returned from a modal dialog box
+          Alias to the TModalResult type in the FPC RTL
         </short>
         <descr>
           <p>
@@ -195,8 +386,12 @@
             <li>mrClose</li>
             <li>mrLast</li>
           </ul>
+          <remark>
+            TModalResult has been deprecated in the UITypes unit for Lazarus versions after 2.0.12. Use the TMsgDlgType type from the System.UITypes unit in the FPC 3.2.0 RTL instead.
+          </remark>
         </descr>
         <seealso>
+          <link id="#rtl.system.uitypes.TModalResult"/>
           <link id="#lcl.dialogs.MessageDlg">MessageDlg</link>
           <link id="#lcl.dialogs.MessageDlgPos">MessageDlgPos</link>
           <link id="#lcl.dialogs.MessageDlgPosHelp">MessageDlgPosHelp</link>
@@ -208,54 +403,175 @@
 
       <element name="PModalResult">
         <short>
-          Pointer to a modal result value
+          Alias to the PModalResult type in the FPC RTL
         </short>
         <descr>
           <p>
             <var>PModalResult</var> is a pointer type to a <var>TModalResult</var> value.
           </p>
+          <remark>
+            PModalResult has been deprecated in the UITypes unit for Lazarus versions after 2.0.12. Use the TMsgDlgType type from the System.UITypes unit in the FPC 3.2.0 RTL instead.
+          </remark>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.system.uitypes.PModalResult"/>
+        </seealso>
       </element>
 
       <element name="mrNone">
         <short>Dialog was closed without pressing a button</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrNone constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrNone"/>
+        </seealso>
       </element>
+
       <element name="mrOK">
         <short>OK button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrOK constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrOK"/>
+        </seealso>
       </element>
+
       <element name="mrCancel">
         <short>Cancel button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrCancel constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrCancel"/>
+        </seealso>
       </element>
+
       <element name="mrAbort">
         <short>Abort button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrAbort constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrAbort"/>
+        </seealso>
       </element>
+
       <element name="mrRetry">
         <short>Retry button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrRetry constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrRetry"/>
+        </seealso>
       </element>
+
       <element name="mrIgnore">
         <short>Ignore button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrIgnore constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrIgnore"/>
+        </seealso>
       </element>
+
       <element name="mrYes">
         <short>Yes button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrYes constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrYes"/>
+        </seealso>
       </element>
+
       <element name="mrNo">
         <short>No button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrNo constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrNo"/>
+        </seealso>
       </element>
+
       <element name="mrAll">
         <short>All button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrAll constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrAll"/>
+        </seealso>
       </element>
+
       <element name="mrNoToAll">
         <short>No to All button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrNoToAll constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrNoToAll"/>
+        </seealso>
       </element>
+
       <element name="mrYesToAll">
         <short>Yes to All button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrYesToAll constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrYesToAll"/>
+        </seealso>
       </element>
+
       <element name="mrClose">
         <short>Close button was clicked</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrClose constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrClose"/>
+        </seealso>
       </element>
+
       <element name="mrLast">
         <short>Last modal result value (same as mrClose)</short>
+        <descr>
+          <remark>
+            Deprecated for Lazarus versions after 2.0.12. Use the mrLast constant from the System.UITypes unit in the FPC 3.2.0 RTL.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#rtl.system.uitypes.mrLast"/>
+        </seealso>
       </element>
 
       <element name="ModalResultStr">
