@@ -142,7 +142,7 @@ begin
   Cfg := GetCfgFileContent;
   if Cfg <> nil then begin
     Warn := '';
-    // insert Cfg at start. For duplicates the latest occurence takes precedence
+    // insert Cfg at start. For duplicates the latest occurrence takes precedence
     for i := 0 to Cfg.Count - 1 do begin
       s := Cfg[i];
       if (s <> '') and (s[1] = '-') then

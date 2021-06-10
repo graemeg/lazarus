@@ -6310,7 +6310,7 @@ end;
 
 function FindBaseComponentClass(AnUnitInfo: TUnitInfo; const AComponentClassName,
   DescendantClassName: string; out AComponentClass: TComponentClass): boolean;
-// returns false if an error occured
+// returns false if an error occurred
 // Important: returns true even if AComponentClass=nil
 var
   ResFormat: TUnitResourcefileFormatClass;
