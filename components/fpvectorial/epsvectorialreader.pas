@@ -489,7 +489,7 @@ end;
 
 {@@ Rules for parsing PostScript files:
 
-* Coments go from the first occurence of % outside a line to the next new line
+* Coments go from the first occurrence of % outside a line to the next new line
 * The only accepted characters are printable ASCII ones, plus spacing ASCII chars
   See IsValidPostScriptChar about that
 }
