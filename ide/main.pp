@@ -2288,7 +2288,7 @@ procedure TMainIDE.SetupStartProject;
   begin
     debugln(['Hint: (lazarus) AskIfLoadLastFailingProject START']);
     Result:=IDEQuestionDialog(lisOpenProject2,
-        Format(lisAnErrorOccuredAtLastStartupWhileLoadingLoadThisPro,
+        Format(lisAnErrorOccurredAtLastStartupWhileLoadingLoadThisPro,
                [EnvironmentOptions.LastSavedProjectFile, LineEnding+LineEnding]),
         mtWarning, [mrYes, lisOpenProjectAgain,
                     mrNoToAll, lisStartWithANewProject]) = mrYes;

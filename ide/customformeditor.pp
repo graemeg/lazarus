@@ -427,7 +427,7 @@ Begin
         ' "'+OldName+':'+OldClassName+'" ',E.Message);
       DumpExceptionBackTrace;
       IDEMessageDialog(lisCCOErrorCaption,
-        Format(lisCFEAnExceptionOccuredDuringDeletionOf,
+        Format(lisCFEAnExceptionOccurredDuringDeletionOf,
                [LineEnding, OldName, OldClassName, LineEnding, E.Message]),
         mtError,[mbOk]);
     end;

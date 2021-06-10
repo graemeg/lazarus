@@ -256,7 +256,7 @@ resourcestring
   lisKMPublishProject = 'Publish project';
   lisOpenTheFileAsNormalSource = 'Open the file as normal source';
   lisOpenAsXmlFile = 'Open as XML file';
-  lisAnErrorOccuredAtLastStartupWhileLoadingLoadThisPro = 'An error occurred '
+  lisAnErrorOccurredAtLastStartupWhileLoadingLoadThisPro = 'An error occurred '
     +'at last startup while loading %s!'
     +'%sLoad this project again?';
   lisOpenProjectAgain = 'Open project again';
@@ -6196,7 +6196,7 @@ resourcestring
     +'Lazarus package files (.lpk). Do not build.';
 
   // Custom form editor
-  lisCFEAnExceptionOccuredDuringDeletionOf = 'An exception occurred during '
+  lisCFEAnExceptionOccurredDuringDeletionOf = 'An exception occurred during '
     +'deletion of%s"%s:%s"%s%s';
   lisCFETCustomFormEditorDeleteComponentWhereIsTheTCustomN = 'TCustomFormEditor'
     +'.DeleteComponent  Where is the TCustomNonFormDesignerForm? %s';
