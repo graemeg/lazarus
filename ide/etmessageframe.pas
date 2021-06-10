@@ -263,7 +263,7 @@ type
       SkipStart, Downwards: boolean;
       out View: TLMsgWndView; out LineNumber: integer): boolean;
     procedure Select(Msg: TMessageLine; DoScroll: boolean);
-    function SelectNextOccurence(Downwards: boolean): boolean;
+    function SelectNextOccurrence(Downwards: boolean): boolean;
     function SelectNextShown(Offset: integer): boolean;
     function SelectLast(DoScroll, FullyVisible: boolean): boolean;
     function SelectFirst(DoScroll, FullyVisible: boolean): boolean;
@@ -2023,7 +2023,7 @@ begin
   EndUpdate;
 end;
 
-function TMessagesCtrl.SelectNextOccurence(Downwards: boolean): boolean;
+function TMessagesCtrl.SelectNextOccurrence(Downwards: boolean): boolean;
 var
   View: TLMsgWndView;
   LineNumber: integer;
@@ -3088,12 +3088,12 @@ end;
 
 procedure TMessagesFrame.SearchNextSpeedButtonClick(Sender: TObject);
 begin
-  MessagesCtrl.SelectNextOccurence(true);
+  MessagesCtrl.SelectNextOccurrence(true);
 end;
 
 procedure TMessagesFrame.SearchPrevSpeedButtonClick(Sender: TObject);
 begin
-  MessagesCtrl.SelectNextOccurence(false);
+  MessagesCtrl.SelectNextOccurrence(false);
 end;
 
 procedure TMessagesFrame.ShowIDMenuItemClick(Sender: TObject);
