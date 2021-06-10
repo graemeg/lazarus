@@ -1570,7 +1570,7 @@ begin
 
   if not IsInfinite(lo.FValue) then begin
     if not IsNan(AValues[start].FValue) then begin
-      // The lower bound value occured after the first in-range value,
+      // The lower bound value occurred after the first in-range value,
       // so we did not reserve space for it. Hopefully rare case.
       for i := cnt downto start + 1 do
         AValues[i] := AValues[i - 1];

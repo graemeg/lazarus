@@ -513,13 +513,13 @@ begin
     AHeight := Max(AHeight, GetSystemMetrics(SM_CYMENUCHECK) + 2);
 end;
 
-{ standard MouseDown handler: checks if the click occured on the checkbox,
+{ standard MouseDown handler: checks if the click occurred on the checkbox,
   on the series icon, or on the text.
   The visibility state of the item's series is changed when clicking on the
   checkbox, and an event OnCheckboxClick is generated.
   An event OnSeriesIconClick is generated when double-clicking on the
   series icon; the method stores the series list index here.
-  An event OnItemClick is generated when the click occured neither on the
+  An event OnItemClick is generated when the click occurred neither on the
   checkbox nor the series icon.
 }
 procedure TChartListbox.MouseDown(
