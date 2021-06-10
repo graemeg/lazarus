@@ -1665,7 +1665,7 @@ var
   CurVariable: String;
   IsColumns: Boolean;
   SavedAllPages: Integer;      // number of pages in entire report
-  ErrorFlag: Boolean;          // error occured through TfrView drawing
+  ErrorFlag: Boolean;          // error occurred through TfrView drawing
   ErrorStr: String;            // error description
   SubValue: String;            // used in GetValue event handler
   ObjID: Integer = 0;
