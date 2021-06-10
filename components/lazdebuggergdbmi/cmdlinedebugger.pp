@@ -122,7 +122,7 @@ var
 {------------------------------------------------------------------------------
   Function: WaitForHandles
   Params:  AHandles:              A set of handles to wait for (max 32)
-  TimeOut: Max Time in milli-secs => set to 0 if timeout occured
+  TimeOut: Max Time in milli-secs => set to 0 if timeout occurred
   Returns: BitArray of handles set, 0 when an error occoured
  ------------------------------------------------------------------------------}
 function TCmdLineDebugger.WaitForHandles(const AHandles: array of Integer; var ATimeOut: Integer): Integer;
