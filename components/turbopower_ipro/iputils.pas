@@ -287,7 +287,7 @@ begin
   Result := Copy(Strng, StrStart, StrEnd - StrStart + 1);
 end;
 
-{ Find leftmost occurence of character C in string S }
+{ Find leftmost occurrence of character C in string S }
 {* If C not found returns 0 }
 function CharPos(C: AnsiChar; const S : string): Integer;
 var
@@ -422,7 +422,7 @@ begin
   Result := i;
 end;
 
-{ Find location of first occurence of a substring (SubStr) in a string (S) }
+{ Find location of first occurrence of a substring (SubStr) in a string (S) }
 { past a particular index (Idx) }
 { * Result is relative to the start of the entire original string }
 { * Returns 0 if substring not found }
