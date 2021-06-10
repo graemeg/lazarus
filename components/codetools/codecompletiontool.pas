@@ -9452,7 +9452,7 @@ function TCodeCompletionCodeTool.CompleteCode(CursorPos: TCodeXYPosition;
 
     UpIdentifier := GetUpAtom;
 
-    //find first occurence of UpIdentifier from procedure begin until CleanCursorPos
+    //find first occurrence of UpIdentifier from procedure begin until CleanCursorPos
     //we are interested only in local variables/identifiers
     //  --> the UpIdentifier must not be preceded by a point ("MyObject.I" - if we want to complete I)
     //      and then do another check if it is not available with the "with" command, e.g.
@@ -9591,7 +9591,7 @@ begin
       if TryComplete(CursorNode, CleanCursorPos) then
         exit(true);
 
-      { Find the first occurence of the (local) identifier at cursor in current
+      { Find the first occurrence of the (local) identifier at cursor in current
         procedure body and try again. }
       if TryFirstLocalIdentOccurence(CursorNode,OrigCleanCursorPos,CleanCursorPos) then
         exit(true);
