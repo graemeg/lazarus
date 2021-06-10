@@ -297,7 +297,7 @@ begin
   if (APage >= 1) and (APage <= PageCount) then
     ActivePage := APage - 1
   else
-    raise Exception.CreateFmt(sErrorOccured, [self.ClassName]);
+    raise Exception.CreateFmt(sErrorOccurred, [self.ClassName]);
 end;
 
 procedure TlrCodeReport.EnableMillimeters;

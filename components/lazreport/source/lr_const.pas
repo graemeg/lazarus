@@ -268,7 +268,7 @@ resourcestring
   sInches = 'Inches';
   sVirtualDataset = 'Virtual Dataset';
   sFRVariables = 'FR variables';
-  sErrorOccured = 'An error occurred during calculation';
+  sErrorOccurred = 'An error occurred during calculation';
   sSpecVal = 'Other';
   sInvalidFRFReport = 'Invalid binary report';
   sInvalidLRFReport = 'Invalid report format';

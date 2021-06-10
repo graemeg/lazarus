@@ -6441,7 +6441,7 @@ var
   i: Integer;
 begin
   ErrorFlag := True;
-  ErrorStr := sErrorOccured;
+  ErrorStr := sErrorOccurred;
   for i := 0 to CurView.Memo.Count - 1 do
     ErrorStr := ErrorStr + LineEnding + CurView.Memo[i];
   ErrorStr := ErrorStr + LineEnding +
