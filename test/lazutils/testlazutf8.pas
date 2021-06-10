@@ -66,7 +66,7 @@ end;
 
 procedure TTestLazUTF8.TestUTF8Pos;
 begin
-  AssertEquals('Skip first occurence',4,UTF8Pos('ab','abcabc',2));
+  AssertEquals('Skip first occurrence',4,UTF8Pos('ab','abcabc',2));
   AssertEquals('Not found',0,UTF8Pos('abc'#0,'abcabc'));
   AssertEquals('Check #0',2,UTF8Pos('bc'#0,'abc'#0'abc'));
 end;
