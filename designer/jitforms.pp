@@ -1925,7 +1925,7 @@ begin
   Action:=mrCancel;
   FCurReadErrorMsg:=ErrorMsg;
   FCurUnknownProperty:=''; // ToDo find name property
-  // find out, what error occured
+  // find out, what error occurred
   if RightStr(ErrorMsg,length(SUnknownProperty))=SUnknownProperty then begin
     ErrorType:=jfeUnknownProperty;
     Action:=mrIgnore;
