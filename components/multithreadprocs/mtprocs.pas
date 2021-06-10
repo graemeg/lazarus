@@ -308,7 +308,7 @@ begin
   try
     // remove from group
     if Item.FGroup<>nil then begin
-      // an exception occured
+      // an exception occurred
       Item.FGroup.EnterExceptionState(E);
       Item.FGroup.RemoveThread(Self);
       Item.FGroup:=nil;
@@ -873,7 +873,7 @@ begin
     // free terminated threads (terminated, because of exceptions)
     CleanTerminatedThreads;
   end;
-  // if the exception occured in a helper thread raise it now
+  // if the exception occurred in a helper thread raise it now
   if HelperThreadException<>nil then
     raise HelperThreadException;
 end;
