@@ -9416,7 +9416,7 @@ function TCodeCompletionCodeTool.CompleteCode(CursorPos: TCodeXYPosition;
     end;
   end;
 
-  function TryFirstLocalIdentOccurence(CursorNode: TCodeTreeNode;
+  function TryFirstLocalIdentOccurrence(CursorNode: TCodeTreeNode;
     OrigCleanCursorPos, CleanCursorPos: Integer): boolean;
   var
     AtomContextNode, StatementNode: TCodeTreeNode;
@@ -9475,7 +9475,7 @@ function TCodeCompletionCodeTool.CompleteCode(CursorPos: TCodeXYPosition;
             FCompletingCursorNode:=CursorNode;
             try
               if not CleanPosToCodePos(OrigCleanCursorPos,OldCodePos) then
-                RaiseException(20170421201838,'TCodeCompletionCodeTool.TryFirstLocalIdentOccurence CleanPosToCodePos');
+                RaiseException(20170421201838,'TCodeCompletionCodeTool.TryFirstLocalIdentOccurrence CleanPosToCodePos');
               CompleteCode:=TryCompleteLocalVar(LastCurPos.StartPos,AtomContextNode);
               AdjustCursor(OldCodePos,OldTopLine,NewPos,NewTopLine);
               exit(true);
@@ -9593,7 +9593,7 @@ begin
 
       { Find the first occurrence of the (local) identifier at cursor in current
         procedure body and try again. }
-      if TryFirstLocalIdentOccurence(CursorNode,OrigCleanCursorPos,CleanCursorPos) then
+      if TryFirstLocalIdentOccurrence(CursorNode,OrigCleanCursorPos,CleanCursorPos) then
         exit(true);
     except
       on E: ECodeToolError do
