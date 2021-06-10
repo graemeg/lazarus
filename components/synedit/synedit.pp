@@ -3671,26 +3671,26 @@ begin
       exit;
 
     if FLeftGutter.Visible and (X < FLeftGutter.Width) then begin
-      // mouse event occured in Gutter ?
+      // mouse event occurred in Gutter ?
       if FLeftGutter.MaybeHandleMouseAction(Info, @DoHandleMouseAction) then
         exit;
     end
     else
     if FRightGutter.Visible and (X > ClientWidth - FRightGutter.Width) then begin
-      // mouse event occured in Gutter ?
+      // mouse event occurred in Gutter ?
       if FRightGutter.MaybeHandleMouseAction(Info, @DoHandleMouseAction) then
         exit;
     end
     else
     begin
-      // mouse event occured in selected block ?
+      // mouse event occurred in selected block ?
       if SelAvail and (X >= FTextArea.Bounds.Left) and (X < FTextArea.Bounds.Right) and
          (Y >= FTextArea.Bounds.Top) and (Y < FTextArea.Bounds.Bottom) and
          IsPointInSelection(FInternalCaret.LineBytePos)
       then
         if DoHandleMouseAction(FMouseSelActions.GetActionsForOptions(MouseOptions), Info) then
           exit;
-      // mouse event occured in text?
+      // mouse event occurred in text?
       if DoHandleMouseAction(FMouseTextActions.GetActionsForOptions(MouseOptions), Info) then
         exit;
     end;

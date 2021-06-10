@@ -58,7 +58,7 @@ uses
 type
   PSynReplaceCharsArray = ^TSynReplaceCharsArray;
   { Array to hold the replacements strings for chars that are invalid for the
-    output format, occurences of the chars that have a corresponding entry in
+    output format, occurrences of the chars that have a corresponding entry in
     this array are replaced with the string the entry points to.  Descendant
     classes have to fill it accordingly. }
   TSynReplaceCharsArray = array[char] of PChar;
