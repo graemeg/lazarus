@@ -1131,6 +1131,7 @@ begin
     end;
   GDK_BUTTON_PRESS:
     begin
+      writeln('Press:',TGtk3Widget(Data).LCLObject.ClassName);
       // set focus before gtk does that, so we have same behaviour as other ws
       if TGtk3Widget(Data).GetFocusableByMouse and
         not TGtk3Widget(Data).LCLObject.Focused and
@@ -1149,7 +1150,11 @@ begin
           LCLIntf.SetFocus(HWND(TGtk3Widget(Data)));
       end;
 
-      Result := TGtk3Widget(Data).GtkEventMouse(Widget , Event);
+      if TGtk3Widget(Data).LCLObject is TButtonControl then exit;
+
+
+      TGtk3Widget(Data).GtkEventMouse(Widget , Event);
+      Result:=true;
     end;
   GDK_2BUTTON_PRESS:
     begin
@@ -1158,6 +1163,8 @@ begin
         not TGtk3Widget(Data).LCLObject.Focused and
         TGtk3Widget(Data).LCLObject.CanFocus then
           LCLIntf.SetFocus(HWND(TGtk3Widget(Data)));
+
+      if TGtk3Widget(Data).LCLObject is TButtonControl then exit;
       Result := TGtk3Widget(Data).GtkEventMouse(Widget , Event);
     end;
   GDK_3BUTTON_PRESS:
@@ -1167,13 +1174,21 @@ begin
         not TGtk3Widget(Data).LCLObject.Focused and
         TGtk3Widget(Data).LCLObject.CanFocus then
           LCLIntf.SetFocus(HWND(TGtk3Widget(Data)));
+
+      if TGtk3Widget(Data).LCLObject is TButtonControl then exit;
+
+
       Result := TGtk3Widget(Data).GtkEventMouse(Widget , Event);
     end;
   GDK_BUTTON_RELEASE:
     begin
-      if not ((csClickEvents in TGtk3Widget(Data).LCLObject.ControlStyle) and
-         (csClicked in TGtk3Widget(Data).LCLObject.ControlState)) then
-        Result := TGtk3Widget(Data).GtkEventMouse(Widget , Event);
+      writeln('Release:',TGtk3Widget(Data).LCLObject.ClassName);
+      {if not ((csClickEvents in TGtk3Widget(Data).LCLObject.ControlStyle) and
+         (csClicked in TGtk3Widget(Data).LCLObject.ControlState)) then }
+
+      if TGtk3Widget(Data).LCLObject is TButtonControl then exit;
+
+      Result := TGtk3Widget(Data).GtkEventMouse(Widget , Event);
     end;
   GDK_KEY_PRESS:
     begin
@@ -2579,7 +2594,11 @@ end;
 procedure TGtk3Widget.DestroyWidget;
 begin
   if IsValidHandle and FOwnWidget then
+  begin
+    DbgOut(#10'destroying '+Classname+' ... ');
     FWidget^.destroy_;
+    DbgOut(Classname+' destroyed.'+#10);
+  end;
   FWidget := nil;
 end;
 
@@ -5799,6 +5818,9 @@ var
   AScrollStyle: TPoint;
   PtrType: GType;
   TreeModel: PGtkTreeModel;
+  iter:TGtkTreeIter;
+  pxb:PGdkPixbuf;
+  err:gint;
 begin
   FImages := nil;
   FScrollX := 0;
@@ -5810,12 +5832,24 @@ begin
 
   PtrType := G_TYPE_POINTER;
 
-  TreeModel := PGtkTreeModel(gtk_list_store_newv(1, @PtrType));
+
 
   if TListView(AListView).ViewStyle in [vsIcon,vsSmallIcon] then
-    FCentralWidget := TGtkIconView.new_with_model(TreeModel)
+  begin
+    TreeModel := PGtkTreeModel(gtk_list_store_new(3, [
+      G_TYPE_POINTER, // ListItem pointer
+      G_TYPE_STRING, // text
+     gdk_pixbuf_get_type() // pixbuf
+     ]));
+    FCentralWidget := TGtkIconView.new_with_model(TreeModel);
+    PGtkIconView(FCentralWidget)^.set_text_column(1);
+    PGtkIconView(FCentralWidget)^.set_pixbuf_column(2);
+  end
   else
+  begin
+    TreeModel := PGtkTreeModel(gtk_list_store_newv(1, @PtrType));
     FCentralWidget := TGtkTreeView.new_with_model(TreeModel);
+  end;
 
   FIsTreeView := not (TListView(AListView).ViewStyle in [vsIcon,vsSmallIcon]);
 
@@ -6195,6 +6229,8 @@ var
   AModel: PGtkTreeModel;
   Iter: TGtkTreeIter;
   NewIndex: Integer;
+  bmp:TBitmap;
+  pxb:PGdkPixbuf;
 begin
   if not IsWidgetOK then
     exit;
@@ -6207,10 +6243,22 @@ begin
     NewIndex := AModel^.iter_n_children(nil)
   else
     NewIndex := AIndex;
-  // AGValue.g_type := G_TYPE_POINTER;
-  // AGValue.set_pointer(AItem);
-  gtk_list_store_insert_with_values(PGtkListStore(AModel), @Iter, NewIndex, [0, Pointer(AItem), -1]);
-  // PGtkListStore(AModel)^.insert_with_valuesv(@Iter, NewIndex, @AColumns, @AGValue, 1);
+
+  if IsTreeView then
+    gtk_list_store_insert_with_values(PGtkListStore(AModel), @Iter, NewIndex,
+      [0, Pointer(AItem), -1])
+  else
+  begin
+    bmp:=TBitmap.Create;
+    TListView(LCLObject).LargeImages.GetBitmap(AIndex,bmp);
+    pxb:=TGtk3Image(bmp.Handle).Handle;
+    gtk_list_store_insert_with_values(PGtkListStore(AModel), @Iter, NewIndex,
+      [0, Pointer(AItem),
+       1, PChar(AItem.Caption),
+       2, pxb, -1] );
+    fImages.Add(bmp);
+  end;
+
 end;
 
 procedure TGtk3ListView.ItemSetText(AIndex, ASubIndex: Integer;
@@ -6221,8 +6269,7 @@ var
 begin
   if not IsWidgetOK then
     exit;
-  if not getContainerWidget^.get_realized then
-    exit;
+
   if IsTreeView then
   begin
     Path := gtk_tree_path_new_from_indices(AIndex, [-1]);
