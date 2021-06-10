@@ -721,7 +721,7 @@ type
   end;
 
 { We use static variable so almost no stack is required, and is thus
-  more safe when an error has occured in the program }
+  more safe when an error has occurred in the program }
 {$WARNING This code is not thread-safe, and needs improvement }
 var
   stabcnt,              { amount of stabs }
