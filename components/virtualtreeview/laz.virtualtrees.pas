@@ -1524,7 +1524,7 @@ type
     tsScrollPending,          // Set when waiting for the scroll delay time to elapse.
     tsSizing,                 // Set when the tree window is being resized. This is used to prevent recursive calls
                               // due to setting the scrollbars when sizing.
-    tsStopValidation,         // Cache validation can be stopped (usually because a change has occured meanwhile).
+    tsStopValidation,         // Cache validation can be stopped (usually because a change has occurred meanwhile).
     tsStructureChangePending, // The structure of the tree has been changed while the update was locked.
     tsSynchMode,              // Set when the tree is in synch mode, where no timer events are triggered.
     tsThumbTracking,          // Stop updating the horizontal scroll bar while dragging the vertical thumb and vice versa.
@@ -1547,7 +1547,7 @@ type
   );
 
   TChangeStates = set of (
-    csStopValidation,         // Cache validation can be stopped (usually because a change has occured meanwhile).
+    csStopValidation,         // Cache validation can be stopped (usually because a change has occurred meanwhile).
     csUseCache,               // The tree's node caches are validated and non-empty.
     csValidating,             // The tree's node caches are currently validated.
     csValidationNeeded        // Something in the structure of the tree has changed. The cache needs validation.
