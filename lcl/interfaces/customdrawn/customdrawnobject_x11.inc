@@ -744,7 +744,7 @@ begin
     begin
       lTimer := GetTimer(i);
 
-      // if selectresult = 0 then a timeout occured, in other cases guess how
+      // if selectresult = 0 then a timeout occurred, in other cases guess how
       // much time passed
       if selectresult = 0 then Inc(lTimer.NativeHandle, lTimeoutInterval)
       else Inc(lTimer.NativeHandle, 10);

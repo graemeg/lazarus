@@ -237,12 +237,12 @@ begin
           begin
             WInfo^.FormWindowState := Event^.window_state;
             // needed to lock recursions, normally send_event can be 0 or 1
-            // we add 2 to know if recursion occured.
+            // we add 2 to know if recursion occurred.
             WInfo^.FormWindowState.send_event := 2;
             g_idle_add(@gtk2WSDelayedWindowStateChange, Data);
           end else
           begin
-            // our send_event flag is 2, mean recursion occured
+            // our send_event flag is 2, mean recursion occurred
             // so we have to normalize things first.
             while WInfo^.FormWindowState.send_event = 2 do
             begin

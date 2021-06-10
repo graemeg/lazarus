@@ -108,7 +108,7 @@ begin
   Result := objc_getClass({Str_TPrivateCocoaCarbonTrayIcon} Str_NSObject);
 end;
 
-{Removes/replaces all occurences of a character from a string}
+{Removes/replaces all occurrences of a character from a string}
 function TPrivateCocoaCarbonTrayIcon.TrimAllChar(const S: string; const ch: Char): string;
 var
   buf: string;

@@ -835,7 +835,7 @@ var
     try
       if not gdk_pixbuf_loader_write(Loader, TGdkPixBufBuffer(@Header), MIN_LOADER_HEADER_SIZE {$ifdef gtk2},nil{$endif})
       then begin
-        DebugLn('WARNING: [TGtkWidgetSet.CreateBitmap] Error occured loading Bitmap Header!');
+        DebugLn('WARNING: [TGtkWidgetSet.CreateBitmap] Error loading Bitmap Header!');
         Exit;
       end;
       
@@ -862,14 +862,14 @@ var
     
       if not res
       then begin
-        DebugLn('WARNING: [TGtkWidgetSet.CreateBitmap] Error occured loading Image!');
+        DebugLn('WARNING: [TGtkWidgetSet.CreateBitmap] Error loading Image!');
         Exit;
       end;
 
       Src := gdk_pixbuf_loader_get_pixbuf(loader);
       if Src = nil
       then begin
-        DebugLn('WARNING: [TGtkWidgetSet.CreateBitmap] Error occured loading Pixbuf!');
+        DebugLn('WARNING: [TGtkWidgetSet.CreateBitmap] Error loading Pixbuf!');
         Exit;
       end;
 

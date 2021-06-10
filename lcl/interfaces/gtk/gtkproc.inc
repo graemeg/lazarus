@@ -277,7 +277,7 @@ begin
   {$IFDEF VerboseGtkToDos}{$note TODO: enable standard error_log handling}{$ENDIF}
   {$IfDef REPORT_GDK_ERRORS}
   If (Xerror<>0) then
-    RaiseGDBException('A GDK/X Error occured, this is normally fatal. The error code was : ' + IntToStr(Xerror));
+    RaiseGDBException('A GDK/X Error occurred, this is normally fatal. The error code was: ' + IntToStr(Xerror));
   {$EndIf}
 end;
 

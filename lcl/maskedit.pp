@@ -1157,7 +1157,7 @@ begin
   end;
   if HasCommaAndPeriod then
   begin
-    //When mask has both period and comma only the first occurence is jumpable
+    //When mask has both period and comma only the first occurrence is jumpable
     if P2 < P then HasNextDot := False;
   end;
   CanJump := HasNextDot and (P < FMaskLength) and (not IsLiteral(P+1));

@@ -819,7 +819,7 @@ begin
   end;
   {$endif}
 
-  // if overflow occured, then previous SetLength() would have fixed the buffer
+  // if overflow occurred, then previous SetLength() would have fixed the buffer
   // size, so run Xutf8LookupString again to read correct value.
   if CDWidgetset.ComposeStatus = XBufferOverflow then
     Xutf8LookupString(CDWidgetset.InputContext, @Event, @CDWidgetset.ComposeBuffer[1],

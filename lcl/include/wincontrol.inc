@@ -7604,7 +7604,7 @@ begin
     AdjustSize;
   finally
     //DebugLn(['TWinControl.CreateWnd created ',DbgSName(Self),' enable autosizing ...']);
-    (* If an error occured and FHandle was not created,
+    (* If an error occurred and FHandle was not created,
        then EnableAutoSizing must not be called.
        EnableAutoSizing will need the Handle, and trigger another attempt to create it.
        This leads to an endless loop/recursion.

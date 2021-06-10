@@ -5717,11 +5717,11 @@ begin
      (CursorNode <> nil) then
   begin
     if FMouseDownOnFoldingSign then
-      // mousedown occured on expand sign -> expand/collapse
+      // mousedown occurred on expand sign -> expand/collapse
       CursorNode.Expanded := not CursorNode.Expanded
     else if (LogicalX >= CursorNode.DisplayStateIconLeft) or (tvoRowSelect in Options) then
     begin
-      // mousedown occured in text or icon -> select node and begin drag operation
+      // mousedown occurred in text or icon -> select node and begin drag operation
       {$IFDEF VerboseDrag}
       DebugLn(['TCustomTreeView.MouseDown In Text ',DbgSName(Self),' MouseCapture=',MouseCapture]);
       {$ENDIF}
