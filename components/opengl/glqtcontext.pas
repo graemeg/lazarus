@@ -266,7 +266,7 @@ end;
 function CustomXErrorHandler({%H-}para1:PDisplay; para2:PXErrorEvent):cint;cdecl;
 begin
   if para2^.error_code=8 then begin
-    raise Exception.Create('A BadMatch X error occured. Most likely the requested OpenGL version is invalid.');
+    raise Exception.Create('A BadMatch X error occurred. Most likely the requested OpenGL version is invalid.');
   end;
   Result:=0;
 end;
