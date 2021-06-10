@@ -234,7 +234,7 @@ type
 // A helper class that contains pointers to a number of controls.
 // This class is used to ease the event handling with controls.
 // The implementation should simply call the appropriate methods
-// of this class when appropriate events occure.
+// of this class when appropriate events occur.
  crtl_container_ptr = ^ctrl_container;
  ctrl_container = object
    m_ctrl : array[0..max_ctrl - 1 ] of ctrl_ptr;

@@ -95,7 +95,7 @@ type
    procedure point_size_  (s : double );
 
   // Event handlers. Just call them if the respective events
-  // in your system occure. The functions return true if redrawing
+  // in your system occur. The functions return true if redrawing
   // is required.
    function  in_rect(x ,y : double ) : boolean; virtual;
 

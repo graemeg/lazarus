@@ -125,7 +125,7 @@ begin
   if m_markers.size and 1 <> 0 then
    begin
    // Initial state, the first coordinate was added.
-   // If two of more calls of start_vertex() occures
+   // If two of more calls of start_vertex() occur
    // we just modify the last one.
     ct.Construct         (x ,y );
     m_markers.modify_last(@ct );
