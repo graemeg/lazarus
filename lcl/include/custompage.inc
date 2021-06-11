@@ -1,4 +1,4 @@
-{%MainUnit ../extctrls.pp}
+{%MainUnit ../comctrls.pp}
 
 {
  *****************************************************************************
@@ -280,4 +280,4 @@ begin
   Result := False;
 end;
 
-// included by extctrls.pp
+// included by comctrls.pp
