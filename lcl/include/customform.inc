@@ -706,7 +706,7 @@ begin
   end;
   { call onShow() or onActivate() for the first time,
     after first OnResize() and OnChangeBounds() }
-  if FDelayedOnResize or FDelayedOnChangeBounds then
+  if FDelayedOnResize and FDelayedOnChangeBounds and FActive then
   begin
     if FIsFirstOnShow then
     begin
@@ -716,18 +716,20 @@ begin
     if FIsFirstOnActivate then
     begin
       FIsFirstOnActivate := False;
-      if FActive then
-        Activate;
+      Activate;
     end;
   end;
-  { delayed onResize() }
-  if FDelayedOnResize then
-    inherited DoOnResize;
-  { delayed onChangeBounds() }
-  if FDelayedOnResize or FDelayedOnChangeBounds then
-    inherited DoOnChangeBounds;
-  FDelayedOnChangeBounds := False;
-  FDelayedOnResize := False;
+  if not (FIsFirstOnShow or FIsFirstOnActivate) then
+  begin
+    { delayed onResize() }
+    if FDelayedOnResize then
+      inherited DoOnResize;
+    { delayed onChangeBounds() }
+    if FDelayedOnResize or FDelayedOnChangeBounds then
+      inherited DoOnChangeBounds;
+    FDelayedOnChangeBounds := False;
+    FDelayedOnResize := False;
+  end;
 end;
 
 procedure TCustomForm.WMWindowPosChanged(var Message: TLMWindowPosChanged);
@@ -1001,6 +1003,10 @@ begin
   if FIsFirstOnShow and (WindowState in [wsMaximized, wsFullScreen]) then
     Exit;
   FIsFirstOnShow := False;
+  // WMActivate is not being called if form has a parent
+  if Parent <> nil then
+    FIsFirstOnActivate := False;
+  FIsFirstRestore := WindowState in [wsMaximized, wsFullScreen];
   if Assigned(FOnShow) then FOnShow(Self);
 end;
 
@@ -1148,8 +1154,28 @@ begin
       if (OldState = wsMinimized) and (Application.MainForm = Self) and
          (WidgetSet.GetLCLCapability(lcNeedMininimizeAppWithMainForm) <> LCL_CAPABILITY_NO) then
         Application.Restore;
-      if Assigned(OnWindowStateChange) then
-        OnWindowStateChange(Self);
+    end;
+
+    if (OldState <> State) or FWindowStateChanged then
+    begin
+      { honor Position property on first restore when form was designed maximized }
+      if not (FIsFirstOnShow or FIsFirstOnActivate) then
+      begin
+        if FIsFirstRestore and (State = wsNormal) then
+        begin
+          { Need to check width/height before calling MoveToDefaultPosition.
+            QT5 triggers Resizing() twice: one for position change, and
+            another for size change. This check should not affect other
+            widgetsets. }
+          if (Width <> RestoredWidth) or (Height <> RestoredHeight) then
+            Exit;
+          MoveToDefaultPosition;
+          FIsFirstRestore := False;
+        end;
+        if Assigned(OnWindowStateChange) then
+          OnWindowStateChange(Self);
+      end;
+      FWindowStateChanged := False;
     end;
   end;
 end;
@@ -1830,7 +1856,10 @@ begin
     FWindowState := Value;
     //DebugLn(['TCustomForm.SetWindowState ',DbgSName(Self),' ',ord(FWindowState),' csDesigning=',csDesigning in ComponentState,' Showing=',Showing]);
     if (not (csDesigning in ComponentState)) and Showing then
+    begin
+      FWindowStateChanged := True;
       ShowWindow(Handle, ShowCommands[Value]);
+    end;
   end;
 end;
 
@@ -2030,6 +2059,8 @@ begin
   FDelayedOnResize := False;
   FIsFirstOnShow := True;
   FIsFirstOnActivate := True;
+  FIsFirstRestore := False;
+  FWindowStateChanged := False;
   GlobalNameSpace.BeginWrite;
   try
     CreateNew(AOwner, 1); // this calls BeginFormUpdate, which is ended in AfterConstruction

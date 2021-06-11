@@ -1162,6 +1162,8 @@ begin
           {$ENDIF}
           SizeMsg.SizeType := SIZE_MINIMIZED;
         end
+        else if (GDK_WINDOW_STATE_FULLSCREEN and state^.new_window_state)>0 then
+          SizeMsg.SizeType := SIZE_FULLSCREEN
         else if (GDK_WINDOW_STATE_MAXIMIZED and state^.new_window_state)>0 then
         begin
           // it can be both maximized + iconified and just loose iconified state
@@ -1174,7 +1176,8 @@ begin
         // don't bother the LCL if nothing changed
         case SizeMsg.SizeType of
           SIZE_RESTORED: if TheForm.WindowState=wsNormal then exit;
-          SIZE_MINIMIZED: if TheForm.WindowState=wsMinimized then exit;
+          // Need to send LM_SIZE message to LCL if wsMinimized to trigger onWindowStateChange()
+          //SIZE_MINIMIZED: if TheForm.WindowState=wsMinimized then exit;
           SIZE_MAXIMIZED: if TheForm.WindowState=wsMaximized then exit;
           SIZE_FULLSCREEN: if TheForm.WindowState=wsFullScreen then exit;
         end;
