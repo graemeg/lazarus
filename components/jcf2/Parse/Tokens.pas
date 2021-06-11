@@ -624,7 +624,8 @@ begin
   AddKeyword('downto', wtReservedWord, ttDownTo);
   AddKeyword('else', wtReservedWord, ttElse);
   AddKeyword('end', wtReservedWord, ttEnd);
-  AddKeyword('enumerator', wtReservedWord, ttEnumerator);
+  // 'enumerator' can be a valid identifier.
+  //AddKeyword('enumerator', wtReservedWord, ttEnumerator);
   AddKeyword('except', wtReservedWord, ttExcept);
   AddKeyword('exports', wtReservedWord, ttExports);
   AddKeyword('file', wtReservedWord, ttFile);
