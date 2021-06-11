@@ -1252,7 +1252,7 @@ begin
 
   if (not IsRelpath) or ((RelPath <> '') and ((Length(RelPath) > 1) and (RelPath[1] = '.') and (RelPath[2] = '.'))) then
   begin
-    // CreateRelativePath retruns a string beginning with ..
+    // CreateRelativePath returns a string beginning with ..
     // so AValue is not a subdirectory of FRoot
     Raise EInvalidPath.CreateFmt(sShellCtrlsInvalidPathRelative,[AValue, FQRootPath]);
   end;

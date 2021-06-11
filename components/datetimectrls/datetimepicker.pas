@@ -86,7 +86,7 @@ type
   { Used by DateDisplayOrder property to determine the order to display date
     parts -- d-m-y, m-d-y or y-m-d.
     When ddoTryDefault is set, the actual order is determined from
-    ShortDateFormat global variable -- see coments above
+    ShortDateFormat global variable -- see comments above
     AdjustEffectiveDateDisplayOrder procedure }
   TDateDisplayOrder = (ddoDMY, ddoMDY, ddoYMD, ddoTryDefault);
 
@@ -3673,7 +3673,7 @@ end;
 
 { TDTSpeedButton }
 
-{ See the coment above TDTUpDown.CalculatePreferredSize }
+{ See the comment above TDTUpDown.CalculatePreferredSize }
 procedure TDTSpeedButton.CalculatePreferredSize(var PreferredWidth,
   PreferredHeight: integer; WithThemeSpace: Boolean);
 begin

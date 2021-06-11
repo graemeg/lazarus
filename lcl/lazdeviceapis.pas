@@ -57,7 +57,7 @@ type
 
   TLazDeviceMessage = class
   public
-    // The coments indicate in which message kind each
+    // The comments indicate in which message kind each
     // field is available.             SMS   MMS  EMail
     bccAddress: TStringList;         // N     N    Y
     Body: string;                    // Y     Y	   Y

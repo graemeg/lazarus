@@ -99,9 +99,9 @@ type
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     procedure Assign(Src: TPersistent); override;
-    // Retruns a 0-based position (even 0-based physical)
+    // Returns a 0-based position (even 0-based physical)
   published
-    // *** coments with (* *)
+    // *** comments with (* *)
 
     (* AnsiIndentFirstLineMax:
        * For comments that use any sciAlignOpen...
@@ -145,7 +145,7 @@ type
     property AnsiEolSkipLongerLine: Boolean      read FEolSkipLongerLine[sctAnsi]
                                                  write FEolSkipLongerLine[sctAnsi];
 
-    // *** coments with { }
+    // *** comments with { }
 
     property BorIndentMode: TSynCommentIndentFlags read FIndentMode[sctBor]
                                                   write FIndentMode[sctBor];
@@ -176,7 +176,7 @@ type
     property BorEolSkipLongerLine: Boolean      read FEolSkipLongerLine[sctBor]
                                                 write FEolSkipLongerLine[sctBor];
 
-    // *** coments with //
+    // *** comments with //
     // Continue only, if Extended
 
     property ExtendSlashCommentMode: TSynCommentExtendMode read FExtendSlashCommentMode

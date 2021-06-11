@@ -165,7 +165,7 @@ type
     function UnIndentLine(const ACaret: TSynEditCaret; out CaretNewX: Integer): Boolean;
   public
     procedure Assign(Src: TPersistent); override;
-    // Retruns a 0-based position (even 0-based physical)
+    // Returns a 0-based position (even 0-based physical)
     function GetIndentForLine(Editor: TSynEditBase; const Line: string;
                         Physical: boolean): Integer;
     function GetDesiredIndentForLine
