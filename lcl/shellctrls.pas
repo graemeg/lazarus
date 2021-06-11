@@ -278,6 +278,7 @@ type
 //    property HotTrackStyles;
 //    property HoverTime;
     property LargeImages;
+    property LargeImagesWidth;
     property Mask;
     property MaskCaseSensitivity;
     property MultiSelect;
@@ -294,6 +295,7 @@ type
     property ShowHint;
 //    property ShowWorkAreas;
     property SmallImages;
+    property SmallImagesWidth;
     property SortColumn;
     property SortType;
     property StateImages;
