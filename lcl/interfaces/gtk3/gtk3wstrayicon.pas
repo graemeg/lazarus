@@ -13,10 +13,10 @@
   for details about the license.
  *****************************************************************************
 
-A unit that uses LibAppIndicator3 to display a TrayIcon in GTK3.   Based on a
-GTK2 version by Anthony Walter, now works with many common Linux systems "out
-of the box" and almost all of the remainder with addition of LibAppIndicator3
-and TopIconsPlus or similar Gnome Extension.
+A unit that uses LibAppIndicator3-1 or libAyatana-AppIndicator3-1 to display a 
+TrayIcon in GTK3.   Based on a GTK2 version by Anthony Walter, now works with 
+many common Linux systems "out of the box" or with the addition of one of the
+above mentioned libraries and possibly gnome-shell-extension-appindicator.
 
 See Wiki for details and Limitations (Menu only, one Icon only....)
 Also refer to discussion in ../gtk2/UnityWSCtrls.pas
@@ -43,15 +43,20 @@ type
     class function GetPosition(const {%H-}ATrayIcon: TCustomTrayIcon): TPoint; override;
   end;
 
-{ Gtk3AppIndicatorInit returns true if LibAppIndicator_3 library has been loaded }
+{ Gtk3AppIndicatorInit returns true if a LibAppIndicator3 library has been loaded }
 function Gtk3AppIndicatorInit: Boolean;
 
 implementation
 
+{X$define DEBUGAPPIND}
+
 uses gtk3objects;     // TGtk3Image
 
 const
-  libappindicator_3 = 'libappindicator3.so.1';
+  libappindicator_3 = 'libappindicator3.so.1';              // Unity or Canonical libappindicator3-1
+  LibAyatanaAppIndicator = 'libayatana-appindicator3.so.1'; // Ayatana - typically called libayatana-appindicator3-1
+  IconThemePath = '/tmp/appindicators/';                    // We must write our icon to a file.
+  IconType = 'png';
 
 type
   TAppIndicatorCategory = (
@@ -109,9 +114,6 @@ type
     procedure Update;
   end;
 
-const
-  IconThemePath = '/tmp/appindicators/'; // We must write our icon to a file.
-  IconType = 'png';
 
 var
   GlobalAppIndicator: PAppIndicator;
@@ -148,6 +150,14 @@ begin
     GlobalAppIndicator := app_indicator_new_with_path(PChar(FName), PChar(FIconName),
       APP_INDICATOR_CATEGORY_APPLICATION_STATUS, IconThemePath);
   Update;
+  {$ifdef DEBUGAPPIND}
+  case app_indicator_get_status(GlobalAppIndicator) of
+	      APP_INDICATOR_STATUS_PASSIVE : writeln('AppInd statis is Passive');
+	      APP_INDICATOR_STATUS_ACTIVE : writeln('AppInd status is Active');
+	      APP_INDICATOR_STATUS_ATTENTION  : writeln('AppInd is Attention');
+  else writeln('AppInd status is unknown');
+  end;
+  {$endif}
 end;
 
 destructor TAppIndTrayIconHandle.Destroy;
@@ -249,9 +259,16 @@ begin
   Loaded := True;
   if Initialized then
     Exit(True);
-  Module := LoadLibrary(libappindicator_3);        // might have several package names, see wiki
-  if Module = 0 then
-     Exit;
+  Module := LoadLibrary(libappindicator_3);
+  if Module = 0 then begin
+    Module := LoadLibrary(LibAyatanaAppIndicator);
+    if Module = 0 then begin                    // Sorry, no TrayIcon !
+      {$ifdef DEBUGAPPIND}
+      writeln('Failed to load an appindicator library');{$endif}
+      Exit;
+    end
+    {$ifdef DEBUGAPPIND} else writeln('Loaded ' + LibAyatanaAppIndicator){$endif};
+  end {$ifdef DEBUGAPPIND} else writeln('Loaded ' + libappindicator_3){$endif};
   Result :=
     TryLoad('app_indicator_get_type', @app_indicator_get_type) and
     TryLoad('app_indicator_new', @app_indicator_new) and
