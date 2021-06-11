@@ -592,9 +592,11 @@ type
     procedure SetColumnVisible(AIndex: Integer; {%H-}AColumn: TListColumn; AVisible: Boolean);
     procedure ColumnSetSortIndicator(const AIndex: Integer; const {%H-}AColumn: TListColumn; const ASortIndicator: TSortIndicator);
 
+    procedure UpdateItem(AIndex:integer;AItem: TListItem);
     procedure ItemDelete(AIndex: Integer);
     procedure ItemInsert(AIndex: Integer; AItem: TListItem);
     procedure ItemSetText(AIndex, ASubIndex: Integer; AItem: TListItem; const AText: String);
+    procedure ItemSetImage(AIndex, ASubIndex: Integer; AItem: TListItem);
     procedure ItemSetState(const AIndex: Integer; const {%H-}AItem: TListItem; const AState: TListItemState;
       const AIsSet: Boolean);
     function ItemGetState(const AIndex: Integer; const {%H-}AItem: TListItem; const AState: TListItemState;
@@ -1153,8 +1155,7 @@ begin
       if TGtk3Widget(Data).LCLObject is TButtonControl then exit;
 
 
-      TGtk3Widget(Data).GtkEventMouse(Widget , Event);
-      Result:=true;
+      Result:=TGtk3Widget(Data).GtkEventMouse(Widget , Event);
     end;
   GDK_2BUTTON_PRESS:
     begin
@@ -6261,11 +6262,46 @@ begin
 
 end;
 
+procedure TGtk3ListView.UpdateItem(AIndex:integer;AItem: TListItem);
+var
+  Path: PGtkTreePath;
+  ItemRect: TGdkRectangle;
+  AModel: PGtkTreeModel;
+  Iter: TGtkTreeIter;
+  bmp:TBitmap;
+  pxb:PGdkPixbuf;
+begin
+  if IsTreeView then
+  begin
+    Path := gtk_tree_path_new_from_indices(AIndex, [-1]);
+    PGtkTreeView(GetContainerWidget)^.get_cell_area(Path, nil, @ItemRect);
+    gtk_tree_path_free(Path);
+  end else
+  begin
+    Path := gtk_tree_path_new_from_indices(AIndex, [-1]);
+    AModel:=PGtkIconView(GetContainerWidget)^.get_model;
+    AModel^.get_iter(@iter,path);
+
+    bmp:=TBitmap.Create;
+    TListView(LCLObject).LargeImages.GetBitmap(AItem.ImageIndex,bmp);
+    pxb:=TGtk3Image(bmp.Handle).Handle;
+    gtk_list_store_set(PGtkListStore(AModel), @Iter,
+      [0, Pointer(AItem),
+       1, PChar(AItem.Caption),
+       2, pxb, -1] );
+    fImages.Add(bmp);
+
+    gtk_tree_path_free(Path);
+  end;
+end;
+
 procedure TGtk3ListView.ItemSetText(AIndex, ASubIndex: Integer;
   AItem: TListItem; const AText: String);
 var
   Path: PGtkTreePath;
   ItemRect: TGdkRectangle;
+  AModel: PGtkTreeModel;
+  Iter: TGtkTreeIter;
 begin
   if not IsWidgetOK then
     exit;
@@ -6276,7 +6312,32 @@ begin
     PGtkTreeView(GetContainerWidget)^.get_cell_area(Path, nil, @ItemRect);
     gtk_tree_path_free(Path);
   end else
-    ItemRect.Height := 1;
+  begin
+    UpdateItem(AIndex,AItem);
+  end;
+  if GetContainerWidget^.get_visible and (ItemRect.height <> 0) then // item is visible
+    GetContainerWidget^.queue_draw;
+end;
+
+procedure TGtk3ListView.ItemSetImage(AIndex, ASubIndex: Integer; AItem: TListItem);
+var
+  Path: PGtkTreePath;
+  ItemRect: TGdkRectangle;
+  AModel: PGtkTreeModel;
+  Iter: TGtkTreeIter;
+begin
+  if not IsWidgetOK then
+    exit;
+
+  if IsTreeView then
+  begin
+    Path := gtk_tree_path_new_from_indices(AIndex, [-1]);
+    PGtkTreeView(GetContainerWidget)^.get_cell_area(Path, nil, @ItemRect);
+    gtk_tree_path_free(Path);
+  end else
+  begin
+    UpdateItem(AIndex,AItem);
+  end;
   if GetContainerWidget^.get_visible and (ItemRect.height <> 0) then // item is visible
     GetContainerWidget^.queue_draw;
 end;

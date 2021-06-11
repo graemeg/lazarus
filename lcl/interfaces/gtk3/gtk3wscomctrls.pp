@@ -689,8 +689,11 @@ class procedure TGtk3WSCustomListView.ItemSetImage(const ALV: TCustomListView;
   const AIndex: Integer; const AItem: TListItem; const ASubIndex,
   AImageIndex: Integer);
 begin
-  // DebugLn('TGtk3WSCustomListView.ItemSetImage ');
-  // inherited ItemSetImage(ALV, AIndex, AItem, ASubIndex, AImageIndex);
+  if not WSCheckHandleAllocated(ALV, 'ItemSetImage') then
+    Exit;
+  TGtk3ListView(ALV.Handle).BeginUpdate;
+  TGtk3ListView(ALV.Handle).ItemSetImage(AIndex,ASubIndex, AItem);
+  TGtk3ListView(ALV.Handle).EndUpdate;
 end;
 
 class procedure TGtk3WSCustomListView.ItemSetState(const ALV: TCustomListView;
