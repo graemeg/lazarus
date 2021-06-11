@@ -13,7 +13,7 @@
 #ifndef CHANDLES_H
 #define CHANDLES_H
 
-#if defined _LP64
+#if defined(_LP64) || defined(__amd64__)
 typedef long long int PTRINT;
 typedef unsigned long long int PTRUINT;
 #else

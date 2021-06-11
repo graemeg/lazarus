@@ -40,7 +40,7 @@
 typedef bool (*EventFilter)(void *message, long *result);
 typedef bool (*EventFilter2)(void *message);
 
-#if defined _LP64
+#if defined(_LP64) || defined(__amd64__)
 typedef long long int PTRINT;
 typedef unsigned long long int PTRUINT;
 #else
