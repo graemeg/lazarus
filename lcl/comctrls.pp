@@ -527,6 +527,7 @@ type
     property PageControl: TPageControl read GetPageControl write SetPageControl;
     property TabIndex: Integer read GetTabIndex;
   published
+    property AutoSize;
     property BorderWidth;
     property BiDiMode;
     property Caption;
@@ -606,6 +607,7 @@ type
     
     property Align;
     property Anchors;
+    property AutoSize;
     property BorderSpacing;
     property BiDiMode;
     property Constraints;
