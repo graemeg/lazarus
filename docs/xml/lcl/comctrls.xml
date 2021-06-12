@@ -1401,6 +1401,9 @@
             <var>IsControlVisible</var> is an overridden method in <var>TCustomPage</var> which indicates whether the control is visible.
           </p>
           <p>
+            If <var>AutoSizingAll</var> is set to <b>True</b>, no actions are performed in the method and the return values is <b>True</b>. This allows inactive pages to be considered in the GetPreferredSize method in the parent control.
+          </p>
+          <p>
             IsControlVisible calls the inherited method on entry to determine if the Visible property is set to <b>True</b>, and whether the control is visible at design-time. When the <var>Parent</var> control is <var>TCustomTabControl</var>, the value in the <var>PageIndex</var> property must match the value in the parent control.
           </p>
           <p>
@@ -3442,6 +3445,7 @@
         <seealso/>
       </element>
 
+      <element name="TTabSheet.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TTabSheet.BorderWidth" link="#lcl.controls.TWinControl.BorderWidth"/>
       <element name="TTabSheet.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
       <element name="TTabSheet.Caption" link="#lcl.controls.TControl.Caption"/>
@@ -3755,6 +3759,7 @@
 
       <element name="TPageControl.Align" link="#lcl.controls.TControl.Align"/>
       <element name="TPageControl.Anchors" link="#lcl.controls.TControl.Anchors"/>
+      <element name="TPageControl.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TPageControl.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
       <element name="TPageControl.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
       <element name="TPageControl.Constraints" link="#lcl.controls.TControl.Constraints"/>

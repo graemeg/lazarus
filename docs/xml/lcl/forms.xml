@@ -2391,6 +2391,8 @@
       <element name="TCustomForm.FDelayedOnResize"/>
       <element name="TCustomForm.FIsFirstOnShow"/>
       <element name="TCustomForm.FIsFirstOnActivate"/>
+      <element name="TCustomForm.FIsFirstRestore"/>
+      <element name="TCustomForm.FWindowStateChanged"/>
       <element name="TCustomForm.GetClientHandle" link="#lcl.forms.TCustomForm.ClientHandle"/>
       <element name="TCustomForm.GetClientHandle.Result">
         <short/>
@@ -2507,7 +2509,7 @@
             <var>DelayedEvent</var> discards duplicate calls to the method; only the most recent message is processed. It is used in conjunction with the <var>QueueAsyncCall</var> method in <var>TApplication</var>. DelayedEvent decrements an internal counter used to track the number of pending delayed event messages. When the counter reaches zero (0), the message is applied.
           </p>
           <p>
-            When <var>WindowState</var> is changed to <var>wsNormal</var>, the window origin or size is restored for the delayed event. For delayed <var>OnChangeBounds</var>  and <var>OnChangeBounds</var> messages,  the <var>DoOnShow</var> and/or <var>Activate</var> methods are called when the form is <var>Active</var>. If the form has not already been displayed and activated, the Activate, DoOnResize, or the DoOnChangeBounds method is called for the corresponding delayed message.
+            When <var>WindowState</var> is changed to <var>wsNormal</var>, the window origin or size is restored. For delayed <var>OnChangeBounds</var>  and <var>OnChangeBounds</var> messages,  the <var>DoOnShow</var> and/or <var>Activate</var> methods are called when the form is <var>Active</var>. If the form has not already been displayed and activated, the DoOnResize or the DoOnChangeBounds method is called for the corresponding delayed message.
           </p>
         </descr>
         <seealso>
@@ -2633,7 +2635,7 @@
         <short>Sets the value for the WindowState property</short>
         <descr>
           <p>
-            SetWindowState sets the value for the WindowState property.
+            <var>SetWindowState</var> sets the value for the <var>WindowState</var> property. Calls the <var>ShowWindow</var> routine at run-time when <var>Showing</var> is set to <b>True</b>.
           </p>
         </descr>
         <seealso/>
@@ -3263,10 +3265,18 @@
             No actions are performed in the method when a maximized or full-screen window (<var>WindowState</var> contains <var>wsMaximized</var> or <var>wsFullScreen</var>) is displayed for the first time.
           </p>
           <p>
+            DoShow sets an internal flag to ensure that WMActivate is not called if the <var>Parent</var> for the form has not been assigned. It signals the OnShow event handler (when assigned) to perform the event notification.
+          </p>
+          <p>
             DoShow is called from the <var>DelayedEvent</var> method in response to queued <var>OnResize</var> or <var>OnChangeBounds</var> events, and from the <var>CMShowingChanged</var> method when <var>Showing</var> is set to <b>True</b>.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TCustomForm.OnShow"/>
+          <link id="TCustomForm.WindowState"/>
+          <link id="#lcl.controls.TWinControl.Showing">TWinControl.Showing</link>
+          <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
+        </seealso>
       </element>
 
       <element name="TCustomForm.EndFormUpdate">
@@ -3956,7 +3966,7 @@
         </seealso>
       </element>
 
-      <element name="TCustomForm.Create" link="#rtl.classes.TComponent.Create">
+      <element name="TCustomForm.Create">
         <short>Constructor for the class instance</short>
         <descr>
           <p>
@@ -3966,6 +3976,7 @@
         <seealso>
           <link id="TCustomForm.CreateNew"/>
           <link id="TCustomForm.ProcessResource"/>
+          <link id="TCustomDesignControl.Create"/>
         </seealso>
       </element>
       <element name="TCustomForm.Create.AOwner">
