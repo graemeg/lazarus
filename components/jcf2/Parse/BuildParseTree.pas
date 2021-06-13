@@ -1042,7 +1042,7 @@ begin
     begin
       if leFirstTokenType in (ClassVisibility+[ttStrict]) then
         break;
-      if leFirstTokenType in [ttClass,ttVar,ttThreadVar,ttConst,ttFunction,ttProcedure,ttOperator,ttConstructor,ttDestructor,ttProperty] then
+      if leFirstTokenType in [ttClass,ttVar,ttThreadVar,ttConst,ttFunction,ttProcedure,ttOperator,ttConstructor,ttDestructor,ttProperty,ttCase] then
         break;
     end
     else
@@ -1123,7 +1123,7 @@ begin
     begin
       if fcTokenList.FirstSolidTokenType in (ClassVisibility + [ttStrict]) then
         break;
-      if fcTokenList.FirstSolidTokenType in [ttClass,ttVar,ttThreadVar, ttConst,ttFunction,ttProcedure,ttOperator,ttConstructor,ttDestructor,ttProperty] then
+      if fcTokenList.FirstSolidTokenType in [ttClass,ttVar,ttThreadVar, ttConst,ttFunction,ttProcedure,ttOperator,ttConstructor,ttDestructor,ttProperty,ttCase] then
         break;
     end
     else
@@ -2458,7 +2458,7 @@ const
   END_VAR_SECTION: TTokenTypeSet =
     [ttVar, ttThreadVar, ttConst, ttLabel, ttResourceString, ttType,
     ttBegin, ttEnd, ttImplementation, ttInitialization,
-    ttProcedure, ttFunction, ttOperator, ttConstructor, ttDestructor, ttClass, ttAsm, ttGeneric];
+    ttProcedure, ttFunction, ttOperator, ttConstructor, ttDestructor, ttClass, ttAsm, ttGeneric, ttCase];
 var
   leEndVarSection: TTokenTypeSet;
 begin
@@ -2493,6 +2493,7 @@ begin
   PushNode(nFunctionHeading);
   Recognise(ttClass);
   Recognise(ttOperator);
+
   RecogniseMethodName(False);
   if fcTokenList.FirstSolidTokenType = ttOpenBracket then
     RecogniseFormalParameters;
@@ -5182,6 +5183,14 @@ procedure TBuildParseTree.RecogniseMethodName(const pbClassNameCompulsory: boole
 var
   lbMore: boolean;
 begin
+  if fcTokenList.FirstSolidTokenType = ttAssign then
+  begin
+    PushNode(nIdentifier);
+    Recognise(ttAssign);
+    PopNode;
+    exit;
+  end
+  else
   if IsSymbolOperator(fcTokenList.FirstSolidToken) then begin
       PushNode(nIdentifier);
       Recognise(Operators);
@@ -5209,7 +5218,10 @@ begin
     while lbMore do
     begin
       Recognise(ttDot);
-      Recognise(IdentiferTokens + Operators);
+      if fcTokenList.FirstSolidTokenType = ttAssign then
+        Recognise(ttAssign)
+      else
+        Recognise(IdentiferTokens + Operators);
 
       if fcTokenList.FirstSolidTokenType = ttLessThan then
       begin
@@ -5932,13 +5944,13 @@ var
   lc: TSourceToken;
 begin
   lc := fcTokenList.FirstSolidToken;
-  if (lc.TokenType=ttIdentifier) and (length(lc.SourceCode)=10) and (lowercase(lc.SourceCode)='enumerator') then
+  if (lc<>nil) and (lc.TokenType=ttIdentifier) and (length(lc.SourceCode)=10) and (lowercase(lc.SourceCode)='enumerator') then
   begin
     lc.TokenType:=ttEnumerator;
     lc.WordType:=wtReservedWord;
   end;
   lc := fcTokenList.SolidToken(2);
-  if (lc.TokenType=ttIdentifier) and (length(lc.SourceCode)=10) and (lowercase(lc.SourceCode)='enumerator') then
+  if (lc<>nil) and (lc.TokenType=ttIdentifier) and (length(lc.SourceCode)=10) and (lowercase(lc.SourceCode)='enumerator') then
   begin
     lc.TokenType:=ttEnumerator;
     lc.WordType:=wtReservedWord;

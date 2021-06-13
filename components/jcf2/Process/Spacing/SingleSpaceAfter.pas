@@ -67,7 +67,7 @@ const
 
 function NeedsSingleSpace(const pt, ptNext: TSourceToken): boolean;
 var
-  lcSameLineToken: TSourceToken;
+  lcSameLineToken,lcPrev: TSourceToken;
 begin
   Assert(pt <> nil);
   Assert(ptNext <> nil);
@@ -120,7 +120,12 @@ begin
     Result := True;
 
   if (pt.TokenType in SingleSpaceAfterTokens) then
+  begin
+    lcPrev := pt.PriorSolidToken;
+    if (lcPrev <> nil) and (lcPrev.TokenType = ttDot) then // operaror  typename.:=( )  .+= .*=
+      exit(false);
     exit(True);
+  end;
 
   if pt.TokenType = ttOpenBracket then
     if FormattingSettings.Spaces.SpaceAfterOpenBrackets then

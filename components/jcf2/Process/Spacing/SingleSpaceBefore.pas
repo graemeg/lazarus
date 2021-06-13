@@ -122,7 +122,12 @@ begin
     exit;
 
   if (pt.TokenType in AssignmentDirectives) then
+  begin
+    lcPrev := pt.PriorSolidToken;
+    if (lcPrev <> nil) and (lcPrev.TokenType = ttDot) then // operaror  typename.:=( )
+      exit(false);
     exit(True);
+  end;
 
   if IsHintDirective(pt) then
     exit(True);
