@@ -3782,7 +3782,7 @@ end;
 
 class function TFpDebugDebugger.Caption: String;
 begin
-  Result:='FpDebug internal Dwarf-debugger (beta)';
+  Result:='FpDebug internal Dwarf-debugger';
 end;
 
 class function TFpDebugDebugger.NeedsExePath: boolean;
