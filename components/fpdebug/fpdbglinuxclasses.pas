@@ -293,6 +293,8 @@ type
     {$ifndef VER2_6}
     procedure OnForkEvent(Sender : TObject);
     {$endif}
+    function ReadWordSize(Adr: TDbgPtr; out AVal: TDBGPtr): boolean; inline;
+    function WriteWordSize(Adr: TDbgPtr; AVal: TDBGPtr): boolean; inline;
   protected
     function GetRequiresExecutionInDebuggerThread: boolean; override;
     procedure InitializeLoaders; override;
@@ -913,73 +915,86 @@ begin
             (ATargetInfo.machineType in [mt386, mtX86_64]);
 end;
 
+function TDbgLinuxProcess.ReadWordSize(Adr: TDbgPtr; out AVal: TDBGPtr
+  ): boolean;
+var
+  e: integer;
+begin
+  AVal := TDbgPtr(fpPTrace(PTRACE_PEEKDATA, FCurrentThreadId, pointer(Adr), nil));
+  e := fpgeterrno;
+  Result := e = 0;
+  if not Result then
+    begin
+    DebugLn(DBG_WARNINGS, 'Failed to read data at address '+FormatAddress(Adr)+' from processid '+inttostr(FCurrentThreadId)+'. Errcode: '+inttostr(e));
+    result := false;
+    end;
+end;
+
+function TDbgLinuxProcess.WriteWordSize(Adr: TDbgPtr; AVal: TDBGPtr): boolean;
+var
+  e: LongInt;
+begin
+  fpPTrace(PTRACE_POKEDATA, FCurrentThreadId, pointer(Adr), pointer(AVal));
+  e := fpgeterrno;
+  Result := e = 0;
+  if not Result then
+    begin
+    DebugLn(DBG_WARNINGS, 'Failed to write data at address '+FormatAddress(Adr)+' from processid '+inttostr(FCurrentThreadId)+'. Errcode: '+inttostr(e));
+    result := false;
+    end;
+end;
+
 function TDbgLinuxProcess.ReadData(const AAdress: TDbgPtr;
   const ASize: Cardinal; out AData): Boolean;
 
 var
-  WordSize: byte;
-
-  function ReadWordSize(Adr: TDbgPtr; out AVal: TDBGPtr): boolean;
-  var
-    e: integer;
-  begin
-    errno := 0;
-    AVal := TDbgPtr(fpPTrace(PTRACE_PEEKDATA, FCurrentThreadId, pointer(Adr), nil));
-    e := fpgeterrno;
-    if e <> 0 then
-      begin
-      DebugLn(DBG_WARNINGS, 'Failed to read data at address '+FormatAddress(Adr)+' from processid '+inttostr(FCurrentThreadId)+'. Errcode: '+inttostr(e));
-      result := false;
-      end
-    else
-      result := true;
-  end;
-
-var
+  WordSize, BytesDone: integer;
+  BufSize: int64;
   AVal: TDbgPtr;
-  AAdressAlign: TDBGPtr;
-  BytesRead: integer;
-  ReadBytes: integer;
-  PB: PByte;
   buf: pbyte;
+  AAdressAlign: TDBGPtr;
 begin
-  BytesRead := 0;
   result := false;
-  getmem(buf, ASize);
-  try
-    WordSize:=DBGPTRSIZE[Mode];
-    if AAdress mod WordSize <> 0 then
-      begin
-      AAdressAlign := ((PtrUInt(AAdress)) and not PtrUInt(WordSize - 1));
-      if not ReadWordSize(AAdressAlign, AVal) then
-        Exit;
-      pb := @AVal;
-      BytesRead:=WordSize-(AAdress-AAdressAlign);
-      if BytesRead>=ASize then
-        BytesRead:=ASize;
-      move(pb[AAdress-AAdressAlign], buf[0], BytesRead);
-      inc(AAdressAlign, WordSize);
-      end
-    else
-      AAdressAlign:=AAdress;
+  fpseterrno(0);
+  BytesDone := 0;
+  buf := @AData;
+  BufSize := ASize;
+  WordSize:=DBGPTRSIZE[Mode];
 
-    while BytesRead<ASize do
-      begin
-      if not ReadWordSize(AAdressAlign, AVal) then
-        exit;
-      if WordSize<(ASize-BytesRead) then
-        ReadBytes:=WordSize
-      else
-        ReadBytes:=(ASize-BytesRead);
-      move(AVal, buf[BytesRead], ReadBytes);
-      inc(BytesRead, ReadBytes);
-      inc(AAdressAlign, WordSize);
-
-      end;
-    System.Move(buf^, AData, BytesRead);
-  finally
-    freemem(buf);
+  {$ifNdef LINUX_NO_PTRACE_ALIGN}  // according to man, only peek/poke_user need align
+  AAdressAlign := AAdress and (not TDBGPtr(WordSize - 1));
+  if AAdressAlign <> AAdress then begin
+    if not ReadWordSize(AAdressAlign, AVal) then
+      Exit;
+    BytesDone := WordSize - (AAdress-AAdressAlign);
+    if BytesDone > ASize then
+      BytesDone := ASize;
+    move(PByte(@AVal)[AAdress-AAdressAlign], buf[0], BytesDone);
+    inc(AAdressAlign, WordSize);
   end;
+  {$else}
+  AAdressAlign := AAdress;
+  {$endif}
+
+  dec(BufSize, WordSize - 1); // full words only
+
+  while BytesDone < BufSize do begin
+    if not ReadWordSize(AAdressAlign, AVal) then
+      Exit;
+    move(AVal, buf[BytesDone], WordSize);
+    inc(BytesDone, WordSize);
+    inc(AAdressAlign, WordSize);
+  end;
+
+  BufSize := ASize - BytesDone;
+  assert((BufSize>=0) and (BufSize<WordSize));
+
+  if BufSize > 0 then begin
+    if not ReadWordSize(AAdressAlign, AVal) then
+      Exit;
+    move(AVal, buf[BytesDone], BufSize);
+  end;
+
   MaskBreakpointsInReadData(AAdress, ASize, AData);
   result := true;
 end;
@@ -987,39 +1002,56 @@ end;
 function TDbgLinuxProcess.WriteData(const AAdress: TDbgPtr;
   const ASize: Cardinal; const AData): Boolean;
 var
-  e: integer;
-  pi: TDBGPtr;
-  WordSize: integer;
+  WordSize, BytesDone: integer;
+  BufSize: int64;
+  AVal: TDBGPtr;
+  buf: PByte;
+  AAdressAlign: TDBGPtr;
 begin
   result := false;
+  fpseterrno(0);
+  BytesDone := 0;
+  buf := @AData;
+  BufSize := ASize;
   WordSize:=DBGPTRSIZE[Mode];
 
-  if ASize>WordSize then
-    DebugLn(DBG_WARNINGS, 'Can not write more then '+IntToStr(WordSize)+' bytes.')
-  else
-    begin
-    if ASize<WordSize then
-      begin
-      fpseterrno(0);
-      pi := TDbgPtr(fpPTrace(PTRACE_PEEKDATA, FCurrentThreadId, pointer(AAdress), nil));
-      e := fpgeterrno;
-      if e <> 0 then
-        begin
-        DebugLn(DBG_WARNINGS, 'Failed to read data. Errcode: '+inttostr(e));
-        result := false;
-        exit;
-        end;
-      end;
-    move(AData, pi, ASize);
+  {$ifNdef LINUX_NO_PTRACE_ALIGN}  // according to man, only peek/poke_user need align
+  AAdressAlign := AAdress and (not TDBGPtr(WordSize - 1));
+  if AAdressAlign <> AAdress then begin
+    if not ReadWordSize(AAdressAlign, AVal) then
+      Exit;
+    BytesDone := WordSize - (AAdress-AAdressAlign);
+    if BytesDone > ASize then
+      BytesDone := ASize;
+    move(buf[0], PByte(@AVal)[AAdress-AAdressAlign], BytesDone);
+    if not WriteWordSize(AAdressAlign, AVal) then
+      Exit;
+    inc(AAdressAlign, WordSize);
+  end;
+  {$else}
+  AAdressAlign := AAdress;
+  {$endif}
 
-    fpPTrace(PTRACE_POKEDATA, FCurrentThreadId, pointer(AAdress), pointer(pi));
-    e := fpgeterrno;
-    if e <> 0 then
-      begin
-      DebugLn(DBG_WARNINGS, 'Failed to write data. Errcode: '+inttostr(e));
-      result := false;
-      end;
-    end;
+  dec(BufSize, WordSize - 1); // full words only
+
+  while BytesDone < BufSize do begin
+    move(buf[BytesDone], AVal, WordSize);
+    if not WriteWordSize(AAdressAlign, AVal) then
+      Exit;
+    inc(BytesDone, WordSize);
+    inc(AAdressAlign, WordSize);
+  end;
+
+  BufSize := ASize - BytesDone;
+  assert((BufSize>=0) and (BufSize<WordSize));
+
+  if BufSize > 0 then begin
+    if not ReadWordSize(AAdressAlign, AVal) then
+      Exit;
+    move(buf[BytesDone], AVal, BufSize);
+    if not WriteWordSize(AAdressAlign, AVal) then
+      Exit;
+  end;
 
   result := true;
 end;
