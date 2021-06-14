@@ -478,7 +478,7 @@ begin
   if not TestControlCanTest(ControlTestWatchScope) then exit;
   t := nil;
 
-  Src := GetCommonSourceFor('WatchesScopePrg.Pas');
+  Src := GetCommonSourceFor('WatchesScopePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
@@ -1137,7 +1137,7 @@ begin
   if not TestControlCanTest(ControlTestWatchValue) then exit;
   t := nil;
 
-  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  Src := GetCommonSourceFor('WatchesValuePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
@@ -1379,7 +1379,7 @@ begin
   if not TestControlCanTest(ControlTestWatchFunct) then exit;
   t := nil;
 
-  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  Src := GetCommonSourceFor('WatchesValuePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
@@ -1686,7 +1686,7 @@ begin
   t := nil;
   tp := nil;
 
-  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  Src := GetCommonSourceFor('WatchesValuePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
@@ -2038,7 +2038,7 @@ begin
   t := nil;
   t2 := nil;
 
-  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  Src := GetCommonSourceFor('WatchesValuePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
@@ -2249,7 +2249,7 @@ begin
   if not TestControlCanTest(ControlTestExpression) then exit;
   t := nil;
 
-  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  Src := GetCommonSourceFor('WatchesValuePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
@@ -2472,16 +2472,18 @@ procedure TTestWatches.TestWatchesModify;
     end;
   end;
 var
-  ExeName: String;
+  ExeName, ExpName: String;
   t: TWatchExpectationList;
   Src: TCommonSource;
   BrkPrg: TDBGBreakPoint;
+  ExpPre: TWatchExpectationResult;
+  testidx: Integer;
 begin
   if SkipTest then exit;
   if not TestControlCanTest(ControlTestModify) then exit;
   t := nil;
 
-  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  Src := GetCommonSourceFor('WatchesValuePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));
@@ -2503,365 +2505,374 @@ begin
 
     RunToPause(BrkPrg);
 
-    t.Clear;
+    for testidx := 0 to 1 do begin
+      ExpPre := weCardinal(qword($9696969696969696),    'QWord', 8);
+      ExpName := 'ModifyTest';
+      if testidx = 1 then begin
+        ExpPre := weCardinal(byte($96),    'Byte', 1);
+        ExpName := 'ModifyPackTest';
+      end;
 
-    //t.Add(AName, p+'QWord'+e,      weCardinal(10000+n,                'QWord',    8));
-    //t.Add(AName, p+'Shortint'+e,   weInteger (50+n,                   'Shortint', 1));
+      t.Clear;
 
-    t.Add('(before)', 'ModifyTestByte.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestByte.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestByte.val',    weCardinal($01,    'Byte', 1));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestByte.val', '131');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestByte.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestByte.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestByte.val',    weCardinal(131,    'Byte', 1));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      //t.Add(AName, p+'QWord'+e,      weCardinal(10000+n,                'QWord',    8));
+      //t.Add(AName, p+'Shortint'+e,   weInteger (50+n,                   'Shortint', 1));
 
-
-    t.Add('(before)', 'ModifyTestWord.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestWord.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestWord.val',    weCardinal($0101,    'Word', 2));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestWord.val', '35131');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestWord.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestWord.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestWord.val',    weCardinal(35131,    'Word', 2));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Byte.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Byte.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Byte.val',    weCardinal($01,    'Byte', 1));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Byte.val', '131');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Byte.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Byte.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Byte.val',    weCardinal(131,    'Byte', 1));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestCardinal.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestCardinal.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestCardinal.val',    weCardinal($81020102,    'Cardinal', 4));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestCardinal.val', '$9AA93333');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestCardinal.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestCardinal.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestCardinal.val',    weCardinal($9AA93333,    'Cardinal', 4));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Word.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Word.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Word.val',    weCardinal($0101,    'Word', 2));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Word.val', '35131');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Word.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Word.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Word.val',    weCardinal(35131,    'Word', 2));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestQWord.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestQWord.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestQWord.val',    weCardinal(qword($8102010201020102),    'QWord', 8));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestQWord.val', '$9AA9333344224422');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestQWord.pre',    weCardinal(qword($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestQWord.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestQWord.val',    weCardinal(qword($9AA9333344224422),    'QWord', 8));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Cardinal.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Cardinal.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Cardinal.val',    weCardinal($81020102,    'Cardinal', 4));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Cardinal.val', '$9AA93333');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Cardinal.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Cardinal.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Cardinal.val',    weCardinal($9AA93333,    'Cardinal', 4));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestInt.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestInt.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestInt.val',    weInteger(-$01030103,    'Integer', 4));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestInt.val', '$44225522');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestInt.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestInt.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestInt.val',    weInteger($44225522,    'Integer', 4));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'QWord.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'QWord.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'QWord.val',    weCardinal(qword($8102010201020102),    'QWord', 8));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'QWord.val', '$9AA9333344224422');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'QWord.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'QWord.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'QWord.val',    weCardinal(qword($9AA9333344224422),    'QWord', 8));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestInt64.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestInt64.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestInt64.val',    weInteger(-$0103010301030103,    'Int64', 8));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestInt64.val', '$4422552201020102');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestInt64.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestInt64.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestInt64.val',    weInteger($4422552201020102,    'Int64', 8));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Int.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Int.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Int.val',    weInteger(-$01030103,    'Integer', 4));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Int.val', '$44225522');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Int.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Int.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Int.val',    weInteger($44225522,    'Integer', 4));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestPointer.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestPointer.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestPointer.val',    wePointerAddr(Pointer(30), 'Pointer'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestPointer.val', '50');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestPointer.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestPointer.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestPointer.val',    wePointerAddr(Pointer(50), 'Pointer'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Int64.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Int64.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Int64.val',    weInteger(-$0103010301030103,    'Int64', 8));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Int64.val', '$4422552201020102');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Int64.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Int64.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Int64.val',    weInteger($4422552201020102,    'Int64', 8));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestPWord.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestPWord.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestPWord.val',    wePointerAddr(Pointer(40), 'PWord'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestPWord.val', '70');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestPWord.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestPWord.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestPWord.val',    wePointerAddr(Pointer(70), 'PWord'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Pointer.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Pointer.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Pointer.val',    wePointerAddr(Pointer(30), 'Pointer'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Pointer.val', '50');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Pointer.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Pointer.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Pointer.val',    wePointerAddr(Pointer(50), 'Pointer'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestBool.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestBool.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestBool.val',    weBool(True));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestBool.val', 'False');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestBool.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestBool.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestBool.val',    weBool(False));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'PWord.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'PWord.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'PWord.val',    wePointerAddr(Pointer(40), 'PWord'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'PWord.val', '70');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'PWord.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'PWord.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'PWord.val',    wePointerAddr(Pointer(70), 'PWord'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestByteBool.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestByteBool.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestByteBool.val',    weSizedBool(False, 'BYTEBOOL'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestByteBool.val', 'True');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestByteBool.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestByteBool.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestByteBool.val',    weSizedBool(True, 'BYTEBOOL'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Bool.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Bool.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Bool.val',    weBool(True));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Bool.val', 'False');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Bool.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Bool.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Bool.val',    weBool(False));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestChar.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestChar.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestChar.val',    weChar('B'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestChar.val', 'X');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestChar.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestChar.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestChar.val',    weChar('X'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'ByteBool.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'ByteBool.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'ByteBool.val',    weSizedBool(False, 'BYTEBOOL'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'ByteBool.val', 'True');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'ByteBool.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'ByteBool.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'ByteBool.val',    weSizedBool(True, 'BYTEBOOL'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestWideChar.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestWideChar.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestWideChar.val',    weWideChar('B'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestWideChar.val', 'Y');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestWideChar.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestWideChar.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestWideChar.val',    weWideChar('Y'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Char.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Char.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Char.val',    weChar('B'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Char.val', 'X');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Char.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Char.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Char.val',    weChar('X'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestEnum.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestEnum.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestEnum.val',    weEnum('EnVal2'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestEnum.val', 'EnVal4');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestEnum.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestEnum.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestEnum.val',    weEnum('EnVal4'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'WideChar.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'WideChar.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'WideChar.val',    weWideChar('B'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'WideChar.val', 'Y');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'WideChar.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'WideChar.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'WideChar.val',    weWideChar('Y'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestEnum16.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestEnum16.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestEnum16.val',    weEnum('ExValX2'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestEnum16.val', 'ExValX7');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestEnum16.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestEnum16.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestEnum16.val',    weEnum('ExValX7'));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-
-    if Compiler.SymbolType <> stDwarf then begin
-
-    t.Add('(before)', 'ModifyTestSet.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestSet.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestSet.val',    weSet(['EnVal2', 'EnVal4']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet.val', ' [ EnVal1, EnVal3] ');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet.val',    weSet(['EnVal1', 'EnVal3']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet.val', ' [ EnVal1] ');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet.val',    weSet(['EnVal1']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet.val', ' [ EnVal4] ');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet.val',    weSet(['EnVal4']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Enum.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Enum.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Enum.val',    weEnum('EnVal2'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Enum.val', 'EnVal4');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Enum.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Enum.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Enum.val',    weEnum('EnVal4'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestSet4.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestSet4.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestSet4.val',    weSet(['E4Val02', 'E4Val09']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet4.val', '[E4Val03,E4Val0A ]');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet4.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet4.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet4.val',    weSet(['E4Val03', 'E4Val0A']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet4.val', ' [E4Val0B ]');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet4.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet4.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet4.val',    weSet(['E4Val0B']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+      t.Add('(before)', ExpName + 'Enum16.pre',    ExpPre);
+      t.Add('(before)', ExpName + 'Enum16.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(before)', ExpName + 'Enum16.val',    weEnum('ExValX2'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+      Debugger.LazDebugger.Modify(ExpName + 'Enum16.val', 'ExValX7');
+      WaitForModify;
+      t.Add('(after)', ExpName + 'Enum16.pre',    ExpPre);
+      t.Add('(after)', ExpName + 'Enum16.post',   weCardinal($69,    'Byte', 1));
+      t.Add('(after)', ExpName + 'Enum16.val',    weEnum('ExValX7'));
+      t.EvaluateWatches;
+      t.CheckResults;
+      t.Clear;
+
+      if Compiler.SymbolType <> stDwarf then begin
+
+        t.Add('(before)', ExpName + 'Set.pre',    ExpPre);
+        t.Add('(before)', ExpName + 'Set.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(before)', ExpName + 'Set.val',    weSet(['EnVal2', 'EnVal4']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set.val', ' [ EnVal1, EnVal3] ');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set.val',    weSet(['EnVal1', 'EnVal3']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set.val', ' [ EnVal1] ');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set.val',    weSet(['EnVal1']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set.val', ' [ EnVal4] ');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set.val',    weSet(['EnVal4']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestSet6.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestSet6.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestSet6.val',    weSet(['E6Val02', 'E6Val1A']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet6.val', '[E6Val03,E6Val1B ]');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet6.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet6.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet6.val',    weSet(['E6Val03', 'E6Val1B']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+        t.Add('(before)', ExpName + 'Set4.pre',    ExpPre);
+        t.Add('(before)', ExpName + 'Set4.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(before)', ExpName + 'Set4.val',    weSet(['E4Val02', 'E4Val09']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set4.val', '[E4Val03,E4Val0A ]');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set4.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set4.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set4.val',    weSet(['E4Val03', 'E4Val0A']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set4.val', ' [E4Val0B ]');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set4.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set4.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set4.val',    weSet(['E4Val0B']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestSet7.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestSet7.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestSet7.val',    weSet(['E7Val02', 'E7Val3A']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet7.val', '[E7Val03,E7Val12,E7Val3B ]');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet7.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet7.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet7.val',    weSet(['E7Val03', 'E7Val12', 'E7Val3B']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+        t.Add('(before)', ExpName + 'Set6.pre',    ExpPre);
+        t.Add('(before)', ExpName + 'Set6.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(before)', ExpName + 'Set6.val',    weSet(['E6Val02', 'E6Val1A']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set6.val', '[E6Val03,E6Val1B ]');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set6.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set6.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set6.val',    weSet(['E6Val03', 'E6Val1B']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestSet8.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestSet8.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestSet8.val',    weSet(['E8Val02', 'E8Val59']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSet8.val', '[E8Val03,E8Val12,E8Val58 ]');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSet8.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSet8.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSet8.val',    weSet(['E8Val03', 'E8Val12', 'E8Val58']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+        t.Add('(before)', ExpName + 'Set7.pre',    ExpPre);
+        t.Add('(before)', ExpName + 'Set7.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(before)', ExpName + 'Set7.val',    weSet(['E7Val02', 'E7Val3A']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set7.val', '[E7Val03,E7Val12,E7Val3B ]');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set7.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set7.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set7.val',    weSet(['E7Val03', 'E7Val12', 'E7Val3B']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
 
 
-    t.Add('(before)', 'ModifyTestSRangeSet.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(before)', 'ModifyTestSRangeSet.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(before)', 'ModifyTestSRangeSet.val',    weSet(['20','23','28']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSRangeSet.val', '[21,$18,27 ]');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSRangeSet.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSRangeSet.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSRangeSet.val',    weSet(['21', '24', '27']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
-    Debugger.LazDebugger.Modify('ModifyTestSRangeSet.val', '[30 ]');
-    WaitForModify;
-    t.Add('(after)', 'ModifyTestSRangeSet.pre',    weCardinal(QWord($9696969696969696),    'QWord', 8));
-    t.Add('(after)', 'ModifyTestSRangeSet.post',   weCardinal($69,    'Byte', 1));
-    t.Add('(after)', 'ModifyTestSRangeSet.val',    weSet(['30']));
-    t.EvaluateWatches;
-    t.CheckResults;
-    t.Clear;
+        t.Add('(before)', ExpName + 'Set8.pre',    ExpPre);
+        t.Add('(before)', ExpName + 'Set8.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(before)', ExpName + 'Set8.val',    weSet(['E8Val02', 'E8Val59']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'Set8.val', '[E8Val03,E8Val12,E8Val58 ]');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'Set8.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'Set8.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'Set8.val',    weSet(['E8Val03', 'E8Val12', 'E8Val58']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+
+
+        t.Add('(before)', ExpName + 'SRangeSet.pre',    ExpPre);
+        t.Add('(before)', ExpName + 'SRangeSet.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(before)', ExpName + 'SRangeSet.val',    weSet(['20','23','28']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'SRangeSet.val', '[21,$18,27 ]');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'SRangeSet.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'SRangeSet.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'SRangeSet.val',    weSet(['21', '24', '27']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+        Debugger.LazDebugger.Modify(ExpName + 'SRangeSet.val', '[30 ]');
+        WaitForModify;
+        t.Add('(after)', ExpName + 'SRangeSet.pre',    ExpPre);
+        t.Add('(after)', ExpName + 'SRangeSet.post',   weCardinal($69,    'Byte', 1));
+        t.Add('(after)', ExpName + 'SRangeSet.val',    weSet(['30']));
+        t.EvaluateWatches;
+        t.CheckResults;
+        t.Clear;
+
+      end;
 
     end;
-
   finally
     Debugger.RunToNextPause(dcStop);
     t.Free;
@@ -2883,7 +2894,7 @@ begin
   if not TestControlCanTest(ControlTestErrors) then exit;
   t := nil;
 
-  Src := GetCommonSourceFor('WatchesValuePrg.Pas');
+  Src := GetCommonSourceFor('WatchesValuePrg.pas');
   TestCompile(Src, ExeName);
 
   AssertTrue('Start debugger', Debugger.StartDebugger(AppDir, ExeName));

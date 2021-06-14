@@ -657,6 +657,128 @@ var
     post: byte; // padding, must not be changed
   end;
 
+  // 7 bytes aftr a qword align
+  ModifyPackTestByte: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: byte;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestWord: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: word;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestCardinal: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: Cardinal;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestqword: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: qword;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestint: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: integer;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestInt64: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: int64;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestPointer: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: Pointer;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestPWord: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: PWord;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestBool: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: Boolean;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestByteBool: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: ByteBool;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestChar: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: Char;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestWideChar: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: WideChar;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestEnum: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TEnum;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestEnum16: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TEnum16;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestSet: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TSet;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestSet4: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TSet4;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestSet6: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TSet6;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestSet7: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TSet7;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestSet8: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TSet8;
+    post: byte; // padding, must not be changed
+  end;
+  ModifyPackTestSRangeSet: packed record
+    q1: QWord;
+    p1, p2, p3, p4, p5, p6, pre: byte; // padding, must not be changed
+    val: TSmallRangeSet;
+    post: byte; // padding, must not be changed
+  end;
+
 
 begin
   U8Data1 := #$2267; //#$E2#$89#$A7;
@@ -700,6 +822,27 @@ begin
   with ModifyTestSet7      do begin pre := qword($9696969696969696); post := $69; val := [E7Val02, E7Val3A]; end;
   with ModifyTestSet8      do begin pre := qword($9696969696969696); post := $69; val := [E8Val02, E8Val59]; end;
   with ModifyTestSRangeSet do begin pre := qword($9696969696969696); post := $69; val := [20,23,28]; end;
+
+  with ModifyPackTestByte      do begin pre := $96; post := $69; val := $01; end;
+  with ModifyPackTestWord      do begin pre := $96; post := $69; val := $0101; end;
+  with ModifyPackTestCardinal  do begin pre := $96; post := $69; val := $81020102; end;
+  with ModifyPackTestQword     do begin pre := $96; post := $69; val := qword($8102010201020102); end;
+  with ModifyPackTestInt       do begin pre := $96; post := $69; val := -$01030103; end;
+  with ModifyPackTestInt64     do begin pre := $96; post := $69; val := -$0103010301030103; end;
+  with ModifyPackTestPointer   do begin pre := $96; post := $69; val := pointer(30); end;
+  with ModifyPackTestPWord     do begin pre := $96; post := $69; val := pointer(40); end;
+  with ModifyPackTestBool      do begin pre := $96; post := $69; val := True; end;
+  with ModifyPackTestByteBool  do begin pre := $96; post := $69; val := False; end;
+  with ModifyPackTestChar      do begin pre := $96; post := $69; val := 'B'; end;
+  with ModifyPackTestWideChar  do begin pre := $96; post := $69; val := 'B'; end;
+  with ModifyPackTestEnum      do begin pre := $96; post := $69; val := EnVal2; end;
+  with ModifyPackTestEnum16    do begin pre := $96; post := $69; val := ExValX2; end;
+  with ModifyPackTestSet       do begin pre := $96; post := $69; val := [EnVal2, EnVal4]; end;
+  with ModifyPackTestSet4      do begin pre := $96; post := $69; val := [E4Val02, E4Val09]; end;
+  with ModifyPackTestSet6      do begin pre := $96; post := $69; val := [E6Val02, E6Val1A]; end;
+  with ModifyPackTestSet7      do begin pre := $96; post := $69; val := [E7Val02, E7Val3A]; end;
+  with ModifyPackTestSet8      do begin pre := $96; post := $69; val := [E8Val02, E8Val59]; end;
+  with ModifyPackTestSRangeSet do begin pre := $96; post := $69; val := [20,23,28]; end;
 
 (* use global const / value in "gv" will be overriden... *)
   TEST_PREPOCESS(WatchesValuePrgIdent.inc,pre__=gv, {e}={, "//@@=} :=", _pre3_=gc, _BLOCK_=TestAssignGC)
