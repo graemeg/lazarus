@@ -1,4 +1,6 @@
-unit UITypes deprecated 'Use System.UITypes instead (available since FPC 3.2.0)';
+unit UITypes
+{$IF FPC_FULLVERSION >= 30200}
+deprecated 'Use System.UITypes instead (available since FPC 3.2.0)';
 
 {$mode objfpc}{$H+}
 
@@ -52,6 +54,40 @@ const
   mrYesToAll = System.UITypes.mrYesToAll;
   mrClose = System.UITypes.mrClose;
   mrLast = System.UITypes.mrLast;
+{$ELSE}
+;
+
+{$mode objfpc}{$H+}
+
+interface
+
+type
+  // Message dialog related
+  TMsgDlgType    = (mtWarning, mtError, mtInformation, mtConfirmation, mtCustom);
+  TMsgDlgBtn     = (mbYes, mbNo, mbOK, mbCancel, mbAbort, mbRetry, mbIgnore,
+                    mbAll, mbNoToAll, mbYesToAll, mbHelp, mbClose);
+  TMsgDlgButtons = set of TMsgDlgBtn;
+
+  // ModalResult
+  TModalResult = low(Integer)..high(Integer);
+  PModalResult = ^TModalResult;
+
+const
+  // Used for ModalResult
+  mrNone = 0;
+  mrOK = mrNone + 1;
+  mrCancel = mrNone + 2;
+  mrAbort = mrNone + 3;
+  mrRetry = mrNone + 4;
+  mrIgnore = mrNone + 5;
+  mrYes = mrNone + 6;
+  mrNo = mrNone + 7;
+  mrAll = mrNone + 8;
+  mrNoToAll = mrNone + 9;
+  mrYesToAll = mrNone + 10;
+  mrClose = mrNone + 11;
+  mrLast = mrClose;
+{$ENDIF}
 
   // String representation of ModalResult values
   ModalResultStr: array[mrNone..mrLast] of shortstring = (
