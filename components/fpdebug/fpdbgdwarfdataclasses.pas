@@ -42,8 +42,8 @@ unit FpDbgDwarfDataClasses;
 interface
 
 uses
-  Classes, Types, SysUtils, contnrs, Math,
-  Maps, LazClasses, LazFileUtils, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazUTF8,
+  Classes, Types, SysUtils, contnrs, Math, Maps, LazClasses, LazFileUtils,
+  LazLoggerDummy, LazUTF8, lazCollections,
   // FpDebug
   FpDbgUtil, FpDbgInfo, FpDbgDwarfConst,
   FpDbgLoader, FpImgReaderBase, FpdMemoryTools, FpErrorMessages, DbgIntfBaseTypes;
@@ -583,6 +583,10 @@ type
 
   TDwarfCompilationUnitClass = class of TDwarfCompilationUnit;
   TDwarfCompilationUnit = class
+  strict private
+    FWaitForScopeScanSection: TWaitableSection;
+    FWaitForComputeHashesSection: TWaitableSection;
+    FBuildAddressMapSection: TWaitableSection;
   private
     FOwner: TFpDwarfInfo;
     FDebugFile: PDwarfDebugFile;
@@ -643,6 +647,8 @@ type
     FComputeNameHashesWorker: TFpThreadWorkerComputeNameHashes;
 
     function GetFirstScope: TDwarfScopeInfo; inline;
+    procedure DoWaitForScopeScan;
+    procedure DoWaitForComputeHashes;
     procedure BuildAddressMap;
     function GetAddressMap: TMap;
     function GetKnownNameHashes: PKnownNameHashesArray; inline;
@@ -821,6 +827,7 @@ var
 
 var
   TheDwarfSymbolClassMapList: TFpSymbolDwarfClassMapList;
+  CachedRtlEvent: PRTLEvent = nil;
 
 const
   SCOPE_ALLOC_BLOCK_SIZE = 4096; // Increase scopelist in steps of
@@ -4198,22 +4205,42 @@ begin
   Result := FAbbrevList.FindLe128bFromPointer(AAbbrevPtr, ADefinition) <> nil;
 end;
 
+procedure TDwarfCompilationUnit.DoWaitForScopeScan;
+begin
+  if FWaitForScopeScanSection.EnterOrWait(CachedRtlEvent) then begin
+    if FScanAllWorker <> nil then begin
+      FOwner.WorkQueue.WaitForItem(FScanAllWorker);
+      FScanAllWorker.DecRef;
+      FScanAllWorker := nil;
+    end;
+    FWaitForScopeScanSection.Leave;
+  end;
+  assert(FScanAllWorker=nil, 'TDwarfCompilationUnit.DoWaitForScopeScan: FScanAllWorker=nil');
+end;
+
+procedure TDwarfCompilationUnit.DoWaitForComputeHashes;
+begin
+  if FWaitForComputeHashesSection.EnterOrWait(CachedRtlEvent) then begin
+    if FComputeNameHashesWorker <> nil then begin
+      FOwner.WorkQueue.WaitForItem(FComputeNameHashesWorker);
+      FComputeNameHashesWorker.DecRef;
+      FComputeNameHashesWorker := nil;
+    end;
+    FWaitForComputeHashesSection.Leave;
+  end;
+  assert(FComputeNameHashesWorker=nil, 'TDwarfCompilationUnit.DoWaitForComputeHashes: FComputeNameHashesWorker=nil');
+end;
+
 procedure TDwarfCompilationUnit.WaitForScopeScan;
 begin
-  if FScanAllWorker <> nil then begin
-    FOwner.WorkQueue.WaitForItem(FScanAllWorker);
-    FScanAllWorker.DecRef;
-  end;
-  FScanAllWorker := nil;
+  if FScanAllWorker <> nil then
+    DoWaitForScopeScan;
 end;
 
 procedure TDwarfCompilationUnit.WaitForComputeHashes;
 begin
-  if FComputeNameHashesWorker <> nil then begin
-    FOwner.WorkQueue.WaitForItem(FComputeNameHashesWorker);
-    FComputeNameHashesWorker.DecRef;
-  end;
-  FComputeNameHashesWorker := nil;
+  if FComputeNameHashesWorker <> nil then
+    DoWaitForComputeHashes;
 end;
 
 function TDwarfCompilationUnit.GetFirstScope: TDwarfScopeInfo;
@@ -4234,57 +4261,65 @@ var
 begin
   if FAddressMapBuild then Exit;
 
-  Scope := FirstScope;
-  ScopeIdx := Scope.Index;
+  if FBuildAddressMapSection.EnterOrWait(CachedRtlEvent) then begin
+    if not FAddressMapBuild then begin
 
-  while Scope.IsValid do
-  begin
-    if not GetDefinition(Scope.Entry, Abbrev) then begin
-      inc(ScopeIdx);
-      Scope.Index := ScopeIdx; // Child or Next, or parent.next
-      continue;
+      Scope := FirstScope;
+      ScopeIdx := Scope.Index;
 
-      //DebugLn(FPDBG_DWARF_WARNINGS, ['No abbrev found']);
-      //break;
-    end;
+      while Scope.IsValid do
+      begin
+        if not GetDefinition(Scope.Entry, Abbrev) then begin
+          inc(ScopeIdx);
+          Scope.Index := ScopeIdx; // Child or Next, or parent.next
+          continue;
 
-    if Abbrev.tag = DW_TAG_subprogram then begin
-      AttribList.EvalCount := 0;
-      Info.ScopeIndex := Scope.Index;
-      Info.ScopeList := Scope.ScopeListPtr;
-      // TODO: abstract origin
-      if InitLocateAttributeList(Scope.Entry, AttribList) then begin // TODO: error if not
-        if (dafHasLowAddr in AttribList.Abbrev^.flags) and
-           LocateAttribute(Scope.Entry, DW_AT_low_pc, AttribList, Attrib, Form)
-        then begin
-          ReadAddressValue(Attrib, Form, Info.StartPC);
+          //DebugLn(FPDBG_DWARF_WARNINGS, ['No abbrev found']);
+          //break;
+        end;
 
-          if LocateAttribute(Scope.Entry, DW_AT_high_pc, AttribList, Attrib, Form)
-          then ReadAddressValue(Attrib, Form, Info.EndPC)
-          else Info.EndPC := Info.StartPC;
+        if Abbrev.tag = DW_TAG_subprogram then begin
+          AttribList.EvalCount := 0;
+          Info.ScopeIndex := Scope.Index;
+          Info.ScopeList := Scope.ScopeListPtr;
+          // TODO: abstract origin
+          if InitLocateAttributeList(Scope.Entry, AttribList) then begin // TODO: error if not
+            if (dafHasLowAddr in AttribList.Abbrev^.flags) and
+               LocateAttribute(Scope.Entry, DW_AT_low_pc, AttribList, Attrib, Form)
+            then begin
+              ReadAddressValue(Attrib, Form, Info.StartPC);
 
-          // TODO (dafHasName in Abbrev.flags)
-          if (dafHasName in AttribList.Abbrev^.flags) and
-             LocateAttribute(Scope.Entry, DW_AT_name, AttribList, Attrib, Form)
-          then ReadValue(Attrib, Form, Info.Name)
-          else Info.Name := 'undefined';
+              if LocateAttribute(Scope.Entry, DW_AT_high_pc, AttribList, Attrib, Form)
+              then ReadAddressValue(Attrib, Form, Info.EndPC)
+              else Info.EndPC := Info.StartPC;
 
-          Info.StateMachine := nil;
-          if Info.StartPC <> 0
-          then begin
-            if FAddressMap.HasId(Info.StartPC)
-            then DebugLn(FPDBG_DWARF_WARNINGS, ['WARNING duplicate start address: ', IntToHex(Info.StartPC, FAddressSize * 2)])
-            else FAddressMap.Add(Info.StartPC, Info);
+              // TODO (dafHasName in Abbrev.flags)
+              if (dafHasName in AttribList.Abbrev^.flags) and
+                 LocateAttribute(Scope.Entry, DW_AT_name, AttribList, Attrib, Form)
+              then ReadValue(Attrib, Form, Info.Name)
+              else Info.Name := 'undefined';
+
+              Info.StateMachine := nil;
+              if Info.StartPC <> 0
+              then begin
+                if FAddressMap.HasId(Info.StartPC)
+                then DebugLn(FPDBG_DWARF_WARNINGS, ['WARNING duplicate start address: ', IntToHex(Info.StartPC, FAddressSize * 2)])
+                else FAddressMap.Add(Info.StartPC, Info);
+              end;
+            end;
           end;
         end;
+
+        inc(ScopeIdx);
+        Scope.Index := ScopeIdx; // Child or Next, or parent.next
       end;
+
+      FAddressMapBuild := True;
     end;
 
-    inc(ScopeIdx);
-    Scope.Index := ScopeIdx; // Child or Next, or parent.next
+    FBuildAddressMapSection.Leave;
   end;
-
-  FAddressMapBuild := True;
+  assert(FAddressMapBuild, 'TDwarfCompilationUnit.BuildAddressMap: FAddressMapBuild');
 end;
 
 constructor TDwarfCompilationUnit.Create(AOwner: TFpDwarfInfo; ADebugFile: PDwarfDebugFile; ADataOffset: QWord; ALength: QWord; AVersion: Word; AAbbrevOffset: QWord; AAddressSize: Byte; AIsDwarf64: Boolean);
@@ -4994,5 +5029,7 @@ initialization
 
 finalization
   FreeAndNil(TheDwarfSymbolClassMapList);
+  if CachedRtlEvent <> nil then
+    RTLEventDestroy(CachedRtlEvent);
 end.
 

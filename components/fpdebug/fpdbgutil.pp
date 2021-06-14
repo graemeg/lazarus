@@ -50,8 +50,6 @@ type
   TFpThreadWorkerQueue = class;
   TFpWorkerThread = class;
 
-  PPRTLEvent = ^PRTLEvent;
-
   { TFpThreadWorkerItem }
 
   TFpThreadWorkerItem = class

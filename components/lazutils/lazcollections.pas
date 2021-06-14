@@ -9,6 +9,7 @@
 unit lazCollections;
 
 {$mode objfpc}{$H+}
+{$ModeSwitch advancedrecords}
 
 interface
 
@@ -18,6 +19,23 @@ uses
   LazSysUtils;
 
 type
+
+  PPRTLEvent = ^PRTLEvent;
+
+  { TWaitableSection }
+
+  TWaitableSection = record
+  strict private
+    FEventPtr: PPRTLEvent;
+    procedure WaitForLeave(AnEventCache: PPRTLEvent);
+  private const
+    SECTION_ENTERED_INDICATOR = Pointer(1);
+  public
+    function  GetCachedOrNewEvent(AnEventCache: PPRTLEvent): PRTLEvent; inline;
+    procedure FreeOrCacheEvent(AnEventCache: PPRTLEvent; AnEvent: PRTLEvent); inline;
+    function EnterOrWait(AnEventCache: PPRTLEvent = nil): Boolean; inline;
+    procedure Leave;  // if enter returned true
+  end;
 
   { TLazMonitor }
 
@@ -101,6 +119,79 @@ type
 
 
 implementation
+
+{ TWaitableSection }
+
+procedure TWaitableSection.WaitForLeave(AnEventCache: PPRTLEvent);
+var
+  Evnt: PRTLEvent;
+  ExistingEvntPtr: PPRTLEvent;
+begin
+  Evnt := GetCachedOrNewEvent(AnEventCache);
+  ExistingEvntPtr := InterlockedExchange(FEventPtr, @Evnt);
+
+  if ExistingEvntPtr = nil then begin
+    // section has been left already
+    ExistingEvntPtr := InterlockedExchange(FEventPtr, nil);
+    if ExistingEvntPtr <> @Evnt then begin
+      // An other thread has our event, and is waitig
+      RTLEventSetEvent(ExistingEvntPtr^);
+      RTLEventWaitFor(Evnt);
+    end;
+    FreeOrCacheEvent(AnEventCache, Evnt);
+    exit;
+  end;
+
+  // wait for our signal
+  RTLEventWaitFor(Evnt);
+
+  if ExistingEvntPtr <> SECTION_ENTERED_INDICATOR then
+    RTLEventSetEvent(ExistingEvntPtr^);
+end;
+
+function TWaitableSection.GetCachedOrNewEvent(AnEventCache: PPRTLEvent
+  ): PRTLEvent;
+begin
+  Result := nil;
+  if AnEventCache <> nil then
+    Result := InterlockedExchange(AnEventCache^, nil);
+  if Result = nil then
+    Result := RTLEventCreate
+  else
+    RTLEventResetEvent(Result);
+end;
+
+procedure TWaitableSection.FreeOrCacheEvent(AnEventCache: PPRTLEvent;
+  AnEvent: PRTLEvent);
+begin
+  if AnEventCache <> nil then
+    AnEvent := InterlockedExchange(AnEventCache^, AnEvent);
+  if AnEvent <> nil then
+    RTLEventDestroy(AnEvent);
+end;
+
+function TWaitableSection.EnterOrWait(AnEventCache: PPRTLEvent): Boolean;
+var
+  ExistingEvntPtr: PPRTLEvent;
+begin
+  ExistingEvntPtr := InterlockedCompareExchange(FEventPtr, SECTION_ENTERED_INDICATOR, nil);
+  Result := ExistingEvntPtr = nil;
+  if Result then
+    exit;
+
+  WaitForLeave(AnEventCache);
+end;
+
+procedure TWaitableSection.Leave;
+var
+  ExistingEvntPtr: PPRTLEvent;
+begin
+  ExistingEvntPtr := InterlockedExchange(FEventPtr, nil);
+  assert(ExistingEvntPtr <> nil);
+
+  if ExistingEvntPtr <> SECTION_ENTERED_INDICATOR then
+    RTLEventSetEvent(ExistingEvntPtr^);
+end;
 
 { TLazMonitor }
 
