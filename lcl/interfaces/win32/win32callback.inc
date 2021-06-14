@@ -15,7 +15,6 @@
 {$ENDIF}
 type
   TWinControlAccess = class(TWinControl);
-  TApplicationAccess = class(TApplication);
 {*************************************************************}
 {            callback routines                                }
 {*************************************************************}
@@ -2055,8 +2054,6 @@ begin
       begin
         CheckSynchronize;
         TWin32Widgetset(Widgetset).CheckPipeEvents;
-        if Assigned(Application) then
-          TApplicationAccess(Application).ProcessAsyncCallQueue;
       end;
     WM_ENTERIDLE: Application.Idle(False);
     WM_ACTIVATE:  SetLMessageAndParams(LM_ACTIVATE);
