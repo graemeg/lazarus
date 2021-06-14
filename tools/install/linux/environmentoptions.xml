@@ -31,5 +31,11 @@
         <Item2 Value="/var/tmp/"/>
       </History>
     </TestBuildDirectory>
+    <Debugger>
+      <Configs>
+        <Config ConfigName="FpDebug" ConfigClass="TFpDebugDebugger" Active="True"/>
+        <Config ConfigName="Gdb" ConfigClass="TGDBMIDebugger" DebuggerFilename="/usr/bin/gdb"/>
+      </Configs>
+    </Debugger>
   </EnvironmentOptions>
 </CONFIG>

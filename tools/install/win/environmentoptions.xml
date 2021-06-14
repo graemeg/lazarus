@@ -12,6 +12,11 @@
     </MakeFilename>
     <TestBuildDirectory Value="%Temp%">
     </TestBuildDirectory>
-    <Debugger Class="TGDBMIDebugger"/>
+    <Debugger>
+      <Configs>
+        <Config ConfigName="FpDebug" ConfigClass="TFpDebugDebugger" Active="True"/>
+        <Config ConfigName="Gdb" ConfigClass="TGDBMIDebugger" DebuggerFilename="$(LazarusDir)mingw\$(TargetCPU)\bin\gdb.exe"/>
+      </Configs>
+    </Debugger>
   </EnvironmentOptions>
 </CONFIG>
