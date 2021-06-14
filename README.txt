@@ -74,5 +74,4 @@ or send an email to the list.
 Patches can be sent as .zip or .tgz attachments directly to the mailing list if
 small, or (preferably) to the bug tracker at
 http://bugs.freepascal.org/my_view_page.php
-or send the patch to patch@dommelstein.net.
 
