@@ -754,7 +754,7 @@ var
          s2.GoNext;
          inc(i);
          if (i and 31) = 0 then begin
-           StatusBar1.SimpleText := IntToHex(s2.Index,8) + ' / '+ IntToHex(CU.InfoDataLength,8);
+           StatusBar1.SimpleText := IntToHex(s2.Index,8) + ' / '+ IntToHex(s2.ScopeListPtr^.HighestKnown,8)+' // '+format('%2.1f',[s2.Index*100/s2.ScopeListPtr^.HighestKnown]);
            Application.ProcessMessages;
            if not FShowingUnit then break;
          end;
@@ -768,7 +768,6 @@ var
   i: Integer;
   s: TDwarfScopeInfo;
   Node: TTreeNode;
-  rs: TDwarfScopeInfo;
 begin
   FShowingUnit := not FShowingUnit;//////////////////
   if not FShowingUnit then exit;/////////////////
@@ -781,7 +780,6 @@ begin
     if CU = nil then exit;
     s := CU.FirstScope;
     BaseScopeAddr := s.Entry;
-    CU.LocateEntry(0, rs);
 
     Node := nil;
     while s.IsValid do begin
