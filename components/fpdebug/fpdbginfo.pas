@@ -41,7 +41,7 @@ interface
 
 uses
   Classes, SysUtils, DbgIntfBaseTypes, FpDbgLoader, FpdMemoryTools, FpErrorMessages,
-  LazLoggerBase, LazClasses, FpDbgCommon,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazClasses, FpDbgCommon,
   // Register all image reader classes
   FpImgReaderWinPE, FpImgReaderElf, FpImgReaderMacho;
 

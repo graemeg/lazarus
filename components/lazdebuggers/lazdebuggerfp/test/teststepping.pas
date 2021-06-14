@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, math, TestDbgControl, TestDbgTestSuites,
   TTestWatchUtilities, TestCommonSources, TestDbgConfig, TestOutputLogger,
   FpDebugDebugger, FpDebugDebuggerUtils, DbgIntfDebuggerBase, DbgIntfBaseTypes,
-  LazLoggerBase, Forms;
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, Forms;
 
 type
 

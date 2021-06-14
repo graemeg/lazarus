@@ -32,7 +32,7 @@ interface
 
 uses
   Classes, SysUtils,
-  LazUTF8, LazLoggerBase,
+  LazUTF8, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif},
   DbgIntfBaseTypes,
   // FpDebug
   FpImgReaderBase, fpDbgSymTable, FpImgReaderElfTypes, FpDbgCommon;

@@ -40,7 +40,7 @@ interface
 
 uses
   Classes, {$ifdef windows}windows,{$endif} SysUtils, math,
-  LazLoggerBase, LazUTF8,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazUTF8,
   DbgIntfBaseTypes,
   FpImgReaderBase, FpImgReaderWinPETypes, fpDbgSymTable;
   

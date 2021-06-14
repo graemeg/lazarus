@@ -39,7 +39,7 @@ interface
 
 uses
   Classes, SysUtils, fgl, math, LazUTF8, lazCollections,
-  UTF8Process, LazLoggerBase, syncobjs;
+  UTF8Process, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, syncobjs;
 
 type
   TFPDMode = (dm32, dm64);

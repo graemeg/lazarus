@@ -31,7 +31,7 @@ interface
 
 uses
   Classes, sysutils, math, DbgIntfBaseTypes, FpDbgInfo, FpdMemoryTools,
-  FpErrorMessages, FpDbgDwarf, LazLoggerBase, LazClasses;
+  FpErrorMessages, FpDbgDwarf, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazClasses;
 
 type
 

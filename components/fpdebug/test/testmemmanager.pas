@@ -6,7 +6,7 @@ interface
 
 uses
   FpDbgDwarf, FpDbgUtil, FpdMemoryTools, FpDbgInfo, TestHelperClasses,
-  LazLoggerBase, LazUTF8, LazClasses, DbgIntfBaseTypes, sysutils, fpcunit,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazUTF8, LazClasses, DbgIntfBaseTypes, sysutils, fpcunit,
   testregistry;
 
 type

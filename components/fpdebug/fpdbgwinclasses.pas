@@ -118,7 +118,7 @@ uses
   FpDbgInfo,
   FpDbgLoader, FpDbgDisasX86,
   DbgIntfBaseTypes, DbgIntfDebuggerBase,
-  LazLoggerBase, UTF8Process,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, UTF8Process,
   FpDbgCommon, FpdMemoryTools, FpErrorMessages;
 
 type

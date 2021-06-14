@@ -42,7 +42,7 @@ uses
   Windows,
 {$endif}
   Classes, SysUtils, FpDbgInfo, FpDbgWinExtra, FpDbgPETypes, FpDbgDwarf, FpDbgUtil,
-  FpDbgDwarfConst, LazLoggerBase;
+  FpDbgDwarfConst, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif};
   
 
 {$ifdef windows}

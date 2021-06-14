@@ -26,7 +26,7 @@ interface
 
 uses
   Classes, SysUtils, math, DbgIntfBaseTypes, FpErrorMessages, LazClasses,
-  Laz_AVL_Tree, LazLoggerBase;
+  Laz_AVL_Tree, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif};
 
 const
   MINIMUM_MEMREAD_LIMIT = 1024;

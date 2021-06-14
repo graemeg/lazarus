@@ -122,7 +122,7 @@ type
 implementation
 
 uses
-  LazLoggerBase, StrUtils,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, StrUtils,
   {$IFNDEF WINDOWS}BaseUnix, termio;
   {$ELSE}winsock2, windows;
   {$ENDIF}

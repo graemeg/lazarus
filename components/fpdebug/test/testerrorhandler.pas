@@ -5,7 +5,7 @@ unit TestErrorHandler;
 interface
 
 uses
-  FpDbgDwarf, FpDbgUtil, FpErrorMessages, TestHelperClasses, LazLoggerBase, LazUTF8,
+  FpDbgDwarf, FpDbgUtil, FpErrorMessages, TestHelperClasses, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazUTF8,
   DbgIntfBaseTypes, sysutils, fpcunit, testregistry;
 
 type

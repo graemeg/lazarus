@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FpPascalBuilder, FpDbgDisasX86, FpDbgClasses, FpDbgLoader,
-  FpDbgUtil, LazLoggerBase, TestOutputLogger, TestDbgTestSuites, fpcunit,
+  FpDbgUtil, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, TestOutputLogger, TestDbgTestSuites, fpcunit,
   testutils, testregistry, RegExpr;
 
 type

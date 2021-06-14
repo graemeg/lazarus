@@ -5,7 +5,7 @@ unit TestDwarfVarious;
 interface
 
 uses
-  FpDbgDwarf, FpDbgUtil, LazLoggerBase, LazUTF8, sysutils, fpcunit, testregistry;
+  FpDbgDwarf, FpDbgUtil, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazUTF8, sysutils, fpcunit, testregistry;
 
 type
 

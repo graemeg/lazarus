@@ -26,7 +26,7 @@ uses
   strutils,
   debugthread,
   CustApp,
-  Maps, LazLoggerBase,
+  Maps, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif},
   SysUtils;
 
 type

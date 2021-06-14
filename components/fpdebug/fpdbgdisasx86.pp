@@ -40,7 +40,7 @@ interface
 
 uses
   SysUtils, FpDbgUtil, FpDbgInfo, DbgIntfBaseTypes, FpdMemoryTools,
-  FpDbgClasses, LazLoggerBase, LazClasses;
+  FpDbgClasses, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazClasses;
 
 {                   
   The function Disassemble decodes the instruction at the given address.

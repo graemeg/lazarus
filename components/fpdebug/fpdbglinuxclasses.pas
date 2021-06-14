@@ -20,7 +20,7 @@ uses
   FpDbgInfo,
   FpDbgUtil,
   UTF8Process,
-  LazLoggerBase, Maps,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, Maps,
   FpDbgCommon, FpdMemoryTools,
   FpErrorMessages;
 

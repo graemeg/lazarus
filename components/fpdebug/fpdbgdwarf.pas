@@ -51,7 +51,7 @@ interface
 uses
   Classes, SysUtils, types, math, FpDbgInfo, FpDbgDwarfDataClasses,
   FpdMemoryTools, FpErrorMessages, FpDbgUtil, FpDbgDwarfConst, FpDbgCommon,
-  DbgIntfBaseTypes, LazUTF8, LazLoggerBase, LazClasses;
+  DbgIntfBaseTypes, LazUTF8, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazClasses;
 
 type
   TFpDwarfInfo = FpDbgDwarfDataClasses.TFpDwarfInfo;

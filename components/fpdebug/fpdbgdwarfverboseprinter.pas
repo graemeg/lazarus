@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, Math, SysUtils, FpDbgDwarf, FpDbgLoader, FpDbgDwarfConst, FpdMemoryTools,
-  FpImgReaderBase, FpDbgDwarfDataClasses, LazLoggerBase, maps;
+  FpImgReaderBase, FpDbgDwarfDataClasses, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, maps;
 
 type
 

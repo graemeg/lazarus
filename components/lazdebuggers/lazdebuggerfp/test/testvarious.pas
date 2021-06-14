@@ -5,7 +5,7 @@ unit TestVarious;
 interface
 
 uses
-  Classes, SysUtils, FpPascalBuilder, LazLoggerBase, TestOutputLogger, fpcunit,
+  Classes, SysUtils, FpPascalBuilder, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, TestOutputLogger, fpcunit,
   testutils, testregistry;
 
 type

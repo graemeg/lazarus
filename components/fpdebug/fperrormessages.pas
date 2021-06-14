@@ -5,7 +5,7 @@ unit FpErrorMessages;
 interface
 
 uses
-  SysUtils, variants, LazLoggerBase;
+  SysUtils, variants, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif};
 
 type
    TFpErrorCode = Integer;

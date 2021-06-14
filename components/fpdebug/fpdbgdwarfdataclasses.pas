@@ -43,7 +43,7 @@ interface
 
 uses
   Classes, Types, SysUtils, contnrs, Math,
-  Maps, LazClasses, LazFileUtils, LazLoggerBase, LazUTF8,
+  Maps, LazClasses, LazFileUtils, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazUTF8,
   // FpDebug
   FpDbgUtil, FpDbgInfo, FpDbgDwarfConst,
   FpDbgLoader, FpImgReaderBase, FpdMemoryTools, FpErrorMessages, DbgIntfBaseTypes;

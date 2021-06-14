@@ -39,7 +39,7 @@ interface
 
 uses
   Classes, SysUtils, Maps, FpDbgDwarf, FpDbgUtil, FpDbgLoader, FpDbgInfo,
-  FpdMemoryTools, LazLoggerBase, LazClasses, LazFileUtils, DbgIntfBaseTypes,
+  FpdMemoryTools, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazClasses, LazFileUtils, DbgIntfBaseTypes,
   fgl, DbgIntfDebuggerBase, FpPascalBuilder, fpDbgSymTableContext,
   FpDbgDwarfDataClasses, FpDbgCommon, FpErrorMessages;
 

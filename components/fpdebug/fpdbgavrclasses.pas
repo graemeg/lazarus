@@ -17,7 +17,7 @@ uses
   FpDbgClasses,
   FpDbgLoader,
   DbgIntfBaseTypes, DbgIntfDebuggerBase,
-  LazLoggerBase, Maps,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, Maps,
   FpDbgRsp, FpDbgCommon, FpdMemoryTools,
   FpErrorMessages;
 

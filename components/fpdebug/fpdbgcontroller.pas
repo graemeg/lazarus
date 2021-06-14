@@ -9,7 +9,7 @@ uses
   Classes,
   SysUtils,
   Maps,
-  LazLoggerBase, LazClasses,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazClasses,
   DbgIntfBaseTypes, DbgIntfDebuggerBase,
   FpDbgDisasX86,
   FpDbgClasses, FpDbgCallContextInfo, FpDbgUtil,

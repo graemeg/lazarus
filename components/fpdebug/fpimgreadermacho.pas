@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, contnrs,
-  LazFglHash, LazLoggerBase, LazFileUtils, LazUTF8,
+  LazFglHash, {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazFileUtils, LazUTF8,
   DbgIntfBaseTypes,
   // FpDebug
   macho, FpImgReaderMachoFile, FpImgReaderBase, fpDbgSymTable, FpDbgUtil;

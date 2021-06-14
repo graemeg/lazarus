@@ -10,7 +10,7 @@ uses
   FpDbgDwarfDataClasses, FpDbgDwarf, FpDbgInfo,
   FpDbgUtil, FpDbgDwarfConst, FpErrorMessages, FpdMemoryTools,
   DbgIntfBaseTypes,
-  LazLoggerBase, LazStringUtils;
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif}, LazStringUtils;
 
 type
 

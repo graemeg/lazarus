@@ -21,7 +21,7 @@ uses
   MacOSAll,
   FpDbgUtil,
   UTF8Process,
-  LazLoggerBase,
+  {$ifdef FORCE_LAZLOGGER_DUMMY} LazLoggerDummy {$else} LazLoggerBase {$endif},
   FpDbgCommon, FpdMemoryTools,
   FpErrorMessages;
 
