@@ -2391,8 +2391,6 @@
       <element name="TCustomForm.FDelayedOnResize"/>
       <element name="TCustomForm.FIsFirstOnShow"/>
       <element name="TCustomForm.FIsFirstOnActivate"/>
-      <element name="TCustomForm.FIsFirstRestore"/>
-      <element name="TCustomForm.FWindowStateChanged"/>
       <element name="TCustomForm.GetClientHandle" link="#lcl.forms.TCustomForm.ClientHandle"/>
       <element name="TCustomForm.GetClientHandle.Result">
         <short/>
@@ -3262,10 +3260,7 @@
         <short>Signals the OnShow event handler when needed</short>
         <descr>
           <p>
-            No actions are performed in the method when a maximized or full-screen window (<var>WindowState</var> contains <var>wsMaximized</var> or <var>wsFullScreen</var>) is displayed for the first time.
-          </p>
-          <p>
-            DoShow sets an internal flag to ensure that WMActivate is not called if the <var>Parent</var> for the form has not been assigned. It signals the OnShow event handler (when assigned) to perform the event notification.
+            No actions are performed in the method when a maximized or full-screen window (<var>WindowState</var> contains <var>wsMaximized</var> or <var>wsFullScreen</var>) is displayed for the first time. It signals the OnShow event handler (when assigned) to perform the event notification.
           </p>
           <p>
             DoShow is called from the <var>DelayedEvent</var> method in response to queued <var>OnResize</var> or <var>OnChangeBounds</var> events, and from the <var>CMShowingChanged</var> method when <var>Showing</var> is set to <b>True</b>.
@@ -3425,10 +3420,7 @@
             <dd>Calls the Minimize method in Application, or Restore if the Form is already minimized</dd>
           </dl>
           <p>
-            If the value in WindowState has been changed, the method honors the value in the Position property if it was set to maximized  at design-time.
-          </p>
-          <p>
-            When the <var>OnWindowStateChange</var> event handler has been assigned for the form, it is signalled for the current class instance.
+            If the value in WindowState has been changed, the method honors the value in the Position property if it was set to maximized  at design-time. When the <var>OnWindowStateChange</var> event handler has been assigned for the form, it is signalled for the current class instance.
           </p>
         </descr>
         <seealso>
