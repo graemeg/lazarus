@@ -282,8 +282,6 @@ begin
   if (im_context_widget<>nil) and
      (GetNearestLCLObject(im_context_widget) is TCustomControl) then
   begin
-    im_context_use:=False;
-    im_context_skipDelete:=False;
     control:=TWinControl(GetNearestLCLObject(im_context_widget));
     SendMessage(control.Handle,LM_IM_COMPOSITION,GTK_IM_FLAG_END,LPARAM(context));
   end;
