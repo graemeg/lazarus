@@ -178,6 +178,14 @@ IF ERRORLEVEL 1 GOTO CLEANUP
 gmkdir -p %BUILDDIR%\image\components\lazutils
 cp -pr %BUILDDIR%\components\lazutils\lib %BUILDDIR%\image\components\lazutils\lib
 
+%SVN% export -q %LAZSVNDIR%\components\freetype %BUILDDIR%\components\freetype
+%BUILDDRIVE%
+cd %BUILDDIR%\components\freetype
+%MAKEEXE% FPC=%compiler%
+IF ERRORLEVEL 1 GOTO CLEANUP
+gmkdir -p %BUILDDIR%\image\components\freetype
+cp -pr %BUILDDIR%\components\freetype\lib %BUILDDIR%\image\components\freetype\lib
+
 %SVN% export -q %LAZSVNDIR%\lcl %BUILDDIR%\lcl
 %BUILDDRIVE%
 cd %BUILDDIR%\lcl
