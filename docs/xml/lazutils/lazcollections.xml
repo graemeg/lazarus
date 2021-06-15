@@ -23,6 +23,96 @@
       <element name="SyncObjs"/>
       <element name="LazSysUtils"/>
 
+      <element name="PPRTLEvent">
+        <short>Pointer to a PRTLEvent type</short>
+        <descr>
+          <p>
+            For Windows, the pointer is to a THandle type. For other platforms, the pointer is to a record type. Used to implement TWaitableSection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TWaitableSection"/>
+          <link id="#rtl.system.PRTLEvent">PRTLEvent</link>
+        </seealso>
+      </element>
+
+      <element name="TWaitableSection">
+        <short>Protects a section of code in multi-threaded applications</short>
+        <descr>
+          <p>
+            <var>TWaitableSection</var> is an <b>advanced record</b> type used to serialize access to a section of code in a multi-threaded application. It uses a pointer to a RTL event, accessible to all interested threads, to protect its resources. When the event is set by an acquiring thread, other threads must wait until the event is reset.
+          </p>
+          <p>
+            TWaitableSection is used in the implementation of the Dwarf debugger for the Lazarus IDE.
+          </p>
+        </descr>
+        <seealso>
+          <link id="PPRTLEvent"/>
+          <link id="#rtl.system.PRTLEvent">PRTLEvent</link>
+        </seealso>
+      </element>
+
+      <element name="TWaitableSection.FEventPtr"/>
+      <element name="TWaitableSection.WaitForLeave"/>
+      <element name="TWaitableSection.WaitForLeave.AnEventCache"/>
+      <element name="TWaitableSection.SECTION_ENTERED_INDICATOR"/>
+
+      <element name="TWaitableSection.GetCachedOrNewEvent">
+        <short>Gets or creates the RTL event  for the synchronization object</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.system.RTLEventCreate">RTLEventCreate</link>
+          <link id="#rtl.system.InterlockedExchange">InterlockedExchange</link>
+        </seealso>
+      </element>
+      <element name="TWaitableSection.GetCachedOrNewEvent.Result">
+        <short>Pointer to the RTL event acquired or created in the method</short>
+      </element>
+      <element name="TWaitableSection.GetCachedOrNewEvent.AnEventCache">
+        <short>Cached event acquired or updated in the method</short>
+      </element>
+
+      <element name="TWaitableSection.FreeOrCacheEvent">
+        <short>Caches or Frees the RTL event for the synchronization object</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.system.RTLEventDestroy">RTLEventDestroy</link>
+          <link id="#rtl.system.InterlockedExchange">InterlockedExchange</link>
+        </seealso>
+      </element>
+      <element name="TWaitableSection.FreeOrCacheEvent.AnEventCache">
+        <short>Cache where the RTL event is stored</short>
+      </element>
+      <element name="TWaitableSection.FreeOrCacheEvent.AnEvent">
+        <short>RTL event cached or destroyed in the method</short>
+      </element>
+
+      <element name="TWaitableSection.EnterOrWait">
+        <short>Enters the protected section, or waits until it is available</short>
+        <descr/>
+        <seealso>
+          <link id="TWaitableSection.GetCachedOrNewEvent"/>
+          <link id="#rtl.system.InterlockedCompareExchange">InterlockedCompareExchange</link>
+          <link id="#rtl.system.RTLEventSetEvent">RTLEventSetEvent</link>
+          <link id="#rtl.system.RTLEventWaitFor">RTLEventWaitFor</link>
+        </seealso>
+      </element>
+      <element name="TWaitableSection.EnterOrWait.Result">
+        <short>True if the protected section has not been entered</short>
+      </element>
+      <element name="TWaitableSection.EnterOrWait.AnEventCache">
+        <short>Cached RTL event set and monitored in the method</short>
+      </element>
+
+      <element name="TWaitableSection.Leave">
+        <short>Leaves the protected section</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.system.InterlockedExchange">InterlockedExchange</link>
+          <link id="#rtl.system.RTLEventSetEvent">RTLEventSetEvent</link>
+        </seealso>
+      </element>
+
       <!-- class Visibility: default -->
       <element name="TLazMonitor">
         <short>
