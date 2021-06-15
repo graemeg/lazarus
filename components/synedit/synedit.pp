@@ -49,7 +49,6 @@ unit SynEdit;
     {$DEFINE WinIMEFull}
   {$ENDIF}
 {$ENDIF}
-{..$DEFINE Gtk2IME}
 
 {$I synedit.inc}
 
