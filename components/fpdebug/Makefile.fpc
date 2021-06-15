@@ -1,17 +1,17 @@
 #   File generated automatically by Lazarus Package Manager
 #
-#   Makefile.fpc for fpdebug 0.9
+#   Makefile.fpc for fpdebug 1.0
 #
-#   This file was generated on 14-7-20
+#   This file was generated on 15-6-21
 
 [package]
 name=fpdebug
-version=0.9
+version=1.0
 
 [compiler]
 unittargetdir=lib/$(CPU_TARGET)-$(OS_TARGET)
 unitdir=. ../../packager/units/$(CPU_TARGET)-$(OS_TARGET) ../lazutils/lib/$(CPU_TARGET)-$(OS_TARGET) ../freetype/lib/$(CPU_TARGET)-$(OS_TARGET) ../../lcl/units/$(CPU_TARGET)-$(OS_TARGET) ../debuggerintf/lib/$(CPU_TARGET)-$(OS_TARGET)
-options= -MObjFPC -Scghi -O1 -g -gl -l -venibq -vw-h- -vm3057 $(DBG_OPTIONS)
+options= -MObjFPC -Scghi -O1 -g -gl -l -venibq -vw-h- -vm6058,3057 $(DBG_OPTIONS)
 
 [target]
 units=fpdebug.pas

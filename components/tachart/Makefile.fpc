@@ -2,7 +2,7 @@
 #
 #   Makefile.fpc for TAChartLazarusPkg 1.0
 #
-#   This file was generated on 13-2-21
+#   This file was generated on 15-6-21
 
 [package]
 name=tachartlazaruspkg
@@ -11,7 +11,7 @@ version=1.0
 [compiler]
 unittargetdir=lib/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM)
 unitdir=numlib_fix editors ../../packager/units/$(CPU_TARGET)-$(OS_TARGET) ../lazutils/lib/$(CPU_TARGET)-$(OS_TARGET) ../buildintf/units/$(CPU_TARGET)-$(OS_TARGET) ../freetype/lib/$(CPU_TARGET)-$(OS_TARGET) ../../lcl/units/$(CPU_TARGET)-$(OS_TARGET) ../../lcl/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) ../lazcontrols/lib/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) ../ideintf/units/$(CPU_TARGET)-$(OS_TARGET)/$(LCL_PLATFORM) .
-options= -MObjFPC -Scghi -O1 -g -gl -Xg -l -vewnhibq -vm6058 -dLCL -dLCL$(LCL_PLATFORM) -dCHECK_VALID_SCALING $(DBG_OPTIONS)
+options= -MObjFPC -Scghi -O1 -g -gl -Xg -l -vewnhibq -dLCL -dLCL$(LCL_PLATFORM) -dCHECK_VALID_SCALING $(DBG_OPTIONS)
 
 [target]
 units=tachartlazaruspkg.pas
