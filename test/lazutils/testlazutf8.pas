@@ -165,6 +165,7 @@ begin
   t(#$f0#$80#$80#$80,0,'invalid: 0 encoded as 4 byte');
   t(#$f0#$8f#$bf#$bf,0,'invalid: $ffff encoded as 4 byte');
   t(#$F7#$BF#$BF#$BF,0,'invalid 4 byte out of range');
+  t(#$ED#$A0#$80,0,'3 byte encoding for reserved UTF-16 surrogate halve');
 end;
 
 procedure TTestLazUTF8.TestFindUnicodeToUTF8;
