@@ -51,7 +51,7 @@ type
   end;
 {$ENDIF}
 
-procedure RunCmdFromPath(ProgramFilename, CmdLineParameters: string);
+procedure RunCmdFromPath(const ProgramFilename, CmdLineParameters: string);
 function FindFilenameOfCmd(ProgramFilename: string): string;
 
 function GetSystemThreadCount: integer; // guess number of cores
@@ -155,33 +155,32 @@ end;
 
 // Runs a short command which should point to an executable in
 // the environment PATH
-// For example: ProgramFilename=ls CmdLineParameters=-l /home
-// Will locate and execute the file /bin/ls
+// For example: ProgramFilename='ls' CmdLineParameters='-l /home'
+// Will locate and execute the file '/bin/ls'
 // If the command isn't found, an exception will be raised
-procedure RunCmdFromPath(ProgramFilename, CmdLineParameters: string);
+procedure RunCmdFromPath(const ProgramFilename, CmdLineParameters: string);
 var
-  OldProgramFilename: String;
+  NewProgramFilename: String;
   BrowserProcess: TProcessUTF8;
 begin
-  OldProgramFilename:=ProgramFilename;
-  ProgramFilename:=FindFilenameOfCmd(ProgramFilename);
+  NewProgramFilename:=FindFilenameOfCmd(ProgramFilename);
 
-  if ProgramFilename='' then
-    raise EFOpenError.Create(Format(lrsProgramFileNotFound, [OldProgramFilename]));
-  if not FileIsExecutable(ProgramFilename) then
-    raise EFOpenError.Create(Format(lrsCanNotExecute, [ProgramFilename]));
+  if NewProgramFilename='' then
+    raise EFOpenError.Create(Format(lrsProgramFileNotFound, [ProgramFilename]));
+  if not FileIsExecutable(NewProgramFilename) then
+    raise EFOpenError.Create(Format(lrsCanNotExecute, [NewProgramFilename]));
 
   // run
   BrowserProcess := TProcessUTF8.Create(nil);
   try
     BrowserProcess.InheritHandles:=false;
     // Encloses the executable with "" if its name has spaces
-    if Pos(' ',ProgramFilename)>0 then
-      ProgramFilename:='"'+ProgramFilename+'"';
+    if Pos(' ',NewProgramFilename)>0 then
+      NewProgramFilename:='"'+NewProgramFilename+'"';
 
     {$Push}
     {$WARN SYMBOL_DEPRECATED OFF}
-    BrowserProcess.CommandLine := ProgramFilename;
+    BrowserProcess.CommandLine := NewProgramFilename;
     if CmdLineParameters<>'' then
       BrowserProcess.CommandLine := BrowserProcess.CommandLine + ' ' + CmdLineParameters;
     {$Pop}
