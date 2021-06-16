@@ -573,6 +573,7 @@ type
   protected
     function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
     function EatArrowKeys(const {%H-}AKey: Word): Boolean; override;
+    class function selection_changed(ctl:TGtk3ListView):gboolean;cdecl;
   public
     destructor Destroy; override;
     {interface implementation}
@@ -5845,6 +5846,7 @@ begin
     FCentralWidget := TGtkIconView.new_with_model(TreeModel);
     PGtkIconView(FCentralWidget)^.set_text_column(1);
     PGtkIconView(FCentralWidget)^.set_pixbuf_column(2);
+    PGtkIconView(FCentralWidget)^.selection_mode:=GTK_SELECTION_SINGLE;
   end
   else
   begin
@@ -5874,9 +5876,51 @@ begin
     gtk_tree_selection_set_select_function(PGtkTreeView(FCentralWidget)^.get_selection, TGtkTreeSelectionFunc(@Gtk3WS_ListViewItemPreSelected),
       Self, nil);
     g_signal_connect_data(PGtkTreeView(FCentralWidget)^.get_selection, 'changed', TGCallback(@Gtk3WS_ListViewItemSelected), Self, nil, 0);
+  end else
+  begin
+    g_signal_connect_data (PGtkIconView(FCentralWidget), 'selection-changed',
+                        TGCallback(@Tgtk3ListView.selection_changed), Self, nil, 0);
   end;
   // if FIsTreeView then
   //  PGtkTreeView(FCentralWidget)^.set_search_column(0);
+end;
+
+class function TGtk3ListView.selection_changed(ctl:TGtk3ListView):gboolean;cdecl;
+var
+  pl:PGList;
+  pndx:PGint;
+  i,cnt:gint;
+  lv:TListView;
+  Msg: TLMNotify;
+  NM: TNMListView;
+begin
+  pl:=PGtkIconView(ctl.FCentralWidget)^.get_selected_items();
+  if Assigned(pl) then
+  begin
+    pndx:=PGtkTreePath(pl^.data)^.get_indices_with_depth(@cnt);
+    lv:=TListView(ctl.LCLObject);
+    ctl.BeginUpdate;
+    try
+      for i:=0 to cnt-1 do
+      begin
+        FillChar(Msg{%H-}, SizeOf(Msg), 0);
+        Msg.Msg := CN_NOTIFY;
+        FillChar(NM{%H-}, SizeOf(NM), 0);
+        NM.hdr.hwndfrom := HWND(ctl);
+        NM.hdr.code := LVN_ITEMCHANGED;
+        NM.iItem := {%H-}PtrInt(pndx^);
+        NM.iSubItem := 0;
+        NM.uNewState := LVIS_SELECTED;
+        NM.uChanged := LVIF_STATE;
+        Msg.NMHdr := @NM.hdr;
+        ctl.DeliverMessage(Msg);
+        inc(pndx);
+      end;
+    finally
+      ctl.EndUpdate;
+    end;
+  end;
+
 end;
 
 function TGtk3ListView.EatArrowKeys(const AKey: Word): Boolean;
