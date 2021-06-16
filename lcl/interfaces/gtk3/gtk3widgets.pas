@@ -2597,6 +2597,7 @@ procedure TGtk3Widget.DestroyWidget;
 begin
   if IsValidHandle and FOwnWidget then
   begin
+    fOwnWidget:=false;
     DbgOut(#10'destroying '+Classname+' ... ');
     FWidget^.destroy_;
     DbgOut(Classname+' destroyed.'+#10);
@@ -4500,12 +4501,12 @@ begin
   if TGtk3Widget(Data).InUpdate then
     exit;
   {page is deleted}
-  DebugLn('GtkNotebookAfterSwitchPage ');
+ { DebugLn('GtkNotebookAfterSwitchPage ');
   if TGtk3NoteBook(Data).getPagesCount < TCustomTabControl(TGtk3NoteBook(Data).LCLObject).PageCount then
   begin
     DebugLn('GtkNotebookAfterSwitchPage PageIsDeleted');
     exit;
-  end;
+  end;}
   FillChar(Mess{%H-}, SizeOf(Mess), 0);
   Mess.Msg := LM_NOTIFY;
   FillChar(NMHdr{%H-}, SizeOf(NMHdr), 0);
@@ -4551,6 +4552,7 @@ procedure GtkNotebookSwitchPage(widget: PGtkWidget; {%H-}page: PGtkWidget; pagen
 var
   Mess: TLMNotify;
   NMHdr: tagNMHDR;
+  c1,c2:integer;
 begin
   if TGtk3Widget(Data).InUpdate then
     exit;
@@ -4558,11 +4560,13 @@ begin
   DebugLn('GtkNotebookSwitchPage Data ',dbgHex({%H-}PtrUInt(Data)),' Realized ',dbgs(Widget^.get_realized),' pageNum=',dbgs(pageNum));
 
   {page is deleted}
-  if TGtk3NoteBook(Data).getPagesCount < TCustomTabControl(TGtk3NoteBook(Data).LCLObject).PageCount then
+ { c1:=TGtk3NoteBook(Data).getPagesCount;
+  c2:=TCustomTabControl(TGtk3NoteBook(Data).LCLObject).PageCount;
+  if c1 < c2 then
   begin
     DebugLn('GtkNotebookSwitchPage PageIsDeleted ');
     exit;
-  end;
+  end;}
 
   FillChar(Mess{%H-}, SizeOf(Mess), 0);
   Mess.Msg := LM_NOTIFY;
