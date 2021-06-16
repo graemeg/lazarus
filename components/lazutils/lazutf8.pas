@@ -2848,6 +2848,8 @@ begin
         and ((ord(p[2]) and %11000000) = %10000000) then begin
           if (c=%11100000) and (ord(p[1])<=%10011111) then
             exit; // XSS attack: 3 bytes are mapped to the 1 or 2 byte codes
+          if ((c=%11101101) and (ord(p[1])>=%10100000)) then
+            exit; //Reserved values for UTF-16 surrogate halves
           CharLen:=3;
         end else
           exit; // missing following bytes
