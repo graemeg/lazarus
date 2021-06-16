@@ -2939,7 +2939,14 @@ function TCodeHelpManager.GetFPDocNodeAsHTML(FPDocFile: TLazFPDocFile;
       if Node.NodeName='errors' then
         Result:=Result+'<div class="title">'+'Errors'+'</div>'
       else if Node.NodeName='seealso' then
-        Result:=Result+'<div class="title">'+'See also'+'</div>';
+        Result:=Result+'<div class="title">'+'See also'+'</div>'
+      else if Node.NodeName='short' then
+      begin
+        //fix Mantis issue #39004
+        s:=Trim(s);
+        if (s<>'') and (s[Length(s)]<>'.') then
+          s:=s+'.';
+      end;
       Result:=Result+'<div class="'+Node.NodeName+'">'+s+'</div>'+LineEnding;
     end else
     if (Node.NodeName='p')
