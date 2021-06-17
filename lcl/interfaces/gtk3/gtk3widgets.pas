@@ -7393,7 +7393,7 @@ begin
   bs:=AForm.BorderStyle;
 
   case bs of
-  bsSingle: result:=result or GDK_DECOR_BORDER;
+  bsSingle: result:=result or GDK_DECOR_TITLE{GDK_DECOR_BORDER};
   bsDialog:
       result:=result or GDK_DECOR_BORDER or GDK_DECOR_TITLE;
   bsSizeable:
