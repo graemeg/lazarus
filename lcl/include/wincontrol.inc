@@ -4322,8 +4322,6 @@ begin
   if (not HandleAllocated)
   or ((not SizeChanged) and (not PosChanged)) then exit;
 
-  Perform(LM_WindowposChanged, 0, 0);
-
   if SizeChanged then
   begin
     with SizeMsg do
