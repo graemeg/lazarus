@@ -324,8 +324,7 @@ begin
   Searcher:=TCopyDirTree.Create;
   try
     // Destination directories are always created. User setting has no effect!
-    Flags:=Flags+[cffCreateDestDirectory];
-    Searcher.FFlags:=Flags;
+    Searcher.FFlags:=Flags+[cffCreateDestDirectory];
     Searcher.FCopyFailedCount:=0;
     Searcher.FSourceDir:=TrimFilename(SetDirSeparators(SourceDir));
     Searcher.FTargetDir:=TrimFilename(SetDirSeparators(TargetDir));
