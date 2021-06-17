@@ -9,8 +9,23 @@
 -->
 
 <module name="Laz_XMLStreaming">
-<short></short>
+<short>
+  Contains classes, types, and routines used to implement an XML serialization driver
+</short>
 <descr>
+  <p>
+    Copyright (c) 2000 by Sebastian Guenther, sg@freepascal.org
+  </p>
+  <p>
+    Extended by Mattias Gaertner:
+  </p>
+  <ul>
+    <li>Reading/Writing children, all kinds of properties,</li>
+    <li>custom properties (via DefineProperties).</li>
+  </ul>
+  <p>
+    This file is part of the <file>LazUtils</file> package.
+  </p>
 </descr>
 
 <!-- enumeration type Visibility: default -->
