@@ -821,7 +821,7 @@ begin
   inherited WMActivate(Message);
 
   PP := LCLIntf.GetParent(Handle);
-  if (PP <> 0) then
+  if PP <> 0 then
     SendMessage(PP, LM_NCACTIVATE, Ord(Message.Active <> WA_INACTIVE), 0);
 end;
 
@@ -944,7 +944,7 @@ begin
   FreeAndNil(Shape);
 
   if Assigned(DTPicker) then begin
-    if (Screen.ActiveControl = DTPicker) then
+    if Screen.ActiveControl = DTPicker then
       DTPicker.Invalidate;
 
     if DTPicker.FCalendarForm = nil then
@@ -1314,9 +1314,13 @@ begin
 
             N := Canvas.GetTextWidth(NullMonthChar);
             if N > 0 then begin
-              N := FMonthWidth div N - 1;
-              if N > 1 then
+              N := (FMonthWidth - 1) div N + 1;
+              if N > 1 then begin
                 FNullMonthText := StringOfChar(NullMonthChar, N);
+                N := Canvas.TextFitInfo(FNullMonthText, FMonthWidth);
+                if N > 1 then
+                  SetLength(FNullMonthText, N);
+              end;
             end;
             if N <= 1 then
               FNullMonthText := NullMonthChar;
@@ -1389,12 +1393,7 @@ begin
     if NowIfNull then
       DecodeTime(SysUtils.Time, Result.Hour, Result.Minute, Result.Second, Result.MiliSec)
     else
-      with Result do begin
-        Hour := 0;
-        Minute := 0;
-        Second := 0;
-        MiliSec := 0;
-      end;
+      Result := Default(THMSMs);
   end else
     DecodeTime(FDateTime, Result.Hour, Result.Minute, Result.Second, Result.MiliSec);
 end;
@@ -1406,14 +1405,10 @@ begin
     if TodayIfNull then
       DecodeDate(SysUtils.Date, Result.Year, Result.Month, Result.Day)
     else
-      with Result do begin
-        Day := 0;
-        Month := 0;
-        Year := 0;
-      end;
+      Result := Default(TYMD);
   end else begin
     DecodeDate(FDateTime, Result.Year, Result.Month, Result.Day);
-    if WithCorrection then begin
+    if WithCorrection and (FCorrectedValue > 0) then begin
       case FCorrectedDTP of
         dtpDay:
           Result.Day := FCorrectedValue;
@@ -1612,7 +1607,7 @@ begin
 
           dtpHour:
             begin
-              if (FTimeFormat = tf12) then begin
+              if FTimeFormat = tf12 then begin
                 if GetHMSMs().Hour < 12 then begin
                   if W = 12 then
                     SetHour(0)
@@ -1638,7 +1633,7 @@ begin
 
       end;
     finally
-      FCorrectedDTP := dtpAMPM;
+      FCorrectedValue := 0;
       Dec(FUserChanging);
     end;
   end;
@@ -1948,12 +1943,10 @@ begin
   CSize.cx := ScaleScreenToFont(CSize.cx);
   CSize.cy := ScaleScreenToFont(CSize.cy);
 
-  if IsRightToLeft and not IgnoreRightToLeft then
-  begin
+  if IsRightToLeft and not IgnoreRightToLeft then begin
     Result.Right := ClientWidth - (BorderSpacing.InnerBorder + BorderWidth);
     Result.Left := Result.Right - CSize.cx;
-  end else
-  begin
+  end else begin
     Result.Left := BorderSpacing.InnerBorder + BorderWidth;
     Result.Right := Result.Left + CSize.cx;
   end;
@@ -2048,8 +2041,7 @@ begin
         Inc(I);
     end;
 
-    if not (GetDateTimePartFromTextPart(I)
-                in FEffectiveHideDateTimeParts) then
+    if not (GetDateTimePartFromTextPart(I) in FEffectiveHideDateTimeParts) then
       FSelectedTextPart := I;
 
     { Is it possible that all parts are hidden? Yes it is!
@@ -2592,7 +2584,7 @@ var
   WT: Array[dtpHour..dtpAMPM] of Word;
   DTP: TDateTimePart;
 begin
-  FCorrectedDTP := dtpAMPM;
+  FCorrectedValue := 0;
 
   FUserChangedText := False;
 
@@ -3070,8 +3062,8 @@ begin
         L := FDayPos;
     end;
 
-    N := 3;
-    K := 3;
+    N := L;
+    K := 0;
     for DTP := dtpHour to dtpAMPM do begin
       I := Ord(DTP) + 1;
       if DTP in FEffectiveHideDateTimeParts then
@@ -3085,14 +3077,12 @@ begin
         else
           DD[I] := 2 * FDigitWidth;
 
-        if K < I then
-          K := I;
+        K := I;
       end;
-
-      if N < K then
-        N := K;
-
     end;
+
+    if N < K then
+      N := K;
 
     for I := M to N do begin
       if DD[I] <> 0 then begin
@@ -3217,7 +3207,7 @@ end;
 
 function TCustomDateTimePicker.GetChecked: Boolean;
 begin
-  Result := not FShowCheckBox or FChecked;
+  Result := (not FShowCheckBox) or FChecked;
 end;
 
 function TCustomDateTimePicker.AreSeparatorsStored: Boolean;
@@ -3354,7 +3344,8 @@ var
   Finished, ForceChange: Boolean;
 
 begin
-  if (not FReadOnly) then begin
+  FCorrectedValue := 0;
+  if not FReadOnly then begin
     Finished := False;
     ForceChange := False;
 
@@ -3384,9 +3375,7 @@ begin
       else
         S := Key;
 
-      if (Length(S) >= N) then begin
-
-        FCorrectedDTP := dtpAMPM;
+      if Length(S) >= N then begin
 
         L := StrToInt(S);
         if DTP < dtpHour then begin
@@ -3399,46 +3388,47 @@ begin
 
           if AutoAdvance and (YMD.Day <= 31) and
               (YMD.Day > NumberOfDaysInMonth(YMD.Month, YMD.Year)) then begin
+            FCorrectedDTP := dtpAMPM;
             case DTP of
               dtpDay:
                 case FEffectiveDateDisplayOrder of
-                  ddoDMY: begin
-                    FCorrectedValue := YMD.Month + 1;
+                  ddoDMY:
                     FCorrectedDTP := dtpMonth;
-                  end;
                   ddoMDY:
                     FCorrectedDTP := dtpYear;
                 end;
               dtpMonth:
                 case FEffectiveDateDisplayOrder of
-                  ddoMDY, ddoYMD: begin
-                      FCorrectedValue := NumberOfDaysInMonth(YMD.Month, YMD.Year);
+                  ddoMDY, ddoYMD:
+                    begin                         
                       FCorrectedDTP := dtpDay;
+                      FCorrectedValue := NumberOfDaysInMonth(YMD.Month, YMD.Year);
+                      YMD.Day := FCorrectedValue;
                     end;
                   ddoDMY:
                     FCorrectedDTP := dtpYear;
                 end;
               dtpYear:
                 if (FEffectiveDateDisplayOrder = ddoYMD) and (YMD.Month = 2)
-                      and (YMD.Day = 29) and not IsLeapYear(YMD.Year) then begin
-                  FCorrectedValue := YMD.Month + 1;
+                      and (YMD.Day = 29) and not IsLeapYear(YMD.Year) then
                   FCorrectedDTP := dtpMonth;
-                end;
             end;
 
             case FCorrectedDTP of
-              dtpDay:
-                YMD.Day := FCorrectedValue;
               dtpMonth:
-                YMD.Month := FCorrectedValue;
+                begin
+                  FCorrectedValue := YMD.Month + 1;
+                  YMD.Month := FCorrectedValue;
+                end;
               dtpYear:
                 if (YMD.Day = 29) and (YMD.Month = 2) then begin
-                  while not IsLeapYear(YMD.Year) do
-                    Inc(YMD.Year);
-                  FCorrectedValue := YMD.Year;
+                  FCorrectedValue := ((YMD.Year + 3) div 4) * 4;
+                  if (FCorrectedValue mod 100 = 0) and (FCorrectedValue mod 400 <> 0) then
+                    FCorrectedValue := FCorrectedValue + 4;
+                  YMD.Year := FCorrectedValue;
                 end;
-
             end;
+
           end;
 
           if TryEncodeDate(YMD.Year, YMD.Month, YMD.Day, D)
@@ -3515,7 +3505,7 @@ begin
       DoAutoCheck;
     end;
 
-    FCorrectedDTP := dtpAMPM;
+    FCorrectedValue := 0;
   end;
 
 end;
