@@ -7,13 +7,16 @@
     ====================================================================
     -->
     <module name="FindDlgUnit">
-      <short/>
+      <short>Contains a form template for the find dialog in LCL</short>
       <descr>
         <p>
           Only the .lfm file is used by the LCL (dialogs.pp). This unit is itself is not compiled into the LCL. This form is used to design the .lfm file.
         </p>
         <p>
           The source code is a copy of <file>../lcl/include/finddialog.inc</file>.
+        </p>
+        <p>
+          This file is part of the Lazarus Component Library (<b>LCL</b>).
         </p>
       </descr>
 

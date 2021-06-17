@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <fpdoc-descriptions>
   <package name="lcl">
     <!--
@@ -7,12 +7,10 @@
     ====================================================================
     -->
     <module name="Graphics">
-      <short>
-        Contains definitions for many fundamental classes and types used in graphic applications
-      </short>
+      <short>Contains definitions for classes and types used in graphic applications</short>
       <descr>
         <p>
-          <file>graphics.pp</file> contains classes, types, and routines used to represent graphic images in a Lazarus Component Library (<b>LCL</b>) application. The following classes are added to the registered class list used in the Run-time Library (<b>RTL</b>):
+          <file>graphics.pp</file> contains classes, types, and routines used to represent graphic images in a Lazarus Component Library (<b>LCL</b>) application. The following classes are added to the registered class list used by the Run-time Library (<b>RTL</b>):
         </p>
         <ul>
           <li>TBitmap</li>
@@ -27,6 +25,9 @@
           <li>TBrush</li>
           <li>TRegion</li>
         </ul>
+        <p>
+          This file is part of the Lazarus Component Library (<b>LCL</b>).
+        </p>
       </descr>
 
       <!-- unresolved external references -->
