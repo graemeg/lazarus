@@ -429,6 +429,27 @@
         </short>
       </element>
 
+      <element name="TMaskEditValidationErrorMode">
+        <short>Represents the action taken for an error in TMaskEdit validation</short>
+        <descr>
+          <p>
+            <var>TMaskEditValidationErrorMode</var> is an enumerated type with values that represent the action taken when a error occurs while validating the value in <var>TCustomMaskEdit</var> and descendants. It is the type used to implement the <var>ValidationErrorMode</var> property in TCustomMaskEdit.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomMaskEdit.ValidationErrorMode"/>
+          <link id="TCustomMaskEdit.OnValidationError"/>
+        </seealso>
+      </element>
+      <element name="TMaskEditValidationErrorMode.mvemException">
+        <short>Causes an exception to be raised for a validation error in TMaskEdit</short>
+      </element>
+      <element name="TMaskEditValidationErrorMode.mvemEvent">
+        <short>
+          Causes the OnValidationError event handler to be signalled for a validation error in TMaskEdit
+        </short>
+      </element>
+
       <element name="EDBEditError">
         <short>Exception class raised for an error in a masked edit control</short>
         <descr>
@@ -1832,11 +1853,11 @@
             </tr>
             <tr>
               <td><b>c</b></td>
-              <td>any optional Utf-8 character</td>
+              <td>any optional Utf-8 character (including a Space character)</td>
             </tr>
             <tr>
               <td><b>C</b></td>
-              <td>any Utf-8 character in the range #32-#255</td>
+              <td>any Utf-8 character in the range #33-#255 (does not include Space)</td>
             </tr>
             <tr>
               <td><b>9</b></td>
@@ -1996,10 +2017,10 @@
         <short>Enables or disables use of set notation in the EditMask</short>
         <descr>
           <p>
-            EnableSets is an experimental Boolean property. It is used when a new value assigned to the EditMask property is parsed to reconstruct the internal mask characters and literals for the control.
+            <var>EnableSets</var> is an experimental <var>Boolean</var> property. It is used when a new value assigned to the EditMask property is parsed to reconstruct the internal mask characters and literals for the control.
           </p>
           <p>
-            When set to False, the '[' and ']' characters used to for set notation are treated as literal characters. When set to True, the optional or required set definition is added to the mask. The default value for the property is False.
+            When set to <b>False</b>, the '[' and ']' characters used in set notation are treated as literal characters. When set to <b>True</b>, the optional or required set definition is added to the mask. The default value for the property is <b>False</b>.
           </p>
         </descr>
         <seealso>
@@ -2051,8 +2072,24 @@
 
       <element name="TMaskEdit.ValidationErrorMode">
         <short>Indicates the action taken when the control value is invalid for its mask</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>ValidationErrorMode</var> is a <var>TMaskEditValidationErrorMode</var> property which indicates the action taken when the value for the control is invalid for the mask in the <var>EditMask</var> property.
+          </p>
+          <p>
+            The default value for the property is <var>mvemException</var>, and causes an exception to be raised when control value is invalid for its mask. Use <var>mvemException</var> to cause the <var>OnValidationError</var> event handler to be signalled for the validation error.
+          </p>
+          <p>
+            The property value is used in the <var>ValidateEdit</var> method when <var>IsMasked</var> is set to <b>True</b> and the EditText for the control is not valid.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomMaskEdit.OnValidationError"/>
+          <link id="TCustomMaskEdit.ValidateEdit"/>
+          <link id="TCustomMaskEdit.IsMasked"/>
+          <link id="TCustomMaskEdit.EditText"/>
+          <link id="TMaskEditValidationErrorMode"/>
+        </seealso>
       </element>
 
       <element name="TMaskEdit.Align" link="#lcl.controls.TControl.Align"/>

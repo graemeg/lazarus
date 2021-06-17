@@ -1293,14 +1293,16 @@ D:\db\employee.fdb
 
       <element name="FileExistsUTF8">
         <short>
-          Indicates if the specified file name exists
+          Indicates if the specified UTF-8-encoded file name exists
         </short>
         <descr>
           <p>
-            <var>FileExistsUTF8</var> is a <var>Boolean</var> function which indicates if the specified file name exists in the local file system. For the Windows environment, FileExistsUTF8 uses FileGetAttrUTF8 to ensure that Filename does not have the <b>FILE_ATTRIBUTE_DIRECTORY</b> attribute. For UNIX-like environments, the FileExists function in <file>SysUtils</file> is used to get the return value.
+            <var>FileExistsUTF8</var> is a <var>Boolean</var> function which indicates if the specified file name exists on the local file system. FileExistsUTF8 calls the <var>FileExists</var> function in <file>SysUtils</file> to get the return value for the routine.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.sysutils.FileExists">FileExists</link>
+        </seealso>
       </element>
 
       <element name="FileExistsUTF8.Result">
@@ -1308,7 +1310,7 @@ D:\db\employee.fdb
       </element>
 
       <element name="FileExistsUTF8.Filename">
-        <short>UTF-8-encoded file name to locate in the local file system</short>
+        <short>UTF-8-encoded file name to locate on the local file system</short>
       </element>
 
       <element name="FileAgeUTF8">

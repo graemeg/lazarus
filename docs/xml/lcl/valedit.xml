@@ -1067,7 +1067,7 @@
         <short>Key data for the modified row</short>
       </element>
 
-      <element name="TValueListEditor" link="#lcl.grids.TCustomStringGrid">
+      <element name="TValueListEditor">
         <short>
           A visual grid control for editing Key-Value pairs
         </short>
@@ -1076,8 +1076,11 @@
             <var>TValueListEditor</var> is a <var>TCustomStringGrid</var> descendant which implements a grid-style editor control for Key-Value pairs. TValueListEditor displays a two column grid where the first column is read-only, and lists the key names. The second column is for editing the associated values for the key names.
           </p>
           <p>
-            TValueListEditor provides properties with the Keys and Values displayed in the rows for the control. The Cells property allows access using the familiar column and row number mechanism used in grid controls. The Strings property allows access to the strings used for the Key and Value in a row.
+            TValueListEditor provides properties with the Keys and Values displayed in the rows and columns for the control. The Cells property allows access using the familiar column and row number mechanism used in grid controls. The Strings property allows access to the strings used for the Key and Value in a row.
           </p>
+          <remark>
+            Since version 2.2.0, Keys will no longer allow the name/value separator used in the Strings property to be entered as a value in the Key column. When entered, focus is moved to the Value column. If pasted into the Key column, the value is silently discarded.
+          </remark>
           <p>
             The ItemProps property is used to configure the cell editors used for the Keys and Values. This includes setting the editor style, edit mask, maximum length for the value, a list of selectable pick list values, and a read-only flag. Descriptive text for the Key name can also be stored  in the ItemProps.
           </p>
@@ -1100,7 +1103,7 @@
         <seealso>
           <link id="TItemPropList"/>
           <link id="TItemProp"/>
-          <link id="#LCL.Grids.TCustomStringGrid">TCustomStringGrid</link>
+          <link id="#lcl.grids.tcustomstringgrid">TCustomStringGrid</link>
         </seealso>
       </element>
 
@@ -2368,6 +2371,9 @@
           <p>
             Use <var>Values</var> to access the value for a specific Key name in the control.
           </p>
+          <remark>
+            Since version 2.2.0, Keys will no longer allow the name/value separator used in the Strings property to be used as a value in the property.
+          </remark>
         </descr>
         <seealso>
           <link id="TValueListEditor.Values"/>

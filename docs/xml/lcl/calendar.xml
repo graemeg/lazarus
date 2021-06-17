@@ -43,10 +43,16 @@
         </short>
         <descr>
           <p>
-            TDisplaySetting is an enumerated type with values that control display settings in TCalendar. Values from TDisplaySetting are stored in the TDisplaySettings type.
+            <var>TDisplaySetting</var> is an enumerated type with values that control display settings in <var>TCalendar</var>. Values from TDisplaySetting are stored in the <var>TDisplaySettings</var> type.
           </p>
+          <remark>
+            The value <var>dsStartMonday</var> has been removed in LCL version 2.2 or higher.
+          </remark>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="DefaultDisplaySettings"/>
+          <link id="TCustomCalendar.DisplaySettings"/>
+        </seealso>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TDisplaySetting.dsShowHeadings">
@@ -64,20 +70,19 @@
       <element name="TDisplaySetting.dsShowWeekNumbers">
         <short>Displays week numbers</short>
       </element>
-      <!-- enumeration value Visibility: default -->
-      <element name="TDisplaySetting.dsStartMonday">
-        <short>Display days starting with Monday (instead of Sunday)</short>
-      </element>
 
       <!-- set type Visibility: default -->
       <element name="TDisplaySettings">
         <short>Set type for TDisplaySetting values</short>
         <descr>
           <p>
-            TDisplaySettings is a set type used to store enumerations values from TDisplaySetting.
+            <var>TDisplaySettings</var> is a set type used to store enumerations values from TDisplaySetting. It is the type used for the <var>DisplaySettings</var> property in <var>TCustomCalendar</var>.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TCustomCalendar.DisplaySettings"/>
+          <link id="TDisplaySetting"/>
+        </seealso>
       </element>
 
       <element name="DefaultDisplaySettings">
@@ -86,7 +91,7 @@
         </short>
         <descr>
           <p>
-            DefaultDisplaySettings is a constant with the default display settings used in TCalendar. DefaultDisplaySettings contains the following values:
+            <var>DefaultDisplaySettings</var> is a constant with the default display settings used in <var>TCalendar</var>. DefaultDisplaySettings contains the following values:
           </p>
           <dl>
             <dt>dsShowHeadings</dt>
@@ -176,6 +181,43 @@
         <short>Grid has decades for one century</short>
       </element>
 
+      <element name="TCalDayOfWeek">
+        <short>Represents days of the week used in TCalendar</short>
+        <descr>
+          <p>
+            <var>TCalDayOfWeek</var> is an enumerated type with values which represent the day  used as the first day of the week in <var>TCustomCalendar</var> and descendants.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomCalendar.FirstDayOfWeek"/>
+        </seealso>
+      </element>
+      <element name="TCalDayOfWeek.dowMonday">
+        <short>Represents Monday.</short>
+      </element>
+      <element name="TCalDayOfWeek.dowTuesday">
+        <short>Represents Tuesday.</short>
+      </element>
+      <element name="TCalDayOfWeek.dowWednesday">
+        <short>Represents Wednesday.</short>
+      </element>
+      <element name="TCalDayOfWeek.dowThursday">
+        <short>Represents Thursday.</short>
+      </element>
+      <element name="TCalDayOfWeek.dowFriday">
+        <short>Represents Friday.</short>
+      </element>
+      <element name="TCalDayOfWeek.dowSaturday">
+        <short>Represents Saturday.</short>
+      </element>
+      <element name="TCalDayOfWeek.dowSunday">
+        <short>Represents Sunday.</short>
+      </element>
+      <element name="TCalDayOfWeek.dowDefault">
+        <short>
+          Use the default day of the week setting for the platform for the first day of the week. Not compatible with the value used in Delphi (dowLocaleDefault).
+        </short>
+      </element>
 
       <!-- object Visibility: default -->
       <element name="EInvalidDate">
@@ -280,7 +322,11 @@
       <!-- function Visibility: private -->
       <element name="TCustomCalendar.GetDisplaySettings">
         <short>Gets the value for the DisplaySettings property</short>
-        <descr></descr>
+        <descr>
+          <link id="TCustomCalendar.DisplaySettings"/>
+          <link id="TDisplaySettings"/>
+          <link id="TDisplaySetting"/>
+        </descr>
         <errors/>
         <seealso></seealso>
       </element>
@@ -293,8 +339,11 @@
       <element name="TCustomCalendar.SetDisplaySettings">
         <short>Sets the value for the DisplaySettings property</short>
         <descr></descr>
-        <errors/>
-        <seealso></seealso>
+        <seealso>
+          <link id="TCustomCalendar.DisplaySettings"/>
+          <link id="TDisplaySettings"/>
+          <link id="TDisplaySetting"/>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomCalendar.SetDisplaySettings.AValue">
@@ -505,11 +554,28 @@
             <dd>Prevents changing the month</dd>
             <dt>dsShowWeekNumbers</dt>
             <dd>Displays week numbers</dd>
-            <dt>dsStartMonday</dt>
-            <dd>Days are ordered starting with Monday instead of Sunday</dd>
           </dl>
+          <remark>
+            The value <var>dsStartMonday</var> is no longer available in LCL version 2.2 or higher. It has been replaced by the <var>FirstDayOfWeek</var> property on platforms where the capablity is supported (Win32, QT, QT5). This is Delphi compatible, and allows any day of the week to be used as the first day of the week.
+          </remark>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TDisplaySettings"/>
+          <link id="TDisplaySetting"/>
+          <link id="TCustomCalendar.FirstDayOfWeek"/>
+        </seealso>
+      </element>
+
+      <element name="TCustomCalendar.FirstDayOfWeek">
+        <short>
+          Indicates the day of the week displayed as the first column in the calendar grid
+        </short>
+        <descr>
+          <p>
+            <var>FirstDayOfWeek</var> is a <var>TCalDayOfWeek</var> property which indicates the day used as the first day of the week. It contains a value from the TCalDayOfWeek enumeration, and determines the order of the cells displayed in the calendar grid. The default value is <var>dowDefault</var>, and indicates the default value provided by the platform or operating system is used.
+          </p>
+        </descr>
+        <seealso/>
       </element>
 
       <!-- property Visibility: public -->

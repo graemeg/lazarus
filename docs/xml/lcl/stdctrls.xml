@@ -800,7 +800,7 @@
          <short>Updates the control style when the parent background is used</short>
          <descr>
            <p>
-             UpdateOpaque is a method used to update the control style flags when the parent background is used for the control. When the ParentBackground property is set to True, ControlStyle is updated to remove the csOpaque flag. If ParentBackground is not enabled, CornStyle is updated to include the csOpaque flag.
+             <var>UpdateOpaque</var> is a method used to update the control style flags when the parent background is used for the control. When the <var>ParentBackground</var> property is set to <b>True</b>, <var>ControlStyle</var> is updated to remove the <var>csOpaque</var> flag. If ParentBackground is not enabled, ControlStyle is updated to include the csOpaque flag.
            </p>
          </descr>
          <seealso>
@@ -829,7 +829,7 @@
         <short>Sets the value for the Color property</short>
         <descr>
           <p>
-            SetColor is a method used to set the value in the Color property. It calls the inherited method on entry.
+            <var>SetColor</var> is a method used to set the value in the <var>Color</var> property. It calls the inherited method on entry.
           </p>
           <p>
             When the value for the Color property is set to <var>clDefault</var>, or has the same value as the Color property in <var>Parent</var>, no additional actions are performed in the method. Otherwise, the value in ParentBackground is set to <b>False</b>.
@@ -846,9 +846,23 @@
 
       <element name="TCustomGroupBox.SetParentBackground">
         <short>Sets the value for the ParentBackground proprety</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>SetParentBackground</var> is an overridden method in <var>TCustomGroupBox</var> used to set the value for the <var>ParentBackground</var> property. It calls the inherited method on entry.
+          </p>
+          <p>
+            When the property value is set to <b>True</b> and <var>ParentColor</var> is enabled, the Color property in the <var>Parent</var> control is assigned to the Color property for the group box. Otherwise, <var>clDefault</var> is assigned to the <var>Color</var> property.
+          </p>
+          <p>
+            SetParentBackground calls the <var>UpdateOpaque</var> method to ensure that the ControlStyle flags for the control reflect the transparency needed to draw the parent background.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomGroupBox.SetParentBackground"/>
+          <link id="TCustomGroupBox.UpdateOpaque"/>
+          <link id="#lcl.controls.TControl.ParentColor">TControl.ParentColor</link>
+          <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
+          <link id="#lcl.graphics.clDefault">clDefault</link>
         </seealso>
       </element>
       <element name="TCustomGroupBox.SetParentBackground.AParentBackground">

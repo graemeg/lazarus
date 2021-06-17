@@ -3449,11 +3449,14 @@
         <short>Event handler signalled when a radio button in the group receives focus</short>
         <descr>
           <p>
-            <var>OnItemEnter</var> is a <var>TNotifyEvent</var> property that implements the event handler signalled when a radio button in the group receives focus. An application must implement and assign an object procedure to the property to respond to the event notification.
+            <var>OnItemEnter</var> is a <var>TNotifyEvent</var> property that implements the event handler signalled when a radio button in the group receives focus. It occurs when the value in ItemIndex has been changed. An application must implement and assign an object procedure to the property to respond to the event notification. The Sender argument contains the radio button which is selected in the control.
           </p>
           <p>
             OnItemEnter is signalled  (when assigned) from the <var>ItemEnter</var> method.
           </p>
+          <remark>
+            OnItemEnter was added in LCL version 2.2, and should be used in place of the OnEnter event handler. This change is Delphi compatible.
+          </remark>
         </descr>
         <seealso>
           <link id="#lcl.stdctrls.TRadioButton.OnEnter">TRadioButton.OnEnter</link>
@@ -3464,11 +3467,14 @@
         <short>Event handler signalled when a radio button in the group loses focus</short>
         <descr>
           <p>
-            <var>OnItemExit</var> is a <var>TNotifyEvent</var> property which implements an event handler signalled when a radio button in the group loses focus. An application must implement and assign an object procedure to the property to respond to the event notification.
+            <var>OnItemExit</var> is a <var>TNotifyEvent</var> property which implements an event handler signalled when a radio button in the group loses focus. It occurs when the value in ItemIndex is changed. The Sender argument contains the radio button which has been de-selected in the control. An application must implement and assign an object procedure to the property to respond to the event notification.
           </p>
           <p>
             OnItemExit is signalled from the <var>ItemExit</var> method (when assigned).
           </p>
+          <remark>
+            OnItemExit was added in LCL version 2.2, and should be used in place of the OnExit event handler. This change is Delphi compatible.
+          </remark>
         </descr>
         <seealso>
           <link id="#lcl.stdctrls.TRadioButton.OnExit">TRadioButton.OnExit</link>

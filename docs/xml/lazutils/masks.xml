@@ -43,7 +43,7 @@
         <short>Represents any valid text</short>
       </element>
       <element name="TMaskOption">
-        <short>Contains options which can be enabled or disabled for TMask comparisons</short>
+        <short>Contains options which can be enabled or disabled in TMask comparisons</short>
         <seealso>
           <link id="#lazutils.masks.MasksOverview">Masks Overview</link>
         </seealso>
@@ -160,7 +160,7 @@
             Each <b>literal character</b> must match a single character in the string. Case sensitivity requires the value <link id="TMaskOption">moCaseSensitive</link> in the options passed to the constructor.
           </p>
           <p>
-            A <b>set</b> starts with "<b>[</b>" and ends with "<b>]</b>". Each element of a set is a literal character and or a range. A range is defined as a first-to-last literal character string. One character of a set must match a single character in the string. A set [!...] matches if the character is not in the set. The option value <link id="TMaskOption">moDisableSets</link> passed to the constructor disables set processing.
+            A <b>set</b> starts with "<b>[</b>" and ends with "<b>]</b>". Each element of a set is a literal character and or a range. A range is defined as a first-to-last literal character string. One character of a set must match a single character in the string. A set [!...] matches if the character is not in the set. The option value <link id="TMaskOption">moDisableSets</link> passed to the constructor disables set processing and treats the brackets as literal characters.
           </p>
           <p>
             <b>Wildcards</b> are the <b>*</b> and <b>?</b> characters. An asterisk matches any number of characters. A question mark matches a single character.
@@ -427,7 +427,7 @@
         <short>Indicates if case sensitivity is used for masks</short>
       </element>
       <element name="TMaskList.Create.Options">
-        <short>Indicates the options enabled for the mask instances</short>
+        <short>Contains the options enabled for the mask instances</short>
       </element>
       <element name="TMaskList.Destroy">
         <short>Destructor for the class instance</short>

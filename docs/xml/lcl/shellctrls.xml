@@ -442,10 +442,6 @@
         <short>Tree node examined in the method</short>
       </element>
 
-      <!--
-
-      The code is stil a Work-In-Progress, and these items were reverted. I expect they will return at some point - so these topics are commented instead of deleted.
-
       <element name="TCustomShellTreeView.DrawBuiltInIcon">
         <short>Draws the Shell Icon for the specified tree node</short>
         <descr>
@@ -505,7 +501,6 @@
       <element name="TCustomShellTreeView.GetBuiltinIconSize.Result">
         <short>TSize instance with the dimensions for the shell icon</short>
       </element>
-      -->
 
       <element name="TCustomShellTreeView.Create">
         <short>Constructor for the class instance</short>
@@ -771,7 +766,7 @@
         </short>
         <descr>
           <p>
-            <var>OnAddItem</var> is a <var>TAddItemEvent</var> property which contains the event handler signalled when an item (tree node) is added to the shell control. OnAddItem is signalled from the <var>PopulateTreeNodeWithFiles</var> method.
+            <var>OnAddItem</var> is a <var>TAddItemEvent</var> property which contains the event handler signalled when an item (tree node) is added to the shell control. OnAddItem is signalled from the <var>PopulateTreeNodeWithFiles</var> method, and allows the base path and file information for each file to be checked before it is added to the tree view.
           </p>
         </descr>
         <seealso>
@@ -1362,6 +1357,7 @@
           <link id="TAddItemEvent"/>
           <link id="TCustomShellListView.Items"/>
           <link id="TCustomShellListView.DoAddItem"/>
+          <link id="TCustomShellListView.PopulateWithRoot"/>
         </seealso>
       </element>
 

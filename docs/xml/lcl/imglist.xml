@@ -1914,6 +1914,9 @@
             <li>TTiffImage</li>
             <li>TPixMap</li>
           </ul>
+          <remark>
+            Starting with Lazarus 2.2,  binary bitmap data stored for the image list in an LFM file uses ZLib compression. While this makes both the LFM and the EXE smaller, it also prevents Lazarus versions prior to 2.0 from opening the LFM file. If you need to maintain a Version 2.X project in an older Lazarus version, you first have to open it in Lazarus 2.0 and resave any forms with a TImageList. Then you can open these resaved LFMs in Lazarus 1versions prior to 2.0.
+          </remark>
           <p>
             Use the <var>Width</var> and <var>Height</var> properties to set the default resolution (or size) used for images in the image list. If an image with a size different than the values in Width and Height is added to the default resolution, it is scaled the dimensions required for the resolution. The Width and Height properties also establish the image size used at the 100% scaling level on a 96 PPI display.
           </p>
