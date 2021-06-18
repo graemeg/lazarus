@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="GraphUtil">
-      <short>Contains routines and types used when drawing graphics</short>
+      <short>Contains routines and types used when drawing graphics.</short>
       <descr>
         <p>
           <var>GraphUtil.pp</var> contains routines and types used when drawing graphics. They focus primarily on converting colors and drawing gradients, scroll bars, and arrows.
@@ -35,424 +35,424 @@
       <element name="GraphType"/>
 
       <element name="ColorToGray">
-        <short>Converts a Lazarus TColor value to its grayscale equivalent</short>
+        <short>Converts a Lazarus TColor value to its grayscale equivalent.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="ColorToGray.Result">
-        <short>Byte contain the grayscale value for the specified color</short>
+        <short>Byte contain the grayscale value for the specified color.</short>
       </element>
       <element name="ColorToGray.AColor">
-        <short>TColor value converted in the method</short>
+        <short>TColor value converted in the method.</short>
       </element>
 
       <element name="ColorToHLS">
-        <short>Converts a TColor value to its Hue, Lightness, and Saturation values</short>
+        <short>Converts a TColor value to its Hue, Lightness, and Saturation values.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="ColorToHLS.AColor">
-        <short>TColor value converted in the method</short>
+        <short>TColor value converted in the method.</short>
       </element>
       <element name="ColorToHLS.H">
-        <short>Hue value for the specified color</short>
+        <short>Hue value for the specified color.</short>
       </element>
       <element name="ColorToHLS.L">
-        <short>Lightness value for the specified color</short>
+        <short>Lightness value for the specified color.</short>
       </element>
       <element name="ColorToHLS.S">
-        <short>Saturation value for the specified color</short>
+        <short>Saturation value for the specified color.</short>
       </element>
 
       <element name="RGBtoHLS">
-        <short>Converts RGB color values to Hue, Lightness, and Saturation values</short>
+        <short>Converts RGB color values to Hue, Lightness, and Saturation values.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="RGBtoHLS.R">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHLS.G">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHLS.B">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHLS.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHLS.L">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHLS.S">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HLStoColor">
-        <short>Converts Hue, Lightness, and Saturation values to a TColor value</short>
+        <short>Converts Hue, Lightness, and Saturation values to a TColor value.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="HLStoColor.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoColor.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoColor.L">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoColor.S">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HLStoRGB">
-        <short>Converts Hue, Lightness, and Saturation values to a RGB color values</short>
+        <short>Converts Hue, Lightness, and Saturation values to a RGB color values.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="HLStoRGB.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoRGB.L">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoRGB.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoRGB.R">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoRGB.G">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HLStoRGB.B">
-        <short></short>
+        <short>.</short>
       </element>
 
       <!-- HSV functions are copied from mbColorLib without changes -->
       <element name="ColorToHSV">
-        <short>Converts a TColor value to Hue, Saturation, and brightness Values</short>
+        <short>Converts a TColor value to Hue, Saturation, and brightness Values.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="ColorToHSV.c">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorToHSV.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorToHSV.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorToHSV.V">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HSVToColor">
-        <short>Converts Hue, Saturation, and brightness values to a TColor value</short>
+        <short>Converts Hue, Saturation, and brightness values to a TColor value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="HSVToColor.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVToColor.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVToColor.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVToColor.V">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="RGBToHSV">
-        <short>Comverts RGB values to Hue, Saturation, and brightness values</short>
+        <short>Comverts RGB values to Hue, Saturation, and brightness values.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="RGBToHSV.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBToHSV.R">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBToHSV.G">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBToHSV.B">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBToHSV.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBToHSV.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBToHSV.V">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HSVtoRGB">
-        <short>Converts Hue, Saturation, and brightness values to RGB values</short>
+        <short>Converts Hue, Saturation, and brightness values to RGB values.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="HSVtoRGB.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGB.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGB.V">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGB.R">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGB.G">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGB.B">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="RGBtoHSVRange">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="RGBtoHSVRange.R">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHSVRange.G">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHSVRange.B">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHSVRange.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHSVRange.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHSVRange.V">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="RGBtoHSVRange.">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HSVtoRGBRange">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="HSVtoRGBRange.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBRange.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBRange.V">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBRange.R">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBRange.G">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBRange.B">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HSVRangeToColor">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="HSVRangeToColor.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVRangeToColor.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVRangeToColor.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVRangeToColor.V">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HSVtoRGBTriple">
         <short>
           Converts Hue, Saturation, and brightness values to a TRGBTriple value
-        </short>
+        .</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="HSVtoRGBTriple.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBTriple.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBTriple.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBTriple.V">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="HSVtoRGBQuad">
         <short>
           Converts Hue, Saturation, and brightness values to a TRGBQuad value
-        </short>
+        .</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="HSVtoRGBQuad.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBQuad.H">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBQuad.S">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="HSVtoRGBQuad.V">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="GetHValue">
-        <short>Gets the Hue value from the specified TColor value</short>
+        <short>Gets the Hue value from the specified TColor value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="GetHValue.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="GetHValue.Color">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="GetSValue">
-        <short>Gets the Saturation value from the specified TColor value</short>
+        <short>Gets the Saturation value from the specified TColor value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="GetSValue.Result">
-        <short>Saturation value for the specified color</short>
+        <short>Saturation value for the specified color.</short>
       </element>
       <element name="GetSValue.Color">
-        <short>Color examined in the routine</short>
+        <short>Color examined in the routine.</short>
       </element>
 
       <element name="GetVValue">
-        <short>Gets the brightness value from the specified TColor value</short>
+        <short>Gets the brightness value from the specified TColor value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="GetVValue.Result">
-        <short>Brightness value for the specified color</short>
+        <short>Brightness value for the specified color.</short>
       </element>
       <element name="GetVValue.Color">
-        <short>Color examined in the routine</short>
+        <short>Color examined in the routine.</short>
       </element>
 
       <element name="DrawVerticalGradient">
-        <short>Draws a gradient from top to bottom with parabolic color variation</short>
+        <short>Draws a gradient from top to bottom with parabolic color variation.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="DrawVerticalGradient.Canvas">
-        <short>Canvas where the gradient is drawn</short>
+        <short>Canvas where the gradient is drawn.</short>
       </element>
       <element name="DrawVerticalGradient.ARect">
-        <short>Rectangle that defines the drawing boundaries for the gradient</short>
+        <short>Rectangle that defines the drawing boundaries for the gradient.</short>
       </element>
       <element name="DrawVerticalGradient.TopColor">
-        <short>Color used at the top of the gradient</short>
+        <short>Color used at the top of the gradient.</short>
       </element>
       <element name="DrawVerticalGradient.BottomColor">
-        <short>Color used at the end or bottom of the gradient</short>
+        <short>Color used at the end or bottom of the gradient.</short>
       </element>
 
       <element name="DrawGradientWindow">
-        <short>Draws a window with a Title using gradient coloring</short>
+        <short>Draws a window with a Title using gradient coloring.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="DrawGradientWindow.Canvas">
-        <short>Canvas where the gradient is drawn</short>
+        <short>Canvas where the gradient is drawn.</short>
       </element>
       <element name="DrawGradientWindow.WindowRect">
-        <short>Rectangle for the window drawn using a gradient </short>
+        <short>Rectangle for the window drawn using a gradient .</short>
       </element>
       <element name="DrawGradientWindow.TitleHeight">
-        <short>Height of the the title bar in the window</short>
+        <short>Height of the the title bar in the window.</short>
       </element>
       <element name="DrawGradientWindow.BaseColor">
-        <short>Base color for the window</short>
+        <short>Base color for the window.</short>
       </element>
 
       <element name="AntiAliasedStretchDrawBitmap">
-        <short>Stretch-draws a bitmap using anti-aliased drawing</short>
+        <short>Stretch-draws a bitmap using anti-aliased drawing.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="AntiAliasedStretchDrawBitmap.SourceBitmap">
-        <short>Bitmap drawn in the routine</short>
+        <short>Bitmap drawn in the routine.</short>
       </element>
       <element name="AntiAliasedStretchDrawBitmap.DestBitmap">
-        <short>Bitmap where the new image is drawn</short>
+        <short>Bitmap where the new image is drawn.</short>
       </element>
       <element name="AntiAliasedStretchDrawBitmap.DestWidth">
-        <short>Width for the resized image</short>
+        <short>Width for the resized image.</short>
       </element>
       <element name="AntiAliasedStretchDrawBitmap.DestHeight">
-        <short>Height for the resized image</short>
+        <short>Height for the resized image.</short>
       </element>
 
       <element name="TScrollDirection">
-        <short>Enumerated type that indicates the direction for scrollbar arrows</short>
+        <short>Enumerated type that indicates the direction for scrollbar arrows.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TScrollDirection.sdLeft">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="TScrollDirection.sdRight">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="TScrollDirection.sdUp">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="TScrollDirection.sdDown">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TArrowType">
-        <short>Indicates the drawing style for an arrow</short>
+        <short>Indicates the drawing style for an arrow.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TArrowType.atSolid">
-        <short>Arrow is drawn using a solid, filled color</short>
+        <short>Arrow is drawn using a solid, filled color.</short>
       </element>
       <element name="TArrowType.atArrows">
-        <short>Arrow is drawn using chevrons</short>
+        <short>Arrow is drawn using chevrons.</short>
       </element>
 
       <element name="NiceArrowAngle">
-        <short></short>
+        <short>.</short>
         <descr>
           45*pi/180
         </descr>
@@ -460,7 +460,7 @@
       </element>
 
       <element name="DrawArrow">
-        <short>Draws an arrow at the specified location on a canvas</short>
+        <short>Draws an arrow at the specified location on a canvas.</short>
         <descr>
           <p>
             <var>DrawArrow</var> is an overloaded procedure used to draw an arrow on a canvas at the specified location. Overloaded variants of the routine allow the type of arrow, length, angle, and drawing style to be specified as arguments.
@@ -469,35 +469,35 @@
         <seealso></seealso>
       </element>
       <element name="DrawArrow.Canvas">
-        <short>Canvas where the arrow is drawn</short>
+        <short>Canvas where the arrow is drawn.</short>
       </element>
       <element name="DrawArrow.Direction">
-        <short>Direction for the arrow</short>
+        <short>Direction for the arrow.</short>
       </element>
       <element name="DrawArrow.Location">
-        <short>Point that indicates the canvas coordinates where the arrow is drawn</short>
+        <short>Point that indicates the canvas coordinates where the arrow is drawn.</short>
       </element>
       <element name="DrawArrow.Size">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="DrawArrow.ArrowType">
-        <short>Drawing style for the arrow</short>
+        <short>Drawing style for the arrow.</short>
       </element>
       <element name="DrawArrow.p1">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="DrawArrow.p2">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="DrawArrow.ArrowLen">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="DrawArrow.ArrowAngleRad">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="FloodFill">
-        <short>A simple first-in-first-out circular buffer (queue) for flood-filling contiguous voxels</short>
+        <short>A simple first-in-first-out circular buffer (queue) for flood-filling contiguous voxels.</short>
         <descr>
           <p>
             <var>FloodFill</var> is a procedure which implements a simple first-in-first-out circular buffer (queue) for flood-filling contiguous voxels. This algorithm avoids stack problems associated simple recursive algorithms described in the discussion at <url href="http://steve.hollasch.net/cgindex/polygons/floodfill.html"/>. Please note that the routine is slow because of its use of <var>Canvas.Pixels</var>.
@@ -509,23 +509,23 @@
         <seealso></seealso>
       </element>
       <element name="FloodFill.Canvas">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="FloodFill.X">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="FloodFill.Y">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="FloodFill.lColor">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="FloodFill.FillStyle">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="ScaleImg">
-        <short>Scales the specified image to the required dimensons</short>
+        <short>Scales the specified image to the required dimensons.</short>
         <descr>
           <p>
             <var>ScaleImg</var> is a procedure used to scale the image in <var>AImage</var> to the dimensions in <var>AWidth</var> and <var>AWidth</var>.
@@ -537,133 +537,133 @@
         <seealso></seealso>
       </element>
       <element name="ScaleImg.AImage">
-        <short>Bitmap image resize in the routine</short>
+        <short>Bitmap image resize in the routine.</short>
       </element>
       <element name="ScaleImg.AWidth">
-        <short>New Width requested for the image</short>
+        <short>New Width requested for the image.</short>
       </element>
       <element name="ScaleImg.AHeight">
-        <short>New height requested for the image</short>
+        <short>New height requested for the image.</short>
       </element>
 
       <element name="ColorRGBToHLS">
         <short>
           Converts an RGB color value to Hue, Lightness, and Saturation values
-        </short>
+        .</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="ColorRGBToHLS.clrRGB">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorRGBToHLS.Hue">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorRGBToHLS.Luminance">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorRGBToHLS.Saturation">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="ColorHLSToRGB">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="ColorHLSToRGB.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorHLSToRGB.Hue">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorHLSToRGB.Luminance">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorHLSToRGB.Saturation">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="ColorAdjustLuma">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="ColorAdjustLuma.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorAdjustLuma.clrRGB">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorAdjustLuma.n">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="ColorAdjustLuma.fScale">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="GetHighLightColor">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="GetHighLightColor.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="GetHighLightColor.Color">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="GetHighLightColor.Luminance">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="GetShadowColor">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <element name="GetShadowColor.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="GetShadowColor.Color">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="GetShadowColor.Luminance">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="NormalizeRect">
-        <short>Ensures that coordinates in the rectangle are in the correct order</short>
+        <short>Ensures that coordinates in the rectangle are in the correct order.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="NormalizeRect.Result">
-        <short>Rectangle with the corrected values for its coordinates</short>
+        <short>Rectangle with the corrected values for its coordinates.</short>
       </element>
       <element name="NormalizeRect.R">
-        <short>Rectangle examined in the routine</short>
+        <short>Rectangle examined in the routine.</short>
       </element>
 
       <element name="WaveTo">
-        <short>Draws a hoizontal or vertical wave at the specified position to the given device context</short>
+        <short>Draws a hoizontal or vertical wave at the specified position to the given device context.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="WaveTo.ADC">
-        <short>Device context that is the target for the drawing operation</short>
+        <short>Device context that is the target for the drawing operation.</short>
       </element>
       <element name="WaveTo.X">
-        <short>Horizontal position where the wave is drawn</short>
+        <short>Horizontal position where the wave is drawn.</short>
       </element>
       <element name="WaveTo.Y">
-        <short>Vertical position where the wave is drawn</short>
+        <short>Vertical position where the wave is drawn.</short>
       </element>
       <element name="WaveTo.R">
-        <short>Amplitude for changes in horizontal or vertical positions in the wave</short>
+        <short>Amplitude for changes in horizontal or vertical positions in the wave.</short>
       </element>
     </module>
     <!-- GraphUtil -->

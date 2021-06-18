@@ -7,7 +7,7 @@
   ====================================================================
 -->
     <module name="GraphMath">
-      <short>A Set of Mathematical Helper routines to simply Cross-Platform Canvas drawing etc</short>
+      <short>A Set of Mathematical Helper routines to simply Cross-Platform Canvas drawing etc.</short>
       <descr/>
 
       <!-- unresolved external references -->
@@ -19,7 +19,7 @@
 
       <element name="TFloatPoint">
         <short>
-          <var>TFloatPoint</var> - an extended precision record specifying the X and Y coordinates of a point in a graphic environment</short>
+          <var>TFloatPoint</var> - an extended precision record specifying the X and Y coordinates of a point in a graphic environment.</short>
         <descr/>
         <seealso/>
       </element>
@@ -50,7 +50,7 @@
       <!-- procedure Visibility: default -->
       <element name="Angles2Coords">
         <short>
-          <var>Angles2Coords</var> - convert an Eccentric Angle and an Angle-Length, into the coords for Start and End Radial-Points</short>
+          <var>Angles2Coords</var> - convert an Eccentric Angle and an Angle-Length, into the coords for Start and End Radial-Points.</short>
         <descr>
           <p>
             Use Angles2Coords to convert an Eccentric (Radial) angle and an angle-length, such as are used in X-Windows and GTK, into the coordinates for the Start and End Radial-Points. Like those used in the Arc, Pie, and Chord routines from the Windows API.
@@ -158,7 +158,7 @@
       <!-- function Visibility: default -->
       <element name="Bezier">
         <short>
-          <var>Bezier</var> - function to get a Bezier figure from the given points</short>
+          <var>Bezier</var> - function to get a Bezier figure from the given points.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -186,7 +186,7 @@
       <!-- procedure Visibility: default -->
       <element name="Bezier2Polyline">
         <short>
-          <var>Bezier2Polyline</var> - convert a 4-Point Bezier into a Pointer Array of TPoint and a Count variable</short>
+          <var>Bezier2Polyline</var> - convert a 4-Point Bezier into a Pointer Array of TPoint and a Count variable.</short>
         <descr>
           <p>
             Use BezierToPolyline to convert a 4-Point Bezier into a Pointer Array of TPoint and a Count variable which can then be used within either a Polyline, or Polygon routine. It is primarily for use within PolyBezier2Polyline.
@@ -213,7 +213,7 @@
       <!-- procedure Visibility: default -->
       <element name="BezierArcPoints">
         <short>
-          <var>BezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon</short>
+          <var>BezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon.</short>
         <descr>
           <p>
             Use BezierArcPoints to convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon. The Rotation parameter accepts a Rotation-Angle for a rotated Ellipse'- for a non-rotated ellipse this value would be 0, or 360. The result is an Approximation based on 1 or more Beziers.
@@ -289,7 +289,7 @@
       <!-- function Visibility: default -->
       <element name="CenterPoint">
         <short>
-          <var>CenterPoint</var> - get the Center-Point of any rectangle. It is primarily for use with, and in, other routines such as Quadrant, and RadialPoint</short>
+          <var>CenterPoint</var> - get the Center-Point of any rectangle. It is primarily for use with, and in, other routines such as Quadrant, and RadialPoint.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -305,7 +305,7 @@
       <!-- procedure Visibility: default -->
       <element name="Coords2Angles">
         <short>
-          <var>Coords2Angles</var> - convert the coords for Start and End Radial-Points into an Eccentric counter clockwise Angle and an Angle-Length</short>
+          <var>Coords2Angles</var> - convert the coords for Start and End Radial-Points into an Eccentric counter clockwise Angle and an Angle-Length.</short>
         <descr>
           <p>
             Use Coords2Angles to convert the coords for Start and End Radial-Points, such as are used in the Windows API Arc Pie and Chord routines, into an Eccentric (aka Radial) counter clockwise Angle and an Angle-Length, such as are used in X-Windows and GTK.
@@ -362,7 +362,7 @@
       </element>
       <!-- function Visibility: default -->
       <element name="Distance">
-        <short>Get the <var>Distance</var> between any two Points. It is primarily for use in other routines such as EccentricAngle</short>
+        <short>Get the <var>Distance</var> between any two Points. It is primarily for use in other routines such as EccentricAngle.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -382,7 +382,7 @@
       <!-- function Visibility: default -->
       <element name="EccentricAngle">
         <short>
-          <var>EccentricAngle</var> - get the Eccentric Angle of a given point on any non-rotated ellipse</short>
+          <var>EccentricAngle</var> - get the Eccentric Angle of a given point on any non-rotated ellipse.</short>
         <descr>
           <p>
             Use EccentricAngle to get the Eccentric( aka Radial ) Angle of a given point on any non-rotated ellipse. It is primarily for use in Coords2Angles. The result is in 1/16th of a degree. For example, a full circle equals 5760 (16*360).  Zero degrees is at the 3 o'clock position.
@@ -406,7 +406,7 @@
       <!-- function Visibility: default -->
       <element name="EllipseRadialLength">
         <short>
-          <var>EllipseRadialLength</var> - Radial-Length of non-rotated ellipse at any given Eccentric Angle</short>
+          <var>EllipseRadialLength</var> - Radial-Length of non-rotated ellipse at any given Eccentric Angle.</short>
         <descr>
           <p>
             Use EllipseRadialLength to get the Radial-Length of non-rotated ellipse at any given Eccentric( aka Radial ) Angle. It is primarily for use in other routines such as RadialPoint. The Eccentric angle is in 1/16th of a degree. For example, a full circle equals 5760 (16*360).  Zero degrees is at the 3 o'clock position.
@@ -450,7 +450,7 @@
       <!-- function Visibility: default -->
       <element name="LineEndPoint">
         <short>
-          <var>LineEndPoint</var> - get the End-Point of a line of any given Length at any given angle with any given Start-Point</short>
+          <var>LineEndPoint</var> - get the End-Point of a line of any given Length at any given angle with any given Start-Point.</short>
         <descr>
           <p>
             Use LineEndPoint to get the End-Point of a line of any given Length at any given angle with any given Start-Point. It is primarily for use in other routines such as RadialPoint. The angle is in 1/16th of a degree. For example, a full circle equals 5760 (16*360).  Zero degrees is at the 3 o'clock position.
@@ -478,7 +478,7 @@
       <!-- procedure Visibility: default -->
       <element name="PolyBezier2Polyline">
         <short>
-          <var>PolyBezier2Polyline</var> - convert an array of 4-Point Bezier into a Pointer Array of TPoint and a Count variable</short>
+          <var>PolyBezier2Polyline</var> - convert an array of 4-Point Bezier into a Pointer Array of TPoint and a Count variable.</short>
         <descr>
           <p>
             Use BezierToPolyline to convert an array of 4-Point Bezier into a Pointer Array of TPoint and a Count variable which can then be used within either a Polyline, or Polygon routine. Points is automatically initialized, so any existing information is lost, and the array starts at 0. Points should ALWAYS be Freed when done by calling to ReallocMem(Points, 0).
@@ -502,7 +502,7 @@
       <!-- procedure Visibility: default -->
       <element name="PolyBezierArcPoints">
         <short>
-          <var>PolyBezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon</short>
+          <var>PolyBezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon.</short>
         <descr>
           <p>
             Use PolyBezierArcPoints to convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon. The Rotation parameter accepts a Rotation-Angle for a rotated Ellipse - for a non-rotated ellipse this value would be 0, or 360. The result is an Approximation based on 1 or more Beziers. If the AngleLength is greater than 45 degrees, it recursively breaks the Arc into Arcs of 45 degrees or less, and converts them into Beziers with BezierArcPoints.
@@ -558,7 +558,7 @@
       </element>
       <!-- function Visibility: default -->
       <element name="Quadrant">
-        <short>Determine the <var>Quadrant</var>  of any point, given the Center</short>
+        <short>Determine the <var>Quadrant</var>  of any point, given the Center.</short>
         <descr>
           <p>
             Use Quadrant to determine the Quadrant of any point, given the Center. It is primarily for use in other routines such as EccentricAngle. A result of 1-4 represents the primary 4 quadrants. A result of 5-8 means the point lies on one of the Axis, 5 = -Y Axis, 6 = +X Axis, 7 = +Y Axis, and 8 = -X Axis. A result of -1 means that it does not fall in any quadrant, that is, it is the Center.
@@ -581,7 +581,7 @@
       </element>
       <!-- function Visibility: default -->
       <element name="RadialPoint">
-        <short>Get the <var>RadialPoint</var> at any given Eccentric angle on any non-rotated ellipse</short>
+        <short>Get the <var>RadialPoint</var> at any given Eccentric angle on any non-rotated ellipse.</short>
         <descr>
           <p>
             Use RadialPoint to get the Radial-Point at any given Eccentric( aka Radial ) angle on any non-rotated ellipse. It is primarily for use in Angles2Coords. The EccentricAngle is in 1/16th of a degree. For example, a full circle equals 5760 (16*360).  Zero degrees is at the 3 o'clock position.
@@ -605,7 +605,7 @@
       <!-- procedure Visibility: default -->
       <element name="SplitBezier">
         <short>
-          <var>SplitBezier</var> - split any 4-Point Bezier into two 4-Point Beziers: a 'Left' and a 'Right'</short>
+          <var>SplitBezier</var> - split any 4-Point Bezier into two 4-Point Beziers: a 'Left' and a 'Right'.</short>
         <descr>
           <p>
             Use SplitBezier to split any 4-Point Bezier into two 4-Point Beziers:
@@ -630,7 +630,7 @@
       <topic name="GraphMathOperators">
         <short>
           <b>GraphMath Operators</b>
-        </short>
+        .</short>
         <descr>
           <p>This Unit contains a number of routines for calculating and converting series of graphic points from one coordinate system to another.</p>
           <p>A fundamental type is introduced, called TFloatPoint. It is an extended precision record containing an X and a Y coordinate for a graphic point. Its structure is as follows:</p>
