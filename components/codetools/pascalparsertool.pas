@@ -5199,9 +5199,8 @@ begin
   if not UpAtomIs('CASE') then
     SaveRaiseException(20170421195151,'[TPascalParserTool.KeyWordFuncTypeRecordCase] '
       +'internal error');
-  if (CurNode.Desc=ctnRecordVariant)
-  or ((CurNode.Desc in AllClassSections)
-      and (CurNode.Parent.Desc=ctnRecordType))
+  if (CurNode.Desc in [ctnRecordVariant,ctnVarSection,ctnClassClassVar])
+  or ((CurNode.Desc in AllClassSections) and (CurNode.Parent.Desc=ctnRecordType))
   then begin
     // ok
   end else begin
