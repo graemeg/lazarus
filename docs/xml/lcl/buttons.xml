@@ -3,7 +3,7 @@
   <package name="lcl">
     <!-- Buttons -->
     <module name="Buttons">
-      <short>Contains types and classes used to implement specialized buttons</short>
+      <short>Contains types and classes used to implement specialized buttons.</short>
       <descr>
         <p>
           <file>buttons.pp</file> contains classes, types, and routines used to implements specialized button controls. It registers the following components on the <b>Additional</b> tab in the Lazarus IDE component palette:
@@ -54,16 +54,16 @@
         </seealso>
       </element>
       <element name="TButtonLayout.blGlyphLeft">
-        <short>Image is drawn aligned to the left</short>
+        <short>Image is drawn aligned to the left.</short>
       </element>
       <element name="TButtonLayout.blGlyphRight">
-        <short>Image is drawn aligned to the right</short>
+        <short>Image is drawn aligned to the right.</short>
       </element>
       <element name="TButtonLayout.blGlyphTop">
-        <short>Image is drawn aligned to the top</short>
+        <short>Image is drawn aligned to the top.</short>
       </element>
       <element name="TButtonLayout.blGlyphBottom">
-        <short>Image is drawn aligned to the bottom</short>
+        <short>Image is drawn aligned to the bottom.</short>
       </element>
 
       <element name="TButtonState">
@@ -75,20 +75,20 @@
         </descr>
       </element>
       <element name="TButtonState.bsUp">
-        <short>Draw the button in its up state</short>
+        <short>Draw the button in its up state.</short>
       </element>
       <element name="TButtonState.bsDisabled">
-        <short>Draw the button in its disabled state</short>
+        <short>Draw the button in its disabled state.</short>
       </element>
       <element name="TButtonState.bsDown">
-        <short>Draw the button in its down state</short>
+        <short>Draw the button in its down state.</short>
       </element>
       <element name="TButtonState.bsExclusive">
-        <short>Draw the button as the only one down in its group</short>
+        <short>Draw the button as the only one down in its group.</short>
       </element>
 
       <element name="TNumGlyphs">
-        <short>Defines the range of values available to access button glyphs</short>
+        <short>Defines the range of values available to access button glyphs.</short>
         <descr>
           <p>
             <var>TNumGlyphs</var> is an <var>Integer</var> range constant which defines the minimum and maximum number of glyphs available for buttons. <var>TNumGlyphs</var> is the type used to implement the <var>NumGlyphs</var> property in <var>TButtonGlyph</var>, <var>TCustomBitBtn</var>, and <var>TCustomSpeedButton</var>.
@@ -102,7 +102,7 @@
       </element>
 
       <element name="TGlyphTransparencyMode">
-        <short>Enumerated type with transparency mode values for button glyphs</short>
+        <short>Enumerated type with transparency mode values for button glyphs.</short>
         <descr>
           TGlyphTransparencyMode is an enumerated type which contains values representing the transparency modes used for button glyphs. TGlyphTransparencyMode is the type used to implement the TransparentMode property in TButtonGlyph.
         </descr>
@@ -110,17 +110,17 @@
         </seealso>
       </element>
       <element name="TGlyphTransparencyMode.gtmGlyph">
-        <short>Transparency is defined in the glyph</short>
+        <short>Transparency is defined in the glyph.</short>
       </element>
       <element name="TGlyphTransparencyMode.gtmOpaque">
-        <short>Transparent is not used, as defined by the owner of the glyph</short>
+        <short>Transparent is not used, as defined by the owner of the glyph.</short>
       </element>
       <element name="TGlyphTransparencyMode.gtmTransparent">
-        <short>Glyph is drawn with transparency</short>
+        <short>Glyph is drawn with transparency.</short>
       </element>
 
       <element name="TButtonGlyph">
-        <short>Represents an image that can be attached to a button</short>
+        <short>Represents an image that can be attached to a button.</short>
         <descr>
           <p>
             <var>TButtonGlyph</var> is a <var>TObject</var> descendant used to represent the image with the symbol or pictograph displayed on a button, or in a column in a grid.  Use the properties and methods in the class to specify the image displayed in the glyph, and the display settings required for the image.
@@ -164,106 +164,106 @@
       <element name="TButtonGlyph.FLCLGlyphName"/>
 
       <element name="TButtonGlyph.GetHeight">
-        <short>Gets the value for the Height property</short>
+        <short>Gets the value for the Height property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.Height"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.GetHeight.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.GetNumGlyphs">
-        <short>Gets the value for the NumGlyphs property</short>
+        <short>Gets the value for the NumGlyphs property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.NumGlyphs"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.GetNumGlyphs.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.GetWidth">
-        <short>Gets the value for the Width property</short>
+        <short>Gets the value for the Width property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.Width"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.GetWidth.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.SetExternalImageIndex">
-        <short>Sets the value for the ExternalImageIndex property</short>
+        <short>Sets the value for the ExternalImageIndex property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.ExternalImageIndex"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.SetExternalImageIndex.AExternalImageIndex">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.SetExternalImages">
-        <short>Sets the value for the ExternalImages property</short>
+        <short>Sets the value for the ExternalImages property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.SetExternalImages"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.SetExternalImages.AExternalImages">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.SetExternalImageWidth">
-        <short>Sets the value for the ExternalImageWidth property</short>
+        <short>Sets the value for the ExternalImageWidth property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.ExternalImageWidth"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.SetExternalImageWidth.AExternalImageWidth">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.SetGlyph">
-        <short>Sets the value for the Glyph property</short>
+        <short>Sets the value for the Glyph property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.Glyph"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.SetGlyph.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.SetNumGlyphs">
-        <short>Sets the value for the NumGlyphs property</short>
+        <short>Sets the value for the NumGlyphs property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.NumGlyphs"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.SetNumGlyphs.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.SetShowMode">
-        <short>Sets the value for the ShowMode property</short>
+        <short>Sets the value for the ShowMode property.</short>
         <descr></descr>
         <seealso>
           <link id="TButtonGlyph.ShowMode"/>
         </seealso>
       </element>
       <element name="TButtonGlyph.SetShowMode.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TButtonGlyph.ClearImages">
-        <short>Removes the references to Images for the button states</short>
+        <short>Removes the references to Images for the button states.</short>
         <descr>
           ClearImages is a procedure used to remove index references to Images used for button states in the glyph. ClearImages sets the values in an internal member to -1 to indicate that the image for the corresponding TButtonState is not used.
         </descr>
@@ -277,54 +277,54 @@
       </element>
 
       <element name="TButtonGlyph.ClearLCLGlyph">
-        <short>Removes the name for the LCL Glyph used in the class instance</short>
+        <short>Removes the name for the LCL Glyph used in the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TButtonGlyph.SetLCLGlyphName">
         <short>
-          Sets the resource name for the LCL glyph used in the instance to the specified value
+          Sets the resource name for the LCL glyph used in the instance to the specified value.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TButtonGlyph.SetLCLGlyphName.ALCLGlyphName">
-        <short>LCL glyph resource name used to get images in the glyph</short>
+        <short>LCL glyph resource name used to get images in the glyph.</short>
       </element>
 
       <element name="TButtonGlyph.QueryInterface">
-        <short>Implements the method from IUnknown</short>
+        <short>Implements the method from IUnknown.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TButtonGlyph.QueryInterface.iid">
-        <short>Interface identifier for the specified object</short>
+        <short>Interface identifier for the specified object.</short>
       </element>
       <element name="TButtonGlyph.QueryInterface.obj">
-        <short>Object examined for the specified interface</short>
+        <short>Object examined for the specified interface.</short>
       </element>
 
       <element name="TButtonGlyph._AddRef">
-        <short>Implements the method from IUnkown</short>
+        <short>Implements the method from IUnkown.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TButtonGlyph._AddRef.Result">
-        <short>Always contains -1</short>
+        <short>Always contains -1.</short>
       </element>
 
       <element name="TButtonGlyph._Release">
-        <short>Implements the method from IUnknown</short>
+        <short>Implements the method from IUnknown.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TButtonGlyph._Release.Result">
-        <short>Always contains -1</short>
+        <short>Always contains -1.</short>
       </element>
 
       <element name="TButtonGlyph.CacheSetImageList">
-        <short>Stores the specified Image list in the Images property</short>
+        <short>Stores the specified Image list in the Images property.</short>
         <descr>
           <p>
             Implements the <var>IImageCacheListener</var> interface method used to receive changes to the cached image list. Stores the image list specified in <var>AImageList</var> to the <var>Images</var> property.
@@ -335,25 +335,25 @@
         </seealso>
       </element>
       <element name="TButtonGlyph.CacheSetImageList.AImageList">
-        <short>Image list stored to the Images property</short>
+        <short>Image list stored to the Images property.</short>
       </element>
 
       <element name="TButtonGlyph.CacheSetImageIndex">
         <short>
-          Sets the button state for the image in AIndex to the value specified in AImageIndex
+          Sets the button state for the image in AIndex to the value specified in AImageIndex.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TButtonGlyph.CacheSetImageIndex.AIndex">
-        <short>Position of the Button state applied to the specified image</short>
+        <short>Position of the Button state applied to the specified image.</short>
       </element>
       <element name="TButtonGlyph.CacheSetImageIndex.AImageIndex">
-        <short>Position of the Image updated in the method</short>
+        <short>Position of the Image updated in the method.</short>
       </element>
 
       <element name="TButtonGlyph.CanShow">
-        <short>Indicates if the glyph can be drawn for the button glyph</short>
+        <short>Indicates if the glyph can be drawn for the button glyph.</short>
         <descr>
           <p>
             <var>CanShow</var> is a <var>Boolean</var> function which indicates if the glyph can be drawn for the button glyph. The return value is determined by examining the value in the <var>ShowMode</var> property. Values in the TGlyphShowMode enumeration determine the return value using the following logic:
@@ -384,11 +384,11 @@
         </seealso>
       </element>
       <element name="TButtonGlyph.CanShow.Result">
-        <short>True when the glyph can be displayed on the button</short>
+        <short>True when the glyph can be displayed on the button.</short>
       </element>
 
       <element name="TButtonGlyph.CanShowGlyph">
-        <short>Determines if an image is available for the button glyph</short>
+        <short>Determines if an image is available for the button glyph.</short>
         <descr>
           <p>
             CanShowGlyph is a Boolean function used to determine if an image is available for the button glyph. The return value is True when an image has been specified using one of the following mechanisms (in the order of precedence):
@@ -406,12 +406,12 @@
         </seealso>
       </element>
       <element name="TButtonGlyph.CanShowGlyph.Result">
-        <short>True when a glyph image is available</short>
+        <short>True when a glyph image is available.</short>
       </element>
 
       <element name="TButtonGlyph.DoChange">
         <short>
-          Performs actions needed when the glyph image has been changed for the class instance
+          Performs actions needed when the glyph image has been changed for the class instance.
         </short>
         <descr>
           <p>
@@ -425,7 +425,7 @@
       </element>
 
       <element name="TButtonGlyph.GlyphChanged">
-        <short>Provides a default implementation for the OnChange event handler</short>
+        <short>Provides a default implementation for the OnChange event handler.</short>
         <descr>
           <p>
             GlyphChanged is procedure which provides the default implementation for the OnChange event handler. Sender is the TObject instance for the change notification, and normally receives a reference to the current TButtonGlyph class instance.
@@ -445,11 +445,11 @@
         </seealso>
       </element>
       <element name="TButtonGlyph.GlyphChanged.Sender">
-        <short>Button glyph for the change notification</short>
+        <short>Button glyph for the change notification.</short>
       </element>
 
       <element name="TButtonGlyph.SetTransparentMode">
-        <short>Sets the value for the TransparentMode property</short>
+        <short>Sets the value for the TransparentMode property.</short>
         <descr>
           <p>
             <var>SetTransparentMode</var> is a procedure used to set the value in the <var>TransparentMode</var> property to the specified <var>TGlyphTransparencyMode</var> value. <var>SetTransparentMode</var> ensures that the bitmap in the <var>Glyph</var> property is updated to use the same transparency mode.
@@ -465,11 +465,11 @@
         </seealso>
       </element>
       <element name="TButtonGlyph.SetTransparentMode.AValue">
-        <short>Value stored in the TransparentMode property</short>
+        <short>Value stored in the TransparentMode property.</short>
       </element>
 
       <element name="TButtonGlyph.TransparentMode">
-        <short>Indicates the transparency mode used to render the glyph image</short>
+        <short>Indicates the transparency mode used to render the glyph image.</short>
         <descr>
           <p>
             <var>TransparentMode</var> is a read-only <var>TGlyphTransparencyMode</var> property used to indicate the transparency mode applied when the glyph image is drawn.
@@ -486,7 +486,7 @@
 
       <element name="TButtonGlyph.Create">
         <short>
-          <var>Create</var> - constructor for <var>TButtonGlyph</var>: frees the Images cache then creates a Glyph Bitmap
+          <var>Create</var> - constructor for <var>TButtonGlyph</var>: frees the Images cache then creates a Glyph Bitmap.
         </short>
         <descr>
           <p>
@@ -501,7 +501,7 @@
 
       <element name="TButtonGlyph.Destroy">
         <short>
-          <var>Destroy</var> - destructor for <var>TButtonGlyph</var>: frees caches and calls inherited <var>Destroy</var>
+          <var>Destroy</var> - destructor for <var>TButtonGlyph</var>: frees caches and calls inherited <var>Destroy</var>.
         </short>
         <descr>
           <p>
@@ -532,7 +532,7 @@
 
       <element name="TButtonGlyph.GetImageIndexAndEffect">
         <short>
-          Gets the index for a button image using a given state, and the effect used to draw it
+          Gets the index for a button image using a given state, and the effect used to draw it.
         </short>
         <descr>
           <p>
@@ -578,7 +578,7 @@
 
       <element name="TButtonGlyph.Draw">
         <short>
-          Draws the glyph for the button using the specified settings
+          Draws the glyph for the button using the specified settings.
         </short>
         <descr>
           <p>
@@ -635,41 +635,41 @@
         </seealso>
       </element>
       <element name="TButtonGlyph.Draw.Result">
-        <short>Rectangle where the glyph was drawn</short>
+        <short>Rectangle where the glyph was drawn.</short>
       </element>
       <element name="TButtonGlyph.Draw.Canvas">
-        <short>Canvas where the glyph is rendered</short>
+        <short>Canvas where the glyph is rendered.</short>
       </element>
       <element name="TButtonGlyph.Draw.Client">
-        <short>Ciient coodintates for the drawing operation</short>
+        <short>Ciient coodintates for the drawing operation.</short>
       </element>
       <element name="TButtonGlyph.Draw.Offset">
-        <short>Offset in the client coordinates where the glyph is drawn</short>
+        <short>Offset in the client coordinates where the glyph is drawn.</short>
       </element>
       <element name="TButtonGlyph.Draw.State">
-        <short>Button state</short>
+        <short>Button state.</short>
       </element>
       <element name="TButtonGlyph.Draw.Transparent">
-        <short>True if the glyph is drawn transparently</short>
+        <short>True if the glyph is drawn transparently.</short>
       </element>
       <element name="TButtonGlyph.Draw.BiDiFlags">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
       </element>
       <element name="TButtonGlyph.Draw.PPI">
-        <short>Pixels Per Inch for the image resolution requested in the method</short>
+        <short>Pixels Per Inch for the image resolution requested in the method.</short>
       </element>
       <element name="TButtonGlyph.Draw.ScaleFactor">
-        <short>Canvas scaling factor used in the method</short>
+        <short>Canvas scaling factor used in the method.</short>
       </element>
 
       <element name="TButtonGlyph.Refresh">
-        <short>Updates the button glyph after changes to property values</short>
+        <short>Updates the button glyph after changes to property values.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TButtonGlyph.Glyph">
-        <short>The bitmap image drawn as the glyph on the button</short>
+        <short>The bitmap image drawn as the glyph on the button.</short>
         <descr>
           <p>
             <var>Glyph</var> is a <var>TBitmap</var> property with the bitmap image drawn as the glyph for the class instance. The value in Glyph is created/loaded when a bitmap is assigned directly to the property, or when loaded from a Lazarus resource or stock icon.
@@ -688,7 +688,7 @@
 
       <element name="TButtonGlyph.IsDesigning">
         <short>
-          Indicates whether change notifications are suppressed while editing property values
+          Indicates whether change notifications are suppressed while editing property values.
         </short>
         <descr>
           <p>
@@ -709,7 +709,7 @@
       </element>
 
       <element name="TButtonGlyph.NumGlyphs">
-        <short>The number of glyphs available for button states</short>
+        <short>The number of glyphs available for button states.</short>
         <descr>
           <p>
             <var>NumGlyphs</var> is a <var>TNumGlyphs</var> property which indicates the number of glyphs available for its button states. The default value for the property is <b>1</b> (the low value for the range), and indicates that a single image is used for all button states in the <var>TButtonGlyph</var>.
@@ -734,7 +734,7 @@
       </element>
 
       <element name="TButtonGlyph.Images">
-        <short>The list of available images for the button glyph</short>
+        <short>The list of available images for the button glyph.</short>
         <descr>
           <p>
             <var>Images</var> is a read-only <var>TCustomImageList</var> property which contains the images available for the <var>Glyph</var> in the class instance.
@@ -757,7 +757,7 @@
 
       <element name="TButtonGlyph.LCLGlyphName">
         <short>
-          Stores the standard LCL resource name used for the Glyph in the class instance
+          Stores the standard LCL resource name used for the Glyph in the class instance.
         </short>
         <descr>
           <p>
@@ -780,7 +780,7 @@
 
       <element name="TButtonGlyph.ExternalImages">
         <short>
-          Contains a reference to an existing list of images available for use in the Glyph property
+          Contains a reference to an existing list of images available for use in the Glyph property.
         </short>
         <descr>
           <p>
@@ -818,32 +818,32 @@
       </element>
 
       <element name="TButtonGlyph.ExternalImageIndex">
-        <short>Ordinal position in the external image list for the glyph image</short>
+        <short>Ordinal position in the external image list for the glyph image.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TButtonGlyph.ExternalImageWidth">
-        <short>Width of an image in the external image list</short>
+        <short>Width of an image in the external image list.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TButtonGlyph.Width">
-        <short>The width of the glyph image</short>
+        <short>The width of the glyph image.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TButtonGlyph.Height">
-        <short>The height of the glyph image</short>
+        <short>The height of the glyph image.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TButtonGlyph.ShowMode">
         <short>
-          Indicates the logic used to display the Glyph image for the class instance
+          Indicates the logic used to display the Glyph image for the class instance.
         </short>
         <descr>
           <p>
@@ -866,7 +866,7 @@
       </element>
 
       <element name="TButtonGlyph.OnChange">
-        <short>Event handler for a change in the glyph</short>
+        <short>Event handler for a change in the glyph.</short>
         <descr>
           <p>
             OnChange is a TNotifyEvent property that represents an event handler signalled when the image used in the Glyph property is altered. OnChange is signalled from the DoChange method, and occurs after Glyph has been loaded using resources or image lists available to the class instance.
@@ -897,48 +897,48 @@
         </seealso>
       </element>
       <element name="TBitBtnKind.bkCustom">
-        <short>Uses a custom image assigned in the button</short>
+        <short>Uses a custom image assigned in the button.</short>
       </element>
       <element name="TBitBtnKind.bkOK">
-        <short>Uses the OK button image</short>
+        <short>Uses the OK button image.</short>
       </element>
       <element name="TBitBtnKind.bkCancel">
-        <short>Uses the CANCEL button image</short>
+        <short>Uses the CANCEL button image.</short>
       </element>
       <element name="TBitBtnKind.bkHelp">
-        <short>Uses the HELP button image</short>
+        <short>Uses the HELP button image.</short>
       </element>
       <element name="TBitBtnKind.bkYes">
-        <short>Uses the YES button image</short>
+        <short>Uses the YES button image.</short>
       </element>
       <element name="TBitBtnKind.bkNo">
-        <short>Uses the NO button image</short>
+        <short>Uses the NO button image.</short>
       </element>
       <element name="TBitBtnKind.bkClose">
-        <short>Uses the CLOSE button image</short>
+        <short>Uses the CLOSE button image.</short>
       </element>
       <element name="TBitBtnKind.bkAbort">
-        <short>Uses the ABORT button image</short>
+        <short>Uses the ABORT button image.</short>
       </element>
       <element name="TBitBtnKind.bkRetry">
-        <short>Uses the RETRY button image</short>
+        <short>Uses the RETRY button image.</short>
       </element>
       <element name="TBitBtnKind.bkIgnore">
-        <short>Uses the IGNORE button image</short>
+        <short>Uses the IGNORE button image.</short>
       </element>
       <element name="TBitBtnKind.bkAll">
-        <short>Uses the ALL button image</short>
+        <short>Uses the ALL button image.</short>
       </element>
       <element name="TBitBtnKind.bkNoToAll">
-        <short>Uses the NO TO ALL button image</short>
+        <short>Uses the NO TO ALL button image.</short>
       </element>
       <element name="TBitBtnKind.bkYesToAll">
-        <short>Uses the YES TO ALL button image</short>
+        <short>Uses the YES TO ALL button image.</short>
       </element>
 
       <element name="TBitBtnKinds">
         <short>
-          <var>TBitBtnKinds</var> - set of <var>TBitBtnKind</var>
+          <var>TBitBtnKinds</var> - set of <var>TBitBtnKind</var>.
         </short>
         <descr>
           <p>
@@ -949,7 +949,7 @@
 
       <element name="TCustomBitBtn">
         <short>
-          <var>TCustomBitBtn</var> - the ancestor class for <var>TBitBtn</var>
+          <var>TCustomBitBtn</var> - the ancestor class for <var>TBitBtn</var>.
         </short>
         <descr>
           <p>
@@ -969,40 +969,40 @@
       <element name="TCustomBitBtn.FImageChangeLink"/>
 
       <element name="TCustomBitBtn.GetGlyph">
-        <short>Gets the value for the Glyph property</short>
+        <short>Gets the value for the Glyph property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Glyph"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.GetGlyph.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.GetGlyphShowMode">
-        <short>Gets the value for the GlyphShowMode property</short>
+        <short>Gets the value for the GlyphShowMode property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.GlyphShowMode"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.GetGlyphShowMode.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.GetNumGlyphs">
-        <short>Gets the value for the NumGlyphs property</short>
+        <short>Gets the value for the NumGlyphs property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.NumGlyphs"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.GetNumGlyphs.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.ImageListChange">
-        <short>Perform a change notification when Images for the control are updated</short>
+        <short>Perform a change notification when Images for the control are updated.</short>
         <descr>
           <p>
             <var>ImageListChange</var> is a procedure used to perform a change notification when the <var>Images</var> for the control have been updated.
@@ -1021,11 +1021,11 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.ImageListChange.Sender">
-        <short>Object generating the change notification</short>
+        <short>Object generating the change notification.</short>
       </element>
 
       <element name="TCustomBitBtn.IsGlyphStored">
-        <short>Gets the storage specifier for the Glyph property</short>
+        <short>Gets the storage specifier for the Glyph property.</short>
         <descr>
           <p>
             <var>IsGlyphStored</var> is a <var>Boolean</var> function used to get the storage specifier for the <var>Glyph</var> property. The return value is <b>True</b> when an image has not already been assigned in the <var>Action</var> property, or in the <var>TButtonGlyph</var> constructed for the control. This ensures that the image is included in processing that occurs for the LCL component streaming mechanism.
@@ -1038,84 +1038,84 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.IsGlyphStored.Result">
-        <short>True when the glyph image is stored in the LCL component stream</short>
+        <short>True when the glyph image is stored in the LCL component stream.</short>
       </element>
 
       <element name="TCustomBitBtn.SetGlyph">
-        <short>Sets the value for the Glyph property</short>
+        <short>Sets the value for the Glyph property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Glyph"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetGlyph.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetGlyphShowMode">
-        <short>Sets the value for the GlyphShowMode property</short>
+        <short>Sets the value for the GlyphShowMode property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.GlyphShowMode"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetGlyphShowMode.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetKind">
-        <short>Sets the value for the Kind property</short>
+        <short>Sets the value for the Kind property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Kind"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetKind.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetLayout">
-        <short>Sets the value for the Layout property</short>
+        <short>Sets the value for the Layout property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Layout"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetLayout.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetMargin">
-        <short>Sets the value for the Margin property</short>
+        <short>Sets the value for the Margin property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Margin"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetMargin.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetNumGlyphs">
-        <short>Sets the value for the NumGlyphs property</short>
+        <short>Sets the value for the NumGlyphs property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.NumGlyphs"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetNumGlyphs.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetSpacing">
-        <short>Sets the value for the Spacing property</short>
+        <short>Sets the value for the Spacing property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Spacing"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetSpacing.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.RealizeKind">
@@ -1165,11 +1165,11 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.RealizeKind.ForceDefaults">
-        <short>True if the default values for properties are used in the control</short>
+        <short>True if the default values for properties are used in the control.</short>
       </element>
 
       <element name="TCustomBitBtn.SetDefaultCaption">
-        <short>Sets the value for the DefaultCaption property</short>
+        <short>Sets the value for the DefaultCaption property.</short>
         <descr>
           <p>
             <var>SetDefaultCaption</var> is the write access specifier for the <var>DefaultCaption</var> property. <var>AValue</var> contains the new value assigned to the property.
@@ -1187,91 +1187,91 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetDefaultCaption.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.GetCaptionOfKind">
-        <short>Gets the default Caption value for the button Kind</short>
+        <short>Gets the default Caption value for the button Kind.</short>
         <descr></descr>
         <seealso>
         </seealso>
       </element>
       <element name="TCustomBitBtn.GetCaptionOfKind.Result">
-        <short>Default value for the Caption property</short>
+        <short>Default value for the Caption property.</short>
       </element>
       <element name="TCustomBitBtn.GetCaptionOfKind.AKind">
-        <short>Enumeration value that identifies the kind of BitButton</short>
+        <short>Enumeration value that identifies the kind of BitButton.</short>
       </element>
 
       <element name="TCustomBitBtn.GetImages">
-        <short>Gets the value for the Images property</short>
+        <short>Gets the value for the Images property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Images"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.GetImages.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetImages">
-        <short>Sets the value for the Images property</short>
+        <short>Sets the value for the Images property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Images"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetImages.AImages">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.GetImageIndex">
-        <short>Gets the value for the ImageIndex property</short>
+        <short>Gets the value for the ImageIndex property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.ImageIndex"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.GetImageIndex.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetImageIndex">
-        <short>Sets the value for the ImageIndex property</short>
+        <short>Sets the value for the ImageIndex property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.ImageIndex"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetImageIndex.AImageIndex">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.GetImageWidth">
-        <short>Gets the value for the ImageWidth property</short>
+        <short>Gets the value for the ImageWidth property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.ImageWidth"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.GetImageWidth.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.SetImageWidth">
-        <short>Sets the value for the ImageWidth property</short>
+        <short>Sets the value for the ImageWidth property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.ImageWidth"/>
         </seealso>
       </element>
       <element name="TCustomBitBtn.SetImageWidth.AImageWidth">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomBitBtn.FButtonGlyph">
         <short>
-          An internal member which contains the TButtonGlyph instance for the control
+          An internal member which contains the TButtonGlyph instance for the control.
         </short>
         <descr></descr>
         <seealso>
@@ -1288,7 +1288,7 @@
 
       <element name="TCustomBitBtn.ActionChange">
         <short>
-          <var>ActionChange</var> - Changes the action associated with the control
+          <var>ActionChange</var> - Changes the action associated with the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1298,7 +1298,7 @@
       </element>
 
       <element name="TCustomBitBtn.GlyphChanged">
-        <short>Performs actions needed when the value in Glyph has been changed</short>
+        <short>Performs actions needed when the value in Glyph has been changed.</short>
         <descr>
           <p>
             Ensures that the widget set class is notified of a change in the value for the Glyph property. Calls InvalidatePreferredSize and AdjustSize to resize the control for the new Glyph image.
@@ -1313,25 +1313,25 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.GlyphChanged.Sender">
-        <short>TObject instance for the change notification</short>
+        <short>TObject instance for the change notification.</short>
       </element>
 
       <element name="TCustomBitBtn.InitializeWnd" link="#lcl.controls.TWinControl.InitializeWnd"/>
 
       <element name="TCustomBitBtn.IsCaptionStored">
-        <short>Gets the storage specifier for the Caption property</short>
+        <short>Gets the storage specifier for the Caption property.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomBitBtn.IsCaptionStored.Result">
         <short>
-          True when a value for the property is included in the LCL component streaming mechanism
+          True when a value for the property is included in the LCL component streaming mechanism.
         </short>
       </element>
 
       <element name="TCustomBitBtn.Loaded">
         <short>
-          Performs actions needed when the component has been loaded using LCL component streaming
+          Performs actions needed when the component has been loaded using LCL component streaming.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1339,18 +1339,18 @@
 
       <element name="TCustomBitBtn.Notification">
         <short>
-          Performs actions needed when a sub-component is added or removed in the class instance
+          Performs actions needed when a sub-component is added or removed in the class instance.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomBitBtn.Notification.AComponent">
-        <short>Component for the notification message</short>
+        <short>Component for the notification message.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomBitBtn.Notification.Operation">
-        <short>Operation performed for the notification message</short>
+        <short>Operation performed for the notification message.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1363,7 +1363,7 @@
       </element>
 
       <element name="TCustomBitBtn.CMAppShowBtnGlyphChanged">
-        <short>Handles the CM_APPSHOWBTNGLYPHCHANGED message for the control</short>
+        <short>Handles the CM_APPSHOWBTNGLYPHCHANGED message for the control.</short>
         <descr>
           <p>
             <var>CMAppShowBtnGlyphChanged</var> is a method used to handle the <b>CM_APPSHOWBTNGLYPHCHANGED</b> control message for the control. It ensures that the bitmap in <var>Glyph</var> is refreshed when the value in the <var>GlyphShowMode</var> property is set to <var>gsmApplication</var>.
@@ -1377,11 +1377,11 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.CMAppShowBtnGlyphChanged.Message">
-        <short>Control message handled in the method</short>
+        <short>Control message handled in the method.</short>
       </element>
 
       <element name="TCustomBitBtn.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance. <var>Create</var> calls the inherited constructor, and initializes the layout, style, spacing, and Button Glyph for the control.
@@ -1393,11 +1393,11 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomBitBtn.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso>
           <link id="#rtl.Classes.TComponent.Destroy">TComponent.Destroy</link>
@@ -1414,7 +1414,7 @@
       </element>
 
       <element name="TCustomBitBtn.LoadGlyphFromResourceName">
-        <short>Loads the Glyph image with the specified named from a resource instance</short>
+        <short>Loads the Glyph image with the specified named from a resource instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1422,33 +1422,33 @@
         <short></short>
       </element>
       <element name="TCustomBitBtn.LoadGlyphFromResourceName.AName">
-        <short>Resource name for the image loaded in the method</short>
+        <short>Resource name for the image loaded in the method.</short>
       </element>
 
       <element name="TCustomBitBtn.LoadGlyphFromLazarusResource">
         <short>
-          <var>LoadGlyphFromLazarusResource</var> - method for loading the glyph from a Lazarus resource file (.lrs)
+          <var>LoadGlyphFromLazarusResource</var> - method for loading the glyph from a Lazarus resource file (.lrs).
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomBitBtn.LoadGlyphFromLazarusResource.AName">
-        <short>Name for the resource loaded from the Lazarus resource file</short>
+        <short>Name for the resource loaded from the Lazarus resource file.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.LoadGlyphFromStock">
-        <short>Loads a stock glyph image for the specified button identifier</short>
+        <short>Loads a stock glyph image for the specified button identifier.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomBitBtn.LoadGlyphFromStock.idButton">
-        <short>Button identifier used to determine the image loaded in the Glyph</short>
+        <short>Button identifier used to determine the image loaded in the Glyph.</short>
       </element>
 
       <element name="TCustomBitBtn.CanShowGlyph">
-        <short>Indicates if the Glyph for the button can be displayed</short>
+        <short>Indicates if the Glyph for the button can be displayed.</short>
         <descr>
           <p>
             <var>CanShowGlyph</var> is a <var>Boolean</var> function which indicates if the <var>Glyph</var> for the button can be displayed. The return value contains the result from the <var>CanShowGlyph</var> method in the internal <var>TButtonGlyph</var> member.
@@ -1465,14 +1465,14 @@
         </seealso>
       </element>
       <element name="TCustomBitBtn.CanShowGlyph.Result">
-        <short>True when the Glyph image can be displayed for the control</short>
+        <short>True when the Glyph image can be displayed for the control.</short>
       </element>
       <element name="TCustomBitBtn.CanShowGlyph.AWithShowMode">
-        <short>Indicates if the ShowMode for the glyph is examined in the method</short>
+        <short>Indicates if the ShowMode for the glyph is examined in the method.</short>
       </element>
 
       <element name="TCustomBitBtn.Caption" link="#lcl.controls.TControl.Caption">
-        <short>Contains the descriptive text displayed for the Bitmap button control</short>
+        <short>Contains the descriptive text displayed for the Bitmap button control.</short>
         <descr>
           <p>
             <var>Caption</var> is a public <var>TCaption</var> property which contains the descriptive text displayed for the Bitmap button control. Assign a value to Caption when the <var>Kind</var> property is set to <var>bkCustom</var>. When Kind contains one of the other <var>TBitBtnKind</var> enumeration values, the Caption is normally set using the <var>GetCaptionOfKind</var> method.
@@ -1489,7 +1489,7 @@
       </element>
 
       <element name="TCustomBitBtn.DefaultCaption">
-        <short>Indicates if Caption contains the default value for the button Kind</short>
+        <short>Indicates if Caption contains the default value for the button Kind.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Caption"/>
@@ -1498,7 +1498,7 @@
       </element>
 
       <element name="TCustomBitBtn.Glyph">
-        <short>Bitmap with the Glyph displayed on the control</short>
+        <short>Bitmap with the Glyph displayed on the control.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomBitBtn.Images"/>
@@ -1512,55 +1512,55 @@
       </element>
 
       <element name="TCustomBitBtn.NumGlyphs">
-        <short>The number of glyphs available for the control</short>
+        <short>The number of glyphs available for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.Images">
-        <short>Contains images available for the control</short>
+        <short>Contains images available for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.ImageIndex">
-        <short>Ordinal position for the image displayed on the control</short>
+        <short>Ordinal position for the image displayed on the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.ImageWidth">
-        <short>Display width for the glyph image on the control</short>
+        <short>Display width for the glyph image on the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.Kind">
-        <short>What kind of BitButton? Custom, OK, Cancel, Yes, No etc</short>
+        <short>What kind of BitButton? Custom, OK, Cancel, Yes, No etc.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.Layout">
-        <short>Layout of button - Glyph at top, bottom, left or right</short>
+        <short>Layout of button - Glyph at top, bottom, left or right.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.Margin">
-        <short>The margin to be left around glyphs</short>
+        <short>The margin to be left around glyphs.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.Spacing">
-        <short>The spacing around the BitButton</short>
+        <short>The spacing around the BitButton.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomBitBtn.GlyphShowMode">
-        <short>Indicates the policy for showing or hiding the glyph image of this button</short>
+        <short>Indicates the policy for showing or hiding the glyph image of this button.</short>
         <descr></descr>
         <seealso>
           <link id="#lcl.menus.TGlyphShowMode">TGlyphShowMode</link>
@@ -1569,7 +1569,7 @@
       </element>
 
       <element name="TBitBtn">
-        <short>A Button with a small image attached</short>
+        <short>A Button with a small image attached.</short>
         <descr>
           <p>
             TBitBtn is a TCustomBitBtn descendant which provides the interface used to display a button with a glyph (or image) and a caption. It performs an action when the button is clicked.
@@ -1811,7 +1811,7 @@
       </element>
 
       <element name="TSpeedButtonActionLink">
-        <short>Links a TSpeedButton with a TAction instance</short>
+        <short>Links a TSpeedButton with a TAction instance.</short>
       </element>
 
       <element name="TSpeedButtonActionLink.AssignClient" link="#rtl.Classes.TBasicActionLink.AssignClient"/>
@@ -1821,7 +1821,7 @@
 
       <element name="TSpeedButtonActionLink.SetGroupIndex">
         <short>
-          <var>SetGroupIndex</var> - stores the value of the index within the list of links
+          <var>SetGroupIndex</var> - stores the value of the index within the list of links.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1832,7 +1832,7 @@
 
       <element name="TSpeedButtonActionLink.SetChecked">
         <short>
-          <var>SetChecked</var> - stores the Checked status (True or False)</short>
+          <var>SetChecked</var> - stores the Checked status (True or False).</short>
           <descr></descr>
           <seealso></seealso>
         </element>
@@ -1842,7 +1842,7 @@
 
       <element name="TSpeedButtonActionLink.SetImageIndex">
         <short>
-          Sets the image index in the control for the action link when enabled
+          Sets the image index in the control for the action link when enabled.
         </short>
         <descr>
           <p>
@@ -1860,7 +1860,7 @@
         </seealso>
       </element>
       <element name="TSpeedButtonActionLink.SetImageIndex.Value">
-        <short>Ordinal position for the image selected in the speed button control</short>
+        <short>Ordinal position for the image selected in the speed button control.</short>
       </element>
 
       <element name="TSpeedButtonActionLink.IsCheckedLinked" link="#LCL.ActnList.TActionLink.IsCheckedLinked"/>
@@ -1874,7 +1874,7 @@
       </element>
 
       <element name="TSpeedButtonActionLink.IsImageIndexLinked">
-        <short>Determines whether the action link can update the image index for the associated control</short>
+        <short>Determines whether the action link can update the image index for the associated control.</short>
         <descr>
           <p>
             <var>IsImageIndexLinked</var> is an overridden <var>Boolean</var> function used to dtermine if the Action Link can update the image in its associated <var>TSpeedButton</var> control. The return value is <b>True</b> when the <var>Action</var> is derived from <var>TCustomAction</var> and the <var>ImageIndex</var> values in the TSpeedButton and the Action currently have the same values.
@@ -1889,12 +1889,11 @@
         </seealso>
       </element>
       <element name="TSpeedButtonActionLink.IsImageIndexLinked.Result">
-        <short>Returns True when the action is can update the image in the associated control</short>
+        <short>Returns True when the action is can update the image in the associated control.</short>
       </element>
 
       <element name="TCustomSpeedButton">
-        <short>The ancestor class for <var>TSpeedButton</var>
-        </short>
+        <short>The ancestor class for <var>TSpeedButton</var>.</short>
         <descr>
           <p>
             <var>TCustomSpeedButton</var> is a <var>TGraphicControl</var> descendant, and the ancestor for <var>TSpeedButton</var>. If you want to define your own SpeedButton class, you should derive it from this class.
@@ -1923,18 +1922,18 @@
       <element name="TCustomSpeedButton.FMouseInControl"/>
 
       <element name="TCustomSpeedButton.GetGlyph">
-        <short>Gets the value for the Glyph property</short>
+        <short>Gets the value for the Glyph property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.Glyph"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.GetGlyph.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.ImageListChange">
-        <short>Performs actions needed when the value in Images is changed</short>
+        <short>Performs actions needed when the value in Images is changed.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1943,30 +1942,30 @@
       </element>
 
       <element name="TCustomSpeedButton.IsGlyphStored">
-        <short>Gets the storage specifier for the Glyph property</short>
+        <short>Gets the storage specifier for the Glyph property.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomSpeedButton.IsGlyphStored.Result">
         <short>
-          True when a value for the Glyph property is included in the LCL component streaming mechanism
+          True when a value for the Glyph property is included in the LCL component streaming mechanism.
         </short>
       </element>
 
       <element name="TCustomSpeedButton.SetShowCaption">
-        <short>Sets the value for the ShowCaption property</short>
+        <short>Sets the value for the ShowCaption property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.ShowCaption"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetShowCaption.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.UpdateExclusive">
         <short>
-          Sends a message to the parent control when the value in AllowAllUp, GroupIndex, or Down is changed
+          Sends a message to the parent control when the value in AllowAllUp, GroupIndex, or Down is changed.
         </short>
         <descr></descr>
         <seealso>
@@ -1977,62 +1976,62 @@
       </element>
 
       <element name="TCustomSpeedButton.SetAllowAllUp">
-        <short>Sets the value for the AllowAllUp property</short>
+        <short>Sets the value for the AllowAllUp property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.AllowAllUp"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetAllowAllUp.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetGlyph">
-        <short>Sets the value for the Glyph property</short>
+        <short>Sets the value for the Glyph property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.Glyph"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetGlyph.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetLayout">
-        <short>Sets the value for the Layout property</short>
+        <short>Sets the value for the Layout property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.Layout"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetLayout.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetShowAccelChar">
-        <short>Sets the value for the ShowAccelChar property</short>
+        <short>Sets the value for the ShowAccelChar property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.ShowAccelChar"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetShowAccelChar.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetTransparent">
-        <short>Sets the value for the Transparent property</short>
+        <short>Sets the value for the Transparent property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.Transparent"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetTransparent.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.CMButtonPressed">
-        <short>Control message passed when the button is pressed</short>
+        <short>Control message passed when the button is pressed.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2041,7 +2040,7 @@
       </element>
 
       <element name="TCustomSpeedButton.CMEnabledChanged">
-        <short>Control message passed when the control is enabled</short>
+        <short>Control message passed when the control is enabled.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2051,7 +2050,7 @@
 
       <element name="TCustomSpeedButton.DoMouseUp">
         <short>
-          Performs actions needed when the Mouse Up message is received for the control
+          Performs actions needed when the Mouse Up message is received for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2073,74 +2072,74 @@
       <element name="TCustomSpeedButton.WMLButtonDBLCLK.Message"/>
 
       <element name="TCustomSpeedButton.GetImages">
-        <short>Gets the value for the Images property</short>
+        <short>Gets the value for the Images property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.Images"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.GetImages.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetImages">
-        <short>Sets the value for the Images property</short>
+        <short>Sets the value for the Images property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.Images"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetImages.AImages">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.GetImageIndex">
-        <short>Gets the value for the ImageIndex property</short>
+        <short>Gets the value for the ImageIndex property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.ImageIndex"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.GetImageIndex.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetImageIndex">
-        <short>Sets the value for the ImageIndex property</short>
+        <short>Sets the value for the ImageIndex property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.ImageIndex"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetImageIndex.AImageIndex">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.GetImageWidth">
-        <short>Gets the value for the ImageWidth property</short>
+        <short>Gets the value for the ImageWidth property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.ImageWidth"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.GetImageWidth.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetImageWidth">
-        <short>Sets the value for the ImageWidth property</short>
+        <short>Sets the value for the ImageWidth property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.ImageWidth"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetImageWidth.AImageWidth">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.FState">
         <short>
-          Internal member used to store the TButtonState for the control
+          Internal member used to store the TButtonState for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2149,7 +2148,7 @@
       <element name="TCustomSpeedButton.WSRegisterClass" link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomSpeedButton.ButtonGlyph">
-        <short>Gets the TButtonGlyph used for the control</short>
+        <short>Gets the TButtonGlyph used for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2158,31 +2157,31 @@
       </element>
 
       <element name="TCustomSpeedButton.GetNumGlyphs">
-        <short>Gets the value for the NumGlyphs property</short>
+        <short>Gets the value for the NumGlyphs property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomSpeedButton.NumGlyphs"/>
         </seealso>
       </element>
       <element name="TCustomSpeedButton.GetNumGlyphs.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.GlyphChanged">
         <short>
-          Performs actions needed when the value in the Glyph property has been changed
+          Performs actions needed when the value in the Glyph property has been changed.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomSpeedButton.GlyphChanged.Sender">
-        <short>TObject instance for the change notification</short>
+        <short>TObject instance for the change notification.</short>
       </element>
 
       <element name="TCustomSpeedButton.DialogChar" link="#lcl.controls.TControl.DialogChar"/>
 
       <element name="TCustomSpeedButton.CalculatePreferredSize">
-        <short>Calculates the default height and width required for the control</short>
+        <short>Calculates the default height and width required for the control.</short>
         <descr>
           <p>
             Calls MeasureDraw to gets the values for the variable parameters in PreferredWidth and PreferredHeight.
@@ -2194,18 +2193,18 @@
         <seealso></seealso>
       </element>
       <element name="TCustomSpeedButton.CalculatePreferredSize.PreferredWidth">
-        <short>Width calculated for the control</short>
+        <short>Width calculated for the control.</short>
       </element>
       <element name="TCustomSpeedButton.CalculatePreferredSize.PreferredHeight">
-        <short>Height calculated for the control</short>
+        <short>Height calculated for the control.</short>
       </element>
       <element name="TCustomSpeedButton.CalculatePreferredSize.WithThemeSpace">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
       </element>
 
       <element name="TCustomSpeedButton.MeasureDraw">
         <short>
-          Calculates the Width and Height for theSpeedButton, and optionally renders the control
+          Calculates the Width and Height for theSpeedButton, and optionally renders the control.
         </short>
         <descr>
           Used in the implementation of the CalculatePreferredSize and Paint methods.
@@ -2269,31 +2268,31 @@
 
       <element name="TCustomSpeedButton.Notification">
         <short>
-          Performs action needed when a sub-component is added or removed for the control
+          Performs action needed when a sub-component is added or removed for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomSpeedButton.Notification.AComponent">
-        <short>Component for the notification message</short>
+        <short>Component for the notification message.</short>
       </element>
       <element name="TCustomSpeedButton.Notification.Operation">
-        <short>Action performed for the notification message</short>
+        <short>Action performed for the notification message.</short>
       </element>
 
       <element name="TCustomSpeedButton.Paint" link="#lcl.controls.TGraphicControl.Paint"/>
 
       <element name="TCustomSpeedButton.PaintBackground">
-        <short>Paints the background for the control</short>
+        <short>Paints the background for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomSpeedButton.PaintBackground.PaintRect">
-        <short>Rectangle where the control is drawn</short>
+        <short>Rectangle where the control is drawn.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetDown">
-        <short>Sets the value for the Down property</short>
+        <short>Sets the value for the Down property.</short>
         <descr>
           <var>SetDown</var> - specifies the Boolean value of <var>Down</var> (i.e. whether or not button was pressed)
         </descr>
@@ -2302,13 +2301,11 @@
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetDown.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetGroupIndex">
-        <short>
-          Sets the value for the GroupIndex property
-        </short>
+        <short>Sets the value for the GroupIndex property.</short>
         <descr>
           <var>SetGroupIndex</var> - specifies the value of the Group Index.
         </descr>
@@ -2317,13 +2314,11 @@
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetGroupIndex.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetFlat">
-        <short>
-          Sets the value for the Flat property
-        </short>
+        <short>Sets the value for the Flat property.</short>
         <descr>
           <var>SetFlat</var> - specifies whether or not the button is displayed <var>Flat</var>
         </descr>
@@ -2332,13 +2327,11 @@
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetFlat.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetMargin">
-        <short>
-          Sets the value for the Margin property
-        </short>
+        <short>Sets the value for the Margin property.</short>
         <descr>
           <var>SetMargin</var> - specifies the size of the margin
         </descr>
@@ -2347,13 +2340,11 @@
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetMargin.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetNumGlyphs">
-        <short>
-          Sets the value for the NumGlyphs property
-        </short>
+        <short>Sets the value for the NumGlyphs property.</short>
         <descr>
           <var>SetNumGlyphs</var> - specifies the number of glyphs.
         </descr>
@@ -2362,13 +2353,11 @@
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetNumGlyphs.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.SetSpacing">
-        <short>
-          Sets the value for the Spacing property
-        </short>
+        <short>Sets the value for the Spacing property.</short>
         <descr>
           <var>SetSpacing</var> - specifies the spacing between buttons.
         </descr>
@@ -2377,7 +2366,7 @@
         </seealso>
       </element>
       <element name="TCustomSpeedButton.SetSpacing.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSpeedButton.RealSetText" link="#lcl.controls.TControl.RealSetText">
@@ -2388,12 +2377,12 @@
         <seealso></seealso>
       </element>
       <element name="TCustomSpeedButton.RealSetText.Value">
-        <short>Value stored in the method</short>
+        <short>Value stored in the method.</short>
       </element>
 
       <element name="TCustomSpeedButton.UpdateState">
         <short>
-          Updates internal members used to track state changes in the control
+          Updates internal members used to track state changes in the control.
         </short>
         <descr>
           <var>UpdateState</var> - brings the state up to date, implementing any pending changes, and rendering non-valid if <var>InvalidateOnChange</var> is True
@@ -2401,12 +2390,12 @@
         <seealso></seealso>
       </element>
       <element name="TCustomSpeedButton.UpdateState.InvalidateOnChange">
-        <short>Indicates if the control is invalidated following a change in state</short>
+        <short>Indicates if the control is invalidated following a change in state.</short>
       </element>
 
       <element name="TCustomSpeedButton.GetDrawDetails">
         <short>
-          <var>GetDrawDetails</var> - returns the structured details for drawing
+          <var>GetDrawDetails</var> - returns the structured details for drawing.
         </short>
       </element>
       <element name="TCustomSpeedButton.GetDrawDetails.Result">
@@ -2415,7 +2404,7 @@
 
       <element name="TCustomSpeedButton.MouseInControl">
         <short>
-          <var>MouseInControl</var> - returns True if the mouse cursor is in the control</short>
+          <var>MouseInControl</var> - returns True if the mouse cursor is in the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2450,7 +2439,7 @@
 
       <element name="TCustomSpeedButton.GetGlyphSize">
         <short>
-          <var>GetGlyphSize</var> - returns the size of the glyph within the specified <var>PaintRect</var>
+          <var>GetGlyphSize</var> - returns the size of the glyph within the specified <var>PaintRect</var>.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2467,7 +2456,7 @@
 
       <element name="TCustomSpeedButton.GetTextSize">
         <short>
-          <var>GetTextSize</var> - returns the size of the text within the specified <var>PaintRect</var>
+          <var>GetTextSize</var> - returns the size of the text within the specified <var>PaintRect</var>.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2484,7 +2473,7 @@
 
       <element name="TCustomSpeedButton.DrawGlyph">
         <short>
-          Draws the glyph on the specified canvas in the specified rectangle at a given offset within the client, with specified state and transparency
+          Draws the glyph on the specified canvas in the specified rectangle at a given offset within the client, with specified state and transparency.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2513,7 +2502,7 @@
 
       <element name="TCustomSpeedButton.Create">
         <short>
-          <var>Create</var> - constructor for <var>TCustomSpeedButton</var>: calls inherited <var>Create</var> and initializes many defaults and properties
+          <var>Create</var> - constructor for <var>TCustomSpeedButton</var>: calls inherited <var>Create</var> and initializes many defaults and properties.
         </short>
         <descr>
           <p>
@@ -2525,12 +2514,12 @@
         </seealso>
       </element>
       <element name="TCustomSpeedButton.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomSpeedButton.Destroy">
         <short>
-          <var>Destroy</var> - destructor for <var>TCustomSpeedButton</var>: frees Glyph then calls inherited <var>Destroy</var>
+          <var>Destroy</var> - destructor for <var>TCustomSpeedButton</var>: frees Glyph then calls inherited <var>Destroy</var>.
         </short>
         <descr>
           <var>Destroy</var> is the destructor for <var>TCustomSpeedButton</var>. It frees resources allocated to the Glyph property, and calls the inherited <var>Destroy</var> method.
@@ -2542,7 +2531,7 @@
 
       <element name="TCustomSpeedButton.FindDownButton">
         <short>
-          <var>FindDownButton</var> - returns the button that is down
+          <var>FindDownButton</var> - returns the button that is down.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2555,7 +2544,7 @@
 
       <element name="TCustomSpeedButton.LoadGlyphFromResourceName">
         <short>
-          Loads the image for the Glyph with the specified name from a resource instance
+          Loads the image for the Glyph with the specified name from a resource instance.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2569,7 +2558,7 @@
 
       <element name="TCustomSpeedButton.LoadGlyphFromLazarusResource">
         <short>
-          <var>LoadGlyphFromLazarusResource</var> - method for loading a glyph from a Lazarus Resource file (.lrs)
+          <var>LoadGlyphFromLazarusResource</var> - method for loading a glyph from a Lazarus Resource file (.lrs).
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2580,7 +2569,7 @@
 
       <element name="TCustomSpeedButton.AllowAllUp">
         <short>
-          Boolean flag whichindicates if all buttons in a group are allowed to be Up (default is False)
+          Boolean flag whichindicates if all buttons in a group are allowed to be Up (default is False).
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2589,57 +2578,57 @@
       <element name="TCustomSpeedButton.Color" link="#lcl.controls.TControl.Color"/>
 
       <element name="TCustomSpeedButton.Down">
-        <short>Indicates if the button has been set to the Down state</short>
+        <short>Indicates if the button has been set to the Down state.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.Flat">
-        <short>Whether the button is to be displayed <var>Flat</var> or in relief</short>
+        <short>Whether the button is to be displayed <var>Flat</var> or in relief.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.Glyph">
-        <short>The Bitmap used for the glyph image on the button</short>
+        <short>The Bitmap used for the glyph image on the button.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.GroupIndex">
         <short>
-          The ordinal position for the control within a group of related speedbuttons
+          The ordinal position for the control within a group of related speedbuttons.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.Images">
-        <short>Contains images available for use as the glyph for the control</short>
+        <short>Contains images available for use as the glyph for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.ImageIndex">
-        <short>Ordinal position for the Image used as the glyph for the control</short>
+        <short>Ordinal position for the Image used as the glyph for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.ImageWidth">
-        <short>Display width for the glyph image in the control</short>
+        <short>Display width for the glyph image in the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.Layout">
-        <short>The button layout - Glyph at top, bottom, left or right</short>
+        <short>The button layout - Glyph at top, bottom, left or right.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.Margin">
-        <short>Margin - the space around glyph and caption</short>
+        <short>Margin - the space around glyph and caption.</short>
         <descr>
           A value of -1 centers the content. If Spacing is -1 too then there is the same space on the left, between the glyph and caption, and on the right.
         </descr>
@@ -2647,23 +2636,23 @@
       </element>
 
       <element name="TCustomSpeedButton.NumGlyphs">
-        <short>The number of Glyphs available</short>
+        <short>The number of Glyphs available.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomSpeedButton.ShowAccelChar">
         <short>
-          Indicates if the accelerator charactershould be shown (i.e. underlined character denoting key to be pressed for quick action)
+          Indicates if the accelerator charactershould be shown (i.e. underlined character denoting key to be pressed for quick action).
         </short>
       </element>
 
       <element name="TCustomSpeedButton.ShowCaption">
-        <short>Indicates if the caption for the speed button is displayed</short>
+        <short>Indicates if the caption for the speed button is displayed.</short>
       </element>
 
       <element name="TCustomSpeedButton.Spacing">
-        <short>Spacing between Glyph and Caption</short>
+        <short>Spacing between Glyph and Caption.</short>
         <descr>
           If Spacing is -1 and Margin is -1 then Glyph and Caption are centered and there is the same amount of space between Glyph and Caption and on the left and right. If Spacing is -1 and Margin is not -1 then Spacing will fill the remaining space.
         </descr>
@@ -2671,13 +2660,13 @@
       </element>
 
       <element name="TCustomSpeedButton.Transparent">
-        <short>Indicates if the control is drawn with transparency</short>
+        <short>Indicates if the control is drawn with transparency.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TSpeedButton">
-        <short>A Button used to represent states (checked or unchecked)</short>
+        <short>A Button used to represent states (checked or unchecked).</short>
         <descr>
           <p>
             The Speed Button is designed to automate a process when it is selected.  An user pushes a button to start an action or set a mode.
@@ -2724,7 +2713,7 @@
       <element name="TSpeedButton.AutoSize" link="#LCL.StdCtrls.TGraphicControl.AutoSize"/>
 
       <element name="TSpeedButton.BidiMode">
-        <short>Indicates the bi-drectional text mode for the control</short>
+        <short>Indicates the bi-drectional text mode for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2879,7 +2868,7 @@
 
       <element name="TGetDefaultBitBtnGlyph">
         <short>
-          <var>TGetDefaultBitBtnGlyph</var> - generic method to return a default Bit Button Glyph of specified Kind
+          <var>TGetDefaultBitBtnGlyph</var> - generic method to return a default Bit Button Glyph of specified Kind.
         </short>
       </element>
 
@@ -2925,14 +2914,14 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
 
       <element name="GetLCLDefaultBtnGlyph">
         <short>
-          <var>GetLCLDefaultBtnGlyph</var> gets the LCL default button glyph for the specified button Kind
+          <var>GetLCLDefaultBtnGlyph</var> gets the LCL default button glyph for the specified button Kind.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="LoadGlyphFromResourceName">
-        <short>Loads a bitmap from a named resource into the specified Glyph</short>
+        <short>Loads a bitmap from a named resource into the specified Glyph.</short>
         <descr>
           <p>
             <var>LoadGlyphFromResourceName</var> is a procedure used to load a bitmap into the specified <var>Glyph</var> from a named resource. <var>AGlyph</var> is the <var>TButtonGlyph</var> where the bitmap is stored. <var>Instance</var> is a <var>THandle</var> for the resource instance accessed in the routine. <var>AName</var> contains the name for the resource loaded in the routine.
@@ -2952,17 +2941,17 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
         </seealso>
       </element>
       <element name="LoadGlyphFromResourceName.AGlyph">
-        <short>Button glyph updated in the routine</short>
+        <short>Button glyph updated in the routine.</short>
       </element>
       <element name="LoadGlyphFromResourceName.Instance">
-        <short>Handle for the resource</short>
+        <short>Handle for the resource.</short>
       </element>
       <element name="LoadGlyphFromResourceName.AName">
-        <short>Resource name loaded in the routine</short>
+        <short>Resource name loaded in the routine.</short>
       </element>
 
       <element name="LoadGlyphFromLazarusResource">
-        <short>Loads the named glyph image from a Lazarus Resource file</short>
+        <short>Loads the named glyph image from a Lazarus Resource file.</short>
         <descr>
           <p>
             <var>LoadGlyphFromLazarusResource</var> loads a glyph image with the specified name from a Lazarus Resource file (<file>.lrs</file>). Used in the implementation of the LoadGlyphFromLazarusResource method in both <var>TCustomBitBtn</var> and <var>TCustomSpeedButton</var>.
@@ -2974,15 +2963,15 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
         </seealso>
       </element>
       <element name="LoadGlyphFromLazarusResource.AGlyph">
-        <short>Class instance where the bitmap for the glyph is stored</short>
+        <short>Class instance where the bitmap for the glyph is stored.</short>
       </element>
       <element name="LoadGlyphFromLazarusResource.AName">
-        <short>Resource name loaded in the routine</short>
+        <short>Resource name loaded in the routine.</short>
       </element>
 
       <element name="LoadGlyphFromStock">
         <short>
-          Loads the bitmap for the specified Glyph using the image for the specified button identifier
+          Loads the bitmap for the specified Glyph using the image for the specified button identifier.
         </short>
         <descr>
           <p>
@@ -2999,14 +2988,14 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
         </seealso>
       </element>
       <element name="LoadGlyphFromStock.AGlyph">
-        <short>TButtonGlyph where the bitmap is stored</short>
+        <short>TButtonGlyph where the bitmap is stored.</short>
       </element>
       <element name="LoadGlyphFromStock.idButton">
-        <short>Button identifier for the image loaded in the routine</short>
+        <short>Button identifier for the image loaded in the routine.</short>
       </element>
 
       <element name="GetButtonCaption">
-        <short>Gets the default caption for the specified button identifier</short>
+        <short>Gets the default caption for the specified button identifier.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -3018,7 +3007,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
       </element>
 
       <element name="GetDefaultButtonIcon">
-        <short>Gets the default icon for the specified button identifier</short>
+        <short>Gets the default icon for the specified button identifier.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -3034,7 +3023,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
 
       <element name="GetButtonIcon">
         <short>
-          Gets a bitmap with the glyph image for the specified button identifier
+          Gets a bitmap with the glyph image for the specified button identifier.
         </short>
         <descr>
           <p>
@@ -3056,7 +3045,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
       </element>
 
       <element name="BidiAdjustButtonLayout">
-        <short>Adjusts the specified button layout for use in bi-drectional rendering</short>
+        <short>Adjusts the specified button layout for use in bi-drectional rendering.</short>
         <descr>
           <p>
             Adjusts the layout for button glyphs to reflect the settings in <var>IsRightToLeft</var>. Uses an implementation constant to get the <var>TButtonLayout</var> value needed for the setting in IsRightLeft.
@@ -3071,31 +3060,31 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
         <seealso/>
       </element>
       <element name="BidiAdjustButtonLayout.Result">
-        <short>Adjusted glyph layout needed for the value in IsRightToLeft</short>
+        <short>Adjusted glyph layout needed for the value in IsRightToLeft.</short>
       </element>
       <element name="BidiAdjustButtonLayout.IsRightToLeft">
-        <short>True when BiDiMode has any value other than bdLeftToRight</short>
+        <short>True when BiDiMode has any value other than bdLeftToRight.</short>
       </element>
       <element name="BidiAdjustButtonLayout.Layout">
-        <short>Glyph layout needed for the button using the specified BiDi setting</short>
+        <short>Glyph layout needed for the button using the specified BiDi setting.</short>
       </element>
 
       <element name="dbgs">
         <short>
-          Gets a String with debugging information from the specified TBitBtnKind instance
+          Gets a String with debugging information from the specified TBitBtnKind instance.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="dbgs.Result">
-        <short>Formatted string value with the information for the type</short>
+        <short>Formatted string value with the information for the type.</short>
       </element>
       <element name="dbgs.Kind">
-        <short>TBitBtnKind instance examined in the routine</short>
+        <short>TBitBtnKind instance examined in the routine.</short>
       </element>
 
       <element name="BitBtnModalResults">
-        <short>Contains modal result values for buttons defined in TBitBtnKind</short>
+        <short>Contains modal result values for buttons defined in TBitBtnKind.</short>
         <descr>
           <p>
             <var>BitBtnModalResults</var> is an <var>Array</var> constant which contains <var>TModalResult</var> values returned for buttons in <var>TBitBtn</var>. BitBtnModalResults is indexed by the enumeration values in <var>TBitBtnKind</var>. BitBtnModalResults is used in the implementation of the <var>RealizeKind</var> method in <var>TCustomBitBtn</var>.
@@ -3107,7 +3096,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
       </element>
 
       <element name="BitBtnImages">
-        <short>Contains button identifiers used to get icons for TBitBtn button glyphs</short>
+        <short>Contains button identifiers used to get icons for TBitBtn button glyphs.</short>
         <descr>
           <p>
             <var>BitBtnImages</var> is an Array constant which contains LongInt values for the button identifiers used in <var>TBitBtn</var>. BitBtnImages is indexed by the enumeration values in <var>TBitBtnKind</var>. Values in BitBtnImages are used in the <var>GetLCLDefaultBtnGlyph</var> routine.
@@ -3120,7 +3109,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
       </element>
 
       <element name="BitBtnResNames">
-        <short>Contains resource names for corresponding button identifiers in TBitBtn</short>
+        <short>Contains resource names for corresponding button identifiers in TBitBtn.</short>
         <descr>
           <p>
             <var>BitBtnResNames</var> is an <var>Array</var> constant that contains Strings with the resource name for button identifiers used in TBitBtn. Values in BitBtnResNames are indexed by the range of values defined in <var>BitBtnImages</var>: <b><var>idButtonOk</var>..<var>idButtonNoToAll</var></b>.
@@ -3136,7 +3125,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
       </element>
 
       <element name="Register">
-        <short>Registers components for use in the Lazarus IDE</short>
+        <short>Registers components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             Register is the procedure used to register components for us in the Lazarus IDE. The following components are added to the Lazarus IDE:

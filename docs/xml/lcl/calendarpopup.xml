@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="CalendarPopup">
-      <short>Implements a pop-up form with a TCalendar control for TDateEdit</short>
+      <short>Implements a pop-up form with a TCalendar control for TDateEdit.</short>
       <descr>
         <p>
           <file>calendarpopup.pas</file> implements a non-modal calendar popup for a TDateEdit control. It includes a ShowCalendarPopup routine to configure, display, and capture the return value for the pop-up form.
@@ -31,7 +31,7 @@
 
       <element name="TReturnDateEvent">
         <short>
-          Specifies an event handler signalled when a date is selected on a pop-up calendar form
+          Specifies an event handler signalled when a date is selected on a pop-up calendar form.
         </short>
         <descr>
           <p>
@@ -43,15 +43,15 @@
         </seealso>
       </element>
       <element name="TReturnDateEvent.Sender">
-        <short>Object for the event notification; normally the pop-up calendar form</short>
+        <short>Object for the event notification; normally the pop-up calendar form.</short>
       </element>
       <element name="TReturnDateEvent.Date">
-        <short>TDateTime value for the date selected on the calendar form</short>
+        <short>TDateTime value for the date selected on the calendar form.</short>
       </element>
 
       <element name="TCalendarPopupForm">
         <short>
-          Implements a non-modal pop-up form used to select a date from a TCalendar control
+          Implements a non-modal pop-up form used to select a date from a TCalendar control.
         </short>
         <descr>
           <p>
@@ -71,7 +71,7 @@
       </element>
 
       <element name="TCalendarPopupForm.Calendar">
-        <short>TCalendar control used to select a date on the form</short>
+        <short>TCalendar control used to select a date on the form.</short>
         <descr>
           <p>
             <var>Calendar</var> is a <var>TCalendar</var> member which contains the calendar control displayed on the form. It allows selection of date, and calls the <var>ReturnDate</var> method when the Month, Day, or Year in the control is changed using either the mouse or the keyboard. Calendar is configured in the <var>Initialize</var> method using the <var>TDateTime</var> and <var>TDisplaySettings</var> provided as arguments.
@@ -89,7 +89,7 @@
 
       <element name="TCalendarPopupForm.CalendarDblClick">
         <short>
-          Performs actions needed when a double click mouse event occurs in the Calendar control
+          Performs actions needed when a double click mouse event occurs in the Calendar control.
         </short>
         <descr>
           <p>
@@ -102,11 +102,11 @@
         </seealso>
       </element>
       <element name="TCalendarPopupForm.CalendarDblClick.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TCalendarPopupForm.CalendarKeyDown">
-        <short>Implements the OnKeyDown event handler for the Calendar control</short>
+        <short>Implements the OnKeyDown event handler for the Calendar control.</short>
         <descr>
           <p>
             <var>CalendarKeyDown</var> is a procedure which implements the <var>OnKeyDown</var> event handler for the <var>Calendar</var> control. The method ensures that the key down virtual key code represented by <var>Key</var> and <var>Shift</var> is applied to the Calendar control, and includes:
@@ -128,17 +128,17 @@
         </seealso>
       </element>
       <element name="TCalendarPopupForm.CalendarKeyDown.Sender">
-        <short>Object for the event notification; the Calendar control in this case</short>
+        <short>Object for the event notification; the Calendar control in this case.</short>
       </element>
       <element name="TCalendarPopupForm.CalendarKeyDown.Key">
-        <short>Virtual key code examined in the method</short>
+        <short>Virtual key code examined in the method.</short>
       </element>
       <element name="TCalendarPopupForm.CalendarKeyDown.Shift">
-        <short>Virtual key modifier examined in the method</short>
+        <short>Virtual key modifier examined in the method.</short>
       </element>
 
       <element name="TCalendarPopupForm.FormClose">
-        <short>Implements the OnClose event handler for the form</short>
+        <short>Implements the OnClose event handler for the form.</short>
         <descr>
           <p>
             Ensures that the <var>FormDeactivate</var> method is removed from the registered OnDeactivate handlers in <var>Application</var>. The value in <var>CloseAction</var> is set to <var>caFree</var> in the method.
@@ -147,23 +147,23 @@
         <seealso></seealso>
       </element>
       <element name="TCalendarPopupForm.FormClose.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCalendarPopupForm.FormClose.CloseAction">
-        <short>Close action to perform on exit from the event handler</short>
+        <short>Close action to perform on exit from the event handler.</short>
       </element>
 
       <element name="TCalendarPopupForm.FormCreate">
-        <short>Implements the OnCreate event handler for the form</short>
+        <short>Implements the OnCreate event handler for the form.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalendarPopupForm.FormCreate.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TCalendarPopupForm.FormDeactivate">
-        <short>Implements the OnDeactivate event handler for the form</short>
+        <short>Implements the OnDeactivate event handler for the form.</short>
         <descr>
           <p>
             Ensures that the <var>FormDeactivate</var> method is added to the OnDeactivate handlers in <var>Application</var>.
@@ -172,7 +172,7 @@
         <seealso></seealso>
       </element>
       <element name="TCalendarPopupForm.FormDeactivate.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TCalendarPopupForm.FCaller"/>
@@ -180,7 +180,7 @@
       <element name="TCalendarPopupForm.FOnReturnDate"/>
 
       <element name="TCalendarPopupForm.Initialize">
-        <short>Configures the Calendar control in the pop-up form</short>
+        <short>Configures the Calendar control in the pop-up form.</short>
         <descr>
           <p>
             Applies the values in the <var>ADate</var> and <var>DisplaySettings</var> arguments to the <var>Calendar</var> control.
@@ -189,26 +189,26 @@
         <seealso></seealso>
       </element>
       <element name="TCalendarPopupForm.Initialize.ADate">
-        <short>Date value assigned to the Calendar control</short>
+        <short>Date value assigned to the Calendar control.</short>
       </element>
       <element name="TCalendarPopupForm.Initialize.DisplaySettings">
-        <short>Display settings applied to the Calendar control</short>
+        <short>Display settings applied to the Calendar control.</short>
       </element>
 
       <element name="TCalendarPopupForm.KeepInView">
         <short>
-          Ensures that the form and the calling control are visible on the current monitor
+          Ensures that the form and the calling control are visible on the current monitor.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalendarPopupForm.KeepInView.PopupOrigin">
-        <short>Coordinates where the pop-up form is displayed</short>
+        <short>Coordinates where the pop-up form is displayed.</short>
       </element>
 
       <element name="TCalendarPopupForm.ReturnDate">
         <short>
-          Signals the OnReturnDate event handler using the DateTime value in the Calendar control
+          Signals the OnReturnDate event handler using the DateTime value in the Calendar control.
         </short>
         <descr>
           <p>
@@ -219,7 +219,7 @@
       </element>
 
       <element name="ShowCalendarPopup">
-        <short>Creates, configures, and displays a TCalendarPopupForm instance</short>
+        <short>Creates, configures, and displays a TCalendarPopupForm instance.</short>
         <descr>
           <p>
             <var>ShowCalendarPopup</var> is a procedure used to create, configure, and display a <var>TCalendarPopupForm</var> instance. ShowCalendarPopup stores arguments to the routine in properties for the pop-up calendar form, and calls its <var>Initialize</var> method to configure the <var>Calendar</var> control.
@@ -235,22 +235,22 @@
         </seealso>
       </element>
       <element name="ShowCalendarPopup.APosition">
-        <short>Coordinates where the pop-up calendar form is displayed</short>
+        <short>Coordinates where the pop-up calendar form is displayed.</short>
       </element>
       <element name="ShowCalendarPopup.ADate">
-        <short>Initial date displayed in the Calendar for the form</short>
+        <short>Initial date displayed in the Calendar for the form.</short>
       </element>
       <element name="ShowCalendarPopup.CalendarDisplaySettings">
-        <short>Display settings applied to the Calendar control</short>
+        <short>Display settings applied to the Calendar control.</short>
       </element>
       <element name="ShowCalendarPopup.OnReturnDate">
-        <short>Event handler signalled when a new date value is selected</short>
+        <short>Event handler signalled when a new date value is selected.</short>
       </element>
       <element name="ShowCalendarPopup.OnShowHide">
-        <short>Event handler signalled when the pop-up form is shown or hidden</short>
+        <short>Event handler signalled when the pop-up form is shown or hidden.</short>
       </element>
       <element name="ShowCalendarPopup.ACaller">
-        <short>The control which creates the pop-up and captures its return value</short>
+        <short>The control which creates the pop-up and captures its return value.</short>
       </element>
 
     </module>

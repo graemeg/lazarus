@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="CalcForm">
-      <short>Contains classes and types used in TCalculatorForm</short>
+      <short>Contains classes and types used in TCalculatorForm.</short>
       <descr>
         <p>
           <file>calcform.pas</file> contains classes and types used in <var>TCalculatorForm</var>, a dialog form used to display a calculator. It is part of the Lazarus Component Library (<b>LCL</b>).
@@ -31,7 +31,7 @@
 
       <element name="CalcDefPrecision">
         <short>
-          Defines the default number of digits of precision used for values in TCalculatorForm
+          Defines the default number of digits of precision used for values in TCalculatorForm.
         </short>
         <descr/>
         <seealso/>
@@ -39,18 +39,18 @@
 
       <element name="TCalculatorCalcKeyEvent">
         <short>
-          Specifies an event handler signalled for Key events occurring in TCalculatorForm
+          Specifies an event handler signalled for Key events occurring in TCalculatorForm.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorCalcKeyEvent.Key">
-        <short>Key value examined in the event handler</short>
+        <short>Key value examined in the event handler.</short>
       </element>
 
       <element name="TCalculatorDispChangeEvent">
         <short>
-          Specifies an event handler signalled when the display in TCalculatorForm is changed
+          Specifies an event handler signalled when the display in TCalculatorForm is changed.
         </short>
         <descr/>
         <seealso/>
@@ -68,13 +68,13 @@
         </seealso>
       </element>
       <element name="TCalculatorState.csFirst">
-        <short>Value on the First key press</short>
+        <short>Value on the First key press.</short>
       </element>
       <element name="TCalculatorState.csValid">
-        <short>Value after the oepration for the key has been applied successfully</short>
+        <short>Value after the oepration for the key has been applied successfully.</short>
       </element>
       <element name="TCalculatorState.csError">
-        <short>Value when the operation resulted in an error</short>
+        <short>Value when the operation resulted in an error.</short>
       </element>
 
       <element name="TCalculatorLayout">
@@ -91,15 +91,15 @@
         </seealso>
       </element>
       <element name="TCalculatorLayout.clNormal">
-        <short>The default layout with larger button sizes and more whitespace</short>
+        <short>The default layout with larger button sizes and more whitespace.</short>
       </element>
       <element name="TCalculatorLayout.clSimple">
-        <short>The compact layout with smaller button sizes</short>
+        <short>The compact layout with smaller button sizes.</short>
       </element>
 
       <element name="TCalculatorPanel">
         <short>
-          Implements a panel used for buttons and the value display in a calculator form
+          Implements a panel used for buttons and the value display in a calculator form.
         </short>
         <descr/>
         <seealso/>
@@ -124,25 +124,25 @@
       <element name="TCalculatorPanel.FControl"/>
 
       <element name="TCalculatorPanel.SetCalcText">
-        <short>Sets the value for the text property</short>
+        <short>Sets the value for the text property.</short>
         <descr/>
         <seealso>
           <link id="TCalculatorPanel.Text"/>
         </seealso>
       </element>
       <element name="TCalculatorPanel.SetCalcText.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCalculatorPanel.CheckFirst">
-        <short>Ensures that Text is updated and displayed when Status is csFirst</short>
+        <short>Ensures that Text is updated and displayed when Status is csFirst.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.CalcKey">
         <short>
-          Performs actions for a key press not handled by a button in the calculator panel
+          Performs actions for a key press not handled by a button in the calculator panel.
         </short>
         <descr/>
         <seealso/>
@@ -152,14 +152,14 @@
       </element>
 
       <element name="TCalculatorPanel.Clear">
-        <short>Clears the display and operator in the calculator panel</short>
+        <short>Clears the display and operator in the calculator panel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.Error">
         <short>
-          Updates the calculator panel to reflect an error condition, and signals OnError
+          Updates the calculator panel to reflect an error condition, and signals OnError.
         </short>
         <descr/>
         <seealso/>
@@ -167,17 +167,17 @@
 
       <element name="TCalculatorPanel.SetDisplay">
         <short>
-          Sets the Text in the calculator panel to the specified value, and signals OnDisplayChange
+          Sets the Text in the calculator panel to the specified value, and signals OnDisplayChange.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorPanel.SetDisplay.R">
-        <short>Double value formatted and assigned to the Text property</short>
+        <short>Double value formatted and assigned to the Text property.</short>
       </element>
 
       <element name="TCalculatorPanel.GetDisplay">
-        <short>Gets the Double value represented in the Text property</short>
+        <short>Gets the Double value represented in the Text property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -186,7 +186,7 @@
       </element>
 
       <element name="TCalculatorPanel.FindButton">
-        <short>Finds the calculator button which handles the specified key character</short>
+        <short>Finds the calculator button which handles the specified key character.</short>
         <descr>
           <p>
             <var>Key</var> contains  a character value to locate in the button captions on the panel. Keys which are not represented by buttons, like <b>Enter</b> (#13) and <b>Escape</b> (#27), are translated to the value used for the target button. In addition, when ',' is used as the decimal separator on the system, it is translated into the '.' decimal notation.
@@ -199,20 +199,20 @@
       </element>
       <element name="TCalculatorPanel.FindButton.Result">
         <short>
-          Button which handles the Key, or Nil when no button is available for Key
+          Button which handles the Key, or Nil when no button is available for Key.
         </short>
       </element>
       <element name="TCalculatorPanel.FindButton.Key">
-        <short>Key character to locate in the buttons for the calculator panel</short>
+        <short>Key character to locate in the buttons for the calculator panel.</short>
       </element>
 
       <element name="TCalculatorPanel.BtnClick">
-        <short>Translates a mouse click on a button to the character key used in CalcKey</short>
+        <short>Translates a mouse click on a button to the character key used in CalcKey.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorPanel.BtnClick.Sender">
-        <short>Calculator button for the button click notification</short>
+        <short>Calculator button for the button click notification.</short>
       </element>
 
       <element name="TCalculatorPanel.ErrorBeep">
@@ -224,14 +224,14 @@
       </element>
 
       <element name="TCalculatorPanel.TextChange">
-        <short>Sets the display text for the associated control and signals OnTextChange</short>
+        <short>Sets the display text for the associated control and signals OnTextChange.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.CreateLayout">
         <short>
-          Initializes and configures the calculator panel using the specified layout
+          Initializes and configures the calculator panel using the specified layout.
         </short>
         <descr/>
         <seealso/>
@@ -244,35 +244,35 @@
       </element>
 
       <element name="TCalculatorPanel.CalcKeyPress">
-        <short>Locates the button using the specified Key and perform its Click method</short>
+        <short>Locates the button using the specified Key and perform its Click method.</short>
         <descr>
           CalcKey is called when a button is located using the specified Key.
         </descr>
         <seealso/>
       </element>
       <element name="TCalculatorPanel.CalcKeyPress.Sender">
-        <short>Object for the KeyPress event</short>
+        <short>Object for the KeyPress event.</short>
       </element>
       <element name="TCalculatorPanel.CalcKeyPress.Key">
-        <short>Key value captured in the panel</short>
+        <short>Key value captured in the panel.</short>
       </element>
 
       <element name="TCalculatorPanel.Copy">
-        <short>Loads the value in Text into the Clipboard as a text value</short>
+        <short>Loads the value in Text into the Clipboard as a text value.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.Paste">
         <short>
-          Pastes text from the Clipboard into the text display for the calculator panel
+          Pastes text from the Clipboard into the text display for the calculator panel.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.WorkingPrecision">
-        <short>Gets the minumum number of precision digits allowable for the panel</short>
+        <short>Gets the minumum number of precision digits allowable for the panel.</short>
         <descr/>
         <seealso/>
       </element>
@@ -282,27 +282,27 @@
 
       <element name="TCalculatorPanel.UpdateMemoryLabel">
         <short>
-          Updates the Memory indicator to reflect a non-zero value in the Memory property
+          Updates the Memory indicator to reflect a non-zero value in the Memory property.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.DisplayValue">
-        <short>Contains the Double value representing the Text in the panel</short>
+        <short>Contains the Double value representing the Text in the panel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.Memory">
-        <short>Contains the Double value stored in the memory fopr the calculator</short>
+        <short>Contains the Double value stored in the memory fopr the calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.Precision">
         <short>
-          Maximum number of digits of precision allowed for the Double value in the calculator
+          Maximum number of digits of precision allowed for the Double value in the calculator.
         </short>
         <descr/>
         <seealso/>
@@ -310,7 +310,7 @@
 
       <element name="TCalculatorPanel.BeepOnError">
         <short>
-          Indicates if a beep occurs when an error condition is detected in the calculator panel
+          Indicates if a beep occurs when an error condition is detected in the calculator panel.
         </short>
         <descr/>
         <seealso/>
@@ -318,7 +318,7 @@
 
       <element name="TCalculatorPanel.Status">
         <short>
-          Contains the status or state for the calculator panel
+          Contains the status or state for the calculator panel.
         </short>
         <descr>
         </descr>
@@ -326,13 +326,13 @@
       </element>
 
       <element name="TCalculatorPanel.OperatorChar">
-        <short>Character representing the last operator entered in the calculator panel</short>
+        <short>Character representing the last operator entered in the calculator panel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorPanel.Text">
-        <short>Text representation for the Double value in the calculator</short>
+        <short>Text representation for the Double value in the calculator.</short>
         <descr/>
         <seealso/>
       </element>
@@ -380,14 +380,14 @@
       </element>
 
       <element name="TCalculatorPanel.Color">
-        <short>Color for the calculator panel</short>
+        <short>Color for the calculator panel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorForm">
         <short>
-          Implements the form used to display a calculator in a TCalculatorDialog
+          Implements the form used to display a calculator in a TCalculatorDialog.
         </short>
         <descr/>
         <seealso/>
@@ -403,38 +403,38 @@
 
       <element name="TCalculatorForm.FormKeyPress">
         <short>
-          Performs actions needed to handle OnKeyPress events in the calculator form
+          Performs actions needed to handle OnKeyPress events in the calculator form.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.FormKeyPress.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCalculatorForm.FormKeyPress.Key">
-        <short>Key handled in the event handler</short>
+        <short>Key handled in the event handler.</short>
       </element>
 
       <element name="TCalculatorForm.CopyItemClick">
-        <short>Implements a copy menu item in the pop-up menu for the form</short>
+        <short>Implements a copy menu item in the pop-up menu for the form.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.CopyItemClick.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TCalculatorForm.GetValue">
-        <short>Gets the value for the Value property</short>
+        <short>Gets the value for the Value property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.GetValue.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCalculatorForm.PasteItemClick">
-        <short>Implements a paste menu item in the pop-up menu for the form</short>
+        <short>Implements a paste menu item in the pop-up menu for the form.</short>
         <descr/>
         <seealso/>
       </element>
@@ -443,16 +443,16 @@
       </element>
 
       <element name="TCalculatorForm.SetValue">
-        <short>Sets the value for the Value property</short>
+        <short>Sets the value for the Value property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.SetValue.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCalculatorForm.OkClick">
-        <short>Performs actions needed when the OK button is clicked</short>
+        <short>Performs actions needed when the OK button is clicked.</short>
         <descr/>
         <seealso/>
       </element>
@@ -461,58 +461,58 @@
       </element>
 
       <element name="TCalculatorForm.CancelClick">
-        <short>Performs actions needed when the Cancel button is clicked</short>
+        <short>Performs actions needed when the Cancel button is clicked.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.CancelClick.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TCalculatorForm.CalcKey">
-        <short>Performs actions needed for a key received in the calculator form</short>
+        <short>Performs actions needed for a key received in the calculator form.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.CalcKey.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCalculatorForm.CalcKey.Key">
-        <short>Key examined in the method</short>
+        <short>Key examined in the method.</short>
       </element>
 
       <element name="TCalculatorForm.DisplayChange">
-        <short>Performs actions needed when the calculator display is changed</short>
+        <short>Performs actions needed when the calculator display is changed.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.DisplayChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TCalculatorForm.InitForm">
-        <short>Initializes the calculator form using the specified layout</short>
+        <short>Initializes the calculator form using the specified layout.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.InitForm.ALayout">
-        <short>Layout applied to the calculator form instance</short>
+        <short>Layout applied to the calculator form instance.</short>
       </element>
 
       <element name="TCalculatorForm.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCalculatorForm.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TCalculatorForm.Create.ALayout">
-        <short>TCalculatorLayout used for the form instance</short>
+        <short>TCalculatorLayout used for the form instance.</short>
       </element>
 
       <element name="TCalculatorForm.Value">
-        <short>Value displayed or returned from the calculator</short>
+        <short>Value displayed or returned from the calculator.</short>
         <descr/>
         <seealso/>
       </element>
@@ -530,31 +530,31 @@
       </element>
 
       <element name="TCalculatorForm.DisplayPanel">
-        <short>Panel for the display area on the calculator form</short>
+        <short>Panel for the display area on the calculator form.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorForm.DisplayLabel">
-        <short>Label used to display the value in the panel</short>
+        <short>Label used to display the value in the panel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorForm.OnCalcKey">
-        <short>Event handler signalled to handle keys press on the calculator form</short>
+        <short>Event handler signalled to handle keys press on the calculator form.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCalculatorForm.OnDisplayChange">
-        <short>Event handler signalled when the calculator display has been changed</short>
+        <short>Event handler signalled when the calculator display has been changed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="CreateCalculatorForm">
-        <short>Creates and configures a new TCalculatorForm instance</short>
+        <short>Creates and configures a new TCalculatorForm instance.</short>
         <descr/>
         <seealso>
           <link id="TCalculatorForm"/>
@@ -562,13 +562,13 @@
         </seealso>
       </element>
       <element name="CreateCalculatorForm.Result">
-        <short>Form instance created in the method</short>
+        <short>Form instance created in the method.</short>
       </element>
       <element name="CreateCalculatorForm.AOwner">
-        <short>Owner for the new form instance</short>
+        <short>Owner for the new form instance.</short>
       </element>
       <element name="CreateCalculatorForm.ALayout">
-        <short>Layout for the calculator panel in the form instance</short>
+        <short>Layout for the calculator panel in the form instance.</short>
       </element>
 
       <element name="CreateCalculatorForm.AHelpContext">
@@ -576,67 +576,67 @@
       </element>
 
       <element name="cColorBtnDigits">
-        <short>Color for the numeric digit buttons in a calculator</short>
+        <short>Color for the numeric digit buttons in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cColorBtnMemory">
-        <short>Color for the Memory button in a calculator</short>
+        <short>Color for the Memory button in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cColorBtnClear">
-        <short>Color for the Clear button in a calculator</short>
+        <short>Color for the Clear button in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cColorBtnOk">
-        <short>Color for the OK button in a calculator</short>
+        <short>Color for the OK button in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cColorBtnCancel">
-        <short>Color for the Cancel button in a calculator</short>
+        <short>Color for the Cancel button in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cColorBtnOthers">
-        <short>Color for miscellaneous "other" buttons in a calculator</short>
+        <short>Color for miscellaneous "other" buttons in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cColorDisplayText">
-        <short>Color for text on the display area for a calculator</short>
+        <short>Color for text on the display area for a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cColorDisplayBack">
-        <short>Color for the background of the display area in a calculator</short>
+        <short>Color for the background of the display area in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cCalculatorFontName">
-        <short>Font name used for buttons and displays in a calculator</short>
+        <short>Font name used for buttons and displays in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cCalculatorFontSize">
-        <short>Font size used for buttons and displays in a calculator</short>
+        <short>Font size used for buttons and displays in a calculator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cCalculatorFontStyle">
-        <short>Font style used for buttons and displays in a calculator</short>
+        <short>Font style used for buttons and displays in a calculator.</short>
         <descr/>
         <seealso/>
       </element>

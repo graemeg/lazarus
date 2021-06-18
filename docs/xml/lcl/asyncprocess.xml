@@ -8,7 +8,7 @@
     -->
     <module name="AsyncProcess">
       <short>
-        Implements a process with asynchronous event notifications
+        Implements a process with asynchronous event notifications.
       </short>
       <descr>
         <p>
@@ -32,7 +32,7 @@
 
       <element name="TAsyncProcess">
         <short>
-          Implements a process with asynchronous notifications for data and termination
+          Implements a process with asynchronous notifications for data and termination.
         </short>
         <descr>
           <p>
@@ -54,7 +54,7 @@
 
       <element name="TAsyncProcess.GetNumBytesAvailable">
         <short>
-          Gets the value for the NumBytesAvailable property
+          Gets the value for the NumBytesAvailable property.
         </short>
         <descr>
           <p>
@@ -74,12 +74,12 @@
         </seealso>
       </element>
       <element name="TAsyncProcess.GetNumBytesAvailable.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TAsyncProcess.HandlePipeInput">
         <short>
-          Implements asynchronous notifications during execution of the process
+          Implements asynchronous notifications during execution of the process.
         </short>
         <descr>
           <p>
@@ -98,15 +98,15 @@
         </seealso>
       </element>
       <element name="TAsyncProcess.HandlePipeInput.AData">
-        <short>Data available on the input handle</short>
+        <short>Data available on the input handle.</short>
       </element>
       <element name="TAsyncProcess.HandlePipeInput.AReasons">
-        <short>Reason the data was written for the handler</short>
+        <short>Reason the data was written for the handler.</short>
       </element>
 
       <element name="TAsyncProcess.HandleProcessTermination">
         <short>
-          Performs actions needed when the process is terminated
+          Performs actions needed when the process is terminated.
         </short>
         <descr>
           <p>
@@ -124,18 +124,18 @@
         </seealso>
       </element>
       <element name="TAsyncProcess.HandleProcessTermination.AData">
-        <short>Data for the process notification</short>
+        <short>Data for the process notification.</short>
       </element>
       <element name="TAsyncProcess.HandleProcessTermination.AReason">
-        <short>Reason(s) for the process notification</short>
+        <short>Reason(s) for the process notification.</short>
       </element>
       <element name="TAsyncProcess.HandleProcessTermination.AInfo">
-        <short>Process exit code</short>
+        <short>Process exit code.</short>
       </element>
 
       <element name="TAsyncProcess.UnhookPipeHandle">
         <short>
-          Removes the pipe handler assigned for the process
+          Removes the pipe handler assigned for the process.
         </short>
         <descr>
           <p>
@@ -153,7 +153,7 @@
 
       <element name="TAsyncProcess.UnhookProcessHandle">
         <short>
-          Removes the process handler assigned for the process
+          Removes the process handler assigned for the process.
         </short>
         <descr>
           <p>
@@ -172,7 +172,7 @@
 
       <element name="TAsyncProcess.Execute">
         <short>
-          Executes the process
+          Executes the process.
         </short>
         <descr>
           <p>
@@ -194,7 +194,7 @@
 
       <element name="TAsyncProcess.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -210,7 +210,7 @@
 
       <element name="TAsyncProcess.NumBytesAvailable">
         <short>
-          Number of output bytes available from the process
+          Number of output bytes available from the process.
         </short>
         <descr>
           <p>
@@ -233,7 +233,7 @@
 
       <element name="TAsyncProcess.OnReadData">
         <short>
-          Event handler signalled when output data is available for the process
+          Event handler signalled when output data is available for the process.
         </short>
         <descr>
           <p>
@@ -253,7 +253,7 @@
 
       <element name="TAsyncProcess.OnTerminate">
         <short>
-          Event handler signalled when the process is terminated
+          Event handler signalled when the process is terminated.
         </short>
         <descr>
           <p>
@@ -270,7 +270,7 @@
       </element>
 
       <element name="Register">
-        <short>Registers components for use in the Lazarus IDE</short>
+        <short>Registers components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             <var>Register</var> is the procedure used to register components for use in the Lazarus IDE.

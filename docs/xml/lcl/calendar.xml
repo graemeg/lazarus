@@ -8,7 +8,7 @@
     -->
     <module name="Calendar">
       <short>
-        Classes and types used to implement TCalendar, a graphic control allowing selection of a date from a calendar display
+        Classes and types used to implement TCalendar, a graphic control allowing selection of a date from a calendar display.
       </short>
       <descr>
         <p>
@@ -39,7 +39,7 @@
       <!-- enumeration type Visibility: default -->
       <element name="TDisplaySetting">
         <short>
-          Enumerated type with values that control display settings in TCalendar
+          Enumerated type with values that control display settings in TCalendar.
         </short>
         <descr>
           <p>
@@ -56,24 +56,24 @@
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TDisplaySetting.dsShowHeadings">
-        <short>Displays a month/year heading</short>
+        <short>Displays a month/year heading.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TDisplaySetting.dsShowDayNames">
-        <short>Displays day names</short>
+        <short>Displays day names.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TDisplaySetting.dsNoMonthChange">
-        <short>Prevents changing the current month</short>
+        <short>Prevents changing the current month.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TDisplaySetting.dsShowWeekNumbers">
-        <short>Displays week numbers</short>
+        <short>Displays week numbers.</short>
       </element>
 
       <!-- set type Visibility: default -->
       <element name="TDisplaySettings">
-        <short>Set type for TDisplaySetting values</short>
+        <short>Set type for TDisplaySetting values.</short>
         <descr>
           <p>
             <var>TDisplaySettings</var> is a set type used to store enumerations values from TDisplaySetting. It is the type used for the <var>DisplaySettings</var> property in <var>TCustomCalendar</var>.
@@ -87,7 +87,7 @@
 
       <element name="DefaultDisplaySettings">
         <short>
-          Default display settings used in TCalendar
+          Default display settings used in TCalendar.
         </short>
         <descr>
           <p>
@@ -106,7 +106,7 @@
       <!-- enumeration type Visibility: default -->
       <element name="TCalendarPart">
         <short>
-           Indicates where a mouse click occurred in a calendar control
+           Indicates where a mouse click occurred in a calendar control.
         </short>
         <descr>
           <p>
@@ -119,41 +119,41 @@
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarPart.cpNoWhere">
-        <short>Mouse click cannot be applied to the control; no handle available</short>
+        <short>Mouse click cannot be applied to the control; no handle available.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarPart.cpDate">
-        <short>Mouse click occurred on a date in the calendar control</short>
+        <short>Mouse click occurred on a date in the calendar control.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarPart.cpWeekNumber">
-        <short>Mouse click occurred on a week number in the calendar control</short>
+        <short>Mouse click occurred on a week number in the calendar control.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarPart.cpTitle">
-        <short>Mouse click occurred on a day heading in the calendar control</short>
+        <short>Mouse click occurred on a day heading in the calendar control.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarPart.cpTitleBtn">
-        <short>Mouse click occurred on a navigation button in a calendar control</short>
+        <short>Mouse click occurred on a navigation button in a calendar control.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarPart.cpTitleMonth">
         <short>
-          Mouse click occurred on the month name heading in the calendar control
+          Mouse click occurred on the month name heading in the calendar control.
         </short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarPart.cpTitleYear">
         <short>
-          Mouse click occurred on the year number  heading in the calendar control
+          Mouse click occurred on the year number  heading in the calendar control.
         </short>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TCalendarView">
         <short>
-          Defines the view for a calendar
+          Defines the view for a calendar.
         </short>
         <descr>
           <p>
@@ -166,23 +166,23 @@
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarView.cvMonth">
-        <short>Grid has days for one month</short>
+        <short>Grid has days for one month.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarView.cvYear">
-        <short>Grid has months in one year</short>
+        <short>Grid has months in one year.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarView.cvDecade">
-        <short>Grid has years from one decade</short>
+        <short>Grid has years from one decade.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TCalendarView.cvCentury">
-        <short>Grid has decades for one century</short>
+        <short>Grid has decades for one century.</short>
       </element>
 
       <element name="TCalDayOfWeek">
-        <short>Represents days of the week used in TCalendar</short>
+        <short>Represents days of the week used in TCalendar.</short>
         <descr>
           <p>
             <var>TCalDayOfWeek</var> is an enumerated type with values which represent the day  used as the first day of the week in <var>TCustomCalendar</var> and descendants.
@@ -222,7 +222,7 @@
       <!-- object Visibility: default -->
       <element name="EInvalidDate">
         <short>
-          <var>EInvalidDate</var> is an exception raised for an invalid date
+          <var>EInvalidDate</var> is an exception raised for an invalid date.
         </short>
         <descr>
           <p>
@@ -236,7 +236,7 @@
       <!-- object Visibility: default -->
       <element name="TCustomCalendar" link="#lcl.Controls.TWinControl">
         <short>
-          <var>TCustomCalendar</var> - base class for <var>TCalendar</var>
+          <var>TCustomCalendar</var> - base class for <var>TCalendar</var>.
         </short>
         <descr>
           <p>
@@ -282,31 +282,31 @@
 
       <!-- function Visibility: private -->
       <element name="TCustomCalendar.GetDateTime">
-        <short>Gets the value for the DateTime property</short>
+        <short>Gets the value for the DateTime property.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <!-- function result Visibility: default -->
       <element name="TCustomCalendar.GetDateTime.Result">
-        <short>Value for the DateTime property</short>
+        <short>Value for the DateTime property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TCustomCalendar.SetDateTime">
-        <short>Sets the value for the DateTime property</short>
+        <short>Sets the value for the DateTime property.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomCalendar.SetDateTime.AValue">
-        <short>New value for the DateTime property</short>
+        <short>New value for the DateTime property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TCustomCalendar.GetProps">
-        <short>Gets values for properties in the calendar control</short>
+        <short>Gets values for properties in the calendar control.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
@@ -314,14 +314,14 @@
 
       <!-- procedure Visibility: private -->
       <element name="TCustomCalendar.SetProps">
-        <short>Sets values for properties in the calendar control</short>
+        <short>Sets values for properties in the calendar control.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <!-- function Visibility: private -->
       <element name="TCustomCalendar.GetDisplaySettings">
-        <short>Gets the value for the DisplaySettings property</short>
+        <short>Gets the value for the DisplaySettings property.</short>
         <descr>
           <link id="TCustomCalendar.DisplaySettings"/>
           <link id="TDisplaySettings"/>
@@ -332,12 +332,12 @@
       </element>
       <!-- function result Visibility: default -->
       <element name="TCustomCalendar.GetDisplaySettings.Result">
-        <short>Value for the DisplaySettings property</short>
+        <short>Value for the DisplaySettings property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TCustomCalendar.SetDisplaySettings">
-        <short>Sets the value for the DisplaySettings property</short>
+        <short>Sets the value for the DisplaySettings property.</short>
         <descr></descr>
         <seealso>
           <link id="TCustomCalendar.DisplaySettings"/>
@@ -347,31 +347,31 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomCalendar.SetDisplaySettings.AValue">
-        <short>New value for the DisplaySettings property</short>
+        <short>New value for the DisplaySettings property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TCustomCalendar.GetDate">
-        <short>Gets the value for the Date property</short>
+        <short>Gets the value for the Date property.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <!-- function result Visibility: default -->
       <element name="TCustomCalendar.GetDate.Result">
-        <short>Value for the Date property</short>
+        <short>Value for the Date property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TCustomCalendar.SetDate">
-        <short>Sets the value for the Date property</short>
+        <short>Sets the value for the Date property.</short>
         <descr></descr>
         <errors/>
         <seealso></seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomCalendar.SetDate.AValue">
-        <short>New value for the Date property</short>
+        <short>New value for the Date property.</short>
       </element>
 
       <!-- class procedure Visibility: protected -->
@@ -382,7 +382,7 @@
         <!-- procedure Visibility: protected -->
       <element name="TCustomCalendar.LMChanged">
         <short>
-          <var>LMChanged</var> - LCL Message method to deal with changes in the control
+          <var>LMChanged</var> - LCL Message method to deal with changes in the control.
         </short>
         <descr></descr>
       </element>
@@ -394,7 +394,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TCustomCalendar.LMMonthChanged">
         <short>
-          <var>LMMonthChanged</var> - LCL Message method for change in Month
+          <var>LMMonthChanged</var> - LCL Message method for change in Month.
         </short>
         <descr></descr>
         <errors/>
@@ -407,7 +407,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TCustomCalendar.LMYearChanged">
         <short>
-          <var>LMYearChanged</var> - LCL Message method for change in Year
+          <var>LMYearChanged</var> - LCL Message method for change in Year.
         </short>
         <descr></descr>
         <errors/>
@@ -421,7 +421,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TCustomCalendar.LMDayChanged">
         <short>
-          <var>LMDayChanged</var> - LCL Message method for change in Day
+          <var>LMDayChanged</var> - LCL Message method for change in Day.
         </short>
         <descr></descr>
         <errors/>
@@ -452,7 +452,7 @@
       <!-- constructor Visibility: public -->
       <element name="TCustomCalendar.Create">
         <short>
-          <var>Create</var> - constructor for <var>TCustomCalendar</var>
+          <var>Create</var> - constructor for <var>TCustomCalendar</var>.
         </short>
         <descr>
           <p>
@@ -465,13 +465,13 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomCalendar.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TCustomCalendar.HitTest">
         <short>
-          Indicates where a mouse click occurred in the calendar control
+          Indicates where a mouse click occurred in the calendar control.
         </short>
         <descr>
           <p>
@@ -481,23 +481,23 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomCalendar.HitTest.APoint">
-        <short>Coordinates where the mouse click occurred</short>
+        <short>Coordinates where the mouse click occurred.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TCustomCalendar.GetCalendarView">
-        <short>Gets the current view for the Calendar</short>
+        <short>Gets the current view for the Calendar.</short>
         <descr></descr>
       </element>
       <!-- function result Visibility: default -->
       <element name="TCustomCalendar.GetCalendarView.Result">
-        <short>Current view for the Calendar</short>
+        <short>Current view for the Calendar.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TCustomCalendar.Date">
         <short>
-          <var>Date</var> is a string representation of the DateTime value
+          <var>Date</var> is a string representation of the DateTime value.
         </short>
         <descr>
           <p>
@@ -515,7 +515,7 @@
       <!-- property Visibility: public -->
       <element name="TCustomCalendar.DateTime">
         <short>
-          Native data type used for a date in the calendar control
+          Native data type used for a date in the calendar control.
         </short>
         <descr>
           <p>
@@ -539,7 +539,7 @@
       <!-- property Visibility: public -->
       <element name="TCustomCalendar.DisplaySettings">
         <short>
-          <var>DisplaySettings</var> contains options which control the appearance of the calendar
+          <var>DisplaySettings</var> contains options which control the appearance of the calendar.
         </short>
         <descr>
           <p>
@@ -568,7 +568,7 @@
 
       <element name="TCustomCalendar.FirstDayOfWeek">
         <short>
-          Indicates the day of the week displayed as the first column in the calendar grid
+          Indicates the day of the week displayed as the first column in the calendar grid.
         </short>
         <descr>
           <p>
@@ -581,7 +581,7 @@
       <!-- property Visibility: public -->
       <element name="TCustomCalendar.OnChange">
         <short>
-          <var>OnChange</var> - event handler for any change in Calendar
+          <var>OnChange</var> - event handler for any change in Calendar.
         </short>
         <descr>
           <p>
@@ -594,7 +594,7 @@
       <!-- property Visibility: public -->
       <element name="TCustomCalendar.OnDayChanged">
         <short>
-          <var>OnDayChanged</var> - event handler for a change in Day selected
+          <var>OnDayChanged</var> - event handler for a change in Day selected.
         </short>
         <descr>
           <p>
@@ -607,7 +607,7 @@
       <!-- property Visibility: public -->
       <element name="TCustomCalendar.OnMonthChanged">
         <short>
-          <var>OnMonthChanged</var> - event handler for a change in month selected
+          <var>OnMonthChanged</var> - event handler for a change in month selected.
         </short>
         <descr>
           <p>
@@ -620,7 +620,7 @@
       <!-- property Visibility: public -->
       <element name="TCustomCalendar.OnYearChanged">
         <short>
-          <var>OnYearChanged</var> - event handler for a change in the year selected
+          <var>OnYearChanged</var> - event handler for a change in the year selected.
         </short>
         <descr>
           <p>
@@ -633,7 +633,7 @@
       <!-- object Visibility: default -->
       <element name="TCalendar">
         <short>
-          <var>TCalendar</var> allows selection of a date from a calendar display
+          <var>TCalendar</var> allows selection of a date from a calendar display.
         </short>
         <descr>
           <p>
@@ -795,7 +795,7 @@
 
       <!-- procedure Visibility: default -->
       <element name="Register">
-        <short>Registers components for use in the Lazarus IDE</short>
+        <short>Registers components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             Register is the procedure used to register components for use in the Lazarus IDE. The following components are added to the Lazarus IDE component palette:

@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="ColorBox">
-      <short>Defines classes for selecting a color from a combo-box or a list box</short>
+      <short>Defines classes for selecting a color from a combo-box or a list box.</short>
       <descr>
         <p>
           <file>colorbox.pas</file> contains <var>TColorBox</var> and <var>TColorListBox</var>. TColorBox is a component that displays colors in a combo-box control. TColorListBox is a component that displays colors in a list box control. This file is part of the Lazarus Component Library (<b>LCL</b>).
@@ -40,7 +40,7 @@
       <element name="LazStringUtils"/>
 
       <element name="cDefaultColorRectWidth">
-        <short>Default width for the color sample (swatch) in a color combo-box or list box</short>
+        <short>Default width for the color sample (swatch) in a color combo-box or list box.</short>
         <descr/>
         <seealso>
           <link id="TCustomColorBox.ColorRectWidth"/>
@@ -52,7 +52,7 @@
 
       <element name="cDefaultColorRectOffset">
         <short>
-          Default spacing between the color sample (swatch) and the color name in a combo-box or list box
+          Default spacing between the color sample (swatch) and the color name in a combo-box or list box.
         </short>
         <descr/>
         <seealso>
@@ -64,7 +64,7 @@
       </element>
 
       <element name="TColorBoxStyles">
-        <short>Represents the available colors and the name display style used in color controls</short>
+        <short>Represents the available colors and the name display style used in color controls.</short>
         <descr>
           <p>
             <var>TColorBoxStyles</var> is an enumerated type with values that represent the available colors and the display style used in color controls like <var>TColorBox</var> and <var>TColorListBox</var>. Values from TColorBoxStyles are stored in the <var>TColorBoxStyle</var> set type.
@@ -79,34 +79,34 @@
         </seealso>
       </element>
        <element name="TColorBoxStyles.cbStandardColors">
-         <short>16 standard colors (as defined in graphics.pp)</short>
+         <short>16 standard colors (as defined in graphics.pp).</short>
        </element>
        <element name="TColorBoxStyles.cbExtendedColors">
-         <short>16 standard colors and 4 extended colors (as defined in graphics.pp)</short>
+         <short>16 standard colors and 4 extended colors (as defined in graphics.pp).</short>
        </element>
        <element name="TColorBoxStyles.cbSystemColors">
-         <short>System colors (as defined in graphics.pp)</short>
+         <short>System colors (as defined in graphics.pp).</short>
        </element>
        <element name="TColorBoxStyles.cbIncludeNone">
-         <short>Includes clNone in the list of colors</short>
+         <short>Includes clNone in the list of colors.</short>
        </element>
        <element name="TColorBoxStyles.cbIncludeDefault">
-         <short>Includes clDefault in the list of colors</short>
+         <short>Includes clDefault in the list of colors.</short>
        </element>
        <element name="TColorBoxStyles.cbCustomColor">
-         <short>The first color is customizable</short>
+         <short>The first color is customizable.</short>
        </element>
        <element name="TColorBoxStyles.cbPrettyNames">
          <short>
-           Uses "pretty" names in the color names instead of the color value; like Red for clRed
+           Uses "pretty" names in the color names instead of the color value; like Red for clRed.
          </short>
        </element>
        <element name="TColorBoxStyles.cbCustomColors">
-         <short>Uses the OnGetColors event handler to get the list of colors</short>
+         <short>Uses the OnGetColors event handler to get the list of colors.</short>
        </element>
 
       <element name="TColorBoxStyle">
-        <short>Set type used to store values from the TColorBoxStyles enumeration</short>
+        <short>Set type used to store values from the TColorBoxStyles enumeration.</short>
         <descr>
           <p>
             <var>TColorBoxStyle</var> is a <var>Set</var> type used to store zero or more values from the <var>TColorBoxStyles</var> enumeration. TColorBoxStyle is the type used to implement the <var>TColorBox.Style</var> and <var>TColorListBox.Style</var> properties.
@@ -122,7 +122,7 @@
       </element>
 
       <element name="TGetColorsEvent">
-        <short>Specifies an event handler used to get the colors in a color control</short>
+        <short>Specifies an event handler used to get the colors in a color control.</short>
         <descr>
           <p>
             <var>TGetColorsEvent</var> is an object procedure type which specifies an event handler used to get the colors names and values used in a color control.
@@ -142,14 +142,14 @@
         </seealso>
       </element>
       <element name="TGetColorsEvent.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TGetColorsEvent.Items">
-        <short>TStrings instance with the color names and values used in the control</short>
+        <short>TStrings instance with the color names and values used in the control.</short>
       </element>
 
       <element name="TCustomColorBox">
-        <short>The base class for TColorBox</short>
+        <short>The base class for TColorBox.</short>
         <descr>
           <p>
             <var>TCustomColorBox</var> is a <var>TCustomComboBox</var> descendant which implements the base class for <var>TColorBox</var>. TCustomColorBox displays available colors in a combo-box control. Each item in the control has a small rectangle where the color is displayed (swatch) and the color name.
@@ -189,23 +189,23 @@
       <element name="TCustomColorBox.FSelected"/>
 
       <element name="TCustomColorBox.GetColor">
-        <short>Gets the value for the indexed Colors property</short>
+        <short>Gets the value for the indexed Colors property.</short>
       </element>
       <element name="TCustomColorBox.GetColor.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomColorBox.GetColor.Index">
-        <short>Ordinal position in the list for the color value</short>
+        <short>Ordinal position in the list for the color value.</short>
       </element>
 
       <element name="TCustomColorBox.GetColorName">
-        <short>Gets the value for the indexed ColorNames property</short>
+        <short>Gets the value for the indexed ColorNames property.</short>
       </element>
       <element name="TCustomColorBox.GetColorName.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomColorBox.GetColorName.Index">
-        <short>Ordinal position in the list for the color name</short>
+        <short>Ordinal position in the list for the color name.</short>
       </element>
 
       <element name="TCustomColorBox.GetColorRectWidth"/>
@@ -230,18 +230,18 @@
 
       <!-- protected -->
       <element name="TCustomColorBox.ColorRectWidthStored">
-        <short>Implements the storage specifier for the ColorRectWidth property</short>
+        <short>Implements the storage specifier for the ColorRectWidth property.</short>
         <descr/>
         <seealso>
           <link id="TCustomColorBox.ColorRectWidth"/>
         </seealso>
       </element>
       <element name="TCustomColorBox.ColorRectWidthStored.Result">
-        <short>True when the property has a value other than the default value</short>
+        <short>True when the property has a value other than the default value.</short>
       </element>
 
       <element name="TCustomColorBox.DrawItem">
-        <short>Draws an item in the combo-box control</short>
+        <short>Draws an item in the combo-box control.</short>
         <descr>
           <p>
             DrawItem is an overridden method used to custom draw an item in the ColorBox.
@@ -261,17 +261,17 @@
         </seealso>
       </element>
       <element name="TCustomColorBox.DrawItem.Index">
-        <short>Ordinal position for the item drawn in the method</short>
+        <short>Ordinal position for the item drawn in the method.</short>
       </element>
       <element name="TCustomColorBox.DrawItem.Rect">
-        <short>Rectanlge with the bounds for the item</short>
+        <short>Rectanlge with the bounds for the item.</short>
       </element>
       <element name="TCustomColorBox.DrawItem.State">
-        <short>Owner draw state for the item</short>
+        <short>Owner draw state for the item.</short>
       </element>
 
       <element name="TCustomColorBox.SetColorList">
-        <short>Loads the list of colors used in the control</short>
+        <short>Loads the list of colors used in the control.</short>
         <descr>
           <p>
             <var>SetColorList</var> is used to fill the <var>Items</var> in the control with the <var>Colors</var> and <var>ColorNames</var> available in the combo-box.
@@ -287,7 +287,7 @@
 
       <element name="TCustomColorBox.Loaded" link="#lcl.controls.TWinControl.Loaded">
         <short>
-          Performs actions needed when LCL component streaming has been completed
+          Performs actions needed when LCL component streaming has been completed.
         </short>
         <descr/>
         <seealso>
@@ -329,7 +329,7 @@
       </element>
 
       <element name="TCustomColorBox.DoGetColors">
-        <short>Signals the OnGetColors event handler (when assigned)</short>
+        <short>Signals the OnGetColors event handler (when assigned).</short>
         <descr>
           <p>
             Called when the <var>Colors</var> in the control are (re-)loaded after setting a new value in <var>Style</var>. It is called if <var>cbCustomColors</var> has been included in Style.
@@ -351,7 +351,7 @@
       </element>
 
       <element name="TCustomColorBox.PickCustomColor">
-        <short>Selects a custom color using a color dialog</short>
+        <short>Selects a custom color using a color dialog.</short>
         <descr>
           <p>
             PickCustomColor is a Boolean function used to select a custom color rather than one of the standard colors in the Colors property.
@@ -372,11 +372,11 @@
         </seealso>
       </element>
       <element name="TCustomColorBox.PickCustomColor.Result">
-        <short>True when a custom color was selected in the method</short>
+        <short>True when a custom color was selected in the method.</short>
       </element>
 
       <element name="TCustomColorBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for <var>TCustomColorBox</var>. It calls the inherited <var>Create</var> method, and sets the Style flags needed for the owner-drawn control. Create sets the default values for properties, including:
@@ -399,7 +399,7 @@
       </element>
 
       <element name="TCustomColorBox.ColorRectWidth">
-        <short>Width for the color sample (swatch) displayed for colors in the item list</short>
+        <short>Width for the color sample (swatch) displayed for colors in the item list.</short>
         <descr>
           <p>
             ColorRectWidth is an Integer property which contains the number of pixels used to draw the color sample (or swatch) for each of the Colors in the combo-box control. The height is determined using the item height for the combo-box control.
@@ -418,7 +418,7 @@
       </element>
 
       <element name="TCustomColorBox.ColorRectOffset">
-        <short>Number of pixels between the color sample and the color name</short>
+        <short>Number of pixels between the color sample and the color name.</short>
         <descr>
           <p>
             ColorRectOffset is an Integer property with the number of pixels used to separate the color sample (or swatch) and the color name displayed for the Items in the control. The default value for the property is cDefaultColorRectOffset.
@@ -434,7 +434,7 @@
       </element>
 
       <element name="TCustomColorBox.Style">
-        <short>Settings which determine the colors available in the control and their display style</short>
+        <short>Settings which determine the colors available in the control and their display style.</short>
         <descr>
           <p>
             Style is a TColorBoxStyle property with settings to determine the colors available in the control and their display style. Include values from the TColorBoxStyles enumeration to enable a particular setting. For instance:
@@ -476,7 +476,7 @@
       </element>
 
       <element name="TCustomColorBox.Colors">
-        <short>Provides indexed access to the TColor value for items in the control</short>
+        <short>Provides indexed access to the TColor value for items in the control.</short>
         <descr>
           <p>
             Colors is an indexed read-only TColor property which provides access to the colors in the control by their ordinal position in the list of Items.
@@ -494,7 +494,7 @@
         </seealso>
       </element>
       <element name="TCustomColorBox.Colors.Index">
-        <short>Ordinal position for the property value in the list of items</short>
+        <short>Ordinal position for the property value in the list of items.</short>
       </element>
 
       <element name="TCustomColorBox.ColorNames">
@@ -517,11 +517,11 @@
         </seealso>
       </element>
       <element name="TCustomColorBox.ColorNames.Index">
-        <short>Ordinal position for the color name accessed in the Items for the control</short>
+        <short>Ordinal position for the color name accessed in the Items for the control.</short>
       </element>
 
       <element name="TCustomColorBox.Selected">
-        <short>The TColor value for the selected item in the combo-box control</short>
+        <short>The TColor value for the selected item in the combo-box control.</short>
         <descr>
           <p>
             Selected is a TColor property with the color for the selected item in combo-box control. The default value for the property is clBlack.
@@ -543,7 +543,7 @@
       </element>
 
       <element name="TCustomColorBox.DefaultColorColor">
-        <short>TColor used for the clDefault color constant</short>
+        <short>TColor used for the clDefault color constant.</short>
         <descr>
           <p>
             <var>DefaultColorColor</var> is a <var>TColor</var> property with the value used for the <var>clDefault</var> color constant.
@@ -576,7 +576,7 @@
       </element>
 
       <element name="TCustomColorBox.NoneColorColor">
-        <short>TColor used for the clNone color constant</short>
+        <short>TColor used for the clNone color constant.</short>
         <descr>
           <p>
             <var>NoneColorColor</var> is a <var>TColor</var> property with the color value used for the <var>clNone</var> color constant.
@@ -610,7 +610,7 @@
 
       <element name="TCustomColorBox.OnGetColors">
         <short>
-          <var>OnGetColors</var> - event handler for the instruction to get colors
+          <var>OnGetColors</var> - event handler for the instruction to get colors.
         </short>
         <descr>
           <p>
@@ -654,7 +654,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TColorBox">
-        <short>Implements combo-box control used to select a color name or value</short>
+        <short>Implements combo-box control used to select a color name or value.</short>
         <descr>
           <p>
             <var>TColorBox</var> is a <var>TCustomColorBox</var> descendant which implements the a combo-box control used to display and select available color names and values. Each item in the control has a small rectangle where the color is displayed (swatch) and the color name.
@@ -758,7 +758,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox">
-        <short>Implements the base class for TColorListBox</short>
+        <short>Implements the base class for TColorListBox.</short>
         <descr>
           <p>
             <var>TCustomColorListBox</var> is a <var>TCustomListBox</var> descendant which implements a list box control used to display and select color names and values. TCustomColorListBox is the base class for the <var>TColorListBox</var> control. Each item in the control has a small rectangle where the color is displayed (swatch) and the color name.
@@ -829,18 +829,18 @@ if iPos &lt;&gt; -1 then
 
       <!-- protected -->
       <element name="TCustomColorListBox.ColorRectWidthStored">
-        <short>Implements the storage specifier for the ColorRectWidth property</short>
+        <short>Implements the storage specifier for the ColorRectWidth property.</short>
         <descr/>
         <seealso>
           <link id="TCustomColorListBox.ColorRectWidth"/>
         </seealso>
       </element>
       <element name="ColorRectWidthStored.Result">
-        <short>True when the property has a value other than the default</short>
+        <short>True when the property has a value other than the default.</short>
       </element>
 
       <element name="TCustomColorListBox.DrawItem">
-        <short>Draws the color preview and name for an item in list box control</short>
+        <short>Draws the color preview and name for an item in list box control.</short>
         <descr>
           <p>
             DrawItem is an overridden method used to custom draw an item in the control.
@@ -861,7 +861,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.SetColorList">
-        <short>Loads the list of colors used in the control</short>
+        <short>Loads the list of colors used in the control.</short>
         <descr>
           <p>
             <var>SetColorList</var> is used to fill the <var>Items</var> in the control with the <var>Colors</var> and <var>ColorNames</var> available in the list box.
@@ -878,7 +878,7 @@ if iPos &lt;&gt; -1 then
 
       <element name="TCustomColorListBox.Loaded">
         <short>
-          Performs actions needed when LCL component streaming has been completed
+          Performs actions needed when LCL component streaming has been completed.
         </short>
         <descr/>
         <seealso>
@@ -914,7 +914,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.DoGetColors">
-        <short>Signals the OnGetColors event handler (when assigned)</short>
+        <short>Signals the OnGetColors event handler (when assigned).</short>
         <descr>
           <p>
             Called when the <var>Colors</var> in the control are (re-)loaded after setting a new value in <var>Style</var>. It is called if <var>cbCustomColors</var> has been included in Style.
@@ -924,7 +924,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.DoSelectionChange">
-        <short>Performs actions needed when the selection in the control is changed</short>
+        <short>Performs actions needed when the selection in the control is changed.</short>
         <descr>
           <p>
             DoSelectionChange is an overridden method used to perform actions needed when the value in the ItemIndex property is changed.
@@ -950,7 +950,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.PickCustomColor">
-        <short>Selects a custom color using a color dialog</short>
+        <short>Selects a custom color using a color dialog.</short>
         <descr>
           <p>
             PickCustomColor is a Boolean function used to select a custom color rather than one of the standard colors in the Colors property.
@@ -968,11 +968,11 @@ if iPos &lt;&gt; -1 then
         <seealso/>
       </element>
       <element name="TCustomColorListBox.PickCustomColor.Result">
-        <short>True when a custom color was selected in the color dialog</short>
+        <short>True when a custom color was selected in the color dialog.</short>
       </element>
 
       <element name="TCustomColorListBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for <var>TCustomColorListBox</var>. Create calls the inherited Create method, and sets the Style flags needed for the owner-drawn control. It also sets the default values for properties in the class instance, including:
@@ -995,7 +995,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.ColorRectWidth">
-        <short>Width for the color sample (swatch) displayed for colors in the item list</short>
+        <short>Width for the color sample (swatch) displayed for colors in the item list.</short>
         <descr>
           <p>
             ColorRectWidth is an Integer property which contains the number of pixels used to draw the color sample (or swatch) for each of the Colors in the list box control. The height for the list Item is in the ItemHeight property.
@@ -1014,7 +1014,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.ColorRectOffset">
-        <short>Number of pixels between the color sample and the color name</short>
+        <short>Number of pixels between the color sample and the color name.</short>
         <descr>
           <p>
             ColorRectOffset is an Integer property with the number of pixels used to separate the color sample (or swatch) and the color name displayed for the Items in the control. The default value for the property is cDefaultColorRectOffset.
@@ -1030,7 +1030,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.Style">
-        <short>Settings which determine the colors available in the control and their display style</short>
+        <short>Settings which determine the colors available in the control and their display style.</short>
         <descr>
           <p>
             Style is a TColorBoxStyle property with settings to determine the colors available in the control and their display style. Include values from the TColorBoxStyles enumeration to enable a particular setting. For instance:
@@ -1070,7 +1070,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.Colors">
-        <short>Provides indexed access to the TColor value for items in the control</short>
+        <short>Provides indexed access to the TColor value for items in the control.</short>
         <descr>
           <p>
             Colors is an indexed TColor property which provides access to the colors in the control by their ordinal position in the list of Items. Setting a new TColor value in the indexed  property causes the control to be redrawn.
@@ -1088,7 +1088,7 @@ if iPos &lt;&gt; -1 then
         <seealso/>
       </element>
       <element name="TCustomColorListBox.Colors.Index">
-        <short>Ordinal position in Items for the color value</short>
+        <short>Ordinal position in Items for the color value.</short>
       </element>
 
       <element name="TCustomColorListBox.ColorNames">
@@ -1110,11 +1110,11 @@ if iPos &lt;&gt; -1 then
         <seealso/>
       </element>
       <element name="TCustomColorListBox.ColorNames.Index">
-        <short>Ordinal position in Items for the color name</short>
+        <short>Ordinal position in Items for the color name.</short>
       </element>
 
       <element name="TCustomColorListBox.Selected">
-        <short>The TColor value for the selected item in the list box control</short>
+        <short>The TColor value for the selected item in the list box control.</short>
         <descr>
           <p>
             Selected is a TColor property with the color for the selected item in list box control. The default value for the property is clBlack.
@@ -1132,7 +1132,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.DefaultColorColor">
-        <short>TColor used for the clDefault color constant</short>
+        <short>TColor used for the clDefault color constant.</short>
         <descr>
           <p>
             <var>DefaultColorColor</var> is a <var>TColor</var> property with the value used for the <var>clDefault</var> color constant.
@@ -1160,7 +1160,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.NoneColorColor">
-        <short>TColor used for the clNone color constant</short>
+        <short>TColor used for the clNone color constant.</short>
         <descr>
           <p>
             <var>NoneColorColor</var> is a <var>TColor</var> property with the color value used for the <var>clNone</var> color constant.
@@ -1189,7 +1189,7 @@ if iPos &lt;&gt; -1 then
 
       <element name="TCustomColorListBox.OnGetColors">
         <short>
-          <var>OnGetColors</var> - event handler for the instruction to get colors
+          <var>OnGetColors</var> - event handler for the instruction to get colors.
         </short>
         <descr>
           <p>
@@ -1226,7 +1226,7 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TColorListBox">
-        <short>Implements a list box control used to display and select color names and values</short>
+        <short>Implements a list box control used to display and select color names and values.</short>
         <descr>
           <p>
             <var>TColorListBox</var> is a <var>TCustomColorListBox</var> descendant which implements a list box control used to display and select color names and values. Each item in the control has a small rectangle where the color is displayed (swatch) and the color name.
@@ -1315,7 +1315,7 @@ if iPos &lt;&gt; -1 then
       <element name="TColorListBox.Visible" link="#lcl.stdctrls.TCustomListBox.Visible"/>
 
       <element name="Register">
-        <short>Register components for use in the Lazarus IDE</short>
+        <short>Register components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             The following components are added to the Lazarus IDE component palette:

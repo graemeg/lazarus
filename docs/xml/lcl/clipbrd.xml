@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="Clipbrd">
-      <short>Definitions for the Clipboard to hold Cut or Copied data for Pasting</short>
+      <short>Definitions for the Clipboard to hold Cut or Copied data for Pasting.</short>
       <descr>
         <p>
           <file>clipbrd.pp</file> contains classes, types, and routines used to implement TClipboard. TClipboard encapsulates the system clipboard for supported platforms. This file is part of the Lazarus Component Library (<b>LCL</b>).
@@ -107,7 +107,7 @@
       <!-- object Visibility: default -->
       <element name="TClipboard">
         <short>
-          <var>TClipboard</var> - area for holding information that has been cut or copied, ready for pasting
+          <var>TClipboard</var> - area for holding information that has been cut or copied, ready for pasting.
         </short>
         <descr>
           <p>
@@ -366,11 +366,11 @@ If the format already exists it replaces the old content otherwise it is added.
 The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions instead.</descr>
         <errors/>
         <seealso/>
-      <short>Acquires ownership of the Clipboard and adds a format</short>
+      <short>Acquires ownership of the Clipboard and adds a format.</short>
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.AddFormat.Result">
-        <short>True if format added correctly</short>
+        <short>True if format added correctly.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.AddFormat.FormatID">
@@ -411,7 +411,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- procedure Visibility: public -->
       <element name="TClipboard.Clear">
         <short>
-          <var>Clear</var> the clipboard</short>
+          <var>Clear</var> the clipboard.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -419,7 +419,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- procedure Visibility: public -->
       <element name="TClipboard.Close">
         <short>
-          <var>Close</var> down the clipboard</short>
+          <var>Close</var> down the clipboard.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -427,7 +427,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- constructor Visibility: public -->
       <element name="TClipboard.Create">
         <short>
-          <var>Create</var> - Constructor: make a new instance of a clipboard</short>
+          <var>Create</var> - Constructor: make a new instance of a clipboard.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -435,7 +435,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- argument Visibility: default -->
       <element name="TClipboard.Create.AClipboardType">
         <short>
-          <var>AClipboardType</var> - optional argument specifying type of clipboard to be created</short>
+          <var>AClipboardType</var> - optional argument specifying type of clipboard to be created.</short>
       </element>
       <!-- destructor Visibility: public -->
       <element name="TClipboard.Destroy" link="#rtl.Classes.TPersistent.Destroy">
@@ -446,26 +446,26 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: public -->
       <element name="TClipboard.FindPictureFormatID">
         <short>
-          <var>FindPictureFormatID</var> - search for the first format ID that is a graphic</short>
+          <var>FindPictureFormatID</var> - search for the first format ID that is a graphic.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.FindPictureFormatID.Result">
-        <short>Returns a Clipboard format</short>
+        <short>Returns a Clipboard format.</short>
       </element>
       <!-- function Visibility: public -->
       <element name="TClipboard.FindFormatID">
         <short>
-          <var>FindFormatID</var> - find a Format ID that has the specified name</short>
+          <var>FindFormatID</var> - find a Format ID that has the specified name.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.FindFormatID.Result">
-        <short>Returns a Clipboard format</short>
+        <short>Returns a Clipboard format.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.FindFormatID.FormatName">
@@ -474,7 +474,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: public -->
       <element name="TClipboard.GetComponent">
         <short>
-          <var>GetComponent</var> - read a component from the clipboard</short>
+          <var>GetComponent</var> - read a component from the clipboard.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -494,14 +494,14 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: public -->
       <element name="TClipboard.GetFormat">
         <short>
-          <var>GetFormat</var> - read information on format from the clipboard</short>
+          <var>GetFormat</var> - read information on format from the clipboard.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.GetFormat.Result">
-        <short>True if Format found</short>
+        <short>True if Format found.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.GetFormat.FormatID">
@@ -514,7 +514,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- procedure Visibility: public -->
       <element name="TClipboard.SupportedFormats">
         <short>
-          <var>SupportedFormats</var> - fills a stringlist with the names of the supported MIME types</short>
+          <var>SupportedFormats</var> - fills a stringlist with the names of the supported MIME types.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -534,14 +534,14 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: public -->
       <element name="TClipboard.GetTextBuf">
         <short>
-          <var>GetTextBuf</var> - reads text from the clipboard and returns the number of characters</short>
+          <var>GetTextBuf</var> - reads text from the clipboard and returns the number of characters.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.GetTextBuf.Result">
-        <short>Number of characters in text buffer</short>
+        <short>Number of characters in text buffer.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.GetTextBuf.Buffer">
@@ -561,7 +561,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.HasFormat.Result">
-        <short>True if format is supported</short>
+        <short>True if format is supported.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.HasFormat.FormatID">
@@ -570,14 +570,14 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: public -->
       <element name="TClipboard.HasFormatName">
         <short>
-          <var>HasFormatName</var> - checks if data have format with specified name</short>
+          <var>HasFormatName</var> - checks if data have format with specified name.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.HasFormatName.Result">
-        <short>True if named format found</short>
+        <short>True if named format found.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.HasFormatName.FormatName">
@@ -586,26 +586,26 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: public -->
       <element name="TClipboard.HasPictureFormat">
         <short>
-          <var>HasPictureFormat</var> - checks whether data are formatted as a picture</short>
+          <var>HasPictureFormat</var> - checks whether data are formatted as a picture.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="TClipboard.HasPictureFormat.Result">
-        <short>True if formatted as picture</short>
+        <short>True if formatted as picture.</short>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TClipboard.Open">
         <short>
-          <var>Open</var> the clipboard to receive and transmit data</short>
+          <var>Open</var> the clipboard to receive and transmit data.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TClipboard.SetComponent">
-        <short>Write specified component to the Clipboard</short>
+        <short>Write specified component to the Clipboard.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -632,7 +632,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- procedure Visibility: public -->
       <element name="TClipboard.SetSupportedFormats">
         <short>
-          <var>SetSupportedFormats</var> - set all supported formats at once</short>
+          <var>SetSupportedFormats</var> - set all supported formats at once.</short>
         <descr>
           <p>
             <var>SetSupportedFormats</var> - set all supported formats at once </p>
@@ -676,7 +676,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- property Visibility: public -->
       <element name="TClipboard.AsText">
         <short>
-          <var>AsText</var> - holds the textual data in the clipboard as a string</short>
+          <var>AsText</var> - holds the textual data in the clipboard as a string.</short>
         <descr/>
         <seealso/>
       </element>
@@ -692,10 +692,10 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.SetAsHtml.HTML">
-        <short>The HTML string that shall be put on the ClipBoard</short>
+        <short>The HTML string that shall be put on the ClipBoard.</short>
       </element>
       <element name="TClipboard.SetAsHtml.PlainText">
-        <short>Optional plain text (string) representation of the HTML</short>
+        <short>Optional plain text (string) representation of the HTML.</short>
         <descr>The optional string parameter PlainText is meant to be a plain text representation
                of the HTML string. The user is responsible for the contents of this variable.
                The value of PlainText can later be retrieved via the
@@ -705,7 +705,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       </element>
       <!-- function Visibility: public -->
       <element name="TClipboard.GetAsHtml">
-        <short>Retrieves the HTML content of the clipboard (if available)</short>
+        <short>Retrieves the HTML content of the clipboard (if available).</short>
         <descr>Retrieves the HTML content of the clipboard (if available).
                On Windows it will automatically remove the clipboard header that Windows inserts.
                The resulting HTML string will be UTF-8 encoded.</descr>
@@ -719,21 +719,21 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- property Visibility: public -->
       <element name="TClipboard.ClipboardType">
         <short>
-          <var>ClipboardType</var> - ctPrimarySelection, ctSecondarySelection, ctClipboard</short>
+          <var>ClipboardType</var> - ctPrimarySelection, ctSecondarySelection, ctClipboard.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- property Visibility: public -->
       <element name="TClipboard.FormatCount">
         <short>
-          <var>FormatCount</var> - the number of formats available</short>
+          <var>FormatCount</var> - the number of formats available.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- property Visibility: public -->
       <element name="TClipboard.Formats">
         <short>
-          <var>Formats</var> - the formats being used in the current clipboard</short>
+          <var>Formats</var> - the formats being used in the current clipboard.</short>
         <descr>
           <p>
             <var>Formats</var> - the formats being used in the current clipboard</p>
@@ -749,7 +749,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- property Visibility: public -->
       <element name="TClipboard.OnRequest">
         <short>
-          <var>OnRequest</var> - event handler for a request for clipboard data
+          <var>OnRequest</var> - event handler for a request for clipboard data.
         </short>
         <descr>
           <p>
@@ -771,7 +771,7 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: default -->
       <element name="PrimarySelection">
         <short>
-          <var>PrimarySelection</var> - the first selection if multiple clipboards exist
+          <var>PrimarySelection</var> - the first selection if multiple clipboards exist.
         </short>
         <descr>
           <p>
@@ -783,12 +783,12 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       </element>
       <!-- function result Visibility: default -->
       <element name="PrimarySelection.Result">
-        <short>Returns a variable of type TClipboard</short>
+        <short>Returns a variable of type TClipboard.</short>
       </element>
       <!-- function Visibility: default -->
       <element name="SecondarySelection">
         <short>
-          <var>SecondarySelection</var> - the second selection if multiple clipboards exist
+          <var>SecondarySelection</var> - the second selection if multiple clipboards exist.
         </short>
         <descr>
           <p>
@@ -800,12 +800,12 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       </element>
       <!-- function result Visibility: default -->
       <element name="SecondarySelection.Result">
-        <short>Returns a variable of type TClipboard</short>
+        <short>Returns a variable of type TClipboard.</short>
       </element>
       <!-- function Visibility: default -->
       <element name="Clipboard">
         <short>
-          <var>Clipboard</var> the function called to access the clipboard with an optional type specifier
+          <var>Clipboard</var> the function called to access the clipboard with an optional type specifier.
         </short>
         <descr>
           <p>
@@ -817,39 +817,39 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       </element>
       <!-- function result Visibility: default -->
       <element name="Clipboard.Result">
-        <short>Returns a variable of type TClipboard</short>
+        <short>Returns a variable of type TClipboard.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="Clipboard.ClipboardType">
         <short>
-          <var>ClipboardType</var> - optional argument to specify type of clipboard</short>
+          <var>ClipboardType</var> - optional argument to specify type of clipboard.</short>
       </element>
       <!-- function Visibility: default -->
       <element name="SetClipboard">
         <short>
-          <var>SetClipboard</var> - sets up and returns a <var>NewClipboard</var>, with an optional type specifier</short>
+          <var>SetClipboard</var> - sets up and returns a <var>NewClipboard</var>, with an optional type specifier.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="SetClipboard.Result">
-        <short>Returns a variable of type TClipboard</short>
+        <short>Returns a variable of type TClipboard.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="SetClipboard.ClipboardType">
         <short>
-          <var>ClipboardType</var> - optional argument to specify type of clipboard</short>
+          <var>ClipboardType</var> - optional argument to specify type of clipboard.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="SetClipboard.NewClipboard">
         <short>
-          <var>NewClipboard</var> - the new clipboard to be set up</short>
+          <var>NewClipboard</var> - the new clipboard to be set up.</short>
       </element>
       <!-- procedure Visibility: default -->
       <element name="FreeAllClipboards">
         <short>
-          <var>FreeAllClipboards</var> - frees all existing clipboards, releasing their resources</short>
+          <var>FreeAllClipboards</var> - frees all existing clipboards, releasing their resources.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -857,22 +857,22 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       <!-- function Visibility: default -->
       <element name="RegisterClipboardFormat">
         <short>
-          <var>RegisterClipboardFormat</var> add the supplied format name to the register of clipboard formats</short>
+          <var>RegisterClipboardFormat</var> add the supplied format name to the register of clipboard formats.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="RegisterClipboardFormat.Result">
-        <short>Returns the registered clipboard format</short>
+        <short>Returns the registered clipboard format.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="RegisterClipboardFormat.Format">
-        <short>The name of the required format as a string</short>
+        <short>The name of the required format as a string.</short>
       </element>
       <element name="TClipboard.GetComponentAsText">
         <short>
-          <var>GetComponentAsText</var> - read the component as text, if supported</short>
+          <var>GetComponentAsText</var> - read the component as text, if supported.</short>
       </element>
     </module>
     <!-- Clipbrd -->

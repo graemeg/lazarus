@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="CheckLst">
-      <short>Classes defining TCheckListBox - a List Box with Check Box items</short>
+      <short>Classes defining TCheckListBox - a List Box with Check Box items.</short>
       <descr>
         <p>
           <file>checklst.pas</file> implements the TCheckListBox conttrol which displays a list with check box items. The following components are added to the Lazarus IDE component palette:
@@ -35,7 +35,7 @@
 
       <element name="TCheckListClicked">
         <short>
-          Defines an object procedure signalled when an item in TCheckListBox is clicked
+          Defines an object procedure signalled when an item in TCheckListBox is clicked.
         </short>
         <descr>
           <p>
@@ -47,15 +47,15 @@
         </seealso>
       </element>
       <element name="TCheckListClicked.Sender">
-        <short>TObject instance for the event notification</short>
+        <short>TObject instance for the event notification.</short>
       </element>
       <element name="TCheckListClicked.Index">
-        <short>Ordinal position for the item clicked in the control</short>
+        <short>Ordinal position for the item clicked in the control.</short>
       </element>
 
       <element name="TCustomCheckListBox">
         <short>
-          The base class for TCheckListBox, a list box  with check box items
+          The base class for TCheckListBox, a list box  with check box items.
         </short>
         <descr>
           <p>
@@ -74,78 +74,78 @@
       <element name="TCustomCheckListBox.FOnItemClick"/>
 
       <element name="TCustomCheckListBox.GetChecked">
-        <short>Gets the value for the indexed Checked property</short>
+        <short>Gets the value for the indexed Checked property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.Checked"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.GetChecked.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomCheckListBox.GetChecked.AIndex">
-        <short>Ordinal position in Items for the affected entry</short>
+        <short>Ordinal position in Items for the affected entry.</short>
       </element>
 
       <element name="TCustomCheckListBox.GetHeader">
-        <short>Gets value for the indexed Header property</short>
+        <short>Gets value for the indexed Header property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.Header"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.GetHeader.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomCheckListBox.GetHeader.AIndex">
-        <short>Ordinal position in Items for the affected entry</short>
+        <short>Ordinal position in Items for the affected entry.</short>
       </element>
 
       <element name="TCustomCheckListBox.GetItemEnabled">
-        <short>Gets the value for the indexed ItemEnabled property</short>
+        <short>Gets the value for the indexed ItemEnabled property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.ItemEnabled"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.GetItemEnabled.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomCheckListBox.GetItemEnabled.AIndex">
-        <short>Ordinal position in Items for the affected entry</short>
+        <short>Ordinal position in Items for the affected entry.</short>
       </element>
 
       <element name="TCustomCheckListBox.GetState">
-        <short>Gets the value for the indexed State property</short>
+        <short>Gets the value for the indexed State property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.State"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.GetState.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomCheckListBox.GetState.AIndex">
-        <short>Ordinal position in Items for the affected entry</short>
+        <short>Ordinal position in Items for the affected entry.</short>
       </element>
 
       <element name="TCustomCheckListBox.SetChecked">
-        <short>Sets the value for the indexed Checked property</short>
+        <short>Sets the value for the indexed Checked property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.Checked"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.SetChecked.AIndex">
-        <short>Ordinal position in Items for the check box updated in the method</short>
+        <short>Ordinal position in Items for the check box updated in the method.</short>
       </element>
       <element name="TCustomCheckListBox.SetChecked.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomCheckListBox.SendItemState">
         <short>
-          Notifies the widget set class when the state for the specified item has been changed
+          Notifies the widget set class when the state for the specified item has been changed.
         </short>
         <descr>
           <remark>
@@ -158,15 +158,15 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.SendItemState.AIndex">
-        <short>Ordinal position in Items for the affected entry</short>
+        <short>Ordinal position in Items for the affected entry.</short>
       </element>
       <element name="TCustomCheckListBox.SendItemState.AState">
-        <short>Check box state applied to the item</short>
+        <short>Check box state applied to the item.</short>
       </element>
 
       <element name="TCustomCheckListBox.SendItemEnabled">
         <short>
-          Notifies the widget set class when the Enabled state for the specified item has been changed
+          Notifies the widget set class when the Enabled state for the specified item has been changed.
         </short>
         <descr>
           <remark>
@@ -179,15 +179,15 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.SendItemEnabled.AIndex">
-        <short>Ordinal position in Items for the affected entry</short>
+        <short>Ordinal position in Items for the affected entry.</short>
       </element>
       <element name="TCustomCheckListBox.SendItemEnabled.AEnabled">
-        <short>Enabled state applied to the item</short>
+        <short>Enabled state applied to the item.</short>
       </element>
 
       <element name="TCustomCheckListBox.SendItemHeader">
         <short>
-          Notifies the widget set class when the specified item should be drawn as a header instead of a check box
+          Notifies the widget set class when the specified item should be drawn as a header instead of a check box.
         </short>
         <descr>
           <remark>
@@ -200,15 +200,15 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.SendItemHeader.AIndex">
-        <short>Ordinal position in Items for the affected entry</short>
+        <short>Ordinal position in Items for the affected entry.</short>
       </element>
       <element name="TCustomCheckListBox.SendItemHeader.AHeader">
-        <short>True when the item is a header; False when it is a check box</short>
+        <short>True when the item is a header; False when it is a check box.</short>
       </element>
 
       <element name="TCustomCheckListBox.DoChange">
         <short>
-          Performs actions needed when an entry in Items is changed using the keyboard or mouse
+          Performs actions needed when an entry in Items is changed using the keyboard or mouse.
         </short>
         <descr>
           <p>
@@ -223,89 +223,87 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.DoChange.Msg">
-        <short>LCL message processed and applied in the method</short>
+        <short>LCL message processed and applied in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.SetHeader">
-        <short>Sets the value for the indexed Header property</short>
+        <short>Sets the value for the indexed Header property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.Header"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.SetHeader.AIndex">
-        <short>Ordinal position in Items for the property value</short>
+        <short>Ordinal position in Items for the property value.</short>
       </element>
       <element name="TCustomCheckListBox.SetHeader.AValue">
         <short>
-          Value for the property; True indicates a header, and False indicates a check box
+          Value for the property; True indicates a header, and False indicates a check box.
         </short>
       </element>
 
       <element name="TCustomCheckListBox.SetItemEnabled">
-        <short>Sets the value for the indexed ItemEnabled property</short>
+        <short>Sets the value for the indexed ItemEnabled property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.ItemEnabled"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.SetItemEnabled.AIndex">
-        <short>Ordinal position in Items for the property value</short>
+        <short>Ordinal position in Items for the property value.</short>
       </element>
       <element name="TCustomCheckListBox.SetItemEnabled.AValue">
         <short>
-          New value for the property; True indicates a header, and False indicates a check box
+          New value for the property; True indicates a header, and False indicates a check box.
         </short>
       </element>
 
       <element name="TCustomCheckListBox.SetState">
-        <short>Sets the value for the indexed State property</short>
+        <short>Sets the value for the indexed State property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckListBox.State"/>
         </seealso>
       </element>
       <element name="TCustomCheckListBox.SetState.AIndex">
-        <short>Ordinal position in Items for the new property value</short>
+        <short>Ordinal position in Items for the new property value.</short>
       </element>
       <element name="TCustomCheckListBox.SetState.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomCheckListBox.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomCheckListBox.AssignItemDataToCache">
         <short>
-          Stores the data for an item at the specified position in the cache for item data
+          Stores the data for an item at the specified position in the cache for item data.
         </short>
         <descr/>
         <seealso></seealso>
       </element>
       <element name="TCustomCheckListBox.AssignItemDataToCache.AIndex">
-        <short>Ordinal position for the entry in Items stored in the method</short>
+        <short>Ordinal position for the entry in Items stored in the method.</short>
       </element>
       <element name="TCustomCheckListBox.AssignItemDataToCache.AData">
-        <short>Pointer to the item data stored in the cache</short>
+        <short>Pointer to the item data stored in the cache.</short>
       </element>
 
       <element name="TCustomCheckListBox.AssignCacheToItemData">
         <short>
-          Retrieves data for an item at the specified position from the cache for item data
+          Retrieves data for an item at the specified position from the cache for item data.
         </short>
         <descr/>
         <seealso></seealso>
       </element>
       <element name="TCustomCheckListBox.AssignCacheToItemData.AIndex">
-        <short>Ordinal position for the item updated from the item data cache</short>
+        <short>Ordinal position for the item updated from the item data cache.</short>
       </element>
       <element name="TCustomCheckListBox.AssignCacheToItemData.AData">
-        <short>Pointer to the data retrieved in the method</short>
+        <short>Pointer to the data retrieved in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.CreateParams">
-        <short>
-          Sets the creation parameters for the control handle
-        </short>
+        <short>Sets the creation parameters for the control handle.</short>
         <descr>
           <p>
             <var>CreateParams</var> is an overridden procedure used to set the creation parameters for the class instance. It calls the inherited method on entry, and sets the list box drawing style flag for the class instance.
@@ -316,12 +314,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.CreateParams.Params">
-        <short>Parameters applied to the control, including the Owner drawing style</short>
+        <short>Parameters applied to the control, including the Owner drawing style.</short>
       </element>
 
       <element name="TCustomCheckListBox.DrawItem">
         <short>
-          Adjusts the drawing area for the specified item, and renders it on the control
+          Adjusts the drawing area for the specified item, and renders it on the control.
         </short>
         <descr>
           <p>
@@ -340,17 +338,17 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.DrawItem.AIndex">
-        <short>Ordinal position in Items for the entry drawn in the method</short>
+        <short>Ordinal position in Items for the entry drawn in the method.</short>
       </element>
       <element name="TCustomCheckListBox.DrawItem.ARect">
-        <short>TRectangle with the drawing area for the item</short>
+        <short>TRectangle with the drawing area for the item.</short>
       </element>
       <element name="TCustomCheckListBox.DrawItem.State">
-        <short>TOwnerDrawState for Items in the control</short>
+        <short>TOwnerDrawState for Items in the control.</short>
       </element>
 
       <element name="TCustomCheckListBox.GetCachedDataSize">
-        <short>Gets the data size for a TCachedItemData entry in the item cache</short>
+        <short>Gets the data size for a TCachedItemData entry in the item cache.</short>
         <descr>
           <p>
             <var>GetCachedDataSize</var> is an overridden <var>Integer</var> function used to get the data size for a <var>TCachedItemData</var> entry in the item data cache. The return value contains the number of bytes needed for the <var>TCachedItemData</var> entry including the offset in the cache.
@@ -359,16 +357,16 @@
         <seealso></seealso>
       </element>
       <element name="TCustomCheckListBox.GetCachedDataSize.Result">
-        <short>Number of bytes required for cached item data</short>
+        <short>Number of bytes required for cached item data.</short>
       </element>
 
       <element name="TCustomCheckListBox.GetCheckWidth">
-        <short>Gets the width required for the check box drawn for Items on the control</short>
+        <short>Gets the width required for the check box drawn for Items on the control.</short>
         <descr/>
         <seealso></seealso>
       </element>
       <element name="TCustomCheckListBox.GetCheckWidth.Result">
-        <short>Width needed to draw a check box</short>
+        <short>Width needed to draw a check box.</short>
       </element>
 
       <element name="TCustomCheckListBox.DefineProperties"  link="#rtl.classes.TComponent.DefineProperties"/>
@@ -378,7 +376,7 @@
 
       <element name="TCustomCheckListBox.ReadData">
         <short>
-          Reads the data for the control from the specified stream
+          Reads the data for the control from the specified stream.
         </short>
         <descr>
           <p>
@@ -390,12 +388,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.ReadData.Stream">
-        <short>TStream instance with the data read in the method</short>
+        <short>TStream instance with the data read in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.WriteData">
         <short>
-          Writes data for the control to the specified stream
+          Writes data for the control to the specified stream.
         </short>
         <descr>
           <p>
@@ -406,12 +404,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.WriteData.Stream">
-        <short>TStream instance where data for the control is written in the method</short>
+        <short>TStream instance where data for the control is written in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.ClickCheck">
         <short>
-          Performs actions needed when a value in the control is about to change
+          Performs actions needed when a value in the control is about to change.
         </short>
         <descr>
           <p>
@@ -439,7 +437,7 @@
 
       <element name="TCustomCheckListBox.ItemClick">
         <short>
-          Performs actions when the specified check box has been changed using the mouse or the keyboard
+          Performs actions when the specified check box has been changed using the mouse or the keyboard.
         </short>
         <descr>
           <p>
@@ -462,11 +460,11 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.ItemClick.AIndex">
-        <short>Ordinal position for the check box</short>
+        <short>Ordinal position for the check box.</short>
       </element>
 
       <element name="TCustomCheckListBox.KeyDown">
-        <short>Handles key down messages for the control</short>
+        <short>Handles key down messages for the control.</short>
         <descr>
           <p>
             <var>KeyDown</var> is an overridden method in <var>TCustomCheckListBox</var> used to handle key down messages for the control. KeyDown ensures that the value for the current check box is toggled when the <b>Space</b> key is pressed while the control has focus.
@@ -491,15 +489,15 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.KeyDown.Key">
-        <short>Keystroke examined in the method</short>
+        <short>Keystroke examined in the method.</short>
       </element>
       <element name="TCustomCheckListBox.KeyDown.Shift">
-        <short>Shift, Control, or Alt modifier for the keystroke</short>
+        <short>Shift, Control, or Alt modifier for the keystroke.</short>
       </element>
 
       <element name="TCustomCheckListBox.FontChanged">
         <short>
-          Recalculates the height for check box Items in the control when the Font is changed
+          Recalculates the height for check box Items in the control when the Font is changed.
         </short>
         <descr>
           <p>
@@ -514,11 +512,11 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.FontChanged.Sender">
-        <short>TObject instance for the change notification</short>
+        <short>TObject instance for the change notification.</short>
       </element>
 
       <element name="TCustomCheckListBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for <var>TCustomCheckListBox</var>. It calls the inherited <var>Create</var> method, and sets the component style flag for the control. It also calls the inherited <var>GetCachedDataSize</var> method to determine the storage size needed for each cached item in the control.
@@ -530,12 +528,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomCheckListBox.MeasureItem">
         <short>
-          Calculates the height for an item displayed in the check list control
+          Calculates the height for an item displayed in the check list control.
         </short>
         <descr>
           <p>
@@ -557,15 +555,15 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.MeasureItem.Index">
-        <short>Ordinal position for the check box item measured in the method</short>
+        <short>Ordinal position for the check box item measured in the method.</short>
       </element>
       <element name="TCustomCheckListBox.MeasureItem.TheHeight">
-        <short>Returns the calculated height for the check box item</short>
+        <short>Returns the calculated height for the check box item.</short>
       </element>
 
       <element name="TCustomCheckListBox.Toggle">
         <short>
-          Toggles the Checked, Unchecked, Grayed state for the specified item in the control
+          Toggles the Checked, Unchecked, Grayed state for the specified item in the control.
         </short>
         <descr>
           <p>
@@ -602,12 +600,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.Toggle.AIndex">
-        <short>Ordinal position of the item state toggled in the method</short>
+        <short>Ordinal position of the item state toggled in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.CheckAll">
         <short>
-          Sets the specified values for State, AllowGrayed, and ItemEnabled for all Items in Control
+          Sets the specified values for State, AllowGrayed, and ItemEnabled for all Items in Control.
         </short>
         <descr>
           <p>
@@ -630,29 +628,29 @@
         <short>Check box state applied to Items in the control`</short>
       </element>
       <element name="TCustomCheckListBox.CheckAll.aAllowGrayed">
-        <short>AllowGrayed property value applied to Items in the control</short>
+        <short>AllowGrayed property value applied to Items in the control.</short>
       </element>
       <element name="TCustomCheckListBox.CheckAll.aAllowDisabled">
-        <short>ItemEnabled property value applied to Items in the control</short>
+        <short>ItemEnabled property value applied to Items in the control.</short>
       </element>
 
       <element name="TCustomCheckListBox.Exchange">
         <short>
-          Swaps the values for the State properties in the Items at the specified ordinal positions
+          Swaps the values for the State properties in the Items at the specified ordinal positions.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCheckListBox.Exchange.AIndex1">
-        <short>Ordinal position for the first item affected in the method</short>
+        <short>Ordinal position for the first item affected in the method.</short>
       </element>
       <element name="TCustomCheckListBox.Exchange.AIndex2">
-        <short>Ordinal position for the second item affected in the method</short>
+        <short>Ordinal position for the second item affected in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.AllowGrayed">
         <short>
-          Indicates if the item can use the "grayed" (or unselectable) check box state
+          Indicates if the item can use the "grayed" (or unselectable) check box state.
         </short>
         <descr>
           <p>
@@ -667,7 +665,7 @@
 
       <element name="TCustomCheckListBox.Checked">
         <short>
-          Provides indexed access to the Boolean Checked or Unchecked state for Items in the control
+          Provides indexed access to the Boolean Checked or Unchecked state for Items in the control.
         </short>
         <descr>
           <p>
@@ -680,12 +678,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.Checked.AIndex">
-        <short>Ordinal position for the entry in Items affected in the method</short>
+        <short>Ordinal position for the entry in Items affected in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.Header">
         <short>
-          Provides indexed access to header usage status for Items in the control
+          Provides indexed access to header usage status for Items in the control.
         </short>
         <descr>
           <p>
@@ -705,12 +703,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.Header.Index">
-        <short>Ordinal position for the item affected in the method</short>
+        <short>Ordinal position for the item affected in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.ItemEnabled">
         <short>
-          Provides indexed access to the enabled state for Items in the control
+          Provides indexed access to the enabled state for Items in the control.
         </short>
         <descr>
           <p>
@@ -733,12 +731,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.ItemEnabled.AIndex">
-        <short>Ordinal position for the item affected in the method</short>
+        <short>Ordinal position for the item affected in the method.</short>
       </element>
 
       <element name="TCustomCheckListBox.State">
         <short>
-          Provides indexed access to the TCheckBoxState for Items in the control
+          Provides indexed access to the TCheckBoxState for Items in the control.
         </short>
         <descr>
           <p>
@@ -763,12 +761,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckListBox.State.AIndex">
-        <short>Ordinal position for the Item examined in the property</short>
+        <short>Ordinal position for the Item examined in the property.</short>
       </element>
 
       <element name="TCustomCheckListBox.OnClickCheck">
         <short>
-          Event handler signalled when a check box in the control has been changed
+          Event handler signalled when a check box in the control has been changed.
         </short>
         <descr>
           <p>
@@ -802,7 +800,7 @@
 
       <element name="TCustomCheckListBox.OnItemClick">
         <short>
-          Event handler signalled when the check box state for a specific item has been changed
+          Event handler signalled when the check box state for a specific item has been changed.
         </short>
         <descr>
           <p>
@@ -841,7 +839,7 @@
 
       <element name="TCheckListBox">
         <short>
-          <var>TCheckListBox</var> implements a list box with check boxes for its items
+          <var>TCheckListBox</var> implements a list box with check boxes for its items.
         </short>
         <descr>
           <p>
@@ -938,7 +936,7 @@
         <element name="TCheckListBox.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="Register">
-        <short>Adds TCheckListBox to the Lazarus IDE</short>
+        <short>Adds TCheckListBox to the Lazarus IDE.</short>
         <descr>
           <var>Register</var> is a procedure used to add the <var>TCheckListBox</var> class to the <b>Additional</b> tab in the Lazarus IDE.
         </descr>
