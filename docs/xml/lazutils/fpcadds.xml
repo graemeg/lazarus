@@ -8,8 +8,8 @@
     -->
     <module name="FPCAdds">
       <short>
-        Contains additional types and routines not currently available in FPC
-      </short>
+        Contains additional types and routines not currently available in FPC.
+        </short>
       <descr>
         <file>fpcadds.pas</file> contains code in its initialization section to set the code page for conversions and the <var>RTL</var> file system to <var>CP_UTF8</var>. The initialization code is included only for platforms or OS-es where the <var>RTL</var> (<b>Run-Time Library</b>) is UTF-8-enabled.
       </descr>
@@ -19,7 +19,7 @@
       <element name="SysUtils"/>
 
       <element name="TStreamSeekType">
-        <short>Alias to the Int64 type used as the origin for TStream seek operations</short>
+        <short>Alias to the Int64 type used as the origin for TStream seek operations.</short>
         <descr>
           <p>
             Used in the implementation of classes including:
@@ -36,7 +36,7 @@
       </element>
 
       <element name="TMemStreamSeekType">
-        <short>Alias to the PtrInt type used as the origin for TMemoryStream seek operations</short>
+        <short>Alias to the PtrInt type used as the origin for TMemoryStream seek operations.</short>
         <descr>
           Used in the implementation of <var>TSynCustomExporter</var>.
         </descr>
@@ -44,7 +44,7 @@
       </element>
 
       <element name="TCompareMemSize">
-        <short>Alias to the PtrUInt type used when comparing memory blocks</short>
+        <short>Alias to the PtrUInt type used when comparing memory blocks.</short>
         <descr>
           Used in the implementation of <var>TSynCustomExporter</var> and <var>TGraphic</var>.
         </descr>
@@ -52,7 +52,7 @@
       </element>
 
       <element name="PHandle">
-        <short>Type used for a pointer to a THandle type</short>
+        <short>Type used for a pointer to a THandle type.</short>
         <descr>
           Also defined in <file>lcltype.pp</file>.
         </descr>
@@ -60,20 +60,20 @@
       </element>
 
       <element name="StrToWord">
-        <short>Converts the value in a String to a Word data type</short>
+        <short>Converts the value in a String to a Word data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="StrToWord.Result">
-        <short>Word value calculated for the specified String</short>
+        <short>Word value calculated for the specified String.</short>
       </element>
       <element name="StrToWord.s">
-        <short>String value examined in the method</short>
+        <short>String value examined in the method.</short>
       </element>
 
       <element name="AlignToPtr">
         <short>
-          Aligns the specified pointer to the boundaries required for the FPC compiler
+          Aligns the specified pointer to the boundaries required for the FPC compiler.
         </short>
         <descr>
           <p>
@@ -85,12 +85,12 @@
         </seealso>
       </element>
       <element name="AlignToPtr.p">
-        <short>Pointer affected in the routine</short>
+        <short>Pointer affected in the routine.</short>
       </element>
 
       <element name="AlignToInt">
         <short>
-          Aligns the specified pointer to the size of an Integer data type
+          Aligns the specified pointer to the size of an Integer data type.
         </short>
         <descr>
           <p>

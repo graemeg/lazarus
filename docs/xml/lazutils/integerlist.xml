@@ -8,7 +8,7 @@
     -->
     <module name="IntegerList">
       <short>
-        Provides lists for Integer data types implemented using generics
+        Provides lists for Integer data types implemented using generics.
       </short>
       <descr>
         <p>
@@ -17,7 +17,7 @@
       </descr>
 
       <element name="TByteList" link="#RTL.fgl.TFPGList">
-        <short>Implements a specialization of TFPGList for Byte data types</short>
+        <short>Implements a specialization of TFPGList for Byte data types.</short>
         <descr>
           <p>
             <var>TByteList</var> provides an overloaded <var>Sort</var> method to ensure that values in the list are handled using a compare function that operates on Byte values.
@@ -29,7 +29,7 @@
       </element>
 
       <element name="TByteList.Sort" link="#rtl.fgl.TFPGList.Sort">
-        <short>Sorts the Byte values stored in the list</short>
+        <short>Sorts the Byte values stored in the list.</short>
         <descr>
           <p>
             <var>Sort</var> is an overloaded method in <var>TByteList</var> which calls the inherited method using the CompareByte function in the implementation section.
@@ -41,7 +41,7 @@
       </element>
 
       <element name="TWordList" link="#rtl.fgl.TFPGList">
-        <short>Implements a specialization of TFPGList for Word data types</short>
+        <short>Implements a specialization of TFPGList for Word data types.</short>
         <descr>
           <p>
             <var>TWordList</var> provides an overloaded <var>Sort</var> method to ensure that values in the list are handled using a compare function that operates on Word  values.
@@ -53,7 +53,7 @@
       </element>
 
       <element name="TWordList.Sort" link="#rtl.fgl.TFPGList.Sort">
-        <short>Sorts the Word values stored in the list</short>
+        <short>Sorts the Word values stored in the list.</short>
         <descr>
           <p>
             <var>Sort</var> is an overloaded method in <var>TWordList</var> which calls the inherited method using the CompareWord function in the implementation section.
@@ -65,7 +65,7 @@
       </element>
 
       <element name="TCardinalList" link="#rtl.fgl.TFPGList">
-        <short>Implements a specialization of TFPGList for Cardinal data types</short>
+        <short>Implements a specialization of TFPGList for Cardinal data types.</short>
         <descr>
           <p>
             <var>TCardinalList</var> provides an overloaded <var>Sort</var> method to ensure that values in the list are handled using a compare function that operates on Cardinal values.
@@ -79,7 +79,7 @@
       </element>
 
       <element name="TCardinalList.Sort" link="#rtl.fgl.TFPGList.Sort">
-        <short>Sorts the Word values stored in the list</short>
+        <short>Sorts the Word values stored in the list.</short>
         <descr>
           <p>
             <var>Sort</var> is an overloaded method in <var>TCardinalList</var> which calls the inherited method using the CompareCardinal function in the implementation section.
@@ -91,7 +91,7 @@
       </element>
 
       <element name="TIntegerList" link="#rtl.fgl.TFPGList">
-        <short>Implements a specialization of TFPGList for Integer data types</short>
+        <short>Implements a specialization of TFPGList for Integer data types.</short>
         <descr>
           <p>
             <var>TIntegerList</var> provides an overloaded <var>Sort</var> method to ensure that values in the list are handled using a compare function that operates on Integer values.
@@ -105,7 +105,7 @@
       </element>
 
       <element name="TIntegerList.Sort" link="#rtl.fgl.TFPGList.Sort">
-        <short>Sorts the Integer values stored in the list</short>
+        <short>Sorts the Integer values stored in the list.</short>
         <descr>
           <p>
             <var>Sort</var> is an overloaded method in <var>TIntegerList</var> which calls the inherited method using the CompareInteger function in the implementation section.
@@ -117,7 +117,7 @@
       </element>
 
       <element name="TInt64List" link="#rtl.fgl.TFPGList">
-        <short>Implements a specialization of TFPGList for Int64 data types</short>
+        <short>Implements a specialization of TFPGList for Int64 data types.</short>
         <descr>
           <p>
             <var>TInt64List</var> provides an overloaded <var>Sort</var> method to ensure that values in the list are handled using a compare function that operates on Int64  values.
@@ -130,7 +130,7 @@
       </element>
 
       <element name="TInt64List.Sort" link="#rtl.fgl.TFPGList.Sort">
-        <short>Sorts the Int64 values stored in the list</short>
+        <short>Sorts the Int64 values stored in the list.</short>
         <descr>
           <p>
             <var>Sort</var> is an overloaded method in <var>TInt64List</var> which calls the inherited method using the CompareInt64 function in the implementation section.

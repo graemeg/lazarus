@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="LazClasses">
-      <short>Contains classes and routines used to implement free notifications</short>
+      <short>Contains classes and routines used to implement free notifications.</short>
       <descr></descr>
 
       <!-- unresolved external references -->
@@ -16,41 +16,41 @@
       <element name="LazMethodList"/>
 
       <element name="TFreeNotifyingObject">
-        <short>Base class used to implement objects which perform free notifications</short>
+        <short>Base class used to implement objects which perform free notifications.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFreeNotifyingObject.FFreeNotificationList">
-        <short>List of notification methods called when the object is freed</short>
+        <short>List of notification methods called when the object is freed.</short>
       </element>
 
       <element name="TFreeNotifyingObject.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFreeNotifyingObject.AddFreeNotification">
-        <short>Adds the specified method to the notification list in the class instance</short>
+        <short>Adds the specified method to the notification list in the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFreeNotifyingObject.AddFreeNotification.ANotification">
-        <short>The notification event handler added to the internal list</short>
+        <short>The notification event handler added to the internal list.</short>
       </element>
 
       <element name="TFreeNotifyingObject.RemoveFreeNotification">
-        <short>Removes the specified method from the internal list</short>
+        <short>Removes the specified method from the internal list.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFreeNotifyingObject.RemoveFreeNotification.ANotification">
-        <short>The notification event handler removed form the internal list</short>
+        <short>The notification event handler removed form the internal list.</short>
       </element>
 
       <element name="TRefCountedObject">
-        <short>Implements a thread-safe reference-counted class which performs free notifications</short>
+        <short>Implements a thread-safe reference-counted class which performs free notifications.</short>
         <descr>
           <p>
             Used in the implementation of logging classes and the debugger interface in Lazarus. Also used in the implementation of classes for TSynEdit.
@@ -217,7 +217,7 @@
       </element>
 
       <element name="TRefCntObjList">
-        <short>Implements a list used to store TRefCountedObject instances</short>
+        <short>Implements a list used to store TRefCountedObject instances.</short>
         <descr>
           <p>
             Provides a <var>Notify</var> method which executes the notification methods for each reference-counted object in the list.

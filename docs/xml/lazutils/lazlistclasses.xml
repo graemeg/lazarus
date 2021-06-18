@@ -8,8 +8,8 @@
     -->
     <module name="LazListClasses">
       <short>
-        Provides list classes implemented using generics
-      </short>
+        Provides list classes implemented using generics.
+        </short>
       <descr>
         <p>
           <file>lazlistclasses.pas</file> contains list classes implemented using generics. The lists are provided as "object" and "class" versions. Each list can be specialized to hold either items of a given type (specialized to type at compile-time) or untyped data with the size specified as a run-time argument to the constructor.
@@ -202,7 +202,7 @@ TLazPagedListObj = object
       </element>
 
       <element name="TLazListClassesItemSize">
-        <short>Helper to specialize lists for a give type</short>
+        <short>Helper to specialize lists for a give type.</short>
         <descr/>
         <seealso/>
       </element>
@@ -216,7 +216,7 @@ TLazPagedListObj = object
       </element>
 
       <element name="TLazListClassesVarItemSize">
-        <short>Helper to specialize lists at run-time to a specified size</short>
+        <short>Helper to specialize lists at run-time to a specified size.</short>
         <descr>
           <code>
   AList := TList.Create(ASize);
@@ -232,7 +232,7 @@ TLazPagedListObj = object
       </element>
 
       <element name="TLazListClassesInternalMem">
-        <short>Helper object used internally</short>
+        <short>Helper object used internally.</short>
         <descr/>
         <seealso/>
       </element>
@@ -462,7 +462,7 @@ TLazPagedListObj = object
 
       <element name="TLazShiftBufferListObjBase.FMem"/>
       <element name="TLazShiftBufferListObjBase.FItemSize">
-        <short>May be 0 (zero)</short>
+        <short>May be 0 (zero).</short>
       </element>
 
       <element name="TLazShiftBufferListObjBase.GetItemPointer">
@@ -1568,7 +1568,7 @@ TLazPagedListObj = object
         <short/>
       </element>
       <element name="TLazFixedRoundBufferListMemBase.GetItemPointerMasked.AMask">
-        <short>Bitmask for Capacity</short>
+        <short>Bitmask for Capacity.</short>
       </element>
 
       <element name="TLazFixedRoundBufferListMemBase.GetItemByteOffsetMasked">
@@ -1583,7 +1583,7 @@ TLazPagedListObj = object
         <short/>
       </element>
       <element name="TLazFixedRoundBufferListMemBase.GetItemByteOffsetMasked.AMask">
-        <short>Bitmask for Capacity</short>
+        <short>Bitmask for Capacity.</short>
       </element>
 
       <element name="TLazFixedRoundBufferListMemBase.GetFirstItemByteOffset">

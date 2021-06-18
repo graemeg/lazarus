@@ -8,8 +8,8 @@
     -->
     <module name="CompWriterPas">
       <short>
-        Contains types, classes, and rotuinees used to serialize components into Pascal code
-      </short>
+        Contains types, classes, and rotuinees used to serialize components into Pascal code.
+        </short>
       <descr>
         <p>
           The following features and functionality are currently implemented:
@@ -62,67 +62,67 @@
       <element name="LazUTF8"/>
 
       <element name="CSPVersion">
-        <short>Component Serialization to Pascal version</short>
+        <short>Component Serialization to Pascal version.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultSignature">
-        <short>Default signature written before serialized component data</short>
+        <short>Default signature written before serialized component data.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultSignatureBegin">
-        <short>Default begin signature written before a serialized component</short>
+        <short>Default begin signature written before a serialized component.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultSignatureEnd">
-        <short>Default end signature written after a serialized component</short>
+        <short>Default end signature written after a serialized component.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultAccessClass">
-        <short>Default class name used to access protected TComponent members</short>
+        <short>Default class name used to access protected TComponent members.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultExecCustomProc">
-        <short>Default value for the ExecCustomProc property in TCompWriterPas</short>
+        <short>Default value for the ExecCustomProc property in TCompWriterPas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultExecCustomProcUnit">
-        <short>Default value for the ExecCustomProcUnit property in TCompWriterPas</short>
+        <short>Default value for the ExecCustomProcUnit property in TCompWriterPas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultMaxColumn">
-        <short>Default value for the MaxColumn property in TCompWriterPas</short>
+        <short>Default value for the MaxColumn property in TCompWriterPas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CSPDefaultAssignOp">
-        <short>Default value for the AssignOp property in TCompWriterPas</short>
+        <short>Default value for the AssignOp property in TCompWriterPas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="CWPSkipParentName">
-        <short>Parent property name to skip when writing component data</short>
+        <short>Parent property name to skip when writing component data.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCWPFindAncestorEvent">
-        <short>Specifies an event handler used to find ancestor class in TCompWriterPas</short>
+        <short>Specifies an event handler used to find ancestor class in TCompWriterPas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -144,7 +144,7 @@
 
       <element name="TCWPGetMethodName">
         <short>
-          Specifies an event handler used to get property information and an identifer name for a property
+          Specifies an event handler used to get property information and an identifer name for a property.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -164,7 +164,7 @@
 
       <element name="TCWPGetParentPropertyEvent">
         <short>
-          Specifies an event handler used to get a parent property name for a component instance
+          Specifies an event handler used to get a parent property name for a component instance.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -198,35 +198,35 @@
       </element>
 
       <element name="TCWPOption">
-        <short>Enumeration which defines options available in TCompWriterPas</short>
+        <short>Enumeration which defines options available in TCompWriterPas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCWPOption.cwpoNoSignature">
-        <short>Do not write Begin, End signatures</short>
+        <short>Do not write Begin, End signatures.</short>
       </element>
       <element name="TCWPOption.cwpoNoSelf">
         <short>Enclose in "with LookupRootname do begin"</short>
       </element>
       <element name="TCWPOption.cwpoSetParentFirst">
-        <short>Add "SetParentComponent" before setting properties, default: after</short>
+        <short>Add "SetParentComponent" before setting properties, default: after.</short>
       </element>
       <element name="TCWPOption.cwpoSrcCodepageUTF8">
         <short>
-          Target unit uses $codepage utf-8, aka do not convert UTF-8 string literals
+          Target unit uses $codepage utf-8, aka do not convert UTF-8 string literals.
         </short>
       </element>
       <element name="TCWPOption.cwpoNoWithBlocks">
-        <short>Do not use with ... do</short>
+        <short>Do not use with ... do.</short>
       </element>
       <element name="TCWPOption.cwpoNoFinalLineBreak">
         <short>
-          Do not include a final line break at the end of the serialized component data
+          Do not include a final line break at the end of the serialized component data.
         </short>
       </element>
 
       <element name="TCWPOptions">
-        <short>Set type used to stores values from the TCWPOption enumeration</short>
+        <short>Set type used to stores values from the TCWPOption enumeration.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -244,7 +244,7 @@
       </element>
 
       <element name="TCompWriterPas">
-        <short>Serializes a component to Pascal code</short>
+        <short>Serializes a component to Pascal code.</short>
         <descr></descr>
         <seealso></seealso>
       </element>

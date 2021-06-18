@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="LazMethodList">
-      <short>Implements a list of TMethod entries</short>
+      <short>Implements a list of TMethod entries.</short>
       <descr>
           <p>
             <file>lazmethodlist.pas</file> implements a list used TMethod instances representing event handler routines in LCL components.
@@ -19,7 +19,7 @@
 
       <!-- class Visibility: default -->
       <element name="TMethodList">
-        <short>Implements a list of TMethod entries</short>
+        <short>Implements a list of TMethod entries.</short>
         <descr>
           <p>
             <var>TMethodList</var> is class which implements a list of TMethod entries. TMethodList is implemented using an array of TMethod references that provide access to the Items in the list. Methods are provided to Add, Insert, Delete, and Move items in the list. Enumerators (forward and reverse) are also available for methods in the list.
@@ -35,46 +35,46 @@
 
       <!-- nested types -->
       <element name="TMethodList.TItemsEnumerator">
-        <short>Implements an enumerator for TMethodList</short>
+        <short>Implements an enumerator for TMethodList.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.Owner">
-        <short>Owner of the enumerator</short>
+        <short>Owner of the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.Index">
-        <short>Index position for the current item in the enumerator</short>
+        <short>Index position for the current item in the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.Reverse">
-        <short>Indicates if items are enumerated in reverse order</short>
+        <short>Indicates if items are enumerated in reverse order.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.GetCurrent">
-        <short>Gets the current item in the enumerator</short>
+        <short>Gets the current item in the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.GetCurrent.Result">
-        <short>Current item for the enumerator</short>
+        <short>Current item for the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.Init">
-        <short>Initializes the enumerator</short>
+        <short>Initializes the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.Init.AOwner">
-        <short>Owner of the enumerator</short>
+        <short>Owner of the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.Init.AReverse">
-        <short>Indicates items are enumerated in reverse order</short>
+        <short>Indicates items are enumerated in reverse order.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.MoveNext">
-        <short>Gets the next item for the enumerator</short>
+        <short>Gets the next item for the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.MoveNext.Result">
-        <short>Next item for the enumerator</short>
+        <short>Next item for the enumerator.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.GetEnumerator">
-        <short>Gets the enumerator instance</short>
+        <short>Gets the enumerator instance.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.GetEnumerator.Result">
-        <short>The enumerator instance</short>
+        <short>The enumerator instance.</short>
       </element>
       <element name="TMethodList.TItemsEnumerator.Current">
-        <short>Current item for the enumerator</short>
+        <short>Current item for the enumerator.</short>
       </element>
 
       <!-- variable Visibility: private -->
@@ -84,46 +84,46 @@
 
       <!-- function Visibility: private -->
       <element name="TMethodList.GetItems" link="#lazutils.lazmethodlist.TMethodList.Items">
-        <short>Gets the value for the Items property</short>
+        <short>Gets the value for the Items property.</short>
       </element>
       <element name="TMethodList.GetItems.Result">
-        <short>Value for the Items property</short>
+        <short>Value for the Items property.</short>
       </element>
       <element name="TMethodList.GetItems.Index">
-        <short>Ordinal position for the item in the method list</short>
+        <short>Ordinal position for the item in the method list.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TMethodList.SetAllowDuplicates" link="#lazutils.lazmethodlist.TMethodList.AllowDuplicates">
-        <short>Sets the value in the AllowDuplicates property</short>
+        <short>Sets the value in the AllowDuplicates property.</short>
       </element>
       <element name="TMethodList.SetAllowDuplicates.AValue">
-        <short>New value for the AllowDuplicates property</short>
+        <short>New value for the AllowDuplicates property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TMethodList.SetItems" link="#lazutils.lazmethodlist.TMethodList.Items">
-        <short>Sets the value for the Items property</short>
+        <short>Sets the value for the Items property.</short>
       </element>
       <element name="TMethodList.SetItems.Index">
-        <short>Ordinal position for the item</short>
+        <short>Ordinal position for the item.</short>
       </element>
       <element name="TMethodList.SetItems.AValue">
-        <short>New value for the item at the specified position</short>
+        <short>New value for the item at the specified position.</short>
       </element>
 
       <element name="TMethodList.InternalInsert" link="#lazutils.lazmethodlist.TMethodList.Insert">
-        <short>Performs actions needed to insert a method at the specified position</short>
+        <short>Performs actions needed to insert a method at the specified position.</short>
       </element>
       <element name="TMethodList.InternalInsert.Index">
-        <short>Ordinal position for the item</short>
+        <short>Ordinal position for the item.</short>
       </element>
       <element name="TMethodList.InternalInsert.AMethod">
-        <short>Method instance to store at the specified position</short>
+        <short>Method instance to store at the specified position.</short>
       </element>
 
       <element name="TMethodList.RaiseIndexOutOfBounds">
-        <short>Raises an index out of bounds exception</short>
+        <short>Raises an index out of bounds exception.</short>
         <descr>
           <p>
             <var>RaiseIndexOutOfBounds</var> is a procedure which raises an <var>EListError</var> exception when an invalid index position is used when accessing the Items in the method list. Index is the invalid  ordinal position requested, and is included in the exception message.
@@ -140,12 +140,12 @@
         </seealso>
       </element>
       <element name="TMethodList.RaiseIndexOutOfBounds.Index">
-        <short>Ordinal position to include in the exception message</short>
+        <short>Ordinal position to include in the exception message.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TMethodList.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for the class instance. Destroy calls ReAllocMem to reset the size for memory allocated to the Items property. Destroy calls the inherited destructor.
@@ -158,7 +158,7 @@
 
       <!-- function Visibility: public -->
       <element name="TMethodList.Count">
-        <short>Gets the number of items included in the method list</short>
+        <short>Gets the number of items included in the method list.</short>
         <descr>
           <p>
             <var>Count</var> is an <var>Integer</var> function used to get the number of Items included in the method list. The value is derived from an internal member in the class instance which gets updated in the Add and Delete methods.
@@ -170,12 +170,12 @@
         </seealso>
       </element>
       <element name="TMethodList.Count.Result">
-        <short>Value for the function</short>
+        <short>Value for the function.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TMethodList.NextDownIndex">
-        <short>Provides access to items in the method list in reverse order</short>
+        <short>Provides access to items in the method list in reverse order.</short>
         <descr>
           <p>
             <var>NextDownIndex</var> is a <var>Boolean</var> function which provides access to Items in the list in reverse order. NextDownIndex ensures that the variable parameter in Index is decremented, and remains in range for the number of methods in the Items property. The return value is <var>True</var> when the updated value in Index is a valid ordinal position in Items. The return value is <var>False</var> when Index contains <b>-1</b>.
@@ -190,15 +190,15 @@
         </seealso>
       </element>
       <element name="TMethodList.NextDownIndex.Result">
-        <short>True when Index is in the range needed to access Items</short>
+        <short>True when Index is in the range needed to access Items.</short>
       </element>
       <element name="TMethodList.NextDownIndex.Index">
-        <short>Ordinal position for the next item</short>
+        <short>Ordinal position for the next item.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TMethodList.IndexOf">
-        <short>Gets the position where the specified method is stored in the list</short>
+        <short>Gets the position where the specified method is stored in the list.</short>
         <descr>
           <p>
             <var>IndexOf</var> is an <var>Integer</var> function used to get the ordinal position in Items where the TMethod instance in AMethod is stored.
@@ -213,15 +213,15 @@
         </seealso>
       </element>
       <element name="TMethodList.IndexOf.Result">
-        <short>Ordinal position for the specified method</short>
+        <short>Ordinal position for the specified method.</short>
       </element>
       <element name="TMethodList.IndexOf.AMethod">
-        <short>Method to locate in the items for the list</short>
+        <short>Method to locate in the items for the list.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.Delete">
-        <short>Deletes the method stored at the specified position</short>
+        <short>Deletes the method stored at the specified position.</short>
         <descr>
           <p>
             <var>Delete</var> is a procedure used to delete the method stored at the specified ordinal position in the list. Delete decrements the internal member used for the Count function.
@@ -240,12 +240,12 @@
         </seealso>
       </element>
       <element name="TMethodList.Delete.Index">
-        <short>Ordinal position for the method to delete from the list</short>
+        <short>Ordinal position for the method to delete from the list.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.Remove">
-        <short>Removes the specified method from the items in the list</short>
+        <short>Removes the specified method from the items in the list.</short>
         <descr>
           <p>
             <var>Remove</var> is a procedure used to remove the TMethod instance specified in AMethod from the Items in the list. Remove ensures that memory has been allocated for the list, and calls the IndexOf method to locate the specified method instance in AMethod. When it exists in the Items property, the Delete method is called to delete the method at the required ordinal position.
@@ -258,12 +258,12 @@
         </seealso>
       </element>
       <element name="TMethodList.Remove.AMethod">
-        <short>Method to remove from the items in the list</short>
+        <short>Method to remove from the items in the list.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.Add">
-        <short>Adds the specified method to the list</short>
+        <short>Adds the specified method to the list.</short>
         <descr>
           <p>
             <var>Add</var> is an overloaded procedure used to add the TMethod instance specified in AMethod to the Items in the list. Add uses the value in AllowDuplicates to determine if the Items in the list need to be checked for duplicates prior to adding the specified  method. When AllowDuplicates is <var>False</var>, the IndexOf method is used to locate an existing entry in Items with the method in AMethod. If the method does not exist in Items, or AllowDuplicates is <var>True</var>, the method in AMethod is appended to the end of the memory allocated to the Items property. ReAllocMem is used to set the new size for the memory allocation.
@@ -283,15 +283,15 @@
         </seealso>
       </element>
       <element name="TMethodList.Add.AMethod">
-        <short>Method to add to the list</short>
+        <short>Method to add to the list.</short>
       </element>
       <element name="TMethodList.Add.AsLast">
-        <short>Indicates if the method should be appended to the end of the list</short>
+        <short>Indicates if the method should be appended to the end of the list.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.Insert">
-        <short>Inserts the specified method at the given position in the list</short>
+        <short>Inserts the specified method at the given position in the list.</short>
         <descr>
           <p>
             <var>Insert</var> is a procedure used to inset the specified method at the given position in Index.
@@ -318,15 +318,15 @@
         </seealso>
       </element>
       <element name="TMethodList.Insert.Index">
-        <short>Ordinal position where the method will be inserted</short>
+        <short>Ordinal position where the method will be inserted.</short>
       </element>
       <element name="TMethodList.Insert.AMethod">
-        <short>Method to insert at the specified position</short>
+        <short>Method to insert at the specified position.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.Move">
-        <short>Moves the position for the specified method in the list</short>
+        <short>Moves the position for the specified method in the list.</short>
         <descr>
           <p>
             <var>Move</var> is a procedure used to relocate a method stored in Items using the specified positions arguments. OldIndex contains the existing ordinal position where the method is stored in Items. NewIndex contains the new ordinal position for the method in the Items property.
@@ -349,15 +349,15 @@
         </seealso>
       </element>
       <element name="TMethodList.Move.OldIndex">
-        <short>Existing position for the specified method</short>
+        <short>Existing position for the specified method.</short>
       </element>
       <element name="TMethodList.Move.NewIndex">
-        <short>New position for the specified method</short>
+        <short>New position for the specified method.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.RemoveAllMethodsOfObject">
-        <short>Removes methods from the list if they are for the specified object</short>
+        <short>Removes methods from the list if they are for the specified object.</short>
         <descr>
           <p>
             <var>RemoveAllMethodsOfObject</var> is a procedure used to remove methods in the Items property which belong to the object instance specified in AnObject. RemoveAllMethodsOfObject iterates over the methods in the Items property (in reverse order), and compares the object in AnObject to the TMethod.Data for each of the store Items. When they refer to the same TObject instance, the Delete method is called to remove the method from Items.
@@ -373,12 +373,12 @@
         </seealso>
       </element>
       <element name="TMethodList.RemoveAllMethodsOfObject.AnObject">
-        <short>Object compared to the entries in the list</short>
+        <short>Object compared to the entries in the list.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.CallNotifyEvents">
-        <short>Performs event notifications using methods in the list</short>
+        <short>Performs event notifications using methods in the list.</short>
         <descr>
           <p>
             <var>CallNotifyEvents</var> is a procedure used to perform event notifications using methods stored in the Items for the list. Methods stored in Items are processed in reverse order, and cast to a <var>TNotifyEvent</var> type using the value in Sender as the originator of the event notification.
@@ -389,12 +389,12 @@
         </seealso>
       </element>
       <element name="TMethodList.CallNotifyEvents.Sender">
-        <short>Originator of the event notification(s)</short>
+        <short>Originator of the event notification(s).</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMethodList.GetReversedEnumerator">
-        <short>Gets an enumerator for the list that navigates in reverse order</short>
+        <short>Gets an enumerator for the list that navigates in reverse order.</short>
         <descr>
           <p>
             GetReversedEnumerator is a TItemsEnumerator function used to get an enumerator that navigates Items in the list in reverse order. The enumerator provides access to the current value, and allows navigation to the next value for the enumerator. Item navigation occurs in reverse order (descending ordinal position) in the list.
@@ -405,11 +405,11 @@
         </seealso>
       </element>
       <element name="TMethodList.GetReversedEnumerator.Result">
-        <short>The reverse enumerator for the list</short>
+        <short>The reverse enumerator for the list.</short>
       </element>
 
       <element name="TMethodList.GetEnumerator">
-        <short>Gets an enumerator for the list</short>
+        <short>Gets an enumerator for the list.</short>
         <descr>
           <var>GetEnumerator</var> is a <var>TItemsEnumerator</var> function used to get an enumerator for Items in the list. The enumerator provides access to the current value, and allows navigation to the next value for the enumerator. Item navigation occurs in the natural order (ascending ordinal position) in the list.
         </descr>
@@ -418,12 +418,12 @@
         </seealso>
       </element>
       <element name="TMethodList.GetEnumerator.Result">
-        <short>The enumerator for the list</short>
+        <short>The enumerator for the list.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TMethodList.Items">
-        <short>Provides indexed access to methods in the list</short>
+        <short>Provides indexed access to methods in the list.</short>
         <descr>
           <p>
             <var>Items</var> is a <var>TMethod</var> property that provides indexed access to methods in the list by the ordinal position specified in Index. The TMethod instance contains the Data (object reference) and Code (pointer to the method) store in the list items.
@@ -458,11 +458,11 @@
         </seealso>
       </element>
       <element name="TMethodList.Items.Index">
-        <short>Ordinal position for the method to access in the method list</short>
+        <short>Ordinal position for the method to access in the method list.</short>
       </element>
 
       <element name="TMethodList.AllowDuplicates">
-        <short>Indicates if duplicate methods are allowed in the list</short>
+        <short>Indicates if duplicate methods are allowed in the list.</short>
         <descr>
           <p>
             <var>AllowDuplicates</var> is a <var>Boolean</var> property that indicates if duplicate entries for any given method are allowed in the method list. The default value for the property is <var>False</var>, and indicates that a duplicate method entry will be rejected and an exception will be raised for the error condition.
@@ -488,7 +488,7 @@
       </element>
 
       <element name="CompareMethods">
-        <short>Performs a comparison between the specified methods</short>
+        <short>Performs a comparison between the specified methods.</short>
         <descr>
           <p>
             CompareMethods is a Boolean function used to compare the specified methods. m1 and m2 are TMethod parameters with the values compared in the function. The comparison examines the Code and Data members in the TMethod records. The return value is True when the Code and Data members are identical in both records.
@@ -496,13 +496,13 @@
         </descr>
       </element>
       <element name="CompareMethods.Result">
-        <short>True when the compared methods share the same code and data</short>
+        <short>True when the compared methods share the same code and data.</short>
       </element>
       <element name="CompareMethods.m1">
-        <short>Method for the comparison</short>
+        <short>Method for the comparison.</short>
       </element>
       <element name="CompareMethods.m2">
-        <short>Another method for the comparison</short>
+        <short>Another method for the comparison.</short>
       </element>
 
     </module>

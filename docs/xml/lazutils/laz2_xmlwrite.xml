@@ -8,8 +8,8 @@
     -->
     <module name="laz2_XMLWrite">
       <short>
-        Provides routines used to write XML content to a file, text file, or stream
-      </short>
+        Provides routines used to write XML content to a file, text file, or stream.
+        </short>
       <descr>
         <p>
           <var>laz2_xmlwrite.pas</var> provides procedures and types used to write XML content to a file, text file, or stream. laz2_xmlwrite.pas has classes in its implementation section that are used to perform serialization of XML content to the storage destination.
@@ -34,7 +34,7 @@
       <!-- enumeration type Visibility: default -->
       <element name="TXMLWriterFlag">
         <short>
-          Represent options enabled when writing XML content
+          Represent options enabled when writing XML content.
         </short>
         <descr>
           <var>TXMLWriterFlag</var> is an enumerated type with values that represent options enabled when writing XML content. Values in TXMLWriterFlag are stored in the <var>TXMLWriterFlags</var> set type, and passed as an argument to the WriteXMLFile and WriteXML routines.
@@ -52,12 +52,12 @@
         </short>
       </element>
       <element name="TXMLWriterFlag.xwfPreserveWhiteSpace">
-        <short>Preserves whitespace in DOM Text nodes</short>
+        <short>Preserves whitespace in DOM Text nodes.</short>
       </element>
 
       <!-- set type Visibility: default -->
       <element name="TXMLWriterFlags">
-        <short>Set type used to store TXMLWriterFlag values</short>
+        <short>Set type used to store TXMLWriterFlag values.</short>
         <descr>
           <p>
             <var>TXMLWriterFlags</var> is a set type used to store 0 or more values from the <var>TXMLWriterFlag</var> enumeration. TXMLWriterFlags indicates the options enabled when writing XML content. TXMLWriterFlags is the type passed as an argument to the <var>WriteXMLFile</var> procedure.
@@ -72,7 +72,7 @@
       <!-- procedure Visibility: default -->
       <element name="WriteXMLFile">
         <short>
-          Writes an XML document to a file, text file, or stream
+          Writes an XML document to a file, text file, or stream.
         </short>
         <descr>
           <p>
@@ -92,33 +92,33 @@
 
       <!-- argument Visibility: default -->
       <element name="WriteXMLFile.doc">
-        <short>XML document written in the routine</short>
+        <short>XML document written in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="WriteXMLFile.AFileName">
-        <short>File name where the XML content is stored</short>
+        <short>File name where the XML content is stored.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="WriteXMLFile.AFile">
-        <short>Text file type where the content is written</short>
+        <short>Text file type where the content is written.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="WriteXMLFile.AStream">
-        <short>Stream where the XML document is stored</short>
+        <short>Stream where the XML document is stored.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="WriteXMLFile.Flags">
-        <short>Options enabled when writing the XML content</short>
+        <short>Options enabled when writing the XML content.</short>
       </element>
 
       <!-- procedure Visibility: default -->
       <element name="WriteXML">
         <short>
-          Writes a DOM Node to a file, text file, or stream
+          Writes a DOM Node to a file, text file, or stream.
         </short>
         <descr>
           <p>
@@ -141,26 +141,26 @@
 
       <!-- argument Visibility: default -->
       <element name="WriteXML.Element">
-        <short>DOM Node with the XML content written in the method</short>
+        <short>DOM Node with the XML content written in the method.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="WriteXML.AFileName">
-        <short>File name where the XML content is stored</short>
+        <short>File name where the XML content is stored.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="WriteXML.AFile">
-        <short>Text file type where the content is written</short>
+        <short>Text file type where the content is written.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="WriteXML.AStream">
-        <short>Stream where the XML document is stored</short>
+        <short>Stream where the XML document is stored.</short>
       </element>
 
       <element name="WriteXML.Flags">
-        <short>Options enabled when writing the XML content</short>
+        <short>Options enabled when writing the XML content.</short>
       </element>
 
     </module>

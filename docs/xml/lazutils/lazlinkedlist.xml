@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="LazLinkedList">
-      <short>Defines a simple doubly linked list</short>
+      <short>Defines a simple doubly linked list.</short>
       <descr>
         <p>
           <file>lazlinkedlist.pas</file> defines a simple doubly linked list (TLinkList). It supports Adding, Deleting, getting First and getting Last in O(1). Finding can be done in time O(n).
@@ -25,7 +25,7 @@
       <element name="SysUtils"/>
 
       <element name="TLinkListItem">
-        <short>Implements an item in a doubly linked list</short>
+        <short>Implements an item in a doubly linked list.</short>
         <descr>
           <p>
             <var>TLinkListItem</var> is a class which implements an item in a doubly linked list. It represents the traversal nodes used in <var>TLinkList</var>, including the terminal (or sentinel) node. Properties are provided to access and maintain the <var>Prior</var> and <var>Next</var> items in the node traversal order.
@@ -40,19 +40,19 @@
       </element>
 
       <element name="TLinkListItem.Next">
-        <short>Contains a reference to the next item in the doubly linked list</short>
+        <short>Contains a reference to the next item in the doubly linked list.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TLinkListItem.Prior">
-        <short>Contains a reference to the previous item in the doubly linked list</short>
+        <short>Contains a reference to the previous item in the doubly linked list.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TLinkListItem.ResetItem">
-        <short>Removes the references to the previous and next items for the list item</short>
+        <short>Removes the references to the previous and next items for the list item.</short>
         <descr>
           <p>
             <var>ResetItem</var> sets the values in the <var>Prior</var> and <var>Next</var> properties to <b>Nil</b>.
@@ -65,7 +65,7 @@
       </element>
 
       <element name="TLinkList">
-        <short>Defines a simple doubly linked list class</short>
+        <short>Defines a simple doubly linked list class.</short>
         <descr>
           <p>
             <var>TLinkList</var> is a class which defines a navigational interface for a simple doubly linked list.
@@ -81,48 +81,48 @@
       </element>
 
       <element name="TLinkList.FFirstFree">
-        <short>First free item in the linked list</short>
+        <short>First free item in the linked list.</short>
       </element>
 
       <element name="TLinkList.FFreeCount">
-        <short>Number of free items in the linked list</short>
+        <short>Number of free items in the linked list.</short>
       </element>
 
       <element name="TLinkList.FFirst">
-        <short>First list item in the linked list</short>
+        <short>First list item in the linked list.</short>
       </element>
 
       <element name="TLinkList.FLast">
-        <short>Last list item in the linked list</short>
+        <short>Last list item in the linked list.</short>
       </element>
 
       <element name="TLinkList.FCount">
-        <short>Number of items in the linked list</short>
+        <short>Number of items in the linked list.</short>
       </element>
 
       <element name="TLinkList.DisposeItem">
         <short>
-          Removes the specified item from the linked list, and optionally frees the item instance
+          Removes the specified item from the linked list, and optionally frees the item instance.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLinkList.DisposeItem.AnItem">
-        <short>List item updated in the method</short>
+        <short>List item updated in the method.</short>
       </element>
 
       <element name="TLinkList.Unbind">
-        <short>Removes the traversal nodes for the specified linked list item</short>
+        <short>Removes the traversal nodes for the specified linked list item.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLinkList.Unbind.AnItem">
-        <short>Linked list item updated in the method</short>
+        <short>Linked list item updated in the method.</short>
       </element>
 
       <element name="TLinkList.CreateItem">
         <short>
-          Specifies the interface used to create a new linked list item for the class
+          Specifies the interface used to create a new linked list item for the class.
         </short>
         <descr>
           <p>
@@ -137,12 +137,12 @@
         </seealso>
       </element>
       <element name="TLinkList.CreateItem.Result">
-        <short>New link list item allocated in the method</short>
+        <short>New link list item allocated in the method.</short>
       </element>
 
       <element name="TLinkList.GetNewItem">
         <short>
-          Gets a new linked list item by reusing a free item or creating a new one
+          Gets a new linked list item by reusing a free item or creating a new one.
         </short>
         <descr>
           <p>
@@ -156,12 +156,12 @@
         </seealso>
       </element>
       <element name="TLinkList.GetNewItem.Result">
-        <short>Linked list item reused or created in the method</short>
+        <short>Linked list item reused or created in the method.</short>
       </element>
 
       <element name="TLinkList.AddAsLast">
         <short>
-          Configures and adds the specified item as the terminal node for the doubly linked list
+          Configures and adds the specified item as the terminal node for the doubly linked list.
         </short>
         <descr>
           <p>
@@ -180,11 +180,11 @@
         </seealso>
       </element>
       <element name="TLinkList.AddAsLast.AnItem">
-        <short>Item saved as the last item in the linked list</short>
+        <short>Item saved as the last item in the linked list.</short>
       </element>
 
       <element name="TLinkList.First">
-        <short>First item in the doubly linked list</short>
+        <short>First item in the doubly linked list.</short>
         <descr>
           <p>
             <var>First</var> is a read-only <var>TLinkListItem</var> property which represents the first traversal node in the doubly linked list. The value in First is updated in methods like <var>Unbind</var> and <var>AddAsLast</var>.
@@ -197,7 +197,7 @@
       </element>
 
       <element name="TLinkList.Last">
-        <short>Last item in the doubly linked list</short>
+        <short>Last item in the doubly linked list.</short>
         <descr>
           <p>
             <var>Last</var> is a read-only <var>TLinkListItem</var> property which represents the last (or terminal) traversal node in the doubly linked list. The value in Last is updated in methods like <var>Unbind</var> anf <var>AddAsLast</var>.
@@ -209,7 +209,7 @@
       </element>
 
       <element name="TLinkList.Count">
-        <short>Total number of items used in the doubly linked list</short>
+        <short>Total number of items used in the doubly linked list.</short>
         <descr>
           <p>
             <var>Count</var> is a read-only <var>Integer</var> property which contains the number of traversal nodes  in the doubly linked list. The value in Count is updated in method like <var>Unbind</var> and <var>AddAsLast</var>.
@@ -221,7 +221,7 @@
       </element>
 
       <element name="TLinkList.Delete">
-        <short>Removes the specified list item from the doubly linked list</short>
+        <short>Removes the specified list item from the doubly linked list.</short>
         <descr>
           <p>
             <var>Delete</var> is a procedure used to remove the specified list item from the traversal nodes in the doubly linked list. No actions are performed in the method when <var>AnItem</var> is unassigned (contains <b>Nil</b>).
@@ -237,12 +237,12 @@
         </seealso>
       </element>
       <element name="TLinkList.Delete.AnItem">
-        <short>Item removed from the traversal nodes in the list</short>
+        <short>Item removed from the traversal nodes in the list.</short>
       </element>
 
       <element name="TLinkList.MoveToLast">
         <short>
-          Relocates the specified list item to the last (or terminal) node for the linked list
+          Relocates the specified list item to the last (or terminal) node for the linked list.
         </short>
         <descr>
           <p>
@@ -259,11 +259,11 @@
         </seealso>
       </element>
       <element name="TLinkList.MoveToLast.AnItem">
-        <short>Item moved to the last node in the linked list</short>
+        <short>Item moved to the last node in the linked list.</short>
       </element>
 
       <element name="TLinkList.Clear">
-        <short>Removes all items in the doubly linked list</short>
+        <short>Removes all items in the doubly linked list.</short>
         <descr>
           <p>
             <var>Clear</var> is a procedure used to remove all items in the doubly linked list. Clear uses the class instance in <var>First</var> as the initial TLinkListItem in the node traversal order. While the node is assigned, it calls the    <var>Delete</var> method for each of the <var>TLinkListItem</var> instances.
@@ -277,19 +277,19 @@
 
       <element name="TLinkList.ConsistencyCheck">
         <short>
-          Checks the validity of traversal nodes and node counts in the doubly linked list
+          Checks the validity of traversal nodes and node counts in the doubly linked list.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLinkList.ConsistencyCheck.Result">
         <short>
-          Returns 0 when the traversal nodes and counts are valid, or a negative value an inconsistency is found
+          Returns 0 when the traversal nodes and counts are valid, or a negative value an inconsistency is found.
         </short>
       </element>
 
       <element name="TLinkList.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           Create calls the inherited constructor.
         </descr>
@@ -297,7 +297,7 @@
       </element>
 
       <element name="TLinkList.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> calls <var>Clear</var>, and frees the unused items in the linked list. Destroy calls the inherited destructor prior to exiting from the method.

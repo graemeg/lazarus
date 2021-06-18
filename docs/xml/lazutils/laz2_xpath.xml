@@ -8,8 +8,8 @@
     -->
     <module name="laz2_xpath">
       <short>
-        An implementation of the XML Path Language (XPath) for Free Pascal
-      </short>
+        An implementation of the XML Path Language (XPath) for Free Pascal.
+        </short>
       <descr>
         <p>
           <var>laz2_xpath.pas</var> provides an implementation of the XML Path Language (XPath) for Free Pascal. It is based on the <var>xpath.pp</var> unit from the Free Component Library (FCL).
@@ -38,101 +38,101 @@
 
       <!-- enumeration type Visibility: default -->
       <element name="TXPathToken">
-        <short>Identifies token types used in XPath expressions</short>
+        <short>Identifies token types used in XPath expressions.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TXPathToken.tkInvalid">
-        <short>Token is not a valid XPath expression</short>
+        <short>Token is not a valid XPath expression.</short>
       </element>
       <element name="TXPathToken.tkEndOfStream">
-        <short>End of the XPath data stream</short>
+        <short>End of the XPath data stream.</short>
       </element>
       <element name="TXPathToken.tkIdentifier">
-        <short>Token is a function name</short>
+        <short>Token is a function name.</short>
       </element>
       <element name="TXPathToken.tkNSNameTest">
         <short>Token contains a namespace prefix </short>
       </element>
       <element name="TXPathToken.tkString">
-        <short>Token is a string literal</short>
+        <short>Token is a string literal.</short>
       </element>
       <element name="TXPathToken.tkNumber">
-        <short>Token contains a numeric digit</short>
+        <short>Token contains a numeric digit.</short>
       </element>
       <element name="TXPathToken.tkVariable">
-        <short>Token is a variable reference</short>
+        <short>Token is a variable reference.</short>
       </element>
       <element name="TXPathToken.tkLeftBracket">
-        <short>Token contains the ( operator</short>
+        <short>Token contains the ( operator.</short>
       </element>
       <element name="TXPathToken.tkRightBracket">
-        <short>Token contains the ) operator</short>
+        <short>Token contains the ) operator.</short>
       </element>
       <element name="TXPathToken.tkAsterisk">
-        <short>Token contains the * operator</short>
+        <short>Token contains the * operator.</short>
       </element>
       <element name="TXPathToken.tkPlus">
-        <short>Token contains the + operator</short>
+        <short>Token contains the + operator.</short>
       </element>
       <element name="TXPathToken.tkComma">
-        <short>Token contains the ,  expression separator</short>
+        <short>Token contains the ,  expression separator.</short>
       </element>
       <element name="TXPathToken.tkMinus">
-        <short>Token contains the - operator</short>
+        <short>Token contains the - operator.</short>
       </element>
       <element name="TXPathToken.tkDot">
         <short>Token contains a the current node (.) expression </short>
       </element>
       <element name="TXPathToken.tkDotDot">
-        <short>Token contains the parent node (..) expression</short>
+        <short>Token contains the parent node (..) expression.</short>
       </element>
       <element name="TXPathToken.tkSlash">
-        <short>Token contains the / operator</short>
+        <short>Token contains the / operator.</short>
       </element>
       <element name="TXPathToken.tkSlashSlash">
-        <short>Token contains the // operator</short>
+        <short>Token contains the // operator.</short>
       </element>
       <element name="TXPathToken.tkColonColon">
-        <short>Token contains the :: axis operator</short>
+        <short>Token contains the :: axis operator.</short>
       </element>
       <element name="TXPathToken.tkLess">
-        <short>Token contains the LessThan operator</short>
+        <short>Token contains the LessThan operator.</short>
       </element>
       <element name="TXPathToken.tkLessEqual">
-        <short>Token contains the LessThanOrEqual operator</short>
+        <short>Token contains the LessThanOrEqual operator.</short>
       </element>
       <element name="TXPathToken.tkEqual">
-        <short>Token contains the = operator</short>
+        <short>Token contains the = operator.</short>
       </element>
       <element name="TXPathToken.tkNotEqual">
-        <short>Token contains the != operator</short>
+        <short>Token contains the != operator.</short>
       </element>
       <element name="TXPathToken.tkGreater">
-        <short>Token contains the GreaterThan operator</short>
+        <short>Token contains the GreaterThan operator.</short>
       </element>
       <element name="TXPathToken.tkGreaterEqual">
-        <short>Token contains the GreaterThanOrEqual operator</short>
+        <short>Token contains the GreaterThanOrEqual operator.</short>
       </element>
       <element name="TXPathToken.tkAt">
-        <short>Token contains the @ expression character</short>
+        <short>Token contains the @ expression character.</short>
       </element>
       <element name="TXPathToken.tkLeftSquareBracket">
-        <short>Token contains the [ expression separator</short>
+        <short>Token contains the [ expression separator.</short>
       </element>
       <element name="TXPathToken.tkRightSquareBracket">
-        <short>Token contains the ] expression separator</short>
+        <short>Token contains the ] expression separator.</short>
       </element>
       <element name="TXPathToken.tkPipe">
-        <short>Token contains the operator | expression character</short>
+        <short>Token contains the operator | expression character.</short>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TXPathKeyword">
         <short>
-          Represents keywords used in XPath syntax
+          Represents keywords used in XPath syntax.
         </short>
         <descr>
           TXPathKeyword is an enumeration type that represents the axis names, node tests, operators, and standard functions available in XPath syntax.
@@ -142,157 +142,157 @@
 
       <!-- enumeration value Visibility: default -->
       <element name="TXPathKeyword.xkNone">
-        <short>No axis specified</short>
+        <short>No axis specified.</short>
       </element>
       <element name="TXPathKeyword.xkAncestor">
-        <short>Ancestor axis (ancestor::)</short>
+        <short>Ancestor axis (ancestor::).</short>
       </element>
       <element name="TXPathKeyword.xkAncestorOrSelf">
-        <short>Ancestor or Self axis (ancestor-or-self::)</short>
+        <short>Ancestor or Self axis (ancestor-or-self::).</short>
       </element>
       <element name="TXPathKeyword.xkAttribute">
-        <short>Attribute axis (attribute::)</short>
+        <short>Attribute axis (attribute::).</short>
       </element>
       <element name="TXPathKeyword.xkChild">
-        <short>Child axis (child::)</short>
+        <short>Child axis (child::).</short>
       </element>
       <element name="TXPathKeyword.xkDescendant">
-        <short>Descendant axis (descendant::)</short>
+        <short>Descendant axis (descendant::).</short>
       </element>
       <element name="TXPathKeyword.xkDescendantOrSelf">
-        <short>Descendant or Self axis (descendant-or-self::)</short>
+        <short>Descendant or Self axis (descendant-or-self::).</short>
       </element>
       <element name="TXPathKeyword.xkFollowing">
-        <short>Following axis (following::)</short>
+        <short>Following axis (following::).</short>
       </element>
       <element name="TXPathKeyword.xkFollowingSibling">
-        <short>Following Sibling axis (following-sibling::)</short>
+        <short>Following Sibling axis (following-sibling::).</short>
       </element>
       <element name="TXPathKeyword.xkNamespace">
-        <short>Namespace axis (namespace::)</short>
+        <short>Namespace axis (namespace::).</short>
       </element>
       <element name="TXPathKeyword.xkParent">
-        <short>Parent axis (parent::)</short>
+        <short>Parent axis (parent::).</short>
       </element>
       <element name="TXPathKeyword.xkPreceding">
-        <short>Preceding axis (preceding::)</short>
+        <short>Preceding axis (preceding::).</short>
       </element>
       <element name="TXPathKeyword.xkPrecedingSibling">
-        <short>Preceding Sibling axis (preceding-sibling::)</short>
+        <short>Preceding Sibling axis (preceding-sibling::).</short>
       </element>
       <element name="TXPathKeyword.xkSelf">
-        <short>Self axis (self::)</short>
+        <short>Self axis (self::).</short>
       </element>
       <element name="TXPathKeyword.xkComment">
-        <short>Node test for comment: comment()</short>
+        <short>Node test for comment: comment().</short>
       </element>
       <element name="TXPathKeyword.xkText">
-        <short>Node test for text: text()</short>
+        <short>Node test for text: text().</short>
       </element>
       <element name="TXPathKeyword.xkProcessingInstruction">
-        <short>Node test for preceding instruction: processing-instruction()</short>
+        <short>Node test for preceding instruction: processing-instruction().</short>
       </element>
       <element name="TXPathKeyword.xkNode">
-        <short>Node test for a node: node()</short>
+        <short>Node test for a node: node().</short>
       </element>
       <element name="TXPathKeyword.xkAnd">
-        <short>And operator</short>
+        <short>And operator.</short>
       </element>
       <element name="TXPathKeyword.xkOr">
-        <short>Or operator</short>
+        <short>Or operator.</short>
       </element>
       <element name="TXPathKeyword.xkDiv">
-        <short>Div operator</short>
+        <short>Div operator.</short>
       </element>
       <element name="TXPathKeyword.xkMod">
-        <short>Mod operator</short>
+        <short>Mod operator.</short>
       </element>
       <element name="TXPathKeyword.xkLast">
-        <short>Node set function last()</short>
+        <short>Node set function last().</short>
       </element>
       <element name="TXPathKeyword.xkPosition">
-        <short>Node set function position()</short>
+        <short>Node set function position().</short>
       </element>
       <element name="TXPathKeyword.xkCount">
-        <short>Node set function Count(node-set)</short>
+        <short>Node set function Count(node-set).</short>
       </element>
       <element name="TXPathKeyword.xkId">
-        <short>Unique ID function: id("foo")</short>
+        <short>Unique ID function: id("foo").</short>
       </element>
       <element name="TXPathKeyword.xkLocalName">
-        <short>Node set function local-name(node-set)</short>
+        <short>Node set function local-name(node-set).</short>
       </element>
       <element name="TXPathKeyword.xkNamespaceUri">
-        <short>Node set function namespace-uri(node-set)</short>
+        <short>Node set function namespace-uri(node-set).</short>
       </element>
       <element name="TXPathKeyword.xkName">
-        <short>Node set function name(node-set)</short>
+        <short>Node set function name(node-set).</short>
       </element>
       <element name="TXPathKeyword.xkString">
-        <short>String function string(object)</short>
+        <short>String function string(object).</short>
       </element>
       <element name="TXPathKeyword.xkConcat">
-        <short>String function concat(string, string)</short>
+        <short>String function concat(string, string).</short>
       </element>
       <element name="TXPathKeyword.xkStartsWith">
-        <short>String function starts-with(string, string)</short>
+        <short>String function starts-with(string, string).</short>
       </element>
       <element name="TXPathKeyword.xkContains">
-        <short>String function contains(string, string)</short>
+        <short>String function contains(string, string).</short>
       </element>
       <element name="TXPathKeyword.xkSubstringBefore">
-        <short>String function substring-before(string, string)</short>
+        <short>String function substring-before(string, string).</short>
       </element>
       <element name="TXPathKeyword.xkSubstringAfter">
-        <short>String function substring-after(string, string)</short>
+        <short>String function substring-after(string, string).</short>
       </element>
       <element name="TXPathKeyword.xkSubstring">
-        <short>String function substring(string, number, number)</short>
+        <short>String function substring(string, number, number).</short>
       </element>
       <element name="TXPathKeyword.xkStringLength">
-        <short>String function string-length(string)</short>
+        <short>String function string-length(string).</short>
       </element>
       <element name="TXPathKeyword.xkNormalizeSpace">
-        <short>String function normalize-space(string)</short>
+        <short>String function normalize-space(string).</short>
       </element>
       <element name="TXPathKeyword.xkTranslate">
-        <short>String function translate(string, string, string)</short>
+        <short>String function translate(string, string, string).</short>
       </element>
       <element name="TXPathKeyword.xkBoolean">
-        <short>Boolean function boolean(object)</short>
+        <short>Boolean function boolean(object).</short>
       </element>
       <element name="TXPathKeyword.xkNot">
-        <short>Boolean function not(boolean)</short>
+        <short>Boolean function not(boolean).</short>
       </element>
       <element name="TXPathKeyword.xkTrue">
-        <short>Boolean function true()</short>
+        <short>Boolean function true().</short>
       </element>
       <element name="TXPathKeyword.xkFalse">
-        <short>Boolean function false()</short>
+        <short>Boolean function false().</short>
       </element>
       <element name="TXPathKeyword.xkLang">
-        <short>Boolean function lang(string)</short>
+        <short>Boolean function lang(string).</short>
       </element>
       <element name="TXPathKeyword.xkNumber">
-        <short>Number function number(object)</short>
+        <short>Number function number(object).</short>
       </element>
       <element name="TXPathKeyword.xkSum">
-        <short>Number function sum(node-set)</short>
+        <short>Number function sum(node-set).</short>
       </element>
       <element name="TXPathKeyword.xkFloor">
-        <short>Number function floor(number)</short>
+        <short>Number function floor(number).</short>
       </element>
       <element name="TXPathKeyword.xkCeiling">
-        <short>Number function ceiling(number)</short>
+        <short>Number function ceiling(number).</short>
       </element>
       <element name="TXPathKeyword.xkRound">
-        <short>Number function round(number)</short>
+        <short>Number function round(number).</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathExprNode">
         <short>
-          Defines the base class used to evaluate XPath expressions
+          Defines the base class used to evaluate XPath expressions.
         </short>
         <descr>
           <p>
@@ -307,7 +307,7 @@
 
       <!-- function Visibility: protected -->
       <element name="TXPathExprNode.EvalPredicate">
-        <short>Evaluates an XPath Predicate Expression</short>
+        <short>Evaluates an XPath Predicate Expression.</short>
         <descr>
           <p>
             EvalPredicate is a Boolean function used to evaluate an XPath Predicate Expression. EvalPredicate calls the Evaluate method using the specified Content node and Environment. An Expression that evaluates to a numeric value is considered to be True when the result matches the ContextPosition in the AContext argument.
@@ -321,22 +321,22 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathExprNode.EvalPredicate.Result">
-        <short>Boolean result for the evaluated expression</short>
+        <short>Boolean result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathExprNode.EvalPredicate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathExprNode.EvalPredicate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathExprNode.Evaluate">
-        <short>Specifies the method used to evaluate an XPath Predicate Expression</short>
+        <short>Specifies the method used to evaluate an XPath Predicate Expression.</short>
         <descr>
           <p>
             <var>Evaluate</var> is an abstract virtual <var>TXPathVariable</var> function which specifies the interface used to evaluate an XPath Predicate Expression. Evaluate must be implemented in descendent classes which handles specific Predicate Expression types in the XPath syntax.
@@ -349,22 +349,22 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathExprNode.Evaluate.Result">
-        <short>Contains the result for the evaluated expression</short>
+        <short>Contains the result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathExprNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathExprNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- array type Visibility: default -->
       <element name="TXPathNodeArray">
-        <short>Array used to store TXPathExprNode entries</short>
+        <short>Array used to store TXPathExprNode entries.</short>
         <descr>
           <p>
             <var>TXPathNodeArray</var> is an array of <var>TXPathExprNode</var> type. It is used to store XPath predicate expressions passed as arguments to <var>TXPathExprNode</var> descendants or <var>TXPathScanner</var>.
@@ -378,7 +378,7 @@
 
       <!-- class Visibility: default -->
       <element name="TXPathConstantNode">
-        <short>Represents an XPath Literal expression</short>
+        <short>Represents an XPath Literal expression.</short>
         <descr>
           <p>
             <var>TXPathConstantNode</var> is a <var>TXPathExprNode</var> descendant that represents an XPath predicate expression which contains a Literal value (any value surrounded by Quotation Marks). The return value is the <var>TXPathVariable</var> passed to the constructor for the class instance.
@@ -395,19 +395,19 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathConstantNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathConstantNode.Create.AValue">
-        <short>XPath variable with the value for the literal expression</short>
+        <short>XPath variable with the value for the literal expression.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TXPathConstantNode.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -415,7 +415,7 @@
       <!-- function Visibility: public -->
       <element name="TXPathConstantNode.Evaluate">
         <short>
-          Evaluates the XPath expression using the context node and environment
+          Evaluates the XPath expression using the context node and environment.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -423,22 +423,22 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathConstantNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathConstantNode.Evaluate.AContext">
-        <short>Context node for the evaluation</short>
+        <short>Context node for the evaluation.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathConstantNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathVariableNode">
-        <short>Represents an XPath Variable expression</short>
+        <short>Represents an XPath Variable expression.</short>
         <descr>
           <p>
             <var>TXPathVariableNode</var> is a <var>TXPathExprNode</var> descendant that represents an XPath Variable Reference expression in the XPath syntax. For example:
@@ -459,19 +459,19 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathVariableNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathVariableNode.Create.AName">
-        <short>Name for the variable</short>
+        <short>Name for the variable.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathVariableNode.Evaluate">
-        <short>Evaluates the XPath expression</short>
+        <short>Evaluates the XPath expression.</short>
         <descr>
           <p>
             <var>Evaluate</var> is an overridden method used to evaluate the XPath expression and return its derived value. Evaluate implements the abstract method defined in the ancestor class.
@@ -492,22 +492,22 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathVariableNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathVariableNode.Evaluate.AContext">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathVariableNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathFunctionNode">
-        <short>Represents an XPath Function expression</short>
+        <short>Represents an XPath Function expression.</short>
         <descr>
           <p>
             TXPathFunctionNode is a TXPathExprNode descendant that represents a Function Name expression in the XPath syntax. For example:
@@ -529,31 +529,31 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathFunctionNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFunctionNode.Create.AName">
-        <short>Name of the function</short>
+        <short>Name of the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFunctionNode.Create.Args">
-        <short>Arguments passed to the function</short>
+        <short>Arguments passed to the function.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TXPathFunctionNode.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathFunctionNode.Evaluate">
-        <short>Evaluates the XPath expression</short>
+        <short>Evaluates the XPath expression.</short>
         <descr>
           <p>
             <var>Evaluate</var> is an overridden <var>TXPathVariable</var> function that implements the method defined in the ancestor class. Evaluate is used to derive the value for the function call using any arguments found in the XPath expression, and to store the result in the TXPathVariable return value.
@@ -576,22 +576,22 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathFunctionNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFunctionNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFunctionNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathNegationNode">
-        <short>Represents an XPath Negation expression</short>
+        <short>Represents an XPath Negation expression.</short>
         <descr>
           <p>
             <var>TXPathNegationNode</var> is a <var>TXPathExprNode</var> descendant used to represent a Unary Expression with a Negation literal in the XPath syntax. For example:
@@ -611,26 +611,26 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathNegationNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathNegationNode.Create.AOperand">
-        <short>Operand in the XPath expression</short>
+        <short>Operand in the XPath expression.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TXPathNegationNode.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNegationNode.Evaluate">
-        <short>Evaluates the XPath expression</short>
+        <short>Evaluates the XPath expression.</short>
         <descr>
           <p>
             <var>Evaluate</var> is an overridden <var>TXPathVariable</var> function used to get the derived value for the XPath expression. Evaluate implements the abstract method defined in the ancestor class.
@@ -648,22 +648,22 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathNegationNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathNegationNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathNegationNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathBinaryNode">
-        <short>The base class for Binary Operations</short>
+        <short>The base class for Binary Operations.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -674,38 +674,38 @@
 
       <!-- destructor Visibility: public -->
       <element name="TXPathBinaryNode.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TXPathMathOp">
-        <short>Identifies Math Operators used in XPath expressions</short>
+        <short>Identifies Math Operators used in XPath expressions.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TXPathMathOp.opAdd">
-        <short>The Addition (+) operator</short>
+        <short>The Addition (+) operator.</short>
       </element>
       <element name="TXPathMathOp.opSubtract">
-        <short>The Subtraction (-) operator</short>
+        <short>The Subtraction (-) operator.</short>
       </element>
       <element name="TXPathMathOp.opMultiply">
-        <short>The Multiplication (*) operator</short>
+        <short>The Multiplication (*) operator.</short>
       </element>
       <element name="TXPathMathOp.opDivide">
-        <short>The Division (/) operator</short>
+        <short>The Division (/) operator.</short>
       </element>
       <element name="TXPathMathOp.opMod">
-        <short>The Modulus (mod) operator</short>
+        <short>The Modulus (mod) operator.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathMathOpNode">
-        <short>Represents a Math Operation in an XPath expression</short>
+        <short>Represents a Math Operation in an XPath expression.</short>
         <descr>
           <p>
             <var>TXPathMathOpNode</var> is a <var>TXPathBinaryNode</var> descendant used to represent a math operation in an XPath expression. TXPathMathOpNode is used for the Additive and Multiplicative Expressions defined in the XPath specification. The constructor accepts the operator and the operands from the expression. TXPathMathOpNode provides an overridden Evaluate method used to derive the value for the XPath expression.
@@ -721,78 +721,78 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathMathOpNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathMathOpNode.Create.AOperator">
-        <short>Math operator used in the XPath expression</short>
+        <short>Math operator used in the XPath expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathMathOpNode.Create.AOperand1">
-        <short>Left hand Operand</short>
+        <short>Left hand Operand.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathMathOpNode.Create.AOperand2">
-        <short>Right hand Operand</short>
+        <short>Right hand Operand.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathMathOpNode.Evaluate">
-        <short>Evaluates the XPath expression</short>
+        <short>Evaluates the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathMathOpNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathMathOpNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathMathOpNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TXPathCompareOp">
-        <short>Identifies a Comparison operator used in an XPath expression</short>
+        <short>Identifies a Comparison operator used in an XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TXPathCompareOp.opEqual">
-        <short>The Equality (=) operator</short>
+        <short>The Equality (=) operator.</short>
       </element>
       <element name="TXPathCompareOp.opNotEqual">
-        <short>The Inequality (!=) operator</short>
+        <short>The Inequality (!=) operator.</short>
       </element>
       <element name="TXPathCompareOp.opLess">
-        <short>The Less Than (&lt;) operator</short>
+        <short>The Less Than (&lt;) operator.</short>
       </element>
       <element name="TXPathCompareOp.opLessEqual">
-        <short>The Less Than Or Equal (&lt;=) operator</short>
+        <short>The Less Than Or Equal (&lt;=) operator.</short>
       </element>
       <element name="TXPathCompareOp.opGreater">
-        <short>The Greater Than (&gt;) operator</short>
+        <short>The Greater Than (&gt;) operator.</short>
       </element>
       <element name="TXPathCompareOp.opGreaterEqual">
-        <short>The Greater Than Or Equal (&gt;=) operator</short>
+        <short>The Greater Than Or Equal (&gt;=) operator.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathCompareNode">
-        <short>Represents an XPath Comparison expression</short>
+        <short>Represents an XPath Comparison expression.</short>
         <descr>
           <p>
             TXPathCompareNode is a TXPathBinaryNode descendant used to represent Equality or Relational expressions in the XPath syntax.
@@ -809,66 +809,66 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathCompareNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathCompareNode.Create.AOperator">
-        <short>Operator for the comparison</short>
+        <short>Operator for the comparison.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathCompareNode.Create.AOperand1">
-        <short>Left hand Operand</short>
+        <short>Left hand Operand.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathCompareNode.Create.AOperand2">
-        <short>Right hand Operand</short>
+        <short>Right hand Operand.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathCompareNode.Evaluate">
-        <short>Evaluate the XPath Comparison expression</short>
+        <short>Evaluate the XPath Comparison expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathCompareNode.Evaluate.Result">
-        <short>Result for the comparison</short>
+        <short>Result for the comparison.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathCompareNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathCompareNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TXPathBooleanOp">
-        <short>Represents Boolean operators in an XPath expression</short>
+        <short>Represents Boolean operators in an XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TXPathBooleanOp.opOr">
-        <short>The OR operator</short>
+        <short>The OR operator.</short>
       </element>
       <element name="TXPathBooleanOp.opAnd">
-        <short>The AND operator</short>
+        <short>The AND operator.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathBooleanOpNode">
-        <short>Represents a Boolean expression in XPath syntax</short>
+        <short>Represents a Boolean expression in XPath syntax.</short>
         <descr>
           <p>
             <var>TXPathBooleanOpNode</var> is a <var>TXPathBinaryNode</var> descendant used to represent an And or Or expression in XPath syntax. TXPathBooleanOpNode provides an overridden constructor that specifies the operator and operands for the XPath expression. TXPathBooleanOpNode contains an overridden Evaluate method which performs the comparison using Boolean short-circuit logic; i. e. the second operand is ignored if the result can be determined using the first operand.
@@ -882,51 +882,51 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathBooleanOpNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathBooleanOpNode.Create.AOperator">
-        <short>Operator for the Boolean expression</short>
+        <short>Operator for the Boolean expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathBooleanOpNode.Create.AOperand1">
-        <short>Left hand operand</short>
+        <short>Left hand operand.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathBooleanOpNode.Create.AOperand2">
-        <short>Right hand operand</short>
+        <short>Right hand operand.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathBooleanOpNode.Evaluate">
-        <short>Evaluates the XPath expression</short>
+        <short>Evaluates the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathBooleanOpNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathBooleanOpNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathBooleanOpNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathUnionNode">
-        <short>Represents a Union Expression node</short>
+        <short>Represents a Union Expression node.</short>
         <descr>
           <p>
             <var>TXPathUnionNode</var> is a <var>TXPathBinaryNode</var> descendant used to represent a Union expression in the XPath syntax. For example:
@@ -941,46 +941,46 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathUnionNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathUnionNode.Create.AOperand1">
-        <short>Left hand operand</short>
+        <short>Left hand operand.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathUnionNode.Create.AOperand2">
-        <short>Right hand operand</short>
+        <short>Right hand operand.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathUnionNode.Evaluate">
-        <short>Evaluates the XPath expression</short>
+        <short>Evaluates the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathUnionNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathUnionNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathUnionNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- alias type Visibility: default -->
       <element name="TNodeSet">
-        <short>Implements an XPath Node Set</short>
+        <short>Implements an XPath Node Set.</short>
         <descr>
           <p>
             <var>TNodeSet</var> is a class alias used to implement a Node Set as defined in the XPath specification. TNodeSet is an alias for the TFPList class.
@@ -991,7 +991,7 @@
 
       <!-- class Visibility: default -->
       <element name="TXPathFilterNode">
-        <short>Implements an XPath Filter expression</short>
+        <short>Implements an XPath Filter expression.</short>
         <descr>
           <p>
             <var>TXPathFilterNode</var> is a <var>TXPathExprNode</var> descendant used to implement a Filter expression in the XPath syntax. For example:
@@ -1010,146 +1010,146 @@
 
       <!-- procedure Visibility: private -->
       <element name="TXPathFilterNode.ApplyPredicates">
-        <short>Applies Predicates to the XPath Node Set</short>
+        <short>Applies Predicates to the XPath Node Set.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFilterNode.ApplyPredicates.Nodes">
-        <short>Node Set used as the context nodes for predicate expressions</short>
+        <short>Node Set used as the context nodes for predicate expressions.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFilterNode.ApplyPredicates.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TXPathFilterNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFilterNode.Create.AExpr">
-        <short>XPath Expression to use in the class instance</short>
+        <short>XPath Expression to use in the class instance.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TXPathFilterNode.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathFilterNode.Evaluate">
-        <short>Evaluates the XPath expression</short>
+        <short>Evaluates the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathFilterNode.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFilterNode.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathFilterNode.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TAxis">
-        <short>Identifies an XPath Axis used in an XPath expression</short>
+        <short>Identifies an XPath Axis used in an XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TAxis.axisInvalid">
-        <short>An invalid Axis name in the XPath syntax</short>
+        <short>An invalid Axis name in the XPath syntax.</short>
       </element>
       <element name="TAxis.axisAncestor">
-        <short>The ancestor:: Axis</short>
+        <short>The ancestor:: Axis.</short>
       </element>
       <element name="TAxis.axisAncestorOrSelf">
-        <short>The ancestor-or-self:: Axis</short>
+        <short>The ancestor-or-self:: Axis.</short>
       </element>
       <element name="TAxis.axisAttribute">
-        <short>The attribute:: Axis</short>
+        <short>The attribute:: Axis.</short>
       </element>
       <element name="TAxis.axisChild">
-        <short>The child:: Axis</short>
+        <short>The child:: Axis.</short>
       </element>
       <element name="TAxis.axisDescendant">
-        <short>The descendant:: Axis</short>
+        <short>The descendant:: Axis.</short>
       </element>
       <element name="TAxis.axisDescendantOrSelf">
-        <short>The descendant-or-self:: Axis</short>
+        <short>The descendant-or-self:: Axis.</short>
       </element>
       <element name="TAxis.axisFollowing">
-        <short>The following:: Axis</short>
+        <short>The following:: Axis.</short>
       </element>
       <element name="TAxis.axisFollowingSibling">
-        <short>The following-sibling:: Axis</short>
+        <short>The following-sibling:: Axis.</short>
       </element>
       <element name="TAxis.axisNamespace">
-        <short>The namespace:: Axis</short>
+        <short>The namespace:: Axis.</short>
       </element>
       <element name="TAxis.axisParent">
-        <short>The parent:: Axis</short>
+        <short>The parent:: Axis.</short>
       </element>
       <element name="TAxis.axisPreceding">
-        <short>The preceding:: Axis</short>
+        <short>The preceding:: Axis.</short>
       </element>
       <element name="TAxis.axisPrecedingSibling">
-        <short>The preceding-sibling:: Axis</short>
+        <short>The preceding-sibling:: Axis.</short>
       </element>
       <element name="TAxis.axisSelf">
-        <short>The self:: Axis</short>
+        <short>The self:: Axis.</short>
       </element>
       <element name="TAxis.axisRoot">
-        <short>The root:: Axis</short>
+        <short>The root:: Axis.</short>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TNodeTestType">
-        <short>Represents XPath Node Test types</short>
+        <short>Represents XPath Node Test types.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TNodeTestType.ntAnyPrincipal">
-        <short>The Any Principal Node Test type</short>
+        <short>The Any Principal Node Test type.</short>
       </element>
       <element name="TNodeTestType.ntName">
-        <short>The Name Node Test type</short>
+        <short>The Name Node Test type.</short>
       </element>
       <element name="TNodeTestType.ntTextNode">
-        <short>The Text Node Test type</short>
+        <short>The Text Node Test type.</short>
       </element>
       <element name="TNodeTestType.ntCommentNode">
-        <short>The Comment Node Test type</short>
+        <short>The Comment Node Test type.</short>
       </element>
       <element name="TNodeTestType.ntPINode">
-        <short>The Processing Instruction Node Test type</short>
+        <short>The Processing Instruction Node Test type.</short>
       </element>
       <element name="TNodeTestType.ntAnyNode">
-        <short>The Any Node Test type</short>
+        <short>The Any Node Test type.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TStep">
-        <short>Implements an XPath Location Step</short>
+        <short>Implements an XPath Location Step.</short>
         <descr>
           <p>
             <var>TStep</var> is a <var>TXPathFilterNode</var> descendant used to implement a Location Step expression in the XPath syntax. A location step expression contains an Axis name, a node test, and optional predicates that determine the items available in a node set. For example:
@@ -1164,92 +1164,92 @@
 
       <!-- procedure Visibility: private -->
       <element name="TStep.SelectNodes">
-        <short>Builds the Node Set for the XPath Location Step</short>
+        <short>Builds the Node Set for the XPath Location Step.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStep.SelectNodes.ANode">
-        <short>Context node for the Location Step</short>
+        <short>Context node for the Location Step.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStep.SelectNodes.ResultNodes">
-        <short>Node Set for the evaluated expression</short>
+        <short>Node Set for the evaluated expression.</short>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TStep.Axis">
-        <short>Axis type for the Location Step</short>
+        <short>Axis type for the Location Step.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TStep.NodeTestType">
-        <short>Node Test Type for the Location Step</short>
+        <short>Node Test Type for the Location Step.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TStep.NodeTestString">
-        <short>Node Test Type as a String value</short>
+        <short>Node Test Type as a String value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TStep.NSTestString">
-        <short>Namespace Test as a String value</short>
+        <short>Namespace Test as a String value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TStep.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStep.Create.aAxis">
-        <short>Axis type to use for the Location Step</short>
+        <short>Axis type to use for the Location Step.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStep.Create.aTest">
-        <short>Node Test Type to use for the Location Step</short>
+        <short>Node Test Type to use for the Location Step.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TStep.Evaluate">
-        <short>Evaluates the XPath expression for the Location Step</short>
+        <short>Evaluates the XPath expression for the Location Step.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TStep.Evaluate.Result">
-        <short>Result for the evaluated expression</short>
+        <short>Result for the evaluated expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStep.Evaluate.AContext">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStep.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="EXPathEvaluationError">
         <short>
-          Exception raised when an error occurs during XPath expression evaluation
+          Exception raised when an error occurs during XPath expression evaluation.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1258,7 +1258,7 @@
       <!-- procedure Visibility: default -->
       <element name="EvaluationError">
         <short>
-          Raises an exception during expression evaluation with the specified error message
+          Raises an exception during expression evaluation with the specified error message.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1266,17 +1266,17 @@
 
       <!-- argument Visibility: default -->
       <element name="EvaluationError.Msg">
-        <short>Message for the evaluation error</short>
+        <short>Message for the evaluation error.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="EvaluationError.Args">
-        <short>Arguments used to format the message for the evaluation error</short>
+        <short>Arguments used to format the message for the evaluation error.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathVariable">
-        <short>Base class used to represent an XPath variables and results</short>
+        <short>Base class used to represent an XPath variables and results.</short>
         <descr>
           <p>
             <var>TXPathVariable</var> is a class used to represent Variables and Results for an XPath expression. TXPathVariable is a base class, and contains abstract methods which must be implemented in descendent classes for the Node Set, String, Number, and Boolean data types allowed in XPath variables and results.
@@ -1293,91 +1293,91 @@
 
       <!-- procedure Visibility: protected -->
       <element name="TXPathVariable.Error">
-        <short>Raises an exception with the specified message and arguments</short>
+        <short>Raises an exception with the specified message and arguments.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathVariable.Error.Msg">
-        <short>Message for the error</short>
+        <short>Message for the error.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathVariable.Error.Args">
-        <short>Arguments used to format the message for the error</short>
+        <short>Arguments used to format the message for the error.</short>
       </element>
 
       <!-- class function Visibility: default -->
       <element name="TXPathVariable.TypeName">
-        <short>Gets the Type name for the XPath variable class instance</short>
+        <short>Gets the Type name for the XPath variable class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathVariable.TypeName.Result">
-        <short>Value for TypeName</short>
+        <short>Value for TypeName.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TXPathVariable.Release">
-        <short>Decrements the reference count for the variable</short>
+        <short>Decrements the reference count for the variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathVariable.AsNodeSet">
-        <short>Gets the XPath variable as a node set</short>
+        <short>Gets the XPath variable as a node set.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathVariable.AsNodeSet.Result">
-        <short>Value for the variable as a Node Set</short>
+        <short>Value for the variable as a Node Set.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathVariable.AsBoolean">
-        <short>Gets the XPath variable as a Boolean value</short>
+        <short>Gets the XPath variable as a Boolean value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathVariable.AsBoolean.Result">
-        <short>Value for the variable as a Boolean data type</short>
+        <short>Value for the variable as a Boolean data type.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathVariable.AsNumber">
-        <short>Gets the XPath variable as a Numeric value</short>
+        <short>Gets the XPath variable as a Numeric value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathVariable.AsNumber.Result">
-        <short>Value for the variable as a Numeric data type</short>
+        <short>Value for the variable as a Numeric data type.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathVariable.AsText">
-        <short>Gets the XPath variable as a String value</short>
+        <short>Gets the XPath variable as a String value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathVariable.AsText.Result">
-        <short>Value for the variable as a String data type</short>
+        <short>Value for the variable as a String data type.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathNodeSetVariable">
-        <short>Represents an XPath Node Set variable</short>
+        <short>Represents an XPath Node Set variable.</short>
         <descr>
           <p>
             <var>TXPathNodeSetVariable</var> is a <var>TXPathVariable</var> used to represent a Node Set variable. TXPathNodeSetVariable implements the abstract methods defined in the ancestor class, and contains an internal TNodeSet member used to store the nodes in the node set.
@@ -1394,62 +1394,62 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathNodeSetVariable.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathNodeSetVariable.Create.AValue">
-        <short>Value for the Node Set variable</short>
+        <short>Value for the Node Set variable.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TXPathNodeSetVariable.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- class function Visibility: default -->
       <element name="TXPathNodeSetVariable.TypeName">
-        <short>Gets the Type Name for the variable class</short>
+        <short>Gets the Type Name for the variable class.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNodeSetVariable.TypeName.Result">
-        <short>Value for the Node Type name</short>
+        <short>Value for the Node Type name.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNodeSetVariable.AsNodeSet">
-        <short>Gets the Node Set in its native format</short>
+        <short>Gets the Node Set in its native format.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNodeSetVariable.AsNodeSet.Result">
-        <short>Value for the Node Set variable as a Node Set type</short>
+        <short>Value for the Node Set variable as a Node Set type.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNodeSetVariable.AsText">
-        <short>Gets the Node Set as a String value</short>
+        <short>Gets the Node Set as a String value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNodeSetVariable.AsText.Result">
-        <short>Value for the Node Set variable as a String data type</short>
+        <short>Value for the Node Set variable as a String data type.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNodeSetVariable.AsBoolean">
-        <short>Gets the Node Set as a Boolean value</short>
+        <short>Gets the Node Set as a Boolean value.</short>
         <descr>
           The return value is True when the Count property for the mode set is not 0.
         </descr>
@@ -1458,31 +1458,31 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathNodeSetVariable.AsBoolean.Result">
-        <short>Value for the Node Set variable as a Boolean data type</short>
+        <short>Value for the Node Set variable as a Boolean data type.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNodeSetVariable.AsNumber">
-        <short>Gets the Node Set as a Numeric value</short>
+        <short>Gets the Node Set as a Numeric value.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNodeSetVariable.AsNumber.Result">
-        <short>Value for the Node Set variable as a Numeric data type</short>
+        <short>Value for the Node Set variable as a Numeric data type.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathNodeSetVariable.Value">
-        <short>Value for the Node Set variable</short>
+        <short>Value for the Node Set variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathBooleanVariable">
-        <short>Represents an XPath Boolean variable</short>
+        <short>Represents an XPath Boolean variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1492,74 +1492,74 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathBooleanVariable.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathBooleanVariable.Create.AValue">
-        <short>Initial value for the variable</short>
+        <short>Initial value for the variable.</short>
       </element>
 
       <!-- class function Visibility: default -->
       <element name="TXPathBooleanVariable.TypeName">
-        <short>Gets the value for TypeName</short>
+        <short>Gets the value for TypeName.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathBooleanVariable.TypeName.Result">
-        <short>The value for TypeName</short>
+        <short>The value for TypeName.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathBooleanVariable.AsBoolean">
-        <short>Gets the value for the Boolean variable as a Boolean data type</short>
+        <short>Gets the value for the Boolean variable as a Boolean data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathBooleanVariable.AsBoolean.Result">
-        <short>Boolean value for the variable</short>
+        <short>Boolean value for the variable.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathBooleanVariable.AsNumber">
-        <short>Gets the value for the Boolean variable as a Numeric data type</short>
+        <short>Gets the value for the Boolean variable as a Numeric data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathBooleanVariable.AsNumber.Result">
-        <short>Numeric value for the variable</short>
+        <short>Numeric value for the variable.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathBooleanVariable.AsText">
-        <short>Gets the value for the Boolean variable as a String data type</short>
+        <short>Gets the value for the Boolean variable as a String data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathBooleanVariable.AsText.Result">
-        <short>String value for the variable</short>
+        <short>String value for the variable.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathBooleanVariable.Value">
-        <short>Value for the Boolean variable</short>
+        <short>Value for the Boolean variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathNumberVariable">
-        <short>Represents an XPath Number variable</short>
+        <short>Represents an XPath Number variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1569,74 +1569,74 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathNumberVariable.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathNumberVariable.Create.AValue">
-        <short>Initial value for the variable</short>
+        <short>Initial value for the variable.</short>
       </element>
 
       <!-- class function Visibility: default -->
       <element name="TXPathNumberVariable.TypeName">
-        <short>Type Name for the variable</short>
+        <short>Type Name for the variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNumberVariable.TypeName.Result">
-        <short>Value for TypeName</short>
+        <short>Value for TypeName.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNumberVariable.AsBoolean">
-        <short>Gets the value for the Numeric variable as a Boolean data type</short>
+        <short>Gets the value for the Numeric variable as a Boolean data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNumberVariable.AsBoolean.Result">
-        <short>Boolean value for the variable</short>
+        <short>Boolean value for the variable.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNumberVariable.AsNumber">
-        <short>Gets the value for the Numeric variable as a Numeric data type</short>
+        <short>Gets the value for the Numeric variable as a Numeric data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNumberVariable.AsNumber.Result">
-        <short>Numeric value for the variable</short>
+        <short>Numeric value for the variable.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathNumberVariable.AsText">
-        <short>Gets the value for the Numeric variable as a String data type</short>
+        <short>Gets the value for the Numeric variable as a String data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathNumberVariable.AsText.Result">
-        <short>String value for the variable</short>
+        <short>String value for the variable.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathNumberVariable.Value">
-        <short>Value for the Numeric variable</short>
+        <short>Value for the Numeric variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathStringVariable">
-        <short>Represents an XPath String variable</short>
+        <short>Represents an XPath String variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1646,74 +1646,74 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXPathStringVariable.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathStringVariable.Create.AValue">
-        <short>Initial value for the variable</short>
+        <short>Initial value for the variable.</short>
       </element>
 
       <!-- class function Visibility: default -->
       <element name="TXPathStringVariable.TypeName">
-        <short>Gets the Type Name for the variable</short>
+        <short>Gets the Type Name for the variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathStringVariable.TypeName.Result">
-        <short>Value for TypeName</short>
+        <short>Value for TypeName.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathStringVariable.AsBoolean">
-        <short>Gets the value for the variable as a Boolean data type</short>
+        <short>Gets the value for the variable as a Boolean data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathStringVariable.AsBoolean.Result">
-        <short>Boolean value for the variable</short>
+        <short>Boolean value for the variable.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathStringVariable.AsNumber">
-        <short>Gets the value for the variable as a Numeric data type</short>
+        <short>Gets the value for the variable as a Numeric data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathStringVariable.AsNumber.Result">
-        <short>Numeric value for the variable</short>
+        <short>Numeric value for the variable.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathStringVariable.AsText">
-        <short>Gets the value for the variable as a String data type</short>
+        <short>Gets the value for the variable as a String data type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathStringVariable.AsText.Result">
-        <short>String value for the variable</short>
+        <short>String value for the variable.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathStringVariable.Value">
-        <short>Value for the variable</short>
+        <short>Value for the variable.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- alias type Visibility: default -->
       <element name="TXPathNSResolver">
-        <short>Implements a Namespace resolver for the XPath environment</short>
+        <short>Implements a Namespace resolver for the XPath environment.</short>
         <descr>
           <p>
             <var>TXPathNSResolver</var> is a class used to implement a Namespace resolver for the XPath environment. TXPathNSResolver performs namespace lookups for Qualified Names which include a prefix. Namespaces are resolved relative to the context node passed to the constructor for the class instance.
@@ -1732,30 +1732,30 @@
       <element name="TXPathNSResolver.FNode"/>
 
       <element name="TXPathNSResolver.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathNSResolver.Create.aNode">
-        <short>Context node for the Namespace Resolver</short>
+        <short>Context node for the Namespace Resolver.</short>
       </element>
 
       <element name="TXPathNSResolver.LookupNamespaceURI">
-        <short>Gets the Namespace URI with the specified Prefix</short>
+        <short>Gets the Namespace URI with the specified Prefix.</short>
         <descr>
           Namespace prefixes and URI are resolved relative to the context node for the resolver.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TXPathNSResolver.LookupNamespaceURI.Result">
-        <short>Namespace URI for the specified Prefix</short>
+        <short>Namespace URI for the specified Prefix.</short>
       </element>
       <element name="TXPathNSResolver.LookupNamespaceURI.aPrefix">
-        <short>Prefix to locate in the Namespace information for the Context node</short>
+        <short>Prefix to locate in the Namespace information for the Context node.</short>
       </element>
 
       <element name="TXPathScanner">
-        <short>Implements a lexical scanner and parser using XPath syntax and semantics</short>
+        <short>Implements a lexical scanner and parser using XPath syntax and semantics.</short>
         <descr>
           <p>
             <var>TXPathScanner</var> is a class which implements a lexical scanner/parser using the syntax and semantics defined in XPath (XML Path Language). TXPathScanner provides methods used to tokenize and parse the XPath Expression types defined in the specification, at:
@@ -1790,360 +1790,360 @@
       <element name="TXPathScanner.FResolver"/>
 
       <element name="TXPathScanner.Error">
-        <short>Raises an exception with the specified message</short>
+        <short>Raises an exception with the specified message.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathScanner.Error.Msg">
-        <short>Message for the error</short>
+        <short>Message for the error.</short>
       </element>
 
       <element name="TXPathScanner.ParsePredicates">
-        <short>Parses XPath Predicate expressions</short>
+        <short>Parses XPath Predicate expressions.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathScanner.ParsePredicates.Dest">
-        <short>Destination nodes for XPath predicates in the expression</short>
+        <short>Destination nodes for XPath predicates in the expression.</short>
       </element>
 
       <element name="TXPathScanner.ParseStep">
-        <short>Parses XPath Location Steps in the expression</short>
+        <short>Parses XPath Location Steps in the expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathScanner.ParseStep.Result">
-        <short>TStep class instance for the Location Step</short>
+        <short>TStep class instance for the Location Step.</short>
       </element>
 
       <element name="TXPathScanner.ParseNodeTest">
         <short>
-          Parses XPath Node Tests to determine the principal node type for the expression
+          Parses XPath Node Tests to determine the principal node type for the expression.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathScanner.ParseNodeTest.Result">
-        <short>TStep class instance for the Location Step</short>
+        <short>TStep class instance for the Location Step.</short>
       </element>
       <element name="TXPathScanner.ParseNodeTest.axis">
-        <short>Axis to use for the Location Step in the result value</short>
+        <short>Axis to use for the Location Step in the result value.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParsePrimaryExpr">
-        <short>Parses a Primary Expression in the XPath expression</short>
+        <short>Parses a Primary Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParsePrimaryExpr.Result">
-        <short>Primary expression parsed in the method</short>
+        <short>Primary expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseFunctionCall">
-        <short>Parses a FunctionCall Expression in the XPath expression</short>
+        <short>Parses a FunctionCall Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseFunctionCall.Result">
-        <short>Function call parsed in the method</short>
+        <short>Function call parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseUnionExpr">
-        <short>Parses a Union Expression in the XPath expression</short>
+        <short>Parses a Union Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseUnionExpr.Result">
-        <short>Union expression parsed in the method</short>
+        <short>Union expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParsePathExpr">
-        <short>Parses a Path Expression in the XPath expression</short>
+        <short>Parses a Path Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParsePathExpr.Result">
-        <short>Path expression parsed in the method</short>
+        <short>Path expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseFilterExpr">
-        <short>Parses a Filter Expression in the XPath expression</short>
+        <short>Parses a Filter Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseFilterExpr.Result">
-        <short>Filter expression parsed in the method</short>
+        <short>Filter expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseOrExpr">
-        <short>Parses an Or Expression in the XPath expression</short>
+        <short>Parses an Or Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseOrExpr.Result">
-        <short>Or expression parsed in the method</short>
+        <short>Or expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseAndExpr">
-        <short>Parses an And Expression in the XPath expression</short>
+        <short>Parses an And Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseAndExpr.Result">
-        <short>And expression parsed in the method</short>
+        <short>And expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseEqualityExpr">
-        <short>Parses an Equality Expression in the XPath expression</short>
+        <short>Parses an Equality Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseEqualityExpr.Result">
-        <short>Equality expression parsed in the method</short>
+        <short>Equality expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseRelationalExpr">
-        <short>Parses a Relational Expression in the XPath expression</short>
+        <short>Parses a Relational Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseRelationalExpr.Result">
-        <short>Relational expression parsed in the method</short>
+        <short>Relational expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseAdditiveExpr">
-        <short>Parses an Additive Expression in the XPath expression</short>
+        <short>Parses an Additive Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseAdditiveExpr.Result">
-        <short>Additive expression parsed in the method</short>
+        <short>Additive expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseMultiplicativeExpr">
-        <short>Parses a Multiplicative Expression in the XPath expression</short>
+        <short>Parses a Multiplicative Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseMultiplicativeExpr.Result">
-        <short>Multiplicative expression parsed in the method</short>
+        <short>Multiplicative expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ParseUnaryExpr">
-        <short>Parses an Unary Expression in the XPath expression</short>
+        <short>Parses an Unary Expression in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ParseUnaryExpr.Result">
-        <short>Unary expression parsed in the method</short>
+        <short>Unary expression parsed in the method.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.GetToken">
-        <short>Gets a lexical token in the XPath expression</short>
+        <short>Gets a lexical token in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.GetToken.Result">
-        <short>Lexical token read in the scanner</short>
+        <short>Lexical token read in the scanner.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathScanner.ScanQName">
-        <short>Locates a Qualified Name in a token</short>
+        <short>Locates a Qualified Name in a token.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.ScanQName.Result">
-        <short>False if the token does not contain a valid QName</short>
+        <short>False if the token does not contain a valid QName.</short>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TXPathScanner.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathScanner.Create.AExpressionString">
-        <short>XPath expression examined in the scanner/parser</short>
+        <short>XPath expression examined in the scanner/parser.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathScanner.NextToken">
-        <short>Gets the next token in the XPath expression</short>
+        <short>Gets the next token in the XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.NextToken.Result">
-        <short>Token kind located in the method</short>
+        <short>Token kind located in the method.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathScanner.PeekToken">
-        <short>Peeks at the token kind for the next lexical element</short>
+        <short>Peeks at the token kind for the next lexical element.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.PeekToken.Result">
-        <short>Value for the pending logical token in the scanner</short>
+        <short>Value for the pending logical token in the scanner.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathScanner.SkipToken">
-        <short>Skips the current token when it is not an error</short>
+        <short>Skips the current token when it is not an error.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathScanner.SkipToken.Result">
-        <short>True if the current token is the same as the tok argument</short>
+        <short>True if the current token is the same as the tok argument.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathScanner.SkipToken.tok">
-        <short>Token expected in the method</short>
+        <short>Token expected in the method.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathScanner.CurToken">
-        <short>Current token kind in the lexical analysis</short>
+        <short>Current token kind in the lexical analysis.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathScanner.CurTokenString">
-        <short>Current token value in the lexical analysis</short>
+        <short>Current token value in the lexical analysis.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathContext">
-        <short>Represents the Context for an XPath expression</short>
+        <short>Represents the Context for an XPath expression.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TXPathContext.ContextNode">
-        <short>The node for the XPath context</short>
+        <short>The node for the XPath context.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TXPathContext.ContextPosition">
-        <short>The position in the context node</short>
+        <short>The position in the context node.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TXPathContext.ContextSize">
-        <short>The size (or length) of the context node set</short>
+        <short>The size (or length) of the context node set.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TXPathContext.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathContext.Create.AContextNode">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathContext.Create.AContextPosition">
-        <short>Position in the context node</short>
+        <short>Position in the context node.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathContext.Create.AContextSize">
-        <short>Size (or length) of the context node set</short>
+        <short>Size (or length) of the context node set.</short>
       </element>
 
       <!-- alias type Visibility: default -->
       <element name="TXPathVarList">
-        <short>List used to store XPath variables in the XPath environment</short>
+        <short>List used to store XPath variables in the XPath environment.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function type Visibility: default -->
       <element name="TXPathFunction">
-        <short>Implements an XPath function</short>
+        <short>Implements an XPath function.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathFunction.Result">
-        <short>XPath variable returned from the XPath function implementation</short>
+        <short>XPath variable returned from the XPath function implementation.</short>
       </element>
       <element name="TXPathFunction.Context">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
       <element name="TXPathFunction.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXPathEnvironment">
         <short>
-          Provides access to functions and variables available in the XPath environment
+          Provides access to functions and variables available in the XPath environment.
         </short>
         <descr>
           <p>
@@ -2165,94 +2165,94 @@
 
       <!-- function Visibility: private -->
       <element name="TXPathEnvironment.GetFunctionCount" link="#lazutils.laz2_xpath.TXPathEnvironment.FunctionCount">
-        <short>Gets the value for the FunctionCount property</short>
+        <short>Gets the value for the FunctionCount property.</short>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.GetFunctionCount.Result">
-        <short>Value for the FunctionCount property</short>
+        <short>Value for the FunctionCount property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathEnvironment.GetVariableCount" link="#lazutils.laz2_xpath.TXPathEnvironment.VariableCount">
-        <short>Gets the value for the VariableCount property</short>
+        <short>Gets the value for the VariableCount property.</short>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.GetVariableCount.Result">
-        <short>Value for the VariableCount property</short>
+        <short>Value for the VariableCount property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathEnvironment.GetFunction">
-        <short>Gets the Function with the specified Name or ordinal position</short>
+        <short>Gets the Function with the specified Name or ordinal position.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.GetFunction.Result">
-        <short>XPath function with the specified name or ordinal position</short>
+        <short>XPath function with the specified name or ordinal position.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.GetFunction.Index">
-        <short>Ordinal position for the requested function</short>
+        <short>Ordinal position for the requested function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.GetFunction.AName">
-        <short>Name for the requested function</short>
+        <short>Name for the requested function.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TXPathEnvironment.GetVariable">
-        <short>Gets the variable with the specified name or ordinal position</short>
+        <short>Gets the variable with the specified name or ordinal position.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.GetVariable.Result">
-        <short>XPath variable with the specified name or ordinal position</short>
+        <short>XPath variable with the specified name or ordinal position.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.GetVariable.Index">
-        <short>Ordinal position for the requested variable</short>
+        <short>Ordinal position for the requested variable.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.GetVariable.AName">
-        <short>Name for the requested variable</short>
+        <short>Name for the requested variable.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpLast">
-        <short>Implements the last() function from the XPath Core Function Library</short>
+        <short>Implements the last() function from the XPath Core Function Library.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpLast.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpLast.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpLast.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpPosition">
         <short>
-          Implements the position() function from the XPath Core Function Library
+          Implements the position() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2260,23 +2260,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpPosition.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpPosition.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpPosition.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpCount">
         <short>
-          Implements the count() function from the XPath Core Function Library
+          Implements the count() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2284,23 +2284,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpCount.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpCount.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpCount.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpId">
         <short>
-          Implements the id() function from the XPath Core Function Library
+          Implements the id() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2308,23 +2308,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpId.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpId.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpId.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpLocalName">
         <short>
-          Implements the local-name() function from the XPath Core Function Library
+          Implements the local-name() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2332,23 +2332,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpLocalName.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpLocalName.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpLocalName.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpNamespaceURI">
         <short>
-          Implements the namespace-uri() function from the XPath Core Function Library
+          Implements the namespace-uri() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2356,23 +2356,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpNamespaceURI.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNamespaceURI.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNamespaceURI.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpName">
         <short>
-          Implements the name() function from the XPath Core Function Library
+          Implements the name() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2380,23 +2380,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpName.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpName.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpName.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpString">
         <short>
-          Implements the string() function from the XPath Core Function Library
+          Implements the string() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2404,23 +2404,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpString.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpString.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpString.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpConcat">
         <short>
-          Implements the concat() function from the XPath Core Function Library
+          Implements the concat() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2428,23 +2428,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpConcat.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpConcat.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpConcat.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpStartsWith">
         <short>
-          Implements the starts-with() function from the XPath Core Function Library
+          Implements the starts-with() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2452,23 +2452,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpStartsWith.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpStartsWith.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpStartsWith.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpContains">
         <short>
-          Implements the contains() function from the XPath Core Function Library
+          Implements the contains() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2476,23 +2476,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpContains.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpContains.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpContains.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpSubstringBefore">
         <short>
-          Implements the substring-before() function from the XPath Core Function Library
+          Implements the substring-before() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2500,23 +2500,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpSubstringBefore.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSubstringBefore.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSubstringBefore.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpSubstringAfter">
         <short>
-          Implements the substring-after() function from the XPath Core Function Library
+          Implements the substring-after() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2524,23 +2524,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpSubstringAfter.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSubstringAfter.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSubstringAfter.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpSubstring">
         <short>
-          Implements the substring() function from the XPath Core Function Library
+          Implements the substring() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2548,23 +2548,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpSubstring.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSubstring.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSubstring.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpStringLength">
         <short>
-          Implements the string-length() function from the XPath Core Function Library
+          Implements the string-length() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2572,23 +2572,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpStringLength.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpStringLength.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpStringLength.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpNormalizeSpace">
         <short>
-          Implements the normalize-space() function from the XPath Core Function Library
+          Implements the normalize-space() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2596,23 +2596,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpNormalizeSpace.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNormalizeSpace.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNormalizeSpace.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpTranslate">
         <short>
-          Implements the translate() function from the XPath Core Function Library
+          Implements the translate() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2620,23 +2620,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpTranslate.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpTranslate.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpTranslate.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpBoolean">
         <short>
-          Implements the boolean() function from the XPath Core Function Library
+          Implements the boolean() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2644,23 +2644,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpBoolean.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpBoolean.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpBoolean.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpNot">
         <short>
-          Implements the not() function from the XPath Core Function Library
+          Implements the not() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2668,23 +2668,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpNot.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNot.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNot.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpTrue">
         <short>
-          Implements the true() function from the XPath Core Function Library
+          Implements the true() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2692,23 +2692,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpTrue.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpTrue.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpTrue.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpFalse">
         <short>
-          Implements the false() function from the XPath Core Function Library
+          Implements the false() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2716,23 +2716,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpFalse.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpFalse.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpFalse.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpLang">
         <short>
-          Implements the lang() function from the XPath Core Function Library
+          Implements the lang() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2740,23 +2740,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpLang.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpLang.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpLang.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpNumber">
         <short>
-          Implements the number() function from the XPath Core Function Library
+          Implements the number() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2764,23 +2764,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpNumber.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNumber.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpNumber.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpSum">
         <short>
-          Implements the sum() function from the XPath Core Function Library
+          Implements the sum() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2788,23 +2788,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpSum.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSum.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpSum.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpFloor">
         <short>
-          Implements the floor() function from the XPath Core Function Library
+          Implements the floor() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2812,23 +2812,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpFloor.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpFloor.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpFloor.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpCeiling">
         <short>
-          Implements the ceiling() function from the XPath Core Function Library
+          Implements the ceiling() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2836,23 +2836,23 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpCeiling.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpCeiling.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpCeiling.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TXPathEnvironment.xpRound">
         <short>
-          Implements the round() function from the XPath Core Function Library
+          Implements the round() function from the XPath Core Function Library.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2860,29 +2860,29 @@
 
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.xpRound.Result">
-        <short>Variable returned by the XPath function</short>
+        <short>Variable returned by the XPath function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpRound.Context">
-        <short>Context node for the function</short>
+        <short>Context node for the function.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.xpRound.Args">
-        <short>Arguments for the function</short>
+        <short>Arguments for the function.</short>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TXPathEnvironment.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TXPathEnvironment.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2890,7 +2890,7 @@
       <!-- function Visibility: public -->
       <element name="TXPathEnvironment.GetFunctionIndex">
         <short>
-          Gets the ordinal position of the XPath function with the specified name
+          Gets the ordinal position of the XPath function with the specified name.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2899,21 +2899,21 @@
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.GetFunctionIndex.Result">
         <short>
-          Ordinal position of the XPath function with the specified name
+          Ordinal position of the XPath function with the specified name.
         </short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.GetFunctionIndex.AName">
         <short>
-          Name of the XPath function to locate in the Functions property
+          Name of the XPath function to locate in the Functions property.
         </short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TXPathEnvironment.GetVariableIndex">
         <short>
-          Gets the ordinal position of the variable with the specified name
+          Gets the ordinal position of the variable with the specified name.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2922,21 +2922,21 @@
       <!-- function result Visibility: default -->
       <element name="TXPathEnvironment.GetVariableIndex.Result">
         <short>
-          Ordinal position of the variable with the specified name
+          Ordinal position of the variable with the specified name.
         </short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.GetVariableIndex.AName">
         <short>
-          Name of the variable to locate in the Variables property
+          Name of the variable to locate in the Variables property.
         </short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TXPathEnvironment.AddFunction">
         <short>
-          Adds a function to the Functions property with the specified name
+          Adds a function to the Functions property with the specified name.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2945,21 +2945,21 @@
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.AddFunction.AName">
         <short>
-          Name for the function added to the Functions property
+          Name for the function added to the Functions property.
         </short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.AddFunction.AFunction">
         <short>
-          Function implementation to use for the specified function name
+          Function implementation to use for the specified function name.
         </short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TXPathEnvironment.AddVariable">
         <short>
-          Adds a variable with the given name and value to the Variables property
+          Adds a variable with the given name and value to the Variables property.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2968,21 +2968,21 @@
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.AddVariable.AName">
         <short>
-          Name of the variable added in the method
+          Name of the variable added in the method.
         </short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.AddVariable.AVariable">
         <short>
-          Value for the variable added in the method
+          Value for the variable added in the method.
         </short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TXPathEnvironment.RemoveFunction">
         <short>
-          Removes a function with the specified name or ordinal position from the Functions property
+          Removes a function with the specified name or ordinal position from the Functions property.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2991,20 +2991,20 @@
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.RemoveFunction.Index">
         <short>
-          Ordinal position for the Function with the specified name
+          Ordinal position for the Function with the specified name.
         </short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.RemoveFunction.AName">
         <short>
-          Name of the function to remove from the Functions property
+          Name of the function to remove from the Functions property.
         </short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TXPathEnvironment.RemoveVariable">
-        <short>Removes a variable with the specified name or ordinal position</short>
+        <short>Removes a variable with the specified name or ordinal position.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -3012,76 +3012,76 @@
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.RemoveVariable.Index">
         <short>
-          Ordinal position for the variable to remove from the XPath environment
+          Ordinal position for the variable to remove from the XPath environment.
         </short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.RemoveVariable.AName">
         <short>
-          Name of the variable to remove from the XPath environment
+          Name of the variable to remove from the XPath environment.
         </short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathEnvironment.FunctionCount">
-        <short>Indicates the number of XPath functions in the XPath environment</short>
+        <short>Indicates the number of XPath functions in the XPath environment.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathEnvironment.VariableCount">
-        <short>Indicates the number of variables defined in the XPath environment</short>
+        <short>Indicates the number of variables defined in the XPath environment.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathEnvironment.Functions">
-        <short>Provides indexed access to XPath functions in the environment</short>
+        <short>Provides indexed access to XPath functions in the environment.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXPathEnvironment.Functions.Index">
-        <short>Ordinal position for the requested XPath function</short>
+        <short>Ordinal position for the requested XPath function.</short>
       </element>
 
       <element name="TXPathEnvironment.FunctionsByName">
-        <short>Gets an XPath function with the specified name</short>
+        <short>Gets an XPath function with the specified name.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TXPathEnvironment.FunctionsByName.AName">
-        <short>Name for the requested XPath function</short>
+        <short>Name for the requested XPath function.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXPathEnvironment.Variables">
-        <short>Provides indexed access to XPath variables in the XPath environment</short>
+        <short>Provides indexed access to XPath variables in the XPath environment.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TXPathEnvironment.Variables.Index">
-        <short>Ordinal position for the requested variable</short>
+        <short>Ordinal position for the requested variable.</short>
       </element>
 
       <element name="TXPathEnvironment.VariablesByName">
-        <short>Gets an XPath variable with the specified name</short>
+        <short>Gets an XPath variable with the specified name.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathEnvironment.VariablesByName.AName">
-        <short>Name of the requested variable</short>
+        <short>Name of the requested variable.</short>
       </element>
 
       <element name="TXPathExpression">
         <short>
-          Evaluates an XPath expression using the specified scanner and resolver
+          Evaluates an XPath expression using the specified scanner and resolver.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -3090,62 +3090,62 @@
       <element name="TXPathExpression.FRootNode"/>
 
       <element name="TXPathExpression.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathExpression.Create.AScanner">
-        <short>Lexical scanner/parser used to evaluate the expression</short>
+        <short>Lexical scanner/parser used to evaluate the expression.</short>
       </element>
       <element name="TXPathExpression.Create.CompleteExpression">
-        <short>The XPath expression evaluated in the class instance</short>
+        <short>The XPath expression evaluated in the class instance.</short>
       </element>
       <element name="TXPathExpression.Create.AResolver">
-        <short>Namespace resolver used to evaluate the expression</short>
+        <short>Namespace resolver used to evaluate the expression.</short>
       </element>
 
       <element name="TXPathExpression.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TXPathExpression.Evaluate">
         <short>
-          Evaluates an XPath expression using the specified context node and environment
+          Evaluates an XPath expression using the specified context node and environment.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TXPathExpression.Evaluate.Result">
-        <short>Value from the evaluated expression</short>
+        <short>Value from the evaluated expression.</short>
       </element>
       <element name="TXPathExpression.Evaluate.AContextNode">
-        <short>Context node for the expression</short>
+        <short>Context node for the expression.</short>
       </element>
       <element name="TXPathExpression.Evaluate.AEnvironment">
-        <short>XPath environment for the evaluation</short>
+        <short>XPath environment for the evaluation.</short>
       </element>
 
       <!-- function Visibility: default -->
       <element name="EvaluateXPathExpression">
         <short>
-          Evaluates an XPath expression using the specified context node and resolver
+          Evaluates an XPath expression using the specified context node and resolver.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="EvaluateXPathExpression.Result">
-        <short>XPath variable representing the evaluated XPath expression</short>
+        <short>XPath variable representing the evaluated XPath expression.</short>
       </element>
       <element name="EvaluateXPathExpression.AExpressionString">
-        <short>XPath expression evaluated in the routine</short>
+        <short>XPath expression evaluated in the routine.</short>
       </element>
       <element name="EvaluateXPathExpression.AContextNode">
-        <short>Context node for the XPath expression</short>
+        <short>Context node for the XPath expression.</short>
       </element>
       <element name="EvaluateXPathExpression.AResolver">
-        <short>Namespace resolver for the evaluation</short>
+        <short>Namespace resolver for the evaluation.</short>
       </element>
 
     </module>

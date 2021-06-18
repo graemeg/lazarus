@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="DynamicArray">
-      <short>Implements a resizable 2-D array of Pointers</short>
+      <short>Implements a resizable 2-D array of Pointers.</short>
       <descr>
       <p>
         <file>dynamicarray.pas</file>implements a resizable 2-D array of Pointers. It is used in the implementation of <var>TCustomGrid</var>, <var>TDrawGrid</var> and <var>TStringGrid</var>.
@@ -33,25 +33,25 @@
       </element>
       <!-- procedure type Visibility: default -->
       <element name="TOnNotifyItem">
-        <short>Type for event handling</short>
+        <short>Type for event handling.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="TOnNotifyItem.Sender">
-        <short>instance of the TArray that causes the event</short>
+        <short>instance of the TArray that causes the event.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TOnNotifyItem.Col">
-        <short>The related Col of the event</short>
+        <short>The related Col of the event.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TOnNotifyItem.Row">
-        <short>The related Row of the event</short>
+        <short>The related Row of the event.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TOnNotifyItem.Item">
-        <short>The related Item of the event</short>
+        <short>The related Item of the event.</short>
       </element>
       <!-- procedure type Visibility: default -->
       <element name="TOnExchangeItem">
@@ -61,7 +61,7 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TOnExchangeItem.Sender">
-         <short>The instance of the TArray that causes the Exchange event</short>
+         <short>The instance of the TArray that causes the Exchange event.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TOnExchangeItem.Index">
@@ -98,7 +98,7 @@
       </element>
       <!-- function Visibility: private -->
       <element name="TArray.Getarr">
-        <short>Returns the stored item(actually pointer) in array</short>
+        <short>Returns the stored item(actually pointer) in array.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -136,7 +136,7 @@
       </element>
       <!-- procedure Visibility: private -->
       <element name="TArray.ClearCol">
-        <short>Clears the given TList</short>
+        <short>Clears the given TList.</short>
         <descr>The given TList is assumed to be the COL of the array.</descr>
         <errors/>
         <seealso/>
@@ -151,18 +151,18 @@
       </element>
       <!-- procedure Visibility: private -->
       <element name="TArray.Aumentar_Rows">
-         <short>Extends a row to its new size(Rows)</short>
+         <short>Extends a row to its new size(Rows).</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.Aumentar_Rows.col">
-        <short>current column</short>
+        <short>current column.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.Aumentar_Rows.Rows">
-        <short>new row size</short>
+        <short>new row size.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.Aumentar_Rows.L">
@@ -213,11 +213,11 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.SetLength.Cols">
-        <short>new column size</short>
+        <short>new column size.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.SetLength.Rows">
-        <short>new row size</short>
+        <short>new row size.</short>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TArray.DeleteColRow">
@@ -233,7 +233,7 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.DeleteColRow.Index">
-        <short>index of a row or a column</short>
+        <short>index of a row or a column.</short>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TArray.MoveColRow">
@@ -249,11 +249,11 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.MoveColRow.FromIndex">
-        <short>source</short>
+        <short>source.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.MoveColRow.ToIndex">
-        <short>destination</short>
+        <short>destination.</short>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TArray.ExchangeColRow">
@@ -269,11 +269,11 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.ExchangeColRow.Index">
-        <short>index of row or column</short>
+        <short>index of row or column.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TArray.ExchangeColRow.WithIndex">
-        <short>index of row or column</short>
+        <short>index of row or column.</short>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TArray.Clear">

@@ -8,8 +8,8 @@
     -->
     <module name="AvgLvlTree">
       <short>
-        An Average Level Tree structure, which is kept balanced so that finding a node is very rapid
-      </short>
+        An Average Level Tree structure, which is kept balanced so that finding a node is very rapid.
+        </short>
       <descr>
         <p>
           Defines classes that use TAvlTree for data storage, and enumerators for them. TAvlTree is an Average Level binary Tree, located in unit AVL_Tree in FPC packages.
@@ -42,7 +42,7 @@
 
       <element name="TAvgLvlTreeNode">
         <short>
-          <var>TAvgLvlTreeNode</var> - a node, the basic structural element of a <var>TAvgLvlTree</var>
+          <var>TAvgLvlTreeNode</var> - a node, the basic structural element of a <var>TAvgLvlTree</var>.
         </short>
         <descr/>
         <errors/>
@@ -57,7 +57,7 @@
 
       <element name="TAvgLvlTree">
         <short>
-          <var>TAvgLvlTree</var> - an Average Level binary Tree
+          <var>TAvgLvlTree</var> - an Average Level binary Tree.
         </short>
         <descr>
           <p>
@@ -126,7 +126,7 @@
       </element>
 
       <element name="TIndexedAVLTreeNode.LeftCount">
-        <short>The number of nodes in the Left side</short>
+        <short>The number of nodes in the Left side.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -265,23 +265,23 @@
 
       <element name="TPointerToPointerItem">
         <short>
-          <var>TPointerToPointerItem</var> - an item in a PointerToPointer Tree (associative array)
+          <var>TPointerToPointerItem</var> - an item in a PointerToPointer Tree (associative array).
         </short>
       </element>
       <element name="TPointerToPointerItem.Key">
         <short>
-          The <var>Key</var> defining the pointer item
+          The <var>Key</var> defining the pointer item.
         </short>
       </element>
       <element name="TPointerToPointerItem.Value">
         <short>
-          The <var>Value</var> of the pointer item
+          The <var>Value</var> of the pointer item.
         </short>
       </element>
 
       <element name="PPointerToPointerItem">
         <short>
-          <var>PPointerToPointerItem</var> - a pointer to a <var>TPointerToPointerItem</var>
+          <var>PPointerToPointerItem</var> - a pointer to a <var>TPointerToPointerItem</var>.
         </short>
       </element>
 
@@ -345,7 +345,7 @@
 
       <element name="TPointerToPointerTree">
         <short>
-          <var>TPointerToPointerTree</var>is an associative array of PointerToPointer Items, or a tree of trees
+          <var>TPointerToPointerTree</var>is an associative array of PointerToPointer Items, or a tree of trees.
         </short>
         <descr>
           <p>
@@ -374,7 +374,7 @@
       <element name="TPointerToPointerTree.GetNode.Value"/>
 
       <element name="TPointerToPointerTree.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for <var>TPointerToPointerTree</var>.
@@ -384,7 +384,7 @@
       </element>
 
       <element name="TPointerToPointerTree.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -396,7 +396,7 @@
       </element>
 
       <element name="TPointerToPointerTree.ClearWithFree">
-        <short>Frees objects stored in Values</short>
+        <short>Frees objects stored in Values.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -457,7 +457,7 @@
 
       <element name="TPointerToPointerTree.GetFirst">
         <short>
-          <var>GetFirst</var> - finds the first node matching the supplied arguments; returns True if successful
+          <var>GetFirst</var> - finds the first node matching the supplied arguments; returns True if successful.
         </short>
         <descr/>
         <seealso/>
@@ -471,7 +471,7 @@
 
       <element name="TPointerToPointerTree.GetLast">
         <short>
-          <var>GetLast</var> - finds the last node matching the supplied arguments; returns True if successful
+          <var>GetLast</var> - finds the last node matching the supplied arguments; returns True if successful.
         </short>
         <descr/>
         <seealso/>
@@ -488,7 +488,7 @@
 
       <element name="TPointerToPointerTree.GetNext">
         <short>
-          <var>GetNext</var> - finds the next node matching the supplied arguments; returns True if successful
+          <var>GetNext</var> - finds the next node matching the supplied arguments; returns True if successful.
         </short>
         <descr/>
         <seealso/>
@@ -508,7 +508,7 @@
 
       <element name="TPointerToPointerTree.GetPrev">
         <short>
-          <var>GetPrev</var> - finds the previous node matching the supplied arguments; returns True if successful
+          <var>GetPrev</var> - finds the previous node matching the supplied arguments; returns True if successful.
         </short>
         <descr/>
         <seealso/>
@@ -532,7 +532,7 @@
         <seealso/>
       </element>
       <element name="TPointerToPointerTree.FindByValue.Result">
-        <short>Pointer to the Key or Nil</short>
+        <short>Pointer to the Key or Nil.</short>
       </element>
       <element name="TPointerToPointerTree.FindByValue.AValue">
         <short/>
@@ -540,7 +540,7 @@
 
       <element name="TPointerToPointerTree.Count">
         <short>
-          <var>Count</var> - the number of items
+          <var>Count</var> - the number of items.
         </short>
         <descr/>
         <seealso/>
@@ -548,7 +548,7 @@
 
       <element name="TPointerToPointerTree.Values">
         <short>
-          <var>Values</var> - a pointer into the array of values associated with the nodes
+          <var>Values</var> - a pointer into the array of values associated with the nodes.
         </short>
         <descr/>
         <seealso/>
@@ -559,7 +559,7 @@
 
       <element name="TPointerToPointerTree.Tree">
         <short>
-          The <var>Tree</var> that forms the basis of the associative array
+          The <var>Tree</var> that forms the basis of the associative array.
         </short>
         <descr/>
         <seealso/>
@@ -608,7 +608,7 @@
       <element name="TCustomStringMapEnumerator.FCurrent"/>
 
       <element name="TCustomStringMapEnumerator.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -697,7 +697,7 @@
       </element>
 
       <element name="TCustomStringMap.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -745,7 +745,7 @@
       </element>
 
       <element name="TCustomStringMap.Tree">
-        <short>Tree containing PStringMapItem pointers</short>
+        <short>Tree containing PStringMapItem pointers.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -940,7 +940,7 @@
       </element>
 
       <element name="TStringToStringTree" link="#lazutils.avglvltree.TCustomStringMap">
-        <short>An associative array of StringToString Items, or a tree of trees</short>
+        <short>An associative array of StringToString Items, or a tree of trees.</short>
         <descr>
           <p>
             <var>TStringToStringTree</var> implements an associative array of StringToString Items, or a tree of trees. This class uses strings to identify strings within the array, unlike the <var>TPointerToPointerTree</var>, which uses pointers to identify pointers.
@@ -1040,7 +1040,7 @@
 
       <element name="TStringToStringTree.Add">
         <short>
-          <var>Add</var> an item to the tree (specified by its name, value or delimiter)
+          <var>Add</var> an item to the tree (specified by its name, value or delimiter).
         </short>
         <descr/>
         <seealso/>
@@ -1057,7 +1057,7 @@
 
       <element name="TStringToStringTree.AddNameValues">
         <short>
-          <var>AddNameValues</var> add the specified named values to the tree
+          <var>AddNameValues</var> add the specified named values to the tree.
         </short>
         <descr/>
         <seealso/>
@@ -1077,7 +1077,7 @@
 
       <element name="TStringToStringTree.Values">
         <short>
-          The <var>Values</var> of the strings corresponding to the supplied name
+          The <var>Values</var> of the strings corresponding to the supplied name.
         </short>
         <descr/>
         <seealso/>
@@ -1136,7 +1136,7 @@
 
       <element name="TStringToStringTree.GetFirst">
         <short>
-          <var>GetFirst</var> - finds the matching first item; returns True if successful
+          <var>GetFirst</var> - finds the matching first item; returns True if successful.
         </short>
         <descr/>
         <seealso/>
@@ -1153,7 +1153,7 @@
 
       <element name="TStringToStringTree.GetLast">
         <short>
-          <var>GetLast</var> - finds the last matching item; returns True if successful
+          <var>GetLast</var> - finds the last matching item; returns True if successful.
         </short>
         <descr/>
         <seealso/>
@@ -1170,7 +1170,7 @@
 
       <element name="TStringToStringTree.GetNext">
         <short>
-          <var>GetNext</var> - finds the next matching item; returns True if successful
+          <var>GetNext</var> - finds the next matching item; returns True if successful.
         </short>
         <descr/>
         <seealso/>
@@ -1190,7 +1190,7 @@
 
       <element name="TStringToStringTree.GetPrev">
         <short>
-          <var>GetPrev</var> - finds the previous matching item; returns True if successful
+          <var>GetPrev</var> - finds the previous matching item; returns True if successful.
         </short>
         <descr/>
         <seealso/>

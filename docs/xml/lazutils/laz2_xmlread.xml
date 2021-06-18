@@ -8,8 +8,8 @@
     -->
     <module name="laz2_XMLRead">
       <short>
-        Provides routines used to read XML content from a file, text file, or stream
-      </short>
+        Provides routines used to read XML content from a file, text file, or stream.
+        </short>
       <descr>
         <p>
           <var>laz2_xmlread.pas</var> provides routines used to read XML content from a file, text file, or stream. It is copied from the FCL unit xmlread.pp (SVN  revision 15251), and adapted to use UTF-8 instead of widestrings by Mattias Gaertner.
@@ -29,7 +29,7 @@
       <!-- enumeration type Visibility: default -->
       <element name="TErrorSeverity">
         <short>
-          Represents error severity codes for XML read operations
+          Represents error severity codes for XML read operations.
         </short>
         <descr>
           <p>
@@ -43,23 +43,23 @@
 
       <!-- enumeration value Visibility: default -->
       <element name="TErrorSeverity.esWarning">
-        <short>Error is a warning</short>
+        <short>Error is a warning.</short>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TErrorSeverity.esError">
-        <short>Error is an Error (not a Warning)</short>
+        <short>Error is an Error (not a Warning).</short>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TErrorSeverity.esFatal">
-        <short>Error is an unrecoverable Fatal Error</short>
+        <short>Error is an unrecoverable Fatal Error.</short>
       </element>
 
       <!-- enumeration type Visibility: default -->
       <element name="TXMLReaderFlag">
         <short>
-          Represents options enabled when reading XML content
+          Represents options enabled when reading XML content.
         </short>
         <descr>
           TXMLReaderFlag is an enumerated type with values for options enabled when reading XML content. TXMLReaderFlag values are stored in the TXMLReaderFlags set type, and passed as an argument to the ReadXMLFile, ReadXMLFragment, and ReadDTDFile routines.
@@ -73,23 +73,23 @@
 
       <!-- enumeration value Visibility: default -->
       <element name="TXMLReaderFlag.xrfAllowLowerThanInAttributeValue">
-        <short>Indicates the &amp;lt; character is allowed in attribute values</short>
+        <short>Indicates the &amp;lt; character is allowed in attribute values.</short>
       </element>
       <element name="TXMLReaderFlag.xrfAllowSpecialCharsInAttributeValue">
         <short>
-          Indicates control characters and reserved XML characters are allowed in XML content
+          Indicates control characters and reserved XML characters are allowed in XML content.
         </short>
       </element>
       <element name="TXMLReaderFlag.xrfAllowSpecialCharsInComments">
-        <short>Indicates if '--' is allowed in an XML comment</short>
+        <short>Indicates if '--' is allowed in an XML comment.</short>
       </element>
       <element name="TXMLReaderFlag.xrfPreserveWhiteSpace">
-        <short>Indicates whitespace is preserved when reading XML content</short>
+        <short>Indicates whitespace is preserved when reading XML content.</short>
       </element>
 
       <!-- set type Visibility: default -->
       <element name="TXMLReaderFlags">
-        <short>Set type used to store options enabled when reading XML content</short>
+        <short>Set type used to store options enabled when reading XML content.</short>
         <descr>
           <p>
             <var>TXMLReaderFlags</var> is a set type used to store zero or more values from the <var>TXMLReaderFlag</var> enumeration. TXMLReaderFlags is the type passed as an argument to the ReadXMLFile, ReadXMLFragment, and ReadDTDFile routines.
@@ -105,7 +105,7 @@
 
       <!-- class Visibility: default -->
       <element name="EXMLReadError">
-        <short>Exception raised when reading XML content</short>
+        <short>Exception raised when reading XML content.</short>
         <descr>
           <p>
             <var>EXMLReadError</var> is an <var>Exception</var> descendant raised when an error occurs while reading XML content. EXMLReadError provides properties that indicate the severity of the error, its error message, and the position where the error occurred.
@@ -127,7 +127,7 @@
 
       <!-- property Visibility: public -->
       <element name="EXMLReadError.Severity">
-        <short>Severity for the XML read error</short>
+        <short>Severity for the XML read error.</short>
         <descr>
           <p>
             <var>Severity</var> is a read-only <var>TErrorSeverity</var> property that identifies the severity of the error. The value in Severity is assigned when an error is encountered, and an exception is created in TXMLReader.
@@ -143,7 +143,7 @@
 
       <!-- property Visibility: public -->
       <element name="EXMLReadError.ErrorMessage">
-        <short>Error message for the XML read error</short>
+        <short>Error message for the XML read error.</short>
         <descr>
           <p>
             <var>ErrorMessage</var> is a read-only <var>String</var> property that contains a description for the error condition. The value in ErrorMessage is assigned when the exception is created in TXMLReader.
@@ -160,21 +160,21 @@
 
       <!-- property Visibility: public -->
       <element name="EXMLReadError.Line">
-        <short>Line number in the XML content where the error occurred</short>
+        <short>Line number in the XML content where the error occurred.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="EXMLReadError.LinePos">
-        <short>Offset in the line where the error occurred</short>
+        <short>Offset in the line where the error occurred.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- function Visibility: public -->
       <element name="EXMLReadError.LineCol">
-        <short>TPoint with the line and column numbers where the error occurred</short>
+        <short>TPoint with the line and column numbers where the error occurred.</short>
         <descr></descr>
         <errors></errors>
         <seealso></seealso>
@@ -182,13 +182,13 @@
 
       <!-- function result Visibility: default -->
       <element name="EXMLReadError.LineCol.Result">
-        <short>Value for the TPoint type</short>
+        <short>Value for the TPoint type.</short>
       </element>
 
       <!-- procedure Visibility: default -->
       <element name="ReadXMLFile">
         <short>
-          Reads the content of an XML file into the specified XML document
+          Reads the content of an XML file into the specified XML document.
         </short>
         <descr>
           <p>
@@ -212,33 +212,33 @@
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFile.ADoc">
-        <short>XML document populated in the routine</short>
+        <short>XML document populated in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFile.AFilename">
-        <short>File name with the XML content read in the routine</short>
+        <short>File name with the XML content read in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFile.Flags">
-        <short>Options enabled when reading the XML content</short>
+        <short>Options enabled when reading the XML content.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFile.f">
-        <short>Stream with the XML content read in the routine</short>
+        <short>Stream with the XML content read in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFile.ABaseURI">
-        <short>Base URI for XML content read in the routine</short>
+        <short>Base URI for XML content read in the routine.</short>
       </element>
 
       <!-- procedure Visibility: default -->
       <element name="ReadXMLFragment">
         <short>
-          Reads an XML fragment into the specified DOM Node
+          Reads an XML fragment into the specified DOM Node.
         </short>
         <descr>
           <p>
@@ -262,32 +262,32 @@
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFragment.AParentNode">
-        <short>DOM Node used as the parent for the XML fragment</short>
+        <short>DOM Node used as the parent for the XML fragment.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFragment.AFilename">
-        <short>File name with the XML content read in the routine</short>
+        <short>File name with the XML content read in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFragment.Flags">
-        <short>Options enabled while reading XML content</short>
+        <short>Options enabled while reading XML content.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFragment.f">
-        <short>Stream with the XML content read in the routine</short>
+        <short>Stream with the XML content read in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadXMLFragment.ABaseURI">
-        <short>Base URI for XML content read in the routine</short>
+        <short>Base URI for XML content read in the routine.</short>
       </element>
 
       <!-- procedure Visibility: default -->
       <element name="ReadDTDFile">
-        <short>Reads and stores a DTD file into the specified XML document</short>
+        <short>Reads and stores a DTD file into the specified XML document.</short>
         <descr></descr>
         <errors></errors>
         <seealso></seealso>
@@ -295,27 +295,27 @@
 
       <!-- argument Visibility: default -->
       <element name="ReadDTDFile.ADoc">
-        <short>XML document where the DTD is stored in the routine</short>
+        <short>XML document where the DTD is stored in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadDTDFile.AFilename">
-        <short>File name with the content for the DTD</short>
+        <short>File name with the content for the DTD.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadDTDFile.f">
-        <short>Stream with the content for the DTD</short>
+        <short>Stream with the content for the DTD.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="ReadDTDFile.ABaseURI">
-        <short>Base URI for values read in the routine</short>
+        <short>Base URI for values read in the routine.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TDOMParseOptions">
-        <short>Represents option settings for the TDOMParser class</short>
+        <short>Represents option settings for the TDOMParser class.</short>
         <descr>
           <p>
             <var>TDOMParseOptions</var> represents parser options used in the <var>TDOMParser</var> class. TDOMParseOptions contains properties that control the behavior of the DOM parser, and the TXMLReader that uses the parser.
@@ -340,84 +340,84 @@
 
       <!-- function Visibility: private -->
       <element name="TDOMParseOptions.GetCanonical">
-        <short>Gets the value for the CanonicalForm property</short>
+        <short>Gets the value for the CanonicalForm property.</short>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TDOMParseOptions.GetCanonical.Result">
-        <short>Value for the CanonicalForm property</short>
+        <short>Value for the CanonicalForm property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TDOMParseOptions.SetCanonical">
-        <short>Sets the value for the CanonicalForm property</short>
+        <short>Sets the value for the CanonicalForm property.</short>
         <descr></descr>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMParseOptions.SetCanonical.aValue">
-        <short>New value for the CanonicalForm property</short>
+        <short>New value for the CanonicalForm property.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.Validate">
-        <short>Indicates if validation is performed when reading XML content</short>
+        <short>Indicates if validation is performed when reading XML content.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.PreserveWhitespace">
-        <short>Indicates if whitespace is preserved when reading XML content</short>
+        <short>Indicates if whitespace is preserved when reading XML content.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.ExpandEntities">
-        <short>Indicates if entities references are expanded when reading XML values</short>
+        <short>Indicates if entities references are expanded when reading XML values.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.IgnoreComments">
-        <short>Indicates if comments are ignored when reading XML content</short>
+        <short>Indicates if comments are ignored when reading XML content.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.CDSectionsAsText">
-        <short>Indicates if CDATA sections are treated as Text nodes</short>
+        <short>Indicates if CDATA sections are treated as Text nodes.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.ResolveExternals">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.Namespaces">
-        <short>Indicates if Namespaces are handled when reading XML content</short>
+        <short>Indicates if Namespaces are handled when reading XML content.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.DisallowDoctype">
-        <short>Indicates if DTDs are handled when reading XML content</short>
+        <short>Indicates if DTDs are handled when reading XML content.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParseOptions.MaxChars">
-        <short>Maximum number of characters allowed in expanded entity references</short>
+        <short>Maximum number of characters allowed in expanded entity references.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -431,7 +431,7 @@
 
       <!-- enumeration type Visibility: default -->
       <element name="TXMLContextAction">
-        <short>Values that control how XML content is stored in a DOM sub-tree</short>
+        <short>Values that control how XML content is stored in a DOM sub-tree.</short>
         <descr>
           <p>
             <var>TXMLContextAction</var> is an enumeration type with values that control how XML content is stored in the DOM sub-tree for a specified context. TXMLContextAction represents the value passed as an argument to the TDOMParser.ParseWithContext method.
@@ -444,25 +444,25 @@
 
       <!-- enumeration value Visibility: default -->
       <element name="TXMLContextAction.xaAppendAsChildren">
-        <short>DOM Fragment is appended as child nodes</short>
+        <short>DOM Fragment is appended as child nodes.</short>
       </element>
       <element name="TXMLContextAction.xaReplaceChildren">
-        <short>DOM Fragment replaces child nodes</short>
+        <short>DOM Fragment replaces child nodes.</short>
       </element>
       <element name="TXMLContextAction.xaInsertBefore">
-        <short>DOM Fragment is inserted before child nodes</short>
+        <short>DOM Fragment is inserted before child nodes.</short>
       </element>
       <element name="TXMLContextAction.xaInsertAfter">
-        <short>DOM Fragment is appended after child nodes</short>
+        <short>DOM Fragment is appended after child nodes.</short>
       </element>
       <element name="TXMLContextAction.xaReplace">
-        <short>DOM Fragment replaces child nodes</short>
+        <short>DOM Fragment replaces child nodes.</short>
       </element>
 
       <!-- procedure type Visibility: default -->
       <element name="TXMLErrorEvent">
         <short>
-          Event type signalled when an error occurs while processing XML content
+          Event type signalled when an error occurs while processing XML content.
         </short>
         <descr>
           <p>
@@ -477,12 +477,12 @@
 
       <!-- argument Visibility: default -->
       <element name="TXMLErrorEvent.Error">
-        <short>Exception for the event notification</short>
+        <short>Exception for the event notification.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TXMLInputSource">
-        <short>Represents the input source for XML content</short>
+        <short>Represents the input source for XML content.</short>
         <descr>
           <p>
             <var>TXMLInputSource</var> is a class used to represent an input source with XML content. TXMLInputSource is based on the DOM InputSource interface from DOM Level 3. It is not a fully compliant implementation of the interface. It does not implement separate byteStream and characterStream properties; the Stream and StringData properties are provided instead. In addition, it does not implement the Encoding property. All values in are expected to use the UTF-8 encoding.
@@ -509,7 +509,7 @@
 
       <!-- constructor Visibility: public -->
       <element name="TXMLInputSource.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overloaded constructor for the class instance.  The variants allow the content for the input source to be assigned using a String or a TStream descendant. Both variants call the inherited constructor to initialize the class instance. The values in AStringData and AStream are assigned to their corresponding properties.
@@ -520,17 +520,17 @@
 
       <!-- argument Visibility: default -->
       <element name="TXMLInputSource.Create.AStream">
-        <short>Stream with the content for the XML input source</short>
+        <short>Stream with the content for the XML input source.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TXMLInputSource.Create.AStringData">
-        <short>Values used as the content for the XML input source</short>
+        <short>Values used as the content for the XML input source.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TXMLInputSource.Stream">
-        <short>Stream with the XML content for the input source</short>
+        <short>Stream with the XML content for the input source.</short>
         <descr>
           Stream is a read-only TStream property that contains the TStream descendant with the XML content for the input source. The value in Stream is assigned in the Create constructor.
         </descr>
@@ -539,7 +539,7 @@
 
       <!-- property Visibility: public -->
       <element name="TXMLInputSource.StringData">
-        <short>String with the XML content for the input source</short>
+        <short>String with the XML content for the input source.</short>
         <descr>
           StringData is a read-only String property that contains the XML content for the input source. The value in StringData is assigned in the Create constructor.
         </descr>
@@ -548,7 +548,7 @@
 
       <!-- property Visibility: public -->
       <element name="TXMLInputSource.BaseURI">
-        <short>Base URI for content in the XML input source</short>
+        <short>Base URI for content in the XML input source.</short>
         <descr>
           <p>
             <var>BaseURI</var> is a <var>String</var> property that represents the absolute resource identifier used to resolve relative URIs found in the XML input source. BaseURI contains the value passed as an argument to the ReadXMLFile, ReadXMLFragment, and ReadDTDFile routines. BaseURI is supplied to TXMLReader and TDOMParser to resolve relative URIs when processing the XML input source.
@@ -564,7 +564,7 @@
 
       <!-- property Visibility: public -->
       <element name="TXMLInputSource.SystemID">
-        <short>System Identifier for content in the XML input source</short>
+        <short>System Identifier for content in the XML input source.</short>
         <descr>
           <p>
             <var>SystemID</var> is a <var>String</var> property that represents the System Identifier for content in the XML input source. SystemID normally contains a URL for the resource.
@@ -582,7 +582,7 @@
 
       <!-- property Visibility: public -->
       <element name="TXMLInputSource.PublicID">
-        <short>Public Identifier for content in the XML input source</short>
+        <short>Public Identifier for content in the XML input source.</short>
         <descr>
           <p>
             <var>PublicID</var> is a <var>String</var> property that represent the Public Identifier for content in the XML input source. PublicID contains a value in the following format:
@@ -648,7 +648,7 @@
 
       <!-- class Visibility: default -->
       <element name="TDOMParser">
-        <short>Implements a parser used to de-serialize XML content into DOM Nodes</short>
+        <short>Implements a parser used to de-serialize XML content into DOM Nodes.</short>
         <descr>
           <p>
             <var>TDOMParser</var> is a class which implements a DOM Parser component. TDOMParser provides methods to parse XML content specified by its URI or using an XML input source. TDOMParser creates DOM nodes needed to represent the XML content, and stores the nodes in a TXMLDocument instance or a DOM content node.
@@ -672,7 +672,7 @@
 
       <!-- constructor Visibility: public -->
       <element name="TDOMParser.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance. Create allocates resources needed for the <var>Options</var> property.
@@ -685,7 +685,7 @@
 
       <!-- destructor Visibility: public -->
       <element name="TDOMParser.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for the class instance. Destroy frees resources allocated to the <var>Options</var> property, and calls the inherited destructor.
@@ -698,7 +698,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TDOMParser.Parse">
-        <short>Parses the input source and updates the specified XML document</short>
+        <short>Parses the input source and updates the specified XML document.</short>
         <descr>
           <p>
             <var>Parse</var> is a procedure used to read and process the XML content in the specified XML input source. Parse creates DOM nodes needed to represent the XML content, and adds them to the specified <var>TXMLDocument</var>.
@@ -717,17 +717,17 @@
 
       <!-- argument Visibility: default -->
       <element name="TDOMParser.Parse.Src">
-        <short>XML input source with content parsed in the method</short>
+        <short>XML input source with content parsed in the method.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMParser.Parse.ADoc">
-        <short>XML Document updated in the method</short>
+        <short>XML Document updated in the method.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TDOMParser.ParseUri">
-        <short>Parses XML content from the specified URI into the XML document</short>
+        <short>Parses XML content from the specified URI into the XML document.</short>
         <descr>
           <p>
             <var>ParseURI</var> is a procedure used to read and process the XML content from the specified URI. ParseURI creates DOM nodes needed to represent the XML content, and adds them to the specified <var>TXMLDocument</var>.
@@ -747,18 +747,18 @@
 
       <!-- argument Visibility: default -->
       <element name="TDOMParser.ParseUri.URI">
-        <short>URI with the content parsed in the method</short>
+        <short>URI with the content parsed in the method.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMParser.ParseUri.ADoc">
-        <short>XML document updated in the method</short>
+        <short>XML document updated in the method.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TDOMParser.ParseWithContext">
         <short>
-          Parses the XML input source into the specified DOM context Node
+          Parses the XML input source into the specified DOM context Node.
         </short>
         <descr>
           <p>
@@ -788,27 +788,27 @@
 
       <!-- function result Visibility: default -->
       <element name="TDOMParser.ParseWithContext.Result">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMParser.ParseWithContext.Src">
-        <short>XML input source for the operation</short>
+        <short>XML input source for the operation.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMParser.ParseWithContext.Context">
-        <short>DOM Node that provides the context for DOM nodes read in the method</short>
+        <short>DOM Node that provides the context for DOM nodes read in the method.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMParser.ParseWithContext.Action">
-        <short>Load and Save action requested for the specified context</short>
+        <short>Load and Save action requested for the specified context.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMParser.Options">
-        <short>Options for the DOM parser</short>
+        <short>Options for the DOM parser.</short>
         <descr>
           Options is a read-only TDOMParseOptions property that represents options settings used when processing XML content in the parser.
         </descr>
@@ -818,7 +818,7 @@
       <!-- property Visibility: public -->
       <element name="TDOMParser.OnError">
         <short>
-          Event handler signalled when an error occurs while reading XML content
+          Event handler signalled when an error occurs while reading XML content.
         </short>
         <descr>
           OnError is a TXMLErrorEvent property that implements the event handler signalled when a error occurs while reading or processing XML content in the parser.
@@ -828,21 +828,21 @@
 
       <!-- record type Visibility: default -->
       <element name="TDecoder">
-        <short>Decoder used to convert encoded values in XML content</short>
+        <short>Decoder used to convert encoded values in XML content.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: default -->
       <element name="TDecoder.Context">
-        <short>Pointer to the context for the decoder</short>
+        <short>Pointer to the context for the decoder.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDecoder.Decode">
         <short>
-          Routine used to decode content using the specified buffer arguments
+          Routine used to decode content using the specified buffer arguments.
         </short>
         <descr>
           Decode is an address for the Integer function (??? is there a better term?) used to decode content using the specified buffer arguments.
@@ -852,33 +852,33 @@
 
       <!-- function result Visibility: default -->
       <element name="TDecoder.Decode.Result">
-        <short>Number of characters decoded in the routine</short>
+        <short>Number of characters decoded in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDecoder.Decode.InBuf">
-        <short>Buffer with values decoded in the routine</short>
+        <short>Buffer with values decoded in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDecoder.Decode.InCnt">
-        <short>Length of the input buffer</short>
+        <short>Length of the input buffer.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDecoder.Decode.OutBuf">
-        <short>Output buffer for the values decoded in the routine</short>
+        <short>Output buffer for the values decoded in the routine.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDecoder.Decode.OutCnt">
-        <short>Length of the output buffer</short>
+        <short>Length of the output buffer.</short>
       </element>
 
       <!-- variable Visibility: default -->
       <element name="TDecoder.Cleanup">
         <short>
-          Optional routine used to perform cleanup actions for the decoder Context
+          Optional routine used to perform cleanup actions for the decoder Context.
         </short>
         <descr>
           Cleanup is an address to the procedure used to perform cleanup actions for the decoder Context.
@@ -887,7 +887,7 @@
       </element>
 
       <element name="TDecoder.Cleanup.Context">
-        <short>Pointer to the Context for the decoder</short>
+        <short>Pointer to the Context for the decoder.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -916,7 +916,7 @@
 
       <!-- procedure Visibility: default -->
       <element name="RegisterDecoder">
-        <short>Registers the procedure used to decode values in a specific encoding</short>
+        <short>Registers the procedure used to decode values in a specific encoding.</short>
         <descr></descr>
         <errors></errors>
         <seealso></seealso>
@@ -924,7 +924,7 @@
 
       <!-- argument Visibility: default -->
       <element name="RegisterDecoder.Proc">
-        <short>Procedure to register in the routine</short>
+        <short>Procedure to register in the routine.</short>
       </element>
 
     </module>

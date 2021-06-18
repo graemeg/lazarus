@@ -7,7 +7,7 @@
     ========================================================================
     -->
     <module name="LazLogger">
-      <short>Provides a log framework</short>
+      <short>Provides a log framework.</short>
       <descr>
         <p>
           <file>LazLogger.pas</file> provides logging facilities to write message to a file. Messages can be logged plain, or enclosed in begin/end like blocks, adding indent to all messages between to points (blocks can be nested). It also has the ability to filter groups of messages.
@@ -52,7 +52,7 @@
       </element>
 
       <element name="DbgOut">
-        <short>Write message to log</short>
+        <short>Writes a message to the log.</short>
         <descr>
           <p>
             Writes the text to the log. Does not append a new line.
@@ -75,7 +75,7 @@
       </element>
 
       <element name="DebugLn">
-        <short>Write message to log</short>
+        <short>Writes a message to the log.</short>
         <descr>
           <p>
             Writes the text to the log. Does append a new line.
@@ -98,7 +98,7 @@
       </element>
 
       <element name="DebugLnEnter">
-        <short>Write message to log</short>
+        <short>Writes a message to the log.</short>
         <descr>
           <p>
             Writes the text to the log. Does append a new line. Increases the current intend.
@@ -121,7 +121,7 @@
       </element>
 
       <element name="DebugLnExit">
-        <short>Write message to log</short>
+        <short>Writes a message to the log.</short>
         <descr>
           <p>
             Writes the text to the log. Does append a new line. Increases the current intend.
@@ -325,7 +325,7 @@
       </element>
 
       <element name="TLazLoggerFileHandle">
-        <short>A log file writer object</short>
+        <short>A log file writer object.</short>
         <descr>
           <p>
             Provides functionality to write messages to a log file. Allows filtering and changing indent level.
@@ -403,19 +403,19 @@
         <short/>
       </element>
       <element name="TLazLoggerFileHandle.LogName">
-        <short>The name of the log file</short>
+        <short>The name of the log file.</short>
         <descr>
           This can be set by the application. Alternatively it can be determined according to ParamForLogFileName and EnvironmentForLogFileName
         </descr>
         <seealso/>
       </element>
       <element name="TLazLoggerFileHandle.UseStdOut">
-        <short>Enable writing to STDOUT, if LogName is not set</short>
+        <short>Enable writing to STDOUT, if LogName is not set.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLazLoggerFileHandle.CloseLogFileBetweenWrites">
-        <short>Enable opening and closing the log for each write</short>
+        <short>Enable opening and closing the log for each write.</short>
         <descr/>
         <seealso/>
       </element>
@@ -441,7 +441,7 @@
       </element>
 
       <element name="TLazLoggerFileHandleThreadSave">
-        <short>Performs file operations using a critical section</short>
+        <short>Performs file operations using a critical section.</short>
         <descr>
           <p>
             TLazLoggerFileHandleThreadSave is a TLazLoggerFileHandle descendant which implements a threaded file logger. TLazLoggerFileHandleThreadSave uses a TRTLCriticalSection class instance to lock the log file during file output operations. Requires that DoOpenFile is called by the main application thread. Otherwise the filehandle may get closed.
@@ -486,7 +486,7 @@
       </element>
 
       <element name="TLazLoggerFileHandleMainThread">
-        <short>File operations are queued for the main thread</short>
+        <short>File operations are queued for the main thread.</short>
         <descr>
           <p>
             TLazLoggerFileHandleMainThread is a TLazLoggerFileHandle descendant which implements a file-based logger which queues file operations for the main thread in an application.
@@ -689,7 +689,7 @@
         <short/>
       </element>
       <element name="TLazLoggerFile.ParamForLogFileName">
-        <short>Name of the command line option, that has the logfile's name</short>
+        <short>Name of the command line option, that has the logfile's name.</short>
         <descr>
           <p>
             A param on the commandline, that may contain the name (if not already set) example/default: --debug-log=.
@@ -701,7 +701,7 @@
         <seealso/>
       </element>
       <element name="TLazLoggerFile.EnvironmentForLogFileName">
-        <short>Name of the environment, that has the logfile name</short>
+        <short>Name of the environment, that has the logfile name.</short>
         <descr>
           <p>
             If LogName is empty and con not be found from ParamForLogFileName, then the environment variable specified will be checked. LogName  will be set, if found.
@@ -712,14 +712,14 @@
         <seealso/>
       </element>
       <element name="TLazLoggerFile.OnDebugLn">
-        <short>Event when writing a full line (Debugln, DebuglnEnter or DebuglnExit)</short>
+        <short>Event when writing a full line (Debugln, DebuglnEnter or DebuglnExit).</short>
         <descr>
           The event contains the text to be logged. It also has a handled var param, that can be set to True to prevent default action (writing to log).
         </descr>
         <seealso/>
       </element>
       <element name="TLazLoggerFile.OnDbgOut">
-        <short>Event when writing without line end (DbgOut)</short>
+        <short>Event when writing without line end (DbgOut).</short>
         <descr>
           <p>
             The event contains the text to be logged. It also has a handled var param, that can be set to True to prevent default action (writing to log).
@@ -756,7 +756,7 @@
       </element>
 
       <element name="TLazLoggerFile.LogName">
-        <short>The name of the log file</short>
+        <short>The name of the log file.</short>
         <descr>
           This can be set by the application. Alternatively it can be determined according to ParamForLogFileName and EnvironmentForLogFileName
         </descr>
@@ -764,13 +764,13 @@
       </element>
 
       <element name="TLazLoggerFile.UseStdOut">
-        <short>Enable writing to STDOUT, if LogName is not set</short>
+        <short>Enable writing to STDOUT, if LogName is not set.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazLoggerFile.CloseLogFileBetweenWrites">
-        <short>Enable opening and closing the log for each write</short>
+        <short>Enable opening and closing the log for each write.</short>
         <descr/>
         <seealso/>
       </element>

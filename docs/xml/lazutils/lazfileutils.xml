@@ -8,8 +8,8 @@
     -->
     <module name="LazFileUtils">
       <short>
-        Contains types, procedures, and functions used for file and directory operations
-      </short>
+        Contains types, procedures, and functions used for file and directory operations.
+        </short>
       <descr>
         <p>
           <file>lazfileutils.pas</file> contains types, procedures, and functions used for file and directory operations. This file is part of the <file>LazUtils</file> package.
@@ -21,7 +21,7 @@
 
       <element name="CompareFilenames">
         <short>
-          Gets the relative sort order for the specified file names
+          Gets the relative sort order for the specified file names.
         </short>
         <descr>
           <p>
@@ -45,20 +45,20 @@
       </element>
 
       <element name="CompareFilenames.Result">
-        <short>Relative sort order for the specified file names</short>
+        <short>Relative sort order for the specified file names.</short>
       </element>
 
       <element name="CompareFilenames.Filename1">
-        <short>First file name for the comparison</short>
+        <short>First file name for the comparison.</short>
       </element>
 
       <element name="CompareFilenames.Filename2">
-        <short>Second file name for the comparison</short>
+        <short>Second file name for the comparison.</short>
       </element>
 
       <element name="CompareFilenamesIgnoreCase">
         <short>
-          Gets the relative sort order for case-insensitive file names
+          Gets the relative sort order for case-insensitive file names.
         </short>
         <descr>
           <p>
@@ -82,18 +82,18 @@
         </seealso>
       </element>
       <element name="CompareFilenamesIgnoreCase.Result">
-        <short>Relative sort order for the file names</short>
+        <short>Relative sort order for the file names.</short>
       </element>
       <element name="CompareFilenamesIgnoreCase.Filename1">
-        <short>First file name for the comparison</short>
+        <short>First file name for the comparison.</short>
       </element>
       <element name="CompareFilenamesIgnoreCase.Filename2">
-        <short>Second file name for the comparison</short>
+        <short>Second file name for the comparison.</short>
       </element>
 
       <element name="CompareFileExt">
         <short>
-          Performs a sort order comparison for the specified file name and extension
+          Performs a sort order comparison for the specified file name and extension.
         </short>
         <descr>
           <p>
@@ -121,21 +121,21 @@
         <seealso/>
       </element>
       <element name="CompareFileExt.Result">
-        <short>Relative sort order for the compared values</short>
+        <short>Relative sort order for the compared values.</short>
       </element>
       <element name="CompareFileExt.Filename">
-        <short>File name for the comparison</short>
+        <short>File name for the comparison.</short>
       </element>
       <element name="CompareFileExt.Ext">
-        <short>File extension for the comparison</short>
+        <short>File extension for the comparison.</short>
       </element>
       <element name="CompareFileExt.CaseSensitive">
-        <short>True if case sensitive comparison is needed</short>
+        <short>True if case sensitive comparison is needed.</short>
       </element>
 
       <element name="CompareFilenameStarts">
         <short>
-          Compares file names using the number characters in common
+          Compares file names using the number characters in common.
         </short>
         <descr>
           <p>
@@ -150,23 +150,23 @@
         </seealso>
       </element>
       <element name="CompareFilenameStarts.Result">
-        <short>Relative sort order for the compared values</short>
+        <short>Relative sort order for the compared values.</short>
       </element>
       <element name="CompareFilenameStarts.Filename1">
-        <short>First file name for the comparison</short>
+        <short>First file name for the comparison.</short>
       </element>
       <element name="CompareFilenameStarts.Filename2">
-        <short>Second file name for the comparison</short>
+        <short>Second file name for the comparison.</short>
       </element>
       <element name="CompareFilenames.Len1">
-        <short>Length of the first file name</short>
+        <short>Length of the first file name.</short>
       </element>
       <element name="CompareFilenames.Len2">
-        <short>Length of the seconds file name</short>
+        <short>Length of the seconds file name.</short>
       </element>
 
       <element name="CompareFilenamesP">
-        <short>Compares file names to determine their relative sort order</short>
+        <short>Compares file names to determine their relative sort order.</short>
         <descr>
           <p>
             <var>CompareFilenamesP</var> is an <var>Integer</var> function used to compare the specified file names to determine their relative sort order.
@@ -187,20 +187,20 @@
         </seealso>
       </element>
       <element name="CompareFilenamesP.Result">
-        <short>Relative sort order for the compared values</short>
+        <short>Relative sort order for the compared values.</short>
       </element>
       <element name="CompareFilenamesP.Filename1">
-        <short>File name used in the comparison</short>
+        <short>File name used in the comparison.</short>
       </element>
       <element name="CompareFilenamesP.Filename2">
-        <short>File name used in the comparison</short>
+        <short>File name used in the comparison.</short>
       </element>
       <element name="CompareFilenamesP.IgnoreCase">
-        <short>Indicates if case differences in file name comparisons are ignored</short>
+        <short>Indicates if case differences in file name comparisons are ignored.</short>
       </element>
 
       <element name="FilenameExtIs">
-        <short>Determines if the Filename has the specified file extension</short>
+        <short>Determines if the Filename has the specified file extension.</short>
         <descr>
           <p>
             <var>FilenameExtIs</var> is a <var>Boolean</var> function used to determines if the file in the <var>Filename</var> parameter has the specified file extension in <var>Ext</var>.
@@ -234,20 +234,20 @@
         </seealso>
       </element>
       <element name="FilenameExtIs.Result">
-        <short>Returns True if the Filename has the specified file extension</short>
+        <short>Returns True if the Filename has the specified file extension.</short>
       </element>
       <element name="FilenameExtIs.Filename">
-        <short>File name examined in the routine</short>
+        <short>File name examined in the routine.</short>
       </element>
       <element name="FilenameExtIs.Ext">
-        <short>File extension expected in the file name</short>
+        <short>File extension expected in the file name.</short>
       </element>
       <element name="FilenameExtIs.CaseSensitive">
-        <short>True to use case-sensitive comparison in the routine</short>
+        <short>True to use case-sensitive comparison in the routine.</short>
       </element>
 
       <element name="FilenameExtIn">
-        <short>Determines if the file name uses one of the specified file extensions</short>
+        <short>Determines if the file name uses one of the specified file extensions.</short>
         <descr>
           <p>
             <var>FilenameExtIn</var> is a <var>Boolean</var> function used to determine if the file name in the <var>Filename</var> parameter uses one of the file extension in <var>Exts</var>.
@@ -267,21 +267,21 @@
         </seealso>
       </element>
       <element name="FilenameExtIn.Result">
-        <short>Returns True if the Filename has one of the specified file extensions</short>
+        <short>Returns True if the Filename has one of the specified file extensions.</short>
       </element>
       <element name="FilenameExtIn.Filename">
-        <short>File name examined in the routine</short>
+        <short>File name examined in the routine.</short>
       </element>
       <element name="FilenameExtIn.Exts">
-        <short>File extensions expected in the file name</short>
+        <short>File extensions expected in the file name.</short>
       </element>
       <element name="FilenameExtIn.CaseSensitive">
-        <short>True to use case-sensitive comparison in the routine</short>
+        <short>True to use case-sensitive comparison in the routine.</short>
       </element>
 
       <element name="DirPathExists">
         <short>
-          Indicates if the specified directory name exists on the local file system
+          Indicates if the specified directory name exists on the local file system.
         </short>
         <descr>
           <p>
@@ -293,15 +293,15 @@
         </seealso>
       </element>
       <element name="DirPathExists.Result">
-        <short>True when the specified directory exists in the file system</short>
+        <short>True when the specified directory exists in the file system.</short>
       </element>
       <element name="DirPathExists.DirectoryName">
-        <short>Directory Name to locate</short>
+        <short>Directory Name to locate.</short>
       </element>
 
       <element name="DirectoryIsWritable">
         <short>
-          Indicates if the specified directory name is writable
+          Indicates if the specified directory name is writable.
         </short>
         <descr>
           <p>
@@ -325,15 +325,15 @@
         </seealso>
       </element>
       <element name="DirectoryIsWritable.Result">
-        <short>True if the specified directory is writable</short>
+        <short>True if the specified directory is writable.</short>
       </element>
       <element name="DirectoryIsWritable.DirectoryName">
-        <short>Directory name to examine in the function</short>
+        <short>Directory name to examine in the function.</short>
       </element>
 
       <element name="ExtractFileNameOnly">
         <short>
-          Gets the base file name (without the file extension) in the specified path
+          Gets the base file name (without the file extension) in the specified path.
         </short>
         <descr>
           <p>
@@ -343,15 +343,15 @@
         <seealso/>
       </element>
       <element name="ExtractFileNameOnly.Result">
-        <short>Base file name in the file path</short>
+        <short>Base file name in the file path.</short>
       </element>
       <element name="ExtractFileNameOnly.AFilename">
-        <short>File path and name to examine in the function</short>
+        <short>File path and name to examine in the function.</short>
       </element>
 
       <element name="FilenameIsAbsolute">
         <short>
-          Determines if the specified value is an absolute file path (not a relative one)
+          Determines if the specified value is an absolute file path (not a relative one).
         </short>
         <descr>
           <p>
@@ -373,15 +373,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FilenameIsAbsolute.Result">
-        <short>True when the file name is not a relative path</short>
+        <short>True when the file name is not a relative path.</short>
       </element>
       <element name="FilenameIsAbsolute.TheFilename">
-        <short>Path and file name to use in the function</short>
+        <short>Path and file name to use in the function.</short>
       </element>
 
       <element name="FilenameIsWinAbsolute">
         <short>
-          Determines if the specified value is an absolute file path (not a relative one)
+          Determines if the specified value is an absolute file path (not a relative one).
         </short>
         <descr>
           <p>
@@ -400,15 +400,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FilenameIsWinAbsolute.Result">
-        <short>True when the file name is not a relative path</short>
+        <short>True when the file name is not a relative path.</short>
       </element>
       <element name="FilenameIsWinAbsolute.TheFilename">
-        <short>Path and file name to use in the function</short>
+        <short>Path and file name to use in the function.</short>
       </element>
 
       <element name="FilenameIsUnixAbsolute">
         <short>
-          Determines if the specified value is an absolute file path (not a relative one)
+          Determines if the specified value is an absolute file path (not a relative one).
         </short>
         <descr>
           <p>
@@ -421,15 +421,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FilenameIsUnixAbsolute.Result">
-        <short>True when the file name is not a relative path</short>
+        <short>True when the file name is not a relative path.</short>
       </element>
       <element name="FilenameIsUnixAbsolute.TheFilename">
-        <short>Path and file name to use in the function</short>
+        <short>Path and file name to use in the function.</short>
       </element>
 
       <element name="ForceDirectory">
         <short>
-          Creates the specified directory if it does not already exist
+          Creates the specified directory if it does not already exist.
         </short>
         <descr>
           <p>
@@ -449,15 +449,15 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="ForceDirectory.Result">
-        <short>Returns True if directory exists or if it was successfully created</short>
+        <short>Returns True if directory exists or if it was successfully created.</short>
       </element>
       <element name="ForceDirectory.DirectoryName">
-        <short>Path information for the operation</short>
+        <short>Path information for the operation.</short>
       </element>
 
       <element name="CheckIfFileIsExecutable">
         <short>
-          Examines the specified file to see if it is executable
+          Examines the specified file to see if it is executable.
         </short>
         <descr>
           <p>
@@ -511,12 +511,12 @@ D:\db\employee.fdb
         </errors>
       </element>
       <element name="CheckIfFileIsExecutable.AFilename">
-        <short>File name to examine</short>
+        <short>File name to examine.</short>
       </element>
 
       <element name="FileIsExecutable">
         <short>
-          Determines if the specified file name is executable
+          Determines if the specified file name is executable.
         </short>
         <descr>
           <p>
@@ -526,14 +526,14 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileIsExecutable.Result">
-        <short>True if the file is executable on the platform or OS</short>
+        <short>True if the file is executable on the platform or OS.</short>
       </element>
       <element name="FileIsExecutable.AFilename">
-        <short>File name to examine</short>
+        <short>File name to examine.</short>
       </element>
 
       <element name="FileIsSymlink">
-        <short>Indicates if the specified file is a symbolic link in the file system</short>
+        <short>Indicates if the specified file is a symbolic link in the file system.</short>
         <descr>
           <p>
             <var>FileIsSymlink</var> is a <var>Boolean</var> function used to determine if the specified file name is a symbolic link on the local file system.
@@ -548,7 +548,7 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="FileIsSymlink.Result">
-        <short>True when the specified file name is a symbolic link</short>
+        <short>True when the specified file name is a symbolic link.</short>
       </element>
       <element name="FileIsSymlink.AFilename">
         <short>File name examined in the routine`</short>
@@ -556,7 +556,7 @@ D:\db\employee.fdb
 
       <element name="FileIsHardLink">
         <short>
-          Indicates if the specified file has a descriptor or handle on the local file system
+          Indicates if the specified file has a descriptor or handle on the local file system.
         </short>
         <descr>
           <p>
@@ -575,15 +575,15 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="FileIsHardLink.Result">
-        <short>True when file information can be accessed by its descriptor or handle</short>
+        <short>True when file information can be accessed by its descriptor or handle.</short>
       </element>
       <element name="FileIsHardLink.AFilename">
-        <short>File name examined in the routine</short>
+        <short>File name examined in the routine.</short>
       </element>
 
       <element name="FileIsReadable">
         <short>
-          Indicates if the specified file name is readable
+          Indicates if the specified file name is readable.
         </short>
         <descr>
           <p>
@@ -596,15 +596,15 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="FileIsReadable.Result">
-        <short>True when the specified file name is readable</short>
+        <short>True when the specified file name is readable.</short>
       </element>
       <element name="FileIsReadable.AFilename">
-        <short>File name to examine</short>
+        <short>File name to examine.</short>
       </element>
 
       <element name="FileIsWritable">
         <short>
-          Indicates if the specified file name is writable
+          Indicates if the specified file name is writable.
         </short>
         <descr>
           <p>
@@ -614,16 +614,16 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileIsWritable.Result">
-        <short>True when the specified file name is writable</short>
+        <short>True when the specified file name is writable.</short>
       </element>
       <element name="FileIsWritable.AFilename">
-        <short>File name to examine</short>
+        <short>File name to examine.</short>
       </element>
 
       <element name="FileIsText">
         <short>
-          Determines if the specified file contains plain text content
-      </short>
+          Determines if the specified file contains plain text content.
+        </short>
         <descr>
           <p>
             <var>FileIsText</var> is a <var>Boolean</var> function used to determine if the specified file contains plain text content. The overloaded variant that includes the FileReadable argument is used to examine the content in the file.
@@ -646,13 +646,13 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileIsText.Result">
-        <short>True when the file contains plain text content</short>
+        <short>True when the file contains plain text content.</short>
       </element>
       <element name="FileIsText.AFilename">
-        <short>File name to examine in the function</short>
+        <short>File name to examine in the function.</short>
       </element>
       <element name="FileIsText.FileReadable">
-        <short>Indicates if the specified file was successfully opened and read</short>
+        <short>Indicates if the specified file was successfully opened and read.</short>
       </element>
 
       <element name="FilenameIsTrimmed">
@@ -668,21 +668,21 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FilenameIsTrimmed.Result">
-        <short>False when the file name needs to trimmed</short>
+        <short>False when the file name needs to trimmed.</short>
       </element>
       <element name="FilenameIsTrimmed.TheFilename">
-        <short>File name to examine in the function</short>
+        <short>File name to examine in the function.</short>
       </element>
       <element name="FilenameIsTrimmed.StartPos">
-        <short>PChar with the file name value</short>
+        <short>PChar with the file name value.</short>
       </element>
       <element name="FilenameIsTrimmed.NameLen">
-        <short>Length of the file name</short>
+        <short>Length of the file name.</short>
       </element>
 
       <element name="TrimFilename">
         <short>
-          Removes leading and trailing spaces, and resolves special characters
+          Removes leading and trailing spaces, and resolves special characters.
         </short>
         <descr>
           <var>TrimFilename</var> is a <var>String</var> function used to remove leading and trailing spaces (Decimal 32) in the specified path and file name. In addition, ResolveDots is called to expand directory characters (like '.' and '..') and to remove duplicate path delimiters (like '//').
@@ -698,15 +698,15 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="TrimFilename.Result">
-        <short>New value  for the path and file name</short>
+        <short>New value  for the path and file name.</short>
       </element>
       <element name="TrimFilename.AFilename">
-        <short>Path and file name for the operation</short>
+        <short>Path and file name for the operation.</short>
       </element>
 
       <element name="ResolveDots">
         <short>
-          Removes duplicate path delimiters and resolves relative path symbols
+          Removes duplicate path delimiters and resolves relative path symbols.
         </short>
         <descr>
           <p>
@@ -715,15 +715,15 @@ D:\db\employee.fdb
         </descr>
       </element>
       <element name="ResolveDots.Result">
-        <short>File name with duplicate delimiters and relative paths resolved</short>
+        <short>File name with duplicate delimiters and relative paths resolved.</short>
       </element>
       <element name="ResolveDots.AFilename">
-        <short>File name examined in the routine</short>
+        <short>File name examined in the routine.</short>
       </element>
 
       <element name="CleanAndExpandFilename">
         <short>
-          Removes whitespace and resolves special characters in the specified file name
+          Removes whitespace and resolves special characters in the specified file name.
         </short>
         <descr>
           <p>
@@ -733,15 +733,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="CleanAndExpandFilename.Result">
-        <short>File name with whitespace removed and special characters resolved</short>
+        <short>File name with whitespace removed and special characters resolved.</short>
       </element>
       <element name="CleanAndExpandFilename.Filename">
-        <short>File name to examine in the function</short>
+        <short>File name to examine in the function.</short>
       </element>
 
       <element name="CleanAndExpandDirectory">
         <short>
-          Removes whitespace and resolves special characters in the specified path
+          Removes whitespace and resolves special characters in the specified path.
         </short>
         <descr>
           <p>
@@ -755,16 +755,16 @@ D:\db\employee.fdb
       </element>
       <element name="CleanAndExpandDirectory.Result">
         <short>
-          Path information after removing whitespace and resolving special characters
+          Path information after removing whitespace and resolving special characters.
         </short>
       </element>
       <element name="CleanAndExpandDirectory.Filename">
-        <short>Path information for the function</short>
+        <short>Path information for the function.</short>
       </element>
 
       <element name="TrimAndExpandFilename">
         <short>
-          Cleans and resolves a file path to the specified base directory name
+          Cleans and resolves a file path to the specified base directory name.
         </short>
         <descr>
           <p>
@@ -777,18 +777,18 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="TrimAndExpandFilename.Result">
-        <short>Cleaned and resolved file path</short>
+        <short>Cleaned and resolved file path.</short>
       </element>
       <element name="TrimAndExpandFilename.Filename">
-        <short>File name for the function</short>
+        <short>File name for the function.</short>
       </element>
       <element name="TrimAndExpandFilename.BaseDir">
-        <short>Base directory name used for a relative file path</short>
+        <short>Base directory name used for a relative file path.</short>
       </element>
 
       <element name="TrimAndExpandDirectory">
         <short>
-          Cleans and resolves a relative path to a base directory
+          Cleans and resolves a relative path to a base directory.
         </short>
         <descr>
           <p>
@@ -804,18 +804,18 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="TrimAndExpandDirectory.Result">
-        <short>Path information cleaned and resolved to the specified base directory</short>
+        <short>Path information cleaned and resolved to the specified base directory.</short>
       </element>
       <element name="TrimAndExpandDirectory.Filename">
-        <short>Path information for the function</short>
+        <short>Path information for the function.</short>
       </element>
       <element name="TrimAndExpandDirectory.BaseDir">
-        <short>Base directory used to resolve a relative path</short>
+        <short>Base directory used to resolve a relative path.</short>
       </element>
 
       <element name="CreateRelativePath">
         <short>
-          Creates a relative path from BaseDirectory to Filename
+          Creates a relative path from BaseDirectory to Filename.
         </short>
         <descr>
           <p>
@@ -831,23 +831,23 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="CreateRelativePath.Result">
-        <short>Relative path from the base directory for the file name</short>
+        <short>Relative path from the base directory for the file name.</short>
       </element>
       <element name="CreateRelativePath.Filename">
-        <short>File name for the operation</short>
+        <short>File name for the operation.</short>
       </element>
       <element name="CreateRelativePath.BaseDirectory">
-        <short>Base directory for the relative path</short>
+        <short>Base directory for the relative path.</short>
       </element>
       <element name="CreateRelativePath.UsePointDirectory">
         <short>
-          True if '.' (current directory symbol) is prepended to the relative path
+          True if '.' (current directory symbol) is prepended to the relative path.
         </short>
       </element>
 
       <element name="FileIsInPath">
         <short>
-          Returns True if Filename exists in the specified Path
+          Returns True if Filename exists in the specified Path.
         </short>
         <descr>
           <p>
@@ -869,17 +869,17 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileIsInPath.Result">
-        <short>True when the file exists in the specified path</short>
+        <short>True when the file exists in the specified path.</short>
       </element>
       <element name="FileIsInPath.Filename">
-        <short>File name to locate</short>
+        <short>File name to locate.</short>
       </element>
       <element name="FileIsInPath.Path">
-        <short>Path used for the operation</short>
+        <short>Path used for the operation.</short>
       </element>
 
       <element name="PathIsInPath">
-        <short>Checks whether the specified directory exists in a given path</short>
+        <short>Checks whether the specified directory exists in a given path.</short>
         <descr>
           <p>
             <var>PathIsInPath</var> is a <var>Boolean</var> function used to determine if the specified <var>Directory</var> exists in the <var>Path</var> argument. The return value is <b>False</b> when Path contains an empty string (''), or when the Directory does not exist in Path.
@@ -894,18 +894,18 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="PathIsInPath.Result">
-        <short>True when Directory exists in Path</short>
+        <short>True when Directory exists in Path.</short>
       </element>
       <element name="PathIsInPath.Path">
-        <short>Path examined in the routine</short>
+        <short>Path examined in the routine.</short>
       </element>
       <element name="PathIsInPath.Directory">
-        <short>Directory name to locate in the specified path</short>
+        <short>Directory name to locate in the specified path.</short>
       </element>
 
       <element name="ShortDisplayFilename">
         <short>
-          Gets a shortened version of the specified file name up to a maximum length
+          Gets a shortened version of the specified file name up to a maximum length.
         </short>
         <descr>
           <p>
@@ -921,13 +921,13 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="ShortDisplayFilename.Result">
-        <short>Shortened version of the specified file name</short>
+        <short>Shortened version of the specified file name.</short>
       </element>
       <element name="ShortDisplayFilename.aFileName">
-        <short>File name examined in the routine</short>
+        <short>File name examined in the routine.</short>
       </element>
       <element name="ShortDisplayFilename.aLimit">
-        <short>Maximum number of characters for the shortened file name</short>
+        <short>Maximum number of characters for the shortened file name.</short>
       </element>
 
       <element name="TPathDelimSwitch">
@@ -938,21 +938,21 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="TPathDelimSwitch.pdsNone">
-        <short>No path delimiter changes were used</short>
+        <short>No path delimiter changes were used.</short>
       </element>
       <element name="TPathDelimSwitch.pdsSystem">
-        <short>Path delimiter is switched to the default path delimiter for the system</short>
+        <short>Path delimiter is switched to the default path delimiter for the system.</short>
       </element>
       <element name="TPathDelimSwitch.pdsUnix">
-        <short>Path delimiter is switched to the UNIX path delimiter (forward slash)</short>
+        <short>Path delimiter is switched to the UNIX path delimiter (forward slash).</short>
       </element>
       <element name="TPathDelimSwitch.pdsWindows">
-        <short>Path delimiter is switched to the Windows path delimiter (backslash)</short>
+        <short>Path delimiter is switched to the Windows path delimiter (backslash).</short>
       </element>
 
       <element name="PathDelimSwitchToDelim">
         <short>
-          Constant array with characters used as path delimiters for supported platforms and OS's
+          Constant array with characters used as path delimiters for supported platforms and OS's.
         </short>
         <descr>
           <var>PathDelimSwitchToDelim</var> is an array constant with character values for path delimiters associated with <var>TPathDelimSwitch</var> enumeration values. The <var>DirectorySeparator</var> value is used for both pdsNone and pdsSystem enumeration values. For UNIX-like environments (pdsUnix), the Forward slash character ('/' ) is used for the path delimiter. For Windows platforms (pdsWindows) the backslash character ('\') is used for the path delimiter.
@@ -966,7 +966,7 @@ D:\db\employee.fdb
 
       <element name="ForcePathDelims">
         <short>
-          Ensures that path delimiters in the specified file name are correct for the current platform or OS
+          Ensures that path delimiters in the specified file name are correct for the current platform or OS.
         </short>
         <descr>
           <p>
@@ -979,11 +979,11 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="ForcePathDelims.FileName">
-        <short>File name examined in the routine</short>
+        <short>File name examined in the routine.</short>
       </element>
 
       <element name="GetForcedPathDelims">
-        <short>Performs path delimiter substitutions for the specified file name</short>
+        <short>Performs path delimiter substitutions for the specified file name.</short>
         <descr>
           <p>
             <var>GetForcedPathDelims</var> is a <var>String</var> function used to perform path delimiter substitutions on the specified file name for the current platform or OS. GetForcedPathDelims calls <var>ForcePathDelims</var> using a copy of <var>FileName</var> as an argument. This ensures that the original file name remains unchanged when path delimiter substitutions are needed.
@@ -994,15 +994,15 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="GetForcedPathDelims.Result">
-        <short>File name after any path delimiter substitutions</short>
+        <short>File name after any path delimiter substitutions.</short>
       </element>
       <element name="GetForcedPathDelims.FileName">
-        <short>File name examined in the function</short>
+        <short>File name examined in the function.</short>
       </element>
 
       <element name="AppendPathDelim">
         <short>
-          Adds a trailing path delimiter when needed
+          Adds a trailing path delimiter when needed.
         </short>
         <descr>
           <p>
@@ -1012,15 +1012,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="AppendPathDelim.Result">
-        <short>Path value with a trailing path delimiter</short>
+        <short>Path value with a trailing path delimiter.</short>
       </element>
       <element name="AppendPathDelim.Path">
-        <short>Path value to examine</short>
+        <short>Path value to examine.</short>
       </element>
 
       <element name="ChompPathDelim">
         <short>
-          Removes a trailing path delimiter from the specified value
+          Removes a trailing path delimiter from the specified value.
         </short>
         <descr>
           <p>
@@ -1030,14 +1030,14 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="ChompPathDelim.Result">
-        <short>Path information after removing the trailing path delimiter</short>
+        <short>Path information after removing the trailing path delimiter.</short>
       </element>
       <element name="ChompPathDelim.Path">
-        <short>Path information for the function</short>
+        <short>Path information for the function.</short>
       </element>
 
       <element name="SwitchPathDelims">
-        <short>Replaces path delimiters in a file path with the specified delimiter</short>
+        <short>Replaces path delimiters in a file path with the specified delimiter.</short>
         <descr>
           <p>
             <var>SwitchPathDelims</var> is an overloaded <var>String</var> function used to ensure that path delimiter characters in Filename use the required character.
@@ -1079,18 +1079,18 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="SwitchPathDelims.Result">
-        <short>File path and name after any path delimiter substitutions</short>
+        <short>File path and name after any path delimiter substitutions.</short>
       </element>
       <element name="SwitchPathDelims.Filename">
-        <short>File path and name examined in the function</short>
+        <short>File path and name examined in the function.</short>
       </element>
       <element name="SwitchPathDelims.Switch">
-        <short>Indicates the desired path delimiter to use in the return value</short>
+        <short>Indicates the desired path delimiter to use in the return value.</short>
       </element>
 
       <element name="CheckPathDelim">
         <short>
-          Determines if the specified path delimiter character is not used on the system
+          Determines if the specified path delimiter character is not used on the system.
         </short>
         <descr>
           <p>
@@ -1110,10 +1110,10 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="CheckPathDelim.Result">
-        <short>Enumeration value indicating the path delimiter substitution required</short>
+        <short>Enumeration value indicating the path delimiter substitution required.</short>
       </element>
       <element name="CheckPathDelim.OldPathDelim">
-        <short>Value to compare to the current path delimiter for the system</short>
+        <short>Value to compare to the current path delimiter for the system.</short>
       </element>
       <element name="CheckPathDelim.Changed">
         <short/>
@@ -1121,7 +1121,7 @@ D:\db\employee.fdb
 
       <element name="IsCurrentPathDelim">
         <short>
-          Determines if the current path delimiter matches the specified path delimiter notation
+          Determines if the current path delimiter matches the specified path delimiter notation.
         </short>
         <descr>
           <p>
@@ -1152,17 +1152,17 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="IsCurrentPathDelim.Result">
-        <short>Boolean result of the path delimiter comparison</short>
+        <short>Boolean result of the path delimiter comparison.</short>
       </element>
       <element name="IsCurrentPathDelim.Switch">
         <short>
-          Enumeration value specifying the character compared to the current path delimiter
+          Enumeration value specifying the character compared to the current path delimiter.
         </short>
       </element>
 
       <element name="CreateAbsoluteSearchPath">
         <short>
-          <var>CreateAbsoluteSearchPath</var> - concatenates <var>BaseDirectory </var>and <var>SearchPath</var> to form an absolute path to search for files
+          <var>CreateAbsoluteSearchPath</var> - concatenates <var>BaseDirectory </var>and <var>SearchPath</var> to form an absolute path to search for files.
         </short>
         <descr>
           <p>
@@ -1178,19 +1178,19 @@ D:\db\employee.fdb
       </element>
       <element name="CreateAbsoluteSearchPath.Result">
         <short>
-          The absolute path formed by concatenating <var>BaseDirectory</var> and <var>SearchPath</var>
+          The absolute path formed by concatenating <var>BaseDirectory</var> and <var>SearchPath</var>.
         </short>
       </element>
       <element name="CreateAbsoluteSearchPath.SearchPath">
-        <short>The search path (a relative path)</short>
+        <short>The search path (a relative path).</short>
       </element>
       <element name="CreateAbsoluteSearchPath.BaseDirectory">
-        <short>The base directory from which to form the absolute path</short>
+        <short>The base directory from which to form the absolute path.</short>
       </element>
 
       <element name="CreateRelativeSearchPath">
         <short>
-          Resolves relative path value(s) in the specified search path
+          Resolves relative path value(s) in the specified search path.
         </short>
         <descr>
           <p>
@@ -1213,22 +1213,22 @@ D:\db\employee.fdb
       </element>
       <element name="CreateRelativeSearchPath.Result">
         <short>
-          Search path after resolving relative paths to the specified base directory
+          Search path after resolving relative paths to the specified base directory.
         </short>
       </element>
       <element name="CreateRelativeSearchPath.SearchPath">
         <short>
-          Search path(s) examined in the function
+          Search path(s) examined in the function.
         </short>
       </element>
       <element name="CreateRelativeSearchPath.BaseDirectory">
         <short>
-          Directory used as the anchor for resolved relative paths
+          Directory used as the anchor for resolved relative paths.
         </short>
       </element>
 
       <element name="MinimizeSearchPath">
-        <short>Trims the specified path, and removes empty or duplicate paths</short>
+        <short>Trims the specified path, and removes empty or duplicate paths.</short>
         <descr>
           <p>
             <var>MinimizeSearchPath</var> is a <var>String</var> function used to trim the path(s) specified in <var>SearchPath</var>, and to remove empty or duplicate paths in the argument. SearchPath can contain multiple path specifications separated by the semicolon (';') character.
@@ -1248,14 +1248,14 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="MinimizeSearchPath.Result">
-        <short>Search path after normalization and removal of duplicates</short>
+        <short>Search path after normalization and removal of duplicates.</short>
       </element>
       <element name="MinimizeSearchPath.SearchPath">
-        <short>Search path(s) examined in the function</short>
+        <short>Search path(s) examined in the function.</short>
       </element>
 
       <element name="FindPathInSearchPath">
-        <short>Locates the specified path in a delimiters list of search paths</short>
+        <short>Locates the specified path in a delimiters list of search paths.</short>
         <descr>
           <p>
             <var>FindPathInSearchPath</var> is an overloaded function used to locate the path specified in <var>APath</var> in a list of search paths.
@@ -1276,24 +1276,24 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FindPathInSearchPath.Result">
-        <short>Position or value for the located search path</short>
+        <short>Position or value for the located search path.</short>
       </element>
       <element name="FindPathInSearchPath.APath">
-        <short>Path to locate in the delimited list of search paths</short>
+        <short>Path to locate in the delimited list of search paths.</short>
       </element>
       <element name="FindPathInSearchPath.APathLen">
-        <short>Length in characters for the path to locate in the routine</short>
+        <short>Length in characters for the path to locate in the routine.</short>
       </element>
       <element name="FindPathInSearchPath.SearchPath">
-        <short>Delimited list of search paths examined in the routine</short>
+        <short>Delimited list of search paths examined in the routine.</short>
       </element>
       <element name="FindPathInSearchPath.SearchPathLen">
-        <short>Length in characters for the search paths list</short>
+        <short>Length in characters for the search paths list.</short>
       </element>
 
       <element name="FileExistsUTF8">
         <short>
-          Indicates if the specified UTF-8-encoded file name exists
+          Indicates if the specified UTF-8-encoded file name exists.
         </short>
         <descr>
           <p>
@@ -1306,16 +1306,16 @@ D:\db\employee.fdb
       </element>
 
       <element name="FileExistsUTF8.Result">
-        <short>True when the specified file name exists</short>
+        <short>True when the specified file name exists.</short>
       </element>
 
       <element name="FileExistsUTF8.Filename">
-        <short>UTF-8-encoded file name to locate on the local file system</short>
+        <short>UTF-8-encoded file name to locate on the local file system.</short>
       </element>
 
       <element name="FileAgeUTF8">
         <short>
-          Returns the last modification time for the file in FileDate format
+          Returns the last modification time for the file in FileDate format.
         </short>
         <descr>
           <p>
@@ -1331,15 +1331,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileAgeUTF8.Result">
-        <short>Last modification time for the file in FileDate format</short>
+        <short>Last modification time for the file in FileDate format.</short>
       </element>
       <element name="FileAgeUTF8.FileName">
-        <short>File name examined in the function</short>
+        <short>File name examined in the function.</short>
       </element>
 
       <element name="DirectoryExistsUTF8">
         <short>
-          Determine if the specified path exists on the local file system
+          Determine if the specified path exists on the local file system.
         </short>
         <descr>
           <p>
@@ -1349,15 +1349,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="DirectoryExistsUTF8.Result">
-        <short>True when the directory exists in the file system</short>
+        <short>True when the directory exists in the file system.</short>
       </element>
       <element name="DirectoryExistsUTF8.Directory">
-        <short>Directory name to locate in the file system</short>
+        <short>Directory name to locate in the file system.</short>
       </element>
 
       <element name="ExpandFileNameUTF8">
         <short>
-          Expands the values in FileName and BaseDir to an absolute file name
+          Expands the values in FileName and BaseDir to an absolute file name.
         </short>
         <descr>
           <p>
@@ -1374,18 +1374,18 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="ExpandFileNameUTF8.Result">
-        <short>The file name with an absolute path</short>
+        <short>The file name with an absolute path.</short>
       </element>
       <element name="ExpandFileNameUTF8.FileName">
-        <short>File name examined in the function</short>
+        <short>File name examined in the function.</short>
       </element>
       <element name="ExpandFileNameUTF8.BaseDir">
-        <short>Base directory used to resolve a relative path</short>
+        <short>Base directory used to resolve a relative path.</short>
       </element>
 
       <element name="FindFirstUTF8">
         <short>
-          Starts searching for files matching the specified path value
+          Starts searching for files matching the specified path value.
         </short>
         <descr>
           <p>
@@ -1404,21 +1404,21 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="FindFirstUTF8.Result">
-        <short>Last error number encountered in the function</short>
+        <short>Last error number encountered in the function.</short>
       </element>
       <element name="FindFirstUTF8.Path">
-        <short>Path and/or file name to locate</short>
+        <short>Path and/or file name to locate.</short>
       </element>
       <element name="FindFirstUTF8.Attr">
-        <short>File attributes to include in the search</short>
+        <short>File attributes to include in the search.</short>
       </element>
       <element name="FindFirstUTF8.Rslt">
-        <short>Search record for the first matching file</short>
+        <short>Search record for the first matching file.</short>
       </element>
 
       <element name="FindNextUTF8">
         <short>
-          Locates another file matching the search criteria
+          Locates another file matching the search criteria.
         </short>
         <descr>
           <p>
@@ -1434,15 +1434,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FindNextUTF8.Result">
-        <short>Last error number</short>
+        <short>Last error number.</short>
       </element>
       <element name="FindNextUTF8.Rslt">
-        <short>Search criteria for the function</short>
+        <short>Search criteria for the function.</short>
       </element>
 
       <element name="FindCloseUTF8">
         <short>
-          Frees resources allocated to the specified search record
+          Frees resources allocated to the specified search record.
         </short>
         <descr>
           <p>
@@ -1453,12 +1453,12 @@ D:\db\employee.fdb
       </element>
 
       <element name="FindCloseUTF8.F">
-        <short>Search record to free in the procedure</short>
+        <short>Search record to free in the procedure.</short>
       </element>
 
       <element name="FileSetDateUTF8">
         <short>
-          Sets the last modification time for the file
+          Sets the last modification time for the file.
         </short>
         <descr>
           <p>
@@ -1474,18 +1474,18 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileSetDateUTF8.Result">
-        <short>Last error number in the function</short>
+        <short>Last error number in the function.</short>
       </element>
       <element name="FileSetDateUTF8.FileName">
-        <short>File name to update in the function</short>
+        <short>File name to update in the function.</short>
       </element>
       <element name="FileSetDateUTF8.Age">
-        <short>New value for the last modification time</short>
+        <short>New value for the last modification time.</short>
       </element>
 
       <element name="FileGetAttrUTF8">
           <short>
-            Gets the value of file attributes for the specified file name
+            Gets the value of file attributes for the specified file name.
         </short>
         <descr>
           <p>
@@ -1524,15 +1524,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileGetAttrUTF8.Result">
-        <short>File attribute value for the specified file name</short>
+        <short>File attribute value for the specified file name.</short>
       </element>
       <element name="FileGetAttrUTF8.FileName">
-        <short>File name for the function</short>
+        <short>File name for the function.</short>
       </element>
 
       <element name="FileSetAttrUTF8">
         <short>
-          Sets the file attribute value for the specified file name
+          Sets the file attribute value for the specified file name.
         </short>
         <descr>
           <p>
@@ -1574,18 +1574,18 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileSetAttrUTF8.Result">
-        <short>Last error number from the function</short>
+        <short>Last error number from the function.</short>
       </element>
       <element name="FileSetAttrUTF8.Filename">
-        <short>File name to update in the function</short>
+        <short>File name to update in the function.</short>
       </element>
       <element name="FileSetAttrUTF8.Attr">
-        <short>File attribute value for the specified file name</short>
+        <short>File attribute value for the specified file name.</short>
       </element>
 
       <element name="DeleteFileUTF8">
         <short>
-          Deletes the specified file name
+          Deletes the specified file name.
         </short>
         <descr>
           <p>
@@ -1601,15 +1601,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="DeleteFileUTF8.Result">
-        <short>True if the specified file name is deleted</short>
+        <short>True if the specified file name is deleted.</short>
       </element>
       <element name="DeleteFileUTF8.FileName">
-        <short>File name to delete in the function</short>
+        <short>File name to delete in the function.</short>
       </element>
 
       <element name="RenameFileUTF8">
         <short>
-          Renames a file to the specified value
+          Renames a file to the specified value.
         </short>
         <descr>
           <p>
@@ -1626,18 +1626,18 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="RenameFileUTF8.Result">
-        <short>True if the file is successfully renamed to the new value</short>
+        <short>True if the file is successfully renamed to the new value.</short>
       </element>
       <element name="RenameFileUTF8.OldName">
-        <short>Existing name for the file</short>
+        <short>Existing name for the file.</short>
       </element>
       <element name="RenameFileUTF8.NewName">
-        <short>New name for the file</short>
+        <short>New name for the file.</short>
       </element>
 
       <element name="FileSearchUTF8">
         <short>
-          Searches for a file with the specified name in the list of directory paths
+          Searches for a file with the specified name in the list of directory paths.
         </short>
         <descr>
           <p>
@@ -1656,18 +1656,18 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileSearchUTF8.Result">
-        <short>Path and file name for the matching file, or an empty string</short>
+        <short>Path and file name for the matching file, or an empty string.</short>
       </element>
       <element name="FileSearchUTF8.Name">
-        <short>File name to locate in the list of directory paths</short>
+        <short>File name to locate in the list of directory paths.</short>
       </element>
       <element name="FileSearchUTF8.DirList">
-        <short>The delimited list of directory paths to search</short>
+        <short>The delimited list of directory paths to search.</short>
       </element>
 
       <element name="FileIsReadOnlyUTF8">
         <short>
-          Determines if the specified file is marked as read-only
+          Determines if the specified file is marked as read-only.
         </short>
         <descr>
           <p>
@@ -1677,15 +1677,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="FileIsReadOnlyUTF8.Result">
-        <short>True when the file is marked as read-only</short>
+        <short>True when the file is marked as read-only.</short>
       </element>
       <element name="FileIsReadOnlyUTF8.FileName">
-        <short>File name to examine in the function</short>
+        <short>File name to examine in the function.</short>
       </element>
 
       <element name="GetCurrentDirUTF8">
         <short>
-          Gets the name for the current directory
+          Gets the name for the current directory.
         </short>
         <descr>
           <p>
@@ -1703,12 +1703,12 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="GetCurrentDirUTF8.Result">
-        <short>Name for the current directory</short>
+        <short>Name for the current directory.</short>
       </element>
 
       <element name="SetCurrentDirUTF8">
         <short>
-          Sets the current directory to the specified name
+          Sets the current directory to the specified name.
         </short>
         <descr>
           <p>
@@ -1735,15 +1735,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="SetCurrentDirUTF8.Result">
-        <short>True if the current directory was successfully changed to the new value</short>
+        <short>True if the current directory was successfully changed to the new value.</short>
       </element>
       <element name="SetCurrentDirUTF8.NewDir">
-        <short>Directory name to use as the current directory</short>
+        <short>Directory name to use as the current directory.</short>
       </element>
 
       <element name="CreateDirUTF8">
         <short>
-          Creates a new directory with the specified name
+          Creates a new directory with the specified name.
         </short>
         <descr>
           <p>
@@ -1761,15 +1761,15 @@ D:\db\employee.fdb
         <seealso/>
       </element>
       <element name="CreateDirUTF8.Result">
-        <short>True if the new directory is successfully created</short>
+        <short>True if the new directory is successfully created.</short>
       </element>
       <element name="CreateDirUTF8.NewDir">
-        <short>Name for the new directory</short>
+        <short>Name for the new directory.</short>
       </element>
 
       <element name="RemoveDirUTF8">
         <short>
-          Removes the directory with the specified name
+          Removes the directory with the specified name.
         </short>
         <descr>
           <p>
@@ -1790,15 +1790,15 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="RemoveDirUTF8.Result">
-        <short>True when the directory is successfully removed</short>
+        <short>True when the directory is successfully removed.</short>
       </element>
       <element name="RemoveDirUTF8.Dir">
-        <short>Name of the directory to remove in the function</short>
+        <short>Name of the directory to remove in the function.</short>
       </element>
 
       <element name="ForceDirectoriesUTF8">
         <short>
-          Creates the specified directories if they do not already exist
+          Creates the specified directories if they do not already exist.
         </short>
         <descr>
           <p>
@@ -1825,16 +1825,16 @@ D:\db\employee.fdb
       </element>
       <element name="ForceDirectoriesUTF8.Result">
         <short>
-          True when directories exist or are successfully created in the function
+          True when directories exist or are successfully created in the function.
         </short>
       </element>
       <element name="ForceDirectoriesUTF8.Dir">
-        <short>Path information to examine the function</short>
+        <short>Path information to examine the function.</short>
       </element>
 
       <element name="FileOpenUTF8">
         <short>
-          Opens the specified file name and returns its file handle
+          Opens the specified file name and returns its file handle.
         </short>
         <descr>
           <p>
@@ -1847,17 +1847,17 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="FileOpenUTF8.Result">
-        <short>File handle for the specified file</short>
+        <short>File handle for the specified file.</short>
       </element>
       <element name="FileOpenUTF8.FileName">
-        <short>File name opened in the function</short>
+        <short>File name opened in the function.</short>
       </element>
       <element name="FileOpenUTF8.Mode">
-        <short>File access mode requested for the opened file</short>
+        <short>File access mode requested for the opened file.</short>
       </element>
 
       <element name="FileCreateUTF8">
-        <short>Creates the specified file and returns its file handle</short>
+        <short>Creates the specified file and returns its file handle.</short>
         <descr>
           <p>
             <var>FileCreateUTF8</var> is a <var>THandle</var> function used to created the file specified in the UTF-8-encoded <var>FileName</var> argument, and returns the file handle for the newly created file. Overloaded variants of the function are provided which allow additional arguments that specify the file sharing mode, or access rights for the newly created file.
@@ -1872,20 +1872,20 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="FileCreateUTF8.Result">
-        <short>File handle for the file created in the function</short>
+        <short>File handle for the file created in the function.</short>
       </element>
       <element name="FileCreateUTF8.FileName">
-        <short>File name created in the function</short>
+        <short>File name created in the function.</short>
       </element>
       <element name="FileCreateUTF8.Rights">
-        <short>File access rights for the new file</short>
+        <short>File access rights for the new file.</short>
       </element>
       <element name="FileCreateUTF8.ShareMode">
-        <short>File sharing mode for the new file</short>
+        <short>File sharing mode for the new file.</short>
       </element>
 
       <element name="FileSizeUtf8">
-        <short>Gets the size for the specified file name</short>
+        <short>Gets the size for the specified file name.</short>
         <descr>
           <var>FileSizeUTF8</var> is an <var>Int64</var> function used to get the size for the file specified in the UTF-8-encoded <var>Filename</var> argument. FileSizeUTF8 calls <var>Utf8ToSys</var> to convert the value in Filename to the system string type type, and calls the <var>FindFirst</var> routine in the <file>SysUtils</file> unit to get the size for the specified file name.
         </descr>
@@ -1894,14 +1894,14 @@ D:\db\employee.fdb
         </seealso>
       </element>
       <element name="FileSizeUtf8.Result">
-        <short>Size of the file on the local file system</short>
+        <short>Size of the file on the local file system.</short>
       </element>
       <element name="FileSizeUtf8.Filename">
-        <short>File name examined in the function</short>
+        <short>File name examined in the function.</short>
       </element>
 
       <element name="GetFileDescription">
-        <short>Gets descriptive information for the specified file name</short>
+        <short>Gets descriptive information for the specified file name.</short>
         <descr>
           <p>
             GetFileDescription is a String function used to get descriptive information for the file name specified in AFilename. The return value contains file information appropriate to the platform, environment, or file system. The implementation of GetFileDescription and the content of the return value are platform- or OS-specific.
@@ -1979,15 +1979,15 @@ asperwd
         <seealso/>
       </element>
       <element name="GetFileDescription.Result">
-        <short>String with the file information for the platform or OS</short>
+        <short>String with the file information for the platform or OS.</short>
       </element>
       <element name="GetFileDescription.AFilename">
-        <short>File name examined in the function</short>
+        <short>File name examined in the function.</short>
       </element>
 
       <element name="ReadAllLinks">
         <short>
-          Resolves a symbolic link to an actual file name
+          Resolves a symbolic link to an actual file name.
         </short>
         <descr>
           <p>
@@ -1998,7 +1998,7 @@ asperwd
 
       <element name="TryReadAllLinks">
         <short>
-          Resolves a symlink to the real file
+          Resolves a symlink to the real file.
         </short>
         <descr>
           <p>
@@ -2008,7 +2008,7 @@ asperwd
       </element>
 
       <element name="GetShellLinkTarget">
-        <short>Resolve a Shell Link to the file path for the shortcut</short>
+        <short>Resolve a Shell Link to the file path for the shortcut.</short>
         <descr>
           <p>
             <var>GetShellLinkTarget</var> is a <var>String</var> function used to resolve the Shell Link file in the <var>FileName</var> parameter to a path on the local system. The return value contains the qualified path to the Shell object in the Link file.
@@ -2032,14 +2032,14 @@ asperwd
         <seealso/>
       </element>
       <element name="GetShellLinkTarget.Result">
-        <short>Path to the Shell object for the link</short>
+        <short>Path to the Shell object for the link.</short>
       </element>
       <element name="GetShellLinkTarget.FileName">
-        <short>Shell Link shortcut file to resolve in the routine</short>
+        <short>Shell Link shortcut file to resolve in the routine.</short>
       </element>
 
       <element name="DbgSFileAttr">
-        <short>Displays information for file attributes in the debugger</short>
+        <short>Displays information for file attributes in the debugger.</short>
         <descr>
           <p>
             Attr contains the file attributes examined in the routine, with the following values displayed for the corresponding file attributes:
@@ -2069,15 +2069,15 @@ asperwd
         <seealso/>
       </element>
       <element name="DbgSFileAttr.Result">
-        <short>String with information about the file attributes</short>
+        <short>String with information about the file attributes.</short>
       </element>
       <element name="DbgSFileAttr.Attr">
-        <short>File attributes examined in the routine</short>
+        <short>File attributes examined in the routine.</short>
       </element>
 
       <element name="TPhysicalFilenameOnError">
         <short>
-          Enumerated type representing actions performed for an unresolved file name
+          Enumerated type representing actions performed for an unresolved file name.
         </short>
         <descr>
           <p>
@@ -2123,7 +2123,7 @@ asperwd
 
       <element name="GetPhysicalFilename">
         <short>
-          Gets the physical file name for a symbolic link on the local file system
+          Gets the physical file name for a symbolic link on the local file system.
         </short>
         <descr>
           <p>
@@ -2144,20 +2144,20 @@ asperwd
         </seealso>
       </element>
       <element name="GetPhysicalFilename.Result">
-        <short>Physical file name for the resolved symbolic link</short>
+        <short>Physical file name for the resolved symbolic link.</short>
       </element>
       <element name="GetPhysicalFilename.Filename">
-        <short>File name examined in the function</short>
+        <short>File name examined in the function.</short>
       </element>
       <element name="GetPhysicalFilename.OnError">
         <short>
-          Indicates the action performed for a symbolic link that cannot be resolved to a physical file name
+          Indicates the action performed for a symbolic link that cannot be resolved to a physical file name.
         </short>
       </element>
 
       <element name="GetUnixPhysicalFilename">
         <short>
-          Resolves the symlink in Filename, including omitted directories
+          Resolves the symlink in Filename, including omitted directories.
         </short>
         <descr>
           <p>
@@ -2172,14 +2172,14 @@ asperwd
         </seealso>
       </element>
       <element name="GetUnixPhysicalFilename.Result">
-        <short>Physical file name for the resolved symbolic link</short>
+        <short>Physical file name for the resolved symbolic link.</short>
       </element>
       <element name="GetUnixPhysicalFilename.Filename">
-        <short>File name (or symlink) examined in the function</short>
+        <short>File name (or symlink) examined in the function.</short>
       </element>
       <element name="GetUnixPhysicalFilename.ExceptionOnError">
         <short>
-          Indicates if an exception is raised for a symbolic link that cannot be resolved to a physical file name
+          Indicates if an exception is raised for a symbolic link that cannot be resolved to a physical file name.
         </short>
       </element>
 
@@ -2221,23 +2221,23 @@ asperwd
       </element>
       <element name="GetAppConfigDirUTF8.Result">
         <short>
-          Path to the directory used for application configuration or data files
+          Path to the directory used for application configuration or data files.
         </short>
       </element>
       <element name="GetAppConfigDirUTF8.Global">
         <short>
-          Indicates if the system-wide (not user specific) directory is used
+          Indicates if the system-wide (not user specific) directory is used.
         </short>
       </element>
       <element name="GetAppConfigDirUTF8.Create">
         <short>
-          Indicates if missing directories in the path should be created
+          Indicates if missing directories in the path should be created.
         </short>
       </element>
 
       <element name="GetAppConfigFileUTF8">
         <short>
-          Gets a UTF-8-encoded configuration file name for the current application
+          Gets a UTF-8-encoded configuration file name for the current application.
         </short>
         <descr>
           <p>
@@ -2266,27 +2266,27 @@ asperwd
         </seealso>
       </element>
       <element name="GetAppConfigFileUTF8.Result">
-        <short>Path to the configuration file for the application</short>
+        <short>Path to the configuration file for the application.</short>
       </element>
       <element name="GetAppConfigFileUTF8.Global">
         <short>
-          Indicates if system-wide settings are used in the configuration file name
+          Indicates if system-wide settings are used in the configuration file name.
         </short>
       </element>
       <element name="GetAppConfigFileUTF8.SubDir">
         <short>
-          Indicates if a directory for the application is included in the configuration file name
+          Indicates if a directory for the application is included in the configuration file name.
         </short>
       </element>
       <element name="GetAppConfigFileUTF8.CreateDir">
         <short>
-          Indicates if missing directories in the configuration file path are created
+          Indicates if missing directories in the configuration file path are created.
         </short>
       </element>
 
       <element name="GetTempFileNameUTF8">
         <short>
-          Gets a temporary file name using the specified UTF-8-encoded path and prefix
+          Gets a temporary file name using the specified UTF-8-encoded path and prefix.
         </short>
         <descr>
           <p>
@@ -2311,17 +2311,17 @@ asperwd
         <seealso/>
       </element>
       <element name="GetTempFileNameUTF8.Result">
-        <short>Temporary file name generated in the routine</short>
+        <short>Temporary file name generated in the routine.</short>
       </element>
       <element name="GetTempFileNameUTF8.Dir">
-        <short>Directory path for the temporary file name</short>
+        <short>Directory path for the temporary file name.</short>
       </element>
       <element name="GetTempFileNameUTF8.Prefix">
-        <short>Prefix for the temporary file name</short>
+        <short>Prefix for the temporary file name.</short>
       </element>
 
       <element name="IsUNCPath">
-        <short>Indicates if the specified path uses Universal Naming Convention (UNC)</short>
+        <short>Indicates if the specified path uses Universal Naming Convention (UNC).</short>
         <descr>
           <p>
             <var>IsUNCPath</var> is a <var>Boolean</var> function which indicates is the specified path uses Universal Naming Convention (UNC).
@@ -2344,14 +2344,14 @@ asperwd
         <seealso/>
       </element>
       <element name="IsUNCPath.Result">
-        <short>True when the path contains UNC notation</short>
+        <short>True when the path contains UNC notation.</short>
       </element>
       <element name="IsUNCPath.Path">
-        <short>Path examined in the function</short>
+        <short>Path examined in the function.</short>
       </element>
 
       <element name="ExtractUNCVolume">
-        <short>Gets UNC host and volume name used in the specified path</short>
+        <short>Gets UNC host and volume name used in the specified path.</short>
         <descr>
           <p>
             <var>ExtractUNCVolume</var> is a <var>String</var> function used to get host and volume information from a path specified using Universal Naming Convention (UNC). UNC notation is recognized using both the long and short formats defined for the naming convention.
@@ -2377,14 +2377,14 @@ asperwd
         </seealso>
       </element>
       <element name="ExtractUNCVolume.Result">
-        <short>UNC host and volume name extracted from the specified path</short>
+        <short>UNC host and volume name extracted from the specified path.</short>
       </element>
       <element name="ExtractUNCVolume.Path">
-        <short>Path information examined in the function</short>
+        <short>Path information examined in the function.</short>
       </element>
 
       <element name="ExtractFileRoot">
-        <short>Gets the root drive/path/directory for the specified file name</short>
+        <short>Gets the root drive/path/directory for the specified file name.</short>
         <descr>
           <p>
             <var>ExtractFileRoot</var> is a <var>String</var> function used to get the root directory for the specified file name. It is file system-aware and includes the drive and/or volume information needed for the file name specified in the FileName argument.
@@ -2415,7 +2415,7 @@ C:\
         <short>Root directory on the file system for the specified file name </short>
       </element>
       <element name="ExtractFileRoot.FileName">
-        <short>File name specifier examined in the routine</short>
+        <short>File name specifier examined in the routine.</short>
       </element>
 
       <element name="GetDarwinSystemFilename">
@@ -2451,19 +2451,19 @@ C:\
 
       <element name="SHGetFolderPathUTF8">
         <short>
-          Works like the WinAPI function SHGetFolderPathW, but returns a UTF-8-encoded string
+          Works like the WinAPI function SHGetFolderPathW, but returns a UTF-8-encoded string.
         </short>
       </element>
       <element name="SHGetFolderPathUTF8.Result">
-        <short>UTF-8-encoded folder path for the identifier</short>
+        <short>UTF-8-encoded folder path for the identifier.</short>
       </element>
       <element name="SHGetFolderPathUTF8.ID">
-        <short>Identifier resolved in the function</short>
+        <short>Identifier resolved in the function.</short>
       </element>
 
       <element name="SplitCmdLineParams">
         <short>
-          Splits command line parameters separated by whitespace characters
+          Splits command line parameters separated by whitespace characters.
         </short>
         <descr>
           <p>
@@ -2472,73 +2472,73 @@ C:\
         </descr>
       </element>
       <element name="SplitCmdLineParams.Params">
-        <short>Whitespace-delimited list of parameters handled in the routine</short>
+        <short>Whitespace-delimited list of parameters handled in the routine.</short>
       </element>
       <element name="SplitCmdLineParams.ParamList">
-        <short>List where parameter names and values are stored</short>
+        <short>List where parameter names and values are stored.</short>
       </element>
       <element name="SplitCmdLineParams.ReadBackslash">
-        <short>Indicates if backslash characters are consumed and removed in the routine</short>
+        <short>Indicates if backslash characters are consumed and removed in the routine.</short>
       </element>
 
       <element name="StrToCmdLineParam">
         <short>
-          Ensures that whitespace and quoting use the format required for command line parameters
+          Ensures that whitespace and quoting use the format required for command line parameters.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="StrToCmdLineParam.Result">
         <short>
-          Value after normalizing whitespace and quote characters in the command line parameter
+          Value after normalizing whitespace and quote characters in the command line parameter.
         </short>
       </element>
       <element name="StrToCmdLineParam.Param">
-        <short>Command line parameter examined in the function</short>
+        <short>Command line parameter examined in the function.</short>
       </element>
 
       <element name="MergeCmdLineParams">
-        <short>Generates a string with the specified list of parameters</short>
+        <short>Generates a string with the specified list of parameters.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="MergeCmdLineParams.Result">
-        <short>String representation for the list of parameters</short>
+        <short>String representation for the list of parameters.</short>
       </element>
       <element name="MergeCmdLineParams.ParamList">
-        <short>Parameter names and values handled in the function</short>
+        <short>Parameter names and values handled in the function.</short>
       </element>
 
       <element name="SplitCmdLine">
-        <short>Splits the specified command line into program and parameter values</short>
+        <short>Splits the specified command line into program and parameter values.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="SplitCmdLine.CmdLine">
-        <short>Command line examined in the function</short>
+        <short>Command line examined in the function.</short>
       </element>
       <element name="SplitCmdLine.ProgramFilename">
-        <short>Executable name found in the command line</short>
+        <short>Executable name found in the command line.</short>
       </element>
       <element name="SplitCmdLine.Params">
-        <short>List of parameters and values found in the command line</short>
+        <short>List of parameters and values found in the command line.</short>
       </element>
 
       <element name="PrepareCmdLineOption">
-        <short>Ensures command line options are formatted properly</short>
+        <short>Ensures command line options are formatted properly.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="PrepareCmdLineOption.Result">
-        <short>Command line option after quoting has been applied</short>
+        <short>Command line option after quoting has been applied.</short>
       </element>
       <element name="PrepareCmdLineOption.Option">
-        <short>Command line option examined in the function</short>
+        <short>Command line option examined in the function.</short>
       </element>
 
       <element name="TInvalidateFileStateCacheEvent">
         <short>
-          Specifies the event signalled for an invalid file state in the file cache
+          Specifies the event signalled for an invalid file state in the file cache.
         </short>
         <descr>
           <p>
@@ -2552,12 +2552,12 @@ C:\
       </element>
 
       <element name="TInvalidateFileStateCacheEvent.Filename">
-        <short>File name for the event notification</short>
+        <short>File name for the event notification.</short>
       </element>
 
       <element name="OnInvalidateFileStateCache">
         <short>
-          Implements the event handler for a file with an invalid file state
+          Implements the event handler for a file with an invalid file state.
         </short>
         <descr>
           <p>
@@ -2574,7 +2574,7 @@ C:\
 
       <element name="InvalidateFileStateCache">
         <short>
-          Signals the OnInvalidateFileStateCache event handler
+          Signals the OnInvalidateFileStateCache event handler.
         </short>
         <descr>
           <p>
@@ -2598,7 +2598,7 @@ C:\
         </seealso>
       </element>
       <element name="InvalidateFileStateCache.Filename">
-        <short>File name for the event notification</short>
+        <short>File name for the event notification.</short>
       </element>
 
     </module>

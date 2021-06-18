@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="FileReferenceList">
-      <short>Contains types and classes used to implement a list of file references</short>
+      <short>Contains types and classes used to implement a list of file references.</short>
       <descr>
         <p>
           Implements the <var>TFileReference</var> and <var>TFileReferenceList</var> classes. Provides a list of file references with reference counters and a search path for files in the list.
@@ -26,7 +26,7 @@
       <element name="LazTracer"/>
 
       <element name="TFileReference">
-        <short>Represents a reference-counted file stored in TFileReferenceList</short>
+        <short>Represents a reference-counted file stored in TFileReferenceList.</short>
         <descr>
           <p>
             <var>TFileReference</var> is a class used to represent a reference-counted file stored in the <var>TFileReferenceList</var> class. It provides <var>FileName</var> and <var>ReferenceCount</var> properties which are maintained by methods in TFileReferenceList.
@@ -43,7 +43,7 @@
 
       <!-- public -->
       <element name="TFileReference.Filename">
-        <short>Contains the name for the reference-counted file in the class instance</short>
+        <short>Contains the name for the reference-counted file in the class instance.</short>
         <descr>
           <p>
             <var>FileName</var> is a read-only String property with the name for the reference-counted file. The value in FileName is assigned in the <var>TFileReferenceList.AddFilename</var> method when the class instance is created.
@@ -60,7 +60,7 @@
       </element>
 
       <element name="TFileReference.ReferenceCount">
-        <short>Contains the number of references for the file</short>
+        <short>Contains the number of references for the file.</short>
         <descr/>
         <seealso>
           <link id="TFileReference.FileName"/>
@@ -70,23 +70,23 @@
       </element>
 
       <element name="TFileReferenceFlag">
-        <short>Represents flag values used for file references in TFileReferenceList</short>
+        <short>Represents flag values used for file references in TFileReferenceList.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFileReferenceFlag.frfSearchPathValid">
         <short>
-          Included when the search path for a file reference list is valid
+          Included when the search path for a file reference list is valid.
         </short>
       </element>
       <element name="TFileReferenceFlag.frfChanged">
         <short>
-          Included when the Timestamp or UpdateLock is changed for a file reference list
+          Included when the Timestamp or UpdateLock is changed for a file reference list.
         </short>
       </element>
 
       <element name="TFileReferenceFlags">
-        <short>Set type used to store flag values for TFileReferenceList</short>
+        <short>Set type used to store flag values for TFileReferenceList.</short>
         <descr/>
         <seealso>
           <link id="TFileReferenceList"/>
@@ -94,7 +94,7 @@
       </element>
 
       <element name="TFileReferenceList">
-        <short>Implements a list used to maintain TFileReference instances</short>
+        <short>Implements a list used to maintain TFileReference instances.</short>
         <descr/>
         <seealso/>
       </element>
@@ -104,7 +104,7 @@
       <element name="TFileReferenceList.FTimeStamp"/>
 
       <element name="TFileReferenceList.FTree">
-        <short>Tree of TFileReference instances sorted by file name</short>
+        <short>Tree of TFileReference instances sorted by file name.</short>
       </element>
 
       <element name="TFileReferenceList.FFlags"/>
@@ -113,23 +113,23 @@
 
       <element name="TFileReferenceList.UpdateSearchPath">
         <short>
-          Reconstructs the delimited list of search path(s) for the files in the list
+          Reconstructs the delimited list of search path(s) for the files in the list.
         </short>
       </element>
 
       <element name="TFileReferenceList.IncreaseTimeStamp">
-        <short>Increments the value in the TimeStamp property</short>
+        <short>Increments the value in the TimeStamp property.</short>
       </element>
 
       <element name="TFileReferenceList.Invalidate">
         <short>
-          Updates the TimeStamp and internal flags for the list, and signal OnChange when needed
+          Updates the TimeStamp and internal flags for the list, and signal OnChange when needed.
         </short>
       </element>
 
       <!-- public -->
       <element name="TFileReferenceList.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Sets the default value for the <var>Timestamp</var> property (<var>LUInvalidChangeStamp64</var>).
@@ -142,7 +142,7 @@
       </element>
 
       <element name="TFileReferenceList.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. It calls <var>Clear</var> to remove nodes in the internal AVL Tree for the class instance. Calls the inherited destructor prior to exiting from the method.
@@ -152,7 +152,7 @@
       </element>
 
       <element name="TFileReferenceList.Clear">
-        <short>Removes any tree nodes in the internal AVL tree</short>
+        <short>Removes any tree nodes in the internal AVL tree.</short>
         <descr>
           Also frees the <var>TFileReference</var> instance for the AVL tree nodes.
         </descr>
@@ -160,87 +160,87 @@
       </element>
 
       <element name="TFileReferenceList.BeginUpdate">
-        <short>Increments the UpdateLock for the class instance</short>
+        <short>Increments the UpdateLock for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileReferenceList.EndUpdate">
-        <short>Decrements the UpdateLock and signals OnChange when needed</short>
+        <short>Decrements the UpdateLock and signals OnChange when needed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileReferenceList.AddFilename">
-        <short>Adds a reference-counted file name to the list</short>
+        <short>Adds a reference-counted file name to the list.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFileReferenceList.AddFilename.Filename">
-        <short>File name added to the list and the internal AVL tree</short>
+        <short>File name added to the list and the internal AVL tree.</short>
       </element>
 
       <element name="TFileReferenceList.RemoveFilename">
-        <short>Remove a reference for the specified file name</short>
+        <short>Remove a reference for the specified file name.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFileReferenceList.RemoveFilename.Filename">
         <short>
-          File name de-referenced in the list and optionally removed from the internal AVL tree
+          File name de-referenced in the list and optionally removed from the internal AVL tree.
         </short>
       </element>
 
       <element name="TFileReferenceList.GetFileReference">
-        <short>Gets an existing TFileReference instance for the specified file name</short>
+        <short>Gets an existing TFileReference instance for the specified file name.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFileReferenceList.GetFileReference.Result">
         <short>
-          TFileReference instance for the specified file name, or Nil when not found
+          TFileReference instance for the specified file name, or Nil when not found.
         </short>
       </element>
       <element name="TFileReferenceList.GetFileReference.Filename">
-        <short>File name to locate in the list</short>
+        <short>File name to locate in the list.</short>
       </element>
 
       <element name="TFileReferenceList.CreateSearchPathFromAllFiles">
         <short>
-          Gets a delimited list of search paths for the reference-counted files in the list
+          Gets a delimited list of search paths for the reference-counted files in the list.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFileReferenceList.CreateSearchPathFromAllFiles.Result">
-        <short>Delimited list of search paths for the reference-counted files</short>
+        <short>Delimited list of search paths for the reference-counted files.</short>
       </element>
 
       <element name="TFileReferenceList.CreateFileList">
         <short>
-          Creates and returns a TStringList instance with the file names in the list
+          Creates and returns a TStringList instance with the file names in the list.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFileReferenceList.CreateFileList.Result">
-        <short>TStringList instance allocated in the method for the list of file names</short>
+        <short>TStringList instance allocated in the method for the list of file names.</short>
       </element>
 
       <element name="TFileReferenceList.TimeStamp">
-        <short>Contains the timestamp value for the last change to the list</short>
+        <short>Contains the timestamp value for the last change to the list.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileReferenceList.OnChanged">
-        <short>Event handler signalled when items in the list have been changed</short>
+        <short>Event handler signalled when items in the list have been changed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileReferenceList.UpdateLock">
-        <short>Contains the active update counter for the list</short>
+        <short>Contains the active update counter for the list.</short>
         <descr/>
         <seealso/>
       </element>

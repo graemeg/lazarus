@@ -8,8 +8,8 @@
     -->
     <module name="GraphMath">
       <short>
-        A set of mathematical helper routines to simply cross-platform canvas drawing
-      </short>
+        A set of mathematical helper routines to simply cross-platform canvas drawing.
+        </short>
       <descr>
         <p>
           <file>graphmath.pp</file> contains math helper routines for use for graphics drawing. It is used to simply cross-platform canvas drawing operations.
@@ -26,7 +26,7 @@
 
       <element name="TFloatPoint">
         <short>
-          <var>TFloatPoint</var> - an extended precision record specifying the X and Y coordinates of a point in a graphic environment</short>
+          <var>TFloatPoint</var> - an extended precision record specifying the X and Y coordinates of a point in a graphic environment.</short>
         <descr/>
         <seealso/>
       </element>
@@ -51,7 +51,7 @@
 
       <element name="Angles2Coords">
         <short>
-          Converts an Eccentric Angle and an Angle-Length, into the coords for Start and End radial Points
+          Converts an Eccentric Angle and an Angle-Length, into the coords for Start and End radial Points.
         </short>
         <descr>
           <p>
@@ -143,7 +143,7 @@
 
       <element name="Bezier">
         <short>
-          <var>Bezier</var> - function to get a Bezier figure from the given points
+          <var>Bezier</var> - function to get a Bezier figure from the given points.
         </short>
         <descr/>
         <errors/>
@@ -167,7 +167,7 @@
 
       <element name="Bezier2Polyline">
         <short>
-          <var>Bezier2Polyline</var> - convert a 4-Point Bezier into a Pointer Array of TPoint and a Count variable
+          <var>Bezier2Polyline</var> - convert a 4-Point Bezier into a Pointer Array of TPoint and a Count variable.
         </short>
         <descr>
           <p>
@@ -192,7 +192,7 @@
 
       <element name="BezierArcPoints">
         <short>
-          <var>BezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon
+          <var>BezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon.
         </short>
         <descr>
           <p>
@@ -259,7 +259,7 @@
 
       <element name="CenterPoint">
         <short>
-          <var>CenterPoint</var> - get the Center-Point of any rectangle. It is primarily for use with, and in, other routines such as Quadrant, and RadialPoint
+          <var>CenterPoint</var> - get the Center-Point of any rectangle. It is primarily for use with, and in, other routines such as Quadrant, and RadialPoint.
         </short>
         <descr/>
         <errors/>
@@ -274,7 +274,7 @@
 
       <element name="Coords2Angles">
         <short>
-          <var>Coords2Angles</var> - convert the coords for Start and End Radial-Points into an Eccentric counter clockwise Angle and an Angle-Length
+          <var>Coords2Angles</var> - convert the coords for Start and End Radial-Points into an Eccentric counter clockwise Angle and an Angle-Length.
         </short>
         <descr>
           <p>
@@ -323,7 +323,7 @@
 
       <element name="Distance">
         <short>
-          Get the <var>Distance</var> between any two Points. It is primarily for use in other routines such as EccentricAngle
+          Get the <var>Distance</var> between any two Points. It is primarily for use in other routines such as EccentricAngle.
         </short>
         <descr/>
         <errors/>
@@ -341,7 +341,7 @@
 
       <element name="EccentricAngle">
         <short>
-          <var>EccentricAngle</var> - get the Eccentric Angle of a given point on any non-rotated ellipse
+          <var>EccentricAngle</var> - get the Eccentric Angle of a given point on any non-rotated ellipse.
         </short>
         <descr>
           <p>
@@ -363,7 +363,7 @@
 
       <element name="EllipseRadialLength">
         <short>
-          <var>EllipseRadialLength</var> - Radial-Length of non-rotated ellipse at any given Eccentric Angle
+          <var>EllipseRadialLength</var> - Radial-Length of non-rotated ellipse at any given Eccentric Angle.
         </short>
         <descr>
           <p>
@@ -403,7 +403,7 @@
 
       <element name="LineEndPoint">
         <short>
-          <var>LineEndPoint</var> - get the End-Point of a line of any given Length at any given angle with any given Start-Point
+          <var>LineEndPoint</var> - get the End-Point of a line of any given Length at any given angle with any given Start-Point.
         </short>
         <descr>
           <p>
@@ -428,7 +428,7 @@
 
       <element name="PolyBezier2Polyline">
         <short>
-          <var>PolyBezier2Polyline</var> - convert an array of 4-Point Bezier into a Pointer Array of TPoint and a Count variable
+          <var>PolyBezier2Polyline</var> - convert an array of 4-Point Bezier into a Pointer Array of TPoint and a Count variable.
         </short>
         <descr>
           <p>
@@ -450,7 +450,7 @@
 
       <element name="PolyBezierArcPoints">
         <short>
-          <var>PolyBezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon
+          <var>PolyBezierArcPoints</var> - convert an Arc and ArcLength into a Pointer Array of TPoints for use with Polyline or Polygon.
         </short>
         <descr>
           <p>
@@ -498,7 +498,7 @@
       </element>
 
       <element name="Quadrant">
-        <short>Determine the <var>Quadrant</var>  of any point, given the Center</short>
+        <short>Determine the <var>Quadrant</var>  of any point, given the Center.</short>
         <descr>
           <p>
             Use Quadrant to determine the Quadrant of any point, given the Center. It is primarily for use in other routines such as EccentricAngle. A result of 1-4 represents the primary 4 quadrants. A result of 5-8 means the point lies on one of the Axis, 5 = -Y Axis, 6 = +X Axis, 7 = +Y Axis, and 8 = -X Axis. A result of -1 means that it does not fall in any quadrant, that is, it is the Center.
@@ -519,7 +519,7 @@
 
       <element name="RadialPoint">
         <short>
-          Get the <var>RadialPoint</var> at any given Eccentric angle on any non-rotated ellipse
+          Get the <var>RadialPoint</var> at any given Eccentric angle on any non-rotated ellipse.
         </short>
         <descr>
           <p>
@@ -562,7 +562,7 @@
 
       <topic name="GraphMathOperators">
         <short>
-          <b>GraphMath Operators</b>
+          <b>GraphMath Operators</b>.
         </short>
         <descr>
           <p>

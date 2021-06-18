@@ -8,8 +8,8 @@
     -->
     <module name="laz2_xmlutils">
       <short>
-        XML utility routines with support for UTF-8 encoding
-      </short>
+        XML utility routines with support for UTF-8 encoding.
+        </short>
       <descr>
         <p>
           <file>laz2_xmlutils.pas</file> contains XML utility routines with support for the UTF-8 encoding. It is copied from code in the FreePascal Free Component Library (FCL) and modifed to provide UTF-8 support.
@@ -57,7 +57,7 @@
       </element>
 
       <element name="IsXmlName">
-        <short>Determines if the specified value contains a valid XML element name</short>
+        <short>Determines if the specified value contains a valid XML element name.</short>
         <descr>
           <p>
             <var>IsXmlName</var> is an overloaded <var>Boolean</var> function used to determine if <var>Value</var> contains a valid XML element name. It ensures that the name is valid using the <b>Name</b> production in the XML specifications.
@@ -86,16 +86,16 @@
         <seealso/>
       </element>
       <element name="IsXmlName.Result">
-        <short>True when the value is a valid XML element name</short>
+        <short>True when the value is a valid XML element name.</short>
       </element>
       <element name="IsXmlName.Value">
-        <short>Value examined in the routine</short>
+        <short>Value examined in the routine.</short>
       </element>
       <element name="IsXmlName.Xml11">
-        <short>True when XML 1.1 naming conventions used in the document</short>
+        <short>True when XML 1.1 naming conventions used in the document.</short>
       </element>
       <element name="IsXmlName.Len">
-        <short>Number of characters in the Pointer</short>
+        <short>Number of characters in the Pointer.</short>
       </element>
 
       <element name="IsXmlNames">
@@ -144,7 +144,7 @@
       </element>
 
       <element name="IsValidXmlEncoding">
-        <short>Determines if the specified value is a valid XML encoding name</short>
+        <short>Determines if the specified value is a valid XML encoding name.</short>
         <descr>
           <p>
             IsValidXmlEncoding is a Boolean function used to determine if the value specified in Value is a valid XML encoding name. The encoding name is used in the XML declaration for a document. For instance:
@@ -158,10 +158,10 @@
         <seealso/>
       </element>
       <element name="IsValidXmlEncoding.Result">
-        <short>True the value satisified the Name production in the XML specification</short>
+        <short>True the value satisified the Name production in the XML specification.</short>
       </element>
       <element name="IsValidXmlEncoding.Value">
-        <short>Value examined for a valid encoding identifier</short>
+        <short>Value examined for a valid encoding identifier.</short>
       </element>
 
       <element name="Xml11NamePages">
@@ -174,24 +174,24 @@
       </element>
 
       <element name="NormalizeSpaces">
-        <short>Removes duplicate spaces in the specified value</short>
+        <short>Removes duplicate spaces in the specified value.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="NormalizeSpaces.Value">
-        <short>Value updated to remove duplicate spaces in the routine</short>
+        <short>Value updated to remove duplicate spaces in the routine.</short>
       </element>
 
       <element name="IsXmlWhiteSpace">
-        <short>Determies if the specified value is an XML Whitespace character</short>
+        <short>Determies if the specified value is an XML Whitespace character.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="IsXmlWhiteSpace.Result">
-        <short>True when the value is an XML Whitespace character</short>
+        <short>True when the value is an XML Whitespace character.</short>
       </element>
       <element name="IsXmlWhiteSpace.c">
-        <short>Value examined in the routine</short>
+        <short>Value examined in the routine.</short>
       </element>
 
       <element name="Hash">
@@ -331,7 +331,7 @@
       </element>
 
       <element name="THashTable">
-        <short>A simple hash table with TXMLUtilString keys</short>
+        <short>A simple hash table with TXMLUtilString keys.</short>
         <descr/>
         <seealso/>
       </element>
@@ -506,7 +506,7 @@
 
       <element name="TExpHashEntry">
         <short>
-          Another hash table used to detect duplicate namespaced attributes without memory allocations
+          Another hash table used to detect duplicate namespaced attributes without memory allocations.
         </short>
         <descr/>
         <seealso/>
@@ -650,10 +650,10 @@
         <short/>
       </element>
       <element name="TAttributeAction.aaPrefix">
-        <short>Override the prefix only</short>
+        <short>Override the prefix only.</short>
       </element>
       <element name="TAttributeAction.aaBoth">
-        <short>Override the prefix and emit a namespace definition</short>
+        <short>Override the prefix and emit a namespace definition.</short>
       </element>
 
       <element name="TNSSupport">

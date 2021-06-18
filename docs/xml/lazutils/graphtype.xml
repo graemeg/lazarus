@@ -8,8 +8,8 @@
     -->
     <module name="GraphType">
       <short>
-        Definitions of several special types (including Raw Image) to be used for graphics
-      </short>
+        Definitions of several special types (including Raw Image) to be used for graphics.
+        </short>
       <descr>
         <p>
           <file>graphtype.pp</file> contains graphic-related platform-independent types and utility functions.
@@ -39,10 +39,10 @@
         <seealso/>
       </element>
       <element name="TGraphicsFillStyle.fsSurface">
-        <short>Fill till the color (it fills all except this color)</short>
+        <short>Fill till the color (it fills all except this color).</short>
       </element>
       <element name="TGraphicsFillStyle.fsBorder">
-        <short>Fill this color (it fills only connected pixels of this color)</short>
+        <short>Fill this color (it fills only connected pixels of this color).</short>
       </element>
 
       <element name="TGraphicsBevelCut">
@@ -69,23 +69,23 @@
         <seealso/>
       </element>
       <element name="TGraphicsDrawEffect.gdeNormal">
-        <short>No drawing effect</short>
+        <short>No drawing effect.</short>
       </element>
       <element name="TGraphicsDrawEffect.gdeDisabled">
-        <short>Drawn with a grayed image</short>
+        <short>Drawn with a grayed image.</short>
       </element>
       <element name="TGraphicsDrawEffect.gdeHighlighted">
-        <short>Drawn with a highlighted image</short>
+        <short>Drawn with a highlighted image.</short>
       </element>
       <element name="TGraphicsDrawEffect.gdeShadowed">
-        <short>Drawn with a shadowed image</short>
+        <short>Drawn with a shadowed image.</short>
       </element>
       <element name="TGraphicsDrawEffect.gde1Bit">
-        <short>1-Bit image (for non-XP windows buttons)</short>
+        <short>1-Bit image (for non-XP windows buttons).</short>
       </element>
 
       <element name="TRawImageColorFormat">
-        <short>Color format for raw image data</short>
+        <short>Color format for raw image data.</short>
         <descr>
           <p>
             Color format for raw image data. A raw image can contain RGBA or monochrome pixels.
@@ -97,7 +97,7 @@
         <seealso/>
       </element>
       <element name="TRawImageColorFormat.ricfNone">
-        <short>ricfNone indicates an uninitialized image</short>
+        <short>ricfNone indicates an uninitialized image.</short>
       </element>
       <element name="TRawImageColorFormat.ricfRGBA">
         <short>
@@ -111,97 +111,97 @@
       </element>
 
       <element name="TRawImageByteOrder">
-        <short>The LSB/MSB-first byte order of pixel data</short>
+        <short>The LSB/MSB-first byte order of pixel data.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TRawImageByteOrder.riboLSBFirst">
-        <short>Least Significant Byte first</short>
+        <short>Least Significant Byte first.</short>
       </element>
       <element name="TRawImageByteOrder.riboMSBFirst">
-        <short>Most SignificantBbyte first</short>
+        <short>Most SignificantBbyte first.</short>
       </element>
 
       <element name="TRawImageBitOrder">
-        <short>Bit order for raw image data scan lines</short>
+        <short>Bit order for raw image data scan lines.</short>
         <descr>
           The first pixel in a raw image line can be the left or right pixel of the displayed image.
         </descr>
         <seealso/>
       </element>
       <element name="TRawImageBitOrder.riboBitsInOrder">
-        <short>Bit 0 represents first pixel</short>
+        <short>Bit 0 represents first pixel.</short>
       </element>
       <element name="TRawImageBitOrder.riboReversedBits">
-        <short>Bit 0 represents highest pixel</short>
+        <short>Bit 0 represents highest pixel.</short>
 
       </element>
 
       <element name="TRawImageLineEnd">
-        <short>The alignment of raw image scanlines</short>
+        <short>The alignment of raw image scanlines.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TRawImageLineEnd.rileTight">
         <short>
-          No gap at the end of Scanlines; Scanlines can begin inside a byte boundary
+          No gap at the end of Scanlines; Scanlines can begin inside a byte boundary.
         </short>
       </element>
       <element name="TRawImageLineEnd.rileByteBoundary">
-        <short>Scanlines start on a byte boundary</short>
+        <short>Scanlines start on a byte boundary.</short>
       </element>
       <element name="TRawImageLineEnd.rileWordBoundary">
-        <short>Scanlines start at a 16-bit boundary</short>
+        <short>Scanlines start at a 16-bit boundary.</short>
       </element>
       <element name="TRawImageLineEnd.rileDWordBoundary">
-        <short>Scanlines start at a 32-bit (DWORD) boundary</short>
+        <short>Scanlines start at a 32-bit (DWORD) boundary.</short>
       </element>
       <element name="TRawImageLineEnd.rileQWordBoundary">
-        <short>Scanlines start at a 64-bit (QWORD) boundary</short>
+        <short>Scanlines start at a 64-bit (QWORD) boundary.</short>
       </element>
       <element name="TRawImageLineEnd.rileDQWordBoundary">
-        <short>Scanlines start at a 128-bit boundary</short>
+        <short>Scanlines start at a 128-bit boundary.</short>
       </element>
 
       <element name="TRawImageLineOrder">
         <short>
-          The first stored line of pixels can represent the logical top or bottom of the displayed image
+          The first stored line of pixels can represent the logical top or bottom of the displayed image.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TRawImageLineOrder.riloTopToBottom">
-        <short>First scanline at the top</short>
+        <short>First scanline at the top.</short>
       </element>
       <element name="TRawImageLineOrder.riloBottomToTop">
-        <short>First scanline at the bottom</short>
+        <short>First scanline at the bottom.</short>
       </element>
 
       <element name="TRawImageQueryFlag">
-        <short>Image formats supported by a device, or present in image data</short>
+        <short>Image formats supported by a device, or present in image data.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TRawImageQueryFlag.riqfMono">
-        <short>Include a description for a mono image</short>
+        <short>Include a description for a mono image.</short>
       </element>
       <element name="TRawImageQueryFlag.riqfGrey">
-        <short>Include a description for a grey image</short>
+        <short>Include a description for a grey image.</short>
       </element>
       <element name="TRawImageQueryFlag.riqfRGB">
-        <short>Include a description for an RGB image</short>
+        <short>Include a description for an RGB image.</short>
       </element>
       <element name="TRawImageQueryFlag.riqfAlpha">
-        <short>Include a description for an Alpha channel</short>
+        <short>Include a description for an Alpha channel.</short>
       </element>
       <element name="TRawImageQueryFlag.riqfMask">
-        <short>Include a description for a Mask</short>
+        <short>Include a description for a Mask.</short>
       </element>
       <element name="TRawImageQueryFlag.riqfPalette">
-        <short>Include a description for a Palette</short>
+        <short>Include a description for a Palette.</short>
       </element>
       <element name="TRawImageQueryFlag.riqfUpdate">
-        <short>Update given description (instead of clearing it)</short>
+        <short>Update given description (instead of clearing it).</short>
       </element>
 
       <element name="TRawImageQueryFlags">
@@ -212,7 +212,7 @@
 
       <element name="TRawImageDescription">
         <short>
-          Descriptor object for the image format of devices and raw (uncompressed) image data
+          Descriptor object for the image format of devices and raw (uncompressed) image data.
         </short>
         <descr>
           <p>
@@ -234,7 +234,7 @@
       </element>
 
       <element name="TRawImageDescription.Format">
-        <short>An initialized image can contain color (RGBA) or monochrome pixels</short>
+        <short>An initialized image can contain color (RGBA) or monochrome pixels.</short>
         <descr>
           <var>ricfNone</var> indicates an uninitialized image.
         </descr>
@@ -242,19 +242,19 @@
       </element>
 
       <element name="TRawImageDescription.Width">
-        <short>Width of the image in pixels</short>
+        <short>Width of the image in pixels.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.Height">
-        <short>Height of the image in pixels</short>
+        <short>Height of the image in pixels.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.Depth">
-        <short>Number of bits used per pixel</short>
+        <short>Number of bits used per pixel.</short>
         <descr>
           The color and pixel storage can be subject to alignment, so that the logical color Depth can be less than the physical BitsPerPixel.
         </descr>
@@ -268,27 +268,27 @@
       </element>
 
       <element name="TRawImageDescription.ByteOrder">
-        <short>The LSB/MSB-first byte order of color data</short>
+        <short>The LSB/MSB-first byte order of color data.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.LineOrder">
         <short>
-          The first stored line of pixels can represent the logical top or bottom of the displayed image
+          The first stored line of pixels can represent the logical top or bottom of the displayed image.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.LineEnd">
-        <short>Alignment of the scanlines</short>
+        <short>Alignment of the scanlines.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.BitsPerPixel">
-        <short>Number of bits stored per pixel</short>
+        <short>Number of bits stored per pixel.</short>
         <descr>
           <var>BitsPerPixel</var> can be greater than the logical (used) <var>Depth</var>.
         </descr>
@@ -296,55 +296,55 @@
       </element>
 
       <element name="TRawImageDescription.RedPrec">
-        <short>Bits per pixel in the Red channel</short>
+        <short>Bits per pixel in the Red channel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.RedShift">
-        <short>Bit offset of the Red channel in color data</short>
+        <short>Bit offset of the Red channel in color data.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.GreenPrec">
-        <short>Bits per pixel in the Green channel</short>
+        <short>Bits per pixel in the Green channel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.GreenShift">
-        <short>Bit offset of the Green channel in color data</short>
+        <short>Bit offset of the Green channel in color data.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.BluePrec">
-        <short>Bits per pixel in the Blue channel</short>
+        <short>Bits per pixel in the Blue channel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.BlueShift">
-        <short>Bit offset of the Blue channel in color data</short>
+        <short>Bit offset of the Blue channel in color data.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.AlphaPrec">
-        <short>Bits per pixel in the Alpha channel</short>
+        <short>Bits per pixel in the Alpha channel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.AlphaShift">
-        <short>Bit offset of the Alpha channel in color data</short>
+        <short>Bit offset of the Alpha channel in color data.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.MaskBitsPerPixel">
-        <short>Bits per mask pixel, usually 1, 0 when no mask</short>
+        <short>Bits per mask pixel, usually 1, 0 when no mask.</short>
         <descr>
           <p>
             Mask-related properties are only valid if there is a mask (MaskBitsPerPixel > 0).
@@ -357,25 +357,25 @@
       </element>
 
       <element name="TRawImageDescription.MaskShift">
-        <short>The bit offset of the mask bit</short>
+        <short>The bit offset of the mask bit.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.MaskLineEnd">
-        <short>Alignment of Mask lines</short>
+        <short>Alignment of Mask lines.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.MaskBitOrder">
-        <short>Bit order of the Mask</short>
+        <short>Bit order of the Mask.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.PaletteColorCount">
-        <short>Entries in the color palettem 0 when no palette</short>
+        <short>Entries in the color palettem 0 when no palette.</short>
         <descr>
           <p>
             Palette-related properties are only valid if there is a palette (PaletteColorCount > 0).
@@ -385,7 +385,7 @@
       </element>
 
       <element name="TRawImageDescription.PaletteBitsPerIndex">
-        <short>Bits per palette index, stored in the pixel data</short>
+        <short>Bits per palette index, stored in the pixel data.</short>
         <descr>
           <p>
             When a palette is used, the color description fields apply to the palette colors, while pixel data contains the palette index. Then Depth applies to the size of the palette colors, and the pixel data is described by PaletteBitsPerIndex and PaletteShift.
@@ -396,7 +396,7 @@
       </element>
 
       <element name="TRawImageDescription.PaletteShift">
-        <short>Bit shift direction from least to most significant</short>
+        <short>Bit shift direction from least to most significant.</short>
         <descr/>
         <seealso/>
       </element>
@@ -408,19 +408,19 @@
       </element>
 
       <element name="TRawImageDescription.PaletteBitOrder">
-        <short>Bit order of the palette indices</short>
+        <short>Bit order of the palette indices.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.PaletteByteOrder">
-        <short>Byte order of the palette indices</short>
+        <short>Byte order of the palette indices.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageDescription.Init">
-        <short>Initialize the image descriptor to all zeroes</short>
+        <short>Initialize the image descriptor to all zeroes.</short>
         <descr>
           <p>
             A constructor cannot be used here, it would break compatibility with a record.
@@ -430,7 +430,7 @@
       </element>
 
       <element name="TRawImageDescription.Init_BPP1">
-        <short>1-bit mono format</short>
+        <short>1-bit mono format.</short>
         <descr/>
         <seealso/>
       </element>
@@ -442,7 +442,7 @@
       </element>
 
       <element name="TRawImageDescription.Init_BPP16_R5G6B5">
-        <short>16-bit format</short>
+        <short>16-bit format.</short>
         <descr/>
         <seealso/>
       </element>
@@ -502,7 +502,7 @@
       </element>
 
       <element name="TRawImageDescription.Init_BPP24_B8G8R8_BIO_TTB">
-        <short>Init for an unmasked 24 bit RGB image (LSB Blue)</short>
+        <short>Init for an unmasked 24 bit RGB image (LSB Blue).</short>
         <descr>
           <p>Init_BPP24_B8G8R8_BIO_TTB - initiator for specified format</p>
 <pre>
@@ -517,7 +517,7 @@
         </element>
 
         <element name="TRawImageDescription.Init_BPP24_B8G8R8_M1_BIO_TTB">
-          <short>Init for a masked 24 bit RGB image (LSB Blue)</short>
+          <short>Init for a masked 24 bit RGB image (LSB Blue).</short>
           <descr>
             <p>Init_BPP24_B8G8R8_M1_BIO_TTB - initiator for specified format</p>
   <pre>
@@ -533,7 +533,7 @@
         </element>
 
         <element name="TRawImageDescription.Init_BPP32_B8G8R8_BIO_TTB">
-          <short>Init for an unmasked 32 bit RGB image (LSB blue)</short>
+          <short>Init for an unmasked 32 bit RGB image (LSB blue).</short>
           <descr>
             <p>
               <var>Init_BPP32_B8G8R8_BIO_TTB</var> - initiator for specified format</p>
@@ -550,7 +550,7 @@
           </descr>
         </element>
         <element name="TRawImageDescription.Init_BPP32_B8G8R8_M1_BIO_TTB">
-          <short>Init for a masked 32 bit RGB image (LSB blue)</short>
+          <short>Init for a masked 32 bit RGB image (LSB blue).</short>
           <descr>
             <p>
               <var>Init_BPP32_B8G8R8_M1_BIO_TTB</var> - initiator for specified format</p>
@@ -568,7 +568,7 @@
         </element>
 
         <element name="TRawImageDescription.Init_BPP32_B8G8R8A8_BIO_TTB">
-          <short>Init for an unmasked 32 bit RGBA image (LSB blue)</short>
+          <short>Init for an unmasked 32 bit RGBA image (LSB blue).</short>
           <descr>
             <p>
               <var>Init_BPP32_B8G8R8A8_BIO_TTB</var> - initiator for specified format</p>
@@ -586,7 +586,7 @@
         </element>
 
         <element name="TRawImageDescription.Init_BPP32_B8G8R8A8_M1_BIO_TTB">
-          <short>Init for a masked 32 bit RGBA image (LSB blue)</short>
+          <short>Init for a masked 32 bit RGBA image (LSB blue).</short>
           <descr>
             <p>
               <var>Init_BPP32_B8G8R8A8_M1_BIO_TTB</var> - initiator for specified format</p>
@@ -605,22 +605,22 @@
 
         <element name="TRawImageDescription.GetDescriptionFromMask">
           <short>
-            Returns an monochrome image descriptor constructed from the Mask
-          </short>
+            Returns an monochrome image descriptor constructed from the Mask.
+        </short>
           <descr/>
           <seealso/>
         </element>
 
         <element name="TRawImageDescription.GetDescriptionFromAlpha">
           <short>
-            Returns an monochrome image descriptor constructed from the Alpha channel
-          </short>
+            Returns an monochrome image descriptor constructed from the Alpha channel.
+        </short>
           <descr/>
           <seealso/>
         </element>
 
         <element name="TRawImageDescription.GetRGBIndices">
-          <short>Gets the indices of channels in four-element array</short>
+          <short>Gets the indices of channels in four-element array.</short>
           <descr/>
           <seealso/>
         </element>
@@ -638,37 +638,37 @@
         </element>
 
         <element name="TRawImageDescription.BytesPerLine">
-          <short>The number of bytes per scanline</short>
+          <short>The number of bytes per scanline.</short>
           <descr/>
           <seealso/>
         </element>
 
         <element name="TRawImageDescription.BitsPerLine">
-          <short>The number of bits per scanline</short>
+          <short>The number of bits per scanline.</short>
           <descr/>
           <seealso/>
         </element>
 
         <element name="TRawImageDescription.MaskBytesPerLine">
-          <short>The number of bytes per Mask scanline</short>
+          <short>The number of bytes per Mask scanline.</short>
           <descr/>
           <seealso/>
         </element>
 
         <element name="TRawImageDescription.MaskBitsPerLine">
-          <short>The number of bits per Mask scanline</short>
+          <short>The number of bits per Mask scanline.</short>
           <descr/>
           <seealso/>
         </element>
 
         <element name="TRawImageDescription.AsString">
-          <short>The image descriptor as a string</short>
+          <short>The image descriptor as a string.</short>
           <descr/>
           <seealso/>
         </element>
 
         <element name="TRawImageDescription.IsEqual">
-          <short>Compares with the given description, returns True if it is equal</short>
+          <short>Compares with the given description, returns True if it is equal.</short>
           <descr/>
           <seealso/>
         </element>
@@ -680,7 +680,7 @@
       </element>
 
       <element name="TRawImagePosition">
-        <short>Record describing a position in Raw Image data</short>
+        <short>Record describing a position in Raw Image data.</short>
         <descr>Byte is the byte offset, Bit the bit number/offset in that byte.</descr>
         <seealso/>
       </element>
@@ -699,14 +699,14 @@
 
       <element name="PRawImagePosition">
         <short>
-          <var>PRawImagePosition</var> - pointer to a <var>TRawImagePosition</var>
+          <var>PRawImagePosition</var> - pointer to a <var>TRawImagePosition</var>.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage">
-        <short>An uncompressed graphics image (bitmap)</short>
+        <short>An uncompressed graphics image (bitmap).</short>
         <descr>
           <p>
             This object hold the pixels, mask and color palette of the image, as well as a detailed <link id="TRawImageDescription">description</link> of the storage format of these parts.
@@ -720,64 +720,60 @@
 
       <element name="TRawImage.Description">
         <short>
-          <var>Description</var> record for the Raw Image</short>
+          <var>Description</var> record for the Raw Image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.Data">
         <short>
-          <var>Data</var> - a pointer to the actual data of the image</short>
+          <var>Data</var> - a pointer to the actual data of the image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.DataSize">
-        <short>
-          <var>DataSize</var> - pointer to the size of the image</short>
+        <short><var>DataSize</var> - pointer to the size of the image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.Mask">
-        <short>
-          <var>Mask</var> - pointer to the Mask for use with the image</short>
+        <short><var>Mask</var> - pointer to the Mask for use with the image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.MaskSize">
-        <short>
-          <var>MaskSize</var> - pointer to the size of the mask</short>
+        <short><var>MaskSize</var> - pointer to the size of the mask.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.Palette">
         <short>
-          <var>Palette</var> - pointer to the palette of colors for this image</short>
+          <var>Palette</var> - pointer to the palette of colors for this image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.PaletteSize">
         <short>
-          <var>PaletteSize</var> - pointer to the size of the palette</short>
+          <var>PaletteSize</var> - pointer to the size of the palette.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.Init">
         <short>
-          <var>Init</var> - initiator for the object. Don't use a constructor here, it will break compatibility with a record
+          <var>Init</var> - initiator for the object. Don't use a constructor here, it will break compatibility with a record.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.CreateData">
-        <short>
-          <var>CreateData</var> - method to create the data for the record
+        <short><var>CreateData</var> - method to create the data for the record.
         </short>
         <descr/>
         <seealso/>
@@ -787,14 +783,14 @@
       </element>
 
       <element name="TRawImage.FreeData">
-        <short>Destroys the allocated Data, Mask and Palette arrays</short>
+        <short>Destroys the allocated Data, Mask and Palette arrays.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImage.ReleaseData">
         <short>
-          <var>ReleaseData</var> - frees the resources when finished with the data
+          <var>ReleaseData</var> - frees the resources when finished with the data.
         </short>
         <descr/>
         <seealso/>
@@ -802,7 +798,7 @@
 
       <element name="TRawImage.ExtractRect">
         <short>
-          <var>ExtractRect</var> - find the position of the bounding rectangle from the raw data
+          <var>ExtractRect</var> - find the position of the bounding rectangle from the raw data.
         </short>
       </element>
       <element name="TRawImage.ExtractRect.ARect">
@@ -826,7 +822,7 @@
 
       <element name="TRawImage.PerformEffect">
         <short>
-          <var>PerformEffect</var> - applies a specified special effect to the data of the Raw Image
+          <var>PerformEffect</var> - applies a specified special effect to the data of the Raw Image.
         </short>
         <descr/>
         <seealso/>
@@ -843,7 +839,7 @@
 
       <element name="TRawImage.ReadBits">
         <short>
-          <var>ReadBits</var> - reads the bit values for the raw image data at a given position
+          <var>ReadBits</var> - reads the bit values for the raw image data at a given position.
         </short>
         <descr/>
         <seealso/>
@@ -860,7 +856,7 @@
 
       <element name="TRawImage.ReadChannels">
         <short>
-          Reads the Red, Green, Blue and Alpha channel values at a given position in pixel data
+          Reads the Red, Green, Blue and Alpha channel values at a given position in pixel data.
         </short>
       </element>
       <element name="TRawImage.ReadChannels.APosition">
@@ -881,7 +877,7 @@
 
       <element name="TRawImage.ReadMask">
         <short>
-          Reads the Mask value at the given position in the image data
+          Reads the Mask value at the given position in the image data.
         </short>
         <descr>
           Reads the Mask value at the given position in the image data. Returns AMask=True if the pixel is transparent. The position in the Mask data typically differs from the position in the color data.
@@ -896,7 +892,7 @@
       </element>
 
       <element name="TRawImage.WriteBits">
-        <short>Writes ABits into Data at the given position</short>
+        <short>Writes ABits into Data at the given position.</short>
         <descr/>
         <seealso/>
       </element>
@@ -915,7 +911,7 @@
 
       <element name="TRawImage.WriteChannels">
         <short>
-          <var>WriteChannels</var> - writes the specified channel values at the nominated position
+          <var>WriteChannels</var> - writes the specified channel values at the nominated position.
         </short>
         <descr/>
         <seealso/>
@@ -950,7 +946,7 @@
 
       <element name="TRawImage.IsMasked">
         <short>
-          <var>IsMasked</var> - returns True if the specified pixels are masked
+          <var>IsMasked</var> - returns True if the specified pixels are masked.
         </short>
       </element>
       <element name="TRawImage.IsMasked.Result">
@@ -962,7 +958,7 @@
 
       <element name="TRawImage.IsTransparent">
         <short>
-          <var>IsTransparent</var> - returns True if the specified pixels are transparent
+          <var>IsTransparent</var> - returns True if the specified pixels are transparent.
         </short>
       </element>
       <element name="TRawImage.IsTransparent.Result">
@@ -974,7 +970,7 @@
 
       <element name="TRawImage.IsEqual">
         <short>
-          <var>IsEqual</var> - returns True if the current and specified images are equal</short>
+          <var>IsEqual</var> - returns True if the current and specified images are equal.</short>
       </element>
       <element name="TRawImage.IsEqual.Result">
         <short/>
@@ -985,7 +981,7 @@
 
       <element name="PRawImage">
         <short>
-          <var>PRawImage</var> - pointer to a <var>TRawImage</var>
+          <var>PRawImage</var> - pointer to a <var>TRawImage</var>.
         </short>
         <descr/>
         <seealso/>
@@ -993,7 +989,7 @@
 
       <element name="TRawImageLineStarts">
         <short>
-          <var>TRawImageLineStarts</var> - contains a list of the start positions of the lines in the Raw Image
+          <var>TRawImageLineStarts</var> - contains a list of the start positions of the lines in the Raw Image.
         </short>
         <descr/>
         <seealso/>
@@ -1006,14 +1002,14 @@
       <element name="TRawImageLineStarts.FLineOrder"/>
 
       <element name="TRawImageLineStarts.Positions">
-        <short>The array of start positions for scanlines in a raw image</short>
+        <short>The array of start positions for scanlines in a raw image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TRawImageLineStarts.Init">
         <short>
-          <var>Init</var> - initiator for the object. Don't use a constructor here, it will break compatibility with a record
+          <var>Init</var> - initiator for the object. Don't use a constructor here, it will break compatibility with a record.
         </short>
         <descr/>
         <seealso/>
@@ -1021,7 +1017,7 @@
 
       <element name="TRawImageLineStarts.GetPosition">
         <short>
-          <var>GetPosition</var> - returns the position specified by x, y coordinates as a <var>TRawImagePosition</var>
+          <var>GetPosition</var> - returns the position specified by x, y coordinates as a <var>TRawImagePosition</var>.
         </short>
         <descr/>
         <seealso/>
@@ -1035,7 +1031,7 @@
 
       <element name="PRawImageLineStarts">
         <short>
-          <var>PRawImageLineStarts</var> - pointer to <var>TRawImageLineStarts</var>
+          <var>PRawImageLineStarts</var> - pointer to <var>TRawImageLineStarts</var>.
         </short>
         <descr/>
         <seealso/>
@@ -1043,7 +1039,7 @@
 
       <element name="DefaultByteOrder">
         <short>
-          Byte order for raw image data on the platform or widgetset
+          Byte order for raw image data on the platform or widgetset.
         </short>
         <descr>
           Value from TRawImageByteOrder with the byte order (Endian-ness) for the platform or widgetset
@@ -1053,7 +1049,7 @@
 
       <element name="GetBytesPerLine">
         <short>
-          <var>GetBytesPerLine</var> - returns the number of bytes per line (as a pointer)
+          <var>GetBytesPerLine</var> - returns the number of bytes per line (as a pointer).
         </short>
         <descr/>
         <seealso/>
@@ -1073,7 +1069,7 @@
 
       <element name="GetBitsPerLine">
         <short>
-          <var>GetBitsPerLine</var> - returns the number of bits per line (as a pointer)
+          <var>GetBitsPerLine</var> - returns the number of bits per line (as a pointer).
         </short>
         <descr/>
         <seealso/>
@@ -1093,7 +1089,7 @@
 
       <element name="CopyImageData">
         <short>
-          <var>CopyImageData</var> - copies data from <var>ASource</var> to <var>ADestination</var>, returning True if successful
+          <var>CopyImageData</var> - copies data from <var>ASource</var> to <var>ADestination</var>, returning True if successful.
         </short>
         <descr/>
         <seealso/>

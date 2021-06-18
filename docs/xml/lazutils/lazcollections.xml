@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="lazCollections">
-      <short>Contains classes used to implement thread-safe collections</short>
+      <short>Contains classes used to implement thread-safe collections.</short>
       <descr>
         <p>
           <file>lazCollections.pas</file> contains classes used to implement thread-safe collections.
@@ -24,7 +24,7 @@
       <element name="LazSysUtils"/>
 
       <element name="PPRTLEvent">
-        <short>Pointer to a PRTLEvent type</short>
+        <short>Pointer to a PRTLEvent type.</short>
         <descr>
           <p>
             For Windows, the pointer is to a THandle type. For other platforms, the pointer is to a record type. Used to implement TWaitableSection.
@@ -37,7 +37,7 @@
       </element>
 
       <element name="TWaitableSection">
-        <short>Protects a section of code in multi-threaded applications</short>
+        <short>Protects a section of code in multi-threaded applications.</short>
         <descr>
           <p>
             <var>TWaitableSection</var> is an <b>advanced record</b> type used to serialize access to a section of code in a multi-threaded application. It uses a pointer to a RTL event, accessible to all interested threads, to protect its resources. When the event is set by an acquiring thread, other threads must wait until the event is reset.
@@ -58,7 +58,7 @@
       <element name="TWaitableSection.SECTION_ENTERED_INDICATOR"/>
 
       <element name="TWaitableSection.GetCachedOrNewEvent">
-        <short>Gets or creates the RTL event  for the synchronization object</short>
+        <short>Gets or creates the RTL event  for the synchronization object.</short>
         <descr/>
         <seealso>
           <link id="#rtl.system.RTLEventCreate">RTLEventCreate</link>
@@ -66,14 +66,14 @@
         </seealso>
       </element>
       <element name="TWaitableSection.GetCachedOrNewEvent.Result">
-        <short>Pointer to the RTL event acquired or created in the method</short>
+        <short>Pointer to the RTL event acquired or created in the method.</short>
       </element>
       <element name="TWaitableSection.GetCachedOrNewEvent.AnEventCache">
-        <short>Cached event acquired or updated in the method</short>
+        <short>Cached event acquired or updated in the method.</short>
       </element>
 
       <element name="TWaitableSection.FreeOrCacheEvent">
-        <short>Caches or Frees the RTL event for the synchronization object</short>
+        <short>Caches or Frees the RTL event for the synchronization object.</short>
         <descr/>
         <seealso>
           <link id="#rtl.system.RTLEventDestroy">RTLEventDestroy</link>
@@ -81,14 +81,14 @@
         </seealso>
       </element>
       <element name="TWaitableSection.FreeOrCacheEvent.AnEventCache">
-        <short>Cache where the RTL event is stored</short>
+        <short>Cache where the RTL event is stored.</short>
       </element>
       <element name="TWaitableSection.FreeOrCacheEvent.AnEvent">
-        <short>RTL event cached or destroyed in the method</short>
+        <short>RTL event cached or destroyed in the method.</short>
       </element>
 
       <element name="TWaitableSection.EnterOrWait">
-        <short>Enters the protected section, or waits until it is available</short>
+        <short>Enters the protected section, or waits until it is available.</short>
         <descr/>
         <seealso>
           <link id="TWaitableSection.GetCachedOrNewEvent"/>
@@ -98,14 +98,14 @@
         </seealso>
       </element>
       <element name="TWaitableSection.EnterOrWait.Result">
-        <short>True if the protected section has not been entered</short>
+        <short>True if the protected section has not been entered.</short>
       </element>
       <element name="TWaitableSection.EnterOrWait.AnEventCache">
-        <short>Cached RTL event set and monitored in the method</short>
+        <short>Cached RTL event set and monitored in the method.</short>
       </element>
 
       <element name="TWaitableSection.Leave">
-        <short>Leaves the protected section</short>
+        <short>Leaves the protected section.</short>
         <descr/>
         <seealso>
           <link id="#rtl.system.InterlockedExchange">InterlockedExchange</link>
@@ -116,7 +116,7 @@
       <!-- class Visibility: default -->
       <element name="TLazMonitor">
         <short>
-          Implements a synchronization construct which provides thread-safe access to resources
+          Implements a synchronization construct which provides thread-safe access to resources.
         </short>
         <descr>
           <p>
@@ -143,43 +143,43 @@
 
       <!-- class function Visibility: private -->
       <element name="TLazMonitor.GetDefaultSpinCount" link="#lazutils.lazcollections.TLazMonitor.DefaultSpinCount">
-        <short>Gets the value for the DefaultSpinCount class property</short>
+        <short>Gets the value for the DefaultSpinCount class property.</short>
       </element>
       <!-- function result Visibility: private -->
       <element name="TLazMonitor.GetDefaultSpinCount.Result">
-        <short>Value for the class property</short>
+        <short>Value for the class property.</short>
       </element>
 
       <!-- class procedure Visibility: private -->
       <element name="TLazMonitor.SetDefaultSpinCount" link="#lazutils.lazcollections.TLazMonitor.DefaultSpinCount">
-        <short>Sets the value for the DefaultSpinCount property</short>
+        <short>Sets the value for the DefaultSpinCount property.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLazMonitor.SetDefaultSpinCount.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TLazMonitor.GetSpinCount" link="#lazutils.lazcollections.TLazMonitor.SpinCount">
-        <short>Gets the value for the SpinCount property</short>
+        <short>Gets the value for the SpinCount property.</short>
       </element>
       <!-- function result Visibility: private -->
       <element name="TLazMonitor.GetSpinCount.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TLazMonitor.SetSpinCount" link="#lazutils.lazcollections.TLazMonitor.SpinCount">
-        <short>Sets the value for the SpinCount property</short>
+        <short>Sets the value for the SpinCount property.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLazMonitor.SetSpinCount.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TLazMonitor.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and sets the value in the <var>SpinCount</var> property to the <var>DefaultSpinCount</var> used in   instances of the class. Create calls the inherited constructor prior to exiting from the method.
@@ -194,7 +194,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazMonitor.Acquire">
-        <short>Limits thread access to the calling thread</short>
+        <short>Limits thread access to the calling thread.</short>
         <descr>
           <p>
             <var>Acquire</var> is an overridden procedure used to limit threaded access to resources to the current calling thread. Acquire extends the inherited method to use a spinlock (or busy waiting loop) to get mutually exclusive access to resources shared between threads.
@@ -218,7 +218,7 @@
 
       <!-- property Visibility: public -->
       <element name="TLazMonitor.SpinCount">
-        <short>Number of busy waiting iterations used in the monitor</short>
+        <short>Number of busy waiting iterations used in the monitor.</short>
         <descr>
           <p>
             <var>SpinCount</var> is an <var>Integer</var> property which indicates the number of busy waiting iterations used in the monitor. The default value for the property is set in the <var>Create</var> constructor to the value in the <var>DefaultSpinCount</var> class property.
@@ -236,7 +236,7 @@
 
       <!-- property Visibility: public -->
       <element name="TLazMonitor.DefaultSpinCount">
-        <short>Default number of busy waiting iterations used in instances of the class</short>
+        <short>Default number of busy waiting iterations used in instances of the class.</short>
         <descr>
           <p>
             <var>DefaultSpinCount</var> is an <var>Integer</var> class property which identifies the default number of busy waiting iterations used in instances of the class. <var>DefaultSpinCount</var> provides the default value for the <var>SpinCount</var> property in new instances of the class.
@@ -250,7 +250,7 @@
 
       <element name="TLazFifoQueue">
         <short>
-          Implements a First-In-First-Out queue for entries using a generic item type
+          Implements a First-In-First-Out queue for entries using a generic item type.
         </short>
         <descr>
           <p>
@@ -275,7 +275,7 @@
       <element name="TLazFifoQueue.FTotalItemsPushed"/>
 
       <element name="TLazFifoQueue.GetIsEmpty">
-        <short>Gets the value for the IsEmpty property</short>
+        <short>Gets the value for the IsEmpty property.</short>
         <descr/>
         <seealso>
           <link id="TLazFifoQueue.IsEmpty"/>
@@ -283,12 +283,12 @@
       </element>
       <element name="TLazFifoQueue.GetIsEmpty.Result">
         <short>
-          True if the number of items pushed onto and popped off of the queue are the same
+          True if the number of items pushed onto and popped off of the queue are the same.
         </short>
       </element>
 
       <element name="TLazFifoQueue.GetIsFull">
-        <short>Gets the value for the IsFull property</short>
+        <short>Gets the value for the IsFull property.</short>
         <descr/>
         <seealso>
           <link id="TLazFifoQueue.IsFull"/>
@@ -296,12 +296,12 @@
       </element>
       <element name="TLazFifoQueue.GetIsFull.Result">
         <short>
-          True when the number of items remaining in the queue is the same as the QueueSize
+          True when the number of items remaining in the queue is the same as the QueueSize.
         </short>
       </element>
 
       <element name="TLazFifoQueue.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <var>Create</var> is the constructor for the class instance, and calls <var>Grow</var> using the value in <var>AQueueDepth</var> as an argument. This sets the initial size for the internal queue storage to the specified number of entries.
         </descr>
@@ -310,11 +310,11 @@
         </seealso>
       </element>
       <element name="TLazFifoQueue.Create.AQueueDepth">
-        <short>Number of items allocated in the internal storage for the queue</short>
+        <short>Number of items allocated in the internal storage for the queue.</short>
       </element>
 
       <element name="TLazFifoQueue.Grow">
-        <short>Resizes the internal storage for the queue by the specified Delta value</short>
+        <short>Resizes the internal storage for the queue by the specified Delta value.</short>
         <descr>
           <p>
             <var>Grow</var> is a method used to resize the internal storage for the queue by the specified Delta value.
@@ -334,11 +334,11 @@
         </seealso>
       </element>
       <element name="TLazFifoQueue.Grow.ADelta">
-        <short>Number of entries to add to (or remove from) the queue size</short>
+        <short>Number of entries to add to (or remove from) the queue size.</short>
       </element>
 
       <element name="TLazFifoQueue.PushItem">
-        <short>Pushes an item of the specified type onto the tail of the queue</short>
+        <short>Pushes an item of the specified type onto the tail of the queue.</short>
         <descr>
           <p>
             <var>Pushitem</var> is a <var>Boolean</var> function used to add the value in <var>AItem</var> to the tail of the queue. The return value is <b>True</b> if the queue was not full when the method was called. No actions are performed in the method when a slot is not available in the internal storage for the queue.
@@ -360,15 +360,15 @@
       </element>
       <element name="TLazFifoQueue.PushItem.Result">
         <short>
-          True if the specified item was added to the queue, or False when the queue is full
+          True if the specified item was added to the queue, or False when the queue is full.
         </short>
       </element>
       <element name="TLazFifoQueue.PushItem.AItem">
-        <short>Item added to the tail of the queue</short>
+        <short>Item added to the tail of the queue.</short>
       </element>
 
       <element name="TLazFifoQueue.PopItem">
-        <short>Pops an item of the specified type off of the head of the queue</short>
+        <short>Pops an item of the specified type off of the head of the queue.</short>
         <descr>
           <p>
             <var>PopItem</var> is a <var>Boolean</var> function used to get the value in AItem from the head of the queue. The return value is <b>True</b> if the queue was not empty when the method was called. No actions are performed in the method when items have not been stored in the internal storage for the queue.
@@ -388,15 +388,15 @@
       </element>
       <element name="TLazFifoQueue.PopItem.Result">
         <short>
-          True if the item was retrieved from the queue storage, False if the queue is empty
+          True if the item was retrieved from the queue storage, False if the queue is empty.
         </short>
       </element>
       <element name="TLazFifoQueue.PopItem.AItem">
-        <short>Item retrieved from the head of the queue</short>
+        <short>Item retrieved from the head of the queue.</short>
       </element>
 
       <element name="TLazFifoQueue.QueueSize">
-        <short>Size (or depth) for the queue</short>
+        <short>Size (or depth) for the queue.</short>
         <descr>
           <p>
             Indicates the number of storage slots available in the internal storage for the queue.
@@ -415,7 +415,7 @@
       </element>
 
       <element name="TLazFifoQueue.TotalItemsPopped">
-        <short>Total number of entries that have been popped off of the queue</short>
+        <short>Total number of entries that have been popped off of the queue.</short>
         <descr>
           <p>
             Used with <var>QueueSize</var> to determine the next position (head) for the queue. (TotalItemsPopped mod QueueSize). Used with <var>TotalItemsPushed</var> to determine if the queue is empty or full. The value for the property is incremented in the <var>PopItem</var> method after the item at the head of the queue has been retrieved from the internal storage.
@@ -429,7 +429,7 @@
       </element>
 
       <element name="TLazFifoQueue.TotalItemsPushed">
-        <short>Total number of entries that have been pushed onto the queue</short>
+        <short>Total number of entries that have been pushed onto the queue.</short>
         <descr>
           <p>
             Used with <var>QueueSize</var> to determine the last position (tail) for the queue. (TotalItemsPushed mod QueueSize). Used with <var>TotalItemsPopped</var> to determine if the queue is empty or full. The value for the property is incremented in the <var>PushItem</var> method after the item has been stored in the internal storage at the tail for the queue.
@@ -444,7 +444,7 @@
 
       <element name="TLazFifoQueue.IsEmpty">
         <short>
-          Indicates if none of the internal storage slots have been used in the queue storage
+          Indicates if none of the internal storage slots have been used in the queue storage.
         </short>
         <descr>
           <p>
@@ -463,7 +463,7 @@
 
       <element name="TLazFifoQueue.IsFull">
         <short>
-          Indicates if all of the internal storage slots have been used in the queue storage
+          Indicates if all of the internal storage slots have been used in the queue storage.
         </short>
         <descr>
           <p>
@@ -483,7 +483,7 @@
 
       <element name="TLazThreadedQueue">
         <short>
-          Implements a thread-safe FIFO queue for items of a generic type
+          Implements a thread-safe FIFO queue for items of a generic type.
         </short>
         <descr>
           <p>
@@ -509,7 +509,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
 
       <element name="TLazThreadedQueue.TLazTypedFifoQueue">
         <short>
-          Type used to the specialize the internal TLazFifoQueue instance for the class
+          Type used to the specialize the internal TLazFifoQueue instance for the class.
         </short>
         <descr/>
         <seealso/>
@@ -525,38 +525,38 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       <element name="TLazThreadedQueue.FShutDown"/>
 
       <element name="TLazThreadedQueue.GetQueueSize">
-        <short>Gets the value for the QueueSize property</short>
+        <short>Gets the value for the QueueSize property.</short>
         <descr/>
         <seealso>
           <link id="TLazThreadedQueue.QueueSize"/>
         </seealso>
       </element>
       <element name="TLazThreadedQueue.GetQueueSize.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TLazThreadedQueue.GetTotalItemsPopped">
-        <short>Gets the value for the TotalItemsPopped property</short>
+        <short>Gets the value for the TotalItemsPopped property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLazThreadedQueue.GetTotalItemsPopped.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TLazThreadedQueue.GetTotalItemsPushed">
-        <short>Gets the value for the TotalItemsPushed property</short>
+        <short>Gets the value for the TotalItemsPushed property.</short>
         <descr/>
         <seealso>
           <link id="TLazThreadedQueue.TotalItemsPushed"/>
         </seealso>
       </element>
       <element name="TLazThreadedQueue.GetTotalItemsPushed.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TLazThreadedQueue.TryPushItem">
-        <short>Tries to add the specified item to the queue</short>
+        <short>Tries to add the specified item to the queue.</short>
         <descr>
           <p>
             <var>TryPushItem</var> is a <var>Boolean</var> function which tries to add the item specified in <var>AItem</var> to the internal storage for the queue. The return value is <b>True</b> if the item was successfully added in the method.
@@ -570,22 +570,22 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
         </seealso>
       </element>
       <element name="TLazThreadedQueue.TryPushItem.Result">
-        <short>True if the item was added successfully</short>
+        <short>True if the item was added successfully.</short>
       </element>
       <element name="TLazThreadedQueue.TryPushItem.AItem">
-        <short>Item added to the queue in the method</short>
+        <short>Item added to the queue in the method.</short>
       </element>
 
       <element name="TLazThreadedQueue.TryPopItem">
-        <short>Tries to remove the next item in the thread-safe queue</short>
+        <short>Tries to remove the next item in the thread-safe queue.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLazThreadedQueue.TryPopItem.Result">
-        <short>True if an item was successfully removed from the queue</short>
+        <short>True if an item was successfully removed from the queue.</short>
       </element>
       <element name="TLazThreadedQueue.TryPopItem.AItem">
-        <short>Item removed from the queue in the method</short>
+        <short>Item removed from the queue in the method.</short>
       </element>
 
       <element name="TLazThreadedQueue.TryPushItemUnprotected">
@@ -613,7 +613,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       </element>
 
       <element name="TLazThreadedQueue.Lock">
-        <short>Enters the Monitor used for resource protection</short>
+        <short>Enters the Monitor used for resource protection.</short>
         <descr/>
         <seealso>
           <link id="TLazThreadedQueue.Unlock"/>
@@ -621,7 +621,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       </element>
 
       <element name="TLazThreadedQueue.Unlock">
-        <short>Leaves the Monitor used for resource protection</short>
+        <short>Leaves the Monitor used for resource protection.</short>
         <descr/>
         <seealso>
           <link id="TLazThreadedQueue.Lock"/>
@@ -629,29 +629,29 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       </element>
 
       <element name="TLazThreadedQueue.CreateFifoQueue">
-        <short>Creates the TLazTypedFifoQueue instance used in the class</short>
+        <short>Creates the TLazTypedFifoQueue instance used in the class.</short>
         <descr/>
         <seealso>
           <link id="TLazThreadedQueue.TLazTypedFifoQueue"/>
         </seealso>
       </element>
       <element name="TLazThreadedQueue.CreateFifoQueue.Result">
-        <short>TLazTypedFifoQueue instance used in the class</short>
+        <short>TLazTypedFifoQueue instance used in the class.</short>
       </element>
       <element name="TLazThreadedQueue.CreateFifoQueue.AQueueDepth">
-        <short>Initial setting for the queue depth (or size)</short>
+        <short>Initial setting for the queue depth (or size).</short>
       </element>
 
       <element name="TLazThreadedQueue.FifoQueue">
         <short>
-          Provides access to the TLazTypedFifoQueue instance used in the class
+          Provides access to the TLazTypedFifoQueue instance used in the class.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazThreadedQueue.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance. Create allocates internal resources used to implement the thread-safe queue, and sets the default values for its properties.
@@ -673,26 +673,26 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       <!-- argument Visibility: default -->
       <element name="TLazThreadedQueue.Create.AQueueDepth">
         <short>
-          Indicates the maximum number of items that can be stored in the thread-safe queue
+          Indicates the maximum number of items that can be stored in the thread-safe queue.
         </short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLazThreadedQueue.Create.PushTimeout">
         <short>
-          Number of ticks (milliseconds) to wait for successful completion of an enqueue request
+          Number of ticks (milliseconds) to wait for successful completion of an enqueue request.
         </short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TLazThreadedQueue.Create.PopTimeout">
         <short>
-          Number of ticks (milliseconds) to wait for successful completion of a dequeue request
+          Number of ticks (milliseconds) to wait for successful completion of a dequeue request.
         </short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TLazThreadedQueue.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for the class instance. Destroy calls the private <var>DoShutDown</var> method to free internal resources allocated in the class instance. Destroy calls the inherited destructor prior to exiting from the method.
@@ -707,7 +707,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
 
       <element name="TLazThreadedQueue.Grow">
         <short>
-          Expands (or shrinks) the allocated storage for the queue by the specified size
+          Expands (or shrinks) the allocated storage for the queue by the specified size.
         </short>
         <descr>
           <p>
@@ -735,11 +735,11 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
         </seealso>
       </element>
       <element name="TLazThreadedQueue.Grow.ADelta">
-        <short>Value used to increase the size of the queue</short>
+        <short>Value used to increase the size of the queue.</short>
       </element>
 
       <element name="TLazThreadedQueue.PushItem">
-        <short>Adds the specified item to the queue</short>
+        <short>Adds the specified item to the queue.</short>
         <descr>
           <p>
             <var>PushItem</var> is a <var>TWaitResult</var> function used to add the item specified in <var>AItem</var> to the thread-safe queue.
@@ -764,15 +764,15 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
         </seealso>
       </element>
       <element name="TLazThreadedQueue.PushItem.Result">
-        <short>Contains the status for the enqueue request</short>
+        <short>Contains the status for the enqueue request.</short>
       </element>
       <element name="TLazThreadedQueue.PushItem.AItem">
-        <short>Item added to the storage for the queue</short>
+        <short>Item added to the storage for the queue.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLazThreadedQueue.PopItem">
-        <short>Pops the next item from the queue</short>
+        <short>Pops the next item from the queue.</short>
         <descr>
           <p>
             <var>PopItem</var> is a <var>TWaitResult</var> function used remove the next item available in the thread-safe queue. PopItem calls the <var>PopItemTimeout</var> method using the value in the <var>PopTimeout</var> property as an argument.
@@ -791,16 +791,16 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       </element>
       <!-- function result Visibility: public -->
       <element name="TLazThreadedQueue.PopItem.Result">
-        <short>Contains the status for the dequeue request</short>
+        <short>Contains the status for the dequeue request.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLazThreadedQueue.PopItem.AItem">
-        <short>Item removed from the queue</short>
+        <short>Item removed from the queue.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLazThreadedQueue.PopItemTimeout">
-        <short>Pops an item off the queue with a timeout value</short>
+        <short>Pops an item off the queue with a timeout value.</short>
         <descr>
           <p>
             <var>PopItemTimeout</var> is a <var>TWaitResult</var> function used to remove the next available item in the queue with a timeout in effect for the dequeue operation.
@@ -826,21 +826,21 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       </element>
       <!-- function result Visibility: public -->
       <element name="TLazThreadedQueue.PopItemTimeout.Result">
-        <short>Contains  the status for the dequeue request</short>
+        <short>Contains  the status for the dequeue request.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLazThreadedQueue.PopItemTimeout.AItem">
-        <short>Item removed from the queue</short>
+        <short>Item removed from the queue.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLazThreadedQueue.PopItemTimeout.Timeout">
-        <short>Maximum number of ticks to wait for the item to be removed from the queue</short>
+        <short>Maximum number of ticks to wait for the item to be removed from the queue.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TLazThreadedQueue.DoShutDown">
         <short>
-          Performs actions required when the thread-safe queue is freed
+          Performs actions required when the thread-safe queue is freed.
         </short>
         <descr>
           <p>
@@ -859,7 +859,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       <!-- property Visibility: public -->
       <element name="TLazThreadedQueue.QueueSize">
         <short>
-          Number of storage slots for items in the queue
+          Number of storage slots for items in the queue.
         </short>
         <descr>
           <p>
@@ -885,7 +885,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       <!-- property Visibility: public -->
       <element name="TLazThreadedQueue.TotalItemsPopped">
         <short>
-          Total number of items removed from the queue
+          Total number of items removed from the queue.
         </short>
         <descr>
           <p>
@@ -905,7 +905,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       <!-- property Visibility: public -->
       <element name="TLazThreadedQueue.TotalItemsPushed">
         <short>
-          Total number of items added to the queue
+          Total number of items added to the queue.
         </short>
         <descr>
           <p>
@@ -924,7 +924,7 @@ TLazThreadedQueueRect = specialize TLazThreadedQueue&lt;TRectangle&gt;;
       <!-- property Visibility: public -->
       <element name="TLazThreadedQueue.ShutDown">
         <short>
-          Indicates if the DoShutdown method has been called but not finished
+          Indicates if the DoShutdown method has been called but not finished.
         </short>
         <descr>
           <p>

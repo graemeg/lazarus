@@ -7,7 +7,7 @@
     ============================================================================
     -->
     <module name="LazTracer">
-      <short>Contains types and routines used to implement exceptions and stack traces</short>
+      <short>Contains types and routines used to implement exceptions and stack traces.</short>
       <descr>
         <p>
           <file>laztracer.pas</file> contains types and routines used to implement exceptions and stack traces in the Lazarus IDE and Debugger. This file is part of the <file>LazUtils</file> package.
@@ -23,7 +23,7 @@
       <element name="LazUtilsStrConsts"/>
 
       <element name="TStackTracePointers">
-        <short>Array type used for Pointers to code addresses</short>
+        <short>Array type used for Pointers to code addresses.</short>
         <descr>
           <p>
             <var>TStackTracePointers</var> is an <var>Array</var> type which contains Pointers to code addresses. TStackTracePointers is the type passed as an argument to the <var>GetStackTracePointers</var> and <var>StackTraceAsString</var> routines. It is also the type used to implement the <var>CreationStack</var> and <var>DestructionStack</var> members in <var>TDebugLCLItemInfo</var>.
@@ -38,7 +38,7 @@
 
       <element name="TLineInfoCacheItem">
         <short>
-          Record type used to store a pointer to a code address and its additional information
+          Record type used to store a pointer to a code address and its additional information.
         </short>
         <descr></descr>
         <seealso>
@@ -47,14 +47,14 @@
         </seealso>
       </element>
       <element name="TLineInfoCacheItem.Addr">
-        <short>Pointer to the address for a source code symbol</short>
+        <short>Pointer to the address for a source code symbol.</short>
       </element>
       <element name="TLineInfoCacheItem.Info">
-        <short>Contains additional information about the code address and its origin</short>
+        <short>Contains additional information about the code address and its origin.</short>
       </element>
 
       <element name="PLineInfoCacheItem">
-        <short>Pointer to a TLineInfoCacheItem type</short>
+        <short>Pointer to a TLineInfoCacheItem type.</short>
         <descr>
           <p>
             Used in the implementation of the <var>GetLineInfo</var> routine.
@@ -66,7 +66,7 @@
       </element>
 
       <element name="RaiseGDBException">
-        <short>Raises an exception in the GDB debugger</short>
+        <short>Raises an exception in the GDB debugger.</short>
         <descr>
           <p>
             <var>RaiseGDBException</var> is a procedure used to raise an exception in the GDB debugger. Normally, GDB does not catch FPC <var>Exception</var> objects. This procedure raises a standard <b>"Division By Zero"</b> exception, which <b>IS</b> caught by GDB. This allows a program to be stopped in the debugger without extra GDB  configuration.
@@ -81,11 +81,11 @@
         <seealso></seealso>
       </element>
       <element name="RaiseGDBException.Msg">
-        <short>Value for the message in the exception</short>
+        <short>Value for the message in the exception.</short>
       </element>
 
       <element name="RaiseAndCatchException">
-        <short>Raises an exception that is caught and handled in an application</short>
+        <short>Raises an exception that is caught and handled in an application.</short>
         <descr>
           <p>
             <var>RaiseAndCatchException</var> is a procedure used to generate an <var>Exception</var> that is caught and handled by an application.
@@ -98,7 +98,7 @@
       </element>
 
       <element name="GetStackTrace">
-        <short>Retrieves backtrace information for code addresses</short>
+        <short>Retrieves backtrace information for code addresses.</short>
         <descr>
           <p>
             <var>GetStackTrace</var> is a <var>String</var> function used to retrieve backtrace information for code addresses in a string format.
@@ -112,14 +112,14 @@
         </seealso>
       </element>
       <element name="GetStackTrace.Result">
-        <short>String with information about backtrace addresses</short>
+        <short>String with information about backtrace addresses.</short>
       </element>
       <element name="GetStackTrace.UseCache">
-        <short>Indicates if cached line information can be used in the routine</short>
+        <short>Indicates if cached line information can be used in the routine.</short>
       </element>
 
       <element name="GetStackTracePointers">
-        <short>Retrieve the addresses and information for a code address and its callers</short>
+        <short>Retrieve the addresses and information for a code address and its callers.</short>
         <descr>
           <p>
             <var>GetStackTracePointers</var> is a procedure used to retrieve the addresses and information for a code address and its callers.
@@ -133,11 +133,11 @@
         </seealso>
       </element>
       <element name="GetStackTracePointers.AStack">
-        <short>Array where pointers to code addresses are stored</short>
+        <short>Array where pointers to code addresses are stored.</short>
       </element>
 
       <element name="StackTraceAsString">
-        <short>Gets a string with backtrace information for the specified call stack</short>
+        <short>Gets a string with backtrace information for the specified call stack.</short>
         <descr>
           <p>
             <var>StackTraceAsString</var> is a <var>String</var> function used to get backtrace information for the  code addresses specified in <var>AStack</var>. The return value contains lines with the values from <var>GetLineInfo</var> for each of the code addresses.
@@ -152,17 +152,17 @@
         </seealso>
       </element>
       <element name="StackTraceAsString.Result">
-        <short>String with backtrace information for the call stack</short>
+        <short>String with backtrace information for the call stack.</short>
       </element>
       <element name="StackTraceAsString.AStack">
-        <short>Array of pointers to code addresses examined in the routine</short>
+        <short>Array of pointers to code addresses examined in the routine.</short>
       </element>
       <element name="StackTraceAsString.UseCache">
-        <short>Indicates if cached line information can be used in the routine</short>
+        <short>Indicates if cached line information can be used in the routine.</short>
       </element>
 
       <element name="GetLineInfo">
-        <short>Gets information about the specified code address</short>
+        <short>Gets information about the specified code address.</short>
         <descr>
           <p>
             <var>GetLineInfo</var> is a <var>String</var> function used to get information about the code address specified in <var>Addr</var>.
@@ -174,13 +174,13 @@
         <seealso/>
       </element>
       <element name="GetLineInfo.Result">
-        <short>String with information about the code address</short>
+        <short>String with information about the code address.</short>
       </element>
       <element name="GetLineInfo.Addr">
-        <short>The code address examined in the routine</short>
+        <short>The code address examined in the routine.</short>
       </element>
       <element name="GetLineInfo.UseCache">
-        <short>Indicates if locally cached line information can be used in the routine</short>
+        <short>Indicates if locally cached line information can be used in the routine.</short>
       </element>
 
     </module>
