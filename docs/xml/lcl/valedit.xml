@@ -9,7 +9,7 @@
     -->
 
     <module name="ValEdit">
-      <short>Implements the TValueListEditor grid control</short>
+      <short>Implements the TValueListEditor grid control.</short>
       <descr>
         <p>
           <file>valedit.pas</file> contains classes and types needed for the TValueListEditor control. It is a specialized 2-column grid control used to display and edit key / value pairs.
@@ -39,7 +39,7 @@
 
       <element name="TEditStyle">
         <short>
-          Indicates the editor style for items in TValueListEditor
+          Indicates the editor style for items in TValueListEditor.
         </short>
         <descr>
           <p>
@@ -51,18 +51,18 @@
         </seealso>
       </element>
       <element name="TEditStyle.esSimple">
-        <short>Displays an editor without decoration for the cell</short>
+        <short>Displays an editor without decoration for the cell.</short>
       </element>
       <element name="TEditStyle.esEllipsis">
-        <short>Displays an ellipsis button next to the cell editor</short>
+        <short>Displays an ellipsis button next to the cell editor.</short>
       </element>
       <element name="TEditStyle.esPickList">
-        <short>Displays a pick list for the cell editor</short>
+        <short>Displays a pick list for the cell editor.</short>
       </element>
 
       <element name="TVleSortCol">
         <short>
-          Indicates the sort order for items in TValueListEditor
+          Indicates the sort order for items in TValueListEditor.
         </short>
         <descr>
             <p>
@@ -74,15 +74,15 @@
         </seealso>
       </element>
       <element name="TVleSortCol.colKey">
-        <short>The Key column is used to sort items</short>
+        <short>The Key column is used to sort items.</short>
       </element>
       <element name="TVleSortCol.colValue">
-        <short>The Value column is used to sort items</short>
+        <short>The Value column is used to sort items.</short>
       </element>
 
       <element name="TItemProp" link="#rtl.classes.TPersistent">
         <short>
-          Represents items in the TValueListEditor control
+          Represents items in the TValueListEditor control.
         </short>
         <descr>
           <p>
@@ -111,90 +111,90 @@
       <element name="TItemProp.FKeyDesc"/>
 
       <element name="TItemProp.GetPickList">
-        <short>Gets the value for the PickList property</short>
+        <short>Gets the value for the PickList property.</short>
         <descr/>
         <seealso>
           <link id="TItemProp.PickList"/>
         </seealso>
       </element>
       <element name="TItemProp.GetPickList.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TItemProp.PickListChange">
-        <short>Implements the OnChange event handler for the PickList property</short>
+        <short>Implements the OnChange event handler for the PickList property.</short>
         <descr></descr>
         <seealso>
           <link id="TItemProp.PickList"/>
         </seealso>
       </element>
       <element name="TItemProp.PickListChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TItemProp.SetEditMask">
-        <short>Sets the value for the EditMask property</short>
+        <short>Sets the value for the EditMask property.</short>
         <seealso>
           <link id="TItemProp.EditMask"/>
         </seealso>
       </element>
       <element name="TItemProp.SetEditMask.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TItemProp.SetMaxLength">
-        <short>Sets the value for the MaxLength property</short>
+        <short>Sets the value for the MaxLength property.</short>
         <seealso>
           <link id="TItemProp.MaxLength"/>
         </seealso>
       </element>
       <element name="TItemProp.SetMaxLength.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TItemProp.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <seealso>
           <link id="TItemProp.ReadOnly"/>
         </seealso>
       </element>
       <element name="TItemProp.SetReadOnly.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TItemProp.SetEditStyle">
-        <short>Sets the value for the EditStyle property</short>
+        <short>Sets the value for the EditStyle property.</short>
         <seealso>
           <link id="TItemProp.EditStyle"/>
         </seealso>
       </element>
       <element name="TItemProp.SetEditStyle.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TItemProp.SetPickList">
-        <short>Sets the value for the PickList property</short>
+        <short>Sets the value for the PickList property.</short>
         <seealso>
           <link id="TItemProp.PickList"/>
         </seealso>
       </element>
       <element name="TItemProp.SetPickList.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TItemProp.SetKeyDesc">
-        <short>Sets the value for the KeyDesc property</short>
+        <short>Sets the value for the KeyDesc property.</short>
         <seealso>
           <link id="TItemProp.KeyDesc"/>
         </seealso>
       </element>
       <element name="TItemProp.SetKeyDesc.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TItemProp.AssignTo">
         <short>
-          Stores property values to the specified persistent object
+          Stores property values to the specified persistent object.
         </short>
         <descr>
           <p>
@@ -217,12 +217,12 @@
         </seealso>
       </element>
       <element name="TItemProp.AssignTo.Dest">
-        <short>Persistent object to receive values from the class</short>
+        <short>Persistent object to receive values from the class.</short>
       </element>
 
       <element name="TItemProp.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -234,12 +234,12 @@
         </seealso>
       </element>
       <element name="TItemProp.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TItemProp.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -253,7 +253,7 @@
 
       <element name="TItemProp.EditMask">
         <short>
-          Specifies the edit mask used when editing the value for the item
+          Specifies the edit mask used when editing the value for the item.
         </short>
         <descr>
           <p>
@@ -310,7 +310,7 @@
 
       <element name="TItemProp.EditStyle">
         <short>
-          Identifies the type of editor used for the item value
+          Identifies the type of editor used for the item value.
         </short>
         <descr>
           <p>
@@ -332,7 +332,7 @@
 
       <element name="TItemProp.KeyDesc">
         <short>
-          Describes the Key for the item in TValueListEditor
+          Describes the Key for the item in TValueListEditor.
         </short>
         <descr>
           <p>
@@ -347,7 +347,7 @@
 
       <element name="TItemProp.PickList">
         <short>
-          Values that can be selected for the item in TValueListEditor
+          Values that can be selected for the item in TValueListEditor.
         </short>
         <descr>
           <p>
@@ -370,7 +370,7 @@
 
       <element name="TItemProp.MaxLength">
         <short>
-          Specifies the maximum length of the item value
+          Specifies the maximum length of the item value.
         </short>
         <descr>
           <p>
@@ -385,7 +385,7 @@
       </element>
 
       <element name="TItemProp.ReadOnly">
-        <short>Indicates if the value for the item can be changed</short>
+        <short>Indicates if the value for the item can be changed.</short>
         <descr>
           <p>
             <var>ReadOnly</var> is a <var>Boolean</var> property which indicates if the value for the item can be changed in <var>TValueListEditor</var>. When ReadOnly is <b>True</b>, the value for the item cannot be changed. Changing the value in ReadOnly causes the TValueListEditor (which owns the item) to be redrawn when its <var>EditorMode</var> is <b>True</b>.
@@ -400,7 +400,7 @@
 
       <element name="TItemPropList">
         <short>
-          Implements a storage container for items added to TValueListEditor
+          Implements a storage container for items added to TValueListEditor.
         </short>
         <descr>
           <p>
@@ -421,44 +421,44 @@
       <element name="TItemPropList.FStrings"/>
 
       <element name="TItemPropList.GetCount">
-        <short>Gets the value for the Count property</short>
+        <short>Gets the value for the Count property.</short>
         <seealso>
           <link id="TItemPropList.Count"/>
         </seealso>
       </element>
       <element name="TItemPropList.GetCount.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TItemPropList.GetItem">
-        <short>Gets the value for the indexed Items property</short>
+        <short>Gets the value for the indexed Items property.</short>
         <seealso>
           <link id="TItemPropList.Items"/>
         </seealso>
       </element>
       <element name="TItemPropList.GetItem.Index">
-        <short>Ordinal position in the container with the property value</short>
+        <short>Ordinal position in the container with the property value.</short>
       </element>
       <element name="TItemPropList.GetItem.Result">
-        <short>Value for the indexed property</short>
+        <short>Value for the indexed property.</short>
       </element>
 
       <element name="TItemPropList.SetItem">
-        <short>Sets the value for the indexed Items property</short>
+        <short>Sets the value for the indexed Items property.</short>
         <seealso>
           <link id="TItemPropList.Items"/>
         </seealso>
       </element>
       <element name="TItemPropList.SetItem.Index">
-        <short>Ordinal position in the container with the property value</short>
+        <short>Ordinal position in the container with the property value.</short>
       </element>
       <element name="TItemPropList.SetItem.AValue">
-        <short>New value for the indexed property</short>
+        <short>New value for the indexed property.</short>
       </element>
 
       <element name="TItemPropList.Add">
         <short>
-          Appends the specified item to the list
+          Appends the specified item to the list.
         </short>
         <descr>
           <p>
@@ -475,12 +475,12 @@
         </seealso>
       </element>
       <element name="TItemPropList.Add.AValue">
-        <short>Item to add to the container</short>
+        <short>Item to add to the container.</short>
       </element>
 
       <element name="TItemPropList.Assign">
         <short>
-          Sets the items in the container to the specified values
+          Sets the items in the container to the specified values.
         </short>
         <descr>
           <p>
@@ -495,12 +495,12 @@
         </seealso>
       </element>
       <element name="TItemPropList.Assign.Source">
-        <short>New values to store in the list for the container</short>
+        <short>New values to store in the list for the container.</short>
       </element>
 
       <element name="TItemPropList.Clear">
         <short>
-          Removes all items in the container
+          Removes all items in the container.
         </short>
         <descr>
           <p>
@@ -518,7 +518,7 @@
 
       <element name="TItemPropList.Delete">
         <short>
-          Removes an item in the container at the specified position
+          Removes an item in the container at the specified position.
         </short>
         <descr>
           <p>
@@ -538,12 +538,12 @@
         </seealso>
       </element>
       <element name="TItemPropList.Delete.Index">
-        <short>Ordinal position for the item</short>
+        <short>Ordinal position for the item.</short>
       </element>
 
       <element name="TItemPropList.Exchange">
         <short>
-          Swaps the items at the specified positions
+          Swaps the items at the specified positions.
         </short>
         <descr>
           <p>
@@ -556,15 +556,15 @@
         </seealso>
       </element>
       <element name="TItemPropList.Exchange.Index1">
-        <short>Ordinal position for the item to be swapped</short>
+        <short>Ordinal position for the item to be swapped.</short>
       </element>
       <element name="TItemPropList.Exchange.Index2">
-        <short>Ordinal position for the item to be swapped</short>
+        <short>Ordinal position for the item to be swapped.</short>
       </element>
 
       <element name="TItemPropList.Insert">
         <short>
-          Inserts the new item at the specified position in the container
+          Inserts the new item at the specified position in the container.
         </short>
         <descr>
           <p>
@@ -579,15 +579,15 @@
         </seealso>
       </element>
       <element name="TItemPropList.Insert.Index">
-        <short>Ordinal position for the new item</short>
+        <short>Ordinal position for the new item.</short>
       </element>
       <element name="TItemPropList.Insert.AValue">
-        <short>New item to insert into the list</short>
+        <short>New item to insert into the list.</short>
       </element>
 
       <element name="TItemPropList.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -600,12 +600,12 @@
         </seealso>
       </element>
       <element name="TItemPropList.Create.AOwner">
-        <short>Owner for the container class instance</short>
+        <short>Owner for the container class instance.</short>
       </element>
 
       <element name="TItemPropList.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -620,7 +620,7 @@
 
       <element name="TItemPropList.Count">
         <short>
-          Number of items in the list for the container
+          Number of items in the list for the container.
         </short>
         <descr>
           <p>
@@ -634,7 +634,7 @@
 
       <element name="TItemPropList.Items">
         <short>
-          Provides access to items in the container by their ordinal position
+          Provides access to items in the container by their ordinal position.
         </short>
         <descr>
           <p>
@@ -661,7 +661,7 @@
 
       <element name="TValueListStrings" link="#rtl.classes.TStringList">
         <short>
-          Stores values and item definitions used in TValueListEditor
+          Stores values and item definitions used in TValueListEditor.
         </short>
         <descr>
           <p>
@@ -681,7 +681,7 @@
       <element name="TValueListStrings.FItemProps"/>
 
       <element name="TValueListStrings.GetItemProp">
-        <short>Gets the item definition for the specified key name or index position</short>
+        <short>Gets the item definition for the specified key name or index position.</short>
         <descr>
           <p>
             GetItemProp is a <var>TItemProp</var> function used to get an item definition for the specified key name or index position in the AKeyOrIndex argument. AKeyOrIndex is a variant type and contains the string with the name for a key, or the Integer row number  for the item.
@@ -706,14 +706,14 @@
         </errors>
       </element>
       <element name="TValueListStrings.GetItemProp.AKeyOrIndex">
-        <short>Key name or index position for the item definition</short>
+        <short>Key name or index position for the item definition.</short>
       </element>
       <element name="TValueListStrings.GetItemProp.Result">
-        <short>TItemProp instance with the definition for the requested key name or index</short>
+        <short>TItemProp instance with the definition for the requested key name or index.</short>
       </element>
 
       <element name="TValueListStrings.QuickSortStringsAndItemProps">
-        <short>Performs a quick sort for the string and TItemProp instances in the list</short>
+        <short>Performs a quick sort for the string and TItemProp instances in the list.</short>
         <descr>
           <p>
             Duplicates the functionality of TStringList.QuickSort, but also sorts the ItemProps.
@@ -721,28 +721,28 @@
         </descr>
       </element>
       <element name="TValueListStrings.QuickSortStringsAndItemProps.L">
-        <short>Index position for the first value in the sort</short>
+        <short>Index position for the first value in the sort.</short>
       </element>
       <element name="TValueListStrings.QuickSortStringsAndItemProps.R">
-        <short>Index position for the second value in the sort</short>
+        <short>Index position for the second value in the sort.</short>
       </element>
       <element name="TValueListStrings.QuickSortStringsAndItemProps.CompareFn">
-        <short>Compare function used to implement the sort routine</short>
+        <short>Compare function used to implement the sort routine.</short>
       </element>
 
       <element name="TValueListStrings.CanHideShowingEditorAtIndex">
-        <short>Indicates if the cell editor for the control is visible but not focused</short>
+        <short>Indicates if the cell editor for the control is visible but not focused.</short>
       </element>
       <element name="TValueListStrings.CanHideShowingEditorAtIndex.Index">
-        <short>Index for the non-title row in the associated grid control</short>
+        <short>Index for the non-title row in the associated grid control.</short>
       </element>
       <element name="TValueListStrings.CanHideShowingEditorAtIndex.Result">
-        <short>True when the cell editor for the control is visible but not focused</short>
+        <short>True when the cell editor for the control is visible but not focused.</short>
       </element>
 
       <element name="TValueListStrings.InsertItem">
         <short>
-          Inserts an item with the specified value at the position in Index
+          Inserts an item with the specified value at the position in Index.
         </short>
         <descr>
           <p>
@@ -758,18 +758,18 @@
         </seealso>
       </element>
       <element name="TValueListStrings.InsertItem.Index">
-        <short>Ordinal position for the new item and value</short>
+        <short>Ordinal position for the new item and value.</short>
       </element>
       <element name="TValueListStrings.InsertItem.S">
-        <short>Value for the new item</short>
+        <short>Value for the new item.</short>
       </element>
       <element name="TValueListStrings.InsertItem.AObject">
-        <short>Object with the definition for the new item</short>
+        <short>Object with the definition for the new item.</short>
       </element>
 
       <element name="TValueListStrings.Put">
         <short>
-          Sets the value for the indexed Strings property
+          Sets the value for the indexed Strings property.
         </short>
         <descr>
           <p>
@@ -782,15 +782,15 @@
         </seealso>
       </element>
       <element name="TValueListStrings.Put.Index">
-        <short>Ordinal position for the value</short>
+        <short>Ordinal position for the value.</short>
       </element>
       <element name="TValueListStrings.Put.S">
-        <short>Value to store at the specified position</short>
+        <short>Value to store at the specified position.</short>
       </element>
 
       <element name="TValueListStrings.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -802,12 +802,12 @@
         </seealso>
       </element>
       <element name="TValueListStrings.Create.AOwner">
-        <short>TValueListEditor that owns the class instance</short>
+        <short>TValueListEditor that owns the class instance.</short>
       </element>
 
       <element name="TValueListStrings.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -821,7 +821,7 @@
 
       <element name="TValueListStrings.Assign">
         <short>
-          Stores properties from Source in the current class instance
+          Stores properties from Source in the current class instance.
         </short>
         <descr>
           <p>
@@ -838,12 +838,12 @@
         </seealso>
       </element>
       <element name="TValueListStrings.Assign.Source">
-        <short>Persistent object with properties copied into the current class instance</short>
+        <short>Persistent object with properties copied into the current class instance.</short>
       </element>
 
       <element name="TValueListStrings.Clear">
         <short>
-          Removes all item values and definitions in the class instance
+          Removes all item values and definitions in the class instance.
         </short>
         <descr>
           <p>
@@ -858,7 +858,7 @@
 
       <element name="TValueListStrings.CustomSort">
         <short>
-          Provides access to the QuickSortStringsAndItemProps method
+          Provides access to the QuickSortStringsAndItemProps method.
         </short>
         <descr>
           <p>
@@ -870,12 +870,12 @@
         </seealso>
       </element>
       <element name="TValueListStrings.CustomSort.Compare">
-        <short>Comparison routine for the sorting operation</short>
+        <short>Comparison routine for the sorting operation.</short>
       </element>
 
       <element name="TValueListStrings.Delete">
         <short>
-          Deletes the item value and definition at the specified position
+          Deletes the item value and definition at the specified position.
         </short>
         <descr>
           <p>
@@ -888,12 +888,12 @@
         <seealso></seealso>
       </element>
       <element name="TValueListStrings.Delete.Index">
-        <short>Ordinal position of the value and definition to delete</short>
+        <short>Ordinal position of the value and definition to delete.</short>
       </element>
 
       <element name="TValueListStrings.Exchange">
         <short>
-          Swaps the values and item definitions at the specified positions
+          Swaps the values and item definitions at the specified positions.
         </short>
         <descr>
           <p>
@@ -906,14 +906,14 @@
         <seealso></seealso>
       </element>
       <element name="TValueListStrings.Exchange.Index1">
-        <short>Position of the item value and definition to swap</short>
+        <short>Position of the item value and definition to swap.</short>
       </element>
       <element name="TValueListStrings.Exchange.Index2">
-        <short>Position of the item value and definition to swap</short>
+        <short>Position of the item value and definition to swap.</short>
       </element>
 
       <element name="TKeyValuePair">
-        <short>Stores Key and Value information used for items in TValueListEditor</short>
+        <short>Stores Key and Value information used for items in TValueListEditor.</short>
         <descr>
           <p>
             <var>TKeyValuePair</var> is a record type used to store Key and Value information for the rows in TValueListEditor. TKeyValuePair is used when an editor is activated for a row in <var>TValueListEditor</var>.
@@ -924,15 +924,15 @@
         </seealso>
       </element>
       <element name="TKeyValuePair.Key">
-        <short>Key data a row</short>
+        <short>Key data a row.</short>
       </element>
       <element name="TKeyValuePair.Value">
-        <short>Value data for a row</short>
+        <short>Value data for a row.</short>
       </element>
 
       <element name="TDisplayOption">
         <short>
-          Represents display capabilities in TValueListEditor
+          Represents display capabilities in TValueListEditor.
         </short>
         <descr>
           <p>
@@ -945,18 +945,18 @@
         </seealso>
       </element>
       <element name="TDisplayOption.doColumnTitles">
-        <short>Displays column titles</short>
+        <short>Displays column titles.</short>
       </element>
       <element name="TDisplayOption.doAutoColResize">
-        <short>Automatically resizes columns to the width of its content</short>
+        <short>Automatically resizes columns to the width of its content.</short>
       </element>
       <element name="TDisplayOption.doKeyColFixed">
-        <short>Displays the Key names column as a fixed caption column</short>
+        <short>Displays the Key names column as a fixed caption column.</short>
       </element>
 
       <element name="TDisplayOptions">
         <short>
-          Set type used to store TDisplayOption enumeration values
+          Set type used to store TDisplayOption enumeration values.
         </short>
         <descr>
           <p>
@@ -970,7 +970,7 @@
       </element>
 
       <element name="TKeyOption">
-        <short>Represents Key actions used in TValueListEditor</short>
+        <short>Represents Key actions used in TValueListEditor.</short>
         <descr>
           <p>
             <var>TKeyOption</var> is an enumeration type with values that control key actions allowed for Key-Value data in <var>TValueListEditor</var>. TKeyOption values are stored in the <var>TKeyOptions</var> set type.
@@ -982,21 +982,21 @@
         </seealso>
       </element>
       <element name="TKeyOption.keyEdit">
-        <short>Allows editing of Key data</short>
+        <short>Allows editing of Key data.</short>
       </element>
       <element name="TKeyOption.keyAdd">
-        <short>Allows adding new Key data</short>
+        <short>Allows adding new Key data.</short>
       </element>
       <element name="TKeyOption.keyDelete">
-        <short>Allows deleting Key data</short>
+        <short>Allows deleting Key data.</short>
       </element>
       <element name="TKeyOption.keyUnique">
-        <short>Key data must be unique</short>
+        <short>Key data must be unique.</short>
       </element>
 
       <element name="TKeyOptions">
         <short>
-          Stores values from the TKeyOption enumeration
+          Stores values from the TKeyOption enumeration.
         </short>
         <descr>
           <p>
@@ -1011,7 +1011,7 @@
 
       <element name="TGetPickListEvent">
         <short>
-          Specifies an event handler signalled when loading the PickList for an item in TValueListEditor
+          Specifies an event handler signalled when loading the PickList for an item in TValueListEditor.
         </short>
         <descr>
           <p>
@@ -1026,18 +1026,18 @@
         </seealso>
       </element>
       <element name="TGetPickListEvent.Sender">
-        <short>TValueListEditor for the event notification</short>
+        <short>TValueListEditor for the event notification.</short>
       </element>
       <element name="TGetPickListEvent.KeyName">
-        <short>Key name for the selected row</short>
+        <short>Key name for the selected row.</short>
       </element>
       <element name="TGetPickListEvent.Values">
-        <short>Pick list values for the selected row</short>
+        <short>Pick list values for the selected row.</short>
       </element>
 
       <element name="TOnValidateEvent">
         <short>
-          Specifies an event handler signalled to validate a changed row in TValueListEditor
+          Specifies an event handler signalled to validate a changed row in TValueListEditor.
         </short>
         <descr>
           <p>
@@ -1052,24 +1052,24 @@
         </seealso>
       </element>
       <element name="TOnValidateEvent.Sender">
-        <short>TValueListEditor instance for the event notification</short>
+        <short>TValueListEditor instance for the event notification.</short>
       </element>
       <element name="TOnValidateEvent.ACol">
-        <short>Column number in the control</short>
+        <short>Column number in the control.</short>
       </element>
       <element name="TOnValidateEvent.ARow">
-        <short>Row number on the control</short>
+        <short>Row number on the control.</short>
       </element>
       <element name="TOnValidateEvent.KeyName">
-        <short>Key name for the modified row</short>
+        <short>Key name for the modified row.</short>
       </element>
       <element name="TOnValidateEvent.KeyValue">
-        <short>Key data for the modified row</short>
+        <short>Key data for the modified row.</short>
       </element>
 
       <element name="TValueListEditor">
         <short>
-          A visual grid control for editing Key-Value pairs
+          A visual grid control for editing Key-Value pairs.
         </short>
         <descr>
           <p>
@@ -1121,57 +1121,57 @@
       <element name="TValueListEditor.FUpdatingKeyOptions"/>
 
       <element name="TValueListEditor.GetItemProp">
-        <short>Gets the value for the indexed ItemProps property</short>
+        <short>Gets the value for the indexed ItemProps property.</short>
         <descr></descr>
         <seealso>
           <link id="TValueListEditor.ItemProps"/>
         </seealso>
       </element>
       <element name="TValueListEditor.GetItemProp.AKeyOrIndex">
-        <short>Key name or position for the item definition</short>
+        <short>Key name or position for the item definition.</short>
       </element>
       <element name="TValueListEditor.GetItemProp.Result">
-        <short>Item definition for the specified key name or position</short>
+        <short>Item definition for the specified key name or position.</short>
       </element>
 
       <element name="TValueListEditor.SetItemProp">
-        <short>Sets the value for the indexed ItemProps property</short>
+        <short>Sets the value for the indexed ItemProps property.</short>
         <descr></descr>
         <seealso>
           <link id="TValueListEditor.ItemProps"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetItemProp.AKeyOrIndex">
-        <short>Key name or position for the item definition</short>
+        <short>Key name or position for the item definition.</short>
       </element>
       <element name="TValueListEditor.SetItemProp.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TValueListEditor.StringsChange">
-        <short>Implements the OnChange event handler for the Strings property</short>
+        <short>Implements the OnChange event handler for the Strings property.</short>
         <descr></descr>
         <seealso>
           <link id="TValueListEditor.Strings"/>
         </seealso>
       </element>
       <element name="TValueListEditor.StringsChange.Sender">
-        <short>Control triggering the event notification</short>
+        <short>Control triggering the event notification.</short>
       </element>
 
       <element name="TValueListEditor.StringsChanging">
-        <short>Implements the OnChanging event handler in the Strings property</short>
+        <short>Implements the OnChanging event handler in the Strings property.</short>
         <descr></descr>
         <seealso>
           <link id="TValueListEditor.Strings"/>
         </seealso>
       </element>
       <element name="TValueListEditor.StringsChanging.Sender">
-        <short>Control triggering the event notification</short>
+        <short>Control triggering the event notification.</short>
       </element>
 
       <element name="TValueListEditor.GetOptions">
-        <short>Gets the value for the Options property</short>
+        <short>Gets the value for the Options property.</short>
         <descr></descr>
         <errors></errors>
         <seealso>
@@ -1179,133 +1179,133 @@
         </seealso>
       </element>
       <element name="TValueListEditor.GetOptions.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TValueListEditor.GetKey">
-        <short>Gets the value for the indexed Keys property</short>
+        <short>Gets the value for the indexed Keys property.</short>
         <descr></descr>
         <seealso>
           <link id="TValueListEditor.Key"/>
         </seealso>
       </element>
       <element name="TValueListEditor.GetKey.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TValueListEditor.GetKey.Index">
-        <short>Position for the Key name in Keys</short>
+        <short>Position for the Key name in Keys.</short>
       </element>
 
       <element name="TValueListEditor.GetValue">
-        <short>Gets the value for the indexed Values property</short>
+        <short>Gets the value for the indexed Values property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.Values"/>
         </seealso>
       </element>
       <element name="TValueListEditor.GetValue.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TValueListEditor.GetValue.Key">
-        <short>Key name to find in the method</short>
+        <short>Key name to find in the method.</short>
       </element>
 
       <element name="TValueListEditor.SetDisplayOptions">
-        <short>Sets the values in the DisplayOptions property</short>
+        <short>Sets the values in the DisplayOptions property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.DisplayOptions"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetDisplayOptions.AValue">
-        <short>New values for the property</short>
+        <short>New values for the property.</short>
       </element>
 
       <element name="TValueListEditor.SetDropDownRows">
-        <short>Sets the value in the DropDownRows property</short>
+        <short>Sets the value in the DropDownRows property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.DropDownRows"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetDropDownRows.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TValueListEditor.SetKeyOptions">
-        <short>Sets the values in the KeyOptions property</short>
+        <short>Sets the values in the KeyOptions property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.KeyOptions"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetKeyOptions.AValue">
-        <short>New values for the property</short>
+        <short>New values for the property.</short>
       </element>
 
       <element name="TValueListEditor.SetKey">
-        <short>Sets the value in the indexed Keys property</short>
+        <short>Sets the value in the indexed Keys property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.Keys"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetKey.Index">
-        <short>Position of the Key name in the item definitions</short>
+        <short>Position of the Key name in the item definitions.</short>
       </element>
       <element name="TValueListEditor.SetKey.Value">
-        <short>New value for the Key name</short>
+        <short>New value for the Key name.</short>
       </element>
 
       <element name="TValueListEditor.SetValue">
-        <short>Sets the value in the indexed Values property</short>
+        <short>Sets the value in the indexed Values property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.Values"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetValue.Key">
-        <short>Key name for the specified value</short>
+        <short>Key name for the specified value.</short>
       </element>
       <element name="TValueListEditor.SetValue.Value">
-        <short>New value for the specified Key name</short>
+        <short>New value for the specified Key name.</short>
       </element>
 
       <element name="TValueListEditor.SetOptions">
-        <short>Sets the values in the Options property</short>
+        <short>Sets the values in the Options property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.Options"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetOptions.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TValueListEditor.SetStrings">
-        <short>Sets the values in the Strings property</short>
+        <short>Sets the values in the Strings property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.Strings"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetStrings.AValue">
-        <short>New values for the property</short>
+        <short>New values for the property.</short>
       </element>
 
       <element name="TValueListEditor.SetTitleCaptions">
-        <short>Sets the values in the TitleCaptions property</short>
+        <short>Sets the values in the TitleCaptions property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.TitleCaptions"/>
         </seealso>
       </element>
       <element name="TValueListEditor.SetTitleCaptions.AValue">
-        <short>New values for the property</short>
+        <short>New values for the property.</short>
       </element>
 
       <element name="TValueListEditor.UpdateTitleCaptions">
-        <short>Updates TitleCaptions with the captions for the key and value columns</short>
+        <short>Updates TitleCaptions with the captions for the key and value columns.</short>
         <descr>
           <p>
             Clears existing values in TitleCaptions.
@@ -1316,14 +1316,14 @@
         </seealso>
       </element>
       <element name="TValueListEditor.UpdateTitleCaptions.KeyCap">
-        <short>Caption used for the Key column</short>
+        <short>Caption used for the Key column.</short>
       </element>
       <element name="TValueListEditor.UpdateTitleCaptions.ValCap">
-        <short>Caption used for the Value column</short>
+        <short>Caption used for the Value column.</short>
       </element>
 
       <element name="TValueListEditor.WSRegisterClass">
-        <short>Registers the class type for the widget set</short>
+        <short>Registers the class type for the widget set.</short>
         <descr/>
         <seealso>
           <link id="#lcl.grids.TCustomGrid.WSRegisterClass">TCustomGrid.WSRegisterClass</link>
@@ -1332,7 +1332,7 @@
 
       <element name="TValueListEditor.SetFixedCols">
         <short>
-          Sets the value for the FixedCols property
+          Sets the value for the FixedCols property.
         </short>
         <descr>
           <p>
@@ -1344,12 +1344,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.SetFixedCols.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TValueListEditor.ShowColumnTitles">
         <short>
-          Assigns and displays the column titles for the Key and Value columns
+          Assigns and displays the column titles for the Key and Value columns.
         </short>
         <descr>
           <p>
@@ -1390,7 +1390,7 @@
 
       <element name="TValueListEditor.AdjustRowCount">
         <short>
-          Sets the number of visible rows for the control
+          Sets the number of visible rows for the control.
         </short>
         <descr>
           <p>
@@ -1411,7 +1411,7 @@
 
       <element name="TValueListEditor.ColRowExchanged" link="#lcl.grids.TCustomDrawGrid.ColRowExchanged">
         <short>
-          Exchanges row values at the specified positions
+          Exchanges row values at the specified positions.
         </short>
         <descr>
           <p>
@@ -1422,19 +1422,19 @@
       </element>
       <element name="TValueListEditor.ColRowExchanged.IsColumn">
         <short>
-          Indicates if the exchange applies to the column only or the entire row
+          Indicates if the exchange applies to the column only or the entire row.
         </short>
       </element>
       <element name="TValueListEditor.ColRowExchanged.Index">
-        <short>First position to be swapped</short>
+        <short>First position to be swapped.</short>
       </element>
       <element name="TValueListEditor.ColRowExchanged.WithIndex">
-        <short>Second position to be swapped</short>
+        <short>Second position to be swapped.</short>
       </element>
 
       <element name="TValueListEditor.ColRowDeleted" link="#lcl.grids.TCustomDrawGrid.ColRowDeleted">
         <short>
-          Performs actions needed when a row is deleted in the control
+          Performs actions needed when a row is deleted in the control.
         </short>
         <descr>
           <p>
@@ -1444,15 +1444,15 @@
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.ColRowDeleted.IsColumn">
-        <short>Indicates the action is for a column (and not a row)</short>
+        <short>Indicates the action is for a column (and not a row).</short>
       </element>
       <element name="TValueListEditor.ColRowDeleted.Index">
-        <short>Ordinal position of the affected item</short>
+        <short>Ordinal position of the affected item.</short>
       </element>
 
       <element name="TValueListEditor.DefineCellsProperty" link="#lcl.grids.TCustomStringGrid">
         <short>
-          Not used in the current implementation
+          Not used in the current implementation.
         </short>
         <descr>
           <remark>
@@ -1464,12 +1464,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.DefineCellsProperty.Filer">
-        <short>Component streamer for the class</short>
+        <short>Component streamer for the class.</short>
       </element>
 
       <element name="TValueListEditor.InvalidateCachedRow">
         <short>
-          Resets the last edited row number for the control
+          Resets the last edited row number for the control.
         </short>
         <descr>
           <p>
@@ -1487,7 +1487,7 @@
 
       <element name="TValueListEditor.GetAutoFillColumnInfo" link="#lcl.grids.TCustomGrid.GetAutoFillColumnInfo">
         <short>
-          Gets the display priority for an auto-fill column
+          Gets the display priority for an auto-fill column.
         </short>
         <descr>
           <p>
@@ -1503,21 +1503,21 @@
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.GetAutoFillColumnInfo.Index">
-        <short>Column number examined in the method</short>
+        <short>Column number examined in the method.</short>
       </element>
       <element name="TValueListEditor.GetAutoFillColumnInfo.aMin">
-        <short>Not used in TValueListEditor</short>
+        <short>Not used in TValueListEditor.</short>
       </element>
       <element name="TValueListEditor.GetAutoFillColumnInfo.aMax">
-        <short>Not used in TValueListEditor</short>
+        <short>Not used in TValueListEditor.</short>
       </element>
       <element name="TValueListEditor.GetAutoFillColumnInfo.aPriority">
-        <short>Relative display priority for the column</short>
+        <short>Relative display priority for the column.</short>
       </element>
 
       <element name="TValueListEditor.GetEditText">
         <short>
-          Gets the value used in the editor for the specified cell
+          Gets the value used in the editor for the specified cell.
         </short>
         <descr>
           <p>
@@ -1530,18 +1530,18 @@
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.GetEditText.Result">
-        <short>Value for the cell editor</short>
+        <short>Value for the cell editor.</short>
       </element>
       <element name="TValueListEditor.GetEditText.ACol">
-        <short>Column number</short>
+        <short>Column number.</short>
       </element>
       <element name="TValueListEditor.GetEditText.ARow">
-        <short>Row number</short>
+        <short>Row number.</short>
       </element>
 
       <element name="TValueListEditor.GetCells">
         <short>
-          Gets the value in Cells at the specified row and column numbers
+          Gets the value in Cells at the specified row and column numbers.
         </short>
         <descr>
           <p>
@@ -1562,17 +1562,17 @@
         </seealso>
       </element>
       <element name="TValueListEditor.GetCells.Result">
-        <short>Value for the cell at the specified row and column number</short>
+        <short>Value for the cell at the specified row and column number.</short>
       </element>
       <element name="TValueListEditor.GetCells.ACol">
-        <short>Column number to read in Cells</short>
+        <short>Column number to read in Cells.</short>
       </element>
       <element name="TValueListEditor.GetCells.ARow">
-        <short>Row number to read in Cells</short>
+        <short>Row number to read in Cells.</short>
       </element>
 
       <element name="TValueListEditor.GetDefaultEditor">
-        <short>Gets the editor control for the specified column number</short>
+        <short>Gets the editor control for the specified column number.</short>
         <descr>
           <p>
             <var>GetDefaultEditor</var> is a <var>TWinControl</var> function used to get the editor control for the specified column number. The return value is the TWinControl used as the editor for the cell in the specified column number.
@@ -1600,14 +1600,14 @@
         </seealso>
       </element>
       <element name="TValueListEditor.GetDefaultEditor.Column">
-        <short>Column number for the editor control</short>
+        <short>Column number for the editor control.</short>
       </element>
       <element name="TValueListEditor.GetDefaultEditor.Result">
-        <short>Editor control for the specified column number</short>
+        <short>Editor control for the specified column number.</short>
       </element>
 
       <element name="TValueListEditor.GetRowCount" link="#lcl.grids.TCustomGrid.GetRowCount">
-        <short>Gets the value for the RowCount property</short>
+        <short>Gets the value for the RowCount property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.RowCount"/>
@@ -1616,12 +1616,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.GetRowCount.Result">
-        <short>Row count for the grid control</short>
+        <short>Row count for the grid control.</short>
       </element>
 
       <element name="TValueListEditor.KeyDown">
         <short>
-          Provides support for special keys used in the control
+          Provides support for special keys used in the control.
         </short>
         <descr>
           <p>
@@ -1647,27 +1647,27 @@
         </seealso>
       </element>
       <element name="TValueListEditor.KeyDown.Key">
-        <short>Key code for the key down event</short>
+        <short>Key code for the key down event.</short>
       </element>
       <element name="TValueListEditor.KeyDown.Shift">
-        <short>Shift / Ctrl / Alt modifier for the key down event</short>
+        <short>Shift / Ctrl / Alt modifier for the key down event.</short>
       </element>
 
       <element name="TValueListEditor.LoadContent">
-        <short>Loads configuration and content from the specified XML configuration file</short>
+        <short>Loads configuration and content from the specified XML configuration file.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.LoadContent.Cfg">
-        <short>XML configuration file with values loaded in the method</short>
+        <short>XML configuration file with values loaded in the method.</short>
       </element>
       <element name="TValueListEditor.LoadContent.Version">
-        <short>Control version for the stored content</short>
+        <short>Control version for the stored content.</short>
       </element>
 
       <element name="TValueListEditor.ResetDefaultColWidths">
         <short>
-          Resets grid columns to their default widths
+          Resets grid columns to their default widths.
         </short>
         <descr>
           <p>
@@ -1688,18 +1688,18 @@
 
       <element name="TValueListEditor.SaveContent">
         <short>
-          Saves configuration and content in the control to the specified XML configuration file
+          Saves configuration and content in the control to the specified XML configuration file.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.SaveContent.Cfg">
-        <short>XML configuration file where values are stored in the method</short>
+        <short>XML configuration file where values are stored in the method.</short>
       </element>
 
       <element name="TValueListEditor.SetCells" link="#lcl.grids.TCustomStringGrid.SetCells">
         <short>
-          Sets the value in the Cells property at the specified position
+          Sets the value in the Cells property at the specified position.
         </short>
         <descr>
           <p>
@@ -1719,18 +1719,18 @@
         </seealso>
       </element>
       <element name="TValueListEditor.SetCells.ACol">
-        <short>Column number for the new cell value</short>
+        <short>Column number for the new cell value.</short>
       </element>
       <element name="TValueListEditor.SetCells.ARow">
-        <short>Row number for the new cell value</short>
+        <short>Row number for the new cell value.</short>
       </element>
       <element name="TValueListEditor.SetCells.AValue">
-        <short>New value for the cell</short>
+        <short>New value for the cell.</short>
       </element>
 
       <element name="TValueListEditor.SetEditText" link="#lcl.grids.TCustomStringGrid.SetEditText">
         <short>
-          Sets the cell value at the specified position
+          Sets the cell value at the specified position.
         </short>
         <descr>
           <p>
@@ -1742,18 +1742,18 @@
         </seealso>
       </element>
       <element name="TValueListEditor.SetEditText.ACol">
-        <short>Column number for the new value</short>
+        <short>Column number for the new value.</short>
       </element>
       <element name="TValueListEditor.SetEditText.ARow">
-        <short>Row number for the new value</short>
+        <short>Row number for the new value.</short>
       </element>
       <element name="TValueListEditor.SetEditText.Value">
-        <short>Value to store in the Cells for the control</short>
+        <short>Value to store in the Cells for the control.</short>
       </element>
 
       <element name="TValueListEditor.SetFixedRows">
         <short>
-          Sets the value in the FixedRows property
+          Sets the value in the FixedRows property.
         </short>
         <descr>
           <p>
@@ -1776,12 +1776,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.SetFixedRows.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TValueListEditor.SetRowCount">
         <short>
-          Sets the value in the RowCount property
+          Sets the value in the RowCount property.
         </short>
         <descr>
           <p>
@@ -1809,12 +1809,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.SetRowCount.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TValueListEditor.Sort">
         <short>
-          Sorts the values in Strings
+          Sorts the values in Strings.
         </short>
         <descr>
           <p>
@@ -1829,12 +1829,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.Sort.ColSorting">
-        <short>Not used n the current implementation</short>
+        <short>Not used n the current implementation.</short>
       </element>
 
       <element name="TValueListEditor.TitlesChanged">
         <short>
-          Event handler signalled when TitleCaptions is changed
+          Event handler signalled when TitleCaptions is changed.
         </short>
         <descr>
           <p>
@@ -1847,12 +1847,12 @@
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.TitlesChanged.Sender">
-        <short>Control triggering the event notification</short>
+        <short>Control triggering the event notification.</short>
       </element>
 
       <element name="TValueListEditor.ValidateEntry">
         <short>
-          Validates data entered in a cell in the control
+          Validates data entered in a cell in the control.
         </short>
         <descr>
           <p>
@@ -1868,24 +1868,24 @@
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.ValidateEntry.ACol">
-        <short>Column number for the new value</short>
+        <short>Column number for the new value.</short>
       </element>
       <element name="TValueListEditor.ValidateEntry.ARow">
-        <short>Row number for the new value</short>
+        <short>Row number for the new value.</short>
       </element>
       <element name="TValueListEditor.ValidateEntry.OldValue">
-        <short>The old value for the cell</short>
+        <short>The old value for the cell.</short>
       </element>
       <element name="TValueListEditor.ValidateEntry.NewValue">
-        <short>The new value for the cell</short>
+        <short>The new value for the cell.</short>
       </element>
       <element name="TValueListEditor.ValidateEntry.Result">
-        <short>True if the cell value is valid</short>
+        <short>True if the cell value is valid.</short>
       </element>
 
       <element name="TValueListEditor.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -1916,12 +1916,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.Create.AOwner">
-        <short>Owner of the control instance</short>
+        <short>Owner of the control instance.</short>
       </element>
 
       <element name="TValueListEditor.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -1935,7 +1935,7 @@
 
       <element name="TValueListEditor.Clear">
         <short>
-          Removes the content in the control
+          Removes the content in the control.
         </short>
         <descr>
           <p>
@@ -1951,7 +1951,7 @@
 
       <element name="TValueListEditor.DeleteColRow">
         <short>
-          Deletes the column or row at the specified position
+          Deletes the column or row at the specified position.
         </short>
         <descr>
           <p>
@@ -1970,15 +1970,15 @@
         </seealso>
       </element>
       <element name="TValueListEditor.DeleteColRow.IsColumn">
-        <short>True when a column is affected in the method</short>
+        <short>True when a column is affected in the method.</short>
       </element>
       <element name="TValueListEditor.DeleteColRow.Index">
-        <short>Position of the row or column in the control</short>
+        <short>Position of the row or column in the control.</short>
       </element>
 
       <element name="TValueListEditor.DeleteRow">
         <short>
-          Deletes the row at the specified position
+          Deletes the row at the specified position.
         </short>
         <descr>
           <p>
@@ -1995,12 +1995,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.DeleteRow.Index">
-        <short>Position of the row to be deleted</short>
+        <short>Position of the row to be deleted.</short>
       </element>
 
       <element name="TValueListEditor.DeleteCol">
         <short>
-          Prevents column deletion in control
+          Prevents column deletion in control.
         </short>
         <descr>
           <p>
@@ -2022,12 +2022,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.DeleteCol.Index">
-        <short>Position of the column to be deleted</short>
+        <short>Position of the column to be deleted.</short>
       </element>
 
       <element name="TValueListEditor.FindRow">
         <short>
-          Locates the row with the specified Key name
+          Locates the row with the specified Key name.
         </short>
         <descr>
           <p>
@@ -2047,18 +2047,18 @@
         </seealso>
       </element>
       <element name="TValueListEditor.FindRow.KeyName">
-        <short>Key name to locate in the method</short>
+        <short>Key name to locate in the method.</short>
       </element>
       <element name="TValueListEditor.FindRow.aRow">
-        <short>Relative row number for the specified key name</short>
+        <short>Relative row number for the specified key name.</short>
       </element>
       <element name="TValueListEditor.FindRow.Result">
-        <short>True when the key name exists in the control</short>
+        <short>True when the key name exists in the control.</short>
       </element>
 
       <element name="TValueListEditor.InsertColRow">
         <short>
-          Inserts a column or a row at the specified position
+          Inserts a column or a row at the specified position.
         </short>
         <descr>
           <p>
@@ -2083,15 +2083,15 @@
         </seealso>
       </element>
       <element name="TValueListEditor.InsertColRow.IsColumn">
-        <short>False if the insert operation is for a row</short>
+        <short>False if the insert operation is for a row.</short>
       </element>
       <element name="TValueListEditor.InsertColRow.Index">
-        <short>Relative position for the inserted column</short>
+        <short>Relative position for the inserted column.</short>
       </element>
 
       <element name="TValueListEditor.InsertRow">
         <short>
-          Inserts a row at the specified position
+          Inserts a row at the specified position.
         </short>
         <descr>
           <p>
@@ -2117,21 +2117,21 @@
         </seealso>
       </element>
       <element name="TValueListEditor.InsertRow.KeyName">
-        <short>Key name to  use in the new row</short>
+        <short>Key name to  use in the new row.</short>
       </element>
       <element name="TValueListEditor.InsertRow.Value">
-        <short>Value to use in the new row</short>
+        <short>Value to use in the new row.</short>
       </element>
       <element name="TValueListEditor.InsertRow.Append">
-        <short>True if a row is inserted after the current row</short>
+        <short>True if a row is inserted after the current row.</short>
       </element>
       <element name="TValueListEditor.InsertRow.Result">
-        <short>Relative row number for the inserted row</short>
+        <short>Relative row number for the inserted row.</short>
       </element>
 
       <element name="TValueListEditor.InsertRowWithValues">
         <short>
-          Inserts a row with the specified values at the specified position
+          Inserts a row with the specified values at the specified position.
         </short>
         <descr>
           <p>
@@ -2153,15 +2153,15 @@
         </seealso>
       </element>
       <element name="TValueListEditor.InsertRowWithValues.Index">
-        <short>Position for the inserted row</short>
+        <short>Position for the inserted row.</short>
       </element>
       <element name="TValueListEditor.InsertRowWithValues.Values">
-        <short>Array with the key name and value for the inserted row</short>
+        <short>Array with the key name and value for the inserted row.</short>
       </element>
 
       <element name="TValueListEditor.ExchangeColRow">
         <short>
-          Swaps the columns or rows at the specified positions
+          Swaps the columns or rows at the specified positions.
         </short>
         <descr>
           <p>
@@ -2182,18 +2182,18 @@
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.ExchangeColRow.IsColumn">
-        <short>False when exchanging row values</short>
+        <short>False when exchanging row values.</short>
       </element>
       <element name="TValueListEditor.ExchangeColRow.Index">
-        <short>Position for one of the exchanged values</short>
+        <short>Position for one of the exchanged values.</short>
       </element>
       <element name="TValueListEditor.ExchangeColRow.WithIndex">
-        <short>Position for one of the exchanged values</short>
+        <short>Position for one of the exchanged values.</short>
       </element>
 
       <element name="TValueListEditor.IsEmptyRow">
         <short>
-          Indicates if the specified row is empty
+          Indicates if the specified row is empty.
         </short>
         <descr>
           <p>
@@ -2210,44 +2210,44 @@
         </seealso>
       </element>
       <element name="TValueListEditor.IsEmptyRow.aRow">
-        <short>Row number to examine in the method</short>
+        <short>Row number to examine in the method.</short>
       </element>
       <element name="TValueListEditor.IsEmptyRow.Result">
-        <short>True if the specified row has empty key name and value cells</short>
+        <short>True if the specified row has empty key name and value cells.</short>
       </element>
 
       <element name="TValueListEditor.LoadFromCSVStream">
         <short>
-          Loads the content for the control from the comma-separated values in the specified stream
+          Loads the content for the control from the comma-separated values in the specified stream.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.LoadFromCSVStream.AStream">
-        <short>TStream instance with the values loaded in the method</short>
+        <short>TStream instance with the values loaded in the method.</short>
       </element>
       <element name="TValueListEditor.LoadFromCSVStream.ADelimiter">
-        <short>Delimiter between cell values; default is Comma (',')</short>
+        <short>Delimiter between cell values; default is Comma (',').</short>
       </element>
       <element name="TValueListEditor.LoadFromCSVStream.UseTitles">
         <short>
-          Indicates whether title captions included as the first row in the CSV data
+          Indicates whether title captions included as the first row in the CSV data.
         </short>
       </element>
       <element name="TValueListEditor.LoadFromCSVStream.FromLine">
         <short>
-          Initial line number in the stream loaded in the method
+          Initial line number in the stream loaded in the method.
         </short>
       </element>
       <element name="TValueListEditor.LoadFromCSVStream.SkipEmptyLines">
         <short>
-          Indicates whether empty lines are ignored when loading the content for the control
+          Indicates whether empty lines are ignored when loading the content for the control.
         </short>
       </element>
 
       <element name="TValueListEditor.MoveColRow">
         <short>
-          Moves the specified column or row to the new position
+          Moves the specified column or row to the new position.
         </short>
         <descr>
           <p>
@@ -2263,18 +2263,18 @@
         </seealso>
       </element>
       <element name="TValueListEditor.MoveColRow.IsColumn">
-        <short>True if the operation affects a column</short>
+        <short>True if the operation affects a column.</short>
       </element>
       <element name="TValueListEditor.MoveColRow.FromIndex">
-        <short>Original position of the row or column</short>
+        <short>Original position of the row or column.</short>
       </element>
       <element name="TValueListEditor.MoveColRow.ToIndex">
-        <short>Target position for the row or column</short>
+        <short>Target position for the row or column.</short>
       </element>
 
       <element name="TValueListEditor.RestoreCurrentRow">
         <short>
-          Restores pre-editing values in the current row
+          Restores pre-editing values in the current row.
         </short>
         <descr>
           <p>
@@ -2290,12 +2290,12 @@
         <seealso></seealso>
       </element>
       <element name="TValueListEditor.RestoreCurrentRow.Result">
-        <short>True if the values were successfully restored in the current row</short>
+        <short>True if the values were successfully restored in the current row.</short>
       </element>
 
       <element name="TValueListEditor.Sort">
         <short>
-          Sorts column values in the control
+          Sorts column values in the control.
         </short>
         <descr>
           <p>
@@ -2321,21 +2321,21 @@
         </seealso>
       </element>
       <element name="TValueListEditor.Sort.Index">
-        <short>Ordinal position of the column sorted in the method</short>
+        <short>Ordinal position of the column sorted in the method.</short>
       </element>
       <element name="TValueListEditor.Sort.IndxFrom">
-        <short>Row with the initial value included in the sort</short>
+        <short>Row with the initial value included in the sort.</short>
       </element>
       <element name="TValueListEditor.Sort.IndxTo">
-        <short>Row with the final value included in the sort</short>
+        <short>Row with the final value included in the sort.</short>
       </element>
       <element name="TValueListEditor.Sort.ACol">
-        <short>Column used for the sort operation</short>
+        <short>Column used for the sort operation.</short>
       </element>
 
       <element name="TValueListEditor.Modified">
         <short>
-          Indicates if changes have been made to items in the control
+          Indicates if changes have been made to items in the control.
         </short>
         <descr>
           <p>
@@ -2359,7 +2359,7 @@
 
       <element name="TValueListEditor.Keys">
         <short>
-          Provides indexed access to Key names in the control
+          Provides indexed access to Key names in the control.
         </short>
         <descr>
           <p>
@@ -2382,12 +2382,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.Keys.Index">
-        <short>Row number for the Key name in the control</short>
+        <short>Row number for the Key name in the control.</short>
       </element>
 
       <element name="TValueListEditor.Values">
         <short>
-          Provides indexed access to Values stored in the control
+          Provides indexed access to Values stored in the control.
         </short>
         <descr>
           <p>
@@ -2407,12 +2407,12 @@
         </seealso>
       </element>
       <element name="TValueListEditor.Values.Key">
-        <short>Key name for the specified value</short>
+        <short>Key name for the specified value.</short>
       </element>
 
       <element name="TValueListEditor.ItemProps">
         <short>
-          Provides indexed access to item definitions in the control
+          Provides indexed access to item definitions in the control.
         </short>
         <descr>
           <p>
@@ -2429,7 +2429,7 @@
         </seealso>
       </element>
       <element name="TValueListEditor.ItemProps.AKeyOrIndex">
-        <short>Key name or position for the item definition</short>
+        <short>Key name or position for the item definition.</short>
       </element>
 
       <element name="TValueListEditor.Align" link="#lcl.grids.TCustomDrawGrid.Align"/>
@@ -2519,7 +2519,7 @@
       <element name="TValueListEditor.OnDrawCell" link="#lcl.grids.TCustomDrawGrid.OnDrawCell"/>
 
       <element name="TValueListEditor.OnEditButtonClick">
-        <short>Deprecated</short>
+        <short>Deprecated.</short>
         <descr>
           Use OnButtonClick instead.
         </descr>
@@ -2569,7 +2569,7 @@
 
       <element name="TValueListEditor.DisplayOptions">
         <short>
-          Enables or disables display features and behaviors in the control
+          Enables or disables display features and behaviors in the control.
         </short>
         <descr>
           <p>
@@ -2603,7 +2603,7 @@
 
       <element name="TValueListEditor.DropDownRows">
         <short>
-          Number of rows displayed for an item with a PickList editor style
+          Number of rows displayed for an item with a PickList editor style.
         </short>
         <descr>
           <p>
@@ -2626,7 +2626,7 @@
 
       <element name="TValueListEditor.KeyOptions">
         <short>
-          Controls actions that can be performed for Keys in the control
+          Controls actions that can be performed for Keys in the control.
         </short>
         <descr>
           <p>
@@ -2648,7 +2648,7 @@
 
       <element name="TValueListEditor.Options">
         <short>
-          Specifies the options enabled for the Key-Value grid
+          Specifies the options enabled for the Key-Value grid.
         </short>
         <descr>
           <p>
@@ -2691,7 +2691,7 @@
 
       <element name="TValueListEditor.Strings">
         <short>
-          Stores the keys, values, and item definitions in the control
+          Stores the keys, values, and item definitions in the control.
         </short>
         <descr>
           <p>
@@ -2718,7 +2718,7 @@
 
       <element name="TValueListEditor.TitleCaptions">
         <short>
-          Title captions used for columns in the control
+          Title captions used for columns in the control.
         </short>
         <descr>
           <p>
@@ -2741,7 +2741,7 @@
       </element>
 
       <element name="TValueListEditor.OnGetPickList">
-        <short>Event handler signalled to load values for the PickList in an item</short>
+        <short>Event handler signalled to load values for the PickList in an item.</short>
         <descr>
           <p>
             <var>OnGetPickList</var> is a <var>TGetPickListEvent</var> property with the event handler signalled to load the PickList for the item with a specific key name.
@@ -2765,7 +2765,7 @@
       </element>
 
       <element name="TValueListEditor.OnStringsChange">
-        <short>Event handler signalled when values in the Strings property are changed</short>
+        <short>Event handler signalled when values in the Strings property are changed.</short>
         <descr>
           <p>
             <var>OnStringsChange</var> is a <var>TNotifyEvent</var> property with the event handler signalled when values in the <var>Strings</var> property are changed. Applications can assign a procedure to the event handler to perform actions needed in the control.
@@ -2784,7 +2784,7 @@
       </element>
 
       <element name="TValueListEditor.OnStringsChanging">
-        <short>Event handler signalled prior to updating the Strings property</short>
+        <short>Event handler signalled prior to updating the Strings property.</short>
         <descr>
           <p>
             <var>OnStringsChanging</var> is a <var>TNotifyEvent</var> property with the event handler signalled prior to updating values in the <var>Strings</var> property. Applications can assign a procedure to the event handler to respond to the event notification.
@@ -2803,7 +2803,7 @@
       </element>
 
       <element name="TValueListEditor.OnValidate">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
         <descr>
           <p>
             <var>OnValidate</var> is a <var>TOnValidateEvent</var> property that implements the event handler signalled to validate a modified value in the  grid. Not used in the current implementation.
@@ -2817,7 +2817,7 @@
 
       <element name="rsVLEDuplicateKey">
         <short>
-          Message displayed when a duplicate Key name is found
+          Message displayed when a duplicate Key name is found.
         </short>
       </element>
 
@@ -2835,36 +2835,36 @@
 
       <element name="rsVLEInvalidRowColOperation">
         <short>
-          Exception message for an invalid row or column operation
+          Exception message for an invalid row or column operation.
         </short>
       </element>
 
       <element name="rsVLENoRowCountFound">
         <short>
-          Error message displayed when a row count is not found when loading content in TValueListEditor
+          Error message displayed when a row count is not found when loading content in TValueListEditor.
         </short>
       </element>
 
       <element name="rsVLERowIndexOutOfBounds">
         <short>
-          Error message displayed when an invalid row number is found when loading content in TValueListEditor
+          Error message displayed when an invalid row number is found when loading content in TValueListEditor.
         </short>
       </element>
 
       <element name="rsVLEColIndexOutOfBounds">
         <short>
-          Error message displayed when an invalid column number is found when loading content in TValueListEditor
+          Error message displayed when an invalid column number is found when loading content in TValueListEditor.
         </short>
       </element>
 
       <element name="rsVLEIllegalColCount">
         <short>
-          Error message displayed when an invalid column count is found when loading content in TValueListEditor; column count is always 2 in TValueListEditor
+          Error message displayed when an invalid column count is found when loading content in TValueListEditor; column count is always 2 in TValueListEditor.
         </short>
       </element>
 
       <element name="Register">
-        <short>Register components for use in the Lazarus IDE</short>
+        <short>Register components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             <var>Register</var> is the procedure used to register components for use in the Lazarus IDE. Register adds the following components to the Lazarus IDE component palette:
