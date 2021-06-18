@@ -8,8 +8,8 @@
     -->
     <module name="TextStrings">
       <short>
-        <var>TTextStrings</var> describes TStrings descendants optimized for handling their complete text as a whole (instead of line by line)
-      </short>
+        <var>TTextStrings</var> describes TStrings descendants optimized for handling their complete text as a whole (instead of line by line).
+        </short>
       <descr>
         <p>
           <file>textstrings.pas</file> contains <var>TStrings</var> descendants optimized for handling their complete text as a whole (instead of line by line).
@@ -26,7 +26,7 @@
 
       <element name="TTextLineRange">
         <short>
-          <var>TTextLineRange</var> - record structure showing start and end of line in text, the line as a string, and any user data
+          <var>TTextLineRange</var> - record structure showing start and end of line in text, the line as a string, and any user data.
         </short>
         <descr>
           <var>TTextLineRange</var> is a record type with information about lines of text in the TTextStrings component.
@@ -38,24 +38,24 @@
         </seealso>
       </element>
       <element name="TTextLineRange.StartPos">
-        <short>Offset to the start of the line in Text</short>
+        <short>Offset to the start of the line in Text.</short>
       </element>
       <element name="TTextLineRange.EndPos">
-        <short>End of the line in Text (the end-of-line sequence)</short>
+        <short>End of the line in Text (the end-of-line sequence).</short>
       </element>
       <element name="TTextLineRange.Line">
-        <short>Cached line as a String type</short>
+        <short>Cached line as a String type.</short>
       </element>
       <element name="TTextLineRange.TheObject">
-        <short>User object</short>
+        <short>User object.</short>
       </element>
 
       <element name="PTextLineRange">
-        <short>Pointer to a TTextLineRange type</short>
+        <short>Pointer to a TTextLineRange type.</short>
       </element>
 
       <element name="TCustomMemoStrings">
-        <short>Implements a string list used in Memo controls</short>
+        <short>Implements a string list used in Memo controls.</short>
         <descr>
           <p>
             <var>TCustomMemoStrings</var> is a <var>TStrings</var> descendant which works around the behavior of <var>TMemo.Lines</var>. In TMemo, Lines contains the text with wordwrap line endings. TCustomMemoStrings stores the text in an LFM without those wordwrap line endings.
@@ -70,41 +70,41 @@
       </element>
 
       <element name="TCustomMemoStrings.DoReadData">
-        <short>Reads and stores the values used in the Strings property</short>
+        <short>Reads and stores the values used in the Strings property.</short>
         <descr>
           Used to read values for the component during LCL component streaming.
         </descr>
         <seealso/>
       </element>
       <element name="TCustomMemoStrings.DoReadData.Reader">
-        <short>TReader instance used to load the values for the component</short>
+        <short>TReader instance used to load the values for the component.</short>
       </element>
 
       <element name="TCustomMemoStrings.DoWriteData">
-        <short>Writes the values in the Strings property</short>
+        <short>Writes the values in the Strings property.</short>
         <descr>
           Used to write values for the component during LCL component streaming.
         </descr>
         <seealso/>
       </element>
       <element name="TCustomMemoStrings.DoWriteData.Writer">
-        <short>TWriter instance used to write the values in the component</short>
+        <short>TWriter instance used to write the values in the component.</short>
       </element>
 
       <element name="TCustomMemoStrings.DefineProperties">
         <short>
-          Defines the Strings property and the read and write procedures for its data
+          Defines the Strings property and the read and write procedures for its data.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomMemoStrings.DefineProperties.Filer">
-        <short>TFiler instance used to read or write values for the component</short>
+        <short>TFiler instance used to read or write values for the component.</short>
       </element>
 
       <element name="TTextStrings">
         <short>
-          Imlpements a string list optimized to handle the complete text as a whole (instead of line by line as in <var>TStringList</var>)
+          Imlpements a string list optimized to handle the complete text as a whole (instead of line by line as in <var>TStringList</var>).
         </short>
         <descr>
           <p>
@@ -128,35 +128,35 @@
       <element name="TTextStrings.FOnChanging"/>
 
       <element name="TTextStrings.FArraysValid">
-        <short>Boolean flag which indicates whether the array of line ranges is valid</short>
+        <short>Boolean flag which indicates whether the array of line ranges is valid.</short>
       </element>
 
       <element name="TTextStrings.FLineCount">
-        <short>Number of lines in the array of line ranges</short>
+        <short>Number of lines in the array of line ranges.</short>
       </element>
 
       <element name="TTextStrings.FLineCapacity">
-        <short>Number of line ranges allocated for the component</short>
+        <short>Number of line ranges allocated for the component.</short>
       </element>
 
       <element name="TTextStrings.FLineRanges">
         <short>
-          Pointer to an array of <var>TTextLineRange</var> instances used for the Strings in the component
+          Pointer to an array of <var>TTextLineRange</var> instances used for the Strings in the component.
         </short>
       </element>
 
       <element name="TTextStrings.FText">
-        <short>Member variable used to store the Text in the component</short>
+        <short>Member variable used to store the Text in the component.</short>
       </element>
 
       <element name="TTextStrings.FUpdateCount">
         <short>
-          Number of times BeginUpdate has been called without a corresponding EndUpdate
+          Number of times BeginUpdate has been called without a corresponding EndUpdate.
         </short>
       </element>
 
       <element name="TTextStrings.FChangedWhileUpdate">
-        <short>Indicates if Changed was called after calling BeginUpdate</short>
+        <short>Indicates if Changed was called after calling BeginUpdate.</short>
       </element>
 
       <element name="TTextStrings.GetTextStr" link="#rtl.classes.TStrings.GetTextStr"/>
@@ -166,7 +166,7 @@
       <element name="TTextStrings.SetTextStr.AValue" link="#rtl.classes.TStrings.SetTextStr.AValue"/>
 
       <element name="TTextStrings.BuildArrays">
-        <short>Clears and builds the array with the line ranges for the values in Text</short>
+        <short>Clears and builds the array with the line ranges for the values in Text.</short>
         <descr>
           <p>
             <var>BuildArrays</var> is a method used to clear and build the internal array with the line ranges for the values in <var>Text</var>. BuildArrays detects the number of end-of-line sequences in Text, allocates memory for the dynamic array, and fills the <var>TTextLineRange</var> instances with their values.
@@ -194,7 +194,7 @@
       </element>
 
       <element name="TTextStrings.GetCount">
-        <short>Gets the value for the Count property</short>
+        <short>Gets the value for the Count property.</short>
         <descr>
           <p>
             <var>GetCount</var> is overridden in <var>TTextStrings</var> to re-implement the method. It ensures that the internal array of line ranges is valid, and calls <var>BuildArrays</var> when the validity flag has not been set.
@@ -211,11 +211,11 @@
         </seealso>
       </element>
       <element name="TTextStrings.GetCount.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TTextStrings.Changed">
-        <short>Performs actions needed after the value in Text is changed</short>
+        <short>Performs actions needed after the value in Text is changed.</short>
         <descr>
           <p>
             <var>Changed</var> is a method used to perform actions needed <b>after</b> the value in the <var>Text</var> property has been changed. If <var>BeginUpdate</var> has been called without a corresponding <var>EndUpdate</var> call, no actions are performed in the method. Otherwise, the <var>OnChange</var> event handler is signalled (when assigned).
@@ -228,7 +228,7 @@
       </element>
 
       <element name="TTextStrings.Changing">
-        <short>Performs action needed when properties in the component are being updated</short>
+        <short>Performs action needed when properties in the component are being updated.</short>
         <descr>
           <p>
             <var>Changing</var> is a method used to perform actions needed when property values in the component are being updated. It mimics the Changing behavior implemented in <var>TStringList</var>, where methods call Changing prior to updates to the  <var>Strings</var> or <var>Objects</var> properties.
@@ -250,7 +250,7 @@
       </element>
 
       <element name="TTextStrings.Get" link="#rtl.classes.TStrings.Get">
-        <short>Gets the value for the indexed Strings property</short>
+        <short>Gets the value for the indexed Strings property.</short>
         <descr/>
         <seealso>
           <link id="#rtl.classes.TStrings.Get">TStrings.Get</link>
@@ -258,14 +258,14 @@
         </seealso>
       </element>
       <element name="TTextStrings.Get.Result">
-        <short>Value for the indexed property</short>
+        <short>Value for the indexed property.</short>
       </element>
       <element name="TTextStrings.Get.Index">
-        <short>Ordinal position for the property value</short>
+        <short>Ordinal position for the property value.</short>
       </element>
 
       <element name="TTextStrings.ClearArrays">
-        <short>Clears the internal array of line ranges used in the component</short>
+        <short>Clears the internal array of line ranges used in the component.</short>
         <descr>
           <p>
             <var>ClearArrays</var> is a method used to free resources allocated to the internal array with the line ranges for the component. ClearArrays frees memory allocated for the <var>TTextLineRange</var> instances in the array, and sets the references to <b>Nil</b>.
@@ -286,7 +286,7 @@
       </element>
 
       <element name="TTextStrings.GetObject" link="#rtl.classes.TStrings.GetObject">
-        <short>Gets the value for the indexed Objects property</short>
+        <short>Gets the value for the indexed Objects property.</short>
         <descr/>
         <seealso>
           <link id="#rtl.classes.TStrings.Objects">TStrings.Objects</link>
@@ -294,14 +294,14 @@
         </seealso>
       </element>
       <element name="TTextStrings.GetObject.Result">
-        <short>Value for the indexed property</short>
+        <short>Value for the indexed property.</short>
       </element>
       <element name="TTextStrings.GetObject.Index">
-        <short>Ordinal position in Objects with the property value</short>
+        <short>Ordinal position in Objects with the property value.</short>
       </element>
 
       <element name="TTextStrings.Put" link="#rtl.classes.TStrings.Put">
-        <short>Sets the value for the indexed Strings property</short>
+        <short>Sets the value for the indexed Strings property.</short>
         <descr/>
         <seealso>
           <link id="#rtl.classes.TStrings.Strings">TStrings.Strings</link>
@@ -309,44 +309,44 @@
         </seealso>
       </element>
       <element name="TTextStrings.Put.Index">
-        <short>Ordinal position for the new property value</short>
+        <short>Ordinal position for the new property value.</short>
       </element>
       <element name="TTextStrings.Put.S">
-        <short>New value in the indexed property</short>
+        <short>New value in the indexed property.</short>
       </element>
 
       <element name="TTextStrings.PutObject" link="#rtl.classes.TStrings.PutObject">
-        <short>Sets a value in the indexed Objects property</short>
+        <short>Sets a value in the indexed Objects property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TTextStrings.PutObject.Index">
-        <short>Ordinal position for the indexed property value</short>
+        <short>Ordinal position for the indexed property value.</short>
       </element>
       <element name="TTextStrings.PutObject.AnObject">
-        <short>TObject instance stored in the indexed property</short>
+        <short>TObject instance stored in the indexed property.</short>
       </element>
 
       <element name="TTextStrings.GetLineLen">
         <short>
-          Gets the length of a line (including optional end-of-line characters) at the specified position
+          Gets the length of a line (including optional end-of-line characters) at the specified position.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TTextStrings.GetLineLen.Result">
-        <short>Length of the specified line</short>
+        <short>Length of the specified line.</short>
       </element>
       <element name="TTextStrings.GetLineLen.Index">
-        <short>Ordinal position for the line examined in the method</short>
+        <short>Ordinal position for the line examined in the method.</short>
       </element>
       <element name="TTextStrings.GetLineLen.IncludeNewLineChars">
-        <short>True to include end-of-line characters in the line length</short>
+        <short>True to include end-of-line characters in the line length.</short>
       </element>
 
       <element name="TTextStrings.GetLineEnd">
         <short>
-          Gets the ordinal position where the specified line ends in the Text property
+          Gets the ordinal position where the specified line ends in the Text property.
         </short>
         <descr>
           Calls BuildArrays if the internal validity flag is not set.
@@ -354,29 +354,29 @@
         <seealso/>
       </element>
       <element name="TTextStrings.GetLineEnd.Result">
-        <short>Offset in Text where the end of the specified line is located</short>
+        <short>Offset in Text where the end of the specified line is located.</short>
       </element>
       <element name="TTextStrings.GetLineEnd.Index">
-        <short>Ordinal position for the line examined in the method</short>
+        <short>Ordinal position for the line examined in the method.</short>
       </element>
       <element name="TTextStrings.GetLineEnd.IncludeNewLineChars">
-        <short>True to include end-of-line character(s) in the return value</short>
+        <short>True to include end-of-line character(s) in the return value.</short>
       </element>
 
       <element name="TTextStrings.CountLineEndings">
-        <short>Gets the number of end-of-line sequences found in the specified string</short>
+        <short>Gets the number of end-of-line sequences found in the specified string.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TTextStrings.CountLineEndings.Result">
-        <short>Number of end-of-line sequences found in s</short>
+        <short>Number of end-of-line sequences found in s.</short>
       </element>
       <element name="TTextStrings.CountLineEndings.s">
-        <short>String with the values examined in the method</short>
+        <short>String with the values examined in the method.</short>
       </element>
 
       <element name="TTextStrings.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry. Create calls the <var>CheckSpecialChars</var> method (in the ancestor) to ensure that default values have assigned for the following properties:
@@ -392,7 +392,7 @@
       </element>
 
       <element name="TTextStrings.Destroy" link="#rtl.classes.TStrings.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. It calls the <var>Clear</var> method to remove the values in the component, and free the resources allocated to the internal array of line ranges.
@@ -408,7 +408,7 @@
       </element>
 
       <element name="TTextStrings.Clear" link="#rtl.classes.TStrings.Clear">
-        <short>Clears the text and internal line ranges for the component</short>
+        <short>Clears the text and internal line ranges for the component.</short>
         <descr>
           <p>
             <var>Clear</var> is an overridden method which implements the abstract virtual method declared in the ancestor. It is used to remove the <var>Text</var> and line range information used in the component.
@@ -431,7 +431,7 @@
       </element>
 
       <element name="TTextStrings.SetText" link="#rtl.classes.TStrings.SetText">
-        <short>Sets the value for the Text property from a PChar type</short>
+        <short>Sets the value for the Text property from a PChar type.</short>
         <descr>
           <p>
             <var>SetText</var> is an overridden method used to set the value for the <var>Text</var> property using the specified <var>PChar</var> value.
@@ -446,11 +446,11 @@
         <seealso/>
       </element>
       <element name="TTextStrings.SetText.TheText">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TTextStrings.Insert" link="#rtl.classes.TStrings.Insert">
-        <short>Inserts the line of text in S at the specified position</short>
+        <short>Inserts the line of text in S at the specified position.</short>
         <descr>
           <p>
             <var>Insert</var> is an overridden method used to insert the line of text in S at the position specified in Index.
@@ -480,14 +480,14 @@
         <seealso/>
       </element>
       <element name="TTextStrings.Insert.Index">
-        <short>Ordinal position where the line of text is inserted</short>
+        <short>Ordinal position where the line of text is inserted.</short>
       </element>
       <element name="TTextStrings.Insert.S">
-        <short>Value for the line of text inserted in the method</short>
+        <short>Value for the line of text inserted in the method.</short>
       </element>
 
       <element name="TTextStrings.Delete" link="#rtl.classes.TStrings.Delete">
-        <short>Deletes the line of text at the specified position</short>
+        <short>Deletes the line of text at the specified position.</short>
         <descr>
           <p>
             <var>Delete</var> is an overridden method used to delete the line of text at the specified position. <var>BuildArrays</var> is called to populate the internal array of <var>TTextLineRange</var> instances when the internal validity flag is not set.
@@ -512,11 +512,11 @@
         </seealso>
       </element>
       <element name="TTextStrings.Delete.Index">
-        <short>Ordinal position for the value removed from the Strings property</short>
+        <short>Ordinal position for the value removed from the Strings property.</short>
       </element>
 
       <element name="TTextStrings.Exchange" link="#rtl.classes.TStrings.Exchange">
-        <short>Swaps the line values at the specified positions</short>
+        <short>Swaps the line values at the specified positions.</short>
         <descr>
           <p>
             <var>Exchange</var> is an overridden method used to swap the line values at the positions specified in Index1 and Index2. No actions are performed in the method when Index1 and Index2 contain the same value.
@@ -543,26 +543,26 @@
         <seealso/>
       </element>
       <element name="TTextStrings.Exchange.Index1">
-        <short>First position for the value exchange</short>
+        <short>First position for the value exchange.</short>
       </element>
       <element name="TTextStrings.Exchange.Index2">
-        <short>Second position for the value exchange</short>
+        <short>Second position for the value exchange.</short>
       </element>
 
       <element name="TTextStrings.Move" link="#rtl.classes.TStrings.Move">
-        <short>Moves a String value from the current position to the new position</short>
+        <short>Moves a String value from the current position to the new position.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TTextStrings.Move.CurIndex">
-        <short>Current ordinal position for the string</short>
+        <short>Current ordinal position for the string.</short>
       </element>
       <element name="TTextStrings.Move.NewIndex">
-        <short>New ordinal position for the string</short>
+        <short>New ordinal position for the string.</short>
       </element>
 
       <element name="TTextStrings.MakeTextBufferUnique">
-        <short>Ensures that the reference count for the Text member is 1</short>
+        <short>Ensures that the reference count for the Text member is 1.</short>
         <descr>
           <p>
             Calls the UniqueString routine from the RTL <file>system</file> unit.
@@ -574,7 +574,7 @@
       </element>
 
       <element name="TTextStrings.BeginUpdate">
-        <short>Starts an update process for the component</short>
+        <short>Starts an update process for the component.</short>
         <descr>
           <p>
             <var>BeginUpdate</var> is a method used to start an update process for the component. It increments an internal update counter used to consolidate <var>OnChanging</var> and <var>OnChange</var>  event notifcations. The counter value is used in the <var>Changing</var> and <var>Changed</var> methods, and controls when the event notifications are enabled and performed.
@@ -594,7 +594,7 @@
       </element>
 
       <element name="TTextStrings.EndUpdate" link="#rtl.classes.TStrings.EndUpdate">
-        <short>Finishes an update process for the component</short>
+        <short>Finishes an update process for the component.</short>
         <descr>
           <p>
             <var>EndUpdate</var> is a method used to finish an active update process for the component.
@@ -621,7 +621,7 @@
       </element>
 
       <element name="TTextStrings.GetText" link="#rtl.classes.TStrings.GetText">
-        <short>Gets the value for the Text property as a PChar type</short>
+        <short>Gets the value for the Text property as a PChar type.</short>
         <descr/>
         <seealso>
           <link id="TTextStrings.Text"/>
@@ -629,25 +629,25 @@
         </seealso>
       </element>
       <element name="TTextStrings.GetText.Result">
-        <short>Value for the property as a PChar type</short>
+        <short>Value for the property as a PChar type.</short>
       </element>
 
       <element name="TTextStrings.IndexOf" link="#rtl.classes.TStrings.IndexOf">
-        <short>Gets the ordinal position for the specified String value</short>
+        <short>Gets the ordinal position for the specified String value.</short>
         <descr/>
         <link id="#rtl.classes.TStrings.IndexOf">TStrings.IndexOf</link>
         <seealso>
         </seealso>
       </element>
       <element name="TTextStrings.IndexOf.Result">
-        <short>Ordinal position for the requested value</short>
+        <short>Ordinal position for the requested value.</short>
       </element>
       <element name="TTextStrings.IndexOf.S">
-        <short>Value to locate in the method</short>
+        <short>Value to locate in the method.</short>
       </element>
 
       <element name="TTextStrings.Add" link="#rtl.classes.TStrings.Add">
-        <short>Appends the specified text to the values in Strings</short>
+        <short>Appends the specified text to the values in Strings.</short>
         <descr>
           <p>
             Calls <var>AddObject</var> to append the value in <var>S</var>. <b>Nil</b> is used as the value for the object parameter.
@@ -658,14 +658,14 @@
         </seealso>
       </element>
       <element name="TTextStrings.Add.Result">
-        <short>Ordinal position in Strings where the value was stored</short>
+        <short>Ordinal position in Strings where the value was stored.</short>
       </element>
       <element name="TTextStrings.Add.S">
-        <short>String appended to the Strings property</short>
+        <short>String appended to the Strings property.</short>
       </element>
 
       <element name="TTextStrings.AddObject">
-        <short>Adds a String and Object pair to the string list</short>
+        <short>Adds a String and Object pair to the string list.</short>
       <descr>
         <p>
           Adds a <var>LineEnding</var> if the value in <var>Text</var> does not already end with one of the end-of-line characters.
@@ -686,13 +686,13 @@
         <seealso/>
       </element>
       <element name="TTextStrings.AddObject.Result">
-        <short>Ordinal position where the string and object were stored</short>
+        <short>Ordinal position where the string and object were stored.</short>
       </element>
       <element name="TTextStrings.AddObject.S">
-        <short>String value added to component</short>
+        <short>String value added to component.</short>
       </element>
       <element name="TTextStrings.AddObject.AObject">
-        <short>TObject instance (or Nil) added to the component</short>
+        <short>TObject instance (or Nil) added to the component.</short>
       </element>
 
       <element name="TTextStrings.AddStrings" link="#rtl.classes.TStrings.AddStrings">
@@ -707,11 +707,11 @@
         </seealso>
       </element>
       <element name="TTextStrings.AddStrings.TheStrings">
-        <short>String list with the values added in the method</short>
+        <short>String list with the values added in the method.</short>
       </element>
 
       <element name="TTextStrings.LoadFromFile">
-        <short>Loads the content in the string list from the specified file name</short>
+        <short>Loads the content in the string list from the specified file name.</short>
         <descr>
           <p>
             Creates a temporary <var>TFileStream</var> instance for the <var>FileName</var> argument.  The file handle is opened for reading, and shared write access is denied. The inherited <var>LoadFromStream</var> method is called to load the values in the string list from the file stream.
@@ -723,11 +723,11 @@
         </seealso>
       </element>
       <element name="TTextStrings.LoadFromFile.FileName">
-        <short>File name with the values loaded in the method</short>
+        <short>File name with the values loaded in the method.</short>
       </element>
 
       <element name="TTextStrings.SaveToFile">
-        <short>Saves the content in the string list to the specified file name</short>
+        <short>Saves the content in the string list to the specified file name.</short>
         <descr>
           <p>
             Creates a temporary <var>TFileStream</var> instance for the <var>FileName</var> argument. The file is created if it does not already exist. The inherited <var>SaveToStream</var> method is called to store content in the string list to the file stream.
@@ -739,11 +739,11 @@
         </seealso>
       </element>
       <element name="TTextStrings.SaveToFile.FileName">
-        <short>File name where the content is stored</short>
+        <short>File name where the content is stored.</short>
       </element>
 
       <element name="TTextStrings.Text" link="#rtl.classes.TStrings.Text">
-        <short>Contains the textual representation for the values in Strings</short>
+        <short>Contains the textual representation for the values in Strings.</short>
         <descr>
           <p>
             <var>Text</var> is a <var>String</var> property which contains the textual representation for the values in the <var>Strings</var> property. <var>TTextStrings</var> re-implements the Text property as defined in <var>TStrings</var>. The write specifier (<var>SetTextStr</var>) is overridden, and forces the internal array of line ranges to be rebuilt during the next read access.
@@ -757,7 +757,7 @@
 
       <element name="TTextStrings.OnChange">
         <short>
-          Event handler signalled when values in Strings or Objects have been changed
+          Event handler signalled when values in Strings or Objects have been changed.
         </short>
         <descr>
           <p>
@@ -776,7 +776,7 @@
       </element>
 
       <element name="TTextStrings.OnChanging">
-        <short>Event handler signalled before properties are updated in the component</short>
+        <short>Event handler signalled before properties are updated in the component.</short>
         <descr>
           <p>
             <var>OnChanging</var> is a <var>TNotifyEvent</var> property with the event handler signalled before the  <var>Strings</var> or <var>Objects</var> properties are updated in the component.

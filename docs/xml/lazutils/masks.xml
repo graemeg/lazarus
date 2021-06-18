@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="Masks">
-      <short>Contains classes for matching file names to file masks</short>
+      <short>Contains classes for matching file names to file masks.</short>
       <descr>
         <p>
           <file>masks.pas</file> contains classes, types, and routines used implement file masks. File masks are patterns used to match file names found on the local file system. Support is provided for both UNIX- and Windows-style file masks. The unit includes utility functions to compare one or more file names to a given mask, including: MatchesMask, MatchesWindowsMask, MatchesMaskList, and MatchesWindowsMaskList.
@@ -20,7 +20,7 @@
       <element name="LazUtilsStrConsts"/>
       <element name="LazUtf8"/>
       <element name="TMaskCharType">
-        <short>Represents character types used in a mask</short>
+        <short>Represents character types used in a mask.</short>
         <descr>
           <p>
             Used in the implementation of TMaskChar.
@@ -31,48 +31,48 @@
         </seealso>
       </element>
       <element name="TMaskCharType.mcChar">
-        <short>Represents a UTF-8-encoded character value</short>
+        <short>Represents a UTF-8-encoded character value.</short>
       </element>
       <element name="TMaskCharType.mcCharSet">
-        <short>Represents a character in a set value</short>
+        <short>Represents a character in a set value.</short>
       </element>
       <element name="TMaskCharType.mcAnyChar">
-        <short>Represents any valid single character</short>
+        <short>Represents any valid single character.</short>
       </element>
       <element name="TMaskCharType.mcAnyText">
-        <short>Represents any valid text</short>
+        <short>Represents any valid text.</short>
       </element>
       <element name="TMaskOption">
-        <short>Contains options which can be enabled or disabled in TMask comparisons</short>
+        <short>Contains options which can be enabled or disabled in TMask comparisons.</short>
         <seealso>
           <link id="#lazutils.masks.MasksOverview">Masks Overview</link>
         </seealso>
       </element>
       <element name="TMaskOption.moCaseSensitive">
-        <short>Enables case sensitive comparison</short>
+        <short>Enables case sensitive comparison.</short>
       </element>
       <element name="TMaskOption.moDisableSets">
-        <short>Disables set processing; "[" and "]" are treated as literal characters</short>
+        <short>Disables set processing; "[" and "]" are treated as literal characters.</short>
       </element>
       <element name="TMaskOptions">
-        <short>Set type used to store values from the TMaskOption enumeration</short>
+        <short>Set type used to store values from the TMaskOption enumeration.</short>
         <seealso>
           <link id="#lazutils.masks.MasksOverview">Masks Overview</link>
         </seealso>
       </element>
       <element name="TCharSet">
-        <short>Defines a set for Char types</short>
+        <short>Defines a set for Char types.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="PCharSet">
-        <short>Defines a pointer to a TCharSet type</short>
+        <short>Defines a pointer to a TCharSet type.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="EMaskError">
-        <short>Exception raised for an invalid character in TMask</short>
+        <short>Exception raised for an invalid character in TMask.</short>
         <descr>
           <p>
             <var>EMaskError</var> is a <var>EConvertError</var> descendant representing the exception raised when an invalid character is found in a value passed to the  <var>TMask.Create</var> constructor.
@@ -89,7 +89,7 @@
       </element>
 
       <element name="TMaskChar">
-        <short>Represents details for mask character types in the TMaskCharType enumeration</short>
+        <short>Represents details for mask character types in the TMaskCharType enumeration.</short>
         <descr>
           <p>
             <var>TMaskChar</var> is a variant record type with members used to represent details for mask character types in the <var>TMaskCharType</var> enumeration. TMaskChar is used to implement the <var>Chars</var> member in the <var>TMaskString</var> record type.
@@ -101,28 +101,28 @@
         </seealso>
       </element>
       <element name="TMaskChar.CharType">
-        <short>Identifies the mask character type</short>
+        <short>Identifies the mask character type.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMaskChar.CharValue">
-        <short>UTF-8 character value for the mask character</short>
+        <short>UTF-8 character value for the mask character.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMaskChar.Negative">
-        <short>True when the "not" operator (!) is included in the character set expression in a mask
+        <short>True when the "not" operator (!) is included in the character set expression in a mask.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMaskChar.SetValue ">
-        <short>Contains the values used in a character set expression in a mask</short>
+        <short>Contains the values used in a character set expression in a mask.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMaskString">
-        <short>Represent characters and symbols in a mask</short>
+        <short>Represent characters and symbols in a mask.</short>
         <descr>
           <p>
             <var>TMaskString</var> is a record type with members representing the characters or symbols in a mask, and the minimum and maximum length for the string. TMaskString is used in the implementation of methods in <var>TMask</var>.
@@ -135,23 +135,23 @@
         </seealso>
       </element>
       <element name="TMaskString.MinLength">
-        <short>Minimum length for a value that matches a mask</short>
+        <short>Minimum length for a value that matches a mask.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMaskString.MaxLength">
-        <short>Maximum length for a value that matches a mask</short>
+        <short>Maximum length for a value that matches a mask.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMaskString.Chars">
-        <short>Array with the TMaskChar information for a mask</short>
+        <short>Array with the TMaskChar information for a mask.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMask">
-        <short>The TMask class represents a mask and performs comparisons</short>
+        <short>The TMask class represents a mask and performs comparisons.</short>
         <descr>
           <p>
             A mask is a comparison pattern built using wildcards, sets and/or literal characters. The mask is limited to the single-byte code points in the UTF-8 encoding. Using multi-byte code points in TMask causes an <var>EMaskError</var> exception to be raised.
@@ -180,15 +180,15 @@
       <element name="TMask.FOptions"/>
 
       <element name="TMask.InitMaskString">
-        <short>Initializes the internal TMaskString instance used in the class</short>
+        <short>Initializes the internal TMaskString instance used in the class.</short>
       </element>
 
       <element name="TMask.ClearMaskString">
-        <short>Frees resources allocated in the internal TMaskString instance</short>
+        <short>Frees resources allocated in the internal TMaskString instance.</short>
       </element>
 
       <element name="TMask.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overloaded constructor for the class instance. Overloaded variants are provided with parameter values that are used to configure the class instance.
@@ -231,16 +231,16 @@
         </seealso>
       </element>
       <element name="TMask.Create.AValue">
-        <short>Mask value for the class instance</short>
+        <short>Mask value for the class instance.</short>
       </element>
       <element name="TMask.Create.CaseSensitive">
-        <short>True if case sensitivity is used when comparing a file name to the mask value</short>
+        <short>True if case sensitivity is used when comparing a file name to the mask value.</short>
       </element>
       <element name="TMask.Create.AOptions">
-        <short>Contains options enabled or disabled in the class instance</short>
+        <short>Contains options enabled or disabled in the class instance.</short>
       </element>
       <element name="TMask.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy call <var>ClearMaskString</var> to free resources allocated in the internal <var>TMaskString</var> instance. Destroy calls the inherited destructor prior to exiting from the method.
@@ -251,7 +251,7 @@
         </seealso>
       </element>
       <element name="TMask.Matches">
-        <short>Determines whether the specified file name matches the mask value</short>
+        <short>Determines whether the specified file name matches the mask value.</short>
         <descr>
           <p>
             <var>Matches</var> is a <var>Boolean</var> function used to determine whether the specified file name matches the mask value in the class instance. Matches converts the value in <var>AFileName</var> to lowercase when case sensitivity is omitted from the <var>TMaskOptions</var> for the class instance.
@@ -281,13 +281,13 @@
         </seealso>
       </element>
       <element name="TMask.Matches.Result">
-        <short>True when the file name matches the mask in the class instance</short>
+        <short>True when the file name matches the mask in the class instance.</short>
       </element>
       <element name="TMask.Matches.AFileName">
-        <short>File name compared to the mask value in the method</short>
+        <short>File name compared to the mask value in the method.</short>
       </element>
       <element name="TMask.MatchesWindowsMask">
-        <short>Determines whether a filename matches the mask using Windows file system masks
+        <short>Determines whether a filename matches the mask using Windows file system masks.
         </short>
         <descr>
           <p>
@@ -322,13 +322,13 @@
         </seealso>
       </element>
       <element name="TMask.MatchesWindowsMask.Result">
-        <short>True when the file name matches the mask value in the class instance</short>
+        <short>True when the file name matches the mask value in the class instance.</short>
       </element>
       <element name="TMask.MatchesWindowsMask.AFileName">
-        <short>File name examined in the method</short>
+        <short>File name examined in the method.</short>
       </element>
       <element name="TParseStringList">
-        <short>The TParseStringList class is used to parse text into the list of strings</short>
+        <short>The TParseStringList class is used to parse text into the list of strings.</short>
         <descr>
           <p>
             <var>TParseStringList</var> is a <var>TStringList</var> descendant used to parse text which uses the specified line separators. An alternate constructor is introduced with parameters for the lines of text and the separators used in the class instance.
@@ -343,7 +343,7 @@
         </seealso>
       </element>
       <element name="TParseStringList.Create">
-        <short>Creates new string list by parsing the specified text using the separators argument</short>
+        <short>Creates new string list by parsing the specified text using the separators argument.</short>
         <descr>
           <p>
             <var>Create</var> is constructor for the class instance. Values in the <var>AText</var> and <var>ASeparator</var> arguments determine the content stored as lines of text in the instance. AText contains one or more file mask expressions separated by one of the delimiters characters n ASeparators.
@@ -355,13 +355,13 @@
         <seealso/>
       </element>
       <element name="TParseStringList.Create.AText">
-        <short>Text examine and parsed in the method</short>
+        <short>Text examine and parsed in the method.</short>
       </element>
       <element name="TParseStringList.Create.ASeparators">
-        <short>String with the separators used to delimit lines in the text argument</short>
+        <short>String with the separators used to delimit lines in the text argument.</short>
       </element>
       <element name="TMaskList">
-        <short>Implements a list for masks</short>
+        <short>Implements a list for masks.</short>
         <descr>
           <p>
             <var>TMaskList</var> is a class used to maintain a list with mask expressions. Parameter values passed to the constructor are used to create and store the TMask instances in the list.
@@ -378,30 +378,31 @@
       </element>
       <element name="TMaskList.FMasks"/>
       <element name="TMaskList.GetCount">
-        <short>Gets the value for the Count property</short>
+        <short>Gets the value for the Count property.</short>
         <descr/>
         <seealso>
           <link id="TMaskList.Count"/>
         </seealso>
       </element>
       <element name="TMaskList.GetCount.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TMaskList.GetItem">
-        <short>Gets the value for the indexed Items property</short>
+        <short>Gets the value for the indexed Items property.</short>
         <descr/>
         <seealso>
           <link id="TMaskList.Items"/>
         </seealso>
       </element>
       <element name="TMaskList.GetItem.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TMaskList.GetItem.Index">
-        <short>Ordinal position for the TMask instance in the property value</short>
+        <short>Ordinal position for the TMask instance in the property value.</short>
       </element>
       <element name="TMaskList.Create">
-        <short>Creates new list of masks using the specified delimited mask values and options
+        <short>
+          Creates new list of masks using the specified delimited mask values and options.
         </short>
         <descr>
           <p>
@@ -418,19 +419,19 @@
         </seealso>
       </element>
       <element name="TMaskList.Create.AValue">
-        <short>Mask value(s) stored in the internal object list</short>
+        <short>Mask value(s) stored in the internal object list.</short>
       </element>
       <element name="TMaskList.Create.ASeparator">
-        <short>Delimiter used to delimit mask values in AValue</short>
+        <short>Delimiter used to delimit mask values in AValue.</short>
       </element>
       <element name="TMaskList.Create.CaseSensitive">
-        <short>Indicates if case sensitivity is used for masks</short>
+        <short>Indicates if case sensitivity is used for masks.</short>
       </element>
       <element name="TMaskList.Create.Options">
-        <short>Contains the options enabled for the mask instances</short>
+        <short>Contains the options enabled for the mask instances.</short>
       </element>
       <element name="TMaskList.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that the internal object list for the class instance is freed. Destroy calls the inherited destructor prior to exiting from the method.
@@ -439,7 +440,7 @@
         <seealso/>
       </element>
       <element name="TMaskList.Matches">
-        <short>Determines whether the specified file name matches a mask in the list</short>
+        <short>Determines whether the specified file name matches a mask in the list.</short>
         <descr>
           <p>
             <var>Matches</var> is a <var>Boolean</var> function used to determine if the specified file name matches one of the file masks in the list.
@@ -461,13 +462,14 @@
         </seealso>
       </element>
       <element name="TMaskList.Matches.Result">
-        <short>True when the file name matches one of the mask items</short>
+        <short>True when the file name matches one of the mask items.</short>
       </element>
       <element name="TMaskList.Matches.AFileName">
-        <short>File name examined in the method</short>
+        <short>File name examined in the method.</short>
       </element>
       <element name="TMaskList.MatchesWindowsMask">
-        <short>Tests whether the file name matches a mask in the list using Windows file system masks
+        <short>
+          Tests whether the file name matches a mask in the list using Windows file system masks.
         </short>
         <descr>
           <p>
@@ -478,13 +480,13 @@
         <seealso/>
       </element>
       <element name="TMaskList.MatchesWindowsMask.Result">
-        <short>True if the file name matches one the masks in the list</short>
+        <short>True if the file name matches one the masks in the list.</short>
       </element>
       <element name="TMaskList.MatchesWindowsMask.AFileName">
-        <short>File name examined in the method</short>
+        <short>File name examined in the method.</short>
       </element>
       <element name="TMaskList.Count">
-        <short>The number of mask items in the list</short>
+        <short>The number of mask items in the list.</short>
         <descr>
           <p>
             <var>Count</var> is a read-only <var>Integer</var> property with the number of <var>TMask</var> instances stored in the <var>Items</var> for the list.
@@ -495,7 +497,7 @@
         </seealso>
       </element>
       <element name="TMaskList.Items">
-        <short>The mask items in the list</short>
+        <short>The mask items in the list.</short>
         <descr>
           <p>
             <var>Items</var> is a read-only indexed <var>TMask</var> property which contains the mask instances in the list.
@@ -516,10 +518,10 @@
         </seealso>
       </element>
       <element name="TMaskList.Items.Index">
-        <short>Ordinal position for the value in the indexed property</short>
+        <short>Ordinal position for the value in the indexed property.</short>
       </element>
       <element name="MatchesMask">
-        <short>Indicates whether the file name matches the specified mask</short>
+        <short>Indicates whether the file name matches the specified mask.</short>
         <descr>
           <p>
             <var>MatchesMask</var> is an overloaded <var>Boolean</var> function used to determine if the file name specified in <var>FileName</var> matches the specified <var>Mask</var>.
@@ -549,22 +551,23 @@
         </seealso>
       </element>
       <element name="MatchesMask.Result">
-        <short>True when the file name matches the mask value using the specified options</short>
+        <short>True when the file name matches the mask value using the specified options.</short>
       </element>
       <element name="MatchesMask.FileName">
-        <short>File name compared to the mask value</short>
+        <short>File name compared to the mask value.</short>
       </element>
       <element name="MatchesMask.Mask">
-        <short>Mask used to perform the comparison</short>
+        <short>Mask used to perform the comparison.</short>
       </element>
       <element name="MatchesMask.CaseSensitive">
-        <short>True when case sensitivity should be used in the comparison</short>
+        <short>True when case sensitivity should be used in the comparison.</short>
       </element>
       <element name="MatchesMask.Options">
-        <short>Set of options enabled for the comparison</short>
+        <short>Set of options enabled for the comparison.</short>
       </element>
       <element name="MatchesWindowsMask">
-        <short>Indicates whether the file name matches the specified Windows-style file system mask
+        <short>
+          Indicates whether the file name matches the specified Windows-style file system mask.
         </short>
         <descr>
           <p>
@@ -611,22 +614,23 @@
         </seealso>
       </element>
       <element name="MatchesWindowsMask.Result">
-        <short>True when the file name matches the mask value using the specified options</short>
+        <short>True when the file name matches the mask value using the specified options.</short>
       </element>
       <element name="MatchesWindowsMask.FileName">
-        <short>File name compared to the mask value</short>
+        <short>File name compared to the mask value.</short>
       </element>
       <element name="MatchesWindowsMask.Mask">
-        <short>Mask used to perform the comparison</short>
+        <short>Mask used to perform the comparison.</short>
       </element>
       <element name="MatchesWindowsMask.CaseSensitive">
-        <short>True when case sensitivity should be used in the comparison</short>
+        <short>True when case sensitivity should be used in the comparison.</short>
       </element>
       <element name="MatchesWindowsMask.Options">
-        <short>Set of options enabled for the comparison</short>
+        <short>Set of options enabled for the comparison.</short>
       </element>
       <element name="MatchesMaskList">
-        <short>Determine whether the specified file name matches at least one of the specified masks
+        <short>
+          Determine whether the specified file name matches at least one of the specified masks.
         </short>
         <descr>
           <p>
@@ -685,25 +689,26 @@
         </seealso>
       </element>
       <element name="MatchesMaskList.Result">
-        <short>True when Filename matches at least one of the masks in the list</short>
+        <short>True when Filename matches at least one of the masks in the list.</short>
       </element>
       <element name="MatchesMaskList.FileName">
-        <short>File name compared to the file masks in Mask</short>
+        <short>File name compared to the file masks in Mask.</short>
       </element>
       <element name="MatchesMaskList.Mask">
-        <short>one or more file mask expressions separated by one of the values in Separator</short>
+        <short>one or more file mask expressions separated by one of the values in Separator.</short>
       </element>
       <element name="MatchesMaskList.Separator">
-        <short>Character(s) used as a separator between mask expressions in Mask</short>
+        <short>Character(s) used as a separator between mask expressions in Mask.</short>
       </element>
       <element name="MatchesMaskList.CaseSensitive">
-        <short>True if the file name to mask comparison is case sensitive</short>
+        <short>True if the file name to mask comparison is case sensitive.</short>
       </element>
       <element name="MatchesMaskList.Options">
-        <short>TMaskOption values which enable or disable features in the comparison</short>
+        <short>TMaskOption values which enable or disable features in the comparison.</short>
       </element>
       <element name="MatchesWindowsMaskList">
-        <short>Determine whether the specified file name matches at least one of the specified masks
+        <short>
+          Determine whether the specified file name matches at least one of the specified masks.
         </short>
         <descr>
           <p>
@@ -763,25 +768,25 @@
       </element>
       <element name="MatchesWindowsMaskList.Result">
         <short>
-          <b>True</b> when Filename matches at least one of the masks in the list</short>
+          <b>True</b> when Filename matches at least one of the masks in the list.</short>
       </element>
       <element name="MatchesWindowsMaskList.FileName">
-        <short>File name compared to the file masks in Mask</short>
+        <short>File name compared to the file masks in Mask.</short>
       </element>
       <element name="MatchesWindowsMaskList.Mask">
-        <short>one or more file mask expressions separated by one of the values in Separator</short>
+        <short>one or more file mask expressions separated by one of the values in Separator.</short>
       </element>
       <element name="MatchesWindowsMaskList.Separator">
-        <short>Character(s) used as a separator between mask expressions in Mask</short>
+        <short>Character(s) used as a separator between mask expressions in Mask.</short>
       </element>
       <element name="MatchesWindowsMaskList.CaseSensitive">
-        <short>True if the file name to mask comparison is case sensitive</short>
+        <short>True if the file name to mask comparison is case sensitive.</short>
       </element>
       <element name="MatchesWindowsMaskList.Options">
-        <short>TMaskOption values which enable or disable features in the comparison</short>
+        <short>TMaskOption values which enable or disable features in the comparison.</short>
       </element>
       <topic name="MasksOverview">
-        <short>Masks Overview</short>
+        <short>Masks Overview.</short>
         <descr>
           <p>
             <b>What is a Mask</b>

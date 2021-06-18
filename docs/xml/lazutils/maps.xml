@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="Maps">
-      <short>Implements a map for unique IDs to arbitrary data</short>
+      <short>Implements a map for unique IDs to arbitrary data.</short>
       <descr>
         <p>
           <file>maps.pp</file> implements a map for unique IDs to arbitrary data. The ID-to-Data mapping is stored in an Average Level Binary Tree for fast indexing. The map also maintains a linked list between the ordered items for fast iteration through its elements. The ID can be signed or unsigned, with a size of 1, 2, 4, 8, 16 or 32 bytes. The data can be of any (constant) size.
@@ -29,7 +29,7 @@
       <element name="FPCAdds"/>
 
       <element name="TMapIdType">
-        <short>Identifies the data type used for map IDs</short>
+        <short>Identifies the data type used for map IDs.</short>
         <descr>
           <p>
             TMapIdType is an enumeration type with values that identify the native data type used in map ID values. TMapIdType is used in TMapID and as an argument in the TBaseMap.Create method.
@@ -41,44 +41,44 @@
         </seealso>
       </element>
       <element name="TMapIdType.itu1">
-        <short>1 byte unsigned value (Byte)</short>
+        <short>1 byte unsigned value (Byte).</short>
       </element>
       <element name="TMapIdType.its1">
-        <short>1 byte signed value (ShortInt)</short>
+        <short>1 byte signed value (ShortInt).</short>
       </element>
       <element name="TMapIdType.itu2">
-        <short>2 byte unsigned value (Word)</short>
+        <short>2 byte unsigned value (Word).</short>
       </element>
       <element name="TMapIdType.its2">
-        <short>2 byte signed value (SmallInt)</short>
+        <short>2 byte signed value (SmallInt).</short>
       </element>
       <element name="TMapIdType.itu4">
-        <short>4 byte unsigned value (LongWord)</short>
+        <short>4 byte unsigned value (LongWord).</short>
       </element>
       <element name="TMapIdType.its4">
-        <short>4 byte signed value (LongInt)</short>
+        <short>4 byte signed value (LongInt).</short>
       </element>
       <element name="TMapIdType.itu8">
-        <short>8 byte unsigned value (QWord)</short>
+        <short>8 byte unsigned value (QWord).</short>
       </element>
       <element name="TMapIdType.its8">
-        <short>8 byte signed value (Int64)</short>
+        <short>8 byte signed value (Int64).</short>
       </element>
       <element name="TMapIdType.itu16">
-        <short>16 byte unsigned value (Low and High QWords)</short>
+        <short>16 byte unsigned value (Low and High QWords).</short>
       </element>
       <element name="TMapIdType.its16">
-        <short>16 byte signed value (Low QWord and High Int64)</short>
+        <short>16 byte signed value (Low QWord and High Int64).</short>
       </element>
       <element name="TMapIdType.itu32">
-        <short>32 byte unsigned value (4 QWord values)</short>
+        <short>32 byte unsigned value (4 QWord values).</short>
       </element>
       <element name="TMapIdType.its32">
-        <short>32 byte signed value (3 QWord values and Int64)</short>
+        <short>32 byte signed value (3 QWord values and Int64).</short>
       </element>
 
       <element name="itsPtrSize">
-        <short>Constant that indicates the size of a signed Pointer in the map</short>
+        <short>Constant that indicates the size of a signed Pointer in the map.</short>
         <descr>
           <p>
             itsPtrSize is a constant TMapIdType data type that indicates the size used for  a signed Pointer in the map. The definition is CPU-specific. For a 64-bit CPU, it is defined as its8 in TMapIdType (or Int64). For all other CPUs, it is defines as its4 in TMapIdType (or LongInt).
@@ -93,7 +93,7 @@
       </element>
 
       <element name="ituPtrSize">
-        <short>Constant that indicates the size of an unsigned Pointer in the map</short>
+        <short>Constant that indicates the size of an unsigned Pointer in the map.</short>
         <descr>
           <p>
             ituPtrSize is a constant TMapIdType data type that indicates the size used for an unsigned Pointer in the map. The definition is CPU-specific. For a 64-bit CPU, it is defined as itu8 in TMapIdType (or QWord). For all other CPUs, it is defines as itu4 in TMapIdType (or LongWord).
@@ -108,7 +108,7 @@
      </element>
 
       <element name="PMapItem">
-        <short>Pointer to a TMapItem data type</short>
+        <short>Pointer to a TMapItem data type.</short>
         <descr>
           <p>
             PMapItem is a Pointer to a TMapItem data type. PMapItem is the type used to represent the first, last, previous, and next items in a linked list. PMapItem is used in TMapLink and TBaseMap.
@@ -122,7 +122,7 @@
       </element>
 
       <element name="PMapLink">
-        <short>Pointer to a TMapLink data type</short>
+        <short>Pointer to a TMapLink data type.</short>
         <descr>
           <p>
             PMapLink is a Pointer to a TMapLink data type.
@@ -134,7 +134,7 @@
       </element>
 
       <element name="TMapLink">
-        <short>Record type used to build the linked list for items in the map</short>
+        <short>Record type used to build the linked list for items in the map.</short>
         <descr>
           <p>
             TMapLink is a record type with members that contain Pointers to the Previous and Next items in the linked list for the map. TMapLink is used to implement TMapItem.
@@ -143,7 +143,7 @@
       </element>
 
       <element name="TMapLink.Previous">
-        <short>Pointer to the previous item in the linked list for a map</short>
+        <short>Pointer to the previous item in the linked list for a map.</short>
         <descr>
           <p>
             Previous is a PMapItem type that contains a pointer to the previous item in the linked list for a map. Values in Previous and Next are used when TBaseMap adds an item to the map, and when TMapIterator acts upon items in the linked list.
@@ -152,7 +152,7 @@
       </element>
 
       <element name="TMapLink.Next">
-        <short>Pointer to the Next item in the linked list for a map</short>
+        <short>Pointer to the Next item in the linked list for a map.</short>
         <descr>
           <p>
             Next is a PMapItem type that contains a pointer to the Next item in the linked list for a map. Values in Previous and Next are used when TBaseMap adds an item to the map, and when TMapIterator acts upon items in the linked list.
@@ -161,7 +161,7 @@
       </element>
 
       <element name="PMapID">
-        <short>Pointer to a TMapID type</short>
+        <short>Pointer to a TMapID type.</short>
         <descr>
           <p>
             PMapID is a Pointer to a TMapID type.
@@ -170,7 +170,7 @@
       </element>
 
       <element name="TMapID">
-        <short>Represents an ID in a map association</short>
+        <short>Represents an ID in a map association.</short>
         <descr>
           <p>
             TMapID is a record type used to provide access to the byte values in the ID for a map association. Members are provided in TMapID to represent each byte in the signed or unsigned value used in the ID.
@@ -188,106 +188,106 @@
       </element>
       <element name="TMapID.U1">
         <short>
-          Unsigned Byte value for the ID (1 Byte)
+          Unsigned Byte value for the ID (1 Byte).
         </short>
       </element>
       <element name="TMapID.S1">
         Signed ShortInt value for the ID (1 Byte)
-        <short>
+        <short>.
         </short>
       </element>
       <element name="TMapID.U2">
         <short>
-          Unsigned Word value for the ID (2 Bytes)
+          Unsigned Word value for the ID (2 Bytes).
         </short>
       </element>
       <element name="TMapID.S2">
         <short>
-          Signed SmallInt value for the ID (2 Bytes)
+          Signed SmallInt value for the ID (2 Bytes).
         </short>
       </element>
       <element name="TMapID.U4">
         <short>
-          Unsigned LongWord value for the ID (4 Bytes)
+          Unsigned LongWord value for the ID (4 Bytes).
         </short>
       </element>
       <element name="TMapID.S4">
         <short>
-          Signed LongInt value for the ID (4 Bytes)
+          Signed LongInt value for the ID (4 Bytes).
         </short>
       </element>
       <element name="TMapID.U8">
         <short>
-          Unsigned QWord value for the ID (8 Bytes)
+          Unsigned QWord value for the ID (8 Bytes).
         </short>
       </element>
       <element name="TMapID.S8">
         <short>
-          Signed Int64 value for the ID (8 Bytes)
+          Signed Int64 value for the ID (8 Bytes).
         </short>
       </element>
       <element name="TMapID.U16H">
         <short>
-          Unsigned QWords (Low and High) (16 Bytes) (with Endian byte order)
+          Unsigned QWords (Low and High) (16 Bytes) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.U16L">
-        <short>
+        <short>.
         </short>
       </element>
       <element name="TMapID.S16H">
-        <short>
+        <short>.
         </short>
       </element>
       <element name="TMapID.S16L">
         <short>
-          Signed QWord (Low) and Int64 (High) (16 Bytes) (with Endian byte order)
+          Signed QWord (Low) and Int64 (High) (16 Bytes) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.U32HH">
         <short>
-          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order)
+          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.U32HL">
         <short>
-          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order)
+          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.U32LH">
         <short>
-          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order)
+          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.U32LL">
         <short>
-          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order)
+          Unsigned QWords (LL, LH, HL, HH) (32 Bytes) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.S32HH">
         <short>
-          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order)
+          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.S32HL">
         <short>
-          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order)
+          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.S32LH">
         <short>
-          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order)
+          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order).
         </short>
       </element>
       <element name="TMapID.S32LL">
         <short>
-          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order)
+          Signed QWords (LL, LH, HL)  and signed Int64 (HH) (with Endian byte order).
         </short>
       </element>
 
       <element name="TMapItem">
         <short>
-          Represents the ID and order of items in the linked list for the map
+          Represents the ID and order of items in the linked list for the map.
         </short>
         <descr>
           <p>
@@ -298,7 +298,7 @@
 
       <element name="TMapItem.Link">
         <short>
-          Provides navigation to the previous and next map items in the linked list
+          Provides navigation to the previous and next map items in the linked list.
         </short>
         <descr>
           <p>
@@ -309,7 +309,7 @@
 
       <element name="TMapItem.ID">
         <short>
-          Represents the ID for the map item
+          Represents the ID for the map item.
         </short>
         <descr>
           <p>
@@ -319,7 +319,7 @@
       </element>
 
       <element name="TLockedMapModifyException">
-        <short>Exception raised when a modification is made to a locked Map</short>
+        <short>Exception raised when a modification is made to a locked Map.</short>
         <descr/>
         <seealso>
           <link id="TBaseMap"/>
@@ -327,7 +327,7 @@
       </element>
 
       <element name="TLockedMapModifyException.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and calls the inherited constructor using the exception message text: 'Map modification not allowed'.
@@ -343,7 +343,7 @@
 
       <element name="TBaseMap">
         <short>
-          Implements the base class for a map for unique IDs to arbitrary data
+          Implements the base class for a map for unique IDs to arbitrary data.
         </short>
         <descr>
           <p>
@@ -370,66 +370,66 @@
       <element name="TBaseMap.FLocked"/>
 
       <element name="TBaseMap.FindNode">
-        <short>Finds a node in the AVL Tree with the specified ID</short>
+        <short>Finds a node in the AVL Tree with the specified ID.</short>
       </element>
       <element name="TBaseMap.FindNode.Result">
-        <short>AVL Tree node with the specified item</short>
+        <short>AVL Tree node with the specified item.</short>
       </element>
       <element name="TBaseMap.FindNode.AId">
-        <short>ID to locate in the AVL Tree</short>
+        <short>ID to locate in the AVL Tree.</short>
       </element>
 
       <element name="TBaseMap.FindItem">
-        <short>Finds the data for the item with the specified ID</short>
+        <short>Finds the data for the item with the specified ID.</short>
       </element>
       <element name="TBaseMap.FindItem.Result">
-        <short>Data stored in the AVL Tree for the specified ID</short>
+        <short>Data stored in the AVL Tree for the specified ID.</short>
       </element>
       <element name="TBaseMap.FindItem.AId">
-        <short>ID to locate in the AVL Tree</short>
+        <short>ID to locate in the AVL Tree.</short>
       </element>
 
       <element name="TBaseMap.FreeData">
-        <short>Frees the data for the specified AVL Tree node</short>
+        <short>Frees the data for the specified AVL Tree node.</short>
       </element>
       <element name="TBaseMap.FreeData.ANode">
-        <short>AVL Tree node to locate in the map</short>
+        <short>AVL Tree node to locate in the map.</short>
       </element>
 
       <element name="TBaseMap.TreeCompareID">
         <short>
-          Gets the relative order for the specified map items using their binary ID values
+          Gets the relative order for the specified map items using their binary ID values.
         </short>
       </element>
       <element name="TBaseMap.TreeCompareID.Result">
-        <short>-1, 0, or 1 as the relative order for the map items</short>
+        <short>-1, 0, or 1 as the relative order for the map items.</short>
       </element>
       <element name="TBaseMap.TreeCompareID.Sender">
-        <short>AVL Tree for the operation</short>
+        <short>AVL Tree for the operation.</short>
       </element>
       <element name="TBaseMap.TreeCompareID.AItem1">
-        <short>Map item to compare</short>
+        <short>Map item to compare.</short>
       </element>
       <element name="TBaseMap.TreeCompareID.AItem2">
-        <short>Map item to compare</short>
+        <short>Map item to compare.</short>
       </element>
 
       <element name="TBaseMap.IteratorAdd">
-        <short>Adds the map iterator to the internal list</short>
+        <short>Adds the map iterator to the internal list.</short>
       </element>
       <element name="TBaseMap.IteratorAdd.AIterator">
-        <short>Map iterator to add to the list</short>
+        <short>Map iterator to add to the list.</short>
       </element>
 
       <element name="TBaseMap.IteratorRemove">
-        <short>Removes the map iterator from the internal list</short>
+        <short>Removes the map iterator from the internal list.</short>
       </element>
       <element name="TBaseMap.IteratorRemove.AIterator">
-        <short>Map iterator to remove from the list</short>
+        <short>Map iterator to remove from the list.</short>
       </element>
 
       <element name="TBaseMap.LockMap">
-        <short>Locks the Map when an iterator is added</short>
+        <short>Locks the Map when an iterator is added.</short>
         <descr>
           <p>
             Calls <var>InterLockedIncrement</var> to increase the value in the internal member used to track the locking state.
@@ -441,7 +441,7 @@
       </element>
 
       <element name="TBaseMap.UnLockMap">
-        <short>Unlocks the Map when an iterator is removed</short>
+        <short>Unlocks the Map when an iterator is removed.</short>
         <descr>
           <p>
             Calls <var>InterLockedDecrement</var> to decrease the value in the internal member used to track the locking state.
@@ -454,7 +454,7 @@
 
       <element name="TBaseMap.InternalAdd">
         <short>
-          Adds a map item with the specified ID and Data to the AVL Tree
+          Adds a map item with the specified ID and Data to the AVL Tree.
         </short>
         <descr>
           <p>
@@ -474,15 +474,15 @@
         </errors>
       </element>
       <element name="TBaseMap.InternalAdd.AId">
-        <short>ID for the new map item</short>
+        <short>ID for the new map item.</short>
       </element>
       <element name="TBaseMap.InternalAdd.AData">
-        <short>Data for the new map item</short>
+        <short>Data for the new map item.</short>
       </element>
 
       <element name="TBaseMap.InternalGetData">
         <short>
-          Gets the data stored in the specified map item
+          Gets the data stored in the specified map item.
         </short>
         <descr>
           <p>
@@ -500,18 +500,18 @@
         </seealso>
       </element>
       <element name="TBaseMap.InternalGetData.Result">
-        <short>True when the specified map item is a valid pointer</short>
+        <short>True when the specified map item is a valid pointer.</short>
       </element>
       <element name="TBaseMap.InternalGetData.AItem">
-        <short>Map item to examine n the method</short>
+        <short>Map item to examine n the method.</short>
       </element>
       <element name="TBaseMap.InternalGetData.AData">
-        <short>Data stored in the specified map item</short>
+        <short>Data stored in the specified map item.</short>
       </element>
 
       <element name="TBaseMap.InternalGetDataPtr">
         <short>
-          Gets a Pointer to the data for the specified map item
+          Gets a Pointer to the data for the specified map item.
         </short>
         <descr>
           <p>
@@ -530,15 +530,15 @@
         </seealso>
       </element>
       <element name="TBaseMap.InternalGetDataPtr.Result">
-        <short>Pointer to the data for the specified map item</short>
+        <short>Pointer to the data for the specified map item.</short>
       </element>
       <element name="TBaseMap.InternalGetDataPtr.AItem">
-        <short>Map item examined in the method</short>
+        <short>Map item examined in the method.</short>
       </element>
 
       <element name="TBaseMap.InternalGetId">
         <short>
-          Get the ID value for the specified map item
+          Get the ID value for the specified map item.
         </short>
         <descr>
           <p>
@@ -553,17 +553,17 @@
         </descr>
       </element>
       <element name="TBaseMap.InternalGetId.Result">
-        <short>False if the specified map item is not a valid Pointer</short>
+        <short>False if the specified map item is not a valid Pointer.</short>
       </element>
       <element name="TBaseMap.InternalGetId.AItem">
-        <short>Map item examined in the method</short>
+        <short>Map item examined in the method.</short>
       </element>
       <element name="TBaseMap.InternalGetId.AID">
-        <short>Value for the ID in the specified map item</short>
+        <short>Value for the ID in the specified map item.</short>
       </element>
 
       <element name="TBaseMap.InternalSetData">
-        <short>Stores the data for the specified map item</short>
+        <short>Stores the data for the specified map item.</short>
         <descr/>
       </element>
       <element name="TBaseMap.InternalSetData.Result">
@@ -577,7 +577,7 @@
       </element>
 
       <element name="TBaseMap.ReleaseData">
-        <short>Frees resources allocated for the data in the map item</short>
+        <short>Frees resources allocated for the data in the map item.</short>
         <descr/>
       </element>
       <element name="TBaseMap.ReleaseData.ADataPtr">
@@ -585,7 +585,7 @@
       </element>
 
       <element name="TBaseMap.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
       </element>
       <element name="TBaseMap.Create.AIdType">
@@ -596,12 +596,12 @@
       </element>
 
       <element name="TBaseMap.Clear">
-        <short>Clears all map items in the AVL Tree</short>
+        <short>Clears all map items in the AVL Tree.</short>
         <descr/>
       </element>
 
       <element name="TBaseMap.Count">
-        <short>Gets the number of map items in the AVL Tree</short>
+        <short>Gets the number of map items in the AVL Tree.</short>
         <descr/>
       </element>
       <element name="TBaseMap.Count.Result">
@@ -609,7 +609,7 @@
       </element>
 
       <element name="TBaseMap.Delete">
-        <short>Deletes the specified map item from the AVL Tree</short>
+        <short>Deletes the specified map item from the AVL Tree.</short>
         <descr/>
       </element>
       <element name="TBaseMap.Delete.Result">
@@ -620,12 +620,12 @@
       </element>
 
       <element name="TBaseMap.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
       </element>
 
       <element name="TBaseMapIterator" link="#rtl.Classes.TObject">
-        <short>Specifies the interface used for map item iterators</short>
+        <short>Specifies the interface used for map item iterators.</short>
         <descr/>
       </element>
 
@@ -636,35 +636,35 @@
       <element name="TBaseMapIterator.FEOM"/>
 
       <element name="TBaseMapIterator.MapDestroyed">
-        <short>Called when the map is destroyed</short>
+        <short>Called when the map is destroyed.</short>
       </element>
 
       <element name="TBaseMapIterator.MapCleared">
-        <short>Called when the map is cleared</short>
+        <short>Called when the map is cleared.</short>
       </element>
 
       <element name="TBaseMapIterator.ItemRemove">
-        <short>Called when an Item is removed from the map</short>
+        <short>Called when an Item is removed from the map.</short>
       </element>
       <element name="TBaseMapIterator.ItemRemove.AData">
-        <short>Pointer to the AVL Tree node for the item</short>
+        <short>Pointer to the AVL Tree node for the item.</short>
       </element>
 
       <element name="TBaseMapIterator.AddToMap">
-        <short>Adds the class instance to the associated Map for the iterator</short>
+        <short>Adds the class instance to the associated Map for the iterator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TBaseMapIterator.RemoveFromMap">
-        <short>Removes the class instance from the associated Map for the iterator</short>
+        <short>Removes the class instance from the associated Map for the iterator.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TBaseMapIterator.InternalCreate">
         <short>
-          Initializes the iterator for specified the map
+          Initializes the iterator for specified the map.
         </short>
         <descr>
           <p>
@@ -684,12 +684,12 @@
         </descr>
       </element>
       <element name="TBaseMapIterator.InternalCreate.AMap">
-        <short>Map for the iterator class instance</short>
+        <short>Map for the iterator class instance.</short>
       </element>
 
       <element name="TBaseMapIterator.InternalLocate">
         <short>
-          True when a matching map item is found
+          True when a matching map item is found.
         </short>
         <descr>
           <p>
@@ -717,15 +717,15 @@
         </descr>
       </element>
       <element name="TBaseMapIterator.InternalLocate.Result">
-        <short>True when the map item exists in the map</short>
+        <short>True when the map item exists in the map.</short>
       </element>
       <element name="TBaseMapIterator.InternalLocate.AId">
-        <short>Map item to locate in the method</short>
+        <short>Map item to locate in the method.</short>
       </element>
 
       <element name="TBaseMapIterator.Validate">
         <short>
-          Validates the AVL Tree and the Current item in the iterator
+          Validates the AVL Tree and the Current item in the iterator.
         </short>
         <descr>
           <p>
@@ -748,7 +748,7 @@
 
       <element name="TBaseMapIterator.ValidateMap">
         <short>
-          Ensures that the map for the iterator is still valid
+          Ensures that the map for the iterator is still valid.
         </short>
         <descr>
           <p>
@@ -764,7 +764,7 @@
 
       <element name="TBaseMapIterator.Current">
         <short>
-          Current map item for the iterator
+          Current map item for the iterator.
         </short>
         <descr>
           <p>
@@ -774,32 +774,32 @@
       </element>
 
       <element name="TBaseMapIterator.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
       </element>
 
       <element name="TBaseMapIterator.First">
-        <short>Moves to the first item in the linked list</short>
+        <short>Moves to the first item in the linked list.</short>
         <descr/>
       </element>
 
       <element name="TBaseMapIterator.Next">
-        <short>Moves to the next item in the linked list</short>
+        <short>Moves to the next item in the linked list.</short>
         <descr/>
       </element>
 
       <element name="TBaseMapIterator.Previous">
-        <short>Moves to the previous item in the linked list</short>
+        <short>Moves to the previous item in the linked list.</short>
         <descr/>
       </element>
 
       <element name="TBaseMapIterator.Last">
-        <short>Moves to the last item in the linked list</short>
+        <short>Moves to the last item in the linked list.</short>
         <descr/>
       </element>
 
       <element name="TBaseMapIterator.Valid">
-        <short>Indicates if the map for the iterator has been freed</short>
+        <short>Indicates if the map for the iterator has been freed.</short>
         <descr>
           <p>
             Valid is a Boolean function used to determine if the map for the iterator is still valid. The return value is False when the map class instance has been freed (contains <var>Nil</var>).
@@ -808,11 +808,11 @@
       </element>
       <!-- function result Visibility: public -->
       <element name="TBaseMapIterator.Valid.Result">
-        <short>False when the map for the iterator has been freed</short>
+        <short>False when the map for the iterator has been freed.</short>
       </element>
 
       <element name="TBaseMapIterator.BOM">
-        <short>True when the iterator is at the beginning of the linked list for the map</short>
+        <short>True when the iterator is at the beginning of the linked list for the map.</short>
         <descr>
           <p>
             BOM is a read-only Boolean property that indicates if the iterator is at the beginning of the linked list for the map, or the value in Current is <var>Nil</var>. The value in BOM is updated when navigation methods for the iterator are used, such as: First, Next, Previous, Last, and Locate.
@@ -821,13 +821,13 @@
       </element>
 
       <element name="TBaseMapIterator.EOM">
-        <short>True when the iterator is at the end of the linked list for the map</short>
+        <short>True when the iterator is at the end of the linked list for the map.</short>
         <descr/>
       </element>
 
       <element name="TMap">
         <short>
-          Implements a map for unique IDs to arbitrary data
+          Implements a map for unique IDs to arbitrary data.
         </short>
         <descr>
           <p>
@@ -844,20 +844,20 @@
 
       <element name="TMap.Add" link="#lazutils.maps.TBaseMap.InternalAdd">
         <short>
-          Adds a map item with the specified ID and Data values
+          Adds a map item with the specified ID and Data values.
         </short>
         <descr/>
       </element>
       <element name="TMap.Add.AId">
-        <short>Map item to add in the method</short>
+        <short>Map item to add in the method.</short>
       </element>
       <element name="TMap.Add.AData">
-        <short>Data for the map item to add in the method</short>
+        <short>Data for the map item to add in the method.</short>
       </element>
 
       <element name="TMap.HasId">
         <short>
-          Checks for the specified ID is in the AVL Tree for the map
+          Checks for the specified ID is in the AVL Tree for the map.
         </short>
         <descr>
           <p>
@@ -866,15 +866,15 @@
         </descr>
       </element>
       <element name="TMap.HasId.Result">
-        <short>True when the AVL Tree contains a node for the specified map item</short>
+        <short>True when the AVL Tree contains a node for the specified map item.</short>
       </element>
       <element name="TMap.HasId.AID">
-        <short>Map item to locate in the AVL Tree</short>
+        <short>Map item to locate in the AVL Tree.</short>
       </element>
 
       <element name="TMap.GetData" link="#lazutils.maps.TBaseMap.InternalGetData">
         <short>
-          Gets the Data for the map item with the specified ID
+          Gets the Data for the map item with the specified ID.
         </short>
         <descr/>
       </element>
@@ -889,7 +889,7 @@
       </element>
 
       <element name="TMap.GetDataPtr" link="#lazutils.maps.TBaseMap.InternalGetDataPtr">
-        <short>Gets a Pointer to the data for the specified map item</short>
+        <short>Gets a Pointer to the data for the specified map item.</short>
         <descr/>
       </element>
       <element name="TMap.GetDataPtr.Result" link="#lazutils.maps.TBaseMap.InternalGetDataPtr.Result">
@@ -900,7 +900,7 @@
       </element>
 
       <element name="TMap.SetData" link="#lazutils.maps.TBaseMap.InternalSetData">
-        <short>Stores the data for the specified map item</short>
+        <short>Stores the data for the specified map item.</short>
         <descr/>
       </element>
       <element name="TMap.SetData.Result" link="#lazutils.maps.TBaseMap.InternalSetData.Result">
@@ -914,7 +914,7 @@
       </element>
 
       <element name="TMapIterator" link="#lazutils.maps.TBaseMapIterator">
-        <short>Implements an iterator for items in a map</short>
+        <short>Implements an iterator for items in a map.</short>
         <descr>
           <p>
             <var>TMapIterator</var> is a <var>TBaseMapIterator</var> descendant that implements an iterator for items in a map. TMapIterator provides methods to initialize the iterator for a map. It also provides methods to read the IDs for map items, and to read and write the Data in map items. TMapIterator also provides an implementation of the Locate method.
@@ -923,15 +923,15 @@
       </element>
 
       <element name="TMapIterator.Create" link="#lazutils.maps.TBaseMapIterator.InternalCreate">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
       </element>
       <element name="TMapIterator.Create.AMap">
-        <short>Map with IDs and Data for the iterator</short>
+        <short>Map with IDs and Data for the iterator.</short>
       </element>
 
       <element name="TMapIterator.DataPtr" link="#lazutils.maps.TBaseMap.InternalGetDataPtr">
-        <short>Gets the Pointer to the Data in a map item</short>
+        <short>Gets the Pointer to the Data in a map item.</short>
         <descr/>
       </element>
       <element name="TMapIterator.DataPtr.Result" link="#lazutils.maps.TBaseMap.InternalGetDataPtr.Result">
@@ -939,15 +939,15 @@
       </element>
 
       <element name="TMapIterator.GetData" link="#lazutils.maps.TBaseMap.InternalGetData">
-        <short>Gets the Data for a map item</short>
+        <short>Gets the Data for a map item.</short>
         <descr/>
       </element>
       <element name="TMapIterator.GetData.AData" link="#lazutils.maps.TBaseMap.InternalGetData,AData">
-        <short>Data for the map item</short>
+        <short>Data for the map item.</short>
       </element>
 
       <element name="TMapIterator.GetID" link="#lazutils.maps.TBaseMap.InternalGetID">
-        <short>Gets the ID for a map item</short>
+        <short>Gets the ID for a map item.</short>
         <descr/>
       </element>
       <element name="TMapIterator.GetID.AID" link="#lazutils.maps.TBaseMap.InternalGetID.AID">
@@ -955,7 +955,7 @@
       </element>
 
       <element name="TMapIterator.Locate" link="#lazutils.maps.TBaseMapIterator.InternalLocate">
-        <short>Locates a map item with the specified ID</short>
+        <short>Locates a map item with the specified ID.</short>
         <descr/>
       </element>
       <element name="TMapIterator.Locate.Result" link="#lazutils.maps.TBaseMapIterator.InternalLocate.Result">
@@ -966,7 +966,7 @@
       </element>
 
       <element name="TMapIterator.SetData" link="#lazutils.maps.TBaseMap.InternalSetData">
-        <short>Sets the Data for a map item</short>
+        <short>Sets the Data for a map item.</short>
         <descr/>
       </element>
       <element name="TMapIterator.SetData.AData" link="#lazutils.maps.TBaseMap.InternalSetData.AData">
@@ -974,7 +974,7 @@
       </element>
 
       <element name="TLockedMapIterator">
-        <short>Implements a map iterator with thread-safe locking in the associated map</short>
+        <short>Implements a map iterator with thread-safe locking in the associated map.</short>
         <descr>
             <p>
               <var>TLockedMapIterator</var> is a <var>TMapIterator</var> descendant which allows iteration of a map in multiple threads. The associated map will be locked prior to adding or removing entries.
@@ -997,7 +997,7 @@
 
       <element name="TTypedMap" link="#lazutils.maps.TMap">
         <short>
-          Implements a map with support for reference counted Type Information in the Data
+          Implements a map with support for reference counted Type Information in the Data.
         </short>
         <descr>
           <p>
@@ -1042,7 +1042,7 @@
       </element>
 
       <element name="TTypedMap.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
       </element>
       <element name="TTypedMap.Create.AIdType">
@@ -1053,7 +1053,7 @@
       </element>
 
       <element name="TTypedMap.Destroy" link="#lazutils.maps.TBaseMap.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
       </element>
 
@@ -1069,7 +1069,7 @@
       </element>
 
       <element name="TTypedMap.GetData" link="#lazutils.maps.TMap.GetData">
-        <short>Gets the Data for the specified map item</short>
+        <short>Gets the Data for the specified map item.</short>
         <descr/>
       </element>
       <element name="TTypedMap.GetData.Result">
@@ -1083,7 +1083,7 @@
       </element>
 
       <element name="TTypedMap.GetDataPtr" link="#lazutils.maps.TMap.GetDataPtr">
-        <short>Gets a Pointer to the Data for the specified map item</short>
+        <short>Gets a Pointer to the Data for the specified map item.</short>
         <descr/>
       </element>
       <element name="TTypedMap.GetDataPtr.Result">
@@ -1094,7 +1094,7 @@
       </element>
 
       <element name="TTypedMap.SetData" link="#lazutils.maps.TMap.SetData">
-        <short>Stores the Data for the specified map item</short>
+        <short>Stores the Data for the specified map item.</short>
         <descr/>
       </element>
       <element name="TTypedMap.SetData.Result">
@@ -1108,7 +1108,7 @@
       </element>
 
       <element name="TTypedMapIterator" link="#lazutils.maps.TMapIterator">
-        <short>Implements an iterator for items in a map</short>
+        <short>Implements an iterator for items in a map.</short>
         <descr>
           <p>
             <var>TTypedMapIterator</var> is a <var>TMapIterator</var> descendant that implements an iterator for map items with reference counted Type Information in their Data. TTypedMapIterator provides methods to initialize the iterator for a map. It also provides methods to read the IDs for map items, and to read and write the Data in map items. TTypedMapIterator also provides an implementation of the Locate method.
@@ -1117,7 +1117,7 @@
       </element>
 
       <element name="TTypedMapIterator.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
       </element>
       <element name="TTypedMapIterator.Create.AMap">
@@ -1125,7 +1125,7 @@
       </element>
 
       <element name="TTypedMapIterator.GetData">
-        <short>Gets the Data for the map item</short>
+        <short>Gets the Data for the map item.</short>
         <descr/>
       </element>
       <element name="TTypedMapIterator.GetData.AData">
@@ -1133,7 +1133,7 @@
       </element>
 
       <element name="TTypedMapIterator.GetID">
-        <short>Gets the ID for the map item</short>
+        <short>Gets the ID for the map item.</short>
         <descr/>
       </element>
       <element name="TTypedMapIterator.GetID.AID">
@@ -1141,7 +1141,7 @@
       </element>
 
       <element name="TTypedMapIterator.Locate">
-        <short>Locates a map item with the specified ID</short>
+        <short>Locates a map item with the specified ID.</short>
         <descr/>
       </element>
       <element name="TTypedMapIterator.Locate.Result">
@@ -1152,7 +1152,7 @@
       </element>
 
       <element name="TTypedMapIterator.SetData">
-        <short>Stores the Data for the map item</short>
+        <short>Stores the Data for the map item.</short>
         <descr/>
       </element>
       <element name="TTypedMapIterator.SetData.AData">
@@ -1161,7 +1161,7 @@
 
       <!-- function Visibility: default -->
       <element name="MapReport">
-        <short>Gets information about the AVL Tree in the specified map</short>
+        <short>Gets information about the AVL Tree in the specified map.</short>
         <descr>
           <p>
             MapReport is a String function used to get information about the AVL Tree in the specified map. The return value contains information about the order of nodes in the AVL Tree, and the pointers used in the structure. It is intended for use as a diagnostic tool.
@@ -1169,10 +1169,10 @@
         </descr>
       </element>
       <element name="MapReport.Result">
-        <short>String with the multi-line information about the AVL Tree</short>
+        <short>String with the multi-line information about the AVL Tree.</short>
       </element>
       <element name="MapReport.AMap">
-        <short>Map class to examine in the routine</short>
+        <short>Map class to examine in the routine.</short>
       </element>
 
     </module>

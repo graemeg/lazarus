@@ -8,7 +8,7 @@
     -->
     <module name="LookupStringList">
       <short>
-        Contains TLookupStringList, an unsorted StringList with a fast lookup feature
+        Contains TLookupStringList, an unsorted StringList with a fast lookup feature.
       </short>
       <descr>
         <p>
@@ -22,7 +22,7 @@
       <!-- class Visibility: default -->
       <element name="TLookupStringList" link="#rtl.Classes.TStringList">
         <short>
-          Implements an unsorted StringList with a fast lookup feature
+          Implements an unsorted StringList with a fast lookup feature.
         </short>
         <descr>
           <p>
@@ -47,7 +47,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TLookupStringList.InsertItem" link="#rtl.Classes.TStringList.InsertItem">
         <short>
-          Adds a new value to the items and the string map with duplicate enforcement
+          Adds a new value to the items and the string map with duplicate enforcement.
         </short>
         <descr>
           <p>
@@ -80,17 +80,17 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.InsertItem.Index">
-        <short>Position for the new item</short>
+        <short>Position for the new item.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.InsertItem.S">
-        <short>Value for the new item</short>
+        <short>Value for the new item.</short>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TLookupStringList.Create" link="#rtl.Classes.TStringList.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -103,7 +103,7 @@
       <!-- destructor Visibility: public -->
       <element name="TLookupStringList.Destroy" link="#rtl.Classes.TStringList.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -116,7 +116,7 @@
       <!-- procedure Visibility: public -->
       <element name="TLookupStringList.Assign" link="#rtl.Classes.TStrings.Assign">
         <short>
-          Implements object persistence in the class
+          Implements object persistence in the class.
         </short>
         <descr>
           <p>
@@ -127,13 +127,13 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.Assign.Source">
-        <short>Persistent object with property values for the class instance</short>
+        <short>Persistent object with property values for the class instance.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TLookupStringList.Clear" link="#rtl.Classes.TStringList.Clear">
         <short>
-          Clears the content stored in the class instance
+          Clears the content stored in the class instance.
         </short>
         <descr>
           <p>
@@ -146,7 +146,7 @@
       <!-- procedure Visibility: public -->
       <element name="TLookupStringList.Delete" link="#rtl.Classes.TStringList.Delete">
         <short>
-          Deletes the value at the specified position
+          Deletes the value at the specified position.
         </short>
         <descr>
           <p>
@@ -157,13 +157,13 @@
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.Delete.Index">
-        <short>Ordinal position of the value to delete</short>
+        <short>Ordinal position of the value to delete.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLookupStringList.Add" link="#rtl.Classes.TStringList.Add">
         <short>
-          Adds the specified value to the Strings in the list
+          Adds the specified value to the Strings in the list.
         </short>
         <descr>
           <p>
@@ -178,18 +178,18 @@
       <!-- function result Visibility: default -->
       <element name="TLookupStringList.Add.Result">
         <short>
-          Ordinal position for the new value, or -1 when duplicates are not  allowed
+          Ordinal position for the new value, or -1 when duplicates are not  allowed.
         </short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.Add.S">
-        <short>Value to add to the Strings in the list</short>
+        <short>Value to add to the Strings in the list.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLookupStringList.AddObject" link="#rtl.Classes.TStrings.AddObject">
         <short>
-          Adds the specified values to the Strings and Objects in the list
+          Adds the specified values to the Strings and Objects in the list.
         </short>
         <descr>
           <p>
@@ -204,22 +204,22 @@
       <!-- function result Visibility: default -->
       <element name="TLookupStringList.AddObject.Result">
         <short>
-          Ordinal position for the new values, or -1 when duplicates are not allowed
+          Ordinal position for the new values, or -1 when duplicates are not allowed.
         </short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.AddObject.S">
-        <short>Value added to the Strings property</short>
+        <short>Value added to the Strings property.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.AddObject.AObject">
-        <short>Value added to the Objects property</short>
+        <short>Value added to the Objects property.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLookupStringList.Contains">
         <short>
-          Determines if the specified value already exists in the string map
+          Determines if the specified value already exists in the string map.
         </short>
         <descr>
           <p>
@@ -233,17 +233,17 @@
       </element>
       <!-- function result Visibility: default -->
       <element name="TLookupStringList.Contains.Result">
-        <short>True when the value is already stored in the TStringMap for the class</short>
+        <short>True when the value is already stored in the TStringMap for the class.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.Contains.S">
-        <short>Value to locate in the string map</short>
+        <short>Value to locate in the string map.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLookupStringList.Find" link="#rtl.Classes.TStringList.Find">
         <short>
-          Locates the specified value in the Strings property
+          Locates the specified value in the Strings property.
         </short>
         <descr>
           <p>
@@ -257,21 +257,21 @@
       </element>
       <!-- function result Visibility: default -->
       <element name="TLookupStringList.Find.Result">
-        <short>True when the value is located in the Strings property</short>
+        <short>True when the value is located in the Strings property.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.Find.S">
-        <short>Value to find in the Strings property</short>
+        <short>Value to find in the Strings property.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.Find.Index">
-        <short>Ordinal position where the value was found</short>
+        <short>Ordinal position where the value was found.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLookupStringList.IndexOf" link="#rtl.Classes.TStringList.IndexOf">
         <short>
-          Gets the position in Strings where the specified value is stored
+          Gets the position in Strings where the specified value is stored.
         </short>
         <descr>
           <p>
@@ -286,17 +286,17 @@
       <!-- function result Visibility: default -->
       <element name="TLookupStringList.IndexOf.Result">
         <short>
-          Ordinal position for the specified value, or -1 when it does not exist
+          Ordinal position for the specified value, or -1 when it does not exist.
         </short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TLookupStringList.IndexOf.S">
-        <short>Value to locate in Strings</short>
+        <short>Value to locate in Strings.</short>
       </element>
 
       <element name="Deduplicate">
         <short>
-          Removes duplicate strings in AStrings
+          Removes duplicate strings in AStrings.
         </short>
         <descr>
           <p>
@@ -306,10 +306,10 @@
         <seealso></seealso>
       </element>
       <element name="Deduplicate.AStrings">
-        <short>TStrings to examine in the function</short>
+        <short>TStrings to examine in the function.</short>
       </element>
       <element name="Deduplicate.Result">
-        <short>False if AStrings owns and contains objects</short>
+        <short>False if AStrings owns and contains objects.</short>
       </element>
 
     </module>

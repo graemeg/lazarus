@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="UTF8Process">
-      <short>Implements a version of the FCL TProcess component that allows UTF-8-encoded arguments</short>
+      <short>Implements a version of the FCL TProcess component that allows UTF-8-encoded arguments.</short>
       <descr>
         <p>
           <file>utf8process.pp</file> implements the <var>TProcessUTF8</var> component which provides a TProcess descendant that allows UTF-8-encoded values in its properties. The TProcessUTF8 component is added to the <b>System</b> tab in the Lazarus IDE Component Palette.
@@ -41,7 +41,7 @@
       </element>
 
       <element name="TProcessUTF8">
-        <short>Implements a version of the FCL TProcess that allows UTF-8-encoded arguments</short>
+        <short>Implements a version of the FCL TProcess that allows UTF-8-encoded arguments.</short>
         <descr>
           <p>
             <var>TProcessUTF8</var> is a <var>TProcess</var> descendant which implements a version of TProcess that accepts and processes UTF-8-encoded arguments. It includes a <var>ParseCmdLine</var> method used to separate a command line into the <var>Executable</var> name and <var>Parameters</var> used in the class instance.
@@ -60,7 +60,7 @@
       </element>
 
       <element name="TProcessUTF8.SetProcessHandle">
-        <short>Updates the process handle for the class instance</short>
+        <short>Updates the process handle for the class instance.</short>
         <descr>
           <p>
             Raises an Exception if the ProcessHandle property cannot be set to the value specified in aProcessHandle.
@@ -71,29 +71,29 @@
         </seealso>
       </element>
       <element name="TProcessUTF8.SetProcessHandle.aProcessHandle">
-        <short>Process handle assigned to the ancestor class</short>
+        <short>Process handle assigned to the ancestor class.</short>
       </element>
 
       <element name="TProcessUTF8.SetThreadHandle">
-        <short>Sets ThreadHandle to the specified value</short>
+        <short>Sets ThreadHandle to the specified value.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TProcessUTF8.SetThreadHandle.aThreadHandle">
-        <short>Thread handle assigned to the ancestor class</short>
+        <short>Thread handle assigned to the ancestor class.</short>
       </element>
 
       <element name="TProcessUTF8.SetProcessID">
-        <short>Sets ProcessID to the specified value</short>
+        <short>Sets ProcessID to the specified value.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TProcessUTF8.SetProcessID.aProcessID">
-        <short>Process ID assigned to the ancestor class</short>
+        <short>Process ID assigned to the ancestor class.</short>
       </element>
 
       <element name="TProcessUTF8.Execute">
-        <short>Starts execution of the process</short>
+        <short>Starts execution of the process.</short>
         <descr>
           <p>
             <var>Execute</var> is an overridden method in <var>TProcessUTF8</var>, and is defined only for the Microsoft Windows platforms. Execute handles the nuances of configuring and executing a call to CreateProcessW in the Windows API.
@@ -138,7 +138,7 @@
 
       <element name="TProcessUTF8.ParseCmdLine">
         <short>
-          Separates values in the CommandLine argument into the Executable and Parameters properties
+          Separates values in the CommandLine argument into the Executable and Parameters properties.
         </short>
         <descr>
           <p>
@@ -161,14 +161,14 @@
         </seealso>
       </element>
       <element name="TProcessUTF8.ParseCmdLine.CmdLine">
-        <short>Command line examined and parsed in the method</short>
+        <short>Command line examined and parsed in the method.</short>
       </element>
       <element name="TProcessUTF8.ParseCmdLine.ReadBackslash">
-        <short>When True, the BackSlash character is used to quote character values</short>
+        <short>When True, the BackSlash character is used to quote character values.</short>
       </element>
 
       <element name="RunCmdFromPath">
-        <short>Executes a command found in the current PATH environment</short>
+        <short>Executes a command found in the current PATH environment.</short>
         <descr>
           <p>
             <var>RunCmdFromPath</var> is used to execute a command which can be found in the current <var>PATH</var> environment. For example, the following locates and executes the /bin/ls command with the specified arguments:
@@ -206,14 +206,14 @@
         </seealso>
       </element>
       <element name="RunCmdFromPath.ProgramFilename">
-        <short>Name of the program to execute</short>
+        <short>Name of the program to execute.</short>
       </element>
       <element name="RunCmdFromPath.CmdLineParameters">
-        <short>Command line parameters for the process</short>
+        <short>Command line parameters for the process.</short>
       </element>
 
       <element name="FindFilenameOfCmd">
-        <short>Gets the full path for the specified executable file</short>
+        <short>Gets the full path for the specified executable file.</short>
         <descr>
           <p>
             <var>FindFilenameOfCmd</var> is a <var>String</var> function used to get the full path for the executable file specified in the <var>ProgramFilename</var> argument. FindFilenameOfCmd calls the <var>FilenameIsAbsolute</var> routine to determine if a relative path in ProgramFilename needs to be resolved. <var>FindDefaultExecutablePath</var> is called to search the <b>PATH</b> environment when path information is not used in ProgramFilename.
@@ -229,14 +229,14 @@
         </seealso>
       </element>
       <element name="FindFilenameOfCmd.Result">
-        <short>Absolute path to the requested program file, or an empty string</short>
+        <short>Absolute path to the requested program file, or an empty string.</short>
       </element>
       <element name="FindFilenameOfCmd.ProgramFilename">
-        <short>Program file examined in the method</short>
+        <short>Program file examined in the method.</short>
       </element>
 
       <element name="GetSystemThreadCount">
-        <short>Gets the number of threads available on the system</short>
+        <short>Gets the number of threads available on the system.</short>
         <descr>
           <p>
             <var>GetSystemThreadCount</var> is an <var>Integer</var> function used to get the number of threads on the system. The implementation for GetSystemThreadCount is platform- and/or OS-specific. For the Windows environment, the total number of processors available (including logical hyperthreaded processors) are returned using the GetProcessAffinityMask API. When GetProcessAffinityMask is unavailable, the total number of processors from GetSystemInfo is used. For UNIX-like environments, either the sysconf or the fpsysctl function is used. For other environments, the return value is always <b>1</b>.
@@ -245,11 +245,11 @@
         <seealso/>
       </element>
       <element name="GetSystemThreadCount.Result">
-        <short>The number of threads on the system</short>
+        <short>The number of threads on the system.</short>
       </element>
 
       <element name="Register">
-        <short>Registers components for use in the Lazarus IDE</short>
+        <short>Registers components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             <var>Register</var> is a procedure used to make components in the unit available for use in the Lazarus IDE. Register calls <var>RegisterComponents</var> to make the <var>TProcessUTF8</var> available on the <b>System</b> tab.

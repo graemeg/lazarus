@@ -5,8 +5,8 @@
     <!-- lazutf8classes -->
     <module name="lazutf8classes">
       <short>
-        Implements UTF-8-enabled classes and routines
-      </short>
+        Implements UTF-8-enabled classes and routines.
+        </short>
       <descr>
         <p>
           <file>lazutf8classes.pas</file> implements UTF-8-enabled classes and routines, including: TFileStreamUTF8, TMemoryStreamUTF8, and TStringListUTF8. This file is part of the <file>LazUtils</file> package.
@@ -19,7 +19,7 @@
       <!-- class Visibility: default -->
       <element name="TFileStreamUTF8" link="#rtl.Classes.TFileStream">
         <short>
-          Implements a file stream with support for UTF-8-encoded file names
+          Implements a file stream with support for UTF-8-encoded file names.
         </short>
         <descr>
           <p>
@@ -35,7 +35,7 @@
       <!-- constructor Visibility: public -->
       <element name="TFileStreamUTF8.Create" link="#rtl.Classes.TFileStream.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -102,23 +102,23 @@
 
       <!-- argument Visibility: default -->
       <element name="TFileStreamUTF8.Create.AFileName">
-        <short>File name where stream content is read or written</short>
+        <short>File name where stream content is read or written.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TFileStreamUTF8.Create.Mode">
-        <short>File mode for the file</short>
+        <short>File mode for the file.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TFileStreamUTF8.Create.Rights">
-        <short>File rights for the file (ignored on Windows)</short>
+        <short>File rights for the file (ignored on Windows).</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TFileStreamUTF8.FileName" link="#rtl.Classes.TFileStream.FileName">
         <short>
-          Name of the file where stream content is read or written
+          Name of the file where stream content is read or written.
         </short>
         <descr>
           FileName is a read-only String property that contains the name of the file where stream content is read or
@@ -130,7 +130,7 @@ written. FileName can contain UTF-8-encoded characters.
       <!-- class Visibility: default -->
       <element name="TStringListUTF8" link="#rtl.Classes.TStringList">
         <short>
-          Implements a UTF-8-enabled string list
+          Implements a UTF-8-enabled string list.
         </short>
         <descr>
           <p>
@@ -146,7 +146,7 @@ written. FileName can contain UTF-8-encoded characters.
       <!-- function Visibility: protected -->
       <element name="TStringListUTF8.DoCompareText">
         <short>
-          Compares UTF-8-encoded lines in the string list
+          Compares UTF-8-encoded lines in the string list.
         </short>
         <descr>
           <p>
@@ -158,23 +158,23 @@ written. FileName can contain UTF-8-encoded characters.
 
       <!-- function result Visibility: default -->
       <element name="TStringListUTF8.DoCompareText.Result">
-        <short>Value from the string comparison</short>
+        <short>Value from the string comparison.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStringListUTF8.DoCompareText.s1">
-        <short>First string value for the comparison</short>
+        <short>First string value for the comparison.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TStringListUTF8.DoCompareText.s2">
-        <short>Second string value for the comparison</short>
+        <short>Second string value for the comparison.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TStringListUTF8.LoadFromFile" link="#rtl.Classes.TStringList.LoadFromFile">
         <short>
-          Loads the content in the string list from the specified file
+          Loads the content in the string list from the specified file.
         </short>
         <descr>
           <p>
@@ -186,13 +186,13 @@ written. FileName can contain UTF-8-encoded characters.
 
       <!-- argument Visibility: default -->
       <element name="TStringListUTF8.LoadFromFile.FileName">
-        <short>File name with content for the string list</short>
+        <short>File name with content for the string list.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TStringListUTF8.SaveToFile" link="#rtl.Classes.TStringList.SaveToFile">
         <short>
-          Saves the content in the string to the specified file name
+          Saves the content in the string to the specified file name.
         </short>
         <descr>
           <p>
@@ -205,13 +205,13 @@ contain UTF-8-encoded characters. SaveToFile uses a TFileStreamUTF8 instance to 
 
       <!-- argument Visibility: default -->
       <element name="TStringListUTF8.SaveToFile.FileName">
-        <short>File name where content in the string list is stored</short>
+        <short>File name where content in the string list is stored.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TMemoryStreamUTF8" link="#rtl.Classes.TMemoryStream">
         <short>
-          Implements a memory stream which supports file names with UTF-8 encoding
+          Implements a memory stream which supports file names with UTF-8 encoding.
         </short>
         <descr>
           <p>
@@ -227,7 +227,7 @@ contain UTF-8-encoded characters. SaveToFile uses a TFileStreamUTF8 instance to 
       <!-- procedure Visibility: public -->
       <element name="TMemoryStreamUTF8.LoadFromFile" link="#rtl.Classes.TMemoryStream.LoadFromFile">
         <short>
-          Loads the content in the stream from the specified file
+          Loads the content in the stream from the specified file.
         </short>
         <descr>
           <p>
@@ -239,13 +239,13 @@ contain UTF-8-encoded characters. SaveToFile uses a TFileStreamUTF8 instance to 
 
       <!-- argument Visibility: default -->
       <element name="TMemoryStreamUTF8.LoadFromFile.FileName">
-        <short>File name where where content for the stream is stored</short>
+        <short>File name where where content for the stream is stored.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TMemoryStreamUTF8.SaveToFile" link="#rtl.Classes.TMemoryStream.SaveToFile">
         <short>
-          Stores the content in the stream to the specified file
+          Stores the content in the stream to the specified file.
         </short>
         <descr>
           <p>
@@ -257,13 +257,13 @@ contain UTF-8-encoded characters. SaveToFile uses a TFileStreamUTF8 instance to 
 
       <!-- argument Visibility: default -->
       <element name="TMemoryStreamUTF8.SaveToFile.FileName">
-        <short>File name where content in the stream is stored</short>
+        <short>File name where content in the stream is stored.</short>
       </element>
 
       <!-- procedure Visibility:default -->
       <element name="LoadStringsFromFileUTF8">
         <short>
-          Loads the content for a TStringList from the specified file name
+          Loads the content for a TStringList from the specified file name.
         </short>
         <descr>
           <p>
@@ -284,18 +284,18 @@ contain UTF-8-encoded characters. SaveToFile uses a TFileStreamUTF8 instance to 
 
       <!-- argument Visibility: default -->
       <element name="LoadStringsFromFileUTF8.List">
-        <short>TStrings descendant where the content is stored</short>
+        <short>TStrings descendant where the content is stored.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="LoadStringsFromFileUTF8.FileName">
-        <short>File name with the content to load in the string list</short>
+        <short>File name with the content to load in the string list.</short>
       </element>
 
       <!-- procedure Visibility: default -->
       <element name="SaveStringsToFileUTF8">
         <short>
-          Saves the content in the TStringList to the specified file name
+          Saves the content in the TStringList to the specified file name.
         </short>
         <descr>
           <p>
@@ -310,12 +310,12 @@ contain UTF-8-encoded characters. SaveToFile uses a TFileStreamUTF8 instance to 
 
       <!-- argument Visibility: default -->
       <element name="SaveStringsToFileUTF8.List">
-        <short>String list to store in the specified file</short>
+        <short>String list to store in the specified file.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="SaveStringsToFileUTF8.FileName">
-        <short>Name of the file where the content is stored</short>
+        <short>Name of the file where the content is stored.</short>
       </element>
 
     </module>

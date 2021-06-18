@@ -9,7 +9,7 @@
 -->
 
 <module name="lazutf16">
-<short>Contains routines used for UTF-16 character and string operations</short>
+<short>Contains routines used for UTF-16 character and string operations.</short>
 <descr>
 <p>
 <file>lazutf16.pas</file> includes string routines which are based on UTF-16
@@ -30,23 +30,23 @@ This file is part of the <file>LazUtils</file> package.
 
 <!-- function Visibility: default -->
 <element name="UTF16CharacterLength">
-<short>Gets the length of the UTF-16 character in the specified PWideChar value</short>
+<short>Gets the length of the UTF-16 character in the specified PWideChar value.</short>
 <descr>
 Uses the endian-ness for the platform. Returns 0, 1, or 2.
 </descr>
 </element>
 <!-- function result Visibility: default -->
 <element name="UTF16CharacterLength.Result">
-<short>Length of the UTF-16 character in the value, or 0 when Nil</short>
+<short>Length of the UTF-16 character in the value, or 0 when Nil.</short>
 </element>
 <!-- argument Visibility: default -->
 <element name="UTF16CharacterLength.p">
-<short>PWideChar value examined in the routine</short>
+<short>PWideChar value examined in the routine.</short>
 </element>
 
 <!-- function Visibility: default -->
 <element name="UTF16Length">
-<short>Gets the length for the specified value in UTF-16 characters</short>
+<short>Gets the length for the specified value in UTF-16 characters.</short>
 <descr/>
 <seealso/>
 </element>
@@ -70,22 +70,22 @@ Uses the endian-ness for the platform. Returns 0, 1, or 2.
 <!-- function Visibility: default -->
 <element name="UTF16Copy">
 <short>
-Copies a number of UTF-16 characters at the given character position in the specified value
+Copies a number of UTF-16 characters at the given character position in the specified value.
 </short>
 <descr/>
 <seealso/>
 </element>
 <element name="UTF16Copy.Result">
-<short>UnicodeString with the values copied in the routine</short>
+<short>UnicodeString with the values copied in the routine.</short>
 </element>
 <element name="UTF16Copy.s">
-<short>UnicodeString with the values examined in the routine</short>
+<short>UnicodeString with the values examined in the routine.</short>
 </element>
 <element name="UTF16Copy.StartCharIndex">
-<short>1-based staring character (code point) position in the Unicode string</short>
+<short>1-based staring character (code point) position in the Unicode string.</short>
 </element>
 <element name="UTF16Copy.CharCount">
-<short>Number of characters (code points) copied in the the routine</short>
+<short>Number of characters (code points) copied in the the routine.</short>
 </element>
 
 <element name="UTF16CharStart">
@@ -97,17 +97,17 @@ Copies a number of UTF-16 characters at the given character position in the spec
 <short/>
 </element>
 <element name="UTF16CharStart.P">
-<short>PWideChar value with the values examined in the routine</short>
+<short>PWideChar value with the values examined in the routine.</short>
 </element>
 <element name="UTF16CharStart.Len">
-<short>Len is the length in words of P</short>
+<short>Len is the length in words of P.</short>
 </element>
 <element name="UTF16CharStart.CharIndex">
-<short>CharIndex is the position of the desired UnicodeChar (starting at 0)</short>
+<short>CharIndex is the position of the desired UnicodeChar (starting at 0).</short>
 </element>
 
 <element name="UTF16Pos">
-<short>Pos implemented for UTF-16-encoded values</short>
+<short>Pos implemented for UTF-16-encoded values.</short>
 <descr>
 <p>
 <var>UTF16Pos</var> is a <var>PtrInt</var> function used to get the character
@@ -123,21 +123,21 @@ starts in SearchInText, or 0 when not found.
 </element>
 <element name="UTF16Pos.Result">
 <short>
-Character index where the SearchForText starts in SearchInText, or 0 when not found
+Character index where the SearchForText starts in SearchInText, or 0 when not found.
 </short>
 </element>
 <element name="UTF16Pos.SearchForText">
-<short>UTF-16-encoded value to locate in SearchInText</short>
+<short>UTF-16-encoded value to locate in SearchInText.</short>
 </element>
 <element name="UTF16Pos.SearchInText">
-<short>UTF-16-encoded value searched in the routine</short>
+<short>UTF-16-encoded value searched in the routine.</short>
 </element>
 <element name="UTF16Pos.StartPos">
-<short>Optional starting position (in UTF-16 code points, not in words)</short>
+<short>Optional starting position (in UTF-16 code points, not in words).</short>
 </element>
 
 <element name="UTF16CharacterToUnicode">
-<short>Converts ordinal values for UTF-16 code points in p to its Unicode equivalent</short>
+<short>Converts ordinal values for UTF-16 code points in p to its Unicode equivalent.</short>
 <descr>
 <p>
 UTF16CharacterToUnicode converts 16-bit values in p to the equivalent Unicode value.
@@ -163,20 +163,20 @@ contains an invalid UTF-16 code point.
 </element>
 <!-- function result Visibility: default -->
 <element name="UTF16CharacterToUnicode.Result">
-<short>Unicode code point for the values in p</short>
+<short>Unicode code point for the values in p.</short>
 </element>
 <!-- argument Visibility: default -->
 <element name="UTF16CharacterToUnicode.p">
-<short>UTF-16 code points examined and converted in the routine</short>
+<short>UTF-16 code points examined and converted in the routine.</short>
 </element>
 <!-- argument Visibility: default -->
 <element name="UTF16CharacterToUnicode.CharLen">
-<short>Number of UTF-16 code points for the converted character</short>
+<short>Number of UTF-16 code points for the converted character.</short>
 </element>
 
 <!-- function Visibility: default -->
 <element name="UnicodeToUTF16">
-<short>Converts a Unicode character value to its UTF-16 equivalent as a WideString value</short>
+<short>Converts a Unicode character value to its UTF-16 equivalent as a WideString value.</short>
 <descr>
 <p>
 Cardinal values below $10000 result in a single WideChar code value for the
@@ -188,11 +188,11 @@ represent the UTF-16 code point.
 </element>
 <!-- function result Visibility: default -->
 <element name="UnicodeToUTF16.Result">
-<short>WideString value with UTF-16 code point the Unicode character</short>
+<short>WideString value with UTF-16 code point the Unicode character.</short>
 </element>
 <!-- argument Visibility: default -->
 <element name="UnicodeToUTF16.u">
-<short>Unicode character value converted in the routine</short>
+<short>Unicode character value converted in the routine.</short>
 </element>
 
 <element name="IsUTF16CharValid">
@@ -231,7 +231,7 @@ Use ANextChar = #0 to indicate that there is no next char.
 </element>
 
 <element name="IsUTF16StringValid">
-<short>Determines if the specified WideString contains valid UTF-16 code points</short>
+<short>Determines if the specified WideString contains valid UTF-16 code points.</short>
 <descr>
 <p>
 Examines the content in AWideStr for valid UTF-16 characters. Calls
@@ -241,10 +241,10 @@ IsUTF16CharValid for consecutive code point pairs.
 <seealso/>
 </element>
 <element name="IsUTF16StringValid.Result">
-<short>True if the specified WideString contains valid UTF-16 code points</short>
+<short>True if the specified WideString contains valid UTF-16 code points.</short>
 </element>
 <element name="IsUTF16StringValid.AWideStr">
-<short>WideString examined in the routine</short>
+<short>WideString examined in the routine.</short>
 </element>
 
 <element name="Utf16StringReplace">
@@ -278,7 +278,7 @@ since it's not available in FPC yet.
 
 <!-- function Visibility: default -->
 <element name="UnicodeLowercase">
-<short>Converts a Unicode character value to its lowercase equivalent</short>
+<short>Converts a Unicode character value to its lowercase equivalent.</short>
 <descr>
 <p>
 Uses internal tables to map Unicode character ranges common to both UTF-16 and UTF-32.
@@ -288,28 +288,28 @@ Uses internal tables to map Unicode character ranges common to both UTF-16 and U
 </element>
 <!-- function result Visibility: default -->
 <element name="UnicodeLowercase.Result">
-<short>Cardinal value for the lowercase equivalent of u</short>
+<short>Cardinal value for the lowercase equivalent of u.</short>
 </element>
 <!-- argument Visibility: default -->
 <element name="UnicodeLowercase.u">
-<short>Unicode character vale converted to lowercase in the routine</short>
+<short>Unicode character vale converted to lowercase in the routine.</short>
 </element>
 
 <!-- function Visibility: default -->
 <element name="UTF8LowerCaseViaTables">
 <short>
-Converts a UTF-8-encoded string to lowercase Unicode values using internal case tables
+Converts a UTF-8-encoded string to lowercase Unicode values using internal case tables.
 </short>
 <descr/>
 <seealso/>
 </element>
 <!-- function result Visibility: default -->
 <element name="UTF8LowerCaseViaTables.Result">
-<short>String with the lowercase Unicode values for s</short>
+<short>String with the lowercase Unicode values for s.</short>
 </element>
 <!-- argument Visibility: default -->
 <element name="UTF8LowerCaseViaTables.s">
-<short>String with UTF-8 values converted to lowercase Unicode in the routine</short>
+<short>String with UTF-8 values converted to lowercase Unicode in the routine.</short>
 </element>
 
 </module>

@@ -8,8 +8,8 @@
     -->
     <module name="LazUTF8">
       <short>
-        Routines for managing UTF-8-encoded strings
-      </short>
+        Routines for managing UTF-8-encoded strings.
+        </short>
       <descr>
         <p>
           <file>lazutf8.pas</file> contains useful routines for managing UTF-8-encoded strings. All routines are thread-safe unless explicitly stated.
@@ -29,7 +29,7 @@
 
       <element name="NeedRTLAnsi">
         <short>
-          Indicates if the OS requires use of AnsiToUTF8 and UTF8ToAnsi for the RTL
+          Indicates if the OS requires use of AnsiToUTF8 and UTF8ToAnsi for the RTL.
         </short>
         <descr>
           <p>
@@ -44,23 +44,23 @@
         </seealso>
       </element>
       <element name="NeedRTLAnsi.Result">
-        <short>True when the system encoding is not UTF-8</short>
+        <short>True when the system encoding is not UTF-8.</short>
       </element>
 
       <element name="SetNeedRTLAnsi">
-        <short>Sets the value for the unit global variable</short>
+        <short>Sets the value for the unit global variable.</short>
         <descr></descr>
         <seealso>
           <link id="NeedRTLAnsi"/>
         </seealso>
       </element>
       <element name="SetNeedRTLAnsi.NewValue">
-        <short>New value for the variable</short>
+        <short>New value for the variable.</short>
       </element>
 
       <element name="UTF8ToSys">
         <short>
-          Ensures UTF-8 characters (or format settings) are converted to the system code page
+          Ensures UTF-8 characters (or format settings) are converted to the system code page.
         </short>
         <descr>
           <p>
@@ -79,18 +79,18 @@
         </seealso>
       </element>
       <element name="UTF8ToSys.Result">
-        <short>Value for the string after conversion</short>
+        <short>Value for the string after conversion.</short>
       </element>
       <element name="UTF8ToSys.s">
-        <short>Value to examine in the function</short>
+        <short>Value to examine in the function.</short>
       </element>
       <element name="UTF8ToSys.AFormatSettings">
-        <short>Format settings to examine in the function</short>
+        <short>Format settings to examine in the function.</short>
       </element>
 
       <element name="SysToUTF8">
         <short>
-          Converts strings (and format settings) from the system codepage to UTF-8
+          Converts strings (and format settings) from the system codepage to UTF-8.
         </short>
         <descr>
           <p>
@@ -106,18 +106,18 @@
         </seealso>
       </element>
       <element name="SysToUTF8.Result">
-        <short>Values after conversion to UTF-8</short>
+        <short>Values after conversion to UTF-8.</short>
       </element>
       <element name="SysToUTF8.s">
-        <short>Values to examine in the function</short>
+        <short>Values to examine in the function.</short>
       </element>
       <element name="SysToUTF8.AFormatSettings">
-        <short>Format settings to examine in the function</short>
+        <short>Format settings to examine in the function.</short>
       </element>
 
       <element name="ConsoleToUTF8">
         <short>
-          Converts an OEM-encoded string to UTF8
+          Converts an OEM-encoded string to UTF8.
         </short>
         <descr>
           <p>
@@ -135,15 +135,15 @@
         </seealso>
       </element>
       <element name="ConsoleToUTF8.Result">
-        <short>UTF-8-encode value for the string</short>
+        <short>UTF-8-encode value for the string.</short>
       </element>
       <element name="ConsoleToUTF8.s">
-        <short>Value to convert in the function</short>
+        <short>Value to convert in the function.</short>
       </element>
 
       <element name="UTF8ToConsole">
         <short>
-          Converts a UTF-8-encoded  string to console (OEM) encoding
+          Converts a UTF-8-encoded  string to console (OEM) encoding.
         </short>
         <descr>
           <p>
@@ -159,15 +159,15 @@
         </seealso>
       </element>
       <element name="UTF8ToConsole.Result">
-        <short>OEM-encoded value for the string</short>
+        <short>OEM-encoded value for the string.</short>
       </element>
       <element name="UTF8ToConsole.s">
-        <short>UTF-8-encode input values</short>
+        <short>UTF-8-encode input values.</short>
       </element>
 
       <element name="WinCPToUTF8">
         <short>
-          Converts the string from Windows code page to UTF-8
+          Converts the string from Windows code page to UTF-8.
         </short>
         <descr>
           <p>
@@ -177,15 +177,15 @@
         <seealso/>
       </element>
       <element name="WinCPToUTF8.Result">
-        <short>UTF-8-encoded values for the string</short>
+        <short>UTF-8-encoded values for the string.</short>
       </element>
       <element name="WinCPToUTF8.s">
-        <short>Input values in Windows codepage encoding</short>
+        <short>Input values in Windows codepage encoding.</short>
       </element>
 
       <element name="UTF8ToWinCP">
         <short>
-          Converts the UTF-8-encoded string to the Windows code page encoding
+          Converts the UTF-8-encoded string to the Windows code page encoding.
         </short>
         <descr>
           <p>
@@ -195,15 +195,15 @@
         <seealso/>
       </element>
       <element name="UTF8ToWinCP.Result">
-        <short>UTF-8-encoded input values</short>
+        <short>UTF-8-encoded input values.</short>
       </element>
       <element name="UTF8ToWinCP.s">
-        <short>Values in the Windows codepage encoding</short>
+        <short>Values in the Windows codepage encoding.</short>
       </element>
 
       <element name="ParamStrUTF8">
         <short>
-          Converts the specified command line parameter to a UTF-8-encoded string
+          Converts the specified command line parameter to a UTF-8-encoded string.
         </short>
         <descr>
           <p>
@@ -215,15 +215,15 @@
         </seealso>
       </element>
       <element name="ParamStrUTF8.Result">
-        <short>UTF-8-encoded value for the command line parameter</short>
+        <short>UTF-8-encoded value for the command line parameter.</short>
       </element>
       <element name="ParamStrUTF8.Param">
-        <short>Ordinal position of the command line parameter</short>
+        <short>Ordinal position of the command line parameter.</short>
       </element>
 
       <element name="GetFormatSettingsUTF8">
         <short>
-          Gets the TFormatSettings for the platform
+          Gets the TFormatSettings for the platform.
         </short>
         <descr>
           <p>
@@ -238,7 +238,7 @@
 
       <element name="GetLocaleFormatSettingsUTF8">
         <short>
-          Gets format settings for a specific Lanuguage Code ID
+          Gets format settings for a specific Lanuguage Code ID.
         </short>
         <descr>
           <p>
@@ -271,10 +271,10 @@
         </seealso>
       </element>
       <element name="GetLocaleFormatSettingsUTF8.LCID">
-        <short>Language Code ID</short>
+        <short>Language Code ID.</short>
       </element>
       <element name="GetLocaleFormatSettingsUTF8.AFormatSettings">
-        <short>The locale-specific format settings for the platform</short>
+        <short>The locale-specific format settings for the platform.</short>
       </element>
 
       <element name="GetEnvironmentVariableCountUTF8">
@@ -288,7 +288,7 @@
         </descr>
       </element>
       <element name="GetEnvironmentVariableCountUTF8.Result">
-        <short>Number of variables in the system environment</short>
+        <short>Number of variables in the system environment.</short>
       </element>
 
       <element name="GetEnvironmentStringUTF8">
@@ -305,15 +305,15 @@
         </descr>
       </element>
       <element name="GetEnvironmentStringUTF8.Result">
-        <short>Value for the environment variable at the specified position</short>
+        <short>Value for the environment variable at the specified position.</short>
       </element>
       <element name="GetEnvironmentStringUTF8.Index">
-        <short>Position for the environment variable</short>
+        <short>Position for the environment variable.</short>
       </element>
 
       <element name="GetEnvironmentVariableUTF8">
         <short>
-          Returns the value of a system environment variable
+          Returns the value of a system environment variable.
         </short>
         <descr>
           <p>
@@ -322,15 +322,15 @@
         </descr>
       </element>
       <element name="GetEnvironmentVariableUTF8.Result">
-        <short>Value for the specified environment variable name</short>
+        <short>Value for the specified environment variable name.</short>
       </element>
       <element name="GetEnvironmentVariableUTF8.EnvVar">
-        <short>Environment variable with the value retrieved in the routine</short>
+        <short>Environment variable with the value retrieved in the routine.</short>
       </element>
 
       <element name="SysErrorMessageUTF8">
         <short>
-          Gets the UTF-8-encoded system error message for the specified error code
+          Gets the UTF-8-encoded system error message for the specified error code.
         </short>
         <descr>
           <p>
@@ -340,15 +340,15 @@
         <seealso/>
       </element>
       <element name="SysErrorMessageUTF8.Result">
-        <short>UTF-8-encoded value for the system error message</short>
+        <short>UTF-8-encoded value for the system error message.</short>
       </element>
       <element name="SysErrorMessageUTF8.ErrorCode">
-        <short>Numeric system error code for the message</short>
+        <short>Numeric system error code for the message.</short>
       </element>
 
       <element name="UTF8CodepointSize">
         <short>
-          Returns the size of the UTF-8 codepoint in bytes
+          Returns the size of the UTF-8 codepoint in bytes.
         </short>
         <descr>
           <p>
@@ -358,15 +358,15 @@
         <seealso/>
       </element>
       <element name="UTF8CodepointSize.Result">
-        <short>Number of bytes for the codepoint</short>
+        <short>Number of bytes for the codepoint.</short>
       </element>
       <element name="UTF8CodepointSize.p">
-        <short>UTF-8-encoded value to examine in the function</short>
+        <short>UTF-8-encoded value to examine in the function.</short>
       </element>
 
       <element name="UTF8CodepointSizeFast">
         <short>
-          Fast version of UTF8CodepointSize
+          Fast version of UTF8CodepointSize.
         </short>
         <descr>
           <p>
@@ -376,15 +376,15 @@
         <seealso/>
       </element>
       <element name="UTF8CodepointSizeFast.Result">
-        <short>Number of bytes for the codepoint</short>
+        <short>Number of bytes for the codepoint.</short>
       </element>
       <element name="UTF8CodepointSizeFast.p">
-        <short>Encoded values to examine in the function</short>
+        <short>Encoded values to examine in the function.</short>
       </element>
 
       <element name="UTF8CharacterLength">
         <short>
-          Returns the number of bytes needed for the UTF-8 codepoint starting at p
+          Returns the number of bytes needed for the UTF-8 codepoint starting at p.
         </short>
         <descr>
           <remark>
@@ -408,15 +408,15 @@ end;
         </seealso>
       </element>
       <element name="UTF8CharacterLength.Result">
-        <short>Number of bytes required for the UTF-8 codepoint, or 0 (zero)</short>
+        <short>Number of bytes required for the UTF-8 codepoint, or 0 (zero).</short>
       </element>
       <element name="UTF8CharacterLength.p">
-        <short>Pointer to the value examined in the routine</short>
+        <short>Pointer to the value examined in the routine.</short>
       </element>
 
       <element name="UTF8Length">
         <short>
-          Gets the length of a UTF-8-encoded string in codepoints
+          Gets the length of a UTF-8-encoded string in codepoints.
         </short>
         <descr>
           <p>
@@ -429,21 +429,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8Length.Result">
-        <short>Number of codepoints in the byte values for the string</short>
+        <short>Number of codepoints in the byte values for the string.</short>
       </element>
       <element name="UTF8Length.s">
-        <short>UTF-8-encoded string to examine in the function</short>
+        <short>UTF-8-encoded string to examine in the function.</short>
       </element>
       <element name="UTF8Length.p">
-        <short>Pointer to the UTF-8-encoded string to examine in the function</short>
+        <short>Pointer to the UTF-8-encoded string to examine in the function.</short>
       </element>
       <element name="UTF8Length.ByteCount">
-        <short>Number of byte values in the UTF-8-encoded string</short>
+        <short>Number of byte values in the UTF-8-encoded string.</short>
       </element>
 
       <element name="UTF8LengthFast">
         <short>
-          Fast version of UTF8Length
+          Fast version of UTF8Length.
         </short>
         <descr>
           <p>
@@ -453,21 +453,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8LengthFast.Result">
-        <short>Number of codepoints in the string</short>
+        <short>Number of codepoints in the string.</short>
       </element>
       <element name="UTF8LengthFast.s">
-        <short>String with UTF-8-encoded values</short>
+        <short>String with UTF-8-encoded values.</short>
       </element>
       <element name="UTF8LengthFast.p">
-        <short>Pointer to the String with UTF-8-encoded values</short>
+        <short>Pointer to the String with UTF-8-encoded values.</short>
       </element>
       <element name="UTF8LengthFast.ByteCount">
-        <short>Number of byte values in the UTF-8-encoded string</short>
+        <short>Number of byte values in the UTF-8-encoded string.</short>
       </element>
 
       <element name="UTF8CodepointToUnicode">
           <short>
-            Converts a UTF-8-encoded character to its unique Unicode U+XXXX character value
+            Converts a UTF-8-encoded character to its unique Unicode U+XXXX character value.
         </short>
         <descr>
           <p>
@@ -492,18 +492,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8CodepointToUnicode.Result">
-        <short>Unicode character value for the UTF-8 character</short>
+        <short>Unicode character value for the UTF-8 character.</short>
       </element>
       <element name="UTF8CodepointToUnicode.p">
-        <short>The UTF-8-encode string value</short>
+        <short>The UTF-8-encode string value.</short>
       </element>
       <element name="UTF8CodepointToUnicode.CodepointLen">
-        <short>Number of bytes needed for the codepoint</short>
+        <short>Number of bytes needed for the codepoint.</short>
       </element>
 
       <element name="UTF8CharacterToUnicode">
         <short>
-          Returns the codepoint at p and the number of bytes to skip
+          Returns the codepoint at p and the number of bytes to skip.
         </short>
         <descr>
           <remark>
@@ -540,7 +540,7 @@ end;
 
       <element name="UnicodeToUTF8">
         <short>
-          Encodes the given code point as an UTF-8 sequence of 1 to 4 bytes
+          Encodes the given code point as an UTF-8 sequence of 1 to 4 bytes.
         </short>
         <descr>
           <p>
@@ -561,18 +561,18 @@ end;
         <seealso/>
       </element>
       <element name="UnicodeToUTF8.Result">
-        <short>Number of bytes needed for the UTF-8-encode value</short>
+        <short>Number of bytes needed for the UTF-8-encode value.</short>
       </element>
       <element name="UnicodeToUTF8.Codepoint">
-        <short>Unicode character value to convert in the function</short>
+        <short>Unicode character value to convert in the function.</short>
       </element>
       <element name="UnicodeToUTF8.Buf">
-        <short>Stores the UTF-8-encoded byte values for the codepoint</short>
+        <short>Stores the UTF-8-encoded byte values for the codepoint.</short>
       </element>
 
       <element name="UnicodeToUTF8SkipErrors">
         <short>
-          Stores a single Unicode codepoint as a UTF-8-encoded value in the buffer
+          Stores a single Unicode codepoint as a UTF-8-encoded value in the buffer.
         </short>
         <descr>
           <p>
@@ -582,18 +582,18 @@ end;
         <seealso/>
       </element>
       <element name="UnicodeToUTF8SkipErrors.Result">
-        <short>UTF-8-encoded value for the codepoint</short>
+        <short>UTF-8-encoded value for the codepoint.</short>
       </element>
       <element name="UnicodeToUTF8SkipErrors.Codepoint">
-        <short>Codepoint (Unicode character) to convert in the function</short>
+        <short>Codepoint (Unicode character) to convert in the function.</short>
       </element>
       <element name="UnicodeToUTF8SkipErrors.Buf">
-        <short>Buffer where the converted value is stored</short>
+        <short>Buffer where the converted value is stored.</short>
       </element>
 
       <element name="UnicodeToUTF8Inline">
         <short>
-          Encodes the given code point as an UTF-8 sequence of 1 to 4 bytes
+          Encodes the given code point as an UTF-8 sequence of 1 to 4 bytes.
         </short>
         <descr>
           <p>
@@ -612,18 +612,18 @@ end;
         <seealso/>
       </element>
       <element name="UnicodeToUTF8Inline.Result">
-        <short>Number of bytes required for the UTF-8-encoded value</short>
+        <short>Number of bytes required for the UTF-8-encoded value.</short>
       </element>
       <element name="UnicodeToUTF8Inline.CodePoint">
-        <short>Unicode character value to convert</short>
+        <short>Unicode character value to convert.</short>
       </element>
       <element name="UnicodeToUTF8Inline.Buf">
-        <short>Destination where encoded byte values are stored</short>
+        <short>Destination where encoded byte values are stored.</short>
       </element>
 
       <element name="UTF8ToDoubleByteString">
         <short>
-          Converts UTF-8 values to their DBCS equivalent
+          Converts UTF-8 values to their DBCS equivalent.
         </short>
         <descr>
           <p>
@@ -639,15 +639,15 @@ end;
         <seealso/>
       </element>
       <element name="UTF8ToDoubleByteString.Result">
-        <short>DBCS values for the specified codepoints</short>
+        <short>DBCS values for the specified codepoints.</short>
       </element>
       <element name="UTF8ToDoubleByteString.s">
-        <short>UTF-8-encoded values to convert in the function</short>
+        <short>UTF-8-encoded values to convert in the function.</short>
       </element>
 
       <element name="UTF8ToDoubleByte">
         <short>
-          Converts a UTF-8-encode string to its DBCS representation
+          Converts a UTF-8-encode string to its DBCS representation.
         </short>
         <descr>
           <p>
@@ -660,21 +660,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8ToDoubleByte.Result">
-        <short>Number of double bytes converted in the function</short>
+        <short>Number of double bytes converted in the function.</short>
       </element>
       <element name="UTF8ToDoubleByte.UTF8Str">
-        <short>UTF-8-encoded values to convert in the function</short>
+        <short>UTF-8-encoded values to convert in the function.</short>
       </element>
       <element name="UTF8ToDoubleByte.Len">
-        <short>Length of the UTF-8-encoded input values</short>
+        <short>Length of the UTF-8-encoded input values.</short>
       </element>
       <element name="UTF8ToDoubleByte.DBStr">
-        <short>Storage for the Double Byte values</short>
+        <short>Storage for the Double Byte values.</short>
       </element>
 
       <element name="UTF8FindNearestCharStart">
         <short>
-          Finds the start of the UTF-8 character at the specified position
+          Finds the start of the UTF-8 character at the specified position.
         </short>
         <descr>
           <p>
@@ -687,21 +687,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8FindNearestCharStart.Result">
-        <short>Position where the next codepoint begins</short>
+        <short>Position where the next codepoint begins.</short>
       </element>
       <element name="UTF8FindNearestCharStart.UTF8Str">
-        <short>Values to examine in the function</short>
+        <short>Values to examine in the function.</short>
       </element>
       <element name="UTF8FindNearestCharStart.Len">
-        <short>Length of the input values</short>
+        <short>Length of the input values.</short>
       </element>
       <element name="UTF8FindNearestCharStart.BytePos">
-        <short>Offset into UTF8Str for the initial byte value</short>
+        <short>Offset into UTF8Str for the initial byte value.</short>
       </element>
 
       <element name="Utf8TryFindCodepointStart">
         <short>
-          Tries to find the start of a valid UTF-8 codepoint in a string
+          Tries to find the start of a valid UTF-8 codepoint in a string.
         </short>
         <descr>
           <p>
@@ -717,27 +717,27 @@ end;
         <seealso/>
       </element>
       <element name="Utf8TryFindCodepointStart.Result">
-        <short>True when the bytes at the specified position are a valid UTF-8 codepoint</short>
+        <short>True when the bytes at the specified position are a valid UTF-8 codepoint.</short>
       </element>
       <element name="Utf8TryFindCodepointStart.AString">
-        <short>Pointer to the string to examine in the function</short>
+        <short>Pointer to the string to examine in the function.</short>
       </element>
       <element name="Utf8TryFindCodepointStart.CurPos">
-        <short>Pointer to the first position in the string examined in the function</short>
+        <short>Pointer to the first position in the string examined in the function.</short>
       </element>
       <element name="Utf8TryFindCodepointStart.CodepointLen">
-        <short>Number of bytes in the codepoint, or 0 when invalid</short>
+        <short>Number of bytes in the codepoint, or 0 when invalid.</short>
       </element>
       <element name="Utf8TryFindCodepointStart.Index">
-        <short>Initial position in the string examined in the function</short>
+        <short>Initial position in the string examined in the function.</short>
       </element>
       <element name="Utf8TryFindCodepointStart.CharLen">
-        <short>Number of bytes required for the UTF-8 codepoint</short>
+        <short>Number of bytes required for the UTF-8 codepoint.</short>
       </element>
 
       <element name="UTF8CodepointStart">
         <short>
-          Finds the n-th UTF-8 codepoint
+          Finds the n-th UTF-8 codepoint.
         </short>
         <descr>
           <p>
@@ -753,16 +753,16 @@ end;
         <seealso/>
       </element>
       <element name="UTF8CodepointStart.Result">
-        <short>Byte values for the codepoint, or Nil</short>
+        <short>Byte values for the codepoint, or Nil.</short>
       </element>
       <element name="UTF8CodepointStart.UTF8Str">
-        <short>Values to examine in the function</short>
+        <short>Values to examine in the function.</short>
       </element>
       <element name="UTF8CodepointStart.Len">
-        <short>Length in bytes for the input values</short>
+        <short>Length in bytes for the input values.</short>
       </element>
       <element name="UTF8CodepointStart.CodepointIndex">
-        <short>Character position for the desired codepoint (zero-based)</short>
+        <short>Character position for the desired codepoint (zero-based).</short>
       </element>
 
       <element name="UTF8CharStart">
@@ -789,7 +789,7 @@ end;
 
       <element name="UTF8CodepointToByteIndex">
         <short>
-          Finds the byte index of the n-th UTF-8 codepoint
+          Finds the byte index of the n-th UTF-8 codepoint.
         </short>
         <descr>
           <p>
@@ -835,7 +835,7 @@ end;
 
       <element name="UTF8FixBroken">
         <short>
-          Replaces all invalid UTF-8 characters with spaces
+          Replaces all invalid UTF-8 characters with spaces.
         </short>
         <descr>
           <p>
@@ -852,7 +852,7 @@ end;
       </element>
 
       <element name="UTF8CodepointStrictSize">
-        <short>Gets the number of bytes needed for the UTF-8 codepoint</short>
+        <short>Gets the number of bytes needed for the UTF-8 codepoint.</short>
         <descr>
           <p>
             Gets the number of bytes needed for the UTF-8 codepoint in <var>P</var>. The return value contains the number of bytes need for the codepoint (in the range 1..4), or 0 (zero) when P is not assigned or the codepoint is invalid.
@@ -864,10 +864,10 @@ end;
         <seealso/>
       </element>
       <element name="UTF8CodepointStrictSize.Result">
-        <short>Number of bytes needed for the codepoint</short>
+        <short>Number of bytes needed for the codepoint.</short>
       </element>
       <element name="UTF8CodepointStrictSize.P">
-        <short>UTF-8-encoded values to examine</short>
+        <short>UTF-8-encoded values to examine.</short>
       </element>
 
       <element name="UTF8CharacterStrictLength">
@@ -890,7 +890,7 @@ end;
 
       <element name="UTF8CStringToUTF8String">
         <short>
-          Copies from a C-style string with UTF-8 encoding to UTF-8 string
+          Copies from a C-style string with UTF-8 encoding to UTF-8 string.
         </short>
         <descr>
           <p>
@@ -913,18 +913,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8CStringToUTF8String.Result">
-        <short>UTF-8-encode string with C-style quoting removed</short>
+        <short>UTF-8-encode string with C-style quoting removed.</short>
       </element>
       <element name="UTF8CStringToUTF8String.SourceStart">
-        <short>PChar with the UTF-8-encoded C-style string</short>
+        <short>PChar with the UTF-8-encoded C-style string.</short>
       </element>
       <element name="UTF8CStringToUTF8String.SourceLen">
-        <short>Number of codepoints to copy in the method</short>
+        <short>Number of codepoints to copy in the method.</short>
       </element>
 
       <element name="UTF8Pos">
         <short>
-          Returns the character index where the search text starts in the string
+          Returns the character index where the search text starts in the string.
         </short>
         <descr>
           <p>
@@ -937,18 +937,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8Pos.Result">
-        <short>Character position where the search text was located</short>
+        <short>Character position where the search text was located.</short>
       </element>
       <element name="UTF8Pos.SearchForText">
-        <short>Value to locate in the string</short>
+        <short>Value to locate in the string.</short>
       </element>
       <element name="UTF8Pos.SearchInText">
-        <short>String to search for the specified value</short>
+        <short>String to search for the specified value.</short>
       </element>
 
       <element name="UTF8Copy">
         <short>
-          Copies the specified number of codepoints from the UTF-8-encoded string
+          Copies the specified number of codepoints from the UTF-8-encoded string.
         </short>
         <descr>
           <p>
@@ -961,21 +961,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8Copy.Result">
-        <short>String with codepoints copied from the specified source</short>
+        <short>String with codepoints copied from the specified source.</short>
       </element>
       <element name="UTF8Copy.s">
-        <short>String with values to copy in the function</short>
+        <short>String with values to copy in the function.</short>
       </element>
       <element name="UTF8Copy.StartCharIndex">
-        <short>Initial character position for the copy operation</short>
+        <short>Initial character position for the copy operation.</short>
       </element>
       <element name="UTF8Copy.CharCount">
-        <short>Number of characters (codepoints) to copy in the function</short>
+        <short>Number of characters (codepoints) to copy in the function.</short>
       </element>
 
       <element name="UTF8Delete">
         <short>
-          Deletes characters (or codepoints) in a UTF-8-encoded string
+          Deletes characters (or codepoints) in a UTF-8-encoded string.
         </short>
         <descr>
           <p>
@@ -994,18 +994,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8Delete.s">
-        <short>String with values to delete in the procedure</short>
+        <short>String with values to delete in the procedure.</short>
       </element>
       <element name="UTF8Delete.StartCharIndex">
-        <short>Initial character position where values will be deleted</short>
+        <short>Initial character position where values will be deleted.</short>
       </element>
       <element name="UTF8Delete.CharCount">
-        <short>Number of characters (or codepoints) to remove in the procedure</short>
+        <short>Number of characters (or codepoints) to remove in the procedure.</short>
       </element>
 
       <element name="UTF8Insert">
         <short>
-          Inserts the specified values into a string at the given position
+          Inserts the specified values into a string at the given position.
         </short>
         <descr>
           <p>
@@ -1015,18 +1015,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8Insert.source">
-        <short>UTF-8 String where values are inserted</short>
+        <short>UTF-8 String where values are inserted.</short>
       </element>
       <element name="UTF8Insert.s">
-        <short>Values to insert into the original string</short>
+        <short>Values to insert into the original string.</short>
       </element>
       <element name="UTF8Insert.StartCharIndex">
-        <short>Starting character position (1-based) for the new values</short>
+        <short>Starting character position (1-based) for the new values.</short>
       </element>
 
       <element name="UTF8StringReplace">
         <short>
-          Replaces values in a String matching a pattern starting at a given position
+          Replaces values in a String matching a pattern starting at a given position.
         </short>
         <descr>
           <p>
@@ -1045,30 +1045,30 @@ end;
         <seealso/>
       </element>
       <element name="UTF8StringReplace.Result">
-        <short>UTF-8-encoded values after the replace operation</short>
+        <short>UTF-8-encoded values after the replace operation.</short>
       </element>
       <element name="UTF8StringReplace.S">
-        <short>Original UTF-8-encoded values to examine</short>
+        <short>Original UTF-8-encoded values to examine.</short>
       </element>
       <element name="UTF8StringReplace.OldPattern">
-        <short>Pattern to replace in the function</short>
+        <short>Pattern to replace in the function.</short>
       </element>
       <element name="UTF8StringReplace.NewPattern">
-        <short>Replacement values for the operation</short>
+        <short>Replacement values for the operation.</short>
       </element>
       <element name="UTF8StringReplace.Flags">
-        <short>Replace options enabled in the function</short>
+        <short>Replace options enabled in the function.</short>
       </element>
       <element name="UTF8StringReplace.ALanguage">
-        <short>Language Code used for locale-specific lowercase conversions</short>
+        <short>Language Code used for locale-specific lowercase conversions.</short>
       </element>
       <element name="UTF8StringReplace.Count">
-        <short>Number of times the search pattern was replaced in the string</short>
+        <short>Number of times the search pattern was replaced in the string.</short>
       </element>
 
       <element name="UTF8LowerCase">
         <short>
-          Converts the specified string to lowercase using Unicode case mapping rules
+          Converts the specified string to lowercase using Unicode case mapping rules.
         </short>
         <descr>
           <p>
@@ -1081,18 +1081,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8LowerCase.Result">
-        <short>Lowercase values for the specified string</short>
+        <short>Lowercase values for the specified string.</short>
       </element>
       <element name="UTF8LowerCase.AInStr">
-        <short>Values to convert in the function</short>
+        <short>Values to convert in the function.</short>
       </element>
       <element name="UTF8LowerCase.ALanguage">
-        <short>Language code for the operation</short>
+        <short>Language code for the operation.</short>
       </element>
 
       <element name="UTF8UpperCase">
         <short>
-          Converts the specified string to uppercase using Unicode case mapping rules
+          Converts the specified string to uppercase using Unicode case mapping rules.
         </short>
         <descr>
           <p>
@@ -1105,18 +1105,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8UpperCase.Result">
-        <short>Uppercase values for the specified string</short>
+        <short>Uppercase values for the specified string.</short>
       </element>
       <element name="UTF8UpperCase.AInStr">
-        <short>Values to convert in the function</short>
+        <short>Values to convert in the function.</short>
       </element>
       <element name="UTF8UpperCase.ALanguage">
-        <short>Language code for the operation</short>
+        <short>Language code for the operation.</short>
       </element>
 
       <element name="UTF8UpperString">
         <short>
-          Inline variant of UTF8UpperCase
+          Inline variant of UTF8UpperCase.
         </short>
         <descr>
           Inline variant of UTF8UpperCase.
@@ -1124,15 +1124,15 @@ end;
         <seealso/>
       </element>
       <element name="UTF8UpperString.Result">
-        <short>Uppercase values for the string</short>
+        <short>Uppercase values for the string.</short>
       </element>
       <element name="UTF8UpperString.s">
-        <short>Values to convert in the function</short>
+        <short>Values to convert in the function.</short>
       </element>
 
       <element name="UTF8SwapCase">
         <short>
-          Provides a simplistic implementation of UTF8UpperCase and UTF8LowerCase
+          Provides a simplistic implementation of UTF8UpperCase and UTF8LowerCase.
         </short>
         <descr>
           <p>
@@ -1151,18 +1151,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8SwapCase.Result">
-        <short>String with the converted case values</short>
+        <short>String with the converted case values.</short>
       </element>
       <element name="UTF8SwapCase.AInStr">
-        <short>Original values for the conversion</short>
+        <short>Original values for the conversion.</short>
       </element>
       <element name="UTF8SwapCase.ALanguage">
-        <short>Language code for the locale used in the conversion</short>
+        <short>Language code for the locale used in the conversion.</short>
       </element>
 
       <element name="UTF8ProperCase">
         <short>
-          Capitalizes the first letter of each word in the string
+          Capitalizes the first letter of each word in the string.
         </short>
         <descr>
           <p>
@@ -1175,18 +1175,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8ProperCase.Result">
-        <short>Converting values for the string</short>
+        <short>Converting values for the string.</short>
       </element>
       <element name="UTF8ProperCase.AInStr">
-        <short>Values to convert in the function</short>
+        <short>Values to convert in the function.</short>
       </element>
       <element name="UTF8ProperCase.WordDelims">
-        <short>Characters used as word delimiters</short>
+        <short>Characters used as word delimiters.</short>
       </element>
 
       <element name="FindInvalidUTF8Codepoint">
         <short>
-          Finds the position where an invalid UTF-8 codepoint is found in the string
+          Finds the position where an invalid UTF-8 codepoint is found in the string.
         </short>
         <descr>
           <p>
@@ -1199,21 +1199,21 @@ end;
         <seealso/>
       </element>
       <element name="FindInvalidUTF8Codepoint.Result">
-        <short>Offset into the string for the error</short>
+        <short>Offset into the string for the error.</short>
       </element>
       <element name="FindInvalidUTF8Codepoint.p">
-        <short>Values to examine in the function</short>
+        <short>Values to examine in the function.</short>
       </element>
       <element name="FindInvalidUTF8Codepoint.Count">
-        <short>Length of the input values</short>
+        <short>Length of the input values.</short>
       </element>
       <element name="FindInvalidUTF8Codepoint.StopOnNonUTF8">
-        <short>True to exit on an malformed codepoint</short>
+        <short>True to exit on an malformed codepoint.</short>
       </element>
 
       <element name="FindInvalidUTF8Character">
         <short>
-          Returns -1 if OK, otherwise byte index of invalid UTF-8 codepoint
+          Returns -1 if OK, otherwise byte index of invalid UTF-8 codepoint.
         </short>
         <descr>
           <remark>
@@ -1240,7 +1240,7 @@ end;
 
       <element name="UTF8StringOfChar">
         <short>
-          Creates a string filled with the specified number of given codepoints
+          Creates a string filled with the specified number of given codepoints.
         </short>
         <descr>
           <p>
@@ -1253,18 +1253,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8StringOfChar.Result`">
-        <short>String with the specified number of occurrence of the codepoint</short>
+        <short>String with the specified number of occurrence of the codepoint.</short>
       </element>
       <element name="UTF8StringOfChar.AUtf8Char">
-        <short>Codepoint to reproduce in the function</short>
+        <short>Codepoint to reproduce in the function.</short>
       </element>
       <element name="UTF8StringOfChar.N">
-        <short>Number of occurrences to include in the return value</short>
+        <short>Number of occurrences to include in the return value.</short>
       </element>
 
       <element name="UTF8AddChar">
         <short>
-          Adds the specified number of UTF-8 codepoints to a string
+          Adds the specified number of UTF-8 codepoints to a string.
         </short>
         <descr>
           <p>
@@ -1280,21 +1280,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8AddChar.Result">
-        <short>Updated value for the string</short>
+        <short>Updated value for the string.</short>
       </element>
       <element name="UTF8AddChar.AUtf8Char">
-        <short>Codepoint to prepend to the string value</short>
+        <short>Codepoint to prepend to the string value.</short>
       </element>
       <element name="UTF8AddChar.S">
-        <short>Original values for the string</short>
+        <short>Original values for the string.</short>
       </element>
       <element name="UTF8AddChar.N">
-        <short>Number of codepoints to prepend to the string</short>
+        <short>Number of codepoints to prepend to the string.</short>
       </element>
 
       <element name="UTF8AddCharR">
         <short>
-          Appends the specified number of UTF-8 codepoints to a string
+          Appends the specified number of UTF-8 codepoints to a string.
         </short>
         <descr>
           <p>
@@ -1307,21 +1307,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8AddCharR.Result">
-        <short>Updated value for the string</short>
+        <short>Updated value for the string.</short>
       </element>
       <element name="UTF8AddCharR.AUtf8Char">
-        <short>Codepoint to append to the string value</short>
+        <short>Codepoint to append to the string value.</short>
       </element>
       <element name="UTF8AddCharR.S">
-        <short>Original values for the string</short>
+        <short>Original values for the string.</short>
       </element>
       <element name="UTF8AddCharR.N">
-        <short>Number of codepoints to append to the string</short>
+        <short>Number of codepoints to append to the string.</short>
       </element>
 
       <element name="UTF8PadLeft">
         <short>
-          Adds the specified number of values in AUtf8Char to the beginning of a string
+          Adds the specified number of values in AUtf8Char to the beginning of a string.
         </short>
         <descr>
           <p>
@@ -1331,21 +1331,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8PadLeft.Result">
-        <short>Updated value for the string with characters inserted at the beginning</short>
+        <short>Updated value for the string with characters inserted at the beginning.</short>
       </element>
       <element name="UTF8PadLeft.S">
-        <short>Original string value to modify in the function</short>
+        <short>Original string value to modify in the function.</short>
       </element>
       <element name="UTF8PadLeft.N">
-        <short>Number of codepoints desired in the modified string</short>
+        <short>Number of codepoints desired in the modified string.</short>
       </element>
       <element name="UTF8PadLeft.AUtf8Char">
-        <short>UTF-8 codepoint to insert into the string</short>
+        <short>UTF-8 codepoint to insert into the string.</short>
       </element>
 
       <element name="UTF8PadRight">
         <short>
-          Appends the specified number of UTF-8 codepoints to the end of a string
+          Appends the specified number of UTF-8 codepoints to the end of a string.
         </short>
         <descr>
           <p>
@@ -1355,21 +1355,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8PadRight.Result">
-        <short>Updated value for the string</short>
+        <short>Updated value for the string.</short>
       </element>
       <element name="UTF8PadRight.S">
-        <short>Original string to modify in the function</short>
+        <short>Original string to modify in the function.</short>
       </element>
       <element name="UTF8PadRight.N">
-        <short>Number of codepoints desired in the modified string</short>
+        <short>Number of codepoints desired in the modified string.</short>
       </element>
       <element name="UTF8PadRight.AUtf8Char">
-        <short>Codepoint to append to the string value</short>
+        <short>Codepoint to append to the string value.</short>
       </element>
 
       <element name="UTF8PadCenter">
         <short>
-          Center aligns a string to the specified length
+          Center aligns a string to the specified length.
         </short>
         <descr>
           <p>
@@ -1379,21 +1379,21 @@ end;
         <seealso/>
       </element>
       <element name="UTF8PadCenter.Result">
-        <short>Modified value for the string after center alignment</short>
+        <short>Modified value for the string after center alignment.</short>
       </element>
       <element name="UTF8PadCenter.S">
-        <short>Original string value</short>
+        <short>Original string value.</short>
       </element>
       <element name="UTF8PadCenter.N">
-        <short>Desired length for the string (in codepoints)</short>
+        <short>Desired length for the string (in codepoints).</short>
       </element>
       <element name="UTF8PadCenter.AUtf8Char">
-        <short>UTF-8 codepoint used as a padding character</short>
+        <short>UTF-8 codepoint used as a padding character.</short>
       </element>
 
       <element namer="UTF8LeftStr">
         <short>
-          Gets the specified number of characters (codepoints) at the start of the string
+          Gets the specified number of characters (codepoints) at the start of the string.
         </short>
         <descr>
           <p>
@@ -1403,18 +1403,18 @@ end;
         <seealso/>
       </element>
       <element namer="UTF8LeftStr.Result">
-        <short>Values from the specified string</short>
+        <short>Values from the specified string.</short>
       </element>
       <element namer="UTF8LeftStr.AText">
-        <short>Original string to examine in the function</short>
+        <short>Original string to examine in the function.</short>
       </element>
       <element namer="UTF8LeftStr.ACount">
-        <short>Number of characters (codepoints) to get from the string</short>
+        <short>Number of characters (codepoints) to get from the string.</short>
       </element>
 
       <element name="UTF8RightStr">
         <short>
-          Gets the specified number of characters (codepoints) at the end of the string
+          Gets the specified number of characters (codepoints) at the end of the string.
         </short>
         <descr>
           <p>
@@ -1424,18 +1424,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8RightStr.Result">
-        <short>Values from the string</short>
+        <short>Values from the string.</short>
       </element>
       <element name="UTF8RightStr.AText">
-        <short>Original string to examine in the function</short>
+        <short>Original string to examine in the function.</short>
       </element>
       <element name="UTF8RightStr.ACount">
-        <short>Number of characters (codepoints) to get from the string</short>
+        <short>Number of characters (codepoints) to get from the string.</short>
       </element>
 
       <element name="UTF8QuotedStr">
         <short>
-          Performs safe quoting for the string value
+          Performs safe quoting for the string value.
         </short>
         <descr>
           <p>
@@ -1459,7 +1459,7 @@ end;
 
       <element name="UTF8StartsText">
         <short>
-          Determines if a string starts with the specified value
+          Determines if a string starts with the specified value.
         </short>
         <descr>
           <p>
@@ -1472,18 +1472,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8StartsText.Result">
-        <short>True when the strings starts with the specified text</short>
+        <short>True when the strings starts with the specified text.</short>
       </element>
       <element name="UTF8StartsText.ASubText">
-        <short>Value to locate at the start of the string</short>
+        <short>Value to locate at the start of the string.</short>
       </element>
       <element name="UTF8StartsText.AText">
-        <short>String to examine in the function</short>
+        <short>String to examine in the function.</short>
       </element>
 
       <element name="UTF8EndsText">
         <short>
-          Determines if a string ends with the specified value
+          Determines if a string ends with the specified value.
         </short>
         <descr>
           <p>
@@ -1496,18 +1496,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8EndsText.Result">
-        <short>True when the strings ends with the specified text</short>
+        <short>True when the strings ends with the specified text.</short>
       </element>
       <element name="UTF8EndsText.ASubText">
-        <short>Value to locate at the end of the string</short>
+        <short>Value to locate at the end of the string.</short>
       </element>
       <element name="UTF8EndsText.AText">
-        <short>String to examine in the function</short>
+        <short>String to examine in the function.</short>
       </element>
 
       <element name="UTF8ReverseString">
         <short>
-          Reverses the order of codepoints in the specified string
+          Reverses the order of codepoints in the specified string.
         </short>
         <descr>
           <p>
@@ -1525,37 +1525,37 @@ end;
         </seealso>
       </element>
       <element name="UTF8ReverseString.Result">
-        <short>String with the reversed text values</short>
+        <short>String with the reversed text values.</short>
       </element>
       <element name="UTF8ReverseString.p">
-        <short>PChar type with values reversed in the routine</short>
+        <short>PChar type with values reversed in the routine.</short>
       </element>
       <element name="UTF8ReverseString.ByteCount">
-        <short>Number of bytes reversed in the routine</short>
+        <short>Number of bytes reversed in the routine.</short>
       </element>
       <element name="UTF8ReverseString.AText">
-        <short>String with the values reversed in the routine</short>
+        <short>String with the values reversed in the routine.</short>
       </element>
 
       <element name="UTF8RPos">
-        <short>Gets the right-most position in the source string for the substring value</short>
+        <short>Gets the right-most position in the source string for the substring value.</short>
         <descr></descr>
         <seealso>
           <link id="UTF8Length"/>
         </seealso>
       </element>
       <element name="UTF8RPos.Result">
-        <short>Pointer to the position in Source</short>
+        <short>Pointer to the position in Source.</short>
       </element>
       <element name="UTF8RPos.Substr">
-        <short>Value to locate in Source</short>
+        <short>Value to locate in Source.</short>
       </element>
       <element name="UTF8RPos.Source">
-        <short>String with values examined in the routine</short>
+        <short>String with values examined in the routine.</short>
       </element>
 
       <element name="UTF8WrapText">
-        <short>Creates a word wrapped version of the specified string</short>
+        <short>Creates a word wrapped version of the specified string.</short>
         <descr>
           <p>
             <var>UTF8WrapText</var> is an overloaded <var>String</var> function used to wrap lines of text in <var>S</var> at the number of characters (codepoints) specified in <var>MaxCol</var>.
@@ -1570,24 +1570,24 @@ end;
         <seealso/>
       </element>
       <element name="UTF8WrapText.Result">
-        <short>Word-wrapped version of the specified text</short>
+        <short>Word-wrapped version of the specified text.</short>
       </element>
       <element name="UTF8WrapText.S">
-        <short>String with values word-wrapped in the routine</short>
+        <short>String with values word-wrapped in the routine.</short>
       </element>
       <element name="UTF8WrapText.BreakStr">
-        <short>End-of-line sequence used in the routine</short>
+        <short>End-of-line sequence used in the routine.</short>
       </element>
       <element name="UTF8WrapText.BreakChars">
-        <short>Set of characters where a line break cab be inserted</short>
+        <short>Set of characters where a line break cab be inserted.</short>
       </element>
       <element name="UTF8WrapText.MaxCol">
-        <short>Maximum line width in number of UTF-8 characters</short>
+        <short>Maximum line width in number of UTF-8 characters.</short>
       </element>
 
       <element name="TEscapeMode">
         <short>
-          Represents styles used to escape control characters
+          Represents styles used to escape control characters.
         </short>
         <descr>
           <p>
@@ -1614,7 +1614,7 @@ end;
 
       <element name="Utf8EscapeControlChars">
         <short>
-          Translates control characters in a UTF-8-encoded string into human readable format
+          Translates control characters in a UTF-8-encoded string into human readable format.
         </short>
         <descr>
           <p>
@@ -1648,18 +1648,18 @@ end;
         </seealso>
       </element>
       <element name="Utf8EscapeControlChars.Result">
-        <short>String with the escaped values for control characters in S</short>
+        <short>String with the escaped values for control characters in S.</short>
       </element>
       <element name="Utf8EscapeControlChars.S">
-        <short>UTF-8 encoded string with values converted in the routine</short>
+        <short>UTF-8 encoded string with values converted in the routine.</short>
       </element>
       <element name="Utf8EscapeControlChars.EscapeMode">
-        <short>Controls the human readable format for escape characters</short>
+        <short>Controls the human readable format for escape characters.</short>
       </element>
 
       <element name="TUTF8TrimFlag">
         <short>
-          Controls trimming actions performed in UTF8Trim
+          Controls trimming actions performed in UTF8Trim.
         </short>
         <descr>
           <p>
@@ -1672,27 +1672,27 @@ end;
         </seealso>
       </element>
       <element name="TUTF8TrimFlag.u8tKeepStart">
-        <short>Keeps leading whitespace</short>
+        <short>Keeps leading whitespace.</short>
       </element>
       <element name="TUTF8TrimFlag.u8tKeepEnd">
-        <short>Keeps trailing whitespace</short>
+        <short>Keeps trailing whitespace.</short>
       </element>
       <element name="TUTF8TrimFlag.u8u8tKeepTabs">
-        <short>Keeps tab characters</short>
+        <short>Keeps tab characters.</short>
       </element>
       <element name="TUTF8TrimFlag.u8u8tKeepLineBreaks">
-        <short>Keeps line breaks</short>
+        <short>Keeps line breaks.</short>
       </element>
       <element name="TUTF8TrimFlag.u8tKeepNoBreakSpaces">
-        <short>Keeps no-break space characters</short>
+        <short>Keeps no-break space characters.</short>
       </element>
       <element name="TUTF8TrimFlag.u8tKeepControlCodes">
-        <short>Keeps control codes other than tabs and line breaks</short>
+        <short>Keeps control codes other than tabs and line breaks.</short>
       </element>
 
       <element name="TUTF8TrimFlags">
         <short>
-          Stores values from the TUTF8TrimFlag enumeration
+          Stores values from the TUTF8TrimFlag enumeration.
         </short>
         <descr>
           <p>
@@ -1707,7 +1707,7 @@ end;
 
       <element name="UTF8Trim">
         <short>
-          Removes leading and trailing whitespace or control characters
+          Removes leading and trailing whitespace or control characters.
         </short>
         <descr>
           <p>
@@ -1717,18 +1717,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8Trim.Result">
-        <short>Trimmed values for the string</short>
+        <short>Trimmed values for the string.</short>
       </element>
       <element name="UTF8Trim.s">
-        <short>String with values to trim</short>
+        <short>String with values to trim.</short>
       </element>
       <element name="UTF8Trim.Flags">
-        <short>Actions to perform in the function</short>
+        <short>Actions to perform in the function.</short>
       </element>
 
       <element name="UTF8CompareStr">
         <short>
-          Compares the UTF-8-encoded string values
+          Compares the UTF-8-encoded string values.
         </short>
         <descr>
           <p>
@@ -1749,24 +1749,24 @@ end;
         <seealso/>
       </element>
       <element name="UTF8CompareStr.Result">
-        <short>Relative order for the compared values</short>
+        <short>Relative order for the compared values.</short>
       </element>
       <element name="UTF8CompareStr.S1">
-        <short>First value for the comparison</short>
+        <short>First value for the comparison.</short>
       </element>
       <element name="UTF8CompareStr.S2">
-        <short>Second value for the comparison</short>
+        <short>Second value for the comparison.</short>
       </element>
       <element name="UTF8CompareStr.Count1">
-        <short>Length of the first value</short>
+        <short>Length of the first value.</short>
       </element>
       <element name="UTF8CompareStr.Count2">
-        <short>Length of the second value</short>
+        <short>Length of the second value.</short>
       </element>
 
       <element name="UTF8CompareText">
         <short>
-          Case-insensitive comparison of two UTF-8-encoded values
+          Case-insensitive comparison of two UTF-8-encoded values.
         </short>
         <descr>
           <p>
@@ -1787,13 +1787,13 @@ end;
         <seealso/>
       </element>
       <element name="UTF8CompareText.Result">
-        <short>Relative order for the compared values</short>
+        <short>Relative order for the compared values.</short>
       </element>
       <element name="UTF8CompareText.S1">
-        <short>First value for the comparison</short>
+        <short>First value for the comparison.</short>
       </element>
       <element name="UTF8CompareText.S2">
-        <short>Second value for the comparison</short>
+        <short>Second value for the comparison.</short>
       </element>
 
       <element name="UTF8CompareTextP">
@@ -1832,7 +1832,7 @@ end;
 
       <element name="UTF8CompareStrCollated">
         <short>
-          Compare two strings using language-specific sorting
+          Compare two strings using language-specific sorting.
         </short>
         <descr>
           <p>
@@ -1842,18 +1842,18 @@ end;
         <seealso/>
       </element>
       <element name="UTF8CompareStrCollated.Result">
-        <short>Relative order for the compared values</short>
+        <short>Relative order for the compared values.</short>
       </element>
       <element name="UTF8CompareStrCollated.S1">
-        <short>First string for the comparison</short>
+        <short>First string for the comparison.</short>
       </element>
       <element name="UTF8CompareStrCollated.S2">
-        <short>Second string for the comparison</short>
+        <short>Second string for the comparison.</short>
       </element>
 
       <element name="CompareStrListUTF8LowerCase">
         <short>
-          Compares the specified lines of text in a TStringList
+          Compares the specified lines of text in a TStringList.
         </short>
         <descr>
           <p>
@@ -1868,16 +1868,16 @@ end;
         </seealso>
       </element>
       <element name="CompareStrListUTF8LowerCase.Result">
-        <short>Relative order for the compared values</short>
+        <short>Relative order for the compared values.</short>
       </element>
       <element name="CompareStrListUTF8LowerCase.List">
-        <short>TStringList with values for the comparison</short>
+        <short>TStringList with values for the comparison.</short>
       </element>
       <element name="CompareStrListUTF8LowerCase.Index1">
-        <short>Position of the first text line</short>
+        <short>Position of the first text line.</short>
       </element>
       <element name="CompareStrListUTF8LowerCase.Index2">
-        <short>Position of the second text line</short>
+        <short>Position of the second text line.</short>
       </element>
 
       <element name="TStringListUTF8Fast">
@@ -1905,7 +1905,7 @@ end;
 
       <element name="TConvertResult">
         <short>
-          Indicates the result from UTF-8 &lt;-&gt; UTF-16  conversions
+          Indicates the result from UTF-8 &lt;-&gt; UTF-16  conversions.
         </short>
         <descr>
           <p>
@@ -1915,27 +1915,27 @@ end;
         <seealso/>
       </element>
       <element name="TConvertResult.trNoError">
-        <short>No error in the conversion</short>
+        <short>No error in the conversion.</short>
       </element>
       <element name="TConvertResult.trNullSrc">
-        <short>Source value is null</short>
+        <short>Source value is null.</short>
       </element>
       <element name="TConvertResult.trNullDest">
-        <short>Destination value is null</short>
+        <short>Destination value is null.</short>
       </element>
       <element name="TConvertResult.trDestExhausted">
-        <short>Destination value is too small for the converted value</short>
+        <short>Destination value is too small for the converted value.</short>
       </element>
       <element name="TConvertResult.trInvalidChar">
-        <short>An invalid encoding was found in the source value</short>
+        <short>An invalid encoding was found in the source value.</short>
       </element>
       <element name="TConvertResult.trUnfinishedChar">
-        <short>An unfinished encoding was found in the source value</short>
+        <short>An unfinished encoding was found in the source value.</short>
       </element>
 
       <element name="TConvertOption">
         <short>
-          Indicates options enabled during UTF-8 &lt;-&gt; UTF-16 conversions
+          Indicates options enabled during UTF-8 &lt;-&gt; UTF-16 conversions.
         </short>
         <descr>
           <p>
@@ -1945,13 +1945,13 @@ end;
         <seealso/>
       </element>
       <element name="TConvertOption.toInvalidCharError">
-        <short>Stop on invalid source char and report error</short>
+        <short>Stop on invalid source char and report error.</short>
       </element>
       <element name="TConvertOption.toInvalidCharToSymbol">
         <short>Replace invalid source chars with '?'</short>
       </element>
       <element name="TConvertOption.toUnfinishedCharError">
-        <short>Stop on unfinished source char and report error</short>
+        <short>Stop on unfinished source char and report error.</short>
       </element>
       <element name="TConvertOption.toUnfinishedCharToSymbol">
         <short>Replace unfinished source char with '?'</short>
@@ -1959,7 +1959,7 @@ end;
 
       <element name="TConvertOptions">
         <short>
-          Stores values from the TConvertOption enumeration
+          Stores values from the TConvertOption enumeration.
         </short>
         <descr>
           <p>
@@ -1975,7 +1975,7 @@ end;
 
       <element name="ConvertUTF8ToUTF16">
         <short>
-          Converts values from UTF-8 encoding to UTF-16 encoding
+          Converts values from UTF-8 encoding to UTF-16 encoding.
         </short>
         <descr>
           <p>
@@ -2047,29 +2047,29 @@ end;
         <seealso/>
       </element>
       <element name="ConvertUTF8ToUTF16.Result">
-        <short>Converted values from the function</short>
+        <short>Converted values from the function.</short>
       </element>
       <element name="ConvertUTF8ToUTF16.Dest">
-        <short>Pointer to destination string</short>
+        <short>Pointer to destination string.</short>
       </element>
       <element name="ConvertUTF8ToUTF16.DestWideCharCount">
-        <short>Wide char count allocated in destination string</short>
+        <short>Wide char count allocated in destination string.</short>
       </element>
       <element name="ConvertUTF8ToUTF16.Src">
-        <short>Pointer to source string</short>
+        <short>Pointer to source string.</short>
       </element>
       <element name="ConvertUTF8ToUTF16.SrcCharCount">
-        <short>Char count allocated in source string</short>
+        <short>Char count allocated in source string.</short>
       </element>
       <element name="ConvertUTF8ToUTF16.Options">
-        <short>Conversion options, if none is set, both invalid and unfinished source chars are skipped</short>
+        <short>Conversion options, if none is set, both invalid and unfinished source chars are skipped.</short>
       </element>
       <element name="ConvertUTF8ToUTF16.ActualWideCharCount">
-        <short>Actual WideChar count used int he conversion</short>
+        <short>Actual WideChar count used int he conversion.</short>
       </element>
 
       <element name="ConvertUTF16ToUTF8">
-        <short>Converts values from UTF-16 encoding to UTF-8 encoding</short>
+        <short>Converts values from UTF-16 encoding to UTF-8 encoding.</short>
         <descr>
           <p>
             Converts the specified UTF-16 encoded string (system endian) to its UTF-8 encoding.
@@ -2144,31 +2144,31 @@ end;
         </seealso>
       </element>
       <element name="ConvertUTF16ToUTF8.Result">
-        <short>Converted values from the function</short>
+        <short>Converted values from the function.</short>
       </element>
       <element name="ConvertUTF16ToUTF8.Dest">
-        <short>Pointer to destination string</short>
+        <short>Pointer to destination string.</short>
       </element>
       <element name="ConvertUTF16ToUTF8.DestCharCount">
-        <short>Char count allocated in destination string</short>
+        <short>Char count allocated in destination string.</short>
       </element>
       <element name="ConvertUTF16ToUTF8.Src">
-        <short>Pointer to source string</short>
+        <short>Pointer to source string.</short>
       </element>
       <element name="ConvertUTF16ToUTF8.SrcWideCharCount">
-        <short>Wide char count allocated in source string</short>
+        <short>Wide char count allocated in source string.</short>
       </element>
       <element name="ConvertUTF16ToUTF8.Options">
         <short>Conversion options, if none is set, both
-          invalid and unfinished source chars are skipped</short>
+          invalid and unfinished source chars are skipped.</short>
       </element>
       <element name="ConvertUTF16ToUTF8.ActualCharCount">
-        <short>Actual char count converted from source string to destination string</short>
+        <short>Actual char count converted from source string to destination string.</short>
       </element>
 
       <element name="UTF8ToUTF16">
         <short>
-          Converts the UTF-8 encoded string to UTF-16 encoding (system endian)
+          Converts the UTF-8 encoded string to UTF-16 encoding (system endian).
         </short>
         <descr>
           <p>
@@ -2180,7 +2180,7 @@ end;
 
       <element name="UTF16ToUTF8">
         <short>
-          Converts a UTF-16-encoded string (system endian) to UTF-8 encoding
+          Converts a UTF-16-encoded string (system endian) to UTF-8 encoding.
         </short>
         <descr>
           <p>
@@ -2233,20 +2233,20 @@ end;
         </seealso>
       </element>
       <element name="UTF16ToUTF8.Result">
-        <short>UTF-8-encoded string</short>
+        <short>UTF-8-encoded string.</short>
       </element>
       <element name="UTF16ToUTF8.S">
-        <short>Source UTF-16 string (system endian)</short>
+        <short>Source UTF-16 string (system endian).</short>
       </element>
       <element name="UTF16ToUTF8.P">
-        <short>Pointer to the Source UTF-16 string (system endian)</short>
+        <short>Pointer to the Source UTF-16 string (system endian).</short>
       </element>
       <element name="UTF16ToUTF8.WideCnt">
-        <short>Number of WideChar values in the source string</short>
+        <short>Number of WideChar values in the source string.</short>
       </element>
 
       <element name="LazGetLanguageIDs">
-        <short>Gets the Language ID and a fallback value for the platform</short>
+        <short>Gets the Language ID and a fallback value for the platform.</short>
         <descr>
           <p>
             <var>LazGetLanguageIDs</var> is a procedure used to get the primary language ID and a fallback value. The values are returned in the <var>Lang</var> and <var>FallbackLang</var> variable parameters.
@@ -2258,14 +2258,14 @@ end;
         <seealso/>
       </element>
       <element name="LazGetLanguageIDs.Lang">
-        <short>Language code for the platform</short>
+        <short>Language code for the platform.</short>
       </element>
       <element name="LazGetLanguageIDs.FallbackLang">
-        <short>Fallback language code for the platform</short>
+        <short>Fallback language code for the platform.</short>
       </element>
 
       <element name="LazGetShortLanguageID">
-        <short>Removes country information from a language ID</short>
+        <short>Removes country information from a language ID.</short>
         <descr>
           <p>
             <var>LazGetShortLanguageID</var> strips country information from the language ID, making it simpler to use. Ideally the resulting ID should conform to ISO 639-1, or ISO 639-2 when the  language code is not in ISO 639-1.
@@ -2274,12 +2274,12 @@ end;
         <seealso/>
       </element>
       <element name="LazGetShortLanguageID.Lang">
-        <short>Language ID examined in the routine</short>
+        <short>Language ID examined in the routine.</short>
       </element>
 
       <element name="FPUpChars">
         <short>
-          Contains uppercase characters for all values in the char type
+          Contains uppercase characters for all values in the char type.
         </short>
         <descr>
           <p>
@@ -2290,7 +2290,7 @@ end;
       </element>
 
       <element name="UTF8GetStandardCodePage">
-        <short>Gets the default system code page for the wide string manager</short>
+        <short>Gets the default system code page for the wide string manager.</short>
         <descr>
           <p>
             <var>UTF8GetStandardCodePage</var> is a <var>TSystemCodePage</var> function used to get the default code page for strings in the Wide String manager. UTF8GetStandardCodePage is implemented for Windows platforms that use a UTF-8-enabled Run-time Library (RTL). It is assigned as the procedure used by the wide string manager for the platform.

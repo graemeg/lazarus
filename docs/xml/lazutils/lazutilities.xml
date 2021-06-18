@@ -8,7 +8,7 @@
     -->
     <module name="LazUtilities">
       <short>
-        Contains miscellaneous utility routines and variables used in the Lazarus IDE and LCL
+        Contains miscellaneous utility routines and variables used in the Lazarus IDE and LCL.
       </short>
       <descr>
         <p>
@@ -22,18 +22,18 @@
       <element name="TypInfo"/>
 
       <element name="FreeThenNil">
-        <short>Ensures that the specified object instance is freed and set to Nil</short>
+        <short>Ensures that the specified object instance is freed and set to Nil.</short>
         <descr>
           <var>FreeThenNil</var> is a procedure used to ensure that the object instance in <var>obj</var> is freed and set to Nil. If obj has been assigned, it is cast to a <var>TObject</var> instance and its Free method is called. Finally, the pointer to the address in obj is set to Nil.
         </descr>
         <seealso/>
       </element>
       <element name="FreeThenNil.obj">
-        <short>Object instance modified in the routine</short>
+        <short>Object instance modified in the routine.</short>
       </element>
 
       <element name="ComparePointers">
-        <short>Gets the relative order for the specified Pointers</short>
+        <short>Gets the relative order for the specified Pointers.</short>
         <descr>
           <p>
             <var>ComparePointers</var> is an <var>Integer</var> function used to get the relative order for the specified Pointer values. The following return values are used in the routine:
@@ -50,17 +50,17 @@
         <seealso/>
       </element>
       <element name="ComparePointers.Result">
-        <short>Numeric value with the relative order for the compared Pointers</short>
+        <short>Numeric value with the relative order for the compared Pointers.</short>
       </element>
       <element name="ComparePointers.p1">
-        <short>Pointer compared in the routine</short>
+        <short>Pointer compared in the routine.</short>
       </element>
       <element name="ComparePointers.p2">
-        <short>Pointer compared in the routine</short>
+        <short>Pointer compared in the routine.</short>
       </element>
 
       <element name="CompareBoolean">
-        <short>Compares the specified Boolean values</short>
+        <short>Compares the specified Boolean values.</short>
         <descr>
           <dl>
             <dt>0</dt>
@@ -74,17 +74,17 @@
         <seealso/>
       </element>
       <element name="CompareBoolean.Result">
-        <short>Numeric value for the comparison</short>
+        <short>Numeric value for the comparison.</short>
       </element>
       <element name="CompareBoolean.b1">
-        <short>Boolean value compared in the routine</short>
+        <short>Boolean value compared in the routine.</short>
       </element>
       <element name="CompareBoolean.b2">
-        <short>Boolean value compared in the routine</short>
+        <short>Boolean value compared in the routine.</short>
       </element>
 
       <element name="GetEnumValueDef">
-        <short>Gets the ordinal position for an enumeration value with the specified name</short>
+        <short>Gets the ordinal position for an enumeration value with the specified name.</short>
         <descr>
           <p>
             <var>GetEnumValueDef</var> is an <var>Integer</var> function used to get the ordinal position in the specified enumeration type insformation for the value with the given name.
@@ -99,20 +99,20 @@
         </seealso>
       </element>
       <element name="GetEnumValueDef.Result">
-        <short>Ordinal position for the enumeration value with the specified name</short>
+        <short>Ordinal position for the enumeration value with the specified name.</short>
       </element>
       <element name="GetEnumValueDef.TypeInfo">
-        <short>Pointer to the type information examined in the routine</short>
+        <short>Pointer to the type information examined in the routine.</short>
       </element>
       <element name="GetEnumValueDef.Name">
-        <short>Name for the enumeration value to locate in TypeInfo</short>
+        <short>Name for the enumeration value to locate in TypeInfo.</short>
       </element>
       <element name="GetEnumValueDef.DefaultValue">
-        <short>Default ordinal position for the enumeration value used when Name is not found</short>
+        <short>Default ordinal position for the enumeration value used when Name is not found.</short>
       </element>
 
       <element name="RoundToInt">
-        <short>Rounds the specified Extended value to an Integer value</short>
+        <short>Rounds the specified Extended value to an Integer value.</short>
         <descr>
           <p>
             Calls <var>Round</var> to round the <var>Extended</var> value, and casts the result to the <var>Integer</var> type used as the return value.
@@ -121,14 +121,14 @@
         <seealso/>
       </element>
       <element name="RoundToInt.Result">
-        <short>Integer value for the rounded numeric value</short>
+        <short>Integer value for the rounded numeric value.</short>
       </element>
       <element name="RoundToInt.e">
-        <short>Extended type rounded and converted in the routine</short>
+        <short>Extended type rounded and converted in the routine.</short>
       </element>
 
       <element name="RoundToCardinal">
-        <short>Rounds the specified Extended value to a Cardinal value</short>
+        <short>Rounds the specified Extended value to a Cardinal value.</short>
         <descr>
           <p>
             Calls <var>Round</var> to round the <var>Extended</var> value, and casts the result to the <var>Cardinal</var> type used as the return value.
@@ -137,38 +137,38 @@
         <seealso/>
       </element>
       <element name="RoundToCardinal.Result">
-        <short>Cardinal value for the rounded numeric value</short>
+        <short>Cardinal value for the rounded numeric value.</short>
       </element>
       <element name="RoundToCardinal.e">
-        <short>Extended type rounded and converted in the routine</short>
+        <short>Extended type rounded and converted in the routine.</short>
       </element>
 
       <element name="TruncToInt">
-        <short>Truncates the extended value and returns an Integer type</short>
+        <short>Truncates the extended value and returns an Integer type.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TruncToInt.Result">
-        <short>Integer type with the truncated value</short>
+        <short>Integer type with the truncated value.</short>
       </element>
       <element name="TruncToInt.e">
-        <short>Extended value truncated and converted in the routine</short>
+        <short>Extended value truncated and converted in the routine.</short>
       </element>
 
       <element name="TruncToCardinal">
-        <short>Truncates the extended value and returns a Cardinal type</short>
+        <short>Truncates the extended value and returns a Cardinal type.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TruncToCardinal.Result">
-        <short>Cardinal type with the truncated value</short>
+        <short>Cardinal type with the truncated value.</short>
       </element>
       <element name="TruncToCardinal.e">
-        <short>Extended value truncated and converted in the routine</short>
+        <short>Extended value truncated and converted in the routine.</short>
       </element>
 
       <element name="StrToDouble">
-        <short>Converts the specified string value to a Double type</short>
+        <short>Converts the specified string value to a Double type.</short>
         <descr>
           <p>
             Calls <var>StrToFloat</var> to convert the value in <var>s</var>, and casts the result to the <var>Double</var> data type used as the return value.
@@ -177,10 +177,10 @@
         <seealso/>
       </element>
       <element name="StrToDouble.Result">
-        <short>Double type with the converted value</short>
+        <short>Double type with the converted value.</short>
       </element>
       <element name="StrToDouble.s">
-        <short>String value converted in the routine</short>
+        <short>String value converted in the routine.</short>
       </element>
 
       <element name="MergeSortWithLen">

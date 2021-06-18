@@ -9,7 +9,7 @@
 -->
 
 <module name="StringHashList">
-<short>Implements a hashed list of string values</short>
+<short>Implements a hashed list of string values.</short>
 <descr>
   <p>
     <file>stringhashlist.pas</file> contains types, classes, and routines used to implement a hashed list of string values.
@@ -28,11 +28,11 @@
 <element name="LazUtilsStrConsts"/>
 
 <element name="PStringHashItem">
-  <short>Pointer to a TStringHashItem instance</short>
+  <short>Pointer to a TStringHashItem instance.</short>
 </element>
 
 <element name="TStringHashItem">
-  <short>Record type used to represent a hash item for a String value</short>
+  <short>Record type used to represent a hash item for a String value.</short>
   <descr>
     <p>
       <var>TStringHashItem</var> is a <b>record</b> type which represents a hash item for a String value. It has members for the Cardinal hash value, the String for the hash value, and a pointer to Data associated with the hash item.
@@ -48,20 +48,20 @@
 </element>
 
 <element name="TStringHashItem.HashValue">
-  <short>Cardinal hash value for the characters in Key</short>
+  <short>Cardinal hash value for the characters in Key.</short>
 </element>
 
 <!-- variable Visibility: default -->
 <element name="TStringHashItem.Key">
-  <short>String with the content used to generate the HashValue</short>
+  <short>String with the content used to generate the HashValue.</short>
 </element>
 
 <element name="TStringHashItem.Data">
-  <short>Untyped Pointer to arbitrary data associated with the Key and HashValue</short>
+  <short>Untyped Pointer to arbitrary data associated with the Key and HashValue.</short>
 </element>
 
 <element name="PStringHashItemList">
-  <short>Pointer to a block of TStringHashItem instances</short>
+  <short>Pointer to a block of TStringHashItem instances.</short>
   <descr>
     <p>
       Implements the storage used in the <var>TStringHashList</var> class.
@@ -74,7 +74,7 @@
 </element>
 
 <element name="TStringHashList">
-  <short>Implements a container used to store hashed item values, keys, and data</short>
+  <short>Implements a container used to store hashed item values, keys, and data.</short>
   <descr>
     <p>
       <var>TStringHashList</var> is a <var>TObject</var> descendant which implements a  container for hash values, keys, and data for <var>String</var> types.
@@ -150,7 +150,7 @@
 <element name="TStringHashList.SetData.AValue"/>
 
 <element name="TStringHashList.HashOf">
-  <short>Calculates the hash value for the specified String</short>
+  <short>Calculates the hash value for the specified String.</short>
   <descr>
     <p>
       <var>HashOf</var> is a <var>Cardinal</var> function used to calculate and return the 32-bit hash value for the String in Key. HashOf examines all bytes values in Key (in reverse order). When CaseSensitive is set to <b>False</b>, the characters are converted to their uppercase equivalent for use in the hashing algorithm. Range and overflow checking are disabled in the HashOf method.
@@ -168,14 +168,14 @@
   </seealso>
 </element>
 <element name="TStringHashList.HashOf.Result">
-<short>Cardinal hash value for the specified Key</short>
+<short>Cardinal hash value for the specified Key.</short>
 </element>
 <element name="TStringHashList.HashOf.Key">
-<short>String used to calculate the hash value for an item in the list</short>
+<short>String used to calculate the hash value for an item in the list.</short>
 </element>
 
 <element name="TStringHashList.Insert">
-  <short>Stores a hash item at the specified position in the container</short>
+  <short>Stores a hash item at the specified position in the container.</short>
   <descr>
     <p>
       <var>Insert</var> is a method used to store the pointer in Item to the internal storage in List. Insert re-allocates the memory used for List to include the addition space needed for the new item.
@@ -197,14 +197,14 @@
   </seealso>
 </element>
 <element name="TStringHashList.Insert.Index">
-  <short>Ordinal position in List for the specified hash item</short>
+  <short>Ordinal position in List for the specified hash item.</short>
 </element>
 <element name="TStringHashList.Insert.Item">
-  <short>Hash item inserted in the method</short>
+  <short>Hash item inserted in the method.</short>
 </element>
 
 <element name="TStringHashList.Create">
-  <short>Constructor for the class instance</short>
+  <short>Constructor for the class instance.</short>
   <descr>
     <p>
       <var>Create</var> is the constructor for the class instance. It sets the value in the CaseSensitive property to the value specified in the CaseSensitivity argument. Create calls the inherited (empty) constructor prior to exiting from the method.
@@ -215,11 +215,11 @@
   </seealso>
 </element>
 <element name="TStringHashList.Create.CaseSensitivity">
-<short>Default value for the CaseSensitive property in the class instance</short>
+<short>Default value for the CaseSensitive property in the class instance.</short>
 </element>
 
 <element name="TStringHashList.Destroy">
-  <short>Destructor for the class instance</short>
+  <short>Destructor for the class instance.</short>
   <descr>
     <p>
       <var>Destroy</var> is the overridden destructor for the class instance. It calls the Clear method to remove free any hash items and the storage allocated in List. Destroy calls the inherited method prior to exit.
@@ -232,7 +232,7 @@
 </element>
 
 <element name="TStringHashList.Add">
-  <short>Adds a hash item and optional data to the container</short>
+  <short>Adds a hash item and optional data to the container.</short>
   <descr>
     <p>
       <var>Add</var> is an overloaded Integer function used to store a hash item (and optional data associated with item) in the List for the container. The return value contains the ordinal position in List where the hash item was stored.
@@ -266,17 +266,17 @@
   </seealso>
 </element>
 <element name="TStringHashList.Add.Result">
-  <short>Ordinal position in List where the new hash item was stored</short>
+  <short>Ordinal position in List where the new hash item was stored.</short>
 </element>
 <element name="TStringHashList.Add.S">
-  <short>Key value for the hash item</short>
+  <short>Key value for the hash item.</short>
 </element>
 <element name="TStringHashList.Add.ItemData">
-  <short>Untyped pointer to the optional data for the specified key</short>
+  <short>Untyped pointer to the optional data for the specified key.</short>
 </element>
 
 <element name="TStringHashList.Clear">
-  <short>Frees resources allocated for hash items and the storage for the list</short>
+  <short>Frees resources allocated for hash items and the storage for the list.</short>
   <descr>
     <p>
       <var>Clear</var> is a method used to free resources allocated for the hash items, and the memory allocated for the List property.
@@ -301,7 +301,7 @@
 </element>
 
 <element name="TStringHashList.Find">
-  <short>Gets the ordinal position in List where the specified key (and data) are stored</short>
+  <short>Gets the ordinal position in List where the specified key (and data) are stored.</short>
   <descr>
     <p>
       <var>Find</var> is an Integer function used to the position in List where the hash item with the specified Key value is stored. The return value contains the ordinal position for the hash item in List, or -1 when a hash item is not found for the key value in S.
@@ -320,17 +320,17 @@
   </seealso>
 </element>
 <element name="TStringHashList.Find.Result">
-  <short>Ordinal position for the requested hash item, or -1 when not found</short>
+  <short>Ordinal position for the requested hash item, or -1 when not found.</short>
 </element>
 <element name="TStringHashList.Find.S">
-  <short>Key value for the hash item to locate in the List</short>
+  <short>Key value for the hash item to locate in the List.</short>
 </element>
 <element name="TStringHashList.Find.Data">
-  <short>Untyped pointer to the optional data for the hash item</short>
+  <short>Untyped pointer to the optional data for the hash item.</short>
 </element>
 
 <element name="TStringHashList.Remove">
-  <short>Frees resources allocated for the hash item and deletes it from the List</short>
+  <short>Frees resources allocated for the hash item and deletes it from the List.</short>
   <descr>
     <p>
       <var>Remove</var> is a method used to remove a hash item in List with the specified key value (and optional data).
@@ -352,17 +352,17 @@
   </seealso>
 </element>
 <element name="TStringHashList.Remove.Result">
-  <short>Ordinal position in List for the removed hash item, or -1 when not found</short>
+  <short>Ordinal position in List for the removed hash item, or -1 when not found.</short>
 </element>
 <element name="TStringHashList.Remove.S">
-  <short>Key value for the hash item removed in the method</short>
+  <short>Key value for the hash item removed in the method.</short>
 </element>
 <element name="TStringHashList.Remove.Data">
-  <short>Untyped pointer to the optional data for the hash item</short>
+  <short>Untyped pointer to the optional data for the hash item.</short>
 </element>
 
 <element name="TStringHashList.CaseSensitive">
-  <short>Indicates if case sensitivity is used for hash item keys</short>
+  <short>Indicates if case sensitivity is used for hash item keys.</short>
   <descr>
     <p>
       <var>CaseSensitive</var> is a <var>Boolean</var> property which indicates the case for the key values in hash items. The default value for the property is set to the argument passed to the Create constructor.
@@ -386,7 +386,7 @@
 </element>
 
 <element name="TStringHashList.Count">
-  <short>Number of hash items stored in the List property</short>
+  <short>Number of hash items stored in the List property.</short>
   <descr>
     <p>
       <var>Count</var> is a read-only <var>Integer</var> property which contains the number of hash items stored in List. The value is maintained when the Add, Insert, Remove, Delete, or Clear methods are called.
@@ -400,7 +400,7 @@
 </element>
 
 <element name="TStringHashList.Data">
-  <short>Provided indexed access to the data for a hash item using its key value</short>
+  <short>Provided indexed access to the data for a hash item using its key value.</short>
   <descr>
     <p>
       <var>Data</var> is an indexed <var>Pointer</var> property which provides access to the storage for a hash item by its key value. The untyped Pointer in the property values is arbitrary data associated with the key value, and must be cast to the type expected in an application.
@@ -421,11 +421,11 @@
   </seealso>
 </element>
 <element name="TStringHashList.Data.S">
-  <short>Key value for the hash item</short>
+  <short>Key value for the hash item.</short>
 </element>
 
 <element name="TStringHashList.List">
-  <short>Provides indexed access to the storage used in the container</short>
+  <short>Provides indexed access to the storage used in the container.</short>
   <descr>
     <p>
       <var>List</var> is a read-only indexed <var>PStringHashItemList</var> property which provides access to the storage used in the container. Resources in List are allocated and freed in methods like Add, Remove, Delete, and Clear.
