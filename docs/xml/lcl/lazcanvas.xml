@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="LazCanvas">
-      <short>Classes and functions for extending TFPImageCanvas</short>
+      <short>Classes and functions for extending TFPImageCanvas.</short>
       <descr>
         <p>
           <file>lazcanvas.pas</file> contains classes and functions for extending TFPImageCanvas to support more stretching filters, and to support all features from the LCL TCanvas. TLazCanvas also fixes various small problems and incompatibilities between TFPImageCanvas versions, making the interface smoother and more consistent.
@@ -37,7 +37,7 @@
       <element name="LCLProc"/>
 
       <element name="TLazCanvasImageFormat">
-        <short>Identifies image formats supported in TLazCanvas</short>
+        <short>Identifies image formats supported in TLazCanvas.</short>
         <descr>
           <p>
             Used in the implementation of the <var>CanvasCopyRect</var> method in <var>TLazCanvas</var>, and in custom-drawn LCL controls to speed up image drawing in the LCL interface.
@@ -48,33 +48,33 @@
         </seealso>
       </element>
       <element name="TLazCanvasImageFormat.clfOther">
-        <short>Images use a format other than those in this enumeration</short>
+        <short>Images use a format other than those in this enumeration.</short>
       </element>
       <element name="TLazCanvasImageFormat.clfRGB16_R5G6B5">
-        <short>Images use 16-bit RGB colors</short>
+        <short>Images use 16-bit RGB colors.</short>
       </element>
       <element name="TLazCanvasImageFormat.clfRGB24">
-        <short>Images use 24-bit RGB colors</short>
+        <short>Images use 24-bit RGB colors.</short>
       </element>
       <element name="TLazCanvasImageFormat.clfRGB24UpsideDown">
-        <short>Images use 24-bit RGB colors with inverse values</short>
+        <short>Images use 24-bit RGB colors with inverse values.</short>
       </element>
       <element name="TLazCanvasImageFormat.clfBGR24">
-        <short>Images use 24-bit BGR colors</short>
+        <short>Images use 24-bit BGR colors.</short>
       </element>
       <element name="TLazCanvasImageFormat.clfBGRA32">
-        <short>Images use 32-bit BGR colors with an Aplha channel</short>
+        <short>Images use 32-bit BGR colors with an Aplha channel.</short>
       </element>
       <element name="TLazCanvasImageFormat.clfRGBA32">
-        <short>Images use 32-bit RGB colors with an Aplha channel</short>
+        <short>Images use 32-bit RGB colors with an Aplha channel.</short>
       </element>
       <element name="TLazCanvasImageFormat.clfARGB32">
-        <short>Images use 32-bit RGB colors with an Aplha channel in the low-order octet</short>
+        <short>Images use 32-bit RGB colors with an Aplha channel in the low-order octet.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TFPSharpInterpolation">
-        <short>Implements a very sharp and square interpolation</short>
+        <short>Implements a very sharp and square interpolation.</short>
         <descr>
           <p>
             TFPSharpInterpolation implements a very sharp and square interpolation for stretching, similar to StretchBlt from the Windows API.
@@ -86,7 +86,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TFPSharpInterpolation.Execute">
         <short>
-          Paints an image on the Canvas using the specified coordinates and dimensions
+          Paints an image on the Canvas using the specified coordinates and dimensions.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -106,7 +106,7 @@
 
       <!-- class Visibility: default -->
       <element name="TLazCanvasState">
-        <short>Contains properties reflecting the state for a Lazarus canvas</short>
+        <short>Contains properties reflecting the state for a Lazarus canvas.</short>
         <descr>
           <p>
             <var>TLazCanvasState</var> is a class with public members that reflect the state for a <var>TLazCanvas</var> instance. A destructor is provided to ensure that resources allocated to members variables are freed before the class instance is destroyed.
@@ -128,28 +128,28 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvasState.Brush">
-        <short>Brush for the canvas</short>
+        <short>Brush for the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvasState.Pen">
-        <short>Pen for the canvas</short>
+        <short>Pen for the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvasState.Font">
-        <short>Font for the canvas</short>
+        <short>Font for the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvasState.BaseWindowOrg">
-        <short>Base window origin for the canvas</short>
+        <short>Base window origin for the canvas.</short>
         <descr>
           <p>
             The values in <var>WindowOrg</var> are relative to the coordinates in <var>BaseWindowOrg</var>. BaseWindowOrg coordinates are relative to the canvas for the containing Form. It is useful when implementing the non-native windowed controls.
@@ -160,7 +160,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvasState.WindowOrg">
-        <short>Window origin for the canvas</short>
+        <short>Window origin for the canvas.</short>
         <descr>
           <p>
             Contains the absolute coordinates for the canvas with <var>BaseWindowOrg</var> summed up.
@@ -171,21 +171,21 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvasState.Clipping">
-        <short>Indicates if Clipping is enabled for the canvas</short>
+        <short>Indicates if Clipping is enabled for the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvasState.ClipRegion">
-        <short>Defines the clipping region for the canvas</short>
+        <short>Defines the clipping region for the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TLazCanvasState.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated for the <var>Brush</var> and <var>Pen</var> properties are freed before the class instance is destroyed. Destroy calls the inherited destructor prior to exiting from the method.
@@ -200,7 +200,7 @@
       <!-- class Visibility: default -->
       <element name="TLazCanvas">
         <short>
-          Implements a canvas which masks differences between FCL and LCL canvas classes
+          Implements a canvas which masks differences between FCL and LCL canvas classes.
         </short>
         <descr>
           <p>
@@ -225,7 +225,7 @@
 
       <!-- variable Visibility: private -->
       <element name="TLazCanvas.GraphicStateList">
-        <short>Stores saved canvas state information</short>
+        <short>Stores saved canvas state information.</short>
         <descr>
           <p>
             Used to store and restore canvas states in the <var>SaveState</var> and <var>RestoreState</var> methods. Contains <var>TLazCanvasState</var> class instances.
@@ -240,83 +240,83 @@
 
       <!-- function Visibility: private -->
       <element name="TLazCanvas.GetAssignedBrush">
-        <short>Gets the value for the AssignedBrush property</short>
+        <short>Gets the value for the AssignedBrush property.</short>
         <descr></descr>
         <seealso>
           <link id="TLazCanvas.AssignedBrush"/>
         </seealso>
       </element>
       <element name="TLazCanvas.GetAssignedBrush.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TLazCanvas.GetAssignedPen">
-        <short>Gets the value for the AssignedPen property</short>
+        <short>Gets the value for the AssignedPen property.</short>
         <descr></descr>
         <seealso>
           <link id="TLazCanvas.AssignedPen"/>
         </seealso>
       </element>
       <element name="TLazCanvas.GetAssignedPen.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TLazCanvas.GetAssignedFont">
-        <short>Gets the value for the AssignedFont property</short>
+        <short>Gets the value for the AssignedFont property.</short>
         <descr></descr>
         <seealso>
           <link id="TLazCanvas.AssignedFont"/>
         </seealso>
       </element>
       <element name="TLazCanvas.GetAssignedFont.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TLazCanvas.GetWindowOrg">
-        <short>Gets the value for the WindowOrg property</short>
+        <short>Gets the value for the WindowOrg property.</short>
         <descr></descr>
         <seealso>
           <link id="TLazCanvas.WindowOrg"/>
         </seealso>
       </element>
       <element name="TLazCanvas.GetWindowOrg.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TLazCanvas.SetWindowOrg">
-        <short>Sets the value for the WindowOrg property</short>
+        <short>Sets the value for the WindowOrg property.</short>
         <descr></descr>
         <seealso>
           <link id="TLazCanvas.WindowOrg"/>
         </seealso>
       </element>
       <element name="TLazCanvas.SetWindowOrg.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TLazCanvas.SetColor">
-        <short>Sets the color for the pixel at the specified coordinates</short>
+        <short>Sets the color for the pixel at the specified coordinates.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.SetColor.x">
-        <short>Horizontal pixel coordinate</short>
+        <short>Horizontal pixel coordinate.</short>
       </element>
       <element name="TLazCanvas.SetColor.y">
-        <short>Vertical pixel coordinate</short>
+        <short>Vertical pixel coordinate.</short>
       </element>
       <element name="TLazCanvas.SetColor.AValue">
-        <short>Color for the pixel</short>
+        <short>Color for the pixel.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TLazCanvas.DoCreateDefaultFont">
-        <short>Creates the custom font used as the default for the canvas</short>
+        <short>Creates the custom font used as the default for the canvas.</short>
         <descr>
           <p>
             <var>DoCreateDefaultFont</var> is an overridden <var>TFPCustomFont</var> function used to provide the default font for the canvas class instance. DoCreateDefaultFont implements the abstract virtual method defined in an ancestor class, and emulates the method defined in TCanvas.
@@ -328,13 +328,13 @@
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.DoCreateDefaultFont.Result">
-        <short>TFPCustomFont instance created and initialized in the method</short>
+        <short>TFPCustomFont instance created and initialized in the method.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TLazCanvas.DoRectangle">
         <short>
-          Adjusts the fcl-image coordinate system to be compatible with coordinates used in TCanvas
+          Adjusts the fcl-image coordinate system to be compatible with coordinates used in TCanvas.
         </short>
         <descr>
           <p>
@@ -349,12 +349,12 @@
         </seealso>
       </element>
       <element name="TLazCanvas.DoRectangle.Bounds">
-        <short>TRect with the bounds for the rectangular area</short>
+        <short>TRect with the bounds for the rectangular area.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TLazCanvas.DoRectangleFill">
-        <short>Adjusts the FCL image rectangle to be LCL compatible</short>
+        <short>Adjusts the FCL image rectangle to be LCL compatible.</short>
         <descr>
           <p>
             Adjusts the fcl-image coordinate system to be compatible with coordinates used in <var>TCanvas</var>.
@@ -363,12 +363,12 @@
         <seealso/>
       </element>
       <element name="TLazCanvas.DoRectangleFill.Bounds">
-        <short>Rectangle bounds adjusted in the method</short>
+        <short>Rectangle bounds adjusted in the method.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TLazCanvas.DoPolygonFill">
-        <short>Implements a polygon fill algorithm not present in fcl-image</short>
+        <short>Implements a polygon fill algorithm not present in fcl-image.</short>
         <descr>
           <p>
             Implements a polygon fill algorithm not present in fcl-image. The algorithm is explained <url href="http://alienryderflex.com/polygon_fill/">here</url>.
@@ -377,30 +377,30 @@
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.DoPolygonFill.points">
-        <short>Array with the TPoint instances for the polygon corners</short>
+        <short>Array with the TPoint instances for the polygon corners.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TLazCanvas.DoLine">
-        <short>Draws a line using the specified coordinates and Pen for the canvas</short>
+        <short>Draws a line using the specified coordinates and Pen for the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.DoLine.x1">
-        <short>Initial horizontal coordinate for the line</short>
+        <short>Initial horizontal coordinate for the line.</short>
       </element>
       <element name="TLazCanvas.DoLine.y1">
-        <short>Initial vertical coordinate for the line</short>
+        <short>Initial vertical coordinate for the line.</short>
       </element>
       <element name="TLazCanvas.DoLine.x2">
-        <short>Terminal horizontal coordinate for the line</short>
+        <short>Terminal horizontal coordinate for the line.</short>
       </element>
       <element name="TLazCanvas.DoLine.y2">
-        <short>Terminal vertical coordinate for the line</short>
+        <short>Terminal vertical coordinate for the line.</short>
       </element>
 
       <element name="TLazCanvas.DoCopyRect">
-        <short>Copies a source rectangle to the specified canvas</short>
+        <short>Copies a source rectangle to the specified canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -418,7 +418,7 @@
       </element>
 
       <element name="TLazCanvas.DoDraw">
-        <short>Draws the specified image at the given coordinates using AlphaBlending</short>
+        <short>Draws the specified image at the given coordinates using AlphaBlending.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -434,7 +434,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvas.HasNoImage">
-        <short>Indicates if a valid image was provided in the constructor</short>
+        <short>Indicates if a valid image was provided in the constructor.</short>
         <descr>
           <p>
             <var>HasNoImage</var> is a <var>Boolean</var> member used to indicate if a valid <var>TFPCustomImage</var> was provided as an argument to the <var>Create</var> constructor. Used in the implementation of the <var>UpdateControlLazImageAndCanvas</var> routine for non-native custom drawn window controls.
@@ -447,7 +447,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazCanvas.NativeDC">
-        <short>Native device context for the canvas</short>
+        <short>Native device context for the canvas.</short>
         <descr>
           <p>
             <var>NativeDC</var> is a <var>PtrInt</var> member which contains the device context used to render a custom-drawn LCL control.
@@ -458,7 +458,7 @@
 
       <!-- constructor Visibility: public -->
       <element name="TLazCanvas.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance. Create calls the inherited constructor using <var>AnImage</var> as an argument.
@@ -472,12 +472,12 @@
         </seealso>
       </element>
       <element name="TLazCanvas.Create.AnImage">
-        <short>Screen image for the control rendered on the canvas</short>
+        <short>Screen image for the control rendered on the canvas.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TLazCanvas.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated for <var>GraphicStateList</var>, <var>AssignedBrush</var>, and <var>AssignedPen</var> are freed. Destroy calls the inherited destructor prior to exiting from the method.
@@ -491,17 +491,17 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.SetLazClipRegion">
-        <short>Sets the value in the ClipRegion property</short>
+        <short>Sets the value in the ClipRegion property.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.SetLazClipRegion.ARegion">
-        <short>Region stored in the property</short>
+        <short>Region stored in the property.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLazCanvas.SaveState">
-        <short>Saves the current canvas state in the GraphicStateList member</short>
+        <short>Saves the current canvas state in the GraphicStateList member.</short>
         <descr>
           <p>
             <var>SaveState</var> is an <var>Integer</var> function used to save the current canvas state in the <var>GraphicStateList</var> member. SaveState creates an instance of <var>TLazCanvasState</var> with copies of the current values for <var>Brush</var>, <var>Pen</var>, and <var>Font</var>. Values from <var>BaseWindowOrg</var>, <var>WindowOrg</var>, and <var>Clipping</var> are also assigned to the class instance.
@@ -524,23 +524,23 @@
       </element>
       <element name="TLazCanvas.SaveState.Result">
         <short>
-          Ordinal position in GraphicStateList where the saved canvas state was stored
+          Ordinal position in GraphicStateList where the saved canvas state was stored.
         </short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.RestoreState">
-        <short>Restores the canvas to the state stored at the specified position</short>
+        <short>Restores the canvas to the state stored at the specified position.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.RestoreState.AIndex">
-        <short>Ordinal position in GraphicStateList restored in the method</short>
+        <short>Ordinal position in GraphicStateList restored in the method.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.ResetCanvasState">
-        <short>Sets the canvas to the default values/state used in the LCL TCanvas class</short>
+        <short>Sets the canvas to the default values/state used in the LCL TCanvas class.</short>
         <descr></descr>
         <errors></errors>
         <seealso></seealso>
@@ -548,7 +548,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.AlphaBlend">
-        <short>Performs an AlphaBlend operation using the specified source canvas</short>
+        <short>Performs an AlphaBlend operation using the specified source canvas.</short>
         <descr></descr>
         <errors></errors>
         <seealso></seealso>
@@ -608,7 +608,7 @@
       </element>
 
       <element name="TLazCanvas.AlphaBlend_Image">
-        <short>AlphaBlends the specified image onto the canvas</short>
+        <short>AlphaBlends the specified image onto the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -635,7 +635,7 @@
       </element>
 
       <element name="TLazCanvas.DoDrawImage">
-        <short>Calls DoDraw for the specified image and coordinates</short>
+        <short>Calls DoDraw for the specified image and coordinates.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -651,7 +651,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.CanvasCopyRect">
-        <short>Copies the contents of a supported image format in ASource to the canvas</short>
+        <short>Copies the contents of a supported image format in ASource to the canvas.</short>
         <descr></descr>
         <errors></errors>
         <seealso></seealso>
@@ -680,7 +680,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.FillColor">
-        <short>Fills the entire drawing area with the specified color</short>
+        <short>Fills the entire drawing area with the specified color.</short>
         <descr>
           <p>
             Fills the entire drawing area with the specified color. <var>AIgnoreClippingAndWindowOrg</var> speeds up canvas drawing operations, but it is dangerous; don't use it unless you know what you are doing.
@@ -689,7 +689,7 @@
         <seealso></seealso>
       </element>
       <element name="TLazCanvas.FillColor.AColor">
-        <short>Color applied to the canvas area</short>
+        <short>Color applied to the canvas area.</short>
       </element>
       <element name="TLazCanvas.FillColor.AIgnoreClippingAndWindowOrg">
         <short></short>
@@ -697,7 +697,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.AssignPenData">
-        <short>Sets the Pen data for the canvas</short>
+        <short>Sets the Pen data for the canvas.</short>
         <descr>
           <p>
             Utilized by <var>LCLIntf.SelectObject</var> and by the <var>RestoreState</var> method. This is needed because calling <var>Assign</var> for the <var>Pen</var>, <var>Brush</var>, or <var>Font</var> properties raises exceptions.
@@ -712,7 +712,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.AssignBrushData">
-        <short>Sets the Brush data for the canvas</short>
+        <short>Sets the Brush data for the canvas.</short>
         <descr>
           <p>
             Utilized by <var>LCLIntf.SelectObject</var> and by the <var>RestoreState</var> method. This is needed because calling <var>Assign</var> for the <var>Pen</var>, <var>Brush</var>, or <var>Font</var> properties raises exceptions.
@@ -727,7 +727,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.AssignFontData">
-        <short>Srts the Font data for the canvas</short>
+        <short>Srts the Font data for the canvas.</short>
         <descr>
           <p>
             Utilized by <var>LCLIntf.SelectObject</var> and by the <var>RestoreState</var> method. This is needed because calling <var>Assign</var> for the <var>Pen</var>, <var>Brush</var>, or <var>Font</var> properties raises exceptions.
@@ -742,7 +742,7 @@
 
       <!-- property Visibility: public -->
       <element name="TLazCanvas.AssignedPen">
-        <short>Pen assigned to the canvas</short>
+        <short>Pen assigned to the canvas.</short>
         <descr>
           <p>
             These properties are utilized to implement <var>LCLIntf.SelectObject</var> to keep track of which pen/brush/font handle was assigned to this canvas. They are not utilized by <var>TLazCanvas</var> itself.
@@ -753,7 +753,7 @@
 
       <!-- property Visibility: public -->
       <element name="TLazCanvas.AssignedBrush">
-        <short>Brush assigned to the canvas</short>
+        <short>Brush assigned to the canvas.</short>
         <descr>
           <p>
             These properties are used to implement <var>LCLIntf.SelectObject</var> to keep track of which pen/brush/font handle was assigned to this canvas. They are not utilized by <var>TLazCanvas</var> itself.
@@ -764,7 +764,7 @@
 
       <!-- property Visibility: public -->
       <element name="TLazCanvas.AssignedFont">
-        <short>Font assigned to the canvas</short>
+        <short>Font assigned to the canvas.</short>
         <descr>
           <p>
             These properties are used to implement <var>LCLIntf.SelectObject</var> to keep track of which pen/brush/font handle was assigned to this canvas. They are not utilized by <var>TLazCanvas</var> itself.
@@ -775,7 +775,7 @@
 
       <!-- property Visibility: public -->
       <element name="TLazCanvas.BaseWindowOrg">
-        <short>Base window origin for the canvas</short>
+        <short>Base window origin for the canvas.</short>
         <descr>
           <p>
             The values in <var>WindowOrg</var> are relative to the coordinates in <var>BaseWindowOrg</var>. BaseWindowOrg coordinates are relative to the canvas for the containing Form. It is useful when implementing the non-native windowed controls.
@@ -785,14 +785,14 @@
       </element>
 
       <element name="TLazCanvas.ClipRegion">
-        <short>Clipping region for the canvas</short>
+        <short>Clipping region for the canvas.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TLazCanvas.WindowOrg">
-        <short>Window origin for the canvas</short>
+        <short>Window origin for the canvas.</short>
         <descr>
           <p>
             Contains the absolute coordinates for the canvas with <var>BaseWindowOrg</var> summed up.

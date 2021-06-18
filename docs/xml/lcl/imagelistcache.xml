@@ -10,7 +10,7 @@
 
 <module name="ImageListCache">
 <short>
-Implements a caching mechanism for TCustomImageList (TImageList) instances
+Implements a caching mechanism for TCustomImageList (TImageList) instances.
 </short>
 <descr>
 <p>
@@ -34,7 +34,7 @@ This file is part of the Lazarus Component Library (<b>LCL</b>).
 <!-- object Visibility: default -->
 <element name="IImageCacheListener">
 <short>
-Interface that cache user should have to listen for cache changes
+Interface that cache user should have to listen for cache changes.
 </short>
 <descr/>
 <seealso>
@@ -47,36 +47,36 @@ Interface that cache user should have to listen for cache changes
 
 <!-- procedure Visibility: default -->
 <element name="IImageCacheListener.CacheSetImageList">
-<short>Sets the image list for the cache listener</short>
+<short>Sets the image list for the cache listener.</short>
 <descr/>
 <seealso/>
 </element>
 
 <!-- argument Visibility: default -->
 <element name="IImageCacheListener.CacheSetImageList.AImageList">
-<short>TCustomImageList instance for the listener</short>
+<short>TCustomImageList instance for the listener.</short>
 </element>
 
 <!-- procedure Visibility: default -->
 <element name="IImageCacheListener.CacheSetImageIndex">
-<short>Sets the new image index for an image in the list</short>
+<short>Sets the new image index for an image in the list.</short>
 <descr/>
 <seealso/>
 </element>
 
 <!-- argument Visibility: default -->
 <element name="IImageCacheListener.CacheSetImageIndex.AIndex">
-<short>Old image index in the listener</short>
+<short>Old image index in the listener.</short>
 </element>
 
 <!-- argument Visibility: default -->
 <element name="IImageCacheListener.CacheSetImageIndex.AImageIndex">
-<short>New image index in the listener</short>
+<short>New image index in the listener.</short>
 </element>
 
 <!-- record type Visibility: default -->
 <element name="TImageCacheItem">
-<short>Represents an item in the cache</short>
+<short>Represents an item in the cache.</short>
 <descr/>
 <seealso>
 <link id="TImageCacheItems"/>
@@ -86,27 +86,27 @@ Interface that cache user should have to listen for cache changes
 
 <!-- variable Visibility: default -->
 <element name="TImageCacheItem.FImageList">
-<short>Reference to the image list</short>
+<short>Reference to the image list.</short>
 </element>
 
 <!-- variable Visibility: default -->
 <element name="TImageCacheItem.FListener">
-<short>Reference to the listener interface</short>
+<short>Reference to the listener interface.</short>
 </element>
 
 <!-- variable Visibility: default -->
 <element name="TImageCacheItem.FImageIndexes">
-<short>Indices in the image list that the listener has reserved</short>
+<short>Indices in the image list that the listener has reserved.</short>
 </element>
 
 <!-- pointer type Visibility: default -->
 <element name="PImageCacheItem">
-<short>Pointer to a TImageCacheItem type</short>
+<short>Pointer to a TImageCacheItem type.</short>
 </element>
 
 <!-- object Visibility: default -->
 <element name="TImageCacheItems">
-<short>Implements a container for cached image lists</short>
+<short>Implements a container for cached image lists.</short>
 <descr>
 <p>
 <var>TImageCacheItems</var> is a <var>TList</var> descendant which implements
@@ -136,7 +136,7 @@ TImageCacheItems is used in the implementation of the
 <element name="TImageCacheItems.SetItem.AValue"/>
 
 <element name="TImageCacheItems.Notify">
-<short>Notifies observers when a value in the container has been changed</short>
+<short>Notifies observers when a value in the container has been changed.</short>
 <descr/>
 <seealso>
 <link id="#rtl.classes.TList"/>
@@ -145,17 +145,17 @@ TImageCacheItems is used in the implementation of the
 
 <!-- argument Visibility: default -->
 <element name="TImageCacheItems.Notify.Ptr">
-<short>Untyped Pointer to the value for the change notification</short>
+<short>Untyped Pointer to the value for the change notification.</short>
 </element>
 
 <!-- argument Visibility: default -->
 <element name="TImageCacheItems.Notify.Action">
-<short>Action for the notification (Add, Extract, Delete)</short>
+<short>Action for the notification (Add, Extract, Delete).</short>
 </element>
 
 <!-- function Visibility: public -->
 <element name="TImageCacheItems.GetNew">
-<short>Allocates and stores a new image list reference in the container</short>
+<short>Allocates and stores a new image list reference in the container.</short>
 <descr>
 <p>
 <var>GetNew</var> is a <var>PImageCacheItem</var> function used to allocate and
@@ -172,13 +172,13 @@ the container.
 
 <!-- function result Visibility: default -->
 <element name="TImageCacheItems.GetNew.Result">
-<short>Reference for an image list stored in the container</short>
+<short>Reference for an image list stored in the container.</short>
 </element>
 
 <!-- property Visibility: public -->
 <element name="TImageCacheItems.Items">
 <short>
-Provides indexed access to image list references in the container
+Provides indexed access to image list references in the container.
 </short>
 <descr>
 <p>
@@ -198,12 +198,12 @@ Items is the default property for the container.
 
 <!-- argument Visibility: default -->
 <element name="TImageCacheItems.Items.AIndex">
-<short>Ordinal position in the container for the requested image list</short>
+<short>Ordinal position in the container for the requested image list.</short>
 </element>
 
 <!-- object Visibility: default -->
 <element name="TImageListCache">
-<short>Implements a caching mechanism for image lists</short>
+<short>Implements a caching mechanism for image lists.</short>
 <descr>
 <p>
 <var>TImageListCache</var> is a class which implements a caching mechanism for
@@ -230,37 +230,37 @@ initiate actions affecting the cache storage.
 <element name="TImageListCache.CheckRebuildNeed">
 <short>
 Determines if the cache storage needs to be rebuilt when the change
-threshold is exceeded
+threshold is exceeded.
 </short>
 </element>
 
 <element name="TImageListCache.GetImageListFor">
 <short>
-Gets a TCustomImageList instance with the specified image size
+Gets a TCustomImageList instance with the specified image size.
 </short>
 </element>
 <element name="TImageListCache.GetImageListFor.Result">
 <short/>
 </element>
 <element name="TImageListCache.GetImageListFor.AWidth">
-<short>Width for the images in the image list</short>
+<short>Width for the images in the image list.</short>
 </element>
 <element name="TImageListCache.GetImageListFor.AHeight">
-<short>Height for the images in the image list</short>
+<short>Height for the images in the image list.</short>
 </element>
 
 <element name="TImageListCache.UnregisterBitmaps">
 <short>
-Marks an image list and its images as unused for the specified cache listener
+Marks an image list and its images as unused for the specified cache listener.
 </short>
 </element>
 <element name="TImageListCache.UnregisterBitmaps.AListener">
-<short>Cache listener removed in the method</short>
+<short>Cache listener removed in the method.</short>
 </element>
 
 <!-- constructor Visibility: public -->
 <element name="TImageListCache.Create">
-<short>Constructor for the class instance</short>
+<short>Constructor for the class instance.</short>
 <descr>
 <p>
 Allocates resources needed for internal members in the class instance.
@@ -271,7 +271,7 @@ Allocates resources needed for internal members in the class instance.
 
 <!-- destructor Visibility: public -->
 <element name="TImageListCache.Destroy">
-<short>Destructor for the class instance</short>
+<short>Destructor for the class instance.</short>
 <descr>
 <p>
 Frees resources allocated to internal members in the class instance,
@@ -284,7 +284,7 @@ including any stored images requested by cache listeners.
 <!-- function Visibility: public -->
 <element name="TImageListCache.RegisterListener">
 <short>
-Adds a listener for an image list stored in the cache
+Adds a listener for an image list stored in the cache.
 </short>
 <descr>
 <p>
@@ -305,21 +305,21 @@ RegisterListener is called from the <var>RegisterBitmap</var> method.
 <!-- function result Visibility: default -->
 <element name="TImageListCache.RegisterListener.Result">
 <short>
-Position where the specified listener was stored in the internal list
+Position where the specified listener was stored in the internal list.
 </short>
 </element>
 
 <!-- argument Visibility: default -->
 <element name="TImageListCache.RegisterListener.AListener">
 <short>
-Listener interface added to the internal list
+Listener interface added to the internal list.
 </short>
 </element>
 
 <!-- procedure Visibility: public -->
 <element name="TImageListCache.UnregisterListener">
 <short>
-Removes the specified cache listener from the internal list
+Removes the specified cache listener from the internal list.
 </short>
 <descr>
 <p>
@@ -341,13 +341,13 @@ singleton used for the image list cache is set to <b>Nil</b>.
 
 <!-- argument Visibility: default -->
 <element name="TImageListCache.UnregisterListener.AListener">
-<short>Cache listener removed from the list</short>
+<short>Cache listener removed from the list.</short>
 </element>
 
 <!-- procedure Visibility: public -->
 <element name="TImageListCache.RegisterBitmap">
 <short>
-Adds the specified bitmap to the image list for a cache listener
+Adds the specified bitmap to the image list for a cache listener.
 </short>
 <descr>
 <p>
@@ -377,22 +377,22 @@ the index positions used in the image list.
 
 <!-- argument Visibility: default -->
 <element name="TImageListCache.RegisterBitmap.AListener">
-<short>Interface for the cache listener for the bitmap</short>
+<short>Interface for the cache listener for the bitmap.</short>
 </element>
 
 <!-- argument Visibility: default -->
 <element name="TImageListCache.RegisterBitmap.ABitmap">
-<short>Bitmap registered in the method</short>
+<short>Bitmap registered in the method.</short>
 </element>
 
 <!-- argument Visibility: default -->
 <element name="TImageListCache.RegisterBitmap.ABitmapCount">
-<short>Number of image "slices" in the bitmap</short>
+<short>Number of image "slices" in the bitmap.</short>
 </element>
 
 <!-- procedure Visibility: public -->
 <element name="TImageListCache.Rebuild">
-<short>Rebuilds the cache storage</short>
+<short>Rebuilds the cache storage.</short>
 <descr>
 <p>
 Removes unused image lists in the cache where the cache listener is no
@@ -407,7 +407,7 @@ indexes.
 <!-- function Visibility: default -->
 <element name="GetImageListCache">
 <short>
-Provides access to the TImageListCache singleton in the implementation
+Provides access to the TImageListCache singleton in the implementation.
 </short>
 <descr/>
 <seealso/>
@@ -415,7 +415,7 @@ Provides access to the TImageListCache singleton in the implementation
 
 <!-- function result Visibility: default -->
 <element name="GetImageListCache.Result">
-<short>TImageListCache instance for the implementation</short>
+<short>TImageListCache instance for the implementation.</short>
 </element>
 
 </module>

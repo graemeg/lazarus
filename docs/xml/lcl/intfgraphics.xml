@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="IntfGraphics">
-      <short>Classes and functions for easy handling of raw images (interface images)</short>
+      <short>Classes and functions for easy handling of raw images (interface images).</short>
       <descr>
           <p>
             Author: Mattias Gaertner
@@ -1529,7 +1529,7 @@
       </element>
 
       <element name="TLazIntfImage.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1550,7 +1550,7 @@
       </element>
 
       <element name="TLazIntfImage.CreateCompatible">
-        <short>Alternate constructor for the class instance</short>
+        <short>Alternate constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1565,13 +1565,13 @@
       </element>
 
       <element name="TLazIntfImage.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazIntfImage.Assign">
-        <short>Stores values from the specified persistent object into the current class instance</short>
+        <short>Stores values from the specified persistent object into the current class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1580,20 +1580,20 @@
       </element>
 
       <element name="TLazIntfImage.BeginUpdate">
-        <short>Increments the internal update counter</short>
+        <short>Increments the internal update counter.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazIntfImage.EndUpdate">
-        <short>Decrements the internal update counter</short>
+        <short>Decrements the internal update counter.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazIntfImage.SetSize">
         <short>
-          <var>SetSize</var> - define the height  and width of the image</short>
+          <var>SetSize</var> - define the height  and width of the image.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1606,7 +1606,7 @@
 
       <element name="TLazIntfImage.CheckDescription">
         <short>
-          <var>CheckDescription</var> - looks at the supplied Image Description record and returns True if it matches the actual properties of the image</short>
+          <var>CheckDescription</var> - looks at the supplied Image Description record and returns True if it matches the actual properties of the image.</short>
         <descr/>
         <errors>Generates an exception if an error is encountered in the image description</errors>
         <seealso/>
@@ -1623,7 +1623,7 @@
 
       <element name="TLazIntfImage.LoadFromDevice">
         <short>
-          <var>LoadFromDevice</var> - loads the image from the device with specified handle</short>
+          <var>LoadFromDevice</var> - loads the image from the device with specified handle.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1633,7 +1633,7 @@
 
       <element name="TLazIntfImage.LoadFromBitmap">
         <short>
-          <var>LoadFromBitmap</var> - loads the image from a Bitmap</short>
+          <var>LoadFromBitmap</var> - loads the image from a Bitmap.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1648,7 +1648,7 @@
       </element>
 
       <element name="TLazIntfImage.CreateBitmaps">
-        <short><var>CreateBitmaps</var> - generates a Bitmap and an optional Mask for  the image data</short>
+        <short><var>CreateBitmaps</var> - generates a Bitmap and an optional Mask for  the image data.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1663,7 +1663,7 @@
       </element>
 
       <element name="TLazIntfImage.SetRawImage">
-        <short>Stores the raw image data in the class instance</short>
+        <short>Stores the raw image data in the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1675,7 +1675,7 @@
       </element>
 
       <element name="TLazIntfImage.GetRawImage">
-        <short>Gets the raw image data stored in the class instance and optionally release ownership</short>
+        <short>Gets the raw image data stored in the class instance and optionally release ownership.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1687,7 +1687,7 @@
       </element>
 
       <element name="TLazIntfImage.FillPixels">
-        <short>Sets the color for all pixels in the raw image data to the specified value</short>
+        <short>Sets the color for all pixels in the raw image data to the specified value.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1717,7 +1717,7 @@
       </element>
 
       <element name="TLazIntfImage.AlphaBlend">
-        <short>Merges a source image with alpha blending</short>
+        <short>Merges a source image with alpha blending.</short>
         <descr>
           <p>
             Merges an image to a canvas using alpha blending according to a separate image containing the alpha channel. White pixels in the alpha channel will correspond to the source image pixel being fully drawn, grey ones are merged and black ones ignored.
@@ -1742,7 +1742,7 @@
       </element>
 
       <element name="TLazIntfImage.AlphaFromMask">
-        <short>Gets the alpha value from the mask if needed</short>
+        <short>Gets the alpha value from the mask if needed.</short>
         <descr>
           <p>
             <var>AlphaFromMask</var>  gets the alpha value from the mask if <var>AKeepAlpha</var> is True (default condition).
@@ -1766,7 +1766,7 @@
 
       <element name="TLazIntfImage.GetXYDataPostion">
         <short>
-          <var>GetXYDataPostion</var> - finds the position of the raw image</short>
+          <var>GetXYDataPostion</var> - finds the position of the raw image.</short>
         <descr>Yes, it really is spelled 'Postion'</descr>
         <seealso/>
       </element>
@@ -1781,7 +1781,7 @@
       </element>
       <element name="TLazIntfImage.GetXYMaskPostion">
         <short>
-          <var>GetXYMaskPostion</var> - finds the position of the raw image mask</short>
+          <var>GetXYMaskPostion</var> - finds the position of the raw image mask.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1796,7 +1796,7 @@
       </element>
 
       <element name="TLazIntfImage.GetDataLineStart">
-        <short>Returns an pointer to the raw data for a scan line</short>
+        <short>Returns an pointer to the raw data for a scan line.</short>
         <descr>
           <p>
             Similar to Delphi's TBitmap.ScanLine. Works with scan lines aligned to whole bytes.
@@ -1846,21 +1846,21 @@
 
       <element name="TLazIntfImage.PixelData">
         <short>
-          <var>PixelData</var> - the raw image data for the image</short>
+          <var>PixelData</var> - the raw image data for the image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazIntfImage.MaskData">
         <short>
-          <var>MaskData</var> - the raw data for the mask in the image</short>
+          <var>MaskData</var> - the raw data for the mask in the image.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazIntfImage.DataDescription">
         <short>
-          <var>DataDescription</var> - the raw description record for the current image</short>
+          <var>DataDescription</var> - the raw description record for the current image.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1879,7 +1879,7 @@
 
       <element name="TLazIntfImage.TColors">
         <short>
-          <var>TColors</var> - the colors available for the specified pixel</short>
+          <var>TColors</var> - the colors available for the specified pixel.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1891,7 +1891,7 @@
       </element>
 
       <element name="TLazIntfImage.Masked">
-        <short><var>Masked</var> - whether the image mask applies at the specified position</short>
+        <short><var>Masked</var> - whether the image mask applies at the specified position.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1904,7 +1904,7 @@
 
       <element name="TLazIntfImageMask">
         <short>
-          <var>TLazIntfImageMask</var> - applying a mask at the Raw Image level</short>
+          <var>TLazIntfImageMask</var> - applying a mask at the Raw Image level.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1977,12 +1977,12 @@
       </element>
       <element name="TLazIntfImageMask.Image">
         <short>
-          <var>Image</var> - the image to which masking is applied</short>
+          <var>Image</var> - the image to which masking is applied.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLazAVLPalette">
-        <short>Descendant of <var>TFPPalette </var> which uses an AVL tree for speed up</short>
+        <short>Descendant of <var>TFPPalette </var> which uses an AVL tree for speed up.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2043,7 +2043,7 @@
         <seealso/>
       </element>
       <element name="TLazAVLPalette.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2116,12 +2116,12 @@
         <seealso/>
       </element>
       <element name="TArrayNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TArrayNode.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2315,12 +2315,12 @@
         <seealso/>
       </element>
       <element name="TArrayNodesTree.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TArrayNodesTree.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2331,8 +2331,7 @@
       </element>
 
       <element name="ILazImageReader">
-        <short>
-        </short>
+        <short></short>
         <descr>
           <p>
             <var>ILazImageReader</var> is an interface used to extend <var>TFPCustomImageReader</var> to initialize a <var>TRawImgeDescription</var> based on the image to be read.
@@ -2357,7 +2356,7 @@
       </element>
 
       <element name="TLazReaderXPM">
-        <short><var>TLazReaderXPM</var> - this is a FPImage reader for xpm images</short>
+        <short><var>TLazReaderXPM</var> - this is a FPImage reader for xpm images.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2454,13 +2453,13 @@
       </element>
 
       <element name="TLazReaderXPM.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazReaderXPM.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2472,7 +2471,7 @@
       </element>
 
       <element name="TLazWriterXPM">
-        <short><var>TLazWriterXPM</var> is a <var>FPImage</var> writer for xpm images</short>
+        <short><var>TLazWriterXPM</var> is a <var>FPImage</var> writer for xpm images.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2503,7 +2502,7 @@
       </element>
 
       <element name="TLazWriterXPM.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2520,10 +2519,10 @@
         <seealso/>
       </element>
       <element name="TLazReaderMaskMode.lrmmNone">
-        <short>No mask is generated</short>
+        <short>No mask is generated.</short>
       </element>
       <element name="TLazReaderMaskMode.lrmmAuto">
-        <short>A mask is generated based on the first pixel read</short>
+        <short>A mask is generated based on the first pixel read.</short>
         <descr>
           <p>
             Note: when reading images with an alpha channel and the alpha channel has no influence on the mask (the maskcolor is transparent).
@@ -2531,7 +2530,7 @@
         </descr>
       </element>
       <element name="TLazReaderMaskMode.lrmmColor">
-        <short>A mask is generated based on the given color</short>
+        <short>A mask is generated based on the given color.</short>
         <descr>
           <p>
             Note: when reading images with an alpha channel and the alpha channel has no influence on the mask (the maskcolor is transparent).
@@ -2554,15 +2553,15 @@
         <short/>
       </element>
       <element name="TLazReaderDIBEncoding.lrdeJpeg">
-        <short>For completeness - don't know if they exist</short>
+        <short>For completeness - don't know if they exist.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLazReaderDIBEncoding.lrdePng">
-        <short>For completeness - don't know if they exist</short>
+        <short>For completeness - don't know if they exist.</short>
       </element>
       <element name="TLazReaderDIBEncoding.lrdeHuffman">
-        <short>For completeness - don't know if they exist</short>
+        <short>For completeness - don't know if they exist.</short>
       </element>
 
       <element name="TLazReaderDIBInfo">
@@ -2643,31 +2642,31 @@
       <element name="TLazReaderDIB.FImage"/>
       <element name="TLazReaderDIB.FMaskMode"/>
       <element name="TLazReaderDIB.FMaskColor">
-        <short>Color which should be interpreted as masked</short>
+        <short>Color which should be interpreted as masked.</short>
       </element>
       <element name="TLazReaderDIB.FMaskIndex">
-        <short>For palette based images, index of the color which should be interpreted as masked</short>
+        <short>For palette based images, index of the color which should be interpreted as masked.</short>
       </element>
       <element name="TLazReaderDIB.FReadSize">
-        <short>Size (in bytes) for a scanline</short>
+        <short>Size (in bytes) for a scanline.</short>
       </element>
       <element name="TLazReaderDIB.FDIBInfo">
-        <short>Information about the bitmap as read from the stream</short>
+        <short>Information about the bitmap as read from the stream.</short>
       </element>
       <element name="TLazReaderDIB.FPalette">
-        <short>Buffer with Palette entries</short>
+        <short>Buffer with Palette entries.</short>
       </element>
       <element name="TLazReaderDIB.FLineBuf">
         <short>Buffer for ascanline. Can be Byte, Word, TColorRGB or TColorRGBA.</short>
       </element>
       <element name="TLazReaderDIB.FUpdateDescription">
-        <short>If set, rawimagedescription is updated</short>
+        <short>If set, rawimagedescription is updated.</short>
       </element>
       <element name="TLazReaderDIB.FContinue">
-        <short>For progress support</short>
+        <short>For progress support.</short>
       </element>
       <element name="TLazReaderDIB.FIgnoreAlpha">
-        <short>If alpha channel is declared but does not exist (all values = 0)</short>
+        <short>If alpha channel is declared but does not exist (all values = 0).</short>
       </element>
 
       <element name="TLazReaderDIB.BitfieldsToFPColor">
@@ -2833,13 +2832,13 @@
       </element>
 
       <element name="TLazReaderDIB.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazReaderDIB.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2864,7 +2863,7 @@
 
       <element name="TLazReaderBMP">
         <short>
-          <var>TLazReaderBMP </var>- This is an improved <var>FPImage</var> reader for bmp images</short>
+          <var>TLazReaderBMP </var>- This is an improved <var>FPImage</var> reader for bmp images.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2950,7 +2949,7 @@
       </element>
 
       <element name="TLazReaderIconDIB">
-        <short>Implements an image readr for a single DIB in an icon file</short>
+        <short>Implements an image readr for a single DIB in an icon file.</short>
         <descr>
           <p>
             <var>TLazReaderIconDIB</var> is a <var>FPImage</var> reader for a single DIB from an icon file.
@@ -3142,7 +3141,7 @@
       </element>
 
       <element name="TLazReaderTiff">
-        <short>Extends the FCL TIFF image reader to support the ILazImageReader interface</short>
+        <short>Extends the FCL TIFF image reader to support the ILazImageReader interface.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3246,7 +3245,7 @@
       </element>
 
       <element name="TLazWriterTiff">
-        <short>Extends the FCL TIFF image writer to support the ILazImageWriter interface</short>
+        <short>Extends the FCL TIFF image writer to support the ILazImageWriter interface.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3453,7 +3452,7 @@
       </element>
 
       <element name="TLazReaderIcnsPart.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor on entry. Create initalizes members in the class instance, and sets the default value for <var>IconType</var> to <var>iitNone</var>.
@@ -3463,7 +3462,7 @@
       </element>
 
       <element name="TLazReaderIcnsPart.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy frees resources allocated for members, and calls the inherited destructor prior to exit.

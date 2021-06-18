@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="HelpIntfs">
-      <short>Interfaces to define the abstract HelpSystem</short>
+      <short>Interfaces to define the abstract HelpSystem.</short>
       <descr>
         <p>
           <file>helpintfs.pas</file> contains interfaces to define the abstract HelpSystem.
@@ -29,7 +29,7 @@
       <element name="LCLProc"/>
 
       <element name="EHelpSystemException">
-        <short>Exception raised for Help system errors</short>
+        <short>Exception raised for Help system errors.</short>
         <descr>
           <p>
             All help-specific errors should use this Exception type.
@@ -39,7 +39,7 @@
       </element>
 
       <element name="TShowHelpResult">
-        <short>Represents result codes returned by THelpManager</short>
+        <short>Represents result codes returned by THelpManager.</short>
         <descr>
           <p>
             <var>TShowHelpResult</var> is an enumerated type with values that represent result codes for help requests using <var>THelpManager</var>. It is also the type returned from convenience methods like <var>ShowTableOfContents</var>, <var>ShowHelpForKeyword</var>, <var>ShowHelpForPascalContexts</var>, et. al.
@@ -50,41 +50,41 @@
         </seealso>
       </element>
       <element name="TShowHelpResult.shrNone">
-        <short>No help result available (help error)</short>
+        <short>No help result available (help error).</short>
       </element>
       <element name="TShowHelpResult.shrSuccess">
-        <short>Help request successfully completed</short>
+        <short>Help request successfully completed.</short>
       </element>
       <element name="TShowHelpResult.shrCancel">
-        <short>Help request was canceled</short>
+        <short>Help request was canceled.</short>
       </element>
       <element name="TShowHelpResult.shrDatabaseNotFound">
-        <short>Help database was not found</short>
+        <short>Help database was not found.</short>
       </element>
       <element name="TShowHelpResult.shrContextNotFound">
-        <short>Help database found, but the context was not found</short>
+        <short>Help database found, but the context was not found.</short>
       </element>
       <element name="TShowHelpResult.shrViewerNotFound">
-        <short>No Help viewer registered for this format</short>
+        <short>No Help viewer registered for this format.</short>
       </element>
       <element name="TShowHelpResult.shrHelpNotFound">
-        <short>No Help found for the keyword or directive</short>
+        <short>No Help found for the keyword or directive.</short>
       </element>
       <element name="TShowHelpResult.shrViewerError">
-        <short>Help viewer could not display a help node</short>
+        <short>Help viewer could not display a help node.</short>
       </element>
       <element name="TShowHelpResult.shrSelectorError">
-        <short>No help node(s) found for the help selector</short>
+        <short>No help node(s) found for the help selector.</short>
       </element>
 
       <element name="TShowHelpResults">
-        <short>Set type used to store values from the TShowHelpResult enumeration</short>
+        <short>Set type used to store values from the TShowHelpResult enumeration.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpDatabaseID">
-        <short>Identifier used to represent a Help database</short>
+        <short>Identifier used to represent a Help database.</short>
         <descr>
           <p>
             <var>THelpDatabaseID</var> is an alias for the <var>String</var> type.
@@ -108,7 +108,7 @@
       <element name="THelpQuery.FHelpDatabaseID"/>
 
       <element name="THelpQuery.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -140,7 +140,7 @@
       <element name="THelpQueryContext.FContext"/>
 
       <element name="THelpQueryContext.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -168,7 +168,7 @@
       <element name="THelpQueryKeyword.FKeyword"/>
 
       <element name="THelpQueryKeyword.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -197,7 +197,7 @@
       <element name="THelpQuerySourcePosition.FSourcePosition"/>
 
       <element name="THelpQuerySourcePosition.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -234,7 +234,7 @@
       <element name="THelpQueryPascalContexts.FContextLists"/>
 
       <element name="THelpQueryPascalContexts.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -308,7 +308,7 @@
       <element name="THelpQueryMessage.FWholeMessage"/>
 
       <element name="THelpQueryMessage.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -324,7 +324,7 @@
       </element>
 
       <element name="THelpQueryMessage.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -352,7 +352,7 @@
       <element name="THelpQueryClass.FTheClass"/>
 
       <element name="THelpQueryClass.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -372,7 +372,7 @@
 
       <element name="THelpManager">
         <short>
-          Defines a help manager used to display a help query or a table of contents
+          Defines a help manager used to display a help query or a table of contents.
         </short>
         <descr>
           <p>
@@ -596,7 +596,7 @@
       </element>
 
       <element name="ShowTableOfContents">
-        <short>Display the Help table of contents</short>
+        <short>Display the Help table of contents.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -752,7 +752,7 @@
       </element>
 
       <element name="ShowHelpFile">
-        <short>Displays a Help file wih the given file name and MIME type</short>
+        <short>Displays a Help file wih the given file name and MIME type.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -793,7 +793,7 @@
       </element>
 
       <element name="ShowHelp">
-        <short>Display a Help file wih the give URL and MIME type</short>
+        <short>Display a Help file wih the give URL and MIME type.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -834,7 +834,7 @@
       </element>
 
       <topic name="HelpDisplay-HowItWorks">
-        <short>Displaying Help (How It Works)</short>
+        <short>Displaying Help (How It Works).</short>
         <descr>
           <ul>
             <li>

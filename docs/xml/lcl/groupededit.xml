@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="GroupedEdit">
-      <short>Provides the base class for grouped edit controls</short>
+      <short>Provides the base class for grouped edit controls.</short>
       <descr>
         <p>
           <file>groupededit.pp</file> provides a base class where a <var>TCustomMaskEdit</var> (derived) control is grouped inside a <var>TCustomControl</var> with another <var>TControl</var> derived class. The objective of this base class is to forward all relevant methods and properties of TCustomMaskEdit. Grouping the controls inside a TCustomControl is done, so that the resulting control can be aligned and anchored.
@@ -37,7 +37,7 @@
       <element name="MaskEdit"/>
 
       <element name="TGEEdit">
-        <short>Implements the edit control used in TCustomAbstractGroupedEdit</short>
+        <short>Implements the edit control used in TCustomAbstractGroupedEdit.</short>
         <descr>
           <p>
             <var>TGEEdit</var> is a <var>TCustomMaskedit</var> descendant which implements the edit control used in <var>TCustomAbstractGroupedEdit</var>. TGEEdit provides an overridden method to handle <b>Tab</b> keys. The key can be frowarded to the control that owns the class instance, to the ancestor class, or simply discarded.
@@ -54,25 +54,25 @@
       </element>
 
       <element name="TGEEdit.PerformTab">
-        <short>Handles Tab key presses for the control</short>
+        <short>Handles Tab key presses for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TGEEdit.PerformTab.Result">
-        <short>True when the Tab key has been handled</short>
+        <short>True when the Tab key has been handled.</short>
       </element>
       <element name="TGEEdit.PerformTab.ForwardTab">
-        <short>True forwards the key to the ancestor class</short>
+        <short>True forwards the key to the ancestor class.</short>
       </element>
 
       <element name="TGEEditClass">
-        <short>Class type used to create instances of TGEEdit</short>
+        <short>Class type used to create instances of TGEEdit.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit">
-        <short>Implements a grouped edit control</short>
+        <short>Implements a grouped edit control.</short>
         <descr>
           <p>
             <var>TCustomAbstractGroupedEdit</var> is a <var>TCustomControl</var> descendant which implements a grouped edit control. TCustomAbstractGroupedEdit is composed of a TGEEdit control that provides an editor for the control value, and a related TControl descendant.
@@ -130,95 +130,95 @@
       <element name="TCustomAbstractGroupedEdit.FOnEditUtf8KeyPress"/>
 
       <element name="TCustomAbstractGroupedEdit.GetAlignment">
-        <short>Gets the value for the Alignment property</short>
+        <short>Gets the value for the Alignment property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.Alignment"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetAlignment.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetAutoSelect">
-        <short>Gets the value for the AutoSelect property</short>
+        <short>Gets the value for the AutoSelect property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.AutoSelect"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetAutoSelect.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetAutoSelected">
-        <short>Gets the value for the AutoSelected property</short>
+        <short>Gets the value for the AutoSelected property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.AutoSelected"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetAutoSelected.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetCanUndo">
-        <short>Gets the value for the CanUndo property</short>
+        <short>Gets the value for the CanUndo property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.CanUndo"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetCanUndo.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetCaretPos">
-        <short>Gets the value for the CaretPos property</short>
+        <short>Gets the value for the CaretPos property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.CaretPos"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetCaretPos.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetCharCase">
-        <short>Gets the value for the CharCase property</short>
+        <short>Gets the value for the CharCase property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.CharCase"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetCharCase.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetColor">
-        <short>Gets the value for the Color property</short>
+        <short>Gets the value for the Color property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.Color"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetColor.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetDirectInput">
-        <short>Gets the value for the DirectInput property</short>
+        <short>Gets the value for the DirectInput property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.DirectInput"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetDirectInput.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetEchoMode">
-        <short>Gets the value for the EchoMode property</short>
+        <short>Gets the value for the EchoMode property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.EchoMode"/>
@@ -226,99 +226,99 @@
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetEchoMode.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetEditMask">
-        <short>Gets the value for the EditMask property</short>
+        <short>Gets the value for the EditMask property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.EditMask"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetEditMask.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetEditText">
-        <short>Gets the value for the EditText property</short>
+        <short>Gets the value for the EditText property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.EditText"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetEditText.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetHideSelection">
-        <short>Gets the value for the HideSelection property</short>
+        <short>Gets the value for the HideSelection property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.HideSelection"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetHideSelection.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetIsMasked">
-        <short>Gets the value for the IsMasked property</short>
+        <short>Gets the value for the IsMasked property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.IsMasked"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetIsMasked.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetMaxLength">
-        <short>Gets the value for the MaxLength property</short>
+        <short>Gets the value for the MaxLength property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.MaxLength"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetMaxLength.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetModified">
-        <short>Gets the value for the Modified property</short>
+        <short>Gets the value for the Modified property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.Modified"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetModified.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetNumbersOnly">
-        <short>Gets the value for the NumbersOnly property</short>
+        <short>Gets the value for the NumbersOnly property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.NumbersOnly"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetNumbersOnly.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetParentColor">
-        <short>Gets the value for the ParentColor property</short>
+        <short>Gets the value for the ParentColor property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.ParentColor"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetParentColor.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetPasswordChar">
-        <short>Gets the value for the PasswordChar property</short>
+        <short>Gets the value for the PasswordChar property.</short>
         <descr>
           Read access for the the value is redirected to the PasswordChar property in BaseEditor.
         </descr>
@@ -328,22 +328,22 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetPasswordChar.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.ReadOnly"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetReadOnly.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetSelLength">
-        <short>Gets the value for the SelLength property</short>
+        <short>Gets the value for the SelLength property.</short>
         <descr>
           Read access to the property value is redirected to BaseEditor.
         </descr>
@@ -352,11 +352,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetSelLength.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetSelStart">
-        <short>Gets the value for the SelStart property</short>
+        <short>Gets the value for the SelStart property.</short>
         <descr>
           Read access to the property value is redirected to BaseEditor.
         </descr>
@@ -365,11 +365,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetSelStart.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetSelText">
-        <short>Gets the value for the SelText property</short>
+        <short>Gets the value for the SelText property.</short>
         <descr>
           Read access to the property value is redirected to BaseEditor.
         </descr>
@@ -378,11 +378,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetSelText.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetTabStop">
-        <short>Gets the value for the TabStop property</short>
+        <short>Gets the value for the TabStop property.</short>
         <descr>
           Read access to the property value is redirected to BaseEditor.
         </descr>
@@ -391,11 +391,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetTabStop.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetTextHint">
-        <short>Gets the value for the TextHint property</short>
+        <short>Gets the value for the TextHint property.</short>
         <descr>
           Read access to the property value is redirected to BaseEditor.
         </descr>
@@ -404,47 +404,47 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetTextHint.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnBuddyClick">
-        <short>Executes the click event handler for the Buddy control</short>
+        <short>Executes the click event handler for the Buddy control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnBuddyClick.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditClick">
-        <short>Executes the click event handler for the BaseEditor control</short>
+        <short>Executes the click event handler for the BaseEditor control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditClick.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDblClick">
-        <short>Executes the double click event handler for the BaseEditor control</short>
+        <short>Executes the double click event handler for the BaseEditor control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDblClick.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditChange">
-        <short>Executes the OnChange event handler for the BaseEditor control</short>
+        <short>Executes the OnChange event handler for the BaseEditor control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditChange.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditContextPopup">
-        <short>Executes the OnEditContextPopup handler for the control</short>
+        <short>Executes the OnEditContextPopup handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -459,12 +459,12 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDragDrop">
-        <short>Executes the OnEditDragDrop event handler for the control</short>
+        <short>Executes the OnEditDragDrop event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDragDrop.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDragDrop.Source">
         <short/>
@@ -477,12 +477,12 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDragOver">
-        <short>Executes the OnEditDragOver event handler for the control</short>
+        <short>Executes the OnEditDragOver event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDragOver.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditDragOver.Source">
         <short/>
@@ -501,40 +501,40 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditEditingDone">
-        <short>Executes the OnEditingDone event handler for the control</short>
+        <short>Executes the OnEditingDone event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditEditingDone.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditEnter">
-        <short>Executes the OnEditEnter event handler for the control</short>
+        <short>Executes the OnEditEnter event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditEnter.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditExit">
-        <short>Executes the OnEditExit event handler for the control</short>
+        <short>Executes the OnEditExit event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditExit.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditEndDrag">
-        <short>Executes the OnEditEndDrag event handler for the control</short>
+        <short>Executes the OnEditEndDrag event handler for the control.</short>
         <short/>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditEndDrag.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditEndDrag.Target">
         <short/>
@@ -547,12 +547,12 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyDown">
-        <short>Executes the OnEditKeyDown event handler for the control</short>
+        <short>Executes the OnEditKeyDown event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyDown.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyDown.Key">
         <short/>
@@ -562,24 +562,24 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyPress">
-        <short>Executes the OnEditKeyPress event handler for the control</short>
+        <short>Executes the OnEditKeyPress event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyPress.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyPress.Key">
         <short/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyUp">
-        <short>Executes the OnEditKeyUp event handler for the control</short>
+        <short>Executes the OnEditKeyUp event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyUp.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditKeyUp.Key">
         <short/>
@@ -589,12 +589,12 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditMouseDown">
-        <short>Executes the OnEditMouseDown event handler for the control</short>
+        <short>Executes the OnEditMouseDown event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditMouseDown.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditMouseDown.Button">
         <short/>
@@ -610,12 +610,12 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.InternalOnEditMouseUp">
-        <short>Executes the OnEditMouseUp event handler for the control</short>
+        <short>Executes the OnEditMouseUp event handler for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditMouseUp.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.InternalOnEditMouseUp.Button">
         <short/>
@@ -748,7 +748,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetAlignment">
-        <short>Sets the value for the Alignment property</short>
+        <short>Sets the value for the Alignment property.</short>
         <descr>
           Write access for the property value is redirected to the <var>Alignment</var> property in <var>BaseEditor</var>.
         </descr>
@@ -758,11 +758,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetAlignment.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetAutoSelect">
-        <short>Sets the value for the AutoSelect property</short>
+        <short>Sets the value for the AutoSelect property.</short>
         <descr>
           Write access for the property value is redirected to <var>BaseEditor</var>.
         </descr>
@@ -772,11 +772,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetAutoSelect.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetAutoSelected">
-        <short>Sets the value for the AutoSelected property</short>
+        <short>Sets the value for the AutoSelected property.</short>
         <descr>
           Write access to the property value is redirected to <var>BaseEditor</var>.
         </descr>
@@ -787,11 +787,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetAutoSelected.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetCaretPos">
-        <short>Sets the value for the CaretPos property</short>
+        <short>Sets the value for the CaretPos property.</short>
         <descr>
           Write access to the property value is redirected to <var>BaseEditor</var>.
         </descr>
@@ -802,11 +802,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetCaretPos.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetCharCase">
-        <short>Sets the value for the CharCase property</short>
+        <short>Sets the value for the CharCase property.</short>
         <descr>
           <p>
             Write access to the property value is redirected to <var>BaseEditor</var>.
@@ -819,11 +819,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetCharCase.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetEchoMode">
-        <short>Sets the value for the EchoMode property</short>
+        <short>Sets the value for the EchoMode property.</short>
         <descr>
           Write access to the property value is redirected to <var>BaseEditor</var>.
         </descr>
@@ -834,11 +834,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetEchoMode.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetEditMask">
-        <short>Sets the value for the EditMask property</short>
+        <short>Sets the value for the EditMask property.</short>
         <descr>
           Write access to the property value is redirected to <var>BaseEditor</var>.
         </descr>
@@ -849,11 +849,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetEditMask.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetEditText">
-        <short>Sets the value for the EditText property</short>
+        <short>Sets the value for the EditText property.</short>
         <descr>
           Write access to the property value is redirected to <var>BaseEditor</var>.
         </descr>
@@ -864,11 +864,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetEditText.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetHideSelection">
-        <short>Sets the value for the HideSelection property</short>
+        <short>Sets the value for the HideSelection property.</short>
         <descr>
           <p>
             Read and write access for the property value is redirected to <var>BaseEditor</var>.
@@ -881,22 +881,22 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetHideSelection.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetLayout">
-        <short>Sets the value for the Layout property</short>
+        <short>Sets the value for the Layout property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.Layout"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetLayout.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetMaxLength">
-        <short>Sets the value for the MaxLength property</short>
+        <short>Sets the value for the MaxLength property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.MaxLength"/>
@@ -904,11 +904,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetMaxLength.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetModified">
-        <short>Sets the value for the Modified property</short>
+        <short>Sets the value for the Modified property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.Modified"/>
@@ -918,11 +918,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetModified.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetNumbersOnly">
-        <short>Sets the value for the NumbersOnly property</short>
+        <short>Sets the value for the NumbersOnly property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.NumbersOnly"/>
@@ -931,11 +931,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetNumbersOnly.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetParentColor">
-        <short>Sets the value for the ParentColor property</short>
+        <short>Sets the value for the ParentColor property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.ParentColor"/>
@@ -944,11 +944,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetParentColor.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetPasswordChar">
-        <short>Sets the value for the PasswordChar property</short>
+        <short>Sets the value for the PasswordChar property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.PasswordChar"/>
@@ -957,85 +957,85 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetPasswordChar.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetPopupMenu">
-        <short>Sets the value for the PopupMenu property</short>
+        <short>Sets the value for the PopupMenu property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetPopupMenu.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetReadOnly.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetSelLength">
-        <short>Sets the value for the SelLength property</short>
+        <short>Sets the value for the SelLength property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetSelLength.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetSelStart">
-        <short>Sets the value for the SelStart property</short>
+        <short>Sets the value for the SelStart property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetSelStart.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetSelText">
-        <short>Sets the value for the SelText property</short>
+        <short>Sets the value for the SelText property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetSelText.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetSpacing">
-        <short>Sets the value for the Spacing property</short>
+        <short>Sets the value for the Spacing property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetSpacing.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetTabStop">
-        <short>Sets the value for the TabStop property</short>
+        <short>Sets the value for the TabStop property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetTabStop.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetTextHint">
-        <short>Sets the value for the TextHint property</short>
+        <short>Sets the value for the TextHint property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetTextHint.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element
         name="TCustomAbstractGroupedEdit.WSRegisterClass"
         link="#lcl.controls.TCustomControl.WSRegisterClass">
-        <short>Registers the widget set class used to create new instances of the grouped edit</short>
+        <short>Registers the widget set class used to create new instances of the grouped edit.</short>
         <descr>
           <p>
             Calls the inherited method, and registers the following properties to be skipped during LCL component streaming:
@@ -1052,7 +1052,7 @@
 
       <element name="TCustomAbstractGroupedEdit.CalculatePreferredSize">
         <short>
-          Calculates the preferred size for the control with optional space reserved by theme services
+          Calculates the preferred size for the control with optional space reserved by theme services.
         </short>
         <descr>
           <p>
@@ -1068,17 +1068,17 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.CalculatePreferredSize.PreferredWidth">
-        <short>Width for the control; always zero in the method</short>
+        <short>Width for the control; always zero in the method.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.CalculatePreferredSize.PreferredHeight">
-        <short>Height for the control</short>
+        <short>Height for the control.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.CalculatePreferredSize.WithThemeSpace">
-        <short>Indicates if additional space needed for theme services is reserved</short>
+        <short>Indicates if additional space needed for theme services is reserved.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CreateBuddy">
-        <short>Creates the TControl instance assigned to the Buddy property</short>
+        <short>Creates the TControl instance assigned to the Buddy property.</short>
         <descr>
           <p>
             <var>CreateBuddy</var> is a <var>TControl</var> function used to create the <var>TControl</var> instance assigned to the <var>Buddy</var> property. CreateBuddy calls <var>GetBuddyClassType</var> to get the class reference used to create new instances of the control, and calls its Create method using the current class  instance as the owner for the TControl instance.
@@ -1095,20 +1095,20 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.CreateBuddy.Result">
-        <short>TControl instance created in the method</short>
+        <short>TControl instance created in the method.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CreateEditor">
-        <short>Creates the TGEEdit instance used in the BaseEditor property</short>
+        <short>Creates the TGEEdit instance used in the BaseEditor property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.CreateEditor.Result">
-        <short>TGEEdit instance created in the method</short>
+        <short>TGEEdit instance created in the method.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.FocusAndMaybeSelectAll">
-        <short>Gives focus to the control, and optionally selects text in its editor</short>
+        <short>Gives focus to the control, and optionally selects text in its editor.</short>
         <descr>
           <p>
             <var>FocusAndMaybeSelectAll</var> is a procedure used to give focus to the control, and to optionally select text in its editor.  FocusAndMaybeSelectAll calls the <var>SetFocus</var> method in <var>BaseEditor</var> to ensure that the editor portion of the grouped edit control has focus.
@@ -1130,156 +1130,156 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetEditorClassType">
-        <short>Gets the class reference used to create the BaseEditor for the control</short>
+        <short>Gets the class reference used to create the BaseEditor for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetEditorClassType.Result">
-        <short>Class reference used to create the BaseEditor for the control</short>
+        <short>Class reference used to create the BaseEditor for the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetBuddyClassType">
-        <short>Gets the class reference used to create the Buddy for the control</short>
+        <short>Gets the class reference used to create the Buddy for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetBuddyClassType.Result">
-        <short>Class reference sed to create the Buddy for the control</short>
+        <short>Class reference sed to create the Buddy for the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetControlClassDefaultSize">
-        <short>Gets the default size for new instances of the control</short>
+        <short>Gets the default size for new instances of the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetControlClassDefaultSize.Result">
-        <short>Default size for new class instances</short>
+        <short>Default size for new class instances.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetDirectInput">
-        <short>Sets the value for the DirectInput property</short>
+        <short>Sets the value for the DirectInput property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetDirectInput.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.RealGetText">
-        <short>Gets the value for the text in the control</short>
+        <short>Gets the value for the text in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.RealGetText.Result">
-        <short>Value for the text in the control</short>
+        <short>Value for the text in the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.RealSetText">
-        <short>Sets the value for the text in the control</short>
+        <short>Sets the value for the text in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.RealSetText.AValue">
-        <short>New value for the text in the control</short>
+        <short>New value for the text in the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetEditPopupMenu">
-        <short>Gets the popup menu for the BaseEditor in the control</short>
+        <short>Gets the popup menu for the BaseEditor in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetEditPopupMenu.Result">
-        <short>The popup menu for the BaseEditor in the control</short>
+        <short>The popup menu for the BaseEditor in the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetBuddyCaption">
-        <short>Gets the Caption used in the Buddy property</short>
+        <short>Gets the Caption used in the Buddy property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetBuddyCaption.Result">
-        <short>Caption used in the Buddy property</short>
+        <short>Caption used in the Buddy property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetBuddyCursor">
-        <short>Gets the value for the BuddyCursor property</short>
+        <short>Gets the value for the BuddyCursor property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BuddyCursor"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetBuddyCursor.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetBuddyHint">
-        <short>Gets the value for the BuddyHint property</short>
+        <short>Gets the value for the BuddyHint property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BuddyHint"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetBuddyHint.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetBuddyWidth">
-        <short>Gets the value for the BuddyWidth property</short>
+        <short>Gets the value for the BuddyWidth property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BuddyWidth"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetBuddyWidth.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetBuddyCaption">
-        <short>Sets the Caption used in the Buddy property</short>
+        <short>Sets the Caption used in the Buddy property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BuddyCaption"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetBuddyCaption.AValue">
-        <short>Value assigned as the Caption in the Buddy property</short>
+        <short>Value assigned as the Caption in the Buddy property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetBuddyCursor">
-        <short>Sets the cursor shape used in the Buddy property</short>
+        <short>Sets the cursor shape used in the Buddy property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BuddyCursor"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetBuddyCursor.AValue">
-        <short>Value assigned as the Cursor in the Buddy property</short>
+        <short>Value assigned as the Cursor in the Buddy property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetBuddyHint">
-        <short>Sets the Hint displayed for the Buddy property</short>
+        <short>Sets the Hint displayed for the Buddy property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BuddyHint"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetBuddyHint.AValue">
-        <short>Value assigned as the Hint in the Buddy property</short>
+        <short>Value assigned as the Hint in the Buddy property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetBuddyWidth">
-        <short>Sets the Width used for the Buddy property</short>
+        <short>Sets the Width used for the Buddy property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BuddyWidth"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetBuddyWidth.AValue">
-        <short>Value assigned as the Width in the Buddy property</short>
+        <short>Value assigned as the Width in the Buddy property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.BuddyClick">
-        <short>Performs actions needed when the Buddy control is clicked</short>
+        <short>Performs actions needed when the Buddy control is clicked.</short>
         <descr>
           <p>
             Used in internal methods to redirect events from the <var>Buddy</var> control to the container class (the current class instance).
@@ -1302,7 +1302,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.DoEnter">
-        <short>Performs actions needed when the control is entered</short>
+        <short>Performs actions needed when the control is entered.</short>
         <descr>
           <p>
             <var>DoEnter</var> is an overridden procedure used to perform actions needed when the control is entered using keyboard navigation. DoEnter calls the inherited DoEnter method to signal the OnEnter event handler, and calls the <var>SetFocus</var> method in <var>BaseEditor</var> at run-time. The focus change is not performed at design-time.
@@ -1314,7 +1314,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditChange">
-        <short>Signals the OnEditChange event handler, when assigned</short>
+        <short>Signals the OnEditChange event handler, when assigned.</short>
         <descr>
           <p>
             <var>EditChange</var> is a procedure used to signals the <var>OnEditChange</var> event handler, when assigned. EditChange is used in the implementation of the <var>InternalOnEditChange</var> method, which is assigned as the    <var>OnChange</var> event handler in the <var>BaseEditor</var> property.
@@ -1327,7 +1327,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditClick">
-        <short>Signals the internal OnEditClick event handler, when assigned</short>
+        <short>Signals the internal OnEditClick event handler, when assigned.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.BaseEditor"/>
@@ -1590,14 +1590,14 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CheckCursor">
-        <short>Forwards a CheckCursor method call to the BaseEditor for the control</short>
+        <short>Forwards a CheckCursor method call to the BaseEditor for the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CMParentColorChanged">
         <short>
-          Handles the control message received when the ParentColor property is changed
+          Handles the control message received when the ParentColor property is changed.
         </short>
         <descr/>
         <seealso/>
@@ -1616,83 +1616,83 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetSel">
-        <short>Gets the offsets for the current text selection in the control</short>
+        <short>Gets the offsets for the current text selection in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetSel._SelStart">
-        <short>Starting position for the text selection in the control</short>
+        <short>Starting position for the text selection in the control.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetSel._SelStop">
-        <short>Ending position for the text selection in the control</short>
+        <short>Ending position for the text selection in the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.GetSpacing">
-        <short>Gets the value for the Spacing property</short>
+        <short>Gets the value for the Spacing property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.GetSpacing.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetSel">
-        <short>Sets the current text selection in the control</short>
+        <short>Sets the current text selection in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetSel._SelStart">
-        <short>Initial position selected in the control</short>
+        <short>Initial position selected in the control.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetSel._SelStop">
-        <short>Final position selected in the control</short>
+        <short>Final position selected in the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Loaded">
         <short>
-          Performs actions when the control has finished loading in the LCL streaming mechanism
+          Performs actions when the control has finished loading in the LCL streaming mechanism.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Reset">
-        <short>Forwards a Reset method call to the BaseEditor in the control</short>
+        <short>Forwards a Reset method call to the BaseEditor in the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetAutoSize">
-        <short>Sets the value for the AutoSize property</short>
+        <short>Sets the value for the AutoSize property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.AutoSize"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetAutoSize.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetColor">
-        <short>Sets the value for the Color property</short>
+        <short>Sets the value for the Color property.</short>
         <descr/>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.Color"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetColor.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetCursor">
-        <short>Sets the value for the Cursor property</short>
+        <short>Sets the value for the Cursor property.</short>
         <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.Cursor">TControl.Cursor</link>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetCursor.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.ShouldAutoAdjust">
@@ -1709,20 +1709,20 @@
 
       <element name="TCustomAbstractGroupedEdit.AutoSelect">
         <short>
-          Indicates if the text in the control is automatically selected when focus is received
+          Indicates if the text in the control is automatically selected when focus is received.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.AutoSelected">
-        <short>Indicates if the current text selection was performed automatically</short>
+        <short>Indicates if the current text selection was performed automatically.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Buddy">
-        <short>Represents the associated TControl instance in the grouped edit control</short>
+        <short>Represents the associated TControl instance in the grouped edit control.</short>
         <descr>
           <p>
             <var>Buddy</var> normally contains a <var>TSpeedButton</var>, <var>TUpDown</var> or similar control. Derived classes may implement a different class type for the control using the <var>GetBuddyClassType</var> method.
@@ -1735,25 +1735,25 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.BuddyCaption">
-        <short>Caption used for the Buddy control</short>
+        <short>Caption used for the Buddy control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.BuddyCursor">
-        <short>Cursor shape used for the Buddy control</short>
+        <short>Cursor shape used for the Buddy control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.BuddyHint">
-        <short>Hint displayed for the Buddy control</short>
+        <short>Hint displayed for the Buddy control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.BuddyWidth">
-        <short>Width for the Buddy control</short>
+        <short>Width for the Buddy control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1765,14 +1765,14 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.DirectInput">
-        <short>Indicates if text can be entered directly into the BaseEditor control</short>
+        <short>Indicates if text can be entered directly into the BaseEditor control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.BaseEditor">
         <short>
-          Represents the control used as the editor for the value in the grouped edit control
+          Represents the control used as the editor for the value in the grouped edit control.
         </short>
         <descr>
         </descr>
@@ -1782,7 +1782,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMask">
-        <short>Contains the masking characters used in the editor for the control</short>
+        <short>Contains the masking characters used in the editor for the control.</short>
         <descr>
           <p>
             <var>EditMask</var> is a <var>String</var> property that contains the masking characters used in the editor for the control. EditMask redirects read and write access for the property to the <var>TGEEdit</var> instance in the <var>BaseEditor</var> property.
@@ -1797,7 +1797,7 @@
 
       <element name="TCustomAbstractGroupedEdit.EditText">
         <short>
-          Contains the value entered in the control including masking characters
+          Contains the value entered in the control including masking characters.
         </short>
         <descr>
           <p>
@@ -1814,7 +1814,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.FocusOnBuddyClick">
-        <short>Determines if the control receives focus when the Buddy conrol is clicked</short>
+        <short>Determines if the control receives focus when the Buddy conrol is clicked.</short>
         <descr>
           <p>
             <var>FocusOnBuddyClick</var> is a <var>Boolean</var> property which determines if the control receives focus (and a potential change to the text selection in the editor) when the <var>Buddy</var> control is clicked. The default value for the property is False.
@@ -1831,7 +1831,7 @@
 
       <element name="TCustomAbstractGroupedEdit.IsMasked">
         <short>
-          Indicates if an edit mask is in use in the BaseEditor in the grouped edit control
+          Indicates if an edit mask is in use in the BaseEditor in the grouped edit control.
         </short>
         <descr/>
         <seealso/>
@@ -1864,7 +1864,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Spacing">
-        <short>Spacing used  between the BaseEditor and the Buddy controls</short>
+        <short>Spacing used  between the BaseEditor and the Buddy controls.</short>
         <descr>
           <p>
             <var>Spacing</var> is an <var>Integer</var> property that contains the spacing used  between the <var>BaseEditor</var> and the <var>Buddy</var> controls.
@@ -1874,13 +1874,13 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.OnBuddyClick">
-        <short>Event handler signalled when the Buddy control is clicked</short>
+        <short>Event handler signalled when the Buddy control is clicked.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create allocates resources needed for the <var>BaseEditor</var> and <var>Buddy</var> properties prior to calling the inherited constructor. The default values for properties and event handlers are assigned in the constructor, including those needed in the BaseEditor and Buddy properties.
@@ -1898,11 +1898,11 @@
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy calls the inherited destructor.
@@ -1915,7 +1915,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SetFocus">
-        <short>Sets the focus to the editor in the control</short>
+        <short>Sets the focus to the editor in the control.</short>
         <descr>
           <p>
             <var>SetFocus</var> is an overridden procedure which gives focus to the grouped edit control. SetFocus redirects the method call to the SetFocus method in the <var>BaseEditor</var> for the control.
@@ -1928,7 +1928,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Focused">
-        <short>Performs actions needed when the control receives focus</short>
+        <short>Performs actions needed when the control receives focus.</short>
         <descr>
           <p>
             <var>Focused</var> is an overridden <var>Boolean</var> function used to perform actions needed when the control receives focus. Focused calls the    <var>Focused</var> method in the <var>BaseEditor</var> for the control.
@@ -1940,11 +1940,11 @@
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.Focused.Result">
-        <short>True when the control has focus</short>
+        <short>True when the control has focus.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Clear">
-        <short>Removes the text content in the control</short>
+        <short>Removes the text content in the control.</short>
         <descr>
           <p>
             <var>Clear</var> is a procedure used to remove the text content in the control. Clear class the Clear method in <var>BaseEditor</var>.
@@ -1957,45 +1957,45 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.ClearSelection">
-        <short>Clears the content for the current selection in the control</short>
+        <short>Clears the content for the current selection in the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CopyToClipboard">
-        <short>Copies content in the control to the clipboard</short>
+        <short>Copies content in the control to the clipboard.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CutToClipboard">
         <short>
-          Copies content in the control to the clipboard, and removes it from the control
+          Copies content in the control to the clipboard, and removes it from the control.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.PasteFromClipboard">
-        <short>Pastes content into the control from the clipboard</short>
+        <short>Pastes content into the control from the clipboard.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SelectAll">
-        <short>Selects all of the content in the control</short>
+        <short>Selects all of the content in the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Undo">
-        <short>Reverses the last edit performed on the control value</short>
+        <short>Reverses the last edit performed on the control value.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.ValidateEdit">
-        <short>Performs actions needed to validate the value for the control</short>
+        <short>Performs actions needed to validate the value for the control.</short>
         <descr>
           <p>
             <var>ValidateEdit</var> is a procedure used to perform actions needed to validate the value for the control. The method calls the ValidateEdit method in the <var>BaseEditor</var> member to validate its Text against the edit mask assigned to  the property.
@@ -2011,7 +2011,7 @@
 
       <element name="TCustomAbstractGroupedEdit.AutoSizeHeightIsEditHeight">
         <short>
-          Indicates if the height for  BaseEditor is used as the height for the control when autosizing
+          Indicates if the height for  BaseEditor is used as the height for the control when autosizing.
         </short>
         <descr>
           <p>
@@ -2028,7 +2028,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Alignment">
-        <short>Indicates the text alignment used for the control value</short>
+        <short>Indicates the text alignment used for the control value.</short>
         <descr>
           <p>
             <var>Alignment</var> is a <var>TAlignment</var> property which indicates the text alignment used for the control value in the <var>BaseEditor</var> control. Read and write access for the property value are redirected to the BaseEditor control.
@@ -2045,20 +2045,20 @@
 
       <element name="TCustomAbstractGroupedEdit.CanUndo">
         <short>
-          Indicates if the Undo method can used to revert changes to the control value
+          Indicates if the Undo method can used to revert changes to the control value.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CaretPos">
-        <short>Position of the editing caret in the control</short>
+        <short>Position of the editing caret in the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CharCase">
-        <short>Controls the case conversion used for a value entered in the control</short>
+        <short>Controls the case conversion used for a value entered in the control.</short>
         <descr>
           <p>
             <var>CharCase</var> is a <var>TEditCharCase</var> property that controls the case conversion used (if any) for a value entered in the control. The default value for the property is <var>ecNormal</var>, and indicates that no case conversion is used. See <link id="#lcl.stdctrls.TEditCharCase">TEditCharCase</link> for more information about the enumeration values supported for the type.
@@ -2079,7 +2079,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.ParentColor">
-        <short>Indicates if the color in the Parent control is used</short>
+        <short>Indicates if the color in the Parent control is used.</short>
         <descr>
           <p>
             <var>ParentColor</var> is a <var>Boolean</var> property which indicates if the <var>Color</var> from the <var>Parent</var> control is used instead the value  assigned to the control. When this property is True, all changes to Color  in the parent will also be applied to the Color in the control, ensuring that they both contain the same value. If the Color of the control is changed by the application, then ParentColor will be automatically set to False.
@@ -2097,68 +2097,68 @@
 
       <element name="TCustomAbstractGroupedEdit.EchoMode">
         <short>
-          Indicates if characters entered in the control value are hidden, displayed, or obscured
+          Indicates if characters entered in the control value are hidden, displayed, or obscured.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.HideSelection">
-        <short>Hides the current text selection in the control</short>
+        <short>Hides the current text selection in the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.MaxLength">
-        <short>Maximum number of characters allowed in the editor for the control</short>
+        <short>Maximum number of characters allowed in the editor for the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Modified">
-        <short>Indicates if the content in the control has been changed</short>
+        <short>Indicates if the content in the control has been changed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.NumbersOnly">
-        <short>Indicates that only numbers can be enetered in the control value</short>
+        <short>Indicates that only numbers can be enetered in the control value.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.PasswordChar">
-        <short>Contains the character displayed when entering a password value</short>
+        <short>Contains the character displayed when entering a password value.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.PopupMenu">
-        <short>PopupMenu for the control</short>
+        <short>PopupMenu for the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.ReadOnly">
-        <short>Indicates if value in the control cannot be changed</short>
+        <short>Indicates if value in the control cannot be changed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SelLength">
-        <short>Number of characters in the current selection for the control</short>
+        <short>Number of characters in the current selection for the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SelStart">
-        <short>Starting position for the current selection in the control</short>
+        <short>Starting position for the current selection in the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.SelText">
-        <short>Returns the selected text in the control</short>
+        <short>Returns the selected text in the control.</short>
         <descr>
           <p>
             <var>GetSelText</var> is a <var>String</var> function used to get the selected text in the grouped edit control. Read and write access to the property are redirected to the <var>BaseEdit</var> property.
@@ -2189,7 +2189,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.TextHint">
-        <short>Contains the hint text displayed for the grouped edit control</short>
+        <short>Contains the hint text displayed for the grouped edit control.</short>
         <descr>
           <p>
             <var>TextHint</var> is a <var>TTranslateString</var> property which contains the hint text displayed for the grouped edit control. Read and write access to the property value are redirected to the <var>BaseEditor</var> property.
@@ -2202,7 +2202,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.OnChange">
-        <short>Event handler signalled when the value for the control is changed</short>
+        <short>Event handler signalled when the value for the control is changed.</short>
         <descr>
           <p>
             <var>OnChange</var> is a <var>TNotifyEvent</var> property that contains the event handler signalled when the value for the control is changed.  OnChange is triggered from the <var>EditChange</var> method called when the   <var>BaseEditor</var> control has modified its value.

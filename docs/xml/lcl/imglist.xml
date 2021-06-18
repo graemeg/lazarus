@@ -8,8 +8,8 @@
     -->
     <module name="ImgList">
       <short>
-        Contains classes and types used in TCustomImageList, the base class for TImageList
-      </short>
+        Contains classes and types used in TCustomImageList, the base class for TImageList.
+        </short>
       <descr>
         <p>
           <file>imglist.pp</file> implements <var>TImageList</var> and <var>TChangelink</var> in the Lazarus Component Library (<b>LCL</b>).
@@ -49,7 +49,7 @@
       <element name="AvgLvlTree"/>
 
       <element name="TImageIndex">
-        <short>Type used for an image list index (integer)</short>
+        <short>Type used for an image list index (integer).</short>
         <descr>
           Not used in the current implementation. Exists for Delphi compatibility only, but is unused there as well.
         </descr>
@@ -57,7 +57,7 @@
 
       <element name="TDestroyResolutionHandleEvent">
         <short>
-          Specifies an event handler signalled when images are removed from TImageList
+          Specifies an event handler signalled when images are removed from TImageList.
         </short>
         <descr>
           <p>
@@ -69,18 +69,18 @@
         </seealso>
       </element>
       <element name="TDestroyResolutionHandleEvent.Sender">
-        <short>Image list generating the event notification</short>
+        <short>Image list generating the event notification.</short>
       </element>
       <element name="TDestroyResolutionHandleEvent.AWidth">
-        <short>Width of the image being removed</short>
+        <short>Width of the image being removed.</short>
       </element>
       <element name="TDestroyResolutionHandleEvent.AReferenceHandle">
-        <short>Handle for the image list updated in the method</short>
+        <short>Handle for the image list updated in the method.</short>
       </element>
 
       <element name="TChangeLink">
         <short>
-          Performs notifications when images are added or deleted in TImageList
+          Performs notifications when images are added or deleted in TImageList.
         </short>
         <descr>
           <p>
@@ -103,7 +103,7 @@
       <element name="TChangeLink.FOnChange" link="#lcl.imglist.TChangeLink.OnChange"/>
 
       <element name="TChangeLink.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that the image list in the Sender property calls its UnRegisterChanges method before freeing the class instance. When Sender is unassigned (contains <b>Nil</b>), no actions are performed. Destroy calls the inherited destructor prior to exiting from the method.
@@ -117,7 +117,7 @@
 
       <element name="TChangeLink.Change">
         <short>
-          Signals the OnChange event handler
+          Signals the OnChange event handler.
         </short>
         <descr>
           <p>
@@ -131,7 +131,7 @@
 
       <element name="TChangeLink.OnChange">
         <short>
-          Event handler signalled for a change in the image list
+          Event handler signalled for a change in the image list.
         </short>
         <descr>
           <p>
@@ -146,13 +146,13 @@
       </element>
       <element name="TChangeLink.Sender">
         <short>
-          The Image list for change notifications in the class
+          The Image list for change notifications in the class.
         </short>
       </element>
 
       <element name="TDrawingStyle">
         <short>
-          Defines drawing styles for images
+          Defines drawing styles for images.
         </short>
         <descr>
           <p>
@@ -162,23 +162,23 @@
         <seealso/>
       </element>
       <element name="TDrawingStyle.dsFocus">
-        <short>Draws the image background using its focused color</short>
+        <short>Draws the image background using its focused color.</short>
       </element>
       <element name="TDrawingStyle.dsSelected">
-        <short>Draws the image background using its selected color</short>
+        <short>Draws the image background using its selected color.</short>
       </element>
       <element name="TDrawingStyle.dsNormal">
         <short>
-          Draw using BkColor for the background, or transparent if BkColor is clNone
+          Draw using BkColor for the background, or transparent if BkColor is clNone.
         </short>
       </element>
       <element name="TDrawingStyle.dsTransparent">
-        <short>Always draw transparently, ignore BkColor and BlendColor</short>
+        <short>Always draw transparently, ignore BkColor and BlendColor.</short>
       </element>
 
       <element name="TImageType">
         <short>
-          Indicates if an image contains display data or a mask for its transparent parts
+          Indicates if an image contains display data or a mask for its transparent parts.
         </short>
         <descr>
           <p>
@@ -188,15 +188,15 @@
         <seealso/>
       </element>
       <element name="TImageType.itImage">
-        <short>Does not represent a mask</short>
+        <short>Does not represent a mask.</short>
       </element>
       <element name="TImageType.itMask">
-        <short>Contains a mask</short>
+        <short>Contains a mask.</short>
       </element>
 
       <element name="TOverlay">
         <short>
-          Represents the valid index positions used to access overlay image assignments
+          Represents the valid index positions used to access overlay image assignments.
         </short>
         <descr>
           <p>
@@ -213,7 +213,7 @@
 
       <element name="TCustomImageListResolution">
         <short>
-          Implements an image resolution (or size) used in TCustomImageList
+          Implements an image resolution (or size) used in TCustomImageList.
         </short>
         <descr>
           <p>
@@ -251,7 +251,7 @@
 
       <element name="TCustomImageListResolution.AllocData">
         <short>
-          Allocates storage for the specified number of images in the resolution
+          Allocates storage for the specified number of images in the resolution.
         </short>
         <descr>
           <p>
@@ -266,19 +266,19 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.AllocData.ACount">
-        <short>Number of images that require data storage</short>
+        <short>Number of images that require data storage.</short>
       </element>
 
       <element name="TCustomImageListResolution.GetReference" link="#lcl.imglist.TCustomImageListResolution.Reference">
-        <short>Gets the value for the Reference property</short>
+        <short>Gets the value for the Reference property.</short>
       </element>
       <element name="TCustomImageListResolution.GetReference.Result">
-        <short>Value for the Reference property</short>
+        <short>Value for the Reference property.</short>
       </element>
 
       <element name="TCustomImageListResolution.Add">
         <short>
-          Adds an image with an optional mask to the resolution
+          Adds an image with an optional mask to the resolution.
         </short>
         <descr>
           <p>
@@ -300,78 +300,78 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.Add.Result">
-        <short>Ordinal position for the image added in the method</short>
+        <short>Ordinal position for the image added in the method.</short>
       </element>
       <element name="TCustomImageListResolution.Add.Image">
-        <short>Bitmap image added in the method</short>
+        <short>Bitmap image added in the method.</short>
       </element>
       <element name="TCustomImageListResolution.Add.Mask">
-        <short>Optional bitmap mask for the image</short>
+        <short>Optional bitmap mask for the image.</short>
       </element>
 
       <element name="TCustomImageListResolution.InternalInsert">
         <short>
-          Performs actions to insert raw image data at the specified position
+          Performs actions to insert raw image data at the specified position.
         </short>
         <descr/>
       </element>
       <element name="TCustomImageListResolution.InternalInsert.AIndex">
-        <short>Position where image data is inserted in the list</short>
+        <short>Position where image data is inserted in the list.</short>
       </element>
       <element name="TCustomImageListResolution.InternalInsert.AData">
-        <short>Bitmap data to insert at the specified position</short>
+        <short>Bitmap data to insert at the specified position.</short>
       </element>
 
       <element name="TCustomImageListResolution.InternalMove">
         <short>
-          Performs actions to move the storage position for image data
+          Performs actions to move the storage position for image data.
         </short>
         <descr/>
       </element>
       <element name="TCustomImageListResolution.InternalMove.ACurIndex">
-        <short>Current position of the image moved in the method</short>
+        <short>Current position of the image moved in the method.</short>
       </element>
       <element name="TCustomImageListResolution.InternalMove.ANewIndex">
-        <short>New position for the image</short>
+        <short>New position for the image.</short>
       </element>
       <element name="TCustomImageListResolution.InternalMove.AIgnoreCurrent">
         <short>
-          Indicates if memory in the current index position is updated after moving the image data
+          Indicates if memory in the current index position is updated after moving the image data.
         </short>
       </element>
 
       <element name="TCustomImageListResolution.InternalReplace">
         <short>
-          Performs actions to replace image data at the specified position
+          Performs actions to replace image data at the specified position.
         </short>
         <descr/>
       </element>
       <element name="TCustomImageListResolution.InternalReplace.AIndex">
-        <short>Position in the list where the image data is stored</short>
+        <short>Position in the list where the image data is stored.</short>
       </element>
       <element name="TCustomImageListResolution.InternalReplace.AData">
-        <short>Image data stored in the method</short>
+        <short>Image data stored in the method.</short>
       </element>
 
       <element name="TCustomImageListResolution.InternalSetData">
         <short>
-          Performs actions to store raw image data at the specified position
+          Performs actions to store raw image data at the specified position.
         </short>
         <descr/>
       </element>
       <element name="TCustomImageListResolution.InternalSetData.Result">
-        <short>Pointer to the 32-bit RGBA raw image data stored in the method</short>
+        <short>Pointer to the 32-bit RGBA raw image data stored in the method.</short>
       </element>
       <element name="TCustomImageListResolution.InternalSetData.AIndex">
-        <short>Position in the list where image data is stored</short>
+        <short>Position in the list where image data is stored.</short>
       </element>
       <element name="TCustomImageListResolution.InternalSetData.AData">
-        <short>Image data stored in the method</short>
+        <short>Image data stored in the method.</short>
       </element>
 
       <element name="TCustomImageListResolution.CheckIndex">
         <short>
-          Ensures an index position is valid for the specified operation
+          Ensures an index position is valid for the specified operation.
         </short>
         <descr>
           <p>
@@ -393,14 +393,14 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.CheckIndex.AIndex">
-        <short>Ordinal position in the list to validate in the method</short>
+        <short>Ordinal position in the list to validate in the method.</short>
       </element>
       <element name="TCustomImageListResolution.CheckIndex.AForInsert">
-        <short>Indicates if the index position is for an insert operation</short>
+        <short>Indicates if the index position is for an insert operation.</short>
       </element>
 
       <element name="TCustomImageListResolution.Clear">
-        <short>Removes all image data for the current resolution</short>
+        <short>Removes all image data for the current resolution.</short>
         <descr>
           <p>
             <var>Clear</var> is a procedure used to remove the 32-bit RGBA raw image data stored in the class instance. No actions are performed in the method when images have not been stored using the resolution.
@@ -419,7 +419,7 @@
       </element>
 
       <element name="TCustomImageListResolution.Delete">
-        <short>Deletes the image at the specified position in the resolution</short>
+        <short>Deletes the image at the specified position in the resolution.</short>
         <descr>
           <p>
             <var>Delete</var> is a procedure used to delete the image at the specified position in the resolution.
@@ -440,12 +440,12 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.Delete.AIndex">
-        <short>Ordinal position for the image deleted in the method</short>
+        <short>Ordinal position for the image deleted in the method.</short>
       </element>
 
       <element name="TCustomImageListResolution.GetFullRawImage">
         <short>
-          Stores raw image data for all images in the resolution to a bitmap
+          Stores raw image data for all images in the resolution to a bitmap.
         </short>
         <descr>
           <p>
@@ -471,12 +471,12 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.GetFullRawImage.Image">
-        <short>Raw image data for all images in the resolution</short>
+        <short>Raw image data for all images in the resolution.</short>
       </element>
 
       <element name="TCustomImageListResolution.WriteData">
         <short>
-          Stores the raw image data for the resolution to a Stream
+          Stores the raw image data for the resolution to a Stream.
         </short>
         <descr>
           <p>
@@ -501,15 +501,15 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.WriteData.AStream">
-        <short>Stream where raw image data for the resolution is stored</short>
+        <short>Stream where raw image data for the resolution is stored.</short>
       </element>
       <element name="TCustomImageListResolution.WriteData.ACompress">
-        <short>Indicates if compression is applied to raw image data</short>
+        <short>Indicates if compression is applied to raw image data.</short>
       </element>
 
       <element name="TCustomImageListResolution.ReadData">
         <short>
-          Reads raw image data from the specified Stream
+          Reads raw image data from the specified Stream.
         </short>
         <descr>
           <p>
@@ -568,11 +568,11 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.ReadData.AStream">
-        <short>Stream which contains the raw image data read in the method</short>
+        <short>Stream which contains the raw image data read in the method.</short>
       </element>
 
       <element name="TCustomImageListResolution.GetReferenceHandle">
-        <short>Gets the Handle for the Reference image list</short>
+        <short>Gets the Handle for the Reference image list.</short>
         <descr>
           <p>
             <var>GetReferenceHandle</var> is an overridden method used to get the handle for the TWSCustomImageListReference class for the widgetset. Some (all?) platforms / widgetsets require a handle when manipulating an image list. GetReferenceHandle uses the value in the Reference property to supply the value for the Handle.
@@ -583,32 +583,32 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.GetReferenceHandle.Result">
-        <short>Handle for the Reference class in the image list</short>
+        <short>Handle for the Reference class in the image list.</short>
       </element>
 
       <element name="TCustomImageListResolution.WSCreateReference">
         <short>
-          Creates the Reference image list using the facilities for the widgetset
+          Creates the Reference image list using the facilities for the widgetset.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.WSCreateReference.Result">
-        <short>Class instance for the reference class</short>
+        <short>Class instance for the reference class.</short>
       </element>
       <element name="TCustomImageListResolution.WSCreateReference.AParams">
-        <short>Parameters used to create the reference class</short>
+        <short>Parameters used to create the reference class.</short>
       </element>
 
       <element name="TCustomImageListResolution.WSRegisterClass">
         <short>
-          Registers the class type used to create references for the widgetset
+          Registers the class type used to create references for the widgetset.
         </short>
       </element>
 
       <element name="TCustomImageListResolution.ReferenceDestroying">
         <short>
-          Notifies an image list list when the handle for the resolution is freed
+          Notifies an image list list when the handle for the resolution is freed.
         </short>
         <descr>
           <p>
@@ -618,13 +618,13 @@
       </element>
 
       <element name="TCustomImageListResolution.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomImageListResolution.GetHotSpot">
-        <short>Get the coordinates for the HotSpot in an image in the list</short>
+        <short>Get the coordinates for the HotSpot in an image in the list.</short>
         <descr>
           <p>
             <var>GetHotSpot</var> is a <var>TPoint</var> function used to get the HotSpot for an image stored in the resolution. The HotSpot is an offset from the drawing position to the image origin. A HotSpot is used only in TDragImageList. In TCustomImageList, its position is always (<b>0,0</b>).
@@ -633,12 +633,12 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.GetHotSpot.Result">
-        <short>Point with the horizontal and vertical offset for the image hot spot</short>
+        <short>Point with the horizontal and vertical offset for the image hot spot.</short>
       </element>
 
       <element name="TCustomImageListResolution.FillDescription">
         <short>
-          Stores the image description for the raw image data for the resolution
+          Stores the image description for the raw image data for the resolution.
         </short>
         <descr>
           <p>
@@ -700,12 +700,12 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.FillDescription.ADesc">
-        <short>Stores values updated in the method</short>
+        <short>Stores values updated in the method.</short>
       </element>
 
       <element name="TCustomImageListResolution.GetBitmap">
         <short>
-          Gets the bitmap for an image drawn using the specified drawing effect
+          Gets the bitmap for an image drawn using the specified drawing effect.
         </short>
         <descr>
           <p>
@@ -733,18 +733,18 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.GetBitmap.Index">
-        <short>Ordinal position for the image in the list</short>
+        <short>Ordinal position for the image in the list.</short>
       </element>
       <element name="TCustomImageListResolution.GetBitmap.Image">
-        <short>Bitmap updated in the method</short>
+        <short>Bitmap updated in the method.</short>
       </element>
       <element name="TCustomImageListResolution.GetBitmap.AEffect">
-        <short>Drawing effect applied to the bitmap</short>
+        <short>Drawing effect applied to the bitmap.</short>
       </element>
 
       <element name="TCustomImageListResolution.GetIcon">
         <short>
-          Gets an Icon rendered using the specified drawing effect
+          Gets an Icon rendered using the specified drawing effect.
         </short>
         <descr>
           <p>
@@ -772,18 +772,18 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.GetIcon.Index">
-        <short>Ordinal position for the image requested in the method</short>
+        <short>Ordinal position for the image requested in the method.</short>
       </element>
       <element name="TCustomImageListResolution.GetIcon.Image">
-        <short>TIcon class where the image data is stored</short>
+        <short>TIcon class where the image data is stored.</short>
       </element>
       <element name="TCustomImageListResolution.GetIcon.AEffect">
-        <short>Drawing effect applied to the rendered image</short>
+        <short>Drawing effect applied to the rendered image.</short>
       </element>
 
       <element name="TCustomImageListResolution.GetFullBitmap">
         <short>
-          Gets a bitmap representing all images in the resolution
+          Gets a bitmap representing all images in the resolution.
         </short>
         <descr>
           <p>
@@ -808,15 +808,15 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.GetFullBitmap.Image">
-        <short>Bitmap image with the combined images for the resolution</short>
+        <short>Bitmap image with the combined images for the resolution.</short>
       </element>
       <element name="TCustomImageListResolution.GetFullBitmap.AEffect">
-        <short>Drawing effect applied to images and stored in the bitmap</short>
+        <short>Drawing effect applied to images and stored in the bitmap.</short>
       </element>
 
       <element name="TCustomImageListResolution.GetRawImage">
         <short>
-          Gets the 32-bit RGBA raw image data for the specified image
+          Gets the 32-bit RGBA raw image data for the specified image.
         </short>
         <descr>
           <p>
@@ -847,14 +847,14 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.GetRawImage.Index">
-        <short>Ordinal position for the image in the list</short>
+        <short>Ordinal position for the image in the list.</short>
       </element>
       <element name="TCustomImageListResolution.GetRawImage.Image">
-        <short>TRawImage instance where image data is stored in the method</short>
+        <short>TRawImage instance where image data is stored in the method.</short>
       </element>
 
       <element name="TCustomImageListResolution.Draw">
-        <short>Renders an image to the specified canvas</short>
+        <short>Renders an image to the specified canvas.</short>
         <descr>
           <p>
             <var>Draw</var> is an overloaded method used to render an image to the specified canvas. Overloaded variants allow the use of a drawing effect or style for the rendered image.
@@ -890,33 +890,33 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.Draw.ACanvas">
-        <short>Canvas where the image is drawn</short>
+        <short>Canvas where the image is drawn.</short>
       </element>
       <element name="TCustomImageListResolution.Draw.AX">
-        <short>Horizontal offset for the image on the canvas</short>
+        <short>Horizontal offset for the image on the canvas.</short>
       </element>
       <element name="TCustomImageListResolution.Draw.AY">
-        <short>Vertical offset for the image on the canvas</short>
+        <short>Vertical offset for the image on the canvas.</short>
       </element>
       <element name="TCustomImageListResolution.Draw.AIndex">
-        <short>Position of the image drawn in the method</short>
+        <short>Position of the image drawn in the method.</short>
       </element>
       <element name="TCustomImageListResolution.Draw.AEnabled">
-        <short>Indicates if the image is drawn in an Enabled state</short>
+        <short>Indicates if the image is drawn in an Enabled state.</short>
       </element>
       <element name="TCustomImageListResolution.Draw.ADrawEffect">
-        <short>Drawing effect applied to the rendered image</short>
+        <short>Drawing effect applied to the rendered image.</short>
       </element>
       <element name="TCustomImageListResolution.Draw.ADrawingStyle">
-        <short>Drawing style applied to the rendered image</short>
+        <short>Drawing style applied to the rendered image.</short>
       </element>
       <element name="TCustomImageListResolution.Draw.AImageType">
-        <short>Indicates if the image contains a mask or source data</short>
+        <short>Indicates if the image contains a mask or source data.</short>
       </element>
 
       <element name="TCustomImageListResolution.StretchDraw">
         <short>
-          Draws an image stretched to the dimensions for the target rectangle
+          Draws an image stretched to the dimensions for the target rectangle.
         </short>
         <descr>
           <p>
@@ -951,20 +951,20 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolution.StretchDraw.Canvas">
-        <short>Canvas used for the drawing operation</short>
+        <short>Canvas used for the drawing operation.</short>
       </element>
       <element name="TCustomImageListResolution.StretchDraw.Index">
-        <short>Ordinal position for the image drawn in the method</short>
+        <short>Ordinal position for the image drawn in the method.</short>
       </element>
       <element name="TCustomImageListResolution.StretchDraw.ARect">
-        <short>Rectangle coordinates used for the draw operation</short>
+        <short>Rectangle coordinates used for the draw operation.</short>
       </element>
       <element name="TCustomImageListResolution.StretchDraw.Enabled">
-        <short>Indicates if the image is drawn using the enabled display state</short>
+        <short>Indicates if the image is drawn using the enabled display state.</short>
       </element>
 
       <element name="TCustomImageListResolution.DrawOverlay">
-        <short>Draws the specified image with the given overlay</short>
+        <short>Draws the specified image with the given overlay.</short>
         <descr>
           <p>
             <var>DrawOverlay</var> is an overloaded procedure used to draw the specified image with an overlay. An overlay is an masked image drawn transparently over another image. The overlay image is generally used to convey state or status information about the image it adorns. The overlay images are stored in the image list  resolution just like the images they decorate.
@@ -1006,37 +1006,37 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.ACanvas">
-        <short>Canvas where the image and its overlay are rendered</short>
+        <short>Canvas where the image and its overlay are rendered.</short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.AX">
-        <short>Horizontal offset for the overlay image</short>
+        <short>Horizontal offset for the overlay image.</short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.AY">
-        <short>Vertical offset for the overlay image</short>
+        <short>Vertical offset for the overlay image.</short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.AIndex">
-        <short>Ordinal position for the base image drawn in the method</short>
+        <short>Ordinal position for the base image drawn in the method.</short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.AOverlay">
         <short>
-          Position in the internal array with the index for an overlay image
+          Position in the internal array with the index for an overlay image.
         </short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.AEnabled">
-        <short>Indicates if the image is drawn in the enabled state</short>
+        <short>Indicates if the image is drawn in the enabled state.</short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.ADrawEffect">
-        <short>Drawing effect applied to the image and its overlay</short>
+        <short>Drawing effect applied to the image and its overlay.</short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.ADrawingStyle">
-        <short>Drawing style applied to the image and its overlay</short>
+        <short>Drawing style applied to the image and its overlay.</short>
       </element>
       <element name="TCustomImageListResolution.DrawOverlay.AImageType">
-        <short>Image type for the requested image</short>
+        <short>Image type for the requested image.</short>
       </element>
 
       <element name="TCustomImageListResolution.ImageList">
-        <short>Image list which owns the resolution</short>
+        <short>Image list which owns the resolution.</short>
         <descr>
           <p>
             <var>ImageList</var> is a read-only <var>TCustomImageList</var> property that represents the image list which owns the resolution. The value in the ImageList property is provided as an argument to the Create constructor.
@@ -1052,7 +1052,7 @@
 
       <element name="TCustomImageListResolution.Width">
         <short>
-          Width of the images stored in the resolution
+          Width of the images stored in the resolution.
         </short>
         <descr>
           <p>
@@ -1075,7 +1075,7 @@
       </element>
 
       <element name="TCustomImageListResolution.Height">
-        <short>Height of the images stored in the resolution</short>
+        <short>Height of the images stored in the resolution.</short>
         <descr>
           <p>
             <var>Height</var> is a read-only <var>Integer</var> property that indicates the height of images stored in the resolution. Height is used along with <var>Width</var> and <var>Count</var> to determine the internal storage allocated for 32-bit RGBA raw image data in the resolution.
@@ -1098,7 +1098,7 @@
 
       <element name="TCustomImageListResolution.Count">
         <short>
-          Number of images stored in the resolution
+          Number of images stored in the resolution.
         </short>
         <descr>
           <p>
@@ -1120,7 +1120,7 @@
 
       <element name="TCustomImageListResolution.AutoCreatedInDesignTime">
         <short>
-          Indicates if the Resolution was auto-created at design-time
+          Indicates if the Resolution was auto-created at design-time.
         </short>
         <descr>
           <p>
@@ -1140,7 +1140,7 @@
 
       <element name="TCustomImageListResolution.Reference">
         <short>
-          Reference to the widgetset image list using this resolution
+          Reference to the widgetset image list using this resolution.
         </short>
         <descr>
           <p>
@@ -1157,7 +1157,7 @@
 
       <element name="TScaledImageListResolution">
         <short>
-          Implements a scaled image resolution (size)
+          Implements a scaled image resolution (size).
         </short>
         <descr>
           <p>
@@ -1189,29 +1189,29 @@
       <element name="TScaledImageListResolution.FHeight" link="#lcl.imglist.TScaledImageListResolution.Height"/>
 
       <element name="TScaledImageListResolution.GetCount" link="#lcl.imglist.TScaledImageListResolution.Count">
-        <short>Gets the value for the Count property</short>
+        <short>Gets the value for the Count property.</short>
       </element>
       <element name="TScaledImageListResolution.GetCount.Result">
-        <short>Value for the Count property</short>
+        <short>Value for the Count property.</short>
       </element>
 
       <element name="TScaledImageListResolution.GetSize" link="#lcl.imglist.TScaledImageListResolution.Size">
-        <short>Gets the value for the Size property</short>
+        <short>Gets the value for the Size property.</short>
       </element>
       <element name="TScaledImageListResolution.GetSize.Result">
-        <short>Value for the Size property</short>
+        <short>Value for the Size property.</short>
       </element>
 
       <element name="TScaledImageListResolution.GetValid" link="#lcl.imglist.TScaledImageListResolution.Valid">
-        <short>Gets the value for the Valid property</short>
+        <short>Gets the value for the Valid property.</short>
       </element>
       <element name="TScaledImageListResolution.GetValid.Result">
-        <short>Value for the the Valid property</short>
+        <short>Value for the the Valid property.</short>
       </element>
 
       <element name="TScaledImageListResolution.Create">
         <short>
-          Allocates a new record instance
+          Allocates a new record instance.
         </short>
         <descr>
           <p>
@@ -1229,58 +1229,58 @@
         </descr>
       </element>
       <element name="TScaledImageListResolution.Create.Result">
-        <short>Record instance allocated in the class function</short>
+        <short>Record instance allocated in the class function.</short>
       </element>
       <element name="TScaledImageListResolution.Create.AResolution">
-        <short>Resolution used as the basis for the scaled images</short>
+        <short>Resolution used as the basis for the scaled images.</short>
       </element>
       <element name="TScaledImageListResolution.Create.AScaleFactor">
-        <short>Scale factor applied to the scaled images</short>
+        <short>Scale factor applied to the scaled images.</short>
       </element>
 
       <element name="TScaledImageListResolution.GetBitmap" link="#lcl.imglist.TCustomImageListResolution.GetBitmap">
-        <short>Gets the scaled bitmap for the specified image</short>
+        <short>Gets the scaled bitmap for the specified image.</short>
       </element>
       <element name="TScaledImageListResolution.GetBitmap.Index">
-        <short>Ordinal position for the bitmap requested in the method</short>
+        <short>Ordinal position for the bitmap requested in the method.</short>
       </element>
       <element name="TScaledImageListResolution.GetBitmap.Image">
-        <short>Bitmap used to store the requested image</short>
+        <short>Bitmap used to store the requested image.</short>
       </element>
       <element name="TScaledImageListResolution.GetBitmap.AEffect">
-        <short>Drawing effect applied to the image</short>
+        <short>Drawing effect applied to the image.</short>
       </element>
 
       <element name="TScaledImageListResolution.Draw" link="#lcl.imglist.TCustomImageListResolution.Draw">
-        <short>Draws the scaled image to the specified canvas</short>
+        <short>Draws the scaled image to the specified canvas.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.ACanvas">
-        <short>Canvas used to render the image</short>
+        <short>Canvas used to render the image.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.AX">
-        <short>Horizontal canvas offset for the rendered image</short>
+        <short>Horizontal canvas offset for the rendered image.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.AY">
-        <short>Vertical canvas offset for the rendered image</short>
+        <short>Vertical canvas offset for the rendered image.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.AIndex">
-        <short>Ordinal position for the image rendered in the method</short>
+        <short>Ordinal position for the image rendered in the method.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.AEnabled">
-        <short>Indicates if the image is drawn in the enabled state</short>
+        <short>Indicates if the image is drawn in the enabled state.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.ADrawEffect">
-        <short>Drawing effect applied to the rendered image</short>
+        <short>Drawing effect applied to the rendered image.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.ADrawingStyle">
-        <short>Drawing style applied to the rendered image</short>
+        <short>Drawing style applied to the rendered image.</short>
       </element>
       <element name="TScaledImageListResolution.Draw.AImageType">
-        <short>Image type for the rendered image</short>
+        <short>Image type for the rendered image.</short>
       </element>
 
       <element name="TScaledImageListResolution.StretchDraw" link="#lcl.imglist.TCustomImageListResolution.StretchDraw">
-        <short>Draws the scaled image sized to the target rectangle</short>
+        <short>Draws the scaled image sized to the target rectangle.</short>
       </element>
       <element name="TScaledImageListResolution.StretchDraw.ACanvas">
         <short/>
@@ -1296,7 +1296,7 @@
       </element>
 
       <element name="TScaledImageListResolution.DrawOverlay" link="#lcl.imglist.TCustomImageListResolution.DrawOverlay">
-        <short>Draws an image with an overlay at the specified canvas position</short>
+        <short>Draws an image with an overlay at the specified canvas position.</short>
         <descr>
           <p>
             <var>DrawOverlay</var> is an overloaded method used to draw an image with an overlay at the given position on a canvas. The overloaded variants allow the enabled state, drawing effect, or drawing style for the image(s) to be specified.
@@ -1325,56 +1325,56 @@
         </seealso>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.ACanvas">
-        <short>Canvas where the image and overlay are drawn</short>
+        <short>Canvas where the image and overlay are drawn.</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.AX">
-        <short>Horizontal coordinate on the canvas where the image is drawn</short>
+        <short>Horizontal coordinate on the canvas where the image is drawn.</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.AY">
-        <short>Vertical coordinate on the canvas where the image is drawn</short>
+        <short>Vertical coordinate on the canvas where the image is drawn.</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.AIndex">
-        <short>Ordinal position for the image drawn in the method</short>
+        <short>Ordinal position for the image drawn in the method.</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.AOverlay">
-        <short>Position for the overlay image applied in the method</short>
+        <short>Position for the overlay image applied in the method.</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.AEnabled">
-        <short>True when the image is drawn in the enabled state (default)</short>
+        <short>True when the image is drawn in the enabled state (default).</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.ADrawEffect">
-        <short>TGraphicsDrawEffect value applied to the image</short>
+        <short>TGraphicsDrawEffect value applied to the image.</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.ADrawingStyle">
-        <short>TDrawingStyle value applied to the image</short>
+        <short>TDrawingStyle value applied to the image.</short>
       </element>
       <element name="TScaledImageListResolution.DrawOverlay.AImageType">
-        <short>Indicates if the content is the image or a mask</short>
+        <short>Indicates if the content is the image or a mask.</short>
       </element>
 
       <element name="TScaledImageListResolution.Width">
-        <short>Width of the images stored in the scaled image resolution</short>
+        <short>Width of the images stored in the scaled image resolution.</short>
       </element>
 
       <element name="TScaledImageListResolution.Height">
-        <short>Height of the images stored in the scaled image resolution</short>
+        <short>Height of the images stored in the scaled image resolution.</short>
       </element>
 
       <element name="TScaledImageListResolution.Size">
-        <short>Size of an image stored in the scaled resolution</short>
+        <short>Size of an image stored in the scaled resolution.</short>
       </element>
 
       <element name="TScaledImageListResolution.Resolution">
-        <short>Resolution used as the bases for scaled images</short>
+        <short>Resolution used as the bases for scaled images.</short>
       </element>
 
       <element name="TScaledImageListResolution.Count">
-        <short>Number of images stored in the scaled image list</short>
+        <short>Number of images stored in the scaled image list.</short>
       </element>
 
       <element name="TScaledImageListResolution.Valid">
         <short>
-          Indicates if the source resolution is assigned for the class instance
+          Indicates if the source resolution is assigned for the class instance.
         </short>
         <descr>
           <p>
@@ -1385,12 +1385,12 @@
       </element>
 
       <element name="TCustomImageListResolutionClass">
-        <short>Class type used to create instances of TCustomImageListResolution</short>
+        <short>Class type used to create instances of TCustomImageListResolution.</short>
       </element>
 
       <element name="TCustomImageListResolutions">
         <short>
-          Provides multiple image resolutions in TCustomImageList
+          Provides multiple image resolutions in TCustomImageList.
         </short>
         <descr>
           <p>
@@ -1422,7 +1422,7 @@
 
       <element name="TCustomImageListResolutions.Find">
         <short>
-          Checks for an existing image resolution in the Items property
+          Checks for an existing image resolution in the Items property.
         </short>
         <descr>
           <p>
@@ -1437,17 +1437,17 @@
         </descr>
       </element>
       <element name="TCustomImageListResolutions.Find.Result">
-        <short>True when the image resolution exists in the Items property</short>
+        <short>True when the image resolution exists in the Items property.</short>
       </element>
       <element name="TCustomImageListResolutions.Find.AImageWidth">
-        <short>Image width desired from the Items property</short>
+        <short>Image width desired from the Items property.</short>
       </element>
       <element name="TCustomImageListResolutions.Find.Index">
-        <short>Ordinal position for the image resolution in the Items property</short>
+        <short>Ordinal position for the image resolution in the Items property.</short>
       </element>
 
       <element name="TCustomImageListResolutions.GetImageLists">
-        <short>Gets the value for the Image Lists property</short>
+        <short>Gets the value for the Image Lists property.</short>
         <descr>
           <p>
             <var>GetImageLists</var> is an overloaded <var>TCustomImageListResolution</var> function. The variant with only an image width argument is used to get the value for the indexed ImageLists property. The other variant is called from the read access specifier.
@@ -1466,42 +1466,42 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutions.GetImageLists.Result">
-        <short>Value for the ImageLists property</short>
+        <short>Value for the ImageLists property.</short>
       </element>
       <element name="TCustomImageListResolutions.GetImageLists.AImageWidth">
-        <short>Image width desired in the image list</short>
+        <short>Image width desired in the image list.</short>
       </element>
       <element name="TCustomImageListResolutions.GetImageLists.AScaleFromExisting">
         <short>
-          Indicates if a missing resolution can be scaled from another resolution
+          Indicates if a missing resolution can be scaled from another resolution.
         </short>
       </element>
       <element name="TCustomImageListResolutions.GetImageLists.AutoCreatedInDesignTime">
         <short>
-          Indicates if the image resolution was auto-created at design-time
+          Indicates if the image resolution was auto-created at design-time.
         </short>
       </element>
 
       <element name="TCustomImageListResolutions.GetItems" link="#lcl.imglist.TCustomImageListResolutions.Items">
-        <short>Gets the value for the indexed Items property</short>
+        <short>Gets the value for the indexed Items property.</short>
       </element>
       <element name="TCustomImageListResolutions.GetItems.Result">
-        <short>Value for the Items property</short>
+        <short>Value for the Items property.</short>
       </element>
       <element name="TCustomImageListResolutions.GetItems.AIndex">
-        <short>Ordinal position for the requested item</short>
+        <short>Ordinal position for the requested item.</short>
       </element>
 
       <element name="TCustomImageListResolutions.GetCount" link="#lcl.imglist.TCustomImageListResolutions.Count">
-        <short>Gets the value for the Count property</short>
+        <short>Gets the value for the Count property.</short>
       </element>
       <element name="TCustomImageListResolutions.GetCount.Result">
-        <short>Value for the Count property</short>
+        <short>Value for the Count property.</short>
       </element>
 
       <element name="TCustomImageListResolutions.FindBestToCopyFrom">
         <short>
-          Finds the resolution that is the best candidate for scaling to the target width
+          Finds the resolution that is the best candidate for scaling to the target width.
         </short>
         <descr>
           <p>
@@ -1520,17 +1520,17 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolutions.FindBestToCopyFrom.Result">
-        <short>Ordinal position of the image resolution selected in the method</short>
+        <short>Ordinal position of the image resolution selected in the method.</short>
       </element>
       <element name="TCustomImageListResolutions.FindBestToCopyFrom.ATargetWidth">
-        <short>Image width desired in the resolution</short>
+        <short>Image width desired in the resolution.</short>
       </element>
       <element name="TCustomImageListResolutions.FindBestToCopyFrom.AIgnoreIndex">
-        <short>Ordinal position of an image resolution ignored in the method</short>
+        <short>Ordinal position of an image resolution ignored in the method.</short>
       </element>
 
       <element name="TCustomImageListResolutions.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance. Create calls the inherited constructor. Create allocates resources needed for the internal object list which stores the image resolutions in the container. Create sets the value for the <var>ImageList</var> property to <var>AImageList</var>. Create stores the class type in <var>AResolutionClass</var> to an internal member used in the container.
@@ -1539,16 +1539,16 @@
         <seealso/>
       </element>
       <element name="TCustomImageListResolutions.Create.AImageList">
-        <short>Image list that owns the container</short>
+        <short>Image list that owns the container.</short>
       </element>
       <element name="TCustomImageListResolutions.Create.AResolutionClass">
         <short>
-          Class type used to create resolution class instances in the container
+          Class type used to create resolution class instances in the container.
         </short>
       </element>
 
       <element name="TCustomImageListResolutions.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for the class instance. Destroy frees resources allocated to the internal list used to store image resolutions in the container. Destroy calls the inherited destructor prior to exiting from the method.
@@ -1559,7 +1559,7 @@
 
       <element name="TCustomImageListResolutions.FindBestToScaleFrom">
         <short>
-          Finds the image resolution with the best size for scaling to the target width
+          Finds the image resolution with the best size for scaling to the target width.
         </short>
         <descr>
           <p>
@@ -1583,15 +1583,15 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutions.FindBestToScaleFrom.Result">
-        <short>Source image resolution to use for scaling to the target width</short>
+        <short>Source image resolution to use for scaling to the target width.</short>
       </element>
       <element name="TCustomImageListResolutions.FindBestToScaleFrom.ATargetWidth">
-        <short>Target width for the scaled image resolution</short>
+        <short>Target width for the scaled image resolution.</short>
       </element>
 
       <element name="TCustomImageListResolutions.Delete">
         <short>
-          Deletes the image resolution stored at the specified position in the container
+          Deletes the image resolution stored at the specified position in the container.
         </short>
         <descr>
           <p>
@@ -1609,12 +1609,12 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutions.Delete.AIndex">
-        <short>Ordinal position of the image resolution to delete from the container</short>
+        <short>Ordinal position of the image resolution to delete from the container.</short>
       </element>
 
       <element name="TCustomImageListResolutions.Clear">
         <short>
-          Clears all image resolutions stored in the container
+          Clears all image resolutions stored in the container.
         </short>
         <descr>
           <p>
@@ -1631,7 +1631,7 @@
 
       <element name="TCustomImageListResolutions.ImageLists">
         <short>
-          Provides access to an image list which uses the specified image width
+          Provides access to an image list which uses the specified image width.
         </short>
         <descr>
           <p>
@@ -1651,15 +1651,15 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutions.ImageLists.Result">
-        <short>Image list with images using the specified width</short>
+        <short>Image list with images using the specified width.</short>
       </element>
       <element name="TCustomImageListResolutions.ImageLists.AImageWidth">
-        <short>Image width requested in the image list</short>
+        <short>Image width requested in the image list.</short>
       </element>
 
       <element name="TCustomImageListResolutions.Items">
         <short>
-          Provides indexed access to existing image resolutions in the container
+          Provides indexed access to existing image resolutions in the container.
         </short>
         <descr>
           <p>
@@ -1681,15 +1681,15 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutions.Items.Result">
-        <short>The image resolution class instance at the specified position</short>
+        <short>The image resolution class instance at the specified position.</short>
       </element>
       <element name="TCustomImageListResolutions.Items.AIndex">
-        <short>Ordinal position for the requested image resolution</short>
+        <short>Ordinal position for the requested image resolution.</short>
       </element>
 
       <element name="TCustomImageListResolutions.Count">
         <short>
-          Number of image resolutions stored in the container
+          Number of image resolutions stored in the container.
         </short>
         <descr>
           <p>
@@ -1704,7 +1704,7 @@
 
       <element name="TCustomImageListResolutionEnumerator">
         <short>
-          Implements an enumerator for image resolutions in TCustomImageList
+          Implements an enumerator for image resolutions in TCustomImageList.
         </short>
         <descr>
           <p>
@@ -1732,15 +1732,15 @@
       <element name="TCustomImageListResolutionEnumerator.FDesc"/>
 
       <element name="TCustomImageListResolutionEnumerator.GetCurrent" link="#lcl.imglist.TCustomImageListResolutionEnumerator.Current">
-        <short>Gets the value for the Current property</short>
+        <short>Gets the value for the Current property.</short>
       </element>
       <element name="TCustomImageListResolutionEnumerator.GetCurrent.Result">
-        <short>Value for the Current property</short>
+        <short>Value for the Current property.</short>
       </element>
 
       <element name="TCustomImageListResolutionEnumerator.GetEnumerator">
         <short>
-          Gets the enumerator for the class instance
+          Gets the enumerator for the class instance.
         </short>
         <descr>
           <p>
@@ -1761,12 +1761,12 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutionEnumerator.GetEnumerator.Result">
-        <short>Enumerator for the image resolutions in the image list</short>
+        <short>Enumerator for the image resolutions in the image list.</short>
       </element>
 
       <element name="TCustomImageListResolutionEnumerator.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -1796,15 +1796,15 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutionEnumerator.Create.AImgList">
-        <short>Image list that owns the image resolutions in the enumerator</short>
+        <short>Image list that owns the image resolutions in the enumerator.</short>
       </element>
       <element name="TCustomImageListResolutionEnumerator.Create.ADesc">
-        <short>Indicates if the enumerator navigates in descending order</short>
+        <short>Indicates if the enumerator navigates in descending order.</short>
       </element>
 
       <element name="TCustomImageListResolutionEnumerator.MoveNext">
         <short>
-          Moves to the next image resolution for the enumerator
+          Moves to the next image resolution for the enumerator.
         </short>
         <descr>
           <p>
@@ -1823,11 +1823,11 @@
         </seealso>
       </element>
       <element name="TCustomImageListResolutionEnumerator.MoveNext.Result">
-        <short>True when another image resolution is available in the enumerator</short>
+        <short>True when another image resolution is available in the enumerator.</short>
       </element>
 
       <element name="TCustomImageListResolutionEnumerator.Current">
-        <short>The current image resolution for the enumerator</short>
+        <short>The current image resolution for the enumerator.</short>
         <descr>
           <p>
             <var>Current</var> is a read-only <var>TCustomImageListResolution</var> property that represents the current image resolution for the enumerator. Current implements the property defined in the <var>IEnumerator</var> interface.
@@ -1847,7 +1847,7 @@
 
       <element name="TCustomImageListGetWidthForPPI">
         <short>
-          Specifies an event handler used to get image widths for a display density (PPI)
+          Specifies an event handler used to get image widths for a display density (PPI).
         </short>
         <descr>
           <p>
@@ -1875,21 +1875,21 @@
         </seealso>
       </element>
       <element name="TCustomImageListGetWidthForPPI.Sender">
-        <short>Image list generating the event notification</short>
+        <short>Image list generating the event notification.</short>
       </element>
       <element name="TCustomImageListGetWidthForPPI.AImageWidth">
-        <short>Initial image width used in the event handler</short>
+        <short>Initial image width used in the event handler.</short>
       </element>
       <element name="TCustomImageListGetWidthForPPI.APPI">
-        <short>Display density (Pixels per Inch)</short>
+        <short>Display density (Pixels per Inch).</short>
       </element>
       <element name="TCustomImageListGetWidthForPPI.AResultWidth">
-        <short>Imaged width calculated in the event handler for the display density</short>
+        <short>Imaged width calculated in the event handler for the display density.</short>
       </element>
 
       <element name="TCustomImageList">
         <short>
-          The base class for TImageList
+          The base class for TImageList.
         </short>
         <descr>
           <p>
@@ -1965,7 +1965,7 @@
 
       <element name="TCustomImageList.FData">
         <short>
-          Stores the TCustomImageListResolutions container used in the image list
+          Stores the TCustomImageListResolutions container used in the image list.
         </short>
       </element>
 
@@ -1979,19 +1979,19 @@
       <element name="TCustomImageList.FOnChange" link="#lcl.imglist.TCustomImageList.OnChange"/>
 
       <element name="TCustomImageList.FChangeLinkList">
-        <short>List of TChangeLinks which are notified of changes</short>
+        <short>List of TChangeLinks which are notified of changes.</short>
       </element>
 
       <element name="TCustomImageList.FBkColor" link="#lcl.imglist.TCustomImageList.BkColor"/>
 
       <element name="TCustomImageList.FChanged">
         <short>
-          Used to remember changes that occur while update notifications are locked (FUpdateCount &gt; 0)
+          Used to remember changes that occur while update notifications are locked (FUpdateCount &gt; 0).
         </short>
       </element>
 
       <element name="TCustomImageList.FUpdateCount">
-        <short>Counter for BeginUpdate/EndUpdate method calls</short>
+        <short>Counter for BeginUpdate/EndUpdate method calls.</short>
       </element>
 
       <element name="TCustomImageList.FOverlays" link="#lcl.imglist.TCustomImageList.Overlay"/>
@@ -2003,7 +2003,7 @@
       <element name="TCustomImageList.FScaled" link="#lcl.imglist.TCustomImageList.Scaled"/>
 
       <element name="TCustomImageList.NotifyChangeLink">
-        <short>Notifies all subscribed objects of a change in the image list</short>
+        <short>Notifies all subscribed objects of a change in the image list.</short>
         <descr/>
         <seealso>
           <link id="TCustomImageList.Change"/>
@@ -2013,58 +2013,58 @@
       </element>
 
       <element name="TCustomImageList.SetBkColor" link="#lcl.imglist.TCustomImageList.BkColor">
-        <short>Sets the value for the BkColor property</short>
+        <short>Sets the value for the BkColor property.</short>
       </element>
       <element name="TCustomImageList.SetBkColor.Value">
         <short>New value for the BkColor property.</short>
       </element>
 
       <element name="TCustomImageList.SetDrawingStyle" link="#lcl.imglist.TCustomImageList.DrawingStyle">
-        <short>Sets the value for the DrawingStyle property</short>
+        <short>Sets the value for the DrawingStyle property.</short>
       </element>
       <element name="TCustomImageList.SetDrawingStyle.AValue">
-        <short>New value for the DrawingStyle property</short>
+        <short>New value for the DrawingStyle property.</short>
       </element>
 
        <element name="TCustomImageList.SetHeight" link="#lcl.imglist.TCustomImageList.Height">
-         <short>Sets the value for the Height property</short>
+         <short>Sets the value for the Height property.</short>
        </element>
        <element name="TCustomImageList.SetHeight.Value">
-         <short>New value for the Height property</short>
+         <short>New value for the Height property.</short>
        </element>
 
        <element name="TCustomImageList.SetMasked" link="#lcl.imglist.TCustomImageList.Masked">
-         <short>Sets the value for the Masked property</short>
+         <short>Sets the value for the Masked property.</short>
        </element>
        <element name="TCustomImageList.SetMasked.AValue">
-         <short>New value for the Masked property</short>
+         <short>New value for the Masked property.</short>
        </element>
 
        <element name="TCustomImageList.SetShareImages" link="#lcl.imglist.TCustomImageList.ShareImages">
-         <short>Sets the value for the ShareImages property</short>
+         <short>Sets the value for the ShareImages property.</short>
        </element>
        <element name="TCustomImageList.SetShareImages.AValue">
-         <short>New value for the ShareImages property</short>
+         <short>New value for the ShareImages property.</short>
        </element>
 
        <element name="TCustomImageList.SetWidth" link="#lcl.imglist.TCustomImageList.Width">
-         <short>Sets the value for the Width property</short>
+         <short>Sets the value for the Width property.</short>
        </element>
        <element name="TCustomImageList.SetWidth.Value">
-         <short>New value for the Width property</short>
+         <short>New value for the Width property.</short>
        </element>
 
        <element name="TCustomImageList.GetReference" link="#lcl.imglist.TCustomImageList.Reference">
-         <short>Gets the value for the Reference property</short>
+         <short>Gets the value for the Reference property.</short>
        </element>
        <element name="TCustomImageList.GetReference.Result">
-         <short>Value for the Reference property</short>
+         <short>Value for the Reference property.</short>
        </element>
 
        <element name="TCustomImageList.GetResolutionForPPI">
          <short>
-           Gets an image list with images resized for the specified display density
-         </short>
+           Gets an image list with images resized for the specified display density.
+        </short>
          <descr>
            <p>
              <var>GetResolutionForPPI</var> is a TScaledImageListResolution function used to get an image list with images suitable for use at the specified display density (PPI).
@@ -2095,48 +2095,48 @@
          </seealso>
        </element>
        <element name="TCustomImageList.GetResolutionForPPI.Result">
-         <short>Image list with the resized images</short>
+         <short>Image list with the resized images.</short>
        </element>
        <element name="TCustomImageList.GetResolutionForPPI.AImageWidth">
-         <short>Image width for source images in the operation</short>
+         <short>Image width for source images in the operation.</short>
        </element>
        <element name="TCustomImageList.GetResolutionForPPI.APPI">
-         <short>Display density (pixels per inch) for the resized images</short>
+         <short>Display density (pixels per inch) for the resized images.</short>
        </element>
        <element name="TCustomImageList.GetResolutionForPPI.ACanvasScaleFactor">
-         <short>Scaling factor used for the target canvas</short>
+         <short>Scaling factor used for the target canvas.</short>
        </element>
 
        <element name="TCustomImageList.GetWidthForPPI" link="#lcl.imglist.TCustomImageList.WidthForPPI">
-         <short>Gets the value for the WidthForPPI property</short>
+         <short>Gets the value for the WidthForPPI property.</short>
        </element>
        <element name="TCustomImageList.GetWidthForPPI.Result">
-         <short>Image width derived for the specified display density</short>
+         <short>Image width derived for the specified display density.</short>
        </element>
        <element name="TCustomImageList.GetWidthForPPI.AImageWidth">
-         <short>Initial image width used in the method</short>
+         <short>Initial image width used in the method.</short>
        </element>
        <element name="TCustomImageList.GetWidthForPPI.APPI">
-         <short>Display density (PPI) for the calculation</short>
+         <short>Display density (PPI) for the calculation.</short>
        </element>
 
        <element name="TCustomImageList.GetHeightForPPI" link="#lcl.imglist.TCustomImageList.HeightForPPI">
-         <short>Gets the value for the HeightForPPI property</short>
+         <short>Gets the value for the HeightForPPI property.</short>
        </element>
        <element name="TCustomImageList.GetHeightForPPI.Result">
-         <short>Image height derived for the specified display density</short>
+         <short>Image height derived for the specified display density.</short>
        </element>
        <element name="TCustomImageList.GetHeightForPPI.AImageWidth">
-         <short>Image width used to derive the value</short>
+         <short>Image width used to derive the value.</short>
        </element>
        <element name="TCustomImageList.GetHeightForPPI.APPI">
-         <short>Display density (PPI) used in the calculation</short>
+         <short>Display density (PPI) used in the calculation.</short>
        </element>
 
        <element name="TCustomImageList.GetHeightForWidth">
          <short>
-           Gets the height for images using the specified width
-         </short>
+           Gets the height for images using the specified width.
+        </short>
          <descr>
            <p>
              <var>GetHeightForWidth</var> is an <var>Integer</var> function used to get the vertical size for images using the image width specified in <var>AWidth</var>. When AWidth contains a non-zero value, it is used to calculate the proportional image height using the values in the <var>Height</var> and <var>Width</var> properties.
@@ -2154,24 +2154,24 @@
          </seealso>
        </element>
        <element name="TCustomImageList.GetHeightForWidth.Result">
-         <short>Image height calculated for the specified image width</short>
+         <short>Image height calculated for the specified image width.</short>
        </element>
        <element name="TCustomImageList.GetHeightForWidth.AWidth">
-         <short>Image width used to derive the proportional image height</short>
+         <short>Image width used to derive the proportional image height.</short>
        </element>
 
 
        <element name="TCustomImageList.GetCount" link="#lcl.imglist.TCustomImageList.Count">
-         <short>Gets the value for the Count property</short>
+         <short>Gets the value for the Count property.</short>
        </element>
        <element name="TCustomImageList.GetCount.Result">
-         <short>Value for the Count property</short>
+         <short>Value for the Count property.</short>
        </element>
 
        <element name="TCustomImageList.GetSizeForPPI">
          <short>
-           Gets the image size for the specified image width and display density (PPI)
-         </short>
+           Gets the image size for the specified image width and display density (PPI).
+        </short>
          <descr>
            <p>
              <var>GetSizeForPPI</var> is a <var>TSize</var> function used to get the image size for the specified image width and display density (PPI).
@@ -2199,19 +2199,19 @@
          </seealso>
        </element>
        <element name="TCustomImageList.GetSizeForPPI.Result">
-         <short>The calculated size for images at the specified display density</short>
+         <short>The calculated size for images at the specified display density.</short>
        </element>
        <element name="TCustomImageList.GetSizeForPPI.AImageWidth">
-         <short>Image width used as the basis for the calculated image size</short>
+         <short>Image width used as the basis for the calculated image size.</short>
        </element>
        <element name="TCustomImageList.GetSizeForPPI.APPI">
-         <short>Display density (PPI) for the calculated image size</short>
+         <short>Display density (PPI) for the calculated image size.</short>
        </element>
 
        <element name="TCustomImageList.GetBestIconIndexForSize">
          <short>
-           Gets the index position for an icon with a suitable size
-         </short>
+           Gets the index position for an icon with a suitable size.
+        </short>
          <descr>
            <p>
              <var>GetBestIconIndexForSize</var> is an <var>Integer</var> function used to locate the index position for an icon with the size specified in <var>AWidth</var>. If an exact match is not found for the specified width, the next largest value in AIcon is used. If an icon size larger than AWidth is not found, the largest icon size available is used.
@@ -2232,39 +2232,39 @@
          </seealso>
        </element>
        <element name="TCustomImageList.GetBestIconIndexForSize.Result">
-         <short>Position of the candidate icon</short>
+         <short>Position of the candidate icon.</short>
        </element>
        <element name="TCustomImageList.GetBestIconIndexForSize.AIcon">
-         <short>Icon examined in the method</short>
+         <short>Icon examined in the method.</short>
        </element>
        <element name="TCustomImageList.GetBestIconIndexForSize.AWidth">
-         <short>Icon width requested in the method</short>
+         <short>Icon width requested in the method.</short>
        </element>
 
        <element name="TCustomImageList.GetResolutionByIndex" link="#lcl.imglist.TCustomImageList.ResolutionByIndex">
-         <short>Gets the value for the ResolutionByIndex property</short>
+         <short>Gets the value for the ResolutionByIndex property.</short>
        </element>
        <element name="TCustomImageList.GetResolutionByIndex.Result">
-         <short>Value for the ResolutionByIndex property</short>
+         <short>Value for the ResolutionByIndex property.</short>
        </element>
        <element name="TCustomImageList.GetResolutionByIndex.AIndex">
-         <short>Index position for the requested image resolution</short>
+         <short>Index position for the requested image resolution.</short>
        </element>
 
       <element name="TCustomImageList.GetResolutionCount" link="#lcl.imglist.TCustomImageList.ResolutionCount">
-        <short>Gets the value for the ResolutionCount property</short>
+        <short>Gets the value for the ResolutionCount property.</short>
         <seealso>
           <link id="TCustomImageList.ResolutionCount"/>
           <link id="TCustomImageList.Resolutions"/>
         </seealso>
       </element>
       <element name="TCustomImageList.GetResolutionCount.Result">
-        <short>Value for the ResolutionCount property</short>
+        <short>Value for the ResolutionCount property.</short>
       </element>
 
       <element name="TCustomImageList.CreateDefaultResolution">
         <short>
-          Creates the default resolution (size) for the image list
+          Creates the default resolution (size) for the image list.
         </short>
         <descr>
           <p>
@@ -2300,7 +2300,7 @@
 
       <element name="TCustomImageList.DoDestroyResolutionReference">
         <short>
-          Performs actions when the reference class for a resolution is freed
+          Performs actions when the reference class for a resolution is freed.
         </short>
         <descr>
           <p>
@@ -2318,15 +2318,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.DoDestroyResolutionReference.AWidth">
-        <short>Image width for the resolution being freed</short>
+        <short>Image width for the resolution being freed.</short>
       </element>
       <element name="TCustomImageList.DoDestroyResolutionReference.AResolutionReference">
-        <short>Reference class for the resolution being freed</short>
+        <short>Reference class for the resolution being freed.</short>
       </element>
 
       <element name="TCustomImageList.GetResolution">
         <short>
-          Gets the value for the indexed Resolution property
+          Gets the value for the indexed Resolution property.
         </short>
         <descr>
           <p>
@@ -2347,15 +2347,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.GetResolution.Result">
-        <short>Value for the Resolution property</short>
+        <short>Value for the Resolution property.</short>
       </element>
       <element name="TCustomImageList.GetResolution.AImageWidth">
-        <short>Image width for the requested resolution</short>
+        <short>Image width for the requested resolution.</short>
       </element>
 
       <element name="TCustomImageList.GetResolutionClass">
         <short>
-          Gets the class type used to create image resolutions in the list
+          Gets the class type used to create image resolutions in the list.
         </short>
         <descr>
           <p>
@@ -2373,12 +2373,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.GetResolutionClass.Result">
-        <short>Class type used to create resolutions in the image list</short>
+        <short>Class type used to create resolutions in the image list.</short>
       </element>
 
       <element name="TCustomImageList.CheckIndex">
         <short>
-          Ensures that an Index position is valid for the bounds of the image list
+          Ensures that an Index position is valid for the bounds of the image list.
         </short>
         <descr>
           <p>
@@ -2399,15 +2399,15 @@
         </errors>
       </element>
       <element name="TCustomImageList.CheckIndex.AIndex">
-        <short>Index position validated in the method</short>
+        <short>Index position validated in the method.</short>
       </element>
       <element name="TCustomImageList.CheckIndex.AForInsert">
-        <short>True when the index position is used for insertion (default is False)</short>
+        <short>True when the index position is used for insertion (default is False).</short>
       </element>
 
       <element name="TCustomImageList.Initialize">
         <short>
-          Performs the initial set up for the image list
+          Performs the initial set up for the image list.
         </short>
         <descr>
           <p>
@@ -2448,7 +2448,7 @@
 
       <element name="TCustomImageList.DefineProperties">
         <short>
-          Defines properties used in the LCL component streaming mechanism
+          Defines properties used in the LCL component streaming mechanism.
         </short>
         <descr>
           <p>
@@ -2478,12 +2478,12 @@
         <seealso/>
       </element>
       <element name="TCustomImageList.DefineProperties.Filer">
-        <short>TFiler class used to read and write the component</short>
+        <short>TFiler class used to read and write the component.</short>
       </element>
 
       <element name="TCustomImageList.SetWidthHeight">
         <short>
-          Sets the Width and Height for images in the default resolution
+          Sets the Width and Height for images in the default resolution.
         </short>
         <descr>
           <p>
@@ -2507,15 +2507,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.SetWidthHeight.NewWidth">
-        <short>New value for the Width property</short>
+        <short>New value for the Width property.</short>
       </element>
       <element name="TCustomImageList.SetWidthHeight.NewHeight">
-        <short>New value for the Height property</short>
+        <short>New value for the Height property.</short>
       </element>
 
       <element name="TCustomImageList.ClearOverlays">
         <short>
-          Clears images indexes assigned as overlay images in the image list
+          Clears images indexes assigned as overlay images in the image list.
         </short>
         <descr>
           <p>
@@ -2534,7 +2534,7 @@
 
       <element name="TCustomImageList.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -2561,12 +2561,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomImageList.CreateSize">
         <short>
-          Initializes the image list using the specified height and width
+          Initializes the image list using the specified height and width.
         </short>
         <descr>
           <p>
@@ -2587,14 +2587,14 @@
         </seealso>
       </element>
       <element name="TCustomImageList.CreateSize.AWidth">
-        <short>The width of images in the default resolution</short>
+        <short>The width of images in the default resolution.</short>
       </element>
       <element name="TCustomImageList.CreateSize.AHeight">
-        <short>The height of images in the default resolution</short>
+        <short>The height of images in the default resolution.</short>
       </element>
 
       <element name="TCustomImageList.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to the internal <var>TCustomImageListResolutions</var> instance in the class are freed, and calls the inherited destructor. Destroy calls <var>UnRegisterChanges</var> to remove the <var>TChangeLink</var> items in the internal list of change links for the class, and frees resources allocated to the list.
@@ -2609,7 +2609,7 @@
 
       <element name="TCustomImageList.ScaleImage">
         <short>
-          Scales an image and its optional mask to the specified target size
+          Scales an image and its optional mask to the specified target size.
         </short>
         <descr>
           <p>
@@ -2667,27 +2667,27 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ScaleImage.ABitmap">
-        <short>Bitmap with the image scaled in the method</short>
+        <short>Bitmap with the image scaled in the method.</short>
       </element>
       <element name="TCustomImageList.ScaleImage.AMask">
-        <short>Optional mask that defines the transparent areas of the image</short>
+        <short>Optional mask that defines the transparent areas of the image.</short>
       </element>
       <element name="TCustomImageList.ScaleImage.TargetWidth">
-        <short>Target width for the scaled image</short>
+        <short>Target width for the scaled image.</short>
       </element>
       <element name="TCustomImageList.ScaleImage.TargetHeight">
-        <short>Target Height for the scaled image</short>
+        <short>Target Height for the scaled image.</short>
       </element>
       <element name="TCustomImageList.ScaleImage.AData">
-        <short>32-bit RGBA raw image data for the scaled image</short>
+        <short>32-bit RGBA raw image data for the scaled image.</short>
       </element>
       <element name="TCustomImageList.ScaleImage.SourceRect">
-        <short>Defines the area in the original image scaled in the method</short>
+        <short>Defines the area in the original image scaled in the method.</short>
       </element>
 
       <element name="TCustomImageList.AssignTo">
         <short>
-          Assigns properties in an image list to another instance of the class
+          Assigns properties in an image list to another instance of the class.
         </short>
         <descr>
           <p>
@@ -2705,12 +2705,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.AssignTo.Dest">
-        <short>Image list to receive the values for the class instance</short>
+        <short>Image list to receive the values for the class instance.</short>
       </element>
 
       <element name="TCustomImageList.Assign">
         <short>
-          Stores properties from the specified image list to the current class instance
+          Stores properties from the specified image list to the current class instance.
         </short>
         <descr>
           <p>
@@ -2739,12 +2739,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Assign.Source">
-        <short>Image list with properties stored in the current class instance</short>
+        <short>Image list with properties stored in the current class instance.</short>
       </element>
 
       <element name="TCustomImageList.WriteData">
         <short>
-          Writes image data for the default resolution to a stream
+          Writes image data for the default resolution to a stream.
         </short>
         <descr>
           <p>
@@ -2770,12 +2770,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.WriteData.AStream">
-        <short>Stream used to store the image data</short>
+        <short>Stream used to store the image data.</short>
       </element>
 
       <element name="TCustomImageList.ReadData">
         <short>
-          Reads image data for the default resolution from a stream
+          Reads image data for the default resolution from a stream.
         </short>
         <descr>
           <p>
@@ -2804,12 +2804,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ReadData.AStream">
-        <short>Stream with the image data read in the method</short>
+        <short>Stream with the image data read in the method.</short>
       </element>
 
       <element name="TCustomImageList.WriteAdvData">
         <short>
-          Writes the image content for multiple resolutions to the specified stream
+          Writes the image content for multiple resolutions to the specified stream.
         </short>
         <descr>
           <p>
@@ -2840,12 +2840,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.WriteAdvData.AStream">
-        <short>Stream where the content for the image resolutions is stored</short>
+        <short>Stream where the content for the image resolutions is stored.</short>
       </element>
 
       <element name="TCustomImageList.ReadAdvData">
         <short>
-          Reads the image content for multiple resolutions from a stream
+          Reads the image content for multiple resolutions from a stream.
         </short>
         <descr>
           <p>
@@ -2910,12 +2910,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ReadAdvData.AStream">
-        <short>Stream with the image resolutions loaded in the method</short>
+        <short>Stream with the image resolutions loaded in the method.</short>
       </element>
 
       <element name="TCustomImageList.Equals">
         <short>
-          Compares the contents of the image lists
+          Compares the contents of the image lists.
         </short>
         <descr>
           <p>
@@ -2937,15 +2937,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Equals.Result">
-        <short>True when the image lists are equivalent</short>
+        <short>True when the image lists are equivalent.</short>
       </element>
       <element name="TCustomImageList.Equals.Obj">
-        <short>The image list object used for the comparison</short>
+        <short>The image list object used for the comparison.</short>
       </element>
 
       <element name="TCustomImageList.BeginUpdate">
         <short>
-          Starts an update to the image list, and blocks execution of the OnChange event
+          Starts an update to the image list, and blocks execution of the OnChange event.
         </short>
         <descr>
           <p>
@@ -2967,7 +2967,7 @@
 
       <element name="TCustomImageList.EndUpdate">
         <short>
-          Finishes an update to the image list, and calls Change
+          Finishes an update to the image list, and calls Change.
         </short>
         <descr>
           <p>
@@ -2989,7 +2989,7 @@
 
       <element name="TCustomImageList.Add">
         <short>
-          Adds an image to the list using its source data and optional mask
+          Adds an image to the list using its source data and optional mask.
         </short>
         <descr>
           <p>
@@ -3022,18 +3022,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Add.Result">
-        <short>The index of the added image</short>
+        <short>The index of the added image.</short>
       </element>
       <element name="TCustomImageList.Add.Image">
-        <short>Bitmap image data added in the method</short>
+        <short>Bitmap image data added in the method.</short>
       </element>
       <element name="TCustomImageList.Add.Mask">
-        <short>A bitmap mask which defines the transparent parts of Image</short>
+        <short>A bitmap mask which defines the transparent parts of Image.</short>
       </element>
 
       <element name="TCustomImageList.AddMultipleResolutions">
         <short>
-          Adds images with varying sizes to the corresponding image resolution
+          Adds images with varying sizes to the corresponding image resolution.
         </short>
         <descr>
           <p>
@@ -3067,15 +3067,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.AddMultipleResolutions.Result">
-        <short>Ordinal position where images were stored in the various resolutions</short>
+        <short>Ordinal position where images were stored in the various resolutions.</short>
       </element>
       <element name="TCustomImageList.AddMultipleResolutions.Images">
-        <short>Array of images stored in the method</short>
+        <short>Array of images stored in the method.</short>
       </element>
 
       <element name="TCustomImageList.AddSliced">
         <short>
-          Adds images to the image list from image data stored as adjacent columns and rows
+          Adds images to the image list from image data stored as adjacent columns and rows.
         </short>
         <descr>
           <p>
@@ -3108,21 +3108,21 @@
         </seealso>
       </element>
       <element name="TCustomImageList.AddSliced.Result">
-        <short>Ordinal position where the first image was stored in the image list</short>
+        <short>Ordinal position where the first image was stored in the image list.</short>
       </element>
       <element name="TCustomImageList.AddSliced.Image">
-        <short>Image data stored as a row(s) and columns(s) of adjacent images</short>
+        <short>Image data stored as a row(s) and columns(s) of adjacent images.</short>
       </element>
       <element name="TCustomImageList.AddSliced.AHorizontalCount">
-        <short>Number of adjacent horizontal images (columns)</short>
+        <short>Number of adjacent horizontal images (columns).</short>
       </element>
       <element name="TCustomImageList.AddSliced.AVerticalCount">
-        <short>Number of adjacent vertical images (rows)</short>
+        <short>Number of adjacent vertical images (rows).</short>
       </element>
 
       <element name="TCustomImageList.AddSlice">
         <short>
-          Adds a portion of an image to each of the resolutions in the image list
+          Adds a portion of an image to each of the resolutions in the image list.
         </short>
         <descr>
           <p>
@@ -3159,19 +3159,19 @@
       </element>
       <element name="TCustomImageList.AddSlice.Result">
         <short>
-          Ordinal position where the new image was stored in each of the image resolutions
+          Ordinal position where the new image was stored in each of the image resolutions.
         </short>
       </element>
       <element name="TCustomImageList.AddSlice.Image">
-        <short>Image added in the method</short>
+        <short>Image added in the method.</short>
       </element>
       <element name="TCustomImageList.AddSlice.AImageRect">
-        <short>Area from the source image added in the method</short>
+        <short>Area from the source image added in the method.</short>
       </element>
 
       <element name="TCustomImageList.AddSliceCentered">
         <short>
-          Adds an image centered in the height and width for the image resolutions
+          Adds an image centered in the height and width for the image resolutions.
         </short>
         <descr>
           <p>
@@ -3193,14 +3193,14 @@
         </seealso>
       </element>
       <element name="TCustomImageList.AddSliceCentered.Result">
-        <short>Ordinal position where the image was stored in the image resolutions</short>
+        <short>Ordinal position where the image was stored in the image resolutions.</short>
       </element>
       <element name="TCustomImageList.AddSliceCentered.Image">
-        <short>Image content added in the method</short>
+        <short>Image content added in the method.</short>
       </element>
 
       <element name="TCustomImageList.AddIcon">
-        <short>Adds an icon to the image list</short>
+        <short>Adds an icon to the image list.</short>
         <descr>
           <p>
             <var>AddIcon</var> is used to add the <var>TIcon</var> instance in the Image parameter to the image list. AddIcon calls <var>InsertIcon</var> to store the Image at the ordinal position represented by the <var>Count</var> property. The return value contains the index of the newly added icon, or -1 if the icon could not be added to the list.
@@ -3215,15 +3215,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.AddIcon.Result">
-        <short>The index of the added icon, -1 if unsuccessful</short>
+        <short>The index of the added icon, -1 if unsuccessful.</short>
       </element>
       <element name="TCustomImageList.AddIcon.Image">
-        <short>The Icon to be added</short>
+        <short>The Icon to be added.</short>
       </element>
 
       <element name="TCustomImageList.AddImages">
         <short>
-          Adds images from another image list to the current class instance
+          Adds images from another image list to the current class instance.
         </short>
         <descr>
           <p>
@@ -3245,13 +3245,13 @@
       </element>
       <element name="TCustomImageList.AddImages.AValue">
         <short>
-          The image list with the source images to add in the method
+          The image list with the source images to add in the method.
         </short>
       </element>
 
       <element name="TCustomImageList.AddMasked">
         <short>
-          Adds an image(s) to the list using the MaskColor for transparent pixels
+          Adds an image(s) to the list using the MaskColor for transparent pixels.
         </short>
         <descr>
           <p>
@@ -3264,18 +3264,18 @@
         <seealso/>
       </element>
       <element name="TCustomImageList.AddMasked.Result">
-        <short>The index of the first added image, -1 if unsuccessful</short>
+        <short>The index of the first added image, -1 if unsuccessful.</short>
       </element>
       <element name="TCustomImageList.AddMasked.Image">
-        <short>The bitmap to be added to the image list</short>
+        <short>The bitmap to be added to the image list.</short>
       </element>
       <element name="TCustomImageList.AddMasked.MaskColor">
-        <short>The color used as the transparent  pixels in the image(s)</short>
+        <short>The color used as the transparent  pixels in the image(s).</short>
       </element>
 
       <element name="TCustomImageList.AddLazarusResource">
         <short>
-          Gets a bitmap from a Lazarus resource and stores it in the image list
+          Gets a bitmap from a Lazarus resource and stores it in the image list.
         </short>
         <descr>
           <p>
@@ -3300,20 +3300,20 @@
         </seealso>
       </element>
       <element name="TCustomImageList.AddLazarusResource.Result">
-        <short>Position where the image was stored</short>
+        <short>Position where the image was stored.</short>
       </element>
       <element name="TCustomImageList.AddLazarusResource.ResourceName">
-        <short>The name of the Lazarus resource</short>
+        <short>The name of the Lazarus resource.</short>
       </element>
       <element name="TCustomImageList.AddLazarusResource.MaskColor">
         <short>
-          The mask color for transparent images. clNone for solid (opaque) images
+          The mask color for transparent images. clNone for solid (opaque) images.
         </short>
       </element>
 
       <element name="TCustomImageList.AddResourceName">
         <short>
-          Adds a graphic from a resource with the specified resource name
+          Adds a graphic from a resource with the specified resource name.
         </short>
         <descr>
           <p>
@@ -3345,23 +3345,23 @@
         </seealso>
       </element>
       <element name="TCustomImageList.AddResourceName.Result">
-        <short>Ordinal position where the image was stored</short>
+        <short>Ordinal position where the image was stored.</short>
       </element>
       <element name="TCustomImageList.AddResourceName.Instance">
-        <short>Handle for the resource</short>
+        <short>Handle for the resource.</short>
       </element>
       <element name="TCustomImageList.AddResourceName.ResourceName">
-        <short>Name of the resource loaded in the method</short>
+        <short>Name of the resource loaded in the method.</short>
       </element>
       <element name="TCustomImageList.AddResourceName.MaskColor">
         <short>
-          Color for transparent areas in the image, clNone for an opaque image
+          Color for transparent areas in the image, clNone for an opaque image.
         </short>
       </element>
 
       <element name="TCustomImageList.Change">
         <short>
-          Sends change notifications when the image list is updated
+          Sends change notifications when the image list is updated.
         </short>
         <descr>
           <p>
@@ -3395,7 +3395,7 @@
 
       <element name="TCustomImageList.Clear">
         <short>
-          Removes all images store in the the image list
+          Removes all images store in the the image list.
         </short>
         <descr>
           <p>
@@ -3417,7 +3417,7 @@
 
       <element name="TCustomImageList.Delete">
         <short>
-          Deletes the image at the specified position from all image resolutions
+          Deletes the image at the specified position from all image resolutions.
         </short>
         <descr>
           <p>
@@ -3439,13 +3439,13 @@
       </element>
       <element name="TCustomImageList.Delete.AIndex">
         <short>
-          The index of the image deleted in the method, or -1 to delete all images
+          The index of the image deleted in the method, or -1 to delete all images.
         </short>
       </element>
 
       <element name="TCustomImageList.Draw">
         <short>
-          Renders an image to the specified canvas using a drawing style or effect
+          Renders an image to the specified canvas using a drawing style or effect.
         </short>
         <descr>
           <p>
@@ -3483,33 +3483,33 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Draw.ACanvas">
-        <short>Canvas used for the draw operation</short>
+        <short>Canvas used for the draw operation.</short>
       </element>
       <element name="TCustomImageList.Draw.AX">
-        <short>Horizontal offset on the canvas for the image</short>
+        <short>Horizontal offset on the canvas for the image.</short>
       </element>
       <element name="TCustomImageList.Draw.AY">
-        <short>Vertical offset on the canvas for the image</short>
+        <short>Vertical offset on the canvas for the image.</short>
       </element>
       <element name="TCustomImageList.Draw.AIndex">
-        <short>Position in the list for the image drawn to the canvas</short>
+        <short>Position in the list for the image drawn to the canvas.</short>
       </element>
       <element name="TCustomImageList.Draw.AEnabled">
-        <short>If False, the image is drawn disabled (dithered)</short>
+        <short>If False, the image is drawn disabled (dithered).</short>
       </element>
       <element name="TCustomImageList.Draw.ADrawEffect">
-        <short>Drawing effect applied to the rendered image</short>
+        <short>Drawing effect applied to the rendered image.</short>
       </element>
       <element name="TCustomImageList.Draw.ADrawingStyle">
-        <short>Drawing style applied to the rendered image</short>
+        <short>Drawing style applied to the rendered image.</short>
       </element>
       <element name="TCustomImageList.Draw.AImageType">
-        <short>Indicates if the image contains a mask or source data</short>
+        <short>Indicates if the image contains a mask or source data.</short>
       </element>
 
       <element name="TCustomImageList.DrawForPPI">
         <short>
-          Renders an image to a canvas scaled to a specified display density
+          Renders an image to a canvas scaled to a specified display density.
         </short>
         <descr>
           <p>
@@ -3548,54 +3548,54 @@
       </element>
       <element name="TCustomImageList.DrawForPPI.ACanvas">
         <short>
-          Canvas where the image is rendered
+          Canvas where the image is rendered.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.AX">
         <short>
-          Horizontal offset on the canvas where the image is drawn
+          Horizontal offset on the canvas where the image is drawn.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.AY">
         <short>
-          Vertical offset on the canvas where the image is drawn
+          Vertical offset on the canvas where the image is drawn.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.AIndex">
         <short>
-          Ordinal position for the image drawn in the method
+          Ordinal position for the image drawn in the method.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.AImageWidthAt96PPI">
         <short>
-          Width of the image in the default resolution
+          Width of the image in the default resolution.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.ATargetPPI">
         <short>
-          Target display density (PPI) for the rendered image
+          Target display density (PPI) for the rendered image.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.ACanvasFactor">
         <short>
-          Canvas scaling factor applied in the method
+          Canvas scaling factor applied in the method.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.AEnabled">
         <short>
-          Indicates if the image is rendered in the enabled state
+          Indicates if the image is rendered in the enabled state.
         </short>
       </element>
       <element name="TCustomImageList.DrawForPPI.ADrawEffect">
         <short>
-          Drawing effect applied to the rendered image
+          Drawing effect applied to the rendered image.
         </short>
       </element>
 
         <element name="TCustomImageList.DrawOverlay">
           <short>
-            Renders an image with an overlay to the specified canvas
-          </short>
+            Renders an image with an overlay to the specified canvas.
+        </short>
           <descr>
             <p>
               <var>DrawOverlay</var> is an overloaded procedure used to draw the specified image with an overlay. An overlay is an masked image drawn transparently over another image. The overlay image is generally used to convey state or status information about the image it adorns. The overlay images are stored in the image list (or the resolution) just like the images they decorate.
@@ -3641,36 +3641,36 @@
           </seealso>
         </element>
         <element name="TCustomImageList.DrawOverlay.ACanvas">
-          <short>Canvas where the image and its overlay are drawn</short>
+          <short>Canvas where the image and its overlay are drawn.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.AX">
-          <short>Horizontal offset for the image on the canvas</short>
+          <short>Horizontal offset for the image on the canvas.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.AY">
-          <short>Vertical offset for the image on the canvas</short>
+          <short>Vertical offset for the image on the canvas.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.AIndex">
-          <short>Ordinal position for the image drawn in the method</short>
+          <short>Ordinal position for the image drawn in the method.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.AOverlay">
-          <short>Position for the overlay image drawn in the method</short>
+          <short>Position for the overlay image drawn in the method.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.AEnabled">
-          <short>Indicates if the image and overlay are drawn in the enabled state</short>
+          <short>Indicates if the image and overlay are drawn in the enabled state.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.ADrawEffect">
-          <short>Drawing effect applied to the image and the overlay</short>
+          <short>Drawing effect applied to the image and the overlay.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.ADrawingStyle">
-          <short>Drawing style used for the image and overlay</short>
+          <short>Drawing style used for the image and overlay.</short>
         </element>
         <element name="TCustomImageList.DrawOverlay.AImageType">
-          <short>Indicates the image type (masked or unmasked)</short>
+          <short>Indicates the image type (masked or unmasked).</short>
         </element>
 
       <element name="TCustomImageList.GetBitmap">
         <short>
-          Gets image data at the specified position as a bitmap
+          Gets image data at the specified position as a bitmap.
         </short>
         <descr>
           <p>
@@ -3697,18 +3697,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.GetBitmap.Index">
-        <short>Ordinal position of the requested image</short>
+        <short>Ordinal position of the requested image.</short>
       </element>
       <element name="TCustomImageList.GetBitmap.Image">
-        <short>Bitmap used to store the image data</short>
+        <short>Bitmap used to store the image data.</short>
       </element>
       <element name="TCustomImageList.GetBitmap.AEffect">
-        <short>Drawing effect applied to the image</short>
+        <short>Drawing effect applied to the image.</short>
       </element>
 
       <element name="TCustomImageList.GetFullBitmap">
         <short>
-          Gets a bitmap with all of the images in the default resolution
+          Gets a bitmap with all of the images in the default resolution.
         </short>
         <descr>
           <p>
@@ -3739,15 +3739,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.GetFullBitmap.Image">
-        <short>Bitmap where image data is stored</short>
+        <short>Bitmap where image data is stored.</short>
       </element>
       <element name="TCustomImageList.GetFullBitmap.AEffect">
-        <short>Drawing effect applied to the rendered images</short>
+        <short>Drawing effect applied to the rendered images.</short>
       </element>
 
       <element name="TCustomImageList.GetFullRawImage">
         <short>
-          Gets the raw image data for all images in the default resolution
+          Gets the raw image data for all images in the default resolution.
         </short>
         <descr>
           <p>
@@ -3764,13 +3764,13 @@
       </element>
       <element name="TCustomImageList.GetFullRawImage.Image">
         <short>
-          Image used to store the 32-bit raw image data for the default resolution
+          Image used to store the 32-bit raw image data for the default resolution.
         </short>
       </element>
 
       <element name="TCustomImageList.GetHotSpot">
         <short>
-          Returns the offset from the drawing position to the image origin
+          Returns the offset from the drawing position to the image origin.
         </short>
         <descr>
           <p>
@@ -3780,12 +3780,12 @@
         <seealso/>
       </element>
       <element name="TCustomImageList.GetHotSpot.Result">
-        <short>TPoint with the coordinates for the image hot spot</short>
+        <short>TPoint with the coordinates for the image hot spot.</short>
       </element>
 
       <element name="TCustomImageList.Insert">
         <short>
-          Inserts an image into each image resolution at the specified position
+          Inserts an image into each image resolution at the specified position.
         </short>
         <descr>
           <p>
@@ -3811,18 +3811,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Insert.AIndex">
-        <short>Ordinal position where the image is stored</short>
+        <short>Ordinal position where the image is stored.</short>
       </element>
       <element name="TCustomImageList.Insert.AImage">
-        <short>Bitmap image stored in the method</short>
+        <short>Bitmap image stored in the method.</short>
       </element>
       <element name="TCustomImageList.Insert.AMask">
-        <short>Transparency mask, Nil for opaque</short>
+        <short>Transparency mask, Nil for opaque.</short>
       </element>
 
       <element name="TCustomImageList.InsertIcon">
         <short>
-          Inserts an Icon into each of the resolutions for the image list
+          Inserts an Icon into each of the resolutions for the image list.
         </short>
         <descr>
           <p>
@@ -3846,15 +3846,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.InsertIcon.AIndex">
-        <short>Position in the image list where the icon is inserted</short>
+        <short>Position in the image list where the icon is inserted.</short>
       </element>
       <element name="TCustomImageList.InsertIcon.AIcon">
-        <short>The Icon to insert into the image list</short>
+        <short>The Icon to insert into the image list.</short>
       </element>
 
       <element name="TCustomImageList.InsertMasked">
         <short>
-          Inserts a transparent image into the image resolutions at the specified position
+          Inserts a transparent image into the image resolutions at the specified position.
         </short>
         <descr>
           <p>
@@ -3881,18 +3881,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.InsertMasked.Index">
-        <short>The index for the inserted image</short>
+        <short>The index for the inserted image.</short>
       </element>
       <element name="TCustomImageList.InsertMasked.AImage">
-        <short>The bitmap to be inserted</short>
+        <short>The bitmap to be inserted.</short>
       </element>
       <element name="TCustomImageList.InsertMasked.MaskColor">
-        <short>The color used transparent areas in the image</short>
+        <short>The color used transparent areas in the image.</short>
       </element>
 
       <element name="TCustomImageList.Move">
         <short>
-          Moves an image from the position at CurIndex to NewIndex
+          Moves an image from the position at CurIndex to NewIndex.
         </short>
         <descr>
           <p>
@@ -3915,15 +3915,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Move.ACurIndex">
-        <short>Current Index position for the image(s) to be moved</short>
+        <short>Current Index position for the image(s) to be moved.</short>
       </element>
       <element name="TCustomImageList.Move.ANewIndex">
-        <short>New index position for the image(s)</short>
+        <short>New index position for the image(s).</short>
       </element>
 
       <element name="TCustomImageList.Overlay">
         <short>
-          Assigns an overlay index for the specified image in the image list
+          Assigns an overlay index for the specified image in the image list.
         </short>
         <descr>
           <p>
@@ -3957,17 +3957,17 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Overlay.AIndex">
-        <short>Ordinal position of the image used as an overlay</short>
+        <short>Ordinal position of the image used as an overlay.</short>
       </element>
       <element name="TCustomImageList.Overlay.Overlay">
         <short>
-          Ordinal position in the internal array where the image index is stored
+          Ordinal position in the internal array where the image index is stored.
         </short>
       </element>
 
       <element name="TCustomImageList.HasOverlays">
         <short>
-          Indicates if any images in the list have been used as an overlay image
+          Indicates if any images in the list have been used as an overlay image.
         </short>
         <descr>
           <p>
@@ -3990,7 +3990,7 @@
 
       <element name="TCustomImageList.Replace">
         <short>
-          Replaces an image at the specified position with the given bitmap
+          Replaces an image at the specified position with the given bitmap.
         </short>
         <descr>
           <p>
@@ -4017,18 +4017,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Replace.AIndex">
-        <short>Ordinal position for the image replace in the method</short>
+        <short>Ordinal position for the image replace in the method.</short>
       </element>
       <element name="TCustomImageList.Replace.AImage">
-        <short>The bitmap image stored in the method</short>
+        <short>The bitmap image stored in the method.</short>
       </element>
       <element name="TCustomImageList.Replace.AMask">
-        <short>The bitmap which defines the transparent parts of the image</short>
+        <short>The bitmap which defines the transparent parts of the image.</short>
       </element>
 
       <element name="TCustomImageList.ReplaceSlice">
         <short>
-          Replace an image at the specified position with a slice from the specified image
+          Replace an image at the specified position with a slice from the specified image.
         </short>
         <descr>
           <p>
@@ -4057,21 +4057,21 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ReplaceSlice.AIndex">
-        <short>Ordinal position for the image updated in the method</short>
+        <short>Ordinal position for the image updated in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceSlice.Image">
-        <short>Image with data stored in the method</short>
+        <short>Image with data stored in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceSlice.AImageRect">
-        <short>Defines the coordinates for the image stored in the method</short>
+        <short>Defines the coordinates for the image stored in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceSlice.AllResolutions">
-        <short>Indicates if all image resolutions are updated in the method</short>
+        <short>Indicates if all image resolutions are updated in the method.</short>
       </element>
 
       <element name="TCustomImageList.ReplaceSliceCentered">
         <short>
-          Replaces the image at the specified position from image data stored as adjacent columns and rows
+          Replaces the image at the specified position from image data stored as adjacent columns and rows.
         </short>
         <descr>
           <p>
@@ -4099,21 +4099,21 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ReplaceSliceCentered.AIndex">
-        <short>Ordinal position for the image replaced in the method</short>
+        <short>Ordinal position for the image replaced in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceSliceCentered.AImageWidth">
-        <short>Image width for the resolution updated in the method</short>
+        <short>Image width for the resolution updated in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceSliceCentered.Image">
-        <short>Image data stored in the method</short>
+        <short>Image data stored in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceSliceCentered.AllResolutions">
-        <short>Indicates if all image resolutions are updated in the method</short>
+        <short>Indicates if all image resolutions are updated in the method.</short>
       </element>
 
       <element name="TCustomImageList.ReplaceIcon">
         <short>
-          Replaces the icon at the specified position in all resolutions for the image list
+          Replaces the icon at the specified position in all resolutions for the image list.
         </short>
         <descr>
           <p>
@@ -4136,15 +4136,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ReplaceIcon.AIndex">
-        <short>Ordinal position for the icon replaced in the method</short>
+        <short>Ordinal position for the icon replaced in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceIcon.AIcon">
-        <short>Icon stored in the method</short>
+        <short>Icon stored in the method.</short>
       </element>
 
       <element name="TCustomImageList.ReplaceMasked">
         <short>
-          Replaces the image at the specified position with a masked image
+          Replaces the image at the specified position with a masked image.
         </short>
         <descr>
           <p>
@@ -4176,18 +4176,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ReplaceMasked.Index">
-        <short>Ordinal position for the image replaced in the method</short>
+        <short>Ordinal position for the image replaced in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceMasked.NewImage">
-        <short>Bitmap image stored in the method</short>
+        <short>Bitmap image stored in the method.</short>
       </element>
       <element name="TCustomImageList.ReplaceMasked.MaskColor">
-        <short>The color used for transparent pixels the image</short>
+        <short>The color used for transparent pixels the image.</short>
       </element>
 
       <element name="TCustomImageList.RegisterChanges">
         <short>
-          Registers a TChangeLink object for notifications when the image list is changed
+          Registers a TChangeLink object for notifications when the image list is changed.
         </short>
         <descr>
           <p>
@@ -4214,12 +4214,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.RegisterChanges.Value">
-        <short>Reference to the ChangeLink object</short>
+        <short>Reference to the ChangeLink object.</short>
       </element>
 
       <element name="TCustomImageList.UnRegisterChanges">
         <short>
-          Unregisters a ChangeLink object for change notifications
+          Unregisters a ChangeLink object for change notifications.
         </short>
         <descr>
           <p>
@@ -4238,12 +4238,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.UnRegisterChanges.Value">
-        <short>Reference to the changelink object to remove</short>
+        <short>Reference to the changelink object to remove.</short>
       </element>
 
       <element name="TCustomImageList.StretchDraw">
         <short>
-          Draws an image stretched to the dimensions for the target rectangle
+          Draws an image stretched to the dimensions for the target rectangle.
         </short>
         <descr>
           <p>
@@ -4271,21 +4271,21 @@
         </seealso>
       </element>
       <element name="TCustomImageList.StretchDraw.Canvas">
-        <short>Canvas used for the drawing operation</short>
+        <short>Canvas used for the drawing operation.</short>
       </element>
       <element name="TCustomImageList.StretchDraw.Index">
-        <short>Ordinal position for the image drawn in the method</short>
+        <short>Ordinal position for the image drawn in the method.</short>
       </element>
       <element name="TCustomImageList.StretchDraw.ARect">
-        <short>Rectangle coordinates used for the draw operation</short>
+        <short>Rectangle coordinates used for the draw operation.</short>
       </element>
       <element name="TCustomImageList.StretchDraw.Enabled">
-        <short>Indicates if the image is drawn using the enabled display state</short>
+        <short>Indicates if the image is drawn using the enabled display state.</short>
       </element>
 
       <element name="TCustomImageList.RegisterResolutions">
         <short>
-          Registers image resolutions (sizes) to use in the image list
+          Registers image resolutions (sizes) to use in the image list.
         </short>
         <descr>
           <p>
@@ -4304,12 +4304,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.RegisterResolutions.AResolutionWidths">
-        <short>Array of image resolutions to allocate in the image list</short>
+        <short>Array of image resolutions to allocate in the image list.</short>
       </element>
 
       <element name="TCustomImageList.DeleteResolution">
         <short>
-          Deletes the image resolution which uses the specified image width
+          Deletes the image resolution which uses the specified image width.
         </short>
         <descr>
           <p>
@@ -4324,12 +4324,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.DeleteResolution.AWidth">
-        <short>Image width for the resolution removed in the method</short>
+        <short>Image width for the resolution removed in the method.</short>
       </element>
 
       <element name="TCustomImageList.FindResolution">
         <short>
-          Finds the image resolution which uses the specified image width
+          Finds the image resolution which uses the specified image width.
         </short>
         <descr>
           <p>
@@ -4355,18 +4355,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.FindResolution.Result">
-        <short>True when an image resolution using the specified width is found</short>
+        <short>True when an image resolution using the specified width is found.</short>
       </element>
       <element name="TCustomImageList.FindResolution.AImageWidth">
-        <short>Image width for the resolution requested in the method</short>
+        <short>Image width for the resolution requested in the method.</short>
       </element>
       <element name="TCustomImageList.FindResolution.AResolution">
-        <short>Image resolution class located in the method</short>
+        <short>Image resolution class located in the method.</short>
       </element>
 
       <element name="TCustomImageList.AllocBy">
         <short>
-          Size used to increment the allocated data count
+          Size used to increment the allocated data count.
         </short>
         <descr>
           <p>
@@ -4383,7 +4383,7 @@
 
       <element name="TCustomImageList.BlendColor">
         <short>
-          Color used when blending (dithering) an image
+          Color used when blending (dithering) an image.
         </short>
         <descr>
           <p>
@@ -4406,7 +4406,7 @@
 
       <element name="TCustomImageList.BkColor">
         <short>
-          Specifies the background color used for transparent parts of images
+          Specifies the background color used for transparent parts of images.
         </short>
         <descr>
           <p>
@@ -4428,7 +4428,7 @@
 
       <element name="TCustomImageList.Count">
         <short>
-          Number of images stored in the default resolution for the image list
+          Number of images stored in the default resolution for the image list.
         </short>
         <descr>
           <p>
@@ -4443,7 +4443,7 @@
 
       <element name="TCustomImageList.DrawingStyle">
         <short>
-          The default drawing style for images in the image list
+          The default drawing style for images in the image list.
         </short>
         <descr>
           <var>DrawingStyle</var> is a TDrawingStyle property that indicates the default drawing style for images in the image list.
@@ -4455,7 +4455,7 @@
 
       <element name="TCustomImageList.Height">
         <short>
-          Height of images in the default resolution for the image list
+          Height of images in the default resolution for the image list.
         </short>
         <descr>
           <p>
@@ -4474,7 +4474,7 @@
 
       <element name="TCustomImageList.HeightForPPI">
         <short>
-          Height for images at the specified display density
+          Height for images at the specified display density.
         </short>
         <descr>
           <p>
@@ -4496,15 +4496,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.HeightForPPI.AImageWidth">
-        <short>Initial image width used to calculate the property value</short>
+        <short>Initial image width used to calculate the property value.</short>
       </element>
       <element name="TCustomImageList.HeightForPPI.APPI">
-        <short>Display density used to calculate the property value</short>
+        <short>Display density used to calculate the property value.</short>
       </element>
 
       <element name="TCustomImageList.HeightForWidth">
         <short>
-          Height used for images with the width specified width
+          Height used for images with the width specified width.
         </short>
         <descr>
           <p>
@@ -4528,12 +4528,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.HeightForWidth.AWidth">
-        <short>Image width used as the basis for the calculated image height</short>
+        <short>Image width used as the basis for the calculated image height.</short>
       </element>
 
       <element name="TCustomImageList.Width">
         <short>
-          Width of images in the default resolution for the image list
+          Width of images in the default resolution for the image list.
         </short>
         <descr>
           <p>
@@ -4552,7 +4552,7 @@
 
       <element name="TCustomImageList.WidthForPPI">
         <short>
-          Image width needed for the specified display density
+          Image width needed for the specified display density.
         </short>
         <descr>
           <p>
@@ -4607,15 +4607,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.WidthForPPI.AImageWidth">
-        <short>Initial image width used for the derived value</short>
+        <short>Initial image width used for the derived value.</short>
       </element>
       <element name="TCustomImageList.WidthForPPI.APPI">
-        <short>Display density for the the derived image width</short>
+        <short>Display density for the the derived image width.</short>
       </element>
 
       <element name="TCustomImageList.SizeForPPI">
         <short>
-          Size used for images with the specified image width at the given display density
+          Size used for images with the specified image width at the given display density.
         </short>
         <descr>
           <p>
@@ -4641,15 +4641,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.SizeForPPI.AImageWidth">
-        <short>Initial image width used to calculate the image size</short>
+        <short>Initial image width used to calculate the image size.</short>
       </element>
       <element name="TCustomImageList.SizeForPPI.APPI">
-        <short>Display density for the calculated image size</short>
+        <short>Display density for the calculated image size.</short>
       </element>
 
       <element name="TCustomImageList.OnChange">
         <short>
-          Event handler signalled when the image list is changed
+          Event handler signalled when the image list is changed.
         </short>
         <descr>
           <p>
@@ -4666,7 +4666,7 @@
 
       <element name="TCustomImageList.Masked">
         <short>
-          Indicates if an image mask is used for images in the list
+          Indicates if an image mask is used for images in the list.
         </short>
         <descr>
           <p>
@@ -4684,7 +4684,7 @@
 
       <element name="TCustomImageList.Reference">
         <short>
-          Provides access to the reference class for the specified resolution
+          Provides access to the reference class for the specified resolution.
         </short>
         <descr>
           <p>
@@ -4702,7 +4702,7 @@
 
       <element name="TCustomImageList.ReferenceForPPI">
         <short>
-          Reference class using the specified image width and display density
+          Reference class using the specified image width and display density.
         </short>
         <descr>
           <p>
@@ -4724,15 +4724,15 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ReferenceForPPI.AImageWidth">
-        <short>Image width for the requested property value</short>
+        <short>Image width for the requested property value.</short>
       </element>
       <element name="TCustomImageList.ReferenceForPPI.APPI">
-        <short>Display density for the requested property value</short>
+        <short>Display density for the requested property value.</short>
       </element>
 
       <element name="TCustomImageList.Resolution">
         <short>
-          Provides indexed access to an image resolution with the specified image width
+          Provides indexed access to an image resolution with the specified image width.
         </short>
         <descr>
           <p>
@@ -4761,12 +4761,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Resolution.AImageWidth">
-        <short>Image width to locate in the resolutions for the image list</short>
+        <short>Image width to locate in the resolutions for the image list.</short>
       </element>
 
       <element name="TCustomImageList.ResolutionByIndex">
         <short>
-          Provides access to an image resolution by its ordinal position in the image list
+          Provides access to an image resolution by its ordinal position in the image list.
         </short>
         <descr>
           <p>
@@ -4795,12 +4795,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ResolutionByIndex.AIndex">
-        <short>Ordinal position for the requested image resolution</short>
+        <short>Ordinal position for the requested image resolution.</short>
       </element>
 
       <element name="TCustomImageList.ResolutionForPPI">
         <short>
-          Gets a scaled resolution with the specified width, display density, and scaling factor
+          Gets a scaled resolution with the specified width, display density, and scaling factor.
         </short>
         <descr>
           <p>
@@ -4826,18 +4826,18 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ResolutionForPPI.AImageWidth">
-        <short>Image width requested in the list of image resolutions</short>
+        <short>Image width requested in the list of image resolutions.</short>
       </element>
       <element name="TCustomImageList.ResolutionForPPI.APPI">
-        <short>Display density (PPI) for the scaled images</short>
+        <short>Display density (PPI) for the scaled images.</short>
       </element>
       <element name="TCustomImageList.ResolutionForPPI.ACanvasScaleFactor">
-        <short>Canvas scaling factor for the scaled images</short>
+        <short>Canvas scaling factor for the scaled images.</short>
       </element>
 
       <element name="TCustomImageList.ResolutionCount">
         <short>
-          Number of image resolutions available in the image list
+          Number of image resolutions available in the image list.
         </short>
         <descr>
           <p>
@@ -4859,7 +4859,7 @@
 
       <element name="TCustomImageList.Resolutions">
         <short>
-          Provides access to the image resolutions (or sizes) used in the image lists
+          Provides access to the image resolutions (or sizes) used in the image lists.
         </short>
         <descr>
           <p>
@@ -4872,12 +4872,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.Resolutions.Result">
-        <short>Container for the images resolutions used in the class instance</short>
+        <short>Container for the images resolutions used in the class instance.</short>
       </element>
 
       <element name="TCustomImageList.ResolutionsDesc">
         <short>
-          Provides access to the descending enumerator for image resolutions in the list
+          Provides access to the descending enumerator for image resolutions in the list.
         </short>
         <descr>
           <p>
@@ -4890,12 +4890,12 @@
         </seealso>
       </element>
       <element name="TCustomImageList.ResolutionsDesc.Result">
-        <short>Descending Resolutions enumerator for the class instance</short>
+        <short>Descending Resolutions enumerator for the class instance.</short>
       </element>
 
       <element name="TCustomImageList.Scaled">
         <short>
-          Indicates if images are automatically scaled for missing resolutions
+          Indicates if images are automatically scaled for missing resolutions.
         </short>
         <descr>
           <p>
@@ -4923,7 +4923,7 @@
 
       <element name="TCustomImageList.ShareImages">
         <short>
-          True when the handle for the image list is shared
+          True when the handle for the image list is shared.
         </short>
         <descr>
           <p>
@@ -4938,7 +4938,7 @@
 
       <element name="TCustomImageList.ImageType">
         <short>
-          Controls whether images are drawn with or without a mask
+          Controls whether images are drawn with or without a mask.
         </short>
         <descr>
           <p>
@@ -4957,7 +4957,7 @@
 
       <element name="TCustomImageList.OnGetWidthForPPI">
         <short>
-          Event handler used to override the scaled width for a display density
+          Event handler used to override the scaled width for a display density.
         </short>
         <descr>
           <p>
@@ -4978,14 +4978,14 @@
 
       <element name="TLCLGlyphsMissingResources">
         <short>
-          Indicates the actions performed for resources with missing image sizes
+          Indicates the actions performed for resources with missing image sizes.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLCLGlyphsMissingResources.gmrAllMustExist">
         <short>
-          Show an exception if any image resolution is missing for a resource
+          Show an exception if any image resolution is missing for a resource.
         </short>
       </element>
       <element name="TLCLGlyphsMissingResources.gmrOneMustExist">
@@ -5001,37 +5001,37 @@
 
       <element name="TLCLGlyphs">
         <short>
-          Represents glyphs for buttons or icons used in LCL controls
+          Represents glyphs for buttons or icons used in LCL controls.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLCLGlyphs.TEntryKey">
-        <short>Record representing glyph names</short>
+        <short>Record representing glyph names.</short>
       </element>
       <element name="TLCLGlyphs.TEntryKey.GlyphName">
-        <short>Glyph name for the entry key</short>
+        <short>Glyph name for the entry key.</short>
       </element>
       <element name="TLCLGlyphs.PEntryKey">
-        <short>Pointer to a TEntryKey type</short>
+        <short>Pointer to a TEntryKey type.</short>
       </element>
       <element name="TLCLGlyphs.TEntry">
-        <short>Represents the key/value pair for glyph name and index position</short>
+        <short>Represents the key/value pair for glyph name and index position.</short>
       </element>
       <element name="TLCLGlyphs.TEntry.GlyphName">
-        <short>Glyph name for the entry</short>
+        <short>Glyph name for the entry.</short>
       </element>
       <element name="TLCLGlyphs.TEntry.ImageIndex">
-        <short>Ordinal position for the image using the specified glyph name</short>
+        <short>Ordinal position for the image using the specified glyph name.</short>
       </element>
       <element name="TLCLGlyphs.TResolution">
-        <short>Record used to track width and scale suffix values used for glyphs</short>
+        <short>Record used to track width and scale suffix values used for glyphs.</short>
       </element>
       <element name="TLCLGlyphs.TResolution.Width">
-        <short>Width of the glyphs for the resolution</short>
+        <short>Width of the glyphs for the resolution.</short>
       </element>
       <element name="TLCLGlyphs.TResolution.ScaleSuffix">
-        <short>Scaling level for glyphs using the resolution</short>
+        <short>Scaling level for glyphs using the resolution.</short>
       </element>
 
       <element name="TLCLGlyphs.FMissingResources"/>
@@ -5040,59 +5040,59 @@
       <element name="TLCLGlyphs.FSuffix100Scale"/>
 
       <element name="TLCLGlyphs.GetImageIndex">
-        <short>Gets the position of the specified resource</short>
+        <short>Gets the position of the specified resource.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLCLGlyphs.GetImageIndex.Result">
-        <short>Ordinal position for the specified resource name</short>
+        <short>Ordinal position for the specified resource name.</short>
       </element>
       <element name="TLCLGlyphs.GetImageIndex.AResourceName">
-        <short>Resource name to locate</short>
+        <short>Resource name to locate.</short>
       </element>
 
       <element name="TLCLGlyphsMissingResources.TLCLGlyphs.RegisterResolutions">
-        <short>Register a list of resolutions using the specified suffixes</short>
+        <short>Register a list of resolutions using the specified suffixes.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLCLGlyphs.RegisterResolutions.AResolutionWidths">
-        <short>List of image widths to register</short>
+        <short>List of image widths to register.</short>
       </element>
       <element name="TLCLGlyphs.RegisterResolutions.AResolutionScaleSuffixes">
-        <short>List of suffixes used for images using the corresponding width</short>
+        <short>List of suffixes used for images using the corresponding width.</short>
       </element>
 
       <element name="TLCLGlyphs.SetWidth100Suffix">
-        <short>Sets the suffix used for images at the 100% scaling level</short>
+        <short>Sets the suffix used for images at the 100% scaling level.</short>
       </element>
       <element name="TLCLGlyphs.SetWidth100Suffix.AWidth100Suffix">
-        <short>Suffix for the scaling level</short>
+        <short>Suffix for the scaling level.</short>
       </element>
 
       <element name="TLCLGlyphs.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLCLGlyphs.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TLCLGlyphs.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLCLGlyphs.MissingResources">
-        <short>Indicates the action performed for missing resources</short>
+        <short>Indicates the action performed for missing resources.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="LCLGlyphs">
-        <short>Provides access to the TLCLGlyphs instance in the implementation</short>
+        <short>Provides access to the TLCLGlyphs instance in the implementation.</short>
         <descr>
           <p>
             <var>LCLGlyphs</var> is a <var>TLCLGlyphs</var> function used to provide access to the TLCLGlyphs instance in the implementation section for the unit. LCLGlyphs ensures that the unit variable has been instantiated, and resolutions are registered using 16, 24, and 32 pixel sizes. The unit variable is freed in the finalization section for the unit.
@@ -5106,12 +5106,12 @@
         </seealso>
       </element>
       <element name="LCLGlyphs.Result">
-        <short>The TLCLGlyphs instance in the implementation</short>
+        <short>The TLCLGlyphs instance in the implementation.</short>
       </element>
 
       <element name="GetDefaultGlyph">
         <short>
-          Gets a glyph with the specified name from the default resource file
+          Gets a glyph with the specified name from the default resource file.
         </short>
         <descr>
           <p>
@@ -5143,16 +5143,16 @@
         </seealso>
       </element>
       <element name="GetDefaultGlyph.Result">
-        <short>Bitmap for the requested resource name and scaling level</short>
+        <short>Bitmap for the requested resource name and scaling level.</short>
       </element>
       <element name="GetDefaultGlyph.ResourceName">
         <short>Resource name for the glyph </short>
       </element>
       <element name="GetDefaultGlyph.ScalePercent">
-        <short>Scaling level for the bitmap image</short>
+        <short>Scaling level for the bitmap image.</short>
       </element>
       <element name="GetDefaultGlyph.IgnoreMissingResource">
-        <short>Indicates if a missing resource can be ignored</short>
+        <short>Indicates if a missing resource can be ignored.</short>
       </element>
 
     </module>
