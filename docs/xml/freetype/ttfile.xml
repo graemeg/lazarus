@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="TTFile">
-      <short>File I/O specification</short>
+      <short>File I/O specification.</short>
       <descr>
         <p>
           Copyright 1996 David Turner, Robert Wilhelm and Werner Lemberg.
@@ -216,7 +216,7 @@
 
       <element name="TFreeTypeStream.AccessFrame">
         <short>
-          Access the next aSize bytes
+          Access the next aSize bytes.
         </short>
         <descr/>
         <seealso/>
@@ -230,7 +230,7 @@
 
       <element name="TFreeTypeStream.CheckAndAccessFrame">
         <short>
-          Access the next min(aSize ,file_size - file_pos) bytes
+          Access the next min(aSize ,file_size - file_pos) bytes.
         </short>
         <descr/>
         <seealso/>
@@ -244,7 +244,7 @@
 
       <element name="TFreeTypeStream.ForgetFrame">
         <short>
-          Discards the previously cached frame
+          Discards the previously cached frame.
         </short>
         <descr/>
         <seealso/>

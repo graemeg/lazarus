@@ -7,16 +7,13 @@
     ====================================================================
     -->
     <module name="TTGLoad">
-      <short>TrueType glyph loader</short>
+      <short>TrueType glyph loader.</short>
       <descr>
         <p>
           Copyright 1996, 1997 by David Turner, Robert Wilhelm, and Werner Lemberg.
         </p>
         <p>
-          This file is part of the FreeType project, and may only be used modified and distributed under
-          the terms of the FreeType project license, LICENSE.TXT. By continuing to use, modify or
-          distribute this file you indicate that you have read the license and understand and accept it
-          fully.
+          This file is part of the FreeType project, and may only be used modified and distributed under the terms of the FreeType project license, LICENSE.TXT. By continuing to use, modify or distribute this file you indicate that you have read the license and understand and accept it fully.
         </p>
       </descr>
 
@@ -27,7 +24,7 @@
       <element name="TTObjs"/>
 
       <element name="Load_TrueType_Glyph">
-        <short>Loads a font glyph into a given glyph info</short>
+        <short>Loads a font glyph into a given glyph info.</short>
         <descr>
           <p>
             The instance and glyph objects faces <b>must</b> match. The load_flags indicate what kind of values should be written to the glyph object (metrics, outline in EM coordinates, grid-fitted outline).

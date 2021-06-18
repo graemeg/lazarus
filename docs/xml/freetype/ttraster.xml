@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="TTRaster">
-      <short>Implements the glyph rasterizer for the FreeType library</short>
+      <short>Implements the glyph rasterizer for the FreeType library.</short>
       <descr>
         <p>
           Copyright 1996 David Turner, Robert Wilhelm and Werner Lemberg.
@@ -111,7 +111,7 @@
       </element>
 
       <element name="TFreeTypeRasterizer.Precision_Bits">
-        <short>Fractional bits of Raster coordinates</short>
+        <short>Fractional bits of Raster coordinates.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Precision">
@@ -123,15 +123,15 @@
       </element>
 
       <element name="TFreeTypeRasterizer.Precision_Step">
-        <short>Bezier subdivision minimal step</short>
+        <short>Bezier subdivision minimal step.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Precision_Shift">
-        <short>Shift used to convert coordinates</short>
+        <short>Shift used to convert coordinates.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Precision_Mask">
-        <short>Integer truncation mask</short>
+        <short>Integer truncation mask.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Precision_Jitter">
@@ -139,11 +139,11 @@
       </element>
 
       <element name="TFreeTypeRasterizer.Pool">
-        <short>Profiles buffer a.k.a. Render Pool</short>
+        <short>Profiles buffer a.k.a. Render Pool.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Cible">
-        <short>Description of target map</short>
+        <short>Description of target map.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.BWidth">
@@ -151,55 +151,55 @@
       </element>
 
       <element name="TFreeTypeRasterizer.BCible">
-        <short>Target bitmap buffer</short>
+        <short>Target bitmap buffer.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.GCible">
-        <short>Target pixmap buffer</short>
+        <short>Target pixmap buffer.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.TraceBOfs">
-        <short>Current offset in target bitmap</short>
+        <short>Current offset in target bitmap.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.TraceBIncr">
-        <short>Increment to the next line in the target bitmap</short>
+        <short>Increment to the next line in the target bitmap.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.TraceGOfs">
-        <short>Current offset in targer pixmap</short>
+        <short>Current offset in targer pixmap.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.TraceGIncr">
-        <short>Increment to the next line in the target pixmap</short>
+        <short>Increment to the next line in the target pixmap.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.gray_min_x">
-        <short>Current min x during gray rendering</short>
+        <short>Current min x during gray rendering.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.gray_max_x">
-        <short>Current max x during gray rendering</short>
+        <short>Current max x during gray rendering.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Proc_Sweep_Init">
-        <short>Sweep initialization</short>
+        <short>Sweep initialization.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Proc_Sweep_Span">
-        <short>Span drawing</short>
+        <short>Span drawing.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Proc_Sweep_Drop">
-        <short>Drop out control</short>
+        <short>Drop out control.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Proc_Sweep_Step">
-        <short>Sweep line step</short>
+        <short>Sweep line step.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Proc_Sweep_Direct">
-        <short>Direct rendering</short>
+        <short>Direct rendering.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Direct_X">
@@ -219,42 +219,42 @@
       </element>
 
       <element name="TFreeTypeRasterizer.Flags">
-        <short>Current flags array</short>
+        <short>Current flags array.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Outs">
-        <short>Current endpoints array</short>
+        <short>Current endpoints array.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.nContours">
-        <short>Current number of contours</short>
+        <short>Current number of contours.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.DropOutControl">
-        <short>Current drop-out control mode</short>
+        <short>Current drop-out control mode.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Grays">
-        <short>Gray palette used during gray-levels rendering</short>
+        <short>Gray palette used during gray-levels rendering.</short>
         <descr>
           0: background .. 4: foreground
         </descr>
       </element>
 
       <element name="TFreeTypeRasterizer.BGray_Data">
-        <short>Temporary bitmap for grayscale</short>
+        <short>Temporary bitmap for grayscale.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.BGray_Incr">
-        <short>Increment for the temporary bitmap</short>
+        <short>Increment for the temporary bitmap.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.BGray_End">
-        <short>Ending offset of the temporary bitmap</short>
+        <short>Ending offset of the temporary bitmap.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.BGray_Capacity">
-        <short>Current capacity of the temporary bitmap</short>
+        <short>Current capacity of the temporary bitmap.</short>
       </element>
 
       <element name="TFreeTypeRasterizer.Second_Pass">
@@ -548,7 +548,7 @@
       </element>
 
       <element name="TFreeTypeRasterizer.Render_Glyph">
-        <short>Render one glyph in the target bitmap (1-bit per pixel)</short>
+        <short>Render one glyph in the target bitmap (1-bit per pixel).</short>
       </element>
       <element name="TFreeTypeRasterizer.Render_Glyph.Result">
         <short/>
@@ -561,7 +561,7 @@
       </element>
 
       <element name="TFreeTypeRasterizer.Render_Gray_Glyph">
-        <short>Render one gray-level glyph in the target pixmap</short>
+        <short>Render one gray-level glyph in the target pixmap.</short>
         <descr>
           <p>
             Palette points to an array of 5 colors used for the rendering. Use Nil to reuse the last palette. The default is VGA graylevels.

@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="LazFreeType">
-      <short>Implements a high-level interface to the FreeType library</short>
+      <short>Implements a high-level interface to the FreeType library.</short>
       <descr>
         <p>
           <file>lazfreetype.pas</file> implements the high-level interface to the FreeType library. It is based in code provided by the FreeType project (freetype.pas), Copyright 1996 by David Turner, Robert Wilhelm and Werner Lemberg.
@@ -31,7 +31,7 @@
       <element name="Classes"/>
 
       <element name="TT_Init_FreeType">
-        <short>Initializes the FreeType engine</short>
+        <short>Initializes the FreeType engine.</short>
         <descr/>
         <seealso/>
       </element>
@@ -40,13 +40,13 @@
       </element>
 
       <element name="TT_Done_FreeType">
-        <short>Finalizes the FreeType engine, and discards all objects</short>
+        <short>Finalizes the FreeType engine, and discards all objects.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Set_Raster_Palette">
-        <short>Set the gray-level palette used for font-smoothing</short>
+        <short>Set the gray-level palette used for font-smoothing.</short>
         <descr>
           <p>
             palette is an array of Byte values which define the gray-level palette used in the default
@@ -90,14 +90,14 @@
         </seealso>
       </element>
       <element name="TT_Set_Raster_Palette.Result">
-        <short>Success or error status value returned from the routine</short>
+        <short>Success or error status value returned from the routine.</short>
       </element>
       <element name="TT_Set_Raster_Palette.palette">
-        <short>Values for the gray-level palette</short>
+        <short>Values for the gray-level palette.</short>
       </element>
 
       <element name="TT_Open_Face">
-        <short>Opens a new font and returns a handle for it in the _face argument</short>
+        <short>Opens a new font and returns a handle for it in the _face argument.</short>
         <descr>
           <p>
             <var>TT_Open_Face</var>
@@ -135,20 +135,20 @@
         </seealso>
       </element>
       <element name="TT_Open_Face.Result">
-        <short>Success or error status for the operation</short>
+        <short>Success or error status for the operation.</short>
       </element>
       <element name="TT_Open_Face.fontname">
-        <short>TrueType font file or collection opened in the routine</short>
+        <short>TrueType font file or collection opened in the routine.</short>
       </element>
       <element name="TT_Open_Face._face">
-        <short>Handle for the font face opened in the routine</short>
+        <short>Handle for the font face opened in the routine.</short>
       </element>
       <element name="TT_Open_Face.AStream">
-        <short>Stream with the font data examined in the routine</short>
+        <short>Stream with the font data examined in the routine.</short>
       </element>
 
       <element name="TT_Open_Collection">
-        <short>Opens a font file embedded in a collection</short>
+        <short>Opens a font file embedded in a collection.</short>
         <descr>
           <p>
             <var>TT_Open_Collection</var>
@@ -184,20 +184,20 @@
         </seealso>
       </element>
       <element name="TT_Open_Collection.Result">
-        <short>Success or fail status for the routine</short>
+        <short>Success or fail status for the routine.</short>
       </element>
       <element name="TT_Open_Collection.fontname">
-        <short>Font collection examined in the routine</short>
+        <short>Font collection examined in the routine.</short>
       </element>
       <element name="TT_Open_Collection.faceIndex">
-        <short>Position of the desired font embedded in the collection</short>
+        <short>Position of the desired font embedded in the collection.</short>
       </element>
       <element name="TT_Open_Collection._face">
-        <short>Handle for the font face opened in the routine</short>
+        <short>Handle for the font face opened in the routine.</short>
       </element>
 
       <element name="TT_Get_Face_Properties">
-        <short>Gets properties for the specified font face</short>
+        <short>Gets properties for the specified font face.</short>
         <descr>
           <p>
             <var>TT_Get_Face_Properties</var>
@@ -249,25 +249,25 @@
         <short>Success or failure status for the routine. 0 indicates success.</short>
       </element>
       <element name="TT_Get_Face_Properties._face">
-        <short>Font face examined in the routine</short>
+        <short>Font face examined in the routine.</short>
       </element>
       <element name="TT_Get_Face_Properties.prop">
-        <short>Properties for the specified font face</short>
+        <short>Properties for the specified font face.</short>
       </element>
 
       <element name="TT_Set_Face_Pointer">
-        <short>Sets the pointer to the data for the font face</short>
+        <short>Sets the pointer to the data for the font face.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TT_Set_Face_Pointer.Result">
-        <short>Success or failure status for the routine</short>
+        <short>Success or failure status for the routine.</short>
       </element>
       <element name="TT_Set_Face_Pointer._face">
-        <short>Font face updated in the routine</short>
+        <short>Font face updated in the routine.</short>
       </element>
       <element name="TT_Set_Face_Pointer.data">
-        <short>Pointer to the data assigned to the specified font face</short>
+        <short>Pointer to the data assigned to the specified font face.</short>
       </element>
 
       <element name="TT_Get_Face_Pointer">

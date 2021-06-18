@@ -3,7 +3,7 @@
 <package name="freetypelaz">
   <!-- TTObjs -->
   <module name="TTObjs">
-    <short>Contains objects definitions used in the FreeType (TrueType) library</short>
+    <short>Contains objects definitions used in the FreeType (TrueType) library.</short>
     <descr>
       <p>
         The four important objects managed by the library are:
@@ -74,13 +74,13 @@
     <element name="TTCMap"/>
 
     <element name="PGraphicsState">
-      <short>Pointer to a TGraphicsState record type</short>
+      <short>Pointer to a TGraphicsState record type.</short>
       <descr/>
       <seealso/>
     </element>
 
     <element name="TGraphicsState">
-      <short>Graphics State</short>
+      <short>Graphics State.</short>
       <descr>
         <p>
           The Graphics State (GS) is managed by the instruction field, but does not come from the font file. Thus, we can use <var>int</var> data types where needed.
@@ -201,7 +201,7 @@
     </element>
 
     <element name="MaxCodeRanges">
-      <short>Maximum number of code ranges</short>
+      <short>Maximum number of code ranges.</short>
       <descr>
         <p>
           There can only be 3 active code ranges at once:
@@ -254,8 +254,8 @@
 
     <element name="TCodeRange">
       <short>
-        Defines a code range
-      </short>
+        Defines a code range.
+        </short>
       <descr>
       <p>
           Code ranges can be resident to a glyph (i.e. the Font Program), while some others are volatile (Glyph instructions). Tracking the state and presence of code ranges allows function and instruction definitions within a code range to be forgotten when the range is discarded.
@@ -277,7 +277,7 @@
     </element>
 
     <element name="TCodeRangeTable">
-      <short>Defines a code range</short>
+      <short>Defines a code range.</short>
       <descr>
         <p>
           Code ranges can be resident in a glyph (i.e. the Font Program), while some others are volatile (Glyph instructions). Tracking the state and presence of code ranges allows function and instruction definitions within a code range to be forgotten when the range is discarded.
@@ -294,8 +294,8 @@
 
     <element name="TDefRecord">
       <short>
-        Defines a function / instruction definition record
-      </short>
+        Defines a function / instruction definition record.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -341,7 +341,7 @@
     </element>
 
     <element name="TCallRecord">
-      <short>Defines a call record used to manage function calls</short>
+      <short>Defines a call record used to manage function calls.</short>
       <descr/>
       <seealso/>
     </element>
@@ -367,7 +367,7 @@
     </element>
 
     <element name="TCallStack">
-      <short>Defines a simple call stack</short>
+      <short>Defines a simple call stack.</short>
       <descr/>
       <seealso/>
     </element>
@@ -401,12 +401,12 @@
     </element>
 
     <element name="TGlyph_Zone.org">
-      <short>Original (scaled) coordinates</short>
+      <short>Original (scaled) coordinates.</short>
       <descr/>
       <seealso/>
     </element>
     <element name="TGlyph_Zone.cur">
-      <short>Current coordinates</short>
+      <short>Current coordinates.</short>
       <descr/>
       <seealso/>
     </element>
@@ -422,7 +422,7 @@
     </element>
 
     <element name="TRound_Function">
-      <short>Rounding function, as used by the interpreter</short>
+      <short>Rounding function, as used by the interpreter.</short>
       <descr/>
       <seealso/>
     </element>
@@ -438,8 +438,8 @@
 
     <element name="TMove_Function">
       <short>
-        Point displacement along the freedom vector routine, as used by the interpreter
-      </short>
+        Point displacement along the freedom vector routine, as used by the interpreter.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -455,8 +455,8 @@
 
     <element name="TProject_Function">
       <short>
-        Distance projection along one of the proj. vectors, as used by the interpreter
-      </short>
+        Distance projection along one of the proj. vectors, as used by the interpreter.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -472,8 +472,8 @@
 
     <element name="TFunc_Get_CVT">
       <short>
-        Reads a CVT value
-      </short>
+        Reads a CVT value.
+        </short>
       <descr>
         Take care of non-square pixels when needed.
       </descr>
@@ -488,8 +488,8 @@
 
     <element name="TFunc_Set_CVT">
       <short>
-        Setting or Moving a CVT value
-      </short>
+        Setting or Moving a CVT value.
+        </short>
       <descr>
         Take care of non-square pixels when needed.
       </descr>
@@ -759,21 +759,21 @@ y_ppem = 10
     </element>
 
     <element name="TFace">
-      <short>The FreeType Face object</short>
+      <short>The FreeType Face object.</short>
       <descr/>
       <seealso/>
     </element>
 
     <element name="TFace.stream">
-      <short>Input / output stream</short>
+      <short>Input / output stream.</short>
       <descr/>
       <seealso/>
     </element>
 
     <element name="TFace.ttcHeader">
       <short>
-        TrueType collection header
-      </short>
+        TrueType collection header.
+        </short>
       <descr>
         TrueType collection header, if any was found.
       </descr>
@@ -781,7 +781,7 @@ y_ppem = 10
     </element>
 
     <element name="TFace.maxProfile">
-      <short>Maximum profile table</short>
+      <short>Maximum profile table.</short>
       <descr>
         <p>
           Maximum profile table, as defined by the TrueType Specification.
@@ -799,7 +799,7 @@ y_ppem = 10
       <seealso/>
     </element>
     <element name="TFace.fontHeader">
-      <short>The font header</short>
+      <short>The font header.</short>
       <descr>
         <p>
           The font header as defined by the TrueType Specification.
@@ -808,7 +808,7 @@ y_ppem = 10
       <seealso/>
     </element>
     <element name="TFace.horizontalHeader">
-      <short>The horizontal header</short>
+      <short>The horizontal header.</short>
       <descr>
         <p>
           The horizontal header, as defined in the TrueType specification.
@@ -817,32 +817,32 @@ y_ppem = 10
       <seealso/>
     </element>
     <element name="TFace.verticalInfo">
-      <short>Set to true when vertical data is in the font</short>
+      <short>Set to true when vertical data is in the font.</short>
       <descr/>
       <seealso/>
     </element>
     <element name="TFace.verticalHeader">
-      <short>Vertical header table</short>
+      <short>Vertical header table.</short>
       <descr/>
       <seealso/>
     </element>
     <element name="TFace.os2">
-      <short>OS/2 table</short>
+      <short>OS/2 table.</short>
       <descr/>
       <seealso/>
     </element>
     <element name="TFace.postscript">
-      <short>Postscript table</short>
+      <short>Postscript table.</short>
       <descr/>
       <seealso/>
     </element>
     <element name="TFace.hdmx">
-      <short>Horizontal device metrics table</short>
+      <short>Horizontal device metrics table.</short>
       <descr/>
       <seealso/>
     </element>
     <element name="TFace.nameTable">
-      <short>Name table</short>
+      <short>Name table.</short>
       <descr/>
       <seealso/>
     </element>
@@ -938,8 +938,8 @@ y_ppem = 10
 
     <element name="TFace.numGlyphs">
       <short>
-        Total number of glyphs in the typeface
-      </short>
+        Total number of glyphs in the typeface.
+        </short>
       <descr>
         <p>
           The value must be set by the maximum profile loader.
@@ -949,8 +949,8 @@ y_ppem = 10
     </element>
     <element name="TFace.maxPoints">
       <short>
-        Maximum number of glyph points, simple and composite
-      </short>
+        Maximum number of glyph points, simple and composite.
+        </short>
       <descr>
         <p>
           The value must be set by the maximum profile loader.
@@ -960,8 +960,8 @@ y_ppem = 10
     </element>
     <element name="TFace.maxContours">
       <short>
-        Maximum number of glyph contours, simple and composite
-      </short>
+        Maximum number of glyph contours, simple and composite.
+        </short>
       <descr>
         <p>
           The value must be set by the maximum profile loader.
@@ -971,8 +971,8 @@ y_ppem = 10
     </element>
     <element name="TFace.maxComponents">
       <short>
-        Maximum number of components in a composite glyph
-      </short>
+        Maximum number of components in a composite glyph.
+        </short>
       <descr>
         <p>
           The value must be set by the maximum profile loader.
@@ -1031,7 +1031,7 @@ y_ppem = 10
     </element>
 
     <element name="TInstance">
-      <short>FreeType Instance Object</short>
+      <short>FreeType Instance Object.</short>
       <descr/>
       <seealso/>
     </element>
@@ -1052,8 +1052,8 @@ y_ppem = 10
     </element>
     <element name="TInstance.numFDefs">
       <short>
-        Number of function definitions
-      </short>
+        Number of function definitions.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1064,15 +1064,15 @@ y_ppem = 10
     </element>
     <element name="TInstance.FDefs">
       <short>
-        Table of FDefs entries
-      </short>
+        Table of FDefs entries.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TInstance.numIDefs">
       <short>
-        Number of instruction definitions
-      </short>
+        Number of instruction definitions.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1083,22 +1083,22 @@ y_ppem = 10
     </element>
     <element name="TInstance.IDefs">
       <short>
-        Table of IDefs entries
-      </short>
+        Table of IDefs entries.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TInstance.maxFunc">
       <short>
-        Maximum function number
-      </short>
+        Maximum function number.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TInstance.maxIns">
       <short>
-        Maximum instruction number
-      </short>
+        Maximum instruction number.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1120,8 +1120,8 @@ y_ppem = 10
     </element>
     <element name="TInstance.storage">
       <short>
-        The storage area
-      </short>
+        The storage area.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1132,23 +1132,23 @@ y_ppem = 10
     </element>
     <element name="TInstance.cvt">
       <short>
-        The scaled Control Value Table
-      </short>
+        The scaled Control Value Table.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TInstance.twilight">
       <short>
-        The instance's twilight zone
-      </short>
+        The instance's twilight zone.
+        </short>
       <descr/>
       <seealso/>
     </element>
 
     <element name="TInstance.debug">
       <short>
-        Debugging variable
-      </short>
+        Debugging variable.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1163,8 +1163,8 @@ y_ppem = 10
     </element>
     <element name="TInstance.genericP">
       <short>
-        Generic pointer
-      </short>
+        Generic pointer.
+        </short>
       <descr>
          <p>
            See TT_Set/Get_Instance_Pointer.
@@ -1174,7 +1174,7 @@ y_ppem = 10
     </element>
 
     <element name="TExec_Context">
-      <short>FreeType Execution Context Object</short>
+      <short>FreeType Execution Context Object.</short>
       <descr/>
       <seealso/>
     </element>
@@ -1201,15 +1201,15 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.stackSize">
       <short>
-        Size of instance stack
-      </short>
+        Size of instance stack.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.stack">
       <short>
-        Current instance stack
-      </short>
+        Current instance stack.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1245,36 +1245,36 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.curRange">
       <short>
-        Ccurrent code range number
-      </short>
+        Ccurrent code range number.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.code">
       <short>
-        Current code range
-      </short>
+        Current code range.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.IP">
       <short>
-        Current instruction pointer
-      </short>
+        Current instruction pointer.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.codeSize">
       <short>
-        Size of current range
-      </short>
+        Size of current range.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.step_ins">
       <short>
-        Used by the interpreter
-      </short>
+        Used by the interpreter.
+        </short>
       <descr>
         If true, go to the next instruction.
       </descr>
@@ -1287,22 +1287,22 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.loadStack">
       <short>
-        The load stack used to load composite glyphs
-      </short>
+        The load stack used to load composite glyphs.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.glyphIns">
       <short>
-        Glyph instructions
-      </short>
+        Glyph instructions.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.glyphSize">
       <short>
-        Glyph instruction size
-      </short>
+        Glyph instruction size.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1313,22 +1313,22 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.callStack">
       <short>
-        Interpreter call stack
-      </short>
+        Interpreter call stack.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.period">
       <short>
-        Value used for SuperRounding
-      </short>
+        Value used for SuperRounding.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.phase">
       <short>
-        Value used for SuperRounding
-      </short>
+        Value used for SuperRounding.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1349,8 +1349,8 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.numFDefs">
       <short>
-        Number of function definitions
-      </short>
+        Number of function definitions.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1361,15 +1361,15 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.FDefs">
       <short>
-        Table of FDefs entries
-      </short>
+        Table of FDefs entries.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.numIDefs">
       <short>
-        Number of instruction definitions
-      </short>
+        Number of instruction definitions.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1380,22 +1380,22 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.IDefs">
       <short>
-        Table of IDefs entries
-      </short>
+        Table of IDefs entries.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.maxFunc">
       <short>
-        Maximum function number
-      </short>
+        Maximum function number.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.maxIns">
       <short>
-        Maximum instruction number
-      </short>
+        Maximum instruction number.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1406,15 +1406,15 @@ y_ppem = 10
     </element>
     <element name="TExec_Context.storeSize">
       <short>
-        Size of the current storage
-      </short>
+        Size of the current storage.
+        </short>
       <descr/>
       <seealso/>
     </element>
     <element name="TExec_Context.storage">
       <short>
-        Sorage area
-      </short>
+        Sorage area.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1529,8 +1529,8 @@ y_ppem = 10
 
     <element name="TGlyph">
       <short>
-        FreeType Glyph Object
-      </short>
+        FreeType Glyph Object.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1595,16 +1595,16 @@ y_ppem = 10
     </element>
     <element name="TFont_Input.fontIndex">
       <short>
-        Index of the font in the collection
-      </short>
+        Index of the font in the collection.
+        </short>
       <descr/>
       <seealso/>
     </element>
 
     <element name="Goto_CodeRange">
       <short>
-         Go to a specified code range
-      </short>
+         Go to a specified code range.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1623,8 +1623,8 @@ y_ppem = 10
 
     <element name="Get_CodeRange">
       <short>
-        Returns a pointer to a given code range record
-      </short>
+        Returns a pointer to a given code range record.
+        </short>
       <descr>
         <p>
           Used only by the debugger.
@@ -1644,8 +1644,8 @@ y_ppem = 10
 
     <element name="Set_CodeRange">
       <short>
-        Sets properties for the given code range
-      </short>
+        Sets properties for the given code range.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1667,8 +1667,8 @@ y_ppem = 10
 
     <element name="Clear_CodeRange">
       <short>
-        Clear a given code range
-      </short>
+        Clear a given code range.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1823,8 +1823,8 @@ y_ppem = 10
 
     <element name="TTObjs_Init">
       <short>
-        Initialize the object manager
-      </short>
+        Initialize the object manager.
+        </short>
       <descr/>
       <seealso/>
     </element>
@@ -1834,8 +1834,8 @@ y_ppem = 10
 
     <element name="TTObjs_Done">
       <short>
-        Finalize the object manager
-      </short>
+        Finalize the object manager.
+        </short>
       <descr/>
       <seealso/>
     </element>

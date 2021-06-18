@@ -8,7 +8,7 @@
     -->
     <module name="LazFreeTypeFontCollection">
       <short>
-        Contains a font collection and font collection items used in the FreeType library
+        Contains a font collection and font collection items used in the FreeType library.
       </short>
       <descr>
         <p>
@@ -25,7 +25,7 @@
       <element name="TTTypes"/>
 
       <element name="TFontCollectionItem">
-        <short>Implements a collection item for a font used in the FreeType library</short>
+        <short>Implements a collection item for a font used in the FreeType library.</short>
         <descr>
           <p>
             Used in the implementation of the TFamilyCollectionItem and TFreeTypeFontCollection classes.
@@ -55,46 +55,46 @@
       </element>
 
       <element name="TFontCollectionItem.SetInformation">
-        <short>Sets the value for the indexed Information property</short>
+        <short>Sets the value for the indexed Information property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.SetInformation.AIndex">
-        <short>Ordinal position where the new value is stored</short>
+        <short>Ordinal position where the new value is stored.</short>
       </element>
       <element name="TFontCollectionItem.SetInformation.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TFontCollectionItem.SetUsePostscriptStyle">
-        <short>Sets the value for the UsePostscriptStyle property</short>
+        <short>Sets the value for the UsePostscriptStyle property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.SetUsePostscriptStyle.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TFontCollectionItem.GetFilename">
-        <short>Gets the value for the Filename property</short>
+        <short>Gets the value for the Filename property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.GetFilename.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TFontCollectionItem.GetBold">
-        <short>Indicates whether the Bold style is included in the list of styles for the font face</short>
+        <short>Indicates whether the Bold style is included in the list of styles for the font face.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.GetBold.Result">
-        <short>True when Bold is included in the list of styles for the font</short>
+        <short>True when Bold is included in the list of styles for the font.</short>
       </element>
 
       <element name="TFontCollectionItem.GetInformation">
-        <short>Gets the value for the indexed Information property</short>
+        <short>Gets the value for the indexed Information property.</short>
         <descr/>
         <seealso>
           <link id="TFontCollectionItem.Information"/>
@@ -102,15 +102,15 @@
         </seealso>
       </element>
       <element name="TFontCollectionItem.GetInformation.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TFontCollectionItem.GetInformation.AIndex">
-        <short>Identifies the datum retrieved for the property value</short>
+        <short>Identifies the datum retrieved for the property value.</short>
       </element>
 
       <element name="TFontCollectionItem.GetItalic">
         <short>
-          Indicates whether the Italic style is included in the list of styles for the font face
+          Indicates whether the Italic style is included in the list of styles for the font face.
         </short>
         <descr/>
         <seealso/>
@@ -120,138 +120,140 @@
       </element>
 
       <element name="TFontCollectionItem.GetStyleCount">
-        <short>Gets the value for the StyleCount property</short>
+        <short>Gets the value for the StyleCount property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.GetStyleCount.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TFontCollectionItem.GetStyles">
-        <short>Gets the value for the Styles property</short>
+        <short>Gets the value for the Styles property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.GetStyles.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TFontCollectionItem.GetStyle">
-        <short>Gets the value for the indexed Style property</short>
+        <short>Gets the value for the indexed Style property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.GetStyle.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TFontCollectionItem.GetStyle.AIndex">
-        <short>Ordinal position for the style used in the property value</short>
+        <short>Ordinal position for the style used in the property value.</short>
       </element>
 
       <element name="TFontCollectionItem.GetVersionNumber">
-        <short>Gets the value for the VersionNumber property</short>
+        <short>Gets the value for the VersionNumber property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.GetVersionNumber.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TFontCollectionItem.NotifyDestroy">
-        <short>Executes the notification procedure in listeners when the collection item is freed</short>
+        <short>Executes the notification procedure in listeners when the collection item is freed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFontCollectionItem.Init">
-        <short>Sets the default values for members in the collection item</short>
+        <short>Sets the default values for members in the collection item.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFontCollectionItem.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.Create.AFilename">
-        <short>File name for the font in the collection item</short>
+        <short>File name for the font in the collection item.</short>
       </element>
       <element name="TFontCollectionItem.Create.AStream">
-        <short>Stream instance with the font for the collection item</short>
+        <short>Stream instance with the font for the collection item.</short>
       </element>
       <element name="TFontCollectionItem.Create.AOwner">
-        <short>Owner of the stream instance</short>
+        <short>Owner of the stream instance.</short>
       </element>
 
       <element name="TFontCollectionItem.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFontCollectionItem.HasStyle">
-        <short>Indicates if the specified style name is available for he font</short>
+        <short>Indicates if the specified style name is available for he font.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.HasStyle.Result">
-        <short>True when the style name is present in the list of styles for the font</short>
+        <short>True when the style name is present in the list of styles for the font.</short>
       </element>
       <element name="TFontCollectionItem.HasStyle.AStyle">
-        <short>Style name to locate in the styles for the font</short>
+        <short>Style name to locate in the styles for the font.</short>
       </element>
 
       <element name="TFontCollectionItem.Information">
-        <short>Provides access to embedded data for the font</short>
+        <short>Provides access to embedded data for the font.</short>
         <descr/>
         <seealso>
           <link id="TFreeTypeInformation"/>
         </seealso>
       </element>
       <element name="TFontCollectionItem.Information.AIndex">
-        <short>Data item accessed in the font</short>
+        <short>Data item accessed in the font.</short>
       </element>
 
       <element name="TFontCollectionItem.VersionNumber">
-        <short>Gets the value for the VersionNumber property</short>
+        <short>Gets the value for the VersionNumber property.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFontCollectionItem.CreateFont">
-        <short>Creates a TFreeTypeFont instance for the stream or file name</short>
+        <short>Creates a TFreeTypeFont instance for the stream or file name.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.CreateFont.Result">
-        <short>TFreeTypeFont instance created in the method</short>
+        <short>TFreeTypeFont instance created in the method.</short>
       </element>
 
       <element name="TFontCollectionItem.QueryFace">
-        <short>Opens the font face for the specified listener using the FreeType library</short>
+        <short>Opens the font face for the specified listener using the FreeType library.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.QueryFace.Result">
-        <short>Handle for the font face when available</short>
+        <short>Handle for the font face when available.</short>
       </element>
       <element name="TFontCollectionItem.QueryFace.AListener">
-        <short>Listener notifed when the font face is destroyed</short>
+        <short>Listener notifed when the font face is destroyed.</short>
       </element>
 
       <element name="TFontCollectionItem.ReleaseFace">
-        <short>Frees the handle for the font face and updates the list of listeners</short>
+        <short>Frees the handle for the font face and updates the list of listeners.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFontCollectionItem.ReleaseFace.AListener">
-        <short>Listener removed form thelist of listeners</short>
+        <short>Listener removed form thelist of listeners.</short>
       </element>
 
       <element name="TFontCollectionItem.UsePostscriptStyle">
-        <short>Indicates if Postscript style names are used in the style list for the font</short>
+        <short>
+          Indicates if Postscript style names are used in the style list for the font
+        </short>
         <descr/>
         <seealso>
           <link id="TFontCollectionItem.Information"/>
@@ -260,7 +262,7 @@
       </element>
 
       <element name="TFamilyCollectionItem">
-        <short>Implements a font collection item with styles mapped to font family names</short>
+        <short>Implements a font collection item with styles mapped to font family names.</short>
         <descr/>
         <seealso>
           <link id="#freetypelaz.easylazfreetype.TCustomFamilyCollectionItem">TCustomFamilyCollectionItem</link>
@@ -473,7 +475,7 @@
       </element>
 
       <element name="TFreeTypeFontCollection">
-        <short>Implements a font collection used in the FreeType library</short>
+        <short>Implements a font collection used in the FreeType library.</short>
         <descr>
           <p>
             Provides methods to add or remove a TrueType font file by name. Methods are provided to load and remove all TrueType fonts found in a directory. Provides enumerators to access fonts by file name or family name.
@@ -722,12 +724,12 @@
       </element>
 
       <element name="SetDefaultFreeTypeFontCollection">
-        <short>Sets the default font collection used in EasyLazFreeType to the specified value</short>
+        <short>Sets the default font collection used in EasyLazFreeType to the specified value.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="SetDefaultFreeTypeFontCollection.ACollection">
-        <short>Font collection used in EasyLazFreeType</short>
+        <short>Font collection used in EasyLazFreeType.</short>
       </element>
 
     </module>

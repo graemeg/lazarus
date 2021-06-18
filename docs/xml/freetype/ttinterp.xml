@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="TTInterp">
-      <short>TrueType bytecode intepreter</short>
+      <short>TrueType bytecode intepreter.</short>
       <descr>
         <p>
             Most of the functionality is found in types and classes defined in the implementation section, and accessed by calling the Run_Ins function. Multithreading should be possible.
@@ -47,7 +47,7 @@
 
       <element name="Run_Ins">
         <short>
-          Runs the TrueType bytecode interpreter with the code range and IP in the execution context
+          Runs the TrueType bytecode interpreter with the code range and IP in the execution context.
         </short>
         <descr>
           Used in the implementation of routines in the <file>TTObjs.pas</file> unit.
@@ -55,14 +55,14 @@
         <seealso/>
       </element>
       <element name="Run_Ins.Result">
-        <short>TError return value from the TInterpreter class instance in the routine</short>
+        <short>TError return value from the TInterpreter class instance in the routine.</short>
       </element>
       <element name="Run_Ins.exec">
-        <short>Execution context for the routine</short>
+        <short>Execution context for the routine.</short>
       </element>
       <element name="Run_Ins.AErrorLog">
-        <short>True enables error logging in the routine</short>
-      </element>    
+        <short>True enables error logging in the routine.</short>
+      </element>
 
     </module>
     <!-- TTInterp -->

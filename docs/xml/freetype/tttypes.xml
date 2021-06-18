@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="TTTypes">
-      <short>Global type definitions</short>
+      <short>Global type definitions.</short>
       <descr>
         <p>
           Global type definitions used in the FreeType library.
@@ -68,19 +68,19 @@
       </element>
 
       <element name="TT_FWord">
-        <short>Distance in FUnits</short>
+        <short>Distance in FUnits.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_UFWord">
-        <short>Unsigned Distance</short>
+        <short>Unsigned Distance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_F2Dot14">
-        <short>Alias for the Integer type</short>
+        <short>Alias for the Integer type.</short>
         <descr>
           <p>
             Signed fixed float 2.14 used for unary vectors, with layout:
@@ -115,7 +115,7 @@
       </element>
 
       <element name="TT_F26Dot6">
-        <short>Alias for the LongInt type</short>
+        <short>Alias for the LongInt type.</short>
         <descr>
           <p>
             26.6 fixed float, used for pixel coordinates.
@@ -125,7 +125,7 @@
       </element>
 
       <element name="TT_Pos">
-        <short>Alias for the LongInt type</short>
+        <short>Alias for the LongInt type.</short>
         <descr>
           <p>
             FUnits or 26.6 fixed float value, depending on context.
@@ -257,7 +257,7 @@
       </element>
 
       <element name="TT_KerningInfo">
-        <short>Kerning information between two glyphs</short>
+        <short>Kerning information between two glyphs.</short>
         <descr/>
         <seealso/>
       </element>
@@ -351,7 +351,7 @@
       </element>
 
       <element name="TT_Outline">
-        <short>Glyph outline description</short>
+        <short>Glyph outline description.</short>
         <descr/>
         <seealso/>
       </element>
@@ -369,25 +369,25 @@
       </element>
 
       <element name="TT_Outline.points">
-        <short>Array of point coordinates</short>
+        <short>Array of point coordinates.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Outline.flags">
-        <short>Array of point flags</short>
+        <short>Array of point flags.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Outline.conEnds">
-        <short>Array of contours ends</short>
+        <short>Array of contours ends.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Outline.owner">
-        <short>Flag set when the outline owns the arrays it uses</short>
+        <short>Flag set when the outline owns the arrays it uses.</short>
         <descr/>
         <seealso/>
       </element>
@@ -411,7 +411,7 @@
       </element>
 
       <element name="TT_Glyph_Metrics">
-        <short>Glyph metrics structure</short>
+        <short>Glyph metrics structure.</short>
         <descr>
           <p>
             Glyph metrics structure.
@@ -445,7 +445,7 @@
       </element>
 
       <element name="TT_Big_Glyph_Metrics">
-        <short>Big glyph metrics structure</short>
+        <short>Big glyph metrics structure.</short>
         <descr>
           <p>
             Big glyph metrics structure.
@@ -519,7 +519,7 @@
       </element>
 
       <element name="TT_Instance_Metrics">
-        <short>Instance metrics structure</short>
+        <short>Instance metrics structure.</short>
         <descr>
           <p>
             Instance metrics used to return information to a client with the state for the instance.
@@ -583,7 +583,7 @@
       </element>
 
       <element name="TT_Raster_Map">
-        <short>Describes a bitmap or pixmap to the rasterizer</short>
+        <short>Describes a bitmap or pixmap to the rasterizer.</short>
         <descr>
           <p>
             A record used to describe a bitmap or pixmap to the rasterizer.
@@ -593,43 +593,43 @@
       </element>
 
       <element name="TT_Raster_Map.Rows">
-        <short>Number of rows for the bitmap</short>
+        <short>Number of rows for the bitmap.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Raster_Map.Cols">
-        <short>Numer of columns (bytes) per Row</short>
+        <short>Numer of columns (bytes) per Row.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Raster_Map.Width">
-        <short>Number of pixels per Row</short>
+        <short>Number of pixels per Row.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Raster_Map.Flow">
-        <short>Flow direction for the bitmap / pixmap</short>
+        <short>Flow direction for the bitmap / pixmap.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Raster_Map.Buffer">
-        <short>Data for the bitmap / pixmap</short>
+        <short>Data for the bitmap / pixmap.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Raster_Map.Size">
-        <short>Size in bytes for the Data in the bitmap / pixmap</short>
+        <short>Size in bytes for the Data in the bitmap / pixmap.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Header">
-        <short>TrueType font header table structure</short>
+        <short>TrueType font header table structure.</short>
         <descr>
           <p>
             The TrueType font header table structure.
@@ -741,7 +741,7 @@
       </element>
 
       <element name="TT_Horizontal_Header">
-        <short>TrueType horizontal header table structure</short>
+        <short>TrueType horizontal header table structure.</short>
         <descr>
           <p>
             The TrueType horizontal header table structure.
@@ -829,19 +829,19 @@
       </element>
 
       <element name="TT_Horizontal_Header.short_metrics">
-        <short>Not part of the header in the file</short>
+        <short>Not part of the header in the file.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Horizontal_Header.long_metrics">
-        <short>Not part of the header in the file</short>
+        <short>Not part of the header in the file.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Vertical_Header">
-        <short>TrueType vertical header table structure</short>
+        <short>TrueType vertical header table structure.</short>
         <descr>
           <p>
             The TrueType vertical header table structure.
@@ -929,19 +929,19 @@
       </element>
 
       <element name="TT_Vertical_Header.short_metrics">
-        <short>Not part of the header in the file</short>
+        <short>Not part of the header in the file.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Vertical_Header.long_metrics">
-        <short>Not part of the header in the file</short>
+        <short>Not part of the header in the file.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2">
-        <short>TrueType OS/2 table structure</short>
+        <short>TrueType OS/2 table structure.</short>
         <descr>
           <p>
             The TrueType OS/2 table structure.
@@ -1053,25 +1053,25 @@
       </element>
 
       <element name="TT_OS2.ulUnicodeRange1">
-        <short>Bits 0 - 31</short>
+        <short>Bits 0 - 31.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.ulUnicodeRange2">
-        <short>Bits 32 - 63</short>
+        <short>Bits 32 - 63.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.ulUnicodeRange3">
-        <short>Bits 64 - 95</short>
+        <short>Bits 64 - 95.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.ulUnicodeRange4">
-        <short>Bits 96 - 127</short>
+        <short>Bits 96 - 127.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1131,49 +1131,49 @@
       </element>
 
       <element name="TT_OS2.ulCodePageRange1">
-        <short>In Version 1 tables only</short>
+        <short>In Version 1 tables only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.ulCodePageRange2">
-        <short>In Version 1 tables only</short>
+        <short>In Version 1 tables only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.sxHeight">
-        <short>In Version 2 tables only</short>
+        <short>In Version 2 tables only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.sCapHeight">
-        <short>In Version 2 tables only</short>
+        <short>In Version 2 tables only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.usDefaultChar">
-        <short>In Version 2 tables only</short>
+        <short>In Version 2 tables only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.usBreakChar">
-        <short>In Version 2 tables only</short>
+        <short>In Version 2 tables only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_OS2.usMaxContext">
-        <short>In Version 2 tables only</short>
+        <short>In Version 2 tables only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TT_Postscript">
-        <short>TrueType Postscript table structure</short>
+        <short>TrueType Postscript table structure.</short>
         <descr>
           <p>
             The TrueType Postscript table structure.
@@ -1241,7 +1241,7 @@
       </element>
 
       <element name="TT_Face_Properties">
-        <short>TrueType font face properties</short>
+        <short>TrueType font face properties.</short>
         <descr>
           <p>
             Used to report important properties for a font face to clients.
@@ -1305,7 +1305,7 @@
       </element>
 
       <element name="TT_Stream">
-        <short>Object handle type for a Stream</short>
+        <short>Object handle type for a Stream.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1317,7 +1317,7 @@
       </element>
 
       <element name="TT_Face">
-        <short>Object handle type for a Face</short>
+        <short>Object handle type for a Face.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1341,7 +1341,7 @@
       </element>
 
       <element name="TT_Glyph">
-        <short>Object handle type for a Glyph</short>
+        <short>Object handle type for a Glyph.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1353,7 +1353,7 @@
       </element>
 
       <element name="TT_CharMap">
-        <short>Object handle type for a Character Map</short>
+        <short>Object handle type for a Character Map.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1377,7 +1377,7 @@
       </element>
 
       <element name="TT_Err_Ok">
-        <short>Success is always 0</short>
+        <short>Success is always 0.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2023,7 +2023,7 @@
       </element>
 
       <element name="TCoordinates">
-        <short>Internal type for coordinates in the FreeType library</short>
+        <short>Internal type for coordinates in the FreeType library.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2050,32 +2050,32 @@
         <seealso></seealso>
       </element>
       <element name="TVecRecord.n">
-        <short>Number of points</short>
+        <short>Number of points.</short>
       </element>
       <element name="TVecRecord.org_x">
-        <short>Original coordinate arrays</short>
+        <short>Original coordinate arrays.</short>
       </element>
       <element name="TVecRecord.org_y">
-        <short>Original coordinate arrays</short>
+        <short>Original coordinate arrays.</short>
       </element>
       <element name="TVecRecord.cur_x">
-        <short>Current coordinate arrays</short>
+        <short>Current coordinate arrays.</short>
       </element>
       <element name="TVecRecord.cur_y">
-        <short>Current coordinate arrays</short>
+        <short>Current coordinate arrays.</short>
       </element>
       <element name="TVecRecord.touch">
-        <short>Touch flags array</short>
+        <short>Touch flags array.</short>
       </element>
 
       <element name="Success">
-        <short>Success value is always False (no error)</short>
+        <short>Success value is always False (no error).</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="Failure">
-        <short>Failure value is always True (error has occurred)</short>
+        <short>Failure value is always True (error has occurred).</short>
         <descr/>
         <seealso/>
       </element>
