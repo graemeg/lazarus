@@ -2305,22 +2305,21 @@ var
   N: Word;
 begin
   SelectMonth;
-  if Cascade then
-    SetDateTime(IncMonth(DateTime))
-  else begin
-    YMD := GetYYYYMMDD(True);
 
-    if YMD.Month >= 12 then
-      YMD.Month := 1
-    else
-      Inc(YMD.Month);
+  YMD := GetYYYYMMDD(True);
 
-    N := NumberOfDaysInMonth(YMD.Month, YMD.Year);
-    if YMD.Day > N then
-      YMD.Day := N;
+  if YMD.Month >= 12 then begin
+    YMD.Month := 1;
+    if Cascade then
+      Inc(YMD.Year);
+  end else
+    Inc(YMD.Month);
 
-    SetYYYYMMDD(YMD);
-  end;
+  N := NumberOfDaysInMonth(YMD.Month, YMD.Year);
+  if YMD.Day > N then
+    YMD.Day := N;
+
+  SetYYYYMMDD(YMD);
 end;
 
 procedure TCustomDateTimePicker.IncreaseYear;
@@ -2342,9 +2341,12 @@ var
   YMD: TYMD;
 begin
   SelectDay;
-  if Cascade then
-    SetDateTime(IncDay(DateTime))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDate(IncDay(SysUtils.Date))
+    else
+      SetDateTime(IncDay(FDateTime));
+  end else begin
     YMD := GetYYYYMMDD(True);
 
     if YMD.Day >= NumberOfDaysInMonth(YMD.Month, YMD.Year) then
@@ -2362,22 +2364,21 @@ var
   N: Word;
 begin
   SelectMonth;
-  if Cascade then
-    SetDateTime(IncMonth(DateTime, -1))
-  else begin
-    YMD := GetYYYYMMDD(True);
 
-    if YMD.Month <= 1 then
-      YMD.Month := 12
-    else
-      Dec(YMD.Month);
+  YMD := GetYYYYMMDD(True);
 
-    N := NumberOfDaysInMonth(YMD.Month, YMD.Year);
-    if YMD.Day > N then
-      YMD.Day := N;
+  if YMD.Month <= 1 then begin
+    YMD.Month := 12;
+    if Cascade then
+      Dec(YMD.Year);
+  end else
+    Dec(YMD.Month);
 
-    SetYYYYMMDD(YMD);
-  end;
+  N := NumberOfDaysInMonth(YMD.Month, YMD.Year);
+  if YMD.Day > N then
+    YMD.Day := N;
+
+  SetYYYYMMDD(YMD);
 end;
 
 procedure TCustomDateTimePicker.DecreaseYear;
@@ -2397,9 +2398,12 @@ var
   YMD: TYMD;
 begin
   SelectDay;
-  if Cascade then
-    SetDateTime(IncDay(DateTime, -1))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDate(IncDay(SysUtils.Date, -1))
+    else
+      SetDateTime(IncDay(FDateTime, -1));
+  end else begin
     YMD := GetYYYYMMDD(True);
 
     if YMD.Day <= 1 then
@@ -2416,9 +2420,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectHour;
-  if Cascade then
-    SetDateTime(IncHour(DateTime))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDateTime(IncHour(SysUtils.Now))
+    else
+      SetDateTime(IncHour(FDateTime));
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.Hour >= 23 then
@@ -2435,8 +2442,11 @@ var
   HMSMs: THMSMs;
 begin
   SelectMinute;
-  if Cascade then
-    SetDateTime(IncMinute(DateTime))
+  if Cascade then 
+    if DateIsNull then
+      SetDateTime(IncMinute(SysUtils.Now))
+    else
+      SetDateTime(IncMinute(FDateTime));
   else begin
     HMSMs := GetHMSMs(True);
 
@@ -2454,9 +2464,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectSecond;
-  if Cascade then
-    SetDateTime(IncSecond(DateTime))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDateTime(IncSecond(SysUtils.Now))
+    else
+      SetDateTime(IncSecond(FDateTime));
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.Second >= 59 then
@@ -2473,9 +2486,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectMiliSec;
-  if Cascade then
-    SetDateTime(IncMilliSecond(DateTime))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDateTime(IncMilliSecond(SysUtils.Now))
+    else
+      SetDateTime(IncMilliSecond(FDateTime));
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.MiliSec >= 999 then
@@ -2492,9 +2508,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectHour;
-  if Cascade then
-    SetDateTime(IncHour(DateTime, -1))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDateTime(IncHour(SysUtils.Now, -1))
+    else
+      SetDateTime(IncHour(FDateTime, -1));
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.Hour <= 0 then
@@ -2511,9 +2530,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectMinute;
-  if Cascade then
-    SetDateTime(IncMinute(DateTime, -1))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDateTime(IncMinute(SysUtils.Now, -1))
+    else
+      SetDateTime(IncMinute(FDateTime, -1));
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.Minute <= 0 then
@@ -2530,9 +2552,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectSecond;
-  if Cascade then
-    SetDateTime(IncSecond(DateTime, -1))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDateTime(IncSecond(SysUtils.Now, -1))
+    else
+      SetDateTime(IncSecond(FDateTime, -1));
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.Second <= 0 then
@@ -2549,9 +2574,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectMiliSec;
-  if Cascade then
-    SetDateTime(IncMilliSecond(DateTime, -1))
-  else begin
+  if Cascade then begin
+    if DateIsNull then
+      SetDateTime(IncMilliSecond(SysUtils.Now, -1))
+    else
+      SetDateTime(IncMilliSecond(FDateTime, -1));
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.MiliSec <= 0 then
