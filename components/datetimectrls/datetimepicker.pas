@@ -2442,12 +2442,12 @@ var
   HMSMs: THMSMs;
 begin
   SelectMinute;
-  if Cascade then 
+  if Cascade then begin
     if DateIsNull then
       SetDateTime(IncMinute(SysUtils.Now))
     else
       SetDateTime(IncMinute(FDateTime));
-  else begin
+  end else begin
     HMSMs := GetHMSMs(True);
 
     if HMSMs.Minute >= 59 then
