@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="CustomTimer">
-      <short>Contains the definition of the base class for <var>TTimer</var></short>
+      <short>Contains the definition of the base class for <var>TTimer</var>.</short>
       <descr>
         <p>
           <file>customtimer.pas</file> defines <var>TCustomTimer</var>, the component used as the ancestor for timer components in the Lazarus Component Library (<b>LCL</b>).
@@ -24,7 +24,7 @@
 
       <element name="TCustomTimer">
         <short>
-          Defines the base class for <var>TTimer</var>
+          Defines the base class for <var>TTimer</var>.
         </short>
         <descr>
           <p>
@@ -62,8 +62,8 @@
 
       <element name="TCustomTimer.Timer">
         <short>
-           Procedure called when the timer interval has elapsed
-         </short>
+           Procedure called when the timer interval has elapsed.
+        </short>
         <descr>
           <p>
             <var>Timer</var> is a private procedure called when the <var>Interval</var> for the timer has elapsed. Timer calls the <var>DoOnTimer</var> method to perform a notification using the <var>OnTimer</var> event (when assigned). Assign a procedure to the <var>OnTimer</var> event handler to perform actions needed when the <var>Interval</var> for the timer has elapsed.
@@ -88,34 +88,34 @@
         </seealso>
       </element>
       <element name="TCustomTimer.SetEnabled">
-        <short>Sets the value for the <var>Enabled</var> property</short>
+        <short>Sets the value for the <var>Enabled</var> property.</short>
         <seealso>
           <link id="TCustomTimer.Enabled"/>
         </seealso>
       </element>
       <element name="TCustomTimer.SetEnabled.Value">
-        <short>True when the timer can be executed</short>
+        <short>True when the timer can be executed.</short>
       </element>
       <element name="TCustomTimer.SetInterval">
-        <short>Sets the value for the <var>Interval</var> property</short>
+        <short>Sets the value for the <var>Interval</var> property.</short>
         <seealso>
           <link id="TCustomTimer.Interval"/>
         </seealso>
       </element>
       <element name="TCustomTimer.SetInterval.Value">
-        <short>The <var>Value</var> of the <var>Interval</var> property in milliseconds</short>
+        <short>The <var>Value</var> of the <var>Interval</var> property in milliseconds.</short>
       </element>
       <element name="TCustomTimer.SetOnTimer">
-        <short>Sets the event handler for the <var>OnTimer</var> property</short>
+        <short>Sets the event handler for the <var>OnTimer</var> property.</short>
         <seealso>
           <link id="TCustomTimer.OnTimer"/>
         </seealso>
       </element>
       <element name="TCustomTimer.SetOnTimer.Value">
-        <short><var>TNotifyEvent</var> handler signalled when the timer has expired</short>
+        <short><var>TNotifyEvent</var> handler signalled when the timer has expired.</short>
       </element>
       <element name="TCustomTimer.DoOnTimer">
-        <short><var>DoOnTimer</var> signals the <var>OnTimer</var> event handler</short>
+        <short><var>DoOnTimer</var> signals the <var>OnTimer</var> event handler.</short>
         <descr>
           <p>
             <var>DoOnTimer</var> is a protected virtual procedure used to signal the <var>OnTimer</var> event handler (when assigned). No actions are performed in <var>DoOnTimer</var> when <var>OnTimer</var> has not been assigned (contains <b>Nil</b>).
@@ -140,7 +140,7 @@
         </seealso>
       </element>
       <element name="TCustomTimer.UpdateTimer">
-        <short>Updates the Timer to reflect the current properties</short>
+        <short>Updates the Timer to reflect the current properties.</short>
         <descr>
           <p>
             <var>UpdateTimer</var> is a protected virtual procedure used to update property values in the timer class instance. UpdateTimer calls <var>KillTimer</var> to stop the timer if it has been enabled and a widget set handle has been previously assigned for the class instance. The handle is recreated at run-time using the <var>Timer</var> method as a polling routine when <var>Enabled</var> contains <b>True</b>, <var>Interval</var> contains a value greater than <b>0</b> (<b>zero</b>), and <var>OnTimer</var> has been assigned for the class instance. The handle is not recreated if the component is being freed, or when the component is <var>Loaded</var> using the LCL streaming mechanism.
@@ -170,7 +170,7 @@
         </seealso>
       </element>
       <element name="TCustomTimer.KillTimer">
-        <short>Stops execution of the timer class instance</short>
+        <short>Stops execution of the timer class instance.</short>
         <descr>
           <p>
             <var>KillTimer</var> is a protected virtual procedure used to stop execution of the timer class instance. KillTimer ensures that a value widget set handle has been assigned for the timer class instance prior to freeing the handle and signalling the <var>OnStopTimer</var> event handler (when assigned). No actions are performed in the method if the widget set handle is not assigned or invalid.
@@ -188,7 +188,8 @@
       <element name="TCustomTimer.Loaded" link="#rtl.classes.TComponent.Loaded"/>
       <element name="TCustomTimer.Create">
         <short>
-          <var>Create</var> - constructor for <var>TCustomTimer</var>: calls inherited <var>Create</var>, sets up handle and initializes timer interval</short>
+          <var>Create</var> - constructor for <var>TCustomTimer</var>: calls inherited <var>Create</var>, sets up handle and initializes timer interval.
+        </short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor using the component in <var>AOwner</var> as the owner for the class instance.
@@ -212,10 +213,10 @@
         </seealso>
       </element>
       <element name="TCustomTimer.Create.AOwner">
-        <short>Component which owns the timer class instance</short>
+        <short>Component which owns the timer class instance.</short>
       </element>
       <element name="TCustomTimer.Destroy">
-        <short>Destructor for the timer class instance</short>
+        <short>Destructor for the timer class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that the <var>OnTimer</var> event handler is unassigned and <var>Enabled</var> is set to <b>False</b> before halting the timer by calling the <var>KillTimer</var> method.
@@ -237,7 +238,7 @@
         </seealso>
       </element>
       <element name="TCustomTimer.Enabled">
-        <short>Indicates if the timer is ready to start</short>
+        <short>Indicates if the timer is ready to start.</short>
         <descr>
           <p>
             <var>Enabled</var> is a <var>Boolean</var> property which controls the state for the timer class instance. When Enabled contains True the timer can be executed, and its <var>OnTimer</var> event handler is signalled when the Interval for the timer has elapsed. Changing the value in Enabled causes the <var>UpdateTimer</var> method to be called to set the current value for properties in the timer.
@@ -254,7 +255,7 @@
         </seealso>
       </element>
       <element name="TCustomTimer.Interval">
-        <short>The <var>Interval</var> (in milliseconds) for timer notifications</short>
+        <short>The <var>Interval</var> (in milliseconds) for timer notifications.</short>
         <descr>
           <p>
             <var>Interval</var> is a <var>Cardinal</var> property which indicates the frequency (in milliseconds) for OnTimer event notifications during timer execution. The default value for the property is <b>1000</b> milliseconds (or <b>1</b> second).
@@ -278,7 +279,7 @@
         </seealso>
       </element>
       <element name="TCustomTimer.OnTimer">
-        <short>Event handler signalled when the Interval for the timer has elapsed</short>
+        <short>Event handler signalled when the Interval for the timer has elapsed.</short>
         <descr>
           <p>
             <var>OnTimer</var> is a <var>TNotifyEvent</var> property that implements the event handler signalled when the <var>Interval</var> for the timer has elapsed. The default value for the property is <b>Nil</b> as assigned in the constructor for the class instance.
@@ -305,7 +306,7 @@
         </seealso>
       </element>
       <element name="TCustomTimer.OnStartTimer">
-        <short>Event handler signalled when the timer is started</short>
+        <short>Event handler signalled when the timer is started.</short>
         <descr>
           <p>
             <var>OnStartTimer</var> is a <var>TNotifyEvent</var> property that implements the event handler signalled when the timer class instance is started. Assign a TNotifyEvent procedure to the the event handler to perform actions needed to reflect the change in the timer state. No actions are performed for the event notification when OnStartTimer is unassigned (contains <b>Nil</b>).
@@ -332,7 +333,8 @@
       </element>
       <element name="TCustomTimer.OnStopTimer">
         <short>
-          <var>OnStopTimer</var> - event handler for stopping the timer</short>
+          <var>OnStopTimer</var> - event handler for stopping the timer.
+        </short>
         <descr>
           <p>
             <var>OnStopTimer</var> is a <var>TNotifyEvent</var> property that implements the event handler signalled when the timer class instance is stopped. Assign a <var>TNotifyEvent</var> procedure to the property to perform actions needed when the timer is halted (or freed during execution). No actions are performed for the event notification when <var>OnStopTimer</var> is unassigned (contains <b>Nil</b>).

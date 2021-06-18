@@ -8,8 +8,8 @@
     -->
     <module name="DefaultTranslator">
       <short>
-        Performs string translations using the language selected for the project
-      </short>
+        Performs string translations using the language selected for the project.
+        </short>
       <descr>
         <p>
           <file>defaulttranslator.pas</file> performs string translations using the default I18n and L10n translation facilities in the Lazarus IDE and LCL. This unit does not contain any code other than the initialization section in the unit. It calls the SetDefaultLang routine to specify that the default language identifier for the project is used.

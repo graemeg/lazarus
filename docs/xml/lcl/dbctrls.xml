@@ -8,8 +8,8 @@
     -->
     <module name="DbCtrls">
       <short>
-        Data-aware controls commonly used for viewing and operating on information held in databases
-      </short>
+        Data-aware controls commonly used for viewing and operating on information held in databases.
+        </short>
       <descr>
         <p>
           <file>dbctrls.pp</file> contains data-aware controls used to access, view, edit, and navigate databases in the Lazarus Component Library (<b>LCL</b>).
@@ -63,7 +63,7 @@
       <element name="LazUtilities"/>
 
       <element link="#FCL.Db.TDataLink" name="TFieldDataLink">
-        <short>Maintains an association between a control, an action, and a field in a linked dataset
+        <short>Maintains an association between a control, an action, and a field in a linked dataset.
         </short>
         <descr>
           <p>
@@ -119,62 +119,61 @@
       <element name="TFieldDataLink.IsModified"/>
 
       <element name="TFieldDataLink.FieldCanModify">
-        <short>Indicates if the Field for the data link can be modified</short>
+        <short>Indicates if the Field for the data link can be modified.</short>
       </element>
       <element name="TFieldDataLink.FieldCanModify.Result">
-        <short>True when Field is assigned and its CanModify method is also True</short>
+        <short>True when Field is assigned and its CanModify method is also True.</short>
       </element>
       <element name="TFieldDataLink.IsKeyField">
-        <short>Indicates if the specified field is present in the KeyFields for the data link
-         </short>
+        <short>Indicates if the specified field is present in the KeyFields for the data link. </short>
       </element>
       <element name="TFieldDataLink.IsKeyField.Result">
-        <short>True when the name for the field is present in KeyFields</short>
+        <short>True when the name for the field is present in KeyFields.</short>
       </element>
       <element name="TFieldDataLink.IsKeyField.aField">
-        <short>Field definition to locate in the KeyFields for the data link</short>
+        <short>Field definition to locate in the KeyFields for the data link.</short>
       </element>
       <element name="TFieldDataLink.GetCanModify">
-        <short>Gets the value for the CanModify property</short>
+        <short>Gets the value for the CanModify property.</short>
         <seealso>
           <link id="TFieldDataLink.CanModify"/>
         </seealso>
       </element>
       <element name="TFieldDataLink.GetCanModify.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TFieldDataLink.SetFieldName">
-        <short>Sets the value for the FieldName property</short>
+        <short>Sets the value for the FieldName property.</short>
         <descr/>
         <seealso>
           <link id="TFieldDataLink.FieldName"/>
         </seealso>
       </element>
       <element name="TFieldDataLink.SetFieldName.Value">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TFieldDataLink.UpdateField">
-        <short>Retrieves the value for the Field property from the linked dataset</short>
+        <short>Retrieves the value for the Field property from the linked dataset.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFieldDataLink.ValidateField">
-        <short>Checks for FieldName in the linked Dataset, and updates the value in Field
+        <short>Checks for FieldName in the linked Dataset, and updates the value in Field.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFieldDataLink.ResetEditingSource">
-        <short>Resets the EditingSource and EditingSourceSet Boolean flags</short>
+        <short>Resets the EditingSource and EditingSourceSet Boolean flags.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFieldDataLink.ActiveChanged">
         <short>
           <var>ActiveChanged</var> - method to process changes in the
-          <var>Active</var> property
+          <var>Active</var> property.
         </short>
         <descr>
           <p>
@@ -198,7 +197,7 @@
       <element name="TFieldDataLink.EditingChanged">
         <short>
           <var>EditingChanged</var> - method for processing changes in the
-          <var>Editing</var> property
+          <var>Editing</var> property.
         </short>
         <descr>
           <p>
@@ -221,7 +220,7 @@
       <element name="TFieldDataLink.LayoutChanged">
         <short>
           <var>LayoutChanged</var>- called if layout is changed: tests validity of field then calls
-          <var>OnLayoutChange</var> event handler
+          <var>OnLayoutChange</var> event handler.
         </short>
         <descr>
           <p>
@@ -246,7 +245,7 @@
       <element name="TFieldDataLink.RecordChanged">
         <short>
           <var>RecordChanged</var> - triggered if the contents of the current record change; calls
-          <var>Reset</var>
+          <var>Reset</var>.
         </short>
         <descr>
           <p>
@@ -269,10 +268,10 @@
         <seealso/>
       </element>
       <element name="TFieldDataLink.RecordChanged.aField">
-        <short>Field definition with the value updated in the current record</short>
+        <short>Field definition with the value updated in the current record.</short>
       </element>
       <element name="TFieldDataLink.UpdateData">
-        <short>Signals the <var>OnUpdateData</var> event handler for pending changes to the linked dataset
+        <short>Signals the <var>OnUpdateData</var> event handler for pending changes to the linked dataset.
         </short>
         <descr>
           <p>
@@ -290,7 +289,7 @@
       </element>
       <element name="TFieldDataLink.FocusControl">
         <short>
-          <var>FocusControl</var> gives the input focus to the data-aware control in the class instance
+          <var>FocusControl</var> gives the input focus to the data-aware control in the class instance.
         </short>
         <descr>
           <p>
@@ -313,10 +312,10 @@
         </seealso>
       </element>
       <element name="TFieldDataLink.FocusControl.aField">
-        <short>Reference to the field expected for the focused control</short>
+        <short>Reference to the field expected for the focused control.</short>
       </element>
       <element name="TFieldDataLink.Create">
-        <short>Constructor for the class instance
+        <short>Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -329,7 +328,7 @@
       </element>
       <element name="TFieldDataLink.Edit">
         <short>
-          <var>Edit</var> - if the field can be modified, performs inherited Edit and shows editing status
+          <var>Edit</var> - if the field can be modified, performs inherited Edit and shows editing status.
         </short>
         <descr>
           <p>
@@ -349,10 +348,10 @@
         </seealso>
       </element>
       <element name="TFieldDataLink.Edit.Result">
-        <short>True if the linked dataset is in an edit state</short>
+        <short>True if the linked dataset is in an edit state.</short>
       </element>
       <element name="TFieldDataLink.Modified">
-        <short>Updates the class when the linked dataset enters an edit state</short>
+        <short>Updates the class when the linked dataset enters an edit state.</short>
         <descr>
           <p>
             <var>Modified</var> is a procedure which updates the class when the linked dataset is placed in an edit state. Modified sets the value in the internal IsModified member to
@@ -377,7 +376,7 @@
           <var>Reset</var> - checks that link is active, calls the
           <var>OnDataChange</var> event handler then sets
           <var>IsModified</var> to
-          <b>False</b>
+          <b>False</b>.
         </short>
         <descr>
           <p>
@@ -397,7 +396,7 @@
         </seealso>
       </element>
       <element name="TFieldDataLink.Control">
-        <short>The <var>Control</var> to which this datalink is attached</short>
+        <short>The <var>Control</var> to which this datalink is attached.</short>
         <descr>
           <p>
             <var>Controls</var> is a
@@ -419,7 +418,7 @@
         </seealso>
       </element>
       <element name="TFieldDataLink.Field">
-        <short>The <var>Field</var> to which the datalink is attached</short>
+        <short>The <var>Field</var> to which the datalink is attached.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -441,7 +440,7 @@
       </element>
       <element name="TFieldDataLink.FieldName">
         <short>
-          <var>FieldName</var> - the name of the attached field, stored as a string
+          <var>FieldName</var> - the name of the attached field, stored as a string.
         </short>
         <descr>
           <p>
@@ -470,7 +469,7 @@
       <element name="TFieldDataLink.CanModify">
         <short>
           <var>CanModify</var> -
-          <b>True</b> if the linked field is capable of being modified
+          <b>True</b> if the linked field is capable of being modified.
         </short>
         <descr>
           <p>
@@ -497,7 +496,7 @@
       <element name="TFieldDataLink.Editing">
         <short>
           <var>Editing</var> -
-          <b>True</b> if the linked field is being edited
+          <b>True</b> if the linked field is being edited.
         </short>
         <descr>
           <p>
@@ -519,8 +518,8 @@
       </element>
 
       <element name="TFieldDataLink.EditingSource">
-        <short>Indicates if the data link is changing its source properties
-         </short>
+        <short>Indicates if the data link is changing its source properties.
+        </short>
         <descr>
           <p>
             <var>EditingSource</var> is a read-only <var>Boolean</var> property which indicates if the data link is changing the source properties for the class instance. The source properties include <var>DataSource</var>, <var>FieldName</var>, and <var>Field</var>.
@@ -541,7 +540,7 @@
 
       <element name="TFieldDataLink.OnDataChange">
         <short>
-          <var>OnDataChange</var> - event handler for a change in the data
+          <var>OnDataChange</var> - event handler for a change in the data.
         </short>
         <descr>
           <p>
@@ -568,7 +567,7 @@
       <element name="TFieldDataLink.OnEditingChange">
         <short>
           <var>OnEditingChange</var> - event handler for a changed in the
-          <var>Editing</var> property
+          <var>Editing</var> property.
         </short>
         <descr>
           <p>
@@ -582,7 +581,7 @@
       </element>
       <element name="TFieldDataLink.OnUpdateData">
         <short>
-          <var>OnUpdateData</var> - event handler for updating any pending changes in the data
+          <var>OnUpdateData</var> - event handler for updating any pending changes in the data.
         </short>
         <descr>
           <p>
@@ -598,7 +597,7 @@
       <element name="TFieldDataLink.OnActiveChange">
         <short>
           <var>OnActiveChange</var> - event handler for a change in the
-          <var>Active</var> property
+          <var>Active</var> property.
         </short>
         <descr>
           <p>
@@ -622,7 +621,7 @@
         <short>
           <var>TDBLookup</var> - used as source of data by
           <var>TDBLookupListBox</var> or
-          <var>TDBLookupComboBox</var>, to find data from a lookup table
+          <var>TDBLookupComboBox</var>, to find data from a lookup table.
         </short>
         <descr>
           <p>
@@ -687,7 +686,7 @@
       <element name="TDBLookup.HandleNullKey.Key"/>
       <element name="TDBLookup.HandleNullKey.Word"/>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBLookup.Notification">
-        <short>Performs the notification message received for a component in the class instance</short>
+        <short>Performs the notification message received for a component in the class instance.</short>
         <descr>
           <p>Notification is an overridden method in TDBLookup. It calls the inherited method, and ensures that the ListSource property is set to Nil when the component is being removed.
           </p>
@@ -695,13 +694,13 @@
         <seealso/>
       </element>
       <element name="TDBLookup.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDBLookup.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
       <element name="TDBLookup.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor. Create allocates resources needed for internal members in the class instance, and sets the default values for the
@@ -717,7 +716,7 @@
       </element>
 
       <element name="TDBLookup.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to internal members in the class instance are freed, and calls the inherited destructor prior to exiting from the method.
@@ -730,7 +729,7 @@
 
       <element name="TDBLookup.Initialize">
         <short>
-          <var>Initialize</var> makes links between local Fields and the appropriate fields in the remote data source, then fetches the lookup data
+          <var>Initialize</var> makes links between local Fields and the appropriate fields in the remote data source, then fetches the lookup data.
         </short>
         <descr>
           <p>
@@ -743,14 +742,14 @@
         </descr>
       </element>
       <element name="TDBLookup.Initialize.AControlDataLink">
-        <short>Link to the dataset with the keys and display values for the control</short>
+        <short>Link to the dataset with the keys and display values for the control.</short>
       </element>
       <element name="TDBLookup.Initialize.AControlItems">
-        <short>Contains the keys and display values for the lookup control</short>
+        <short>Contains the keys and display values for the lookup control.</short>
       </element>
       <element name="TDBLookup.KeyFieldValue">
-        <short>Gets the value(s) for one or more key fields defined for the Field in the linked dataset
-         </short>
+        <short>Gets the value(s) for one or more key fields defined for the Field in the linked dataset.
+        </short>
         <descr>
           <p>
             <var>KeyFieldValue</var> is a
@@ -777,10 +776,10 @@
         </seealso>
       </element>
       <element name="TDBLookup.KeyFieldValue.Result">
-        <short>Variant value for the key fields in the field definition for the control</short>
+        <short>Variant value for the key fields in the field definition for the control.</short>
       </element>
       <element name="TDBLookup.UpdateData">
-        <short>Signals the <var>OnUpdateData</var> event handler for pending changes to the linked dataset
+        <short>Signals the <var>OnUpdateData</var> event handler for pending changes to the linked dataset.
         </short>
         <descr>
           <p>
@@ -800,13 +799,13 @@
         </seealso>
       </element>
       <element name="TDBLookup.UpdateData.ValueIndex">
-        <short>Ordinal position in the key fields located in the method</short>
+        <short>Ordinal position in the key fields located in the method.</short>
       </element>
 
       <element name="TDBLookup.GetKeyValue">
         <short>
-          Gets the value for the key field at the specified ordinal position in the list of values from the lookup dataset
-         </short>
+          Gets the value for the key field at the specified ordinal position in the list of values from the lookup dataset.
+        </short>
         <descr>
           <p>
             <var>GetKeyValue</var> is a <var>Variant</var> function used to get a values from an index key field in the linked lookup dataset.
@@ -828,24 +827,24 @@
         </seealso>
       </element>
       <element name="TDBLookup.GetKeyValue.Result">
-        <short>Value for the Key field retrieved from the lookup dataset</short>
+        <short>Value for the Key field retrieved from the lookup dataset.</short>
       </element>
       <element name="TDBLookup.GetKeyValue.ValueIndex">
-        <short>Ordinal position in the list of key values from the lookup dataset</short>
+        <short>Ordinal position in the list of key values from the lookup dataset.</short>
       </element>
       <element name="TDBLookup.GetKeyIndex">
-        <short>Gets the ordinal position in the list for the specified key value</short>
+        <short>Gets the ordinal position in the list for the specified key value.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookup.GetKeyIndex.Result">
-        <short>Ordinal position for the specified key value</short>
+        <short>Ordinal position for the specified key value.</short>
       </element>
       <element name="TDBLookup.GetKeyIndex.AKeyValue">
-        <short>Key value to locate in the method</short>
+        <short>Key value to locate in the method.</short>
       </element>
       <element name="TDBLookup.ControlItems">
-        <short>Contains the items displayed for the lookup control</short>
+        <short>Contains the items displayed for the lookup control.</short>
         <descr>
           <p>
             <var>ControlItems</var> is a
@@ -861,30 +860,30 @@
         <seealso/>
       </element>
       <element name="TDBLookup.KeyField">
-        <short>The name of the <var>KeyField</var> used in the lookup search</short>
+        <short>The name of the <var>KeyField</var> used in the lookup search.</short>
       </element>
       <element name="TDBLookup.ListField">
         <short>
-          <var>ListField</var> - the name of the list field displayed for the lookup</short>
+          <var>ListField</var> - the name of the list field displayed for the lookup.</short>
       </element>
       <element name="TDBLookup.ListFieldIndex">
         <short>
-          <var>ListFieldIndex</var> - the index value of the list field</short>
+          <var>ListFieldIndex</var> - the index value of the list field.</short>
       </element>
       <element name="TDBLookup.ListSource">
         <short>
-          <var>ListSource</var> - the data source that contains the lookup list
+          <var>ListSource</var> - the data source that contains the lookup list.
         </short>
       </element>
       <element name="TDBLookup.NullValueKey">
-        <short>Keyboard shortcut which causes an empty value to be assigned to each of the key fields defined for the lookup control
-         </short>
+        <short>Keyboard shortcut which causes an empty value to be assigned to each of the key fields defined for the lookup control.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookup.ScrollListDataset">
-        <short>Indicates if the Dataset in ListSource can be scrolled when loading/locating key and display values
-         </short>
+        <short>Indicates if the Dataset in ListSource can be scrolled when loading/locating key and display values.
+        </short>
         <descr>
           <p>
             <var>ScrollListDataset</var> is a
@@ -902,7 +901,7 @@
         </seealso>
       </element>
       <element name="TDBLookup.EmptyValue">
-        <short>Value stored for the lookup control when a lookup value is not available</short>
+        <short>Value stored for the lookup control when a lookup value is not available.</short>
         <descr>
           <p>
             <var>EmptyValue</var> is a
@@ -925,7 +924,7 @@
         </version>
       </element>
       <element name="TDBLookup.DisplayEmpty">
-        <short>Value displayed in the lookup control when a lookup value is not available</short>
+        <short>Value displayed in the lookup control when a lookup value is not available.</short>
         <descr>
           <p>
             <var>DisplayEmpty</var> is a
@@ -949,7 +948,7 @@
       </element>
       <element name="TDBEdit">
         <short>
-          <var>TDBEdit </var> - a data-aware edit box for processing a single text-string from a dataset
+          <var>TDBEdit </var> - a data-aware edit box for processing a single text-string from a dataset.
         </short>
         <descr>
           <p>
@@ -982,17 +981,17 @@
       <element name="TDBEdit.FCustomEditMask"/>
       <element name="TDBEdit.FFocusedDisplay"/>
       <element name="TDBEdit.DataChange">
-        <short>Performs actions needed when values in the dataset have been changed
+        <short>Performs actions needed when values in the dataset have been changed.
         </short>
         <descr>DataChange implements the OnDataChange event handler used in the internal TFieldDataLink instance.
         </descr>
         <seealso/>
       </element>
       <element name="TDBEdit.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBEdit.UpdateData">
-        <short>Performs actions needed to validate the edit control, and update the field in the linked dataset
+        <short>Performs actions needed to validate the edit control, and update the field in the linked dataset.
         </short>
         <descr>
           <p>UpdateData is assigned to the OnUpdateData event handler in the internal TFieldDataLink instance used in the control.
@@ -1001,59 +1000,59 @@
         <seealso/>
       </element>
       <element name="TDBEdit.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBEdit.GetDataField">
-        <short>Gets the value for the DataField property</short>
+        <short>Gets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBEdit.GetDataField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBEdit.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBEdit.GetDataSource.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBEdit.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBEdit.GetField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBEdit.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBEdit.SetDataField.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBEdit.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr>Calls the ChangeDataSource routine to perform free notifications and update the TFieldDataLink used in the class instance.
          </descr>
         <seealso/>
       </element>
       <element name="TDBEdit.SetDataSource.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBEdit.CMGetDataLink">
-        <short>Implements the CM_GETDATALINK control message</short>
+        <short>Implements the CM_GETDATALINK control message.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBEdit.CMGetDataLink.Message">
-        <short>Message examined and updated in the method</short>
+        <short>Message examined and updated in the method.</short>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.GetReadOnly" name="TDBEdit.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
         <descr>
           <p>
             <var>GetReadOnly</var> is a
@@ -1068,10 +1067,10 @@
         </seealso>
       </element>
       <element name="TDBEdit.GetReadOnly.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.SetReadOnly" name="TDBEdit.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <descr>
           <p>
             <var>SetReadOnly</var> is a procedure used to set the value for the
@@ -1086,10 +1085,10 @@
         </seealso>
       </element>
       <element name="TDBEdit.SetReadOnly.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element link="#lcl.controls.TWinControl.KeyDown" name="TDBEdit.KeyDown">
-        <short>Handles key down events in the control</short>
+        <short>Handles key down events in the control.</short>
         <descr>
           <p>
             <var>KeyDown</var> is an overridden method in
@@ -1117,13 +1116,13 @@
         </seealso>
       </element>
       <element name="TDBEdit.KeyDown.Key">
-        <short>Virtual key code examined and applied in the method</short>
+        <short>Virtual key code examined and applied in the method.</short>
       </element>
       <element name="TDBEdit.KeyDown.Shift">
-        <short>Key modifier examined and applied in the method</short>
+        <short>Key modifier examined and applied in the method.</short>
       </element>
       <element name="TDBEdit.UTF8KeyPress">
-        <short>Handles UTF-8 characters for the data-aware control</short>
+        <short>Handles UTF-8 characters for the data-aware control.</short>
         <descr>
           <p>
             <var>UTF8KeyPress</var> is an overridden method in TDBEdit. UTF8KeyPress calls the inherited method, and performs actions needed to handle the UTF-8-encoded character specified in the
@@ -1144,7 +1143,7 @@
         </seealso>
       </element>
       <element name="TDBEdit.UTF8KeyPress.UTF8Key">
-        <short>UTF-8 character examined in the method</short>
+        <short>UTF-8 character examined in the method.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBEdit.Notification">
         <short/>
@@ -1156,13 +1155,13 @@
         </seealso>
       </element>
       <element name="TDBEdit.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDBEdit.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
       <element link="#LCL.MaskEdit.TCustomMaskEdit.EditCanModify" name="TDBEdit.EditCanModify">
-        <short>Indicates if the control can modify the text for the control value</short>
+        <short>Indicates if the control can modify the text for the control value.</short>
         <descr>
           <p>
             <var>EditCanModify</var> is an overridden
@@ -1178,12 +1177,12 @@
         </seealso>
       </element>
       <element name="TDBEdit.EditCanModify.Result">
-        <short>True when the control can modify the value for the field in the linked dataset</short>
+        <short>True when the control can modify the value for the field in the linked dataset.</short>
       </element>
       <element link="#LCL.MaskEdit.TCustomMaskEdit.GetEditText" name="TDBEdit.GetEditText"/>
       <element link="#LCL.MaskEdit.TCustomMaskEdit.GetEditText.Result" name="TDBEdit.GetEditText.Result"/>
       <element link="#LCL.MaskEdit.TCustomMaskEdit.Change" name="TDBEdit.Change">
-        <short>Performs actions needed when the value for the control has been changed</short>
+        <short>Performs actions needed when the value for the control has been changed.</short>
         <descr>
           <p>
             <var>Change</var> is an overridden procedure in
@@ -1201,7 +1200,7 @@
         </seealso>
       </element>
       <element link="#LCL.MaskEdit.TCustomMaskEdit.Reset" name="TDBEdit.Reset">
-        <short>Cancels pending changes to the linked dataset</short>
+        <short>Cancels pending changes to the linked dataset.</short>
         <descr>
           <p>
             <var>Reset</var> is an overridden method in
@@ -1217,7 +1216,7 @@
         </seealso>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.WMSetFocus" name="TDBEdit.WMSetFocus">
-        <short>Ensures that the control has the input focus</short>
+        <short>Ensures that the control has the input focus.</short>
         <descr>
           <p/>
           <var>WMSetFocus</var> is an overridden method in TDBEdit. WMSetFocus ensures that the text for the control is updated before calling the inherited method. This includes applying an edit mask assigned to the control when it has input focus.
@@ -1228,7 +1227,7 @@
         <short/>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.WMKillFocus" name="TDBEdit.WMKillFocus">
-        <short>Ensures that the liked dataset is updated when the modified control loses input focus
+        <short>Ensures that the liked dataset is updated when the modified control loses input focus.
         </short>
         <descr/>
         <seealso/>
@@ -1237,7 +1236,7 @@
         <short/>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.WndProc" name="TDBEdit.WndProc">
-        <short>Handles the specified LCL message for the control</short>
+        <short>Handles the specified LCL message for the control.</short>
         <descr>
           <p>
             <var>WndProc</var> is an overridden method in TDBEdit. It is used to process the specified LCL message for the control. WndProc ensures that the message is applied to the linked dataset when it can be modified, and handles the following LCL messages:
@@ -1265,10 +1264,10 @@
         </seealso>
       </element>
       <element name="TDBEdit.WndProc.Message">
-        <short>LCL message examined and applied in the method</short>
+        <short>LCL message examined and applied in the method.</short>
       </element>
       <element link="#LCL.MaskEdit.TCustomMaskEdit.Create" name="TDBEdit.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor, then creates and configures the internal
@@ -1285,10 +1284,10 @@
         </seealso>
       </element>
       <element name="TDBEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBEdit.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to members in the class instance are freed prior to destruction of the class instance. Destroy calls the inherited destructor prior to exit.
@@ -1299,7 +1298,7 @@
         </seealso>
       </element>
       <element link="#RTL.Classes.TComponent.ExecuteAction" name="TDBEdit.ExecuteAction">
-        <short>Provides support for TBasicAction in the control</short>
+        <short>Provides support for TBasicAction in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden method in
@@ -1317,14 +1316,14 @@
         </seealso>
       </element>
       <element name="TDBEdit.ExecuteAction.Result">
-        <short>True if the action was executed in the method</short>
+        <short>True if the action was executed in the method.</short>
       </element>
       <element name="TDBEdit.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element name="TDBEdit.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
-         </short>
+        <short>Updates the specified action to reflect the current state in the linked dataset.
+        </short>
         <descr>
           <p>
             <var>UpdateAction</var> is an overridden
@@ -1346,13 +1345,13 @@
         </seealso>
       </element>
       <element name="TDBEdit.UpdateAction.Result">
-        <short>True if the action was updated in the method</short>
+        <short>True if the action was updated in the method.</short>
       </element>
       <element name="TDBEdit.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
       <element name="TDBEdit.Field">
-        <short>Provides access to the field definition for the data-aware control</short>
+        <short>Provides access to the field definition for the data-aware control.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -1370,7 +1369,7 @@
         </seealso>
       </element>
       <element name="TDBEdit.CustomEditMask">
-        <short>Indicates if a custom edit mask is used in the control</short>
+        <short>Indicates if a custom edit mask is used in the control.</short>
         <descr>
           <p>
             <var>CustomEditMask</var> is a
@@ -1389,7 +1388,7 @@
         </seealso>
       </element>
       <element name="TDBEdit.DataField">
-        <short>Contains the name of the field with the value for the control</short>
+        <short>Contains the name of the field with the value for the control.</short>
         <descr>
           <p>
             <var>DataField</var> is a
@@ -1412,7 +1411,7 @@
       </element>
 
       <element name="TDBEdit.DataSource">
-        <short>Provides access to the dataset with content for the control
+        <short>Provides access to the dataset with content for the control.
         </short>
         <descr>
           <p>
@@ -1435,7 +1434,7 @@
       </element>
 
       <element link="#LCL.StdCtrls.TCustomEdit.ReadOnly" name="TDBEdit.ReadOnly">
-        <short>Indicates if the control cannot modify the field in the linked dataset</short>
+        <short>Indicates if the control cannot modify the field in the linked dataset.</short>
         <descr>
           <p>
             <var>ReadOnly</var> is a
@@ -1595,7 +1594,7 @@
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBEdit.OnStartDrag"/>
       <element link="#lcl.controls.TWinControl.OnUTF8KeyPress" name="TDBEdit.OnUTF8KeyPress"/>
       <element name="TDBText">
-        <short>Displays a string value stored in  a dataset field
+        <short>Displays a string value stored in  a dataset field.
         </short>
         <descr>
           <p>
@@ -1613,7 +1612,7 @@
       </element>
       <element name="TDBText.FDataLink"/>
       <element name="TDBText.DataChange">
-        <short>Updates the control display value when the linked dataset is changed
+        <short>Updates the control display value when the linked dataset is changed.
         </short>
         <descr>
           <p>
@@ -1634,10 +1633,10 @@
         </seealso>
       </element>
       <element name="TDBText.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBText.GetDataField">
-        <short>Gets the name of the field in the linked dataset with the value for the control
+        <short>Gets the name of the field in the linked dataset with the value for the control.
         </short>
         <descr/>
         <seealso>
@@ -1645,53 +1644,53 @@
         </seealso>
       </element>
       <element name="TDBText.GetDataField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBText.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
         <descr/>
         <seealso>
           <link id="TDBText.DataSource"/>
         </seealso>
       </element>
       <element name="TDBText.GetDataSource.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBText.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
         <descr/>
         <seealso>
           <link id="TDBText.Field"/>
         </seealso>
       </element>
       <element name="TDBText.GetField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBText.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBText.SetDataField.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBText.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr/>
         <seealso>
           <link id="TDBText.DataSource"/>
         </seealso>
       </element>
       <element name="TDBText.SetDataSource.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBText.CMGetDataLink">
-        <short>Handles the CM_GETDATALINK message for the control</short>
+        <short>Handles the CM_GETDATALINK message for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBText.CMGetDataLink.Message">
-        <short>Message handled and updated in the method</short>
+        <short>Message handled and updated in the method.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBText.Notification">
         <descr>
@@ -1708,7 +1707,7 @@
         <seealso/>
       </element>
       <element link="#LCL.StdCtrls.TCustomLabel.WSRegisterClass" name="TDBText.WSRegisterClass">
-        <short>Registers the class type used to create new instance of the control for the Widgetset
+        <short>Registers the class type used to create new instance of the control for the Widgetset.
         </short>
         <descr>
           <p>
@@ -1735,13 +1734,13 @@
         <seealso/>
       </element>
       <element name="TDBText.Notification.AComponent">
-        <short>Component affected by the notification</short>
+        <short>Component affected by the notification.</short>
       </element>
       <element name="TDBText.Notification.Operation">
-        <short>Operation for the component</short>
+        <short>Operation for the component.</short>
       </element>
       <element name="TDBText.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for
@@ -1757,10 +1756,10 @@
         </seealso>
       </element>
       <element name="TDBText.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBText.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for
@@ -1773,7 +1772,7 @@
         </seealso>
       </element>
       <element link="#lcl.controls.TControl.ExecuteAction" name="TDBText.ExecuteAction">
-        <short>Implements support for standard actions in the control</short>
+        <short>Implements support for standard actions in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden
@@ -1795,13 +1794,13 @@
         </seealso>
       </element>
       <element name="TDBText.ExecuteAction.Result">
-        <short>Returns True when the standard action was executed for the control</short>
+        <short>Returns True when the standard action was executed for the control.</short>
       </element>
       <element name="TDBText.ExecuteAction.AAction">
-        <short>Standard action examined in the method</short>
+        <short>Standard action examined in the method.</short>
       </element>
       <element link="#RTL.Classes.TComponent.UpdateAction" name="TDBText.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
+        <short>Updates the specified action to reflect the current state in the linked dataset.
         </short>
         <descr>
           <p>
@@ -1824,7 +1823,7 @@
         </seealso>
       </element>
       <element name="TDBText.Field">
-        <short>Provides access to the field definition for the data-aware control</short>
+        <short>Provides access to the field definition for the data-aware control.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -1880,7 +1879,7 @@
       <element link="#lcl.controls.TControl.Color" name="TDBText.Color"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBText.Constraints"/>
       <element name="TDBText.DataField">
-        <short>The name of the field, as a string (i.e. cannot be referred to as an Index)
+        <short>The name of the field, as a string (i.e. cannot be referred to as an Index).
         </short>
         <descr>
           <p>
@@ -1899,7 +1898,7 @@
         </seealso>
       </element>
       <element name="TDBText.DataSource">
-        <short>Provides access to the content displayed in the control
+        <short>Provides access to the content displayed in the control.
         </short>
         <descr>
           <p>
@@ -1944,7 +1943,7 @@
       <element link="#lcl.controls.TControl.ShowHint" name="TDBText.ShowHint"/>
       <element link="#LCL.StdCtrls.TCustomLabel.Transparent" name="TDBText.Transparent"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBText.Visible">
-        <short>Indicates if the control is displayed</short>
+        <short>Indicates if the control is displayed.</short>
         <descr>
           <p>The <var>Visible</var> property represents the ability to see a visual control. If Visible is set to  <b>True</b> the control is shown, otherwise it is hidden. Calling Show sets Visible to  <b>True</b>. Setting Visible to <b>False</b> is equivalent to calling the <var>Hide</var> method.
           </p>
@@ -1954,7 +1953,7 @@
         <seealso/>
       </element>
       <element link="#LCL.StdCtrls.TCustomLabel.WordWrap" name="TDBText.WordWrap">
-        <short>Indicates if text is wrapped at the right edge of the control</short>
+        <short>Indicates if text is wrapped at the right edge of the control.</short>
         <descr>
           <p>
             <var>WordWrap</var>indicates whether a word is to be wrapped to the next line if the text is about to become too long for the width available in the control.
@@ -1983,7 +1982,7 @@
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBText.OnStartDrag"/>
       <element link="#LCL.StdCtrls.TCustomLabel.OptimalFill" name="TDBText.OptimalFill"/>
       <element name="TCustomDBListBox">
-        <short>Specifies a data-aware listbox control</short>
+        <short>Specifies a data-aware listbox control.</short>
         <descr>
           <p>
             <var>TCustomDBListBox</var> is a
@@ -2006,99 +2005,99 @@
       </element>
       <element name="TCustomDBListBox.GetDataField">
         <short>
-          <var>GetDataField</var> - returns the name of the data field as a string
+          <var>GetDataField</var> - returns the name of the data field as a string.
         </short>
         <seealso>
           <link id="TCustomDBListBox.DataField"/>
         </seealso>
       </element>
       <element name="TCustomDBListBox.GetDataField.Result">
-        <short>Value for the DataField property</short>
+        <short>Value for the DataField property.</short>
       </element>
       <element name="TCustomDBListBox.GetDataSource">
         <short>
-          <var>GetDataSource</var> - returns the identity of the data source
+          <var>GetDataSource</var> - returns the identity of the data source.
         </short>
         <seealso>
           <link id="TCustomDBListBox.DataSource"/>
         </seealso>
       </element>
       <element name="TCustomDBListBox.GetDataSource.Result">
-        <short>Value for the DataSource property</short>
+        <short>Value for the DataSource property.</short>
       </element>
       <element name="TCustomDBListBox.GetField">
         <short>
-          <var>GetField</var> - returns the identity of the field
+          <var>GetField</var> - returns the identity of the field.
         </short>
         <seealso>
           <link id="TCustomDBListBox.Field"/>
         </seealso>
       </element>
       <element name="TCustomDBListBox.GetField.Result">
-        <short>Value for the Field property</short>
+        <short>Value for the Field property.</short>
       </element>
       <element name="TCustomDBListBox.GetReadOnly">
         <short>
           <var>GetReadOnly</var> - fetches the
-          <var>ReadOnly</var> status from the field datalink rather than using the inherited ReadOnly status
+          <var>ReadOnly</var> status from the field datalink rather than using the inherited ReadOnly status.
         </short>
         <seealso>
           <link id="TCustomDBListBox.ReadOnly"/>
         </seealso>
       </element>
       <element name="TCustomDBListBox.GetReadOnly.Result">
-        <short>Value for the ReadOnly property</short>
+        <short>Value for the ReadOnly property.</short>
       </element>
       <element name="TCustomDBListBox.SetReadOnly">
         <short>
           <var>SetReadOnly</var> - changes the datalink
           <var>ReadOnly</var> property as well as the local property, to that specified by
-          <var>Value</var>
+          <var>Value</var>.
         </short>
         <seealso>
           <link id="TCustomDBListBox.ReadOnly"/>
         </seealso>
       </element>
       <element name="TCustomDBListBox.SetReadOnly.Value">
-        <short>New value for the ReadOnly property</short>
+        <short>New value for the ReadOnly property.</short>
       </element>
       <element name="TCustomDBListBox.SetDataField">
         <short>
-          <var>SetDataField</var> - links to the field in the datalink with the given name
+          <var>SetDataField</var> - links to the field in the datalink with the given name.
         </short>
         <seealso>
           <link id="TCustomDBListBox.DataField"/>
         </seealso>
       </element>
       <element name="TCustomDBListBox.SetDataField.Value">
-        <short>New value for the DataField property</short>
+        <short>New value for the DataField property.</short>
       </element>
       <element name="TCustomDBListBox.SetDataSource">
         <short>
-          <var>SetDataSource</var> - changes the attached data source to the one specified by AValue
-          </short>
+          <var>SetDataSource</var> - changes the attached data source to the one specified by AValue.
+        </short>
         <seealso>
           <link id="TCustomDBListBox.DataSource"/>
         </seealso>
       </element>
       <element name="TCustomDBListBox.SetDataSource.Value">
-        <short>New value for the DataSource property</short>
+        <short>New value for the DataSource property.</short>
       </element>
       <element name="TCustomDBListBox.CMGetDataLink">
         <short>
-          <var>CMGetDataLink</var> - control message method for obtaining the data link
+          <var>CMGetDataLink</var> - control message method for obtaining the data link.
         </short>
       </element>
       <element name="TCustomDBListBox.CMGetDataLink.Message">
-        <short>Message examined and updated in the method</short>
+        <short>Message examined and updated in the method.</short>
       </element>
       <element name="TCustomDBListBox.FDataLink">
         <short>
-          <var>FDataLink</var> - local variable holding the identity of the field data link
+          <var>FDataLink</var> - local variable holding the identity of the field data link.
         </short>
       </element>
       <element name="TCustomDBListBox.DataChange">
-        <short>Performs actions needed when the linked dataset is repositioned
+        <short>Performs actions needed when the linked dataset is repositioned.
         </short>
         <descr>
           <p>
@@ -2115,7 +2114,7 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#lcl.controls.TWinControl.KeyDown" name="TCustomDBListBox.KeyDown">
         <descr>
@@ -2139,10 +2138,10 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.KeyDown.Key">
-        <short>Virtual key code applied in the method</short>
+        <short>Virtual key code applied in the method.</short>
       </element>
       <element name="TCustomDBListBox.KeyDown.Shift">
-        <short>Modifier for the key code applied in the method</short>
+        <short>Modifier for the key code applied in the method.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TCustomDBListBox.Notification">
         <descr>
@@ -2160,7 +2159,7 @@
 
       <element name="TCustomDBListBox.UpdateData">
         <short>
-          <var>UpdateData</var> - method for applying any pending changes to the data
+          <var>UpdateData</var> - method for applying any pending changes to the data.
         </short>
         <descr>
           <p>
@@ -2179,12 +2178,12 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCustomDBListBox.SetItems">
         <short>
           <var>SetItems</var> - copies the specified Values into the
-          <var>Items</var> property
+          <var>Items</var> property.
         </short>
         <descr>
           <p>
@@ -2198,10 +2197,10 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.SetItems.Values">
-        <short>New values for the property</short>
+        <short>New values for the property.</short>
       </element>
       <element name="TCustomDBListBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor, and allocates and configures the internal <var>TFieldDataLink</var> used in the class instance. The <var>DataChange</var> and <var>UpdateData</var> methods are assigned as the <var>OnDataChange</var> and <var>OnUpdateData</var> event handlers in the TFieldDataLink instance.
@@ -2216,7 +2215,7 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <var>Destroy</var>is the overridden destructor for the class instance. Destroy frees resources allocated to internal members in the class instance, and calls the inherited destructor prior to exiting from the method.
         </descr>
@@ -2226,7 +2225,7 @@
       </element>
 
       <element link="#RTL.Classes.TComponent.ExecuteAction" name="TCustomDBListBox.ExecuteAction">
-        <short>Implements support for standard actions in the control</short>
+        <short>Implements support for standard actions in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden <var>Boolean</var> function used to implement support for <var>TBasicAction</var> in the control. ExecuteAction extends the inherited method by using the internal field data link (when assigned) to perform the requested action.
@@ -2248,13 +2247,13 @@
       </element>
 
       <element name="TCustomDBListBox.ExecuteAction.Result">
-        <short>True when the action is performed in the method</short>
+        <short>True when the action is performed in the method.</short>
       </element>
       <element name="TCustomDBListBox.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element link="#RTL.Classes.TComponent.UpdateAction" name="TCustomDBListBox.UpdateAction">
-        <short>Updates the state for the specified action</short>
+        <short>Updates the state for the specified action.</short>
         <descr>
           <p>
             <var>UpdateAction</var> is an overridden
@@ -2273,13 +2272,13 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.UpdateAction.Result">
-        <short>True if the action was updated in the method</short>
+        <short>True if the action was updated in the method.</short>
       </element>
       <element name="TCustomDBListBox.UpdateAction.AAction">
-        <short>Action updated in the method</short>
+        <short>Action updated in the method.</short>
       </element>
       <element name="TCustomDBListBox.Field">
-        <short>Field definition in the linked dataset for the control</short>
+        <short>Field definition in the linked dataset for the control.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -2298,7 +2297,7 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.DataField">
-        <short>Name for the field in the linked dataset used in the control</short>
+        <short>Name for the field in the linked dataset used in the control.</short>
         <descr>
           <p>
             <var>DataField</var> is a
@@ -2316,7 +2315,7 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.DataSource">
-        <short>Provides access to the linked dataset for the control</short>
+        <short>Provides access to the linked dataset for the control.</short>
         <descr>
           <p>
             <var>DataSource</var> is a
@@ -2337,7 +2336,7 @@
         </seealso>
       </element>
       <element name="TCustomDBListBox.ReadOnly">
-        <short>Indicates if the linked dataset for the control cannot be modified</short>
+        <short>Indicates if the linked dataset for the control cannot be modified.</short>
         <descr>
           <p>
             <var>ReadOnly</var> is a
@@ -2356,7 +2355,7 @@
         </seealso>
       </element>
       <element link="#lcl.dbctrls.TCustomDBListBox" name="TDBListBox">
-        <short>Implements a data-aware version of <var>TListBox</var>
+        <short>Implements a data-aware version of <var>TListBox</var>.
         </short>
         <descr>
           <p>
@@ -2377,7 +2376,7 @@
         </seealso>
       </element>
       <element link="#lcl.dbctrls.TCustomDBListBox.DataChange" name="TDBListBox.DataChange">
-        <short>Implements the event handler signalled when data in the linked dataset has been changed
+        <short>Implements the event handler signalled when data in the linked dataset has been changed.
         </short>
         <descr>
           <p>
@@ -2401,10 +2400,10 @@
         </seealso>
       </element>
       <element name="TDBListBox.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#LCL.StdCtrls.TCustomListBox.DoSelectionChange" name="TDBListBox.DoSelectionChange">
-        <short>Performs actions needed when the current selection in the listbox control is changed
+        <short>Performs actions needed when the current selection in the listbox control is changed.
         </short>
         <descr>
           <p>
@@ -2432,10 +2431,10 @@
         </seealso>
       </element>
       <element name="TDBListBox.DoSelectionChange.User">
-        <short>Indicates if the change results from user interaction with the control</short>
+        <short>Indicates if the change results from user interaction with the control.</short>
       </element>
       <element link="#lcl.dbctrls.TCustomDBListBox.UpdateData" name="TDBListBox.UpdateData">
-        <short>Performs actions needed to update the linked dataset when the value for the control has changed
+        <short>Performs actions needed to update the linked dataset when the value for the control has changed.
         </short>
         <descr>
           <p>
@@ -2456,11 +2455,11 @@
         </seealso>
       </element>
       <element name="TDBListBox.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBListBox.EditingDone">
         <short>
-          <var>EditingDone</var> - what to do when you have finished editing
+          <var>EditingDone</var> - what to do when you have finished editing.
         </short>
         <descr>
           <p>Called when user has finished editing. This procedure can be used by data links to commit the changes.
@@ -2638,7 +2637,7 @@
         <seealso/>
       </element>
       <element name="TDBLookupListBox">
-        <short>Implements a data-aware listbox control with database lookup capabilities
+        <short>Implements a data-aware listbox control with database lookup capabilities.
         </short>
         <descr>
           <p>
@@ -2710,7 +2709,7 @@
       <element name="TDBLookupListBox.SetScrollListDataset.AValue"/>
       <element name="TDBLookupListBox.UpdateLookup"/>
       <element name="TDBLookupListBox.DataChange">
-        <short>Performs actions needed when a new DataField value is selected using the lookup dataset
+        <short>Performs actions needed when a new DataField value is selected using the lookup dataset.
         </short>
         <descr>
           <p>
@@ -2735,7 +2734,7 @@
       </element>
 
       <element name="TDBLookupListBox.DoSelectionChange">
-        <short>Performs actions needed when the selected item in the listbox is changed
+        <short>Performs actions needed when the selected item in the listbox is changed.
         </short>
         <descr>
           <p>
@@ -2764,11 +2763,11 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.DoSelectionChange.User">
-        <short>Indicates if the selection change is due to user interaction with the control
+        <short>Indicates if the selection change is due to user interaction with the control.
         </short>
       </element>
       <element link="#LCL.StdCtrls.TCustomListBox.InitializeWnd" name="TDBLookupListBox.InitializeWnd">
-        <short>Initializes the window handle for the control</short>
+        <short>Initializes the window handle for the control.</short>
         <descr>
           <p>
             <var>InitializeWnd</var> is an overridden procedure in
@@ -2783,7 +2782,7 @@
         </seealso>
       </element>
       <element link="#LCL.StdCtrls.TCustomListBox.DestroyWnd" name="TDBLookupListBox.DestroyWnd">
-        <short>Frees the window handle and updates the address used for the Items in the controls
+        <short>Frees the window handle and updates the address used for the Items in the controls.
         </short>
         <descr/>
         <seealso>
@@ -2791,7 +2790,7 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.KeyDown">
-        <short>Applies the specified virtual key code to the control</short>
+        <short>Applies the specified virtual key code to the control.</short>
         <descr>
           <p>
             <var>KeyDown</var> is an overridden procedure used to apply the specified virtual key code and modifier to the control.
@@ -2812,13 +2811,13 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.KeyDown.Key">
-        <short>Virtual key code examined in the method</short>
+        <short>Virtual key code examined in the method.</short>
       </element>
       <element name="TDBLookupListBox.KeyDown.Shift">
-        <short>Modifier for the virtual key code</short>
+        <short>Modifier for the virtual key code.</short>
       </element>
       <element link="#RTL.Classes.TComponent.Loaded" name="TDBLookupListBox.Loaded">
-        <short>Performs actions needed when the control has loaded using the LCL streaming mechanism
+        <short>Performs actions needed when the control has loaded using the LCL streaming mechanism.
         </short>
         <descr>
           <p>
@@ -2833,7 +2832,7 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.UpdateData">
-        <short>Updates the data in the lookup dataset for the control</short>
+        <short>Updates the data in the lookup dataset for the control.</short>
         <descr>
           <p>
             <var>UpdateData</var> is an overridden procedure in
@@ -2853,10 +2852,10 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBLookupListBox.IsUnbound">
-        <short>Indicates if the control is being used in the "unbound" mode</short>
+        <short>Indicates if the control is being used in the "unbound" mode.</short>
         <descr>
           <p>
             <var>IsUnbound</var> is a
@@ -2874,11 +2873,11 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.IsUnbound.Result">
-        <short>True when the control does not store the current selection in the linked dataset
+        <short>True when the control does not store the current selection in the linked dataset.
         </short>
       </element>
       <element name="TDBLookupListBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor, and allocates resources needed for the lookup dataset used in the control. Create sets the default values for properties, and assigns the
@@ -2892,11 +2891,11 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TDBLookupListBox.KeyValue">
-        <short>Accesses the value for the KeyField in the lookup dataset</short>
+        <short>Accesses the value for the KeyField in the lookup dataset.</short>
         <descr>
           <p>
             <var>KeyValue</var> is a <var>Variant</var> property used to access the value for the
@@ -2928,7 +2927,7 @@
       <element link="#lcl.controls.TControl.Enabled" name="TDBLookupListBox.Enabled"/>
       <element link="#LCL.StdCtrls.TCustomListBox.Font" name="TDBLookupListBox.Font"/>
       <element name="TDBLookupListBox.KeyField">
-        <short>Field name in the lookup dataset with the value for the control
+        <short>Field name in the lookup dataset with the value for the control.
         </short>
         <descr>
           <p>
@@ -2948,7 +2947,7 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.ListField">
-        <short>Field name with the descriptive value displayed in the listbox</short>
+        <short>Field name with the descriptive value displayed in the listbox.</short>
         <descr>
           <p>
             <var>ListField</var> is a
@@ -2966,7 +2965,7 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.ListFieldIndex">
-        <short>Ordinal position of the field in the lookup dataset with the descriptive value displayed in the control
+        <short>Ordinal position of the field in the lookup dataset with the descriptive value displayed in the control.
         </short>
         <descr>
           <p>
@@ -2988,7 +2987,7 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.ListSource">
-        <short>Datasource with the lookup dataset for the control</short>
+        <short>Datasource with the lookup dataset for the control.</short>
         <descr>
           <p>
             <var>ListSource</var> is a
@@ -3009,22 +3008,22 @@
         </seealso>
       </element>
       <element name="TDBLookupListBox.LookupCache">
-        <short>Indicates if caching is enabled for fields in the lookup dataset</short>
+        <short>Indicates if caching is enabled for fields in the lookup dataset.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupListBox.NullValueKey">
-        <short>Keyboard shortcut used to assign the empty key value to the control</short>
+        <short>Keyboard shortcut used to assign the empty key value to the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupListBox.EmptyValue">
-        <short>Value used as the empty field value in the DataField for the control</short>
+        <short>Value used as the empty field value in the DataField for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupListBox.DisplayEmpty">
-        <short>Descriptive text displayed for the EmptyValue in the control</short>
+        <short>Descriptive text displayed for the EmptyValue in the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3074,7 +3073,7 @@
       <element name="TDBRadioGroup">
         <short>
           <var>TDBRadioGroup</var> - a data-aware version of
-          <var>TRadioGroup,</var> providing a series of mutually exclusive buttons to select an entry to insert into a database field
+          <var>TRadioGroup,</var> providing a series of mutually exclusive buttons to select an entry to insert into a database field.
         </short>
         <descr>
           <p>The properties of <var>TDBRadioGroup</var> are similar to those of <var>TRadioGroup</var> (and <var>TCustomRadioGroup</var>). Access is obtained to members of the group by selecting (in the Object Inspector) the ellipsis (...) next to the entry <b>Items</b>, and then editing the stringlist.
@@ -3114,7 +3113,7 @@
       <element name="TDBRadioGroup.CMGetDataLink"/>
       <element name="TDBRadioGroup.CMGetDataLink.Message"/>
       <element name="TDBRadioGroup.Change">
-        <short>Signals the OnChange event handler when assigned
+        <short>Signals the OnChange event handler when assigned.
         </short>
         <descr>
           <var>Change</var> is used to signal the
@@ -3123,7 +3122,7 @@
         <seealso/>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBRadioGroup.Notification">
-        <short>Sets the DataSource to Nil when the control is destroyed
+        <short>Sets the DataSource to Nil when the control is destroyed.
         </short>
         <descr>
           <p>
@@ -3141,13 +3140,13 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDBRadioGroup.Notification.Operation">
-        <short>Operation generating the notification</short>
+        <short>Operation generating the notification.</short>
       </element>
       <element name="TDBRadioGroup.DataChange">
-        <short>Updates the control display value when the linked dataset is repositioned
+        <short>Updates the control display value when the linked dataset is repositioned.
         </short>
         <descr>
           <p>
@@ -3162,10 +3161,10 @@
         <seealso/>
       </element>
       <element name="TDBRadioGroup.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBRadioGroup.UpdateData">
-        <short>Updates the linked dataset using the current selection in the control
+        <short>Updates the linked dataset using the current selection in the control.
         </short>
         <descr>
           <p>
@@ -3185,10 +3184,10 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBRadioGroup.DataLink">
-        <short>Provides access to properties, methods, and events for the data-aware control
+        <short>Provides access to properties, methods, and events for the data-aware control.
         </short>
         <descr>
           <p>
@@ -3215,7 +3214,7 @@
       </element>
 
       <element name="TDBRadioGroup.GetButtonValue">
-        <short>Gets the value for the radio button at the specified position in the control
+        <short>Gets the value for the radio button at the specified position in the control.
         </short>
         <descr>
           <p>
@@ -3240,14 +3239,14 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.GetButtonValue.Result">
-        <short>The value stored for the specified radio button</short>
+        <short>The value stored for the specified radio button.</short>
       </element>
       <element name="TDBRadioGroup.GetButtonValue.Index">
-        <short>Ordinal position in Items for the requested radio button</short>
+        <short>Ordinal position in Items for the requested radio button.</short>
       </element>
 
       <element name="TDBRadioGroup.UpdateRadioButtonStates">
-        <short>Updates the linked dataset to reflect the current radio button selected in the control
+        <short>Updates the linked dataset to reflect the current radio button selected in the control.
         </short>
         <descr>
           <p>
@@ -3269,7 +3268,7 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.Create">
-        <short>Constructor for the class instance
+        <short>Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -3287,10 +3286,10 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBRadioGroup.Destroy">
-        <short>Destroy is the destructor for the class instance</short>
+        <short>Destroy is the destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for <var>TDBRadioGroup</var>. It frees resources allocated to the <var>DataLink</var> and <var>Values</var> properties, and calls the inherited destructor prior to exiting from the method.
@@ -3301,7 +3300,7 @@
         </seealso>
       </element>
       <element link="#lcl.controls.TControl.EditingDone" name="TDBRadioGroup.EditingDone">
-        <short>Performs actions needed when the user has finished editing
+        <short>Performs actions needed when the user has finished editing.
         </short>
         <descr>
           <p>
@@ -3322,7 +3321,7 @@
         </seealso>
       </element>
       <element link="#RTL.Classes.TComponent.ExecuteAction" name="TDBRadioGroup.ExecuteAction">
-        <short>Implements support for standard actions in the control</short>
+        <short>Implements support for standard actions in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden <var>Boolean</var> function used to implement support for
@@ -3343,13 +3342,13 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.ExecuteAction.Result">
-        <short>True when the action was executed in the method</short>
+        <short>True when the action was executed in the method.</short>
       </element>
       <element name="TDBRadioGroup.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element name="TDBRadioGroup.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
+        <short>Updates the specified action to reflect the current state in the linked dataset.
         </short>
         <descr>
           <p>
@@ -3369,13 +3368,13 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.UpdateAction.Result">
-        <short>True when the action was updated in the method</short>
+        <short>True when the action was updated in the method.</short>
       </element>
       <element name="TDBRadioGroup.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
       <element name="TDBRadioGroup.Field">
-        <short>The DataSet Field relevant to the data being selected</short>
+        <short>The DataSet Field relevant to the data being selected.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -3410,7 +3409,7 @@
       </element>
 
       <element name="TDBRadioGroup.Value">
-        <short>The value for the selected radio button in the control</short>
+        <short>The value for the selected radio button in the control.</short>
         <descr>
           <p>
             <var>Value</var> is a
@@ -3484,7 +3483,7 @@
       </element>
       <element link="#lcl.controls.TControl.Constraints" name="TDBRadioGroup.Constraints"/>
       <element name="TDBRadioGroup.DataField">
-        <short>Name of the Field in the linked dataset where the control Value is stored</short>
+        <short>Name of the Field in the linked dataset where the control Value is stored.</short>
         <descr>
           <p>
             <var>DataField</var> is a
@@ -3502,7 +3501,7 @@
         </seealso>
       </element>
       <element name="TDBRadioGroup.DataSource">
-        <short>Provides access to the linked dataset and the field definition used in the control
+        <short>Provides access to the linked dataset and the field definition used in the control.
         </short>
         <descr>
           <p>
@@ -3541,7 +3540,7 @@
       <element link="#lcl.controls.TControl.Font" name="TDBRadioGroup.Font"/>
 
       <element link="#lcl.extctrls.TCustomRadioGroup.Items" name="TDBRadioGroup.Items">
-        <short>Contains the string values used as captions for radio buttons in the grouped data-aware control
+        <short>Contains the string values used as captions for radio buttons in the grouped data-aware control.
         </short>
         <descr>
           <p>
@@ -3565,7 +3564,7 @@
       </element>
 
       <element name="TDBRadioGroup.OnChange">
-        <short>Event Handler signalled when the Value for the control is changed
+        <short>Event Handler signalled when the Value for the control is changed.
         </short>
         <descr>
           <p>
@@ -3642,7 +3641,7 @@
 
       <element name="TDBRadioGroup.ReadOnly">
         <short>
-          <var>ReadOnly</var> - if <b>True</b>, data can only be read, not written or modified. (Doesn't really make sense for a RadioGroup!)
+          <var>ReadOnly</var> - if <b>True</b>, data can only be read, not written or modified. (Doesn't really make sense for a RadioGroup!).
         </short>
         <descr>
           <p>
@@ -3663,7 +3662,7 @@
       <element link="#lcl.controls.TWinControl.TabStop" name="TDBRadioGroup.TabStop"/>
 
       <element name="TDBRadioGroup.Values">
-        <short>The <var>values</var> of the strings in <var>Items</var>
+        <short>The <var>values</var> of the strings in <var>Items</var>.
         </short>
         <descr>
           <p>
@@ -3692,7 +3691,7 @@
         <seealso/>
       </element>
       <element name="TDBCheckBox">
-        <short>Implements a data-aware checkbox control</short>
+        <short>Implements a data-aware checkbox control.</short>
         <descr>
           <p>
             <var>TDBCheckBox</var> implements a data-aware checkbox control for use with a logical field in a database. The dataset field can be represented using either a
@@ -3725,91 +3724,91 @@
       <element name="TDBCheckBox.FValueCheck"/>
       <element name="TDBCheckBox.FValueUncheck"/>
       <element name="TDBCheckBox.GetDataField">
-        <short>Gets the value for the DataField property</short>
+        <short>Gets the value for the DataField property.</short>
       </element>
       <element name="TDBCheckBox.GetDataField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCheckBox.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
       </element>
       <element name="TDBCheckBox.GetDataSource.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCheckBox.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
       </element>
       <element name="TDBCheckBox.GetField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCheckBox.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
       </element>
       <element name="TDBCheckBox.GetReadOnly.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCheckBox.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso>
           <link id="TDBCheckBox.DataField"/>
         </seealso>
       </element>
       <element name="TDBCheckBox.SetDataField.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCheckBox.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr/>
         <seealso>
           <link id="TDBCheckBox.DataSource"/>
         </seealso>
       </element>
       <element name="TDBCheckBox.SetDataSource.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCheckBox.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <descr/>
         <seealso>
           <link id="TDBCheckBox.ReadOnly"/>
         </seealso>
       </element>
       <element name="TDBCheckBox.SetReadOnly.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCheckBox.SetValueChecked">
-        <short>Sets the value for the ValueChecked property</short>
+        <short>Sets the value for the ValueChecked property.</short>
         <descr/>
         <seealso>
           <link id="TDBCheckBox.ValueChecked"/>
         </seealso>
       </element>
       <element name="TDBCheckBox.SetValueChecked.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCheckBox.SetValueUnchecked">
-        <short>Sets the value for the ValueUnchecked property</short>
+        <short>Sets the value for the ValueUnchecked property.</short>
         <descr/>
         <seealso>
           <link id="TDBCheckBox.ValueUnchecked"/>
         </seealso>
       </element>
       <element name="TDBCheckBox.SetValueUnchecked.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCheckBox.CMGetDataLink">
-        <short>Implements the CM_GETDATALINK control message for the data-aware control
+        <short>Implements the CM_GETDATALINK control message for the data-aware control.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCheckBox.CMGetDataLink.Message">
-        <short>Message examined and updated in the method</short>
+        <short>Message examined and updated in the method.</short>
       </element>
       <element name="TDBCheckBox.GetFieldCheckState">
         <short>
-          <var>GetFieldCheckState</var> - returns the checkbox state for the current field
+          <var>GetFieldCheckState</var> - returns the checkbox state for the current field.
         </short>
         <descr>
           <p>
@@ -3838,10 +3837,10 @@
         <seealso/>
       </element>
       <element name="TDBCheckBox.GetFieldCheckState.Result">
-        <short>Current TCheckBoxState for the control</short>
+        <short>Current TCheckBoxState for the control.</short>
       </element>
       <element name="TDBCheckBox.DataChange">
-        <short>Updates the control display value when the linked dataset is changed
+        <short>Updates the control display value when the linked dataset is changed.
         </short>
         <descr>
           <p>
@@ -3853,10 +3852,10 @@
         </descr>
       </element>
       <element name="TDBCheckBox.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#LCL.StdCtrls.TButtonControl.DoOnChange" name="TDBCheckBox.DoOnChange">
-        <short>Performs actions needed when the control is clicked</short>
+        <short>Performs actions needed when the control is clicked.</short>
         <descr>
           <p>
             <var>DoOnChange</var> is an overridden method in <var>TDBCheckBox</var>. It ensures that the internal <var>TFieldDataLink</var> is notified of a change to the control value. The <var>Edit</var>, <var>Modified</var>, and <var>UpdateRecord</var> methods in the field data link are called to store the new value for the control. If the linked dataset cannot be edited, the <var>GetFieldCheckState</var> is called to get the value stored in the <var>State</var> property.
@@ -3879,7 +3878,7 @@
 
       <element name="TDBCheckBox.UpdateData">
         <short>
-          <var>UpdateData</var> - examines the <var>State</var> to see whether it has changed
+          <var>UpdateData</var> - examines the <var>State</var> to see whether it has changed.
         </short>
         <descr>
           <p>
@@ -3904,10 +3903,10 @@
         </seealso>
       </element>
       <element name="TDBCheckBox.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBCheckBox.Notification">
-        <short>Handles notification events for components used in the class instance</short>
+        <short>Handles notification events for components used in the class instance.</short>
         <descr>
           <p>
             <var>Notification</var> is an overridden procedure in <var>TDBCheckBox</var>, and calls the inherited method. Notification ensures that an assigned value in <var>DataSource</var> is cleared (set to <b>Nil</b>) when the DataSource component is destroyed.
@@ -3919,14 +3918,14 @@
         </seealso>
       </element>
       <element name="TDBCheckBox.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDBCheckBox.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
 
       <element name="TDBCheckBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <var>Create</var> is the constructor for
           <var>TDBCheckBox</var>. It calls the inherited
@@ -3937,10 +3936,10 @@
         </seealso>
       </element>
       <element name="TDBCheckBox.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBCheckBox.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <var>Destroy</var> is the destructor for
           <var>TDBCheckBox</var>. It frees links and calls inherited
@@ -3951,7 +3950,7 @@
         </seealso>
       </element>
       <element name="TDBCheckBox.ExecuteAction">
-        <short>Implements support for TBasicAction in the data-aware control
+        <short>Implements support for TBasicAction in the data-aware control.
         </short>
         <descr>
           <p>
@@ -3981,13 +3980,13 @@
         </seealso>
       </element>
       <element name="TDBCheckBox.ExecuteAction.Result">
-        <short>True if the action was executed in the method</short>
+        <short>True if the action was executed in the method.</short>
       </element>
       <element name="TDBCheckBox.ExecuteAction.AAction">
-        <short>Action examined an executed in the method</short>
+        <short>Action examined an executed in the method.</short>
       </element>
       <element name="TDBCheckBox.UpdateAction">
-        <short>Updates the state for the specified action</short>
+        <short>Updates the state for the specified action.</short>
         <descr>
           <p>
             <var>UpdateAction</var> is overridden in <var>TDBCheckBox</var>, and checks the action specified in
@@ -4009,16 +4008,16 @@
         </seealso>
       </element>
       <element name="TDBCheckBox.UpdateAction.Result">
-        <short>True when the action is supported and updated in the method</short>
+        <short>True when the action is supported and updated in the method.</short>
       </element>
       <element name="TDBCheckBox.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
 
       <element link="#LCL.StdCtrls.TButtonControl.Checked" name="TDBCheckBox.Checked"/>
 
       <element name="TDBCheckBox.Field">
-        <short>Provides access to the field definition for the data-aware control</short>
+        <short>Provides access to the field definition for the data-aware control.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only <var>TField</var> property which provides access to the field definition to which the data-aware control is linked. Read access for the property is redirected to the <var>Field</var> property in the internal <var>TFieldDataLink</var> class instance.
@@ -4124,7 +4123,7 @@
       </element>
       <element link="#lcl.controls.TControl.Constraints" name="TDBCheckBox.Constraints"/>
       <element name="TDBCheckBox.DataField">
-        <short>The name (as a string) of the field with which the checkbox is to be associated
+        <short>The name (as a string) of the field with which the checkbox is to be associated.
         </short>
         <descr>
           <p>
@@ -4151,7 +4150,7 @@
         </seealso>
       </element>
       <element name="TDBCheckBox.DataSource">
-        <short>Provides access to the dataset with content for the control
+        <short>Provides access to the dataset with content for the control.
         </short>
         <descr>
           <p>
@@ -4240,7 +4239,7 @@
       <element name="TDBCheckBox.ReadOnly">
         <short>
           <var>ReadOnly </var>- if
-          <b>True</b>, data may be read but not written or modified (doesn't make much sense for a check-box unless the box is NOT Enabled!)
+          <b>True</b>, data may be read but not written or modified (doesn't make much sense for a check-box unless the box is NOT Enabled!).
         </short>
         <descr/>
         <seealso/>
@@ -4297,7 +4296,7 @@
       </element>
       <element name="TCustomDBComboBox">
         <short>
-          <var>TCustomDBComboBox</var> is a data-aware Combo Box for displaying information from a database
+          <var>TCustomDBComboBox</var> is a data-aware Combo Box for displaying information from a database.
         </short>
         <descr>
           <p>
@@ -4322,15 +4321,15 @@
       <element name="TCustomDBComboBox.FDataLink"/>
       <element name="TCustomDBComboBox.FDetectedEvents"/>
       <element name="TCustomDBComboBox.GetDataField">
-        <short>Gets the value for the DataField property</short>
+        <short>Gets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.GetDataField.Result">
-        <short>Value for the DataField property</short>
+        <short>Value for the DataField property.</short>
       </element>
       <element name="TCustomDBComboBox.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
         <descr>
           <p>
             <var>GetDataSource</var> is a
@@ -4344,10 +4343,10 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.GetDataSource.Result">
-        <short>Value for the DataSource property</short>
+        <short>Value for the DataSource property.</short>
       </element>
       <element name="TCustomDBComboBox.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
         <descr>
           <p>
             <var>GetField</var> is a
@@ -4361,59 +4360,59 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.GetField.Result">
-        <short>Value for the Field property</short>
+        <short>Value for the Field property.</short>
       </element>
       <element name="TCustomDBComboBox.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
         <descr/>
         <seealso>
           <link id="TCustomDBComboBox.ReadOnly"/>
         </seealso>
       </element>
       <element name="TCustomDBComboBox.GetReadOnly.Result">
-        <short>Value for the ReadOnly property</short>
+        <short>Value for the ReadOnly property.</short>
       </element>
       <element name="TCustomDBComboBox.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso>
           <link id="TCustomDBComboBox.DataField"/>
         </seealso>
       </element>
       <element name="TCustomDBComboBox.SetDataField.AValue">
-        <short>New value for the DataField property</short>
+        <short>New value for the DataField property.</short>
       </element>
       <element name="TCustomDBComboBox.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr/>
         <seealso>
           <link id="TCustomDBComboBox.DataSource"/>
         </seealso>
       </element>
       <element name="TCustomDBComboBox.SetDataSource.AValue">
-        <short>New value for the DataSource property</short>
+        <short>New value for the DataSource property.</short>
       </element>
       <element name="TCustomDBComboBox.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <descr/>
         <seealso>
           <link id="TCustomDBComboBox.ReadOnly"/>
         </seealso>
       </element>
       <element name="TCustomDBComboBox.SetReadOnly.AValue">
-        <short>New value for the ReadOnly property</short>
+        <short>New value for the ReadOnly property.</short>
       </element>
       <element name="TCustomDBComboBox.CMGetDataLink">
-        <short>Implements the message to get the data link for the control
-         </short>
+        <short>Implements the message to get the data link for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.CMGetDataLink.Message">
-        <short>Control message updated in the the method</short>
+        <short>Control message updated in the the method.</short>
       </element>
       <element name="TCustomDBComboBox.DoEdit">
-        <short>Performs LCL deferred edit messages for event s detected in the control</short>
+        <short>Performs LCL deferred edit messages for event s detected in the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4421,7 +4420,7 @@
         <short/>
       </element>
       <element name="TCustomDBComboBox.DoOnCloseUp">
-        <short>Performs actions to close the drop down for the combo box</short>
+        <short>Performs actions to close the drop down for the combo box.</short>
         <descr/>
         <seealso>
           <link id="TCustomDBComboBox.CloseUp"/>
@@ -4434,17 +4433,17 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.DoOnSelect">
-        <short>Calls Select to trigger the OnSelect event handler</short>
+        <short>Calls Select to trigger the OnSelect event handler.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.DoOnChange">
-        <short>Calls Change to trigger the OnChange event handler</short>
+        <short>Calls Change to trigger the OnChange event handler.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.LMDeferredEdit">
-        <short>Implements the LCL message for a deferred edit</short>
+        <short>Implements the LCL message for a deferred edit.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4452,23 +4451,23 @@
         <short/>
       </element>
       <element name="TCustomDBComboBox.DetectedEvents">
-        <short>Deferred messages pending for the control</short>
+        <short>Deferred messages pending for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.CloseUp">
-        <short>Sets deferred events when the drop down for the combo box is closed</short>
+        <short>Sets deferred events when the drop down for the combo box is closed.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.Select">
-        <short>Checks for the DBCBEVENT_SELECT message in the control</short>
+        <short>Checks for the DBCBEVENT_SELECT message in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.DataChange">
         <short>
-          <var>DataChange</var> - updates any changes in text
+          <var>DataChange</var> - updates any changes in text.
         </short>
         <descr>
           <p>
@@ -4478,23 +4477,23 @@
         </descr>
       </element>
       <element name="TCustomDBComboBox.DoMouseWheel">
-        <short>Checks for mouse wheel events in the control</short>
+        <short>Checks for mouse wheel events in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.DoMouseWheel.Shift">
-        <short>Shift state for the mouse wheel event</short>
+        <short>Shift state for the mouse wheel event.</short>
       </element>
       <element name="TCustomDBComboBox.DoMouseWheel.WheelDelta">
-        <short>Number of clicks that the mouse wheel was moved</short>
+        <short>Number of clicks that the mouse wheel was moved.</short>
       </element>
       <element name="TCustomDBComboBox.DoMouseWheel.MousePos">
-        <short>Mouse cursor position for the mouse wheel event</short>
+        <short>Mouse cursor position for the mouse wheel event.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TCustomDBComboBox.Notification"/>
       <element name="TCustomDBComboBox.Change">
         <short>
-          <var>Change</var> -if there has been a change to the data the link must be notified
+          <var>Change</var> -if there has been a change to the data the link must be notified.
         </short>
         <descr>
           <p>
@@ -4509,7 +4508,7 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.KeyDown">
-        <short>Performs actions needed to apply the key down event</short>
+        <short>Performs actions needed to apply the key down event.</short>
         <descr>
           <p>KeyDown is an overridden method in TCustomDBComboBox, and calls the inherited method on entry. It ensures that a virtual key which affects the datasource state is applied to the control. KeyDown handles the following virtual key codes:
           </p>
@@ -4529,14 +4528,14 @@
       </element>
 
       <element name="TCustomDBComboBox.KeyDown.Key">
-        <short>Virtual key code handled in the method</short>
+        <short>Virtual key code handled in the method.</short>
       </element>
       <element name="TCustomDBComboBox.KeyDown.Shift">
-        <short>Key modifier handled in the method</short>
+        <short>Key modifier handled in the method.</short>
       </element>
       <element name="TCustomDBComboBox.UpdateData">
         <short>
-          <var>UpdateData</var> - implements any pending changes in the data</short>
+          <var>UpdateData</var> - implements any pending changes in the data.</short>
         <descr>
           <p>
             <var>UpdateData</var> is an abstract virtual method in <var>TCustomDBComboBox</var>. It must be implemented in descendent classes, like TDBComboBox or TDBLookComboBox, to perform any actions needed to update the value stored in the Field for the control.
@@ -4548,7 +4547,7 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.UpdateRecord">
-        <short>Updates the record in the linked dataset with the value for the control
+        <short>Updates the record in the linked dataset with the value for the control.
         </short>
         <descr>
           <p>
@@ -4561,7 +4560,7 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.WndProc">
-        <short>Handles cut, copy and paste window messages for the control
+        <short>Handles cut, copy and paste window messages for the control.
         </short>
         <descr>
           <p>
@@ -4580,10 +4579,10 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.WndProc.Message">
-        <short>LCL window message examined in the method</short>
+        <short>LCL window message examined in the method.</short>
       </element>
       <element name="TCustomDBComboBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor on entry. Create allocates and configures the internal
@@ -4604,10 +4603,10 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TCustomDBComboBox.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that the internal
@@ -4620,7 +4619,7 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.ExecuteAction">
-        <short>Provides support for TBasicAction in the control</short>
+        <short>Provides support for TBasicAction in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden method in
@@ -4638,13 +4637,13 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element name="TCustomDBComboBox.ExecuteAction.Result">
-        <short>True if the action was executed in the method</short>
+        <short>True if the action was executed in the method.</short>
       </element>
       <element name="TCustomDBComboBox.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
+        <short>Updates the specified action to reflect the current state in the linked dataset.
         </short>
         <descr>
           <p>
@@ -4667,15 +4666,15 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
       <element name="TCustomDBComboBox.UpdateAction.Result">
-        <short>True when the action was updated in the method</short>
+        <short>True when the action was updated in the method.</short>
       </element>
       <element link="#lcl.controls.TControl.EditingDone" name="TCustomDBComboBox.EditingDone">
         <short>
           <var>EditingDone</var> - updates data through the link, then calls inherited
-          <var>EditingDone</var>
+          <var>EditingDone</var>.
         </short>
         <descr>
           <p>
@@ -4694,7 +4693,7 @@
         </seealso>
       </element>
       <element name="TCustomDBComboBox.Field">
-        <short>Contains the field definition from the linked dataset
+        <short>Contains the field definition from the linked dataset.
         </short>
         <descr>
           <p>
@@ -4715,7 +4714,7 @@
       <element link="#LCL.StdCtrls.TCustomComboBox.ItemIndex" name="TCustomDBComboBox.ItemIndex"/>
 
       <element name="TCustomDBComboBox.DataField">
-        <short>The name of the Field which provides the values displayed in the control</short>
+        <short>The name of the Field which provides the values displayed in the control.</short>
         <descr>
           <p>
             <var>DataField</var> is a
@@ -4738,7 +4737,7 @@
       </element>
 
       <element name="TCustomDBComboBox.DataSource">
-        <short>Provides access to the dataset with content for the control</short>
+        <short>Provides access to the dataset with content for the control.</short>
         <descr>
           <p>
             <var>DataSource</var> is a
@@ -4760,7 +4759,7 @@
       </element>
 
       <element name="TCustomDBComboBox.ReadOnly">
-        <short>Indicates if the control is prevented from changing the field value in its linked dataset
+        <short>Indicates if the control is prevented from changing the field value in its linked dataset.
         </short>
         <descr>
           <p>
@@ -4787,7 +4786,7 @@
       <element link="#lcl.dbctrls.TCustomDBComboBox" name="TDBComboBox">
         <short>
           <var>TDBComboBox</var> - a data-aware version of
-          <var>TComboBox</var> to allow selection of a value from a list of entries into a database field
+          <var>TComboBox</var> to allow selection of a value from a list of entries into a database field.
         </short>
         <descr>
           <p>
@@ -4807,7 +4806,7 @@
       </element>
       <element name="TDBComboBox.DataChange">
         <short>
-          <var>DataChange</var> - updates the text if it has changed
+          <var>DataChange</var> - updates the text if it has changed.
         </short>
         <descr>
           <p>
@@ -4829,10 +4828,10 @@
         </seealso>
       </element>
       <element name="TDBComboBox.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#lcl.controls.TWinControl.KeyPress" name="TDBComboBox.KeyPress">
-        <short>Applies standard keystrokes to the control</short>
+        <short>Applies standard keystrokes to the control.</short>
         <descr>
           <p>
             <var>KeyPress</var> is an overridden method used to apply standard keystrokes to the data-aware control. KeyPress calls the inherited method to process the keystroke character in
@@ -4847,10 +4846,10 @@
         </seealso>
       </element>
       <element name="TDBComboBox.KeyPress.Key">
-        <short>Keystroke character examined in the method</short>
+        <short>Keystroke character examined in the method.</short>
       </element>
       <element link="#lcl.dbctrls.TCustomDBComboBox.UpdateData" name="TDBComboBox.UpdateData">
-        <short>Applies the changed value for the control to the field in its linked dataset
+        <short>Applies the changed value for the control to the field in its linked dataset.
         </short>
         <descr>
           <p>
@@ -4867,7 +4866,7 @@
         </seealso>
       </element>
       <element name="TDBComboBox.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#lcl.controls.TControl.Align" name="TDBComboBox.Align"/>
       <element link="#lcl.controls.TControl.Anchors" name="TDBComboBox.Anchors"/>
@@ -4875,7 +4874,7 @@
       <element link="#LCL.StdCtrls.TCustomComboBox.AutoComplete" name="TDBComboBox.AutoComplete"/>
       <element link="#LCL.StdCtrls.TCustomComboBox.AutoCompleteText" name="TDBComboBox.AutoCompleteText"/>
       <element link="#LCL.StdCtrls.TCustomComboBox.AutoDropDown" name="TDBComboBox.AutoDropDown">
-        <short>Indicates if the drop-down is automatically displayed when the control gets the input focus
+        <short>Indicates if the drop-down is automatically displayed when the control gets the input focus.
         </short>
         <descr>
           <p>
@@ -5005,7 +5004,7 @@
       </element>
       <element name="TDBLookupComboBox">
         <short>
-          <var>TDBLookupComboBox</var> - a dataware ComboBox for examining a lookup table from a database
+          <var>TDBLookupComboBox</var> - a dataware ComboBox for examining a lookup table from a database.
         </short>
         <descr>
           <p>
@@ -5037,7 +5036,7 @@
         </seealso>
       </element>
       <element name="TDBLookupComboBox.DoEdit">
-        <short>Implements support for the "unbound" editing mode in the data-aware control</short>
+        <short>Implements support for the "unbound" editing mode in the data-aware control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5045,7 +5044,7 @@
         <short/>
       </element>
       <element name="TDBLookupComboBox.IsUnbound">
-        <short>Indicates if the control lacks a datasource or field name ("unbound" mode)</short>
+        <short>Indicates if the control lacks a datasource or field name ("unbound" mode).</short>
         <descr/>
         <seealso/>
       </element>
@@ -5099,18 +5098,18 @@
       <element name="TDBLookupComboBox.UpdateLookup"/>
       <element name="TDBLookupComboBox.UpdateItemIndex"/>
       <element name="TDBLookupComboBox.InitializeWnd">
-        <short>Ensures that the lookup uses the address for the items defined in the control</short>
+        <short>Ensures that the lookup uses the address for the items defined in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.DestroyWnd">
-        <short>Updates the lookup with the address for the items in the control when the control handle is freed
+        <short>Updates the lookup with the address for the items in the control when the control handle is freed.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.KeyDown">
-        <short>Handles the Null key shortcut in key down events</short>
+        <short>Handles the Null key shortcut in key down events.</short>
         <descr>
           <p>
             <var>KeyDown</var> is an overridden method used to handle and apply virtual key code messages (
@@ -5134,14 +5133,14 @@
         </seealso>
       </element>
       <element name="TDBLookupComboBox.KeyDown.Key">
-        <short>Key examined in the method</short>
+        <short>Key examined in the method.</short>
       </element>
       <element name="TDBLookupComboBox.KeyDown.Shift">
-        <short>Modifier(s) for the key examined in the method</short>
+        <short>Modifier(s) for the key examined in the method.</short>
       </element>
 
       <element name="TDBLookupComboBox.UTF8KeyPress">
-        <short>Handles UTF-8 characters for the data-aware control</short>
+        <short>Handles UTF-8 characters for the data-aware control.</short>
         <descr>
           <p>
             <var>UTF8KeyPress</var> is an overridden method in <var>TDBLookupComboBox</var>. UTF8KeyPress ensures that the value in <var>Key</var> is cleared when the linked dataset cannot be modified, or the control is being used in the "unbound" mode.
@@ -5155,21 +5154,21 @@
         </seealso>
       </element>
       <element name="TDBLookupComboBox.UTF8KeyPress.UTF8Key">
-        <short>UTF-8-encoded value examined in the method</short>
+        <short>UTF-8-encoded value examined in the method.</short>
       </element>
 
       <element link="#rtl.Classes.TComponent.Loaded" name="TDBLookupComboBox.Loaded"/>
 
       <element name="TDBLookupComboBox.UpdateData">
         <short>
-          <var>UpdateData</var> - copies the local data from the corresponding entry from the lookup field
+          <var>UpdateData</var> - copies the local data from the corresponding entry from the lookup field.
         </short>
         <seealso>
           <link id="TCustomDBComboBox.UpdateData"/>
         </seealso>
       </element>
       <element name="TDBLookupComboBox.DataChange">
-        <short>Updates the control when the value in the linked dataset has been changed</short>
+        <short>Updates the control when the value in the linked dataset has been changed.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5177,12 +5176,12 @@
         <short/>
       </element>
       <element name="TDBLookupComboBox.DoOnSelect">
-        <short>Performs the OnSelect event handler when in drop-down list mode</short>
+        <short>Performs the OnSelect event handler when in drop-down list mode.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor, and allocates resources for the internal
@@ -5203,7 +5202,7 @@
         </seealso>
       </element>
       <element name="TDBLookupComboBox.KeyValue">
-        <short>Value for the key field in the lookup dataset at the position in ItemIndex
+        <short>Value for the key field in the lookup dataset at the position in ItemIndex.
         </short>
         <descr>
           <p>Read and write access for the property value is provided using methods in the internal <var>TDBLookp</var> instance used in the class. Reading the value calls the <var>GetKeyValue</var> method in TDBLookup. Writing the value calls the <var>GetKeyIndex</var> method in TDBLookUp.
@@ -5235,7 +5234,7 @@
       <element link="#lcl.controls.TControl.Font" name="TDBLookupComboBox.Font"/>
       <element name="TDBLookupComboBox.KeyField">
         <short>
-          <var>KeyField</var> the name of the field containing the key data</short>
+          <var>KeyField</var> the name of the field containing the key data.</short>
         <descr>
           <p>
             <var>KeyField</var> is a
@@ -5264,7 +5263,7 @@
       </element>
       <element name="TDBLookupComboBox.ListField">
         <short>
-          <var>ListField</var> is the name of the field containing the list data displayed in the control
+          <var>ListField</var> is the name of the field containing the list data displayed in the control.
         </short>
         <descr>
           <p>
@@ -5284,20 +5283,20 @@
       </element>
       <element name="TDBLookupComboBox.ListFieldIndex">
         <short>
-          <var>ListFieldIndex</var> - the index value of the field containing the list
+          <var>ListFieldIndex</var> - the index value of the field containing the list.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.ListSource">
         <short>
-          <var>ListSource</var> the data source that contains the list
+          <var>ListSource</var> the data source that contains the list.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.NullValueKey">
-        <short>Keyboard shortcut which causes an empty value to be assigned to the field value for the lookup control
+        <short>Keyboard shortcut which causes an empty value to be assigned to the field value for the lookup control.
         </short>
         <descr>
           <p>
@@ -5310,7 +5309,7 @@
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.EmptyValue">
-        <short>Value stored for the lookup control when a lookup value is not available</short>
+        <short>Value stored for the lookup control when a lookup value is not available.</short>
         <descr>
           <p>
             <var>EmptyValue</var> is a <var>String</var> property which contains the value stored in the list of key values when no records are available in the linked lookup dataset, or when the <var>NullValueKey</var> shortcut is pressed.
@@ -5333,7 +5332,7 @@
         </version>
       </element>
       <element name="TDBLookupComboBox.DisplayEmpty">
-        <short>Value displayed in the lookup control when a lookup value is not available</short>
+        <short>Value displayed in the lookup control when a lookup value is not available.</short>
         <descr>
           <p>
             <var>DisplayEmpty</var> is a <var>String</var> property which contains the value displayed in the lookup when no records are available in the linked lookup dataset, or when the <var>NullValueKey</var> shortcut is pressed.
@@ -5393,7 +5392,7 @@
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBLookupComboBox.PopupMenu"/>
       <element link="#LCL.StdCtrls.TCustomComboBox.ReadOnly" name="TDBLookupComboBox.ReadOnly"/>
       <element name="TDBLookupComboBox.ScrollListDataset">
-        <short>Indicates if the Dataset in ListSource can be scrolled when loading/locating key and display values
+        <short>Indicates if the Dataset in ListSource can be scrolled when loading/locating key and display values.
         </short>
         <descr>
           <p>
@@ -5419,7 +5418,7 @@
       <element link="#lcl.controls.TControl.Visible" name="TDBLookupComboBox.Visible"/>
       <element name="TDBMemo">
         <short>
-          <var>TDBMemo </var> - a data-aware Memo box to process the multi-line text of a single field in a dataset
+          <var>TDBMemo </var> - a data-aware Memo box to process the multi-line text of a single field in a dataset.
         </short>
         <descr>
           <p>
@@ -5448,63 +5447,63 @@
       <element name="TDBMemo.FDBMemoFocused"/>
       <element name="TDBMemo.FDBMemoLoaded"/>
       <element name="TDBMemo.GetDataField">
-        <short>Gets the value for the DataField property</short>
+        <short>Gets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.GetDataField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBMemo.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.GetDataSource.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBMemo.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.GetField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.GetReadOnly" name="TDBMemo.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.GetReadOnly.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBMemo.SetAutoDisplay">
-        <short>Sets the value for the AutoDisplay property</short>
+        <short>Sets the value for the AutoDisplay property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.SetAutoDisplay.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBMemo.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.SetDataField.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBMemo.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.SetDataSource.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBMemo.CMGetDataLink">
-        <short>Implements the CM_GETDATALINK message for the control</short>
+        <short>Implements the CM_GETDATALINK message for the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5512,24 +5511,24 @@
         <short/>
       </element>
       <element name="TDBMemo.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.GetReadOnly.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.SetReadOnly" name="TDBMemo.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBMemo.SetReadOnly.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBMemo.DataChange">
         <short>
-          <var>DataChange</var> - if Data changed, loads the new data into the appropriate part of the Field
+          <var>DataChange</var> - if Data changed, loads the new data into the appropriate part of the Field.
         </short>
         <descr/>
         <seealso/>
@@ -5550,7 +5549,7 @@
       </element>
       <element name="TDBMemo.UpdateData">
         <short>
-          <var>UpdateData</var> - if data changed, copy new text via the datalink
+          <var>UpdateData</var> - if data changed, copy new text via the datalink.
         </short>
         <descr/>
         <seealso/>
@@ -5559,7 +5558,7 @@
         <short/>
       </element>
       <element link="#LCL.StdCtrls.TCustomEdit.Change" name="TDBMemo.Change">
-        <short>Performs actions needed when the value for the control has been changed</short>
+        <short>Performs actions needed when the value for the control has been changed.</short>
         <descr>
           <p>
             <var>Change</var> is an overridden method used to perform actions needed when the value for the control has been changed. Change ensures that the linked dataset is notified by calling its
@@ -5574,7 +5573,7 @@
         </seealso>
       </element>
       <element name="TDBMemo.KeyDown">
-        <short>Handles key down events in the data-aware control</short>
+        <short>Handles key down events in the data-aware control.</short>
         <descr>
           <p>
             <var>KeyDown</var> is an overridden method used to handle key down events in the control.
@@ -5600,10 +5599,10 @@
         </seealso>
       </element>
       <element name="TDBMemo.KeyDown.Key">
-        <short>Virtual key code examined in the method</short>
+        <short>Virtual key code examined in the method.</short>
       </element>
       <element name="TDBMemo.KeyDown.Shift">
-        <short>Sift modifier for the key code</short>
+        <short>Sift modifier for the key code.</short>
       </element>
       <element link="#lcl.controls.TWinControl.KeyPress" name="TDBMemo.KeyPress">
         <short/>
@@ -5616,13 +5615,13 @@
       <element link="#lcl.controls.TControl.WndProc" name="TDBMemo.WndProc"/>
       <element link="#lcl.controls.TControl.WndProc.Message" name="TDBMemo.WndProc.Message"/>
       <element name="TDBMemo.WSRegisterClass">
-        <short>Registers the widgetset class created for new instances of the control</short>
+        <short>Registers the widgetset class created for new instances of the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDBMemo.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor, and allocates resources for the internal <var>TFieldDataLink</var> instance used in the class. The <var>DataChange</var> and <var>UpdateData</var> methods are assigned as the <var>OnDataChange</var> and <var>OnUpdateData</var> event handlers in the <var>TFieldDataLink</var> instance. Create sets the default values for the <var>ControlStyle</var> and <var>AutoDisplay</var> properties.
@@ -5639,14 +5638,14 @@
         </seealso>
       </element>
       <element name="TDBMemo.Create.TheOwner">
-        <short>Owner for the class instance</short>
+        <short>Owner for the class instance.</short>
       </element>
 
       <element name="TDBMemo.Destroy">
         <short>
           <var>Destroy</var> - destructor for
           <var>TDBMemo</var>: frees datalinks then calls inherited
-          <var>Destroy</var>
+          <var>Destroy</var>.
         </short>
         <descr/>
         <seealso>
@@ -5660,14 +5659,14 @@
       </element>
       <element name="TDBMemo.LoadMemo">
         <short>
-          <var>LoadMemo</var> - tries to load data from current field as a string if possible, otherwise returns an exception
+          <var>LoadMemo</var> - tries to load data from current field as a string if possible, otherwise returns an exception.
         </short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <element link="#RTL.Classes.TComponent.ExecuteAction" name="TDBMemo.ExecuteAction">
-        <short>Provides support for TBasicAction in the control</short>
+        <short>Provides support for TBasicAction in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden method in
@@ -5685,13 +5684,13 @@
         </seealso>
       </element>
       <element name="TDBMemo.ExecuteAction.Result">
-        <short>True if the action was executed in the method</short>
+        <short>True if the action was executed in the method.</short>
       </element>
       <element name="TDBMemo.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element link="#RTL.Classes.TComponent.UpdateAction" name="TDBMemo.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
+        <short>Updates the specified action to reflect the current state in the linked dataset.
         </short>
         <descr>
           <p>
@@ -5714,13 +5713,13 @@
         </seealso>
       </element>
       <element name="TDBMemo.UpdateAction.Result">
-        <short>True if the action was updated in the  method</short>
+        <short>True if the action was updated in the  method.</short>
       </element>
       <element name="TDBMemo.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
       <element name="TDBMemo.Field">
-        <short>Provides access to the field definition for the data-aware control</short>
+        <short>Provides access to the field definition for the data-aware control.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -5743,7 +5742,7 @@
       <element name="TDBMemo.AutoDisplay">
         <short>
           <var>AutoDisplay</var> - if
-          <b>True</b>, automatically displays the data when loaded from the linked dataset
+          <b>True</b>, automatically displays the data when loaded from the linked dataset.
         </short>
         <descr>
           <p>
@@ -5768,7 +5767,7 @@
       <element link="#lcl.controls.TControl.Constraints" name="TDBMemo.Constraints"/>
 
       <element name="TDBMemo.DataField">
-        <short>The name of the field, as a string (i.e. cannot be referred to as an Index)</short>
+        <short>The name of the field, as a string (i.e. cannot be referred to as an Index).</short>
         <descr>
           <p>
             <var>DataField</var> is a <var>String</var> property which contains the name of the field in the linked dataset where the value for the control is stored. Read and write access to the property value are redirected to the <var>FieldName</var> property in the <var>TFieldDataLink</var> instance used in the class. Changing the value in DataField causes the value in the <var>Field</var> property to be updated.
@@ -5787,7 +5786,7 @@
       </element>
 
       <element name="TDBMemo.DataSource">
-        <short>Provides access to the dataset with content for the control
+        <short>Provides access to the dataset with content for the control.
         </short>
         <descr>
           <p>
@@ -5848,7 +5847,7 @@
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBMemo.ParentShowHint"/>
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBMemo.PopupMenu"/>
       <element link="#LCL.StdCtrls.TCustomEdit.ReadOnly" name="TDBMemo.ReadOnly">
-        <short>Indicates that the text in the control cannot be modified
+        <short>Indicates that the text in the control cannot be modified.
         </short>
         <descr>
           <p>
@@ -5876,7 +5875,7 @@
       <element name="TDBGroupBox">
         <short>
           <var>TDBGroupBox</var>  - a data-aware version of
-          <var>TGroupBox,</var>  allowing a number of data-aware objects to be grouped together on a form
+          <var>TGroupBox,</var>  allowing a number of data-aware objects to be grouped together on a form.
         </short>
         <descr>
           <p>
@@ -5893,71 +5892,71 @@
       </element>
       <element name="TDBGroupBox.FDataLink">
         <short>
-          <var>FDataLink</var> - local variable storing the identity of the Field Data Link
+          <var>FDataLink</var> - local variable storing the identity of the Field Data Link.
         </short>
       </element>
       <element name="TDBGroupBox.GetDataField">
-        <short>Gets the value for the DataField property</short>
+        <short>Gets the value for the DataField property.</short>
         <descr/>
         <seealso>
           <link id="TDBGroupBox.DataField"/>
         </seealso>
       </element>
       <element name="TDBGroupBox.GetDataField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBGroupBox.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
         <descr/>
         <seealso>
           <link id="TDBGroupBox.DataSource"/>
         </seealso>
       </element>
       <element name="TDBGroupBox.GetDataSource.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBGroupBox.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
         <descr/>
         <seealso>
           <link id="TDBGroupBox.Field"/>
         </seealso>
       </element>
       <element name="TDBGroupBox.GetField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBGroupBox.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso>
           <link id="TDBGroupBox.DataField"/>
         </seealso>
       </element>
       <element name="TDBGroupBox.SetDataField.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBGroupBox.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr/>
         <seealso>
           <link id="TDBGroupBox.DataSource"/>
         </seealso>
       </element>
       <element name="TDBGroupBox.SetDataSource.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBGroupBox.CMGetDataLink">
         <short>
-          <var>CMGetDataLink</var> implements the control message for finding the data link
+          <var>CMGetDataLink</var> implements the control message for finding the data link.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBGroupBox.CMGetDataLink.Message">
-        <short>Message where the field data link is stored in the method</short>
+        <short>Message where the field data link is stored in the method.</short>
       </element>
       <element name="TDBGroupBox.DataChange">
-        <short>Updates the value for the control when the linked dataset is changed
+        <short>Updates the value for the control when the linked dataset is changed.
         </short>
         <descr>
           <p>
@@ -5977,7 +5976,7 @@
         </seealso>
       </element>
       <element name="TDBGroupBox.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBGroupBox.Notification">
         <descr>
@@ -5994,13 +5993,13 @@
         <seealso/>
       </element>
       <element name="TDBGroupBox.Notification.AComponent">
-        <short>Component for the notification event</short>
+        <short>Component for the notification event.</short>
       </element>
       <element name="TDBGroupBox.Notification.Operation">
-        <short>Operation for the notification event</short>
+        <short>Operation for the notification event.</short>
       </element>
       <element link="#LCL.StdCtrls.TCustomGroupBox.Create" name="TDBGroupBox.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for
@@ -6021,10 +6020,10 @@
         </seealso>
       </element>
       <element name="TDBGroupBox.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBGroupBox.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for
@@ -6039,7 +6038,7 @@
         </seealso>
       </element>
       <element link="#RTL.Classes.TComponent.ExecuteAction" name="TDBGroupBox.ExecuteAction">
-        <short>Provides support for TBasicAction in the control</short>
+        <short>Provides support for TBasicAction in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden method in
@@ -6057,13 +6056,13 @@
         </seealso>
       </element>
       <element name="TDBGroupBox.ExecuteAction.Result">
-        <short>True if the action was executed in the method</short>
+        <short>True if the action was executed in the method.</short>
       </element>
       <element name="TDBGroupBox.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element link="#RTL.Classes.TComponent.UpdateAction" name="TDBGroupBox.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
+        <short>Updates the specified action to reflect the current state in the linked dataset.
         </short>
         <descr>
           <p>
@@ -6086,13 +6085,13 @@
         </seealso>
       </element>
       <element name="TDBGroupBox.UpdateAction.Result">
-        <short>True if the action was updated in the method</short>
+        <short>True if the action was updated in the method.</short>
       </element>
       <element name="TDBGroupBox.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
       <element name="TDBGroupBox.Field">
-        <short>The <var>Field</var> to which the datalink is attached</short>
+        <short>The <var>Field</var> to which the datalink is attached.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -6143,7 +6142,7 @@
       <element link="#lcl.controls.TControl.Constraints" name="TDBGroupBox.Constraints"/>
 
       <element name="TDBGroupBox.DataField">
-        <short>Contains the name of the field with the value for the control</short>
+        <short>Contains the name of the field with the value for the control.</short>
         <descr>
           <p>
             <var>DataField</var> is a <var>String</var> property which contains the name for the field in the linked dataset where the value for the control is read and written. Read and write access to the property value are redirected to the <var>FieldName</var> property in the internal <var>TFieldDataLink</var> instance for the control. Changing the value in DataField causes the value in <var>Field</var> to be updated.
@@ -6163,7 +6162,7 @@
       </element>
 
       <element name="TDBGroupBox.DataSource">
-        <short>Provides access to the dataset with content for the control
+        <short>Provides access to the dataset with content for the control.
         </short>
         <descr>
           <p>
@@ -6298,7 +6297,7 @@
       </element>
       <element name="TDBImage">
         <short>
-          <var>TDBImage </var>- a data-aware Image box to display a single image from a dataset
+          <var>TDBImage </var>- a data-aware Image box to display a single image from a dataset.
         </short>
         <descr>
           <p>TDBImage is a TCustomImage descendant which implements a data-aware image control.
@@ -6324,7 +6323,7 @@
       <element name="TDBImage.FUpdatingRecord"/>
       <element name="TDBImage.FWriteHeader"/>
       <element name="TDBImage.GetDataField">
-        <short>Gets the value for the DataField property</short>
+        <short>Gets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6332,7 +6331,7 @@
         <short/>
       </element>
       <element name="TDBImage.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6340,7 +6339,7 @@
         <short/>
       </element>
       <element name="TDBImage.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6348,7 +6347,7 @@
         <short/>
       </element>
       <element name="TDBImage.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6356,7 +6355,7 @@
         <short/>
       </element>
       <element name="TDBImage.SetAutoDisplay">
-        <short>Sets the value for the AutoDisplay property</short>
+        <short>Sets the value for the AutoDisplay property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6364,7 +6363,7 @@
         <short/>
       </element>
       <element name="TDBImage.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6372,7 +6371,7 @@
         <short/>
       </element>
       <element name="TDBImage.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6380,7 +6379,7 @@
         <short/>
       </element>
       <element name="TDBImage.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6388,27 +6387,27 @@
         <short/>
       </element>
       <element name="TDBImage.CMGetDataLink">
-        <short>Implements the CM_GETDATALINK message for the control</short>
+        <short>Implements the CM_GETDATALINK message for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBImage.CMGetDataLink.Message">
-        <short>Message for the handler</short>
+        <short>Message for the handler.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBImage.Notification">
-        <short>Performs notifications when a component in the class instance is added or removed
+        <short>Performs notifications when a component in the class instance is added or removed.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBImage.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDBImage.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
       <element name="TDBImage.DataChange">
-        <short>Performs actions needed when the content in the linked dataset has been changed
+        <short>Performs actions needed when the content in the linked dataset has been changed.
         </short>
         <descr>
           <p>
@@ -6428,10 +6427,10 @@
         </seealso>
       </element>
       <element name="TDBImage.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBImage.UpdateData">
-        <short>Performs actions needed to validate and store the content for the image control
+        <short>Performs actions needed to validate and store the content for the image control.
         </short>
         <descr>
           <p>UpdateData is a procedure used to validate and store the content for the image control.
@@ -6450,10 +6449,10 @@
         </seealso>
       </element>
       <element name="TDBImage.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#lcl.extctrls.TCustomImage.PictureChanged" name="TDBImage.PictureChanged">
-        <short>Performs actions needed when the Picture property in the image control has been changed
+        <short>Performs actions needed when the Picture property in the image control has been changed.
         </short>
         <descr>
           <p>PictureChanged is an overridden method in TDBImage, and calls the inherited method. PictureChanged ensures that the Change method is called if it has not already been executed.
@@ -6467,11 +6466,11 @@
         </seealso>
       </element>
       <element name="TDBImage.PictureChanged.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#lcl.extctrls.TCustomImage.WSRegisterClass" name="TDBImage.WSRegisterClass"/>
       <element name="TDBImage.DoCopyToClipboard">
-        <short>Implements the clipboard Copy (Ctrl+C) command</short>
+        <short>Implements the clipboard Copy (Ctrl+C) command.</short>
         <descr>
           <p>
             <var>DoCopyToClipboard</var> is a procedure used to implement the clipboard
@@ -6493,7 +6492,7 @@
         </seealso>
       </element>
       <element name="TDBImage.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor.
@@ -6518,10 +6517,10 @@
         </seealso>
       </element>
       <element name="TDBImage.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBImage.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to the internal
@@ -6533,7 +6532,7 @@
         </seealso>
       </element>
       <element name="TDBImage.ExecuteAction">
-        <short>Provides support for TBasicAction in the control</short>
+        <short>Provides support for TBasicAction in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden method in
@@ -6551,13 +6550,13 @@
         </seealso>
       </element>
       <element name="TDBImage.ExecuteAction.Result">
-        <short>True if the action was executed in the method</short>
+        <short>True if the action was executed in the method.</short>
       </element>
       <element name="TDBImage.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element name="TDBImage.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
+        <short>Updates the specified action to reflect the current state in the linked dataset.
         </short>
         <descr>
           <p>
@@ -6580,13 +6579,13 @@
         </seealso>
       </element>
       <element name="TDBImage.UpdateAction.Result">
-        <short>True if the action was updated in the method</short>
+        <short>True if the action was updated in the method.</short>
       </element>
       <element name="TDBImage.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
       <element name="TDBImage.Field">
-        <short>Definition for the field in the linked dataset where the control value is stored</short>
+        <short>Definition for the field in the linked dataset where the control value is stored.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -6604,7 +6603,7 @@
         </seealso>
       </element>
       <element name="TDBImage.Change">
-        <short>Notifies the linked dataset when the value in the control is changed
+        <short>Notifies the linked dataset when the value in the control is changed.
         </short>
         <descr>
           <p>
@@ -6628,7 +6627,7 @@
       </element>
 
       <element name="TDBImage.LoadPicture">
-        <short>Loads the graphic content for the control from a field in the linked dataset</short>
+        <short>Loads the graphic content for the control from a field in the linked dataset.</short>
         <descr>
           <p>
             <var>LoadPicture</var> is a procedure used to load the graphic content into the image control from the field in the linked dataset. <var>DataField</var> contains the field name with the value for the control. <var>DataSource</var> is the component which provides access to the dataset with the specified field name.
@@ -6667,22 +6666,22 @@
       </element>
 
       <element name="TDBImage.CopyToClipboard">
-        <short>Performs actions needed for the Clipboard Copy (Ctrl+C) command</short>
+        <short>Performs actions needed for the Clipboard Copy (Ctrl+C) command.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBImage.CutToClipboard">
-        <short>Performs actions needed for the Clipboard Cut (Ctrl+C) command</short>
+        <short>Performs actions needed for the Clipboard Cut (Ctrl+C) command.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBImage.PasteFromClipboard">
-        <short>Performs actions needed for the Clipboard Paste (Ctrl+V) command</short>
+        <short>Performs actions needed for the Clipboard Paste (Ctrl+V) command.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBImage.PictureLoaded">
-        <short>Indicates if the graphic content for the data-aware control has been loaded from its linked dataset
+        <short>Indicates if the graphic content for the data-aware control has been loaded from its linked dataset.
         </short>
         <descr/>
         <seealso/>
@@ -6693,7 +6692,7 @@
       <element name="TDBImage.AutoDisplay">
         <short>
           <var>AutoDisplay</var> - if
-          <b>True</b>, automatically displays when focus is given
+          <b>True</b>, automatically displays when focus is given.
         </short>
         <descr>
           <p>
@@ -6721,7 +6720,7 @@
       <element link="#lcl.extctrls.TCustomImage.Center" name="TDBImage.Center"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBImage.Constraints"/>
       <element name="TDBImage.DataField">
-        <short>Contains the name of the field with the value for the control</short>
+        <short>Contains the name of the field with the value for the control.</short>
         <descr>
           <p>
             <var>DataField</var> is a <var>String</var> property which contains the name for the field in the linked dataset where the value for the control is read and written. Read and write access to the property value are redirected to the <var>FieldName</var> property in the internal <var>TFieldDataLink</var> instance for the control. Changing the value in DataField causes the value in <var>Field</var> to be updated.
@@ -6745,7 +6744,7 @@
       </element>
 
       <element name="TDBImage.DataSource">
-        <short>Provides access to the dataset with content for the control
+        <short>Provides access to the dataset with content for the control.
         </short>
         <descr>
           <p>
@@ -6774,7 +6773,7 @@
       <element name="TDBImage.OnDblClick" link="#lcl.extctrls.TCustomImage.OnDblClick"/>
 
       <element name="TDBImage.OnDBImageRead">
-        <short>Event to read a custom header from image stream</short>
+        <short>Event to read a custom header from image stream.</short>
         <descr>
           <p>By default, the <var>TDbImage</var> component expects a header at the start of the image stream. This helps to efficiently identify the image format contained in the data stream. On writing, the header is controlled by the <var>WriteHeader</var> property or the <var>OnDbImageWrite</var> event handler.
           </p>
@@ -6822,7 +6821,7 @@
       <element name="TDBImage.QuickDraw">
         <short>
           <var>QuickDraw</var> - if
-          <b>True</b>, quick drawing is implemented
+          <b>True</b>, quick drawing is implemented.
         </short>
         <descr>
           <p>QuickDraw is a Boolean property which indicates if QuickDraw is enabled for the platform or OS. The default value for the property is <b>True</b>.
@@ -6833,7 +6832,7 @@
         <seealso/>
       </element>
       <element name="TDBImage.ReadOnly">
-        <short>Indicates if the control cannot modify the image in the field for the linked dataset</short>
+        <short>Indicates if the control cannot modify the image in the field for the linked dataset.</short>
         <descr>
           <p>
             <var>ReadOnly</var> is a
@@ -6865,7 +6864,7 @@
       <element link="#lcl.extctrls.TCustomImage.Visible" name="TDBImage.Visible"/>
 
       <element name="TDBImage.WriteHeader">
-        <short>Write a header in the image stream</short>
+        <short>Write a header in the image stream.</short>
         <descr>
           <p>The <var>WriteHeader</var> property controls whether or not a header will be written to the image stream. By default a header will be written. This helps to efficiently identify the image format when loading. The writing of a header in the image stream could be a problem if the database will be shared with external applications that do not expect a header in the image stream. In this case, set WriteHeader value to <b>False</b> in order to skip the header writing.
           </p>
@@ -6878,7 +6877,7 @@
       <element link="#LCL.Calendar.TCalendar" name="TDBCalendar">
         <short>
           <var>TDBCalendar</var> - a data-aware version of
-          <var>TCalendar</var>, for selecting a date to store in a database field
+          <var>TCalendar</var>, for selecting a date to store in a database field.
         </short>
         <descr>
           <p>
@@ -6905,106 +6904,106 @@
       </element>
       <element name="TDBCalendar.FDataLink">
         <short>
-          <var>FDataLink</var> is a local variable used to hold field information for the linked dataset
+          <var>FDataLink</var> is a local variable used to hold field information for the linked dataset.
         </short>
       </element>
       <element name="TDBCalendar.DataChange">
         <short>
-          <var>DataChange</var> - if the link is active, transmit the changed data
+          <var>DataChange</var> - if the link is active, transmit the changed data.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.DataChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBCalendar.UpdateDate">
         <short>
-          <var>UpdateDate</var> - implements any pending changes in the date selected
+          <var>UpdateDate</var> - implements any pending changes in the date selected.
         </short>
       </element>
       <element name="TDBCalendar.UpdateData.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBCalendar.GetDataField">
-        <short>Gets the value for the DataField property</short>
+        <short>Gets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.GetDataField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCalendar.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.GetDataSource.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCalendar.GetField">
-        <short>Gets the value for the Field property</short>
+        <short>Gets the value for the Field property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.GetField.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCalendar.GetReadOnly">
-        <short>Gets the value for the ReadOnly property</short>
+        <short>Gets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.GetReadOnly.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCalendar.SetReadOnly">
-        <short>Sets the value for the ReadOnly property</short>
+        <short>Sets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.SetReadOnly.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCalendar.SetDate">
-        <short>Sets the value for the Date property</short>
+        <short>Sets the value for the Date property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.SetDate.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCalendar.SetDataField">
-        <short>Sets the value for the DataField property</short>
+        <short>Sets the value for the DataField property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.SetDataField.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCalendar.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.SetDataSource.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCalendar.UpdateDate">
-        <short>Updates the value in the Date property</short>
+        <short>Updates the value in the Date property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCalendar.UpdateDate.AValue">
-        <short>Value assigned to the Date property</short>
+        <short>Value assigned to the Date property.</short>
       </element>
       <element name="TDBCalendar.CMGetDataLink">
         <short>
-          <var>CMGetDataLink</var> - control message method for getting the data link
+          <var>CMGetDataLink</var> - control message method for getting the data link.
         </short>
       </element>
       <element name="TDBCalendar.CMGetDataLink.Message">
-        <short>Implements the CM_GETDATALINK message for the control</short>
+        <short>Implements the CM_GETDATALINK message for the control.</short>
       </element>
       <element link="#lcl.controls.TControl.Notification" name="TDBCalendar.Notification">
         <descr>Notification is an overridden method in TDBCalendar. It ensures that the DataSource is set to Nil when the component is freed.
@@ -7014,16 +7013,16 @@
         </seealso>
       </element>
       <element name="TDBCalendar.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDBCalendar.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
       <element name="TDBCalendar.Create">
         <short>
           <var>Create</var> - constructor for
           <var>TDBCalendar</var>: calls inherited
-          <var>Create</var> and forms datalinks and actions
+          <var>Create</var> and forms datalinks and actions.
         </short>
         <descr>
           <p>
@@ -7042,13 +7041,13 @@
         </seealso>
       </element>
       <element name="TDBCalendar.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBCalendar.Destroy">
         <short>
           <var>Destroy</var> - destructor for
           <var>TDBCalendar</var>: frees datalinks and calls inherited
-          <var>Destroy</var>
+          <var>Destroy</var>.
         </short>
         <descr>
           <p>
@@ -7061,7 +7060,7 @@
         </seealso>
       </element>
       <element name="TDBCalendar.EditingDone">
-        <short>Performs actions needed when the user has finished editing
+        <short>Performs actions needed when the user has finished editing.
         </short>
         <descr>
           <p>
@@ -7080,7 +7079,7 @@
         </seealso>
       </element>
       <element name="TDBCalendar.ExecuteAction">
-        <short>Provides support for TBasicAction in the control</short>
+        <short>Provides support for TBasicAction in the control.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> is an overridden method in
@@ -7098,13 +7097,13 @@
         </seealso>
       </element>
       <element name="TDBCalendar.ExecuteAction.Result">
-        <short>True if the action was executed in the method</short>
+        <short>True if the action was executed in the method.</short>
       </element>
       <element name="TDBCalendar.ExecuteAction.AAction">
-        <short>Action examined and executed in the method</short>
+        <short>Action examined and executed in the method.</short>
       </element>
       <element name="TDBCalendar.UpdateAction">
-        <short>Updates the specified action to reflect the current state in the linked dataset
+        <short>Updates the specified action to reflect the current state in the linked dataset.
         </short>
         <descr>
           <p>
@@ -7127,13 +7126,13 @@
         </seealso>
       </element>
       <element name="TDBCalendar.UpdateAction.Result">
-        <short>True if the action was updated in the method</short>
+        <short>True if the action was updated in the method.</short>
       </element>
       <element name="TDBCalendar.UpdateAction.AAction">
-        <short>Action examined and updated in the method</short>
+        <short>Action examined and updated in the method.</short>
       </element>
       <element name="TDBCalendar.Field">
-        <short>Provides access to the field definition for the data-aware control</short>
+        <short>Provides access to the field definition for the data-aware control.</short>
         <descr>
           <p>
             <var>Field</var> is a read-only
@@ -7154,7 +7153,7 @@
       <element link="#LCL.Calendar.TCalendar.Constraints" name="TDBCalendar.Constraints"/>
 
       <element name="TDBCalendar.DataField">
-        <short>Contains the name of the field with the value for the control</short>
+        <short>Contains the name of the field with the value for the control.</short>
         <descr>
           <p>
             <var>DataField</var> is a <var>String</var> property which contains the name for the field in the linked dataset where the value for the control is read and written. Read and write access to the property value are redirected to the <var>FieldName</var> property in the internal <var>TFieldDataLink</var> instance for the control. Changing the value in DataField causes the value in <var>Field</var> to be updated.
@@ -7174,7 +7173,7 @@
       </element>
 
       <element name="TDBCalendar.DataSource">
-        <short>Provides access to the dataset with content for the control
+        <short>Provides access to the dataset with content for the control.
         </short>
         <descr>
           <p>
@@ -7197,7 +7196,7 @@
       </element>
 
       <element name="TDBCalendar.Date">
-        <short>Date value for the control as a String type</short>
+        <short>Date value for the control as a String type.</short>
         <descr>
           <p>
             <var>Date</var> is a <var>String</var> property that represents the date/time value for the control as a string data type. Write access is re-implemented in TDBCalendar to call the DataChange method after setting the DateTime value in the ancestor.
@@ -7216,7 +7215,7 @@
       </element>
 
       <element link="#LCL.Calendar.TCustomCalendar.ReadOnly" name="TDBCalendar.ReadOnly">
-        <short>Indicates if the control cannot modify the field in the linked dataset</short>
+        <short>Indicates if the control cannot modify the field in the linked dataset.</short>
         <descr>
           <p>
             <var>ReadOnly</var> is a
@@ -7259,18 +7258,18 @@
       <element link="#LCL.Calendar.TCustomCalendar.OnYearChanged" name="TDBCalendar.OnYearChanged"/>
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBCalendar.OnStartDrag"/>
       <element name="TDBNavGlyph">
-        <short>Not used in the current LCL version</short>
+        <short>Not used in the current LCL version.</short>
         <descr>Not used in the current LCL version</descr>
         <seealso/>
       </element>
       <element name="TDBNavGlyph.ngEnabled">
-        <short>Not used in the current LCL version</short>
+        <short>Not used in the current LCL version.</short>
       </element>
       <element name="TDBNavGlyph.ngDisabled">
-        <short>Not used in the current LCL version</short>
+        <short>Not used in the current LCL version.</short>
       </element>
       <element name="TDBNavButtonType">
-        <short>TDBNavButtonType</short>
+        <short>TDBNavButtonType.</short>
         <descr>
           <p>
             <var>TDBNavButtonType</var> is an enumerated type with values that represent button types (and their corresponding glyphs) in a database navigation control. TDBNavButtonType enumeration values are used when  accessing the
@@ -7287,38 +7286,38 @@
         </seealso>
       </element>
       <element name="TDBNavButtonType.nbFirst">
-        <short>Represents the First button used to navigate to the beginning of a dataset</short>
+        <short>Represents the First button used to navigate to the beginning of a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbPrior">
-        <short>Represents the Prior button used to navigate to the previous record in a dataset</short>
+        <short>Represents the Prior button used to navigate to the previous record in a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbNext">
-        <short>Represents the Next button used to navigate to the next record in a dataset</short>
+        <short>Represents the Next button used to navigate to the next record in a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbLast">
-        <short>Represents the Last button used to navigate to the last record in a dataset</short>
+        <short>Represents the Last button used to navigate to the last record in a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbInsert">
-        <short>Represents the Insert button used to create a new record in a dataset</short>
+        <short>Represents the Insert button used to create a new record in a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbDelete">
-        <short>Represents the Delete button used to delete the current record in a dataset</short>
+        <short>Represents the Delete button used to delete the current record in a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbEdit">
-        <short>Represents the Edit button used to enable edit mode for the current record in a dataset
+        <short>Represents the Edit button used to enable edit mode for the current record in a dataset.
         </short>
       </element>
       <element name="TDBNavButtonType.nbPost">
-        <short>Represents the Post button used to apply pending changes to a record in a dataset</short>
+        <short>Represents the Post button used to apply pending changes to a record in a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbCancel">
-        <short>Represents the Cancel button used to cancel pending updates to a dataset</short>
+        <short>Represents the Cancel button used to cancel pending updates to a dataset.</short>
       </element>
       <element name="TDBNavButtonType.nbRefresh">
-        <short>Represents the Refresh button used to refresh the records in a dataset</short>
+        <short>Represents the Refresh button used to refresh the records in a dataset.</short>
       </element>
       <element name="TDBNavButtonSet">
-        <short>Stores TDBNavButtonType enumeration values</short>
+        <short>Stores TDBNavButtonType enumeration values.</short>
         <descr>
           <p>
             <var>TDBNavButtonSet</var> is a set type used to store zero or more values from the
@@ -7333,7 +7332,7 @@
         </seealso>
       </element>
       <element name="TDBNavButtonStyle">
-        <short>Controls the appearance and behavior of a navigator button</short>
+        <short>Controls the appearance and behavior of a navigator button.</short>
         <descr>
           <p>
             <var>TDBNavButtonStyle</var> is an set type used to store information which controls the appearance and behavior for a button on a navigation control. TDBNavButtonStyle is the type used to implement the
@@ -7348,10 +7347,10 @@
         </seealso>
       </element>
       <element name="TDBNavButtonStyle.nsAllowTimer">
-        <short>Enables use of a timer for the operation performed by a navigator button</short>
+        <short>Enables use of a timer for the operation performed by a navigator button.</short>
       </element>
       <element name="TDBNavButtonStyle.nsFocusRect">
-        <short>Allows the button to be drawn with a focus rectangle</short>
+        <short>Allows the button to be drawn with a focus rectangle.</short>
       </element>
       <element name="TDBNavButtonDirection">
         <short/>
@@ -7367,10 +7366,10 @@
         </seealso>
       </element>
       <element name="TDBNavButtonDirection.nbdHorizontal">
-        <short>Buttons are displayed horizontally (in a row)</short>
+        <short>Buttons are displayed horizontally (in a row).</short>
       </element>
       <element name="TDBNavButtonDirection.nbdVertical">
-        <short>Buttons are displayed vertically (in a column)</short>
+        <short>Buttons are displayed vertically (in a column).</short>
       </element>
       <element name="TDBNavigatorOption">
         <short/>
@@ -7386,7 +7385,7 @@
         <seealso/>
       </element>
       <element name="TNavigateBtn">
-        <short>Alias to the TDBNavButtonType type</short>
+        <short>Alias to the TDBNavButtonType type.</short>
         <descr>
           <p>
             <var>TNavigateBtn</var> is an alias for the
@@ -7398,7 +7397,7 @@
         </seealso>
       </element>
       <element name="TDBNavClickEvent">
-        <short>Specifies an event handler used to handle click events in a database navigation control</short>
+        <short>Specifies an event handler used to handle click events in a database navigation control.</short>
         <descr>
           <p>
             <var>TDBNavClickEvent</var> is an object procedure type which specifies an event handler signalled for click events in a database navigation control. TDBNavClickEvent is the type used to implement the
@@ -7415,10 +7414,10 @@
         </seealso>
       </element>
       <element name="TDBNavClickEvent.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBNavClickEvent.Button">
-        <short>Navigator button for the click event</short>
+        <short>Navigator button for the click event.</short>
       </element>
       <element name="DefaultDBNavigatorButtons">
         <short/>
@@ -7436,7 +7435,7 @@
         </seealso>
       </element>
       <element name="DBNavButtonResourceName">
-        <short>Default resource names for the buttons displayed in TDBCustomNavigator</short>
+        <short>Default resource names for the buttons displayed in TDBCustomNavigator.</short>
         <descr>
           <p>
             <var>DBNavButtonResourceName</var> is an array constant which contains the resource names used for the buttons displayed in a database navigator control. Elements in the array contain a
@@ -7460,7 +7459,7 @@
       <element name="TDBCustomNavigator">
         <short>
           <var>TDBCustomNavigator</var> - the base class for
-          <var>TDBNavigator</var>, a tool for navigating through the records of a dataset
+          <var>TDBNavigator</var>, a tool for navigating through the records of a dataset.
         </short>
         <descr>
           <p>
@@ -7518,87 +7517,87 @@
       <element name="TDBCustomNavigator.FImages"/>
       <element name="TDBCustomNavigator.FImageChangeLink"/>
       <element name="TDBCustomNavigator.DefaultHintsChanged">
-        <short>Performs actions needed when the values in the default hints have changed</short>
+        <short>Performs actions needed when the values in the default hints have changed.</short>
         <descr>Used as the OnChange event handler for the TStringList used in UpdateHints.
         </descr>
       </element>
       <element name="TDBCustomNavigator.DefaultHintsChanged.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBCustomNavigator.GetDataSource">
-        <short>Gets the value for the DataSource property</short>
+        <short>Gets the value for the DataSource property.</short>
       </element>
       <element name="TDBCustomNavigator.GetDataSource.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.GetHints">
-        <short>Gets the value for the Hints property</short>
+        <short>Gets the value for the Hints property.</short>
       </element>
       <element name="TDBCustomNavigator.GetHints.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
       </element>
       <element name="TDBCustomNavigator.SetDataSource.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetDirection">
-        <short>Sets the value for the Direction property</short>
+        <short>Sets the value for the Direction property.</short>
       </element>
       <element name="TDBCustomNavigator.SetDirection.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetFlat">
-        <short>Sets the value for the Flat property</short>
+        <short>Sets the value for the Flat property.</short>
       </element>
       <element name="TDBCustomNavigator.SetFlat.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetHints">
-        <short>Sets the value for the Hints property</short>
+        <short>Sets the value for the Hints property.</short>
       </element>
       <element name="TDBCustomNavigator.SetHints.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetImages">
-        <short>Sets the value for the Images property</short>
+        <short>Sets the value for the Images property.</short>
       </element>
       <element name="TDBCustomNavigator.SetImages.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetOptions">
-        <short>Sets the value for the Options property</short>
+        <short>Sets the value for the Options property.</short>
       </element>
       <element name="TDBCustomNavigator.SetOptions.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetShowButtonHints">
-        <short>Sets the value for the ShowButtonHints property</short>
+        <short>Sets the value for the ShowButtonHints property.</short>
       </element>
       <element name="TDBCustomNavigator.SetShowButtonHints.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.SetVisibleButtons">
-        <short>Sets the value for the VisibleButtons property</short>
+        <short>Sets the value for the VisibleButtons property.</short>
       </element>
       <element name="TDBCustomNavigator.SetVisibleButtons.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
       <element name="TDBCustomNavigator.CMGetDataLink">
-        <short>Handles the CM_GETDATALINK message for the control</short>
+        <short>Handles the CM_GETDATALINK message for the control.</short>
       </element>
       <element name="TDBCustomNavigator.CMGetDataLink.Message">
-        <short>Message handled in the method</short>
+        <short>Message handled in the method.</short>
       </element>
       <element name="TDBCustomNavigator.ImageListChange">
-        <short>Implements the OnChange event handler for the TChangeLink instance in the class</short>
+        <short>Implements the OnChange event handler for the TChangeLink instance in the class.</short>
       </element>
       <element name="TDBCustomNavigator.ImageListChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBCustomNavigator.Buttons">
-        <short>The list of Buttons included in the navigator tool</short>
+        <short>The list of Buttons included in the navigator tool.</short>
         <descr>
           <p>
             <var>Buttons</var> is a member which contains an array of
@@ -7624,7 +7623,7 @@
       </element>
       <element name="TDBCustomNavigator.DataChanged">
         <short>
-          <var>DataChanged</var> - update status of all the buttons to reflect new data
+          <var>DataChanged</var> - update status of all the buttons to reflect new data.
         </short>
         <descr/>
         <seealso/>
@@ -7632,7 +7631,7 @@
       <element name="TDBCustomNavigator.EditingChanged">
         <short>
           <var>EditingChanged</var> - the status of the buttons is set to
-          <var>CanModify</var>
+          <var>CanModify</var>.
         </short>
         <descr/>
         <seealso/>
@@ -7641,7 +7640,7 @@
         <short>
           <var>ActiveChanged</var> - if datalink is active, calls
           <var>DataChanged</var> and
-          <var>EditingChanged</var>
+          <var>EditingChanged</var>.
         </short>
         <descr/>
         <seealso>
@@ -7668,7 +7667,7 @@
       <element name="TDBCustomNavigator.UpdateButtons">
         <short>
           <var>UpdateButtons</var> - if the position of the buttons need to be changed, does this, then updates the status of the buttons (see
-          <var>ActiveChanged</var>)
+          <var>ActiveChanged</var>).
         </short>
         <descr/>
         <seealso>
@@ -7677,7 +7676,7 @@
       </element>
       <element name="TDBCustomNavigator.UpdateHints">
         <short>
-          <var>UpdateHints</var> - reloads the default hints and modifies any that have been changed
+          <var>UpdateHints</var> - reloads the default hints and modifies any that have been changed.
         </short>
         <descr/>
         <seealso/>
@@ -7685,7 +7684,7 @@
       <element name="TDBCustomNavigator.HintsChanged">
         <short>
           <var>HintsChanged</var> - calls
-          <var>UpdateHints</var>
+          <var>UpdateHints</var>.
         </short>
         <descr/>
         <seealso>
@@ -7698,7 +7697,7 @@
       <element name="TDBCustomNavigator.ButtonClickHandler">
         <short>
           <var>ButtonClickHandler</var> - performs
-          <var>BtnClick</var> for the appropriate button
+          <var>BtnClick</var> for the appropriate button.
         </short>
         <descr/>
         <seealso/>
@@ -7712,14 +7711,14 @@
       </element>
       <element name="TDBCustomNavigator.BeginUpdateButtons">
         <short>
-          <var>BeginUpdateButtons</var> - locks the buttons before updating them
+          <var>BeginUpdateButtons</var> - locks the buttons before updating them.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.EndUpdateButtons">
         <short>
-          <var>EndUpdateButtons</var> - unlocks each button in turn and updates it if needed
+          <var>EndUpdateButtons</var> - unlocks each button in turn and updates it if needed.
         </short>
         <descr/>
         <errors/>
@@ -7733,7 +7732,7 @@
         <short>
           <var>Create</var> - constructor for
           <var>TDBCustomNavigator</var>: locks the buttons, calls inherited
-          <var>Create</var>, sets default size, style, forms datalinks, initializes hints, updates the buttons
+          <var>Create</var>, sets default size, style, forms datalinks, initializes hints, updates the buttons.
         </short>
         <descr/>
         <seealso>
@@ -7741,13 +7740,13 @@
         </seealso>
       </element>
       <element name="TDBCustomNavigator.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
       <element name="TDBCustomNavigator.Destroy">
         <short>
           <var>Destroy</var> - destructor for
           <var>TDBCustomNavigator</var>: frees datalinks and hints, then calls inherited
-          <var>Destroy</var>
+          <var>Destroy</var>.
         </short>
         <descr/>
         <seealso>
@@ -7757,7 +7756,7 @@
       <element name="TDBCustomNavigator.BtnClick">
         <short>
           <var>BtnClick</var> - procedure to respond to button clicks, and select an action from a list according to the value of the
-          <var>Index</var> of the clicked button
+          <var>Index</var> of the clicked button.
         </short>
         <descr/>
         <seealso/>
@@ -7766,7 +7765,7 @@
         <short/>
       </element>
       <element name="TDBCustomNavigator.VisibleButtonCount">
-        <short>Number of visible buttons in the control</short>
+        <short>Number of visible buttons in the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7775,13 +7774,13 @@
       </element>
       <element name="TDBCustomNavigator.BeforeAction">
         <short>
-          <var>BeforeAction</var> - code to be executed before an action is performed
+          <var>BeforeAction</var> - code to be executed before an action is performed.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.ConfirmDelete">
-        <short>Indicates if the user is asked to confirm a record deletion
+        <short>Indicates if the user is asked to confirm a record deletion.
         </short>
         <descr>
           <p>When set to <b>True</b>, a dialog is displayed to ask for confirmation of the Delete request.
@@ -7790,12 +7789,12 @@
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.DataSource">
-        <short>The Data Source to which the control must be linked in order to function</short>
+        <short>The Data Source to which the control must be linked in order to function.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.Direction">
-        <short>Contains the orientation for buttons displayed on the control: horizontal or vertical
+        <short>Contains the orientation for buttons displayed on the control: horizontal or vertical.
         </short>
         <descr/>
         <seealso/>
@@ -7803,30 +7802,30 @@
       <element name="TDBCustomNavigator.Flat">
         <short>
           <var>Flat</var> - if
-          <b>True</b>, buttons have no 3-D effect
+          <b>True</b>, buttons have no 3-D effect.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.Hints">
-        <short>A list of hints to be shown if the mouse hovers over a button</short>
+        <short>A list of hints to be shown if the mouse hovers over a button.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.Options">
-        <short>Options enabled for the navigator</short>
+        <short>Options enabled for the navigator.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.OnClick">
-        <short>The action to be taken when a navigator button is clicked</short>
+        <short>The action to be taken when a navigator button is clicked.</short>
         <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.OnClick">TControl.OnClick</link>
         </seealso>
       </element>
       <element name="TDBCustomNavigator.VisibleButtons">
-        <short>The set of visible buttons (some of them can be suppressed if their function appears redundant)
+        <short>The set of visible buttons (some of them can be suppressed if their function appears redundant).
         </short>
         <descr>
           <p>The VisibleButtons entry in the Object Inspector can be used to set whether or not a particular button is to be visible.
@@ -7835,12 +7834,12 @@
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.ShowButtonHints">
-        <short>Controls whether button hints are displayed for the control</short>
+        <short>Controls whether button hints are displayed for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.Images">
-        <short>Contains the images available for display on the navigator buttons</short>
+        <short>Contains the images available for display on the navigator buttons.</short>
         <descr>
           <p>
             <var>Images</var> is a
@@ -7864,7 +7863,7 @@
 
       <element name="TDBNavButton">
         <short>
-          <var>TDBNavButton</var> implements a <var>SpeedButton</var> displayed on a <var>TDBNavigator</var> control
+          <var>TDBNavButton</var> implements a <var>SpeedButton</var> displayed on a <var>TDBNavigator</var> control.
         </short>
         <descr/>
         <seealso/>
@@ -7878,14 +7877,14 @@
       </element>
       <element name="TDBNavButton.NavStyle">
         <short>
-          <var>NavStyle</var> - the style of Navigator Button
+          <var>NavStyle</var> - the style of Navigator Button.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBNavButton.Index">
         <short>
-          <var>Index</var> - the value from the enumerated type that specifies which button is being selected
+          <var>Index</var> - the value from the enumerated type that specifies which button is being selected.
         </short>
         <descr>
           <p>Button may be one of the following: nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh.
@@ -7921,7 +7920,7 @@
       </element>
       <element name="TDBNavDataLink">
         <short>
-          <var>TDBNavDataLink</var> - provides a link between a Database Navigator and a DataSet
+          <var>TDBNavDataLink</var> - provides a link between a Database Navigator and a DataSet.
         </short>
         <descr>
           <p>
@@ -7937,14 +7936,14 @@
       <element name="TDBNavDataLink.EditingChanged">
         <short>
           <var>EditingChanged</var> - method to process a change in the
-          <var>Editing</var> property of the navigator
+          <var>Editing</var> property of the navigator.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBNavDataLink.DataSetChanged">
         <short>
-          <var>DataSetChanged</var> - method to process a change in the data set attached to the navigator
+          <var>DataSetChanged</var> - method to process a change in the data set attached to the navigator.
         </short>
         <descr>
           <p>
@@ -7962,7 +7961,7 @@
       <element name="TDBNavDataLink.ActiveChanged">
         <short>
           <var>ActiveChanged</var> - method to process a change in the
-          <var>Active</var> property of the navigator
+          <var>Active</var> property of the navigator.
         </short>
         <descr>
           <p>
@@ -7980,7 +7979,7 @@
       </element>
 
       <element name="TDBNavDataLink.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and calls the inherited constructor. Create assigns the value in <var>TheNavigator</var> to an internal member used in the class instance. It also sets the value in the <var>VisualControl</var> property to <b>True</b>.
@@ -7992,12 +7991,12 @@
         </seealso>
       </element>
       <element name="TDBNavDataLink.Create.TheNavigator">
-        <short>TDBCustomNavigator control for the data link</short>
+        <short>TDBCustomNavigator control for the data link.</short>
       </element>
 
       <element  name="TDBNavigator" link="#lcl.dbctrls.TDBCustomNavigator">
         <short>
-          <var>TDBNavigator </var>- a data-aware Button-Bar to facilitate navigating between records of a dataset
+          <var>TDBNavigator </var>- a data-aware Button-Bar to facilitate navigating between records of a dataset.
         </short>
         <descr>
           <p>
@@ -8099,7 +8098,7 @@
       <element link="#lcl.dbctrls.TDBCustomNavigator.VisibleButtons" name="TDBNavigator.VisibleButtons"/>
       <element link="#lcl.dbctrls.TDBCustomNavigator.Images" name="TDBNavigator.Images"/>
       <element name="ChangeDataSource">
-        <short>Performs actions needed when the datasource in a control with the specified data link is changed
+        <short>Performs actions needed when the datasource in a control with the specified data link is changed.
         </short>
         <descr>
           <p>
@@ -8114,16 +8113,16 @@
         </seealso>
       </element>
       <element name="ChangeDataSource.AControl">
-        <short>Control notified in the routine</short>
+        <short>Control notified in the routine.</short>
       </element>
       <element name="ChangeDataSource.Link">
-        <short>Data link updated in the method</short>
+        <short>Data link updated in the method.</short>
       </element>
       <element name="ChangeDataSource.NewDataSource">
-        <short>Datasource assigned to the data link in the method</short>
+        <short>Datasource assigned to the data link in the method.</short>
       </element>
       <element name="Register">
-        <short>Registers components in the unit for use in the Lazarus IDE</short>
+        <short>Registers components in the unit for use in the Lazarus IDE.</short>
         <descr>
           <p>
             <var>Register</var> is a procedure used to register components in the
@@ -8153,7 +8152,7 @@
       </element>
       <topic name="HowToUseDataAwareControls">
         <short>
-          <var>HowToUseDataAwareControls</var> - Hints for accessing databases
+          <var>HowToUseDataAwareControls</var> - Hints for accessing databases.
         </short>
         <descr>
           <p>

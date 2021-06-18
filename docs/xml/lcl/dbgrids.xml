@@ -4,7 +4,7 @@
     <!-- DBGrids  -->
     <module name="DBGrids">
       <short>
-        Contains Data-aware grids to display and operate on information in a database
+        Contains Data-aware grids to display and operate on information in a database.
       </short>
       <descr>
         <p>
@@ -43,7 +43,7 @@
       <element name="Laz2_XMLCfg"/>
 
       <element name="DEFINDICATORCOLWIDTH">
-        <short>Default width for the indicator column in a grid control</short>
+        <short>Default width for the indicator column in a grid control.</short>
         <descr>
           <p>
             Used to set the width for indicator column (when enabled in the grid options) when the grid control is emptied. The value may be scaled for the display density (PPI) used for the Font in the grid control.
@@ -56,7 +56,7 @@
 
       <element name="EInvalidGridOperation">
         <short>
-          Exception raised for an invalid grid operation
+          Exception raised for an invalid grid operation.
         </short>
         <descr>
           <p>
@@ -69,7 +69,7 @@
 
       <element name="TDBGridOption">
         <short>
-          Enumerated type containing options available for use in a database grid control
+          Enumerated type containing options available for use in a database grid control.
         </short>
         <descr>
           <p>
@@ -86,148 +86,148 @@
       </element>
       <element name="TDBGridOption.dgEditing">
         <short>
-          Indicates cells in the grid can be edited
+          Indicates cells in the grid can be edited.
         </short>
       </element>
       <element name="TDBGridOption.dgTitles">
         <short>
-          Indicates titles are displayed for columns in the grid
+          Indicates titles are displayed for columns in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgIndicator">
         <short>
-          Enables drawing of the row indicator for the currently selected row in the grid
+          Enables drawing of the row indicator for the currently selected row in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgColumnResize">
         <short>
-          Indicates columns in the grid can be resized
+          Indicates columns in the grid can be resized.
         </short>
       </element>
       <element name="TDBGridOption.dgColumnMove">
         <short>
-          Indicates the order of columns in the grid can be changed
+          Indicates the order of columns in the grid can be changed.
         </short>
       </element>
       <element name="TDBGridOption.dgColLines">
         <short>
-          Indicates vertical lines are drawn between columns in the grid
+          Indicates vertical lines are drawn between columns in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgRowLines">
         <short>
-          Indicates horizontal lines are drawn between rows in the grid
+          Indicates horizontal lines are drawn between rows in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgTabs">
         <short>
-          Indicates the Tab key can be used to navigate between cells in the grid
+          Indicates the Tab key can be used to navigate between cells in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgAlwaysShowEditor">
         <short>
-          Indicates an edit control is always displayed for the current cell in the grid
+          Indicates an edit control is always displayed for the current cell in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgRowSelect">
         <short>
-          Indicates the entire row is highlighted when selected
+          Indicates the entire row is highlighted when selected.
         </short>
       </element>
       <element name="TDBGridOption.dgAlwaysShowSelection">
         <short>
-          Indicates the current selection is displayed even when the control loses focus
+          Indicates the current selection is displayed even when the control loses focus.
         </short>
       </element>
       <element name="TDBGridOption.dgConfirmDelete">
         <short>
-          Indicates a confirmation dialog is required when deleting a record in the grid
+          Indicates a confirmation dialog is required when deleting a record in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgCancelOnExit">
         <short>
-          Indicates an active editing operation is cancelled when the control loses focus
+          Indicates an active editing operation is cancelled when the control loses focus.
         </short>
       </element>
       <element name="TDBGridOption.dgMultiselect">
         <short>
-          Indicates more than one cell or row can be selected in the grid
+          Indicates more than one cell or row can be selected in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgHeaderHotTracking">
         <short>
-          Indicates column headers are highlighted when the column has mouse focus
+          Indicates column headers are highlighted when the column has mouse focus.
         </short>
       </element>
       <element name="TDBGridOption.dgHeaderPushedLook">
         <short>
-          Indicates column headers are drawn with a button down appearance
+          Indicates column headers are drawn with a button down appearance.
         </short>
       </element>
       <element name="TDBGridOption.dgPersistentMultiSelect">
         <short>
-          Indicates multiple selections are retained even when the control loses focus
+          Indicates multiple selections are retained even when the control loses focus.
         </short>
       </element>
       <element name="TDBGridOption.dgAutoSizeColumns">
         <short>
-          Indicates columns are automatically resized to fit their content
+          Indicates columns are automatically resized to fit their content.
         </short>
       </element>
       <element name="TDBGridOption.dgAnyButtonCanSelect">
         <short>
-          Indicates that any mouse button can change the selection in the grid
+          Indicates that any mouse button can change the selection in the grid.
         </short>
       </element>
       <element name="TDBGridOption.dgDisableDelete">
         <short>
-          Indicates if deleting records with <var><b>Ctrl + Delete</b></var>  is disabled
+          Indicates if deleting records with <var><b>Ctrl + Delete</b></var>  is disabled.
         </short>
       </element>
       <element name="TDBGridOption.dgDisableInsert">
         <short>
-          Indicates if inserting (or appending) records is disabled
+          Indicates if inserting (or appending) records is disabled.
         </short>
       </element>
       <element name="TDBGridOption.dgCellHints">
         <short>
-          Indicates if displaying a hint for an individual cell is enabled
+          Indicates if displaying a hint for an individual cell is enabled.
         </short>
       </element>
       <element name="TDBGridOption.dgTruncCellHints">
         <short>
-          Indicates if cell hints are truncated when they are too long
+          Indicates if cell hints are truncated when they are too long.
         </short>
       </element>
       <element name="TDBGridOption.dgCellEllipsis">
         <short>
-          Indicates if an Ellipsis character is added to the end of cells longer than the display area for  the cell
+          Indicates if an Ellipsis character is added to the end of cells longer than the display area for  the cell.
         </short>
       </element>
       <element name="TDBGridOption.dgRowHighlight">
         <short>
-          Indicates if the current row in the grid is highlighted instead of the current cell
+          Indicates if the current row in the grid is highlighted instead of the current cell.
         </short>
       </element>
       <element name="TDBGridOption.dgThumbTracking">
         <short>
-          Indicates if the current selection is changed when the mouse thumb wheel is scrolled
+          Indicates if the current selection is changed when the mouse thumb wheel is scrolled.
         </short>
       </element>
       <element name="TDBGridOption.dgDblClickAutoSize">
         <short>
-          Indicates if double clicking on borders or headers for a column causes it to be automatically  resized to its contents
+          Indicates if double clicking on borders or headers for a column causes it to be automatically  resized to its contents.
         </short>
       </element>
       <element name="TDBGridOption.dgDisplayMemoText">
         <short>
-          Indicates if memo content is displayed instead of the '(Memo)' string literal for ftMemo Fields
+          Indicates if memo content is displayed instead of the '(Memo)' string literal for ftMemo Fields.
         </short>
       </element>
 
       <element name="TDbGridOptions">
         <short>
-          Stores values from the <var>TDbGridOption</var> enumeration
+          Stores values from the <var>TDbGridOption</var> enumeration.
         </short>
         <descr>
           <var>TDbGridOptions</var> is a set type used to store values from the <var>TDbGridOption</var> enumeration. <var>TDbGridOptions</var> is the type used for the <var>Options</var> property in  <var>TDBGrid</var>.
@@ -240,7 +240,7 @@
 
       <element name="TDbGridExtraOption">
         <short>
-          Enumerated type that specifies  extra options available in a  database grid
+          Enumerated type that specifies  extra options available in a  database grid.
         </short>
         <descr>
           <p>
@@ -253,18 +253,18 @@
       </element>
       <element name="TDbGridExtraOption.dgeAutoColumns">
         <short>
-          Indicates if Fields in the dataset are automatically added as columns in the database grid
+          Indicates if Fields in the dataset are automatically added as columns in the database grid.
         </short>
       </element>
       <element name="TDbGridExtraOption.dgeCheckboxColumn">
         <short>
-          Indicates that checkbox controls are used to edit Boolean Fields in the grid dataset
+          Indicates that checkbox controls are used to edit Boolean Fields in the grid dataset.
         </short>
       </element>
 
       <element name="TDbGridExtraOptions">
         <short>
-          <var>TDbGridExtraOptions</var> is a set of values from the <var>TDbGridExtraOption</var> enumeration
+          <var>TDbGridExtraOptions</var> is a set of values from the <var>TDbGridExtraOption</var> enumeration.
         </short>
         <descr>
           <p>
@@ -280,7 +280,7 @@
 
       <element name="TDbGridStatusItem">
         <short>
-          Enumerated type with values for status  messages used in a database grid
+          Enumerated type with values for status  messages used in a database grid.
         </short>
         <descr>
           <p>
@@ -294,38 +294,38 @@
       </element>
       <element name="TDbGridStatusItem.gsUpdatingData">
         <short>
-          Indicates the grid is updating after a change to its data
+          Indicates the grid is updating after a change to its data.
         </short>
       </element>
       <element name="TDbGridStatusItem.gsAddingAutoColumns">
         <short>
-          Indicates automatic columns are being added for the grid control
+          Indicates automatic columns are being added for the grid control.
         </short>
       </element>
       <element name="TDbGridStatusItem.gsRemovingAutoColumns">
         <short>
-          Indicates automatic columns are being removed from the grid control
+          Indicates automatic columns are being removed from the grid control.
         </short>
       </element>
       <element name="TDbGridStatusItem.gsAutoSized">
         <short>
-          Indicates automatically sized columns are currently in use in the grid control
+          Indicates automatically sized columns are currently in use in the grid control.
         </short>
       </element>
       <element name="TDbGridStatusItem.gsStartEditing">
         <short>
-          Indicates the data link for a grid control is updating the value in its Editing property
+          Indicates the data link for a grid control is updating the value in its Editing property.
         </short>
       </element>
       <element name="TDbGridStatusItem.gsLoadingGrid">
         <short>
-          Indicates the grid control is loading its settings from a file or stream
+          Indicates the grid control is loading its settings from a file or stream.
         </short>
       </element>
 
       <element name="TDbGridStatus">
         <short>
-          Set type used to store <var>TDbGridStatusItem</var> enumeration values
+          Set type used to store <var>TDbGridStatusItem</var> enumeration values.
         </short>
         <descr>
           <p>
@@ -343,7 +343,7 @@
 
       <element name="TDatasetScrolledEvent">
         <short>
-          Specifies an event handler signalled after scrolling a dataset
+          Specifies an event handler signalled after scrolling a dataset.
         </short>
         <descr>
           <p>
@@ -375,15 +375,15 @@
         <seealso></seealso>
       </element>
       <element name="TDatasetScrolledEvent.Dataset">
-        <short>Dataset for the event</short>
+        <short>Dataset for the event.</short>
       </element>
       <element name="TDatasetScrolledEvent.Distance">
-        <short>Number of rows and direction for the event</short>
+        <short>Number of rows and direction for the event.</short>
       </element>
 
       <element name="TFocusControlEvent">
         <short>
-          Event handler signalled to coordinate Field selection and control focus
+          Event handler signalled to coordinate Field selection and control focus.
         </short>
         <descr>
           <p>
@@ -395,12 +395,12 @@
         </seealso>
       </element>
       <element name="TFocusControlEvent.aField">
-        <short>Field reference for the focus event</short>
+        <short>Field reference for the focus event.</short>
       </element>
 
       <element name="TDBGridClickEvent">
         <short>
-          Specifies an event handler signalled when a grid column in is clicked
+          Specifies an event handler signalled when a grid column in is clicked.
         </short>
         <descr>
           <p>
@@ -410,12 +410,12 @@
         <seealso></seealso>
       </element>
       <element name="TDBGridClickEvent.Column">
-        <short>Column for the event</short>
+        <short>Column for the event.</short>
       </element>
 
       <element name="TMovedEvent">
         <short>
-          Specifies an event handler signalled when the display order of rows or columns  is changed
+          Specifies an event handler signalled when the display order of rows or columns  is changed.
         </short>
         <descr>
           <p>
@@ -428,18 +428,18 @@
         </seealso>
       </element>
       <element name="TMovedEvent.Sender">
-        <short>Grid control for the event</short>
+        <short>Grid control for the event.</short>
       </element>
       <element name="TMovedEvent.FromIndex">
-        <short>Previous ordinal position for the event</short>
+        <short>Previous ordinal position for the event.</short>
       </element>
       <element name="TMovedEvent.ToIndex">
-        <short>New ordinal position for the event</short>
+        <short>New ordinal position for the event.</short>
       </element>
 
       <element name="TDrawColumnCellEvent">
         <short>
-          Specifies an event handler for drawing a cell in a grid control
+          Specifies an event handler for drawing a cell in a grid control.
         </short>
         <descr>
           <p>
@@ -455,21 +455,21 @@
         <short>Grid control for the event`</short>
       </element>
       <element name="TDrawColumnCellEvent.Rect">
-        <short>Canvas rectangle where the cell is drawn</short>
+        <short>Canvas rectangle where the cell is drawn.</short>
       </element>
       <element name="TDrawColumnCellEvent.DataCol">
-        <short>Position of the Field used to get data for the event</short>
+        <short>Position of the Field used to get data for the event.</short>
       </element>
       <element name="TDrawColumnCellEvent.Column">
         <short>Column definition for the event`</short>
       </element>
       <element name="TDrawColumnCellEvent.State">
-        <short>Drawing state for the event</short>
+        <short>Drawing state for the event.</short>
       </element>
 
       <element name="TGetDbEditMaskEvent">
         <short>
-          Specifies an event handler used to get the Edit Mask for a cell in a grid
+          Specifies an event handler used to get the Edit Mask for a cell in a grid.
         </short>
         <descr>
           <p>
@@ -481,18 +481,18 @@
         </seealso>
       </element>
       <element name="TGetDbEditMaskEvent.Sender">
-        <short>Grid control for the event</short>
+        <short>Grid control for the event.</short>
       </element>
       <element name="TGetDbEditMaskEvent.Field">
-        <short>Field for the event</short>
+        <short>Field for the event.</short>
       </element>
       <element name="TGetDbEditMaskEvent.Value">
-        <short>Default value for the edit mask</short>
+        <short>Default value for the edit mask.</short>
       </element>
 
       <element name="TDbGridSelEditorEvent">
         <short>
-          Specifies an event handler used to select a cell editor in a database grid
+          Specifies an event handler used to select a cell editor in a database grid.
         </short>
         <descr>
           <p>
@@ -506,18 +506,18 @@
         </seealso>
       </element>
       <element name="TDbGridSelEditorEvent.Sender">
-        <short>Control signalling the event</short>
+        <short>Control signalling the event.</short>
       </element>
       <element name="TDbGridSelEditorEvent.Column">
-        <short>Column for the control</short>
+        <short>Column for the control.</short>
       </element>
       <element name="TDbGridSelEditorEvent.Editor">
-        <short>Editor for the specified column</short>
+        <short>Editor for the specified column.</short>
       </element>
 
       <element name="TPrepareDbGridCanvasEvent">
         <short>
-          Specifies an event handler which prepares the canvas for drawing a database grid
+          Specifies an event handler which prepares the canvas for drawing a database grid.
         </short>
         <descr>
           <p>
@@ -532,16 +532,16 @@
         </seealso>
       </element>
       <element name="TPrepareDbGridCanvasEvent.Sender">
-        <short>Control signalling the event</short>
+        <short>Control signalling the event.</short>
       </element>
       <element name="TPrepareDbGridCanvasEvent.DataCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TPrepareDbGridCanvasEvent.Column">
-        <short></short>
+        <short/>
       </element>
       <element name="TPrepareDbGridCanvasEvent.AState">
-        <short>Drawing state for the selection</short>
+        <short>Drawing state for the selection.</short>
       </element>
 
       <element name="TDbGridCheckBoxBitmapEvent">
@@ -591,7 +591,7 @@
 
       <element name="TBookmarkedRecordEnumeratorOptions">
         <short>
-          Enumeration with option values for the bookmarked record enumerator
+          Enumeration with option values for the bookmarked record enumerator.
         </short>
         <descr>
           <p>
@@ -604,17 +604,17 @@
         </seealso>
       </element>
       <element name="TBookmarkedRecordEnumeratorOptions.breDisableDataset">
-        <short>Disables controls attached to the dataset</short>
+        <short>Disables controls attached to the dataset.</short>
       </element>
       <element name="TBookmarkedRecordEnumeratorOptions.breStopOnInvalidBookmark">
-        <short>Stops enumerating when an invalid bookmark is encountered</short>
+        <short>Stops enumerating when an invalid bookmark is encountered.</short>
       </element>
       <element name="TBookmarkedRecordEnumeratorOptions.breRestoreCurrent">
-        <short>Restores the current bookmark when exiting the enumerator</short>
+        <short>Restores the current bookmark when exiting the enumerator.</short>
       </element>
 
       <element name="TBookmarkedRecordEnumerator">
-        <short>Defines a bookmarked record enumeration class</short>
+        <short>Defines a bookmarked record enumeration class.</short>
         <descr>
           <p>
             <var>TBookmarkedRecordEnumerator</var> is a Class which defines a bookmarked record enumerator for use in <var>TBookmarklist</var>.
@@ -634,7 +634,7 @@
 
       <element name="TBookmarkedRecordEnumerator.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -644,18 +644,18 @@
         <seealso></seealso>
       </element>
       <element name="TBookmarkedRecordEnumerator.Create.bookList">
-        <short>Bookmark  list for the enumerator</short>
+        <short>Bookmark  list for the enumerator.</short>
       </element>
       <element name="TBookmarkedRecordEnumerator.Create.aGrid">
-        <short>Grid control for the enumerator</short>
+        <short>Grid control for the enumerator.</short>
       </element>
       <element name="TBookmarkedRecordEnumerator.Create.anOptions">
-        <short>Options for the enumerator</short>
+        <short>Options for the enumerator.</short>
       </element>
 
       <element name="TBookmarkedRecordEnumerator.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -674,7 +674,7 @@
 
       <element name="TBookmarkedRecordEnumerator.MoveNext">
         <short>
-          Moves to the next bookmark in the list
+          Moves to the next bookmark in the list.
         </short>
         <descr>
           <p>
@@ -690,12 +690,12 @@
         <seealso></seealso>
       </element>
       <element name="TBookmarkedRecordEnumerator.MoveNext.Result">
-        <short>True when the action has been performed successfully</short>
+        <short>True when the action has been performed successfully.</short>
       </element>
 
       <element name="TBookmarkedRecordEnumerator.GetEnumerator">
         <short>
-          Returns the current class instance (Self)
+          Returns the current class instance (Self).
         </short>
         <descr>
           <p>
@@ -705,12 +705,12 @@
         <seealso></seealso>
       </element>
       <element name="TBookmarkedRecordEnumerator.GetEnumerator.Result">
-        <short>The current class instance</short>
+        <short>The current class instance.</short>
       </element>
 
       <element name="TBookmarkedRecordEnumerator.Current">
         <short>
-          Current bookmark for the enumerator
+          Current bookmark for the enumerator.
         </short>
         <descr>
           <p>
@@ -725,7 +725,7 @@
 
       <element name="TBookmarkedRecordEnumerator.Options">
         <short>
-          Controls the actions performed when Bookmarks are visited
+          Controls the actions performed when Bookmarks are visited.
         </short>
         <descr>
           <p>
@@ -744,7 +744,7 @@
 
       <element name="TBookmarkList">
         <short>
-          Implements a list of Bookmarks in a database grid
+          Implements a list of Bookmarks in a database grid.
         </short>
         <descr>
           <p>
@@ -764,7 +764,7 @@
 
       <element name="TBookmarkList.GetCount">
         <short>
-          Gets the value for the Count property
+          Gets the value for the Count property.
         </short>
         <descr>
           <var>GetCount</var> is an Integer function used to get the value for the Count property.  Use the Items property to access TBookmark instances stored in the list.
@@ -772,12 +772,12 @@
         <seealso></seealso>
       </element>
       <element name="TBookmarkList.GetCount.Result">
-        <short>Number of bookmarks in the list</short>
+        <short>Number of bookmarks in the list.</short>
       </element>
 
       <element name="TBookmarkList.GetCurrentRowSelected">
         <short>
-          Gets the value in the for the CurrentRowSelected property
+          Gets the value in the for the CurrentRowSelected property.
         </short>
         <descr>
           <p>
@@ -792,12 +792,12 @@
         </seealso>
       </element>
       <element name="TBookmarkList.GetCurrentRowSelected.Result">
-        <short>True when a bookmark for the current row already exists in the list</short>
+        <short>True when a bookmark for the current row already exists in the list.</short>
       </element>
 
       <element name="TBookmarkList.GetItem">
         <short>
-          Gets the value for the bookmark stored at the specified position in the list
+          Gets the value for the bookmark stored at the specified position in the list.
         </short>
         <descr>
           <p>
@@ -807,15 +807,15 @@
         <seealso></seealso>
       </element>
       <element name="TBookmarkList.GetItem.Result">
-        <short>The bookmark at the specified position</short>
+        <short>The bookmark at the specified position.</short>
       </element>
       <element name="TBookmarkList.GetItem.AIndex">
-        <short>Ordinal position in the list for the bookmark</short>
+        <short>Ordinal position in the list for the bookmark.</short>
       </element>
 
       <element name="TBookmarkList.SetCurrentRowSelected">
         <short>
-          Sets the value in the CurrentRowSelected property
+          Sets the value in the CurrentRowSelected property.
         </short>
         <descr>
           <p>
@@ -826,13 +826,13 @@
       </element>
       <element name="TBookmarkList.SetCurrentRowSelected.AValue">
         <short>
-          True to select the current row. False to de-selected the current row
+          True to select the current row. False to de-selected the current row.
         </short>
       </element>
 
       <element name="TBookmarkList.CheckActive">
         <short>
-          Ensures that the dataset for the bookmark list is properly configured and active
+          Ensures that the dataset for the bookmark list is properly configured and active.
         </short>
         <descr>
           <p>
@@ -858,7 +858,7 @@
 
       <element name="TBookmarkList.Create">
         <short>
-          <var>Create</var> is the  constructor for TBookmarkList
+          <var>Create</var> is the  constructor for TBookmarkList.
         </short>
         <descr>
           <p>
@@ -870,13 +870,13 @@
         </seealso>
       </element>
       <element name="TBookmarkList.Create.AGrid">
-        <short>Grid control that owns the bookmark list</short>
+        <short>Grid control that owns the bookmark list.</short>
       </element>
 
       <element name="TBookmarkList.Destroy">
         <short>
-          <var>Destroy</var>  is the destructor for  <var>TBookmarkList</var>
-       </short>
+          <var>Destroy</var>  is the destructor for  <var>TBookmarkList</var>.
+        </short>
         <descr>
           <p>
             <var>Destroy</var> is an overridden destructor for the <var>TBookmarkList</var> class instance. Destroy ensures that <var>TBookmark</var> items are removed from the list and freed before the list is freed. Destroy calls the inherited destructor.
@@ -889,7 +889,7 @@
 
       <element name="TBookmarkList.Clear">
         <short>
-          <var>Clear</var> removes all Items in the bookmark list
+          <var>Clear</var> removes all Items in the bookmark list.
         </short>
         <descr>
           <p>
@@ -904,7 +904,7 @@
 
       <element name="TBookmarkList.Delete">
         <short>
-          Deletes rows in the Dataset represented by bookmarks in the list
+          Deletes rows in the Dataset represented by bookmarks in the list.
         </short>
         <descr>
           <p>
@@ -916,7 +916,7 @@
 
       <element name="TBookmarkList.Find">
         <short>
-          <var>Find</var> locates the specified Bookmark and its position in the bookmark list
+          <var>Find</var> locates the specified Bookmark and its position in the bookmark list.
         </short>
         <descr>
           <p>
@@ -936,18 +936,18 @@
         </seealso>
       </element>
       <element name="TBookmarkList.Find.Result">
-        <short>True when the bookmark is located in the list</short>
+        <short>True when the bookmark is located in the list.</short>
       </element>
       <element name="TBookmarkList.Find.Item">
-        <short>Bookmark to locate</short>
+        <short>Bookmark to locate.</short>
       </element>
       <element name="TBookmarkList.Find.AIndex">
-        <short>Position in the list for the bookmark</short>
+        <short>Position in the list for the bookmark.</short>
       </element>
 
       <element name="TBookmarkList.IndexOf">
         <short>
-          <var>IndexOf</var> returns the ordinal position for the specified Bookmark in the list
+          <var>IndexOf</var> returns the ordinal position for the specified Bookmark in the list.
         </short>
         <descr>
           <p>
@@ -957,15 +957,15 @@
         <seealso></seealso>
       </element>
       <element name="TBookmarkList.IndexOf.Result">
-        <short>Position in the list for the bookmark</short>
+        <short>Position in the list for the bookmark.</short>
       </element>
       <element name="TBookmarkList.IndexOf.Item">
-        <short>Bookmark to find in the list</short>
+        <short>Bookmark to find in the list.</short>
       </element>
 
       <element name="TBookmarkList.Refresh">
         <short>
-          Searches for and removes invalid Bookmarks in the list
+          Searches for and removes invalid Bookmarks in the list.
         </short>
         <descr>
           <p>
@@ -975,12 +975,12 @@
         <seealso></seealso>
       </element>
       <element name="TBookmarkList.Refresh.Result">
-        <short>True when the bookmark list was updated and the grid was refreshed</short>
+        <short>True when the bookmark list was updated and the grid was refreshed.</short>
       </element>
 
       <element name="TBookmarkList.GetEnumerator">
         <short>
-          Gets an enumerator for the bookmark list
+          Gets an enumerator for the bookmark list.
         </short>
         <descr>
           <p>
@@ -992,15 +992,15 @@
         </seeslo>
       </element>
       <element name="TBookmarkList.GetEnumerator.Result">
-        <short>The bookmark list enumerator</short>
+        <short>The bookmark list enumerator.</short>
       </element>
       <element name="TBookmarkList.GetEnumerator.opt">
-        <short>Options to use in the bookmark list enumerator</short>
+        <short>Options to use in the bookmark list enumerator.</short>
       </element>
 
       <element name="TBookmarkList.Count">
         <short>
-          Indicates the number of Bookmarks in the list
+          Indicates the number of Bookmarks in the list.
         </short>
         <descr>
           <p>
@@ -1012,7 +1012,7 @@
 
       <element name="TBookmarkList.CurrentRowSelected">
         <short>
-          Indicates if the current row in the Dataset is selected
+          Indicates if the current row in the Dataset is selected.
         </short>
         <descr>
           <p>
@@ -1031,7 +1031,7 @@
 
       <element name="TBookmarkList.Items">
         <short>
-          Provides indexed access to Bookmarks in the list
+          Provides indexed access to Bookmarks in the list.
         </short>
         <descr>
           <p>
@@ -1051,12 +1051,12 @@
         </seealso>
       </element>
       <element name="TBookmarkList.Items.AIndex">
-        <short>Ordinal position for the bookmark to retrieve from the list</short>
+        <short>Ordinal position for the bookmark to retrieve from the list.</short>
       </element>
 
       <element name="TComponentDataLink">
         <short>
-          Maintains an association between a component and a dataset
+          Maintains an association between a component and a dataset.
         </short>
         <descr>
           <p>
@@ -1090,7 +1090,7 @@
 
       <element name="TComponentDataLink.GetDatasetName">
         <short>
-          Gets the value for the DatasetName property
+          Gets the value for the DatasetName property.
         </short>
         <descr>
           <p>
@@ -1103,12 +1103,12 @@
         <seealso></seealso>
       </element>
       <element name="TComponentDataLink.GetDatasetName.Result">
-        <short>Name for the linked dataset</short>
+        <short>Name for the linked dataset.</short>
       </element>
 
       <element name="TComponentDataLink.GetFields">
         <short>
-          Gets the Field at the specified position
+          Gets the Field at the specified position.
         </short>
         <descr>
           <p>
@@ -1121,15 +1121,15 @@
         <seealso></seealso>
       </element>
       <element name="TComponentDataLink.GetFields.Result">
-        <short>Field stored at the specified position</short>
+        <short>Field stored at the specified position.</short>
       </element>
       <element name="TComponentDataLink.GetFields.Index">
-        <short>Position to get from the Fields in the dataset</short>
+        <short>Position to get from the Fields in the dataset.</short>
       </element>
 
       <element name="TComponentDataLink.SetDatasetName">
         <short>
-          Sets the name for the dataset
+          Sets the name for the dataset.
         </short>
         <descr>
           <p>
@@ -1142,12 +1142,12 @@
         <seealso></seealso>
       </element>
       <element name="TComponentDataLink.SetDatasetName.AValue">
-        <short>Name to use for the dataset</short>
+        <short>Name to use for the dataset.</short>
       </element>
 
       <element name="TComponentDataLink.RecordChanged">
         <short>
-          Signals the <var>OnRecordChanged</var> event handler when assigned
+          Signals the <var>OnRecordChanged</var> event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1160,12 +1160,12 @@
         </seealso>
       </element>
       <element name="TComponentDataLink.RecordChanged.Field">
-        <short>Modified Field  for the event notification</short>
+        <short>Modified Field  for the event notification.</short>
       </element>
 
       <element name="TComponentDataLink.DatasetChanged">
         <short>
-          Signals the <var>OnDatasetChanged</var> event handler when assigned
+          Signals the <var>OnDatasetChanged</var> event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1180,7 +1180,7 @@
 
       <element name="TComponentDataLink.ActiveChanged">
         <short>
-          Signals an event handler when the Active property is changed
+          Signals an event handler when the Active property is changed.
         </short>
         <descr>
           <p>
@@ -1200,7 +1200,7 @@
 
       <element name="TComponentDataLink.LayoutChanged">
         <short>
-          Signals the OnLayoutChanged event handler when assigned
+          Signals the OnLayoutChanged event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1215,7 +1215,7 @@
 
       <element name="TComponentDataLink.DatasetScrolled">
         <short>
-          Signals the OnDataSetScrolled event handler when assigned
+          Signals the OnDataSetScrolled event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1227,12 +1227,12 @@
         </seealso>
       </element>
       <element name="TComponentDataLink.DatasetScrolled.Distance">
-        <short>Number of records for the event notification</short>
+        <short>Number of records for the event notification.</short>
       </element>
 
       <element name="TComponentDataLink.FocusControl" link="#fcl.db.TDataLink.FocusControl">
         <short>
-          Signal the OnFocusControl event handler when assigned
+          Signal the OnFocusControl event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1242,12 +1242,12 @@
         <seealso></seealso>
       </element>
       <element name="TComponentDataLink.FocusControl.Field">
-        <short>Field receiving focus in the event notification</short>
+        <short>Field receiving focus in the event notification.</short>
       </element>
 
       <element name="TComponentDataLink.CheckBrowseMode" link="#fcl.db.TDataLink.CheckBrowseMode">
         <short>
-          Calls the inherited method
+          Calls the inherited method.
         </short>
         <descr>
           <p>
@@ -1259,7 +1259,7 @@
 
       <element name="TComponentDataLink.EditingChanged">
         <short>
-          Signals the OnEditingChanged event handler when assigned
+          Signals the OnEditingChanged event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1273,7 +1273,7 @@
 
       <element name="TComponentDataLink.UpdateData">
         <short>
-          Signals the OnUpdateData event handler when assigned
+          Signals the OnUpdateData event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1287,7 +1287,7 @@
 
       <element name="TComponentDataLink.MoveBy" link="#fcl.db.TDataLink.MoveBy">
         <short>
-          Moves the position in the dataset by the specified number of rows
+          Moves the position in the dataset by the specified number of rows.
         </short>
         <descr>
           <p>
@@ -1297,15 +1297,15 @@
         <seealso></seealso>
       </element>
       <element name="TComponentDataLink.MoveBy.Result">
-        <short>Actual number of rows moved in the method</short>
+        <short>Actual number of rows moved in the method.</short>
       </element>
       <element name="TComponentDataLink.MoveBy.Distance">
-        <short>Number of rows to move in the dataset</short>
+        <short>Number of rows to move in the dataset.</short>
       </element>
 
       <element name="TComponentDataLink.Modified">
         <short>
-          Indicates if the component or the linked dataset has been changed
+          Indicates if the component or the linked dataset has been changed.
         </short>
         <descr>
           <p>
@@ -1317,7 +1317,7 @@
 
       <element name="TComponentDataLink.OnRecordChanged">
         <short>
-          <var>OnRecordChanged</var> - event handler for a change in the current record
+          <var>OnRecordChanged</var> - event handler for a change in the current record.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1325,7 +1325,7 @@
 
       <element name="TComponentDataLink.OnDatasetChanged">
         <short>
-          <var>OnDataseChanged</var> - event handler for a change in the attached dataset
+          <var>OnDataseChanged</var> - event handler for a change in the attached dataset.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1333,7 +1333,7 @@
 
       <element name="TComponentDataLink.OnNewdataset">
         <short>
-          <var>OnNewdataset</var> - event handler for formation of a link to a new dataset
+          <var>OnNewdataset</var> - event handler for formation of a link to a new dataset.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1341,7 +1341,7 @@
 
       <element name="TComponentDataLink.OnDatasetOpen">
         <short>
-          <var>OnDataseOpen</var> - event handler when the dataset is open
+          <var>OnDataseOpen</var> - event handler when the dataset is open.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1349,7 +1349,7 @@
 
       <element name="TComponentDataLink.OnInvalidDataset">
         <short>
-          <var>OnInvalidDataset</var> - event handler when the dataset is invalid
+          <var>OnInvalidDataset</var> - event handler when the dataset is invalid.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1357,14 +1357,14 @@
 
       <element name="TComponentDataLink.OnInvalidDataSource">
         <short>
-          <var>OnInvalidDataSource</var> - event handler when the data source is invalid
+          <var>OnInvalidDataSource</var> - event handler when the data source is invalid.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TComponentDataLink.OnFocusContol">
-        <short>Event handler signalled when the grid control receives focus</short>
+        <short>Event handler signalled when the grid control receives focus.</short>
         <descr>
           <p>
             <var>OnFocusControl</var> is a TFocusControlEvent property that implements an event handler signalled when  the grid control receives focus.
@@ -1378,7 +1378,7 @@
       <element name="TComponentDataLink.OnLayoutChanged">
         <short>
           <var>OnLayoutChanged</var> - event handler when the layout of the dataset has
-          changed
+          changed.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1386,7 +1386,7 @@
 
       <element name="TComponentDataLink.OnDatasetClose">
         <short>
-          <var>OnDataseClose</var> - event handler when the dataset is closed
+          <var>OnDataseClose</var> - event handler when the dataset is closed.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1394,7 +1394,7 @@
 
       <element name="TComponentDataLink.OnDatasetScrolled">
         <short>
-          <var>OnDataseScrolled</var> - event handler when the dataset is scrolled
+          <var>OnDataseScrolled</var> - event handler when the dataset is scrolled.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1403,7 +1403,7 @@
       <element name="TComponentDataLink.OnEditingChanged">
         <short>
           <var>OnEditingChanged</var> - event handler for a change in the
-          <var>Editing</var> property
+          <var>Editing</var> property.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1412,7 +1412,7 @@
       <element name="TComponentDataLink.OnUpdateData">
         <short>
           <var>OnUpdateData</var> - event handler for implementing any pending changes to
-          data
+          data.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1420,7 +1420,7 @@
 
       <element name="TComponentDataLink.DatasetName">
         <short>
-          <var>DatasetName</var> - the (string) name of the attached dataset
+          <var>DatasetName</var> - the (string) name of the attached dataset.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1428,24 +1428,24 @@
 
       <element name="TComponentDataLink.Fields">
         <short>
-          <var>Fields</var> - an indexed array containing the Fields of the dataset
+          <var>Fields</var> - an indexed array containing the Fields of the dataset.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TComponentDataLink.Fields.Index">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TComponentDataLink.VisualControl" link="#fcl.db.TDataLink.VisualControl">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TColumnTitle">
         <short>
-          <var>TColumnTitle</var> is a <var>TGridColumnTitle</var> descendant
+          <var>TColumnTitle</var> is a <var>TGridColumnTitle</var> descendant.
         </short>
         <descr>
           <p>
@@ -1456,7 +1456,7 @@
       </element>
 
       <element name="TColumnTitle.GetDefaultCaption">
-        <short>Gets the default caption used as the title for the grid column</short>
+        <short>Gets the default caption used as the title for the grid column.</short>
         <descr>
           <p>
             <var>GetDefaultCaption</var> is an overridden String function in
@@ -1477,12 +1477,12 @@
         </seealso>
       </element>
       <element name="TColumnTitle.GetDefaultCaption.Result">
-        <short>Default value used as the title for the column</short>
+        <short>Default value used as the title for the column.</short>
       </element>
 
       <element name="TColumn">
         <short>
-          Implements a display column for the TDBGrid control
+          Implements a display column for the TDBGrid control.
         </short>
         <descr>
           <p>
@@ -1519,7 +1519,7 @@
 
       <element name="TColumn.ApplyDisplayFormat">
         <short>
-          Applies a new display format to the Field which gets data for the column
+          Applies a new display format to the Field which gets data for the column.
         </short>
         <descr>
           <p>
@@ -1535,7 +1535,7 @@
       </element>
 
       <element name="TColumn.GetDataset">
-        <short>Gets the  Dataset for the column</short>
+        <short>Gets the  Dataset for the column.</short>
         <descr>
           <p>
             <var>GetDataset</var> is a TDataset function used to get the dataset which provides data for the column. GetDataset uses Grid (cast to a TCustomDBGrid  instance) to access its DataLink and get the DataSet for the column definition. The return value is <var><b>Nil</b></var> if Grid has not been assigned for the column.
@@ -1548,12 +1548,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetDataset.Result">
-        <short>Dataset for the column definition</short>
+        <short>Dataset for the column definition.</short>
       </element>
 
       <element name="TColumn.GetDisplayFormat">
         <short>
-          Get the value for the DisplayFormat property
+          Get the value for the DisplayFormat property.
         </short>
         <descr>
           <p>
@@ -1566,12 +1566,12 @@
         <seealso></seealso>
       </element>
       <element name="TColumn.GetDisplayFormat.Result">
-        <short>Value for the DisplayFormat property</short>
+        <short>Value for the DisplayFormat property.</short>
       </element>
 
       <element name="TColumn.GetField">
         <short>
-          Gets the value for the Field property
+          Gets the value for the Field property.
         </short>
         <descr>
           <p>
@@ -1588,12 +1588,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetField.Result">
-        <short>Field used to access data for the column</short>
+        <short>Field used to access data for the column.</short>
       </element>
 
       <element name="TColumn.GetIsDesignColumn">
         <short>
-          Gets the value for the IsDesignColumn property
+          Gets the value for the IsDesignColumn property.
         </short>
         <descr>
           <p>
@@ -1613,12 +1613,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetIsDesignColumn.Result">
-        <short>Value for the IsDesignColumn property</short>
+        <short>Value for the IsDesignColumn property.</short>
       </element>
 
       <element name="TColumn.IsDisplayFormatStored">
         <short>
-          Determines the storage specifier for the DisplayFormat property
+          Determines the storage specifier for the DisplayFormat property.
         </short>
         <descr>
           <p>
@@ -1629,7 +1629,7 @@
       </element>
       <element name="TColumn.IsDisplayFormatStored.Result">
         <short>
-          True when DisplayFormat is different the one used for the Field
+          True when DisplayFormat is different the one used for the Field.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -1637,7 +1637,7 @@
 
       <element name="TColumn.SetDisplayFormat">
         <short>
-          Sets the value in the DisplayFormat property
+          Sets the value in the DisplayFormat property.
         </short>
         <descr>
           <p>
@@ -1658,7 +1658,7 @@
 
       <element name="TColumn.SetField">
         <short>
-          Sets the value in the Field property
+          Sets the value in the Field property.
         </short>
         <descr>
           <p>
@@ -1682,7 +1682,7 @@
 
       <element name="TColumn.SetFieldName">
         <short>
-          Sets the value in the FieldName property
+          Sets the value in the FieldName property.
         </short>
         <descr>
           <p>
@@ -1703,7 +1703,7 @@
 
       <element name="TColumn.CreateTitle" link="#lcl.Grids.TGridColumn.CreateTitle">
         <short>
-          Creates the title used for the grid column
+          Creates the title used for the grid column.
         </short>
         <descr>
           <p>
@@ -1713,12 +1713,12 @@
         <seealso></seealso>
       </element>
       <element name="TColumn.CreateTitle.Result">
-        <short>Title for the column</short>
+        <short>Title for the column.</short>
       </element>
 
       <element name="TColumn.GetDefaultAlignment">
         <short>
-          Gets the default alignment for the Field in the column definition
+          Gets the default alignment for the Field in the column definition.
         </short>
         <descr>
           <p>
@@ -1729,12 +1729,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetDefaultAlignment.Result">
-        <short>Alignment for the Field and/or editor style</short>
+        <short>Alignment for the Field and/or editor style.</short>
       </element>
 
       <element name="TColumn.GetDefaultDisplayFormat">
         <short>
-          Gets the default display format for the Field in a column
+          Gets the default display format for the Field in a column.
         </short>
         <descr>
           <p>
@@ -1750,12 +1750,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetDefaultDisplayFormat.Result">
-        <short>Default display format for the Field in the column</short>
+        <short>Default display format for the Field in the column.</short>
       </element>
 
       <element name="TColumn.GetDefaultValueChecked">
         <short>
-          Gets the default value for a Checkbox in the Checked state as a String
+          Gets the default value for a Checkbox in the Checked state as a String.
         </short>
         <descr>
           <p>
@@ -1771,7 +1771,7 @@
 
       <element name="TColumn.GetDefaultValueUnchecked">
         <short>
-          Gets the default String value for a Checkbox in the UnChecked state
+          Gets the default String value for a Checkbox in the UnChecked state.
         </short>
         <descr>
           <p>
@@ -1787,7 +1787,7 @@
 
       <element name="TColumn.GetDefaultVisible" link="#lcl.Grids.TGridColumn.GetDefaultVisible">
         <short>
-          Indicates if the Field for the column is Visible
+          Indicates if the Field for the column is Visible.
         </short>
         <descr>
           <p>
@@ -1797,12 +1797,12 @@
         <seealso></seealso>
       </element>
       <element name="TColumn.GetDefaultVisible.Result">
-        <short>True when the Field for the column is visible</short>
+        <short>True when the Field for the column is visible.</short>
       </element>
 
       <element name="TColumn.GetDisplayName">
         <short>
-          Gets the display name for the collection item
+          Gets the display name for the collection item.
         </short>
         <descr>
           <p>
@@ -1821,12 +1821,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetDisplayName.Result">
-        <short>Display name for the collection item</short>
+        <short>Display name for the collection item.</short>
       </element>
 
       <element name="TColumn.GetDefaultReadOnly">
         <short>
-          Gets the default value for the ReadOnly property
+          Gets the default value for the ReadOnly property.
         </short>
         <descr>
           <p>
@@ -1840,12 +1840,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetDefaultReadOnly.Result">
-        <short>Effective value for the ReadOnly property</short>
+        <short>Effective value for the ReadOnly property.</short>
       </element>
 
       <element name="TColumn.GetDefaultWidth">
         <short>
-          Gets the effective width for the column
+          Gets the effective width for the column.
         </short>
         <descr>
           <p>
@@ -1860,12 +1860,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetDefaultWidth.Result">
-        <short>Effective width for the the column</short>
+        <short>Effective width for the the column.</short>
       </element>
 
       <element name="TColumn.GetPickList">
         <short>
-          Gets the values in the pick list for the column
+          Gets the values in the pick list for the column.
         </short>
         <descr>
           <p>
@@ -1881,12 +1881,12 @@
         </seealso>
       </element>
       <element name="TColumn.GetPickList.Result">
-        <short>Values available for the lookup-style column</short>
+        <short>Values available for the lookup-style column.</short>
       </element>
 
       <element name="TColumn.IsAutomaticColumn">
         <short>
-          Indicates if the column was automatically added at run-time
+          Indicates if the column was automatically added at run-time.
         </short>
         <descr>
           <p>
@@ -1906,7 +1906,7 @@
 
       <element name="TColumn.IsDesignColumn">
         <short>
-          Indicates if the column was added at design-time
+          Indicates if the column was added at design-time.
         </short>
         <descr>
           <p>
@@ -1925,7 +1925,7 @@
 
       <element name="TColumn.LinkField">
         <short>
-          Establishes a link between the FieldName and the Field in a Dataset
+          Establishes a link between the FieldName and the Field in a Dataset.
         </short>
         <descr>
           <p>
@@ -1948,7 +1948,7 @@
 
       <element name="TColumn.Create">
         <short>
-          Constructor for the <var>TColumn</var> instance
+          Constructor for the <var>TColumn</var> instance.
         </short>
         <descr>
           <p>
@@ -1962,12 +1962,12 @@
         </seealso>
       </element>
       <element name="TColumn.Create.ACollection">
-        <short>Collection that owns the collection item</short>
+        <short>Collection that owns the collection item.</short>
       </element>
 
       <element name="TColumn.Assign">
         <short>
-          Stores properties from a persistent class in the current class instance
+          Stores properties from a persistent class in the current class instance.
         </short>
         <descr>
           <p>
@@ -1985,12 +1985,12 @@
         </seealso>
       </element>
       <element name="TColumn.Assign.Source">
-        <short>Persistent class with values stored in the method</short>
+        <short>Persistent class with values stored in the method.</short>
       </element>
 
       <element name="TColumn.IsDefault" link="#lcl.Grids.TGridColumn.IsDefault">
         <short>
-          Indicates if the column uses its default display format
+          Indicates if the column uses its default display format.
         </short>
         <descr>
           <p>
@@ -2000,12 +2000,12 @@
         <seealso></seealso>
       </element>
       <element name="TColumn.IsDefault.Result">
-        <short>True when DisplayFormat has been changed</short>
+        <short>True when DisplayFormat has been changed.</short>
       </element>
 
       <element name="TColumn.DesignIndex">
         <short>
-          Order for the column in its collection at design-time
+          Order for the column in its collection at design-time.
         </short>
         <descr>
           <p>
@@ -2020,7 +2020,7 @@
 
       <element name="TColumn.Field">
         <short>
-          <var>Field </var> in the <var>Dataset</var> associated with this <var>Column</var>
+          <var>Field </var> in the <var>Dataset</var> associated with this <var>Column</var>.
         </short>
         <descr>
           <p>
@@ -2035,7 +2035,7 @@
 
       <element name="TColumn.FieldName">
         <short>
-          Name of the Field with data for the column
+          Name of the Field with data for the column.
         </short>
         <descr>
           <p>
@@ -2046,7 +2046,7 @@
       </element>
 
       <element name="TColumn.DisplayFormat">
-        <short>The format to be used for display in this column</short>
+        <short>The format to be used for display in this column.</short>
         <descr>
           <p>
             <var>DisplayFormat</var> is a String property which specifies a format string used for displaying the value of a Field with the name in FieldName. Use of DisplayFormat in TColumn is consistent with its use in TField (and decendants), but can assign a value that overrides the default display format for the Field.
@@ -2060,7 +2060,7 @@
 
       <element name="TColumnOrder">
         <short>
-          Enumerated type defining alternate ordering for columns
+          Enumerated type defining alternate ordering for columns.
         </short>
         <descr>
           <p>
@@ -2074,15 +2074,15 @@
         </seealso>
       </element>
       <element name="TColumnOrder.coDesignOrder">
-        <short>Columns are ordered using the DesignIndex value</short>
+        <short>Columns are ordered using the DesignIndex value.</short>
       </element>
       <element name="TColumnOrder.coFieldIndexOrder">
-        <short>Columns are order by the Index for the Field</short>
+        <short>Columns are order by the Index for the Field.</short>
       </element>
 
       <element name="TDbGridColumns">
         <short>
-          Implements a collection for columns in a database grid
+          Implements a collection for columns in a database grid.
         </short>
         <descr>
           <p>
@@ -2103,7 +2103,7 @@
 
       <element name="TDBGridColumns.GetColumn">
         <short>
-          Gets the collection item stored at the specified position
+          Gets the collection item stored at the specified position.
         </short>
         <descr>
           <p>
@@ -2116,15 +2116,15 @@
         <seealso></seealso>
       </element>
       <element name="TDBGridColumns.GetColumn.Result">
-        <short>Collection item at the specified position</short>
+        <short>Collection item at the specified position.</short>
       </element>
       <element name="TDBGridColumns.GetColumn.Index">
-        <short>Position in the collection</short>
+        <short>Position in the collection.</short>
       </element>
 
       <element name="TDBGridColumns.SetColumn">
         <short>
-          Stores the collection item at the specified position
+          Stores the collection item at the specified position.
         </short>
         <descr>
           <p>
@@ -2140,12 +2140,12 @@
         <short>Position where the collection item is stored </short>
       </element>
       <element name="TDBGridColumns.SetColumn.Value">
-        <short>Collection item to store at the specified position</short>
+        <short>Collection item to store at the specified position.</short>
       </element>
 
       <element name="TDBGridColumns.Update">
         <short>
-          Redraws the Grid control that owns the column collection
+          Redraws the Grid control that owns the column collection.
         </short>
         <descr>
           <p>
@@ -2158,12 +2158,12 @@
         </seealso>
       </element>
       <element name="TDBGridColumns.Update.Item">
-        <short>Collection item triggering the update</short>
+        <short>Collection item triggering the update.</short>
       </element>
 
       <element name="TDBGridColumns.ColumnFromField">
         <short>
-          <var>ColumnFromField</var> returns the collection item for the specified Field
+          <var>ColumnFromField</var> returns the collection item for the specified Field.
         </short>
         <descr>
           <p>
@@ -2179,15 +2179,15 @@
         <seealso></seealso>
       </element>
       <element name="TDBGridColumns.ColumnFromField.Result">
-        <short>Collection item for the specified Field</short>
+        <short>Collection item for the specified Field.</short>
       </element>
       <element name="TDBGridColumns.ColumnFromField.Field">
-        <short>Field to locate in the collection</short>
+        <short>Field to locate in the collection.</short>
       </element>
 
       <element name="TDBGridColumns.HasAutomaticColumns">
         <short>
-          <var>HasAutomaticColumns</var> indicates if any items in the collection are an automatic column
+          <var>HasAutomaticColumns</var> indicates if any items in the collection are an automatic column.
         </short>
         <descr>
           <p>
@@ -2200,12 +2200,12 @@
         </seealso>
       </element>
       <element name="TDBGridColumns.HasAutomaticColumns.Result">
-        <short>True when automatic columns are stored in the collection</short>
+        <short>True when automatic columns are stored in the collection.</short>
       </element>
 
       <element name="TDBGridColumns.HasDesignColumns">
         <short>
-          <var>HasDesignColumns</var> indicates if the collection contains any items explicitly added at design-time
+          <var>HasDesignColumns</var> indicates if the collection contains any items explicitly added at design-time.
         </short>
         <descr>
           <p>
@@ -2219,12 +2219,12 @@
         </seealso>
       </element>
       <element name="TDBGridColumns.HasDesignColumns.Result">
-        <short>True an item has its IsDesignColumn property set</short>
+        <short>True an item has its IsDesignColumn property set.</short>
       </element>
 
       <element name="TDBGridColumns.RemoveAutoColumns">
         <short>
-          <var>RemoveAutoColumns</var> removes automatic columns in the collection
+          <var>RemoveAutoColumns</var> removes automatic columns in the collection.
         </short>
         <descr>
           <p>
@@ -2245,7 +2245,7 @@
 
       <element name="TDBGridColumns.Add">
         <short>
-          <var>Add</var> creates and stores a new item  in the collection
+          <var>Add</var> creates and stores a new item  in the collection.
         </short>
         <descr>
           <p>
@@ -2263,7 +2263,7 @@
         </seealso>
       </element>
       <element name="TDBGridColumns.Add.Result">
-        <short>TColumn added to the collection</short>
+        <short>TColumn added to the collection.</short>
       </element>
 
       <element name="TDBGridColumns.ColumnByFieldname">
@@ -2292,7 +2292,7 @@
 
       <element name="TDBGridColumns.LinkFields">
         <short>
-          Associates column items with the corresponding Fields in the Dataset
+          Associates column items with the corresponding Fields in the Dataset.
         </short>
         <descr>
           <p>
@@ -2304,7 +2304,7 @@
 
       <element name="TDBGridColumns.ResetColumnsOrder">
         <short>
-          <var>ResetColumnsOrder</var> arranges columns in the collection to the specified order
+          <var>ResetColumnsOrder</var> arranges columns in the collection to the specified order.
         </short>
         <descr>
           <p>
@@ -2327,7 +2327,7 @@
         <seealso></seealso>
       </element>
       <element name="TDBGridColumns.ResetColumnsOrder.ColumnOrder">
-        <short>Sort order for columns in the collection</short>
+        <short>Sort order for columns in the collection.</short>
       </element>
 
       <element name="TDBGridColumns.Items">
@@ -2345,7 +2345,7 @@
         <seealso></seealso>
       </element>
       <element name="TDBGridColumns.Items.Index">
-        <short>Position for the collection item</short>
+        <short>Position for the collection item.</short>
       </element>
 
       <element name="TCustomDBGrid">
@@ -2420,7 +2420,7 @@
       </element>
 
       <element name="TCustomDBGrid.GetColumns">
-        <short>Gets the value for the Columns property</short>
+        <short>Gets the value for the Columns property.</short>
         <descr>
           <p>
             GetColumns is re-implemented in TCustomDBGrid to return the TDBGridCoumns type, instead of the TGridColumns types used in the TCustomGrid ancestor.
@@ -2432,7 +2432,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.GetColumns.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomDBGrid.GetCurrentColumn">
@@ -2450,7 +2450,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetCurrentColumn.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomDBGrid.GetCurrentField">
@@ -2468,7 +2468,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetCurrentField.Result">
-        <short>Value for the SelectedField property</short>
+        <short>Value for the SelectedField property.</short>
       </element>
 
       <element name="TCustomDBGrid.GetDataSource">
@@ -2486,7 +2486,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetDataSource.Result">
-        <short>Value for the DataSource property</short>
+        <short>Value for the DataSource property.</short>
       </element>
 
       <element name="TCustomDBGrid.GetFirstColumn">
@@ -2519,7 +2519,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetRecordCount.Result">
-        <short>Number of records in the linked dataset</short>
+        <short>Number of records in the linked dataset.</short>
       </element>
 
       <element name="TCustomDBGrid.GetSelectedFieldRect">
@@ -2546,7 +2546,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetSelectedIndex.Result">
-        <short>Ordinal position of the currently selected column</short>
+        <short>Ordinal position of the currently selected column.</short>
       </element>
 
       <element name="TCustomDBGrid.OnRecordChanged">
@@ -2561,7 +2561,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnRecordChanged.Field">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.OnDatasetChanged">
@@ -2576,7 +2576,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnDatasetChanged.aDataset">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.OnDatasetOpen">
@@ -2591,7 +2591,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnDatasetOpen.aDataset">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.OnDatasetClose">
@@ -2604,7 +2604,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnDatasetClose.aDataset">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.OnEditingChanged">
@@ -2617,7 +2617,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnEditingChanged.aDataset">
-        <short>Dataset for the event notification</short>
+        <short>Dataset for the event notification.</short>
       </element>
 
       <element name="TCustomDBGrid.OnInvalidDataset">
@@ -2630,7 +2630,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnInvalidDataset.ADataset">
-        <short>Dataset for the event notification</short>
+        <short>Dataset for the event notification.</short>
       </element>
 
       <element name="TCustomDBGrid.OnInvalidDataSource">
@@ -2643,11 +2643,11 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnInvalidDataSource.ADataset">
-        <short>Dataset for the event notification</short>
+        <short>Dataset for the event notification.</short>
       </element>
 
       <element name="TCustomDBGrid.OnFocusControl">
-        <short>Implements an event handler signalled when a control gets focus</short>
+        <short>Implements an event handler signalled when a control gets focus.</short>
         <descr>
           <p>
             <var>OnFocusControl</var> is a procedure which implements the event handler signalled when a control gets focus in the database grid. It cannot be overridden. Use the OnFocusControl property in DataLink to override the event handler.
@@ -2662,7 +2662,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.OnFocusControl.aField">
-        <short>Field reference for the event</short>
+        <short>Field reference for the event.</short>
       </element>
 
       <element name="TCustomDBGrid.OnLayoutChanged">
@@ -2675,7 +2675,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnLayoutChanged.ADataset">
-        <short>Dataset for the event notification</short>
+        <short>Dataset for the event notification.</short>
       </element>
 
       <element name="TCustomDBGrid.OnNewDataset">
@@ -2688,7 +2688,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnNewdataset.ADataset">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.OnDatasetScrolled">
@@ -2701,10 +2701,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnDatasetScrolled.ADataset">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.OnDatasetScrolled.Distance">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.OnUpdateData">
@@ -2717,17 +2717,17 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnUpdateData.ADataset">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.SetColumns">
-        <short></short>
+        <short/>
         <descr>
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.SetColumns.AValue">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.SetCurrentField">
@@ -2747,7 +2747,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.SetCurrentField.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomDBGrid.SetDataSource">
@@ -2765,7 +2765,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.SetDataSource.AValue">
-        <short>New data source for the property value</short>
+        <short>New data source for the property value.</short>
       </element>
 
       <element name="TCustomDBGrid.SetExtraOptions">
@@ -2783,7 +2783,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.SetExtraOptions.AValue">
-        <short>New value for the ExtraOptions property</short>
+        <short>New value for the ExtraOptions property.</short>
       </element>
 
       <element name="TCustomDBGrid.SetOptions">
@@ -2823,7 +2823,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.SetOptions.AValue">
-        <short>New values for the Options property</short>
+        <short>New values for the Options property.</short>
       </element>
 
       <element name="TCustomDBGrid.SetRowMoved">
@@ -2850,7 +2850,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.SetSelectedIndex.AValue">
-        <short>New value for the SelectedIndex property</short>
+        <short>New value for the SelectedIndex property.</short>
       </element>
 
       <element name="TCustomDBGrid.UpdateBufferCount">
@@ -2886,7 +2886,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetColumnCount.Result">
-        <short>Number of visible Fields or columns in the grid</short>
+        <short>Number of visible Fields or columns in the grid.</short>
       </element>
 
       <element name="TCustomDBGrid.DefaultFieldColWidth">
@@ -2901,10 +2901,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DefaultFieldColWidth.Result">
-        <short>Default column width for the field</short>
+        <short>Default column width for the field.</short>
       </element>
       <element name="TCustomDBGrid.DefaultFieldColWidth.F">
-        <short>Field to examine in the method</short>
+        <short>Field to examine in the method.</short>
       </element>
 
       <element name="TCustomDBGrid.UpdateGridColumnSizes">
@@ -2978,7 +2978,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.ISEOF.Result">
-        <short>EOF state for the linked dataset</short>
+        <short>EOF state for the linked dataset.</short>
       </element>
 
       <element name="TCustomDBGrid.ValidDataset">
@@ -2996,7 +2996,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.ValidDataset.Result">
-        <short>True when the control points to a valid dataset</short>
+        <short>True when the control points to a valid dataset.</short>
       </element>
 
       <element name="TCustomDBGrid.InsertCancelable">
@@ -3014,7 +3014,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.InsertCancelable.Result">
-        <short>True when the insert can be cancelled</short>
+        <short>True when the insert can be cancelled.</short>
       </element>
 
       <element name="TCustomDBGrid.StartUpdating">
@@ -3062,11 +3062,11 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.UpdatingData.Result">
-        <short>True when UpdateData has been called for the control</short>
+        <short>True when UpdateData has been called for the control.</short>
       </element>
 
       <element name="TCustomDBGrid.SwapCheckBox">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -3098,7 +3098,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.SelectRecord.AValue">
-        <short>True when the current record should be selected</short>
+        <short>True when the current record should be selected.</short>
       </element>
 
       <element name="TCustomDBGrid.GetScrollbarParams">
@@ -3113,13 +3113,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetScrollbarParams.aRange">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetScrollbarParams.aPage">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetScrollbarParams.aPos">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.CMGetDataLink">
@@ -3233,17 +3233,17 @@
         </element>
 
       <element name="TCustomDBGrid.BeforeMoveSelection">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso>
           <link id="#lcl.grids.TCustomGrid.BeforeMoveSelection">TCustomGrid.BeforeMoveSelection</link>
         </seealso>
       </element>
       <element name="TCustomDBGrid.BeforeMoveSelection.DCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.BeforeMoveSelection.DRow">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.BeginLayout">
@@ -3275,10 +3275,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.CellClick.aCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.CellClick.aRow">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.CheckDisplayMemo">
@@ -3295,10 +3295,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.CheckDisplayMemo.aField">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.CheckDisplayMemo.Result">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.InvalidateSizes">
@@ -3325,13 +3325,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.ColRowMoved.IsColumn">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.ColRowMoved.FromIndex">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.ColRowMoved.ToIndex">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.ColumnEditorStyle">
@@ -3352,13 +3352,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.ColumnEditorStyle.Result">
-        <short>Button style for the column or Field</short>
+        <short>Button style for the column or Field.</short>
       </element>
       <element name="TCustomDBGrid.ColumnEditorStyle.aCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.ColumnEditorStyle.F">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.CreateColumns">
@@ -3375,7 +3375,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.CreateColumns.Result">
-        <short>Columns collection for the grid control</short>
+        <short>Columns collection for the grid control.</short>
       </element>
 
       <element name="TCustomDBGrid.CreateWnd">
@@ -3399,7 +3399,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.DefineProperties.Filer">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.DefaultDrawCell">
@@ -3417,16 +3417,16 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aRow">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aRect">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aState">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.DefaultEditorStyle">
@@ -3481,13 +3481,13 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.DoMouseWheelDown.Result">
-        <short>True when the mouse event is handled in the method</short>
+        <short>True when the mouse event is handled in the method.</short>
       </element>
       <element name="TCustomDBGrid.DoMouseWheelDown.Shift">
-        <short>Shift state for the mouse wheel event</short>
+        <short>Shift state for the mouse wheel event.</short>
       </element>
       <element name="TCustomDBGrid.DoMouseWheelDown.MousePos">
-        <short>Location of the mouse wheel event</short>
+        <short>Location of the mouse wheel event.</short>
       </element>
 
       <element name="TCustomDBGrid.DoMouseWheelUp">
@@ -3502,13 +3502,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DoMouseWheelUp.Result">
-        <short>True when the mouse event is handled in the method</short>
+        <short>True when the mouse event is handled in the method.</short>
       </element>
       <element name="TCustomDBGrid.DoMouseWheelUp.Shift">
-        <short>Shift state for the mouse wheel event</short>
+        <short>Shift state for the mouse wheel event.</short>
       </element>
       <element name="TCustomDBGrid.DoMouseWheelUp.MousePos">
-        <short>Location of the mouse wheel event</short>
+        <short>Location of the mouse wheel event.</short>
       </element>
 
       <element name="TCustomDBGrid.DoOnChangeBounds">
@@ -3538,13 +3538,13 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.DoPrepareCanvas.aCol">
-        <short>Column number for the operation</short>
+        <short>Column number for the operation.</short>
       </element>
       <element name="TCustomDBGrid.DoPrepareCanvas.aRow">
-        <short>Row number for the operation</short>
+        <short>Row number for the operation.</short>
       </element>
       <element name="TCustomDBGrid.DoPrepareCanvas.aState">
-        <short>Drawing state for the operation</short>
+        <short>Drawing state for the operation.</short>
       </element>
 
       <element name="TCustomDBGrid.DoLoadColumn">
@@ -3630,13 +3630,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DrawFocusRect.aCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.DrawFocusRect.aRow">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.DrawFocusRect.ARect">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.DrawRow" link="#lcl.Grids.TCustomGrid.DrawRow">
@@ -3670,16 +3670,16 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DrawCell.ACol">
-        <short>Column number for the cell</short>
+        <short>Column number for the cell.</short>
       </element>
       <element name="TCustomDBGrid.DrawCell.ARow">
-        <short>Row number for the cell</short>
+        <short>Row number for the cell.</short>
       </element>
       <element name="TCustomDBGrid.DrawCell.ARect">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.DrawCell.AState">
-        <short>Drawing state for the cell</short>
+        <short>Drawing state for the cell.</short>
       </element>
 
       <element name="TCustomDBGrid.DrawCellBackground">
@@ -3721,13 +3721,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DrawCheckboxBitmaps.aCol">
-        <short>Column number to draw</short>
+        <short>Column number to draw.</short>
       </element>
       <element name="TCustomDBGrid.DrawCheckboxBitmaps.aRect">
-        <short>Canvas rectangle for the operation</short>
+        <short>Canvas rectangle for the operation.</short>
       </element>
       <element name="TCustomDBGrid.DrawCheckboxBitmaps.F">
-        <short>Field with data for the column</short>
+        <short>Field with data for the column.</short>
       </element>
 
       <element name="TCustomDBGrid.DrawFixedText">
@@ -3745,16 +3745,16 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DrawFixedText.aCol">
-        <short>Column number to draw</short>
+        <short>Column number to draw.</short>
       </element>
       <element name="TCustomDBGrid.DrawFixedText.aRow">
-        <short>Row number to draw</short>
+        <short>Row number to draw.</short>
       </element>
       <element name="TCustomDBGrid.DrawFixedText.aRect">
-        <short>Canvas rectangle for the drawing operation</short>
+        <short>Canvas rectangle for the drawing operation.</short>
       </element>
       <element name="TCustomDBGrid.DrawFixedText.aState">
-        <short>Drawing state for the operation</short>
+        <short>Drawing state for the operation.</short>
       </element>
 
       <element name="TCustomDBGrid.DrawColumnText">
@@ -3816,10 +3816,10 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.EditingColumn.aCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.EditingColumn.Ok">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.EditorCancelEditing">
@@ -3877,10 +3877,10 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.EditorCanAcceptKey.ch">
-        <short>Key to examine in the method</short>
+        <short>Key to examine in the method.</short>
       </element>
       <element name="TCustomDBGrid.EditorCanAcceptKey.Result">
-        <short>True when the character can be applied to the field</short>
+        <short>True when the character can be applied to the field.</short>
       </element>
 
       <element name="TCustomDBGrid.EditorIsReadOnly" link="#lcl.Grids.TCustomGrid.EditorIsReadOnly">
@@ -3908,7 +3908,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.EditorIsReadOnly.Result">
-        <short>True when an editor cannot modify the select cell</short>
+        <short>True when an editor cannot modify the select cell.</short>
       </element>
 
       <element name="TCustomDBGrid.EditorTextChanged">
@@ -3962,10 +3962,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.FieldIndexFromGridColumn.Result">
-        <short>Position of the field for the specified column</short>
+        <short>Position of the field for the specified column.</short>
       </element>
       <element name="TCustomDBGrid.FieldIndexFromGridColumn.Column">
-        <short>Column to locate in the fields for the control</short>
+        <short>Column to locate in the fields for the control.</short>
       </element>
 
       <element name="TCustomDBGrid.FirstGridColumn">
@@ -3992,7 +3992,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetBufferCount.Result">
-        <short>Number of data rows visible in the grid control</short>
+        <short>Number of data rows visible in the grid control.</short>
       </element>
 
       <element name="TCustomDBGrid.GetCellHintText">
@@ -4022,10 +4022,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnAlignment.Result">
-        <short>Default alignment for the column</short>
+        <short>Default alignment for the column.</short>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnAlignment.Column">
-        <short>Column number to use from the dataset</short>
+        <short>Column number to use from the dataset.</short>
       </element>
 
       <element name="TCustomDBGrid.GetDefaultColumnWidth">
@@ -4040,10 +4040,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnWidth.Result">
-        <short>Default width of the column</short>
+        <short>Default width of the column.</short>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnWidth.Column">
-        <short>Column number to use for the calculation</short>
+        <short>Column number to use for the calculation.</short>
       </element>
 
       <element name="TCustomDBGrid.GetDefaultColumnReadOnly">
@@ -4058,10 +4058,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnReadOnly.Result">
-        <short>True when the column cannot  be modified</short>
+        <short>True when the column cannot  be modified.</short>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnReadOnly.Column">
-        <short>Column number to examine</short>
+        <short>Column number to examine.</short>
       </element>
 
       <element name="TCustomDBGrid.GetDefaultColumnTitle">
@@ -4076,10 +4076,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnTitle.Result">
-        <short>Default title for the column</short>
+        <short>Default title for the column.</short>
       </element>
       <element name="TCustomDBGrid.GetDefaultColumnTitle.Column">
-        <short>Column number to locate in the Fields for the grid control</short>
+        <short>Column number to locate in the Fields for the grid control.</short>
       </element>
 
       <element name="TCustomDBGrid.GetDefaultRowHeight">
@@ -4096,7 +4096,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.GetDefaultRowHeight.Result">
-        <short>Default height for records displayed in the control</short>
+        <short>Default height for records displayed in the control.</short>
       </element>
 
       <element name="TCustomDBGrid.GetDsFieldFromGridColumn">
@@ -4111,10 +4111,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetDsFieldFromGridColumn.Result">
-        <short>Field to use for the specified column</short>
+        <short>Field to use for the specified column.</short>
       </element>
       <element name="TCustomDBGrid.GetDsFieldFromGridColumn.Column">
-        <short>Column with the field to locate in the method</short>
+        <short>Column with the field to locate in the method.</short>
       </element>
 
       <element name="TCustomDBGrid.GetEditMask">
@@ -4140,13 +4140,13 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.GetEditMask.Result">
-        <short>Edit mask for the specified cell</short>
+        <short>Edit mask for the specified cell.</short>
       </element>
       <element name="TCustomDBGrid.GetEditMask.aCol">
-        <short>Column in the grid</short>
+        <short>Column in the grid.</short>
       </element>
       <element name="TCustomDBGrid.GetEditMask.aRow">
-        <short>Row in the grid</short>
+        <short>Row in the grid.</short>
       </element>
 
       <element name="TCustomDBGrid.GetEditText">
@@ -4164,13 +4164,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetEditText.Result">
-        <short>Text value displayed for the specified cell</short>
+        <short>Text value displayed for the specified cell.</short>
       </element>
       <element name="TCustomDBGrid.GetEditText.aCol">
         <short>Column in the grid`</short>
       </element>
       <element name="TCustomDBGrid.GetEditText.aRow">
-        <short>Row in the grid</short>
+        <short>Row in the grid.</short>
       </element>
 
       <element name="TCustomDBGrid.GetFieldFromGridColumn">
@@ -4185,10 +4185,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetFieldFromGridColumn.Result">
-        <short>Field for the specified column</short>
+        <short>Field for the specified column.</short>
       </element>
       <element name="TCustomDBGrid.GetFieldFromGridColumn.Column">
-        <short>Column to locate in the method</short>
+        <short>Column to locate in the method.</short>
       </element>
 
       <element name="TCustomDBGrid.GetGridColumnFromField">
@@ -4203,10 +4203,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetGridColumnFromField.Result">
-        <short>Column for the specified field</short>
+        <short>Column for the specified field.</short>
       </element>
       <element name="TCustomDBGrid.GetGridColumnFromField.F">
-        <short>Field to locate in the grid columns</short>
+        <short>Field to locate in the grid columns.</short>
       </element>
 
       <element name="TCustomDBGrid.GetImageForCheckBox">
@@ -4221,25 +4221,25 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetImageForCheckBox.Result">
-        <short>Bitmap to display for the Checkbox column</short>
+        <short>Bitmap to display for the Checkbox column.</short>
       </element>
       <element name="TCustomDBGrid.GetImageForCheckBox.aCol">
-        <short>Column number for the cell</short>
+        <short>Column number for the cell.</short>
       </element>
       <element name="TCustomDBGrid.GetImageForCheckBox.aRow">
-        <short>Row number for the cell</short>
+        <short>Row number for the cell.</short>
       </element>
       <element name="TCustomDBGrid.GetImageForCheckBox.CheckBoxView">
-        <short>Checkbox state for the column</short>
+        <short>Checkbox state for the column.</short>
       </element>
       <element name="TCustomDBGrid.GetImageForCheckBox.ImageList">
-        <short>Images for the checkbox states</short>
+        <short>Images for the checkbox states.</short>
       </element>
       <element name="TCustomDBGrid.GetImageForCheckBox.ImageIndex">
-        <short>Ordinal position for the image</short>
+        <short>Ordinal position for the image.</short>
       </element>
       <element name="TCustomDBGrid.GetImageForCheckBox.Bitmap">
-        <short>Bitmap for the checkbox</short>
+        <short>Bitmap for the checkbox.</short>
       </element>
 
       <element name="TCustomDBGrid.GetIsCellSelected" link="#lcl.Grids.TCustomGrid.GetIsCellSelected">
@@ -4254,13 +4254,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetIsCellSelected.Result">
-        <short>True when the specified cell is selected or multi-selected</short>
+        <short>True when the specified cell is selected or multi-selected.</short>
       </element>
       <element name="TCustomDBGrid.GetIsCellSelected.aCol">
-        <short>Column number to examine</short>
+        <short>Column number to examine.</short>
       </element>
       <element name="TCustomDBGrid.GetIsCellSelected.aRow">
-        <short>Row number to examine</short>
+        <short>Row number to examine.</short>
       </element>
 
       <element name="TCustomDBGrid.GetIsCellTitle">
@@ -4329,7 +4329,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GridCanModify.Result">
-        <short>True when the grid can be modified</short>
+        <short>True when the grid can be modified.</short>
       </element>
 
       <element name="TCustomDBGrid.GetSBVisibility">
@@ -4346,34 +4346,34 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.GetSBVisibility.HsbVisible">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetSBVisibility.VsbVisible">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.GetSBRanges" link="#lcl.Grids.TCustomGrid.GetSBRanges">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.GetSBRanges.HsbVisible">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetSBRanges.VsbVisible">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetSBRanges.HsbRange">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetSBRanges.VsbRange">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetSBRanges.HsbPage">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.GetSBRanges.VsbPage">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.HeaderClick">
@@ -4390,10 +4390,10 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.HeaderClick.IsColumn">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.HeaderClick.Index">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.HeaderSized" link="#lcl.Grids.TCustomGrid.HeaderSized">
@@ -4414,10 +4414,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.HeaderSized.IsColumn">
-        <short>Sizing applies to a column and not a row</short>
+        <short>Sizing applies to a column and not a row.</short>
       </element>
       <element name="TCustomDBGrid.HeaderSized.Index">
-        <short>Ordinal position for the column</short>
+        <short>Ordinal position for the column.</short>
       </element>
 
       <element name="TCustomDBGrid.IsColumnVisible">
@@ -4545,10 +4545,10 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.KeyDown.Key">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.KeyDown.Shift">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.LinkActive">
@@ -4566,7 +4566,7 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.LinkActive.Value">
-        <short>True when the dataset is open</short>
+        <short>True when the dataset is open.</short>
       </element>
 
       <element name="TCustomDBGrid.LayoutChanged">
@@ -4663,16 +4663,16 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.MouseDown.Button">
-        <short>Mouse button examined in the method</short>
+        <short>Mouse button examined in the method.</short>
       </element>
       <element name="TCustomDBGrid.MouseDown.Shift">
-        <short>Shift / Ctrl / Alt modifier for the mouse buttom</short>
+        <short>Shift / Ctrl / Alt modifier for the mouse buttom.</short>
       </element>
       <element name="TCustomDBGrid.MouseDown.X">
-        <short>Horizontal coordinate for the mouse button click</short>
+        <short>Horizontal coordinate for the mouse button click.</short>
       </element>
       <element name="TCustomDBGrid.MouseDown.Y">
-        <short>Vertical coordinate for the mouse button click</short>
+        <short>Vertical coordinate for the mouse button click.</short>
       </element>
 
       <element name="TCustomDBGrid.MouseMove" link="#lcl.Controls.TControl.MouseMove">
@@ -4699,13 +4699,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.PrepareCanvas.aCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.PrepareCanvas.aRow">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.PrepareCanvas.aState">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.PrepareCellHints">
@@ -4714,10 +4714,10 @@
         <seealso/>
       </element>
       <element name="TCustomDBGrid.PrepareCellHints.ACol">
-        <short>Column number for the cell</short>
+        <short>Column number for the cell.</short>
       </element>
       <element name="TCustomDBGrid.PrepareCellHints.ARow">
-        <short>Row number for the cell</short>
+        <short>Row number for the cell.</short>
       </element>
 
       <element name="TCustomDBGrid.RemoveAutomaticColumns">
@@ -4783,13 +4783,13 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.SetEditText.ACol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.SetEditText.ARow">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.SetEditText.Value">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.SetFixedCols">
@@ -4859,25 +4859,25 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.UpdateGridCounts.Result">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.WMVScroll" link="#lcl.Grids.TCustomGrid.WMVScroll">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.WMVScroll.Message">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.WndProc" link="#lcl.Controls.TControl.WndProc">
-        <short></short>
+        <short/>
         <descr></descr>
        <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.WndProc.TheMessage">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.Columns">
@@ -5123,7 +5123,7 @@
       </element>
 
       <element name="TCustomDBGrid.OnGetCellHint">
-        <short>Event handler signalled to get the hint text for a cell in the grid control</short>
+        <short>Event handler signalled to get the hint text for a cell in the grid control.</short>
         <descr/>
         <seealso>
           <link id="TDbGridCellHintEvent"/>
@@ -5145,16 +5145,16 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnPrepareCanvas.Sender">
-        <short>Grid with the canvas for the operation</short>
+        <short>Grid with the canvas for the operation.</short>
       </element>
       <element name="TCustomDBGrid.OnPrepareCanvas.DataCol">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.OnPrepareCanvas.Column">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomDBGrid.OnPrepareCanvas.AState">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TCustomDBGrid.OnSelectEditor">
@@ -5285,7 +5285,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.Create.AOwner">
-        <short>Owner of the component</short>
+        <short>Owner of the component.</short>
       </element>
 
       <element name="TCustomDBGrid.AutoAdjustColumns">
@@ -5322,16 +5322,16 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DefaultDrawColumnCell.Rect">
-        <short>Canvas rectangle for the cell</short>
+        <short>Canvas rectangle for the cell.</short>
       </element>
       <element name="TCustomDBGrid.DefaultDrawColumnCell.DataCol">
-        <short>Index of the Field for cell data</short>
+        <short>Index of the Field for cell data.</short>
       </element>
       <element name="TCustomDBGrid.DefaultDrawColumnCell.Column">
-        <short>Column definition for the cell</short>
+        <short>Column definition for the cell.</short>
       </element>
       <element name="TCustomDBGrid.DefaultDrawColumnCell.State">
-        <short>Grid drawing state for the cell</short>
+        <short>Grid drawing state for the cell.</short>
       </element>
 
       <element name="TCustomDBGrid.EditorByStyle">
@@ -5348,10 +5348,10 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.EditorByStyle.Result">
-        <short>Editor control for the specified button style</short>
+        <short>Editor control for the specified button style.</short>
       </element>
       <element name="TCustomDBGrid.EditorByStyle.Style">
-        <short>Button style to use in the editor control</short>
+        <short>Button style to use in the editor control.</short>
       </element>
 
       <element name="TCustomDBGrid.ResetColWidths">
@@ -5608,67 +5608,67 @@
       </element>
 
       <element name="TDBGrid.DefaultTextStyle" link="#lcl.Grids.TCustomGrid.DefaultTextStyle">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.EditorBorderStyle" link="#lcl.Grids.TCustomGrid.EditorBorderStyle">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.EditorMode" link="#lcl.Grids.TCustomGrid.EditorMode">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.ExtendedColSizing" link="#lcl.Grids.TCustomGrid.ExtendedColSizing">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.FastEditing" link="#lcl.Grids.TCustomGrid.FastEditing">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.FocusColor" link="#lcl.Grids.TCustomGrid.FocusColor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.FocusRectVisible" link="#lcl.Grids.TCustomGrid.FocusRectVisible">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.GridLineColor" link="#lcl.Grids.TCustomGrid.GridLineColor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.GridLineStyle" link="#lcl.Grids.TCustomGrid.GridLineStyle">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.SelectedColor" link="#lcl.Grids.TCustomGrid.SelectedColor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.SelectedRows" link="#lcl.DBGrids.TCustomDBGrid.SelectedRows">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5692,7 +5692,7 @@
       </element>
 
       <element name="TDBGrid.AlternateColor" link="#lcl.Grids.TCustomGrid.AlternateColor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5720,14 +5720,14 @@
       </element>
 
       <element name="TDBGrid.AutoEdit" link="#lcl.Grids.TCustomGrid.AutoEdit">
-        <short></short>
+        <short/>
         <descr>
         </descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.AutoFillColumns" link="#lcl.Grids.TCustomGrid.AutoFillColumns">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5747,7 +5747,7 @@
       </element>
 
       <element name="TDBGrid.BorderStyle" link="#lcl.Controls.TWinControl.BorderStyle">
-        <short></short>
+        <short/>
         <descr>
           <remarks>
             A restricted set of options are available for the grid control: bsNone or bsSingle.
@@ -5763,7 +5763,7 @@
       </element>
 
       <element name="TDBGrid.Color" link="#lcl.Controls.TControl.Color">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5800,13 +5800,13 @@
       </element>
 
       <element name="TDBGrid.DataSource" link="#lcl.DBGrids.TCustomDBGrid.DataSource">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.DefaultDrawing" link="#lcl.Grids.TCustomGrid.DefaultDrawing">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5827,19 +5827,19 @@
       </element>
 
       <element name="TDBGrid.DoubleBuffered" link="#lcl.Controls.TWinControl.DoubleBuffered">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.DragCursor" link="#lcl.Controls.TControl.DragCursor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.DragMode" link="#lcl.Controls.TControl.DragMode">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5868,7 +5868,7 @@
       </element>
 
       <element name="TDBGrid.FixedHotColor" link="#lcl.Grids.TCustomGrid.FixedHotColor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5890,74 +5890,74 @@
       </element>
 
       <element name="TDBGrid.HeaderHotZones" link="#lcl.Grids.TCustomGrid.HeaderHotZones">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.HeaderPushZones" link="#lcl.Grids.TCustomGrid.HeaderPushZones">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.Options" link="#lcl.DBGrids.TCustomDBGrid.Options">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.Options2" link="#lcl.grids.TCustomGrid.Options2">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OptionsExtra" link="#lcl.DBGrids.TCustomDBGrid.OptionsExtra">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.ParentColor" link="#lcl.Controls.TControl.ParentColor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.ParentDoubleBuffered" link="#lcl.Controls.TWinControl.ParentDoubleBuffered">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.ParentFont" link="#lcl.Controls.TControl.ParentFont">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.PopupMenu" link="#lcl.Controls.TControl.PopupMenu">
-        <short></short>
+        <short/>
         <descr>
         </descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.ReadOnly" link="#lcl.DBGrids.TCustomDBGrid.ReadOnly">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.Scrollbars" link="#lcl.Grids.TCustomGrid.ScrollBars">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -5984,7 +5984,7 @@
       </element>
 
       <element name="TDBGrid.TabOrder" link="#lcl.Controls.TWinControl.TabOrder">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -6005,25 +6005,25 @@
       </element>
 
       <element name="TDBGrid.TitleFont" link="#lcl.Grids.TCustomGrid.TitleFont">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.TitleImageList" link="#lcl.grids.TCustomGrid.TitleImageList">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.TitleStyle" link="#lcl.Grids.TCustomGrid.TitleStyle">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.UseXORFeatures" link="#lcl.Grids.TCustomGrid.UseXORFeatures">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -6045,19 +6045,19 @@
       </element>
 
       <element name="TDBGrid.OnCellClick" link="#lcl.DBGrids.TCustomDBGrid.OnCellClick">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnColEnter" link="#lcl.DBGrids.TCustomDBGrid.OnColEnter">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnColExit" link="#lcl.DBGrids.TCustomDBGrid.OnColExit">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -6071,7 +6071,7 @@
       </element>
 
       <element name="TDBGrid.OnColumnSized" link="#lcl.DBGrids.TCustomDBGrid.OnColumnSized">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -6083,13 +6083,13 @@
       </element>
 
       <element name="TDBGrid.OnDrawColumnCell" link="#lcl.DBGrids.TCustomDBGrid.OnDrawColumnCell">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnDrawColumnTitle" link="#lcl.DBGrids.TCustomDBGrid.OnDrawColumnTitle">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -6104,19 +6104,19 @@
       </element>
 
       <element name="TDBGrid.OnDragDrop" link="#lcl.Controls.TControl.OnDragDrop">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnDragOver" link="#lcl.Controls.TControl.OnDragOver">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnEditButtonClick" link="#lcl.Grids.TCustomGrid.OnEditButtonClick">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -6128,25 +6128,25 @@
       </element>
 
       <element name="TDBGrid.OnEndDrag" link="#lcl.Controls.TControl.OnEndDrag">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnEnter" link="#lcl.Controls.TWinControl.OnEnter">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnExit" link="#lcl.Controls.TWinControl.OnExit">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnFieldEditMask" link="#lcl.DBGrids.TCustomDBGrid.OnFieldEditMask">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -6159,7 +6159,7 @@
 
       <element name="TDBGrid.OnKeyDown" link="#lcl.Controls.TWinControl.OnKeyDown">
         <short>
-          Event handler signalled when a key is down while the control has focus
+          Event handler signalled when a key is down while the control has focus.
         </short>
         <descr>
           <p>
@@ -6202,103 +6202,103 @@
       </element>
 
       <element name="TDBGrid.OnMouseDown" link="#lcl.Controls.TControl.OnMouseDown">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnMouseEnter" link="#lcl.Controls.TControl.OnMouseEnter">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnMouseLeave" link="#lcl.Controls.TControl.OnMouseLeave">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnMouseMove" link="#lcl.Controls.TControl.OnMouseMove">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnMouseUp" link="#lcl.Controls.TControl.OnMouseUp">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnMouseWheel" link="#lcl.Controls.TControl.OnMouseWheel">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnMouseWheelDown" link="#lcl.Controls.TControl.OnMouseWheelDown">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnMouseWheelUp" link="#lcl.Controls.TControl.OnMouseWheelUp">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnPrepareCanvas" link="#lcl.DBGrids.TCustomDBGrid.OnPrepareCanvas">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnSelectEditor" link="#lcl.DBGrids.TCustomDBGrid.OnSelectEditor">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnStartDrag" link="#lcl.Controls.TControl.OnStartDrag">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnTitleClick" link="#lcl.DBGrids.TCustomDBGrid.OnTitleClick">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnUserCheckboxBitmap" link="#lcl.Grids.TCustomGrid.OnUserCheckboxBitmap">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnUserCheckBoxImage" link="#lcl.Grids.TCustomGrid.OnUserCheckBoxImage">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnUserCheckBoxState" link="#lcl.Grids.TCustomGrid.OnUserCheckBoxState">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDBGrid.OnUTF8KeyPress" link="#lcl.Controls.TWinControl.OnUTF8KeyPress">
-        <short></short>
+        <short/>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="Register">
-        <short>Register components in the unit for use in the Lazarus IDE</short>
+        <short>Register components in the unit for use in the Lazarus IDE.</short>
         <descr>
           Register calls RegisterComponents to added <var>TDBGrid</var> to the <b>Data Controls</b> palette in the Lazarus IDE.
         </descr>

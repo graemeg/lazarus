@@ -8,7 +8,7 @@
     -->
     <module name="DBActns">
       <short>
-        Standard actions used to navigate and manipulate a dataset in a datasource
+        Standard actions used to navigate and manipulate a dataset in a datasource.
       </short>
       <descr>
         <p>
@@ -40,7 +40,7 @@
 
       <element name="TDataSetAction">
         <short>
-          <var>TDataSetAction</var> is the base class for all other standard <var>TDataSet</var> actions
+          <var>TDataSetAction</var> is the base class for all other standard <var>TDataSet</var> actions.
         </short>
         <descr>
           <p>
@@ -71,18 +71,18 @@
       <element name="TDataSetAction.FDataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetAction.SetDataSource">
-        <short>Sets the value for the DataSource property</short>
+        <short>Sets the value for the DataSource property.</short>
         <seealso>
           <link id="TDataSetAction.DataSource"/>
         </seealso>
       </element>
       <element name="TDataSetAction.SetDataSource.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TDataSetAction.Notification">
         <short>
-          Performs a notification when the datasource for the component is removed
+          Performs a notification when the datasource for the component is removed.
         </short>
         <descr>
           <p>
@@ -97,39 +97,39 @@
         </seealso>
       </element>
       <element name="TDataSetAction.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDataSetAction.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
 
       <element name="TDataSetAction.GetDataSet">
-        <short>Gets the Dataset assigned to the specified target datasource</short>
+        <short>Gets the Dataset assigned to the specified target datasource.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetAction.GetDataSet.Result">
-        <short>TDataSet assigned to the specified target datasource</short>
+        <short>TDataSet assigned to the specified target datasource.</short>
       </element>
       <element name="TDataSetAction.GetDataSet.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetAction.HandlesTarget">
-        <short>Indicates if the action is handled for the specified target</short>
+        <short>Indicates if the action is handled for the specified target.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetAction.HandlesTarget.Result">
-        <short>True when a valid DataSource and DataSet exist in the Target</short>
+        <short>True when a valid DataSource and DataSet exist in the Target.</short>
       </element>
       <element name="TDataSetAction.HandlesTarget.Target">
-        <short>Object instance examined in the method</short>
+        <short>Object instance examined in the method.</short>
       </element>
 
       <element name="TDataSetAction.DataSource">
         <short>
-          DataSource with the dataset for the action
+          DataSource with the dataset for the action.
         </short>
         <descr>
           <p>
@@ -141,7 +141,7 @@
 
       <element name="TDataSetFirst">
         <short>
-          <var>TDataSetFirst</var> moves to first record in the <var>DataSet</var>
+          <var>TDataSetFirst</var> moves to first record in the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -167,18 +167,18 @@
 
       <element name="TDataSetFirst.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its First method
+          Retrieves the dataset for the target datasource and calls its First method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetFirst.ExecuteTarget.Target">
-        <short>Target where the action is performed in the method</short>
+        <short>Target where the action is performed in the method.</short>
       </element>
 
       <element name="TDataSetFirst.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -188,14 +188,14 @@
         <seealso/>
       </element>
       <element name="TDataSetFirst.UpdateTarget.Target">
-        <short>Target datasource examined in the method</short>
+        <short>Target datasource examined in the method.</short>
       </element>
 
       <element name="TDataSetFirst.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetLast">
         <short>
-          <var>TDataSetLast</var> moves to last record in the <var>DataSet</var>
+          <var>TDataSetLast</var> moves to last record in the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -221,18 +221,18 @@
 
       <element name="TDataSetLast.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Last method
+          Retrieves the dataset for the target datasource and calls its Last method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetLast.ExecuteTarget.Target">
-        <short>Target datasource examined in the method</short>
+        <short>Target datasource examined in the method.</short>
       </element>
 
       <element name="TDataSetLast.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -245,14 +245,14 @@
         <seealso/>
       </element>
       <element name="TDataSetLast.UpdateTarget.Target">
-        <short>Target datasource examined in the method</short>
+        <short>Target datasource examined in the method.</short>
       </element>
 
       <element name="TDataSetLast.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetNext">
         <short>
-          <var>TDataSetNext</var> moves to next record in the <var>DataSet</var>
+          <var>TDataSetNext</var> moves to next record in the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -278,18 +278,18 @@
 
       <element name="TDataSetNext.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Next method
+          Retrieves the dataset for the target datasource and calls its Next method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetNext.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetNext.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -302,14 +302,14 @@
         <seealso/>
       </element>
       <element name="TDataSetNext.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetNext.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetPrior">
         <short>
-          <var>TDataSetPrior</var> moves to previous record in the <var>DataSet</var>
+          <var>TDataSetPrior</var> moves to previous record in the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -335,18 +335,18 @@
 
       <element name="TDataSetPrior.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Prior method
+          Retrieves the dataset for the target datasource and calls its Prior method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetPrior.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetPrior.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -359,14 +359,14 @@
         <seealso/>
       </element>
       <element name="TDataSetPrior.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetPrior.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetRefresh">
         <short>
-          <var>TDataSetRefresh</var> refreshes the <var>DataSet</var>
+          <var>TDataSetRefresh</var> refreshes the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -392,18 +392,18 @@
 
       <element name="TDataSetRefresh.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Refresh method
+          Retrieves the dataset for the target datasource and calls its Refresh method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetRefresh.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetRefresh.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -416,13 +416,13 @@
         <seealso/>
       </element>
       <element name="TDataSetRefresh.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
       <element name="TDataSetRefresh.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetCancel">
         <short>
-          <var>TDataSetCancel</var> cancels the current edit mode for a <var>DataSet</var>
+          <var>TDataSetCancel</var> cancels the current edit mode for a <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -448,18 +448,18 @@
 
       <element name="TDataSetCancel.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Cancel method
+          Retrieves the dataset for the target datasource and calls its Cancel method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetCancel.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetCancel.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -472,14 +472,14 @@
         <seealso/>
       </element>
       <element name="TDataSetCancel.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetCancel.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetDelete">
         <short>
-          <var>TDataSetDelete</var> deletes the current record in the <var>DataSet</var>
+          <var>TDataSetDelete</var> deletes the current record in the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -508,18 +508,18 @@
 
       <element name="TDataSetDelete.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Delete method
+          Retrieves the dataset for the target datasource and calls its Delete method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetDelete.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetDelete.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -532,14 +532,14 @@
         <seealso/>
       </element>
       <element name="TDataSetDelete.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetDelete.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetEdit">
         <short>
-          <var>TDataSetEdit</var> edits the current record in the <var>DataSet</var>
+          <var>TDataSetEdit</var> edits the current record in the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -564,18 +564,18 @@
 
       <element name="TDataSetEdit.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Edit method
+          Retrieves the dataset for the target datasource and calls its Edit method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetEdit.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetEdit.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -588,14 +588,14 @@
         <seealso/>
       </element>
       <element name="TDataSetEdit.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetEdit.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetInsert">
         <short>
-          <var>TDataSetInsert</var> inserts (appends) a new record into the <var>DataSet</var>
+          <var>TDataSetInsert</var> inserts (appends) a new record into the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -624,18 +624,18 @@
 
       <element name="TDataSetInsert.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Insert method
+          Retrieves the dataset for the target datasource and calls its Insert method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetInsert.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetInsert.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -645,14 +645,14 @@
         <seealso/>
       </element>
       <element name="TDataSetInsert.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetInsert.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>
 
       <element name="TDataSetPost">
         <short>
-          <var>TDataSetPost</var> posts changes for the current record to the <var>DataSet</var>
+          <var>TDataSetPost</var> posts changes for the current record to the <var>DataSet</var>.
         </short>
         <descr>
           <p>
@@ -674,18 +674,18 @@
 
       <element name="TDataSetPost.ExecuteTarget">
         <short>
-          Retrieves the dataset for the target datasource and calls its Post method
+          Retrieves the dataset for the target datasource and calls its Post method.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDataSetPost.ExecuteTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetPost.UpdateTarget">
         <short>
-          Enables or disables the action based on the state of the dataset in the target
+          Enables or disables the action based on the state of the dataset in the target.
         </short>
         <descr>
           <p>
@@ -701,7 +701,7 @@
         <seealso/>
       </element>
       <element name="TDataSetPost.UpdateTarget.Target">
-        <short>DataSource object examined in the method</short>
+        <short>DataSource object examined in the method.</short>
       </element>
 
       <element name="TDataSetPost.DataSource" link="#lcl.dbactns.TDataSetAction.DataSource"/>

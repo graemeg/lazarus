@@ -4,7 +4,7 @@
 
     <!-- DBExtCtrls -->
     <module name="DBExtCtrls">
-      <short>Contains extended database controls</short>
+      <short>Contains extended database controls.</short>
       <descr>
         <p>
           <var>dbextctrls.pp</var> contains extended database-aware controls used in the Lazarus Component Library (<b>LCL</b>).
@@ -47,7 +47,7 @@
       <!-- class Visibility: default -->
       <element name="TDBDateEdit">
         <short>
-          TDBDateEdit implements a data-aware editing control for a date field in a dataset
+          TDBDateEdit implements a data-aware editing control for a date field in a dataset.
         </short>
         <descr>
           <p>
@@ -72,7 +72,7 @@
       <!-- procedure Visibility: private -->
       <element name="TDBDateEdit.DataChange">
         <short>
-          Gets the value for the control when its Field has changed
+          Gets the value for the control when its Field has changed.
         </short>
         <descr>
           <p>
@@ -93,13 +93,13 @@
       </element>
       <!-- argument Visibility: private -->
       <element name="TDBDateEdit.DataChange.Sender">
-        <short>Class signalling the data change</short>
+        <short>Class signalling the data change.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TDBDateEdit.UpdateData">
         <short>
-          Updates the field in a dataset when the value for the control has changed
+          Updates the field in a dataset when the value for the control has changed.
         </short>
         <descr>
           <p>
@@ -117,13 +117,13 @@
       </element>
       <!-- argument Visibility: private -->
       <element name="TDBDateEdit.UpdateData.Sender">
-        <short>Class signalling the update</short>
+        <short>Class signalling the update.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TDBDateEdit.GetDataField">
         <short>
-          Gets the value for the DataField property
+          Gets the value for the DataField property.
         </short>
         <descr>
           <p>
@@ -140,13 +140,13 @@
       </element>
       <!-- function result Visibility: private -->
       <element name="TDBDateEdit.GetDataField.Result">
-        <short>Value for the DataField property</short>
+        <short>Value for the DataField property.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TDBDateEdit.GetDataSource">
         <short>
-          Gets the value for the DataSource property
+          Gets the value for the DataSource property.
         </short>
         <descr>
           <p>
@@ -163,13 +163,13 @@
       </element>
       <!-- function result Visibility: private -->
       <element name="TDBDateEdit.GetDataSource.Result">
-        <short>Value for the DataSource property</short>
+        <short>Value for the DataSource property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TDBDateEdit.SetDataField">
         <short>
-          Sets the value for the DataField property
+          Sets the value for the DataField property.
         </short>
         <descr>
           <p>
@@ -187,13 +187,13 @@
       </element>
       <!-- argument Visibility: private -->
       <element name="TDBDateEdit.SetDataField.Value">
-        <short>Value for the DataField property</short>
+        <short>Value for the DataField property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TDBDateEdit.SetDataSource">
         <short>
-          Sets the value for the DataSource property
+          Sets the value for the DataSource property.
         </short>
         <descr>
           <p>
@@ -210,13 +210,13 @@
       </element>
       <!-- argument Visibility: private -->
       <element name="TDBDateEdit.SetDataSource.Value">
-        <short>Value for the DataSource property</short>
+        <short>Value for the DataSource property.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TDBDateEdit.CMGetDataLink">
         <short>
-          Responds to the CM_GETDATALINK control message
+          Responds to the CM_GETDATALINK control message.
         </short>
         <descr>
           <p>
@@ -228,13 +228,13 @@
       </element>
       <!-- argument Visibility: private -->
       <element name="TDBDateEdit.CMGetDataLink.Message">
-        <short>Message for the control notification</short>
+        <short>Message for the control notification.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TDBDateEdit.GetField">
         <short>
-          Gets the value for the Field property
+          Gets the value for the Field property.
         </short>
         <descr>
           <p>
@@ -250,13 +250,13 @@
       </element>
       <!-- function result Visibility: private -->
       <element name="TDBDateEdit.GetField.Result">
-        <short>Value for the Field property</short>
+        <short>Value for the Field property.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.Notification">
         <short>
-          Handles notifications when a component is added or removed
+          Handles notifications when a component is added or removed.
         </short>
         <descr>
           <p>
@@ -268,17 +268,17 @@
       </element>
       <!-- argument Visibility: protected -->
       <element name="TDBDateEdit.Notification.AComponent">
-        <short>Component for the notification event</short>
+        <short>Component for the notification event.</short>
       </element>
       <!-- argument Visibility: protected -->
       <element name="TDBDateEdit.Notification.Operation">
-      <short>Operation for the notification event</short>
+      <short>Operation for the notification event.</short>
       </element>
 
       <!-- function Visibility: protected -->
       <element name="TDBDateEdit.EditCanModify">
         <short>
-          Indicates if the control can modify its contents
+          Indicates if the control can modify its contents.
         </short>
         <descr>
           <p>
@@ -290,13 +290,13 @@
       </element>
       <!-- function result Visibility: protected -->
       <element name="TDBDateEdit.EditCanModify.Result">
-        <short>True when the control value can be changed</short>
+        <short>True when the control value can be changed.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.EditEnter">
         <short>
-          Performs actions required when the Enter key is pressed on the control
+          Performs actions required when the Enter key is pressed on the control.
         </short>
         <descr>
           <p>
@@ -313,7 +313,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.EditKeyDown">
         <short>
-          Handles special keys in the keydown state
+          Handles special keys in the keydown state.
         </short>
         <descr>
           <p>
@@ -336,17 +336,17 @@
       </element>
       <!-- argument Visibility: protected -->
       <element name="TDBDateEdit.EditKeyDown.Key">
-        <short>Numeric value for the key</short>
+        <short>Numeric value for the key.</short>
       </element>
       <!-- argument Visibility: protected -->
       <element name="TDBDateEdit.EditKeyDown.Shift">
-        <short>Shift state for the key</short>
+        <short>Shift state for the key.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.EditKeyPress">
         <short>
-          Ensures character values are valid for the control
+          Ensures character values are valid for the control.
         </short>
         <descr>
           <p>
@@ -361,13 +361,13 @@
       </element>
       <!-- argument Visibility: protected -->
       <element name="TDBDateEdit.EditKeyPress.Key">
-        <short>Character value for the key</short>
+        <short>Character value for the key.</short>
       </element>
 
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.ButtonClick">
         <short>
-          Actions performed when the button for the control is clicked
+          Actions performed when the button for the control is clicked.
         </short>
         <descr>
           <p>
@@ -382,7 +382,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.EditChange">
         <short>
-          Signals the control changed state
+          Signals the control changed state.
         </short>
         <descr>
           <p>
@@ -399,7 +399,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.EditExit">
         <short>
-          Performs actions needed when the exiting the control
+          Performs actions needed when the exiting the control.
         </short>
         <descr>
           <p>
@@ -416,7 +416,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TDBDateEdit.Reset">
         <short>
-          Restores the control to its value in the dataset
+          Restores the control to its value in the dataset.
         </short>
         <descr>
           <p>
@@ -432,7 +432,7 @@
 
       <!-- constructor Visibility: public -->
       <element name="TDBDateEdit.Create">
-        <short>Constructor for the object instance</short>
+        <short>Constructor for the object instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the object instance. Create call the inherited constructor using AOwner as the owner for the object instance. Create allocates resources needed for the DataLink property, and sets the event handlers for its OnDataChange and OnUpdateData properties to the DataChange and UpdateData methods in the class instance.
@@ -446,13 +446,13 @@
       </element>
       <!-- argument Visibility: public -->
       <element name="TDBDateEdit.Create.AOwner">
-        <short>Owner of the object instance</short>
+        <short>Owner of the object instance.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TDBDateEdit.Destroy">
         <short>
-          Frees the object instance
+          Frees the object instance.
         </short>
         <descr>
           <p>
@@ -466,7 +466,7 @@
       <!-- function Visibility: public -->
       <element name="TDBDateEdit.ExecuteAction">
         <short>
-          Perform the default action for the control
+          Perform the default action for the control.
         </short>
         <descr>
           <p>
@@ -480,11 +480,11 @@
       </element>
       <!-- function result Visibility: public -->
       <element name="TDBDateEdit.ExecuteAction.Result">
-        <short>True if the action is successfully handled</short>
+        <short>True if the action is successfully handled.</short>
       </element>
       <!-- argument Visibility: public -->
       <element name="TDBDateEdit.ExecuteAction.AAction">
-        <short>Action to perform</short>
+        <short>Action to perform.</short>
       </element>
 
       <!-- function Visibility: public -->
@@ -501,17 +501,17 @@
       </element>
       <!-- function result Visibility: public -->
       <element name="TDBDateEdit.UpdateAction.Result">
-        <short>True if the action is successfully handled</short>
+        <short>True if the action is successfully handled.</short>
       </element>
       <!-- argument Visibility: public -->
       <element name="TDBDateEdit.UpdateAction.AAction">
-        <short>Action to perform</short>
+        <short>Action to perform.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDBDateEdit.Field">
         <short>
-          TField class which reads and writes data for the control
+          TField class which reads and writes data for the control.
         </short>
         <descr>
           <p>
@@ -532,7 +532,7 @@
       <!-- property Visibility: published -->
       <element name="TDBDateEdit.DataField">
         <short>
-          Name of the field in the dataset
+          Name of the field in the dataset.
         </short>
         <descr>
           <p>
@@ -552,7 +552,7 @@
       <!-- property Visibility: published -->
       <element name="TDBDateEdit.DataSource">
         <short>
-          Provides access to the dataset used for the editing control
+          Provides access to the dataset used for the editing control.
         </short>
         <descr>
           <p>
@@ -566,7 +566,7 @@
       </element>
 
       <element name="Register">
-        <short>Registers components for use  in the Lazarus IDE</short>
+        <short>Registers components for use  in the Lazarus IDE.</short>
         <descr>
           <p>
             The following components are added to the Lazarus IDE component palette:

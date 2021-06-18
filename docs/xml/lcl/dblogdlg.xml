@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="DBLogDlg">
-      <short>Contains forms and routines used to implement a database login dialog</short>
+      <short>Contains forms and routines used to implement a database login dialog.</short>
       <descr>
         <p>
           <file>dblogdlg.pas</file> contains the <var>TLoginDialog</var> dialog form used to capture the user name and password used to login to a database. The <var>LoginDialogEx</var> routine is provided to create, configure, and execute a TLogInDialog instance.
@@ -25,7 +25,7 @@
       <element name="DB"/>
 
       <element name="TLoginDialog">
-        <short>Implements a database login dialog form</short>
+        <short>Implements a database login dialog form.</short>
         <descr>
           <p>
             <var>TLoginDialog</var> is a <var>TForm</var> descendant which implements a database login form. TLoginDialog contains labels and edits used to display and/or edit Database Name, User Name, and Password values. Database Name is read-only and cannot be changed on the form. The User Name can optionally be read-only. It  also has a button panel with Login and Cancel buttons.
@@ -40,59 +40,59 @@
       </element>
 
       <element name="TLoginDialog.lDatabaseName">
-        <short>Label used to display the Database Name for the dialog form</short>
+        <short>Label used to display the Database Name for the dialog form.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLoginDialog.lDatabase">
-        <short>Label for the Database Name field</short>
-        <short></short>
+        <short>Label for the Database Name field.</short>
+        <short>.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLoginDialog.lUserName">
-        <short>Label for the User Name field</short>
+        <short>Label for the User Name field.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLoginDialog.lPassword">
-        <short>Label for the Password field</short>
+        <short>Label for the Password field.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLoginDialog.eUserName">
-        <short>Edit control used to enter the User Name</short>
+        <short>Edit control used to enter the User Name.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLoginDialog.ePassword">
-        <short>Edit control used to enter the Password</short>
+        <short>Edit control used to enter the Password.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLoginDialog.BtnPanel">
-        <short>Button Panel for the OK and Cancel buttons on the dialog</short>
+        <short>Button Panel for the OK and Cancel buttons on the dialog.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLoginDialog.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLoginDialog.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="LoginDialogEx">
-        <short>Creates, configures, and displays a TLoginDialog dialog form</short>
+        <short>Creates, configures, and displays a TLoginDialog dialog form.</short>
         <descr>
           <p>
             <var>LoginDialogEx</var> is a <var>Boolean</var> function used to create, configure, and display a <var>TLoginDialog</var> dialog form. The return value contains <b>True</b> when the <var>ModalResult</var> for the form display contains the value <var>mrOk</var>.
@@ -110,47 +110,47 @@
         <seealso/>
       </element>
       <element name="LoginDialogEx.Result">
-        <short>True when the ModalResult for the form is mrOk</short>
+        <short>True when the ModalResult for the form is mrOk.</short>
       </element>
       <element name="LoginDialogEx.ADatabaseName">
-        <short>Database name displayed on the form</short>
+        <short>Database name displayed on the form.</short>
       </element>
       <element name="LoginDialogEx.AUserName">
-        <short>User name edited on the form</short>
+        <short>User name edited on the form.</short>
       </element>
       <element name="LoginDialogEx.APassword">
-        <short>Password edited on the form</short>
+        <short>Password edited on the form.</short>
       </element>
       <element name="LoginDialogEx.UserNameReadOnly">
-        <short>True if the User Name cannot be changed in the form</short>
+        <short>True if the User Name cannot be changed in the form.</short>
       </element>
 
       <element name="rsDBLogDlgCaption">
-        <short>Resource string with the Caption displayed on the dialog form</short>
+        <short>Resource string with the Caption displayed on the dialog form.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="rsDBLogDlgDatabase">
-        <short>Resource string for the Database label</short>
+        <short>Resource string for the Database label.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="rsDBLogDlgUserName">
-        <short>Resource string for the User Name label</short>
+        <short>Resource string for the User Name label.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="rsDBLogDlgPassword">
-        <short>Resource string for the Password label</short>
+        <short>Resource string for the Password label.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="rsDBLogDlgLogin">
-        <short>Resource string with the caption for the OK button</short>
+        <short>Resource string with the caption for the OK button.</short>
         <descr/>
         <seealso/>
       </element>

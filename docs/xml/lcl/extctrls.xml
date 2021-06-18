@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="ExtCtrls">
-      <short>Contains extra controls commonly used in Lazarus forms</short>
+      <short>Contains extra controls commonly used in Lazarus forms.</short>
       <descr>
         <p>
           <file>extctrls.pp</file> contains extra controls commonly used in Lazarus Component Library (<b>LCL</b>) applications. It adds components to the following tabs in the Lazarus IDE Component Palette:
@@ -78,7 +78,7 @@
       <element name="LazUtilities"/>
 
       <element name="TBeforeShowPageEvent">
-        <short>Specifies an event handler triggered before a page in displayed</short>
+        <short>Specifies an event handler triggered before a page in displayed.</short>
         <descr>
           <p>
             <var>TBeforeShowPageEvent</var> is an object procedure which specifies an event handler triggered before a page in displayed. TBeforeShowPageEvent can be used to perform actions needed to configure the page or its parent control before the new page is displayed.
@@ -92,17 +92,17 @@
         </seealso>
       </element>
       <element name="TBeforeShowPageEvent.ASender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TBeforeShowPageEvent.ANewPage">
-        <short>The page instance for the notification</short>
+        <short>The page instance for the notification.</short>
       </element>
       <element name="TBeforeShowPageEvent.ANewIndex">
-        <short>The ordinal position for the page in the parent control</short>
+        <short>The ordinal position for the page in the parent control.</short>
       </element>
 
       <element name="TImagePaintBackgroundEvent">
-        <short>Specifies an event handler signalled to draw the background for an image</short>
+        <short>Specifies an event handler signalled to draw the background for an image.</short>
         <descr>
           <p>
             <var>TImagePaintBackgroundEvent</var> is an object procedure  which specifies an event handler signalled to draw the backgound for a <var>TImage</var> class instance. TImagePaintBackgroundEvent is the type used to implement the <var>OnPaintBackground</var> event handler in <var>TCustomImage</var>.
@@ -113,18 +113,18 @@
         </seealso>
       </element>
       <element name="TImagePaintBackgroundEvent.ASender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TImagePaintBackgroundEvent.ACanvas">
-        <short>Canvas for the image is drawn</short>
+        <short>Canvas for the image is drawn.</short>
       </element>
       <element name="TImagePaintBackgroundEvent.ARect">
-        <short>Rectangle with the dimensions for the image</short>
+        <short>Rectangle with the dimensions for the image.</short>
       </element>
 
       <element name="TPage">
         <short>
-          <var>TPage</var>: One of the pages in a tabbed Notebook</short>
+          <var>TPage</var>: One of the pages in a tabbed Notebook.</short>
         <descr>
           <p>
             <var>TPage</var> is a <var>TCustomControl</var> descendant that implements a page displayed in a tabbed Notebook.
@@ -139,7 +139,7 @@
       <element name="TPage.FOnBeforeShow"/>
 
       <element name="TPage.GetPageIndex">
-        <short>Gets the ordinal position for the page in the TNotebook</short>
+        <short>Gets the ordinal position for the page in the TNotebook.</short>
         <descr>
           <p>
             <var>GetPageIndex</var> is an Integer function used to get the ordinal position for the page in the <var>TNotebook</var>.
@@ -155,7 +155,7 @@
       </element>
       <element name="TPage.GetPageIndex.Result">
         <short>
-          Ordinal position for the page, or -1 when the Parent control is unassigned or not a TNotebook instance
+          Ordinal position for the page, or -1 when the Parent control is unassigned or not a TNotebook instance.
         </short>
       </element>
 
@@ -166,18 +166,18 @@
       </element>
 
       <element name="TPage.SetParent">
-        <short>Sets the value for the Parent property</short>
+        <short>Sets the value for the Parent property.</short>
         <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
         </seealso>
       </element>
       <element name="TPage.SetParent.AParent">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TPage.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor, and sets the default values for properties in the class instance. The following properties are updated in the method:
@@ -200,11 +200,11 @@
         <seealso/>
       </element>
       <element name="TPage.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TPage.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that the page is also removed from the page list maintained in the <var>Parent</var> control (<var>TNotebook</var>). The action is not performed when the Parent control has <var>csDestroying</var> in its <var>ComponentState</var>, or when Parent has not been assigned.
@@ -217,7 +217,7 @@
       </element>
 
       <element name="TPage.PageIndex" link="#LCL.ComCtrls.TCustomPage.PageIndex">
-        <short>Ordinal position for the page in its Notebook</short>
+        <short>Ordinal position for the page in its Notebook.</short>
         <descr>
           <p>
             <var>PageIndex</var> is a read-only <var>Integer</var> property which contains the ordinal position for the page in its <var>TNotebook</var> container. The return value is <b>-1</b> when the <var>Parent</var> control is unassigned, or not derived from <var>TNotebook</var>.
@@ -230,7 +230,7 @@
       </element>
 
       <element name="TPage. OnBeforeShow">
-        <short>Event handler signalled before a page is displayed</short>
+        <short>Event handler signalled before a page is displayed.</short>
         <descr>
           <p>
             <var>OnBeforeShow</var> is a <var>TBeforeShowPageEvent</var> property that contains the event handler signalled before a page is displayed. Applications must assign an object procedure to the event handler to respond to the event notification.
@@ -268,7 +268,7 @@
       <element name="TPage.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="TUNBPages">
-        <short>Represents page names and class instances for a notebook</short>
+        <short>Represents page names and class instances for a notebook.</short>
         <descr>
           <p>
             <var>TUNBPages</var> is a <var>TStrings</var> descendant used to represent the names, <var>TPage</var> instances, and the owner class in <var>TNotebook</var>. TUNBPages extends the ancestor class by providing overridden methods needed to add, insert, delete and locate pages with a specified name or TPage class instance.
@@ -286,17 +286,17 @@
       <element name="TUNBPages.FNotebook"/>
 
       <element name="TUNBPages.GetNotebookOwner">
-        <short>Gets the owner for the TNotebook instance for the pages</short>
+        <short>Gets the owner for the TNotebook instance for the pages.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TUNBPages.GetNotebookOwner.Result">
-        <short>Owner of the TNotebook instance for the pages</short>
+        <short>Owner of the TNotebook instance for the pages.</short>
       </element>
 
       <element name="TUNBPages.Get">
         <short>
-          Gets the name for the page stored at the specified position in the list of pages
+          Gets the name for the page stored at the specified position in the list of pages.
         </short>
         <descr>
           <p>
@@ -312,37 +312,37 @@
         <seealso/>
       </element>
       <element name="TUNBPages.Get.Result">
-        <short>Name for the page at the specified position</short>
+        <short>Name for the page at the specified position.</short>
       </element>
       <element name="TUNBPages.Get.Index">
-        <short>Ordinal position for the page requested in the method</short>
+        <short>Ordinal position for the page requested in the method.</short>
       </element>
 
       <element name="TUNBPages.GetCount">
-        <short>Gets the number of pages defined in the page list</short>
+        <short>Gets the number of pages defined in the page list.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TUNBPages.GetCount.Result">
-        <short>Value for the Count property</short>
+        <short>Value for the Count property.</short>
       </element>
 
       <element name="TUNBPages.GetObject">
         <short>
-          Gets the TPage class instance stored at the specified ordinal position in the page list
+          Gets the TPage class instance stored at the specified ordinal position in the page list.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TUNBPages.GetObject.Result">
-        <short>TPage class instance at the specified position</short>
+        <short>TPage class instance at the specified position.</short>
       </element>
       <element name="TUNBPages.GetObject.Index">
-        <short>Ordinal position in the list of pages for the requested page object</short>
+        <short>Ordinal position in the list of pages for the requested page object.</short>
       </element>
 
       <element name="TUNBPages.Put" link="#rtl.classes.TStrings.Put">
-        <short>Ensures that the index value is valid before accessing the TPage object</short>
+        <short>Ensures that the index value is valid before accessing the TPage object.</short>
         <descr>
           <p>
             <var>Put</var> is overridden in <var>TUNBPages</var> to set the name for the page object at the specified position. Put ensures that the value in Index is valid. Index must contain a value in the range 0 to the number of defined pages - 1. An exception is raised  when Index contains an invalid value.
@@ -357,29 +357,29 @@
         <seealso/>
       </element>
       <element name="TUNBPages.Put.Index">
-        <short>Ordinal position for the page object updated in the method</short>
+        <short>Ordinal position for the page object updated in the method.</short>
       </element>
       <element name="TUNBPages.Put.S">
-        <short>Name stored in the requested page object</short>
+        <short>Name stored in the requested page object.</short>
       </element>
 
       <element name="TUNBPages.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TUNBPages.Create.theNotebook">
-        <short>Notebook that is the owner of the class instance</short>
+        <short>Notebook that is the owner of the class instance.</short>
       </element>
 
       <element name="TUNBPages.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TUNBPages.Add">
-        <short>Creates a new page instance with the specified name</short>
+        <short>Creates a new page instance with the specified name.</short>
         <descr>
           <p>
             <var>Add</var> is an overridden <var>Integer</var> function used to create a new <var>TPage</var> instance with the name specified in <var>S</var>. The page object is created using the return value from <var>GetNotebookOwner</var> as the owner of the class instance. Add calls the <var>AddObject</var> method to store the page object in the list of pages for the notebook.
@@ -391,29 +391,29 @@
         <seealso/>
       </element>
       <element name="TUNBPages.Add.Result">
-        <short>Ordinal position where the page object was stored</short>
+        <short>Ordinal position where the page object was stored.</short>
       </element>
       <element name="TUNBPages.Add.S">
-        <short>Name for the page added in the method</short>
+        <short>Name for the page added in the method.</short>
       </element>
 
       <element name="TUNBPages.AddObject">
-        <short>Adds the specified page object to the list of pages</short>
+        <short>Adds the specified page object to the list of pages.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TUNBPages.AddObject.Result">
-        <short>Ordinal position in the page list where the page object was stored</short>
+        <short>Ordinal position in the page list where the page object was stored.</short>
       </element>
       <element name="TUNBPages.AddObject.S">
-        <short>Identifier used as the name and/or caption for the page object</short>
+        <short>Identifier used as the name and/or caption for the page object.</short>
       </element>
       <element name="TUNBPages.AddObject.AObject">
-        <short>Page object stored in the method</short>
+        <short>Page object stored in the method.</short>
       </element>
 
       <element name="TUNBPages.Clear">
-        <short>Removes all page objects stored in the list of pages</short>
+        <short>Removes all page objects stored in the list of pages.</short>
         <descr>
           <p>
             <var>Clear</var> is an overridden method which implements the abstract virtual method declared in the <var>TStrings</var> ancestor. Clear is used to remove all <var>TPage</var> instances stored in the the internal page list. It calls the <var>Delete</var> method to remove the last TPage instance in the list until all items in the list have been deleted.
@@ -426,18 +426,18 @@
       </element>
 
       <element name="TUNBPages.Delete">
-        <short>Deletes the page at the specified position in the list of pages</short>
+        <short>Deletes the page at the specified position in the list of pages.</short>
         <descr>
         </descr>
         <seealso/>
       </element>
       <element name="TUNBPages.Delete.Index">
-        <short>Ordinal position in the list of pages for page removed in the method</short>
+        <short>Ordinal position in the list of pages for page removed in the method.</short>
       </element>
 
       <element name="TUNBPages.IndexOfObject" link="#rtl.classes.TStrings.IndexOfObject">
         <short>
-          Gets the ordinal position for the specified page object in the list of pages
+          Gets the ordinal position for the specified page object in the list of pages.
         </short>
         <descr/>
         <seealso/>
@@ -451,7 +451,7 @@
 
       <element name="TUNBPages.Insert" link="#rtl.classes.TStrings.Insert">
         <short>
-          Inserts a page with the specified name at the given position in the list of pages
+          Inserts a page with the specified name at the given position in the list of pages.
         </short>
         <descr/>
         <seealso/>
@@ -464,7 +464,7 @@
       </element>
 
       <element name="TUNBPages.Move">
-        <short>Moves the active page to a position in the page list</short>
+        <short>Moves the active page to a position in the page list.</short>
         <descr>
           <p>
             <var>Move</var> is an overridden procedure in <var>TUNBPages</var>.  It re-implements the method defined in the <var>TStrings</var> ancestor class. Move is used to relocate the active page in a NoteBook control to a new position in the page list.
@@ -491,15 +491,15 @@
         </seealso>
       </element>
       <element name="TUNBPages.Move.CurIndex`">
-        <short>Current position for the active page</short>
+        <short>Current position for the active page.</short>
       </element>
       <element name="TUNBPages.Move.NewIndex`">
-        <short>New position in the page list for the page</short>
+        <short>New position in the page list for the page.</short>
       </element>
 
       <element name="TNotebook">
         <short>
-          <var>TNotebook</var> is a container for a series of <var>pages</var> placed together
+          <var>TNotebook</var> is a container for a series of <var>pages</var> placed together.
         </short>
         <descr>
           <p>
@@ -523,87 +523,87 @@
       <element name="TNotebook.FPageIndex"/>
 
       <element name="TNotebook.GetActivePage">
-        <short>Gets the value for the ActivePage property</short>
+        <short>Gets the value for the ActivePage property.</short>
         <descr/>
         <seealso>
           <link id="TNotebook.ActivePage"/>
         </seealso>
       </element>
       <element name="TNotebook.GetActivePage.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TNotebook.GetActivePageComponent">
-        <short>Gets the value for the ActivePageComponent property</short>
+        <short>Gets the value for the ActivePageComponent property.</short>
         <descr/>
         <seealso>
           <link id="TNotebook.ActivePageComponent"/>
         </seealso>
       </element>
       <element name="TNotebook.GetActivePageComponent.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TNotebook.GetPage">
-        <short>Gets the value for the indexed Page property</short>
+        <short>Gets the value for the indexed Page property.</short>
         <descr/>
         <seealso>
           <link id="TNotebook.Page"/>
         </seealso>
       </element>
       <element name="TNotebook.GetPage.Result">
-        <short>Page object at the specified position in the list of pages</short>
+        <short>Page object at the specified position in the list of pages.</short>
       </element>
       <element name="TNotebook.GetPage.AIndex">
-        <short>Ordinal position for the requested page object in the list of pages</short>
+        <short>Ordinal position for the requested page object in the list of pages.</short>
       </element>
 
       <element name="TNotebook.GetPageCount">
-        <short>Gets the value for the PageCount property</short>
+        <short>Gets the value for the PageCount property.</short>
         <descr/>
         <seealso>
           <link id="TNotebook.PageCount"/>
         </seealso>
       </element>
       <element name="TNotebook.GetPageCount.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TNotebook.GetPageIndex">
-        <short>Gets the value for the PageIndex property</short>
+        <short>Gets the value for the PageIndex property.</short>
         <descr/>
         <seealso>
           <link id="TNotebook.PageIndex"/>
         </seealso>
       </element>
       <element name="TNotebook.GetPageIndex.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TNotebook.SetPageIndex">
-        <short>Sets the value for the PageIndex property</short>
+        <short>Sets the value for the PageIndex property.</short>
         <descr/>
         <seealso>
           <link id="TNotebook.PageIndex"/>
         </seealso>
       </element>
       <element name="TNotebook.SetPageIndex.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TNotebook.SetPages">
-        <short>Sets the value for the Pages property</short>
+        <short>Sets the value for the Pages property.</short>
         <descr/>
         <seealso>
           <link id="TNotebook.Pages"/>
         </seealso>
       </element>
       <element name="TNotebook.SetPages.Items">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TNotebook.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance.
@@ -623,11 +623,11 @@
         <seealso/>
       </element>
       <element name="TNotebook.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TNotebook.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to the internal page list member are freed. Destroy calls the inherited destructor prior to exiting from the method.
@@ -637,7 +637,7 @@
       </element>
 
       <element name="TNotebook.ShowControl">
-        <short>Displays the specified control (page object)</short>
+        <short>Displays the specified control (page object).</short>
         <descr>
           <p>
             <var>ShowControl</var> is an overridden procedure used to display the control specified in <var>AControl</var>. ShowControl checks the internal list of pages for the value specified in AControl. The ordinal position for the page object, when found, is assigned to  the <var>PageIndex</var> property and causes the page object to become visible.
@@ -656,25 +656,25 @@
         </seealso>
       </element>
       <element name="TNotebook.ShowControl.AControl">
-        <short>Page object to display in the notebook control</short>
+        <short>Page object to display in the notebook control.</short>
       </element>
 
       <element name="TNotebook.IndexOf">
         <short>
-          Gets the ordinal position in the list of pages for the specified page object
+          Gets the ordinal position in the list of pages for the specified page object.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TNotebook.IndexOf.Result">
-        <short>Ordinal position for the requested page object</short>
+        <short>Ordinal position for the requested page object.</short>
       </element>
       <element name="TNotebook.IndexOf.APage">
-        <short>Page object to locate in the list of pages</short>
+        <short>Page object to locate in the list of pages.</short>
       </element>
 
       <element name="TNotebook.ActivePage">
-        <short>Gets the name for the active page object in the notebook control</short>
+        <short>Gets the name for the active page object in the notebook control.</short>
         <descr>
           <p>
             <var>ActivePage</var> is a read-only <var>String</var> property which provides the name for the active page object in the notebook control. The value in <var>PageIndex</var> is used to access the page object instance in the <var>Page</var> property. Its <var>Name</var> property is used as the property  value.
@@ -696,7 +696,7 @@
 
       <element name="TNotebook.ActivePageComponent">
         <short>
-          Gets the TPage instance representing the active page in the notebook control
+          Gets the TPage instance representing the active page in the notebook control.
         </short>
         <descr>
           <p>
@@ -711,7 +711,7 @@
 
       <element name="TNotebook.Page">
         <short>
-          Provides access to a page object in the notebook control by its ordinal position in the list of pages
+          Provides access to a page object in the notebook control by its ordinal position in the list of pages.
         </short>
         <descr>
           <p>
@@ -721,11 +721,11 @@
         <seealso/>
       </element>
       <element name="TNotebook.Page.Index">
-        <short>Ordinal position for the requested page object</short>
+        <short>Ordinal position for the requested page object.</short>
       </element>
 
       <element name="TNotebook.PageCount">
-        <short>Indicates the number of page objects defined for the notebook control</short>
+        <short>Indicates the number of page objects defined for the notebook control.</short>
         <descr>
           <p>
             <var>PageCount</var> is a read-only Integer property that indicates the number of page objects defined for the notebook control. The value in PageCount is  determined by the total number of entries stored in the list of Pages.
@@ -738,7 +738,7 @@
       </element>
 
       <element name="TNotebook.PageIndex">
-        <short>Ordinal position for the active page in the notebook control</short>
+        <short>Ordinal position for the active page in the notebook control.</short>
         <descr>
           <p>
             <var>PageIndex</var> is an <var>Integer</var> property that indicates the ordinal position for the active page in the notebook control.
@@ -757,7 +757,7 @@
       </element>
 
       <element name="TNotebook.Pages">
-        <short>Contains the page names defined for the notebook control</short>
+        <short>Contains the page names defined for the notebook control.</short>
         <descr>
           <p>
             <var>Pages</var> is a <var>TStrings</var> property which contains the page names defined for the notebook control.
@@ -805,7 +805,7 @@
 
       <element name="TTimer">
         <short>
-          <var>TTimer</var> is an elapsed timer useful in many applications
+          <var>TTimer</var> is an elapsed timer useful in many applications.
         </short>
         <descr>
           <p>
@@ -823,7 +823,7 @@
 
       <element name="TIdleTimerAutoEvent">
         <short>
-          <var>TIdleTimerAutoEvent</var> is an enumerated type containing the events relevant to a timer
+          <var>TIdleTimerAutoEvent</var> is an enumerated type containing the events relevant to a timer.
         </short>
         <descr>
           <p>
@@ -839,18 +839,18 @@
         </seealso>
       </element>
       <element name="TIdleTimerAutoEvent.itaOnIdle">
-        <short>Timer responds to idle start events</short>
+        <short>Timer responds to idle start events.</short>
       </element>
       <element name="TIdleTimerAutoEvent.itaOnIdleEnd">
-        <short>Time responds to idle end events</short>
+        <short>Time responds to idle end events.</short>
       </element>
       <element name="TIdleTimerAutoEvent.itaOnUserInput">
-        <short>Time responds to user input events</short>
+        <short>Time responds to user input events.</short>
       </element>
 
       <element name="TIdleTimerAutoEvents">
         <short>
-          <var>TIdleTimerAutoEvents</var> is set type used to store <var>TIdleTimerAutoEvent</var> values
+          <var>TIdleTimerAutoEvents</var> is set type used to store <var>TIdleTimerAutoEvent</var> values.
         </short>
         <descr>
           <remark>Not used in the current LCL version.</remark>
@@ -859,7 +859,7 @@
       </element>
 
       <element name="TCustomIdleTimer">
-        <short>Implements the base class for TIdleTimer</short>
+        <short>Implements the base class for TIdleTimer.</short>
         <descr>
           <p>
             <var>TCustomIdleTimer</var> is a <var>TCustomTimer</var> descendant which implements the base class for <var>TIdleTimer</var>. TCustomIdleTimer extends the ancestor class to use events which toggle the timer state. In addition, support is provided for adding and removing its event handlers in the global TApplication instance.
@@ -885,7 +885,7 @@
 
       <element name="TCustomIdleTimer.UpdateHandlers">
         <short>
-          Updates the event handlers used in the Application singleton
+          Updates the event handlers used in the Application singleton.
         </short>
         <descr>
           <p>
@@ -913,7 +913,7 @@
       </element>
 
       <element name="TCustomIdleTimer.SetAutoEnabled">
-        <short>Sets the value for the AutoEnabled property</short>
+        <short>Sets the value for the AutoEnabled property.</short>
         <descr>
           <p>
             Calls UpdateHandlers to add or remove event handlers assigned in the Application singleton.
@@ -924,12 +924,12 @@
         </seealso>
       </element>
       <element name="TCustomIdleTimer.SetAutoEnabled.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomIdleTimer.DoOnIdle">
         <short>
-          Performs actions which execute the idle timer
+          Performs actions which execute the idle timer.
         </short>
         <descr>
           <p>
@@ -948,32 +948,32 @@
         <seealso/>
       </element>
       <element name="TCustomIdleTimer.DoOnIdle.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCustomIdleTimer.DoOnIdle.Done">
-        <short>True if the idle timer has already executed its OnTimer event handler</short>
+        <short>True if the idle timer has already executed its OnTimer event handler.</short>
       </element>
 
       <element name="TCustomIdleTimer.DoOnIdleEnd">
         <short>
-          <var>DoOnIdleEnd</var> performs actions when the idle state ends for the timer
+          <var>DoOnIdleEnd</var> performs actions when the idle state ends for the timer.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomIdleTimer.DoOnIdleEnd.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TCustomIdleTimer.DoOnUserInput">
         <short>
-          <var>DoOnUserInput</var> performs the code for responding to user input
+          <var>DoOnUserInput</var> performs the code for responding to user input.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomIdleTimer.DoOnUserInput.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCustomIdleTimer.DoOnUserInput.Msg">
           <short/>
@@ -981,7 +981,7 @@
 
       <element name="TCustomIdleTimer.Loaded">
         <short>
-          Performs actions needed when the component has finished loading during LCL component streaming
+          Performs actions needed when the component has finished loading during LCL component streaming.
         </short>
         <descr>
           <p>
@@ -994,7 +994,7 @@
       </element>
 
       <element name="TCustomIdleTimer.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor using <var>TheOwner</var> as the owner of the class instance. Create sets the default values for the following properties:
@@ -1013,11 +1013,11 @@
         </seealso>
       </element>
       <element name="TCustomIdleTimer.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomIdleTimer.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> sets the value in <var>AutoEnabled</var> to <b>False</b>, and calls the inherited destructor.
@@ -1027,7 +1027,7 @@
       </element>
 
       <element name="TCustomIdleTimer.AutoEnabled">
-        <short>Controls whether the idle timer can be automatically enabled or disabled</short>
+        <short>Controls whether the idle timer can be automatically enabled or disabled.</short>
         <descr>
           <p>
             <var>AutoEnabled</var> is a <var>Boolean</var> property  which controls whether the idle timer can be automatically Enabled (or disabled) in event handler routines. The default value for the property is <b>False</b>, and indicates that event handlers in the timer are not assigned to the <var>Application</var> singleton in the <var>UpdateHandlers</var> method.
@@ -1041,7 +1041,7 @@
 
       <element name="TCustomIdleTimer.AutoStartEvent">
         <short>
-          <var>AutoStartEvent</var> - the event that triggers autostart (either idle time-out or user input)
+          <var>AutoStartEvent</var> - the event that triggers autostart (either idle time-out or user input).
         </short>
         <descr>
           <p>
@@ -1060,7 +1060,7 @@
 
       <element name="TCustomIdleTimer.AutoEndEvent">
         <short>
-          <var>AutoEndEvent</var> - the event that stops the timer by setting Enabled to False
+          <var>AutoEndEvent</var> - the event that stops the timer by setting Enabled to False.
         </short>
         <descr>
           <p>
@@ -1079,7 +1079,7 @@
 
       <element name="TCustomIdleTimer.FireOnIdle">
         <short>
-          <var>FireOnIdle</var> - Boolean property determining whether the timer should fire when idle
+          <var>FireOnIdle</var> - Boolean property determining whether the timer should fire when idle.
         </short>
           <descr>
             <p>
@@ -1186,42 +1186,42 @@
       <element name="TShape.FShape"/>
 
       <element name="TShape.SetBrush">
-        <short>Sets the value for the Brush property</short>
+        <short>Sets the value for the Brush property.</short>
         <descr/>
         <seealso>
           <link id="TShape.Brush"/>
         </seealso>
       </element>
       <element name="TShape.SetBrush.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TShape.SetPen">
-        <short>Sets the value for the Pen property</short>
+        <short>Sets the value for the Pen property.</short>
         <descr/>
         <seealso>
           <link id="TShape.Pen"/>
         </seealso>
       </element>
       <element name="TShape.SetPen.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TShape.SetShape">
-        <short>Sets the value for the Shape property</short>
+        <short>Sets the value for the Shape property.</short>
         <descr/>
         <seealso>
           <link id="TShape.Shape"/>
         </seealso>
       </element>
       <element name="TShape.SetShape.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TShape.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TShape.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize">
-        <short>Gets the default size for instances of the control</short>
+        <short>Gets the default size for instances of the control.</short>
         <descr>
           <p>
             <var>GetControlClassDefaultSize</var> is an overridden <var>TSize</var> class function which provides the default size for instances of the control. The return value is updated in the method to use dimensions of 65 x 65 pixels.
@@ -1234,7 +1234,7 @@
         <seealso/>
       </element>
       <element name="TShape.GetControlClassDefaultSize.Result">
-        <short>TSize instance with the dimensions for instances of the control class</short>
+        <short>TSize instance with the dimensions for instances of the control class.</short>
       </element>
 
       <element name="TShape.Create">
@@ -1261,7 +1261,7 @@
       </element>
 
       <element name="TShape.Paint" link="#lcl.controls.TGraphicControl.Paint">
-        <short>Draws the shape for the control on its Canvas</short>
+        <short>Draws the shape for the control on its Canvas.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure used to draw the shape for the control on its <var>Canvas</var>. Paint uses the <var>Pen</var>, <var>Brush</var>, and <var>Shape</var> defined in the control. Drawing methods in Canvas are called to render the desired Shape to a rectangle using the Width and Height defined in the component.
@@ -1294,7 +1294,7 @@
       <element name="TShape.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
 
       <element name="TShape.Brush">
-        <short>The Brush to be used for coloring this shape</short>
+        <short>The Brush to be used for coloring this shape.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1307,7 +1307,7 @@
       <element name="TShape.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
 
       <element name="TShape.Pen">
-        <short>The Pen to be used for drawing this shape</short>
+        <short>The Pen to be used for drawing this shape.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1334,7 +1334,7 @@
       <element name="TShape.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
 
       <element name="TShape.Shape">
-        <short>Indicates the geometric shape drawn in the control</short>
+        <short>Indicates the geometric shape drawn in the control.</short>
         <descr>
           <p>
             <var>Shape</var> is a <var>TShapeType</var> property that specifies the geometric shape drawn in the control.  See <link id="TShapeType"/> for the values that can be assigned to the property.
@@ -1362,13 +1362,13 @@
         </seealso>
       </element>
       <element name="TResizeStyle.rsLine">
-        <short>Draw a line, but don't update splitter position during movement</short>
+        <short>Draw a line, but don't update splitter position during movement.</short>
       </element>
       <element name="TResizeStyle.rsNone">
-        <short>Draw nothing and don't update splitter position during movement</short>
+        <short>Draw nothing and don't update splitter position during movement.</short>
       </element>
       <element name="TResizeStyle.rsPattern">
-        <short>draw a dot pattern, but don't update splitter position during movement</short>
+        <short>draw a dot pattern, but don't update splitter position during movement.</short>
       </element>
       <element name="TResizeStyle.rsUpdate">
         <short>Draw nothing, but update splitter position during movement </short>
@@ -1390,13 +1390,13 @@
         </seealso>
       </element>
       <element name="TCanOffsetEvent.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCanOffsetEvent.NewOffset">
-        <short>Offset value examined in the routine</short>
+        <short>Offset value examined in the routine.</short>
       </element>
       <element name="TCanOffsetEvent.Accept">
-        <short>True if the offset value is valid</short>
+        <short>True if the offset value is valid.</short>
       </element>
 
       <element name="TCanResizeEvent">
@@ -1417,13 +1417,13 @@
         </seealso>
       </element>
       <element name="TCanResizeEvent.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCanResizeEvent.NewSize">
-        <short>New size for the resize operation</short>
+        <short>New size for the resize operation.</short>
       </element>
       <element name="TCanResizeEvent.Accept">
-        <short>Indicates if the new value is accepted</short>
+        <short>Indicates if the new value is accepted.</short>
       </element>
 
       <element name="TCustomSplitter">
@@ -1464,40 +1464,40 @@
       <element name="TCustomSplitter.FSplitterWindow"/>
 
       <element name="TCustomSplitter.GetResizeControl">
-        <short>Gets the value for the ResizeControl property</short>
+        <short>Gets the value for the ResizeControl property.</short>
         <descr/>
         <seealso>
           <link id="TCustomSplitter.ResizeControl"/>
         </seealso>
       </element>
       <element name="TCustomSplitter.GetResizeControl.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomSplitter.SetBeveled">
-        <short>Sets the value for the Beveled property</short>
+        <short>Sets the value for the Beveled property.</short>
         <descr/>
         <seealso>
           <link id="TCustomSplitter.Beveled"/>
         </seealso>
       </element>
       <element name="TCustomSplitter.SetBeveled.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSplitter.SetMinSize">
-        <short>Sets the value for the MinSize property</short>
+        <short>Sets the value for the MinSize property.</short>
         <descr/>
         <seealso>
           <link id="TCustomSplitter.MinSize"/>
         </seealso>
       </element>
       <element name="TCustomSplitter.SetMinSize.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSplitter.CMEnabledChanged">
-        <short>Handles the CM_ENABLEDCHANGED message</short>
+        <short>Handles the CM_ENABLEDCHANGED message.</short>
         <descr>
           <p>
             Calls the inherited method, and performs the UpdateCursor method to apply the cursor shape needed for the value in ResizeAnchor.
@@ -1508,13 +1508,13 @@
         </seealso>
       </element>
       <element name="TCustomSplitter.CMEnabledChanged.Message">
-        <short>Message with parameters handled in the method</short>
+        <short>Message with parameters handled in the method.</short>
       </element>
 
       <element name="TCustomSplitter.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomSplitter.AdaptAnchors">
-        <short>Adjust anchor settings to reflect the value in the Align property</short>
+        <short>Adjust anchor settings to reflect the value in the Align property.</short>
         <descr>
           <p>
             <var>AdaptAnchors</var> is a <var>TAnchors</var> function used to adjust the anchor settings for the control to reflect the value in the <var>Align</var> property. <var>a</var> contains the initial anchors used in the method, and is assigned as the default return value.
@@ -1539,10 +1539,10 @@
         <seealso/>
       </element>
       <element name="TCustomSplitter.AdaptAnchors.Result">
-        <short>TAnchors settings derived in the method</short>
+        <short>TAnchors settings derived in the method.</short>
       </element>
       <element name="TCustomSplitter.AdaptAnchors.a">
-        <short>Initial TAnchors values used in the method</short>
+        <short>Initial TAnchors values used in the method.</short>
       </element>
 
       <element name="TCustomSplitter.CheckNewSize">
@@ -1564,10 +1564,10 @@
         </seealso>
       </element>
       <element name="TCustomSplitter.CheckNewSize.Result">
-        <short>True when NewSize is an acceptable size for the splitter</short>
+        <short>True when NewSize is an acceptable size for the splitter.</short>
       </element>
       <element name="TCustomSplitter.CheckNewSize.NewSize">
-        <short>New sized for the splitter</short>
+        <short>New sized for the splitter.</short>
       </element>
 
       <element name="TCustomSplitter.CheckOffset">
@@ -1588,7 +1588,7 @@
 
       <element name="TCustomSplitter.FindAlignControl">
         <short>
-          <var>FindAlignControl</var> returns the main alignment control</short>
+          <var>FindAlignControl</var> returns the main alignment control.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -1609,7 +1609,7 @@
       </element>
 
       <element name="TCustomSplitter.MouseDown" link="#lcl.controls.TControl.MouseDown">
-        <short>Initiates the splitter movement operation</short>
+        <short>Initiates the splitter movement operation.</short>
         <descr>
           <p>
             Overridden in TCustomSplitter. Calls the inherited method, and ensures that the absolute mouse position is used when the left mouse button is depressed; The X and Y arguments are not valid during a resize operation.
@@ -1621,20 +1621,20 @@
         <seealso/>
       </element>
       <element name="TCustomSplitter.MouseDown.Button">
-        <short>Button examined in the method</short>
+        <short>Button examined in the method.</short>
       </element>
       <element name="TCustomSplitter.MouseDown.Shift">
-        <short>Modifier for the mouse button</short>
+        <short>Modifier for the mouse button.</short>
       </element>
       <element name="TCustomSplitter.MouseDown.X">
-        <short>Horizontal coordinate for the mouse event</short>
+        <short>Horizontal coordinate for the mouse event.</short>
       </element>
       <element name="TCustomSplitter.MouseDown.Y">
-        <short>Vertical coordinate for the mouse event</short>
+        <short>Vertical coordinate for the mouse event.</short>
       </element>
 
       <element name="TCustomSplitter.MouseEnter" link="#lcl.controls.TControl.MouseEnter">
-        <short>Starts mouse capture and tracking for the control</short>
+        <short>Starts mouse capture and tracking for the control.</short>
         <descr>
           <p>
             Calls the inherited method. No additional actions are performed in the method at design-time, or when mouse capture has already been enabled for the control. Ensures that the internal flag used to track mouse entry into the control is set, and the control is refreshed by calling Invalidate.
@@ -1704,18 +1704,18 @@
       </element>
 
       <element name="TCustomSplitter.SetAlign" link="#lcl.controls.TControl.SetAlign">
-        <short>Sets the value for the Align property</short>
+        <short>Sets the value for the Align property.</short>
         <descr/>
         <seealso>
           <link id="TCustomSplitter.Align"/>
         </seealso>
       </element>
       <element name="TCustomSplitter.SetAlign.Value">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomSplitter.SetAnchors">
-        <short>Sets the value for the Anchors property</short>
+        <short>Sets the value for the Anchors property.</short>
         <descr>
           <p>
             <var>SetAnchors</var> is an overridden procedure used to implement the write access specifier for the Anchors property. SetAnchors calls <var>AdaptAnchors</var> to ensure that the new value for the property reflects the setting in the <var>Align</var> property. SetAnchors calls the inherited method prior to exit.
@@ -1726,29 +1726,29 @@
         </seealso>
       </element>
       <element name="TCustomSplitter.SetAnchors.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSplitter.SetResizeAnchor">
-        <short>Sets the value for the ResizeAnchor property</short>
+        <short>Sets the value for the ResizeAnchor property.</short>
         <descr/>
         <seealso>
           <link id="TCustomSplitter.ResizeAnchor"/>
         </seealso>
       </element>
       <element name="TCustomSplitter.SetResizeAnchor.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSplitter.SetResizeControl">
-        <short>Sets the value for the ResizeControl property</short>
+        <short>Sets the value for the ResizeControl property.</short>
         <descr/>
         <seealso>
           <link id="TCustomSplitter.ResizeControl"/>
         </seealso>
       </element>
       <element name="TCustomSplitter.SetResizeControl.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomSplitter.StartSplitterMove">
@@ -1794,7 +1794,7 @@
         </seealso>
       </element>
       <element name="TCustomSplitter.Create.TheOwner">
-        <short>Owner for the class instance</short>
+        <short>Owner for the class instance.</short>
       </element>
 
       <element name="TCustomSplitter.AnchorSplitter">
@@ -1850,7 +1850,7 @@
         </short>
       </element>
       <element name="TCustomSplitter.GetSplitterPosition.Result">
-        <short>Current position for the splitter</short>
+        <short>Current position for the splitter.</short>
       </element>
 
       <element name="TCustomSplitter.Align" link="#lcl.controls.TControl.Align">
@@ -1875,7 +1875,7 @@
       </element>
 
       <element name="TCustomSplitter.Beveled">
-        <short>Indicates whether the edges of the splitter bar are beveled</short>
+        <short>Indicates whether the edges of the splitter bar are beveled.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1891,7 +1891,7 @@
       </element>
 
       <element name="TCustomSplitter.MinSize">
-        <short>Minimum size for splitter; default is 30 pixels</short>
+        <short>Minimum size for splitter; default is 30 pixels.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1905,13 +1905,13 @@
       </element>
 
       <element name="TCustomSplitter.OnCanResize">
-        <short>Event handler for receiving permission to resize</short>
+        <short>Event handler for receiving permission to resize.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomSplitter.OnMoved">
-        <short>Event handler for occasion when splitter has moved</short>
+        <short>Event handler for occasion when splitter has moved.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1926,7 +1926,7 @@
       </element>
 
       <element name="TCustomSplitter.ResizeStyle">
-        <short>Style for resizing - as a line, a pattern, full update, or none</short>
+        <short>Style for resizing - as a line, a pattern, full update, or none.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1996,7 +1996,7 @@
       <element name="TPaintBox.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TPaintBox.Paint">
-        <short>Draws the content for the control</short>
+        <short>Draws the content for the control.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure used to draw the control.
@@ -2018,7 +2018,7 @@
       </element>
 
       <element name="TPaintBox.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize">
-        <short>Gets the default size used for new instances of the class</short>
+        <short>Gets the default size used for new instances of the class.</short>
         <descr>
           <p>
             The default dimensions used in <var>TPaintBox</var> are 105 pixels wide x 105 pixels high.
@@ -2027,7 +2027,7 @@
         <seealso/>
       </element>
       <element name="TPaintBox.GetControlClassDefaultSize.Result">
-        <short>TSize instance with the default dimensions for a new TPaintBox control</short>
+        <short>TSize instance with the default dimensions for a new TPaintBox control.</short>
       </element>
 
       <element name="TPaintBox.Create">
@@ -2044,7 +2044,7 @@
         </seealso>
       </element>
       <element name="TPaintBox.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TPaintBox.Canvas" link="#lcl.controls.TGraphicControl.Canvas"/>
@@ -2119,130 +2119,130 @@
       <element name="TCustomImage.FPainting"/>
 
       <element name="TCustomImage.GetCanvas">
-        <short>Gets the value for the Canvas property</short>
+        <short>Gets the value for the Canvas property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.Canvas"/>
         </seealso>
       </element>
       <element name="TCustomImage.GetCanvas.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetAntialiasingMode">
-        <short>Sets the value for the AntialiasingMode property</short>
+        <short>Sets the value for the AntialiasingMode property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.AntialiasingMode"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetAntialiasingMode.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetPicture">
-        <short>Sets the value for the Picture property</short>
+        <short>Sets the value for the Picture property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.Picture"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetPicture.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetCenter">
-        <short>Sets the value for the Center property</short>
+        <short>Sets the value for the Center property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.Center"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetCenter.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetKeepOriginX">
-        <short>Sets the value for the KeepOriginXWhenClipped property</short>
+        <short>Sets the value for the KeepOriginXWhenClipped property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.KeepOriginXWhenClipped"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetKeepOriginX.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetKeepOriginY">
-        <short>Sets the value for the KeepOriginYWhenClipped property</short>
+        <short>Sets the value for the KeepOriginYWhenClipped property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.KeepOriginYWhenClipped"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetKeepOriginY.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetProportional">
-        <short>Sets the value for the Proportional property</short>
+        <short>Sets the value for the Proportional property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.Proportional"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetProportional.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetStretch">
-        <short>Sets the value for the Stretch property</short>
+        <short>Sets the value for the Stretch property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.Stretch"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetStretch.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetStretchInEnabled">
-        <short>Sets the value for the StretchInEnabled property</short>
+        <short>Sets the value for the StretchInEnabled property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.StretchInEnabled"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetStretchInEnabled.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetStretchOutEnabled">
-        <short>Sets the value for the StretchOutEnabled property</short>
+        <short>Sets the value for the StretchOutEnabled property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.StretchOutEnabled"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetStretchOutEnabled.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.SetTransparent">
-        <short>Sets the value for the Transparent property</short>
+        <short>Sets the value for the Transparent property.</short>
         <descr/>
         <seealso>
           <link id="TCustomImage.Transparent"/>
         </seealso>
       </element>
       <element name="TCustomImage.SetTransparent.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomImage.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomImage.PictureChanged">
-        <short>Performs actions needed when the Picture property has been changed</short>
+        <short>Performs actions needed when the Picture property has been changed.</short>
         <descr>
           <p>
             <var>PictureChanged</var> is a procedure used to perform actions needed when the <var>Picture</var> property has been changed. PictureChanged adjusts the size for an assigned bitmap in Picture, and sets its bitmap transparency to the value in the <var>Transparent</var> property. PictureChanged calls <var>Invalidate</var> to cause the image to be repainted. The <var>OnPictureChanged</var> event handler is signalled (when assigned) prior to exiting from the method.
@@ -2259,7 +2259,7 @@
         </seealso>
       </element>
       <element name="TCustomImage.PictureChanged.Sender">
-        <short>Object instance for the change notification</short>
+        <short>Object instance for the change notification.</short>
       </element>
 
       <element name="TCustomImage.CalculatePreferredSize" link="#lcl.controls.TControl.CalculatePreferredSize">
@@ -2287,7 +2287,7 @@
       </element>
 
       <element name="TCustomImage.Paint" link="#lcl.controls.TGraphicControl.Paint">
-        <short>Draws the image to the control canvas</short>
+        <short>Draws the image to the control canvas.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure used to draw the image to the control <var>Canvas</var>. At design-time, a dashed black line is drawn around the image as a frame to mark the dimensions for its content.
@@ -2319,7 +2319,7 @@
       </element>
 
       <element name="TCustomImage.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the  constructor for <var>TCustomImage</var>, and calls the  inherited <var>Create</var> method. It then sets the default values for the style, bounds and other local variables. Creates allocates resources for the <var>Picture</var> property.
@@ -2330,11 +2330,11 @@
         </seealso>
       </element>
       <element name="TCustomImage.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomImage.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for <var>TCustomImage</var>. It free resources allocated to the <var>Picture</var> property, and then calls the inherited <var>Destroy</var> method.
@@ -2346,7 +2346,7 @@
       </element>
 
       <element name="TCustomImage.Canvas" link="#lcl.controls.TGraphicControl.Canvas">
-        <short>Canvas used to draw the image</short>
+        <short>Canvas used to draw the image.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2361,11 +2361,11 @@
         <seealso/>
       </element>
       <element name="TCustomImage.DestRect.Result">
-        <short>Rectangle where the image is drawn in the Paint method</short>
+        <short>Rectangle where the image is drawn in the Paint method.</short>
       </element>
 
       <element name="TCustomImage.Invalidate">
-        <short>Causes the control to be repainted</short>
+        <short>Causes the control to be repainted.</short>
         <descr>
           <p>
             <var>Invalidate</var> is an overridden procedure which causes the control to be repainted. Invalidate is called when the content or dimensions for the image have been changed.
@@ -2386,7 +2386,7 @@
       </element>
 
       <element name="TCustomImage.AntialiasingMode">
-        <short>Indicates if anti-aliasing is used when rendering the image</short>
+        <short>Indicates if anti-aliasing is used when rendering the image.</short>
         <descr>
           <p>
             <var>AntialiasingMode</var> is a <var>TAntialiasingMode</var> property which indicates if anti-aliasing is used when rendering the image. The value in AntialiasingMode is assigned to the <var>TCanvas</var> instance used in the <var>Paint</var> method. Changing the value in the property causes the <var>PictureChanged</var> method to be called to invalidate and repaint the image to its canvas.
@@ -2407,7 +2407,7 @@
       <element name="TCustomImage.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
 
       <element name="TCustomImage.Center">
-        <short>Indicates if the  image should be centered</short>
+        <short>Indicates if the  image should be centered.</short>
         <descr>
           <p>
             <var>Center</var> is a <var>Boolean</var> property which indicates if the image is drawn aligned to the center of the client area for the control. Center is used in the <var>DestRect</var> method to find the horizontal and vertical coordinates for the <var>Picture</var> aligned to the <var>ClientWidth</var> and <var>ClientHeight</var> for the control.
@@ -2449,7 +2449,7 @@
       <element name="TCustomImage.Constraints" link="#lcl.controls.TControl.Constraints"/>
 
       <element name="TCustomImage.Picture">
-        <short>Contains the image displayed in the control</short>
+        <short>Contains the image displayed in the control.</short>
         <descr>
           <p>
             <var>Picture</var> is a <var>TPicture</var> property which contains the dimensions, format, and data for the image displayed in the control. Resources are allocated for Picture in the constructor; this includes use of the      <var>PictureChanged</var> method as the <var>OnChange</var> event handler for the property.
@@ -2478,7 +2478,7 @@
       <element name="TCustomImage.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
 
       <element name="TCustomImage.Stretch">
-        <short>Indicates if the image is resized to the client area for the control</short>
+        <short>Indicates if the image is resized to the client area for the control.</short>
         <descr>
           <p>
             <var>Stretch</var> is a <var>Boolean</var> property which indicates if the image content is resized to the client area for the control. It is used in the <var>DestRect</var> method (along with <var>Proportional</var>) to calculate the rectangle needed to render the image content.
@@ -2518,7 +2518,7 @@
       </element>
 
       <element name="TCustomImage.Transparent">
-        <short>Indicates if the image has a clear, non-opaque background</short>
+        <short>Indicates if the image has a clear, non-opaque background.</short>
         <descr>
           <p>
             <var>Transparent</var> is a <var>Boolean</var> property which indicates if the image uses a clear, non-opaque background. The value for the property is used in the <var>PictureChanged</var> method to set the transparency for the bitmap in  <var>Picture</var>. Changing the value for the property causes PictureChanged to be called to update the image data assigned to Picture and to repaint the control.
@@ -2539,7 +2539,7 @@
       </element>
 
       <element name="TCustomImage.Proportional">
-        <short>True if image is proportional</short>
+        <short>True if image is proportional.</short>
         <descr>
           <p>
             <var>Proportional</var> is a <var>Boolean</var> property which indicates if the proportions (the ratio of width to  height) for an image are maintained when it is resized. When set to <b>True</b>, a change to the image size maintains the ratio of width to height for the original image. Proportional is used (along with <var>Stretch</var>) in the <var>DestRect</var> method to determine the rectangle needed to render the image in the control.
@@ -2555,7 +2555,7 @@
       </element>
 
       <element name="TCustomImage.OnPictureChanged">
-        <short>Event handler signalled when Picture is changed</short>
+        <short>Event handler signalled when Picture is changed.</short>
         <descr>
           <p>
             <var>OnPictureChanged</var> is a <var>TNotifyEvent</var> property which contains the event handler signalled then the <var>Picture</var> property is changed. <var>OnPictureChanged</var> is signalled from the <var>PictureChanged</var> method, and allows actions to be performed after updates to image properties and the <var>Invalidate</var> method has been called.
@@ -2570,7 +2570,7 @@
       </element>
 
       <element name="TCustomImage.OnPaintBackground">
-        <short>Event handler signalled to draw the background for the image</short>
+        <short>Event handler signalled to draw the background for the image.</short>
         <descr>
           <p>
             <var>OnPaintBackground</var> is a <var>TImagePaintBackgroundEvent</var> property which implements an event handler signalled to paint the background for an image. OnPaintBackground is signalled from the <var>Paint</var> method using the <var>Canvas</var> and <var>DestRect</var> for the image as arguments. The event occurs immediately prior to the image being drawn using its canvas handle.
@@ -2721,7 +2721,7 @@
       </element>
 
       <element name="TBevel">
-        <short>A bevel placed around the edge of buttons and other components</short>
+        <short>A bevel placed around the edge of buttons and other components.</short>
         <descr>
           <p>
             The appearance of the Bevel is governed by <link id="TBevelShape"/> and <link id="TBevelStyle"/>.
@@ -2733,31 +2733,31 @@
       <element name="TBevel.FShape"/>
 
       <element name="TBevel.SetStyle">
-        <short>Sets the value for the Style property</short>
+        <short>Sets the value for the Style property.</short>
         <descr/>
         <seealso>
           <link id="TBevel.Style"/>
         </seealso>
       </element>
       <element name="TBevel.SetStyle.aStyle">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TBevel.SetShape">
-        <short>Sets the value for the Shape property</short>
+        <short>Sets the value for the Shape property.</short>
         <descr/>
         <seealso>
           <link id="TBevel.Shape"/>
         </seealso>
       </element>
       <element name="TBevel.SetShape.aShape">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TBevel.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TBevel.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize">
-        <short>Gets the default size for new instances of the class</short>
+        <short>Gets the default size for new instances of the class.</short>
         <descr>
           <p>
             <var>GetControlClassDefaultSize</var> is an overridden <var>TSize</var> class function used to get the default size for new instances of the class. GetControlClassDefaultSize sets the dimensions in the return value to 50 pixels x 50 pixels.
@@ -2768,11 +2768,11 @@
         </seealso>
       </element>
       <element name="TBevel.GetControlClassDefaultSize.Result">
-        <short>Default size for a new instance of the class</short>
+        <short>Default size for a new instance of the class.</short>
       </element>
 
       <element name="TBevel.Paint" link="#lcl.controls.TGraphicControl.Paint">
-        <short>Handles paint requests received from the parent control</short>
+        <short>Handles paint requests received from the parent control.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure used to perform paint requests received by the parent control.
@@ -2798,7 +2798,7 @@
       </element>
 
       <element name="TBevel.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for <var>TBevel</var>. Create calls the inherited <var>Create</var> method, and sets the initial values used in the <var>ControlStyle</var>, <var>Style</var>, <var>Shape</var>, and <var>Bounds</var> properties.
@@ -2819,17 +2819,17 @@
         </seealso>
       </element>
       <element name="TBevel.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TBevel.Destroy" link="#lcl.controls.TGraphicControl.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>Calls the inherited destructor.</descr>
         <seealso/>
       </element>
 
       <element name="TBevel.Assign" link="#rtl.classes.TPersistent.Assign">
-        <short>Copies properrtty values from Source to the current class instance</short>
+        <short>Copies properrtty values from Source to the current class instance.</short>
         <descr>
           <p>
             <var>Assign</var> copies the contents of <var>Source</var> to <var>Self</var>, if the classes of the destination and source classes are compatible.
@@ -2923,7 +2923,7 @@
       </element>
 
       <element name="TBevel.Visible" link="#lcl.controls.TControl.Visible">
-        <short>Makes the control visible or hidden</short>
+        <short>Makes the control visible or hidden.</short>
         <descr>
           <p>
             The <var>Visible</var> property represents the ability to see a visual control. If Visible is <b>True</b> the control is shown, otherwise it is hidden. Calling <var>Show</var> sets Visible to <b>True</b>. Setting Visible to <b>False</b> is equivalent to calling <var>Hide</var> method.
@@ -2966,10 +2966,10 @@
         </seealso>
       </element>
       <element name="TColumnLayout.clHorizontalThenVertical">
-        <short>Items are arranged horizontally, and advances vertically</short>
+        <short>Items are arranged horizontally, and advances vertically.</short>
       </element>
       <element name="TColumnLayout.clVerticalThenHorizontal">
-        <short>Items are arranged vertically, and advances horizontally</short>
+        <short>Items are arranged vertically, and advances horizontally.</short>
       </element>
 
       <element name="TCustomRadioGroup">
@@ -3008,7 +3008,7 @@
       <element name="TCustomRadioGroup.Changed.Sender"/>
 
       <element name="TCustomRadioGroup.Clicked">
-        <short>Performs actions needed when a radio button in the group is clicked</short>
+        <short>Performs actions needed when a radio button in the group is clicked.</short>
         <descr>
           <p>
             <var>Clicked</var> is a procedure used to perform actions needed when a radio button in the group is clicked. Clicked calls the <var>CheckItemIndexChanged</var> method to update the state for the radio buttons in the group, and to signal the <var>OnClicked</var> and <var>OnSelection</var> event handlers (when assigned).
@@ -3028,7 +3028,7 @@
         </seealso>
       </element>
       <element name="TCustomRadioGroup.Clicked.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomRadioGroup.ItemEnter">
@@ -3086,7 +3086,7 @@
       </element>
 
       <element name="TCustomRadioGroup.ItemKeyUp">
-        <short>Handles key up messages for radio buttons in the group</short>
+        <short>Handles key up messages for radio buttons in the group.</short>
         <descr>
           <p>
             Calls the KeyUp method in the ancestor class to handle the values in Key and Shift.
@@ -3106,7 +3106,7 @@
       </element>
 
       <element name="TCustomRadioGroup.ItemKeyPress">
-        <short>Handles key press characters for radio buttons in the group</short>
+        <short>Handles key press characters for radio buttons in the group.</short>
         <descr>
           <p>
             Calls the <var>KeyPress</var> method from the ancestor class to handle the character value in <var>Key</var>.
@@ -3122,7 +3122,7 @@
       </element>
 
       <element name="TCustomRadioGroup.ItemUTF8KeyPress">
-        <short>Handles UTF-8 key press characters for radio buttons in the group</short>
+        <short>Handles UTF-8 key press characters for radio buttons in the group.</short>
         <descr>
           <p>
             Calls the <var>OnUTF8KeyPress</var> method in the ancestor class to handle the UTF-8-encoded character in <var>UTF8Key</var>.
@@ -3151,25 +3151,25 @@
       </element>
 
       <element name="TCustomRadioGroup.SetAutoFill">
-        <short>Sets the value for the AutoFill property</short>
+        <short>Sets the value for the AutoFill property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRadioGroup.AutoFill"/>
         </seealso>
       </element>
       <element name="TCustomRadioGroup.SetAutoFill.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomRadioGroup.SetColumnLayout">
-        <short>Sets the value for the ColumnLayout property</short>
+        <short>Sets the value for the ColumnLayout property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRadioGroup.ColumnLayout"/>
         </seealso>
       </element>
       <element name="TCustomRadioGroup.SetColumnLayout.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomRadioGroup.UpdateControlsPerLine">
@@ -3181,7 +3181,7 @@
       </element>
 
       <element name="TCustomRadioGroup.UpdateItems">
-        <short>Adds or removes radio buttons to match the names defined in Items</short>
+        <short>Adds or removes radio buttons to match the names defined in Items.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3244,47 +3244,47 @@
       </element>
 
       <element name="TCustomRadioGroup.SetItems">
-        <short>Sets the value for the Items property</short>
+        <short>Sets the value for the Items property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRadioGroup.Items"/>
         </seealso>
       </element>
       <element name="TCustomRadioGroup.SetItems.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomRadioGroup.SetColumns">
-        <short>Sets the value for the Columns property</short>
+        <short>Sets the value for the Columns property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRadioGroup.Columns"/>
         </seealso>
       </element>
       <element name="TCustomRadioGroup.SetColumns.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomRadioGroup.SetItemIndex">
-        <short>Sets the value for the ItemIndex property</short>
+        <short>Sets the value for the ItemIndex property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRadioGroup.ItemIndex"/>
         </seealso>
       </element>
       <element name="TCustomRadioGroup.SetItemIndex.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomRadioGroup.GetItemIndex">
-        <short>Gets the value for the ItemIndex property</short>
+        <short>Gets the value for the ItemIndex property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRadioGroup.ItemIndex"/>
         </seealso>
       </element>
       <element name="TCustomRadioGroup.GetItemIndex.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomRadioGroup.CheckItemIndexChanged">
@@ -3296,7 +3296,7 @@
       </element>
 
       <element name="TCustomRadioGroup.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for <var>TCustomRadioGroup</var>.It calls the inherited <var>Create</var> method, then sets the list of radio buttons, and initializes layout and sizing properties.
@@ -3307,11 +3307,11 @@
         </seealso>
       </element>
       <element name="TCustomRadioGroup.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomRadioGroup.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for <var>TCustomRadioGroup</var>. It frees the Items and radio buttons allocated in the class, and calls the inherited <var>Destroy</var> method.
@@ -3323,7 +3323,7 @@
       </element>
 
       <element name="TCustomRadioGroup.CanModify">
-        <short>Indicates if modification of the RadioGroup is permitted</short>
+        <short>Indicates if modification of the RadioGroup is permitted.</short>
         <descr>
           <p>
             <var>CanModify</var> is a <var>Boolean</var> function which indicates if modification of the RadioGroup is permitted.  CanModify always returns <b>True</b> in <var>TCustomRadioGroup</var>.
@@ -3332,7 +3332,7 @@
         <seealso/>
       </element>
       <element name="TCustomRadioGroup.CanModify.Result">
-        <short>True when the control can be modified</short>
+        <short>True when the control can be modified.</short>
       </element>
 
       <element name="TCustomRadioGroup.FlipChildren">
@@ -3359,7 +3359,7 @@
         </seealso>
       </element>
       <element name="TCustomRadioGroup.Rows.Result">
-        <short>Number of rows</short>
+        <short>Number of rows.</short>
       </element>
 
       <element name="TCustomRadioGroup.AutoFill">
@@ -3403,7 +3403,7 @@
       </element>
 
       <element name="TCustomRadioGroup.Columns">
-        <short>Number of columns used to display radio buttons in the control</short>
+        <short>Number of columns used to display radio buttons in the control.</short>
         <descr>
           <p>
             <var>Columns</var> is an Integer property that indicates the number of columns used to display the radio buttons in the control. Columns must contain a positive non-zero value; use of an invalid value causes an Exception to be raised.
@@ -3430,7 +3430,7 @@
       </element>
 
       <element name="TCustomRadioGroup.OnClick">
-        <short>Event called when the selected item is changed</short>
+        <short>Event called when the selected item is changed.</short>
         <descr>
           <p>
             <var>OnClick</var> is different from the usual event <var>TControl.OnClick</var>. Instead of occurring on a mouse click on the control, this event is occurs when the currently selected item changes. It will not occur if a click does not make the selection change, will not occur upon clicking a already selected item and will occur if one changes the selection via the keyboard. It also occurs when the item is changed programmatically. This is done for Delphi compatibility.
@@ -3446,7 +3446,7 @@
       </element>
 
       <element name="TCustomRadioGroup.OnItemEnter">
-        <short>Event handler signalled when a radio button in the group receives focus</short>
+        <short>Event handler signalled when a radio button in the group receives focus.</short>
         <descr>
           <p>
             <var>OnItemEnter</var> is a <var>TNotifyEvent</var> property that implements the event handler signalled when a radio button in the group receives focus. It occurs when the value in ItemIndex has been changed. An application must implement and assign an object procedure to the property to respond to the event notification. The Sender argument contains the radio button which is selected in the control.
@@ -3464,7 +3464,7 @@
       </element>
 
       <element name="TCustomRadioGroup.OnItemExit">
-        <short>Event handler signalled when a radio button in the group loses focus</short>
+        <short>Event handler signalled when a radio button in the group loses focus.</short>
         <descr>
           <p>
             <var>OnItemExit</var> is a <var>TNotifyEvent</var> property which implements an event handler signalled when a radio button in the group loses focus. It occurs when the value in ItemIndex is changed. The Sender argument contains the radio button which has been de-selected in the control. An application must implement and assign an object procedure to the property to respond to the event notification.
@@ -3482,7 +3482,7 @@
       </element>
 
       <element name="TCustomRadioGroup.OnSelectionChanged">
-        <short>Event called when the selected item changes</short>
+        <short>Event called when the selected item changes.</short>
         <descr>
           <p>
             This event was introduced in Lazarus 0.9.31, and is called when the selected item is changed. It is triggered when changed using the mouse or the keyboard, and is triggered when the selected item is changed programmatically.
@@ -3607,10 +3607,10 @@
         <seealso/>
       </element>
       <element name="TCheckGroupClicked.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCheckGroupClicked.Index">
-        <short>Ordinal position for the checkbox Item clicked in the control</short>
+        <short>Ordinal position for the checkbox Item clicked in the control.</short>
       </element>
 
       <element name="TCustomCheckGroup">
@@ -3637,31 +3637,31 @@
       <element name="TCustomCheckGroup.FUpdatingItems"/>
 
       <element name="TCustomCheckGroup.GetChecked">
-        <short>Gets the value for the indexed Checked property</short>
+        <short>Gets the value for the indexed Checked property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckGroup.Checked"/>
         </seealso>
       </element>
       <element name="TCustomCheckGroup.GetChecked.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomCheckGroup.GetChecked.Index">
-        <short>Ordinal position for the check box examined in the method</short>
+        <short>Ordinal position for the check box examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.GetCheckEnabled">
-        <short>Gets the value for the indexed CheckEnabled property</short>
+        <short>Gets the value for the indexed CheckEnabled property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckGroup.CheckEnabled"/>
         </seealso>
       </element>
       <element name="TCustomCheckGroup.GetCheckEnabled.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TCustomCheckGroup.GetCheckEnabled.Index">
-        <short>Ordinal position for the check box examined in the method</short>
+        <short>Ordinal position for the check box examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.Clicked">
@@ -3686,7 +3686,7 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.Clicked.Sender">
-        <short>Check box generating the click notification</short>
+        <short>Check box generating the click notification.</short>
       </element>
 
       <element name="TCustomCheckGroup.DoClick">
@@ -3697,7 +3697,7 @@
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.DoClick.Index">
-        <short>Ordinal position for the check box clicked in the grouped control</short>
+        <short>Ordinal position for the check box clicked in the grouped control.</short>
       </element>
 
       <element name="TCustomCheckGroup.ItemKeyDown">
@@ -3708,13 +3708,13 @@
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.ItemKeyDown.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCustomCheckGroup.ItemKeyDown.Key">
-        <short>Key examined in the method</short>
+        <short>Key examined in the method.</short>
       </element>
       <element name="TCustomCheckGroup.ItemKeyDown.Shift">
-        <short>Key modifier examined in the method</short>
+        <short>Key modifier examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.ItemKeyUp">
@@ -3725,13 +3725,13 @@
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.ItemKeyUp.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCustomCheckGroup.ItemKeyUp.Key">
-        <short>Key examined in the method</short>
+        <short>Key examined in the method.</short>
       </element>
       <element name="TCustomCheckGroup.ItemKeyUp.Shift">
-        <short>Key modifier examined in the method</short>
+        <short>Key modifier examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.ItemKeyPress">
@@ -3742,10 +3742,10 @@
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.ItemKeyPress.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCustomCheckGroup.ItemKeyPress.Key">
-        <short>Key examined in the method</short>
+        <short>Key examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.ItemUTF8KeyPress">
@@ -3756,10 +3756,10 @@
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.ItemUTF8KeyPress.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCustomCheckGroup.ItemUTF8KeyPress.UTF8Key">
-        <short>UTF code point examined in the method</short>
+        <short>UTF code point examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.RaiseIndexOutOfBounds">
@@ -3770,61 +3770,61 @@
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.RaiseIndexOutOfBounds.Index">
-        <short>Ordinal position examined in the method</short>
+        <short>Ordinal position examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.SetAutoFill">
-        <short>Sets the value for the AutoFill property</short>
+        <short>Sets the value for the AutoFill property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckGroup.AutoFill"/>
         </seealso>
       </element>
       <element name="TCustomCheckGroup.SetAutoFill.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomCheckGroup.SetChecked">
-        <short>Sets the value for the indexed Checked property</short>
+        <short>Sets the value for the indexed Checked property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckGroup.Checked"/>
         </seealso>
       </element>
       <element name="TCustomCheckGroup.SetChecked.Index">
-        <short>Ordinal position for the checkbox updated in the method</short>
+        <short>Ordinal position for the checkbox updated in the method.</short>
       </element>
       <element name="TCustomCheckGroup.SetChecked.AValue">
-        <short>New value for the checkbox</short>
+        <short>New value for the checkbox.</short>
       </element>
 
       <element name="TCustomCheckGroup.SetCheckEnabled">
-        <short>Sets the value for the indexed CheckEnabled property</short>
+        <short>Sets the value for the indexed CheckEnabled property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckGroup.CheckEnabled"/>
         </seealso>
       </element>
       <element name="TCustomCheckGroup.SetCheckEnabled.Index">
-        <short>Ordinal position for the checkbox updated in the method</short>
+        <short>Ordinal position for the checkbox updated in the method.</short>
       </element>
       <element name="TCustomCheckGroup.SetCheckEnabled.AValue">
-        <short>New value for the enable state in the checkbox</short>
+        <short>New value for the enable state in the checkbox.</short>
       </element>
 
       <element name="TCustomCheckGroup.SetColumnLayout">
-        <short>Sets the value for the ColumnLayout property</short>
+        <short>Sets the value for the ColumnLayout property.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckGroup.ColumnLayout"/>
         </seealso>
       </element>
       <element name="TCustomCheckGroup.SetColumnLayout.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomCheckGroup.UpdateItems">
-        <short>Adds or removes checkboxes for the Items defined for the control</short>
+        <short>Adds or removes checkboxes for the Items defined for the control.</short>
         <descr/>
         <seealso>
           <link id="TCustomCheckGroup.Items"/>
@@ -3854,7 +3854,7 @@
       </element>
 
       <element name="TCustomCheckGroup.UpdateAll">
-        <short>Updates both the Items and the number of controls per line</short>
+        <short>Updates both the Items and the number of controls per line.</short>
         <descr>
           <p>
             Calls <var>OwnerFormDesignerModified</var> to notify the owner form when the control has been modified at design-time.
@@ -3866,7 +3866,7 @@
       </element>
 
       <element name="TCustomCheckGroup.SetItems">
-        <short>Sets the value for the Items property</short>
+        <short>Sets the value for the Items property.</short>
         <descr>
           <p>
             Calls the Assign method in Items to store the specified Value. Updates the group by re-creating the check-box controls needed for the values in Items. Re-displays the control using the required number of Columns.
@@ -3879,11 +3879,11 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.SetItems.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomCheckGroup.SetColumns">
-        <short>Sets the value for the Columns property</short>
+        <short>Sets the value for the Columns property.</short>
         <descr>
           <p>
             Raises an <var>Exception</var> if the new property value is less than 1. At minimum,  a single column is required.
@@ -3897,12 +3897,12 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.SetColumns.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomCheckGroup.DefineProperties">
         <short>
-          <var>DefineProperties</var> - overrides the method inherited from TComponent, defines the top, left properties</short>
+          <var>DefineProperties</var> - overrides the method inherited from TComponent, defines the top, left properties.</short>
         <descr/>
         <seealso>
           <link id="#rtl.Classes.TComponent">TComponent</link>
@@ -3913,21 +3913,21 @@
       </element>
 
       <element name="TCustomCheckGroup.ReadData">
-        <short>Reads LCL component streaming data from a stream</short>
+        <short>Reads LCL component streaming data from a stream.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.ReadData.Stream">
-        <short>TStream instance with values read in the method</short>
+        <short>TStream instance with values read in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.WriteData">
-        <short>Writes LCL component streaming data to a stream</short>
+        <short>Writes LCL component streaming data to a stream.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.WriteData.Stream">
-        <short>TStream instance where values are written in the method</short>
+        <short>TStream instance where values are written in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.Loaded" link="#rtl.classes.TComponent.Loaded">
@@ -3947,7 +3947,7 @@
       <element name="TCustomCheckGroup.DoOnResize" link="#lcl.controls.TControl.DoOnResize"/>
 
       <element name="TCustomCheckGroup.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for <var>TCustomCheckGroup</var>. It calls the inherited <var>Create</var> method. It also sets styles, creates lists, and initializes sizing and layout properties in the control.
@@ -3958,11 +3958,11 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomCheckGroup.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for <var>TCustomCheckGroup</var>. It  frees items and check boxes in the control, and calls the inherited    <var>Destroy</var> method.
@@ -4003,7 +4003,7 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.Rows.Result">
-        <short>The number of rows used for the Items</short>
+        <short>The number of rows used for the Items.</short>
       </element>
 
       <element name="TCustomCheckGroup.AutoFill">
@@ -4025,7 +4025,7 @@
       </element>
 
       <element name="TCustomCheckGroup.Items">
-        <short>String list with the captions for the check boxes in the grouped edit control</short>
+        <short>String list with the captions for the check boxes in the grouped edit control.</short>
         <descr>
           <p>
             <var>Items</var> is a <var>TStrings</var> property which stores the captions for the check boxes on the grouped edit control. Items also determines the number of <var>TCheckBox</var> controls created and displayed for the control. Setting a new value for the property causes the list of check boxes and the columns in the control to be updated.
@@ -4041,7 +4041,7 @@
       </element>
 
       <element name="TCustomCheckGroup.Checked">
-        <short>Whether an individual entry in the list is <var>Checked</var></short>
+        <short>Whether an individual entry in the list is <var>Checked</var>.</short>
         <descr>
           <p>
             <var>Checked</var> is an indexed <var>Boolean</var> property used to read or write the state for a check box at the ordinal position specified in <var>Index</var>.
@@ -4050,7 +4050,7 @@
         <seealso/>
       </element>
       <element name="TCustomCheckGroup.Checked.Index">
-        <short>Ordinal position in Items for the requested check box</short>
+        <short>Ordinal position in Items for the requested check box.</short>
       </element>
 
       <element name="TCustomCheckGroup.CheckEnabled">
@@ -4074,7 +4074,7 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.CheckEnabled.Index">
-        <short>Ordinal position for the check box examined in the method</short>
+        <short>Ordinal position for the check box examined in the method.</short>
       </element>
 
       <element name="TCustomCheckGroup.Columns">
@@ -4235,7 +4235,7 @@
       <element name="TCheckGroup.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="TBoundLabel">
-        <short>Implements a label bound to another control</short>
+        <short>Implements a label bound to another control.</short>
         <descr>
           <p>
             <var>TBoundLabel</var> is a <var>TCustomLabel</var> descendant which implements a label bound to another control. TBoundLabel is the type used to implement the <var>EditLabel</var> property in <var>TCustomLabeledEdit</var> and <var>TLabeledEdit</var>.
@@ -4258,7 +4258,7 @@
       </element>
 
       <element name="TBoundLabel.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <var>Create</var> is the constructor for <var>TBoundLabel</var>. It calls the inherited <var>Create</var> method, and makes itself a SubComponent of the Owner. The Caption in the control is changd to the Name in the Owner.
         </descr>
@@ -4267,7 +4267,7 @@
         </seealso>
       </element>
       <element name="TBoundLabel.Create.TheOwner">
-        <short>Owner for the class instance</short>
+        <short>Owner for the class instance.</short>
       </element>
 
       <element name="TBoundLabel.FocusControl">
@@ -4358,7 +4358,7 @@
       </element>
 
       <element name="TCustomLabeledEdit">
-        <short>Custom Labelled Edit</short>
+        <short>Custom Labelled Edit.</short>
         <descr>
           <p>
             <var>TCustomLabeledEdit</var> : The base type for <var>LabeledEdit</var>.
@@ -4378,31 +4378,31 @@
       <element name="TCustomLabeledEdit.FLabelSpacing"/>
 
       <element name="TCustomLabeledEdit.SetLabelPosition">
-        <short>Sets the value for the LabelPosition property</short>
+        <short>Sets the value for the LabelPosition property.</short>
         <descr/>
         <seealso>
           <link id="TCustomLabeledEdit.LabelPosition"/>
         </seealso>
       </element>
       <element name="TCustomLabeledEdit.SetLabelPosition.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomLabeledEdit.SetLabelSpacing">
-        <short>Sets the value for the LabelSpacing property</short>
+        <short>Sets the value for the LabelSpacing property.</short>
         <descr/>
         <seealso>
           <link id="TCustomLabeledEdit.LabelSpacing"/>
         </seealso>
       </element>
       <element name="TCustomLabeledEdit.SetLabelSpacing.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomLabeledEdit.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomLabeledEdit.SetParent" link="#lcl.controls.TControl.SetParent">
-        <short>Sets the value for the Parent property</short>
+        <short>Sets the value for the Parent property.</short>
         <descr>
           <p>
             <var>SetParent</var> is overridden in TCustomLabeledEdit to ensure that the EditLabel for the control is properly aligned after the value in Parent is changed. Calls DoPositionLabel to set the label visibility and position the label using the value in LabelPosition and LabelSpacing.
@@ -4416,7 +4416,7 @@
         </seealso>
       </element>
       <element name="TCustomLabeledEdit.SetParent.AParent">
-        <short>New parent for the control</short>
+        <short>New parent for the control.</short>
       </element>
 
       <element name="TCustomLabeledEdit.SetName" link="#lcl.controls.TControl.SetName">
@@ -4432,7 +4432,7 @@
         </seealso>
       </element>
       <element name="TCustomLabeledEdit.SetName.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomLabeledEdit.Loaded" link="#rtl.classes.TComponent.Loaded">
@@ -4486,14 +4486,14 @@
         <seealso/>
       </element>
       <element name="TCustomLabeledEdit.Notification.AComponent">
-        <short>Component for the event notification</short>
+        <short>Component for the event notification.</short>
       </element>
       <element name="TCustomLabeledEdit.Notification.Operation">
-        <short>Operation for the event notification</short>
+        <short>Operation for the event notification.</short>
       </element>
 
       <element name="TCustomLabeledEdit.CMBiDiModeChanged" link="#lcl.controls.TWinControl.CMBiDiModeChanged">
-        <short>Handles the CM_BIDIMODECHANGED control message for the control</short>
+        <short>Handles the CM_BIDIMODECHANGED control message for the control.</short>
         <descr>
           <p>
             Ensures that an assigned <var>EditLabel</var> uses the value stored in the <var>BiDiMode</var> property. Calls <var>DoPositionLabel</var> to update the control layout and position, and calls <var>Invalidate</var> to force the control to be redrawn.
@@ -4510,7 +4510,7 @@
         </seealso>
       </element>
       <element name="TCustomLabeledEdit.CMBiDiModeChanged.Msg">
-        <short>Message handled in the method</short>
+        <short>Message handled in the method.</short>
       </element>
 
       <element name="TCustomLabeledEdit.CMVisibleChanged" link="#lcl.controls.TWinControl.CMVisibleChanged">
@@ -4567,12 +4567,12 @@
         </seealso>
       </element>
       <element name="TCustomLabeledEdit.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomLabeledEdit.EditLabel">
         <short>
-          <var>EditLabel </var>- the label attached to the edit box</short>
+          <var>EditLabel </var>- the label attached to the edit box.</short>
       </element>
 
       <element name="TCustomLabeledEdit.LabelPosition">
@@ -4588,7 +4588,7 @@
       </element>
 
       <element name="TLabeledEdit">
-        <short>Labelled Edit is an Edit Box with a permanently attached Label</short>
+        <short>Labelled Edit is an Edit Box with a permanently attached Label.</short>
         <descr>
           <p>
             <var>TLabeledEdit</var>is an Edit Box with a permanently attached Label.
@@ -4709,7 +4709,7 @@
       <element name="TCustomPanel.FWordWrap"/>
 
       <element name="TCustomPanel.PaintBevel">
-        <short>Draws a bevel using the color and width defined for the panel</short>
+        <short>Draws a bevel using the color and width defined for the panel.</short>
         <descr>
           <p>
             <var>PaintBevel</var> is a procedure used to draw the bevel for the panel using the values in the <var>BevelColor</var> and <var>BevelWidth</var> properties. <var>ARect</var> is the rectangle with the coordinates where the bevel is drawn. <var>ABevel</var> contains the style used to draw the bevel.
@@ -4742,69 +4742,69 @@
       </element>
 
       <element name="TCustomPanel.SetAlignment">
-        <short>Sets the value for the Alignment property</short>
+        <short>Sets the value for the Alignment property.</short>
         <descr/>
         <seealso>
           <link id="TCustomPanel.Alignment"/>
         </seealso>
       </element>
       <element name="TCustomPanel.SetAlignment.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomPanel.SetBevelColor">
-        <short>Sets the value for the BevelColor property</short>
+        <short>Sets the value for the BevelColor property.</short>
         <descr/>
         <seealso>
           <link id="TCustomPanel.BevelColor"/>
         </seealso>
       </element>
       <element name="TCustomPanel.SetBevelColor.AColor">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomPanel.SetBevelInner">
-        <short>Sets the value for the BevelInner property</short>
+        <short>Sets the value for the BevelInner property.</short>
         <descr/>
         <seealso>
           <link id="TCustomPanel.BevelInner"/>
         </seealso>
       </element>
       <element name="TCustomPanel.SetBevelInner.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomPanel.SetBevelOuter">
-        <short>Sets the value for the BevelOuter property</short>
+        <short>Sets the value for the BevelOuter property.</short>
         <descr/>
         <seealso>
           <link id="TCustomPanel.BevelOuter"/>
         </seealso>
       </element>
       <element name="TCustomPanel.SetBevelOuter.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomPanel.SetBevelWidth">
-        <short>Sets the value for the BevelWidth property</short>
+        <short>Sets the value for the BevelWidth property.</short>
         <descr/>
         <seealso>
           <link id="TCustomPanel.BevelWidth"/>
         </seealso>
       </element>
       <element name="TCustomPanel.SetBevelWidth.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomPanel.SetWordWrap">
-        <short>Sets the value for the WordWrap property</short>
+        <short>Sets the value for the WordWrap property.</short>
         <descr/>
         <seealso>
           <link id="TCustomPanel.WordWrap"/>
         </seealso>
       </element>
       <element name="TCustomPanel.SetWordWrap.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomPanel.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
@@ -4829,11 +4829,11 @@
         </seealso>
       </element>
       <element name="TCustomPanel.AdjustClientRect.Rect">
-        <short>Drawing rectangle adjusted in the method</short>
+        <short>Drawing rectangle adjusted in the method.</short>
       </element>
 
       <element name="TCustomPanel.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize">
-        <short>Gets the size used for new instance of the class type</short>
+        <short>Gets the size used for new instance of the class type.</short>
         <descr>
           <p>
             <var>GetControlClassDefaultSize</var> is overridden to provide the default size for new instances of the class type. The return value is a <var>TSize</var> type which contains the dimensions for the new control. The CX member contains the Width for the panel, and defaults to 170 pixels. The CY member contains the Height for the panel, and defaults to 50 pixels.
@@ -4842,7 +4842,7 @@
         <seealso/>
       </element>
       <element name="TCustomPanel.GetControlClassDefaultSize.Result">
-        <short>TSize value with the default dimesions for new class instances</short>
+        <short>TSize value with the default dimesions for new class instances.</short>
       </element>
 
       <element name="TCustomPanel.CMParentColorChanged" link="#lcl.controls.TControl.CMParentColorChanged">
@@ -4864,7 +4864,7 @@
       </element>
 
       <element name="TCustomPanel.Loaded" link="#rtl.classes.TComponent.Loaded">
-        <short>Performs actions needed when the component has finished loading in the LCL  streaming mechanism</short>
+        <short>Performs actions needed when the component has finished loading in the LCL  streaming mechanism.</short>
         <descr>
           <p>
             <var>Loaded</var> is an overridden procedure used to perform actions needed when the component has finished loading in the LCL component streaming mechanism. Loaded calls the inherited method, and calls <var>UpdateParentColorChange</var> to adjust the <var>ControlStyle</var> when <var>ParentColor</var> is in use.
@@ -4878,7 +4878,7 @@
       </element>
 
       <element name="TCustomPanel.RealSetText" link="#lcl.controls.TControl.RealSetText">
-        <short>Stores the specified value as the Caption for the control</short>
+        <short>Stores the specified value as the Caption for the control.</short>
         <descr>
           <p>
             <var>RealSetText</var> is an overridden procedure used to store the specified value as the <var>Caption</var> for the control. RealSetText calls the inherited method to store the text, and then calls the <var>Invalidate</var> method to repaint the control.
@@ -4887,11 +4887,11 @@
         <seealso/>
       </element>
       <element name="TCustomPanel.RealSetText.Value">
-        <short>New text value used as the caption for the control</short>
+        <short>New text value used as the caption for the control.</short>
       </element>
 
       <element name="TCustomPanel.Paint">
-        <short>Paints the panel including the bevels and caption defined for the control</short>
+        <short>Paints the panel including the bevels and caption defined for the control.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure which paints the panel including the bevels and caption defined for the control. Paint calls <var>GetClientRect</var> to get the rectangle used to draw the control. <var>PaintBevel</var> is called to draw both the inner and outer bevels for the control (when used).
@@ -4909,7 +4909,7 @@
       </element>
 
       <element name="TCustomPanel.SetParentBackground">
-        <short>Sets the background used for the parent control</short>
+        <short>Sets the background used for the parent control.</short>
         <descr>
           <p>
             <var>SetParentBackground</var> is an overridden procedure used to the set the background used for the parent control. SetParentBackground ensures that the <var>ControlStyle</var> property is updated to include or omit the value <var>csOpaque</var>. When AParentBackground contains <b>True</b>, the value is excluded from ControlStyle. When AParentBackground contains <b>False</b>, the value is included in ControlStyle.
@@ -4923,7 +4923,7 @@
         </seealso>
       </element>
       <element name="TCustomPanel.SetParentBackground.AParentBackground">
-        <short>When True, the panel is drawn with transparency</short>
+        <short>When True, the panel is drawn with transparency.</short>
       </element>
 
       <element name="TCustomPanel.UpdateParentColorChange">
@@ -4946,7 +4946,7 @@
       </element>
 
       <element name="TCustomPanel.WordWrap">
-        <short>Indicates if the Caption can be word wrapped when painted</short>
+        <short>Indicates if the Caption can be word wrapped when painted.</short>
         <descr>
           <p>
             <var>WordWrap</var> is a <var>Boolean</var> property which indicates if the text in the <var>Caption</var> property can be word wrapped into multiple lines when painting the control. The default value for the property is <b>False</b>, and indicates that word wrapping is not used for the caption. Changing the value in WordWrap causes the <var>Invalidate</var> method to be called to repaint the control.
@@ -4963,7 +4963,7 @@
       </element>
 
       <element name="TCustomPanel.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for <var>TCustomPanel</var>. It calls the inherited <var>Create</var> method, and sets the initial style, bevel, color, alignment and bounds for the control.
@@ -4975,7 +4975,7 @@
         </seealso>
       </element>
       <element name="TCustomPanel.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomPanel.Align" link="#lcl.controls.TControl.Align"/>
@@ -4997,7 +4997,7 @@
       </element>
 
       <element name="TCustomPanel.BevelColor">
-        <short>Color used to draw bevels for the panel</short>
+        <short>Color used to draw bevels for the panel.</short>
         <descr>
           <p>
             <var>BevelColor</var> is a <var>TColor</var> property that specifies the color used to draw bevels for the panel. BevelColor is used in the <var>PaintBevel</var> method; it is passed as an argument to Canvas drawing routines when BevelColor contains a value other than <var>clDefault</var>.
@@ -5065,7 +5065,7 @@
       </element>
 
       <element name="TCustomPanel.ParentColor">
-        <short>Indicates if the control is drawn using the color in the parent control</short>
+        <short>Indicates if the control is drawn using the color in the parent control.</short>
         <descr>
           <p>
             When <var>ParentColor</var> is <b>True</b>, the control is drawn using the <var>Color</var> from the parent control. When <var>ParentColor</var> is <b>False</b>, the <var>Color</var> property is used to draw the control.
@@ -5169,7 +5169,7 @@
       <element name="TPanel.OnUnDock" link="#lcl.controls.TWinControl.OnUnDock"/>
 
       <element name="TFlowStyle">
-        <short>Represents the flow styles used in TCustomFlowPanel</short>
+        <short>Represents the flow styles used in TCustomFlowPanel.</short>
         <descr>
           <p>
             <var>TFlowStyle</var> is an enumerated type which contains values that represent the flow styles available in <var>TCustomFlowPanel</var>. It is the type used to implement the <var>FlowStyle</var> property in <var>TCustomFlowPanel</var>.
@@ -5180,28 +5180,28 @@
         </seealso>
       </element>
       <element name="TFlowStyle.fsLeftRightTopBottom">
-        <short>Controls flow from left to right, then top to bottom</short>
+        <short>Controls flow from left to right, then top to bottom.</short>
       </element>
       <element name="TFlowStyle.fsRightLeftTopBottom">
-        <short>Controls flow from right to left, then top to bottom</short>
+        <short>Controls flow from right to left, then top to bottom.</short>
       </element>
       <element name="TFlowStyle.fsLeftRightBottomTop">
-        <short>Controls flow from left to right, then bottom to top</short>
+        <short>Controls flow from left to right, then bottom to top.</short>
       </element>
       <element name="TFlowStyle.fsRightLeftBottomTop">
-        <short>Controls flow from right to left, then bottom to top</short>
+        <short>Controls flow from right to left, then bottom to top.</short>
       </element>
       <element name="TFlowStyle.fsTopBottomLeftRight">
-        <short>Controls flow from top to bottom, then left to right</short>
+        <short>Controls flow from top to bottom, then left to right.</short>
       </element>
       <element name="TFlowStyle.fsBottomTopLeftRight">
-        <short>Controls flow from bottom to top, then left to right</short>
+        <short>Controls flow from bottom to top, then left to right.</short>
       </element>
       <element name="TFlowStyle.fsTopBottomRightLeft">
-        <short>Controls flow from top to bottom, then right to left</short>
+        <short>Controls flow from top to bottom, then right to left.</short>
       </element>
       <element name="TFlowStyle.fsBottomTopRightLeft">
-        <short>Controls flow from bottom to top, then right to left</short>
+        <short>Controls flow from bottom to top, then right to left.</short>
       </element>
 
       <element name="TWrapAfter">
@@ -5214,10 +5214,10 @@
         <seealso/>
       </element>
       <element name="TWrapAfter.waAuto">
-        <short>Automatically wrap when the control exceeds the bounds</short>
+        <short>Automatically wrap when the control exceeds the bounds.</short>
       </element>
       <element name="TWrapAfter.waForce">
-        <short>Always wrap after this control</short>
+        <short>Always wrap after this control.</short>
       </element>
       <element name="TWrapAfter.waAvoid">
         <short>
@@ -5225,11 +5225,11 @@
         </short>
       </element>
       <element name="TWrapAfter.waForbid">
-        <short>Never wrap after this control</short>
+        <short>Never wrap after this control.</short>
       </element>
 
       <element name="TFlowPanelControl">
-        <short>Implements a collection item for the TFlowPanelControlList collection</short>
+        <short>Implements a collection item for the TFlowPanelControlList collection.</short>
         <descr>
           <p>
             <var>TFlowPanelControl</var> is a <var>TCollectionItem</var> descendant which implements a collection item maintained in <var>TFlowPanelControlList</var>. TFlowPanelControl provides properties and methods need to represent a flowed control in the collection, and provides support for the IObjInspInterface used in the Lazarus Object Inspector.
@@ -5244,38 +5244,38 @@
       <element name="TFlowPanelControl.FWrapAfter"/>
 
       <element name="TFlowPanelControl.SetControl">
-        <short>Sets the value for the Control property</short>
+        <short>Sets the value for the Control property.</short>
         <descr/>
         <seealso>
           <link id="TFlowPanelControl.Control"/>
         </seealso>
       </element>
       <element name="TFlowPanelControl.SetControl.aControl">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TFlowPanelControl.SetWrapAfter">
-        <short>Sets the value for the WrapAfter property</short>
+        <short>Sets the value for the WrapAfter property.</short>
         <descr/>
         <seealso>
           <link id="TFlowPanelControl.WrapAfter"/>
         </seealso>
       </element>
       <element name="TFlowPanelControl.SetWrapAfter.AWrapAfter">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TFlowPanelControl.GetDisplayName" link="#LCL.Classes.TCollectionItem.DisplayName">
-        <short>Gets the value for the DisplayName property</short>
+        <short>Gets the value for the DisplayName property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFlowPanelControl.GetDisplayName.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TFlowPanelControl.SetIndex" link ="#LCL.Classes.TCollectionItem.SetIndex">
-        <short>Sets the value for the Index property</short>
+        <short>Sets the value for the Index property.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5284,7 +5284,7 @@
       </element>
 
       <element name="TFlowPanelControl.AssignTo" link="#LCL.Classes.TPersistent.AssignTo">
-        <short>implement persistence in the control</short>
+        <short>implement persistence in the control.</short>
         <descr>
           <p>
             <var>AssignTo</var> is an overridden method used to implement persistence in the control. AssignTo provides support for storing property values from the current class instance into the <var>Dest</var> argument when it is derived from <var>TFlowPanelControl</var>. Otherwise, the inherited AssignTo method is called.
@@ -5293,18 +5293,18 @@
         <seealso/>
       </element>
       <element name="TFlowPanelControl.AssignTo.Dest">
-        <short>Persistent object where property values are stored</short>
+        <short>Persistent object where property values are stored.</short>
       </element>
 
       <element name="TFlowPanelControl.FPCollection">
-        <short>Gets the TFlowPanelControlList instance that owns the collection item</short>
+        <short>Gets the TFlowPanelControlList instance that owns the collection item.</short>
         <descr/>
         <seealso>
           <link id="TFlowPanelControlList"/>
         </seealso>
       </element>
       <element name="TFlowPanelControl.FPCollection.Result">
-        <short>TFlowPanelControlList instance that owns the collection item</short>
+        <short>TFlowPanelControlList instance that owns the collection item.</short>
       </element>
 
       <element name="TFlowPanelControl.FPOwner">
@@ -5315,7 +5315,7 @@
         <seealso/>
       </element>
       <element name="TFlowPanelControl.FPOwner.Result">
-        <short>TCustomFlowPanel instance that owns the collection and its items</short>
+        <short>TCustomFlowPanel instance that owns the collection and its items.</short>
       </element>
 
       <element name="TFlowPanelControl.AllowAdd">
@@ -5367,7 +5367,7 @@
       </element>
 
       <element name="TFlowPanelControlList">
-        <short>Implements a collection for TCustomFlowPanel collection items</short>
+        <short>Implements a collection for TCustomFlowPanel collection items.</short>
         <descr>
           <p>
             <var>TFlowPanelControlList</var> is a <var>TOwnedCollection</var> descendant. TFlowPanelControlList implements the <var>IObjInspInterface</var> interface which allows the collection to be used in the Lazarus Object Inspector.
@@ -5379,47 +5379,47 @@
       </element>
 
       <element name="TFlowPanelControlList.GetItem">
-        <short>Gets the value for the indexed Items property</short>
+        <short>Gets the value for the indexed Items property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFlowPanelControlList.GetItem.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
       <element name="TFlowPanelControlList.GetItem.Index">
-        <short>Ordinal position in the collection for the requested item</short>
+        <short>Ordinal position in the collection for the requested item.</short>
       </element>
 
       <element name="TFlowPanelControlList.SetItem">
-        <short>Sets the value for the indexed Items property</short>
+        <short>Sets the value for the indexed Items property.</short>
         <descr/>
         <seealso>
           <link id="TFlowPanelControlList.Items"/>
         </seealso>
       </element>
       <element name="TFlowPanelControlList.SetItem.Index">
-        <short>Ordinal position in the collection for the specified item</short>
+        <short>Ordinal position in the collection for the specified item.</short>
       </element>
       <element name="TFlowPanelControlList.SetItem.AItem">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TFlowPanelControlList.FPOwner">
-        <short>Gets the owner of the collection as a TCustomFlowPanel instance</short>
+        <short>Gets the owner of the collection as a TCustomFlowPanel instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFlowPanelControlList.FPOwner.Result">
-        <short>The flow panel which owns the collection and its items</short>
+        <short>The flow panel which owns the collection and its items.</short>
       </element>
 
       <element name="TFlowPanelControlList.Add">
-        <short>Adds a TFlowPanelControl instance to the owned collection</short>
+        <short>Adds a TFlowPanelControl instance to the owned collection.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFlowPanelControlList.Add.Result">
-        <short>TFlowPanelControl instance created in the method</short>
+        <short>TFlowPanelControl instance created in the method.</short>
       </element>
 
       <element name="TFlowPanelControlList.AddControl">
@@ -5431,7 +5431,7 @@
         <short/>
       </element>
       <element name="TFlowPanelControlList.AddControl.AIndex">
-        <short>The default value for the argument is <b>-1</b></short>
+        <short>The default value for the argument is <b>-1</b>.</short>
       </element>
 
       <element name="TFlowPanelControlList.RemoveControl">
@@ -5444,12 +5444,12 @@
       </element>
 
       <element name="TFlowPanelControlList.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TFlowPanelControlList.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TFlowPanelControlList.IndexOf">
@@ -5467,7 +5467,7 @@
       </element>
 
       <element name="TFlowPanelControlList.Items">
-        <short>Provides indexed access to controls stored in the container</short>
+        <short>Provides indexed access to controls stored in the container.</short>
         <descr>
           <p>
             <var>Items</var> is an indexed <var>TFlowPanelControl</var> property which provides access to the flow panel controls in the container. Items is the default property for the collection.
@@ -5487,7 +5487,7 @@
         </seealso>
       </element>
       <element name="TFlowPanelControlList.Items.Index">
-        <short>Ordinal position for the requested control</short>
+        <short>Ordinal position for the requested control.</short>
       </element>
 
       <element name="TFlowPanelControlList.AllowAdd">
@@ -5522,51 +5522,51 @@
       <element name="TCustomFlowPanel.FFlowLayout"/>
 
       <element name="TCustomFlowPanel.SetAutoWrap">
-        <short>Sets the value for the AutoWrap property</short>
+        <short>Sets the value for the AutoWrap property.</short>
         <descr/>
         <seealso>
           <link id="TCustomFlowPanel.AutoWrap"/>
         </seealso>
       </element>
       <element name="TCustomFlowPanel.SetAutoWrap.AAutoWrap">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomFlowPanel.SetControlList">
-        <short>Sets the value for the ControlList property</short>
+        <short>Sets the value for the ControlList property.</short>
         <descr/>
         <seealso>
           <link id="TCustomFlowPanel.ControlList"/>
         </seealso>
       </element>
       <element name="TCustomFlowPanel.SetControlList.AControlList">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomFlowPanel.SetFlowStyle">
-        <short>Sets the value for the FlowStyle property</short>
+        <short>Sets the value for the FlowStyle property.</short>
         <descr/>
         <seealso>
           <link id="TCustomFlowPanel.FlowStyle"/>
         </seealso>
       </element>
       <element name="TCustomFlowPanel.SetFlowStyle.AFlowStyle">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomFlowPanel.SetFlowLayout">
-        <short>Sets the value for the FlowLayout property</short>
+        <short>Sets the value for the FlowLayout property.</short>
         <descr/>
         <seealso>
           <link id="TCustomFlowPanel.FlowLayout"/>
         </seealso>
       </element>
       <element name="TCustomFlowPanel.SetFlowLayout.aFlowLayout">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomFlowPanel.CMControlChange">
-        <short>Handles the CM_CONTROLCHANGE message</short>
+        <short>Handles the CM_CONTROLCHANGE message.</short>
         <descr>
           <p>
             Calls DisableAlign prior to adding (inserting) the control in ControlList. Calls ReAlign when the control is added, and calls EnableAlign prior to exit.
@@ -5578,11 +5578,11 @@
         <seealso/>
       </element>
       <element name="TCustomFlowPanel.CMControlChange.Message">
-        <short>Message with parameters examined in the method</short>
+        <short>Message with parameters examined in the method.</short>
       </element>
 
       <element name="TCustomFlowPanel.AlignControls">
-        <short>Performs layout and alignment for flowed controls on the panel</short>
+        <short>Performs layout and alignment for flowed controls on the panel.</short>
         <descr>
           <p>
             <var>AlignControls</var> is an overridden procedure used to perform layout and alignment for flowed controls on the panel.
@@ -5618,7 +5618,7 @@
       </element>
 
       <element name="TCustomFlowPanel.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor. Create ensures that resources are allocated for the <var>ControlList</var> property, and sets the default value for <var>AutoWrap</var> to <b>True</b>.
@@ -5627,11 +5627,11 @@
         <seealso/>
       </element>
       <element name="TCustomFlowPanel.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomFlowPanel.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy calls the inherited destructor, and frees resources allocated to the <var>ControlList</var> property.
@@ -5641,7 +5641,7 @@
       </element>
 
       <element name="TCustomFlowPanel.GetControlIndex">
-        <short>Gets the ordinal position in ControlList for the specified control</short>
+        <short>Gets the ordinal position in ControlList for the specified control.</short>
         <descr>
           <p>
             <var>GetControlIndex</var> is a convenience method used to get the ordinal position in <var>ControlList</var> for the specified <var>TFlowPanelControl</var>. Calls <var>TFlowPanelControlList.IndexOf</var> to get the return value, which can be -1 if <var>AControl</var> is not found in ControlList.
@@ -5663,19 +5663,19 @@
         </short>
       </element>
       <element name="TCustomFlowPanel.GetControlIndex.AControl">
-        <short>Flowed control to locate in ControlList</short>
+        <short>Flowed control to locate in ControlList.</short>
       </element>
 
       <element name="TCustomFlowPanel.SetControlIndex">
-        <short>Sets the Index position in ControlList for the specified control</short>
+        <short>Sets the Index position in ControlList for the specified control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomFlowPanel.SetControlIndex.AControl">
-        <short>Control to locate and update in the list of controls</short>
+        <short>Control to locate and update in the list of controls.</short>
       </element>
       <element name="TCustomFlowPanel.SetControlIndex.Index">
-        <short>Value assigned to the Index property for the specified control</short>
+        <short>Value assigned to the Index property for the specified control.</short>
       </element>
 
       <element name="TCustomFlowPanel.AutoWrap">
@@ -5683,11 +5683,11 @@
       </element>
 
       <element name="TCustomFlowPanel.ControlList">
-        <short>Collection used to stored TFlowPanelControl instances on the panel</short>
+        <short>Collection used to stored TFlowPanelControl instances on the panel.</short>
       </element>
 
       <element name="TCustomFlowPanel.FlowStyle">
-        <short>Contains the flow direction used to position controls on the panel</short>
+        <short>Contains the flow direction used to position controls on the panel.</short>
       </element>
 
       <element name="TCustomFlowPanel.FlowLayout">
@@ -5702,7 +5702,7 @@
       </element>
 
       <element name="TFlowPanel">
-        <short>Implements a container with flowed layout for its controls</short>
+        <short>Implements a container with flowed layout for its controls.</short>
         <descr>
           <p>
             Use <var>TFloatPanel</var> if you need a container with a float layout. The Anchors and Align properties of child controls are ignored. The floating direction is determined with <link id="#LCL.extctrls.TCustomFlowPanel.FlowStyle">FlowStyle</link> property.
@@ -5783,16 +5783,16 @@
          </descr>
       </element>
       <element name="TBalloonFlags.bfNone">
-        <short>No icon is displayed on a balloon hint</short>
+        <short>No icon is displayed on a balloon hint.</short>
       </element>
       <element name="TBalloonFlags.bfInfo">
-        <short>Displays an Information icon on a balloon hint</short>
+        <short>Displays an Information icon on a balloon hint.</short>
       </element>
       <element name="TBalloonFlags.bfWarning">
-        <short>Displays a Warning icon on a balloon hint</short>
+        <short>Displays a Warning icon on a balloon hint.</short>
       </element>
       <element name="TBalloonFlags.bfError">
-        <short>Displays an Error icon on a balloon hint</short>
+        <short>Displays an Error icon on a balloon hint.</short>
       </element>
 
       <element name="TCustomTrayIcon">
@@ -5832,29 +5832,29 @@
       <element name="TCustomTrayIcon.FOnMouseMove"/>
 
       <element name="TCustomTrayIcon.GetAnimateInterval">
-        <short>Gets the value for the AnimateInterval property</short>
+        <short>Gets the value for the AnimateInterval property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.AnimateInterval"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.GetAnimateInterval.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.GetCanvas">
-        <short>Gets the value for the Canvas property</short>
+        <short>Gets the value for the Canvas property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.Canvas"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.GetCanvas.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.InternalShow">
-        <short>Prevents the tray icon from being displayed during component streaming</short>
+        <short>Prevents the tray icon from being displayed during component streaming.</short>
         <descr>
           <p>
             <var>InternalShow</var> is called when the <var>Show</var> method is executed during LCL component streaming. InternalShow sets a flag to enable delayed display when <var>csLoading</var> is in the <var>ComponentState</var> property. No additional actions are performed in the method during LCL component streaming.
@@ -5871,88 +5871,88 @@
         </seealso>
       </element>
       <element name="TCustomTrayIcon.InternalShow.Result">
-        <short>True when the tray icon is enabled and visible</short>
+        <short>True when the tray icon is enabled and visible.</short>
       </element>
 
       <element name="TCustomTrayIcon.SetAnimate">
-        <short>Sets the value for the Animate property</short>
+        <short>Sets the value for the Animate property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.Animate"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.SetAnimate.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.SetAnimateInterval">
-        <short>Sets the value for the AnimateInterval property</short>
+        <short>Sets the value for the AnimateInterval property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.AnimateInterval"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.SetAnimateInterval.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.SetHint">
-        <short>Sets the value for the Hint property</short>
+        <short>Sets the value for the Hint property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.Hint"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.SetHint.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.SetIcon">
-        <short>Sets the value for the Icon property</short>
+        <short>Sets the value for the Icon property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.Icon"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.SetIcon.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.SetIcons">
-        <short>Sets the value for the Icons property</short>
+        <short>Sets the value for the Icons property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.Icons"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.SetIcons.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.SetPopUpMenu">
-        <short>Sets the value for the PopupMenu property</short>
+        <short>Sets the value for the PopupMenu property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.PopUpMenu"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.SetPopUpMenu.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.SetVisible">
-        <short>Sets the value for the Visible property</short>
+        <short>Sets the value for the Visible property.</short>
         <descr/>
         <seealso>
           <link id="TCustomTrayIcon.Visible"/>
         </seealso>
       </element>
       <element name="TCustomTrayIcon.SetVisible.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomTrayIcon.HandleNotifierClose">
-        <short>Performs actions needed when the popup notifier is closed</short>
+        <short>Performs actions needed when the popup notifier is closed.</short>
         <descr>
           <p>
             <var>HandleNotifierClose</var> ensures that the internal balloon hint timer for the tray icon is disabled when the notifier is closed or destroyed. HandleNotifierClose is assigned to the <var>OnClose</var> event handler in the internal <var>TPopupNotifier</var> class instance used in the tray icon.
@@ -5963,14 +5963,14 @@
         </seealso>
       </element>
       <element name="TCustomTrayIcon.HandleNotifierClose.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TCustomTrayIcon.HandleNotifierClose.CloseAction">
-        <short>Action to perform; not used in the method</short>
+        <short>Action to perform; not used in the method.</short>
       </element>
 
       <element name="TCustomTrayIcon.HandleNotifierTimeout">
-        <short>Event handler used when the timer in the tray icon has expired</short>
+        <short>Event handler used when the timer in the tray icon has expired.</short>
         <descr>
           <p>
             <var>HandleNotifierTimeout</var> is a procedure which implements an event handler used to disabled the timer and to close the popup notifier for the tray icon. HandleNotifierTimeout is used as the <var>OnTimer</var> event handler in the <var>TTimer</var> class instance used in the component.
@@ -5981,11 +5981,11 @@
         </seealso>
       </element>
       <element name="TCustomTrayIcon.HandleNotifierTimeout.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomTrayIcon.HandleOnAnimateTimer">
-        <short>Event handler used when the interval for the animation timer has elapsed</short>
+        <short>Event handler used when the interval for the animation timer has elapsed.</short>
         <descr>
           <p>
             <var>HandleOnAnimateTimer</var> is a procedure used to implement an event handler signalled when the interval for the animation timer has elapsed. HandleOnAnimateTimer retrieves and displays a bitmap stored in the <var>Icons</var> property when the interval for the timer has elapsed. An internal counter is incremented in the handler to indicate the next image used in the animation sequence. The counter is reset to zero (0) when the last bitmap in Icons is used. HandleOnAnimateTimer calls the <var>InternalUpdate</var> method to refresh the widget set class for the tray icon.
@@ -6008,7 +6008,7 @@
         </seealso>
       </element>
       <element name="TCustomTrayIcon.HandleOnAnimateTimer.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomTrayIcon.IconChanged">
@@ -6032,13 +6032,13 @@
         </seealso>
       </element>
       <element name="TCustomTrayIcon.IconChanged.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TCustomTrayIcon.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomTrayIcon.Notification" link="#LCL.Classes.TComponent.Notification">
-        <short>Performs action when a component is added or removed at run-time</short>
+        <short>Performs action when a component is added or removed at run-time.</short>
         <descr>
           <p>
             <var>Notification</var> is an overridden procedure used to perform actions when a component is added or removed at run-time. Notification calls the inherited method, and ensures that the <var>PopUpMenu</var> for the tray icon is set to <b>Nil</b> when the component is removed.
@@ -6047,10 +6047,10 @@
         <seealso/>
       </element>
       <element name="TCustomTrayIcon.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TCustomTrayIcon.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
 
       <element name="TCustomTrayIcon.Loaded">
@@ -6068,7 +6068,7 @@
       </element>
 
       <element name="TCustomTrayIcon.Handle">
-        <short>Operating system <var>Handle</var> for the Tray Icon</short>
+        <short>Operating system <var>Handle</var> for the Tray Icon.</short>
         <descr>
           <p>
             <var>Handle</var> is a public <var>HWND</var> member that represents the operating system handle for the control. The value in Handle is used (when assigned) in the <var>IconChanged</var> event handler.
@@ -6106,7 +6106,7 @@
       </element>
 
       <element name="TCustomTrayIcon.Hide">
-        <short>Hide removes the icon from the System Tray</short>
+        <short>Hide removes the icon from the System Tray.</short>
         <descr>
           <p>
             <var>Hide</var> is a <var>Boolean</var> function used to hide the tray icon and to remove it from the tray area in the task bar.
@@ -6125,7 +6125,7 @@
       </element>
 
       <element name="TCustomTrayIcon.Show">
-        <short>Show displays the icon in the System Tray</short>
+        <short>Show displays the icon in the System Tray.</short>
         <descr>
           <p>
             <var>Show</var> is a Boolean function used to display the tray icon in the system tray. The return value is True if the control is successfully displayed in the method, or the control is already visible. No additional actions are performed in the method when Visible is already set to True.
@@ -6183,7 +6183,7 @@
       </element>
 
       <element name="TCustomTrayIcon.Animate">
-        <short>Indicates if animations are displayed on the tray icon</short>
+        <short>Indicates if animations are displayed on the tray icon.</short>
         <descr>
           <p>
             <var>Animate</var> is a <var>Boolean</var> property that indicates if animations are displayed on the tray icon.
@@ -6196,7 +6196,7 @@
       </element>
 
       <element name="TCustomTrayIcon.AnimateInterval">
-        <short>Defines the time interval between updates to the image for the tray icon</short>
+        <short>Defines the time interval between updates to the image for the tray icon.</short>
         <descr>
           <p>
             <var>AnimateInterval</var> is a <var>Cardinal</var> property that defines the elapsed time interval between updates to the image displayed on the tray icon. The default value for the property is 1000 (milliseconds), and causes the animation timer to refresh the image on the tray icon every second.
@@ -6226,19 +6226,19 @@
       </element>
 
       <element name="TCustomTrayIcon.BalloonHint">
-        <short>The text to be shown in the hinting balloon</short>
+        <short>The text to be shown in the hinting balloon.</short>
       </element>
 
       <element name="TCustomTrayIcon.BalloonTimeout">
-        <short>The period after which the hinting balloon disappears</short>
+        <short>The period after which the hinting balloon disappears.</short>
       </element>
 
       <element name="TCustomTrayIcon.BalloonTitle">
-        <short>The title to be shown on the hinting balloon</short>
+        <short>The title to be shown on the hinting balloon.</short>
       </element>
 
       <element name="TCustomTrayIcon.Canvas">
-        <short>The canvas of the Tray Icon</short>
+        <short>The canvas of the Tray Icon.</short>
       </element>
 
       <element name="TCustomTrayIcon.PopUpMenu">
@@ -6248,11 +6248,11 @@
       </element>
 
       <element name="TCustomTrayIcon.Icon">
-        <short>The Icon or picture that displayed on the tray icon</short>
+        <short>The Icon or picture that displayed on the tray icon.</short>
       </element>
 
       <element name="TCustomTrayIcon.Hint">
-        <short>A simple hint shown when the mouse hovers over the icon</short>
+        <short>A simple hint shown when the mouse hovers over the icon.</short>
       </element>
 
       <element name="TCustomTrayIcon.ShowIcon">
@@ -6264,23 +6264,23 @@
       </element>
 
       <element name="TCustomTrayIcon.OnClick">
-        <short>Event Handler for Mouse Click on Tray Icon</short>
+        <short>Event Handler for Mouse Click on Tray Icon.</short>
       </element>
 
       <element name="TCustomTrayIcon.OnDblClick">
-        <short>Event handler for mouse double-click</short>
+        <short>Event handler for mouse double-click.</short>
       </element>
 
       <element name="TCustomTrayIcon.OnMouseDown">
-        <short>Event handler if mouse button is pressed down</short>
+        <short>Event handler if mouse button is pressed down.</short>
       </element>
 
       <element name="TCustomTrayIcon.OnMouseUp">
-        <short>Event handler if mouse button is up</short>
+        <short>Event handler if mouse button is up.</short>
       </element>
 
       <element name="TCustomTrayIcon.OnMouseMove">
-        <short>Event handler for mouse movement</short>
+        <short>Event handler for mouse movement.</short>
       </element>
 
       <element name="TCustomTrayIcon.OnPaint">
@@ -6349,7 +6349,7 @@
       </element>
 
       <element name="TBandPaintOption">
-        <short>Represents the paint options enabled when drawing a TControlBar</short>
+        <short>Represents the paint options enabled when drawing a TControlBar.</short>
         <descr>
           <p>
             <var>TBandPaintOption</var> is an enumerated type with values that represent the paint options enabled when drawing a <var>TControlBar</var> instance. Values from TBandPaintOption are stored in the <var>TBandPaintOptions</var> type, and passed as an argument to a <var>TBandPaintEvent</var> event handler.
@@ -6371,13 +6371,13 @@
       </element>
 
       <element name="TBandPaintOptions">
-        <short>Stores values from the TBandPaintOption enumeration</short>
+        <short>Stores values from the TBandPaintOption enumeration.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TBandDragEvent">
-        <short>Specifies an event handler signalled when a control band is dragged</short>
+        <short>Specifies an event handler signalled when a control band is dragged.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6415,18 +6415,18 @@
       </element>
 
       <element name="TBandMoveEvent">
-        <short>Specifies an event handler signalled when a control band is moved</short>
+        <short>Specifies an event handler signalled when a control band is moved.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TBandMoveEvent.Sender">
-        <short>Object instance for the event notification</short>
+        <short>Object instance for the event notification.</short>
       </element>
       <element name="TBandMoveEvent.Control">
-        <short>Control for the event notification</short>
+        <short>Control for the event notification.</short>
       </element>
       <element name="TBandMoveEvent.ARect">
-        <short>Display rectangle for the event notification</short>
+        <short>Display rectangle for the event notification.</short>
       </element>
 
       <element name="TBandPaintEvent">
@@ -6475,7 +6475,7 @@
       </element>
 
       <element name="TBandMove">
-        <short>Represents band move states in TCtrlBand</short>
+        <short>Represents band move states in TCtrlBand.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6529,62 +6529,62 @@
       <element name="TCtrlBand.FWidth"/>
 
       <element name="TCtrlBand.GetBandRect">
-        <short>Gets the value for the BandRect property</short>
+        <short>Gets the value for the BandRect property.</short>
         <descr/>
         <seealso>
           <link id="TCtrlBand.BandRect"/>
         </seealso>
       </element>
       <element name="TCtrlBand.GetBandRect.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCtrlBand.GetBottom">
-        <short>Gets the value for the Bottom property</short>
+        <short>Gets the value for the Bottom property.</short>
         <descr/>
         <seealso>
           <link id="TCtrlBand.Bottom"/>
         </seealso>
       </element>
       <element name="TCtrlBand.GetBottom.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCtrlBand.GetRight">
-        <short>Gets the value for the Right property</short>
+        <short>Gets the value for the Right property.</short>
         <descr/>
         <seealso>
           <link id="TCtrlBand.Right"/>
         </seealso>
       </element>
       <element name="TCtrlBand.GetRight.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCtrlBand.SetBandRect">
-        <short>Sets the value for the BandRect property</short>
+        <short>Sets the value for the BandRect property.</short>
         <descr/>
         <seealso>
           <link id="TCtrlBand.BandRect"/>
         </seealso>
       </element>
       <element name="TCtrlBand.SetBandRect.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCtrlBand.SetRight">
-        <short>Sets the value for the Right property</short>
+        <short>Sets the value for the Right property.</short>
         <descr/>
         <seealso>
           <link id="TCtrlBand.Right"/>
         </seealso>
       </element>
       <element name="TCtrlBand.SetRight.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCtrlBand.BandRect">
-        <short>Contains the bounds for the band control</short>
+        <short>Contains the bounds for the band control.</short>
         <descr>
           <p>
             <var>BandRect</var> is a <var>TRect</var> property which contains the bounds for the band control. BandRect is used in methods which set the layout and placement for the the band control, like <var>InitializeBand</var> and <var>MoveBand</var>.
@@ -6597,7 +6597,7 @@
       </element>
 
       <element name="TCtrlBand.Bottom">
-        <short>Position of the bottom of the band control</short>
+        <short>Position of the bottom of the band control.</short>
         <descr>
           <var>Bottom</var> is a read-only <var>Integer</var> property which contains the vertical position that is the bottom of the band control. The value in Bottom is derived using the Top and Height properties, which are updated when a value is assigned to the <var>BandRect</var> property.
         </descr>
@@ -6683,7 +6683,7 @@
       </element>
 
       <element name="TCtrlBand.InitLeft">
-        <short>Stores the initial position for the band during a move operation</short>
+        <short>Stores the initial position for the band during a move operation.</short>
         <descr>
           <p>
             Updated in the InitializeMove method in TCustomControlBar.
@@ -6693,7 +6693,7 @@
       </element>
 
       <element name="TCtrlBand.InitTop">
-        <short>Stores the initial position for the band during a move operation</short>
+        <short>Stores the initial position for the band during a move operation.</short>
         <descr>
           <p>
             Updated in the InitializeMove method in TCustomControlBar.
@@ -6703,7 +6703,7 @@
       </element>
 
       <element name="TCtrlBand.Left">
-        <short>Contains the position for the band</short>
+        <short>Contains the position for the band.</short>
         <descr>
           <p>
             Updated when a value is assigned to the BandRect property, and in the AlignControlToBand method in TCustomControlBar.
@@ -6713,7 +6713,7 @@
       </element>
 
       <element name="TCtrlBand.Right">
-        <short>Contains the position for the band</short>
+        <short>Contains the position for the band.</short>
         <descr>
           <p>
             Updated when a value is assigned to the BandRect property, and in the AlignControlToBand method in TCustomControlBar.
@@ -6723,7 +6723,7 @@
       </element>
 
       <element name="TCtrlBand.Top">
-        <short>Contains the position for the band</short>
+        <short>Contains the position for the band.</short>
         <descr>
           <p>
             Updated when a value is assigned to the BandRect property, and in the AlignControlToBand method in TCustomControlBar.
@@ -6733,14 +6733,14 @@
       </element>
 
       <element name="TCtrlBand.Visible">
-        <short>Indicates if the band and its Control are visible</short>
+        <short>Indicates if the band and its Control are visible.</short>
         <descr>
         </descr>
         <seealso/>
       </element>
 
       <element name="TCtrlBand.Width">
-        <short>Contains the dimensions for the band</short>
+        <short>Contains the dimensions for the band.</short>
         <descr>
           <p>
             Updated when a value is assigned to the BandRect property, and in the AlignControlToBand method in TCustomControlBar.
@@ -6760,7 +6760,7 @@
       </element>
 
       <element name="TCtrlBands.GetIndex">
-        <short>Gets the ordinal position for the specified control in the container</short>
+        <short>Gets the ordinal position for the specified control in the container.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6770,7 +6770,7 @@
         </short>
       </element>
       <element name="TCtrlBands.GetIndex.AControl">
-        <short>The control to locate in the TCtrlBand items in the container</short>
+        <short>The control to locate in the TCtrlBand items in the container.</short>
       </element>
 
       <element name="TCustomControlBar">
@@ -6811,73 +6811,73 @@
       <element name="TCustomControlBar.FOnPaint"/>
 
       <element name="TCustomControlBar.SetDrawingStyle">
-        <short>Sets the value for the DrawingStyle property</short>
+        <short>Sets the value for the DrawingStyle property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlBar.DrawingStyle"/>
         </seealso>
       </element>
       <element name="TCustomControlBar.SetDrawingStyle.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlBar.SetGradientDirection">
-        <short>Sets the value for the GradientDirection property</short>
+        <short>Sets the value for the GradientDirection property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlBar.GradientDirection"/>
         </seealso>
       </element>
       <element name="TCustomControlBar.SetGradientDirection.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlBar.SetGradientEndColor">
-        <short>Sets the value for the GradientEndColor property</short>
+        <short>Sets the value for the GradientEndColor property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlBar.GradientEndColor"/>
         </seealso>
       </element>
       <element name="TCustomControlBar.SetGradientEndColor.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlBar.SetGradientStartColor">
-        <short>Sets the value for the GradientStartColor property</short>
+        <short>Sets the value for the GradientStartColor property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlBar.GradientStartColor"/>
         </seealso>
       </element>
       <element name="TCustomControlBar.SetGradientStartColor.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlBar.SetPicture">
-        <short>Sets the value for the Picture property</short>
+        <short>Sets the value for the Picture property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlBar.Picture"/>
         </seealso>
       </element>
       <element name="TCustomControlBar.SetPicture.aValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlBar.SetRowSize">
-        <short>Sets the value for the RowSize property</short>
+        <short>Sets the value for the RowSize property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlBar.RowSize"/>
         </seealso>
       </element>
       <element name="TCustomControlBar.SetRowSize.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlBar.cBandBorderH">
-        <short>Space reserved for the horizontal border in a control bar</short>
+        <short>Space reserved for the horizontal border in a control bar.</short>
       </element>
 
       <element name="TCustomControlBar.cBandBorderV">
@@ -6885,7 +6885,7 @@
       </element>
 
       <element name="TCustomControlBar.cGrabWidth">
-        <short>Space reserved as the width of the grabber in a control bar</short>
+        <short>Space reserved as the width of the grabber in a control bar.</short>
       </element>
 
       <element name="TCustomControlBar.cFullGrabber">
@@ -6907,7 +6907,7 @@
       <element name="TCustomControlBar.FVisiBandsEx"/>
 
       <element name="TCustomControlBar.AlignControlToBand">
-        <short>Aligns the control bar to the specified control band</short>
+        <short>Aligns the control bar to the specified control band.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6919,7 +6919,7 @@
       </element>
 
       <element name="TCustomControlBar.AlignControlsToBands">
-        <short>Aligns visible control bands in the container</short>
+        <short>Aligns visible control bands in the container.</short>
         <descr>
           Temporarily disables AutoSizing during the alignment process. Restores AutoSizing prior to exiting from the method.
         </descr>
@@ -6927,15 +6927,15 @@
       </element>
 
       <element name="TCustomControlBar.CalcBandHeight">
-        <short>Calculates the vertical space needed for the control bar</short>
+        <short>Calculates the vertical space needed for the control bar.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomControlBar.CalcBandHeight.Result">
-        <short>Number of pixels need for the height of the control bar</short>
+        <short>Number of pixels need for the height of the control bar.</short>
       </element>
       <element name="TCustomControlBar.CalcBandHeight.AControl">
-        <short>Toolbar or Toolbutton control examined in the method</short>
+        <short>Toolbar or Toolbutton control examined in the method.</short>
       </element>
 
       <element name="TCustomControlBar.CalcBandHeightSnapped">
@@ -6990,7 +6990,7 @@
       </element>
 
       <element name="TCustomControlBar.ChangeCursor">
-        <short>Changes the cursor to the specified shape</short>
+        <short>Changes the cursor to the specified shape.</short>
         <descr>
           <p>
             ACursor contains the cursor shape requested in the method. The value in ACursor is translated into one the following cursor constants, and assigned to the Cursor property:
@@ -7007,7 +7007,7 @@
         <seealso/>
       </element>
       <element name="TCustomControlBar.ChangeCursor.ACursor">
-        <short>Cursor shape requested in the method</short>
+        <short>Cursor shape requested in the method.</short>
       </element>
 
       <element name="TCustomControlBar.CheckBandsSizeAndVisibility">
@@ -7023,7 +7023,7 @@
       </element>
 
       <element name="TCustomControlBar.CMBiDiModeChanged">
-        <short>Handles the CM_BIDIMODECHANGED message</short>
+        <short>Handles the CM_BIDIMODECHANGED message.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7032,7 +7032,7 @@
       </element>
 
       <element name="TCustomControlBar.CMBorderChanged">
-        <short>Handles the CM_BORDERCHANGED message</short>
+        <short>Handles the CM_BORDERCHANGED message.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7063,7 +7063,7 @@
       </element>
 
       <element name="TCustomControlBar.DoBandPaint">
-        <short>Signals the OnBandPaint event handler using the arguments to the method</short>
+        <short>Signals the OnBandPaint event handler using the arguments to the method.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7145,7 +7145,7 @@
       </element>
 
       <element name="TCustomControlBar.InitializeClass">
-        <short>Class constructor used to initial class constants</short>
+        <short>Class constructor used to initial class constants.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7172,7 +7172,7 @@
       </element>
 
       <element name="TCustomControlBar.Loaded">
-        <short>Performs actions needed when component loading has been completed</short>
+        <short>Performs actions needed when component loading has been completed.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7193,7 +7193,7 @@
       </element>
 
       <element name="TCustomControlBar.MouseDown" link="#lcl.controls.TControl.MouseDown">
-        <short>Handles a mouse down message in the control</short>
+        <short>Handles a mouse down message in the control.</short>
         <descr>
           <p>
             Overridden to provide support for dragging the control band under the mouse cursor.
@@ -7215,7 +7215,7 @@
       </element>
 
       <element name="TCustomControlBar.MouseMove" link="#lcl.controls.TControl.MouseMove">
-        <short>Handles a mouse move message while dragging a control band</short>
+        <short>Handles a mouse move message while dragging a control band.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7230,7 +7230,7 @@
       </element>
 
       <element name="TCustomControlBar.MouseUp" link="#lcl.controls.TControl.MouseUp">
-        <short>Handles a mouse up message that ends a drag operation for a control band</short>
+        <short>Handles a mouse up message that ends a drag operation for a control band.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7266,7 +7266,7 @@
       </element>
 
       <element name="TCustomControlBar.NormalizeRows">
-        <short>Orders visible bands in the control, and removes empty rows</short>
+        <short>Orders visible bands in the control, and removes empty rows.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7295,7 +7295,7 @@
       </element>
 
       <element name="TCustomControlBar.SetCursor" link="#lcl.controls.TControl.SetCursor">
-        <short>Sets the Cursor to the specified TCursor shape</short>
+        <short>Sets the Cursor to the specified TCursor shape.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7328,7 +7328,7 @@
       </element>
 
       <element name="TCustomControlBar.WMSize" link="#lcl.controls.TWinControl.WMSize">
-        <short>Handles the LM_SIZE message</short>
+        <short>Handles the LM_SIZE message.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7339,7 +7339,7 @@
       <element name="TCustomControlBar.FUpdateCount"/>
 
       <element name="TCustomControlBar.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create allocates resources needed to store the bands for the control bar, and calls the inherited constructor. Creates sets the default values for properties, including:
@@ -7367,11 +7367,11 @@
         <seealso/>
       </element>
       <element name="TCustomControlBar.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomControlBar.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy frees resources allocated to the <var>Picture</var> property, as well as the internal <var>TCtrlBands</var> container. Destroy calls the inherited destructor prior to exit.
@@ -7408,7 +7408,7 @@
       </element>
 
       <element name="TCustomControlBar.HitTest">
-        <short>Gets the visible control for a band under the specified coordinates</short>
+        <short>Gets the visible control for a band under the specified coordinates.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7417,10 +7417,10 @@
         </short>
       </element>
       <element name="TCustomControlBar.HitTest.X">
-        <short>Horizontal position for the test</short>
+        <short>Horizontal position for the test.</short>
       </element>
       <element name="TCustomControlBar.HitTest.Y">
-        <short>Vertical position for the test</short>
+        <short>Vertical position for the test.</short>
       </element>
 
       <element name="TCustomControlBar.InsertControl">
@@ -7435,10 +7435,10 @@
         </seealso>
       </element>
       <element name="TCustomControlBar.InsertControl.AControl">
-        <short>Toolbar or Toolbutton added to the new band in the control bar</short>
+        <short>Toolbar or Toolbutton added to the new band in the control bar.</short>
       </element>
       <element name="TCustomControlBar.InsertControl.Index">
-        <short>Ordinal position in the bands where the control is inserted</short>
+        <short>Ordinal position in the bands where the control is inserted.</short>
       </element>
 
       <element name="TCustomControlBar.MouseToBandPos">
@@ -7460,16 +7460,16 @@
       </element>
 
       <element name="TCustomControlBar.RemoveControl">
-        <short>Removes the band for the specified control</short>
+        <short>Removes the band for the specified control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomControlBar.RemoveControl.AControl">
-        <short>Toolbar or Toolbutton removed from the bands in the control bar</short>
+        <short>Toolbar or Toolbutton removed from the bands in the control bar.</short>
       </element>
 
       <element name="TCustomControlBar.StickControls">
-        <short>Aligns control to the bands in the control bar</short>
+        <short>Aligns control to the bands in the control bar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7528,13 +7528,13 @@
       </element>
 
       <element name="TCustomControlBar.GradientStartColor">
-        <short>Specifies the initial color used in a gradient drawn on the control bar</short>
+        <short>Specifies the initial color used in a gradient drawn on the control bar.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomControlBar.GradientEndColor">
-        <short>Specifies the ending color used in a gradient drawn on the control bar</short>
+        <short>Specifies the ending color used in a gradient drawn on the control bar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7578,7 +7578,7 @@
       </element>
 
       <element name="TCustomControlBar.OnBandDrag">
-        <short>Event handler signalled when a control band is dropped in the control bar</short>
+        <short>Event handler signalled when a control band is dropped in the control bar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7590,7 +7590,7 @@
       </element>
 
       <element name="TCustomControlBar.OnBandMove">
-        <short>Event handler signalled when a control band is moved on the control bar</short>
+        <short>Event handler signalled when a control band is moved on the control bar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7695,7 +7695,7 @@
       <element name="TControlBar.OnUnDock" link="#lcl.controls.TWinControl.OnUnDock"/>
 
       <element name="Frame3D">
-        <short>Provides a wrapper for the Frame3D method in TCanvas</short>
+        <short>Provides a wrapper for the Frame3D method in TCanvas.</short>
         <descr>
           <p>
             <var>Frame3D</var> is a procedure which provides a wrapper for the <var>Frame3D</var> method in <var>TCanvas</var>. <var>ACanvas</var> is the TCanvas instance used to perform the Frame3D method with the settings in the specified arguments.
@@ -7706,19 +7706,19 @@
         </seealso>
       </element>
       <element name="Frame3D.ACanvas">
-        <short>Canvas used to perform the 3D drawing routine</short>
+        <short>Canvas used to perform the 3D drawing routine.</short>
       </element>
       <element name="Frame3D.ARect">
-        <short>Coordinates for the drawing operation</short>
+        <short>Coordinates for the drawing operation.</short>
       </element>
       <element name="Frame3D.TopColor">
-        <short>Pen color used to draw left and top lines in the frame</short>
+        <short>Pen color used to draw left and top lines in the frame.</short>
       </element>
       <element name="Frame3D.BottomColor">
-        <short>Pen color used to draw right and bottom lines in the frame</short>
+        <short>Pen color used to draw right and bottom lines in the frame.</short>
       </element>
       <element name="Frame3D.FrameWidth">
-        <short>Width required for the 3D frame</short>
+        <short>Width required for the 3D frame.</short>
       </element>
 
       <element name="Register">

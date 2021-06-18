@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="EditBtn">
-      <short>Implements specialized edit controls with attached speed buttons</short>
+      <short>Implements specialized edit controls with attached speed buttons.</short>
       <descr>
         <p>
           <file>editbtn.pas</file> contains specialized edit controls with an attached speed button used to perform an action when it is clicked. The following components are added to the <b>Misc</b> tab in the Lazarus IDE Component Palette:
@@ -52,13 +52,13 @@
       <element name="ImgList"/>
 
       <element name="NullDate">
-        <short>Represents a TDateTime type without a value assigned</short>
+        <short>Represents a TDateTime type without a value assigned.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TEbEdit">
-        <short>Implements the embedded edit control used in TCustomEditButton</short>
+        <short>Implements the embedded edit control used in TCustomEditButton.</short>
         <descr>
           <p>
             <var>TEbEdit</var> is a <var>TGEEdit</var> descendant which implements the embedded edit control used in <var>TCustomEditButton</var>. TEbEdit provides overridden methods to alter the behavior of the control when handling <var>OnEnter</var> and <var>OnExit</var> notifications.
@@ -70,7 +70,7 @@
       </element>
 
       <element name="TEbEdit.DoEnter">
-        <short>Performs actions needed when the control is entered</short>
+        <short>Performs actions needed when the control is entered.</short>
         <descr>
           <p>
             Ensures that the button visibility and spacing for the Owner control are handled when the Owner is derived from TCustomEditButton. Calls the inherited method prior to exit.
@@ -82,7 +82,7 @@
       </element>
 
       <element name="TEbEdit.DoExit">
-        <short>Performs actions needed when the control is exited</short>
+        <short>Performs actions needed when the control is exited.</short>
         <descr>
           <p>
             Ensures that the button visibility and spacing for the Owner control are handled when the Owner is derived from TCustomEditButton. Calls the inherited method prior to exit.
@@ -94,7 +94,7 @@
       </element>
 
       <element name="TEditSpeedButton">
-        <short>Implements a speed button used in TCustomEditButton</short>
+        <short>Implements a speed button used in TCustomEditButton.</short>
         <descr>
           <p>
             <var>TEditSpeedButton</var> is a <var>TSpeedButton</var> descendant which provides support for change notifications for Glyphs used on the Button in <var>TCustomEditButton</var>.
@@ -107,18 +107,18 @@
 
       <element name="TEditSpeedButton.GlyphChanged">
         <short>
-          Performs actions needed when the glyph has changed for the Button in TCustomEditButton
+          Performs actions needed when the glyph has changed for the Button in TCustomEditButton.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TEditSpeedButton.GlyphChanged.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
 
       <element name="TCustomEditButton">
         <short>
-          <var>TCustomEditButton</var> - base class for <var>TEditButton</var>, an Edit Box with attached Speed Button
+          <var>TCustomEditButton</var> - base class for <var>TEditButton</var>, an Edit Box with attached Speed Button.
         </short>
         <descr>
           <p>
@@ -137,205 +137,205 @@
       <element name="TCustomEditButton.FFlat"/>
 
       <element name="TCustomEditButton.GetFocusOnButtonClick">
-        <short>Gets the value for the FocusOnButtonClick property</short>
+        <short>Gets the value for the FocusOnButtonClick property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.FocusOnButtonClick"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetFocusOnButtonClick.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetOnButtonClick">
-        <short>Gets the value for the OnButtonClick property</short>
+        <short>Gets the value for the OnButtonClick property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.OnButtonClick"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetOnButtonClick.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetButton">
-        <short>Gets the value for the Button property</short>
+        <short>Gets the value for the Button property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.Button"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetButton.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetGlyph">
-        <short>Gets the value for the Glyph property</short>
+        <short>Gets the value for the Glyph property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.Glyph"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetGlyph.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetNumGlyphs">
-        <short>Gets the value for the NumGlyphs property</short>
+        <short>Gets the value for the NumGlyphs property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.NumGlyphs"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetNumGlyphs.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetEdit">
-        <short>Gets the value for the Edit property</short>
+        <short>Gets the value for the Edit property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.Edit"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetEdit.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetFocusOnButtonClick">
-        <short>Sets the value for the FocusOnButtonClick property</short>
+        <short>Sets the value for the FocusOnButtonClick property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.FocusOnButtonClick"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetFocusOnButtonClick.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetOnButtonClick">
-        <short>Sets the value for the OnButtonClick property</short>
+        <short>Sets the value for the OnButtonClick property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.OnButtonClick"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetOnButtonClick.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetButtonOnlyWhenFocused">
-        <short>Sets the value for the ButtonOnlyWhenFocused property</short>
+        <short>Sets the value for the ButtonOnlyWhenFocused property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.ButtonOnlyWhenFocused"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetButtonOnlyWhenFocused.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetFlat">
-        <short>Sets the value for the Flat property</short>
+        <short>Sets the value for the Flat property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.Flat"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetFlat.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetGlyph">
-        <short>Sets the value for the Glyph property</short>
+        <short>Sets the value for the Glyph property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.Glyph"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetGlyph.Pic">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetNumGlyphs">
-        <short>Sets the value for the NumGlyphs property</short>
+        <short>Sets the value for the NumGlyphs property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.NumGlyphs"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetNumGlyphs.ANumber">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetImages">
-        <short>Gets the value for the Images property</short>
+        <short>Gets the value for the Images property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.GetImages"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetImages.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetImages">
-        <short>Sets the value for the Images property</short>
+        <short>Sets the value for the Images property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.Images"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetImages.aImages">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetImageIndex">
-        <short>Gets the value for the ImageIndex property</short>
+        <short>Gets the value for the ImageIndex property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.ImageIndex"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetImageIndex.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetImageIndex">
-        <short>Sets the value for the ImageIndex property</short>
+        <short>Sets the value for the ImageIndex property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.ImageIndex"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetImageIndex.AImageIndex">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.GetImageWidth">
-        <short>Gets the value for the ImageWidth property</short>
+        <short>Gets the value for the ImageWidth property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.ImageWidth"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.GetImageWidth.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.SetImageWidth">
-        <short>Sets the value for the ImageWidth property</short>
+        <short>Sets the value for the ImageWidth property.</short>
         <descr/>
         <seealso>
           <link id="TCustomEditButton.ImageWidth"/>
         </seealso>
       </element>
       <element name="TCustomEditButton.SetImageWidth.aImageWidth">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomEditButton.ButtonClick">
-        <short>Performs actions needed when the button for the control is clicked</short>
+        <short>Performs actions needed when the button for the control is clicked.</short>
         <descr>
           <p>
             The implementation for <var>ButtonClick</var> is empty in    <var>TCustomEditButton</var>; use a descendent class which implements a specific functionality.
@@ -345,31 +345,31 @@
       </element>
 
       <element name="TCustomEditButton.BuddyClick">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomEditButton.GetEditorClassType">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomEditButton.GetEditorClassType.Result">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomEditButton.GetBuddyClassType">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomEditButton.GetBuddyClassType.Result">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomEditButton.GetControlClassDefaultSize">
-        <short>Gets the default size used for new instances of the class</short>
+        <short>Gets the default size used for new instances of the class.</short>
         <descr>
           <p>
             The return value is a <var>TSize</var> type with the dimensions for the control. The CX member contains the width needed for both the <var>Edit</var> and the <var>Button</var> controls in the grouped edit control. The CY member contains the height used for the Edit and the Button controls.
@@ -386,11 +386,11 @@
         </seealso>
       </element>
       <element name="TCustomEditButton.GetControlClassDefaultSize.Result">
-        <short>TSize value with the dimensions for the new class instance</short>
+        <short>TSize value with the dimensions for the new class instance.</short>
       </element>
 
       <element name="TCustomEditButton.CalcButtonVisible">
-        <short>Indicates whether the Button for the control should be visible</short>
+        <short>Indicates whether the Button for the control should be visible.</short>
         <descr>
           <p>
             <var>CalcButtonVisible</var> is a <var>Boolean</var> function used to determine whether the <var>Button</var> for the control should be visible. The return value is True when the control is Visible and the Edit has focus, or the control is not configured to display its button only when focused.
@@ -410,18 +410,18 @@
         </seealso>
       </element>
       <element name="TCustomEditButton.CalcButtonVisible.Result">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomEditButton.GetDefaultGlyphName">
         <short>
-          <var>GetDefaultGlyphName</var> finds the name of the default glyph used for the Button
+          <var>GetDefaultGlyphName</var> finds the name of the default glyph used for the Button.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomEditButton.GetDefaultGlyphName.Result">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomEditButton.CalculatePreferredSize" link="#lcl.groupededit.TCustomAbstractGroupedEdit.CalculatePreferredSize"/>
@@ -430,7 +430,7 @@
       <element name="TCustomEditButton.CalculatePreferredSize.WithThemeSpace"/>
 
       <element name="TCustomEditButton.CheckButtonVisible">
-        <short>Ensures the Button for the control is configured and its visibility is set</short>
+        <short>Ensures the Button for the control is configured and its visibility is set.</short>
         <descr>
           <p>
             <var>CheckButtonVisible</var> is a procedure which ensures that the     <var>Button</var> in the control is configured and its visibility is set. If Button has not been assigned (contains Nil), no actions are performed in the method.
@@ -448,37 +448,37 @@
       </element>
 
       <element name="TCustomEditButton.LoadDefaultGlyph">
-        <short>Loads the default glyph displayed on the Button for the control</short>
+        <short>Loads the default glyph displayed on the Button for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomEditButton.GlyphChanged">
-        <short>Performs action needed when the glyph assigned in Button has changed</short>
+        <short>Performs action needed when the glyph assigned in Button has changed.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomEditButton.GlyphChanged.Sender">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomEditButton.Button">
         <short>
-          <var>Button</var> is the TSpeedButton that is attached to the grouped edit control
+          <var>Button</var> is the TSpeedButton that is attached to the grouped edit control.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomEditButton.ButtonCaption">
-        <short>Contains the caption used for the Button on the grouped edit control</short>
+        <short>Contains the caption used for the Button on the grouped edit control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomEditButton.ButtonCursor">
         <short>
-          Cursor shape displayed when the mouse hovers over the Button in the control
+          Cursor shape displayed when the mouse hovers over the Button in the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -486,7 +486,7 @@
 
       <element name="TCustomEditButton.ButtonHint">
         <short>
-          <var>ButtonHint</var> is the hint that pops up when the mouse hovers over the button
+          <var>ButtonHint</var> is the hint that pops up when the mouse hovers over the button.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -494,7 +494,7 @@
 
       <element name="TCustomEditButton.ButtonOnlyWhenFocused">
         <short>
-          <var>ButtonOnlyWhenFocused</var> - if True, the SpeedButton only appears when focus is given to the EditButton control
+          <var>ButtonOnlyWhenFocused</var> - if True, the SpeedButton only appears when focus is given to the EditButton control.
         </short>
         <descr/>
         <seealso/>
@@ -502,7 +502,7 @@
 
       <element name="TCustomEditButton.ButtonWidth">
         <short>
-          <var>ButtonWidth</var> is the width for the TSpeedButton used in the grouped edit control
+          <var>ButtonWidth</var> is the width for the TSpeedButton used in the grouped edit control.
         </short>
         <descr/>
         <seealso/>
@@ -510,7 +510,7 @@
 
       <element name="TCustomEditButton.Edit">
         <short>
-          Edit is the TEbEdit control used to perform direct input for the value in the grouped edit control
+          Edit is the TEbEdit control used to perform direct input for the value in the grouped edit control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -518,14 +518,14 @@
 
       <element name="TCustomEditButton.Flat">
         <short>
-          <var>Flat</var> - if True, SpeedButton appears flat rather than three-dimensional</short>
+          <var>Flat</var> - if True, SpeedButton appears flat rather than three-dimensional.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomEditButton.FocusOnButtonClick">
         <short>
-          Indicates if the focus is changed to the Edit control after the Button is clicked
+          Indicates if the focus is changed to the Edit control after the Button is clicked.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -533,21 +533,21 @@
 
       <element name="TCustomEditButton.Glyph">
         <short>
-          <var>Glyph</var> - the small graphic image on the SpeedButton, which ought to indicate its function</short>
+          <var>Glyph</var> - the small graphic image on the SpeedButton, which ought to indicate its function.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomEditButton.NumGlyphs">
         <short>
-          <var>NumGlyphs</var> - the number of available glyphs</short>
+          <var>NumGlyphs</var> - the number of available glyphs.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomEditButton.Images">
         <short>
-          Contains the Images that can be displayed on the Button for the grouped edit control
+          Contains the Images that can be displayed on the Button for the grouped edit control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -555,7 +555,7 @@
 
       <element name="TCustomEditButton.ImageIndex">
         <short>
-          Ordinal position in Images for the bitmap displayed on the Button control
+          Ordinal position in Images for the bitmap displayed on the Button control.
         </short>
         <descr>
           <p>
@@ -569,7 +569,7 @@
 
       <element name="TCustomEditButton.ImageWidth">
         <short>
-          Specifies the width of the image displayed on the Button control
+          Specifies the width of the image displayed on the Button control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -577,7 +577,7 @@
 
       <element name="TCustomEditButton.Spacing">
         <short>
-          Specifies the amount of space reserved between the Edit and Button controls when Button is visible
+          Specifies the amount of space reserved between the Edit and Button controls when Button is visible.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -585,7 +585,7 @@
 
       <element name="TCustomEditButton.OnButtonClick">
         <short>
-          <var>OnButtonClick</var> - event handler for a mouse click on the SpeedButton
+          <var>OnButtonClick</var> - event handler for a mouse click on the SpeedButton.
         </short>
         <descr/>
         <seealso/>
@@ -593,7 +593,7 @@
 
       <element name="TCustomEditButton.Create">
         <short>
-          <var>Create</var> - constructor for <var>TCustomEditButton</var>: calls inherited <var>Create</var> then sets some defaults and initializes some variables
+          <var>Create</var> - constructor for <var>TCustomEditButton</var>: calls inherited <var>Create</var> then sets some defaults and initializes some variables.
         </short>
         <descr>
           <p>
@@ -610,18 +610,18 @@
         </seealso>
       </element>
       <element name="TCustomEditButton.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomEditButton.Destroy" link="#LCL.Controls.TWinControl.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TEditButton">
         <short>
-          Implements a grouped edit control with both an Edit and a Button
+          Implements a grouped edit control with both an Edit and a Button.
         </short>
         <descr>
           <p>
@@ -643,7 +643,7 @@
       <element name="TEditButton.AutoSelect" link="#LCL.StdCtrls.TCustomEdit.AutoSelect"/>
 
       <element name="TEditButton.AutoSize" link="#LCL.GroupedEdit.TCustomAbstractGroupedEdit.AutoSize">
-        <short>The default value is True in TEditButton</short>
+        <short>The default value is True in TEditButton.</short>
         <descr/>
         <seealso/>
       </element>
@@ -655,7 +655,7 @@
       <element name="TEditButton.BorderSpacing" link="#LCL.Controls.TControl.BorderSpacing"/>
 
       <element name="TEditButton.BorderStyle" link="#LCL.Controls.TCustomControl.BorderStyle">
-        <short>Style for the Border drawn around the control</short>
+        <short>Style for the Border drawn around the control.</short>
         <descr>
           <p>
             The default value for the property is <var>bsNone</var> in <var>TEditButton</var>.
@@ -725,7 +725,7 @@
       <element name="TEditButton.Visible" link="#LCL.Controls.TControl.Visible"/>
 
       <element name="TFilterStringOption">
-        <short>String filter options which can be enabled in controls</short>
+        <short>String filter options which can be enabled in controls.</short>
         <descr>
           <p>
             <var>TFilterStringOption</var> is an enumerated type with values representing string filter options which can be enabled in controls which support the feature. TFilterStringOption values are stored in the <var>TFilterStringOptions</var> set type used to implement the <var>FilterOptions</var> property in <var>TCustomControlFilterEdit</var>.
@@ -737,14 +737,14 @@
         </seealso>
       </element>
       <element name="TFilterStringOption.fsoCaseSensitive">
-        <short>Value comparisons are case sensitive</short>
+        <short>Value comparisons are case sensitive.</short>
       </element>
       <element name="TFilterStringOption.fsoMatchOnlyAtStart">
-        <short>Value comparisons start at the beginning to the string value</short>
+        <short>Value comparisons start at the beginning to the string value.</short>
       </element>
 
       <element name="TFilterStringOptions">
-        <short>Set type used to store values from the TFilterStringOption enumeration</short>
+        <short>Set type used to store values from the TFilterStringOption enumeration.</short>
         <descr></descr>
         <seealso>
           <link id="TFilterStringOption"/>
@@ -754,7 +754,7 @@
 
       <element name="TFilterItemEvent">
         <short>
-          Specifies an event handler used to filter data items in TCustomControlFilterEdit
+          Specifies an event handler used to filter data items in TCustomControlFilterEdit.
         </short>
         <descr>
           <p>
@@ -771,18 +771,18 @@
         </seealso>
       </element>
       <element name="TFilterItemEvent.Result">
-        <short>True if the item matches the filter implemented in the event handler</short>
+        <short>True if the item matches the filter implemented in the event handler.</short>
       </element>
       <element name="TFilterItemEvent.ItemData">
-        <short>Pointer to the data for the item examined in the event handler</short>
+        <short>Pointer to the data for the item examined in the event handler.</short>
       </element>
       <element name="TFilterItemEvent.Done">
-        <short>Indicates if additional filtering is needed on the title of the item data</short>
+        <short>Indicates if additional filtering is needed on the title of the item data.</short>
       </element>
 
       <element name="TFilterItemExEvent">
         <short>
-          Specifies an event handler used to filter data items in TCustomControlFilterEdit
+          Specifies an event handler used to filter data items in TCustomControlFilterEdit.
         </short>
         <descr>
           <p>
@@ -802,20 +802,20 @@
         </seealso>
       </element>
       <element name="TFilterItemExEvent.Result">
-        <short>True if the item matches the filter implemented in the event handler</short>
+        <short>True if the item matches the filter implemented in the event handler.</short>
       </element>
       <element name="TFilterItemExEvent.ACaption">
-        <short>Caption or display name for the item examined in the event handler</short>
+        <short>Caption or display name for the item examined in the event handler.</short>
       </element>
       <element name="TFilterItemExEvent.ItemData">
-        <short>Pointer to the data for the item examined in the event handler</short>
+        <short>Pointer to the data for the item examined in the event handler.</short>
       </element>
       <element name="TFilterItemExEvent.Done">
-        <short>Indicates if additional filtering is needed for the caption or item data</short>
+        <short>Indicates if additional filtering is needed for the caption or item data.</short>
       </element>
 
       <element name="TCheckItemEvent">
-        <short>Specifies an event handler is to determine if the specified Item is checked</short>
+        <short>Specifies an event handler is to determine if the specified Item is checked.</short>
         <descr>
           <p>
             <var>TCheckItemEvent</var> specifies an event handler that can be used only for items that have a checkbox. Returns <b>True</b> when the item is checked. It will be necessary to cast the object instance in Item to the correct data type in the event handler to access properties introduced in a <var>TObject</var> descendant.
@@ -829,15 +829,15 @@
         </seealso>
       </element>
       <element name="TCheckItemEvent.Result">
-        <short>True when the item is checked</short>
+        <short>True when the item is checked.</short>
       </element>
       <element name="TCheckItemEvent.Item">
-        <short>Object examined in the method</short>
+        <short>Object examined in the method.</short>
       </element>
 
       <element name="TCustomControlFilterEdit">
         <short>
-          Base class for edit controls which filter data in an associated container control like TListbox or TTreeview
+          Base class for edit controls which filter data in an associated container control like TListbox or TTreeview.
         </short>
         <descr>
           <p>
@@ -855,30 +855,30 @@
       <element name="TCustomControlFilterEdit.fOnAfterFilter"/>
 
       <element name="TCustomControlFilterEdit.SetFilter">
-        <short>Sets the value for the Filter property</short>
+        <short>Sets the value for the Filter property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlFilterEdit.Filter"/>
         </seealso>
       </element>
       <element name="TCustomControlFilterEdit.SetFilter.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.SetIdleConnected">
-        <short>Sets the value for the IdleConnected property</short>
+        <short>Sets the value for the IdleConnected property.</short>
         <descr/>
         <seealso>
           <link id="TCustomControlFilterEdit.IdleConnected"/>
         </seealso>
       </element>
       <element name="TCustomControlFilterEdit.SetIdleConnected.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.OnIdle">
         <short>
-          Event handler signalled to apply a filter when an Application becomes idle
+          Event handler signalled to apply a filter when an Application becomes idle.
         </short>
         <descr>
           <p>
@@ -900,10 +900,10 @@
         </seealso>
       </element>
       <element name="TCustomControlFilterEdit.OnIdle.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TCustomControlFilterEdit.OnIdle.Done">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.IsTextHintStored">
@@ -913,45 +913,45 @@
         <short>
           <p>
             The value is True when <var>TextHint</var> contains a value other than the <var>rsFilter</var> resource string.
-          </p>
+          </p>.
         </short>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.IsTextHintStored.Result">
-        <short>True when TextHint is included in the LCL component stream</short>
+        <short>True when TextHint is included in the LCL component stream.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.fNeedUpdate">
         <short>
-          Flag which indicates that the filter has been updated and needs to be applied
+          Flag which indicates that the filter has been updated and needs to be applied.
         </short>
       </element>
 
       <element name="TCustomControlFilterEdit.fIsFirstUpdate">
         <short>
-          Flag indicating if the filter has ever been applied
+          Flag indicating if the filter has ever been applied.
         </short>
       </element>
 
       <element name="TCustomControlFilterEdit.fSelectedPart">
-        <short>Node to select during the next update</short>
+        <short>Node to select during the next update.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.fOnFilterItem">
-        <short>Stores the event handler in the OnFilterItem property</short>
+        <short>Stores the event handler in the OnFilterItem property.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.fOnFilterItemEx">
-        <short>Stores the event handler in the OnFilterItemEx property</short>
+        <short>Stores the event handler in the OnFilterItemEx property.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.fOnCheckItem">
-        <short>Stores the event handler in the OnCheckItem property</short>
+        <short>Stores the event handler in the OnCheckItem property.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.DestroyWnd" link="#LCL.Controls.TCustomControl.DestroyWnd">
         <short>
-          Ensures that the Canvas for the control is freed before the window handle is destroyed
+          Ensures that the Canvas for the control is freed before the window handle is destroyed.
         </short>
         <descr>
           Calls the inherited DestroyWnd method.
@@ -961,7 +961,7 @@
 
       <element name="TCustomControlFilterEdit.DoDefaultFilterItem">
         <short>
-          Provides a default routine used to examine an item in the filtered edit control
+          Provides a default routine used to examine an item in the filtered edit control.
         </short>
         <descr>
           <p>
@@ -978,50 +978,50 @@
         </seealso>
       </element>
       <element name="TCustomControlFilterEdit.DoDefaultFilterItem.Result">
-        <short>True when the item meets the filter condition</short>
+        <short>True when the item meets the filter condition.</short>
       </element>
       <element name="TCustomControlFilterEdit.DoDefaultFilterItem.ACaption">
-        <short>Caption for the item passed to DoDefaultFilterItem</short>
+        <short>Caption for the item passed to DoDefaultFilterItem.</short>
       </element>
       <element name="TCustomControlFilterEdit.DoDefaultFilterItem.ItemData">
-        <short>Pointer to the data for the item examined in the method</short>
+        <short>Pointer to the data for the item examined in the method.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.DoFilterItem">
-        <short>Filters items using the handlers for the control</short>
+        <short>Filters items using the handlers for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.DoFilterItem.Result">
-        <short>Returns True when the item meets the filter criterion</short>
+        <short>Returns True when the item meets the filter criterion.</short>
       </element>
       <element name="TCustomControlFilterEdit.DoFilterItem.ACaption">
-        <short>Caption for the item</short>
+        <short>Caption for the item.</short>
       </element>
       <element name="TCustomControlFilterEdit.DoFilterItem.ItemData">
-        <short>Pointer to the data for the item</short>
+        <short>Pointer to the data for the item.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.EditKeyDown">
-        <short>Gandles a KeyDown event for the Edit control</short>
+        <short>Gandles a KeyDown event for the Edit control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.EditKeyDown.Key">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="TCustomControlFilterEdit.EditKeyDown.Shift">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.EditChange">
-        <short>Performs actions needed when the Edit is changed</short>
+        <short>Performs actions needed when the Edit is changed.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomControlFilterEdit.BuddyClick">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1037,7 +1037,7 @@
       </element>
 
       <element name="TCustomControlFilterEdit.ApplyFilter">
-        <short>Filters the data and updates the container</short>
+        <short>Filters the data and updates the container.</short>
         <descr>
           <p>
             Does its job at once when Immediately is set to True. Otherwise, it connects the  OnIdle event handler which applies the filter when the Application is idle.
@@ -1045,12 +1045,12 @@
         </descr>
       </element>
       <element name="TCustomControlFilterEdit.ApplyFilter.Immediately">
-        <short>Indicates the filter is applied immediately</short>
+        <short>Indicates the filter is applied immediately.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.ApplyFilterCore">
         <short>
-          Applies the Filter data to the container component
+          Applies the Filter data to the container component.
         </short>
         <descr>
           Method that actually filters data in the container component. ApplyFilterCore is a virtual abstract method, and must be implemented in a derived classes.
@@ -1059,93 +1059,93 @@
       </element>
 
       <element name="TCustomControlFilterEdit.MoveNext">
-        <short></short>
+        <short>.</short>
         <descr>
           Abstract virtual method that must be implemented in a descendent class.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.MoveNext.ASelect">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.MovePrev">
-        <short></short>
+        <short>.</short>
         <descr>
           Abstract virtual method that must be implemented in a descendent class.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.MovePrev.ASelect">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.MovePageUp">
-        <short></short>
+        <short>.</short>
         <descr>
           Abstract virtual method that must be implemented in a descendent class.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.MovePageUp.ASelect">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.MovePageDown">
-        <short></short>
+        <short>.</short>
         <descr>
           Abstract virtual method that must be implemented in a descendent class.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.MovePageDown.ASelect">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.MoveHome">
-        <short></short>
+        <short>.</short>
         <descr>
           Abstract virtual method that must be implemented in a descendent class.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.MoveHome.ASelect">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.MoveEnd">
-        <short></short>
+        <short>.</short>
         <descr>
           Abstract virtual method that must be implemented in a descendent class.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.MoveEnd.ASelect">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.ReturnKeyHandled">
-        <short></short>
+        <short>.</short>
         <descr>
           Abstract virtual method that must be implemented in a descendent class.
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomControlFilterEdit.ReturnKeyHandled.Result">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.GetDefaultGlyphName" link="#lcl.editbtn.TCustomEditButton.GetDefaultGlyphName"/>
       <element name="TCustomControlFilterEdit.GetDefaultGlyphName.Result"/>
 
       <element name="TCustomControlFilterEdit.WSRegisterClass">
-        <short>Registers the class reference used to create new instances of the class</short>
+        <short>Registers the class reference used to create new instances of the class.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomControlFilterEdit.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and calls the inherited constructor. Create sets the default values for properties used to configure the <var>Edit</var> and <var>Button</var> in the class instance as well as its internal flags, including:
@@ -1166,22 +1166,22 @@
         <seealso/>
       </element>
       <element name="TCustomControlFilterEdit.Create.AOwner">
-        <short>Owner for the class instance</short>
+        <short>Owner for the class instance.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomControlFilterEdit.InvalidateFilter">
-        <short>Should be called when data was changed and it must be filtered again</short>
+        <short>Should be called when data was changed and it must be filtered again.</short>
         <descr>Connects to OnIdle handler which filters the data later.</descr>
       </element>
 
       <element name="TCustomControlFilterEdit.ResetFilter">
-        <short>Removes the filter text and shows all items in the container</short>
+        <short>Removes the filter text and shows all items in the container.</short>
       </element>
 
       <element name="TCustomControlFilterEdit.ForceFilter">
@@ -1190,7 +1190,7 @@
 
       <element name="TCustomControlFilterEdit.StoreSelection">
         <short>
-          Stores the current selection for the associated control in the class instance
+          Stores the current selection for the associated control in the class instance.
         </short>
         <descr>
           <p>
@@ -1207,20 +1207,20 @@
       </element>
 
       <element name="TCustomControlFilterEdit.RestoreSelection">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomControlFilterEdit.Filter">
-        <short>The textual representation for the filter</short>
+        <short>The textual representation for the filter.</short>
         <descr>
           Typically a user types it in the edit control but it can also be set in code. Filtering is done during idle time after the value of Filter text has changed.
         </descr>
       </element>
 
       <element name="TCustomControlFilterEdit.FilterLowercase">
-        <short>Lowercase variant of the Filter property</short>
+        <short>Lowercase variant of the Filter property.</short>
         <descr>
           <p>
             <var>FilterLowercase</var> is a read-only <var>String</var> property which contains a variant of <var>Filter</var> converted to lowercase characters. It is used in the implementation of the <var>DoDefaultFilterItem</var> method when case sensitivity is not enabled in the <var>FilterOptions</var> property ( <var>fsoCaseSensitive</var> is not included). The property can be used in a similar manner in routines assigned to the <var>OnFilterItem</var> and <var>OnFilterItemEx</var> event handlers.
@@ -1239,7 +1239,7 @@
 
       <element name="TCustomControlFilterEdit.IdleConnected">
         <short>
-          Indicates if OnIdle has been connected to the Application singleton
+          Indicates if OnIdle has been connected to the Application singleton.
         </short>
         <descr>
           <p>
@@ -1283,7 +1283,7 @@
 
       <element name="TCustomControlFilterEdit.FilterOptions">
         <short>
-          Contains options which control string comparisons for filters in the control
+          Contains options which control string comparisons for filters in the control.
         </short>
         <descr>
           <p>
@@ -1315,7 +1315,7 @@
       </element>
 
       <element name="TCustomControlFilterEdit.OnFilterItemEx">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1394,21 +1394,21 @@
 
       <element name="TAcceptFileNameEvent">
         <short>
-          <var>TAcceptFileNameEvent</var> - generic event handling method to accept a filename from a dialog
+          <var>TAcceptFileNameEvent</var> - generic event handling method to accept a filename from a dialog.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TAcceptFileNameEvent.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TAcceptFileNameEvent.Value">
-        <short>File name examined in the event handler</short>
+        <short>File name examined in the event handler.</short>
       </element>
 
       <element name="TDialogKind">
         <short>
-          Enumerated type representing dialog styles used in TFileNameEdit
+          Enumerated type representing dialog styles used in TFileNameEdit.
         </short>
         <descr>
           <p>
@@ -1423,21 +1423,21 @@
         </seealso>
       </element>
       <element name="TDialogKind.dkOpen">
-        <short>An Open dialog</short>
+        <short>An Open dialog.</short>
       </element>
       <element name="TDialogKind.dkSave">
-        <short>A Save dialog</short>
+        <short>A Save dialog.</short>
       </element>
       <element name="TDialogKind.dkPictureOpen">
-        <short>An Open dialog for image types</short>
+        <short>An Open dialog for image types.</short>
       </element>
       <element name="TDialogKind.dkPictureSave">
-        <short>A Save dialog for image types</short>
+        <short>A Save dialog for image types.</short>
       </element>
 
       <element name="TFileNameEdit">
         <short>
-          <var>TFileNameEdit</var> - an EditBox to hold a filename, with an attached SpeedButton that summons a File Open dialog
+          <var>TFileNameEdit</var> - an EditBox to hold a filename, with an attached SpeedButton that summons a File Open dialog.
         </short>
         <descr>
           <p>
@@ -1462,18 +1462,18 @@
       <element name="TFileNameEdit.FFileNameChangeLock"/>
 
       <element name="TFileNameEdit.SetFileName">
-        <short>Sets the value for the FileName property</short>
+        <short>Sets the value for the FileName property.</short>
         <descr/>
         <seealso>
           <link id="TFileNameEdit.FileName"/>
         </seealso>
       </element>
       <element name="TFileNameEdit.SetFileName.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TFileNameEdit.GetDefaultGlyphName" link="#LCL.EditBtn.TCustomEditButton.GetDefaultGlyphName">
-        <short>Gets the default glyph name used for the Button on the control</short>
+        <short>Gets the default glyph name used for the Button on the control.</short>
         <descr>
           <p>
             The return value contains the resource ID in the <var>ResBtnFileOpen</var> constant. The value is used in the <var>LoadDefaultGlyph</var> method defined in  <var>TCustomEditButton</var>.
@@ -1486,7 +1486,7 @@
       </element>
 
       <element name="TFileNameEdit.CreateDialog">
-        <short>Creates the dialog for the control</short>
+        <short>Creates the dialog for the control.</short>
         <descr>
           <p>
             CreateDialog is a TCommonDialog function which creates and returns the dialog for the grouped edit control.
@@ -1526,15 +1526,15 @@
         </seealso>
       </element>
       <element name="TFileNameEdit.CreateDialog.Result">
-        <short>Dialog class instance created in the method</short>
+        <short>Dialog class instance created in the method.</short>
       </element>
       <element name="TFileNameEdit.CreateDialog.AKind">
-        <short>Identifies the dialog kind or type created in the method</short>
+        <short>Identifies the dialog kind or type created in the method.</short>
       </element>
 
       <element name="TFileNameEdit.SaveDialogResult">
         <short>
-          <var>SaveDialogResult</var> - stores the result of the dialog
+          <var>SaveDialogResult</var> - stores the result of the dialog.
         </short>
         <descr>
           <p>
@@ -1552,14 +1552,14 @@
         <seealso/>
       </element>
       <element name="TFileNameEdit.SaveDialogResult.AKind">
-        <short>Dialog type in the D argument</short>
+        <short>Dialog type in the D argument.</short>
       </element>
       <element name="TFileNameEdit.SaveDialogResult.D">
-        <short>Dialog examined in the method</short>
+        <short>Dialog examined in the method.</short>
       </element>
 
       <element name="TFileNameEdit.ButtonClick">
-        <short>Performs actions needed when the Button for the control is clicked</short>
+        <short>Performs actions needed when the Button for the control is clicked.</short>
         <descr>
           <p>
             <var>ButtonClick</var> is an overridden method used to perform actions needed when the <var>Button</var> for the control is clicked. For <var>TFileNameEdit</var>, the <var>RunDialog</var> method is called to execute the dialog for the control and to capture it results. When <var>FocusOnButtonClick</var> is set, the <var>FocusAndMaybeSelectAll</var> method is called to give focus to the <var>Edit</var> control in the class.
@@ -1576,22 +1576,22 @@
       </element>
 
       <element name="TFileNameEdit.EditChange">
-        <short>Performs actions needed when the value for the control  has been changed</short>
+        <short>Performs actions needed when the value for the control  has been changed.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TFileNameEdit.DoFolderChange">
-        <short>Signals the OnFolderChange event handler (when assigned)</short>
+        <short>Signals the OnFolderChange event handler (when assigned).</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TFileNameEdit.DoFolderChange.Sender">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TFileNameEdit.Create" link="#LCL.EditBtn.TCustomEditButton.Create">
-        <short>Constuctor for the class instance</short>
+        <short>Constuctor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor. Create allocates resource needed for the <var>DialogFiles</var> property, and sets the default values for the <var>DialogKind</var> and <var>DialogOptions</var> properties.
@@ -1604,18 +1604,18 @@
         </seealso>
       </element>
       <element name="TFileNameEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TFileNameEdit.Destroy" link="#LCL.EditBtn.TCustomEditButton.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileNameEdit.RunDialog">
         <short>
-          <var>RunDialog</var> executes the dialog for the control
+          <var>RunDialog</var> executes the dialog for the control.
         </short>
         <descr/>
         <errors/>
@@ -1626,7 +1626,7 @@
 
       <element name="TFileNameEdit.DialogFiles">
         <short>
-          <var>DialogFiles</var> is the list of files for the dialog
+          <var>DialogFiles</var> is the list of files for the dialog.
         </short>
         <descr>
           <p>
@@ -1642,7 +1642,7 @@
 
       <element name="TFileNameEdit.FileName">
         <short>
-          <var>FileName</var> - the name of the selected file: either the initial value placed in the Text Box, or the value selected from the dialog
+          <var>FileName</var> - the name of the selected file: either the initial value placed in the Text Box, or the value selected from the dialog.
         </short>
         <descr/>
         <seealso/>
@@ -1650,7 +1650,7 @@
 
       <element name="TFileNameEdit.InitialDir">
         <short>
-          <var>InitialDir</var> is the directory from which the search starts
+          <var>InitialDir</var> is the directory from which the search starts.
         </short>
         <descr/>
         <seealso/>
@@ -1658,21 +1658,21 @@
 
       <element name="TFileNameEdit.OnAcceptFileName">
         <short>
-          <var>OnAcceptFileName</var> is an event handler for accepting a filename
+          <var>OnAcceptFileName</var> is an event handler for accepting a filename.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileNameEdit.OnFolderChange">
-        <short>Event handler signalled when the path to FileName has changed</short>
+        <short>Event handler signalled when the path to FileName has changed.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TFileNameEdit.DialogKind">
         <short>
-          Determines the dialog type executed when the Button in the control is clicked
+          Determines the dialog type executed when the Button in the control is clicked.
         </short>
         <descr>
           <p>
@@ -1689,7 +1689,7 @@
 
       <element name="TFileNameEdit.DialogTitle">
         <short>
-          <var>DialogTitle</var> - the title to appear on the dialog
+          <var>DialogTitle</var> - the title to appear on the dialog.
         </short>
         <descr>
           <p>
@@ -1704,7 +1704,7 @@
 
       <element name="TFileNameEdit.DialogOptions">
         <short>
-          <var>DialogOptions</var> - set of options enabled for the file open dialog
+          <var>DialogOptions</var> - set of options enabled for the file open dialog.
         </short>
         <descr>
           <p>
@@ -1724,27 +1724,27 @@
 
       <element name="TFileNameEdit.Filter">
         <short>
-          <var>Filter</var> - the filtering string to help search for the required file</short>
+          <var>Filter</var> - the filtering string to help search for the required file.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileNameEdit.FilterIndex">
         <short>
-          <var>FilterIndex</var> - index value for the filtering string
+          <var>FilterIndex</var> - index value for the filtering string.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileNameEdit.DefaultExt">
-        <short>Default file extension used in the dialog for the component</short>
+        <short>Default file extension used in the dialog for the component.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TFileNameEdit.HideDirectories">
-        <short>Hide directory name from edit</short>
+        <short>Hide directory name from edit.</short>
         <descr>
           <p>
             If <var>HideDirectories</var> is set to true, the file name editor displays only a file name, without path.
@@ -1756,33 +1756,33 @@
       </element>
 
       <element name="TFileNameEdit.ButtonCaption">
-        <short>Text displayed on the button for the control</short>
+        <short>Text displayed on the button for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TFileNameEdit.ButtonCursor">
         <short>
-          Cursor shape displayed when hovering the mouse over the button for the control
+          Cursor shape displayed when hovering the mouse over the button for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TFileNameEdit.ButtonHint">
-        <short>Text displayed in the balloon hint for the button in the control</short>
+        <short>Text displayed in the balloon hint for the button in the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TFileNameEdit.ButtonOnlyWhenFocused" link="#LCL.EditBtn.TCustomEditButton.ButtonOnlyWhenFocused">
-        <short>Controls visibility of the Button when the control loses focus</short>
+        <short>Controls visibility of the Button when the control loses focus.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TFileNameEdit.ButtonWidth" link="#LCL.EditBtn.TCustomEditButton.ButtonWidth">
-        <short>Width of the Button displayed in the control</short>
+        <short>Width of the Button displayed in the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1851,7 +1851,7 @@
 
       <element name="TDirectoryEdit">
         <short>
-          <var>TDirectoryEdit</var> - an EditBox to hold a directory name, with an attached SpeedButton that summons a Directory Open dialog
+          <var>TDirectoryEdit</var> - an EditBox to hold a directory name, with an attached SpeedButton that summons a Directory Open dialog.
         </short>
         <descr/>
         <seealso>
@@ -1866,36 +1866,36 @@
       <element name="TDirectoryEdit.FDialogOptions"/>
 
       <element name="TDirectoryEdit.GetDirectory">
-        <short>Gets the value for the Directory property</short>
+        <short>Gets the value for the Directory property.</short>
         <descr/>
         <seealso>
           <link id="TDirectoryEdit.Directory"/>
         </seealso>
       </element>
       <element name="TDirectoryEdit.GetDirectory.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TDirectoryEdit.SetDirectory">
-        <short>Sets the value for the Directory property</short>
+        <short>Sets the value for the Directory property.</short>
         <descr/>
         <seealso>
           <link id="TDirectoryEdit.Directory"/>
         </seealso>
       </element>
       <element name="TDirectoryEdit.SetDirectory.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TDirectoryEdit.GetDefaultGlyphName" link="#LCL.EditBtn.TCustomEditButton.GetDefaultGlyphName">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDirectoryEdit.CreateDialog">
         <short>
-          Creates and configures the dialog for the control
+          Creates and configures the dialog for the control.
         </short>
         <descr>
           <p>
@@ -1921,11 +1921,11 @@
         </seealso>
       </element>
       <element name="TDirectoryEdit.CreateDialog.Result">
-        <short>Dialog created and configured in the method</short>
+        <short>Dialog created and configured in the method.</short>
       </element>
 
       <element name="TDirectoryEdit.GetDialogResult">
-        <short>Gets the result from the specified dialog</short>
+        <short>Gets the result from the specified dialog.</short>
         <descr>
           <p>
             <var>GetDialogResult</var> is a <var>String</var> function used to get the result from the Select Directory dialog. The return value contains the value from the <var>FileName</var> property in the <var>TSelectDirectoryDialog</var> instance in <var>D</var>. The return value, when accepted in <var>OnAcceptDirectory</var>, is stored in the <var>Directory</var> property.
@@ -1943,14 +1943,14 @@
         </seealso>
       </element>
       <element name="TDirectoryEdit.GetDialogResult.Result">
-        <short>Directory name from the dialog</short>
+        <short>Directory name from the dialog.</short>
       </element>
       <element name="TDirectoryEdit.GetDialogResult.D">
-        <short>Dialog examined in the method</short>
+        <short>Dialog examined in the method.</short>
       </element>
 
       <element name="TDirectoryEdit.ButtonClick">
-        <short>Implements the button handler for the Button in the control</short>
+        <short>Implements the button handler for the Button in the control.</short>
         <descr>
           <p>
             <var>ButtonClick</var> is an overridden method used to implement the button click handler for the <var>Button</var> in the control. ButtonClick calls the inherited method, and calls <var>RunDialog</var> to display the dialog and capture the directory name. When the dialog has completed, and <var>FocusOnButtonClick</var> is set to <b>True</b>, the <var>FocusAndMaybeSelectAll</var> method is called to give focus to the <var>Edit</var> control and select text as needed.
@@ -1972,7 +1972,7 @@
       <element name="TDirectoryEdit.AutoSelect" link="#LCL.StdCtrls.TCustomEdit.AutoSelect"/>
 
       <element name="TDirectoryEdit.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor. Create sets the values in the <var>DialogOptions</var> property to the defaults in <var>DefaultOpenDialogOptions</var>.
@@ -1984,12 +1984,12 @@
         </seealso>
       </element>
       <element name="TDirectoryEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TDirectoryEdit.RunDialog">
         <short>
-          Executes the dialog for the control and stores the return value
+          Executes the dialog for the control and stores the return value.
         </short>
         <descr>
           <p>
@@ -2014,7 +2014,7 @@
       </element>
 
       <element name="TDirectoryEdit.Directory">
-        <short>The <var>Directory</var> selected by the dialog</short>
+        <short>The <var>Directory</var> selected by the dialog.</short>
         <descr>
           <p>
             <var>Directory</var> is a <var>String</var> property which contains the active directory, and the value displayed in the <var>Edit</var> for the control.
@@ -2036,7 +2036,7 @@
 
       <element name="TDirectoryEdit.RootDir">
         <short>
-          The root directory for file system navigation in the control
+          The root directory for file system navigation in the control.
         </short>
         <descr>
           <p>
@@ -2055,7 +2055,7 @@
 
       <element name="TDirectoryEdit.OnAcceptDirectory">
         <short>
-          <var>OnAcceptDirectory</var> - event handler for accepting the name of a directory
+          <var>OnAcceptDirectory</var> - event handler for accepting the name of a directory.
         </short>
         <descr/>
         <seealso/>
@@ -2063,13 +2063,13 @@
 
       <element name="TDirectoryEdit.DialogTitle">
         <short>
-          <var>DialogTitle</var> - the title that appears on the Select Directory dialog</short>
+          <var>DialogTitle</var> - the title that appears on the Select Directory dialog.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDirectoryEdit.DialogOptions">
-        <short></short>
+        <short>.</short>
         <descr>
           <p>
             The default value for the property is defined in the <var>DefaultOpenDialogOptions</var> set type.
@@ -2080,7 +2080,7 @@
 
       <element name="TDirectoryEdit.ShowHidden">
         <short>
-          <var>ShowHidden</var> - if True, display names of hidden directories
+          <var>ShowHidden</var> - if True, display names of hidden directories.
         </short>
         <descr>
           <p>
@@ -2091,21 +2091,21 @@
       </element>
 
       <element name="TDirectoryEdit.ButtonCaption">
-        <short>Text displayed on the button for the control</short>
+        <short>Text displayed on the button for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDirectoryEdit.ButtonCursor">
         <short>
-          Cursor shape displayed when the mouse hovers over the button for the control
+          Cursor shape displayed when the mouse hovers over the button for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDirectoryEdit.ButtonHint">
-        <short>Hint displayed when the mouse hovers over the button for the control</short>
+        <short>Hint displayed when the mouse hovers over the button for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2175,7 +2175,7 @@
 
       <element name="TAcceptDateEvent">
         <short>
-          <var>TAcceptDateEvent</var> - generic event handling method for accepting a date from a dialog
+          <var>TAcceptDateEvent</var> - generic event handling method for accepting a date from a dialog.
         </short>
         <descr>
           <p>
@@ -2199,18 +2199,18 @@
         </seealso>
       </element>
       <element name="TAcceptDateEvent.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TAcceptDateEvent.ADate">
-        <short>TDateTime value examined in the method</short>
+        <short>TDateTime value examined in the method.</short>
       </element>
       <element name="TAcceptDateEvent.AcceptDate">
-        <short>Indicates if the Date/Time can be accepted when True</short>
+        <short>Indicates if the Date/Time can be accepted when True.</short>
       </element>
 
       <element name="TCustomDateEvent">
         <short>
-          Specifies an event handler used to examine or alter a String with a date value
+          Specifies an event handler used to examine or alter a String with a date value.
         </short>
         <descr>
           <p>
@@ -2231,17 +2231,17 @@
         </seealso>
       </element>
       <element name="TCustomDateEvent.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCustomDateEvent.ADate">
         <short>
-          Variable String argument which can be examined or altered in the event handler
+          Variable String argument which can be examined or altered in the event handler.
         </short>
       </element>
 
       <element name="TDateOrder">
         <short>
-          Controls the display order for Month, Day, and Year portions of a date value
+          Controls the display order for Month, Day, and Year portions of a date value.
         </short>
         <descr>
           <p>
@@ -2256,21 +2256,21 @@
         </seealso>
       </element>
       <element name="TDateOrder.doNone">
-        <short>No order is specified for the Year, Month, and Day values</short>
+        <short>No order is specified for the Year, Month, and Day values.</short>
       </element>
       <element name="TDateOrder.doMDY">
-        <short>Displayed in Month, Day, Year order</short>
+        <short>Displayed in Month, Day, Year order.</short>
       </element>
       <element name="TDateOrder.doDMY">
-        <short>Displayed in Day, Month, Year order</short>
+        <short>Displayed in Day, Month, Year order.</short>
       </element>
       <element name="TDateOrder.doYMD">
-        <short>Displayed in Year, Month, Day order</short>
+        <short>Displayed in Year, Month, Day order.</short>
       </element>
 
       <element name="TDateEdit">
         <short>
-          <var>TDateEdit</var> - an EditBox to hold a date, with an attached SpeedButton that will summon a date selection (calendar) dialog
+          <var>TDateEdit</var> - an EditBox to hold a date, with an attached SpeedButton that will summon a date selection (calendar) dialog.
         </short>
         <descr>
           <p>
@@ -2297,35 +2297,35 @@
       <element name="TDateEdit.FUpdatingDate"/>
 
       <element name="TDateEdit.SetFreeDateFormat">
-        <short>Sets the value for the DateFormat property</short>
+        <short>Sets the value for the DateFormat property.</short>
         <descr/>
         <seealso>
           <link id="TDateEdit.DateFormat"/>
         </seealso>
       </element>
       <element name="TDateEdit.SetFreeDateFormat.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TDateEdit.TextToDate">
         <short>
-          Converts the specified text to a TDateTime value with an optional default value
+          Converts the specified text to a TDateTime value with an optional default value.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TDateEdit.TextToDate.Result">
-        <short>TDateTime value for the specified text</short>
+        <short>TDateTime value for the specified text.</short>
       </element>
       <element name="TDateEdit.TextToDate.AText">
-        <short>Text examined in the method</short>
+        <short>Text examined in the method.</short>
       </element>
       <element name="TDateEdit.TextToDate.ADefault">
-        <short>Default TDateTime value used when the text cannot be converted</short>
+        <short>Default TDateTime value used when the text cannot be converted.</short>
       </element>
 
       <element name="TDateEdit.GetDate">
-        <short>Gets the value for the Date property</short>
+        <short>Gets the value for the Date property.</short>
         <descr/>
         <seealso>
           <link id="TDateEdit.SetDate"/>
@@ -2333,11 +2333,11 @@
         </seealso>
       </element>
       <element name="TDateEdit.GetDate.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TDateEdit.SetDate">
-        <short>Sets the value for the Date property</short>
+        <short>Sets the value for the Date property.</short>
         <descr/>
         <seealso>
           <link id="TDateEdit.GetDate"/>
@@ -2345,12 +2345,12 @@
         </seealso>
       </element>
       <element name="TDateEdit.SetDate.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TDateEdit.CalendarPopupReturnDate">
         <short>
-          Implements the OnReturnDate event handler used in the dialog in the control
+          Implements the OnReturnDate event handler used in the dialog in the control.
         </short>
         <descr>
           <p>
@@ -2371,15 +2371,15 @@
         </seealso>
       </element>
       <element name="TDateEdit.CalendarPopupReturnDate.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TDateEdit.CalendarPopupReturnDate.ADate">
-        <short>Date/Time value examined and stored in the method</short>
+        <short>Date/Time value examined and stored in the method.</short>
       </element>
 
       <element name="TDateEdit.CalendarPopupShowHide">
         <short>
-          Implements the event handler used to toggle the visibility of the dialog form for the control
+          Implements the event handler used to toggle the visibility of the dialog form for the control.
         </short>
         <descr>
           <p>
@@ -2397,23 +2397,23 @@
       </element>
       <element name="TDateEdit.CalendarPopupShowHide.Sender">
         <short>
-          Object generating the event notification; the TCalendarPopupForm instance in this case
+          Object generating the event notification; the TCalendarPopupForm instance in this case.
         </short>
       </element>
 
       <element name="TDateEdit.SetDateOrder">
-        <short>Sets the value for the DateOrder property</short>
+        <short>Sets the value for the DateOrder property.</short>
         <descr></descr>
         <seealso>
           <link id="TDateEdit.DateOrder"/>
         </seealso>
       </element>
       <element name="TDateEdit.SetDateOrder.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TDateEdit.DateToText">
-        <short>Converts the specified TDateTime value to a string</short>
+        <short>Converts the specified TDateTime value to a string.</short>
         <descr>
           <p>
             <var>DateToText</var> is a <var>String</var> function used to convert the <var>TDateTime</var> value in the <var>Value</var> parameter to its textual representation. The return value is an empty String (<b>''</b>) when Value is equal to the <var>NullDate</var> constant.
@@ -2435,20 +2435,20 @@
         </seealso>
       </element>
       <element name="TDateEdit.DateToText.Result">
-        <short>Text for the converted date/time value</short>
+        <short>Text for the converted date/time value.</short>
       </element>
       <element name="TDateEdit.DateToText.Value">
-        <short>TDateTime vale converted in the method</short>
+        <short>TDateTime vale converted in the method.</short>
       </element>
 
       <element name="TDateEdit.WSRegisterClass">
         <short/>
-        <short>Registers the class reference used to create new instances of the class</short>
+        <short>Registers the class reference used to create new instances of the class.</short>
         <seealso/>
       </element>
 
       <element name="TDateEdit.GetDefaultGlyphName" link="#LCL.EditBtn.TCustomEditButton.GetDefaultGlyphName">
-        <short>Gets the default glyph name displayed on the Button for the control</short>
+        <short>Gets the default glyph name displayed on the Button for the control.</short>
         <descr>
           <p>
             <var>GetDefaultGlyphName</var> is overridden in <var>TDateEdit</var> to return the resource name specified in the <var>ResBtnCalendar</var> constant.
@@ -2460,19 +2460,19 @@
         </seealso>
       </element>
       <element name="TDateEdit.GetDefaultGlyphName.Result">
-        <short>Resource name for the default glyph</short>
+        <short>Resource name for the default glyph.</short>
       </element>
 
       <element name="TDateEdit.ButtonClick" link="#lcl.editbtn.TCustomEditButton.ButtonClick">
         <short>
-          Implements the handler executed when the Button for the control is clicked
+          Implements the handler executed when the Button for the control is clicked.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDateEdit.EditDblClick" link="#LCL.GroupedEdit.TCustomAbstractGroupedEdit.EditDblClick">
-        <short>Performs actions needed when the Edit in the control is double clicked</short>
+        <short>Performs actions needed when the Edit in the control is double clicked.</short>
         <descr>
           <p>
             <var>EditDblClick</var> is an overridden procedure in <var>TDateEdit</var>. It calls the inherited method, and checks to ensure that the control is not marked as <var>ReadOnly</var> before calling the <var>ButtonClick</var> method.
@@ -2485,13 +2485,13 @@
       </element>
 
       <element name="TDateEdit.EditEditingDone">
-        <short>Implement the OnEditingDone event handler for the Edit in the control</short>
+        <short>Implement the OnEditingDone event handler for the Edit in the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDateEdit.SetDirectInput">
-        <short>Sets the value in the DirectInput property</short>
+        <short>Sets the value in the DirectInput property.</short>
         <descr>
           <p>
             <var>SetDirectory</var> is overridden in <var>TDateEdit</var> to synchronize the values in the Text and Date properties when DirectInput is changed.
@@ -2506,11 +2506,11 @@
         </seealso>
       </element>
       <element name="TDateEdit.SetDirectInput.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TDateEdit.RealSetText">
-        <short>Sets the value for the control</short>
+        <short>Sets the value for the control.</short>
         <descr>
           <p>
             <var>RealSetText</var> is overridden in <var>TDateEdit</var> to ensure that <var>DefaultToday</var> is used to set the <var>Date</var> when <var>Text</var> is an empty string. Calls the inherited RealSetText method.
@@ -2523,12 +2523,12 @@
         </seealso>
       </element>
       <element name="TDateEdit.RealSetText.AValue">
-        <short>New value for the control</short>
+        <short>New value for the control.</short>
       </element>
 
       <element name="TDateEdit.SetDateMask">
         <short>
-          Applies a mask to the Edit control suitable for the DateOrder in the control
+          Applies a mask to the Edit control suitable for the DateOrder in the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2536,7 +2536,7 @@
 
       <element name="TDateEdit.Loaded">
         <short>
-          Performs actions needed when the component has finished loading in the LCL streaming mechanism
+          Performs actions needed when the component has finished loading in the LCL streaming mechanism.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2544,7 +2544,7 @@
 
       <element name="TDateEdit.Create">
         <short>
-          <var>Create</var> - constructor for <var>TDateEdit</var>: calls inherited <var>Create</var> and sets defaults</short>
+          <var>Create</var> - constructor for <var>TDateEdit</var>: calls inherited <var>Create</var> and sets defaults.</short>
         <descr>
           <p>
             <var>Create</var> - constructor for <var>TDateEdit</var>: calls inherited <var>Create</var> and sets defaults.
@@ -2559,24 +2559,24 @@
         </seealso>
       </element>
       <element name="TDateEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TDateEdit.GetDateFormat">
         <short>
-          <var>GetDateFormat</var> - returns the format for the date
+          <var>GetDateFormat</var> - returns the format for the date.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TDateEdit.GetDateFormat.Result">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TDateEdit.AutoSelected" link="#LCL.GroupedEdit.TCustomAbstractGroupedEdit.AutoSelected"/>
 
       <element name="TDateEdit.Date">
-        <short>Contains the TDateTime value for the control</short>
+        <short>Contains the TDateTime value for the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2584,14 +2584,14 @@
       <element name="TDateEdit.Button" link="#LCL.EditBtn.TCustomEditButton.Button"/>
 
       <element name="TDateEdit.DroppedDown">
-        <short>Indicates the dialog for control is visible when True</short>
+        <short>Indicates the dialog for control is visible when True.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDateEdit.CalendarDisplaySettings">
         <short>
-          <var>CalendarDisplaySettings</var> - governs how the calendar dialog is displayed
+          <var>CalendarDisplaySettings</var> - governs how the calendar dialog is displayed.
         </short>
         <descr/>
         <seealso/>
@@ -2599,7 +2599,7 @@
 
       <element name="TDateEdit.OnAcceptDate">
         <short>
-          <var>OnAcceptDate</var> - event handler for accepting the date selected in the calendar dialog
+          <var>OnAcceptDate</var> - event handler for accepting the date selected in the calendar dialog.
         </short>
         <descr/>
         <seealso/>
@@ -2607,21 +2607,21 @@
 
       <element name="TDateEdit.OnCustomDate">
         <short>
-          <var>OnCustomDate</var> - event handler for inserting a custom date
+          <var>OnCustomDate</var> - event handler for inserting a custom date.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDateEdit.ReadOnly">
-        <short>Indicates if the value for the control can be changed</short>
+        <short>Indicates if the value for the control can be changed.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDateEdit.DefaultToday">
         <short>
-          <var>DefaultToday</var> - if True, the current date is offered as the default date (value is False by default)
+          <var>DefaultToday</var> - if True, the current date is offered as the default date (value is False by default).
         </short>
         <descr>
           Default value for the property is <b>False</b>.
@@ -2631,14 +2631,14 @@
 
       <element name="TDateEdit.DateOrder">
         <short>
-          Controls the display order for Year, Month, and Day parts of the date value
+          Controls the display order for Year, Month, and Day parts of the date value.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TDateEdit.DateFormat">
-        <short>Specifies the editing format used for the date value in the control</short>
+        <short>Specifies the editing format used for the date value in the control.</short>
         <descr>
           <p>
             <var>DateFormat</var> is a <var>String</var> property which contains the format used when converting the Date value to and from text. DateFormat is relevant when <var>DateOrder</var> contains the value <var>doNone</var>; when another <var>TDateOrder</var> value is used, the fixed format needed for the date order is automatically used.
@@ -2723,7 +2723,7 @@
 
       <element name="TAcceptTimeEvent">
         <short>
-          Specifies an event handler used to validate and accept/reject a time value
+          Specifies an event handler used to validate and accept/reject a time value.
         </short>
         <descr>
           <p>
@@ -2735,18 +2735,18 @@
         </seealso>
       </element>
       <element name="TAcceptTimeEvent.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TAcceptTimeEvent.ATime">
-        <short>Time value examined in the method</short>
+        <short>Time value examined in the method.</short>
       </element>
       <element name="TAcceptTimeEvent.AcceptTime">
-        <short>Indicates the time value is accepted when True</short>
+        <short>Indicates the time value is accepted when True.</short>
       </element>
 
       <element name="TCustomTimeEvent">
         <short>
-          Specifies an event handler used to generate an arbitrary time value
+          Specifies an event handler used to generate an arbitrary time value.
         </short>
         <descr>
           <p>
@@ -2758,14 +2758,14 @@
         </seealso>
       </element>
       <element name="TCustomTimeEvent.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TCustomTimeEvent.ATime">
-        <short>TDateTime value generated in the event handler</short>
+        <short>TDateTime value generated in the event handler.</short>
       </element>
 
       <element name="TTimeEdit">
-        <short>Implements a control used to edit time values</short>
+        <short>Implements a control used to edit time values.</short>
         <descr>
           <p>
             <var>TTimeEdit</var> is a <var>TCustomEditButton</var> descendant which implements a control used to edit a time value. TTimeEdit provides the <var>Edit</var> and <var>Button</var> properties defined in the ancestor class, and a dialog that is executed to select a time value when the Button is clicked.
@@ -2788,29 +2788,29 @@
       <element name="TTimeEdit.FOnCustomTime"/>
 
       <element name="TTimeEdit.GetTime">
-        <short>Gets the value for the Time property</short>
+        <short>Gets the value for the Time property.</short>
         <descr/>
         <seealso>
           <link id="TTimeEdit.Time"/>
         </seealso>
       </element>
       <element name="TTimeEdit.GetTime.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TTimeEdit.SetTime">
-        <short>Sets the value for the Time property</short>
+        <short>Sets the value for the Time property.</short>
         <descr/>
         <seealso>
           <link id="TTimeEdit.Time"/>
         </seealso>
       </element>
       <element name="TTimeEdit.SetTime.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TTimeEdit.SetEmptyTime">
-        <short>Sets the value in the Time property to the empty time value</short>
+        <short>Sets the value in the Time property to the empty time value.</short>
         <descr>
           <p>
             <var>SetEmptyTime</var> is a procedure used to set the value in the <var>Time</var> property to the empty time value. The value in <var>NullDate</var> is assigned as the value for the <var>Time</var> property. In addition, the <var>EmptyStr</var> constant is assigned as the value for the <var>Text</var> property. An internal flag is set to indicate that the time value is empty.
@@ -2828,55 +2828,55 @@
       </element>
 
       <element name="TTimeEdit.GetLayout">
-        <short>Gets the value for the SimpleLayout property</short>
+        <short>Gets the value for the SimpleLayout property.</short>
         <descr></descr>
         <seealso>
           <link id="TTimeEdit.SimpleLayout"/>
         </seealso>
       </element>
       <element name="TTimeEdit.GetLayout.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TTimeEdit.SetLayout">
-        <short>Sets the value for the SimpleLayout property</short>
+        <short>Sets the value for the SimpleLayout property.</short>
         <descr/>
         <seealso>
           <link id="TTimeEdit.SimpleLayout"/>
         </seealso>
       </element>
       <element name="TTimeEdit.SetLayout.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TTimeEdit.TimePopupReturnTime">
         <short>
-          Implements the event handler used to display the popup dialog for the control, and to capture the returned time value
+          Implements the event handler used to display the popup dialog for the control, and to capture the returned time value.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TTimeEdit.TimePopupReturnTime.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
       <element name="TTimeEdit.TimePopupReturnTime.ATime">
-        <short>Time value returned from the popup dialog</short>
+        <short>Time value returned from the popup dialog.</short>
       </element>
 
       <element name="TTimeEdit.TimePopupShowHide">
         <short>
-          Implements an event handler used to toggle the visibility of the popup dialog for the control
+          Implements an event handler used to toggle the visibility of the popup dialog for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TTimeEdit.TimePopupShowHide.Sender">
-        <short>Object generating the event notification</short>
+        <short>Object generating the event notification.</short>
       </element>
 
       <element name="TTimeEdit.OpenTimePopup">
         <short>
-          Configures and displays the popup dialog for the control
+          Configures and displays the popup dialog for the control.
         </short>
         <descr>
           Used in the implementation of the ButtonClick and EditDblClick methods.
@@ -2886,7 +2886,7 @@
 
       <element name="TTimeEdit.ParseInput">
         <short>
-          Parses text in the Edit control and stores the value in the Time property
+          Parses text in the Edit control and stores the value in the Time property.
         </short>
         <descr>
           Used in the implementation of the OpenTimePopup and EditEditingDone methods.
@@ -2895,34 +2895,34 @@
       </element>
 
       <element name="TTimeEdit.TryParseInput">
-        <short></short>
+        <short>.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TTimeEdit.TryParseInput.Result">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="TTimeEdit.TryParseInput.AInput">
-        <short></short>
+        <short>.</short>
       </element>
       <element name="TTimeEdit.TryParseInput.ParseResult">
-        <short></short>
+        <short>.</short>
       </element>
 
       <element name="TTimeEdit.GetDefaultGlyphName">
         <short>
-          Gets the resource name for the default glyph displayed on the Button for the control
+          Gets the resource name for the default glyph displayed on the Button for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TTimeEdit.GetDefaultGlyphName.Result">
-        <short>Resource name for the glyph</short>
+        <short>Resource name for the glyph.</short>
       </element>
 
       <element name="TTimeEdit.ButtonClick">
         <short>
-          Performs actions needed when the Button for the control is clicked
+          Performs actions needed when the Button for the control is clicked.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2930,7 +2930,7 @@
 
       <element name="TTimeEdit.EditDblClick">
         <short>
-          Implements the OnDblClick event handler for the Edit in the control
+          Implements the OnDblClick event handler for the Edit in the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2938,23 +2938,23 @@
 
       <element name="TTimeEdit.EditEditingDone">
         <short>
-          Implements the OnEditingDone event handler for the Edit in the control
+          Implements the OnEditingDone event handler for the Edit in the control.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TTimeEdit.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TTimeEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TTimeEdit.Time">
-        <short>Represents the time value in the control</short>
+        <short>Represents the time value in the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2962,7 +2962,7 @@
       <element name="TTimeEdit.Button" link="#lcl.editbtn.TCustomEditButton.Button"/>
 
       <element name="TTimeEdit.DroppedDown">
-        <short>Indicates if the popup dialog for the control is visible</short>
+        <short>Indicates if the popup dialog for the control is visible.</short>
         <descr>
           DroppedDown is read-only Boolean property which indicates if the popup dialog for the control is visible.
         </descr>
@@ -2970,7 +2970,7 @@
       </element>
 
       <element name="TTimeEdit.DefaultNow">
-        <short>Indicates the current time is used for an empty time value</short>
+        <short>Indicates the current time is used for an empty time value.</short>
         <descr>
           <p>
             <var>DefaultNow</var> is a <var>Boolean</var> property which indicates if the time value defaults to the current system time when a empty time value assigned in the control. The default value for the property is <b>False</b>.
@@ -2986,7 +2986,7 @@
 
       <element name="TTimeEdit.OnAcceptTime">
         <short>
-          Event handler signalled to validate and accept/reject the time value for the control
+          Event handler signalled to validate and accept/reject the time value for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2994,7 +2994,7 @@
 
       <element name="TTimeEdit.OnCustomTime">
         <short>
-          Event handler signalled to get an arbitrary time value for the control
+          Event handler signalled to get an arbitrary time value for the control.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -3060,7 +3060,7 @@
       <element name="TTimeEdit.ShowHint" link="#LCL.Controls.TControl.ShowHint"/>
 
       <element name="TTimeEdit.SimpleLayout">
-        <short></short>
+        <short>.</short>
         <descr>
           <p>
             <var>SimpleLayout</var> is a <var>Boolean</var> property which indicates if the popup dialog for the control uses the 2 (rows) by 6 (columns) layout with 30 minute intervals between time values. The default value for the property is <b>True</b>. When set to <b>False</b>, a more detailed layout with 12 rows by 5 columns using 5 minute time intervals is used.
@@ -3078,7 +3078,7 @@
 
       <element name="TAcceptValueEvent">
         <short>
-          <var>TAcceptValueEvent</var> - generic event handling method for accepting a value from a (calculator) dialog
+          <var>TAcceptValueEvent</var> - generic event handling method for accepting a value from a (calculator) dialog.
         </short>
         <descr/>
         <seealso/>
@@ -3095,7 +3095,7 @@
 
       <element name="TCalcEdit">
         <short>
-          <var>TCalcEdit</var> - an EditBox to hold a numeric value, with an attached SpeedButton that displays a calculator dialog
+          <var>TCalcEdit</var> - an EditBox to hold a numeric value, with an attached SpeedButton that displays a calculator dialog.
         </short>
         <descr/>
         <seealso/>
@@ -3109,47 +3109,47 @@
       <element name="TCalcEdit.FDialogTop"/>
 
       <element name="TCalcEdit.GetAsFloat">
-        <short>Gets the value for the AsFloat property</short>
+        <short>Gets the value for the AsFloat property.</short>
         <descr/>
         <seealso>
           <link id="TCalcEdit.AsFloat"/>
         </seealso>
       </element>
       <element name="TCalcEdit.GetAsFloat.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCalcEdit.GetAsInteger">
-        <short>Gets the value for the AsInteger property</short>
+        <short>Gets the value for the AsInteger property.</short>
         <descr/>
         <seealso>
           <link id="TCalcEdit.AsInteger"/>
         </seealso>
       </element>
       <element name="TCalcEdit.GetAsInteger.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCalcEdit.SetAsFloat">
-        <short>Sets the value for the AsFloat property</short>
+        <short>Sets the value for the AsFloat property.</short>
         <descr/>
         <seealso>
           <link id="TCalcEdit.AsFloat"/>
         </seealso>
       </element>
       <element name="TCalcEdit.SetAsFloat.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCalcEdit.SetAsInteger">
-        <short>Sets the value for the AsInteger property</short>
+        <short>Sets the value for the AsInteger property.</short>
         <descr/>
         <seealso>
           <link id="TCalcEdit.AsInteger"/>
         </seealso>
       </element>
       <element name="TCalcEdit.SetAsInteger.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCalcEdit.TitleStored">
@@ -3163,7 +3163,7 @@
 
       <element name="TCalcEdit.FCalcDialog">
         <short>
-          <var>FCalcDialog</var> - local variable holding the Calculator Dialog for use with this class
+          <var>FCalcDialog</var> - local variable holding the Calculator Dialog for use with this class.
         </short>
         <descr/>
         <seealso/>
@@ -3173,7 +3173,7 @@
       <element name="TCalcEdit.GetDefaultGlyphName.Result"/>
 
       <element name="TCalcEdit.ButtonClick" link="#lcl.editbtn.TCustomEditButton.ButtonClick">
-        <short>Performs actions needed when the button for the control is clicked</short>
+        <short>Performs actions needed when the button for the control is clicked.</short>
         <descr>
           <p>
             <var>ButtonClick</var> is an overridden method used to perform actions needed when the <var>Button</var> for the control is clicked. For <var>TCalcEdit</var>, the <var>RunDialog</var> method is called to execute the dialog for the control and to capture it results. When <var>FocusOnButtonClick</var> is set, the <var>FocusAndMaybeSelectAll</var> method is called to give focus to the <var>Edit</var> control in the class.
@@ -3183,7 +3183,7 @@
       </element>
 
       <element name="TCalcEdit.Create" link="#LCL.EditBtn.TCustomEditButton.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor, and sets the default values for the following properties:
@@ -3198,12 +3198,12 @@
         <seealso/>
       </element>
       <element name="TCalcEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCalcEdit.RunDialog">
         <short>
-          <var>RunDialog</var> - perform the function of the dialog
+          <var>RunDialog</var> - perform the function of the dialog.
         </short>
         <descr>
           <p>
@@ -3220,7 +3220,7 @@
 
       <element name="TCalcEdit.CalculatorLayout">
         <short>
-          <var>CalculatorLayout</var> - normal or simple
+          <var>CalculatorLayout</var> - normal or simple.
         </short>
         <descr/>
         <seealso/>
@@ -3228,7 +3228,7 @@
 
       <element name="TCalcEdit.AsFloat">
         <short>
-          <var>AsFloat</var> - holds the result of the calculation as a floating-point (double precision) number
+          <var>AsFloat</var> - holds the result of the calculation as a floating-point (double precision) number.
         </short>
         <descr/>
         <seealso/>
@@ -3236,7 +3236,7 @@
 
       <element name="TCalcEdit.AsInteger">
         <short>
-          <var>AsInteger</var> - holds the result of the calculation as an Integer
+          <var>AsInteger</var> - holds the result of the calculation as an Integer.
         </short>
         <descr/>
         <seealso/>
@@ -3244,7 +3244,7 @@
 
       <element name="TCalcEdit.OnAcceptValue">
         <short>
-          <var>OnAcceptValue</var> - event handler for accepting the result of the calculation
+          <var>OnAcceptValue</var> - event handler for accepting the result of the calculation.
         </short>
         <descr/>
         <seealso/>
@@ -3252,7 +3252,7 @@
 
       <element name="TCalcEdit.DialogTitle">
         <short>
-          <var>DialogTitle</var> - the caption to be used for the dialog
+          <var>DialogTitle</var> - the caption to be used for the dialog.
         </short>
         <descr/>
         <seealso/>
@@ -3266,7 +3266,7 @@
       <element name="TCalcEdit.Constraints" link="#LCL.Controls.TControl.Constraints"/>
 
       <element name="TCalcEdit.DialogPosition">
-        <short></short>
+        <short>.</short>
         <descr>
           The default value for the property is <var>poScreenCenter</var>.
         </descr>
@@ -3274,13 +3274,13 @@
       </element>
 
       <element name="TCalcEdit.DialogTop">
-        <short>Vertical coordinate for the dialog displayed for the control</short>
+        <short>Vertical coordinate for the dialog displayed for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCalcEdit.DialogLeft">
-        <short>Horizontal coordinate for the dialog displayed for the control</short>
+        <short>Horizontal coordinate for the dialog displayed for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -3347,42 +3347,42 @@
 
       <element name="ResBtnListFilter">
         <short>
-          Resource name for the default glyph used on the Button in TCustomControlFilterEdit
+          Resource name for the default glyph used on the Button in TCustomControlFilterEdit.
         </short>
       </element>
 
       <element name="ResBtnFileOpen">
         <short>
-          Resource name for the default glyph used on the Button in TFileNameEdit
+          Resource name for the default glyph used on the Button in TFileNameEdit.
         </short>
       </element>
 
       <element name="ResBtnSelDir">
         <short>
-          Resource name for the default glyph used on the Button in TDirectoryEdit
+          Resource name for the default glyph used on the Button in TDirectoryEdit.
         </short>
       </element>
 
       <element name="ResBtnCalendar">
         <short>
-          Resource name for the default glyph used on the Button in TDateEdit
+          Resource name for the default glyph used on the Button in TDateEdit.
         </short>
       </element>
 
       <element name="ResBtnCalculator">
         <short>
-          Resource name for the default glyph used on the Button in TCalcEdit
+          Resource name for the default glyph used on the Button in TCalcEdit.
         </short>
       </element>
 
       <element name="ResBtnTime">
         <short>
-          Resource name for the default glyph used on the Button in TTimeEdit
+          Resource name for the default glyph used on the Button in TTimeEdit.
         </short>
       </element>
 
       <element name="Register">
-        <short>Registers components in the unit for use in the Lazarus IDE</short>
+        <short>Registers components in the unit for use in the Lazarus IDE.</short>
         <descr>
           <p>
             <var>Register</var> is the procedure used to add components to the component palette in the Lazarus IDE. Register adds the following components to the <b>Misc</b> tab on the component palette:
