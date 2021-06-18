@@ -3,7 +3,7 @@
   <package name="LazControls">
     <!-- LvlGraphCtrl -->
     <module name="LvlGraphCtrl">
-      <short>Implements a Level (or Layered) Graph control</short>
+      <short>Implements a Level (or Layered) Graph control.</short>
       <descr/>
 
       <!-- unresolved external references -->
@@ -223,7 +223,7 @@
       </element>
 
       <element name="TLvlGraphNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the constructor for the class instance.
@@ -242,7 +242,7 @@
       </element>
 
       <element name="TLvlGraphNode.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -484,7 +484,7 @@
       </element>
 
       <element name="TLvlGraphNode.DrawPosition">
-        <short>Drawing position for the node at the current Level</short>
+        <short>Drawing position for the node at the current Level.</short>
         <descr/>
         <seealso/>
       </element>
@@ -522,7 +522,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphNode.DrawnCaptionRect">
-        <short>Last drawing position for the caption, with scrolling</short>
+        <short>Last drawing position for the caption, with scrolling.</short>
         <descr>
           <p>
             DrawnCaptionRect is a read-only TRect property.
@@ -532,7 +532,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphNode.InWeight">
-        <short>Total weight for InEdges</short>
+        <short>Total weight for InEdges.</short>
         <descr>
           <p>
             InWeight is a read-only Single property.
@@ -542,7 +542,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphNode.OutWeight">
-        <short>Total weight for OutEdges</short>
+        <short>Total weight for OutEdges.</short>
         <descr>
           <p>
             OutWeight is a read-only Single property.
@@ -552,12 +552,12 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphNodeClass">
-        <short>Class reference for the TLvlGrapNode type</short>
+        <short>Class reference for the TLvlGrapNode type.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="PLvlGraphNodeClass">
-        <short>Pointer to a TLvlGrapNode instance</short>
+        <short>Pointer to a TLvlGrapNode instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -573,7 +573,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <element name="TLvlGraphEdge.FNoGapCircle">
         <short>
-          True when a circular reference exists between 2 nodes, with no levels between; i. e. both edges paint in the same location
+          True when a circular reference exists between 2 nodes, with no levels between; i. e. both edges paint in the same location.
         </short>
       </element>
 
@@ -606,13 +606,13 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <!-- public -->
       <element name="TLvlGraphEdge.Data">
-        <short>Pointer to the user data for the edge</short>
+        <short>Pointer to the user data for the edge.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLvlGraphEdge.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the constructor for the class instance.
@@ -628,7 +628,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphEdge.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             Destroy is the overridden destructor for the class instance.
@@ -695,7 +695,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphEdge.DrawnAt">
-        <short>Last drawing rectangle, with scrolling</short>
+        <short>Last drawing rectangle, with scrolling.</short>
         <descr>
           DrawnAt is a read-only TRect property.
         </descr>
@@ -760,7 +760,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="PLvlGraphEdge">
-        <short>Pointer to a TLvlGraphEdge type</short>
+        <short>Pointer to a TLvlGraphEdge type.</short>
         <descr/>
         <seealso/>
       </element>
@@ -816,7 +816,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphLevel.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the constructor for the class instance.
@@ -832,7 +832,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphLevel.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             Destroy is the overridden destructor for the class instance.
@@ -887,7 +887,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
         <seealso/>
       </element>
       <element name="TLvlGraphLevel.GetTotalInOutWeights.Result">
-        <short>Sum of the maximum weights for each node: Max(InWeight,OutWeight)</short>
+        <short>Sum of the maximum weights for each node: Max(InWeight,OutWeight).</short>
       </element>
 
       <element name="TLvlGraphLevel.Index">
@@ -940,7 +940,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <!-- public -->
       <element name="TLvlGraphSubGraph.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the constructor for the class instance.
@@ -956,7 +956,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphSubGraph.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             Destroy is the overridden destructor for the class instance.
@@ -1029,16 +1029,16 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
         <short/>
       </element>
       <element name="TLvlGraphEdgeSplitMode.lgesSeparate">
-        <short>Create separate hidden nodes for each edge; this creates a lot of hidden nodes</short>
+        <short>Create separate hidden nodes for each edge; this creates a lot of hidden nodes.</short>
       </element>
       <element name="TLvlGraphEdgeSplitMode.lgesMergeSource">
-        <short>Combine hidden nodes at source (outgoing edge)</short>
+        <short>Combine hidden nodes at source (outgoing edge).</short>
       </element>
       <element name="TLvlGraphEdgeSplitMode.lgesMergeTarget">
-        <short>Combine hidden nodes at target (incoming edge)</short>
+        <short>Combine hidden nodes at target (incoming edge).</short>
       </element>
       <element name="TLvlGraphEdgeSplitMode.lgesMergeHighest">
-        <short>Combine hidden nodes at source or target, whichever has more edges</short>
+        <short>Combine hidden nodes at source or target, whichever has more edges.</short>
       </element>
 
       <element name="TLvlGraph">
@@ -1167,7 +1167,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraph.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the constructor for the class instance.
@@ -1177,7 +1177,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraph.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             Destroy is the overridden destructor for the class instance.
@@ -1432,7 +1432,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraph.CreateTopologicalLevels">
-        <short>Creates levels using the edges for the Level Graph</short>
+        <short>Creates levels using the edges for the Level Graph.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1469,7 +1469,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraph.SplitLongEdges">
-        <short>Splits long edges by adding hidden nodes</short>
+        <short>Splits long edges by adding hidden nodes.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1523,13 +1523,13 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraph.MinimizeCrossings">
-        <short>Permutates nodes to minimize crossings</short>
+        <short>Permutates nodes to minimize crossings.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLvlGraph.MinimizeOverlappings">
-        <short>Sets the position for all nodes to minimize overlappings</short>
+        <short>Sets the position for all nodes to minimize overlappings.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1904,7 +1904,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <!-- public -->
       <element name="TLvlGraphNodeStyle.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the constructor for the class instance.
@@ -1913,11 +1913,11 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
         <seealso/>
       </element>
       <element name="TLvlGraphNodeStyle.Create.AControl">
-        <short>Level Graph control where values in the class instance are used</short>
+        <short>Level Graph control where values in the class instance are used.</short>
       </element>
 
       <element name="TLvlGraphNodeStyle.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             Destroy is the overridden destructor for the class instance.
@@ -2121,7 +2121,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <!-- public -->
       <element name="TLvlGraphEdgeStyle.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance.
@@ -2134,7 +2134,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphEdgeStyle.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance.
@@ -2276,7 +2276,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <!-- public -->
       <element name="TLvlGraphLimits.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance.
@@ -2285,11 +2285,11 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
         <seealso/>
       </element>
       <element name="TLvlGraphLimits.Create.AControl">
-        <short>Control where class instance is used</short>
+        <short>Control where class instance is used.</short>
       </element>
 
       <element name="TLvlGraphLimits.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance.
@@ -2331,7 +2331,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <!-- published -->
       <element name="TLvlGraphLimits.MaxLevelHeightAbs">
-        <short>Maximum number of user-specified nodes for a level</short>
+        <short>Maximum number of user-specified nodes for a level.</short>
         <descr>
           <p>
             MaxLevelHeightAbs is an Integer property with the maximum number of visible (user-specified) nodes in a level. <b>0</b> (<b>zero</b>) indicates that the maximum is ignored. The default value for the property is defined in the <var>DefaultMaxLevelHeightAbs</var> constant.
@@ -2444,7 +2444,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TCustomLvlGraphControl">
-        <short>Ancestor for the TLvlGraphControl control</short>
+        <short>Ancestor for the TLvlGraphControl control.</short>
         <descr>
           <p>
             <var>TCustomLvlGraphControl</var> is a <var>TCustomControl</var> descendant which impements the ancestor for <var>TLvlGraphControl</var>.
@@ -2758,7 +2758,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TCustomLvlGraphControl.DoDrawEdge">
-        <short>Draws a line for the specified Edge using the current Canvas color</short>
+        <short>Draws a line for the specified Edge using the current Canvas color.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2843,7 +2843,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
 
       <!-- public -->
       <element name="TCustomLvlGraphControl.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance.
@@ -2852,11 +2852,11 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
         <seealso/>
       </element>
       <element name="TCustomLvlGraphControl.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomLvlGraphControl.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance.
@@ -3059,13 +3059,13 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TCustomLvlGraphControl.OnMinimizeCrossings">
-        <short>Event handler signalled to provide an alternative minimize crossing algorithm</short>
+        <short>Event handler signalled to provide an alternative minimize crossing algorithm.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomLvlGraphControl.OnMinimizeOverlappings">
-        <short>Event handler signalled to provide an alternative minimize overlappings algorithm</short>
+        <short>Event handler signalled to provide an alternative minimize overlappings algorithm.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3121,7 +3121,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
 
       <element name="TLvlGraphControl">
-        <short>Implements a control used to draw a level (or layered) graph</short>
+        <short>Implements a control used to draw a level (or layered) graph.</short>
         <descr>
           <p>
             <var>TLvlGraphControl</var> is a <var>TCustomLvlGraphControl</var> descendant which implements a control used to render a level graph (also known as a edlayered graph). A level graph consists of nodes (or vertices) and edges  with an equidistant spacing beteen related nodes.

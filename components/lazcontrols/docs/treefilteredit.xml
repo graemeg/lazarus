@@ -3,7 +3,7 @@
   <package name="LazControls">
 
     <module name="TreeFilterEdit">
-      <short>Implements a control used to filter an associated TreeView</short>
+      <short>Implements a control used to filter an associated TreeView.</short>
       <descr/>
 
       <element name="TTreeFilterEdit">
@@ -30,16 +30,22 @@
       </element>
 
       <element name="TTreeFilterEdit.ShowDirHierarchy">
-        <short>When a filtered text is a directory name, it is split and shown as a tree structure.</short>
+        <short>
+          When a filtered text is a directory name, it is split and shown as a tree structure.
+        </short>
         <descr>
-          This has effect only in the "sub-branches" mode. The "whole tree" mode uses the existing tree nodes as is and only changes their visibility.
+          <p>
+            This has effect only in the "sub-branches" mode. The "whole tree" mode uses the existing tree nodes as is and only changes their visibility.
+          </p>
         </descr>
       </element>
 
       <element name="TTreeFilterEdit.ExpandAllInitially">
         <short>Tree branches are expanded also initially.</short>
         <descr>
-          The branches are expanded in any case when the tree is filtered and matches are found. This setting only affects the initial state.
+          <p>
+            The branches are expanded in any case when the tree is filtered and matches are found. This setting only affects the initial state.
+          </p>
         </descr>
       </element>
 
@@ -49,19 +55,26 @@
 
       <element name="TTreeFilterEdit.GetExistingBranch">
         <short>Get an existing branch for a given tree-node, or Nil if there is none.</short>
-        <descr>This can be used only with the "sub-branches" mode.
+        <descr>
+          <p>
+            This can be used only with the "sub-branches" mode.
+          </p>
         </descr>
       </element>
 
       <element name="TTreeFilterEdit.GetCleanBranch">
         <short>Get a new or existing branch with data cleared for a given tree-node.</short>
-        <descr>This can be used only with the "sub-branches" mode. In fact calling this method switches
-          the filter into "sub-branches" mode. This is the way to add those branches.
+        <descr>
+          <p>
+            This can be used only with the "sub-branches" mode. In fact calling this method switches the filter into "sub-branches" mode. This is the way to add those branches.
+          </p>
         </descr>
       </element>
 
       <element name="TTreeFilterBranch">
-        <short>A branch associated with an existing TreeNode when the filter is used in "sub-branches" mode.</short>
+        <short>
+          A branch associated with an existing TreeNode when the filter is used in "sub-branches" mode.
+        </short>
       </element>
 
       <element name="TTreeFilterBranch.Create">

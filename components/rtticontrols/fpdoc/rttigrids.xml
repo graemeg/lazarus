@@ -2,14 +2,12 @@
 <fpdoc-descriptions>
   <package name="RunTimeTypeInfoControls">
     <module name="RTTIGrids">
-      <short>Contains controls which access properties in TPersistent objects using RTTI</short>
+      <short>
+        Contains controls which access properties in TPersistent objects using RTTI.
+      </short>
       <descr>
         <p>
-          Provides LCL controls that access properties of TPersistent objects via RTTI (the FreePascal Run
-          Time Type Information). Every published property can be edited in the Object Inspector. There
-          you have a TOIPropertyGrid working with TEdit, TComboBox and TButton. These controls extends the
-          possibilities to edit single properties and the developer can choose how to represent the
-          property.
+          Provides LCL controls that access properties of TPersistent objects via RTTI (the FreePascal Run Time Type Information). Every published property can be edited in the Object Inspector. There you have a TOIPropertyGrid working with TEdit, TComboBox and TButton. These controls extends the possibilities to edit single properties and the developer can choose how to represent the property.
         </p>
       </descr>
 
@@ -200,39 +198,39 @@
       </element>
       <element name="TTIGridCellType.tgctNone">
         <short>
-          Out or undfined
+          Out or undfined.
         </short>
       </element>
       <element name="TTIGridCellType.tgctValue">
         <short>
-          A normal property cell
+          A normal property cell.
         </short>
       </element>
       <element name="TTIGridCellType.tgctPropName">
         <short>
-          Header cell for property name
+          Header cell for property name.
         </short>
       </element>
       <element name="TTIGridCellType.tgctPropNameAlt">
         <short>
-          Header cell for alternative property name (e. g. FixedRows&gt;1)
+          Header cell for alternative property name (e. g. FixedRows&gt;1).
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TTIGridCellType.tgctObjectName">
         <short>
-          Header cell for the object name
+          Header cell for the object name.
         </short>
       </element>
       <element name="TTIGridCellType.tgctObjectNameAlt">
         <short>
-          Header cell for an alternative object name (e. g. FixedCols&gt;1)
+          Header cell for an alternative object name (e. g. FixedCols&gt;1).
         </short>
       </element>
       <element name="TTIGridCellType.tgctCorner">
         <short>
-          Corner cell at the left, top of the grid
+          Corner cell at the left, top of the grid.
         </short>
       </element>
 
@@ -249,12 +247,12 @@
       </element>
       <element name="TTIGridOption.tgoStartIndexAtOne">
         <short>
-          Start object index at 1 for displayed object
+          Start object index at 1 for displayed object.
         </short>
       </element>
       <element name="TTIGridOption.tgoShowOnlyProperties">
         <short>
-          Show only those properties in ShowOnlyProperties
+          Show only those properties in ShowOnlyProperties.
         </short>
       </element>
 

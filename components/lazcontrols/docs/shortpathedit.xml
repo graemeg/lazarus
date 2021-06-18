@@ -3,7 +3,7 @@
   <package name="LazControls">
 
     <module name="ShortPathEdit">
-      <short>Implements the TShortPathEdit control</short>
+      <short>Implements the TShortPathEdit control.</short>
       <descr/>
 
       <!-- unresolved external references -->
@@ -14,7 +14,7 @@
       <element name="LazFileUtils"/>
 
       <element name="TShortPathEdit">
-        <short>Control used to select a directory on the local file system</short>
+        <short>Control used to select a directory on the local file system.</short>
         <descr>
           <p>
             <var>TShortPathEdit</var> is a <var>TDirectoryEdit</var> descendant which allows selecting a directory on the local file system.
@@ -40,7 +40,7 @@
 
       <!-- protected -->
       <element name="TShortPathEdit.CreateDialog">
-        <short>Creates and configures the dialog used to select a directory</short>
+        <short>Creates and configures the dialog used to select a directory.</short>
         <descr>
           <p>
             <var>CreateDialog</var> is an overridden method in <var>TShortPathEdit</var> used to create and configure the directory selection dialog for the control.  The return value contains the <var>TCommonDialog</var> descendant created and configured in the method. It is actually a <var>TSelectDirectoryDialog</var> instance.
@@ -58,12 +58,12 @@
         <seealso/>
       </element>
       <element name="TShortPathEdit.CreateDialog.Result">
-        <short>Directory selection dialog created and configured in the method</short>
+        <short>Directory selection dialog created and configured in the method.</short>
       </element>
 
       <!-- published -->
       <element name="TShortPathEdit.RunDialog">
-        <short>Executes the directory selection dialog for the control</short>
+        <short>Executes the directory selection dialog for the control.</short>
         <descr>
           <p>
             <var>RunDialog</var> is an overridden method in <var>TShortPathEdit</var>. It is an alternate implementation, and does not call the inherited method.
@@ -76,7 +76,7 @@
       </element>
 
       <element name="TShortPathEdit.Directory">
-        <short>Initial directory used in the directory selection dialog</short>
+        <short>Initial directory used in the directory selection dialog.</short>
         <descr>
           <p>
             <var>Directory</var> is a <var>String</var> property used to specify the initial directory on the local file system used to select a directory in the control. It is used as the initial directory for the directory selection dialog executed in the RunDialog method. It is also used to store a  valid path name returned from the directory selection dialog.
@@ -89,7 +89,9 @@
       </element>
 
       <element name="TShortPathEdit.OnAcceptDirectory">
-        <short>Event handler signalled when a directory is selected in the directory selection dialog</short>
+        <short>
+          Event handler signalled when a directory is selected in the directory selection dialog.
+        </short>
         <descr>
           <p>
             <var>OnAcceptDirectory</var> is <var>TAcceptFileNameEvent</var>  property with the event handler signalled when a directory path has been selected in the <var>RunDialog</var> method. Arguments to the event handler include the directory name selected in the dialog, or an empty string when the Cancel button is pressed in the dialog.

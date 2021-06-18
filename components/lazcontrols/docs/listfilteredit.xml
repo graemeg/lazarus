@@ -3,7 +3,7 @@
   <package name="LazControls">
 
     <module name="ListFilterEdit">
-      <short>Implements a control used to filter an associated list box</short>
+      <short>Implements a control used to filter an associated list box.</short>
       <descr/>
 
       <!-- unresolved external references -->
@@ -38,7 +38,7 @@
       </element>
 
       <element name="TListFilterEdit">
-        <short>Filter for an associated ListBox</short>
+        <short>Filter for an associated ListBox.</short>
         <descr>
           <p>
             TListFilterEdit is a TCustomControlFilterEdit descendant which implements a filter for an associated ListBox.
@@ -49,23 +49,23 @@
 
       <!-- private members and methods -->
       <element name="TListFilterEdit.FFilteredListbox">
-        <short>The control showing the filtered data</short>
+        <short>The control showing the filtered data.</short>
       </element>
 
       <element name="TListFilterEdit.FSelectionList">
-        <short>Stores / restores the selections in the associated control</short>
+        <short>Stores / restores the selections in the associated control.</short>
       </element>
 
       <element name="TListFilterEdit.FOriginalData">
-        <short>The orignal value supplied in the Data property</short>
+        <short>The orignal value supplied in the Data property.</short>
       </element>
 
       <element name="TListFilterEdit.FSortedData">
-        <short>Sorted values from the Data property</short>
+        <short>Sorted values from the Data property.</short>
       </element>
 
       <element name="TListFilterEdit.FCheckedItems">
-        <short>Contains the checked items for TCheckListBox</short>
+        <short>Contains the checked items for TCheckListBox.</short>
       </element>
 
       <element name="TListFilterEdit.CompareFNs">
@@ -82,10 +82,10 @@
       </element>
 
       <element name="TListFilterEdit.SetFilteredListbox">
-        <short>Sets the value for the FilteredListbox property</short>
+        <short>Sets the value for the FilteredListbox property.</short>
       </element>
       <element name="TListFilterEdit.SetFilteredListbox.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <!-- protected methods -->
@@ -199,7 +199,7 @@
 
       <!-- public methods -->
       <element name="TListFilterEdit.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the overridden constructor for the class instance.
@@ -208,11 +208,11 @@
         <seealso/>
       </element>
       <element name="TListFilterEdit.Create.AOwner">
-        <short>Owner for the class instance</short>
+        <short>Owner for the class instance.</short>
       </element>
 
       <element name="TListFilterEdit.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             Destroy is the overridden destructor for the class instance.
@@ -222,12 +222,12 @@
       </element>
 
       <element name="TListFilterEdit.RemoveItem">
-        <short>Removes the specified item from the Items property</short>
+        <short>Removes the specified item from the Items property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TListFilterEdit.RemoveItem.AItem">
-        <short>Item located and removed in the method</short>
+        <short>Item located and removed in the method.</short>
       </element>
 
       <element name="TListFilterEdit.ItemWasClicked">
@@ -269,7 +269,7 @@
 
       <!-- published properties -->
       <element name="TListFilterEdit.FilteredListbox">
-        <short>The Listbox associated with the filter edit control</short>
+        <short>The Listbox associated with the filter edit control.</short>
         <descr/>
         <seealso/>
       </element>

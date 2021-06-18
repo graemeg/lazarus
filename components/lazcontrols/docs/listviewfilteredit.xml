@@ -42,7 +42,9 @@
       </element>
 
       <element name="TListViewDataItem.OperatorEqual">
-        <short>Implements the Equal (=) comparison operator for TListViewDataItem instances</short>
+        <short>
+          Implements the Equal (=) comparison operator for TListViewDataItem instances.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -57,7 +59,7 @@
       </element>
 
       <element name="TListViewDataList">
-        <short>List container for TListViewDataItem instances</short>
+        <short>List container for TListViewDataItem instances.</short>
         <descr/>
         <seealso>
           <link id="#fcl.Fgl.TFPGList"/>
@@ -66,14 +68,14 @@
       </element>
 
       <element name="TListViewFilterEdit">
-        <short>Implements a control used to filter an associated ListView</short>
+        <short>Implements a control used to filter an associated ListView.</short>
         <descr/>
         <seealso/>
       </element>
 
       <!-- private members and methods -->
       <element name="TListViewFilterEdit.FFilteredListview">
-        <short>A control showing the (filtered) data</short>
+        <short>A control showing the (filtered) data.</short>
       </element>
 
       <element name="TListViewFilterEdit.FByAllFields">
@@ -81,15 +83,15 @@
       </element>
 
       <element name="TListViewFilterEdit.FSelectionList">
-        <short>Stores / restores the previous selections in the associated control</short>
+        <short>Stores / restores the previous selections in the associated control.</short>
       </element>
 
       <element name="TListViewFilterEdit.FOriginalData">
-        <short>Data supplied by the caller through the Items property</short>
+        <short>Data supplied by the caller through the Items property.</short>
       </element>
 
       <element name="TListViewFilterEdit.FFilteredData">
-        <short>Data sorted for viewing</short>
+        <short>Data sorted for viewing.</short>
       </element>
 
       <element name="TListViewFilterEdit.MatchesFilter">
@@ -229,7 +231,7 @@
 
       <!-- public methods and properties -->
       <element name="TListViewFilterEdit.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Create is the overridden constructor for the class instance.
@@ -238,11 +240,11 @@
         <seealso/>
       </element>
       <element name="TListViewFilterEdit.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TListViewFilterEdit.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             Destroy is the overridden destructor for the class instance.
@@ -264,7 +266,7 @@
       </element>
 
       <element name="TListViewFilterEdit.SelectionList">
-        <short>Selected items restored after filtering</short>
+        <short>Selected items restored after filtering.</short>
         <descr>
           <p>
             The list of selected items. They are restored after filtering.
@@ -274,20 +276,20 @@
       </element>
 
       <element name="TListViewFilterEdit.Items">
-        <short>Maintains the data which is filtered and shown in the ListView</short>
+        <short>Maintains the data which is filtered and shown in the ListView.</short>
         <descr/>
         <seealso/>
       </element>
 
       <!-- published properties -->
       <element name="TListViewFilterEdit.FilteredListview">
-        <short>The associated ListView</short>
+        <short>The associated ListView.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TListViewFilterEdit.ByAllFields">
-        <short>Indicates if all fields are compared using the filter</short>
+        <short>Indicates if all fields are compared using the filter.</short>
         <descr>
           <p>
             Use all ListView fields when searching filter matches. Otherwise just the first field (ListView caption) is used.

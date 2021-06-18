@@ -2,14 +2,12 @@
 <fpdoc-descriptions>
   <package name="RunTimeTypeInfoControls">
     <module name="RTTICtrls">
-      <short>Contains controls which access properties in TPersistent objects using RTTI</short>
+      <short>
+        Contains controls which access properties in TPersistent objects using RTTI.
+      </short>
       <descr>
         <p>
-          Provides LCL controls that access properties of TPersistent objects via RTTI (the FreePascal Run
-          Time Type Information). Every published property can be edited in the Object Inspector. There
-          you have a TOIPropertyGrid working with TEdit, TComboBox and TButton. These controls extends the
-          possibilities to edit single properties and the developer can choose how to represent the
-          property.
+          Provides LCL controls that access properties of TPersistent objects via RTTI (the FreePascal Run Time Type Information). Every published property can be edited in the Object Inspector. There you have a TOIPropertyGrid working with TEdit, TComboBox and TButton. These controls extends the possibilities to edit single properties and the developer can choose how to represent the property.
         </p>
       </descr>
 
@@ -38,12 +36,11 @@
 
       <element name="TAliasStrings">
         <short>
-          Maps strings to alias strings
+          Maps strings to alias strings.
         </short>
         <descr>
           <p>
-            Some RTTI controls uses this to map RTTI values to display values. Eventually accelerate search
-            for Names and Values.
+            Some RTTI controls uses this to map RTTI values to display values. Eventually accelerate search for Names and Values.
           </p>
         </descr>
         <seealso/>
@@ -133,13 +130,13 @@
       </element>
 
       <element name="TPropertyLinkOption">
-        <short>Optional flags for TPropertyLink</short>
+        <short>Optional flags for TPropertyLink.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPropertyLinkOption">
-        <short>Options for the RTTI Control to Property Editor link</short>
+        <short>Options for the RTTI Control to Property Editor link.</short>
         <descr/>
         <seealso/>
       </element>
@@ -147,11 +144,11 @@
         <short/>
       </element>
       <element name="TPropertyLinkOption.ploAutoSave">
-        <short>Auto-save on EditingDone</short>
+        <short>Auto-save on EditingDone.</short>
       </element>
       <!-- TODO:
       <element name="TPropertyLinkOption.ploDisableOnNil">
-        <short>Disable control if link disconnected</short>
+        <short>Disable control if link disconnected.</short>
       </element>
       <element name="TPropertyLinkOption.ploReadOnly">
         <short/>
@@ -742,13 +739,13 @@
       </element>
 
       <element name="TCustomPropertyLink.Owner">
-        <short>The RTTI control using the link</short>
+        <short>The RTTI control using the link.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomPropertyLink.SaveEnabled">
-        <short>Enable to automatically save changes</short>
+        <short>Enable to automatically save changes.</short>
         <descr/>
         <seealso/>
       </element>
@@ -760,19 +757,19 @@
       </element>
 
       <element name="TCustomPropertyLink.TIObject">
-        <short>The object for the property</short>
+        <short>The object for the property.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomPropertyLink.TIPropertyName">
-        <short>The name of the property</short>
+        <short>The name of the property.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomPropertyLink.TIElementName">
-        <short>If the property is a set then the name of the enum can be given here</short>
+        <short>If the property is a set then the name of the enum can be given here.</short>
         <descr/>
         <seealso/>
       </element>
@@ -913,7 +910,7 @@
 
       <element name="TTIElementNamePropertyEditor.FPropEdits">
         <short>
-          List of TPropertyEditor instances for TIPropertyName
+          List of TPropertyEditor instances for TIPropertyName.
         </short>
         <descr/>
         <seealso/>
@@ -921,7 +918,7 @@
 
       <element name="TTIElementNamePropertyEditor.FElementPropEdits">
         <short>
-          List of TPropertyEditor for TIElementName
+          List of TPropertyEditor for TIElementName.
         </short>
       </element>
 
