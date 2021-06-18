@@ -8,8 +8,8 @@
     -->
     <module name="RubberBand">
       <short>
-        Implements <var>TRubberBand</var> used to draw a  "rubber-band" selection
-      </short>
+        Implements <var>TRubberBand</var> used to draw a  "rubber-band" selection.
+        </short>
       <descr>
         <file>RubberBand.pas</file> contains types and classes needed to implement a rubber-band selection control in the Lazarus Component Library (LCL).
       </descr>
@@ -19,7 +19,7 @@
       <element name="Controls"/>
 
       <element name="TRubberBandShape">
-        <short>Defines the shape drawn for a rubber-band selection</short>
+        <short>Defines the shape drawn for a rubber-band selection.</short>
         <descr>
           <p>
             <var>TRubberBandShape</var> is an enumerated type with values that define the shape for the rubber-band selection drawn in <var>TCustomRubberBand</var> and descendent classes. TRubberBandShape is the type used to implement the <var>Shape</var> property in TCustomRubberBand.
@@ -34,18 +34,18 @@
       </element>
       <element name="TRubberBandShape.rbsLine">
         <short>
-          Rubber-band selection is drawn as a line; can represent either a horizontal or a vertical line
+          Rubber-band selection is drawn as a line; can represent either a horizontal or a vertical line.
         </short>
       </element>
       <element name="TRubberBandShape.rbsRectangle">
         <short>
-          Rubber-band selection is drawn as a rectangle; may be a filled semi-transparent rectangle or a dotted outline depending on the style
+          Rubber-band selection is drawn as a rectangle; may be a filled semi-transparent rectangle or a dotted outline depending on the style.
         </short>
       </element>
 
       <element name="TCustomRubberBand">
         <short>
-          Base class which implements a rubber-band selection
+          Base class which implements a rubber-band selection.
         </short>
         <descr>
           <p>
@@ -62,31 +62,31 @@
       <element name="TCustomRubberBand.FShape"/>
 
       <element name="TCustomRubberBand.GetShape">
-        <short>Gets the value for the Shape property</short>
+        <short>Gets the value for the Shape property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRubberBand.Shape"/>
         </seealso>
       </element>
       <element name="TCustomRubberBand.GetShape.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomRubberBand.SetShape">
-        <short>Sets the value for the Shape property</short>
+        <short>Sets the value for the Shape property.</short>
         <descr/>
         <seealso>
           <link id="TCustomRubberBand.Shape"/>
         </seealso>
       </element>
       <element name="TCustomRubberBand.SetShape.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomRubberBand.WSRegisterClass" link="#LCL.LCLClasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomRubberBand.Create" link="#rtl.Classes.TComponent.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance, and calls the inherited constructor on entry to the method. Create sets the default value for the <var>Shape</var> property to <var>rsLine</var>.
@@ -98,12 +98,12 @@
         </seealso>
       </element>
       <element name="TCustomRubberBand.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomRubberBand.Shape">
         <short>
-          The <var>Shape</var> of the rubber band device: a line or a rectangle around the selection
+          The <var>Shape</var> of the rubber band device: a line or a rectangle around the selection.
         </short>
         <descr>
           <p>
@@ -120,7 +120,7 @@
 
       <element name="TRubberBand" link="#lcl.rubberband.TCustomRubberBand">
         <short>
-          Implements a rubber-band selection
+          Implements a rubber-band selection.
         </short>
         <descr>
           <p>

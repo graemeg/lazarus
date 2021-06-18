@@ -9,13 +9,13 @@
   -->
 
   <module name="lazdeviceapis">
-    <short>LCL APIs for accessing hardware sensors (such as Accelerometer, GPS, etc) and integrated elements of the system (such as Calendar, Contacts, etc)</short>
+    <short>LCL APIs for accessing hardware sensors (such as Accelerometer, GPS, etc) and integrated elements of the system (such as Calendar, Contacts, etc).</short>
     <descr>
     </descr>
 
     <!-- class Visibility: default -->
     <element name="TLazAccelerometer">
-    <short>Represents the hardware accelerometer</short>
+    <short>Represents the hardware accelerometer.</short>
     <descr>
     </descr>
     <errors>
@@ -26,7 +26,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazAccelerometer.xaxis">
-    <short>The last value measured for the X axis of the accelerometer</short>
+    <short>The last value measured for the X axis of the accelerometer.</short>
     <descr>
     </descr>
     <seealso>
@@ -35,7 +35,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazAccelerometer.yaxis">
-    <short>The last value measured for the Y axis of the accelerometer</short>
+    <short>The last value measured for the Y axis of the accelerometer.</short>
     <descr>
     </descr>
     <seealso>
@@ -44,7 +44,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazAccelerometer.zaxis">
-    <short>The last value measured for the Z axis of the accelerometer</short>
+    <short>The last value measured for the Z axis of the accelerometer.</short>
     <descr>
     </descr>
     <seealso>
@@ -53,7 +53,7 @@
 
     <!-- procedure Visibility: public -->
     <element name="TLazAccelerometer.StartReadingAccelerometerData">
-    <short>Starts monitoring the accelerometer sensor</short>
+    <short>Starts monitoring the accelerometer sensor.</short>
     <descr><p>After calling this method, the accelerometer sensor will be monitored.
     If the accelerometer native API sends an event for value changes, then the event
     OnSensorChanged will be called on every change and before calling it the xaxis,
@@ -71,7 +71,7 @@
 
     <!-- procedure Visibility: public -->
     <element name="TLazAccelerometer.StopReadingAccelerometerData">
-    <short>Stops monitoring the accelerometer sensor</short>
+    <short>Stops monitoring the accelerometer sensor.</short>
     <descr><p>After calling this method OnSensorChange will no longer be called and
     the xaxis, yaxis and zaxis properties will remain stopped at the last value read</p>
     </descr>
@@ -83,7 +83,7 @@
 
     <!-- procedure Visibility: public -->
     <element name="TLazAccelerometer.OnSensorChanged">
-    <short>Called when the accelerometer value changes or is updated from the sensor</short>
+    <short>Called when the accelerometer value changes or is updated from the sensor.</short>
     <descr>
     </descr>
     <errors>
@@ -94,7 +94,7 @@
 
     <!-- enumeration type Visibility: default -->
     <element name="TLazDeviceMessageKind">
-    <short>Indicates the type of message (for example: SMS, MMS, EMail)</short>
+    <short>Indicates the type of message (for example: SMS, MMS, EMail).</short>
     <descr>
     </descr>
     <seealso>
@@ -103,22 +103,22 @@
 
     <!-- enumeration value Visibility: default -->
     <element name="TLazDeviceMessageKind.dmkSMS">
-    <short>Indicates that the message is a SMS</short>
+    <short>Indicates that the message is a SMS.</short>
     </element>
 
     <!-- enumeration value Visibility: default -->
     <element name="TLazDeviceMessageKind.dmkMMS">
-    <short>Indicates that the message is a MMS</short>
+    <short>Indicates that the message is a MMS.</short>
     </element>
 
     <!-- enumeration value Visibility: default -->
     <element name="TLazDeviceMessageKind.dmkEMail">
-    <short>Indicates that the message is a E-Mail</short>
+    <short>Indicates that the message is a E-Mail.</short>
     </element>
 
     <!-- class Visibility: default -->
     <element name="TLazDeviceMessage">
-    <short>Represents a message</short>
+    <short>Represents a message.</short>
     <descr>Don't create instances of this class directly. Instead use Messaging.CreateMessage().
     </descr>
     <errors>
@@ -129,7 +129,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.bccAddress">
-    <short>A copy should be sent to addresses specified here, but these addresses will not appear in the message</short>
+    <short>A copy should be sent to addresses specified here, but these addresses will not appear in the message.</short>
     <descr>The BCC field of E-Mails, also known as hidden copy
     </descr>
     <seealso>
@@ -138,7 +138,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.Body">
-    <short>The main text of the message</short>
+    <short>The main text of the message.</short>
     <descr>
     </descr>
     <seealso>
@@ -147,7 +147,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.ReplyToAddress">
-    <short>Might indicate an address different from SourceAddress so that replies are sent to a different address then the message sender</short>
+    <short>Might indicate an address different from SourceAddress so that replies are sent to a different address then the message sender.</short>
     <descr>By default this value is empty, which means that the source and reply-to addresses match.
     </descr>
     <seealso>
@@ -156,7 +156,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.ccAddress">
-    <short>A copy should be sent to addresses specified here</short>
+    <short>A copy should be sent to addresses specified here.</short>
     <descr>The CC field in E-Mails
     </descr>
     <seealso>
@@ -165,7 +165,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.destinationAddress">
-    <short>The destination(s) of the message</short>
+    <short>The destination(s) of the message.</short>
     <descr>
     </descr>
     <seealso>
@@ -174,7 +174,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.isRead">
-    <short>Indicates if the user has already read the message</short>
+    <short>Indicates if the user has already read the message.</short>
     <descr>
     </descr>
     <seealso>
@@ -183,7 +183,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.messageId">
-    <short>Reserved field</short>
+    <short>Reserved field.</short>
     <descr>
     </descr>
     <seealso>
@@ -192,7 +192,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.messageType">
-    <short>The type of the message</short>
+    <short>The type of the message.</short>
     <descr>
     </descr>
     <seealso>
@@ -201,7 +201,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.sourceAddress">
-    <short>The address from which the message was sent</short>
+    <short>The address from which the message was sent.</short>
     <descr>
     </descr>
     <seealso>
@@ -210,7 +210,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.Subject">
-    <short>The title or subject of the message</short>
+    <short>The title or subject of the message.</short>
     <descr>
     </descr>
     <seealso>
@@ -219,7 +219,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.Time">
-    <short>The time when the message was sent</short>
+    <short>The time when the message was sent.</short>
     <descr>
     </descr>
     <seealso>
@@ -228,7 +228,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazDeviceMessage.validityPeriod">
-    <short>The period of time for which the message is valid</short>
+    <short>The period of time for which the message is valid.</short>
     <descr>
     </descr>
     <seealso>
@@ -237,7 +237,7 @@
 
     <!-- enumeration type Visibility: default -->
     <element name="TLazMessagingStatus">
-    <short>Indicates the current stage of a message sending operation</short>
+    <short>Indicates the current stage of a message sending operation.</short>
     <descr>
     </descr>
     <seealso>
@@ -246,7 +246,7 @@
 
     <!-- enumeration value Visibility: default -->
     <element name="TLazMessagingStatus.mssSentSuccessfully">
-    <short>Indicates that the message was sent successfully to the server</short>
+    <short>Indicates that the message was sent successfully to the server.</short>
     </element>
 
     <!-- enumeration value Visibility: default -->
@@ -257,7 +257,7 @@
     <!-- enumeration value Visibility: default -->
     <element name="TLazMessagingStatus.mssRadioOff">
     <short>The hardware device which would send the message is off. The user should activate
-    his Radio Network (CDMA, GMS or another one) or activate his WiFi (for EMail only)</short>
+    his Radio Network (CDMA, GMS or another one) or activate his WiFi (for EMail only).</short>
     </element>
 
     <!-- enumeration value Visibility: default -->
@@ -268,7 +268,7 @@
 
     <!-- enumeration value Visibility: default -->
     <element name="TLazMessagingStatus.mssReceivedSuccessfully">
-    <short>The message was successfully received by the destination</short>
+    <short>The message was successfully received by the destination.</short>
     </element>
 
     <!-- enumeration value Visibility: default -->
@@ -278,7 +278,7 @@
 
     <!-- procedure type Visibility: default -->
     <element name="TOnMessagingStatus">
-    <short>A procedural type to receive the events of the status of sending a message</short>
+    <short>A procedural type to receive the events of the status of sending a message.</short>
     <descr>
     </descr>
     <seealso>
@@ -297,7 +297,7 @@
 
     <!-- class Visibility: default -->
     <element name="TLazMessaging">
-    <short>A class which manages messages</short>
+    <short>A class which manages messages.</short>
     <descr>
     </descr>
     <errors>
@@ -308,7 +308,7 @@
 
     <!-- procedure Visibility: public -->
     <element name="TLazMessaging.SendMessage">
-    <short>Sends a message to the target specified on it</short>
+    <short>Sends a message to the target specified on it.</short>
     <descr><p>The message to be sent should be created with the method CreateMessage
     from this same class and later released with FreeMessage. The same message can be
     sent multiple times, but ideally it should not be edited after sending the first
@@ -328,7 +328,7 @@
 
     <!-- procedure Visibility: public -->
     <element name="TLazMessaging.CreateMessage">
-    <short>Creates a new message which can be sent with SendMessage</short>
+    <short>Creates a new message which can be sent with SendMessage.</short>
     <descr>
     </descr>
     <errors>
@@ -344,7 +344,7 @@
 
     <!-- procedure Visibility: public -->
     <element name="TLazMessaging.FreeMessage">
-    <short>Removes a message created with CreateMessage</short>
+    <short>Removes a message created with CreateMessage.</short>
     <descr>
     </descr>
     <errors>
@@ -369,7 +369,7 @@
 
     <!-- enumeration type Visibility: default -->
     <element name="TLazPositionMethod">
-    <short>A list of possible positioning methods</short>
+    <short>A list of possible positioning methods.</short>
     <descr>
     </descr>
     <seealso>
@@ -378,17 +378,17 @@
 
     <!-- enumeration value Visibility: default -->
     <element name="TLazPositionMethod.pmGPS">
-    <short>The GPS positioning method</short>
+    <short>The GPS positioning method.</short>
     </element>
 
     <!-- enumeration value Visibility: default -->
     <element name="TLazPositionMethod.pmNetwork">
-    <short>Detects the position via the network connection</short>
+    <short>Detects the position via the network connection.</short>
     </element>
 
     <!-- class Visibility: default -->
     <element name="TLazPositionInfo">
-    <short>Represents the hardware GPS device</short>
+    <short>Represents the hardware GPS device.</short>
     <descr>
     </descr>
     <errors>
@@ -399,7 +399,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazPositionInfo.IsPositionDataAvailable">
-    <short>Indicates if position info was read in the life of this program</short>
+    <short>Indicates if position info was read in the life of this program.</short>
     <descr>
     </descr>
     <seealso>
@@ -408,7 +408,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazPositionInfo.accuracy">
-    <short>The horizontal accuracy of the position in meters</short>
+    <short>The horizontal accuracy of the position in meters.</short>
     <descr>
     </descr>
     <seealso>
@@ -417,7 +417,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazPositionInfo.altitude">
-    <short>Altitude in meters in relation to the sea level using the World Geodetic System 1984 (WGS84) datum</short>
+    <short>Altitude in meters in relation to the sea level using the World Geodetic System 1984 (WGS84) datum.</short>
     <descr>
     </descr>
     <seealso>
@@ -426,7 +426,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazPositionInfo.altitudeAccuracy">
-    <short>The vertical accuracy of the position in meters, or zero if not available</short>
+    <short>The vertical accuracy of the position in meters, or zero if not available.</short>
     <descr>
     </descr>
     <seealso>
@@ -435,7 +435,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazPositionInfo.latitude">
-    <short>Latitude in degrees using the World Geodetic System 1984 (WGS84) datum</short>
+    <short>Latitude in degrees using the World Geodetic System 1984 (WGS84) datum.</short>
     <descr>
     </descr>
     <seealso>
@@ -446,7 +446,7 @@
     <element name="TLazPositionInfo.longitude">
     <short>
       Longitude in degrees using the World Geodetic System 1984 (WGS84) datum
-      In meters / second
+      In meters / second.
     </short>
     <descr>
     </descr>
@@ -456,7 +456,7 @@
 
     <!-- variable Visibility: public -->
     <element name="TLazPositionInfo.timeStamp">
-    <short>The time when the latest location was established</short>
+    <short>The time when the latest location was established.</short>
     <descr>
     </descr>
     <seealso>
@@ -465,7 +465,7 @@
 
     <!-- procedure Visibility: public -->
     <element name="TLazPositionInfo.RequestPositionInfo">
-    <short>Requests the latest position using the given method</short>
+    <short>Requests the latest position using the given method.</short>
     <descr>This call is asynchronous and the data will only be available when the OnPositionRetrieved callback is called.
     </descr>
     <errors>
@@ -481,7 +481,7 @@
 
     <!-- property Visibility: public -->
     <element name="TLazPositionInfo.OnPositionRetrieved">
-    <short>Called asynchronously when the position is read</short>
+    <short>Called asynchronously when the position is read.</short>
     <descr>
     </descr>
     <seealso>
@@ -490,7 +490,7 @@
 
     <!-- class Visibility: default -->
     <element name="TLazDevice">
-    <short>Represents the device itself in a general way and hardware elements which don't have a exclusive object to represent them</short>
+    <short>Represents the device itself in a general way and hardware elements which don't have a exclusive object to represent them.</short>
     <descr>
     </descr>
     <errors>
@@ -510,7 +510,7 @@
 
     <!-- property Visibility: public -->
     <element name="TLazDevice.Manufacturer">
-    <short>A string with the name of the manufacturer of the device</short>
+    <short>A string with the name of the manufacturer of the device.</short>
     <descr>
     </descr>
     <seealso>
@@ -528,7 +528,7 @@
 
     <!-- variable Visibility: default -->
     <element name="Accelerometer">
-    <short>A global object representing the accelerometer of the device</short>
+    <short>A global object representing the accelerometer of the device.</short>
     <descr>
     </descr>
     <seealso>
@@ -537,7 +537,7 @@
 
     <!-- variable Visibility: default -->
     <element name="Messaging">
-    <short>A global object to manage message</short>
+    <short>A global object to manage message.</short>
     <descr>
     </descr>
     <seealso>
@@ -546,7 +546,7 @@
 
     <!-- variable Visibility: default -->
     <element name="PositionInfo">
-    <short>A global object which represents the positioning sensor of the device</short>
+    <short>A global object which represents the positioning sensor of the device.</short>
     <descr>
     </descr>
     <seealso>

@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="LDockTree">
-      <short>This unit defines TLazDockTree, the default TDockTree for the LCL</short>
+      <short>This unit defines TLazDockTree, the default TDockTree for the LCL.</short>
       <descr/>
       <!-- unresolved type reference Visibility: default -->
       <element name="Classes">
@@ -48,7 +48,7 @@
       <!-- object Visibility: default -->
       <element name="TLazDockSplitter">
         <short>
-          <var>TLazDockSplitter</var> - a splitter used with Lazarus Docking components</short>
+          <var>TLazDockSplitter</var> - a splitter used with Lazarus Docking components.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -56,7 +56,7 @@
       <!-- object Visibility: default -->
       <element name="TLazDockZone">
         <short>
-          <var>TLazDockZone</var> - a zone for docking in a Lazarus form</short>
+          <var>TLazDockZone</var> - a zone for docking in a Lazarus form.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -82,7 +82,7 @@
       <!-- destructor Visibility: public -->
       <element name="TLazDockZone.Destroy">
         <short>
-          <var>Destroy</var> - destructor for <var>TLazDockZone</var>; frees subcomponents then calls inherited <var>Destroy</var>
+          <var>Destroy</var> - destructor for <var>TLazDockZone</var>; frees subcomponents then calls inherited <var>Destroy</var>.
         </short>
         <descr/>
         <errors/>
@@ -91,7 +91,7 @@
       <!-- function Visibility: public -->
       <element name="TLazDockZone.GetCaption">
         <short>
-          <var>GetCaption</var> - if there is a child control, returns the caption for that control; else returns the Index of the control as a string value</short>
+          <var>GetCaption</var> - if there is a child control, returns the caption for that control; else returns the Index of the control as a string value.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -103,7 +103,7 @@
       <!-- function Visibility: public -->
       <element name="TLazDockZone.GetParentControl">
         <short>
-          <var>GetParentControl</var> - returns the identity of the Parent control if there is one; otherwise returns the Root zone if this is, in fact, the Root, or the Child control</short>
+          <var>GetParentControl</var> - returns the identity of the Parent control if there is one; otherwise returns the Root zone if this is, in fact, the Root, or the Child control.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -114,26 +114,26 @@
       </element>
       <!-- property Visibility: public -->
       <element name="TLazDockZone.Splitter">
-        <short>The <var>Splitter</var> to be use to control the docking of this Zone</short>
+        <short>The <var>Splitter</var> to be use to control the docking of this Zone.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- property Visibility: public -->
       <element name="TLazDockZone.Pages">
-        <short>The <var>Pages</var> (as in a Notebook) included in the dock zone</short>
+        <short>The <var>Pages</var> (as in a Notebook) included in the dock zone.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- property Visibility: public -->
       <element name="TLazDockZone.Page">
-        <short>A <var>Page</var> in the Notebook included in the Dock Zone</short>
+        <short>A <var>Page</var> in the Notebook included in the Dock Zone.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- object Visibility: default -->
       <element name="TLazDockTree">
         <short>
-          <var>TLazDockTree</var> - a tree of <var>TLazDockZones</var> found in a docked window</short>
+          <var>TLazDockTree</var> - a tree of <var>TLazDockZones</var> found in a docked window.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -147,7 +147,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TLazDockTree.UndockControlForDocking">
         <short>
-          <var>UndockControlForDocking</var> - frees anchors from parent and sibling controls</short>
+          <var>UndockControlForDocking</var> - frees anchors from parent and sibling controls.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -159,7 +159,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TLazDockTree.BreakAnchors">
         <short>
-          <var>BreakAnchors</var> - detach the anchors of all child controls</short>
+          <var>BreakAnchors</var> - detach the anchors of all child controls.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -171,7 +171,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TLazDockTree.CreateDockLayoutHelperControls">
         <short>
-          <var>CreateDockLayoutHelperControls</var> - creates any splitters and pages needed for the dock layout, including recursive creation for child controls</short>
+          <var>CreateDockLayoutHelperControls</var> - creates any splitters and pages needed for the dock layout, including recursive creation for child controls.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -183,7 +183,7 @@
       <!-- procedure Visibility: protected -->
       <element name="TLazDockTree.AnchorDockLayout">
         <short>
-          <var>AnchorDockLayout</var> - sets up anchors between all docked controls and helper controls</short>
+          <var>AnchorDockLayout</var> - sets up anchors between all docked controls and helper controls.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -195,7 +195,7 @@
       <!-- constructor Visibility: public -->
       <element name="TLazDockTree.Create">
         <short>
-          <var>Create</var> - constructor for <var>TLazDockTree</var>: creates a docking form if required, sets up a dock manager then calls inherited <var>Create</var>
+          <var>Create</var> - constructor for <var>TLazDockTree</var>: creates a docking form if required, sets up a dock manager then calls inherited <var>Create</var>.
         </short>
         <descr/>
         <errors/>
@@ -208,7 +208,7 @@
       <!-- destructor Visibility: public -->
       <element name="TLazDockTree.Destroy">
         <short>
-          <var>Destroy</var> - destructor for <var>TLazDockTree</var>: frees the dock site, annuls the Docksite manager, destroys any images then calls inherited <var>Destroy</var>
+          <var>Destroy</var> - destructor for <var>TLazDockTree</var>: frees the dock site, annuls the Docksite manager, destroys any images then calls inherited <var>Destroy</var>.
         </short>
         <descr/>
         <errors/>
@@ -217,7 +217,7 @@
       <!-- procedure Visibility: public -->
       <element name="TLazDockTree.InsertControl">
         <short>
-          <var>InsertControl</var> - undocks <var>AControl</var> and docks it into the tree</short>
+          <var>InsertControl</var> - undocks <var>AControl</var> and docks it into the tree.</short>
         <descr>
           <p>
             <var>InsertControl</var> - undocks AControl and docks it into the tree
@@ -285,7 +285,7 @@
       <!-- procedure Visibility: public -->
       <element name="TLazDockTree.BuildDockLayout">
         <short>
-          <var>BuildDockLayout</var> - breaks the current anchors, forms the appropriate helper controls then re-establishes the anchors</short>
+          <var>BuildDockLayout</var> - breaks the current anchors, forms the appropriate helper controls then re-establishes the anchors.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -297,7 +297,7 @@
       <!-- procedure Visibility: public -->
       <element name="TLazDockTree.FindBorderControls">
         <short>
-          <var>FindBorderControls</var> - makes splitters for all bordering controls along the specified <var>Side</var>
+          <var>FindBorderControls</var> - makes splitters for all bordering controls along the specified <var>Side</var>.
         </short>
         <descr/>
         <errors/>
@@ -337,7 +337,7 @@
       <!-- function Visibility: public -->
       <element name="TLazDockTree.GetAnchorControl">
         <short>
-          <var>GetAnchorControl</var> - find a control to anchor the Zone's Side</short>
+          <var>GetAnchorControl</var> - find a control to anchor the Zone's Side.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -361,14 +361,14 @@
       <!-- property Visibility: public -->
       <element name="TLazDockTree.AutoFreeDockSite">
         <short>
-          <var>AutoFreeDockSite</var> - determines whether the dock site is free</short>
+          <var>AutoFreeDockSite</var> - determines whether the dock site is free.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- object Visibility: default -->
       <element name="TLazDockForm">
         <short>
-          <var>TLazDockForm</var> - the default DockSite for a TLazDockTree and for TCustomAnchoredDockManager</short>
+          <var>TLazDockForm</var> - the default DockSite for a TLazDockTree and for TCustomAnchoredDockManager.</short>
         <descr>
           <p>
             <var>TLazDockForm</var> - the default DockSite for a TLazDockTree and for TCustomAnchoredDockManager
@@ -407,7 +407,7 @@
       <!-- object Visibility: default -->
       <element name="TLazDockPage">
         <short>
-          <var>TLazDockPage</var> - an entity similar to a <var>TLazDockForm</var>, but forming a page in a notebook of <var>TLazDockPages</var>
+          <var>TLazDockPage</var> - an entity similar to a <var>TLazDockForm</var>, but forming a page in a notebook of <var>TLazDockPages</var>.
         </short>
         <descr/>
         <errors/>
@@ -427,20 +427,20 @@
       </element>
       <!-- property Visibility: public -->
       <element name="TLazDockPage.DockZone">
-        <short>The <var>DockZone</var> in which this page is located</short>
+        <short>The <var>DockZone</var> in which this page is located.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- property Visibility: public -->
       <element name="TLazDockPage.PageControl">
-        <short>The <var>PageControl</var> or notebook in which this page is located (its parent)</short>
+        <short>The <var>PageControl</var> or notebook in which this page is located (its parent).</short>
         <descr/>
         <seealso/>
       </element>
       <!-- object Visibility: default -->
       <element name="TLazDockPages">
         <short>
-          <var>TLazDockPages</var> a notebook in which each page is a <var>TLazDockPage</var>
+          <var>TLazDockPages</var> a notebook in which each page is a <var>TLazDockPage</var>.
         </short>
         <descr/>
         <errors/>
@@ -486,7 +486,7 @@
       <!-- property Visibility: public -->
       <element name="TLazDockPages.Page">
         <short>
-          <var>Page</var> - an individual <var>TLazDockPage</var> in the notebook, referred by its <var>Index</var>
+          <var>Page</var> - an individual <var>TLazDockPage</var> in the notebook, referred by its <var>Index</var>.
         </short>
         <descr/>
         <seealso/>
@@ -515,43 +515,43 @@
       </element>
       <element name="TLazDockZone.FreeSubComponents">
         <short>
-          <var>FreeSubComponents</var> - frees and nils the local splitter and page/pages components, ready for destroying the control</short>
+          <var>FreeSubComponents</var> - frees and nils the local splitter and page/pages components, ready for destroying the control.</short>
       </element>
       <element name="TLazDockTree.ResetSizes">
         <short>
-          <var>ResetSizes</var> - splits available size of Zone between children</short>
+          <var>ResetSizes</var> - splits available size of Zone between children.</short>
       </element>
       <element name="TLazDockTree.PaintDockFrame">
         <short>
-          <var>PaintDockFrame</var> - finds the cursor position and paints the dock frame of the specified size on the nominated canvas</short>
+          <var>PaintDockFrame</var> - finds the cursor position and paints the dock frame of the specified size on the nominated canvas.</short>
       </element>
       <element name="TLazDockTree.DefaultDockGrabberSize">
         <short>
-          <var>DefaultDockGrabberSize</var> - returns the default size for the dock grabber</short>
+          <var>DefaultDockGrabberSize</var> - returns the default size for the dock grabber.</short>
       </element>
       <element name="TLazDockTree.AdjustDockRect">
         <short>
-          <var>AdjustDockRect</var> - offset one of the borders of control rect in order to get space for frame</short>
+          <var>AdjustDockRect</var> - offset one of the borders of control rect in order to get space for frame.</short>
       </element>
       <element name="TLazDockTree.RemoveControl">
         <short>
-          <var>RemoveControl</var> - destroy child zone and all parents if they does not contain anything else, then removes the dock control</short>
+          <var>RemoveControl</var> - destroy child zone and all parents if they does not contain anything else, then removes the dock control.</short>
       </element>
       <element name="TLazDockTree.PaintSite">
         <short>
-          <var>PaintSite</var> - paint bounds for each control and close button (using the supplied handle)</short>
+          <var>PaintSite</var> - paint bounds for each control and close button (using the supplied handle).</short>
       </element>
       <element name="TLazDockTree.MessageHandler">
         <short>
-          <var>MessageHandler</var> - checks the state of the mouse and takes the appropriate action: checks whether redraw is needed because of mouse move or change in mouse button status, text needs to be added, etc</short>
+          <var>MessageHandler</var> - checks the state of the mouse and takes the appropriate action: checks whether redraw is needed because of mouse move or change in mouse button status, text needs to be added, etc.</short>
       </element>
       <element name="TLazDockTree.DumpLayout">
         <short>
-          <var>DumpLayout</var> - writes layout of Zone to a file, for debugging purposes etc</short>
+          <var>DumpLayout</var> - writes layout of Zone to a file, for debugging purposes etc.</short>
       </element>
       <element name="TLazDockForm.Notification">
         <short>
-          <var>Notification</var> - if the required operation is removal, sets MainControl to nil, then calls inherited <var>Notification</var>
+          <var>Notification</var> - if the required operation is removal, sets MainControl to nil, then calls inherited <var>Notification</var>.
         </short>
         <seealso>
           <link id="#lcl.forms.TCustomForm.Notification">TCustomForm.Notification</link>
@@ -559,113 +559,113 @@
       </element>
       <element name="TLazDockForm.UpdateMainControl">
         <short>
-          <var>UpdateMainControl</var> - sets MainControl to a new value</short>
+          <var>UpdateMainControl</var> - sets MainControl to a new value.</short>
       </element>
       <element name="TLazDockForm.MouseUp">
         <short>
-          <var>MouseUp</var> - calls inherited MouseUp then finds position and appropriate header</short>
+          <var>MouseUp</var> - calls inherited MouseUp then finds position and appropriate header.</short>
         <seealso>
           <link id="#LCL.Controls.TControl.MouseUp">TControl.MouseUp</link>
         </seealso>
       </element>
       <element name="TLazDockForm.MouseDown">
         <short>
-          <var>MouseDown</var> - performs inherited MouseDown, then finds position and appropriate header</short>
+          <var>MouseDown</var> - performs inherited MouseDown, then finds position and appropriate header.</short>
         <seealso>
           <link id="#LCL.Controls.TControl.MouseDown">TControl.MouseDown</link>
         </seealso>
       </element>
       <element name="TLazDockForm.MouseMove">
         <short>
-          <var>MouseMove</var> - performs inherited MouseMove, then finds position and appropriate header</short>
+          <var>MouseMove</var> - performs inherited MouseMove, then finds position and appropriate header.</short>
         <seealso>
           <link id="#LCL.Controls.TControl.MouseMove">TControl.MouseMove</link>
         </seealso>
       </element>
       <element name="TLazDockForm.MouseLeave">
         <short>
-          <var>MouseLeave</var> - performs inherited MouseLeave, and sets the local store of position to indicate absence of the mouse</short>
+          <var>MouseLeave</var> - performs inherited MouseLeave, and sets the local store of position to indicate absence of the mouse.</short>
         <seealso>
           <link id="#LCL.Controls.TControl.MouseLeave">TControl.MouseLeave</link>
         </seealso>
       </element>
       <element name="TLazDockForm.PaintWindow">
         <short>
-          <var>PaintWindow</var> - calls inherited PaintWindow, then creates new canvas and handle at cursor position, inserts header caption, title and images</short>
+          <var>PaintWindow</var> - calls inherited PaintWindow, then creates new canvas and handle at cursor position, inserts header caption, title and images.</short>
         <seealso>
           <link id="#LCL.Controls.TCustomControl.PaintWindow">TCustomControl.PaintWindow</link>
         </seealso>
       </element>
       <element name="TLazDockForm.TrackMouse">
         <short>
-          <var>TrackMouse</var> - finds position of the mouse, which part of the control it occupies (whether header or main part of control), and state of buttons</short>
+          <var>TrackMouse</var> - finds position of the mouse, which part of the control it occupies (whether header or main part of control), and state of buttons.</short>
       </element>
       <element name="TLazDockForm.Create">
         <short>
-          <var>Create</var> - constructor for <var>TLazDocForm</var>: calls inherited Create, then fills in the header</short>
+          <var>Create</var> - constructor for <var>TLazDocForm</var>: calls inherited Create, then fills in the header.</short>
         <seealso>
           <link id="#LCL.Forms.TCustomForm.Create">TCustomForm.Create</link>
         </seealso>
       </element>
       <element name="TLazDockForm.Destroy">
         <short>
-          <var>Destroy</var> - destructor for <var>TLazDockForm</var>: removes header then calls inherited Destroy</short>
+          <var>Destroy</var> - destructor for <var>TLazDockForm</var>: removes header then calls inherited Destroy.</short>
         <seealso>
           <link id="#LCL.Forms.TCustomForm.Destroy">TCustomForm.Destroy</link>
         </seealso>
       </element>
       <element name="TLazDockForm.CloseQuery">
         <short>
-          <var>CloseQuery</var> - calls inherited method, then asks all top level forms if form can close</short>
+          <var>CloseQuery</var> - calls inherited method, then asks all top level forms if form can close.</short>
         <seealso>
           <link id="#LCL.Forms.TCustomForm.CloseQuery">TCustomForm.CloseQuery</link>
         </seealso>
       </element>
       <element name="TLazDockForm.UpdateCaption">
         <short>
-          <var>UpdateCaption</var> - brings caption up-to-date if there have been changes</short>
+          <var>UpdateCaption</var> - brings caption up-to-date if there have been changes.</short>
       </element>
       <element name="TLazDockForm.UpdateMainControlInParents">
         <short>
-          <var>UpdateMainControlInParents</var> - make sure all parents recognize the presence of MainControl</short>
+          <var>UpdateMainControlInParents</var> - make sure all parents recognize the presence of MainControl.</short>
       </element>
       <element name="TLazDockForm.FindMainControlCandidate">
         <short>
-          <var>FindMainControlCandidate</var> - finds forms and controls in the docktree hierarchy that could act as the MainControl</short>
+          <var>FindMainControlCandidate</var> - finds forms and controls in the docktree hierarchy that could act as the MainControl.</short>
       </element>
       <element name="TLazDockForm.FindHeader">
         <short>
-          <var>FindHeader</var> - identifies the part of the dock form that is the header, and returns a TControl</short>
+          <var>FindHeader</var> - identifies the part of the dock form that is the header, and returns a TControl.</short>
       </element>
       <element name="TLazDockForm.InsertControl">
         <short>
-          <var>InsertControl</var> - calls inherited method then updates the main control</short>
+          <var>InsertControl</var> - calls inherited method then updates the main control.</short>
         <seealso>
           <link id="#LCL.Controls.TWinControl.InsertControl">TWinControl.InsertControl</link>
         </seealso>
       </element>
       <element name="TLazDockForm.IsDockedControl">
         <short>
-          <var>IsDockedControl</var> - checks if control is a child, not a TLazDockSplitter and properly anchor docked; returns True if OK</short>
+          <var>IsDockedControl</var> - checks if control is a child, not a TLazDockSplitter and properly anchor docked; returns True if OK.</short>
       </element>
       <element name="TLazDockForm.ControlHasTitle">
         <short>
-          <var>ControlHasTitle</var> - returns True if nominated control is visible, is a docked control and has a border spacing greater than zero</short>
+          <var>ControlHasTitle</var> - returns True if nominated control is visible, is a docked control and has a border spacing greater than zero.</short>
       </element>
       <element name="TLazDockForm.GetTitleRect">
         <short>
-          <var>GetTitleRect</var> - returns the coordinates of the title rectangle for the nominated control</short>
+          <var>GetTitleRect</var> - returns the coordinates of the title rectangle for the nominated control.</short>
       </element>
       <element name="TLazDockForm.GetTitleOrientation">
         <short>
-          <var>GetTitleOrientation</var> - returns the orientation (horizontal or vertical) of the title in the nominated control</short>
+          <var>GetTitleOrientation</var> - returns the orientation (horizontal or vertical) of the title in the nominated control.</short>
       </element>
       <element name="TLazDockForm.MainControl">
-        <short>The identity of the <var>MainControl</var> in the docked form (used for the default caption)</short>
+        <short>The identity of the <var>MainControl</var> in the docked form (used for the default caption).</short>
       </element>
       <element name="TLazDockPage.InsertControl">
         <short>
-          <var>InsertControl</var> - calls inherited method, then ensures that all parents recognize the <var>MainControl</var>
+          <var>InsertControl</var> - calls inherited method, then ensures that all parents recognize the <var>MainControl</var>.
         </short>
         <seealso>
           <link id="#LCL.Controls.TWinControl.InsertControl">TWinControl.InsertControl</link>
@@ -673,7 +673,7 @@
       </element>
       <element name="TLazDockPages.GetFloatingDockSiteClass">
         <short>
-          <var>GetFloatingDockSiteClass</var> - returns a default class of <var>TLazDockForm</var>, overriding the inherited value</short>
+          <var>GetFloatingDockSiteClass</var> - returns a default class of <var>TLazDockForm</var>, overriding the inherited value.</short>
         <seealso>
           <link id="#LCL.Controls.TControl.GetFloatingDockSiteClass">TControl.GetFloatingDockSiteClass</link>
         </seealso>
@@ -681,18 +681,18 @@
 
       <element name="TLazDockPages.GetPageClass">
         <short>
-          Gets the TLazDockPage class type used as the page class for the tabbed control
+          Gets the TLazDockPage class type used as the page class for the tabbed control.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazDockPages.GetPageClass.Result">
-        <short>TLazDockPage class type used for the page class</short>
+        <short>TLazDockPage class type used for the page class.</short>
       </element>
 
       <element name="TLazDockPages.Change">
         <short>
-          <var>Change</var> - calls inherited method, then ensures that all parents recognize MainControl</short>
+          <var>Change</var> - calls inherited method, then ensures that all parents recognize MainControl.</short>
         <seealso>
           <link id="#LCL.ComCtrls.TCustomTabControl.Change">TCustomTabControl.Change</link>
         </seealso>
@@ -700,23 +700,23 @@
       <element name="TLazDockSplitter.Create">
         <short>
           <var>Create</var> - constructor for <var>TLazDockSplitter</var>: calls inherited <var>Create</var> and initializes
-minimum size</short>
+minimum size.</short>
         <seealso>
           <link id="#LCL.ExtCtrls.TCustomSplitter.Create">TCustomSplitter.Create</link>
         </seealso>
       </element>
       <element name="TLazDockOwnerComponent">
         <short>
-          <var>TLazDockOwnerComponent</var> - A <var>TComponent</var> owning all automatically created controls of a <var>TCustomAnchoredDockManager</var>, like <var>TLazDockForm</var>
+          <var>TLazDockOwnerComponent</var> - A <var>TComponent</var> owning all automatically created controls of a <var>TCustomAnchoredDockManager</var>, like <var>TLazDockForm</var>.
         </short>
       </element>
       <element name="TLazDockOwnerComponent.Manager">
         <short>
-          <var>Manager</var> - the <var>TCustomAnchoredDockManager</var> for this Owner</short>
+          <var>Manager</var> - the <var>TCustomAnchoredDockManager</var> for this Owner.</short>
       </element>
       <element name="TCustomAnchoredDockManager">
         <short>
-          <var>TCustomAnchoredDockManager</var> - implements an LCL <var>TDockManager</var> via anchoring</short>
+          <var>TCustomAnchoredDockManager</var> - implements an LCL <var>TDockManager</var> via anchoring.</short>
         <descr>
           <p>
             <var>TCustomAnchoredDockManager</var> - implements an LCL <var>TDockManager</var> via anchoring. It implements docking, undocking, enlarging, shrinking. The TCustomLazDockingManager component in LDockCtrl uses this docking manager and extends it by layouts that can be stored/restored.
@@ -725,15 +725,15 @@ minimum size</short>
       </element>
       <element name="TCustomAnchoredDockManager.FOwnerComponent">
         <short>
-          <var>FOwnerComponent</var> - local variable to hold the <var>TLazDockOwnerComponent</var> for this manager</short>
+          <var>FOwnerComponent</var> - local variable to hold the <var>TLazDockOwnerComponent</var> for this manager.</short>
       </element>
       <element name="TCustomAnchoredDockManager.DeleteSideSplitter">
         <short>
-          <var>DeleteSideSplitter</var> - removes a side splitter to make way for a <var>NewAnchorControl</var> with its anchors</short>
+          <var>DeleteSideSplitter</var> - removes a side splitter to make way for a <var>NewAnchorControl</var> with its anchors.</short>
       </element>
       <element name="TCustomAnchoredDockManager.CombineSpiralSplitterPair">
         <short>
-          <var>CombineSpiralSplitterPair</var> - cleans up alignment of two adjacent splitters when they don't line up properly</short>
+          <var>CombineSpiralSplitterPair</var> - cleans up alignment of two adjacent splitters when they don't line up properly.</short>
         <descr>
           <p>
             <var>CombineSpiralSplitterPair</var> - cleans up alignment of two adjacent splitters when they don't line up properly</p>
@@ -771,23 +771,23 @@ minimum size</short>
       </element>
       <element name="TCustomAnchoredDockManager.DeletePage">
         <short>
-          <var>DeletePage</var> - removes the specified page from the notebook</short>
+          <var>DeletePage</var> - removes the specified page from the notebook.</short>
       </element>
       <element name="TCustomAnchoredDockManager.DeletePages">
         <short>
-          <var>DeletePages</var> - removes the specified group of pages (notebook) from the Dock Form</short>
+          <var>DeletePages</var> - removes the specified group of pages (notebook) from the Dock Form.</short>
       </element>
       <element name="TCustomAnchoredDockManager.DeleteDockForm">
         <short>
-          <var>DeleteDockForm</var> - removes the specified dock form</short>
+          <var>DeleteDockForm</var> - removes the specified dock form.</short>
       </element>
       <element name="TCustomAnchoredDockManager.GetAnchorDepth">
         <short>
-          <var>GetAnchorDepth</var> - returns the number of levels of anchoring associated with the given side of the nominated control</short>
+          <var>GetAnchorDepth</var> - returns the number of levels of anchoring associated with the given side of the nominated control.</short>
       </element>
       <element name="TCustomAnchoredDockManager.GetPreferredTitlePosition">
         <short>
-          <var>GetPreferredTitlePosition</var> - returns the most favorable place (top or left side) to put the title of a dock component, given the width and height</short>
+          <var>GetPreferredTitlePosition</var> - returns the most favorable place (top or left side) to put the title of a dock component, given the width and height.</short>
       </element>
       <element name="TCustomAnchoredDockManager.Create">
         <seealso>
@@ -795,11 +795,11 @@ minimum size</short>
         </seealso>
         <short>
           <var>Create</var> - constructor for <var>TCustomAnchoredDockManager</var>: creates the owner component and
-initializes splitter size, title height and width</short>
+initializes splitter size, title height and width.</short>
       </element>
       <element name="TCustomAnchoredDockManager.Destroy">
         <short>
-          <var>Destroy</var> - destructor for <var>TCustomAnchoredDockManager</var>: frees and annuls the owner component the calls inherited <var>Destroy</var>
+          <var>Destroy</var> - destructor for <var>TCustomAnchoredDockManager</var>: frees and annuls the owner component the calls inherited <var>Destroy</var>.
         </short>
         <seealso>
           <link id="#rtl.Classes.TPersistent.Destroy">TPersistent.Destroy</link>
@@ -807,34 +807,34 @@ initializes splitter size, title height and width</short>
       </element>
       <element name="TCustomAnchoredDockManager.BeginUpdate">
         <short>
-          <var>BeginUpdate</var> - starts the update process by incrementing the update count</short>
+          <var>BeginUpdate</var> - starts the update process by incrementing the update count.</short>
         <seealso>
           <link id="#LCL.Controls.TDockManager.BeginUpdate">TDockManager.BeginUpdate</link>
         </seealso>
       </element>
       <element name="TCustomAnchoredDockManager.EndUpdate">
         <short>
-          <var>EndUpdate</var> - ends update process by decrementing the update count</short>
+          <var>EndUpdate</var> - ends update process by decrementing the update count.</short>
         <errors>If Update count is zero or less, raises and exception</errors>
       </element>
       <element name="TCustomAnchoredDockManager.GetControlBounds">
         <short>
-          <var>GetControlBounds</var> - finds the bounding rectangle of the specified control</short>
+          <var>GetControlBounds</var> - finds the bounding rectangle of the specified control.</short>
         <seealso>
           <link id="#LCL.Controls.TDockManager.GetControlBounds">TDockManager.GetControlBounds</link>
         </seealso>
       </element>
       <element name="TCustomAnchoredDockManager.DisableLayout">
         <short>
-          <var>DisableLayout</var> - placeholder for a virtual procedure to disable the layout of the specified control</short>
+          <var>DisableLayout</var> - placeholder for a virtual procedure to disable the layout of the specified control.</short>
       </element>
       <element name="TCustomAnchoredDockManager.EnableLayout">
         <short>
-          <var>EnableLayout</var> - placeholder for a virtual procedure to enable the layout of the specified control</short>
+          <var>EnableLayout</var> - placeholder for a virtual procedure to enable the layout of the specified control.</short>
       </element>
       <element name="TCustomAnchoredDockManager.DockControl">
         <short>
-          <var>DockControl</var> - docks the specified control with the Drop Control, using the alignment rule specified by <var>InsertAt</var>
+          <var>DockControl</var> - docks the specified control with the Drop Control, using the alignment rule specified by <var>InsertAt</var>.
         </short>
       </element>
       <element name="TCustomAnchoredDockManager.UndockControl">
@@ -912,7 +912,7 @@ initializes splitter size, title height and width</short>
       </element>
       <element name="TCustomAnchoredDockManager.InsertControl">
         <short>
-          <var>InsertControl</var> - calls DockControl to perform insertion</short>
+          <var>InsertControl</var> - calls DockControl to perform insertion.</short>
         <seealso>
           <link id="#lcl.LDockTree.TCustomAnchoredDockManager.DockControl">TCustomAnchoredDockManager.DockControl</link>
           <link id="#LCL.Controls.TDockManager.InsertControl">TDockManager.InsertControl</link>
@@ -924,7 +924,7 @@ initializes splitter size, title height and width</short>
       </element>
       <element name="TCustomAnchoredDockManager.RemoveControl">
         <short>
-          <var>RemoveControl</var> - calls <var>UndockControl</var> to remove the specified control from the docking hierarchy</short>
+          <var>RemoveControl</var> - calls <var>UndockControl</var> to remove the specified control from the docking hierarchy.</short>
         <seealso>
           <link id="#lcl.LDockTree.TCustomAnchoredDockManager.UndockControl">TCustomAnchoredDockManager.UndockControl</link>
           <link id="#LCL.Controls.TDockManager.RemoveControl">TDockManager.RemoveControl</link>
@@ -932,11 +932,11 @@ initializes splitter size, title height and width</short>
       </element>
       <element name="TCustomAnchoredDockManager.ReplaceAnchoredControl">
         <short>
-          <var>ReplaceAnchoredControl</var> - takes away <var>OldControl</var>, puts <var>NewControl</var> in its place, re-establishing all the docking, anchors and alignments</short>
+          <var>ReplaceAnchoredControl</var> - takes away <var>OldControl</var>, puts <var>NewControl</var> in its place, re-establishing all the docking, anchors and alignments.</short>
       </element>
       <element name="TCustomAnchoredDockManager.GetSplitterWidth">
         <short>
-          <var>GetSplitterWidth</var> - returns the value of the width of the splitter needed to control this docking process</short>
+          <var>GetSplitterWidth</var> - returns the value of the width of the splitter needed to control this docking process.</short>
       </element>
       <element name="TCustomAnchoredDockManager.GetSplitterHeight">
         <short>
@@ -944,23 +944,23 @@ initializes splitter size, title height and width</short>
       </element>
       <element name="TCustomAnchoredDockManager.SplitterSize">
         <short>
-          <var>SplitterSize</var> - the size of splitter required for this docking process</short>
+          <var>SplitterSize</var> - the size of splitter required for this docking process.</short>
       </element>
       <element name="TCustomAnchoredDockManager.TitleWidth">
         <short>
-          <var>TitleWidth</var> - the width of the title for this docking control</short>
+          <var>TitleWidth</var> - the width of the title for this docking control.</short>
       </element>
       <element name="TCustomAnchoredDockManager.TitleHeight">
         <short>
-          <var>TitleHeight</var> - the height of the title for this docking control</short>
+          <var>TitleHeight</var> - the height of the title for this docking control.</short>
       </element>
       <element name="TCustomAnchoredDockManager.UpdateTitlePosition">
         <short>
-          <var>UpdateTitlePosition</var> - brings title position up to date, reflecting any pending changes</short>
+          <var>UpdateTitlePosition</var> - brings title position up to date, reflecting any pending changes.</short>
       </element>
       <element name="TCustomAnchoredDockManager.PaintSite">
         <short>
-          <var>PaintSite</var> - (drawing of titles is is actually done by <var>TLazDockForm</var>)</short>
+          <var>PaintSite</var> - (drawing of titles is is actually done by <var>TLazDockForm</var>).</short>
         <seealso>
           <link id="#LCL.LDockTree.TLazDockForm.PaintWindow">TLazDockForm.PaintWindow</link>
           <link id="#LCL.Controls.TDockManager.PaintSite">TDockManager.PaintSite</link>
@@ -968,38 +968,38 @@ initializes splitter size, title height and width</short>
       </element>
       <element name="TCustomAnchoredDockManager.MessageHandler">
         <short>
-          <var>MessageHandler</var> - not implemented</short>
+          <var>MessageHandler</var> - not implemented.</short>
       </element>
       <element name="TCustomAnchoredDockManager.PositionDockRect">
         <short>
-          <var>PositionDockRect</var> - not implemented</short>
+          <var>PositionDockRect</var> - not implemented.</short>
       </element>
       <element name="TCustomAnchoredDockManager.ResetBounds">
         <short>
-          <var>ResetBounds</var> - not implemented</short>
+          <var>ResetBounds</var> - not implemented.</short>
       </element>
       <element name="TCustomAnchoredDockManager.SetReplacingControl">
         <short>
-          <var>SetReplacingControl</var> - not implemented</short>
+          <var>SetReplacingControl</var> - not implemented.</short>
       </element>
       <element name="TCustomAnchoredDockManager.LoadFromStream">
         <short>
-          <var>LoadFromStream</var> - not implemented</short>
+          <var>LoadFromStream</var> - not implemented.</short>
       </element>
       <element name="TCustomAnchoredDockManager.SaveToStream">
         <short>
-          <var>SaveToStream</var> - not implemented</short>
+          <var>SaveToStream</var> - not implemented.</short>
       </element>
       <element name="TCustomAnchoredDockManager.AutoFreeByControl">
         <short>
-          <var>AutoFreeByControl</var> - always returns False, overriding inherited value</short>
+          <var>AutoFreeByControl</var> - always returns False, overriding inherited value.</short>
         <seealso>
           <link id="#LCL.Controls.TDockManager.AutoFreeByControl">TDockManager.AutoFreeByControl</link>
         </seealso>
       </element>
       <element name="TCustomAnchoredDockManager.CreateForm">
         <short>
-          <var>CreateForm</var> - makes a form and sets up the dock manager</short>
+          <var>CreateForm</var> - makes a form and sets up the dock manager.</short>
       </element>
     </module>
     <!-- LDockTree -->

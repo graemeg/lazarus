@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="LazRegions">
-      <short>Implements non-native regions with support for managing their Z-order</short>
+      <short>Implements non-native regions with support for managing their Z-order.</short>
       <descr>
         <p>
           <file>lazregions.pas</file> contains classes, types, and routines used to implement clipping regions in <var>TLazCanvas</var>, and regions used in custom-drawn LCL controls.
@@ -25,7 +25,7 @@
 
       <!-- enumeration type Visibility: default -->
       <element name="TLazRegionFillMode">
-        <short>Represents region fill modes used for polygons in Lazarus regions</short>
+        <short>Represents region fill modes used for polygons in Lazarus regions.</short>
         <descr>
           <p>
             Adheres to the nomenclature used in the Windows GDI API.
@@ -38,18 +38,18 @@
       </element>
       <element name="TLazRegionFillMode.rfmOddEven">
         <short>
-        Use the alternate fill mode (fills the area between odd-numbered and even-numbered polygon sides on each scan line)
+          Use the alternate fill mode (fills the area between odd-numbered and even-numbered polygon sides on each scan line).
         </short>
       </element>
       <element name="TLazRegionFillMode.rfmWinding">
         <short>
-          Use the winding fill mode (fills any region with a non-zero winding value)
+          Use the winding fill mode (fills any region with a non-zero winding value).
         </short>
       </element>
 
       <!-- array type Visibility: default -->
       <element name="TPointArray">
-        <short>Defines an array type used for TPoint values</short>
+        <short>Defines an array type used for TPoint values.</short>
         <descr>
           <p>
             <var>TPointArray</var> is an array type used for <var>TPoint</var> instances which define the vertices in a polygon. It is used to implement the <var>Points</var> member in <var>TLazRegionPolygon</var>, and passed as an argument to the <var>AddPolygon</var> method in <var>TLazRegion</var>.
@@ -63,7 +63,7 @@
 
       <!-- class Visibility: default -->
       <element name="TLazRegionPart">
-        <short>Base class used for rectangular areas in a region</short>
+        <short>Base class used for rectangular areas in a region.</short>
         <descr>
           <p>
             <var>TLazRegionPart</var> defines the base class used to represent a rectangular area in a region. <var>TLazRegionPart</var> is used as the ancestor for the <var>TLazRegionRect</var> class.
@@ -75,7 +75,7 @@
       </element>
 
       <element name="TLazRegionPart.GetBoundingRect">
-        <short>Gets the rectangle with the Bounds for an area in a region</short>
+        <short>Gets the rectangle with the Bounds for an area in a region.</short>
         <descr>
           <p>
             <var>GetBoundingRect</var> is a <var>TRect</var> function used to get the rectangle with the Bounds for a  rectangular area in a region. In TLazRegionPart, the return value contains an empty rectangle (with zero assigned to its Left, Top, Right, Bottom, Width, and Height members).
@@ -87,7 +87,7 @@
       <!-- function Visibility: public -->
       <element name="TLazRegionPart.IsPointInPart">
         <short>
-          Indicates if a point with the specified coordinates is within the bounds for the rectangular area
+          Indicates if a point with the specified coordinates is within the bounds for the rectangular area.
         </short>
         <descr>
           <p>
@@ -99,19 +99,19 @@
       </element>
       <element name="TLazRegionPart.IsPointInPart.Result">
         <short>
-          True when the coordinates are located in the bounds for the rectangular area
+          True when the coordinates are located in the bounds for the rectangular area.
         </short>
       </element>
       <element name="TLazRegionPart.IsPointInPart.AX">
-        <short>Horizontal coordinate for the point</short>
+        <short>Horizontal coordinate for the point.</short>
       </element>
       <element name="TLazRegionPart.IsPointInPart.AY">
-        <short>Vertical coordinate for the point</short>
+        <short>Vertical coordinate for the point.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TLazRegionRect">
-        <short>Implements a region defined by a TRect structure</short>
+        <short>Implements a region defined by a TRect structure.</short>
         <descr>
           <p>
             <var>TLazRegionRect</var> is a <var>TLazRegionPart</var> descendant which implements a region as a rectangular area. It includes a <var>Rect</var> member used to store the <var>TRect</var> with the bounds for the region. It also provides an overridden <var>IsPointInPart</var> method to examine the Rect member when locating a point in the region. Instances of TLazRegionRect are created when the <var>AddRectangle</var> method in <var>TLazRegion</var> is called.
@@ -126,7 +126,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazRegionRect.Rect">
-        <short>Rectangle with the bounds that defines the region</short>
+        <short>Rectangle with the bounds that defines the region.</short>
         <descr>
           <p>
             <var>Rect</var> is a <var>TRect</var> member which contains the rectangular area that is the bounds for the region.
@@ -138,7 +138,7 @@
       <!-- function Visibility: public -->
       <element name="TLazRegionRect.IsPointInPart">
         <short>
-          Indicates if a point with the specified coordinates is within the rectangle used as the bounds for the region
+          Indicates if a point with the specified coordinates is within the rectangle used as the bounds for the region.
         </short>
         <descr>
           <p>
@@ -149,19 +149,19 @@
       </element>
       <element name="TLazRegionRect.IsPointInPart.Result">
         <short>
-          True when the coordinates are located in the bounds rectangle for the region
+          True when the coordinates are located in the bounds rectangle for the region.
         </short>
       </element>
       <element name="TLazRegionRect.IsPointInPart.AX">
-        <short>Horizontal coordinate for the point</short>
+        <short>Horizontal coordinate for the point.</short>
       </element>
       <element name="TLazRegionRect.IsPointInPart.AY">
-        <short>Vertical coordinate for the point</short>
+        <short>Vertical coordinate for the point.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TLazRegionPolygon">
-        <short>Represents a region defined as a series of vertices for a polygon</short>
+        <short>Represents a region defined as a series of vertices for a polygon.</short>
         <descr>
           <p>
             <var>TLazRegionPolygon</var> is a <var>TLazRegionPart</var> descendant which implements a region as a polygonal area defined by a series of vertices.
@@ -182,14 +182,14 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazRegionPolygon.Points">
-        <short>Array of TPoint values that define the vertices for the polygonal region</short>
+        <short>Array of TPoint values that define the vertices for the polygonal region.</short>
         <descr/>
         <seealso/>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TLazRegionPolygon.FillMode">
-        <short>Fill mode used for the polygon</short>
+        <short>Fill mode used for the polygon.</short>
         <descr/>
         <seealso/>
       </element>
@@ -197,7 +197,7 @@
       <!-- function Visibility: public -->
       <element name="TLazRegionPolygon.IsPointInPart">
         <short>
-          Indicates if a point with the specified coordinates is within the vertices for the polygonal region
+          Indicates if a point with the specified coordinates is within the vertices for the polygonal region.
         </short>
         <descr>
           <p>
@@ -213,17 +213,17 @@
         </seealso>
       </element>
       <element name="TLazRegionPolygon.IsPointInPart.Result">
-        <short>True when the point occurs inside the vertices for the polygonal region</short>
+        <short>True when the point occurs inside the vertices for the polygonal region.</short>
       </element>
       <element name="TLazRegionPolygon.IsPointInPart.AX">
-        <short>Horizontal coordinate for the point</short>
+        <short>Horizontal coordinate for the point.</short>
       </element>
       <element name="TLazRegionPolygon.IsPointInPart.AY">
-        <short>Vertical coordinate for the point</short>
+        <short>Vertical coordinate for the point.</short>
       </element>
 
       <element name="TLazRegionEllipse">
-        <short>Implements a region defined as an Ellipse</short>
+        <short>Implements a region defined as an Ellipse.</short>
         <descr>
           <p>
             <var>TLazRegionEllipse</var> is a <var>TLazRegionPart</var> descendant which implements a region defined as an elliptical area with the specified vertex and co-vertex. The <var>X1</var>, <var>X2</var>, <var>Y1</var>, and <var>Y2</var> members are provided to represent the horizontal and vertical coordinates for the vertex and co-vertex points.
@@ -240,32 +240,32 @@
       </element>
 
       <element name="TLazRegionEllipse.X1">
-        <short>Horizontal coordinate for the vertex</short>
+        <short>Horizontal coordinate for the vertex.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazRegionEllipse.Y1">
-        <short>Vertical coordinate for the vertex</short>
+        <short>Vertical coordinate for the vertex.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazRegionEllipse.X2">
-        <short>Horizontal coordinate for the co-vertex</short>
+        <short>Horizontal coordinate for the co-vertex.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazRegionEllipse.Y2">
-        <short>Vertical coordinate for the co-vertex</short>
+        <short>Vertical coordinate for the co-vertex.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TLazRegionEllipse.IsPointInPart">
         <short>
-          Indicates if the specified point is located inside the elliptical area for the region
+          Indicates if the specified point is located inside the elliptical area for the region.
         </short>
         <descr>
           <p>
@@ -276,13 +276,13 @@
         <seealso/>
       </element>
       <element name="TLazRegionEllipse.IsPointInPart.Result">
-        <short>True when the specified point is located inside the area for the ellipse</short>
+        <short>True when the specified point is located inside the area for the ellipse.</short>
       </element>
       <element name="TLazRegionEllipse.IsPointInPart.AX">
-        <short>Horizontal coordinate for the point</short>
+        <short>Horizontal coordinate for the point.</short>
       </element>
       <element name="TLazRegionEllipse.IsPointInPart.AY">
-        <short>Vertical coordinate for the point</short>
+        <short>Vertical coordinate for the point.</short>
       </element>
 
       <element name="TFPCustomRegion">
@@ -336,7 +336,7 @@
 
       <!-- class Visibility: default -->
       <element name="TLazRegion">
-        <short>Represents a custom region in the Lazarus LCL</short>
+        <short>Represents a custom region in the Lazarus LCL.</short>
         <descr>
           <p>
             <var>TLazRegion</var> is a <var>TFPCustomRegion</var> descendant which represents a region as used in the Lazarus LCL. It is used to implement the clipping region in <var>TLazCanvas</var>, and in custom-drawn windowed LCL controls. The region is composed of <var>TLazRegionPart</var> descendants representing the rectangles, polygons, and ellipses that define the display area on a device. TLazRegion provides overridden methods to query information for the composite display area.
@@ -355,7 +355,7 @@
       <!-- variable Visibility: public -->
       <element name="TLazRegion.Parts">
         <short>
-          List with the Rectangles, Polygons, and Ellipses that define the display area for the region
+          List with the Rectangles, Polygons, and Ellipses that define the display area for the region.
         </short>
         <descr/>
         <seealso/>
@@ -363,7 +363,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazRegion.IsSimpleRectRegion">
-        <short>Indicates whether this region is composed of a single rectangular part</short>
+        <short>Indicates whether this region is composed of a single rectangular part.</short>
         <descr>
           <p>
             Use <var>Rect</var> to access the <var>TRect</var> structure with the bounds for the rectangular region.
@@ -374,14 +374,14 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazRegion.Rect">
-        <short>TRect instance with the bounds for the region</short>
+        <short>TRect instance with the bounds for the region.</short>
         <descr/>
         <seealso/>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TLazRegion.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance. Create calls the inherited constructor to initialize the class instance. Create allocates resources needed for the <var>Parts</var> member, and sets the default value for <var>IsSimpleRectRegion</var> to <b>True</b>.
@@ -392,7 +392,7 @@
 
       <!-- destructor Visibility: public -->
       <element name="TLazRegion.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resource allocated for the <var>Parts</var> member are freed. Destroy calls the inherited destructor prior to exiting from the method.
@@ -405,7 +405,7 @@
       </element>
 
       <element name="TLazRegion.Assign">
-        <short>Stores values from ASrcRegion in the current class instance</short>
+        <short>Stores values from ASrcRegion in the current class instance.</short>
         <descr>
           <p>
             Calls <var>Clear</var> to remove any items stored in <var>Parts</var>.
@@ -415,11 +415,11 @@
         <seealso/>
       </element>
       <element name="TLazRegion.Assign.ASrcRegion">
-        <short>Region with the values stored in the method</short>
+        <short>Region with the values stored in the method.</short>
       </element>
 
       <element name="TLazRegion.Clear">
-        <short>Frees all of the TLazRegionPart instances in Parts, and clears the list</short>
+        <short>Frees all of the TLazRegionPart instances in Parts, and clears the list.</short>
         <descr>
           <p>
             Frees all of the <var>TLazRegionPart</var> instances in the <var>Parts</var> member, and clears the list.
@@ -429,7 +429,7 @@
       </element>
 
       <element name="TLazRegion.CombineWith">
-        <short>Combines the specified source region using the given region operation</short>
+        <short>Combines the specified source region using the given region operation.</short>
         <descr>
           <p>
             <var>ASrcRegion</var> is the source region with the Parts applied in the method.
@@ -451,14 +451,14 @@
         <seealso/>
       </element>
       <element name="TLazRegion.CombineWith.ASrcRegion">
-        <short>Source region with values applied in the method</short>
+        <short>Source region with values applied in the method.</short>
       </element>
       <element name="TLazRegion.CombineWith.AOperation">
-        <short>Combine region flag with the operation to perform for the subregions</short>
+        <short>Combine region flag with the operation to perform for the subregions.</short>
       </element>
 
       <element name="TLazRegion.GetRegionKind">
-        <short>Gets the type of region represented in the class instance</short>
+        <short>Gets the type of region represented in the class instance.</short>
         <descr>
           <p>
             <var>GetRegionKind</var> is a <var>Longint</var> function used to get the type of region represented in the class instance. The return value adheres to the region flag values used in the Windows GDI API, and can include one of the following:
@@ -483,24 +483,24 @@
         <seealso/>
       </element>
       <element name="TLazRegion.GetRegionKind.Result">
-        <short>Region flag value for the class instance</short>
+        <short>Region flag value for the class instance.</short>
       </element>
 
       <element name="TLazRegion.IsSimpleRectEmpty">
         <short>
-          Indicates whether the Rect member contains empty or invalid rectangle coordinates
+          Indicates whether the Rect member contains empty or invalid rectangle coordinates.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLazRegion.IsSimpleRectEmpty.Result">
         <short>
-          True when the dimensions for the rectangle are invalid
+          True when the dimensions for the rectangle are invalid.
         </short>
       </element>
 
       <element name="TLazRegion.AddPart">
-        <short>Adds the specified part as a subregion in the Parts member</short>
+        <short>Adds the specified part as a subregion in the Parts member.</short>
         <descr>
           <p>
             <var>AddPart</var> is a procedure used to add the specified <var>TLazRegionPart</var> in <var>APart</var> to the <var>Parts</var> member in the class instance. AddPart calls the <var>TFPList.Add</var> method to store the value in APart in the list. AddPart calls <var>DoChangeToComplexRegion</var> to update  <var>IsSimpleRectRegion</var> to reflect the current composition for the region.
@@ -519,12 +519,12 @@
         </seealso>
       </element>
       <element name="TLazRegion.AddPart.APart">
-        <short>TLazRegionPart (or descendant) added in the method</short>
+        <short>TLazRegionPart (or descendant) added in the method.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TLazRegion.AddRectangle">
-        <short>Adds the specified TRect instance to the Parts member</short>
+        <short>Adds the specified TRect instance to the Parts member.</short>
         <descr>
           <p>
             <var>AddRectangle</var> is a procedure used to add a rectangular region defined by the <var>TRect</var> instance in <var>ARect</var> to the <var>Parts</var> member. AddRectangle creates a <var>TLazRegionRect</var> instance and assigns ARect to its <var>Rect</var> member. AddRectangle calls <var>AddPart</var> to store the TLazRegionRect instance in Parts.
@@ -537,12 +537,12 @@
         </seealso>
       </element>
       <element name="TLazRegion.AddRectangle.ARect">
-        <short>TRect instance with the rectangular region added in the method</short>
+        <short>TRect instance with the rectangular region added in the method.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TLazRegion.AddPolygon">
-        <short>Adds a polygonal area with the specified vertices to the region</short>
+        <short>Adds a polygonal area with the specified vertices to the region.</short>
         <descr>
           <p>
             <var>AddPolygon</var> is a procedure used to add a polygonal area with the specified vertices to the region. <var>APoints</var> is an array with <var>TPoint</var> instances that define each of the vertices for the polygon. <var>AFillMode</var> is a <var>TLazRegionFillMode</var> value that defines the fill mode for the polygonal area.
@@ -561,14 +561,14 @@
         </seealso>
       </element>
       <element name="TLazRegion.AddPolygon.APoints">
-        <short>Array of TPoint instances representing the vertices for the polygon</short>
+        <short>Array of TPoint instances representing the vertices for the polygon.</short>
       </element>
       <element name="TLazRegion.AddPolygon.AFillMode">
-        <short>TLazRegionFillMode value used for the polygon</short>
+        <short>TLazRegionFillMode value used for the polygon.</short>
       </element>
 
       <element name="TLazRegion.AddEllipse">
-        <short>Adds an elliptical area with the specified co-vertices to the region</short>
+        <short>Adds an elliptical area with the specified co-vertices to the region.</short>
         <descr>
           <p>
             <var>AddEllipse</var> is a procedure used to add an elliptical area with the specified co-vertices to the region. <var>AX1</var> and <var>AY1</var> is the point where the endpoint for the long axis is located. <var>AX2</var> and <var>AY2</var> is the point where the endpoint for the short axis is located. Each point is located perpendicular to the opposing axis, and its diameter bisects the opposing axis.
@@ -584,32 +584,32 @@
         </seealso>
       </element>
       <element name="TLazRegion.AddEllipse.AX1">
-        <short>Horizontal coordinate for the endpoint of the major axis</short>
+        <short>Horizontal coordinate for the endpoint of the major axis.</short>
       </element>
       <element name="TLazRegion.AddEllipse.AY1">
-        <short>Vertical  coordinate for the endpoint of the major axis</short>
+        <short>Vertical  coordinate for the endpoint of the major axis.</short>
       </element>
       <element name="TLazRegion.AddEllipse.AX2">
-        <short>Horizontal coordinate for the endpoint of the minor axis</short>
+        <short>Horizontal coordinate for the endpoint of the minor axis.</short>
       </element>
       <element name="TLazRegion.AddEllipse.AY2">
-        <short>Vertical coordinate for the endpoint of the minor axis</short>
+        <short>Vertical coordinate for the endpoint of the minor axis.</short>
       </element>
 
       <!-- procedure Visibility: public -->
       <element name="TLazRegion.SetAsSimpleRectRegion">
-        <short>Sets the area for the region to the specified rectangle</short>
+        <short>Sets the area for the region to the specified rectangle.</short>
         <descr/>
         <errors></errors>
         <seealso/>
       </element>
       <element name="TLazRegion.SetAsSimpleRectRegion.ARect">
-        <short>TRect with the bounds for the region</short>
+        <short>TRect with the bounds for the region.</short>
       </element>
 
       <element name="TLazRegion.AddPartsFromRegion">
         <short>
-          Adds the region (and any subregions) from ASrcRegion to the current class instance
+          Adds the region (and any subregions) from ASrcRegion to the current class instance.
         </short>
         <descr>
           <p>
@@ -627,12 +627,12 @@
         </seealso>
       </element>
       <element name="TLazRegion.AddPartsFromRegion.ASrcRegion">
-        <short>Region with the values added in the method</short>
+        <short>Region with the values added in the method.</short>
       </element>
 
       <element name="TLazRegion.DoChangeToComplexRegion">
         <short>
-          Adds the value in Rect to the Parts member, and resets the value in  IsSimpleRectRegion
+          Adds the value in Rect to the Parts member, and resets the value in  IsSimpleRectRegion.
         </short>
         <descr>
           <p>
@@ -647,7 +647,7 @@
 
       <!-- function Visibility: public -->
       <element name="TLazRegion.GetBoundingRect">
-        <short>Gets the bounds for the region as a rectangle</short>
+        <short>Gets the bounds for the region as a rectangle.</short>
         <descr>
           <p>
             <var>GetBoundingRect</var> is a <var>TRect</var> function used to get the rectangle structure with the bounds for the region. GetBoundingRect uses the value in the <var>Rect</var> member as the return value for the method.
@@ -656,12 +656,12 @@
         <seealso/>
       </element>
       <element name="TLazRegion.GetBoundingRect.Result">
-        <short>TRect with the bounds for the region</short>
+        <short>TRect with the bounds for the region.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TLazRegion.IsPointInRegion">
-        <short>Checks whether the specified point is inside the region</short>
+        <short>Checks whether the specified point is inside the region.</short>
         <descr>
           <p>
             Checks if the specified point is inside the display area for the region. Uses the value in <var>IsSimpleRectRegion</var> to determine whether <var>Rect</var> contains the bounds for the region. When it contains <b>False</b>, the values in the <var>Parts</var> member are used to determine the return value.
@@ -674,19 +674,19 @@
       </element>
       <element name="TLazRegion.IsPointInRegion.Result">
         <short>
-          True when the point is located inside the rectangle or one of the subregions that define the bounds for the region
+          True when the point is located inside the rectangle or one of the subregions that define the bounds for the region.
         </short>
       </element>
       <element name="TLazRegion.IsPointInRegion.AX">
-        <short>Horizontal coordinate for the point</short>
+        <short>Horizontal coordinate for the point.</short>
       </element>
       <element name="TLazRegion.IsPointInRegion.AY">
-        <short>Vertical coordinate for the point</short>
+        <short>Vertical coordinate for the point.</short>
       </element>
 
       <!-- class Visibility: default -->
       <element name="TLazRegionWithChilds">
-        <short>Implement a region which can have other regions as children</short>
+        <short>Implement a region which can have other regions as children.</short>
         <descr>
           <p>
             <var>TLazRegionWithChilds</var> is a <var>TLazRegion</var> descendant which implements a region which can hold a list of other region holders. Use <var>Parent</var> to access the complex region which owns the current class instance. Use <var>Childs</var> to access the list of subregions for the class instance.
@@ -697,7 +697,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazRegionWithChilds.Parent">
-        <short>Complex region which hosts the subregions in the current class instance</short>
+        <short>Complex region which hosts the subregions in the current class instance.</short>
         <descr>
           <remark>
             <var>Parent</var> is not maintain in methods for the class instance; it is available for use in widget set classes which utilize the region.
@@ -708,7 +708,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazRegionWithChilds.Childs">
-        <short>List of subregions for the current class instance</short>
+        <short>List of subregions for the current class instance.</short>
         <descr>
           <p>
             The order in this list is also the Z-Order of the sub regions inside it. The element with index zero is the bottom-most one.
@@ -719,7 +719,7 @@
 
       <!-- variable Visibility: public -->
       <element name="TLazRegionWithChilds.UserData">
-        <short>Contains an available link to another object</short>
+        <short>Contains an available link to another object.</short>
         <descr>
           Contains an available link to another object.
         </descr>
@@ -728,7 +728,7 @@
 
       <!-- constructor Visibility: public -->
       <element name="TLazRegionWithChilds.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create calls the inherited constructor to initialize the class instance, and allocates resources needed for the <var>Childs</var> member.
@@ -739,7 +739,7 @@
 
       <!-- destructor Visibility: public -->
       <element name="TLazRegionWithChilds.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to the <var>Childs</var> member are freed. Destroy calls the inherited destructor prior to exiting from the method.
@@ -750,7 +750,7 @@
 
       <!-- function Visibility: public -->
       <element name="TLazRegionWithChilds.IsPointInRegion">
-        <short>Indicates if the specified point is within the bounds for the region</short>
+        <short>Indicates if the specified point is within the bounds for the region.</short>
         <descr>
           <p>
             Returns itself or a child, depending on where the point was found, or nil if the point is neither in the region nor in any children.
@@ -763,20 +763,20 @@
       </element>
       <element name="TLazRegionWithChilds.IsPointInRegion.Result">
         <short>
-          True when the point is within the bounds for one of the child areas in the region
+          True when the point is within the bounds for one of the child areas in the region.
         </short>
       </element>
       <element name="TLazRegionWithChilds.IsPointInRegion.AX">
-        <short>Horizontal coordinate for the point</short>
+        <short>Horizontal coordinate for the point.</short>
       </element>
       <element name="TLazRegionWithChilds.IsPointInRegion.AY">
-        <short>Vertical coordinate for the point</short>
+        <short>Vertical coordinate for the point.</short>
       </element>
 
       <!-- function Visibility: default -->
       <element name="IsPointInPolygon">
         <short>
-          Determines if the specified point is inside the vertices for the specified polygon
+          Determines if the specified point is inside the vertices for the specified polygon.
         </short>
         <descr>
           <p>
@@ -798,17 +798,17 @@
       </element>
       <element name="IsPointInPolygon.Result">
         <short>
-          True when the specified point is located within the polygon using the specified vertices
+          True when the specified point is located within the polygon using the specified vertices.
         </short>
       </element>
       <element name="IsPointInPolygon.AX">
-        <short>Horizontal coordinate for the point</short>
+        <short>Horizontal coordinate for the point.</short>
       </element>
       <element name="IsPointInPolygon.AY">
-        <short>Vertical coordinate for the point</short>
+        <short>Vertical coordinate for the point.</short>
       </element>
       <element name="IsPointInPolygon.APolygon">
-        <short>Array with the TPoint values that define the vertices for the polygon</short>
+        <short>Array with the TPoint values that define the vertices for the polygon.</short>
       </element>
 
     </module>

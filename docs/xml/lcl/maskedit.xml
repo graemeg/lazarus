@@ -8,8 +8,8 @@
     -->
     <module name="MaskEdit">
       <short>
-        Defines classes for a masked edit control
-      </short>
+        Defines classes for a masked edit control.
+        </short>
       <descr>
         <p>
           <file>maskedit.pp</file> implements an masked edit control which can be used to format, vaidate, or obscure the text entered in the control. The following components are added to the Lazarus IDE component palette:
@@ -40,121 +40,121 @@
       <element name="LazUtf8"/>
 
       <element name="cMask_SpecialChar">
-        <short>After this you can set an arbitrary char</short>
+        <short>After this you can set an arbitrary char.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_UpperCase">
-        <short>After this the chars are in upper case</short>
+        <short>After this the chars are in upper case.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_LowerCase">
-        <short>After this the chars are in lower case</short>
+        <short>After this the chars are in lower case.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_Letter">
-        <short>Can contain an optional letter only</short>
+        <short>Can contain an optional letter only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_LetterFixed">
-        <short>Must contain a letter only</short>
+        <short>Must contain a letter only.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_AlphaNum">
-        <short>An optional alphanumeric character</short>
+        <short>An optional alphanumeric character.</short>
         <descr>['A'..'Z','a..'z','0'..'9']</descr>
         <seealso/>
       </element>
 
       <element name="cMask_AlphaNumFixed">
-        <short>A required alphanumeric character</short>
+        <short>A required alphanumeric character.</short>
         <descr>['A'..'Z','a..'z','0'..'9']</descr>
         <seealso/>
       </element>
 
       <element name="cMask_AllChars">
-        <short>An optional UTF-8 character</short>
+        <short>An optional UTF-8 character.</short>
         <descr>Any UTF-8 character in the range #32 to #255</descr>
         <seealso/>
       </element>
 
       <element name="cMask_AllCharsFixed">
-        <short>A required UTF-8 character</short>
+        <short>A required UTF-8 character.</short>
         <descr>Any UTF-8 character in the range #32 to #255</descr>
         <seealso/>
       </element>
 
       <element name="cMask_Number">
-        <short>An optional numeric character</short>
+        <short>An optional numeric character.</short>
         <descr>In the range '0' to '9'</descr>
         <seealso/>
       </element>
 
       <element name="cMask_NumberFixed">
-        <short>A required numeric character</short>
+        <short>A required numeric character.</short>
         <descr>In the range '0' to '9'</descr>
         <seealso/>
       </element>
 
       <element name="cMask_NumberPlusMin">
-        <short>An optional numeric or sign character</short>
+        <short>An optional numeric or sign character.</short>
         <descr>Includes the characters: 0,1,2,3,4,5,6,7,8,9,+, and -</descr>
         <seealso/>
       </element>
 
       <element name="cMask_HourSeparator">
-        <short>Inserts the hour separator char</short>
+        <short>Inserts the hour separator char.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_DateSeparator">
-        <short>Inserts the date separator character</short>
+        <short>Inserts the date separator character.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_Hex">
-        <short>An optional hexadecimal character</short>
+        <short>An optional hexadecimal character.</short>
         <descr> (['0'..'9','a'..'f']). A Lazarus extension, not supported in Delphi.</descr>
         <seealso/>
       </element>
 
       <element name="cMask_HexFixed">
-        <short>A required hexadecimal character</short>
+        <short>A required hexadecimal character.</short>
         <descr> (['0'..'9','a'..'f']). A Lazarus extension, not supported in Delphi.</descr>
         <seealso/>
       </element>
 
       <element name="cMask_Binary">
-        <short>An optional binary character</short>
+        <short>An optional binary character.</short>
         <descr>['0'..'1']. A Lazarus extension, not supported in Delphi.</descr>
         <seealso/>
       </element>
 
       <element name="cMask_BinaryFixed">
-        <short>A required binary character</short>
+        <short>A required binary character.</short>
         <descr>['0'..'1']. A Lazarus extension, not supported in Delphi.</descr>
         <seealso/>
       </element>
 
       <element name="cMask_NoLeadingBlanks">
-        <short>Causes leading blanks to be trimmed from the value</short>
+        <short>Causes leading blanks to be trimmed from the value.</short>
         <descr>Trailing blanks are trimmed by default.</descr>
         <seealso/>
       </element>
 
       <element name="cMask_SetStart">
-        <short>Indicates the start of a set definition</short>
+        <short>Indicates the start of a set definition.</short>
         <descr>
           <p>
             Uses notation like:
@@ -173,13 +173,13 @@
       </element>
 
       <element name="cMask_SetEnd">
-        <short>Indicates the end of a set definition</short>
+        <short>Indicates the end of a set definition.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cMask_SetNegate">
-        <short>Negates the following set definition</short>
+        <short>Negates the following set definition.</short>
         <descr>
           <p>
             Common usage:
@@ -193,7 +193,7 @@
       </element>
 
       <element name="cMask_SetOptional">
-        <short>Indicates a set of optional characters allowed for a position in a mask</short>
+        <short>Indicates a set of optional characters allowed for a position in a mask.</short>
         <descr>
           <p>
             Common usage:
@@ -210,32 +210,32 @@
 
       <element name="cMask_SetRange">
         <short>
-          Indicates that the character set definition uses a range of character values
+          Indicates that the character set definition uses a range of character values.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="DefaultBlank">
-        <short>Represents a blank character value in a mask</short>
+        <short>Represents a blank character value in a mask.</short>
         <descr>Can be changed at run-time.</descr>
         <seealso/>
       </element>
 
       <element name="MaskFieldSeparator">
-        <short>Delimiter used between fields in a mask</short>
+        <short>Delimiter used between fields in a mask.</short>
         <descr>Can be changed at run-time.</descr>
         <seealso/>
       </element>
 
       <element name="MaskNoSave">
-        <short>Represents a character that is not stored  in a mask</short>
+        <short>Represents a character that is not stored  in a mask.</short>
         <descr>Can be changed at run-time.</descr>
         <seealso/>
       </element>
 
       <element name="TMaskedType">
-        <short>Enumeration with values representing mask character types</short>
+        <short>Enumeration with values representing mask character types.</short>
         <descr>
           <p>
             <var>TMaskType</var> is an enumerated type which contains values representing mask character types used in TCustomMaskEdit and TMaskEdit. Mask character types control the letters, numbers, literals, space characters, and trimming options allowed for each position in a masked edit control.
@@ -250,129 +250,129 @@
         </seealso>
       </element>
       <element name="TMaskedType.Char_IsLiteral">
-        <short>Character is a literal</short>
+        <short>Character is a literal.</short>
       </element>
       <element name="TMaskedType.Char_Number">
-        <short>Character is an optional numeric value 0..9</short>
+        <short>Character is an optional numeric value 0..9.</short>
       </element>
       <element name="TMaskedType.Char_NumberFixed">
-        <short>Character is a required numeric value 0..9</short>
+        <short>Character is a required numeric value 0..9.</short>
       </element>
       <element name="TMaskedType.Char_NumberPlusMin">
         <short>Character is an optional numeric value 0..9, +, -</short>
       </element>
       <element name="TMaskedType.Char_Letter">
-        <short>Character is an optional alphabetic value</short>
+        <short>Character is an optional alphabetic value.</short>
       </element>
       <element name="TMaskedType.Char_LetterFixed">
-        <short>Character is a required alphabetic value</short>
+        <short>Character is a required alphabetic value.</short>
       </element>
       <element name="TMaskedType.Char_LetterUpCase">
-        <short>Character is an optional uppercase alphabetic value</short>
+        <short>Character is an optional uppercase alphabetic value.</short>
       </element>
       <element name="TMaskedType.Char_LetterDownCase">
-        <short>Character is an optional lowercase alphabetic value</short>
+        <short>Character is an optional lowercase alphabetic value.</short>
       </element>
       <element name="TMaskedType.Char_LetterFixedUpCase">
-        <short>Character is a required uppercase alphabetic value</short>
+        <short>Character is a required uppercase alphabetic value.</short>
       </element>
       <element name="TMaskedType.Char_LetterFixedDownCase">
-        <short>Character is a required lowercase alphabetic value</short>
+        <short>Character is a required lowercase alphabetic value.</short>
       </element>
       <element name="TMaskedType.Char_AlphaNum">
-        <short>Character is an optional alphabetic or numeric value</short>
+        <short>Character is an optional alphabetic or numeric value.</short>
       </element>
       <element name="TMaskedType.Char_AlphaNumFixed">
-        <short>Character is a required alphabetic or numeric value</short>
+        <short>Character is a required alphabetic or numeric value.</short>
       </element>
       <element name="TMaskedType.Char_AlphaNumUpCase">
-        <short>Character is an optional uppercase alphabetic or numeric value</short>
+        <short>Character is an optional uppercase alphabetic or numeric value.</short>
       </element>
       <element name="TMaskedType.Char_AlphaNumDownCase">
-        <short>Character is an optional lowercase alphabetic or numeric value</short>
+        <short>Character is an optional lowercase alphabetic or numeric value.</short>
       </element>
       <element name="TMaskedType.Char_AlphaNumFixedUpCase">
-        <short>Character is a required uppercase alphabetic or numeric value</short>
+        <short>Character is a required uppercase alphabetic or numeric value.</short>
       </element>
       <element name="TMaskedType.Char_AlphaNumFixedDownCase">
-        <short>Character is a required lowercase alphabetic or numeric value</short>
+        <short>Character is a required lowercase alphabetic or numeric value.</short>
       </element>
       <element name="TMaskedType.Char_All">
-        <short>Any optional UTF-8 character</short>
+        <short>Any optional UTF-8 character.</short>
       </element>
       <element name="TMaskedType.Char_AllFixed">
-        <short>Any required UTF-8 character</short>
+        <short>Any required UTF-8 character.</short>
       </element>
       <element name="TMaskedType.Char_AllUpCase">
-        <short>Any optional uppercase UTF-8 character</short>
+        <short>Any optional uppercase UTF-8 character.</short>
       </element>
       <element name="TMaskedType.Char_AllDownCase">
-        <short>Any optional lowercase UTF-8 character</short>
+        <short>Any optional lowercase UTF-8 character.</short>
       </element>
       <element name="TMaskedType.Char_AllFixedUpCase">
-        <short>Any required uppercase UTF-8 character</short>
+        <short>Any required uppercase UTF-8 character.</short>
       </element>
       <element name="TMaskedType.Char_AllFixedDownCase">
-        <short>Any required lowercase UTF-8 character</short>
+        <short>Any required lowercase UTF-8 character.</short>
       </element>
       <element name="TMaskedType.Char_HourSeparator">
-        <short>Character is the time separator character</short>
+        <short>Character is the time separator character.</short>
       </element>
       <element name="TMaskedType.Char_DateSeparator">
-        <short>Character is the date separator character</short>
+        <short>Character is the date separator character.</short>
       </element>
       <element name="TMaskedType.Char_Hex">
-        <short>Character is an optional hexadecimal digit</short>
+        <short>Character is an optional hexadecimal digit.</short>
         <descr>
           Lazarus extension, not supported by Delphi.
         </descr>
       </element>
       <element name="TMaskedType.Char_HexFixed">
-        <short>Character is a required hexadecimal digit</short>
+        <short>Character is a required hexadecimal digit.</short>
         <descr>Lazarus extension, not supported by Delphi.</descr>
       </element>
       <element name="TMaskedType.Char_HexUpCase">
-        <short>Character is an optional uppercase hexadecimal digit</short>
+        <short>Character is an optional uppercase hexadecimal digit.</short>
         <descr>Lazarus extension, not supported by Delphi.</descr>
       </element>
       <element name="TMaskedType.Char_HexDownCase">
-        <short>Character is an optional lowercase hexadecimal digit</short>
+        <short>Character is an optional lowercase hexadecimal digit.</short>
         <descr>Lazarus extension, not supported by Delphi.</descr>
       </element>
       <element name="TMaskedType.Char_HexFixedUpCase">
-        <short>Character is a required uppercase hexadecimal digit</short>
+        <short>Character is a required uppercase hexadecimal digit.</short>
         <descr>Lazarus extension, not supported by Delphi.</descr>
       </element>
       <element name="TMaskedType.Char_HexFixedDownCase">
-        <short>Character is a required lowercase hexadecimal digit</short>
+        <short>Character is a required lowercase hexadecimal digit.</short>
         <descr>Lazarus extension, not supported by Delphi.</descr>
       </element>
       <element name="TMaskedType.Char_Binary">
-        <short>Character is an optional binary value 0..1</short>
+        <short>Character is an optional binary value 0..1.</short>
         <descr>Lazarus extension, not supported by Delphi.</descr>
       </element>
       <element name="TMaskedType.Char_BinaryFixed">
-        <short>Character is a required binary value 0..1</short>
+        <short>Character is a required binary value 0..1.</short>
         <descr>Lazarus extension, not supported by Delphi.</descr>
       </element>
       <element name="TMaskType.Char_Set">
-        <short>Optional character must be in the defined set or space</short>
+        <short>Optional character must be in the defined set or space.</short>
         <descr>Lazarus extension, not supported by Delphi</descr>
         <seealso/>
       </element>
       <element name="TMaskType.Char_SetFixed">
-        <short>Required character must be in the defined set</short>
+        <short>Required character must be in the defined set.</short>
         <descr></descr>
         <seealso/>
       </element>
       <element name="TMaskType.Char_SetNegateFixed">
-        <short>Required character must NOT be in the defined set</short>
+        <short>Required character must NOT be in the defined set.</short>
         <descr></descr>
         <seealso/>
       </element>
 
       <element name="TIntMaskRec">
-        <short>Represents the type and literal used for a character in an edit mask</short>
+        <short>Represents the type and literal used for a character in an edit mask.</short>
         <descr>
           <p>
             <var>TIntMaskRec</var> is a <var>record</var> type with members that represent the types and literal used for a character in <var>TCustomMaskEdit</var>. TIntMaskRec instances are stored in the <var>TInternalMask</var> array type, and used in the implementation of the TCustomMaskEdit control.
@@ -386,15 +386,15 @@
         </seealso>
       </element>
       <element name="TIntMaskRec.MaskType">
-        <short>Identifies the type for the mask character</short>
+        <short>Identifies the type for the mask character.</short>
       </element>
       <element name="TIntMaskRec.Literal">
-        <short>Contains the literal displayed for the mask character</short>
+        <short>Contains the literal displayed for the mask character.</short>
       </element>
 
       <element name="TInternalMask">
         <short>
-          Array type used to represent edit mask symbols in TCustomMaskEdit
+          Array type used to represent edit mask symbols in TCustomMaskEdit.
         </short>
         <descr>
           <p>
@@ -408,7 +408,7 @@
       </element>
 
       <element name="TMaskEditTrimType">
-        <short>Controls how the value in a masked edit control is trimmed</short>
+        <short>Controls how the value in a masked edit control is trimmed.</short>
         <descr>
           <p>
             <var>TMaskEditTrimType</var> is an enumerated type with values that control if / how the text in <var>TCustomMaskEdit</var> is trimmed.
@@ -421,16 +421,16 @@
         </seealso>
       </element>
       <element name="TMaskEditTrimType.metTrimLeft">
-        <short>Trims leading spaces from the value for a masked edit control</short>
+        <short>Trims leading spaces from the value for a masked edit control.</short>
       </element>
       <element name="TMaskEditTrimType.metTrimRight">
         <short>
-          Trims trailing spaces from the value for a masked edit control; this is the default action in TCustomMaskEdit
+          Trims trailing spaces from the value for a masked edit control; this is the default action in TCustomMaskEdit.
         </short>
       </element>
 
       <element name="TMaskEditValidationErrorMode">
-        <short>Represents the action taken for an error in TMaskEdit validation</short>
+        <short>Represents the action taken for an error in TMaskEdit validation.</short>
         <descr>
           <p>
             <var>TMaskEditValidationErrorMode</var> is an enumerated type with values that represent the action taken when a error occurs while validating the value in <var>TCustomMaskEdit</var> and descendants. It is the type used to implement the <var>ValidationErrorMode</var> property in TCustomMaskEdit.
@@ -442,16 +442,16 @@
         </seealso>
       </element>
       <element name="TMaskEditValidationErrorMode.mvemException">
-        <short>Causes an exception to be raised for a validation error in TMaskEdit</short>
+        <short>Causes an exception to be raised for a validation error in TMaskEdit.</short>
       </element>
       <element name="TMaskEditValidationErrorMode.mvemEvent">
         <short>
-          Causes the OnValidationError event handler to be signalled for a validation error in TMaskEdit
+          Causes the OnValidationError event handler to be signalled for a validation error in TMaskEdit.
         </short>
       </element>
 
       <element name="EDBEditError">
-        <short>Exception class raised for an error in a masked edit control</short>
+        <short>Exception class raised for an error in a masked edit control.</short>
         <descr>
           <p>
             Raised in the <var>TCustomMaskEdit.ValidateEdit</var> method when exiting the edit control where its text is in an invalid state for its edit mask.
@@ -464,7 +464,7 @@
       </element>
 
       <element name="EInvalidUtf8">
-        <short>Ancestor for UTF-8 exceptions</short>
+        <short>Ancestor for UTF-8 exceptions.</short>
         <descr>
           <p>
             <var>EInvalidUtf8</var> is an <var>Exception</var> descendant that implements the ancestor for exceptions that occur for UTF-8-encoded content.
@@ -477,7 +477,7 @@
 
       <element name="EInvalidCodePoint">
         <short>
-          Exeption raised when an error occurs while setting a UTF-8 Code Point in a String
+          Exeption raised when an error occurs while setting a UTF-8 Code Point in a String.
         </short>
         <descr>
           <p>
@@ -493,7 +493,7 @@
       </element>
 
       <element name="SInvalidCodePoint">
-        <short>Message displayed in the EInvalidCodePoint exception</short>
+        <short>Message displayed in the EInvalidCodePoint exception.</short>
         <descr/>
         <seealso>
           <link id="EInvalidUtf8"/>
@@ -501,7 +501,7 @@
       </element>
 
       <element name="SIndexOutOfRangeForFMask">
-        <short>Exception message used when a position in the internal mask is not valid</short>
+        <short>Exception message used when a position in the internal mask is not valid.</short>
         <descr>
         </descr>
         <seealso>
@@ -510,7 +510,7 @@
       </element>
 
       <element name="TCustomMaskEdit">
-        <short>The base class for TMaskEdit</short>
+        <short>The base class for TMaskEdit.</short>
         <descr>
           <p>
             <var>TCustomMaskEdit</var> is a TCustomEdit descendant, and the base class for <var>TMaskEdit</var>. TCustomMaskEdit provides an Edit box with masking features for characters displayed (or hidden) in the control.
@@ -537,85 +537,85 @@
       </element>
 
       <element name="TCustomMaskEdit.FRealMask">
-        <short>Real mask inserted</short>
+        <short>Real mask inserted.</short>
       </element>
       <element name="TCustomMaskEdit.FMask">
-        <short>Actual internal mask</short>
+        <short>Actual internal mask.</short>
       </element>
       <element name="TCustomMaskEdit.FMaskLength">
-        <short>Length of the internal mask</short>
+        <short>Length of the internal mask.</short>
       </element>
       <element name="TCustomMaskEdit.FFirstFreePos">
-        <short>First position where user can enter text (1-based)</short>
+        <short>First position where user can enter text (1-based).</short>
       </element>
       <element name="TCustomMaskEdit.FMaskSave">
         <short>Save mask as part of the data?</short>
       </element>
       <element name="TCustomMaskEdit.FTrimType">
-        <short>Trim leading or trailing spaces in GetText</short>
+        <short>Trim leading or trailing spaces in GetText.</short>
       </element>
       <element name="TCustomMaskEdit.FSpaceChar">
-        <short>Character used for space characters (default value is '_')</short>
+        <short>Character used for space characters (default value is '_').</short>
       </element>
       <element name="TCustomMaskEdit.FCurrentText">
         <short>FCurrentText is our backup. See the notes for TCustomMaskEdit.</short>
       </element>
       <element name="TCustomMaskEdit.FTextOnEnter">
-        <short>Text when user enters the control, used for Reset()</short>
+        <short>Text when user enters the control, used for Reset().</short>
       </element>
       <element name="TCustomMaskEdit.FCursorPos">
-        <short>Current caret position (0-based)</short>
+        <short>Current caret position (0-based).</short>
       </element>
       <element name="TCustomMaskEdit.FChangeAllowed">
         <short>
-          Indicates if text can be changed by the OS (copy/cut/paste/clear via the context menu)
+          Indicates if text can be changed by the OS (copy/cut/paste/clear via the context menu).
         </short>
       </element>
       <element name="TCustomMaskEdit.FInitialText">
-        <short>Value for the text set in the form designer (must be handled in Loaded)</short>
+        <short>Value for the text set in the form designer (must be handled in Loaded).</short>
       </element>
       <element name="TCustomMaskEdit.FInitialMask">
-        <short>EditMask set in the form designer (must be handled in Loaded)</short>
+        <short>EditMask set in the form designer (must be handled in Loaded).</short>
       </element>
       <element name="TCustomMaskEdit.FSettingInitialText">
         <short>
-          Flag which indicates if the control value is being assigned for the first time
+          Flag which indicates if the control value is being assigned for the first time.
         </short>
       </element>
       <element name="TCustomMaskEdit.FValidationFailed">
         <short>Flag used in DoEnter. Set to mvemException by default.</short>
       </element>
       <element name="TCustomMaskEdit.FMaskIsPushed">
-        <short>True when the internal mask has been saved in DisableMask</short>
+        <short>True when the internal mask has been saved in DisableMask.</short>
       </element>
       <element name="TCustomMaskEdit.FSavedMask">
-        <short>Saved internal mask</short>
+        <short>Saved internal mask.</short>
       </element>
       <element name="TCustomMaskEdit.FSavedMaskLength">
-        <short>Length of the saved internal mask</short>
+        <short>Length of the saved internal mask.</short>
       </element>
       <element name="TCustomMaskEdit.FTextChangedBySetText">
-        <short>Used with FInRealSetTextWhileMasked to determine real value for Modified</short>
+        <short>Used with FInRealSetTextWhileMasked to determine real value for Modified.</short>
       </element>
       <element name="TCustomMaskEdit.FInRealSetTextWhileMasked">
-        <short>Used with FTextChangedBySetText to determine real value for Modified</short>
+        <short>Used with FTextChangedBySetText to determine real value for Modified.</short>
       </element>
 
       <element name="TCustomMaskEdit.ClearInternalMask">
-        <short>Fills the specified mask with Null characters (decimal 0)</short>
+        <short>Fills the specified mask with Null characters (decimal 0).</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.ClearInternalMask.AMask">
-        <short>Mask updated in the method</short>
+        <short>Mask updated in the method.</short>
       </element>
       <element name="TCustomMaskEdit.ClearInternalMask.ALengthIndicator">
-        <short>Set to zero (0) to indicate that the mask is empty</short>
+        <short>Set to zero (0) to indicate that the mask is empty.</short>
       </element>
 
       <element name="TCustomMaskEdit.AddToMask">
         <short>
-          Appends the specified mask character or literal to the internal mask in the control
+          Appends the specified mask character or literal to the internal mask in the control.
         </short>
         <descr>
           <p>
@@ -636,25 +636,25 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.AddToMask.ALiteral">
-        <short>UTF-8 character literal appended to the mask for the edit control</short>
+        <short>UTF-8 character literal appended to the mask for the edit control.</short>
       </element>
       <element name="TCustomMaskEdit.AddToMask.AMaskType">
-        <short>Enumeration value representing the mask character class</short>
+        <short>Enumeration value representing the mask character class.</short>
       </element>
 
       <element name="TCustomMaskEdit.GetModified">
-        <short>Sets the value for the Modified property</short>
+        <short>Sets the value for the Modified property.</short>
         <descr/>
         <seealso>
           <link id="TCustomMaskEdit.Modified"/>
         </seealso>
       </element>
       <element name="TCustomMaskEdit.GetModified.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.GetMask">
-        <short>Gets values in the internal FMask member</short>
+        <short>Gets values in the internal FMask member.</short>
       </element>
       <element name="TCustomMaskEdit.GetMask.Result">
         <short/>
@@ -664,7 +664,7 @@
       </element>
 
       <element name="TCustomMaskEdit.SetEditMask">
-        <short>Sets the value for the EditMask property</short>
+        <short>Sets the value for the EditMask property.</short>
         <descr>
           <p>
             Re-initializes the internal TInternalMask instance with the mask character classes and literals used in the EditMask.
@@ -677,68 +677,68 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.SetEditMask.Value">
-        <short>New value for the EditMask property</short>
+        <short>New value for the EditMask property.</short>
       </element>
 
       <element name="TCustomMaskEdit.ParseSet">
-        <short>Parses set notation found in the EditMask for the control</short>
+        <short>Parses set notation found in the EditMask for the control.</short>
       </element>
       <element name="TCustomMaskEdit.ParseSet.S">
-        <short>Value examined in the method</short>
+        <short>Value examined in the method.</short>
       </element>
       <element name="TCustomMaskEdit.ParseSet.i">
-        <short>Position for UTF-8 codepoint with the set notation in the specified value</short>
+        <short>Position for UTF-8 codepoint with the set notation in the specified value.</short>
       </element>
       <element name="TCustomMaskEdit.ParseSet.SUILen">
-        <short>Length of the value examined in the method</short>
+        <short>Length of the value examined in the method.</short>
       </element>
       <element name="TCustomMaskEdit.ParseSet.ACharSet">
-        <short>Set of characters found in the set notation</short>
+        <short>Set of characters found in the set notation.</short>
       </element>
       <element name="TCustomMaskEdit.ParseSet.IsNegative">
-        <short>True if the set has a negate operator</short>
+        <short>True if the set has a negate operator.</short>
       </element>
       <element name="TCustomMaskEdit.ParseSet.IsOptional">
         <short>
-          True if the character position for the set is optional, False when it is  required
+          True if the character position for the set is optional, False when it is  required.
         </short>
       </element>
 
       <element name="TCustomMaskEdit.GetIsMasked">
-        <short>Gets the value for the IsMasked property</short>
+        <short>Gets the value for the IsMasked property.</short>
         <descr/>
         <seealso>
           <link id="TCustomMaskEdit.IsMasked"/>
         </seealso>
       </element>
       <element name="TCustomMaskEdit.GetIsMasked.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.SetModified">
-        <short>Sets the value for the Modified property</short>
+        <short>Sets the value for the Modified property.</short>
         <descr/>
         <seealso>
           <link ide="TCustomMaskEdit.Modified"/>
         </seealso>
       </element>
       <element name="TCustomMaskEdit.SetModified.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.SetSpaceChar">
-        <short>Sets the value for the SpaceChar property</short>
+        <short>Sets the value for the SpaceChar property.</short>
         <descr/>
         <seealso>
           <link id="TCustomMaskEdit.SpaceChar"/>
         </seealso>
       </element>
       <element name="TCustomMaskEdit.SetSpaceChar.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.SetCursorPos">
-        <short>Sets the cursor position, and selects the character in the control</short>
+        <short>Sets the cursor position, and selects the character in the control.</short>
         <descr>
           <p>
             <var>SetCursorPos</var> is a procedure used to set the cursor or current caret position in the edit control. An internal member contains the offset in the control where the cursor is positioned. The cursor position cannot exceed the length of the mask in the control.
@@ -755,7 +755,7 @@
 
       <element name="TCustomMaskEdit.SelectNextChar">
         <short>
-          Selects the next character in the edit control
+          Selects the next character in the edit control.
         </short>
         <descr>
           <p>
@@ -771,7 +771,7 @@
       </element>
 
       <element name="TCustomMaskEdit.SelectPrevChar">
-        <short>Selects the previous character in the edit control</short>
+        <short>Selects the previous character in the edit control.</short>
         <descr>
           <p>
             <var>SelectPrevChar</var> is a procedure used to move to and select the previous character in the value for the edit control. Mask literals in the control value are skipped. SelectPrevChar calls the <var>SetCursorPos</var> method to update the caret (or cursor) position for the control.
@@ -784,7 +784,7 @@
       </element>
 
       <element name="TCustomMaskEdit.SelectFirstChar">
-        <short>Selects the first character in the edit control</short>
+        <short>Selects the first character in the edit control.</short>
         <descr>
           <p>
             <var>SelectFirstChar</var> is a procedure used to move to and select the first character in the edit control. SelectFirstChar sets the value for the internal member used to track the cursor (or caret) position, and calls    <var>SetCursorPos</var> to update the cursor in the control.
@@ -794,7 +794,7 @@
       </element>
 
       <element name="TCustomMaskEdit.GotoEnd">
-        <short>Moves the caret to the last position in the edit control</short>
+        <short>Moves the caret to the last position in the edit control.</short>
         <descr>
           <p>
             <var>GotoEnd</var> is a procedure used to set the caret (or cursor) to the last position in the edit control. GotoEnd updates the internal member used to track the cursor position, and calls the <var>SetCursorPos</var> method to apply the cursor position to the control.
@@ -808,7 +808,7 @@
 
       <element name="TCustomMaskEdit.JumpToNextDot">
         <short>
-          Moves to the next occurrance of the specified character in the value for the edit control
+          Moves to the next occurrance of the specified character in the value for the edit control.
         </short>
         <descr>
           <p>
@@ -827,11 +827,11 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.JumpToNextDot.Dot">
-        <short>Mask literal to locate in the edit mask for the control</short>
+        <short>Mask literal to locate in the edit mask for the control.</short>
       </element>
 
       <element name="TCustomMaskEdit.HasSelection">
-        <short>Indicates if any characters are currently selected in the edit control</short>
+        <short>Indicates if any characters are currently selected in the edit control.</short>
         <descr>
           <p>
             <var>HasSelection</var> is a <var>Boolean</var> function which indicates if any characters are currently selected in the edit control. The return value is <b>True</b> when <var>GetSelLength</var> returns a value greater than one (1).
@@ -840,12 +840,12 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.HasSelection.Result">
-        <short>True when characters are selected at the caret position</short>
+        <short>True when characters are selected at the caret position.</short>
       </element>
 
       <element name="TCustomMaskEdit.HasExtSelection">
         <short>
-          Returns True if more than one (1) character is selected in the value for the control
+          Returns True if more than one (1) character is selected in the value for the control.
         </short>
         <descr>
           <p>
@@ -855,12 +855,12 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.HasExtSelection.Result">
-        <short>True when the current selection in the control is more than one character</short>
+        <short>True when the current selection in the control is more than one character.</short>
       </element>
 
       <element name="TCustomMaskEdit.IsLiteral">
         <short>
-          Indicates whether the mask value at the specified position is a mask literal
+          Indicates whether the mask value at the specified position is a mask literal.
         </short>
         <descr>
           <p>
@@ -886,15 +886,15 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.IsLiteral.Result">
-        <short>True if the specified character is a mask literal</short>
+        <short>True if the specified character is a mask literal.</short>
       </element>
       <element name="TCustomMaskEdit.IsLiteral.Index">
-        <short>Character position examined in the method</short>
+        <short>Character position examined in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.TextIsValid">
         <short>
-          Indicates whether the specified valuel is valid for the EditMask in the control
+          Indicates whether the specified valuel is valid for the EditMask in the control.
         </short>
         <descr>
           <p>
@@ -905,15 +905,15 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.TextIsValid.Result">
-        <short>True when the value is valid for the edit mask</short>
+        <short>True when the value is valid for the edit mask.</short>
       </element>
       <element name="TCustomMaskEdit.TextIsValid.Value">
-        <short>Value examined in the method</short>
+        <short>Value examined in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.CharMatchesMask">
         <short>
-          Determines if a character in the control value is valid for the specified EditMask
+          Determines if a character in the control value is valid for the specified EditMask.
         </short>
         <descr>
           <p>
@@ -945,18 +945,18 @@
       </element>
       <element name="TCustomMaskEdit.CharMatchesMask.Result">
         <short>
-          True when the character value is valid for the corresponding position in the EditMask
+          True when the character value is valid for the corresponding position in the EditMask.
         </short>
       </element>
       <element name="TCustomMaskEdit.CharMatchesMask.Ch">
-        <short>Character value examined in the method</short>
+        <short>Character value examined in the method.</short>
       </element>
       <element name="TCustomMaskEdit.CharMatchesMask.Position">
-        <short>Offset into the edit mask for the character value</short>
+        <short>Offset into the edit mask for the character value.</short>
       </element>
 
       <element name="TCustomMaskEdit.ClearChar">
-        <short>Clears a character which is not a literal at the specified Position</short>
+        <short>Clears a character which is not a literal at the specified Position.</short>
         <descr>
           <p>
             For Delphi compatibilty, only literals remain.
@@ -977,14 +977,14 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.ClearChar.Result">
-        <short>Character displayed for a mask literal at the specified position</short>
+        <short>Character displayed for a mask literal at the specified position.</short>
       </element>
       <element name="TCustomMaskEdit.ClearChar.Position">
-        <short>Position in EditMask examined in the method</short>
+        <short>Position in EditMask examined in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.RealSetTextWhileMasked">
-        <short>Sets the text in the control when a mask is in use</short>
+        <short>Sets the text in the control when a mask is in use.</short>
         <descr>
           <p>
             <var>RealSetTextWhileMasked</var> is a method used to set the <var>Text</var> in the control to the content specified in <var>Value</var>.
@@ -1010,11 +1010,11 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.RealSetTextWhileMasked.Value">
-        <short>New value for the Text in the control</short>
+        <short>New value for the Text in the control.</short>
       </element>
 
       <element name="TCustomMaskEdit.InsertChar">
-        <short>Inserts a single UTF-8 character at the current position for the cursor</short>
+        <short>Inserts a single UTF-8 character at the current position for the cursor.</short>
         <descr>
           <p>
             <var>InsertChar</var> is a procedure used to insert the specified UTF-8 character at the current position for the cursor.
@@ -1034,12 +1034,12 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.InsertChar.Ch">
-        <short>Character value inserted at the current cursor position</short>
+        <short>Character value inserted at the current cursor position.</short>
       </element>
 
       <element name="TCustomMaskEdit.CanInsertChar">
         <short>
-          Indicates if the specified character can be inserted at a given position in the control
+          Indicates if the specified character can be inserted at a given position in the control.
         </short>
         <descr>
           <p>
@@ -1052,22 +1052,22 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.CanInsertChar.Result">
-        <short>True when the character is valid for the mask character type</short>
+        <short>True when the character is valid for the mask character type.</short>
       </element>
       <element name="TCustomMaskEdit.CanInsertChar.Position">
-        <short>Position in the control value and mask examined in the method</short>
+        <short>Position in the control value and mask examined in the method.</short>
       </element>
       <element name="TCustomMaskEdit.CanInsertChar.Ch">
-        <short>Character value examined in the method</short>
+        <short>Character value examined in the method.</short>
       </element>
       <element name="TCustomMaskEdit.CanInsertChar.IsPasting">
         <short>
-          Indicates if the character originates from a Paste operation (Ctrl+V or Shift+Insert)
+          Indicates if the character originates from a Paste operation (Ctrl+V or Shift+Insert).
         </short>
       </element>
 
       <element name="TCustomMaskEdit.DeleteSelected">
-        <short>Clears values in the current selection for the control</short>
+        <short>Clears values in the current selection for the control.</short>
         <descr>
           <p>
             <var>DeleteSelected</var> is a method used to clear values in the current selection for the control. DeleteSelected calls <var>GetSel</var> to determine the starting and ending positions for characters currently selected in the control. DeleteSelected calls <var>SetCodePoint</var> to store blank values for mask positions selected in the value for the control.
@@ -1083,7 +1083,7 @@
       </element>
 
       <element name="TCustomMaskEdit.DeleteChars">
-        <short>Deletes one or more characters at the current cursor position</short>
+        <short>Deletes one or more characters at the current cursor position.</short>
         <descr>
           <p>
             The number of characters affected in the method is determined by the value from <var>HasSelection</var>. When <b>True</b>, the current selection is control is affected. When <b>False</b>, a single character value is deleted.
@@ -1093,20 +1093,20 @@
       </element>
       <element name="TCustomMaskEdit.DeleteChars.NextChar">
         <short>
-          When True the following character(s) are deleted; when False the preceeding character(s) are deleted
+          When True the following character(s) are deleted; when False the preceeding character(s) are deleted.
         </short>
       </element>
 
       <element name="TCustomMaskEdit.WSRegisterClass">
         <short>
-          Registers the widget set class reference used to create new instances of the control
+          Registers the widget set class reference used to create new instances of the control.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomMaskEdit.ApplyMaskToText">
-        <short>Applies the edit mask in the control to the specified value</short>
+        <short>Applies the edit mask in the control to the specified value.</short>
         <descr>
           <p>
             <var>ApplyMaskToText</var> is a <var>TCaption</var> function used to apply the edit mask in the control to the text specified in <var>Value</var>. This method mimics the behavior implemented in Delphi version 3, including:
@@ -1196,15 +1196,15 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.ApplyMaskToText.Result">
-        <short>Value after mask literals and space substitution is applied</short>
+        <short>Value after mask literals and space substitution is applied.</short>
       </element>
       <element name="TCustomMaskEdit.ApplyMaskToText.Value">
-        <short>Value examined and converted in the method</short>
+        <short>Value examined and converted in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.CanShowEmulatedTextHint">
         <short>
-          Indicates if the control can display its Hint or TextHint using the LCL capatibility layer
+          Indicates if the control can display its Hint or TextHint using the LCL capatibility layer.
         </short>
         <descr>
           <p>
@@ -1220,7 +1220,7 @@
       </element>
 
       <element name="TCustomMaskEdit.DisableMask">
-        <short>Saves and disables the edit mask in the control</short>
+        <short>Saves and disables the edit mask in the control.</short>
         <descr>
           <p>
             <var>DisableMask</var> is a <var>Boolean</var> function used to save the current edit mask to an internal member, and then disables the edit mask in the control. This gives developers the opportunity to set any text in the control without affecting the control state. Whether or not the function succeeds, <var>NewText</var> will be set as the new Text in  the control. There is no need to retain the saved internal mask or trim type; they are only set in <var>SetEditMask</var>.
@@ -1233,15 +1233,15 @@
       </element>
       <element name="TCustomMaskEdit.DisableMask.Result">
         <short>
-          Returns True on success, or False when an edit mask is not used in the control
+          Returns True on success, or False when an edit mask is not used in the control.
         </short>
       </element>
       <element name="TCustomMaskEdit.DisableMask.NewText">
-        <short>New value for the Text property in the control</short>
+        <short>New value for the Text property in the control.</short>
       </element>
 
       <element name="TCustomMaskEdit.DoValidationError">
-        <short>Performs actions when the control value is invalid for its edit mask</short>
+        <short>Performs actions when the control value is invalid for its edit mask.</short>
         <descr>
           <p>
             Signals the <var>OnValidationError</var> event handler (when assigned). It is called from the <var>ValidateEdit</var> method when <var>TextIsValid</var> returns <b>False</b> and <var>ValidationErrorMode</var> is set to <var>mvemEvent</var>.
@@ -1255,7 +1255,7 @@
       </element>
 
       <element name="TCustomMaskEdit.RestoreMask">
-        <short>Restores the saved edit mask in the control</short>
+        <short>Restores the saved edit mask in the control.</short>
         <descr>
           <p>
             <var>RestoreMask</var> is a procedure used to restore the saved edit mask in the control. The edit mask is saved when <var>DisableMask</var> is called and an edit mask is active for the control. The return value is <b>True</b> when the edit mask (and control state and value) are successfullly restored.
@@ -1267,14 +1267,14 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.RestoreMask.Result">
-        <short>True on success</short>
+        <short>True on success.</short>
       </element>
       <element name="TCustomMaskEdit.RestoreMask.NewText">
-        <short>New vaule assigned to the Text property</short>
+        <short>New vaule assigned to the Text property.</short>
       </element>
 
       <element name="TCustomMaskEdit.RealSetText">
-        <short>Sets the value for the Text in the control</short>
+        <short>Sets the value for the Text in the control.</short>
         <descr>
           <p>
             <var>RealSetText</var> is an overridden procedure used to set the value for the Text in the control.
@@ -1289,11 +1289,11 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.RealSetText.AValue">
-        <short>Value stored in the text for the control</short>
+        <short>Value stored in the text for the control.</short>
       </element>
 
       <element name="TCustomMaskEdit.RealGetText" link="#lcl.stdctrls.TCustomEdit.RealGetText">
-        <short>Gets the value for the Text in the control</short>
+        <short>Gets the value for the Text in the control.</short>
         <descr/>
         <seealso>
           <link id="#lcl.stdctrls.TCustomEdit.RealGetText"/>
@@ -1305,13 +1305,13 @@
 
       <element name="TCustomMaskEdit.GetTextWithoutMask">
         <short>
-          Gets the raw value for the control without formatting applied by an edit mask
+          Gets the raw value for the control without formatting applied by an edit mask.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.GetTextWithoutMask.Result">
-        <short>Value for the control without the formatting or literals in the EditMask</short>
+        <short>Value for the control without the formatting or literals in the EditMask.</short>
       </element>
       <element name="TCustomMaskEdit.GetTextWithoutMask.Value">
         <short/>
@@ -1319,7 +1319,7 @@
 
       <element name="TCustomMaskEdit.GetTextWithoutSpaceChar">
         <short>
-          Gets the value for the control without Space characters inserted by an edit mask
+          Gets the value for the control without Space characters inserted by an edit mask.
         </short>
         <descr/>
         <seealso/>
@@ -1332,7 +1332,7 @@
       </element>
 
       <element name="TCustomMaskEdit.SetTextApplyMask">
-        <short>Sets the value for the control after applying its edit mask</short>
+        <short>Sets the value for the control after applying its edit mask.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1341,7 +1341,7 @@
       </element>
 
       <element name="TCustomMaskEdit.GetEditText">
-        <short>Gets the text in the edit box (the string value that has been masked)</short>
+        <short>Gets the text in the edit box (the string value that has been masked).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1351,7 +1351,7 @@
 
       <element name="TCustomMaskEdit.SetEditText">
         <short>
-          Sets the value for the Text displayed in the control
+          Sets the value for the Text displayed in the control.
         </short>
         <descr>
           <p>
@@ -1364,12 +1364,12 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.SetEditText.Value">
-        <short>New value applied to the Text in the control</short>
+        <short>New value applied to the Text in the control.</short>
       </element>
 
       <element name="TCustomMaskEdit.GetSel">
         <short>
-          Finds the starting and ending positions for the selection
+          Finds the starting and ending positions for the selection.
         </short>
         <descr>
           <var>GetSel</var> finds the starting and ending positions for the selected text in the control. Calls GetSelStart to get the value for the _SelStart argument. Calls  GetSelLength to get the number of characters selected, and calculates the value for _SelStop.
@@ -1377,29 +1377,29 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.GetSel._SelStart">
-        <short>Stating position for the text selected in the control</short>
+        <short>Stating position for the text selected in the control.</short>
       </element>
       <element name="TCustomMaskEdit.GetSel._SelStop">
-        <short>Ending position for the text selected in the  control</short>
+        <short>Ending position for the text selected in the  control.</short>
       </element>
 
       <element name="TCustomMaskEdit.SetSel">
         <short>
-          Specifies the starting and ending positions for the text selected in the control
+          Specifies the starting and ending positions for the text selected in the control.
         </short>
         <descr>
           <var>SetSel</var> specifies the starting and ending positions for the text selected in the control.
         </descr>
       </element>
       <element name="TCustomMaskEdit.SetSel._SelStart">
-        <short>Starting position for text selected in the control</short>
+        <short>Starting position for text selected in the control.</short>
       </element>
       <element name="TCustomMaskEdit.SetSel._SelStop">
-        <short>Ending position for text selected in the control</short>
+        <short>Ending position for text selected in the control.</short>
       </element>
 
       <element name="TCustomMaskEdit.TextChanged">
-        <short>Performs actions when the value in the Text property has been changed</short>
+        <short>Performs actions when the value in the Text property has been changed.</short>
         <descr>
           <p>
             <var>TextChanged</var> is an overridden procedure used to respond to a change in the value for the Text property. Its purpose is to avoid leaving the control in an invalid state when:
@@ -1426,7 +1426,7 @@
 
       <element name="TCustomMaskEdit.Change">
         <short>
-          Suppresses the OnChange event when the initial value for the control is assigned
+          Suppresses the OnChange event when the initial value for the control is assigned.
         </short>
         <descr>
           <p>
@@ -1440,7 +1440,7 @@
       </element>
 
       <element name="TCustomMaskEdit.SetCharCase">
-        <short>Sets the value in the CharCase property</short>
+        <short>Sets the value in the CharCase property.</short>
         <descr>
           <p>
             <var>SetCharCase</var> is an overridden procedure used to set the value in the <var>CharCase</var> property.
@@ -1461,33 +1461,33 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.SetCharCase.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.SetMaxLength">
-        <short>Sets the value for the MaxLength property</short>
+        <short>Sets the value for the MaxLength property.</short>
         <descr/>
         <seealso>
           <link id="TCustomMaskEdit.MaxLength"/>
         </seealso>
       </element>
       <element name="TCustomMaskEdit.SetMaxLength.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.GetMaxLength">
-        <short>Gets the value for the MaxLength property</short>
+        <short>Gets the value for the MaxLength property.</short>
         <descr/>
         <seealso>
           <link id="TCustomMaskEdit.MaxLength"/>
         </seealso>
       </element>
       <element name="TCustomMaskEdit.GetMaxLength.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.SetNumbersOnly">
-        <short>Sets the value for the NumbersOnly property</short>
+        <short>Sets the value for the NumbersOnly property.</short>
         <descr>
           <p>
             <var>SetNumbersOnly</var> is an overridden <var>Boolean</var> function used as the write access specifier for the <var>NumbersOnly</var> property.
@@ -1502,12 +1502,12 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.SetNumbersOnly.Value">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TCustomMaskEdit.Loaded">
         <short>
-          Performs actions when a component has been loaded from the LCL streaming mechanism
+          Performs actions when a component has been loaded from the LCL streaming mechanism.
         </short>
         <descr>
           <p>
@@ -1521,24 +1521,24 @@
 
       <element name="TCustomMaskEdit.LMPasteFromClip">
         <short>
-          <var>LMPasteFromClip</var> is the LCL message method for pasting from the clipboard
+          <var>LMPasteFromClip</var> is the LCL message method for pasting from the clipboard.
         </short>
       </element>
 
       <element name="TCustomMaskEdit.LMCutToClip">
         <short>
-          <var>LMCutToClip</var> is the LCL message method for cutting to the clipboard
+          <var>LMCutToClip</var> is the LCL message method for cutting to the clipboard.
         </short>
       </element>
 
       <element name="TCustomMaskEdit.LMClearSel">
         <short>
-          <var>LMClearSel</var> is the LCL message method for clearing selected items
+          <var>LMClearSel</var> is the LCL message method for clearing selected items.
         </short>
       </element>
 
       <element name="TCustomMaskEdit.EditCanModify">
-        <short>If True, the Edit box is allowed to modify the contents</short>
+        <short>If True, the Edit box is allowed to modify the contents.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -1549,14 +1549,14 @@
 
       <element name="TCustomMaskEdit.Reset">
         <short>
-          Reset returns the edit to its default state with mask appearing in Text box and no string input
+          Reset returns the edit to its default state with mask appearing in Text box and no string input.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomMaskEdit.DoEnter">
-        <short>Performs actions needed when the control is entered</short>
+        <short>Performs actions needed when the control is entered.</short>
         <descr>
           <p>
             <var>DoEnter</var> is an overridden procedure used to perform actions needed the control is entered. DoEnter extends the behavior in the inherited method to track the value for control when entered and to perform auto selection logic when an edit mask is in use.
@@ -1568,7 +1568,7 @@
       </element>
 
       <element name="TCustomMaskEdit.DoExit">
-        <short>Performs actions needed when the control is exited</short>
+        <short>Performs actions needed when the control is exited.</short>
         <descr/>
         <seealso>
           <link id="#lcl.stdctrls.TCustomEdit.DoExit">TCustomEdit.DoExit</link>
@@ -1576,7 +1576,7 @@
       </element>
 
       <element name="TCustomMaskEdit.KeyDown">
-        <short>Performs actions needed to apply key down messages</short>
+        <short>Performs actions needed to apply key down messages.</short>
         <descr>
           <p>
             Calls the inherited <var>KeyDown</var> method. If an edit mask is not assigned in the control, no additional actions are required in the method.
@@ -1630,14 +1630,14 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.KeyDown.Key">
-        <short>Key code examined in the method</short>
+        <short>Key code examined in the method.</short>
       </element>
       <element name="TCustomMaskEdit.KeyDown.Shift">
-        <short>Key modifier examined in the method</short>
+        <short>Key modifier examined in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.HandleKeyPress">
-        <short>Handle all keys from KeyPress and Utf8KeyPress</short>
+        <short>Handle all keys from KeyPress and Utf8KeyPress.</short>
         <descr>
           <p>
             <var>HandleKeyPress</var> is a method used to handle keys forwarded from the <var>KeyPress</var> and <var>UTF8KeyPress</var> methods. No actions are performed in the method if the control is <var>ReadOnly</var>, or <var>IsMasked</var> returns <b>False</b>.
@@ -1655,11 +1655,11 @@
         <seealso/>
       </element>
       <element name="TCustomMaskEdit.HandleKeyPress.Key">
-        <short>Character value for the key examined in the method</short>
+        <short>Character value for the key examined in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.KeyPress">
-        <short>Performs actions needed to handle the specified character in the control</short>
+        <short>Performs actions needed to handle the specified character in the control.</short>
         <descr>
           <p>
             <var>KeyPress</var> is an overridden procedure used to apply the character specified in <var>Key</var> to the control. KeyPress calls the inherited method, and converts the character in Key to a UTF-8-encoded character which is passed to the <var>HandleKeyPress</var> method. All character values handled in HandleKeyPress are set to an empty character, and causes the value in Key to be digested in the method.
@@ -1671,12 +1671,12 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.KeyPress.Key">
-        <short>Character handled in the method</short>
+        <short>Character handled in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.Utf8KeyPress" link="#lcl.controls.TWinControl.UTF8KeyPress">
         <short>
-          Handles a key press with the specified UTF-8 character value
+          Handles a key press with the specified UTF-8 character value.
         </short>
         <descr>
           <p>
@@ -1697,11 +1697,11 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.Utf8KeyPress.UTF8Key">
-        <short>UTF-8-encode key handled in the method</short>
+        <short>UTF-8-encode key handled in the method.</short>
       </element>
 
       <element name="TCustomMaskEdit.MouseUp">
-        <short>Perfoems actions needed to handle a mouse button up message</short>
+        <short>Perfoems actions needed to handle a mouse button up message.</short>
         <descr>
           <p>
             Calls the inherited <var>MouseUp</var> method. When a mask is used in the control, the cursor is moved to the beginning of the current selection in the control and <var>SetCursorPos</var> is called to update the caret position.
@@ -1712,21 +1712,21 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.MouseUp.Button">
-        <short>Mouse button for the message</short>
+        <short>Mouse button for the message.</short>
       </element>
       <element name="TCustomMaskEdit.MouseUp.Shift">
-        <short>Shift modifier for the message</short>
+        <short>Shift modifier for the message.</short>
       </element>
       <element name="TCustomMaskEdit.MouseUp.X">
-        <short>Horizontal coordinate for the mouse position</short>
+        <short>Horizontal coordinate for the mouse position.</short>
       </element>
       <element name="TCustomMaskEdit.MouseUp.Y">
-        <short>Vertical coordinate for the mouse position</short>
+        <short>Vertical coordinate for the mouse position.</short>
       </element>
 
       <element name="TCustomMaskEdit.CheckCursor">
         <short>
-          Updates the position for the cursor (or caret) when an EditMask is used in the control
+          Updates the position for the cursor (or caret) when an EditMask is used in the control.
         </short>
         <descr>
           <p>
@@ -1744,7 +1744,7 @@
 
       <element name="TCustomMaskEdit.EditText">
         <short>
-          Value entered in the control and obscured / formatted using the EditMask
+          Value entered in the control and obscured / formatted using the EditMask.
         </short>
         <descr>
           <p>
@@ -1759,7 +1759,7 @@
 
       <element name="TCustomMaskEdit.IsMasked">
         <short>
-          True if a non-empty value has been assigned to EditMask
+          True if a non-empty value has been assigned to EditMask.
         </short>
         <descr/>
         <seealso/>
@@ -1767,7 +1767,7 @@
 
       <element name="TCustomMaskEdit.SpaceChar">
         <short>
-          Contains the value used to represent Space (#32) characters in the control value
+          Contains the value used to represent Space (#32) characters in the control value.
         </short>
         <descr>
           <p>
@@ -1794,7 +1794,7 @@
 
       <element name="TCustomMaskEdit.MaxLength">
         <short>
-          Indicates the maximum number of characters that can be stored in the value for the control
+          Indicates the maximum number of characters that can be stored in the value for the control.
         </short>
         <descr>
           <p>
@@ -1812,7 +1812,7 @@
       <!-- TODO: set notation, other changes? -->
       <element name="TCustomMaskEdit.EditMask">
         <short>
-          Contains the mask characters classes and literals used to format/obscure the value for the control
+          Contains the mask characters classes and literals used to format/obscure the value for the control.
         </short>
         <descr>
           <p>
@@ -1915,7 +1915,7 @@
       <element name="TCustomMaskEdit.PasteFromClipBoard" link="#lcl.stdctrls.TCustomEdit.PasteFromClipboard"/>
 
       <element name="TCustomMaskEdit.Create" link="#rtl.classes.TComponent.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for the class instance. Create sets the default values for internal members and properties specific to <var>TCustomMaskEdit</var>. The value in <var>SpaceChar</var> is set to '_'.
@@ -1931,11 +1931,11 @@
         </seealso>
       </element>
       <element name="TCustomMaskEdit.Create.AOwner">
-        <short>Owner for the class instance</short>
+        <short>Owner for the class instance.</short>
       </element>
 
       <element name="TCustomMaskEdit.Clear">
-        <short>Clears the value for the edit control</short>
+        <short>Clears the value for the edit control.</short>
         <descr>
           <p>
             <var>Clear</var> is an overridden procedure used to clear the value for the text in the edit control. Clear uses the value from <var>IsMasked</var> to determine if a mask specification has been assigned for the edit control.
@@ -1960,7 +1960,7 @@
       </element>
 
       <element name="TCustomMaskEdit.SelectAll">
-        <short>Selects all of the text in the masked edit control</short>
+        <short>Selects all of the text in the masked edit control.</short>
         <descr>
           <p>
             <var>SelectAll</var> is an overridden method used to select all of the text in the masked edit control. SelectAll ensures that content formatted using the <var>EditMask</var> is handled in the method.
@@ -1984,7 +1984,7 @@
 
       <element name="TCustomMaskEdit.ValidateEdit">
         <short>
-          Validates the value for the edit control when an EditMask has been specified
+          Validates the value for the edit control when an EditMask has been specified.
         </short>
         <descr>
           <p>
@@ -2014,7 +2014,7 @@
       </element>
 
       <element name="TCustomMaskEdit.EnableSets">
-        <short>Enables or disables use of set notation in the EditMask</short>
+        <short>Enables or disables use of set notation in the EditMask.</short>
         <descr>
           <p>
             <var>EnableSets</var> is an experimental <var>Boolean</var> property. It is used when a new value assigned to the EditMask property is parsed to reconstruct the internal mask characters and literals for the control.
@@ -2029,7 +2029,7 @@
       </element>
 
       <element name="TCustomMaskEdit.Modified">
-        <short>Indicates if the value for the edit control has been changed</short>
+        <short>Indicates if the value for the edit control has been changed.</short>
         <descr>
           <p>
             <var>Modified</var> is a <var>Boolean</var> property which indicates if the value for the edit control has been changed.
@@ -2040,7 +2040,7 @@
 
       <element name="TCustomMaskEdit.OnValidationError">
         <short>
-          Event handler signalled when the value for the masked edit control is invalid
+          Event handler signalled when the value for the masked edit control is invalid.
         </short>
         <descr>
           <p>
@@ -2052,7 +2052,7 @@
 
       <element name="TMaskEdit">
         <short>
-          <var>TMaskEdit</var> is an Edit box with characters masked out to avoid unauthorized reading
+          <var>TMaskEdit</var> is an Edit box with characters masked out to avoid unauthorized reading.
         </short>
         <descr>
           <p>
@@ -2071,7 +2071,7 @@
       <element name="TMaskEdit.EditText" link="#lcl.maskedit.TCustomMaskEdit.EditText"/>
 
       <element name="TMaskEdit.ValidationErrorMode">
-        <short>Indicates the action taken when the control value is invalid for its mask</short>
+        <short>Indicates the action taken when the control value is invalid for its mask.</short>
         <descr>
           <p>
             <var>ValidationErrorMode</var> is a <var>TMaskEditValidationErrorMode</var> property which indicates the action taken when the value for the control is invalid for the mask in the <var>EditMask</var> property.
@@ -2184,7 +2184,7 @@
       <element name="TMaskEdit.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
 
       <element name="TMaskEdit.PopupMenu">
-        <short>PopupMenu - a context-sensitive menu that pops up when the right mouse button is clicked over this control</short>
+        <short>PopupMenu - a context-sensitive menu that pops up when the right mouse button is clicked over this control.</short>
         <descr>
           <p>
             One of the standard properties, which should be supported by all descendants.
@@ -2198,14 +2198,14 @@
 
       <element name="TMaskEdit.ReadOnly" link="#lcl.stdctrls.TCustomEdit.ReadOnly">
         <short>
-          <var>ReadOnly</var> indicates if the contents of the edit box may only be read, not written or erased
+          <var>ReadOnly</var> indicates if the contents of the edit box may only be read, not written or erased.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMaskEdit.ShowHint">
-        <short>Flag to determine if the hint is displayed for this control</short>
+        <short>Flag to determine if the hint is displayed for this control.</short>
         <descr>
           <p>
             One of the standard properties, which should be supported by all descendants.
@@ -2218,7 +2218,7 @@
       </element>
 
       <element name="TMaskEdit.TabOrder" link="#lcl.controls.TWinControl.TabOrder">
-        <short>Keyboard navigation order for the control when Tab is pressed</short>
+        <short>Keyboard navigation order for the control when Tab is pressed.</short>
         <descr>
           <p>
             Keyboard navigation order for the control in it Parent control when the Tab key is pressed. The default value for the property is <b>-1</b>.
@@ -2234,7 +2234,7 @@
 
       <element name="TMaskEdit.TabStop" link="#lcl.controls.TWinControl.TabStop">
         <short>
-          Enables or disables keyboard navigation using the Tab key
+          Enables or disables keyboard navigation using the Tab key.
         </short>
         <descr>
           <p>
@@ -2245,7 +2245,7 @@
       </element>
 
       <element name="TMaskEdit.Visible" link="#lcl.controls.TControl.Visible">
-        <short>Indicates if the control is visible or hidden</short>
+        <short>Indicates if the control is visible or hidden.</short>
         <descr>
           <p>
             The <var>Visible</var> property indicates the ability to see a visual control. If Visible is True the control is shown, otherwise it is hidden. Calling Show sets Visible to True. Setting Visible to False is equivalent to calling the Hide method.
@@ -2294,7 +2294,7 @@
       <element name="TMaskEdit.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
 
       <element name="TMaskEdit.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown">
-        <short>Handles a key down event for the focused control</short>
+        <short>Handles a key down event for the focused control.</short>
         <descr>
           <p>
             <var>OnKeyDown</var> is an event handler signalled when a key is down while control has focus.
@@ -2307,7 +2307,7 @@
       </element>
 
       <element name="TMaskEdit.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress">
-        <short>Handles a key press event for the focused control</short>
+        <short>Handles a key press event for the focused control.</short>
         <descr>
           <p>
             <var>OnKeyPress</var> is an event handler signalled when a key is pressed while the control has focus.
@@ -2320,7 +2320,7 @@
       </element>
 
       <element name="TMaskEdit.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp">
-        <short>Handles a key up event for the focused control</short>
+        <short>Handles a key up event for the focused control.</short>
         <descr>
           <p>
             <var>OnKeyUp</var> is an event handler signalled when a key is released (not pressed) while the control has focus.
@@ -2348,7 +2348,7 @@
       <element name="TMaskEdit.EditMask" link="#lcl.maskedit.TCustomMaskEdit.EditMask"/>
 
       <element name="TMaskEdit.Text">
-        <short>Contains the value for the control</short>
+        <short>Contains the value for the control.</short>
         <descr>
           <p>
             <var>Text</var> is a public <var>String</var> property in <var>TMaskEdit</var> which provides access to the value for the edit control.
@@ -2368,7 +2368,7 @@
       <element name="TMaskEdit.SpaceChar" link="#lcl.maskedit.TCustomMaskEdit.SpaceChar"/>
 
       <element name="FormatMaskText">
-        <short>Applies an edit mask to the specified string value</short>
+        <short>Applies an edit mask to the specified string value.</short>
         <descr>
           <p>
             <var>FormatMaskText</var> is a <var>String</var> function used to apply an edit mask to the specified String value. FormatMaskText creates a temporary instance of <var>TCustomMaskEdit</var> that  is used to apply the edit mask in <var>AEditMask</var> when required. The value in AEditMask is assigned to the <var>EditMask</var> property in TCustomMaskEdit.
@@ -2388,18 +2388,18 @@
         </seealso>
       </element>
       <element name="FormatMaskText.Result">
-        <short>Value after applying the specified mask</short>
+        <short>Value after applying the specified mask.</short>
       </element>
       <element name="FormatMaskText.EditMask">
-        <short>Edit mask applied to the specified content</short>
+        <short>Edit mask applied to the specified content.</short>
       </element>
       <element name="FormatMaskText.Value">
-        <short>Original content modified in the routine</short>
+        <short>Original content modified in the routine.</short>
       </element>
 
       <element name="SplitEditMask">
         <short>
-          Separates fields in the edit mask into the arguments passed to the routine
+          Separates fields in the edit mask into the arguments passed to the routine.
         </short>
         <descr>
           <p>
@@ -2436,20 +2436,20 @@
         </seealso>
       </element>
       <element name="SplitEditMask.AEditMask">
-        <short>Delimited mask specification examined in the method</short>
+        <short>Delimited mask specification examined in the method.</short>
       </element>
       <element name="SplitEditMask.AMaskPart">
-        <short>Contains the mask chatracters or literals in the specification</short>
+        <short>Contains the mask chatracters or literals in the specification.</short>
       </element>
       <element name="SplitEditMask.AMaskSave">
-        <short>Indicates if mask data is saved with the value in a control</short>
+        <short>Indicates if mask data is saved with the value in a control.</short>
       </element>
       <element name="SplitEditMask.ASpaceChar">
-        <short>Character representing the Space character in the masked value</short>
+        <short>Character representing the Space character in the masked value.</short>
       </element>
 
       <element name="Register">
-        <short>Registers component for use in the Lazarus IDE</short>
+        <short>Registers component for use in the Lazarus IDE.</short>
         <descr>
           <p>
             <var>Register</var> is a procedure used to register components in the <file>maskedit.pp</file> unit for use in the Lazarus IDE. Register calls <var>RegisterComponents</var> to add the <var>TMaskEdit</var> class to the <b>Additional</b> tab in the Lazarus IDE.

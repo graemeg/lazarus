@@ -8,7 +8,7 @@
 -->
     <module name="LResources">
       <short>
-        Maintains a global list of Lazarus resources and provides methods and types to stream components
+        Maintains a global list of Lazarus resources and provides methods and types to stream components.
       </short>
       <descr>
         <p>
@@ -104,7 +104,7 @@
       </element>
       <!-- variable Visibility: private -->
       <element name="TLResourceList.FSortedCount">
-        <short>0 .. FSortedCount-1 resources are sorted</short>
+        <short>0 .. FSortedCount-1 resources are sorted.</short>
         <descr/>
         <seealso/>
       </element>
@@ -336,7 +336,7 @@
       </element>
       <!-- class Visibility: default -->
       <element name="TAbstractTranslator">
-        <short>Abstract base class for translators</short>
+        <short>Abstract base class for translators.</short>
         <descr>
         </descr>
         <errors/>
@@ -344,7 +344,7 @@
       </element>
       <!-- procedure Visibility: public -->
       <element name="TAbstractTranslator.TranslateStringProperty">
-        <short>The base class for an TReader.OnReadStringProperty handler</short>
+        <short>The base class for an TReader.OnReadStringProperty handler.</short>
         <descr>
         </descr>
         <errors/>
@@ -840,7 +840,7 @@
       </element>
       <!-- property Visibility: public -->
       <element name="TLRSObjectReader.Reader">
-        <short>The root component reader</short>
+        <short>The root component reader.</short>
         <descr/>
         <seealso/>
       </element>
@@ -853,13 +853,13 @@
         <seealso/>
       </element>
       <element name="TLRSOWStackItemState.lrsowsisStarted">
-        <short>now writing header</short>
+        <short>now writing header.</short>
       </element>
       <element name="TLRSOWStackItemState.lrsowsisHeaderWritten">
-        <short>header saved on stack, not yet written to stream, waiting for data</short>
+        <short>header saved on stack, not yet written to stream, waiting for data.</short>
       </element>
       <element name="TLRSOWStackItemState.lrsowsisDataWritten">
-        <short>header written to stream, data written</short>
+        <short>header written to stream, data written.</short>
       </element>
       <!-- record type Visibility: default -->
       <element name="TLRSOWStackItem">
@@ -888,15 +888,13 @@
       </element>
       <!-- variable Visibility: default -->
       <element name="TLRSOWStackItem.PushCount">
-        <short>waiting for this number of Pops
-        </short>
+        <short>waiting for this number of Pops.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="TLRSOWStackItem.ItemNr">
-        <short>Index in a collection or list.
-        </short>
+        <short>Index in a collection or list.</short>
         <descr/>
         <seealso/>
       </element>
@@ -934,9 +932,9 @@
       <element link="#lcl.lresources.TLRSOWStackItem" name="PLRSOWStackItem"/>
       <!-- object Visibility: default -->
       <element name="TLRSObjectWriter">
-        <short>Object writer for Lazarus Resource Streams.
-        </short>
-        <descr>The TLRSObjectWriter can find empty entries and omit writing them to stream.
+        <short>Object writer for Lazarus Resource Streams.</short>
+        <descr>
+          The TLRSObjectWriter can find empty entries and omit writing them to stream.
         </descr>
         <errors/>
         <seealso/>
@@ -1172,8 +1170,7 @@
       </element>
       <!-- procedure Visibility: protected -->
       <element name="TLRSObjectWriter.WriteWordsReversed">
-        <short>Writes multiples words (WideChar) with reversed byte order.
-        </short>
+        <short>Writes multiples words (WideChar) with reversed byte order.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -1568,19 +1565,16 @@
       </element>
       <!-- procedure Visibility: public -->
       <element name="TLRPositionLinks.Sort">
-        <short>Sort the items by LFM or LRS position.
-        </short>
+        <short>Sort the items by LFM or LRS position.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TLRPositionLinks.Sort.LFMPositions">
-        <short>True for sorting by LFM position.
-        </short>
+        <short>True for sorting by LFM position.</short>
       </element>
       <!-- function Visibility: public -->
       <element name="TLRPositionLinks.IndexOf">
-        <short>Searches for an item by LFM or LRS position.
-        </short>
+        <short>Searches for an item by LFM or LRS position.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1606,7 +1600,7 @@
         <short>First acceptable position.</short>
       </element>
       <element name="TLRPositionLinks.IndexOfRange.ToPos">
-        <short>First position after the range (exclude)</short>
+        <short>First position after the range (exclude).</short>
       </element>
       <element name="TLRPositionLinks.IndexOfRange.LFMPositions">
         <short>True for searching LFM positions.</short>
@@ -1622,7 +1616,7 @@
         <short>First acceptable position.</short>
       </element>
       <element name="TLRPositionLinks.SetPosition.ToPos">
-        <short>First position after the range (exclude)</short>
+        <short>First position after the range (exclude).</short>
       </element>
       <element name="TLRPositionLinks.SetPosition.MappedPos">
         <short>The new position.</short>
@@ -1647,8 +1641,7 @@
       </element>
       <!-- property Visibility: public -->
       <element name="TLRPositionLinks.LFM">
-        <short>Indexed access to the LFM positions.
-        </short>
+        <short>Indexed access to the LFM positions.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1657,8 +1650,7 @@
       </element>
       <!-- property Visibility: public -->
       <element name="TLRPositionLinks.LRS">
-        <short>Indexed access to the LRS positions.
-        </short>
+        <short>Indexed access to the LRS positions.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1681,7 +1673,7 @@
         <descr/>
         <seealso/>
       </element>
-<!-- class Visibility: default -->
+      <!-- class Visibility: default -->
       <element name="TUTF8Parser">
         <short>Parser for identifiers, and string and number literals.</short>
         <descr>
@@ -1748,7 +1740,7 @@
       </element>
       <!-- variable Visibility: private -->
       <element name="TUTF8Parser.fLastTokenStr">
-        <short>Holds the last parsed token text</short>
+        <short>Holds the last parsed token text.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1772,7 +1764,7 @@
       </element>
       <!-- procedure Visibility: private -->
       <element name="TUTF8Parser.CheckLoadBuffer">
-        <short>Skips to the next non-null character</short>
+        <short>Skips to the next non-null character.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2096,8 +2088,7 @@
       </element>
       <!-- property Visibility: public -->
       <element name="TUTF8Parser.FloatType">
-        <short>The type of the parsed floating point number. (number, date...)
-        </short>
+        <short>The type of the parsed floating point number. (number, date...).</short>
         <descr/>
         <seealso/>
       </element>
@@ -2265,7 +2256,7 @@
       </element>
 <!-- record type Visibility: default -->
       <element name="TPropertyToSkip">
-        <short>Item of TPropertiesToSkip</short>
+        <short>Item of TPropertiesToSkip.</short>
         <descr/>
         <seealso/>
       </element>

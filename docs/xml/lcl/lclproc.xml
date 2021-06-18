@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="LCLProc">
-      <short>Useful lower-level helper functions and classes</short>
+      <short>Useful lower-level helper functions and classes.</short>
       <descr>
         <p>
           <file>lclproc.pas</file> contains lower-level  classes and helper routines that are useful in LCL applications. This file is part of the Lazarus Component Library (<b>LCL</b>).
@@ -31,7 +31,7 @@
       <element name="LCLType"/>
 
       <element name="TMethodList">
-        <short>A list for method references</short>
+        <short>A list for method references.</short>
         <descr>
         <p>
           <var>TMethodList</var> is an alias for the TMethodList type in the <file>LazMethodList</file> unit.
@@ -44,11 +44,9 @@
 
       <element name="TDebugLCLItemInfo">
         <short>
-          A node in TDebugLCLItems, holding information about a heap object
+          A node in TDebugLCLItems, holding information about a heap object.
         </short>
         <descr/>
-<errors>
-        </errors>
         <seealso>
           <link id="TDebugLCLItems"/>
         </seealso>
@@ -67,25 +65,25 @@
       </element>
 
       <element name="TDebugLCLItemInfo.Info">
-        <short>A descriptive string</short>
+        <short>A descriptive string.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDebugLCLItemInfo.CreationStack">
-        <short>Stack trace at creation of the object</short>
+        <short>Stack trace at creation of the object.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDebugLCLItemInfo.DestructionStack">
-        <short>Stack trace at destruction of the object</short>
+        <short>Stack trace at destruction of the object.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDebugLCLItemInfo.AsString">
-        <short>All information about the object</short>
+        <short>All information about the object.</short>
         <descr/>
         <seealso/>
       </element>
@@ -97,7 +95,7 @@
       </element>
 
       <element name="TDebugLCLItemInfo.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -113,13 +111,13 @@
       </element>
 
       <element name="TDebugLCLItems.FItems">
-        <short>The list entries, organized as an AVL tree</short>
+        <short>The list entries, organized as an AVL tree.</short>
       </element>
 
       <element name="TDebugLCLItems.FName" link="#lcl.lclproc.TDebugLCLItems.Name"/>
 
       <element name="TDebugLCLItems.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             Sets the <var>Name</var> property to the value in <var>TheName</var>. Allocates resources for the internal <var>TAvlTree</var> instance used in the class.
@@ -131,14 +129,14 @@
       </element>
 
       <element name="TDebugLCLItems.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDebugLCLItems.FindInfo">
         <short>
-          Returns information about an item, optionally creating an entry if not found
+          Returns information about an item, optionally creating an entry if not found.
         </short>
         <descr/>
         <errors>
@@ -146,17 +144,17 @@
         <seealso/>
       </element>
       <element name="TDebugLCLItems.FindInfo.Result">
-        <short>The item information, or Nil if none was found or created</short>
+        <short>The item information, or Nil if none was found or created.</short>
       </element>
       <element name="TDebugLCLItems.FindInfo.p">
-        <short>The address of the item to find</short>
+        <short>The address of the item to find.</short>
       </element>
       <element name="TDebugLCLItems.FindInfo.CreateIfNotExists">
-        <short>True means create an according list entry, if none existed yet</short>
+        <short>True means create an according list entry, if none existed yet.</short>
       </element>
 
       <element name="TDebugLCLItems.IsDestroyed">
-        <short>True when the item has been created and destroyed</short>
+        <short>True when the item has been created and destroyed.</short>
         <descr/>
         <errors>
         </errors>
@@ -172,19 +170,19 @@
       </element>
 
       <element name="TDebugLCLItems.IsCreated">
-        <short>True when the item is alive</short>
+        <short>True when the item is alive.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDebugLCLItems.IsCreated.Result">
-        <short>True when the item is listed and has not yet been destroyed</short>
+        <short>True when the item is listed and has not yet been destroyed.</short>
       </element>
       <element name="TDebugLCLItems.IsCreated.p">
-        <short>The address to find</short>
+        <short>The address to find.</short>
       </element>
 
       <element name="TDebugLCLItems.MarkCreated">
-        <short>Checked insert of an item</short>
+        <short>Checked insert of an item.</short>
         <descr/>
         <errors>
           GDB exception 'RaiseDoubleCreated' when the address is already in use.
@@ -192,17 +190,17 @@
         <seealso/>
       </element>
       <element name="TDebugLCLItems.MarkCreated.Result">
-        <short>The info object describing the address</short>
+        <short>The info object describing the address.</short>
       </element>
       <element name="TDebugLCLItems.MarkCreated.p">
-        <short>The address to add</short>
+        <short>The address to add.</short>
       </element>
       <element name="TDebugLCLItems.MarkCreated.InfoText">
-        <short>Descriptive text about the item</short>
+        <short>Descriptive text about the item.</short>
       </element>
 
       <element name="TDebugLCLItems.MarkDestroyed">
-        <short>Checked destruction notification</short>
+        <short>Checked destruction notification.</short>
         <descr/>
         <errors>
           <ul>
@@ -218,32 +216,32 @@
       </element>
 
       <element name="TDebugLCLItems.MarkDestroyed.p">
-        <short>The address to mark as destroyed</short>
+        <short>The address to mark as destroyed.</short>
       </element>
 
       <element name="TDebugLCLItems.GetInfo">
-        <short>Returns textual information about an object</short>
+        <short>Returns textual information about an object.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDebugLCLItems.GetInfo.Result">
-        <short>The descriptive string</short>
+        <short>The descriptive string.</short>
       </element>
       <element name="TDebugLCLItems.GetInfo.p">
-        <short>The address to find</short>
+        <short>The address to find.</short>
       </element>
       <element name="TDebugLCLItems.GetInfo.WithStackTraces">
-        <short>True means include stack traces</short>
+        <short>True means include stack traces.</short>
       </element>
 
       <element name="TDebugLCLItems.Name">
-        <short>The descriptive name of the list</short>
+        <short>The descriptive name of the list.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="CompareDebugLCLItemInfos">
-        <short>Compare function for the TDebugLCLItems AVL tree</short>
+        <short>Compare function for the TDebugLCLItems AVL tree.</short>
         <descr>
           Compares the Item addresses.
         </descr>
@@ -290,15 +288,15 @@
       </element>
 
       <element name="MergeSort">
-        <short>Sorting TStrings or TFPList</short>
+        <short>Sorting TStrings or TFPList.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="MergeSort.List">
-        <short>The list to sort (overloaded type)</short>
+        <short>The list to sort (overloaded type).</short>
       </element>
       <element name="MergeSort.OnCompare">
-        <short>The sort compare function</short>
+        <short>The sort compare function.</short>
       </element>
       <element name="MergeSort.StartIndex">
         <short/>
@@ -335,7 +333,7 @@
       </element>
 
       <element name="ShortCutToText">
-        <short>Returns the textual representation for a shortcut value</short>
+        <short>Returns the textual representation for a shortcut value.</short>
         <descr/>
         <seealso/>
       </element>
@@ -359,7 +357,7 @@
       </element>
 
       <element name="TextToShortCut">
-        <short>Converts the textual representation for a shortcut into a shortcut value</short>
+        <short>Converts the textual representation for a shortcut into a shortcut value.</short>
         <descr/>
         <seealso/>
       </element>
@@ -383,27 +381,27 @@
       </element>
 
       <element name="GetCompleteText">
-        <short>Find an string in a list, given its first few characters</short>
+        <short>Find an string in a list, given its first few characters.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="GetCompleteText.Result">
-        <short>The found string</short>
+        <short>The found string.</short>
       </element>
       <element name="GetCompleteText.sText">
-        <short>The begin of the string to find</short>
+        <short>The begin of the string to find.</short>
       </element>
       <element name="GetCompleteText.iSelStart">
-        <short>The list index where the search should start</short>
+        <short>The list index where the search should start.</short>
       </element>
       <element name="GetCompleteText.bCaseSensitive">
-        <short>True means case-sensitive comparison</short>
+        <short>True means case-sensitive comparison.</short>
       </element>
       <element name="GetCompleteText.bSearchAscending">
-        <short>True means search ascending from iSelStart</short>
+        <short>True means search ascending from iSelStart.</short>
       </element>
       <element name="GetCompleteText.slTextList">
-        <short>The list to search</short>
+        <short>The list to search.</short>
       </element>
 
       <element name="IsEditableTextKey">
@@ -415,7 +413,7 @@
         <short/>
       </element>
       <element name="IsEditableTextKey.Key">
-        <short>The virtual key code</short>
+        <short>The virtual key code.</short>
       </element>
 
       <element name="TSendApplicationMessageFunction">
@@ -493,12 +491,12 @@
       </element>
 
       <element name="FreeThenNil">
-        <short>Free the TObject, before setting the reference to Nil</short>
+        <short>Free the TObject, before setting the reference to Nil.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="FreeThenNil.obj">
-        <short>The object reference (variable)</short>
+        <short>The object reference (variable).</short>
       </element>
 
       <element name="RegisterInterfaceInitializationHandler">
@@ -511,7 +509,7 @@
       </element>
 
       <element name="CallInterfaceInitializationHandlers">
-        <short>Invokes the registered handlers</short>
+        <short>Invokes the registered handlers.</short>
         <descr/>
         <seealso/>
       </element>
@@ -527,19 +525,19 @@
       </element>
 
       <element name="CallInterfaceFinalizationHandlers">
-        <short>Invokes the registered handlers</short>
+        <short>Invokes the registered handlers.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
 
       <element name="OffsetRect">
-        <short>Increments the TopLeft and BottomRight coordinates of the rectangle</short>
+        <short>Increments the TopLeft and BottomRight coordinates of the rectangle.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="OffsetRect.Result">
-        <short>True when the TopLeft coordinates are all positive</short>
+        <short>True when the TopLeft coordinates are all positive.</short>
       </element>
       <element name="OffsetRect.ARect">
         <short/>
@@ -721,7 +719,7 @@
       </element>
 
       <element name="CompareMethods">
-        <short>Returns true when both method references are equal</short>
+        <short>Returns true when both method references are equal.</short>
         <descr>
           Deprecated. Use LazMethodList.CompareMethods instead.
         </descr>
@@ -846,7 +844,7 @@
       </element>
 
       <element name="RaiseGDBException">
-        <short>Raises a catchable exception</short>
+        <short>Raises a catchable exception.</short>
         <descr>
           <p>
             Normally, GDB does not catch FPC Exception objects. This procedure raises a standard divide by zero exception which is caught by GDB.
@@ -860,7 +858,7 @@
       </element>
 
       <element name="DebugLn">
-        <short>Writes a number of strings (heavily overloaded) to the debug output</short>
+        <short>Writes a number of strings (heavily overloaded) to the debug output.</short>
         <errors/>
         <seealso/>
       </element>
@@ -1144,7 +1142,7 @@
       </element>
 
       <element name="dbgMemStream">
-        <short>Provides a hex dump of an memory stream</short>
+        <short>Provides a hex dump of an memory stream.</short>
         <descr/>
         <errors>
           <p>
@@ -1164,7 +1162,7 @@
       </element>
 
       <element name="dbgObjMem">
-        <short>Provides an hex dump of an TObject</short>
+        <short>Provides an hex dump of an TObject.</short>
         <descr/>
         <errors>
         </errors>
@@ -1178,7 +1176,7 @@
       </element>
 
       <element name="dbghex">
-        <short>Provides an hex dump of an Int64 value, (sign + absolute value)</short>
+        <short>Provides an hex dump of an Int64 value, (sign + absolute value).</short>
         <descr/>
         <errors>
         </errors>
@@ -1204,7 +1202,7 @@
       </element>
 
       <element name="DbgsVKCode">
-        <short>Converts a virtual key code to its String representation</short>
+        <short>Converts a virtual key code to its String representation.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1237,7 +1235,7 @@
       </element>
 
       <element name="DbgSaveData">
-        <short>Writes data into an file</short>
+        <short>Writes data into an file.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1252,7 +1250,7 @@
       </element>
 
       <element name="DbgAppendToFile">
-        <short>Appends a line to the given file</short>
+        <short>Appends a line to the given file.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1264,7 +1262,7 @@
       </element>
 
       <element name="DbgAppendToFileWithoutLn">
-        <short>Appends (preformatted) text to an file</short>
+        <short>Appends (preformatted) text to an file.</short>
         <descr/>
         <errors>
         </errors>
@@ -1317,7 +1315,7 @@
 
       <element name="UTF16CharacterLength">
         <short>
-          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements
+          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements.
         </short>
       </element>
       <element name="UTF16CharacterLength.Result">
@@ -1329,7 +1327,7 @@
 
       <element name="UTF16Length">
         <short>
-          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements
+          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements.
         </short>
       </element>
       <element name="UTF16Length.Result">
@@ -1347,7 +1345,7 @@
 
       <element name="UTF16CharacterToUnicode">
         <short>
-          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements
+          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements.
         </short>
       </element>
       <element name="UTF16CharacterToUnicode.Result">
@@ -1362,7 +1360,7 @@
 
       <element name="UnicodeToUTF16">
         <short>
-          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements
+          Deprecated, see the <file>LazUTF16</file> unit in the <file>LazUtils</file> package for replacements.
         </short>
       </element>
       <element name="UnicodeToUTF16.Result">
@@ -1373,7 +1371,7 @@
       </element>
 
       <element name="CreateFirstIdentifier">
-        <short>Replaces last digits with 1</short>
+        <short>Replaces last digits with 1.</short>
         <descr>For example Name321 becomes Name1</descr>
         <seealso/>
       </element>
@@ -1386,7 +1384,7 @@
 
       <element name="CreateNextIdentifier">
         <short>
-          Deprecated, see the <file>LazUTF8</file> unit in the <file>LazUtils</file> package for replacements
+          Deprecated, see the <file>LazUTF8</file> unit in the <file>LazUtils</file> package for replacements.
         </short>
       </element>
       <element name="CreateNextIdentifier.Result">

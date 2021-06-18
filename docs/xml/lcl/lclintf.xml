@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="LCLIntf">
-      <short>Contains WinAPI-like functions for Delphi compatibility</short>
+      <short>Contains WinAPI-like functions for Delphi compatibility.</short>
       <descr>
         <p>
           This unit was created for Delphi compatibility. It contains selected functions from the Delphi Windows unit, which finally are implemented in the widgetsets.
@@ -51,7 +51,7 @@
       <element name="Maps"/>
 
       <element name="Arc">
-        <short>Draws an elliptical curve</short>
+        <short>Draws an elliptical curve.</short>
         <descr>
           <p>Use Arc to draw an elliptically curved line with the current Pen.</p>
           <p>
@@ -80,16 +80,16 @@
         <short/>
       </element>
       <element name="Arc.Angle16Deg">
-        <short>The starting angle in 1/16 degrees, starting right and continuing counter-clockwise</short>
+        <short>The starting angle in 1/16 degrees, starting right and continuing counter-clockwise.</short>
       </element>
       <element name="Arc.Angle16DegLength">
         <short>
-          The length of the arc. A positive value indicates that it goes counter-clockwise from the start angle and a negative value that it goes clockwise
+          The length of the arc. A positive value indicates that it goes counter-clockwise from the start angle and a negative value that it goes clockwise.
         </short>
       </element>
 
       <element name="AngleChord">
-        <short>Draws a filled Chord described by two angles</short>
+        <short>Draws a filled Chord described by two angles.</short>
         <descr>
           <p>
             AngleChord is a Lazarus addition, similar to the Windows API Chord, but uses angles to control the location of the chord inside the ellipse instead of two points like the Windows API Chord.
@@ -111,7 +111,7 @@
         </seealso>
       </element>
       <element name="AngleChord.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="AngleChord.DC">
         <short/>
@@ -129,14 +129,14 @@
         <short/>
       </element>
       <element name="AngleChord.angle1">
-        <short>The starting angle in 1/16 degrees, starting right and continuing counter-clockwise</short>
+        <short>The starting angle in 1/16 degrees, starting right and continuing counter-clockwise.</short>
       </element>
       <element name="AngleChord.angle2">
-        <short>The ending angle in 1/16 degrees, starting right and continuing counter-clockwise</short>
+        <short>The ending angle in 1/16 degrees, starting right and continuing counter-clockwise.</short>
       </element>
 
       <element name="BeginPaint">
-        <short>Start painting in a window</short>
+        <short>Start painting in a window.</short>
         <descr>
           <p>
             This function is for use in WM_PAINT handlers only. Not all platforms allow for painting outside WM_PAINT messages.
@@ -152,14 +152,14 @@
         </short>
       </element>
       <element name="BeginPaint.Handle">
-        <short>The window Handle</short>
+        <short>The window Handle.</short>
       </element>
       <element name="BeginPaint.PS">
-        <short>Will receive painting information</short>
+        <short>Will receive painting information.</short>
       </element>
 
       <element name="BitBlt">
-        <short>Copies a section of a Canvas to another one, performing a raster operation (ROP)</short>
+        <short>Copies a section of a Canvas to another one, performing a raster operation (ROP).</short>
         <descr>
           <p>
             This routine implements the equivalent Windows GDI API of the same name in all platforms supported by Lazarus. It copies a section of a Canvas to another one, without any stretching. It allows one to select the kind of operation which should be performed to draw the pixels into the destination in the parameter ROP. Allowed operations go from simply copying the pixels without change to inverting them and also to executing logical operations involving the source pixels and the previously existing pixels in the destination Canvas.
@@ -229,59 +229,59 @@
         </seealso>
       </element>
       <element name="BitBlt.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="BitBlt.DestDC">
-        <short>The destination Device Context</short>
+        <short>The destination Device Context.</short>
       </element>
       <element name="BitBlt.X">
-        <short>The origin in the destination DC</short>
+        <short>The origin in the destination DC.</short>
       </element>
       <element name="BitBlt.Y">
-        <short>The origin in the destination DC</short>
+        <short>The origin in the destination DC.</short>
       </element>
       <element name="BitBlt.Width">
-        <short>The image size</short>
+        <short>The image size.</short>
       </element>
       <element name="BitBlt.Height">
-        <short>The image size</short>
+        <short>The image size.</short>
       </element>
       <element name="BitBlt.SrcDC">
-        <short>The source Device Context</short>
+        <short>The source Device Context.</short>
       </element>
       <element name="BitBlt.XSrc">
-        <short>The origin in the source DC</short>
+        <short>The origin in the source DC.</short>
       </element>
       <element name="BitBlt.YSrc">
-        <short>The origin in the source DC</short>
+        <short>The origin in the source DC.</short>
       </element>
       <element name="BitBlt.Rop">
-        <short>The raster operation</short>
+        <short>The raster operation.</short>
       </element>
 
       <element name="CallNextHookEx">
-        <short>Calls the next procedure in the hook chain</short>
+        <short>Calls the next procedure in the hook chain.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CallNextHookEx.Result">
-        <short>Depends on the Hook type</short>
+        <short>Depends on the Hook type.</short>
       </element>
       <element name="CallNextHookEx.hhk">
-        <short>Handle of the current hook</short>
+        <short>Handle of the current hook.</short>
       </element>
       <element name="CallNextHookEx.ncode">
-        <short>The Hook code (message ID)</short>
+        <short>The Hook code (message ID).</short>
       </element>
       <element name="CallNextHookEx.WParam">
-        <short>Message parameter</short>
+        <short>Message parameter.</short>
       </element>
       <element name="CallNextHookEx.LParam">
-        <short>Message parameter</short>
+        <short>Message parameter.</short>
       </element>
 
       <element name="CallWindowProc">
-        <short>Calls another Window procedure, to handle a message</short>
+        <short>Calls another Window procedure, to handle a message.</short>
         <descr/>
         <seealso/>
       </element>
@@ -305,24 +305,24 @@
       </element>
 
       <element name="ClientToScreen">
-        <short>Converts (relative) Client coordinates into absolute Screen coordinates</short>
+        <short>Converts (relative) Client coordinates into absolute Screen coordinates.</short>
         <descr/>
         <seealso>
           <link id="ScreenToClient"/>
         </seealso>
       </element>
       <element name="ClientToScreen.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="ClientToScreen.Handle">
-        <short>The window handle with the client area</short>
+        <short>The window handle with the client area.</short>
       </element>
       <element name="ClientToScreen.P">
-        <short>The point to convert</short>
+        <short>The point to convert.</short>
       </element>
 
       <element name="CombineRgn">
-        <short>Combines two regions</short>
+        <short>Combines two regions.</short>
         <descr>
           <p>The following parameters are present in this function:</p>
           <dl>
@@ -357,22 +357,22 @@
         </short>
       </element>
       <element name="CombineRgn.Src1">
-        <short>The handle of a region to combine</short>
+        <short>The handle of a region to combine.</short>
       </element>
       <element name="CombineRgn.Src2">
-        <short>The handle of a region to combine</short>
+        <short>The handle of a region to combine.</short>
       </element>
       <element name="CombineRgn.fnCombineMode">
-        <short>How the regions are combined</short>
+        <short>How the regions are combined.</short>
       </element>
 
       <element name="CreateBitmap">
-        <short>Creates a bitmap object</short>
+        <short>Creates a bitmap object.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateBitmap.Result">
-        <short>The bitmap Handle, zero on failure</short>
+        <short>The bitmap Handle, zero on failure.</short>
       </element>
       <element name="CreateBitmap.Width">
         <short/>
@@ -381,79 +381,79 @@
         <short/>
       </element>
       <element name="CreateBitmap.Planes">
-        <short>The number of color planes</short>
+        <short>The number of color planes.</short>
       </element>
       <element name="CreateBitmap.BitCount">
-        <short>The number of color bits per pixel and plane</short>
+        <short>The number of color bits per pixel and plane.</short>
       </element>
       <element name="CreateBitmap.BitmapBits">
-        <short>The bitmap pixels. Scanlines must be word-aligned</short>
+        <short>The bitmap pixels. Scanlines must be word-aligned.</short>
       </element>
 
       <element name="CreateBrushIndirect">
-        <short>Creates a brush object (bitmap)</short>
+        <short>Creates a brush object (bitmap).</short>
         <descr>
           A brush is used to fill image areas (background...). It has a color and a pattern, e.g. BS_SOLID.
         </descr>
         <seealso/>
       </element>
       <element name="CreateBrushIndirect.Result">
-        <short>The brush Handle, zero on failure</short>
+        <short>The brush Handle, zero on failure.</short>
       </element>
       <element name="CreateBrushIndirect.LogBrush">
-        <short>Description of the brush</short>
+        <short>Description of the brush.</short>
       </element>
 
       <element name="CreateCaret">
-        <short>Creates a Caret (text cursor)</short>
+        <short>Creates a Caret (text cursor).</short>
         <descr>This description is taken from the WinAPI, no guarantee for other platforms.
         </descr>
         <seealso/>
       </element>
       <element name="CreateCaret.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="CreateCaret.Handle">
-        <short>The window that owns the caret</short>
+        <short>The window that owns the caret.</short>
       </element>
       <element name="CreateCaret.Bitmap">
-        <short>Bitmap Handle, or zero for a solid (black) caret, 1 for a grey caret</short>
+        <short>Bitmap Handle, or zero for a solid (black) caret, 1 for a grey caret.</short>
       </element>
       <element name="CreateCaret.width">
-        <short>The width of the caret, in logical units</short>
+        <short>The width of the caret, in logical units.</short>
       </element>
       <element name="CreateCaret.Height">
-        <short>The height of the caret, in logical units</short>
+        <short>The height of the caret, in logical units.</short>
       </element>
 
       <element name="CreateCompatibleBitmap">
-        <short>Creates a bitmap that is compatible with the given DC</short>
+        <short>Creates a bitmap that is compatible with the given DC.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateCompatibleBitmap.Result">
-        <short>The bitmap handle, zero on failure</short>
+        <short>The bitmap handle, zero on failure.</short>
       </element>
       <element name="CreateCompatibleBitmap.DC">
-        <short>The Device Context for the bitmap</short>
+        <short>The Device Context for the bitmap.</short>
       </element>
       <element name="CreateCompatibleBitmap.Width">
-        <short>The bitmap width in pixels</short>
+        <short>The bitmap width in pixels.</short>
       </element>
       <element name="CreateCompatibleBitmap.Height">
-        <short>The bitmap height in pixels</short>
+        <short>The bitmap height in pixels.</short>
       </element>
 
       <element name="CreateCompatibleDC">
-        <short>Creates an memory Device Context, compatible with the device of the given DC</short>
+        <short>Creates an memory Device Context, compatible with the device of the given DC.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateCompatibleDC.Result">
-        <short>The memory DC, zero on failure</short>
+        <short>The memory DC, zero on failure.</short>
       </element>
       <element name="CreateCompatibleDC.DC">
-        <short>The device DC</short>
+        <short>The device DC.</short>
       </element>
 
       <element name="CreateDIBitmap">
@@ -464,46 +464,46 @@
         <seealso/>
       </element>
       <element name="CreateDIBitmap.Result">
-        <short>The bitmap handle, zero on failure</short>
+        <short>The bitmap handle, zero on failure.</short>
       </element>
       <element name="CreateDIBitmap.DC">
-        <short>The context for the DDB</short>
+        <short>The context for the DDB.</short>
       </element>
       <element name="CreateDIBitmap.InfoHeader">
-        <short>The bitmap info header</short>
+        <short>The bitmap info header.</short>
       </element>
       <element name="CreateDIBitmap.dwUsage">
         <short/>
       </element>
       <element name="CreateDIBitmap.InitBits">
-        <short>An array containing the bitmap pixels</short>
+        <short>An array containing the bitmap pixels.</short>
       </element>
       <element name="CreateDIBitmap.InitInfo">
-        <short>CBM_INIT when InitBits contains valid data, else zero</short>
+        <short>CBM_INIT when InitBits contains valid data, else zero.</short>
       </element>
       <element name="CreateDIBitmap.wUsage">
         <short/>
       </element>
 
       <element name="CreateDIBSection">
-        <short>Creates a bitmap into which the application can write</short>
+        <short>Creates a bitmap into which the application can write.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateDIBSection.Result">
-        <short>The bitmap Handle, zero on failure</short>
+        <short>The bitmap Handle, zero on failure.</short>
       </element>
       <element name="CreateDIBSection.DC">
-        <short>The DC for the bitmap</short>
+        <short>The DC for the bitmap.</short>
       </element>
       <element name="CreateDIBSection.BitmapInfo">
-        <short>Contains all information about the bitmap, except the pixels</short>
+        <short>Contains all information about the bitmap, except the pixels.</short>
       </element>
       <element name="CreateDIBSection.Usage">
-        <short>The type of the bitmap colors, e.g. DIB_RGB_COLORS</short>
+        <short>The type of the bitmap colors, e.g. DIB_RGB_COLORS.</short>
       </element>
       <element name="CreateDIBSection.Bits">
-        <short>Pointer to the bitmap pixels</short>
+        <short>Pointer to the bitmap pixels.</short>
       </element>
       <element name="CreateDIBSection.SectionHandle">
         <short>
@@ -511,16 +511,16 @@
         </short>
       </element>
       <element name="CreateDIBSection.Offset">
-        <short>The offset to the bitmap bits in the file-mapping object</short>
+        <short>The offset to the bitmap bits in the file-mapping object.</short>
       </element>
 
       <element name="CreateEllipticRgn">
-        <short>Creates an elliptic region</short>
+        <short>Creates an elliptic region.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateEllipticRgn.Result">
-        <short>The region Handle, zero on failure</short>
+        <short>The region Handle, zero on failure.</short>
       </element>
       <element name="CreateEllipticRgn.X1">
         <short/>
@@ -536,17 +536,17 @@
       </element>
 
       <element name="CreateFontIndirect">
-        <short>Creates a logical font, selectable into any DC</short>
+        <short>Creates a logical font, selectable into any DC.</short>
         <descr/>
         <seealso>
           <link id="CreateFontIndirectEx"/>
         </seealso>
       </element>
       <element name="CreateFontIndirect.Result">
-        <short>The font handle, zero on failure</short>
+        <short>The font handle, zero on failure.</short>
       </element>
       <element name="CreateFontIndirect.LogFont">
-        <short>The font description</short>
+        <short>The font description.</short>
       </element>
 
       <element name="CreateFontIndirectEx">
@@ -559,41 +559,41 @@
         </seealso>
       </element>
       <element name="CreateFontIndirectEx.Result">
-        <short>The font handle, zero on failure</short>
+        <short>The font handle, zero on failure.</short>
       </element>
       <element name="CreateFontIndirectEx.LogFont">
-        <short>The font description</short>
+        <short>The font description.</short>
       </element>
       <element name="CreateFontIndirectEx.LongFontName">
-        <short>The font name, can be longer than 32 characters</short>
+        <short>The font name, can be longer than 32 characters.</short>
       </element>
 
       <element name="CreateIconIndirect">
-        <short>Creates an icon or cursor</short>
+        <short>Creates an icon or cursor.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateIconIndirect.Result">
-        <short>The Handle, zero on failure</short>
+        <short>The Handle, zero on failure.</short>
       </element>
       <element name="CreateIconIndirect.IconInfo">
         <short/>
       </element>
 
       <element name="CreatePalette">
-        <short>Creates a logical palette, selectable into any DC</short>
+        <short>Creates a logical palette, selectable into any DC.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreatePalette.Result">
-        <short>The palette Handle, zero on failure</short>
+        <short>The palette Handle, zero on failure.</short>
       </element>
       <element name="CreatePalette.LogPalette">
         <short/>
       </element>
 
       <element name="CreatePatternBrush">
-        <short>Creates a logical brush, selectable into any DC</short>
+        <short>Creates a logical brush, selectable into any DC.</short>
         <descr>
           <p>
             The bitmap pattern is repeated for areas of larger width or height, it should allow for smooth transitions.
@@ -605,49 +605,49 @@
         <seealso/>
       </element>
       <element name="CreatePatternBrush.Result">
-        <short>The brush handle, zero on failure</short>
+        <short>The brush handle, zero on failure.</short>
       </element>
       <element name="CreatePatternBrush.ABitmap">
-        <short>The bitmap to use for the brush</short>
+        <short>The bitmap to use for the brush.</short>
       </element>
 
       <element name="CreatePenIndirect">
-        <short>Creates a logical Pen, selectable into any DC</short>
+        <short>Creates a logical Pen, selectable into any DC.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreatePenIndirect.Result">
-        <short>The pen Handle, zero on failure</short>
+        <short>The pen Handle, zero on failure.</short>
       </element>
       <element name="CreatePenIndirect.LogPen">
         <short/>
       </element>
 
       <element name="CreatePolygonRgn">
-        <short>Creates a polygonal region</short>
+        <short>Creates a polygonal region.</short>
         <descr>The last point is connected to the first point, to close the region.</descr>
         <seealso/>
       </element>
       <element name="CreatePolygonRgn.Result">
-        <short>The region Handle, zero on failure</short>
+        <short>The region Handle, zero on failure.</short>
       </element>
       <element name="CreatePolygonRgn.Points">
-        <short>The array of points</short>
+        <short>The array of points.</short>
       </element>
       <element name="CreatePolygonRgn.NumPts">
-        <short>The number of points in Points</short>
+        <short>The number of points in Points.</short>
       </element>
       <element name="CreatePolygonRgn.FillMode">
-        <short>Can be ALTERNATE or WINDING</short>
+        <short>Can be ALTERNATE or WINDING.</short>
       </element>
 
       <element name="CreateRectRgn">
-        <short>Creates a rectangular region</short>
+        <short>Creates a rectangular region.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateRectRgn.Result">
-        <short>The region handle, zero on failure</short>
+        <short>The region handle, zero on failure.</short>
       </element>
       <element name="CreateRectRgn.X1">
         <short/>
@@ -663,7 +663,7 @@
       </element>
 
       <element name="CreateRoundRectRgn">
-        <short>Creates a rectangular region with rounded corners</short>
+        <short>Creates a rectangular region with rounded corners.</short>
         <descr>
           <p>
             Creates a rectangular region with rounded corners. All parameters in logical units.
@@ -672,7 +672,7 @@
         <seealso/>
       </element>
       <element name="CreateRoundRectRgn.Result">
-        <short>The region Handle, zero on failure</short>
+        <short>The region Handle, zero on failure.</short>
       </element>
       <element name="CreateRoundRectRgn.X1">
         <short/>
@@ -687,14 +687,14 @@
         <short/>
       </element>
       <element name="CreateRoundRectRgn.nWidthEllipse">
-        <short>The extent of the ellipse, used for the rounded corners</short>
+        <short>The extent of the ellipse, used for the rounded corners.</short>
       </element>
       <element name="CreateRoundRectRgn.nHeightEllipse">
-        <short>The extent of the ellipse, used for the rounded corners</short>
+        <short>The extent of the ellipse, used for the rounded corners.</short>
       </element>
       <!-- procedure Visibility: default -->
       <element name="DeleteCriticalSection">
-        <short>Deletes an unowned critical section</short>
+        <short>Deletes an unowned critical section.</short>
         <descr/>
         <errors>
           Results are unpredictable when the section is owned, i.e. has been entered but not yet left.
@@ -706,109 +706,109 @@
       </element>
 
       <element name="DeleteDC">
-        <short>Deletes a Device Context, created by CreateDC</short>
+        <short>Deletes a Device Context, created by CreateDC.</short>
         <descr/>
         <seealso>
           <link id="ReleaseDC"/>
         </seealso>
       </element>
       <element name="DeleteDC.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="DeleteDC.hDC">
         <short/>
       </element>
 
       <element name="DeleteObject">
-        <short>Frees a GDI object</short>
+        <short>Frees a GDI object.</short>
         <descr>The bitmap of a pattern brush is not destroyed with the brush.</descr>
         <errors>The function fails when the Handle is selected into an DC.</errors>
         <seealso/>
       </element>
       <element name="DeleteObject.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="DeleteObject.GDIObject">
         <short/>
       </element>
 
       <element name="DestroyCaret">
-        <short>Destroys the caret but doesn't free the bitmap</short>
+        <short>Destroys the caret but doesn't free the bitmap.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="DestroyCaret.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="DestroyCaret.Handle">
-        <short>Handle of the window with the caret</short>
+        <short>Handle of the window with the caret.</short>
       </element>
 
       <element name="DestroyCursor">
-        <short>Destroys an mouse cursor</short>
+        <short>Destroys an mouse cursor.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="DestroyCursor.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="DestroyCursor.Handle">
-        <short>The cursor Handle</short>
+        <short>The cursor Handle.</short>
       </element>
 
       <element name="DestroyIcon">
-        <short>Destroys an icon</short>
+        <short>Destroys an icon.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="DestroyIcon.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="DestroyIcon.Handle">
         <short/>
       </element>
 
       <element name="DPtoLP">
-        <short>Converts an array of Device Points (coordinates) into Logical Points</short>
+        <short>Converts an array of Device Points (coordinates) into Logical Points.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="DPtoLP.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="DPtoLP.DC">
-        <short>The device context, containing the coordinate mapping information</short>
+        <short>The device context, containing the coordinate mapping information.</short>
       </element>
       <element name="DPtoLP.Points">
-        <short>An array of points</short>
+        <short>An array of points.</short>
       </element>
       <element name="DPtoLP.Count">
-        <short>The number of points to convert</short>
+        <short>The number of points to convert.</short>
       </element>
 
       <element name="DrawFrameControl">
-        <short>Draws a window frame for a control of the specified type and style</short>
+        <short>Draws a window frame for a control of the specified type and style.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="DrawFrameControl.Result">
-        <short>Returns False when the control type is anything other than a button</short>
+        <short>Returns False when the control type is anything other than a button.</short>
       </element>
       <element name="DrawFrameControl.DC">
-        <short>Device context where the operation is performed</short>
+        <short>Device context where the operation is performed.</short>
       </element>
       <element name="DrawFrameControl.Rect">
-        <short>Rectangle with the bounds for the control</short>
+        <short>Rectangle with the bounds for the control.</short>
       </element>
       <element name="DrawFrameControl.uType">
-        <short>Identifies the type of control for the frame</short>
+        <short>Identifies the type of control for the frame.</short>
       </element>
       <element name="DrawFrameControl.uState">
-        <short>Identifies the state for the control</short>
+        <short>Identifies the state for the control.</short>
       </element>
 
       <element name="DrawFocusRect">
-        <short>Determines if the focuis rectangle is handled by the widgetset class</short>
+        <short>Determines if the focuis rectangle is handled by the widgetset class.</short>
         <descr/>
         <seealso/>
       </element>
@@ -816,14 +816,14 @@
         <short/>
       </element>
       <element name="DrawFocusRect.DC">
-        <short>Device content for the operation</short>
+        <short>Device content for the operation.</short>
       </element>
       <element name="DrawFocusRect.Rect">
         <short/>
       </element>
 
       <element name="DrawEdge">
-        <short>Draws one or more edges for a rectangle</short>
+        <short>Draws one or more edges for a rectangle.</short>
         <descr/>
         <seealso/>
       </element>
@@ -844,7 +844,7 @@
       </element>
 
       <element name="DrawText">
-        <short>Draws formatted text on the specified device context</short>
+        <short>Draws formatted text on the specified device context.</short>
         <descr/>
         <seealso>
           <link id="TextOut"/>
@@ -852,22 +852,22 @@
         </seealso>
       </element>
       <element name="DrawText.Result">
-        <short>1 on success, 0 when text could not be drawn</short>
+        <short>1 on success, 0 when text could not be drawn.</short>
       </element>
       <element name="DrawText.DC">
-        <short>Device context used to measure and render the specified Text</short>
+        <short>Device context used to measure and render the specified Text.</short>
       </element>
       <element name="DrawText.Str">
-        <short>Text drawn in the routine</short>
+        <short>Text drawn in the routine.</short>
       </element>
       <element name="DrawText.Count">
-        <short>Length of the value in Str; calculated when Count is negative</short>
+        <short>Length of the value in Str; calculated when Count is negative.</short>
       </element>
       <element name="DrawText.Rect">
-        <short>Rectangle where the text was drawn</short>
+        <short>Rectangle where the text was drawn.</short>
       </element>
       <element name="DrawText.Flags">
-        <short>DrawText flags examined in the routine</short>
+        <short>DrawText flags examined in the routine.</short>
       </element>
 
       <element name="EnableScrollBar">
@@ -907,7 +907,7 @@
       </element>
 
       <element name="EndPaint">
-        <short>Ends painting a window, started with BeginPaint</short>
+        <short>Ends painting a window, started with BeginPaint.</short>
         <descr/>
         <seealso/>
       </element>
@@ -925,7 +925,7 @@
       </element>
       <!-- procedure Visibility: default -->
       <element name="EnterCriticalSection">
-        <short>Enters a critical section</short>
+        <short>Enters a critical section.</short>
         <descr/>
         <seealso/>
       </element>
@@ -934,7 +934,7 @@
       </element>
 
       <element name="EnumDisplayMonitors">
-        <short>Invokes a callback function for every available display monitor</short>
+        <short>Invokes a callback function for every available display monitor.</short>
         <descr/>
         <seealso/>
       </element>
@@ -955,7 +955,7 @@
       </element>
 
       <element name="EnumFontFamilies">
-        <short>Invokes a callback function for every font available on a specified device</short>
+        <short>Invokes a callback function for every font available on a specified device.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1001,7 +1001,7 @@
       </element>
 
       <element name="Ellipse">
-        <short>Draws a filled circle or ellipse, bounded by a rectangle</short>
+        <short>Draws a filled circle or ellipse, bounded by a rectangle.</short>
         <descr/>
       </element>
       <element name="Ellipse.Result">
@@ -1049,7 +1049,7 @@
       </element>
 
       <element name="ExtCreatePen">
-        <short>Creates a logical pen, selectable into any DC</short>
+        <short>Creates a logical pen, selectable into any DC.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1073,7 +1073,7 @@
       </element>
 
       <element name="ExtTextOut">
-        <short>Draws an string without formatting (single line)</short>
+        <short>Draws an string without formatting (single line).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1106,7 +1106,7 @@
       </element>
 
       <element name="ExtSelectClipRGN">
-        <short>Combines the passed Region with the current clipping region</short>
+        <short>Combines the passed Region with the current clipping region.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1124,7 +1124,7 @@
       </element>
 
       <element name="FillRect">
-        <short>Fills a rectangle by using the specified brush</short>
+        <short>Fills a rectangle by using the specified brush.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1142,7 +1142,7 @@
       </element>
 
       <element name="FillRgn">
-        <short>Fills a region using the specified brush</short>
+        <short>Fills a region using the specified brush.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1160,7 +1160,7 @@
       </element>
 
       <element name="FloodFill">
-        <short>Fills an area of the display surface with the current brush</short>
+        <short>Fills an area of the display surface with the current brush.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1187,7 +1187,7 @@
       </element>
 
       <element name="FrameRect">
-        <short>Draws a border around a rectangle</short>
+        <short>Draws a border around a rectangle.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1205,7 +1205,7 @@
       </element>
 
       <element name="GetActiveWindow">
-        <short>Returns the Handle of the active window of the calling thread</short>
+        <short>Returns the Handle of the active window of the calling thread.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1214,7 +1214,7 @@
       </element>
 
       <element name="GetBitmapBits">
-        <short>Fills an buffer with the bitmap bits</short>
+        <short>Fills an buffer with the bitmap bits.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1232,7 +1232,7 @@
       </element>
 
       <element name="GetBkColor">
-        <short>Returns the background color of an device context</short>
+        <short>Returns the background color of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1244,7 +1244,7 @@
       </element>
 
       <element name="GetCapture">
-        <short>Returns the window that captures mouse messages</short>
+        <short>Returns the window that captures mouse messages.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1253,7 +1253,7 @@
       </element>
 
       <element name="GetCaretPos">
-        <short>Returns the caret position, in client coordinates</short>
+        <short>Returns the caret position, in client coordinates.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1265,7 +1265,7 @@
       </element>
 
       <element name="GetClientRect">
-        <short>Returns the client rectangle of a control. Left and Top are always 0</short>
+        <short>Returns the client rectangle of a control. Left and Top are always 0.</short>
         <descr>
           <p>
             The client rectangle is the size of the inner area of a control, where the child controls are
@@ -1305,7 +1305,7 @@
       </element>
 
       <element name="GetClipRGN">
-        <short>Returns the clipping region of an device context</short>
+        <short>Returns the clipping region of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1332,7 +1332,7 @@
       </element>
 
       <element name="GetCurrentObject">
-        <short>Returns an currently selected object in an device context</short>
+        <short>Returns an currently selected object in an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1347,7 +1347,7 @@
       </element>
 
       <element name="GetCharABCWidths">
-        <short>Returns the ABC widths of an range of character codes</short>
+        <short>Returns the ABC widths of an range of character codes.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1381,7 +1381,7 @@
       </element>
 
       <element name="GetDeviceCaps">
-        <short>Returns various device specific information</short>
+        <short>Returns various device specific information.</short>
         <descr>
           <p>
             Returns information about any DC (Device Context), which might be the screen DC representing the monitor, a control canvas or a offscreen bitmap canvas. The following constants can be utilized in the index argument:
@@ -1436,7 +1436,7 @@ end;
       </element>
 
       <element name="GetDoubleClickTime">
-        <short>Returns the double-click time, in milliseconds</short>
+        <short>Returns the double-click time, in milliseconds.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1445,7 +1445,7 @@ end;
       </element>
 
       <element name="GetDIBits">
-        <short>Fill an buffer with the bitmap bits</short>
+        <short>Fill an buffer with the bitmap bits.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1456,7 +1456,7 @@ end;
         <short/>
       </element>
       <element name="GetDIBits.Bitmap">
-        <short>The (device dependent) bitmap handle</short>
+        <short>The (device dependent) bitmap handle.</short>
       </element>
       <element name="GetDIBits.StartScan">
         <short/>
@@ -1465,7 +1465,7 @@ end;
         <short/>
       </element>
       <element name="GetDIBits.Bits">
-        <short>Pointer to the output buffer, or Nil to get the required dimensions</short>
+        <short>Pointer to the output buffer, or Nil to get the required dimensions.</short>
       </element>
       <element name="GetDIBits.BitInfo">
         <short/>
@@ -1485,7 +1485,7 @@ end;
       </element>
 
       <element name="GetFontLanguageInfo">
-        <short>Returns language information about the currently selected font</short>
+        <short>Returns language information about the currently selected font.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1497,7 +1497,7 @@ end;
       </element>
 
       <element name="GetForegroundWindow">
-        <short>Returns the window that the user is currently working with, session wide</short>
+        <short>Returns the window that the user is currently working with, session wide.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1506,7 +1506,7 @@ end;
       </element>
 
       <element name="GetIconInfo">
-        <short>Returns information about an Icon or Cursor</short>
+        <short>Returns information about an Icon or Cursor.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1521,7 +1521,7 @@ end;
       </element>
 
       <element name="GetKeyState">
-        <short>The status of a virtual key</short>
+        <short>The status of a virtual key.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1535,7 +1535,7 @@ end;
       </element>
 
       <element name="GetMapMode">
-        <short>Returns the mapping mode of an device context</short>
+        <short>Returns the mapping mode of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1549,7 +1549,7 @@ end;
       </element>
 
       <element name="GetMonitorInfo">
-        <short>Returns information about an display monitor</short>
+        <short>Returns information about an display monitor.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1564,7 +1564,7 @@ end;
       </element>
 
       <element name="GetObject">
-        <short>Returns information about a graphics object</short>
+        <short>Returns information about a graphics object.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1582,7 +1582,7 @@ end;
       </element>
 
       <element name="GetPaletteEntries">
-        <short>Retrieves an range of color entries from a logical palette</short>
+        <short>Retrieves an range of color entries from a logical palette.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1603,7 +1603,7 @@ end;
       </element>
 
       <element name="GetParent">
-        <short>Returns the parent window of a window</short>
+        <short>Returns the parent window of a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1631,7 +1631,7 @@ end;
       </element>
 
       <element name="GetRgnBox">
-        <short>Returns the bounding rectangle of a region, containing the entire region</short>
+        <short>Returns the bounding rectangle of a region, containing the entire region.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1646,7 +1646,7 @@ end;
       </element>
 
       <element name="GetROP2">
-        <short>The current Foreground Mixing Mode in an device context</short>
+        <short>The current Foreground Mixing Mode in an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1667,21 +1667,21 @@ end;
         </seealso>
       </element>
       <element name="GetScrollInfo.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="GetScrollInfo.Handle">
-        <short>The ScrollBar or window handle</short>
+        <short>The ScrollBar or window handle.</short>
       </element>
       <element name="GetScrollInfo.SBStyle">
         <short>The ScrollBar kind.
         </short>
       </element>
       <element name="GetScrollInfo.ScrollInfo">
-        <short>Receives the values indicated in fMask</short>
+        <short>Receives the values indicated in fMask.</short>
       </element>
 
       <element name="GetStockObject">
-        <short>Retrieves a handle to one of the predefined graphic objects</short>
+        <short>Retrieves a handle to one of the predefined graphic objects.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1693,7 +1693,7 @@ end;
       </element>
 
       <element name="GetSysColor">
-        <short>Retrieves the system color for standard display elements</short>
+        <short>Retrieves the system color for standard display elements.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1705,7 +1705,7 @@ end;
       </element>
 
       <element name="GetSysColorBrush">
-        <short>Retrieves a system brush for standard display elements</short>
+        <short>Retrieves a system brush for standard display elements.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1717,7 +1717,7 @@ end;
       </element>
 
       <element name="GetSystemPaletteEntries">
-        <short>Retrieves an range of color entries from the system palette for a device</short>
+        <short>Retrieves an range of color entries from the system palette for a device.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1738,7 +1738,7 @@ end;
       </element>
 
       <element name="GetSystemMetrics">
-        <short>Retrieves various system metrics</short>
+        <short>Retrieves various system metrics.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1750,7 +1750,7 @@ end;
       </element>
 
       <element name="GetTextColor">
-        <short>The current text color in an device context</short>
+        <short>The current text color in an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1762,7 +1762,7 @@ end;
       </element>
 
       <element name="GetTextExtentExPoint">
-        <short>Calculates the number of characters, that fit into some horizontal space</short>
+        <short>Calculates the number of characters, that fit into some horizontal space.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1792,7 +1792,7 @@ end;
       </element>
 
       <element name="GetTextExtentPoint">
-        <short>Computes the display width and height of an string</short>
+        <short>Computes the display width and height of an string.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1813,7 +1813,7 @@ end;
       </element>
 
       <element name="GetTextExtentPoint32">
-        <short>Computes the display width and height of an string</short>
+        <short>Computes the display width and height of an string.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1834,7 +1834,7 @@ end;
       </element>
 
       <element name="GetTextMetrics">
-        <short>Retrieves the metrics for the currently selected font</short>
+        <short>Retrieves the metrics for the currently selected font.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1849,7 +1849,7 @@ end;
       </element>
 
       <element name="GetViewPortExtEx">
-        <short>Returns the size of the viewport of an device context</short>
+        <short>Returns the size of the viewport of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1864,7 +1864,7 @@ end;
       </element>
 
       <element name="GetViewPortOrgEx">
-        <short>Returns the origin of the viewport of an device context</short>
+        <short>Returns the origin of the viewport of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1879,7 +1879,7 @@ end;
       </element>
 
       <element name="GetWindowExtEx">
-        <short>Returns the extent of a window, in logical units</short>
+        <short>Returns the extent of a window, in logical units.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1894,7 +1894,7 @@ end;
       </element>
 
       <element name="GetWindowLong">
-        <short>Returns attributes of a window</short>
+        <short>Returns attributes of a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1910,7 +1910,7 @@ end;
 
       <element name="GetWindowRect">
         <short>
-          Retrieves the bounding rectangle of a window, including the window decoration in screen coordinates
+          Retrieves the bounding rectangle of a window, including the window decoration in screen coordinates.
         </short>
         <descr>
           Retrieves the bounding rectangle of a window, including the window decoration. The
@@ -1962,7 +1962,7 @@ end;
       </element>
 
       <element name="GetWindowOrgEx">
-        <short>Retrieves the window origin of an device context, in logical units</short>
+        <short>Retrieves the window origin of an device context, in logical units.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1977,7 +1977,7 @@ end;
       </element>
 
       <element name="GradientFill">
-        <short>Fills rectangle or triangle areas with gradient colors</short>
+        <short>Fills rectangle or triangle areas with gradient colors.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2004,7 +2004,7 @@ end;
       </element>
 
       <element name="HideCaret">
-        <short>Removes the caret from the screen</short>
+        <short>Removes the caret from the screen.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2027,7 +2027,7 @@ end;
         </seealso>
       </element>
       <element name="IntersectClipRect.Result">
-        <short>The region type, zero on failure</short>
+        <short>The region type, zero on failure.</short>
       </element>
       <element name="IntersectClipRect.dc">
         <short/>
@@ -2046,7 +2046,7 @@ end;
       </element>
 
       <element name="InvalidateRect">
-        <short>Marks a display area for repaint</short>
+        <short>Marks a display area for repaint.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2064,7 +2064,7 @@ end;
       </element>
 
       <element name="InvalidateRgn">
-        <short>Marks a display area for repaint</short>
+        <short>Marks a display area for repaint.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2094,7 +2094,7 @@ end;
       </element>
 
       <element name="IsIconic">
-        <short>True when the window is minimized</short>
+        <short>True when the window is minimized.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2106,7 +2106,7 @@ end;
       </element>
 
       <element name="IsWindow">
-        <short>Checks whether a handle refers to a window</short>
+        <short>Checks whether a handle refers to a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2118,7 +2118,7 @@ end;
       </element>
 
       <element name="IsWindowEnabled">
-        <short>Determines whether a window can receive mouse and keyboard input</short>
+        <short>Determines whether a window can receive mouse and keyboard input.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2130,7 +2130,7 @@ end;
       </element>
 
       <element name="IsWindowVisible">
-        <short>The definite Visible state of a window</short>
+        <short>The definite Visible state of a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2142,7 +2142,7 @@ end;
       </element>
 
       <element name="IsZoomed">
-        <short>True when the window is maximized</short>
+        <short>True when the window is maximized.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2154,7 +2154,7 @@ end;
       </element>
       <!-- procedure Visibility: default -->
       <element name="InitializeCriticalSection">
-        <short>Initializes a Critical Section object</short>
+        <short>Initializes a Critical Section object.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2163,7 +2163,7 @@ end;
       </element>
       <!-- procedure Visibility: default -->
       <element name="LeaveCriticalSection">
-        <short>Releases a critical section, for use by other threads</short>
+        <short>Releases a critical section, for use by other threads.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2173,7 +2173,7 @@ end;
 
       <element name="LineTo">
         <short>
-          Draws a line from the current position up to, but not including, the specified point
+          Draws a line from the current position up to, but not including, the specified point.
         </short>
         <descr/>
         <seealso/>
@@ -2192,7 +2192,7 @@ end;
       </element>
 
       <element name="LPtoDP">
-        <short>Converts logical coordinates into device coordinates</short>
+        <short>Converts logical coordinates into device coordinates.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2290,7 +2290,7 @@ end;
       </element>
 
       <element name="MonitorFromPoint">
-        <short>Finds an monitor from screen coordinates</short>
+        <short>Finds an monitor from screen coordinates.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2316,7 +2316,7 @@ end;
       </element>
 
       <element name="MonitorFromWindow" link="#lcl.InterfaceBase.MonitorFromWindow">
-        <short>Finds the monitor covering most of a window</short>
+        <short>Finds the monitor covering most of a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2331,7 +2331,7 @@ end;
       </element>
 
       <element name="MoveToEx">
-        <short>Moves the current position to the specified point</short>
+        <short>Moves the current position to the specified point.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2352,7 +2352,7 @@ end;
       </element>
 
       <element name="OffsetRgn">
-        <short>Moves a region relative</short>
+        <short>Moves a region relative.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2437,7 +2437,7 @@ end;
       </element>
 
       <element name="PolyBezier">
-        <short>Draws Bézier curves</short>
+        <short>Draws Bézier curves.</short>
         <descr>
           Use Polybezier to draw cubic Bézier curves. The first curve is drawn from the first point to the fourth point with the second and third points being the control points. If the Continuous flag is TRUE then each subsequent curve requires three more points, using the end-point of the previous Curve as its starting point, the first and second points being used as its control points, and the third point its end-point. If the continuous flag is set to FALSE, then each subsequent Curve requires 4 additional points, which are used exactly as in the first curve. Any additional points which do not add up to a full Bézier(4 for Continuous, 3 otherwise) are ignored. There must be at least 4 points for an drawing to occur. If the Filled Flag is set to TRUE then the resulting Poly-Bézier will be drawn as a Polygon.
         </descr>
@@ -2469,7 +2469,7 @@ end;
       </element>
 
       <element name="Polygon">
-        <short>Draws a Polygon</short>
+        <short>Draws a Polygon.</short>
         <descr>
           Use Polygon to draw a closed, many-sided shape on the canvas, using the value of Pen. After drawing the complete shape, Polygon fills the shape using the value of Brush. The Points parameter is an array of points that give the vertices of the polygon. Winding determines how the polygon is filled. When Winding is True, Polygon fills the shape using the Winding fill algorithm. When Winding is False, Polygon uses the even-odd (alternative) fill algorithm. StartIndex gives the index of the first point in the array to use. All points before this are ignored. NumPts indicates the number of points to use, starting at StartIndex. If NumPts is -1 (the default), Polygon uses all points from StartIndex to the end of the array. The first point is always connected to the last point. To draw a polygon on the canvas, without filling it, use the Polyline method, specifying the first point a second time at the end.
         </descr>
@@ -2492,7 +2492,7 @@ end;
       </element>
 
       <element name="Polyline">
-        <short>Draws a sequence of lines</short>
+        <short>Draws a sequence of lines.</short>
         <descr>
           Use Polyline to connect a set of points on the canvas. If you specify only two points, Polyline draws a single line. The Points parameter is an array of points to be connected. StartIndex identifies the first point in the array to use. NumPts indicates the number of points to use. If NumPts is -1 (the default), PolyLine uses all the points from StartIndex to the end of the array. Calling the MoveTo function with the value of the first point, and then repeatedly calling LineTo with all subsequent points will draw the same image on the canvas. However, unlike LineTo, Polyline does not change the value of PenPos.
         </descr>
@@ -2516,7 +2516,7 @@ end;
       </element>
 
       <element name="PostMessage">
-        <short>Sends a message to a window</short>
+        <short>Sends a message to a window.</short>
         <descr>
           <p>
             This method is a thread-safe solution to send messages to windows. Those messages will be handled in the message loop of the application and therefore can be sent from any thread. They are not immediate, but they will awake the main thread if it is waiting for messages. These messages can be handled by procedures with the keyword message in the class of a form for example. One would then use the handle of this form as the Handle parameter of this routine. Custom messages should always have an identification number (represented by the parameter Msg) larger then the constant LM_USER. The two parameters WParam and LParam will be passed along to the window together with the Msg identification number.
@@ -2635,7 +2635,7 @@ end;
       </element>
 
       <element name="RedrawWindow">
-        <short>Redraws (part of) a window</short>
+        <short>Redraws (part of) a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2667,24 +2667,24 @@ end;
       </element>
 
       <element name="ReleaseDC">
-        <short>Releases an Device Context obtained by GetDC</short>
+        <short>Releases an Device Context obtained by GetDC.</short>
         <descr/>
         <seealso>
           <link id="DeleteDC"/>
         </seealso>
       </element>
       <element name="ReleaseDC.Result">
-        <short>Zero on failure</short>
+        <short>Zero on failure.</short>
       </element>
       <element name="ReleaseDC.hWnd">
-        <short>The window associated with the DC</short>
+        <short>The window associated with the DC.</short>
       </element>
       <element name="ReleaseDC.DC">
         <short/>
       </element>
 
       <element name="RemoveProp">
-        <short>Removes a named property from a window</short>
+        <short>Removes a named property from a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2729,7 +2729,7 @@ end;
       </element>
 
       <element name="RestoreDC">
-        <short>Restores an Device Context (DC) to an previously saved state</short>
+        <short>Restores an Device Context (DC) to an previously saved state.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2744,7 +2744,7 @@ end;
       </element>
 
       <element name="SaveDC">
-        <short>Saves the state of an Device Context in the context stack</short>
+        <short>Saves the state of an Device Context in the context stack.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2764,13 +2764,13 @@ end;
         </seealso>
       </element>
       <element name="ScreenToClient.Result">
-        <short>False on failure</short>
+        <short>False on failure.</short>
       </element>
       <element name="ScreenToClient.Handle">
-        <short>The window with the client area</short>
+        <short>The window with the client area.</short>
       </element>
       <element name="ScreenToClient.P">
-        <short>The point to convert</short>
+        <short>The point to convert.</short>
       </element>
 
       <element name="ScrollWindowEx">
@@ -2816,7 +2816,7 @@ end;
       </element>
 
       <element name="SendMessage">
-        <short>Sends a message directed to a window to the message pool of the application
+        <short>Sends a message directed to a window to the message pool of the application.
         </short>
         <descr>
           <p>
@@ -2834,7 +2834,7 @@ end;
         <short/>
       </element>
       <element name="SendMessage.HandleWnd">
-        <short>The handle of the window to receive the message</short>
+        <short>The handle of the window to receive the message.</short>
       </element>
       <element name="SendMessage.Msg">
         <short/>
@@ -2847,7 +2847,7 @@ end;
       </element>
 
       <element name="SetActiveWindow">
-        <short>Sets focus to the specified window, if the application is on top</short>
+        <short>Sets focus to the specified window, if the application is on top.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2859,7 +2859,7 @@ end;
       </element>
 
       <element name="SetBkColor">
-        <short>Sets the current background color of an device context</short>
+        <short>Sets the current background color of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2874,7 +2874,7 @@ end;
       </element>
 
       <element name="SetBkMode">
-        <short>Sets the background mix mode (transparency) of an device context</short>
+        <short>Sets the background mix mode (transparency) of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2889,7 +2889,7 @@ end;
       </element>
 
       <element name="SetCapture">
-        <short>Sets the mouse capture to the specified window</short>
+        <short>Sets the mouse capture to the specified window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2901,7 +2901,7 @@ end;
       </element>
 
       <element name="SetCaretPos">
-        <short>Moves the Caret to the specified coordinates</short>
+        <short>Moves the Caret to the specified coordinates.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2916,7 +2916,7 @@ end;
       </element>
 
       <element name="SetCaretPosEx">
-        <short>Moves the Caret into a window</short>
+        <short>Moves the Caret into a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2934,7 +2934,7 @@ end;
       </element>
 
       <element name="SetCursor">
-        <short>Changes the shape of the mouse cursor</short>
+        <short>Changes the shape of the mouse cursor.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2946,7 +2946,7 @@ end;
       </element>
 
       <element name="SetCursorPos">
-        <short>Changes the position of the mouse cursor</short>
+        <short>Changes the position of the mouse cursor.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2961,7 +2961,7 @@ end;
       </element>
 
       <element name="SetMapMode">
-        <short>Sets the mapping mode of an device context</short>
+        <short>Sets the mapping mode of an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2976,7 +2976,7 @@ end;
       </element>
 
       <element name="SetMenu">
-        <short>Assigns a menu to a window</short>
+        <short>Assigns a menu to a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2991,7 +2991,7 @@ end;
       </element>
 
       <element name="SetParent">
-        <short>Changes the parent of a window</short>
+        <short>Changes the parent of a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3007,7 +3007,7 @@ end;
 
 
       <element name="SetProp">
-        <short>Adds a property to a window</short>
+        <short>Adds a property to a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3025,7 +3025,7 @@ end;
       </element>
 
       <element name="SetROP2">
-        <short>Sets the Foreground Mixing Mode in an device context</short>
+        <short>Sets the Foreground Mixing Mode in an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3040,7 +3040,7 @@ end;
       </element>
 
       <element name="SelectClipRGN">
-        <short>Sets the ClipRegion of an DeviceContext</short>
+        <short>Sets the ClipRegion of an DeviceContext.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3055,7 +3055,7 @@ end;
       </element>
 
       <element name="SelectObject">
-        <short>Selects an object into an device context</short>
+        <short>Selects an object into an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3092,7 +3092,7 @@ end;
       </element>
 
       <element name="SetFocus">
-        <short>Sets the keyboard input focus to the specified window</short>
+        <short>Sets the keyboard input focus to the specified window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3143,7 +3143,7 @@ end;
       </element>
 
       <element name="SetStretchBltMode">
-        <short>Sets the StrechBlt mode for an device context</short>
+        <short>Sets the StrechBlt mode for an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3158,7 +3158,7 @@ end;
       </element>
 
       <element name="SetSysColors">
-        <short>Sets the colors for one or more display elements of window borders and desktop</short>
+        <short>Sets the colors for one or more display elements of window borders and desktop.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3176,7 +3176,7 @@ end;
       </element>
 
       <element name="SetTextCharacterExtra">
-        <short>Sets extra inter-character spacing in text output</short>
+        <short>Sets extra inter-character spacing in text output.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3191,7 +3191,7 @@ end;
       </element>
 
       <element name="SetTextColor">
-        <short>Sets the text color in an device context</short>
+        <short>Sets the text color in an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3209,7 +3209,7 @@ end;
       </element>
 
       <element name="SetViewPortExtEx">
-        <short>Sets the extent of the viewport for a device context</short>
+        <short>Sets the extent of the viewport for a device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3230,7 +3230,7 @@ end;
       </element>
 
       <element name="SetViewPortOrgEx">
-        <short>Sets the device origin corresponding to the window origin (0,0) in an device context</short>
+        <short>Sets the device origin corresponding to the window origin (0,0) in an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3251,7 +3251,7 @@ end;
       </element>
 
       <element name="SetWindowExtEx">
-        <short>Sets the extent of the window for an device context</short>
+        <short>Sets the extent of the window for an device context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3272,7 +3272,7 @@ end;
       </element>
 
       <element name="SetWindowLong">
-        <short>Sets an attribute of a window</short>
+        <short>Sets an attribute of a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3290,7 +3290,7 @@ end;
       </element>
 
       <element name="SetWindowOrgEx">
-        <short>Specifies which window point maps to the viewport origin (0,0)</short>
+        <short>Specifies which window point maps to the viewport origin (0,0).</short>
         <descr/>
         <seealso/>
       </element>
@@ -3311,7 +3311,7 @@ end;
       </element>
 
       <element name="SetWindowPos">
-        <short>Changes the size, position, and Z order of a window</short>
+        <short>Changes the size, position, and Z order of a window.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3341,7 +3341,7 @@ end;
       </element>
       <!-- function SetWindowRgn Visibility: default -->
       <element name="SetWindowRgn">
-        <short>Defines the visible region of a window or control</short>
+        <short>Defines the visible region of a window or control.</short>
         <descr>
           <p>
             This function sets the visible region of a window or control. It's parameters are:
@@ -3376,7 +3376,7 @@ end;
       </element>
 
       <element name="ShowCaret">
-        <short>Shows the Caret (text cursor)</short>
+        <short>Shows the Caret (text cursor).</short>
         <descr/>
         <seealso/>
       </element>
@@ -3388,7 +3388,7 @@ end;
       </element>
 
       <element name="ShowScrollBar">
-        <short>Shows or hides a ScrollBar</short>
+        <short>Shows or hides a ScrollBar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3406,7 +3406,7 @@ end;
       </element>
 
       <element name="ShowWindow">
-        <short>Shows a window in an specific state</short>
+        <short>Shows a window in an specific state.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3515,7 +3515,7 @@ end;
       </element>
 
       <element name="SystemParametersInfo">
-        <short>Retrieves or sets one of the system-wide parameters</short>
+        <short>Retrieves or sets one of the system-wide parameters.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3536,7 +3536,7 @@ end;
       </element>
 
       <element name="TextOut">
-        <short>Draws an string without formatting (single line)</short>
+        <short>Draws an string without formatting (single line).</short>
         <descr/>
         <seealso/>
       </element>
@@ -3566,7 +3566,7 @@ end;
       </element>
 
       <element name="UpdateWindow">
-        <short>Forces an immediate repaint of a window, if required</short>
+        <short>Forces an immediate repaint of a window, if required.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3578,7 +3578,7 @@ end;
       </element>
 
       <element name="WindowFromPoint">
-        <short>Finds the window containing the specified point</short>
+        <short>Finds the window containing the specified point.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3778,7 +3778,7 @@ end;
       </element>
 
       <element name="EqualRect">
-        <short>Returns True when the rectangles are identical</short>
+        <short>Returns True when the rectangles are identical.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3793,12 +3793,12 @@ end;
       </element>
 
       <element name="GetScrollPos">
-        <short>Returns the scollbar position</short>
+        <short>Returns the scollbar position.</short>
         <descr>If the scrollbar is not visible, then the return value is 0.</descr>
         <seealso/>
       </element>
       <element name="GetScrollPos.Result">
-        <short>The position, zero if the scrollbar is not visible</short>
+        <short>The position, zero if the scrollbar is not visible.</short>
       </element>
       <element name="GetScrollPos.Handle">
         <short/>
@@ -3830,7 +3830,7 @@ end;
       </element>
 
       <element name="GetRValue">
-        <short>Extracts the red color value from a COLORREF</short>
+        <short>Extracts the red color value from a COLORREF.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3842,7 +3842,7 @@ end;
       </element>
 
       <element name="GetGValue">
-        <short>Extracts the green color value from a COLORREF</short>
+        <short>Extracts the green color value from a COLORREF.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3854,7 +3854,7 @@ end;
       </element>
 
       <element name="GetBValue">
-        <short>Extracts the blue color value from a COLORREF</short>
+        <short>Extracts the blue color value from a COLORREF.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3866,7 +3866,7 @@ end;
       </element>
       <!-- procedure Visibility: default -->
       <element name="GetRGBValues">
-        <short>Extracts the red, green and blue color values from a COLORREF</short>
+        <short>Extracts the red, green and blue color values from a COLORREF.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3884,7 +3884,7 @@ end;
       </element>
       <!-- procedure Visibility: default -->
       <element name="GetRGBIntValues">
-        <short>Extracts the red, green and blue color values from a COLORREF</short>
+        <short>Extracts the red, green and blue color values from a COLORREF.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3912,7 +3912,7 @@ end;
         </short>
       </element>
       <element name="IndexToOverlayMask.iOverlay">
-        <short>The imagelist index of the overlay</short>
+        <short>The imagelist index of the overlay.</short>
       </element>
 
       <element name="InflateRect">
@@ -3935,20 +3935,20 @@ end;
         <seealso/>
       </element>
       <element name="InflateRect.Result">
-        <short>Always True</short>
+        <short>Always True.</short>
       </element>
       <element name="InflateRect.ARect">
-        <short>This rectangle is modified</short>
+        <short>This rectangle is modified.</short>
       </element>
       <element name="InflateRect.dx">
-        <short>The horizontal increase, negative to decrease</short>
+        <short>The horizontal increase, negative to decrease.</short>
       </element>
       <element name="InflateRect.dy">
-        <short>The vertical increase, negative to decrease</short>
+        <short>The vertical increase, negative to decrease.</short>
       </element>
 
       <element name="IntersectRect">
-        <short>Intersects SrcRect1 and SrcRect2 into DestRect</short>
+        <short>Intersects SrcRect1 and SrcRect2 into DestRect.</short>
         <descr>
           <p>
             Intersecting means that DestRect will be the overlapping area of SrcRect1 and SrcRect2.
@@ -3960,10 +3960,10 @@ end;
         <seealso/>
       </element>
       <element name="IntersectRect.Result">
-        <short>False when the rectangles don't overlap</short>
+        <short>False when the rectangles don't overlap.</short>
       </element>
       <element name="IntersectRect.DestRect">
-        <short>Receives the intersection</short>
+        <short>Receives the intersection.</short>
       </element>
       <element name="IntersectRect.SrcRect1">
         <short/>
@@ -3973,33 +3973,33 @@ end;
       </element>
 
       <element name="IsCharAlphaNumeric">
-        <short>Checks for ASCII letter or digit characters</short>
+        <short>Checks for ASCII letter or digit characters.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="IsCharAlphaNumeric.Result">
-        <short>True when the character is a letter or digit</short>
+        <short>True when the character is a letter or digit.</short>
       </element>
       <element name="IsCharAlphaNumeric.c">
         <short/>
       </element>
 
       <element name="IsRectEmpty">
-        <short>Returns True if the rectangle is empty</short>
+        <short>Returns True if the rectangle is empty.</short>
         <descr>
           IsEmptyRect returns true if the area of the rectangle is empty, i.e. has a zero or negative width or height.
         </descr>
         <seealso/>
       </element>
       <element name="IsRectEmpty.Result">
-        <short>True if the rectangle is empty</short>
+        <short>True if the rectangle is empty.</short>
       </element>
       <element name="IsRectEmpty.ARect">
         <short/>
       </element>
 
       <element name="KillTimer">
-        <short>Removes an timer</short>
+        <short>Removes an timer.</short>
         <descr/>
         <seealso>
           <link id="SetTimer"/>
@@ -4009,25 +4009,25 @@ end;
         <short>Zero on failure!</short>
       </element>
       <element name="KillTimer.Wnd">
-        <short>The window handle associated with the timer, can be zero</short>
+        <short>The window handle associated with the timer, can be zero.</short>
       </element>
       <element name="KillTimer.uIDEvent">
-        <short>The timer ID</short>
+        <short>The timer ID.</short>
       </element>
 
       <element name="MakeLong">
-        <short>Copies two words into a double word</short>
+        <short>Copies two words into a double word.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="MakeLong.Result">
-        <short>The combined doubleword</short>
+        <short>The combined doubleword.</short>
       </element>
       <element name="MakeLong.A">
-        <short>The low word</short>
+        <short>The low word.</short>
       </element>
       <element name="MakeLong.B">
-        <short>The high word</short>
+        <short>The high word.</short>
       </element>
 
       <element name="MakeROP4">
@@ -4046,7 +4046,7 @@ end;
       </element>
 
       <element name="MakeWord">
-        <short>Copies two bytes into a word</short>
+        <short>Copies two bytes into a word.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4055,14 +4055,14 @@ end;
         <short/>
       </element>
       <element name="MakeWord.A">
-        <short>The low byte</short>
+        <short>The low byte.</short>
       </element>
       <element name="MakeWord.B">
-        <short>The high byte</short>
+        <short>The high byte.</short>
       </element>
 
       <element name="MakeWParam">
-        <short>Copies two words into a double word, usable as a message wParam</short>
+        <short>Copies two words into a double word, usable as a message wParam.</short>
         <descr>The result has the size of an pointer.</descr>
         <seealso/>
       </element>
@@ -4070,14 +4070,14 @@ end;
         <short/>
       </element>
       <element name="MakeWParam.l">
-        <short>The low word</short>
+        <short>The low word.</short>
       </element>
       <element name="MakeWParam.h">
-        <short>The high word</short>
+        <short>The high word.</short>
       </element>
 
       <element name="MakeLParam" link="MakeWParam">
-        <short>Copies two words into a double word, usable as a message lParam</short>
+        <short>Copies two words into a double word, usable as a message lParam.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4085,14 +4085,14 @@ end;
         <short/>
       </element>
       <element name="MakeLParam.l">
-        <short>The low word</short>
+        <short>The low word.</short>
       </element>
       <element name="MakeLParam.h">
-        <short>The high word</short>
+        <short>The high word.</short>
       </element>
 
       <element name="MakeLResult" link="MakeWParam">
-        <short>Copies two words into a double word, usable as a message Result</short>
+        <short>Copies two words into a double word, usable as a message Result.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4100,10 +4100,10 @@ end;
         <short/>
       </element>
       <element name="MakeLResult.l">
-        <short>The low word</short>
+        <short>The low word.</short>
       </element>
       <element name="MakeLResult.h">
-        <short>The high word</short>
+        <short>The high word.</short>
       </element>
 
       <element name="OffSetRect">
@@ -4113,7 +4113,7 @@ end;
         <seealso/>
       </element>
       <element name="OffSetRect.Result">
-        <short>False if resulting Top or Left are negative</short>
+        <short>False if resulting Top or Left are negative.</short>
       </element>
       <element name="OffSetRect.Rect">
         <short/>
@@ -4126,7 +4126,7 @@ end;
       </element>
 
       <element name="PtInRect">
-        <short>Checks whether a Point is within a Rect</short>
+        <short>Checks whether a Point is within a Rect.</short>
         <descr>
           <p>
             Top and Left side are part of the rectangle, but Bottom and Right side are outside.
@@ -4135,7 +4135,7 @@ end;
         <seealso/>
       </element>
       <element name="PtInRect.Result">
-        <short>True when Point is within Rect</short>
+        <short>True when Point is within Rect.</short>
       </element>
       <element name="PtInRect.Rect">
         <short/>
@@ -4170,7 +4170,7 @@ end;
         <seealso/>
       </element>
       <element name="RGB.Result">
-        <short>The combined COLORREF created with the given color channels</short>
+        <short>The combined COLORREF created with the given color channels.</short>
       </element>
       <element name="RGB.R">
         <short>
@@ -4178,14 +4178,14 @@ end;
         </short>
       </element>
       <element name="RGB.G">
-        <short>The value of the green channel</short>
+        <short>The value of the green channel.</short>
       </element>
       <element name="RGB.B">
-        <short>The value of the blue channel</short>
+        <short>The value of the blue channel.</short>
       </element>
 
       <element name="ScrollWindow">
-        <short>Scrolls the content of a window, by a number of pixels</short>
+        <short>Scrolls the content of a window, by a number of pixels.</short>
         <descr/>
         <seealso>
           <link id="ScrollWindowEx"/>
@@ -4198,26 +4198,26 @@ end;
         <short/>
       </element>
       <element name="ScrollWindow.XAmount">
-        <short>Horizontal distance (positive to scroll right)</short>
+        <short>Horizontal distance (positive to scroll right).</short>
       </element>
       <element name="ScrollWindow.YAmount">
-        <short>Vertical distance (positive to scroll down)</short>
+        <short>Vertical distance (positive to scroll down).</short>
       </element>
       <element name="ScrollWindow.Rect">
         <short>The part of the window, that is to be scrolled.
         </short>
       </element>
       <element name="ScrollWindow.ClipRect">
-        <short>Pixels falling outside this rectangle are lost</short>
+        <short>Pixels falling outside this rectangle are lost.</short>
       </element>
 
       <element name="SetRect">
-        <short>Copies coordinates into a rectangle</short>
+        <short>Copies coordinates into a rectangle.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="SetRect.Result">
-        <short>Always True</short>
+        <short>Always True.</short>
       </element>
       <element name="SetRect.ARect">
         <short/>
@@ -4236,12 +4236,12 @@ end;
       </element>
 
       <element name="SetRectEmpty">
-        <short>Clears the rectangle to all zero coordinates</short>
+        <short>Clears the rectangle to all zero coordinates.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="SetRectEmpty.Result">
-        <short>Always True</short>
+        <short>Always True.</short>
       </element>
       <element name="SetRectEmpty.ARect">
         <short/>
@@ -4258,21 +4258,21 @@ end;
         </seealso>
       </element>
       <element name="SetScrollPos.Result">
-        <short>The previous Position, zero if invisible</short>
+        <short>The previous Position, zero if invisible.</short>
       </element>
       <element name="SetScrollPos.Handle">
-        <short>The ScrollBar or Window Handle</short>
+        <short>The ScrollBar or Window Handle.</short>
       </element>
       <element name="SetScrollPos.nBar">
         <short>
           <link id="#lcl.LCLType.SB_CTL">SB_CTL</link>
-          means a ScrollBar control</short>
+          means a ScrollBar control.</short>
       </element>
       <element name="SetScrollPos.nPos">
-        <short>The new Position</short>
+        <short>The new Position.</short>
       </element>
       <element name="SetScrollPos.bRedraw">
-        <short>True forces a repaint</short>
+        <short>True forces a repaint.</short>
       </element>
 
       <element name="SetScrollRange">
@@ -4284,7 +4284,7 @@ end;
         </seealso>
       </element>
       <element name="SetScrollRange.Result">
-        <short>Always True</short>
+        <short>Always True.</short>
       </element>
       <element name="SetScrollRange.Handle">
         <short/>
@@ -4303,7 +4303,7 @@ end;
       </element>
 
       <element name="SetTimer">
-        <short>Creates or resets an timer for the given time interval</short>
+        <short>Creates or resets an timer for the given time interval.</short>
         <descr>
           <p>
             Every timer has a unique ID, which is reported in the timer message and can be used to reset or kill the timer.
@@ -4321,23 +4321,23 @@ end;
         </seealso>
       </element>
       <element name="SetTimer.Result">
-        <short>The timer ID, or zero on failure</short>
+        <short>The timer ID, or zero on failure.</short>
       </element>
       <element name="SetTimer.Wnd">
-        <short>The window associated with the timer</short>
+        <short>The window associated with the timer.</short>
       </element>
       <element name="SetTimer.nIDEvent">
-        <short>The ID of the timer, ignored when Wnd is zero</short>
+        <short>The ID of the timer, ignored when Wnd is zero.</short>
       </element>
       <element name="SetTimer.uElapse">
-        <short>The time interval to wait</short>
+        <short>The time interval to wait.</short>
       </element>
       <element name="SetTimer.lpTimerFunc">
-        <short>The callback procedure, can be Nil</short>
+        <short>The callback procedure, can be Nil.</short>
       </element>
 
       <element name="SmallPointToPoint">
-        <short>Converts an TSmallPoint into an TPoint</short>
+        <short>Converts an TSmallPoint into an TPoint.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4349,7 +4349,7 @@ end;
       </element>
 
       <element name="SubtractRect">
-        <short>Computes the bounding box of the geometric difference of two rectangles</short>
+        <short>Computes the bounding box of the geometric difference of two rectangles.</short>
         <descr>
           <p>
             When the rectangles do not overlap completely in either x or y direction, the result is the first rectangle (lprcSrc1).
@@ -4364,7 +4364,7 @@ end;
         <seealso/>
       </element>
       <element name="SubtractRect.Result">
-        <short>False when the resulting rectangle is empty</short>
+        <short>False when the resulting rectangle is empty.</short>
       </element>
       <element name="SubtractRect.lprcDst">
         <short/>
@@ -4373,7 +4373,7 @@ end;
         <short/>
       </element>
       <element name="SubtractRect.lprcSrc2">
-        <short>The rectangle to subtract</short>
+        <short>The rectangle to subtract.</short>
       </element>
 
       <element name="UnionRect">
@@ -5823,7 +5823,7 @@ end;
       </element>
 
       <element name="GetTickCount">
-        <short>Number of ticks (milliseconds) elapsed since the computer was started</short>
+        <short>Number of ticks (milliseconds) elapsed since the computer was started.</short>
         <descr>
           <p>
             GetTickCount is a  DWord function used to get the number of ticks (milliseconds) elapsed since the computer was started. GetTickCount calls the GetTickCount64 function in LazSysUtils to get the return value.
@@ -5832,11 +5832,11 @@ end;
         <seealso/>
       </element>
       <element name="GetTickCount.Result">
-        <short>Elapsed ticks (milliseconds)</short>
+        <short>Elapsed ticks (milliseconds).</short>
       </element>
 
       <element name="GetTickCount64">
-        <short>Number of ticks (milliseconds) elapsed since the computer was started</short>
+        <short>Number of ticks (milliseconds) elapsed since the computer was started.</short>
         <descr>
           <p>
             GetTickCount64 is a QWord function used to get the number of ticks (milliseconds) elapsed since the computer was started. GetTickCount64 calls the GetTickCount64 function in LazSysUtils to get the return value.
@@ -5845,26 +5845,26 @@ end;
         <seealso/>
       </element>
       <element name="GetTickCount64.Result">
-        <short>Elapsed ticks (milliseconds)</short>
+        <short>Elapsed ticks (milliseconds).</short>
       </element>
 
       <element name="FindDefaultBrowser">
-        <short>Gets the path to the default browser and its parameters</short>
+        <short>Gets the path to the default browser and its parameters.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="FindDefaultBrowser.Result">
-        <short>True the default browser was found for the platform</short>
+        <short>True the default browser was found for the platform.</short>
       </element>
       <element name="FindDefaultBrowser.ABrowser">
-        <short>Qualified path to the executable for the default browser</short>
+        <short>Qualified path to the executable for the default browser.</short>
       </element>
       <element name="FindDefaultBrowser.AParams">
-        <short>Parameters needed to start the default browser for the platform</short>
+        <short>Parameters needed to start the default browser for the platform.</short>
       </element>
 
       <element name="OpenURL">
-        <short>Open a given URL with the default browser</short>
+        <short>Open a given URL with the default browser.</short>
         <descr>
           <p>
             The function uses FindDefaultBrowser to find the default browser for the platfrom. If it was found,  it is started and the returns value is set to <b>True</b>.
@@ -5875,15 +5875,15 @@ end;
         </descr>
       </element>
       <element name="OpenURL.Result">
-        <short>True if the browser was found and called to open the URL</short>
+        <short>True if the browser was found and called to open the URL.</short>
       </element>
       <element name="OpenURL.AURL">
-        <short>URL with the resource to open in the browser</short>
+        <short>URL with the resource to open in the browser.</short>
       </element>
 
       <element name="OpenDocument">
         <short>
-          Opens the specified document using the default application for the platform or widgetset
+          Opens the specified document using the default application for the platform or widgetset.
         </short>
         <descr>
           <p>
@@ -5899,10 +5899,10 @@ end;
         <seealso/>
       </element>
       <element name="OpenDocument.Result">
-        <short>True if an application was found and the document was opened</short>
+        <short>True if an application was found and the document was opened.</short>
       </element>
       <element name="OpenDocument.APath">
-        <short>Full path and file name to open in the routine</short>
+        <short>Full path and file name to open in the routine.</short>
       </element>
 
       <element name="TOpenParamStringProc">

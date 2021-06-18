@@ -8,8 +8,8 @@
     -->
     <module name="lazdialogs">
       <short>
-        Contains classes, types, and routines needed for Lazarus dialogs in custom-drawn and non-desktop environments
-      </short>
+        Contains classes, types, and routines needed for Lazarus dialogs in custom-drawn and non-desktop environments.
+        </short>
       <descr>
         <p>
           <file>lazdialogs.pas</file> contains classes, types, and routines needed for Lazarus dialogs in custom-drawn and non-desktop environments.
@@ -18,7 +18,7 @@
 
       <element name="TLazFileDialogKind">
         <short>
-          Enumerated type which represents the dialog kind in a Lazarus dialog form
+          Enumerated type which represents the dialog kind in a Lazarus dialog form.
         </short>
         <descr></descr>
         <seealso>
@@ -29,19 +29,19 @@
         </seealso>
       </element>
       <element name="TLazFileDialogKind.ldkOpenDesktop">
-        <short>Dialog is an open dialog for desktop environments</short>
+        <short>Dialog is an open dialog for desktop environments.</short>
       </element>
       <element name="TLazFileDialogKind.ldkSaveDesktop">
-        <short>Dialog is a save dialog for desktop environments</short>
+        <short>Dialog is a save dialog for desktop environments.</short>
       </element>
       <element name="TLazFileDialogKind.ldkOpenPDA">
-        <short>Dialog is an open dialog for PDA environments</short>
+        <short>Dialog is an open dialog for PDA environments.</short>
       </element>
       <element name="TLazFileDialogKind.ldkSavePDA">
-        <short>Dialog is a save dialog for PDA environments</short>
+        <short>Dialog is a save dialog for PDA environments.</short>
       </element>
       <element name="TLazFileDialogKind.ldkSelectDirectory">
-        <short>Dialog is a directory selection dialog</short>
+        <short>Dialog is a directory selection dialog.</short>
       </element>
 
       <element name="TLazarusFileDialogForm">
@@ -52,13 +52,13 @@
 
       <element name="TLazarusFileDialogForm.FKind">
         <short>
-          Member used to store the TLazFileDialogKind enumeration value for the dialog form
+          Member used to store the TLazFileDialogKind enumeration value for the dialog form.
         </short>
       </element>
 
       <element name="TLazarusFileDialogForm.SetFilter">
         <short>
-          Sets the value for the file mask used in the Filter for the dialog form
+          Sets the value for the file mask used in the Filter for the dialog form.
         </short>
         <descr>
           <p>
@@ -74,12 +74,12 @@
       </element>
 
       <element name="TLazarusFileDialogForm.SetFilter.AFilter">
-        <short>New value for the Filter member</short>
+        <short>New value for the Filter member.</short>
       </element>
 
       <element name="TLazarusFileDialogForm.ButtonPanel">
         <short>
-          Button panel for the Lazarus dialog form
+          Button panel for the Lazarus dialog form.
         </short>
         <descr>
           <p>
@@ -94,7 +94,7 @@
 
       <element name="TLazarusFileDialogForm.ShellTreeView">
         <short>
-          Shell tree view control for the Lazarus dialog form
+          Shell tree view control for the Lazarus dialog form.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -102,7 +102,7 @@
 
       <element name="TLazarusFileDialogForm.ShellListView">
         <short>
-          Shell list view control for the Lazarus dialog form
+          Shell list view control for the Lazarus dialog form.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -116,7 +116,7 @@
 
       <element name="TLazarusFileDialogForm.FilterComboBox">
         <short>
-          Combo box control used for the file mask filter in the Lazarus dialog form
+          Combo box control used for the file mask filter in the Lazarus dialog form.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -124,7 +124,7 @@
 
       <element name="TLazarusFileDialogForm.FileName">
         <short>
-          File name for the selected file in the Lazarus dialog form
+          File name for the selected file in the Lazarus dialog form.
         </short>
         <descr>
           <p>
@@ -144,7 +144,7 @@
 
       <element name="TLazarusFileDialogForm.Filter">
         <short>
-          File mask filter for the Lazarus dialog form
+          File mask filter for the Lazarus dialog form.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -152,7 +152,7 @@
 
       <element name="TLazarusFileDialogForm.InitialDir">
         <short>
-          Initial directory used in the Lazarus file dialog form
+          Initial directory used in the Lazarus file dialog form.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -160,7 +160,7 @@
 
       <element name="TLazarusFileDialogForm.Title">
         <short>
-          Title displayed for the Lazarus dialog form
+          Title displayed for the Lazarus dialog form.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -168,7 +168,7 @@
 
       <element name="TLazarusFileDialogForm.CreateNew">
         <short>
-          Alternate constructor for the class instance
+          Alternate constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -188,16 +188,16 @@
       </element>
 
       <element name="TLazarusFileDialogForm.CreateNew.AOwner">
-        <short>Owner of the Lazarus dialog form</short>
+        <short>Owner of the Lazarus dialog form.</short>
       </element>
 
       <element name="TLazarusFileDialogForm.CreateNew.Num">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
       </element>
 
       <element name="TLazarusFileDialogForm.Initialize">
         <short>
-          Creates and positions child controls on the Lazarus dialog form
+          Creates and positions child controls on the Lazarus dialog form.
         </short>
         <descr>
           <p>
@@ -229,37 +229,37 @@
         </seealso>
       </element>
       <element name="TLazarusFileDialogForm.Initialize.AKind">
-        <short>Dialog kind for the Lazarus dialog form instance</short>
+        <short>Dialog kind for the Lazarus dialog form instance.</short>
       </element>
 
       <element name="TLazarusFileDialogForm.HandleOkClick">
         <short>
-          Event handler signalled when the OK button is clicked
+          Event handler signalled when the OK button is clicked.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazarusFileDialogForm.HandleOkClick.ASender">
-        <short>
+        <short>.
         </short>
       </element>
 
       <element name="TLazarusFileDialogForm.HandleCancelClick">
         <short>
-          Event handler signalled when the Cancel button is clicked
+          Event handler signalled when the Cancel button is clicked.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazarusFileDialogForm.HandleCancelClick.ASender">
         <short>
-          Component generating the event notification
+          Component generating the event notification.
         </short>
       </element>
 
       <element name="TLazarusFileDialogForm.HandleCloseQuery">
         <short>
-          Event handler for an OnCloseQuery event notification
+          Event handler for an OnCloseQuery event notification.
         </short>
         <descr>
           <p>
@@ -286,15 +286,15 @@
         </seealso>
       </element>
       <element name="TLazarusFileDialogForm.HandleCloseQuery.Sender">
-        <short>Component performing the event notification</short>
+        <short>Component performing the event notification.</short>
       </element>
       <element name="TLazarusFileDialogForm.HandleCloseQuery.CanClose">
-        <short>Indicates if the Lazarus dialog form can be closed</short>
+        <short>Indicates if the Lazarus dialog form can be closed.</short>
       </element>
 
       <element name="TLazarusFileDialogForm.HandleEditChange">
         <short>
-          Event handler for changes to the value in the SaveEdit control
+          Event handler for changes to the value in the SaveEdit control.
         </short>
         <descr>
           <p>
@@ -310,12 +310,12 @@
         </seealso>
       </element>
       <element name="TLazarusFileDialogForm.HandleEditChange.ASender">
-        <short>Component generating the event notification</short>
+        <short>Component generating the event notification.</short>
       </element>
 
       <element name="TLazarusFileDialogForm.HandleSelectItem">
         <short>
-          Event handler for changes to the selected item in ShellListView
+          Event handler for changes to the selected item in ShellListView.
         </short>
         <descr>
           <p>
@@ -333,23 +333,23 @@
       </element>
       <element name="TLazarusFileDialogForm.HandleSelectItem.Sender">
         <short>
-          Component generating the event notification
+          Component generating the event notification.
         </short>
       </element>
       <element name="TLazarusFileDialogForm.HandleSelectItem.Item">
         <short>
-          List item selected in the ShellListView control
+          List item selected in the ShellListView control.
         </short>
       </element>
       <element name="TLazarusFileDialogForm.HandleSelectItem.Selected">
         <short>
-          Indicates that Item is selected when True
+          Indicates that Item is selected when True.
         </short>
       </element>
 
       <element name="TLazarusFileDialogForm.HandleTreeViewSelectionChanged">
         <short>
-          Event handler signalled when the selected item in ShellTreeView is changed
+          Event handler signalled when the selected item in ShellTreeView is changed.
         </short>
         <descr>
           <p>
@@ -366,12 +366,12 @@
         </seealso>
       </element>
       <element name="TLazarusFileDialogForm.HandleTreeViewSelectionChanged.ASender">
-        <short>Component generating the event notification</short>
+        <short>Component generating the event notification.</short>
       </element>
 
       <element name="TLazOpenDialog">
         <short>
-          Implements a Lazarus file open dialog
+          Implements a Lazarus file open dialog.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -379,19 +379,19 @@
 
       <element name="TLazOpenDialog.FForm">
         <short>
-          Member used to store the form instance for the Lazarus dialog
+          Member used to store the form instance for the Lazarus dialog.
         </short>
       </element>
 
       <element name="TLazOpenDialog.WSRegisterClass">
         <short>
-          An empty implementation; dialogs do not require a WS implementation
+          An empty implementation; dialogs do not require a WS implementation.
         </short>
       </element>
 
       <element name="TLazOpenDialog.DoExecute">
         <short>
-          Executes the file open dialog
+          Executes the file open dialog.
         </short>
         <descr>
           <p>
@@ -406,13 +406,13 @@
       </element>
       <element name="TLazOpenDialog.DoExecute.Result">
         <short>
-          True when the file open dialog was not cancelled during execution
+          True when the file open dialog was not cancelled during execution.
         </short>
       </element>
 
       <element name="TLazOpenDialog.DoInitialize">
         <short>
-          Performs actions needed to initialize the Lazarus dialog
+          Performs actions needed to initialize the Lazarus dialog.
         </short>
         <descr></descr>
       </element>
@@ -420,18 +420,18 @@
 
       <element name="TLazOpenDialog.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TLazOpenDialog.Create.TheOwner">
-        <short>Owner of the Lazarus dialog</short>
+        <short>Owner of the Lazarus dialog.</short>
       </element>
 
       <element name="TLazSaveDialog">
         <short>
-          Implements a Lazarus File Save dialog
+          Implements a Lazarus File Save dialog.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -439,7 +439,7 @@
 
       <element name="TLazSaveDialog.DoInitialize">
         <short>
-          Performs actions needed to initialize the Lazarus dialog
+          Performs actions needed to initialize the Lazarus dialog.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -447,7 +447,7 @@
 
       <element name="TLazSelectDirectoryDialog">
         <short>
-          Implements a Lazarus directory selection dialog
+          Implements a Lazarus directory selection dialog.
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -455,7 +455,7 @@
 
       <element name="TLazSelectDirectoryDialog.DoInitialize">
         <short>
-          Performs actions needed to initialize the Lazarus dialog
+          Performs actions needed to initialize the Lazarus dialog.
         </short>
         <descr></descr>
         <seealso></seealso>

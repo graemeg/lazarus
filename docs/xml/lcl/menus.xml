@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="Menus">
-      <short>Implements menus used in forms created with the Lazarus IDE</short>
+      <short>Implements menus used in forms created with the Lazarus IDE.</short>
       <descr>
         <p>
           <file>menus.pp</file> contains classes, types, and routines used to implement menus used on TForm instances in the Lazarus Component Library (<b>LCL</b>).
@@ -53,7 +53,7 @@
 
       <element name="EMenuError">
         <short>
-          Exception raised when an error occurs while accessing a menu item
+          Exception raised when an error occurs while accessing a menu item.
         </short>
         <descr/>
         <seealso>
@@ -65,7 +65,7 @@
 
       <element name="TGlyphShowMode">
         <short>
-          <var>TGlyphShowMode</var> indicates if the glyph image of a menu or button should shown or not and in which circumstances
+          <var>TGlyphShowMode</var> indicates if the glyph image of a menu or button should shown or not and in which circumstances.
         </short>
         <descr/>
         <seealso>
@@ -75,23 +75,23 @@
         </seealso>
       </element>
       <element name="TGlyphShowMode.gsmAlways">
-        <short>Always show the glyph image</short>
+        <short>Always show the glyph image.</short>
       </element>
       <element name="TGlyphShowMode.gsmNever">
-        <short>Never show the glyph image</short>
+        <short>Never show the glyph image.</short>
       </element>
       <element name="TGlyphShowMode.gsmApplication">
         <short>
-          Uses the setting in the Application.ShowMenuGlyphs property
+          Uses the setting in the Application.ShowMenuGlyphs property.
         </short>
       </element>
       <element name="TGlyphShowMode.gsmSystem">
-        <short>Uses the theme element setting in ThemeServices</short>
+        <short>Uses the theme element setting in ThemeServices.</short>
       </element>
 
       <element name="TMenuChangeEvent">
         <short>
-          Specifies an event handler signalled when a menu or menu item is changed
+          Specifies an event handler signalled when a menu or menu item is changed.
         </short>
         <descr>
           <p>
@@ -108,18 +108,18 @@
         </seealso>
       </element>
       <element name="TMenuChangeEvent.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TMenuChangeEvent.Source">
-        <short>Menu or menu item where the change occurred</short>
+        <short>Menu or menu item where the change occurred.</short>
       </element>
       <element name="TMenuChangeEvent.Rebuild">
-        <short>True to rebuild the menu item hierarchy</short>
+        <short>True to rebuild the menu item hierarchy.</short>
       </element>
 
       <element name="TMenuActionLink">
         <short>
-          <var>TMenuActionLink</var>: defines the link between a selected menu item and its corresponding action
+          <var>TMenuActionLink</var>: defines the link between a selected menu item and its corresponding action.
         </short>
         <descr>
           <p>
@@ -128,7 +128,7 @@
       </element>
 
       <element name="TMenuActionLink.FClient">
-        <short>Stored a reference to the menu item for the link</short>
+        <short>Stored a reference to the menu item for the link.</short>
       </element>
 
       <element name="TMenuActionLink.AssignClient" link="#rtl.classes.TBasicActionLink.AssignClient">
@@ -144,13 +144,13 @@
 
       <element name="TMenuActionLink.IsAutoCheckLinked">
         <short>
-          Determines if the menu item and action have the same value in their AutoCheck properties
+          Determines if the menu item and action have the same value in their AutoCheck properties.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuActionLink.IsAutoCheckLinked.Result">
-        <short>True when  AutoCheck is the same in the menu item and the action</short>
+        <short>True when  AutoCheck is the same in the menu item and the action.</short>
       </element>
 
       <element name="TMenuActionLink.IsCaptionLinked" link="#lcl.actnlist.TActionLink.IsCaptionLinked">
@@ -248,7 +248,7 @@
 
       <element name="TMenuActionLink.SetAutoCheck">
         <short>
-          <var>SetAutoCheck</var> - specifies whether AutoCheck is to apply
+          <var>SetAutoCheck</var> - specifies whether AutoCheck is to apply.
         </short>
         <descr/>
         <seealso/>
@@ -259,7 +259,7 @@
 
       <element name="TMenuActionLink.SetCaption">
         <short>
-          <var>SetCaption</var> - specifies the caption for the linked <var>MenuItem</var>
+          <var>SetCaption</var> - specifies the caption for the linked <var>MenuItem</var>.
         </short>
         <descr/>
         <seealso/>
@@ -270,7 +270,7 @@
 
       <element name="TMenuActionLink.SetChecked">
         <short>
-          <var>SetChecked</var> - specifies whether the Item is checked
+          <var>SetChecked</var> - specifies whether the Item is checked.
         </short>
         <descr/>
         <seealso/>
@@ -281,7 +281,7 @@
 
       <element name="TMenuActionLink.SetEnabled">
         <short>
-          <var>SetEnabled</var> - specifies whether the action is enabled
+          <var>SetEnabled</var> - specifies whether the action is enabled.
         </short>
         <descr/>
         <seealso/>
@@ -292,7 +292,7 @@
 
       <element name="TMenuActionLink.SetHelpContext">
         <short>
-          <var>SetHelpContext</var> - specifies the Help context
+          <var>SetHelpContext</var> - specifies the Help context.
         </short>
         <descr/>
         <seealso/>
@@ -302,7 +302,7 @@
       </element>
 
       <element name="TMenuActionLink.SetHint">
-        <short>Sets the Hint text for the linked menu action</short>
+        <short>Sets the Hint text for the linked menu action.</short>
         <descr/>
         <seealso/>
       </element>
@@ -311,7 +311,7 @@
       </element>
 
       <element name="TMenuActionLink.SetImageIndex">
-        <short>Sets the index for the image associated with the linked menu action</short>
+        <short>Sets the index for the image associated with the linked menu action.</short>
         <descr/>
         <seealso/>
       </element>
@@ -320,7 +320,7 @@
       </element>
 
       <element name="TMenuActionLink.SetShortCut">
-        <short>Sets the ShortCut or accelerator key for the linked menu action</short>
+        <short>Sets the ShortCut or accelerator key for the linked menu action.</short>
         <descr/>
         <seealso/>
       </element>
@@ -330,13 +330,13 @@
 
       <element name="TMenuActionLink.SetVisible">
         <short>
-          Sets the value in Visible for the menu item when the client and the action are linked
+          Sets the value in Visible for the menu item when the client and the action are linked.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuActionLink.SetVisible.Value">
-        <short>New value for the Visible property in the menu item</short>
+        <short>New value for the Visible property in the menu item.</short>
       </element>
 
       <element name="TMenuActionLink.SetOnExecute" link="#rtl.classes.TBasicActionLink.SetOnExecute">
@@ -354,7 +354,7 @@
 
       <element name="TMenuActionLinkClass">
         <short>
-          <var>TMenuActionLinkClass</var> - class of <var>TMenuActionLink</var>
+          <var>TMenuActionLinkClass</var> - class of <var>TMenuActionLink</var>.
         </short>
         <descr/>
         <seealso/>
@@ -362,7 +362,7 @@
 
       <element name="TMenuItemEnumerator">
         <short>
-          Implements an enumerator for child menu items in the specified TMenuItem instance
+          Implements an enumerator for child menu items in the specified TMenuItem instance.
         </short>
         <descr>
           <p>
@@ -388,7 +388,7 @@
 
       <!-- public -->
       <element name="TMenuItemEnumerator.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance. Create stores the menu item in the <var>AMenuItem</var> argument to an internal member, and sets the internal position for the enumerator to <b>-1</b>.
@@ -404,11 +404,11 @@
         </seealso>
       </element>
       <element name="TMenuItemEnumerator.Create.AMenuItem">
-        <short>Menu item with the child menu items accessed in the class instance</short>
+        <short>Menu item with the child menu items accessed in the class instance.</short>
       </element>
 
       <element name="TMenuItemEnumerator.MoveNext">
-        <short>Moves to the next position for the enumerator</short>
+        <short>Moves to the next position for the enumerator.</short>
         <descr/>
         <seealso>
           <link id="TMenuItemEnumerator.Current"/>
@@ -417,11 +417,11 @@
         </seealso>
       </element>
       <element name="TMenuItemEnumerator.MoveNext.Result">
-        <short>True if another value is available for the enumerator</short>
+        <short>True if another value is available for the enumerator.</short>
       </element>
 
       <element name="TMenuItemEnumerator.Current">
-        <short>Returns the TMenuItem instance at the current position for the enumerator</short>
+        <short>Returns the TMenuItem instance at the current position for the enumerator.</short>
         <descr/>
         <seealso>
           <link id="TMenuItemEnumerator.MoveNext"/>
@@ -431,7 +431,7 @@
 
       <element name="TMenuItemHandlerType">
         <short>
-          <var>TMenuItemHandlerType</var> - enumerated type for menu item handlers
+          <var>TMenuItemHandlerType</var> - enumerated type for menu item handlers.
         </short>
         <descr>
           Currently has only one member - <var>mihtDestroy</var>
@@ -442,26 +442,26 @@
       </element>
 
       <element name="TMenuDrawItemEvent">
-        <short>Specifies an event handler signalled to draw a menu item to a canvas</short>
+        <short>Specifies an event handler signalled to draw a menu item to a canvas.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuDrawItemEvent.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TMenuDrawItemEvent.ACanvas">
-        <short>Canvas used to render the menu item</short>
+        <short>Canvas used to render the menu item.</short>
       </element>
       <element name="TMenuDrawItemEvent.ARect">
-        <short>Display rectangle for the menu item</short>
+        <short>Display rectangle for the menu item.</short>
       </element>
       <element name="TMenuDrawItemEvent.AState">
-        <short>Owner-drawn state for the menu item</short>
+        <short>Owner-drawn state for the menu item.</short>
       </element>
 
       <element name="TMenuMeasureItemEvent">
         <short>
-          Specifies an event handler signalled to get the width and height for a menu item
+          Specifies an event handler signalled to get the width and height for a menu item.
         </short>
         <descr>
           <p>
@@ -486,21 +486,21 @@
         </seealso>
       </element>
       <element name="TMenuMeasureItemEvent.Sender">
-        <short>Object (TMenuItem) for the event notification</short>
+        <short>Object (TMenuItem) for the event notification.</short>
       </element>
       <element name="TMenuMeasureItemEvent.ACanvas">
-        <short>Canvas where the menu item is drawn</short>
+        <short>Canvas where the menu item is drawn.</short>
       </element>
       <element name="TMenuMeasureItemEvent.AWidth">
-        <short>Width needed for the menu item</short>
+        <short>Width needed for the menu item.</short>
       </element>
       <element name="TMenuMeasureItemEvent.AHeight">
-        <short>Height needed for the menu item</short>
+        <short>Height needed for the menu item.</short>
       </element>
 
       <element name="TMergedMenuItems">
         <short>
-          Implements a container for menu items merged into a parent menu or menu item
+          Implements a container for menu items merged into a parent menu or menu item.
         </short>
         <descr>
           <p>
@@ -534,7 +534,7 @@
 
       <!-- public -->
       <element name="TMergedMenuItems.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and calls the inherited method on entry. Create allocates resources needed for the internal storage in the container.
@@ -546,11 +546,11 @@
         <seealso/>
       </element>
       <element name="TMergedMenuItems.Create.aParent">
-        <short>Menu item with the merged menu items for the container</short>
+        <short>Menu item with the merged menu items for the container.</short>
       </element>
 
       <element name="TMergedMenuItems.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that menu items in the internal storage are freed. It calls the inherited destructor prior to exiting from the method.
@@ -560,7 +560,7 @@
       </element>
 
       <element name="TMergedMenuItems.DefaultSort">
-        <short>Implements the default sort routine for merged menu items</short>
+        <short>Implements the default sort routine for merged menu items.</short>
         <descr/>
         <seealso/>
       </element>
@@ -568,24 +568,24 @@
         <short/>
       </element>
       <element name="TMergedMenuItems.DefaultSort.aItem1">
-        <short>Pointer to the first menu item for the sort comparison</short>
+        <short>Pointer to the first menu item for the sort comparison.</short>
       </element>
       <element name="TMergedMenuItems.DefaultSort.aItem2">
-        <short>Pointer to the second menu item for the sort comparison</short>
+        <short>Pointer to the second menu item for the sort comparison.</short>
       </element>
       <element name="TMergedMenuItems.DefaultSort.aParentItem">
-        <short>Pointer to the Parent menu item for the compared values</short>
+        <short>Pointer to the Parent menu item for the compared values.</short>
       </element>
 
       <element name="TMergedMenuItems.VisibleCount">
-        <short>Number of visible menu items in the storage for the container</short>
+        <short>Number of visible menu items in the storage for the container.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMergedMenuItems.VisibleItems">
         <short>
-          Provides indexed access to the visible menu items in the list of merged menu items
+          Provides indexed access to the visible menu items in the list of merged menu items.
         </short>
         <descr/>
         <seealso>
@@ -593,28 +593,28 @@
         </seealso>
       </element>
       <element name="TMergedMenuItems.VisibleItems.Index">
-        <short>Ordinal position for a visible menu item in the container</short>
+        <short>Ordinal position for a visible menu item in the container.</short>
       </element>
 
       <element name="TMergedMenuItems.InvisibleCount">
-        <short>Number of invisible (hidden) menu items in the storage for the container</short>
+        <short>Number of invisible (hidden) menu items in the storage for the container.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMergedMenuItems.InvisibleItems">
         <short>
-          Provides indexed access to the invisible (hidden) menu items in the list of merged menu items
+          Provides indexed access to the invisible (hidden) menu items in the list of merged menu items.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMergedMenuItems.InvisibleItems.Index">
-        <short>Ordinal position for an invisible (hidden) menu item in the container</short>
+        <short>Ordinal position for an invisible (hidden) menu item in the container.</short>
       </element>
 
       <element name="TMenuItems">
-        <short>Implements a list used to store TMenuItem instances with a given parent</short>
+        <short>Implements a list used to store TMenuItem instances with a given parent.</short>
         <descr/>
         <seealso/>
       </element>
@@ -625,7 +625,7 @@
       <!-- protected -->
       <element name="TMenuItems.Notify">
         <short>
-          Notifies the parent and the merged menu item that a child menu item has been added, extracted, or deleted
+          Notifies the parent and the merged menu item that a child menu item has been added, extracted, or deleted.
         </short>
         <descr>
           <p>
@@ -635,15 +635,15 @@
         <seealso/>
       </element>
       <element name="TMenuItems.Notify.Ptr">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
       </element>
       <element name="TMenuItems.Notify.Action">
-        <short>Not used in the current implementation</short>
+        <short>Not used in the current implementation.</short>
       </element>
 
       <!-- public -->
       <element name="TMenuItems.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and calls the inherited method on entry. Create stores the value in <var>AMenuItem</var> to the member variable used for the parent menu item.
@@ -652,11 +652,11 @@
         <seealso/>
       </element>
       <element name="TMenuItems.Create.AMenuItem ">
-        <short>Menu item that is the parent for the menu items in the list</short>
+        <short>Menu item that is the parent for the menu items in the list.</short>
       </element>
 
       <element name="TMenuItem">
-        <short>Represents a menu item displayed in a menu</short>
+        <short>Represents a menu item displayed in a menu.</short>
         <descr>
           <p>
             <var>TMenuItem</var> is a <var>TLCLComponent</var> descendant which represent a menu item displayed on a <var>TMenu</var> instance, or one of its derived classes like <link id="TMainMenu">TMainMenu</link> and <link id="TPopUpMenu">TPopUpMenu</link>.
@@ -783,14 +783,14 @@
 
       <!-- protected -->
       <element name="TMenuItem.FCommand">
-        <short>Stores the numeric command in the widgetset class for the menu item</short>
+        <short>Stores the numeric command in the widgetset class for the menu item.</short>
       </element>
 
       <element name="TMenuItem.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TMenuItem.ActionChange">
         <short>
-          Changes the action for the menu item using the value specified in Sender
+          Changes the action for the menu item using the value specified in Sender.
         </short>
         <descr>
           <p>
@@ -818,12 +818,12 @@
         <seealso/>
       </element>
       <element name="TMenuItem.ActionChange.Sender">
-        <short>TCustomAction examined and applied to the menu item</short>
+        <short>TCustomAction examined and applied to the menu item.</short>
       </element>
 
       <element name="TMenuItem.AssignTo">
         <short>
-          Copies property values from the current class instance to the specified destination
+          Copies property values from the current class instance to the specified destination.
         </short>
         <descr>
           <p>
@@ -852,11 +852,11 @@
         </seealso>
       </element>
       <element name="TMenuItem.AssignTo.Dest">
-        <short>Action or menu item where values are stored in the method</short>
+        <short>Action or menu item where values are stored in the method.</short>
       </element>
 
       <element name="TMenuItem.BitmapChange">
-        <short>Updates the image associated with the menu item when it has been changed</short>
+        <short>Updates the image associated with the menu item when it has been changed.</short>
         <descr>
           <p>
             <var>BitmapChange</var> is a method used to updates the image associated with the menu item when it has been changed. BitmapChange calls the <var>UpdateImage</var> method retrieve the <var>Images</var> or <var>SubMenuImages</var> for the item, its ancestor items, or the parent menu.
@@ -875,7 +875,7 @@
       </element>
 
       <element name="TMenuItem.DoDrawItem">
-        <short>Performs actions needed to draw the menu item to the specified Canvas</short>
+        <short>Performs actions needed to draw the menu item to the specified Canvas.</short>
         <descr>
           <p>
             <var>DoDrawItem</var> is a <var>Boolean</var> function which performs actions needed to draw the menu item to the specified canvas with the given owner-drawn state.
@@ -893,20 +893,20 @@
         <seealso/>
       </element>
       <element name="TMenuItem.DoDrawItem.Result">
-        <short>True if the menu item was rendered using an OnDrawItem event handler</short>
+        <short>True if the menu item was rendered using an OnDrawItem event handler.</short>
       </element>
       <element name="TMenuItem.DoDrawItem.ACanvas">
-        <short>Canvas where the menu item is drawn</short>
+        <short>Canvas where the menu item is drawn.</short>
       </element>
       <element name="TMenuItem.DoDrawItem.ARect">
-        <short>Display rectangle for the menu item</short>
+        <short>Display rectangle for the menu item.</short>
       </element>
       <element name="TMenuItem.DoDrawItem.AState">
-        <short>Owner-draw state for the menu item</short>
+        <short>Owner-draw state for the menu item.</short>
       </element>
 
       <element name="TMenuItem.DoMeasureItem">
-        <short>Performs actions needed to get the width and height for the menu item</short>
+        <short>Performs actions needed to get the width and height for the menu item.</short>
         <descr>
           <p>
             <var>DoMeasureItem</var> is a method used to perform actions needed to get the width and height for the menu item. DoMeasureItem signals the <var>OnMeasureItem</var> event handler (when assigned) to calculate the values in AWidth and AHeight. The TCanvas instance in ACanvas is used to get the text metrics for the Caption.
@@ -924,20 +924,20 @@
         <seealso/>
       </element>
       <element name="TMenuItem.DoMeasureItem.Result">
-        <short>True if the size was calculated using an OnMeasureItem event handler</short>
+        <short>True if the size was calculated using an OnMeasureItem event handler.</short>
       </element>
       <element name="TMenuItem.DoMeasureItem.ACanvas">
-        <short>Canvas used to get size information for the menu item</short>
+        <short>Canvas used to get size information for the menu item.</short>
       </element>
       <element name="TMenuItem.DoMeasureItem.AWidth">
-        <short>Calculated width for the menu item</short>
+        <short>Calculated width for the menu item.</short>
       </element>
       <element name="TMenuItem.DoMeasureItem.AHeight">
-        <short>Calculated height for the menu item</short>
+        <short>Calculated height for the menu item.</short>
       </element>
 
       <element name="TMenuItem.GetAction">
-        <short>Gets the value for the Action property</short>
+        <short>Gets the value for the Action property.</short>
         <descr>
           <p>
             The value for the property is read from the <var>ActionLink</var> property (when assigned).  The property value is <b>Nil</b> when a <var>TMenuActionLink</var> instance has not been assigned to ActionLink.
@@ -950,20 +950,20 @@
         </seealso>
       </element>
       <element name="TMenuItem.GetAction.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TMenuItem.GetActionLinkClass">
-        <short>Gets the class reference used to create an action link for the class</short>
+        <short>Gets the class reference used to create an action link for the class.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.GetActionLinkClass.Result">
-        <short>Returns TMenuActionLink in TMenuItem</short>
+        <short>Returns TMenuActionLink in TMenuItem.</short>
       </element>
 
       <element name="TMenuItem.GetHandle">
-        <short>Gets the value for the Handle property</short>
+        <short>Gets the value for the Handle property.</short>
         <descr>
           <p>
             <var>GetHandle</var> calls <var>HandleNeeded</var> to ensure that a valid handle is available for the menu item. If the handle has not already been allocated, <var>CreateHandle</var> is called to create the handle in the widgetset class.
@@ -974,12 +974,12 @@
         </seealso>
       </element>
       <element name="TMenuItem.GetHandle.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TMenuItem.DoClicked">
         <short>
-          <var>DoClicked </var>- process the system message signifying that a click has occurred over this menu item
+          <var>DoClicked </var>- process the system message signifying that a click has occurred over this menu item.
         </short>
         <descr>
           <p>
@@ -992,11 +992,11 @@
         <seealso/>
       </element>
       <element name="TMenuItem.DoClicked.msg">
-        <short>Message handled in the method</short>
+        <short>Message handled in the method.</short>
       </element>
 
       <element name="TMenuItem.CreateHandle">
-        <short>Creates the Handle for the menu item</short>
+        <short>Creates the Handle for the menu item.</short>
         <descr>
           <p>
             <var>CreateHandle</var> is a method used to create the <var>Handle</var> for the control using the widgetset class instance. CreateHandle calls CheckChildrenHandles to ensure that handles for hidden menu Items are freed, and handles for MergedItems are re-created.
@@ -1009,7 +1009,7 @@
       </element>
 
       <element name="TMenuItem.DestroyHandle">
-        <short>Frees the Handle for the control and any handles allocated for its Items</short>
+        <short>Frees the Handle for the control and any handles allocated for its Items.</short>
         <descr>
           <p>
             Handles for menu items in <var>Merged</var> are also freed. Calls the corresponding method in the widgetset class to destroy the handle, and sets the <var>Handle</var> property to <b>0</b> to indicate that it is unassigned.
@@ -1019,7 +1019,7 @@
       </element>
 
       <element name="TMenuItem.Loaded" link="#rtl.classes.TComponent.Loaded">
-        <short>Performs actions needed after the component is loaded using LCL streaming</short>
+        <short>Performs actions needed after the component is loaded using LCL streaming.</short>
         <descr>
           <p>
             Loaded is overridden in TMenuItem, and calls the inherited method on entry. It calls the <var>ActionChange</var> method if <var>Action</var> has been assigned for the class instance.
@@ -1032,7 +1032,7 @@
       </element>
 
       <element name="TMenuItem.Notification" link="#rtl.classes.TComponent.Notification">
-        <short>Performs a notification when the menu item is added or removed</short>
+        <short>Performs a notification when the menu item is added or removed.</short>
         <descr>
           <p>
             <var>Notification</var> is an overridden method in <var>TMenuItem</var>, and calls the inherited method on entry. Notification ensures that the class instances in <var>Action</var> and <var>SubMenuImages</var> are set to <b>Nil</b> when the remove <var>Operation</var> is received for either member.
@@ -1041,14 +1041,14 @@
         <seealso/>
       </element>
       <element name="TMenuItem.Notification.AComponent">
-        <short>Component for the notification</short>
+        <short>Component for the notification.</short>
       </element>
       <element name="TMenuItem.Notification.Operation">
-        <short>Operation for the notification</short>
+        <short>Operation for the notification.</short>
       </element>
 
       <element name="TMenuItem.GetChildren" link="#rtl.classes.TComponent.GetChildren">
-        <short>Performs an operation for a component instance and its Items</short>
+        <short>Performs an operation for a component instance and its Items.</short>
         <descr>
           <p>
             <var>GetChildren</var> is an overridden method in <var>TMenuItem</var>, and implements the dynamic method defined in the ancestor class. It does not call the inherited method.
@@ -1063,14 +1063,14 @@
         <seealso/>
       </element>
       <element name="TMenuItem.GetChildren.Proc">
-        <short>Object procedure called for the component</short>
+        <short>Object procedure called for the component.</short>
       </element>
       <element name="TMenuItem.GetChildren.Root">
-        <short>Component examined in the object procedure</short>
+        <short>Component examined in the object procedure.</short>
       </element>
 
       <element name="TMenuItem.InitiateActions">
-        <short>Updates Actions in child menu items</short>
+        <short>Updates Actions in child menu items.</short>
         <descr>
           <p>
             <var>InitiateActions</var> is a method used to update the actions for child menu items in the Items property. InitiateActions visits each of the <var>TMenuItem</var> instances in <var>Items</var> and calls its <var>InitiateAction</var> method. This allows the <var>ActionLink</var> in the menu item to  call its <var>Update</var> method for the associated <var>TBasicAction</var> instance.
@@ -1084,7 +1084,7 @@
 
       <element name="TMenuItem.MenuChanged">
         <short>
-          Signals the OnChange event handler (when assigned) and optionally rebuilds child  menu items
+          Signals the OnChange event handler (when assigned) and optionally rebuilds child  menu items.
         </short>
         <descr>
           <p>
@@ -1100,11 +1100,11 @@
         <seealso/>
       </element>
       <element name="TMenuItem.MenuChanged.Rebuild">
-        <short>True to rebuild the child menu items</short>
+        <short>True to rebuild the child menu items.</short>
       </element>
 
       <element name="TMenuItem.SetAction">
-        <short>Sets the value for the Action property</short>
+        <short>Sets the value for the Action property.</short>
         <descr>
           <p>
             Maintains the ActionLink for the class instance.
@@ -1115,11 +1115,11 @@
         </seealso>
       </element>
       <element name="TMenuItem.SetAction.NewAction">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenuItem.SetChildOrder" link="#rtl.classes.TComponent.SetChildOrder">
-        <short>Moves a menu item to the specified position in a menu</short>
+        <short>Moves a menu item to the specified position in a menu.</short>
         <descr>
           <p>
             Stores the value in the Order parameter to the MenuIndex property in the Child menu item.
@@ -1128,25 +1128,25 @@
         <seealso/>
       </element>
       <element name="TMenuItem.SetChildOrder.Child">
-        <short>Menu item affected in the method</short>
+        <short>Menu item affected in the method.</short>
       </element>
       <element name="TMenuItem.SetChildOrder.Order">
-        <short>Value assigned to the MenuIndex for the menu item</short>
+        <short>Value assigned to the MenuIndex for the menu item.</short>
       </element>
 
       <element name="TMenuItem.SetGroupIndex">
-        <short>Sets the value for the GroupIndex property</short>
+        <short>Sets the value for the GroupIndex property.</short>
         <descr/>
         <seealso>
           <link id="TMenuItem.GroupIndex"/>
         </seealso>
       </element>
       <element name="TMenuItem.SetGroupIndex.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenuItem.SetImageIndex">
-        <short>Sets the value for the ImageIndex property</short>
+        <short>Sets the value for the ImageIndex property.</short>
         <descr>
           <p>
             Calls GetImageList to get the Images for the TMenu instance that owns the menu item, or the SubImages from the Parent menu item. AValue indicates the position in the image list used as the property value.
@@ -1160,12 +1160,12 @@
         </seealso>
       </element>
       <element name="TMenuItem.SetImageIndex.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenuItem.SetParentComponent" link="#rtl.classes.TComponent.SetParentComponent">
         <short>
-          Ensures that the menu item is parented by the specified menu or menu item
+          Ensures that the menu item is parented by the specified menu or menu item.
         </short>
         <descr>
           <p>
@@ -1184,33 +1184,33 @@
         <seealso/>
       </element>
       <element name="TMenuItem.SetParentComponent.AValue">
-        <short>Menu or menu item used as the parent for the current class instance</short>
+        <short>Menu or menu item used as the parent for the current class instance.</short>
       </element>
 
       <element name="TMenuItem.SetShortCut">
-        <short>Sets the value for the ShortCut property</short>
+        <short>Sets the value for the ShortCut property.</short>
         <descr/>
         <seealso>
           <link id="TMenuItem.ShortCut"/>
         </seealso>
       </element>
       <element name="TMenuItem.SetShortCut.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenuItem.SetShortCutKey2">
-        <short>Sets the value for the SetShortCutKey2 property</short>
+        <short>Sets the value for the SetShortCutKey2 property.</short>
         <descr/>
         <seealso>
           <link id="TMenuItem.ShortCutKey2"/>
         </seealso>
       </element>
       <element name="TMenuItem.SetShortCutKey2.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenuItem.SetVisible">
-        <short>Sets the value for the Visible property</short>
+        <short>Sets the value for the Visible property.</short>
         <descr>
           <p>
             When the new property value is <b>True</b>, a valid <var>Handle</var> is needed for both the menu item and its <var>Parent</var> (when assigned). <var>HandleNeeded</var> is called to allocate a handle if it does not already exist.
@@ -1230,11 +1230,11 @@
         </seealso>
       </element>
       <element name="TMenuItem.SetVisible.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenuItem.UpdateWSIcon">
-        <short>Updates the widgetset class with the values in HasIcon and Bitmap</short>
+        <short>Updates the widgetset class with the values in HasIcon and Bitmap.</short>
         <descr>
           <p>
             <var>UpdateWSIcon</var> is a method used to update the widgetset class to reflect the values from <var>HasIcon</var> and the <var>Bitmap</var> property.  HasIcon returns <b>True</b> when a bitmap is available and in use for the menu item. Bitmap contains the image displayed for the menu item, and may be <b>Nil</b> when HasIcon returns <b>False</b>.
@@ -1251,29 +1251,29 @@
 
       <element name="TMenuItem.ImageListChange">
         <short>
-          <var>ImageListChange</var> - change the image list if commanded by the Sender
+          <var>ImageListChange</var> - change the image list if commanded by the Sender.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.ImageListChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TMenuItem.ActionLink">
-        <short>Maintains a link to the action for the menu item</short>
+        <short>Maintains a link to the action for the menu item.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMenuItem.FCompStyle">
-        <short>Member used to store style flags for the component</short>
+        <short>Member used to store style flags for the component.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMenuItem.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor for <var>TMenuItem</var>, and calls the inherited method on entry. Create sets the default values for properties, and allocates resources needed for the internal <var>TChangeLink</var> instance used in the class instance.
@@ -1284,11 +1284,11 @@
         </seealso>
       </element>
       <element name="TMenuItem.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TMenuItem.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated for the class instance are freed. This includes freeing the Bitmap, Handle, and any Items or Merged items for the menu item. It also removes itself from the Items for the Parent menu or menu item. Destroy calls the inherited destructor prior to exit.
@@ -1301,7 +1301,7 @@
 
       <element name="TMenuItem.Find">
         <short>
-          <var>Find</var> the identity given menu item (named in <var>ACaption</var>)
+          <var>Find</var> the identity given menu item (named in <var>ACaption</var>).
         </short>
         <descr>
           <p>
@@ -1311,11 +1311,11 @@
         <seealso/>
       </element>
       <element name="TMenuItem.Find.ACaption">
-        <short>Caption for the menu item to locate in the method</short>
+        <short>Caption for the menu item to locate in the method.</short>
       </element>
 
       <element name="TMenuItem.GetEnumerator">
-        <short>Gets an enumerator for the child menu Items in the class instance</short>
+        <short>Gets an enumerator for the child menu Items in the class instance.</short>
         <descr/>
         <seealso>
           <link id="TMenuItem.Items"/>
@@ -1323,11 +1323,11 @@
         </seealso>
       </element>
       <element name="TMenuItem.GetEnumerator.Result">
-        <short>TMenuItemEnumerator instance for the Items in the class</short>
+        <short>TMenuItemEnumerator instance for the Items in the class.</short>
       </element>
 
       <element name="TMenuItem.GetImageList">
-        <short>Gets an image list with the available bitmaps for the menu item</short>
+        <short>Gets an image list with the available bitmaps for the menu item.</short>
         <descr>
           <p>
             <var>GetImageList</var> is an overloaded method used to get the list of available images for the menu item. The images are retrieved from an ancestor menu item or the menu which contains the menu item.
@@ -1357,13 +1357,13 @@
         <seealso/>
       </element>
       <element name="TMenuItem.GetImageList.Result">
-        <short>TCustomImageList with the bitmaps available for the menu item</short>
+        <short>TCustomImageList with the bitmaps available for the menu item.</short>
       </element>
       <element name="TMenuItem.GetImageList.aImages">
-        <short>Output variable with the images available for the menu item</short>
+        <short>Output variable with the images available for the menu item.</short>
       </element>
       <element name="TMenuItem.GetImageList.aImagesWidth">
-        <short>Output variable with the width for the images in AImages</short>
+        <short>Output variable with the width for the images in AImages.</short>
       </element>
 
       <element name="TMenuItem.GetParentComponent" link="#rtl.classes.TComponent.GetParentComponent">
@@ -1376,11 +1376,11 @@
         <seealso/>
       </element>
       <element name="TMenuItem.GetParentComponent.Result">
-        <short>Parent menu item or menu for the current class instance</short>
+        <short>Parent menu item or menu for the current class instance.</short>
       </element>
 
       <element name="TMenuItem.GetParentMenu">
-        <short>Gets the parent menu to which this menu item belongs</short>
+        <short>Gets the parent menu to which this menu item belongs.</short>
         <descr>
           <p>
             <var>GetParentMenu</var> is a <var>TMenu</var> function used to get the menu where the menu item or its Parent menu item is located. GetParentMenu visits each of the Parent menu items. When an item is located without an assigned Parent, its Menu property is used as the return value for the method. The return value is Nil if all menu items in the hierarchy have a Parent menu item.
@@ -1402,7 +1402,7 @@
 
       <element name="TMenuItem.GetMergedParentMenu">
         <short>
-          Gets the parent menu to which this menu item belongs taking a merged menu into account
+          Gets the parent menu to which this menu item belongs taking a merged menu into account.
         </short>
         <descr/>
         <seealso/>
@@ -1413,7 +1413,7 @@
 
       <element name="TMenuItem.GetIsRightToLeft">
         <short>
-          Determines whether right-to-left display is enabled for the menu item
+          Determines whether right-to-left display is enabled for the menu item.
         </short>
         <descr>
           <p>
@@ -1424,24 +1424,24 @@
       </element>
       <element name="TMenuItem.GetIsRightToLeft.Result">
         <short>
-          True when the menu item has a parent menu with a BiDiMode other than bdLeftToRight
+          True when the menu item has a parent menu with a BiDiMode other than bdLeftToRight.
         </short>
       </element>
 
       <element name="TMenuItem.HandleAllocated">
         <short>
-          Indicates whether a Handle has been allocated for the menu item
+          Indicates whether a Handle has been allocated for the menu item.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.HandleAllocated.Result">
-        <short>True when Handle has a non-zero value</short>
+        <short>True when Handle has a non-zero value.</short>
       </element>
 
       <element name="TMenuItem.HasIcon">
         <short>
-          True when a bitmap is configured and available for the menu item
+          True when a bitmap is configured and available for the menu item.
         </short>
         <descr>
           <p>
@@ -1472,7 +1472,7 @@
       </element>
       <element name="TMenuItem.HasIcon.Result">
         <short>
-          True when a bitmap is configured and available for the menu item
+          True when a bitmap is configured and available for the menu item.
         </short>
       </element>
 
@@ -1486,12 +1486,12 @@
         <seealso/>
       </element>
       <element name="TMenuItem.HasParent.Result">
-        <short>True when a Parent menu item has been assigned for the menu item</short>
+        <short>True when a Parent menu item has been assigned for the menu item.</short>
       </element>
 
       <element name="TMenuItem.InitiateAction">
         <short>
-          Updates the Action in the ActionLink for the menu item
+          Updates the Action in the ActionLink for the menu item.
         </short>
         <descr>
           <p>
@@ -1506,7 +1506,7 @@
 
       <element name="TMenuItem.IntfDoSelect">
         <short>
-          <var>IntfDoSelect</var> - perform the selection using the interface
+          <var>IntfDoSelect</var> - perform the selection using the interface.
         </short>
         <descr>
           <p>
@@ -1517,7 +1517,7 @@
 
       <element name="TMenuItem.IndexOf">
         <short>
-          Gets the ordinal position in Items for the specified menu item
+          Gets the ordinal position in Items for the specified menu item.
         </short>
         <descr>
           <p>
@@ -1529,15 +1529,15 @@
         </seealso>
       </element>
       <element name="TMenuItem.IndexOf.Result">
-        <short>Ordinal position for the specified menu item, or -1 when not found</short>
+        <short>Ordinal position for the specified menu item, or -1 when not found.</short>
       </element>
       <element name="TMenuItem.IndexOf.Item">
-        <short>Menu item to locate in the Items property</short>
+        <short>Menu item to locate in the Items property.</short>
       </element>
 
       <element name="TMenuItem.IndexOfCaption">
         <short>
-          Gets the ordinal position in Items for the menu item with the specified Caption
+          Gets the ordinal position in Items for the menu item with the specified Caption.
         </short>
         <descr>
           <p>
@@ -1554,15 +1554,15 @@
       </element>
       <element name="TMenuItem.IndexOfCaption.Result">
         <short>
-          Ordinal position for the menu item with the given caption, or -1 when not found
+          Ordinal position for the menu item with the given caption, or -1 when not found.
         </short>
       </element>
       <element name="TMenuItem.IndexOfCaption.ACaption">
-        <short>Caption text to locate in the child Items for the menu item</short>
+        <short>Caption text to locate in the child Items for the menu item.</short>
       </element>
 
       <element name="TMenuItem.InvalidateMergedItems">
-        <short>Frees the MergedItems property for the menu item</short>
+        <short>Frees the MergedItems property for the menu item.</short>
         <descr/>
         <seealso>
           <link id="TMenuItem.MergedItems"/>
@@ -1572,7 +1572,7 @@
 
       <element name="TMenuItem.VisibleIndexOf">
         <short>
-          Gets the ordinal position for the specified menu item in the list of visible menu items
+          Gets the ordinal position for the specified menu item in the list of visible menu items.
         </short>
         <descr>
           <p>
@@ -1588,14 +1588,14 @@
         <seealso/>
       </element>
       <element name="TMenuItem.VisibleIndexOf.Result">
-        <short>Ordinal position in the visible Mergeditems for the specified menu item</short>
+        <short>Ordinal position in the visible Mergeditems for the specified menu item.</short>
       </element>
       <element name="TMenuItem.VisibleIndexOf.Item">
-        <short>Menu item to locate in the visible MergedItems</short>
+        <short>Menu item to locate in the visible MergedItems.</short>
       </element>
 
       <element name="TMenuItem.Add">
-        <short>Adds item(s) to the menu item</short>
+        <short>Adds item(s) to the menu item.</short>
         <descr>
           <p>
             <var>Add</var> is an overloaded method used to add one or more items to the menu. Variants are provided that allow a single TMenuItem instance to be added, or an array of TMenuItem instances.
@@ -1618,14 +1618,14 @@
         <seealso/>
       </element>
       <element name="TMenuItem.Add.Item">
-        <short>Menu item added to the child Items</short>
+        <short>Menu item added to the child Items.</short>
       </element>
       <element name="TMenuItem.Add.AItems">
-        <short>Array of menu items added to the child Items</short>
+        <short>Array of menu items added to the child Items.</short>
       </element>
 
       <element name="TMenuItem.AddSeparator">
-        <short>Adds a separator line to the child menu items</short>
+        <short>Adds a separator line to the child menu items.</short>
         <descr>
           <p>
             <var>AddSeparator</var> is a method used to add a separator line to the child menu <var>Items</var>. AddSeparator creates a new <var>TMenuItem</var> instance, and sets its <var>Caption</var> to the value in the <var>cLineCaption</var> constant. The <var>Add</var> method is called to append the menu item to the Items property.
@@ -1641,7 +1641,7 @@
       </element>
 
       <element name="TMenuItem.Click">
-        <short>Performs actions needed when the menu item is clicked</short>
+        <short>Performs actions needed when the menu item is clicked.</short>
         <descr>
           <p>
             <var>Click</var> is method used to perform actions needed when the menu item is clicked, or when the <var>DoClick</var> method is called. No actions are performed in the method if the menu item is not <var>Enabled</var>.
@@ -1660,7 +1660,7 @@
       </element>
 
       <element name="TMenuItem.Delete">
-        <short>Deletes the child menu item at the specified position in Items</short>
+        <short>Deletes the child menu item at the specified position in Items.</short>
         <descr>
           <p>
             <var>Delete</var> is a method used to delete the menu item in <var>Items</var> at the position specified in <var>Index</var>. Index must be in the range <b>0..<var>Count</var>-1</b>. An <var>EMenuError</var> exception is raised when Index is not in the required range, when Items has not been assigned for the class instance, or when the menu item has already been freed.
@@ -1672,11 +1672,11 @@
         <seealso/>
       </element>
       <element name="TMenuItem.Delete.Index">
-        <short>Ordinal position for the menu item removed in the method</short>
+        <short>Ordinal position for the menu item removed in the method.</short>
       </element>
 
       <element name="TMenuItem.HandleNeeded">
-        <short>Ensures that a valid Handle exists for the menu item</short>
+        <short>Ensures that a valid Handle exists for the menu item.</short>
         <descr>
           <p>
             Checks the value in <var>Handle</var> to ensure that a handle has been allocated for the menu item. Calls <var>CreateHandle</var> when Handle is set to <b>0</b> (unassigned).
@@ -1692,20 +1692,20 @@
 
       <element name="TMenuItem.Insert">
         <short>
-          <var>Insert</var> a new item at the location marked by <var>Index</var>
+          <var>Insert</var> a new item at the location marked by <var>Index</var>.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.Insert.Index">
-        <short>Ordinal position in Items where the menu item is inserted</short>
+        <short>Ordinal position in Items where the menu item is inserted.</short>
       </element>
       <element name="TMenuItem.Insert.Item">
-        <short>Menu item inserted in Items</short>
+        <short>Menu item inserted in Items.</short>
       </element>
 
       <element name="TMenuItem.RecreateHandle">
-        <short>Re-creates the Handle for the menu item</short>
+        <short>Re-creates the Handle for the menu item.</short>
         <descr>
           <p>
             RecreateHandle is a method used to destroy and re-create the <var>Handle</var> for the menu item. It is called when the type or the context for a <var>TMenuItem</var> instance is changed.
@@ -1721,7 +1721,7 @@
       </element>
 
       <element name="TMenuItem.Remove">
-        <short>Removes the specified menu item from its Parent</short>
+        <short>Removes the specified menu item from its Parent.</short>
         <descr>
           <p>
             <var>Remove</var> is a method used to locate and delete the menu item specified in <var>Item</var>.  Remove call <var>IndexOf</var> to get the position in <var>Items</var> where the menu item is stored. An <var>EMenuError</var> exception is raised if the menu item in Item is not found in the Items property.
@@ -1733,12 +1733,12 @@
         <seealso/>
       </element>
       <element name="TMenuItem.Remove.Item">
-        <short>Menu item removed in the method</short>
+        <short>Menu item removed in the method.</short>
       </element>
 
       <element name="TMenuItem.UpdateImage">
         <short>
-          Updates the image associated with the menu item, particularly if it has changed
+          Updates the image associated with the menu item, particularly if it has changed.
         </short>
         <descr>
         </descr>
@@ -1747,7 +1747,7 @@
 
       <element name="TMenuItem.UpdateImages">
         <short>
-          Update the images for the menu item and its child items
+          Update the images for the menu item and its child items.
         </short>
         <descr/>
         <seealso/>
@@ -1755,7 +1755,7 @@
 
       <element name="TMenuItem.IsCheckItem">
         <short>
-          Indicates if the menu item is configured as a check box or a radio button item
+          Indicates if the menu item is configured as a check box or a radio button item.
         </short>
         <descr/>
         <seealso/>
@@ -1766,7 +1766,7 @@
 
       <element name="TMenuItem.IsLine">
         <short>
-          True if the menu item is configured as a separator line
+          True if the menu item is configured as a separator line.
         </short>
         <descr/>
         <seealso/>
@@ -1774,7 +1774,7 @@
 
       <element name="TMenuItem.IsInMenuBar">
         <short>
-          True if the menu item has a main menu bar as its parent
+          True if the menu item has a main menu bar as its parent.
         </short>
         <descr/>
         <seealso>
@@ -1785,13 +1785,13 @@
       </element>
       <element name="TMenuItem.IsInMenuBar.Result">
         <short>
-          True if the menu item has a main menu bar as its parent
+          True if the menu item has a main menu bar as its parent.
         </short>
       </element>
 
       <element name="TMenuItem.Clear">
         <short>
-          Removes all child menu Items in the class instance
+          Removes all child menu Items in the class instance.
         </short>
         <descr>
           <p>
@@ -1805,20 +1805,20 @@
 
       <element name="TMenuItem.HasBitmap">
         <short>
-          Indicates whether a TBitmap instance has been assigned to the Bitmap property
+          Indicates whether a TBitmap instance has been assigned to the Bitmap property.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.HasBitmap.Result">
         <short>
-          True if a TBitmap instance has been assigned to the Bitmap property
+          True if a TBitmap instance has been assigned to the Bitmap property.
         </short>
       </element>
 
       <element name="TMenuItem.GetIconSize">
         <short>
-          Gets the size for the icon (glyph) used on the menu item
+          Gets the size for the icon (glyph) used on the menu item.
         </short>
         <descr>
           <p>
@@ -1832,12 +1832,12 @@
       </element>
       <element name="TMenuItem.GetIconSize.Result">
         <short>
-          TPoint instance with the width and height for the glyph displayed on the menu item
+          TPoint instance with the width and height for the glyph displayed on the menu item.
         </short>
       </element>
       <element name="TMenuItem.GetIconSize.ADC">
         <short>
-          Device context used to get the display density (PPI) for the glyph images
+          Device context used to get the display density (PPI) for the glyph images.
         </short>
       </element>
 
@@ -1852,49 +1852,49 @@
 
       <element name="TMenuItem.AddHandlerOnDestroy">
         <short>
-          Adds an OnDestroy event handler to the handlers for the menu item
+          Adds an OnDestroy event handler to the handlers for the menu item.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.AddHandlerOnDestroy.OnDestroyEvent">
-        <short>Routine added to the handlers for the menu item</short>
+        <short>Routine added to the handlers for the menu item.</short>
       </element>
       <element name="TMenuItem.AddHandlerOnDestroy.AsFirst">
-        <short>True if the handler is the first in the list of OnDestroy handlers</short>
+        <short>True if the handler is the first in the list of OnDestroy handlers.</short>
       </element>
 
       <element name="TMenuItem.RemoveHandlerOnDestroy">
         <short>
-          Removes the specified OnDestroy event handler from the list of handlers for the menu item
+          Removes the specified OnDestroy event handler from the list of handlers for the menu item.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.RemoveHandlerOnDestroy.OnDestroyEvent">
-        <short>Routine removed from the list of handlers in the menu item</short>
+        <short>Routine removed from the list of handlers in the menu item.</short>
       </element>
 
       <element name="TMenuItem.AddHandler">
         <short>
-          Adds an event handler routine of the specified type to the menu item
+          Adds an event handler routine of the specified type to the menu item.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenuItem.AddHandler.HandlerType">
-        <short>Identifies the type of handler added in the method</short>
+        <short>Identifies the type of handler added in the method.</short>
       </element>
       <element name="TMenuItem.AddHandler.AMethod">
-        <short>Event handler routine added to the list of handlers</short>
+        <short>Event handler routine added to the list of handlers.</short>
       </element>
       <element name="TMenuItem.AddHandler.AsFirst">
-        <short>True if the handler is the first for the given type</short>
+        <short>True if the handler is the first for the given type.</short>
       </element>
 
       <element name="TMenuItem.RemoveHandler">
         <short>
-          Removes the event handler routine from the specified handler type
+          Removes the event handler routine from the specified handler type.
         </short>
         <descr/>
         <seealso/>
@@ -1907,7 +1907,7 @@
       </element>
 
       <element name="TMenuItem.Merged">
-        <short>Contains a menu item and its children merged into the current class instance</short>
+        <short>Contains a menu item and its children merged into the current class instance.</short>
         <descr>
           <p>
             <var>Merged</var> is a read-only <var>TMenuItem</var> property with the menu item merged into the Items for the current class instance.
@@ -1917,7 +1917,7 @@
       </element>
 
       <element name="TMenuItem.MergedWith">
-        <short>Menu item where the current class instance was merged</short>
+        <short>Menu item where the current class instance was merged.</short>
         <descr>
           <p>
             <var>MergedWith</var> is a read-only <var>TMenuItem</var> property with the menu item where the current class instance was merged.
@@ -1928,7 +1928,7 @@
 
       <element name="TMenuItem.Count">
         <short>
-          Number of child menu items stored in the Items property
+          Number of child menu items stored in the Items property.
         </short>
         <descr>
           <p>
@@ -1942,7 +1942,7 @@
       </element>
 
       <element name="TMenuItem.Handle">
-        <short>Handle for the menu item allocated in the widgetset class</short>
+        <short>Handle for the menu item allocated in the widgetset class.</short>
         <descr>
           <p>
             <var>Handle</var> is a <var>HMenu</var> property with the handle for the menu item. Reading the value for the property causes the <var>HandleNeeded</var> method to be called to ensure that a valid handle exists for the menu item. The Handle value is assigned when the <var>CreateHandle</var> method in the widgetset class is called. Handle is set <b>0</b> when it has not been allocated using the widgetset class.
@@ -1958,7 +1958,7 @@
 
       <element name="TMenuItem.Items">
         <short>
-          Provides indexed access to the child menu items for the current class instance
+          Provides indexed access to the child menu items for the current class instance.
         </short>
         <descr>
           <p>
@@ -1980,12 +1980,12 @@
         <seealso/>
       </element>
       <element name="TMenuItem.Items.Index">
-        <short>Ordinal position in the list for the property value</short>
+        <short>Ordinal position in the list for the property value.</short>
       </element>
 
       <element name="TMenuItem.MergedItems">
         <short>
-          Returns the visible and invisible child items taking the merged menu into account
+          Returns the visible and invisible child items taking the merged menu into account.
         </short>
         <descr/>
         <seealso/>
@@ -1993,7 +1993,7 @@
 
       <element name="TMenuItem.MenuIndex">
         <short>
-          Ordinal position for the menu item in its Parent
+          Ordinal position for the menu item in its Parent.
         </short>
         <descr>
           <p>
@@ -2008,7 +2008,7 @@
 
       <element name="TMenuItem.Menu">
         <short>
-          Menu where the menu item is displayed
+          Menu where the menu item is displayed.
         </short>
         <descr>
           <p>
@@ -2022,14 +2022,14 @@
       </element>
 
       <element name="TMenuItem.Parent">
-        <short>The parent menu item for the class instance</short>
+        <short>The parent menu item for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMenuItem.MergedParent">
         <short>
-          The parent menu item for the class instance taking the merged menu into account
+          The parent menu item for the class instance taking the merged menu into account.
         </short>
         <descr/>
         <seealso/>
@@ -2037,7 +2037,7 @@
 
       <element name="TMenuItem.Command">
         <short>
-          Numeric command for the menu item as assigned in the widgetset class
+          Numeric command for the menu item as assigned in the widgetset class.
         </short>
         <descr/>
         <seealso/>
@@ -2045,7 +2045,7 @@
 
       <element name="TMenuItem.MenuVisibleIndex">
         <short>
-          <var>MenuVisibleIndex</var> - the index value of the visible menu
+          <var>MenuVisibleIndex</var> - the index value of the visible menu.
         </short>
         <descr/>
         <seealso/>
@@ -2056,7 +2056,7 @@
 
       <element name="TMenuItem.WriteDebugReport">
         <short>
-          Generates information about the menu item and its child Items for use in the debugger
+          Generates information about the menu item and its child Items for use in the debugger.
         </short>
         <descr/>
         <seealso/>
@@ -2064,7 +2064,7 @@
 
       <element name="TMenuItem.Action">
         <short>
-          <var>Action</var> - the default action associated with this Menu Item
+          <var>Action</var> - the default action associated with this Menu Item.
         </short>
         <descr/>
         <seealso/>
@@ -2072,7 +2072,7 @@
 
       <element name="TMenuItem.AutoCheck">
         <short>
-          Indicates whether a check mark is automatically drawn when the menu item is selected
+          Indicates whether a check mark is automatically drawn when the menu item is selected.
         </short>
         <descr/>
         <seealso/>
@@ -2080,7 +2080,7 @@
 
       <element name="TMenuItem.Caption">
         <short>
-          The caption text displayed for the menu item
+          The caption text displayed for the menu item.
         </short>
         <descr>
           <p>
@@ -2095,7 +2095,7 @@
 
       <element name="TMenuItem.Checked">
         <short>
-          Indicates whether a check mark is displayed beside the menu item
+          Indicates whether a check mark is displayed beside the menu item.
         </short>
         <descr/>
         <seealso>
@@ -2107,7 +2107,7 @@
 
       <element name="TMenuItem.Default">
         <short>
-          Indicates if the menu item is the default selection
+          Indicates if the menu item is the default selection.
         </short>
         <descr>
           When <var>Default</var> is set to <b>True</b>,  the menu item is normally displayed in boldface and can be executed by pressing the <b>Enter</b> key.
@@ -2117,7 +2117,7 @@
 
       <element name="TMenuItem.Enabled">
         <short>
-          Indicates if the menu item can be selected and executed
+          Indicates if the menu item can be selected and executed.
         </short>
         <descr>
           When Enabled is set to False, the menu item is normally displayed using a "greyed" style.
@@ -2127,7 +2127,7 @@
 
       <element name="TMenuItem.Bitmap">
         <short>
-          Bitmap image (glyph) displayed for the menu item
+          Bitmap image (glyph) displayed for the menu item.
         </short>
         <descr>
           <p>
@@ -2148,7 +2148,7 @@
 
       <element name="TMenuItem.GroupIndex">
         <short>
-          <var>GroupIndex</var>: the sequence number in a group of mutually exclusive RadioItem choices
+          <var>GroupIndex</var>: the sequence number in a group of mutually exclusive RadioItem choices.
         </short>
         <descr>
           <p>
@@ -2166,7 +2166,7 @@
 
       <element name="TMenuItem.GlyphShowMode">
         <short>
-          Indicates the display behavior for the glyph (or Bitmap) on the menu item
+          Indicates the display behavior for the glyph (or Bitmap) on the menu item.
         </short>
         <descr>
           <p>
@@ -2183,7 +2183,7 @@
 
       <element name="TMenuItem.HelpContext">
         <short>
-          Index to the context-sensitive help string used for the menu item (context ID)
+          Index to the context-sensitive help string used for the menu item (context ID).
         </short>
         <descr/>
         <seealso/>
@@ -2199,7 +2199,7 @@
 
       <element name="TMenuItem.ImageIndex">
         <short>
-          Ordinal position in the list of images for the glyph displayed on the menu item
+          Ordinal position in the list of images for the glyph displayed on the menu item.
         </short>
         <descr/>
         <seealso/>
@@ -2207,7 +2207,7 @@
 
       <element name="TMenuItem.RadioItem">
         <short>
-          Indicates if the menu item is displayed as a radio button
+          Indicates if the menu item is displayed as a radio button.
         </short>
         <descr/>
         <seealso/>
@@ -2215,7 +2215,7 @@
 
       <element name="TMenuItem.RightJustify">
         <short>
-          Indicates if the menu item caption is displayed with right-justification
+          Indicates if the menu item caption is displayed with right-justification.
         </short>
         <descr>
           <p>
@@ -2227,7 +2227,7 @@
 
       <element name="TMenuItem.ShortCut">
         <short>
-          Accelerator key sequence to be used in selecting this menu item
+          Accelerator key sequence to be used in selecting this menu item.
         </short>
         <descr>
           <p>
@@ -2241,14 +2241,14 @@
       </element>
 
       <element name="TMenuItem.ShortCutKey2">
-        <short>Secondary shortcut (accelerator) key for the menu item</short>
+        <short>Secondary shortcut (accelerator) key for the menu item.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMenuItem.ShowAlwaysCheckable">
         <short>
-          <var>ShowAlwaysCheckable</var> - if True, Item is always shown as checkable
+          <var>ShowAlwaysCheckable</var> - if True, Item is always shown as checkable.
         </short>
         <descr/>
         <seealso/>
@@ -2272,7 +2272,7 @@
 
       <element name="TMenuItem.Visible">
         <short>
-          Indicates whether the menu item is visible (or hidden)
+          Indicates whether the menu item is visible (or hidden).
         </short>
         <descr/>
         <seealso/>
@@ -2280,7 +2280,7 @@
 
       <element name="TMenuItem.OnClick">
         <short>
-          Event handler signalled to perform the actions needed when the menu item is selected
+          Event handler signalled to perform the actions needed when the menu item is selected.
         </short>
         <descr/>
         <seealso>
@@ -2292,7 +2292,7 @@
 
       <element name="TMenuItem.OnDrawItem">
         <short>
-          Event handler signalled to draw the menu item
+          Event handler signalled to draw the menu item.
         </short>
         <descr>
           <p>
@@ -2304,7 +2304,7 @@
 
       <element name="TMenuItem.OnMeasureItem">
         <short>
-          Event handler signalled to get the Width and Height for the menu item
+          Event handler signalled to get the Width and Height for the menu item.
         </short>
         <descr>
           <p>
@@ -2319,7 +2319,7 @@
 
       <element name="TMenuItemClass">
         <short>
-          <var>TMenuItemClass</var> - class of <var>TMenuItem</var>
+          <var>TMenuItemClass</var> - class of <var>TMenuItem</var>.
         </short>
         <descr/>
         <seealso/>
@@ -2327,7 +2327,7 @@
 
       <element name="TFindItemKind">
         <short>
-          <var>TFindItemKind</var> - enumerated type for kind of item in search operation: a command, a handle or a shortcut
+          <var>TFindItemKind</var> - enumerated type for kind of item in search operation: a command, a handle or a shortcut.
         </short>
         <descr>
           <p>
@@ -2339,18 +2339,18 @@
         </seealso>
       </element>
       <element name="TFindItemKind.fkCommand">
-        <short>Checks the Command property in a menu item</short>
+        <short>Checks the Command property in a menu item.</short>
       </element>
       <element name="TFindItemKind.fkHandle">
-        <short>Checks the Handle property in a menu item</short>
+        <short>Checks the Handle property in a menu item.</short>
       </element>
       <element name="TFindItemKind.fkShortCut">
-        <short>Checks the ShortCut  property in a menu item</short>
+        <short>Checks the ShortCut  property in a menu item.</short>
       </element>
 
       <element name="TMenu">
         <short>
-          <var>TMenu</var> - a menu appearing in a form. Base class for <var>TMainMenu</var> or <var>TPopupMenu</var>
+          <var>TMenu</var> - a menu appearing in a form. Base class for <var>TMainMenu</var> or <var>TPopupMenu</var>.
         </short>
         <descr>
           <p>
@@ -2385,7 +2385,7 @@
       <!-- private methods -->
       <element name="TMenu.CMParentBiDiModeChanged">
         <short>
-          Handles the CM_PARENTBIDIMODECHANGED control message
+          Handles the CM_PARENTBIDIMODECHANGED control message.
         </short>
         <descr>
           <p>
@@ -2395,98 +2395,98 @@
         <seealso/>
       </element>
       <element name="TMenu.CMParentBiDiModeChanged.Message">
-        <short>Control message examined in the method</short>
+        <short>Control message examined in the method.</short>
       </element>
 
       <element name="TMenu.CMAppShowMenuGlyphChanged">
         <short>
-          Handles the CM_APPSHOWMENUGLYPHCHANGED message for the menu
+          Handles the CM_APPSHOWMENUGLYPHCHANGED message for the menu.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenu.CMAppShowMenuGlyphChanged.Message">
-        <short>Control message examined in the method</short>
+        <short>Control message examined in the method.</short>
       </element>
 
       <element name="TMenu.IsBiDiModeStored">
-        <short>Implements the storage specifier for the BiDiMode property</short>
+        <short>Implements the storage specifier for the BiDiMode property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenu.IsBiDiModeStored.Result">
-        <short>True when BiDiMode contains a value other than the default</short>
+        <short>True when BiDiMode contains a value other than the default.</short>
       </element>
 
       <element name="TMenu.ImageListChange">
-        <short>Implements the OnChange event handler used in the Images property</short>
+        <short>Implements the OnChange event handler used in the Images property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenu.ImageListChange.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TMenu.SetBiDiMode">
-        <short>Sets the value for the BiDiMode property</short>
+        <short>Sets the value for the BiDiMode property.</short>
         <descr/>
         <seealso>
           <link id="TMenu.BiDiMode"/>
         </seealso>
       </element>
       <element name="TMenu.SetBiDiMode.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenu.SetImages">
-        <short>Sets the value for the Images property</short>
+        <short>Sets the value for the Images property.</short>
         <descr/>
         <seealso>
           <link id="TMenu.Images"/>
         </seealso>
       </element>
       <element name="TMenu.SetImages.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenu.SetImagesWidth">
-        <short>Sets the value for the ImagesWidth property</short>
+        <short>Sets the value for the ImagesWidth property.</short>
         <descr/>
         <seealso>
           <link id="TMenu.ImagesWidth"/>
         </seealso>
       </element>
       <element name="TMenu.SetImagesWidth.aImagesWidth">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenu.SetParent">
-        <short>Sets the value for the Parent property</short>
+        <short>Sets the value for the Parent property.</short>
         <descr/>
         <seealso>
           <link id="TMenu.Parent"/>
         </seealso>
       </element>
       <element name="TMenu.SetParent.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenu.SetParentBiDiMode">
-        <short>Sets the value for the Parent   BiDiMode   property</short>
+        <short>Sets the value for the Parent   BiDiMode   property.</short>
         <descr/>
         <seealso>
           <link id="TMenu.ParentBiDiMode"/>
         </seealso>
       </element>
       <element name="TMenu.SetParentBiDiMode.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="TMenu.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TMenu.BidiModeChanged">
         <short>
-          Performs actions needed when the value in BiDiMode has been changed
+          Performs actions needed when the value in BiDiMode has been changed.
         </short>
         <descr>
           <p>
@@ -2500,7 +2500,7 @@
       </element>
 
       <element name="TMenu.CreateHandle">
-        <short>Creates the Handle for the menu</short>
+        <short>Creates the Handle for the menu.</short>
         <descr>
           <p>
             <var>CreateHandle</var> calls the corresponding method in the widgetset class. It also calls <var>CheckChildHandles</var> to validate and update handles for merged menu Items. CreateHandle is used in the implementation of the <var>HandleNeeded</var> method.
@@ -2511,7 +2511,7 @@
 
       <element name="TMenu.DoChange">
         <short>
-          Performs actions needed when the specified menu item has been changed
+          Performs actions needed when the specified menu item has been changed.
         </short>
         <descr>
           <p>
@@ -2531,14 +2531,14 @@
         </seealso>
       </element>
       <element name="TMenu.DoChange.Source">
-        <short>Menu item where the change occurred</short>
+        <short>Menu item where the change occurred.</short>
       </element>
       <element name="TMenu.DoChange.Rebuild">
-        <short>True to rebuild the child menu items</short>
+        <short>True to rebuild the child menu items.</short>
       </element>
 
       <element name="TMenu.GetHandle">
-        <short>Gets the value for the Handle property</short>
+        <short>Gets the value for the Handle property.</short>
         <descr>
           <p>
             Calls <var>HandleNeeded</var> to create the handle if it has not been allocated in the widgetset class.
@@ -2550,7 +2550,7 @@
         </seealso>
       </element>
       <element name="TMenu.GetHandle.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TMenu.GetChildren" link="#rtl.classes.TComponent.GetChildren">
@@ -2571,7 +2571,7 @@
 
       <element name="TMenu.MenuChanged">
         <short>
-          Implements the OnChange event handler assigned to menu items in the menu
+          Implements the OnChange event handler assigned to menu items in the menu.
         </short>
         <descr>
           <p>
@@ -2584,18 +2584,18 @@
         </seealso>
       </element>
       <element name="TMenu.MenuChanged.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TMenu.MenuChanged.Source">
-        <short>Menu item for the change notification</short>
+        <short>Menu item for the change notification.</short>
       </element>
       <element name="TMenu.MenuChanged.Rebuild">
-        <short>True to rebuild the visible child menu items in Source</short>
+        <short>True to rebuild the visible child menu items in Source.</short>
       </element>
 
       <element name="TMenu.AssignTo">
         <short>
-          Copies property values from the class instance to the specified persistent object
+          Copies property values from the class instance to the specified persistent object.
         </short>
         <descr>
           <p>
@@ -2610,13 +2610,13 @@
         </seealso>
       </element>
       <element name="TMenu.AssignTo.Dest">
-        <short>Persistent object where the property values are stored</short>
+        <short>Persistent object where the property values are stored.</short>
       </element>
 
       <element name="TMenu.Notification" link="#rtl.classes.TComponent.Notification"/>
 
       <element name="TMenu.ParentBidiModeChanged">
-        <short>Performs action when ParentBiDiMode has been changed</short>
+        <short>Performs action when ParentBiDiMode has been changed.</short>
         <descr>
           <p>
             Performs actions needed when the value in <var>ParentBiDiMode</var> has been changed. When Parent   BiDiMode   is set to <b>True</b>, ParentBidiModeChanged ensures the <var>BiDiMode</var> from the <var>TCustomForm</var> instance in <var>AOwner</var> is used in the menu.
@@ -2628,14 +2628,14 @@
         <seealso/>
       </element>
       <element name="TMenu.ParentBidiModeChanged.AOwner">
-        <short>Owner of the menu instance with the BiDiMode value applied to the menu</short>
+        <short>Owner of the menu instance with the BiDiMode value applied to the menu.</short>
       </element>
 
       <element name="TMenu.SetChildOrder" link="#rtl.classes.TComponent.SetChildOrder"/>
 
       <element name="TMenu.UpdateItems">
         <short>
-          UpdateItems has an empty implementation in the current LCL version
+          UpdateItems has an empty implementation in the current LCL version.
         </short>
         <descr/>
         <seealso/>
@@ -2643,20 +2643,20 @@
 
       <element name="TMenu.OnChange">
         <short>
-          Event handler signalled when a menu item in Items has been changed
+          Event handler signalled when a menu item in Items has been changed.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMenu.FCompStyle">
-        <short>Stores component style flags</short>
+        <short>Stores component style flags.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMenu.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for <var>TMenu</var>, and creates menu items and links, sets some defaults then calls inherited <var>Create</var>.
@@ -2667,11 +2667,11 @@
         </seealso>
       </element>
       <element name="TMenu.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TMenu.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for <var>TMenu</var>, and frees items and links, then calls inherited <var>Destroy</var>.
@@ -2683,7 +2683,7 @@
       </element>
 
       <element name="TMenu.DestroyHandle">
-        <short>Frees the Handles for the items on the menu</short>
+        <short>Frees the Handles for the items on the menu.</short>
         <descr>
           <p>
             <var>DestroyHandle</var> calls the DestroyHandle method in <var>Items</var> to free all of the handles for the menu items.
@@ -2697,7 +2697,7 @@
 
       <element name="TMenu.FindItem">
         <short>
-          Gets the menu item with the specified value in a given property
+          Gets the menu item with the specified value in a given property.
         </short>
         <descr>
           <p>
@@ -2719,35 +2719,35 @@
         </seealso>
       </element>
       <element name="TMenu.FindItem.Result">
-        <short>Menu item which matches the find criteria, or Nil when not found</short>
+        <short>Menu item which matches the find criteria, or Nil when not found.</short>
       </element>
       <element name="TMenu.FindItem.AValue">
-        <short>Value to locate in the property indicated by Kind</short>
+        <short>Value to locate in the property indicated by Kind.</short>
       </element>
       <element name="TMenu.FindItem.Kind">
-        <short>Identifies the property examined for the specified value</short>
+        <short>Identifies the property examined for the specified value.</short>
       </element>
 
       <element name="TMenu.GetHelpContext">
         <short>
-          Gets the numeric help context for the menu item with the specified handle or command
+          Gets the numeric help context for the menu item with the specified handle or command.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenu.GetHelpContext.Result">
-        <short>Menu item with the specified value, or Nil when not found</short>
+        <short>Menu item with the specified value, or Nil when not found.</short>
       </element>
       <element name="TMenu.GetHelpContext.AValue">
-        <short>Command or Handle to locate in the menu items for the menu</short>
+        <short>Command or Handle to locate in the menu items for the menu.</short>
       </element>
       <element name="TMenu.GetHelpContext.ByCommand">
-        <short>True to search Command values, False to search Handle values</short>
+        <short>True to search Command values, False to search Handle values.</short>
       </element>
 
       <element name="TMenu.IsShortcut">
         <short>
-          Indicates if the specified control message contains a shortcut (accelerator) key used in the menu
+          Indicates if the specified control message contains a shortcut (accelerator) key used in the menu.
         </short>
         <descr>
           <p>
@@ -2763,26 +2763,26 @@
         <seealso/>
       </element>
       <element name="TMenu.IsShortcut.Result">
-        <short>True when the message matches a menu item shortcut in Items</short>
+        <short>True when the message matches a menu item shortcut in Items.</short>
       </element>
       <element name="TMenu.IsShortcut.Message">
-        <short>Control message examined in the method</short>
+        <short>Control message examined in the method.</short>
       </element>
 
       <element name="TMenu.HandleAllocated">
         <short>
-          Returns True if a Handle has been allocated for the menu
+          Returns True if a Handle has been allocated for the menu.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMenu.HandleAllocated.Result">
-        <short>True if a Handle has been allocated for the menu</short>
+        <short>True if a Handle has been allocated for the menu.</short>
       </element>
 
       <element name="TMenu.IsRightToLeft">
         <short>
-          Indicates if Right-to-Left text display is used in the menu
+          Indicates if Right-to-Left text display is used in the menu.
         </short>
         <descr>
           <p>
@@ -2797,7 +2797,7 @@
 
       <element name="TMenu.UseRightToLeftAlignment">
         <short>
-          <var>UseRightToLeftAlignment</var> - returns True if Right-Left alignment is being used
+          <var>UseRightToLeftAlignment</var> - returns True if Right-Left alignment is being used.
         </short>
         <descr/>
         <seealso/>
@@ -2808,7 +2808,7 @@
 
       <element name="TMenu.UseRightToLeftReading">
         <short>
-          Indicates if right-to-left reading is used for the menu
+          Indicates if right-to-left reading is used for the menu.
         </short>
         <descr>
           <p>
@@ -2833,7 +2833,7 @@
 
       <element name="TMenu.HandleNeeded">
         <short>
-          Ensures that a Handle has been allocated for the menu
+          Ensures that a Handle has been allocated for the menu.
         </short>
         <descr>
           <p>
@@ -2851,7 +2851,7 @@
 
       <element name="TMenu.DispatchCommand">
         <short>
-          Executes the menu item with the specified numeric Command value
+          Executes the menu item with the specified numeric Command value.
         </short>
         <descr/>
         <seealso>
@@ -2861,15 +2861,15 @@
         </seealso>
       </element>
       <element name="TMenu.DispatchCommand.Result">
-        <short>True if a menu item with the specified command was found and executed</short>
+        <short>True if a menu item with the specified command was found and executed.</short>
       </element>
       <element name="TMenu.DispatchCommand.ACommand">
-        <short>Numeric command value to locate in the menu items for the menu</short>
+        <short>Numeric command value to locate in the menu items for the menu.</short>
       </element>
 
       <element name="TMenu.Handle">
         <short>
-          Handle for the menu allocated in the widgetset class
+          Handle for the menu allocated in the widgetset class.
         </short>
         <descr>
           <p>
@@ -2884,7 +2884,7 @@
       </element>
 
       <element name="TMenu.Parent">
-        <short>Parent component for the menu</short>
+        <short>Parent component for the menu.</short>
         <descr>
           <p>
             <var>Parent</var> is a <var>TComponent</var> property with the component associated with the menu instance. Setting Parent to <b>Nil</b> when a handle has been assigned for <var>Items</var> in the menu causes the <var>DestroyHandle</var> method to be called.
@@ -2899,7 +2899,7 @@
 
       <element name="TMenu.ShortcutHandled">
         <short>
-          Indicates whether the shortcut key for a menu item is used in the menu
+          Indicates whether the shortcut key for a menu item is used in the menu.
         </short>
         <descr/>
         <seealso>
@@ -2911,7 +2911,7 @@
 
       <element name="TMenu.BidiMode">
         <short>
-          Indicates whether Bi-directional text mode is implemented allowing use with languages like Arabic or Hebrew
+          Indicates whether Bi-directional text mode is implemented allowing use with languages like Arabic or Hebrew.
         </short>
         <descr/>
         <seealso/>
@@ -2919,14 +2919,14 @@
 
       <element name="TMenu.ParentBidiMode">
         <short>
-          The BiDiMode value for the parent component
+          The BiDiMode value for the parent component.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMenu.Items">
-        <short>Contains the menu items displayed on the menu</short>
+        <short>Contains the menu items displayed on the menu.</short>
         <descr>
           <p>
             <var>Items</var> is a read-only <var>TMenuItem</var> property with the menu items included in the menu. Values in Items can be maintained at design-time using the menu editor in the Lazarus IDE, or created and configured at run-time.
@@ -2949,7 +2949,7 @@
       </element>
 
       <element name="TMenu.Images">
-        <short>The image list with bitmaps used as glyphs for the menu items</short>
+        <short>The image list with bitmaps used as glyphs for the menu items.</short>
         <descr>
           <p>
             <var>Images</var> is a <var>TCustomImageList</var> property which contains the bitmap images displayed as glyphs for the <var>Items</var> on the menu. Populate an image list and assign it to the property prior to setting the <var>ImageIndex</var> and <var>GlyphShowMode</var> for the individual <var>TMenuItem</var> instances on the menu. As an alternative, glyphs can assigned directly to the <var>Bitmap</var> property in each TMenuItem instance.
@@ -2968,7 +2968,7 @@
       </element>
 
       <element name="TMenu.ImagesWidth">
-        <short>Width for the bitmaps in the Images property</short>
+        <short>Width for the bitmaps in the Images property.</short>
         <descr>
           <p>
             <var>ImagesWidth</var> is an <var>Integer</var> property with the width needed for bitmaps in the <var>Images</var> property. The default value for the property is <b>0</b> (<b>zero</b>), and indicates that the width in the Images property is used.
@@ -2986,7 +2986,7 @@
       </element>
 
       <element name="TMenu.OwnerDraw">
-        <short>Indicates if the menu items are drawn using the OnDrawItem event handler</short>
+        <short>Indicates if the menu items are drawn using the OnDrawItem event handler.</short>
         <descr>
           <p>
             <var>OwnerDraw</var> is a <var>Boolean</var> property which indicates if the menu items are drawn using the <var>OnDrawItem</var> event handler. The default value for the property is <b>False</b>.
@@ -3004,7 +3004,7 @@
       </element>
 
       <element name="TMenu.OnDrawItem">
-        <short>Event handler signalled to draw a menu item on the menu</short>
+        <short>Event handler signalled to draw a menu item on the menu.</short>
         <descr/>
         <seealso>
           <link id="TMenu.OwnerDraw"/>
@@ -3014,7 +3014,7 @@
 
       <element name="TMenu.OnMeasureItem">
         <short>
-          Event handler signalled to get the width and height for a menu item on the menu
+          Event handler signalled to get the width and height for a menu item on the menu.
         </short>
         <descr/>
         <seealso>
@@ -3025,7 +3025,7 @@
 
       <element name="TMainMenu">
         <short>
-          <var>TMainMenu</var> - the Main Menu that appears at the top of most windows
+          <var>TMainMenu</var> - the Main Menu that appears at the top of most windows.
         </short>
         <descr>
           <p>
@@ -3056,7 +3056,7 @@
       <!-- protected -->
       <element name="TMainMenu.ItemChanged">
         <short>
-          <var>ItemChanged</var> - method to deal with a changed Item
+          <var>ItemChanged</var> - method to deal with a changed Item.
         </short>
         <descr>
           <p>
@@ -3070,7 +3070,7 @@
 
       <element name="TMainMenu.MenuChanged">
         <short>
-          Implements the OnChange event handler used for menu items in the class instance
+          Implements the OnChange event handler used for menu items in the class instance.
         </short>
         <descr>
           <p>
@@ -3083,17 +3083,17 @@
         </seealso>
       </element>
       <element name="TMainMenu.MenuChanged.Sender">
-        <short>Object of the change notification</short>
+        <short>Object of the change notification.</short>
       </element>
       <element name="TMainMenu.MenuChanged.Source">
-        <short>Menu item for the change notification</short>
+        <short>Menu item for the change notification.</short>
       </element>
       <element name="TMainMenu.MenuChanged.Rebuild">
-        <short>True to rebuild the child menu items for the menu</short>
+        <short>True to rebuild the child menu items for the menu.</short>
       </element>
 
       <element name="TMainMenu.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the overridden constructor in <var>TMainMenu</var>.
@@ -3115,7 +3115,7 @@
       </element>
 
       <element name="TMainMenu.Merge">
-        <short>Merges menu items from the specified main menu instance</short>
+        <short>Merges menu items from the specified main menu instance.</short>
         <descr>
           <p>
             <var>Merge</var> is a method used to merge the menu items from the specified <var>Menu</var> into the Items for the current class instance. When Menu contains a non-<b>Nil</b> value, the <var>MergeWith</var> method in <var>Items</var> is called using the Items in the current class instance as the target. When Menu has not been assigned, the MergeWith method in Items is called using <b>Nil</b> as the target.
@@ -3132,32 +3132,32 @@
         </seealso>
       </element>
       <element name="TMainMenu.Merge.Menu">
-        <short>Main menu merged into the current class instance</short>
+        <short>Main menu merged into the current class instance.</short>
       </element>
 
       <element name="TMainMenu.Unmerge">
-        <short>Removes merged menu items for the specified menu</short>
+        <short>Removes merged menu items for the specified menu.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TMainMenu.Unmerge.Menu">
-        <short>Menu instance with the merged items removed in the method</short>
+        <short>Menu instance with the merged items removed in the method.</short>
       </element>
 
       <element name="TMainMenu.Height">
-        <short>Height for the menu</short>
+        <short>Height for the menu.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMainMenu.WindowHandle">
-        <short>Handle for the window where the menu is displayed</short>
+        <short>Handle for the window where the menu is displayed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TMainMenu.OnChange">
-        <short>Event handler signalled when a menu item has been changed</short>
+        <short>Event handler signalled when a menu item has been changed.</short>
         <descr/>
         <seealso>
           <link id="TMainMenu.ItemChanged"/>
@@ -3168,7 +3168,7 @@
 
       <element name="TPopupAlignment">
         <short>
-          <var>TPopupAlignment</var> -  enumerated type to describe the position of pop-up menu relative to the pop-up coordinates
+          <var>TPopupAlignment</var> -  enumerated type to describe the position of pop-up menu relative to the pop-up coordinates.
         </short>
         <descr>
           <dl>
@@ -3184,7 +3184,7 @@
 
       <element name="TTrackButton">
         <short>
-          <var>TTrackButton</var> - enumerated type described which mouse buttons can be used to activate (click) menu items
+          <var>TTrackButton</var> - enumerated type described which mouse buttons can be used to activate (click) menu items.
         </short>
         <descr>
           <dl>
@@ -3198,7 +3198,7 @@
 
       <element name="TPopupMenu">
         <short>
-          <var>TPopupMenu </var> - a menu panel that pops up on the desktop when the right mouse button is clicked
+          <var>TPopupMenu </var> - a menu panel that pops up on the desktop when the right mouse button is clicked.
         </short>
         <descr>
           <p>
@@ -3240,22 +3240,22 @@
       <element name="TPopupMenu.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TPopupMenu.DoPopup">
-        <short>Performs actions needed to display the pop-up menu</short>
+        <short>Performs actions needed to display the pop-up menu.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPopupMenu.DoPopup.Sender">
-        <short>Object for the event notification</short>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TPopupMenu.DoClose">
-        <short>Performs actions needed when the pop-up menu is closed</short>
+        <short>Performs actions needed when the pop-up menu is closed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPopupMenu.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for <var>TPopupMenu</var>, and calls the inherited <var>Create</var>, sets style to <var>PopupMenu</var>, sets <var>AutoPopup</var> to True.
@@ -3266,11 +3266,11 @@
         </seealso>
       </element>
       <element name="TPopupMenu.Create.AOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TPopupMenu.Destroy">
-        <short>
+        <short>.
         </short>
         <descr>
           <p>
@@ -3284,16 +3284,16 @@
 
       <element name="TPopupMenu.PopUp">
         <short>
-          Displays the pop-up menu
+          Displays the pop-up menu.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPopupMenu.PopUp.X">
-        <short>Horizontal coordinate where the pop-up menu is displayed</short>
+        <short>Horizontal coordinate where the pop-up menu is displayed.</short>
       </element>
       <element name="TPopupMenu.PopUp.Y">
-        <short>Vertical coordinate where the pop-up menu is displayed</short>
+        <short>Vertical coordinate where the pop-up menu is displayed.</short>
       </element>
 
       <element name="TPopupMenu.PopupComponent">
@@ -3304,7 +3304,7 @@
 
       <element name="TPopupMenu.PopupPoint">
         <short>
-          TPoint instance with the coordinates where the pop-up menu is displayed
+          TPoint instance with the coordinates where the pop-up menu is displayed.
         </short>
         <descr/>
         <seealso>
@@ -3314,7 +3314,7 @@
 
       <element name="TPopupMenu.Close">
         <short>
-          Closes the display window for the pop-up menu
+          Closes the display window for the pop-up menu.
         </short>
         <descr/>
         <seealso/>
@@ -3322,7 +3322,7 @@
 
       <element name="TPopupMenu.Alignment">
         <short>
-          Determines the position of pop-up menu relative to the pop-up coordinate
+          Determines the position of pop-up menu relative to the pop-up coordinate.
         </short>
         <descr/>
         <seealso/>
@@ -3330,21 +3330,21 @@
 
       <element name="TPopupMenu.AutoPopup">
         <short>
-          Indicates if the pop-up is displayed when the mouse hovers over the component for the pop-up menu
+          Indicates if the pop-up is displayed when the mouse hovers over the component for the pop-up menu.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPopupMenu.HelpContext">
-        <short>Help context for the pop-up menu</short>
+        <short>Help context for the pop-up menu.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPopupMenu.TrackButton">
         <short>
-          Identifies the mouse button which activated the pop-up menu
+          Identifies the mouse button which activated the pop-up menu.
         </short>
         <descr/>
         <seealso/>
@@ -3352,7 +3352,7 @@
 
       <element name="TPopupMenu.OnPopup">
         <short>
-          Event handler signalled to display the pop-up menu
+          Event handler signalled to display the pop-up menu.
         </short>
         <descr/>
         <seealso>
@@ -3363,7 +3363,7 @@
 
       <element name="TPopupMenu.OnClose">
         <short>
-          <var>OnClose</var> - event handler for closing down the pop-up
+          <var>OnClose</var> - event handler for closing down the pop-up.
         </short>
         <descr>
           <p>
@@ -3374,7 +3374,7 @@
       </element>
 
       <element name="ShortCut">
-        <short>Converts a virtual key code and modifier to a shortcut value</short>
+        <short>Converts a virtual key code and modifier to a shortcut value.</short>
         <descr>
           <p>
             Calls the KeyToShortCut routine in <file>LCLType</file> get the return value for the function.
@@ -3385,54 +3385,54 @@
         </seealso>
       </element>
       <element name="ShortCut.Result">
-        <short>TShortCut type with the value for the key and modifier</short>
+        <short>TShortCut type with the value for the key and modifier.</short>
       </element>
       <element name="ShortCut.Key">
-        <short>Virtual key code for the shortcut value</short>
+        <short>Virtual key code for the shortcut value.</short>
       </element>
       <element name="ShortCut.Shift">
-        <short>Shift, Alt, or Ctrl modifier for the shortcut value</short>
+        <short>Shift, Alt, or Ctrl modifier for the shortcut value.</short>
       </element>
 
       <element name="ShortCutToKey">
-        <short>Converts a shortcut value to a virtual key code and modifier</short>
+        <short>Converts a shortcut value to a virtual key code and modifier.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="ShortCutToKey.ShortCut">
-        <short>Shortcut value converted to a Key code and Shift modifier</short>
+        <short>Shortcut value converted to a Key code and Shift modifier.</short>
       </element>
       <element name="ShortCutToKey.Key">
-        <short>Virtual key code for the shortcut value</short>
+        <short>Virtual key code for the shortcut value.</short>
       </element>
       <element name="ShortCutToKey.Shift">
-        <short>Shift, Ctrl or Alt modifier for the shortcut value</short>
+        <short>Shift, Ctrl or Alt modifier for the shortcut value.</short>
       </element>
 
       <element name="DesignerMenuItemClick">
         <short>
-          Unit global variable with the event handler signalled when a menu item is clicked at design-time
+          Unit global variable with the event handler signalled when a menu item is clicked at design-time.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="ActivePopupMenu">
-        <short>Unit global variable which represents the active pop-up menu</short>
+        <short>Unit global variable which represents the active pop-up menu.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="OnMenuPopupHandler">
         <short>
-          Unit global variable with the event handler signalled when a pop-up menu is displayed
+          Unit global variable with the event handler signalled when a pop-up menu is displayed.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="NewMenu">
-        <short>Creates and configures a new menu instance with the specified menu items</short>
+        <short>Creates and configures a new menu instance with the specified menu items.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3450,7 +3450,7 @@
       </element>
 
       <element name="NewPopupMenu">
-        <short>Creates and configures a new pop-up menu with the specified menu items</short>
+        <short>Creates and configures a new pop-up menu with the specified menu items.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3474,7 +3474,7 @@
       </element>
 
       <element name="NewSubMenu">
-        <short>Creates and configures a new sub-menu with the specified child menu items</short>
+        <short>Creates and configures a new sub-menu with the specified child menu items.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3498,7 +3498,7 @@
       </element>
 
       <element name="NewItem">
-        <short>Creates and configures a new menu item instance</short>
+        <short>Creates and configures a new menu item instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3528,28 +3528,28 @@
       </element>
 
       <element name="NewLine">
-        <short>Creates and configures a menu item displayed as a separator line</short>
+        <short>Creates and configures a menu item displayed as a separator line.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="NewLine.Result">
-        <short>TMenuItem instance created in the routine</short>
+        <short>TMenuItem instance created in the routine.</short>
       </element>
 
       <element name="StripHotkey">
-        <short>Removes the hot key (accelerator) prefix from the specified text</short>
+        <short>Removes the hot key (accelerator) prefix from the specified text.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="StripHotkey.Result">
-        <short>Text value after removing the hotkey prefix</short>
+        <short>Text value after removing the hotkey prefix.</short>
       </element>
       <element name="StripHotkey.Text">
-        <short>Text examined and updated in the routine</short>
+        <short>Text examined and updated in the routine.</short>
       </element>
 
       <element name="Register">
-        <short>Registers components for use in the Lazarus IDE</short>
+        <short>Registers components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             The following components are added to the Lazarus IDE component palette:
@@ -3571,26 +3571,26 @@
       </element>
 
       <element name="cHotkeyPrefix">
-        <short>Prefix used in a menu item caption to identify a hot key (accelerator)</short>
+        <short>Prefix used in a menu item caption to identify a hot key (accelerator).</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cLineCaption">
-        <short>Caption used for a menu item displayed as a separator line</short>
+        <short>Caption used for a menu item displayed as a separator line.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="cDialogSuffix">
-        <short>Not used in the current  LCL implementation</short>
+        <short>Not used in the current  LCL implementation.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="ValidMenuHotkeys">
         <short>
-          Contains characters that can be used as accelerator keys in menus and menu items
+          Contains characters that can be used as accelerator keys in menus and menu items.
         </short>
         <descr>
           <p>
@@ -3602,7 +3602,7 @@
 
       <topic name="HowToUseMenus">
         <short>
-          <var>HowToUseMenus</var> - hints for creating Menus for your Forms
+          <var>HowToUseMenus</var> - hints for creating Menus for your Forms.
         </short>
         <descr>
           <p>

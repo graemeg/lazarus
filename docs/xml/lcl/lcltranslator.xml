@@ -8,8 +8,8 @@
     -->
     <module name="LCLTranslator">
       <short>
-        Performs string translation in the Lazarus IDE and LCL
-      </short>
+        Performs string translation in the Lazarus IDE and LCL.
+        </short>
       <descr>
         <p>
           <var>lcltranslator.pas</var> contains classes and routines used to perform translation for strings used in Lazarus IDE and LCL (Lazarus Component Library). It searches for .po (Portable Object) and/or .mo (Machine Object) files used to perform I18n internationalization and L10n localization. The .po/.mo files are stored in the <b>languages</b> or <b>locale</b> directories. To access translation files from an alternate location, use the LResources unit and the LRSMoFile variable directly.
@@ -42,7 +42,7 @@
 
       <element name="TUpdateTranslator">
         <short>
-          Performs string translations for persistent objects
+          Performs string translations for persistent objects.
         </short>
         <descr>
           <p>
@@ -63,17 +63,17 @@
 
       <element name="TUpdateTranslator.IntUpdateTranslation" link="#lcl.lcltranslator.TUpdateTranslator.UpdateTranslation">
         <short>
-          Performs action required to update string translations for persistent objects using RTTI
+          Performs action required to update string translations for persistent objects using RTTI.
         </short>
         <descr></descr>
         <seealso></seealso>
       </element>
       <element name="TUpdateTranslator.IntUpdateTranslation.AnInstance">
-        <short>Persistent object updated in the method</short>
+        <short>Persistent object updated in the method.</short>
       </element>
 
       <element name="TUpdateTranslator.UpdateTranslation">
-        <short>Updates string translations for persistent objects</short>
+        <short>Updates string translations for persistent objects.</short>
         <descr>
           <p>
             <var>UpdateTranslation</var> is procedure used to translate string properties in the specified persistent object instance. UpdateTranslation uses RTTI (Run Time Type Information) to update the value for translatable properties in Lazarus resources. This requires properties to be a TPersistent descendant with RTTI enabled, and have a setter (write access) procedure. Strings, Classes, Components and the sub-Components are handled in the method.
@@ -82,12 +82,12 @@
         <seealso></seealso>
       </element>
       <element name="TUpdateTranslator.UpdateTranslation.AnInstance">
-        <short>Persistent object updated in the method</short>
+        <short>Persistent object updated in the method.</short>
       </element>
 
       <element name="TDefaultTranslator">
         <short>
-          Performs string translations using a .mo file (Machine Object)
+          Performs string translations using a .mo file (Machine Object).
         </short>
         <descr>
           <p>
@@ -106,7 +106,7 @@
       <element name="TDefaultTranslator.FMOFile"/>
 
       <element name="TDefaultTranslator.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and calls the inherited constructor. Create initializes and stores a TMOFile instance using the file name specified in the MOFileName parameter. Create calls UTF8ToSys to convert any UTF-8-encoded values in MOFileName to the default encoding used for the platform or OS.
@@ -115,11 +115,11 @@
         <seealso></seealso>
       </element>
       <element name="TDefaultTranslator.Create.MOFileName">
-        <short>.mo file used in the class instance</short>
+        <short>.mo file used in the class instance.</short>
       </element>
 
       <element name="TDefaultTranslator.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to an internal TMOFile member are freed prior to calling the inherited destructor.
@@ -130,7 +130,7 @@
 
       <element name="TDefaultTranslator.TranslateStringProperty">
         <short>
-          Gets the translated value for the specified property
+          Gets the translated value for the specified property.
         </short>
         <descr>
           <p>
@@ -155,21 +155,21 @@
         <seealso></seealso>
       </element>
       <element name="TDefaultTranslator.TranslateStringProperty.Sender">
-        <short>Class instance calling the method</short>
+        <short>Class instance calling the method.</short>
       </element>
       <element name="TDefaultTranslator.TranslateStringProperty.Instance">
-        <short>Persistent object with properties affected in the method</short>
+        <short>Persistent object with properties affected in the method.</short>
       </element>
       <element name="TDefaultTranslator.TranslateStringProperty.PropInfo">
-        <short>RTTI Property information</short>
+        <short>RTTI Property information.</short>
       </element>
       <element name="TDefaultTranslator.TranslateStringProperty.Content">
-        <short>Value for the translated string property</short>
+        <short>Value for the translated string property.</short>
       </element>
 
       <element name="TPOTranslator">
         <short>
-          Performs string translations using a .po (Portable Object) file
+          Performs string translations using a .po (Portable Object) file.
         </short>
         <descr>
           <p>
@@ -189,7 +189,7 @@
 
       <element name="TPOTranslator.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -205,14 +205,14 @@
         <seealso></seealso>
       </element>
       <element name="TPOTranslator.Create.POFileName">
-        <short>.po file name to use for translated string values</short>
+        <short>.po file name to use for translated string values.</short>
       </element>
       <element name="TPOTranslator.Create.aPOFile">
-        <short>.po file to use for translated string values</short>
+        <short>.po file to use for translated string values.</short>
       </element>
 
       <element name="TPOTranslator.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy ensures that resources allocated to the internal TPOFile member in the class instance are freed. Destroy calls the inherited destructor.
@@ -223,7 +223,7 @@
 
       <element name="TPOTranslator.TranslateStringProperty">
         <short>
-          Gets the translated value for the specified property
+          Gets the translated value for the specified property.
         </short>
         <descr>
           <p>
@@ -247,20 +247,20 @@
         </descr>
       </element>
       <element name="TPOTranslator.TranslateStringProperty.Sender">
-        <short>Class instance calling the method</short>
+        <short>Class instance calling the method.</short>
       </element>
       <element name="TPOTranslator.TranslateStringProperty.Instance">
-        <short>Persistent object with properties affected in the method</short>
+        <short>Persistent object with properties affected in the method.</short>
       </element>
       <element name="TPOTranslator.TranslateStringProperty.PropInfo">
-        <short>RTTI Property information</short>
+        <short>RTTI Property information.</short>
       </element>
       <element name="TPOTranslator.TranslateStringProperty.Content">
-        <short>Value for the translated string property</short>
+        <short>Value for the translated string property.</short>
       </element>
 
       <element name="TranslateLCLResourceStrings">
-        <short>Translates resource strings in <file>LCLStrConsts</file> to the specified language</short>
+        <short>Translates resource strings in <file>LCLStrConsts</file> to the specified language.</short>
         <descr>
           <p>
             <var>TranslateLCLResourceStrings</var> is a <var>String</var> function used to translate resource strings in the <file>LCLStrConsts</file> unit to the language identifier specified in the Lang argument.
@@ -281,18 +281,18 @@
         <seealso></seealso>
       </element>
       <element name="TranslateLCLResourceStrings.Lang">
-        <short>Language identifer for the translated constants</short>
+        <short>Language identifer for the translated constants.</short>
       </element>
       <element name="TranslateLCLResourceStrings.Dir">
-        <short>Path to the .MO or .PO file used for the translation</short>
+        <short>Path to the .MO or .PO file used for the translation.</short>
       </element>
       <element name="TranslateLCLResourceStrings.Result">
-        <short>File name used for the translation, or an empty when translation is not available</short>
+        <short>File name used for the translation, or an empty when translation is not available.</short>
       </element>
 
       <element name="SetDefaultLang">
         <short>
-          Sets the default language used for string translations
+          Sets the default language used for string translations.
         </short>
         <descr>
           <p>
@@ -332,30 +332,30 @@
       </element>
       <element name="SetDefaultLang.Lang">
         <short>
-          Language ID to use for translated strings
+          Language ID to use for translated strings.
         </short>
       </element>
       <element name="SetDefaultLang.Dir">
-        <short>Directory name with translation files</short>
+        <short>Directory name with translation files.</short>
       </element>
       <element name="SetDefaultLang.LocaleFileName">
-        <short>Locale code for the localization file</short>
+        <short>Locale code for the localization file.</short>
       </element>
       <element name="SetDefaultLang.ForceUpdate">
-        <short>Indicates if the UI should be updated immediately</short>
+        <short>Indicates if the UI should be updated immediately.</short>
       </element>
       <element name="SetDefaultLang.Result">
-        <short>Default language code in use</short>
+        <short>Default language code in use.</short>
       </element>
 
       <element name="GetDefaultLang">
-        <short>Deprecated</short>
+        <short>Deprecated.</short>
         <descr>Deprecated. Use the result from the SetDefaultLang function instead.</descr>
         <version>Deprecated in LCL version 2.1.0.</version>
         <seealso><link id="SetDefaultLang"/></seealso>
       </element>
       <element name="GetDefaultLang.Result">
-        <short>Default language code currently in use</short>
+        <short>Default language code currently in use.</short>
       </element>
 
     </module>

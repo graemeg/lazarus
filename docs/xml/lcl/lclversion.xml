@@ -24,7 +24,7 @@ expressions are supported in <i>{$mode delphi}</i> and <i>{$mode objfpc}</i>.
 </descr>
 
 <element name="lcl_fullversion">
-<short>LCL full version</short>
+<short>LCL full version.</short>
 <descr>
 <p>
 The lcl_fullversion constant contains all version numbers, formatted with 2
@@ -38,7 +38,7 @@ digits and concatenated (leading zeros are omitted).
 </element>
 
 <element name="lcl_major">
-<short>LCL major version</short>
+<short>LCL major version.</short>
 <descr>
 <p>
 Given a complete version string like 2.0.12, the lcl_major constant
@@ -49,7 +49,7 @@ contains the first number (2).
 </element>
 
 <element name="lcl_minor">
-<short>LCL minor version</short>
+<short>LCL minor version.</short>
 <descr>
 <p>
 Given a version string like 2.0.12, the lcl_minor constant
@@ -60,7 +60,7 @@ contains the second number (0).
 </element>
 
 <element name="lcl_release">
-<short>LCL release number</short>
+<short>LCL release number.</short>
 <descr>
 <p>
 Given a version string like 2.0.12, the lcl_release constant
@@ -71,7 +71,7 @@ contains the third number (12).
 </element>
 
 <element name="lcl_patch">
-<short>LCL patch version</short>
+<short>LCL patch version.</short>
 <descr>
 <p>
 Given a complete version string like 2.0.12.1, the lcl_patch constant
@@ -83,7 +83,7 @@ version string is 2.0.12, then lcl_patch is 0.
 </element>
 
 <element name="lcl_version">
-<short>LCL version string</short>
+<short>LCL version string.</short>
 <descr>Contains the LCL version string, e.g. 2.0.12.</descr>
 <seealso/>
 </element>

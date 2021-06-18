@@ -8,8 +8,8 @@
     -->
     <module name="PairSplitter">
       <short>
-        Defines the TPairSplitter component
-      </short>
+        Defines the TPairSplitter component.
+        </short>
       <descr>
         <p>
           <file>pairsplitter.pas</file> defines the <var>TPairSplitter</var> component. TPairSplitter is a component with two TPairSplitterSide children. Both child components can contain other components. The children are separated by a splitter which can be dragged by the user to resize the adjacent children.
@@ -61,17 +61,17 @@
 
       <!-- function Visibility: private -->
       <element name="TPairSplitterSide.GetSplitter">
-        <short>Gets the value for the Splitter property</short>
+        <short>Gets the value for the Splitter property.</short>
       </element>
       <element name="TPairSplitterSide.GetSplitter.Result">
-        <short>Value for the property</short>
+        <short>Value for the property.</short>
       </element>
 
       <element name="TPairSplitterSide.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TPairSplitterSide.SetParent">
         <short>
-          Sets the value for the Parent property
+          Sets the value for the Parent property.
         </short>
         <descr>
           <p>
@@ -92,22 +92,22 @@
         </seealso>
       </element>
       <element name="TPairSplitterSide.SetParent.AParent">
-        <short>New value for the Parent property</short>
+        <short>New value for the Parent property.</short>
       </element>
 
       <element name="TPairSplitterSide.WMPaint">
         <short>
-          Provides custom handling for WMPaint messages
+          Provides custom handling for WMPaint messages.
         </short>
       </element>
       <element name="TPairSplitterSide.WMPaint.PaintMessage">
-        <short>WM_PAINT message for the control</short>
+        <short>WM_PAINT message for the control.</short>
         <descr></descr>
         <seealso/>
       </element>
 
       <element name="TPairSplitterSide.Paint">
-        <short>Renders the control on its Canvas</short>
+        <short>Renders the control on its Canvas.</short>
         <descr></descr>
         <seealso/>
       </element>
@@ -116,7 +116,7 @@
       <element name="TPairSplitterSide.Anchors" link="#lcl.controls.TControl.Anchors"/>
 
       <element name="TPairSplitterSide.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr>
           <p>
             <var>Create</var> is the constructor for the class instance, and calls the inherited constructor using TheOwner as the owner of the control. Create updates values in the ControlStyle property and the internal window control flags used in the control.
@@ -125,12 +125,12 @@
         <seealso/>
       </element>
       <element name="TPairSplitterSide.Create.TheOwner">
-        <short>Owner of the control</short>
+        <short>Owner of the control.</short>
       </element>
 
       <element name="TPairSplitterSide.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -142,7 +142,7 @@
 
       <element name="TPairSplitterSide.Splitter">
         <short>
-          TPairSplitter for the control
+          TPairSplitter for the control.
         </short>
         <descr>
           <p>
@@ -177,7 +177,7 @@
 
       <element name="TPairSplitterType">
         <short>
-          Sets the orientation for the Splitter in TPairSplitter
+          Sets the orientation for the Splitter in TPairSplitter.
         </short>
         <descr>
           <p>
@@ -192,15 +192,15 @@
         </seealso>
       </element>
       <element name="TPairSplitterType.pstHorizontal">
-        <short>Splitter is oriented to size adjacent children horizontally</short>
+        <short>Splitter is oriented to size adjacent children horizontally.</short>
       </element>
       <element name="TPairSplitterType.pstVertical">
-        <short>Splitter is oriented to size adjacent children vertically</short>
+        <short>Splitter is oriented to size adjacent children vertically.</short>
       </element>
 
       <element name="TCustomPairSplitter">
         <short>
-          Defines the base class for the TPairSplitter component
+          Defines the base class for the TPairSplitter component.
         </short>
         <descr>
           <p>
@@ -234,22 +234,22 @@
       <element name="TCustomPairSplitter.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomPairSplitter.GetCursor">
-        <short>Gets the value for the Cursor property</short>
+        <short>Gets the value for the Cursor property.</short>
       </element>
       <element name="TCustomPairSplitter.GetCursor.Result">
-        <short>Value for the Cursor property</short>
+        <short>Value for the Cursor property.</short>
       </element>
 
       <element name="TCustomPairSplitter.SetCursor">
-        <short>Sets the value for the Cursor property</short>
+        <short>Sets the value for the Cursor property.</short>
       </element>
       <element name="TCustomPairSplitter.SetCursor.Value">
-        <short>New value for the Cursor property</short>
+        <short>New value for the Cursor property.</short>
       </element>
 
       <element name="TCustomPairSplitter.GetControlClassDefaultSize">
         <short>
-          Gets the default size for the control class
+          Gets the default size for the control class.
         </short>
         <descr>
           <p>
@@ -267,13 +267,13 @@
       </element>
       <element name="TCustomPairSplitter.GetControlClassDefaultSize.Result">
         <short>
-          TSize type with the default Height and Width for instances of the class
+          TSize type with the default Height and Width for instances of the class.
         </short>
       </element>
 
       <element name="TCustomPairSplitter.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -307,11 +307,11 @@
         </seealso>
       </element>
       <element name="TCustomPairSplitter.Create.TheOwner">
-        <short>Owner of the component</short>
+        <short>Owner of the component.</short>
       </element>
 
       <element name="TCustomPairSplitter.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for the class instance. Destroy ensures that the class instances in Sides are not created (or re-created), and calls the inherited destructor.
@@ -326,7 +326,7 @@
 
       <element name="TCustomPairSplitter.CreateWnd">
         <short>
-          Creates the window handle for the control
+          Creates the window handle for the control.
         </short>
         <descr>
           <p>
@@ -343,7 +343,7 @@
 
       <element name="TCustomPairSplitter.UpdatePosition">
         <short>
-          Updates the value in the Position property
+          Updates the value in the Position property.
         </short>
         <descr>
           <p>
@@ -360,7 +360,7 @@
 
       <element name="TCustomPairSplitter.CreateSides">
         <short>
-          Creates missing any controls in the Sides property
+          Creates missing any controls in the Sides property.
         </short>
         <descr>
           <p>
@@ -383,7 +383,7 @@
 
       <element name="TCustomPairSplitter.Loaded">
         <short>
-          Performs actions when LCL component streaming has been completed
+          Performs actions when LCL component streaming has been completed.
         </short>
         <descr>
           <p>
@@ -402,7 +402,7 @@
 
       <element name="TCustomPairSplitter.ChildClassAllowed">
         <short>
-          Determines if the class is inherited from a specific ancestor
+          Determines if the class is inherited from a specific ancestor.
         </short>
         <descr>
           <p>
@@ -415,11 +415,11 @@
         <short>Class to compare in the method`</short>
       </element>
       <element name="TCustomPairSplitter.ChildClassAllowed.Result">
-        <short>True if the class has a specific ancestor</short>
+        <short>True if the class has a specific ancestor.</short>
       </element>
 
       <element name="TCustomPairSplitter.Cursor" link="#lcl.controls.TControl.Cursor">
-        <short>Cursor displayed when the control is resized</short>
+        <short>Cursor displayed when the control is resized.</short>
         <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.Cursor">TControl.Cursor</link>
@@ -428,7 +428,7 @@
 
       <element name="TCustomPairSplitter.Sides">
         <short>
-          Provides access to the adjacent children resized using the Splitter
+          Provides access to the adjacent children resized using the Splitter.
         </short>
         <descr>
           <p>
@@ -448,12 +448,12 @@
         </seealso>
       </element>
       <element name="TCustomPairSplitter.Sides.Index">
-        <short>Ordinal position the adjacent child control</short>
+        <short>Ordinal position the adjacent child control.</short>
       </element>
 
       <element name="TCustomPairSplitter.SplitterType">
         <short>
-          Specifies the orientation for the splitter in the component
+          Specifies the orientation for the splitter in the component.
         </short>
         <descr>
           <p>
@@ -479,7 +479,7 @@
 
       <element name="TCustomPairSplitter.Position">
         <short>
-          Indicates the position for the Splitter relative to its orientation
+          Indicates the position for the Splitter relative to its orientation.
         </short>
         <descr>
           <p>
@@ -501,7 +501,7 @@
 
       <element name="TPairSplitter">
         <short>
-          Implements the TPairSplitter component
+          Implements the TPairSplitter component.
         </short>
         <descr>
           <p>
@@ -539,7 +539,7 @@
       <element name="TPairSplitter.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="Register">
-        <short>Registers components for use in the Lazarus IDE</short>
+        <short>Registers components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             The following components are added to the Lazarus IDE component palette:

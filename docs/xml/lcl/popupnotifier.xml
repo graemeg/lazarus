@@ -4,7 +4,7 @@
 
     <!-- popupnotifier -->
     <module name="popupnotifier">
-      <short>Contains the TPopupNotifier visual component</short>
+      <short>Contains the TPopupNotifier visual component.</short>
       <descr>
         <remark>
           Please note that <var>ExtCtrls</var> has a dependency on the <var>popupnotifier</var> unit; circular dependencies between <var>popupnotifier</var> and other units should be avoided.
@@ -14,7 +14,7 @@
       <!-- enumeration type Visibility: default -->
       <element name="TNotifierXButtonButtonState">
         <short>
-          Button states for the popup notifier buttons
+          Button states for the popup notifier buttons.
         </short>
         <descr>
           <p>
@@ -26,23 +26,23 @@
 
       <!-- enumeration value Visibility: default -->
       <element name="TNotifierXButtonButtonState.nbsUp">
-        <short>The button is up</short>
+        <short>The button is up.</short>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TNotifierXButtonButtonState.nbsDown">
-        <short>The button is down</short>
+        <short>The button is down.</short>
       </element>
 
       <!-- enumeration value Visibility: default -->
       <element name="TNotifierXButtonButtonState.nbsHot">
-        <short>The button is hot (under the mouse)</short>
+        <short>The button is hot (under the mouse).</short>
       </element>
 
       <!-- object Visibility: default -->
       <element name="TNotifierXButton">
         <short>
-          Implements the button for TNotifierForm
+          Implements the button for TNotifierForm.
         </short>
         <descr>
           <p>
@@ -59,7 +59,7 @@
       <!-- procedure Visibility: private -->
       <element name="TNotifierXButton.HandleMouseDown">
         <short>
-          Responds to mouse down messages
+          Responds to mouse down messages.
         </short>
         <descr>
           <p>
@@ -72,13 +72,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseDown.Sender">
-        <short>Object generating the mouse message</short>
+        <short>Object generating the mouse message.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseDown.Button">
         <short>
-          Mouse button for the message
+          Mouse button for the message.
         </short>
         <descr>
           <p>
@@ -91,18 +91,18 @@
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseDown.X">
-        <short>Horizontal position for the mouse message</short>
+        <short>Horizontal position for the mouse message.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseDown.Y">
-        <short>Vertical position for the mouse message</short>
+        <short>Vertical position for the mouse message.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TNotifierXButton.HaButton for the mouse messagendleMouseUp">
         <short>
-          Responds to mouse up messages
+          Responds to mouse up messages.
         </short>
         <descr>
           <p>
@@ -115,33 +115,33 @@
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseUp.Sender">
-        <short>Object generating the mouse message</short>
+        <short>Object generating the mouse message.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseUp.Button">
-        <short>Button for the mouse message</short>
+        <short>Button for the mouse message.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseUp.Shift">
-        <short>Shift key state for the message</short>
+        <short>Shift key state for the message.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseUp.X">
-        <short>Horizontal position for the mouse message</short>
+        <short>Horizontal position for the mouse message.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.HandleMouseUp.Y">
-        <short>Vertical position for the mouse message</short>
+        <short>Vertical position for the mouse message.</short>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TNotifierXButton.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -160,13 +160,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TNotifierXButton.Create.AOwner">
-        <short>Owner for the class instance</short>
+        <short>Owner for the class instance.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TNotifierXButton.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -178,7 +178,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TNotifierXButton.Paint">
-        <short>Draws the button in its current state</short>
+        <short>Draws the button in its current state.</short>
         <descr>
           <p>
              <var>Paint</var> is an overridden procedure which draws the button using the Canvas for the control. Paint ensures that the pen and brush contain the correct values needed to draw the button in its current state. Paint calls the inherited method prior to exit.
@@ -190,7 +190,7 @@
       <!-- object Visibility: default -->
       <element name="TNotifierForm">
         <short>
-          Implements the form used for TPopupNotifier
+          Implements the form used for TPopupNotifier.
         </short>
         <descr>
           <p>
@@ -203,28 +203,28 @@
 
       <!-- variable Visibility: private -->
       <element name="TNotifierForm.lblTitle">
-        <short>Title for the form</short>
+        <short>Title for the form.</short>
       </element>
 
       <!-- variable Visibility: private -->
       <element name="TNotifierForm.lblText">
-        <short>Text for the form</short>
+        <short>Text for the form.</short>
       </element>
 
       <!-- variable Visibility: private -->
       <element name="TNotifierForm.imgIcon">
-        <short>Icon for the form</short>
+        <short>Icon for the form.</short>
       </element>
 
       <!-- variable Visibility: private -->
       <element name="TNotifierForm.btnX">
-        <short>Button for the form</short>
+        <short>Button for the form.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TNotifierForm.HideForm">
         <short>
-          Signals an event when the form is hidden
+          Signals an event when the form is hidden.
         </short>
         <descr>
           <p>
@@ -240,13 +240,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TNotifierForm.HideForm.Sender">
-        <short>Object generating the event</short>
+        <short>Object generating the event.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TNotifierForm.HandleResize">
         <short>
-          Handles resize requests for the form
+          Handles resize requests for the form.
         </short>
         <descr>
           <p>
@@ -258,13 +258,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TNotifierForm.HandleResize.Sender">
-        <short>Object generating the event</short>
+        <short>Object generating the event.</short>
       </element>
 
       <!-- procedure visibility: protected -->
       <element name="TNotifierForm.CreateHandle">
         <short>
-          Creates the handle for the form
+          Creates the handle for the form.
         </short>
         <descr>
           <p>
@@ -299,13 +299,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TNotifierForm.Create.AOwner">
-        <short>Owner of the form instance</short>
+        <short>Owner of the form instance.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TNotifierForm.Destroy">
         <short>
-          Frees the class instance
+          Frees the class instance.
         </short>
         <descr>
           <p>
@@ -319,7 +319,7 @@
       <!-- object Visibility: default -->
       <element name="TPopupNotifier">
         <short>
-          Implements a popup notification component
+          Implements a popup notification component.
         </short>
         <descr>
           <p>
@@ -332,7 +332,7 @@
       <!-- function Visibility: private -->
       <element name="TPopupNotifier.GetColor">
         <short>
-          Gets the color for the notification form
+          Gets the color for the notification form.
         </short>
         <descr>
           <p>
@@ -347,13 +347,13 @@
 
       <!-- function result Visibility: default -->
       <element name="TPopupNotifier.GetColor.Result">
-        <short>Current color for the notification form</short>
+        <short>Current color for the notification form.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TPopupNotifier.SetColor">
         <short>
-          Sets the color for the notification form
+          Sets the color for the notification form.
         </short>
         <descr>
           <p>
@@ -368,13 +368,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.SetColor.Value">
-        <short>New color for the notification form</short>
+        <short>New color for the notification form.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TPopupNotifier.GetIcon">
         <short>
-          Gets the icon for the notification form
+          Gets the icon for the notification form.
         </short>
         <descr>
           <p>
@@ -389,12 +389,12 @@
 
       <!-- function result Visibility: default -->
       <element name="TPopupNotifier.GetIcon.Result">
-        <short>Current Icon for the notification form</short>
+        <short>Current Icon for the notification form.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TPopupNotifier. SetIcon">
-        <short>Sets the icon for the notification form</short>
+        <short>Sets the icon for the notification form.</short>
         <descr>
           <p>
              <var>SetIcon</var> is a procedure which sets the Icon for the popup notification form to the specified value. SetIcon is the write access specifier for the Icon property.
@@ -408,13 +408,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.SetIcon.Value">
-        <short>New icon for the notification form</short>
+        <short>New icon for the notification form.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TPopupNotifier.GetText">
         <short>
-          Gets the text for the notification form
+          Gets the text for the notification form.
         </short>
         <descr>
           <p>
@@ -429,13 +429,13 @@
 
       <!-- function result Visibility: default -->
       <element name="TPopupNotifier.GetText.Result">
-        <short>Text for the notification form</short>
+        <short>Text for the notification form.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TPopupNotifier.SetText">
         <short>
-          Sets the text for the notification form
+          Sets the text for the notification form.
         </short>
         <descr>
           <p>
@@ -450,12 +450,12 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.SetText.Value">
-        <short>New text for the notification form</short>
+        <short>New text for the notification form.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TPopupNotifier.GetTitle">
-        <short>Gets the title for the notification form</short>
+        <short>Gets the title for the notification form.</short>
         <descr>
           <p>
             <var>GetTitle</var> is a String function which gets the title displayed on the popup notification form. GetTitle is the read access specifier for the Title property. GetTitle returns the value for the caption in the corresponding TLabel on the notification form.
@@ -469,13 +469,13 @@
 
       <!-- function result Visibility: default -->
       <element name="TPopupNotifier.GetTitle.Result">
-        <short>Title for the notification form</short>
+        <short>Title for the notification form.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TPopupNotifier.SetTitle">
         <short>
-          Sets the title for the notification form
+          Sets the title for the notification form.
         </short>
         <descr>
           <p>
@@ -490,13 +490,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.SetTitle.Value">
-        <short>New title for the notification form</short>
+        <short>New title for the notification form.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TPopupNotifier.GetVisible">
         <short>
-          Gets the Visible property for the notification form
+          Gets the Visible property for the notification form.
         </short>
         <descr>
           <p>
@@ -511,13 +511,13 @@
 
       <!-- function result Visibility: default -->
       <element name="TPopupNotifier.GetVisible.Result">
-        <short>Value of the Visible property for the notification form</short>
+        <short>Value of the Visible property for the notification form.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TPopupNotifier.SetVisible">
         <short>
-          Sets the Visible property for the notification form
+          Sets the Visible property for the notification form.
         </short>
         <descr>
           <p>
@@ -535,13 +535,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.SetVisible.Value">
-        <short>New value for the Visible property in the notification form</short>
+        <short>New value for the Visible property in the notification form.</short>
       </element>
 
       <!-- function Visibility: private -->
       <element name="TPopupNotifier.GetOnClose">
         <short>
-          Sets the OnClose event handler for the notification form
+          Sets the OnClose event handler for the notification form.
         </short>
         <descr>
           <p>
@@ -556,13 +556,13 @@
 
       <!-- function result Visibility: default -->
       <element name="TPopupNotifier.GetOnClose.Result">
-        <short>Value for the OnClose event handler in the notification form</short>
+        <short>Value for the OnClose event handler in the notification form.</short>
       </element>
 
       <!-- procedure Visibility: private -->
       <element name="TPopupNotifier.SetOnClose">
         <short>
-          Sets the OnClose event handler for the popup notification form
+          Sets the OnClose event handler for the popup notification form.
         </short>
         <descr>
           <p>
@@ -577,13 +577,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.SetOnClose.Value">
-        <short>New event handler assigned to OnClose in the notification form</short>
+        <short>New event handler assigned to OnClose in the notification form.</short>
       </element>
 
       <!-- variable Visibility: public -->
       <element name="TPopupNotifier.vNotifierForm">
         <short>
-          Form which displays the popup notification
+          Form which displays the popup notification.
         </short>
         <descr>
           <p>
@@ -596,7 +596,7 @@
       <!-- constructor Visibility: public -->
       <element name="TPopupNotifier.Create">
         <short>
-          Constructor for the component instance
+          Constructor for the component instance.
         </short>
         <descr>
           <p>
@@ -608,13 +608,13 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.Create.AOwner">
-        <short>Owner of the component instance</short>
+        <short>Owner of the component instance.</short>
       </element>
 
       <!-- destructor Visibility: public -->
       <element name="TPopupNotifier.Destroy">
         <short>
-          Frees the component
+          Frees the component.
         </short>
         <descr>
           <p>
@@ -627,7 +627,7 @@
       <!-- procedure Visibility: public -->
       <element name="TPopupNotifier.Hide">
         <short>
-          Hides the popup notification form
+          Hides the popup notification form.
         </short>
         <descr>
           <p>
@@ -640,7 +640,7 @@
       <!-- procedure Visibility: public -->
       <element name="TPopupNotifier.Show">
         <short>
-          Displays the popup notification
+          Displays the popup notification.
         </short>
         <descr>
           <p>
@@ -653,7 +653,7 @@
       <!-- procedure Visibility: public -->
       <element name="TPopupNotifier.ShowAtPos">
         <short>
-          Displays the popup notification form at the specified position
+          Displays the popup notification form at the specified position.
         </short>
         <descr>
           <p>
@@ -665,18 +665,18 @@
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.ShowAtPos.x">
-        <short>Horizontal position for the notification</short>
+        <short>Horizontal position for the notification.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TPopupNotifier.ShowAtPos.y">
-        <short>Vertical position for the notification</short>
+        <short>Vertical position for the notification.</short>
       </element>
 
       <!-- property Visibility: published -->
       <element name="TPopupNotifier.Color">
         <short>
-          Color for the popup notification form
+          Color for the popup notification form.
         </short>
         <descr>
           <p>
@@ -689,7 +689,7 @@
       <!-- property Visibility: published -->
       <element name="TPopupNotifier.Icon">
         <short>
-          Icon for the popup notification form
+          Icon for the popup notification form.
         </short>
         <descr>
           <p>
@@ -702,7 +702,7 @@
       <!-- property Visibility: published -->
       <element name="TPopupNotifier.Text">
         <short>
-          Text for the popup notification form
+          Text for the popup notification form.
         </short>
         <descr>
           <p>
@@ -715,7 +715,7 @@
       <!-- property Visibility: published -->
       <element name="TPopupNotifier.Title">
         <short>
-          Title for the popup notification form
+          Title for the popup notification form.
         </short>
         <descr>
           <p>
@@ -728,7 +728,7 @@
       <!-- property Visibility: published -->
       <element name="TPopupNotifier.Visible">
         <short>
-          Value for the Visible property in the popup notification form
+          Value for the Visible property in the popup notification form.
         </short>
         <descr>
           <p>
@@ -741,7 +741,7 @@
       <!-- property Visibility: published -->
       <element name="TPopupNotifier.OnClose">
         <short>
-          OnClose event handler for the popup notification form
+          OnClose event handler for the popup notification form.
         </short>
         <descr>
           <p>
@@ -754,7 +754,7 @@
       <!-- constant Visibility: default -->
       <element name="BGDrawn">
         <short>
-          Not used in the current implementation
+          Not used in the current implementation.
         </short>
         <descr>
           <p>

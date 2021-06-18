@@ -7,7 +7,7 @@
   ====================================================================
 -->
 <module name="LCLPlatformDef">
-<short>Contains the non-GUI dependent parts of LCL Platform definition</short>
+<short>Contains the non-GUI dependent parts of LCL Platform definition.</short>
 <descr>
 <file>lclplatformdef.pas</file> contains types, constants, variables and
 routines used in non-GUI dependent parts of LCL Platform definition.
@@ -15,7 +15,7 @@ This file is part of the Lazarus Component Library (<b>LCL</b>).
 </descr>
 
 <element name="TLCLPlatform">
-<short>Represents the platforms supported in the LCL</short>
+<short>Represents the platforms supported in the LCL.</short>
 <descr>
 </descr>
 <seealso>
@@ -24,47 +24,47 @@ This file is part of the Lazarus Component Library (<b>LCL</b>).
 </seealso>
 </element>
 <element name="TLCLPlatform.lpGtk">
-<short>GIMP ToolKit</short>
+<short>GIMP ToolKit.</short>
 </element>
 <element name="TLCLPlatform.lpGtk2">
-<short>GTK version 2</short>
+<short>GTK version 2.</short>
 </element>
 <element name="TLCLPlatform.lpGtk3">
-<short>GTK version 3</short>
+<short>GTK version 3.</short>
 </element>
 <element name="TLCLPlatform.lpWin32">
-<short>Windows API (formerly called Win32 API)</short>
+<short>Windows API (formerly called Win32 API).</short>
 </element>
 <element name="TLCLPlatform.lpWinCE">
-<short>Windows CE</short>
+<short>Windows CE.</short>
 </element>
 <element name="TLCLPlatform.lpCarbon">
-<short>MacOS Carbon API</short>
+<short>MacOS Carbon API.</short>
 </element>
 <element name="TLCLPlatform.lpQT">
-<short>QT version 4</short>
+<short>QT version 4.</short>
 </element>
 <element name="TLCLPlatform.lpQt5">
-<short>QT version 5</short>
+<short>QT version 5.</short>
 </element>
 <element name="TLCLPlatform.lpfpGUI">
-<short>FreePascal GUI</short>
+<short>FreePascal GUI.</short>
 </element>
 <element name="TLCLPlatform.lpNoGUI">
-<short>No GUI</short>
+<short>No GUI.</short>
 </element>
 <element name="TLCLPlatform.lpCocoa">
-<short>MacOS Cocoa API</short>
+<short>MacOS Cocoa API.</short>
 </element>
 <element name="TLCLPlatform.lpCustomDrawn">
-<short>Custom-drawn</short>
+<short>Custom-drawn.</short>
 </element>
 <element name="TLCLPlatform.lpMUI">
-<short>Magic User Interface (MUI) for AmigaOS, AROS</short>
+<short>Magic User Interface (MUI) for AmigaOS, AROS.</short>
 </element>
 
 <element name="TLCLPlatforms">
-<short>Set type used to store TLCLPlatform value(s)</short>
+<short>Set type used to store TLCLPlatform value(s).</short>
 <descr>
 </descr>
 <seealso>
@@ -73,21 +73,21 @@ This file is part of the Lazarus Component Library (<b>LCL</b>).
 </element>
 
 <element name="DirNameToLCLPlatform">
-<short>Gets the platform enumeration value for the specified directory name</short>
+<short>Gets the platform enumeration value for the specified directory name.</short>
 <descr>
 </descr>
 <seealso>
 </seealso>
 </element>
 <element name="DirNameToLCLPlatform.Result">
-<short>TLCLPlatform enumeration value for the given directory name</short>
+<short>TLCLPlatform enumeration value for the given directory name.</short>
 </element>
 <element name="DirNameToLCLPlatform.ADirName">
-<short>DIrectory name to convert to a TLCLPlatform enumertation value</short>
+<short>DIrectory name to convert to a TLCLPlatform enumertation value.</short>
 </element>
 
 <element name="GetBuildLCLWidgetType">
-<short>Gets the value in the BuildLCLWidgetType variable</short>
+<short>Gets the value in the BuildLCLWidgetType variable.</short>
 <descr>
 <p>
 Used in the <var>lazbuild</var> utility to get the target widgetset using the
@@ -99,11 +99,11 @@ platform defines.
 </seealso>
 </element>
 <element name="GetBuildLCLWidgetType.Result">
-<short>TLCLPlatform enumeration value for the platform</short>
+<short>TLCLPlatform enumeration value for the platform.</short>
 </element>
 
 <element name="LCLPlatformDirNames">
-<short>Array constant with the directory names for supported LCL platforms</short>
+<short>Array constant with the directory names for supported LCL platforms.</short>
 <descr>
 <p>
 LCLPlatformDirNames is a array of Strings with directory names for the supported
@@ -130,7 +130,7 @@ enumeration value.
 </element>
 
 <element name="LCLPlatformDisplayNames">
-<short>Array constant with the display names for supported LCL platforms</short>
+<short>Array constant with the display names for supported LCL platforms.</short>
 <descr>
   <p>
   LCLPlatformDisplayNames is a array of Strings with display names for the supported
@@ -157,7 +157,7 @@ enumeration value.
 </element>
 
 <element name="BuildLCLWidgetType">
-<short>Gets the TLCLPlatform enumeration value for the current platform</short>
+<short>Gets the TLCLPlatform enumeration value for the current platform.</short>
 <descr>
 </descr>
 <seealso>

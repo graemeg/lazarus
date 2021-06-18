@@ -8,8 +8,8 @@
     -->
     <module name="LazHelpIntf">
       <short>
-        Defines base classes used in the LCL help system
-      </short>
+        Defines base classes used in the LCL help system.
+        </short>
       <descr>
         <p>
           <file>lazhelpintf.pas</file> contains types, classes, and routines used in the LCL help system. It defines various base classes that provide the interface for the help system. Many of the methods in these classes are defined as abstract virtual methods, and must be implemented in more specialized descendent classes.
@@ -41,7 +41,7 @@
 
       <element name="THelpQueryItem.AsString">
         <short>
-          Specifies the interface used get a help query as a String value
+          Specifies the interface used get a help query as a String value.
         </short>
         <descr>
           <p>
@@ -53,12 +53,12 @@
         </seealso>
       </element>
       <element name="THelpQueryItem.AsString.Result">
-        <short>String representation for the help query item</short>
+        <short>String representation for the help query item.</short>
       </element>
 
       <element name="THelpQueryItem.IsEqual">
         <short>
-          Performs actions needed to compare the help query items
+          Performs actions needed to compare the help query items.
         </short>
         <descr>
           <p>
@@ -70,71 +70,71 @@
         </seealso>
       </element>
       <element name="THelpQueryItem.IsEqual.Result">
-        <short>True when the help query items are the same</short>
+        <short>True when the help query items are the same.</short>
       </element>
       <element name="THelpQueryItem.IsEqual.QueryItem">
-        <short>Help query item compared to the current class instance</short>
+        <short>Help query item compared to the current class instance.</short>
       </element>
 
       <element name="TPascalHelpContextType">
-        <short>Enumerated type with values representing Pascal help contexts</short>
+        <short>Enumerated type with values representing Pascal help contexts.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPascalHelpContextType.pihcFilename">
-        <short>Context is a file name</short>
+        <short>Context is a file name.</short>
       </element>
       <element name="TPascalHelpContextType.pihcSourceName">
-        <short>Context is a file name for a unit or library</short>
+        <short>Context is a file name for a unit or library.</short>
       </element>
       <element name="TPascalHelpContextType.pihcProperty">
-        <short>Context is a property</short>
+        <short>Context is a property.</short>
       </element>
       <element name="TPascalHelpContextType.pihcProcedure">
-        <short>Context is a procedure or function</short>
+        <short>Context is a procedure or function.</short>
       </element>
       <element name="TPascalHelpContextType.pihcParameterList">
-        <short>Context is a list of parameters</short>
+        <short>Context is a list of parameters.</short>
       </element>
       <element name="TPascalHelpContextType.pihcVariable">
-        <short>Context is a variable</short>
+        <short>Context is a variable.</short>
       </element>
       <element name="TPascalHelpContextType.pihcType">
-        <short>Context is a type</short>
+        <short>Context is a type.</short>
       </element>
       <element name="TPascalHelpContextType.pihcConst">
-        <short>Context is a constant</short>
+        <short>Context is a constant.</short>
       </element>
 
       <element name="TPascalHelpContext">
         <short>
-          Record type used to represent a Pascal help context and its descriptor
+          Record type used to represent a Pascal help context and its descriptor.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPascalHelpContext.Descriptor">
-        <short>TPascalHelpContextType for the record</short>
+        <short>TPascalHelpContextType for the record.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPascalHelpContext.Context">
-        <short>String representing the Pascal context</short>
+        <short>String representing the Pascal context.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPascalHelpTPascalHelpContextList">
-        <short>Pointer used to reference a TPascalHelpContextType instance</short>
+        <short>Pointer used to reference a TPascalHelpContextType instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPascalHelpContextList">
         <short>
-          Implements a list for Pascal help contexts
+          Implements a list for Pascal help contexts.
         </short>
         <descr>
           <p>
@@ -163,29 +163,29 @@
       </element>
 
       <element name="TPascalHelpContextList.Add">
-        <short>Adds a Pascal help context to the end of list in Items</short>
+        <short>Adds a Pascal help context to the end of list in Items.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPascalHelpContextList.Add.Context">
-        <short>Pascal help context added in the method</short>
+        <short>Pascal help context added in the method.</short>
       </element>
 
       <element name="TPascalHelpContextList.Insert">
-        <short>Inserts a Pascal help context at the specified position in Items</short>
+        <short>Inserts a Pascal help context at the specified position in Items.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPascalHelpContextList.Insert.Index">
-        <short>Ordinal position in Items where the context is stored</short>
+        <short>Ordinal position in Items where the context is stored.</short>
       </element>
       <element name="TPascalHelpContextList.Insert.Context">
-        <short>Pascal context inserted into the Items for the list</short>
+        <short>Pascal context inserted into the Items for the list.</short>
       </element>
 
       <element name="TPascalHelpContextList.Clear">
         <short>
-          Clears the Items in the list of Pascal help contexts
+          Clears the Items in the list of Pascal help contexts.
         </short>
         <descr>
           <p>
@@ -200,7 +200,7 @@
       </element>
 
       <element name="TPascalHelpContextList.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the overridden destructor for the class instance. Destroy calls the Clear method to remove Pascal help contexts stored in the Items for the List. Destroy calls the inherited constructor to finalize the class instance.
@@ -213,7 +213,7 @@
 
       <element name="TPascalHelpContextList.IsEqual">
         <short>
-          Indicates if the list is equivalent to the specified list of help contexts
+          Indicates if the list is equivalent to the specified list of help contexts.
         </short>
         <descr>
           <p>
@@ -229,26 +229,26 @@
         </seealso>
       </element>
       <element name="TPascalHelpContextList.IsEqual.Result">
-        <short>True the lists are equivalent</short>
+        <short>True the lists are equivalent.</short>
       </element>
       <element name="TPascalHelpContextList.IsEqual.QueryItem">
-        <short>List of help contexts compared in the method</short>
+        <short>List of help contexts compared in the method.</short>
       </element>
 
       <element name="TPascalHelpContextList.CompareList">
-        <short>Compares the specified list of help contexts to the current instance</short>
+        <short>Compares the specified list of help contexts to the current instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPascalHelpContextList.CompareList.Result">
-        <short>Returns 0 when lists are the same</short>
+        <short>Returns 0 when lists are the same.</short>
       </element>
       <element name="TPascalHelpContextList.CompareList.AList">
-        <short>List of help contexts compared to the current instance</short>
+        <short>List of help contexts compared to the current instance.</short>
       </element>
 
       <element name="TPascalHelpContextList.AsString">
-        <short>Gets the string representation for help contexts in Items</short>
+        <short>Gets the string representation for help contexts in Items.</short>
         <descr/>
         <seealso/>
       </element>
@@ -257,31 +257,31 @@
       </element>
 
       <element name="TPascalHelpContextList.Count">
-        <short>Indicates the number of help contexts stored in Items</short>
+        <short>Indicates the number of help contexts stored in Items.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TPascalHelpContextList.Items">
         <short>
-          Provides indexed access to help contexts in the List by ordinal position
+          Provides indexed access to help contexts in the List by ordinal position.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPascalHelpContextList.Items.Index">
-        <short>Ordinal position for the help context</short>
+        <short>Ordinal position for the help context.</short>
       </element>
 
       <element name="TPascalHelpContextList.List">
-        <short>Pointer to the initial help context stored in the list</short>
+        <short>Pointer to the initial help context stored in the list.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpNodeType">
         <short>
-          Enumerated type that identifies the method(s) available to locate a help topic
+          Enumerated type that identifies the method(s) available to locate a help topic.
         </short>
         <descr>
           <p>
@@ -298,26 +298,26 @@
         </seealso>
       </element>
       <element name="THelpNodeType.hntURLIDContext">
-        <short>URL, ID, and Context are valid for the help node</short>
+        <short>URL, ID, and Context are valid for the help node.</short>
       </element>
       <element name="THelpNodeType.hntURL">
-        <short>Only the URL is valid for the help node</short>
+        <short>Only the URL is valid for the help node.</short>
       </element>
       <element name="THelpNodeType.hntURLID">
-        <short>URL and ID are valid for the help node</short>
+        <short>URL and ID are valid for the help node.</short>
       </element>
       <element name="THelpNodeType.hntID">
-        <short>Only ID is valid for the help node</short>
+        <short>Only ID is valid for the help node.</short>
       </element>
       <element name="THelpNodeType.hntContext">
-        <short>Only Context is valid for the help node</short>
+        <short>Only Context is valid for the help node.</short>
       </element>
       <element name="THelpNodeType.hntURLContext">
-        <short>URL and Context are valid for the help node</short>
+        <short>URL and Context are valid for the help node.</short>
       </element>
 
       <element name="THelpNode">
-        <short>
+        <short>.
         </short>
         <descr>
         </descr>
@@ -333,199 +333,199 @@
       <element name="THelpNode.FTitle" link="#lcl.lazhelpintf.THelpNode.Title"/>
 
       <element name="THelpNode.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.Create.TheOwner">
-        <short>Help database that owns the help node</short>
+        <short>Help database that owns the help node.</short>
       </element>
       <element name="THelpNode.Create.Node">
         <short>
-          Help node with property values stored in the new help node; basically, it is a copy Constructor
+          Help node with property values stored in the new help node; basically, it is a copy Constructor.
         </short>
       </element>
       <element name="THelpNode.Create.TheTitle">
-        <short>Title for the help node</short>
+        <short>Title for the help node.</short>
       </element>
       <element name="THelpNode.Create.TheURL">
-        <short>URL for the help node</short>
+        <short>URL for the help node.</short>
       </element>
       <element name="THelpNode.Create.TheID">
-        <short>Unique identifier for the help node</short>
+        <short>Unique identifier for the help node.</short>
       </element>
       <element name="THelpNode.Create.TheContext">
-        <short>Context for the help node</short>
+        <short>Context for the help node.</short>
       </element>
 
       <element name="THelpNode.CreateURL">
-        <short>Alternate constructor using the URL for the help node</short>
+        <short>Alternate constructor using the URL for the help node.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.CreateURL.TheOwner">
-        <short>Help database that owns the help node</short>
+        <short>Help database that owns the help node.</short>
       </element>
       <element name="THelpNode.CreateURL.TheTitle">
-        <short>Title for the help node</short>
+        <short>Title for the help node.</short>
       </element>
       <element name="THelpNode.CreateURL.TheURL">
-        <short>URL for the help node</short>
+        <short>URL for the help node.</short>
       </element>
 
       <element name="THelpNode.CreateID">
-        <short>Alternate constructor using the ID for the help node</short>
+        <short>Alternate constructor using the ID for the help node.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.CreateID.TheOwner">
-        <short>Help database that owns the help node</short>
+        <short>Help database that owns the help node.</short>
       </element>
       <element name="THelpNode.CreateID.TheTitle">
-        <short>Title for the help node</short>
+        <short>Title for the help node.</short>
       </element>
       <element name="THelpNode.CreateID.TheID">
-        <short>Unique ID for the help node</short>
+        <short>Unique ID for the help node.</short>
       </element>
 
       <element name="THelpNode.CreateURLID">
-        <short>Alternate constructor using the URL and ID for the help node</short>
+        <short>Alternate constructor using the URL and ID for the help node.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.CreateURLID.TheOwner">
-        <short>Help database that owns the help node</short>
+        <short>Help database that owns the help node.</short>
       </element>
       <element name="THelpNode.CreateURLID.TheTitle">
-        <short>Title for the help node</short>
+        <short>Title for the help node.</short>
       </element>
       <element name="THelpNode.CreateURLID.TheURL">
-        <short>URL for the help node</short>
+        <short>URL for the help node.</short>
       </element>
       <element name="THelpNode.CreateURLID.TheID">
-        <short>Unique ID for the help node</short>
+        <short>Unique ID for the help node.</short>
       </element>
 
       <element name="THelpNode.CreateContext">
-        <short>Alternate constructor using the Context for the help node</short>
+        <short>Alternate constructor using the Context for the help node.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.CreateContext.TheOwner">
-        <short>Help database that owns the help node</short>
+        <short>Help database that owns the help node.</short>
       </element>
       <element name="THelpNode.CreateContext.TheTitle">
-        <short>Title for the help node</short>
+        <short>Title for the help node.</short>
       </element>
       <element name="THelpNode.CreateContext.TheContext">
-        <short>Context for the help node</short>
+        <short>Context for the help node.</short>
       </element>
 
       <element name="THelpNode.CreateURLContext">
-        <short>Alternate constructor using the URL and Context for the help node</short>
+        <short>Alternate constructor using the URL and Context for the help node.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.CreateURLContext.TheOwner">
-        <short>Help database that owns the help node</short>
+        <short>Help database that owns the help node.</short>
       </element>
       <element name="THelpNode.CreateURLContext.TheTitle">
-        <short>Title for the help node</short>
+        <short>Title for the help node.</short>
       </element>
       <element name="THelpNode.CreateURLContext.TheURL">
-        <short>URL for the help node</short>
+        <short>URL for the help node.</short>
       </element>
       <element name="THelpNode.CreateURLContext.TheContext">
-        <short>Context for the help node</short>
+        <short>Context for the help node.</short>
       </element>
 
       <element name="THelpNode.Owner">
-        <short>Help database that owns the help node</short>
+        <short>Help database that owns the help node.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpNode.URLValid">
         <short>
-          Indicates if the URL for the help node is valid
+          Indicates if the URL for the help node is valid.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.URLValid.Result">
-        <short>True if the URL was provided to the constructor for the help node</short>
+        <short>True if the URL was provided to the constructor for the help node.</short>
       </element>
 
       <element name="THelpNode.IDValid">
         <short>
-          Indicates if the unique identifier is valid for the help node
+          Indicates if the unique identifier is valid for the help node.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.IDValid.Result">
-        <short>True if the ID was provided to the constructor for the help node</short>
+        <short>True if the ID was provided to the constructor for the help node.</short>
       </element>
 
       <element name="THelpNode.ContextValid">
         <short>
-          Indicates if the help context is valid for the help node
+          Indicates if the help context is valid for the help node.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.ContextValid.Result">
         <short>
-          True if the help context was provided to the constructor for the help node
+          True if the help context was provided to the constructor for the help node.
         </short>
       </element>
 
       <element name="THelpNode.AsString">
-        <short>Gets the string representation for the help node</short>
+        <short>Gets the string representation for the help node.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.AsString.Result">
-        <short>Contains the value in the Title property</short>
+        <short>Contains the value in the Title property.</short>
       </element>
 
       <element name="THelpNode.Assign">
-        <short>Assigns values from Source to the current class instance</short>
+        <short>Assigns values from Source to the current class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNode.Assign.Source">
-        <short>Help node with values stored in the current class instance</short>
+        <short>Help node with values stored in the current class instance.</short>
       </element>
 
       <element name="THelpNode.Title">
-        <short>Title for the help node</short>
+        <short>Title for the help node.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpNode.HelpType">
-        <short>Type for the help node</short>
+        <short>Type for the help node.</short>
         <descr/>
         <seealso/>
       </element>
 
      <element name="THelpNode.URL">
-        <short>URL used to access content for the help node</short>
+        <short>URL used to access content for the help node.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpNode.ID">
         <short>
-          Unique identifier for the help node in a help database
+          Unique identifier for the help node in a help database.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpNode.Context">
-        <short>Help context for the help node</short>
+        <short>Help context for the help node.</short>
         <descr/>
         <seealso/>
       </element>
@@ -540,7 +540,7 @@
       <element name="THelpNodeQuery.FQueryItem" link="#lcl.lazhtmlintf.THelpNodeQuery.QueryItem"/>
 
       <element name="THelpNodeQuery.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -623,29 +623,29 @@
       </element>
 
       <element name="THelpNodeQueryList.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpNodeQueryList.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpNodeQueryList.Count">
-        <short>Indicates the number of entries stored in the Items property</short>
+        <short>Indicates the number of entries stored in the Items property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNodeQueryList.Count.Result">
-        <short>Number of entries stored in the Items property</short>
+        <short>Number of entries stored in the Items property.</short>
       </element>
 
       <element name="THelpNodeQueryList.Add">
         <short>
-          Adds the specified help node, node query, and query item  to the Items in the list
+          Adds the specified help node, node query, and query item  to the Items in the list.
         </short>
         <descr/>
         <seealso/>
@@ -665,18 +665,18 @@
 
       <element name="THelpNodeQueryList.Delete">
         <short>
-          Deletes the help node  query at the specified ordinal position in the list
+          Deletes the help node  query at the specified ordinal position in the list.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNodeQueryList.Delete.Index">
-        <short>Ordinal position removed in the method</short>
+        <short>Ordinal position removed in the method.</short>
       </element>
 
       <element name="THelpNodeQueryList.IndexOf">
         <short>
-          Gets the ordinal position in the llist where the specified node and query items are stored
+          Gets the ordinal position in the llist where the specified node and query items are stored.
         </short>
         <descr/>
         <seealso/>
@@ -696,7 +696,7 @@
 
       <element name="THelpNodeQueryList.Clear">
         <short>
-          Removes all items stored in the list
+          Removes all items stored in the list.
         </short>
         <descr/>
         <seealso/>
@@ -704,13 +704,13 @@
 
       <element name="THelpNodeQueryList.Items">
         <short>
-          Provides indexed access to help nodes and query selectors by their ordinal position
+          Provides indexed access to help nodes and query selectors by their ordinal position.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpNodeQueryList.Items.Index">
-        <short>Ordinal position for the requested item</short>
+        <short>Ordinal position for the requested item.</short>
       </element>
 
       <element name="THelpDBItem">
@@ -722,22 +722,22 @@
       <element name="THelpDBItem.FNode" link="#lcl.lazhtmlintf.THelpDBItem.Node"/>
 
       <element name="THelpDBItem.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDBItem.Create.TheNode">
-        <short>Help node for the new item</short>
+        <short>Help node for the new item.</short>
       </element>
 
       <element name="THelpDBItem.Destroy">
-        <short>Destructor for the clas instance</short>
+        <short>Destructor for the clas instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpDBItem.Node">
-        <short>Help node for the item</short>
+        <short>Help node for the item.</short>
         <descr/>
         <seealso/>
       </element>
@@ -752,36 +752,36 @@
       <element name="THelpDBISourceFile.FFilename" link="#lcl.lazhtmlintf.THelpDBISourceFile.Filename"/>
 
       <element name="THelpDBISourceFile.SetFilename" link="#lcl.lazhtmlintf.THelpDBISourceFile.Filename">
-        <short>Sets the value for the Filename property</short>
+        <short>Sets the value for the Filename property.</short>
       </element>
       <element name="THelpDBISourceFile.SetFilename.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THelpDBISourceFile.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDBISourceFile.Create.TheNode">
-        <short>Help node for the new item</short>
+        <short>Help node for the new item.</short>
       </element>
       <element name="THelpDBISourceFile.Create.TheFilename">
-        <short>File name for the new item</short>
+        <short>File name for the new item.</short>
       </element>
 
       <element name="THelpDBISourceFile.FileMatches">
         <short>
-          Indicates if the specified file name matches the value in the Filename property
+          Indicates if the specified file name matches the value in the Filename property.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDBISourceFile.FileMatches.Result">
-        <short>True when the file name matches the Filename property</short>
+        <short>True when the file name matches the Filename property.</short>
       </element>
       <element name="THelpDBISourceFile.FileMatches.AFilename">
-        <short>File name compared to the current class instance</short>
+        <short>File name compared to the current class instance.</short>
       </element>
 
       <element name="THelpDBISourceFile.GetFullFilename">
@@ -794,16 +794,16 @@
       </element>
 
       <element name="THelpDBISourceFile.GetBasePath">
-        <short>Gets the value for the BasePath needed to access the file</short>
+        <short>Gets the value for the BasePath needed to access the file.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDBISourceFile.GetBasePath.Result">
-        <short>Value for the BasePath for the file</short>
+        <short>Value for the BasePath for the file.</short>
       </element>
 
       <element name="THelpDBISourceFile.BasePathObject">
-        <short>Represents the BasePath used to access the source file</short>
+        <short>Represents the BasePath used to access the source file.</short>
         <descr/>
         <seealso/>
       </element>
@@ -824,21 +824,21 @@
       <element name="THelpDBISourceDirectory.FWithSubDirectories" link="#lcl.lazhtmlintf.THelpDBISourceDirectory.WithSubDirectories"/>
 
       <element name="THelpDBISourceDirectory.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDBISourceDirectory.Create.TheNode">
-        <short>Help node for the new item</short>
+        <short>Help node for the new item.</short>
       </element>
       <element name="THelpDBISourceDirectory.Create.TheFilename">
-        <short>File name for the new item</short>
+        <short>File name for the new item.</short>
       </element>
       <element name="THelpDBISourceDirectory.Create.TheFileMask">
-        <short>File mask used to select files displayed in the directory</short>
+        <short>File mask used to select files displayed in the directory.</short>
       </element>
       <element name="THelpDBISourceDirectory.Create.Recursive">
-        <short>Indiates if subdirectories are visited when accessing the directory</short>
+        <short>Indiates if subdirectories are visited when accessing the directory.</short>
       </element>
 
       <element name="THelpDBISourceDirectory.FileMatches">
@@ -930,7 +930,7 @@
 
       <element name="THelpDatabase">
         <short>
-          Provides support for integrating a collection of related help topics with a table of contents
+          Provides support for integrating a collection of related help topics with a table of contents.
         </short>
         <descr/>
         <seealso/>
@@ -946,77 +946,77 @@
       <element name="THelpDatabase.FTOCNode" link="#lcl.lazhelpintf.THelpDatabase.TOCNode"/>
 
       <element name="THelpDatabase.SetAutoRegister">
-        <short>Sets the value for the AutoRegister property</short>
+        <short>Sets the value for the AutoRegister property.</short>
         <descr/>
         <seealso>
           <link id="THelpDatabase..AutoRegister"/>
         </seealso>
       </element>
       <element name="THelpDatabase.SetAutoRegister.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THelpDatabase.SetID">
-        <short>Sets the value in the ID property</short>
+        <short>Sets the value in the ID property.</short>
         <descr/>
         <seealso>
           <link id="THelpDatabase.ID"/>
         </seealso>
       </element>
       <element name="THelpDatabase.SetID.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THelpDatabase.SetDatabases">
-        <short>Sets the value in the Databases property</short>
+        <short>Sets the value in the Databases property.</short>
         <descr/>
         <seealso>
           <link id="THelpDatabase.SetDatabases"/>
         </seealso>
       </element>
       <element name="THelpDatabase.SetDatabases.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THelpDatabase.SetSupportedMimeTypes">
-        <short>Sets the value in the SupportedMimeTypes property</short>
+        <short>Sets the value in the SupportedMimeTypes property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDatabase.SetSupportedMimeTypes.List">
-        <short>List of MIME types stored in the property</short>
+        <short>List of MIME types stored in the property.</short>
       </element>
 
       <element name="THelpDatabase.AddSupportedMimeType">
-        <short>Adds a MIME type entry to the list in SupportedMimeTypes</short>
+        <short>Adds a MIME type entry to the list in SupportedMimeTypes.</short>
         <descr/>
         <seealso>
           <link id="THelpDatabase.SupportedMimeTypes"/>
         </seealso>
       </element>
       <element name="THelpDatabase.AddSupportedMimeType.AMimeType">
-        <short>MIME type added in the method</short>
+        <short>MIME type added in the method.</short>
       </element>
 
       <element name="THelpDatabase.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso>
           <link id="#rtl.classes.TComponent.Create">TComponent.Create</link>
         </seealso>
       </element>
       <element name="THelpDatabase.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="THelpDatabase.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpDatabase.Reference">
-        <short>Increments the number of references for the class instance</short>
+        <short>Increments the number of references for the class instance.</short>
         <descr/>
         <seealso>
           <link id="THelpDatabase.Release"/>
@@ -1024,7 +1024,7 @@
       </element>
 
       <element name="THelpDatabase.RegisterSelf">
-        <short>Ensures that the LCL Help system has been initialized</short>
+        <short>Ensures that the LCL Help system has been initialized.</short>
         <descr>
           <p>
             Calls CreateLCLHelpSystem if HelpDatabases has not been assigned. HelpDatabases, HelpManager, and HelpViewers are initialized when the LCL Help system is set up  in the Lazarus IDE.
@@ -1060,7 +1060,7 @@
 
       <element name="THelpDatabase.Registered">
         <short>
-          Indicates if the list of help databases has been initialized for the database instance
+          Indicates if the list of help databases has been initialized for the database instance.
         </short>
         <descr/>
         <seealso/>
@@ -1071,7 +1071,7 @@
 
       <element name="THelpDatabase.CanShowTableOfContents">
         <short>
-          Determines if a Table of Contents node is available for the help database
+          Determines if a Table of Contents node is available for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1082,7 +1082,7 @@
 
       <element name="THelpDatabase.ShowTableOfContents">
         <short>
-          Displays the Table of Contents in the TOCNode for the help database
+          Displays the Table of Contents in the TOCNode for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1090,7 +1090,7 @@
 
       <element name="THelpDatabase.ShowError">
         <short>
-          Displays an error message using the help manager, or raises an exception
+          Displays an error message using the help manager, or raises an exception.
         </short>
         <descr/>
         <seealso/>
@@ -1128,7 +1128,7 @@
       </element>
 
       <element name="THelpDatabase.ShowHelpFile">
-        <short>Displays a help topic with the specified  file name</short>
+        <short>Displays a help topic with the specified  file name.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1153,41 +1153,41 @@
 
       <element name="THelpDatabase.SupportsMimeType">
         <short>
-          Determines is the specified MIME type is supported in the help database
+          Determines is the specified MIME type is supported in the help database.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDatabase.SupportsMimeType.Result">
-        <short>True when the MIME type is in the list of supported MIME types</short>
+        <short>True when the MIME type is in the list of supported MIME types.</short>
       </element>
       <element name="THelpDatabase.SupportsMimeType.AMimeType">
-        <short>MIME type to locate in the list of supported MIME types</short>
+        <short>MIME type to locate in the list of supported MIME types.</short>
       </element>
 
       <element name="THelpDatabase.GetNodesForKeyword">
         <short>
-          Creates or updates a list of help nodes using the specified help HelpKeyword
+          Creates or updates a list of help nodes using the specified help HelpKeyword.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDatabase.GetNodesForKeyword.Result">
-        <short>Status for help request</short>
+        <short>Status for help request.</short>
       </element>
       <element name="THelpDatabase.GetNodesForKeyword.HelpKeyword">
-        <short>Help keyword to locate in nodes in the help database</short>
+        <short>Help keyword to locate in nodes in the help database.</short>
       </element>
       <element name="THelpDatabase.GetNodesForKeyword.ListOfNodes">
-        <short>List of nodes updated in the method</short>
+        <short>List of nodes updated in the method.</short>
       </element>
       <element name="THelpDatabase.GetNodesForKeyword.ErrMsg">
-        <short>Message describing an error condition in the return value</short>
+        <short>Message describing an error condition in the return value.</short>
       </element>
 
       <element name="THelpDatabase.GetNodesForContext">
         <short>
-          Creates or updates the list of help nodes for the specified help context
+          Creates or updates the list of help nodes for the specified help context.
         </short>
         <descr/>
         <seealso/>
@@ -1207,7 +1207,7 @@
 
       <element name="THelpDatabase.GetNodesForPascalContexts">
         <short>
-          Creates or updates a list of nodes for the specified Pascal help GetNodesForPascalContexts
+          Creates or updates a list of nodes for the specified Pascal help GetNodesForPascalContexts.
         </short>
         <descr/>
         <seealso/>
@@ -1227,7 +1227,7 @@
 
       <element name="THelpDatabase.GetNodesForClass">
         <short>
-          Creates or updates a list of help nodes for the specified class
+          Creates or updates a list of help nodes for the specified class.
         </short>
         <descr/>
         <seealso/>
@@ -1247,7 +1247,7 @@
 
       <element name="THelpDatabase.GetNodesForMessage">
         <short>
-          Creates or updates a list of help nodes matching the specified message
+          Creates or updates a list of help nodes matching the specified message.
         </short>
         <descr/>
         <seealso/>
@@ -1270,7 +1270,7 @@
 
       <element name="THelpDatabase.FindViewer">
         <short>
-          Gets the help viewer which supports the specified MIME type
+          Gets the help viewer which supports the specified MIME type.
         </short>
         <descr/>
         <seealso/>
@@ -1290,7 +1290,7 @@
 
       <element name="THelpDatabase.RegisterItem">
         <short>
-          Adds the specified item to the search items for the help database
+          Adds the specified item to the search items for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1301,7 +1301,7 @@
 
       <element name="THelpDatabase.RegisterItemWithNode">
         <short>
-          Adds a search item to the help database for the specified help node
+          Adds a search item to the help database for the specified help node.
         </short>
         <descr/>
         <seealso/>
@@ -1312,7 +1312,7 @@
 
       <element name="THelpDatabase.RegisterFileItemWithNode">
         <short>
-          Adds a search item to the help database for the source file with the specified file name
+          Adds a search item to the help database for the source file with the specified file name.
         </short>
         <descr/>
         <seealso/>
@@ -1326,7 +1326,7 @@
 
       <element name="THelpDatabase.UnregisterItem">
         <short>
-          Removes the specified item from the search items for the help database
+          Removes the specified item from the search items for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1346,7 +1346,7 @@
 
       <element name="THelpDatabase.GetRegisteredItem">
         <short>
-          Gets the number of registered search items for the help database
+          Gets the number of registered search items for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1392,7 +1392,7 @@
 
       <element name="THelpDatabase.GetLocalizedName">
         <short>
-          Gets the localized name (ID) for the help database
+          Gets the localized name (ID) for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1403,7 +1403,7 @@
 
       <element name="THelpDatabase.Databases">
         <short>
-          Help databases registered for use with the LCL help manager
+          Help databases registered for use with the LCL help manager.
         </short>
         <descr/>
         <seealso/>
@@ -1411,7 +1411,7 @@
 
       <element name="THelpDatabase.ID">
         <short>
-          Unique identifier for the hep database
+          Unique identifier for the hep database.
         </short>
         <descr/>
         <seealso/>
@@ -1419,7 +1419,7 @@
 
       <element name="THelpDatabase.SupportedMimeTypes">
         <short>
-          Contains the list of MIME types supported in the help database
+          Contains the list of MIME types supported in the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1427,7 +1427,7 @@
 
       <element name="THelpDatabase.BasePathObject">
         <short>
-          Represents the base path for the help database
+          Represents the base path for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1435,7 +1435,7 @@
 
       <element name="THelpDatabase.TOCNode">
         <short>
-          Help node with the Table of Contents for the help database
+          Help node with the Table of Contents for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1443,7 +1443,7 @@
 
       <element name="THelpDatabase.AutoRegister">
         <short>
-          Indicates if the help database is automatically registered at run-time
+          Indicates if the help database is automatically registered at run-time.
         </short>
         <descr/>
         <seealso/>
@@ -1451,7 +1451,7 @@
 
       <element name="THelpDatabase.OnFindViewer">
         <short>
-          Event handler signalled to locate the viewer for the help database
+          Event handler signalled to locate the viewer for the help database.
         </short>
         <descr/>
         <seealso/>
@@ -1459,7 +1459,7 @@
 
       <element name="THelpDatabaseClass">
         <short>
-          Class reference for the THelpDatabase type
+          Class reference for the THelpDatabase type.
         </short>
         <descr/>
         <seealso/>
@@ -1467,21 +1467,21 @@
 
       <element name="THelpDatabases">
         <short>
-          Implements support for accessing and maintaining registered help database classes in the help system
+          Implements support for accessing and maintaining registered help database classes in the help system.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpDatabases.FItems">
-        <short>List with registered help database instances</short>
+        <short>List with registered help database instances.</short>
       </element>
       <element name="THelpDatabases.FHelpDBClasses">
-        <short>List with class references for each registered help database</short>
+        <short>List with class references for each registered help database.</short>
       </element>
 
       <element name="THelpDatabases.GetItems" link="#lcl.lazhelpintf.THelpDatabases.Items">
-        <short>Gets a value in the Items property by its ordinal position</short>
+        <short>Gets a value in the Items property by its ordinal position.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1494,7 +1494,7 @@
 
       <element name="THelpDatabases.DoRegisterDatabase">
         <short>
-          Performs actions needed to register the specified help database
+          Performs actions needed to register the specified help database.
         </short>
         <descr>
           <p>
@@ -1511,7 +1511,7 @@
         </seealso>
       </element>
       <element name="THelpDatabases.DoRegisterDatabase.ADatabase">
-        <short>Help database registered in the method</short>
+        <short>Help database registered in the method.</short>
       </element>
 
       <element name="THelpDatabases.DoUnregisterDatabase">
@@ -1524,20 +1524,20 @@
       </element>
 
       <element name="THelpDatabases.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpDatabases.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpDatabases.Count">
         <short>
-          \Gets the number of registered help database instances in the Items property
+          \Gets the number of registered help database instances in the Items property.
         </short>
         <descr/>
         <seealso/>
@@ -1547,28 +1547,28 @@
       </element>
 
       <element name="THelpDatabases.Items">
-        <short>Provides indexed access to registered help database instances</short>
+        <short>Provides indexed access to registered help database instances.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDatabases.Items.Index">
-        <short>Ordinal position for the help database instance</short>
+        <short>Ordinal position for the help database instance.</short>
       </element>
 
       <element name="THelpDatabases.FindDatabase">
-        <short>Gets the help database with the specified unique identifier</short>
+        <short>Gets the help database with the specified unique identifier.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDatabases.FindDatabase.Result">
-        <short>The registered help database instance, or Nil when ID is not found</short>
+        <short>The registered help database instance, or Nil when ID is not found.</short>
       </element>
       <element name="THelpDatabases.FindDatabase.ID">
-        <short>Unique identifier to locate in Items</short>
+        <short>Unique identifier to locate in Items.</short>
       </element>
 
       <element name="THelpDatabases.GetDatabase">
-        <short>Gets the help database instance with the specified ID</short>
+        <short>Gets the help database instance with the specified ID.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1590,7 +1590,7 @@
 
       <element name="THelpDatabases.IndexOf">
         <short>
-          Gets the ordinal position in Items for the help database with the specified ID
+          Gets the ordinal position in Items for the help database with the specified ID.
         </short>
         <descr/>
         <seealso/>
@@ -1604,7 +1604,7 @@
 
       <element name="THelpDatabases.CreateUniqueDatabaseID">
         <short>
-          Creates a unique identifier for a help database using a suggested identifier prefix
+          Creates a unique identifier for a help database using a suggested identifier prefix.
         </short>
         <descr/>
         <seealso/>
@@ -1618,7 +1618,7 @@
 
       <element name="THelpDatabases.CreateHelpDatabase">
         <short>
-          Creates and optionally registers a unique help database instance using the specified class reference
+          Creates and optionally registers a unique help database instance using the specified class reference.
         </short>
         <descr/>
         <seealso/>
@@ -1638,7 +1638,7 @@
 
       <element name="THelpDatabases.ShowTableOfContents">
         <short>
-          Displays the Table of Contents
+          Displays the Table of Contents.
         </short>
         <descr>
           <p>
@@ -1656,7 +1656,7 @@
 
       <element name="THelpDatabases.ShowError">
         <short>
-          Displays an error dialog for status result codes other than shrSuccess and shrCancel
+          Displays an error dialog for status result codes other than shrSuccess and shrCancel.
         </short>
         <descr>
           <p>
@@ -1717,14 +1717,14 @@
         </seealso>
       </element>
       <element name="THelpDatabases.ShowError.ShowResult">
-        <short>Status result code examined in the method</short>
+        <short>Status result code examined in the method.</short>
       </element>
       <element name="THelpDatabases.ShowError.ErrMsg">
-        <short>Message displayed for the error condition</short>
+        <short>Message displayed for the error condition.</short>
       </element>
 
       <element name="THelpDatabases.GetBaseURLForBasePathObject">
-        <short>Gets a URL representing the base path object for the help databases</short>
+        <short>Gets a URL representing the base path object for the help databases.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1736,7 +1736,7 @@
       </element>
 
       <element name="THelpDatabases.GetBaseDirectoryForBasePathObject">
-        <short>Gets the directory for the base path object in the help databases</short>
+        <short>Gets the directory for the base path object in the help databases.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1748,7 +1748,7 @@
       </element>
 
       <element name="THelpDatabases.FindViewer">
-        <short>Finds the registered help viewer for the specified MIME type</short>
+        <short>Finds the registered help viewer for the specified MIME type.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1766,7 +1766,7 @@
       </element>
 
       <element name="THelpDatabases.SubstituteMacros">
-        <short>Used to substitute macros</short>
+        <short>Used to substitute macros.</short>
         <descr>Always returns True in THelpDatabases.</descr>
         <seealso/>
       </element>
@@ -1778,7 +1778,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelpForNodes">
-        <short>Displays help for nodes matching the specified query list</short>
+        <short>Displays help for nodes matching the specified query list.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1796,7 +1796,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelpForQuery">
-        <short>Displays help for the specified THelpQuery</short>
+        <short>Displays help for the specified THelpQuery.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1814,7 +1814,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelpForContext">
-        <short>Displays help nodes matching the specified help query context</short>
+        <short>Displays help nodes matching the specified help query context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1829,7 +1829,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelpForKeyword">
-        <short>Displays help nodes matching the specified keyword help query</short>
+        <short>Displays help nodes matching the specified keyword help query.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1844,7 +1844,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelpForPascalContexts">
-        <short>Displays help nodes matching the specified Pascal help query</short>
+        <short>Displays help nodes matching the specified Pascal help query.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1859,7 +1859,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelpForSourcePosition">
-        <short>Displays help for the Pascal source contexts in the help query</short>
+        <short>Displays help for the Pascal source contexts in the help query.</short>
         <descr>
           Always returns shrHelpNotFound with the error message 'THelpDatabases.ShowHelpForPascalSource not implemented'.
         </descr>
@@ -1906,7 +1906,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelpFile">
-        <short>Displays the requested help file in the help viewer</short>
+        <short>Displays the requested help file in the help viewer.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1927,7 +1927,7 @@
       </element>
 
       <element name="THelpDatabases.ShowHelp">
-        <short>Displays the help topic for the requested URL in the help viewer</short>
+        <short>Displays the help topic for the requested URL in the help viewer.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1948,7 +1948,7 @@
       </element>
 
       <element name="THelpDatabases.GetNodesForKeyword">
-        <short>Populates a list with help nodes using the specified help keyword</short>
+        <short>Populates a list with help nodes using the specified help keyword.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1966,7 +1966,7 @@
       </element>
 
       <element name="THelpDatabases.GetNodesForContext">
-        <short>Populates a list with help node for the specified help context</short>
+        <short>Populates a list with help node for the specified help context.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2102,29 +2102,29 @@
 
       <element name="THelpDatabases.Load">
         <short>
-          Loads configuration settings for each registered help database in the container
+          Loads configuration settings for each registered help database in the container.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDatabases.Load.Storage">
-        <short>Configuration storage with values loaded in the method</short>
+        <short>Configuration storage with values loaded in the method.</short>
       </element>
 
       <element name="THelpDatabases.Save">
         <short>
-          Saves configuration settings for each register help database in the container
+          Saves configuration settings for each register help database in the container.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpDatabases.Save.Storage">
-        <short>Configuration storage updated in the method</short>
+        <short>Configuration storage updated in the method.</short>
       </element>
 
       <element name="THelpViewer">
         <short>
-          Base class for help viewers used in the LCL help system
+          Base class for help viewers used in the LCL help system.
         </short>
         <descr>
           <p>
@@ -2148,50 +2148,50 @@
       <element name="THelpViewer.FSupportedMimeTypes" link="#lcl.lazhelpintf.THelpViewer.SupportedMimeTypes"/>
 
       <element name="THelpViewer.SetAutoRegister" link="#lcl.lazhelpintf.THelpViewer.AutoRegister">
-        <short>Sets the value in the AutoRegister property</short>
+        <short>Sets the value in the AutoRegister property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpViewer.SetAutoRegister.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THelpViewer.SetSupportedMimeTypes" link="#lcl.lazhelpintf.THelpViewer.SupportedMimeTypes">
-        <short>Sets the value in the SupportedMimeTypes property</short>
+        <short>Sets the value in the SupportedMimeTypes property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpViewer.SetSupportedMimeTypes.List">
-        <short>List with value used in the property</short>
+        <short>List with value used in the property.</short>
       </element>
 
       <element name="THelpViewer.AddSupportedMimeType">
-        <short>Adds the specified MIME type to the SupportedMimeTypes property</short>
+        <short>Adds the specified MIME type to the SupportedMimeTypes property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpViewer.AddSupportedMimeType.AMimeType">
-        <short>MIME type added in the method</short>
+        <short>MIME type added in the method.</short>
       </element>
 
       <element name="THelpViewer.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpViewer.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="THelpViewer.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpViewer.SupportsTableOfContents">
         <short>
-          Indicates if the help viewer can display a table of contents for the specified help node
+          Indicates if the help viewer can display a table of contents for the specified help node.
         </short>
         <descr/>
         <seealso/>
@@ -2202,7 +2202,7 @@
 
       <element name="THelpViewer.ShowTableOfContents">
         <short>
-          Displays the table of contents for the specified help node
+          Displays the table of contents for the specified help node.
         </short>
         <descr/>
         <seealso/>
@@ -2213,7 +2213,7 @@
 
       <element name="THelpViewer.SupportsMimeType">
         <short>
-          Indicates if the specified MIME type exists in the SupportedMimeTypes property
+          Indicates if the specified MIME type exists in the SupportedMimeTypes property.
         </short>
         <descr/>
         <seealso/>
@@ -2226,7 +2226,7 @@
       </element>
 
       <element name="THelpViewer.ShowNode">
-        <short>Displays the help topic for the specified help node</short>
+        <short>Displays the help topic for the specified help node.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2241,7 +2241,7 @@
       </element>
 
       <element name="THelpViewer.Hide">
-        <short>Hides the help viewer</short>
+        <short>Hides the help viewer.</short>
         <descr>
           Must be implemented in a descendent class.
         </descr>
@@ -2250,7 +2250,7 @@
 
       <element name="THelpViewer.Assign">
         <short>
-          Assigns property values from the specified source to the current class instance
+          Assigns property values from the specified source to the current class instance.
         </short>
         <descr/>
         <seealso/>
@@ -2261,7 +2261,7 @@
 
       <element name="THelpViewer.Load">
         <short>
-          Loads configuration settings for the help viewer from the specified storage
+          Loads configuration settings for the help viewer from the specified storage.
         </short>
         <descr>
           Must be implemented in a descendent class.
@@ -2274,7 +2274,7 @@
 
       <element name="THelpViewer.Save">
         <short>
-          Saves configuration settings to the specified storage
+          Saves configuration settings to the specified storage.
         </short>
         <descr>
           Must be implemented in a descendent class.
@@ -2287,7 +2287,7 @@
 
       <element name="THelpViewer.GetLocalizedName">
         <short>
-          Gets the localized name for the help viewer
+          Gets the localized name for the help viewer.
         </short>
         <descr/>
         <seealso/>
@@ -2298,7 +2298,7 @@
 
       <element name="THelpViewer.RegisterSelf">
         <short>
-          Registers the help viewer for use in the LCL help system
+          Registers the help viewer for use in the LCL help system.
         </short>
         <descr/>
         <seealso/>
@@ -2306,7 +2306,7 @@
 
       <element name="THelpViewer.UnregisterSelf">
         <short>
-          Unregisters the help viewer in the LCL help system
+          Unregisters the help viewer in the LCL help system.
         </short>
         <descr/>
         <seealso/>
@@ -2314,7 +2314,7 @@
 
       <element name="THelpViewer.SupportedMimeTypes">
         <short>
-          Contains MIME types supported in the help viewer
+          Contains MIME types supported in the help viewer.
         </short>
         <descr/>
         <seealso/>
@@ -2322,7 +2322,7 @@
 
       <element name="THelpViewer.ParameterHelp">
         <short>
-          Contains a help message describing how parameters are used in the help viewer
+          Contains a help message describing how parameters are used in the help viewer.
         </short>
         <descr/>
         <seealso/>
@@ -2330,7 +2330,7 @@
 
       <element name="THelpViewer.StorageName">
         <short>
-          Indicates the storage used for configuration settings in the help viewer
+          Indicates the storage used for configuration settings in the help viewer.
         </short>
         <descr/>
         <seealso/>
@@ -2338,7 +2338,7 @@
 
       <element name="THelpViewer.AutoRegister">
         <short>
-          Indicates if the help viewer is automatically registered at run-time
+          Indicates if the help viewer is automatically registered at run-time.
         </short>
         <descr/>
         <seealso/>
@@ -2346,7 +2346,7 @@
 
       <element name="THelpViewerClass">
         <short>
-          Class reference used to create instances of the help viewer
+          Class reference used to create instances of the help viewer.
         </short>
         <descr/>
         <seealso/>
@@ -2354,7 +2354,7 @@
 
       <element name="THelpViewers">
         <short>
-          Used to access and maintain registered help viewers for the LCL help system
+          Used to access and maintain registered help viewers for the LCL help system.
         </short>
         <descr/>
         <seealso/>
@@ -2365,7 +2365,7 @@
       </element>
 
       <element name="THelpViewers.FDestroying">
-        <short>Indicates if the class is being freed</short>
+        <short>Indicates if the class is being freed.</short>
       </element>
 
       <element name="THelpViewers.GetItems" link="#lcl.lazhelpintf.THelpViewers.Items">
@@ -2374,44 +2374,44 @@
         <seealso/>
       </element>
       <element name="THelpViewers.GetItems.Result">
-        <short>Help viewer at the specified ordinal position</short>
+        <short>Help viewer at the specified ordinal position.</short>
       </element>
       <element name="THelpViewers.GetItems.Index">
-        <short>Ordinal position in the list for a help viewer</short>
+        <short>Ordinal position in the list for a help viewer.</short>
       </element>
 
       <element name="THelpViewers.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpViewers.Destroy">
-        <short>Destructor for the class instance</short>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpViewers.Clear">
-        <short>Frees all help viewers in the Items property</short>
+        <short>Frees all help viewers in the Items property.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpViewers.Count">
         <short>
-          Indicates the number of registered help viewers in the Items property
+          Indicates the number of registered help viewers in the Items property.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpViewers.Count.Result">
-        <short>Number of help viewers in the list</short>
+        <short>Number of help viewers in the list.</short>
       </element>
 
       <element name="THelpViewers.GetViewersSupportingMimeType">
         <short>
-          Populates a list with help viewers that support the specified MIME type
+          Populates a list with help viewers that support the specified MIME type.
         </short>
         <descr/>
         <seealso/>
@@ -2424,17 +2424,17 @@
       </element>
 
       <element name="THelpViewers.RegisterViewer">
-        <short>Adds a help viewer to the list of registered viewers in Items</short>
+        <short>Adds a help viewer to the list of registered viewers in Items.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpViewers.RegisterViewer.AHelpViewer">
-        <short>Help viewer added in the method</short>
+        <short>Help viewer added in the method.</short>
       </element>
 
       <element name="THelpViewers.UnregisterViewer">
         <short>
-          Unregisters the specified help viewer and removes it from the Items property
+          Unregisters the specified help viewer and removes it from the Items property.
         </short>
         <descr/>
         <seealso/>
@@ -2445,7 +2445,7 @@
 
       <element name="THelpViewers.Load">
         <short>
-          Loads configuration settings from the specified storage for each registered help viewer
+          Loads configuration settings from the specified storage for each registered help viewer.
         </short>
         <descr/>
         <seealso/>
@@ -2456,7 +2456,7 @@
 
       <element name="THelpViewers.Save">
         <short>
-          Saves configuration settings to the specified storage for each registered help viewer
+          Saves configuration settings to the specified storage for each registered help viewer.
         </short>
         <descr/>
         <seealso/>
@@ -2467,7 +2467,7 @@
 
       <element name="THelpViewers.IndexOf">
         <short>
-          Gets the ordinal position for the specified help viewer in the Items property
+          Gets the ordinal position for the specified help viewer in the Items property.
         </short>
         <descr/>
         <seealso/>
@@ -2481,7 +2481,7 @@
 
       <element name="THelpViewers.Items">
         <short>
-          List with the registered help viewers for the LCL help system
+          List with the registered help viewers for the LCL help system.
         </short>
         <descr/>
         <seealso/>
@@ -2492,8 +2492,8 @@
 
       <element name="THelpBasePathObject">
         <short>
-            Stores the base file path for help databases
-          </short>
+            Stores the base file path for help databases.
+        </short>
         <descr>
           <p>
             <var>THelpBasePathObject</var> is a <var>TPersistent</var> descendant used to represent the base file path for topics in help databases. It is used in the implementation of the THelpDatabases.GetBaseDirectoryForBasePathObject method.
@@ -2508,32 +2508,32 @@
       <element name="THelpBasePathObject.FBasePath" link="#lcl.lazhelpintf.THelpBasePathObject.BasePath"/>
 
       <element name="THelpBasePathObject.SetBasePath" link="#lcl.lazhelpintf.THelpBasePathObject.BasePath">
-        <short>Sets the value for the BasePath property</short>
+        <short>Sets the value for the BasePath property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpBasePathObject.SetBasePath.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THelpBasePathObject.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpBasePathObject.Create.TheBasePath">
-        <short>Initial value for the BasePath property</short>
+        <short>Initial value for the BasePath property.</short>
       </element>
 
       <element name="THelpBasePathObject.BasePath">
-        <short>Represents the base file path for topics in a help database</short>
+        <short>Represents the base file path for topics in a help database.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpBaseURLObject">
         <short>
-          Stores the base URL for topics in help databases
+          Stores the base URL for topics in help databases.
         </short>
         <descr/>
         <seealso/>
@@ -2542,32 +2542,32 @@
       <element name="THelpBaseURLObject.FBaseURL" link="#lcl.lazhelpintf.THelpBaseURLObject.BaseURL"/>
 
       <element name="THelpBaseURLObject.SetBaseURL" link="#lcl.lazhelpintf.THelpBaseURLObject.BaseURL">
-        <short>Sets the value in the BaseURL property</short>
+        <short>Sets the value in the BaseURL property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpBaseURLObject.SetBaseURL.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THelpBaseURLObject.Create">
-        <short>Constructor for the class instance</short>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpBaseURLObject.Create.TheBaseURL">
-        <short>Initial value for the BaseURL property</short>
+        <short>Initial value for the BaseURL property.</short>
       </element>
 
       <element name="THelpBaseURLObject.BaseURL">
-        <short>Represents the base URL for topics in a help database</short>
+        <short>Represents the base URL for topics in a help database.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="HelpDatabases">
         <short>
-          Contains the list of registered help databases used in the Lazarus IDE
+          Contains the list of registered help databases used in the Lazarus IDE.
         </short>
         <descr/>
         <seealso/>
@@ -2575,7 +2575,7 @@
 
       <element name="HelpViewers">
         <short>
-          Contains the list of registered help viewers used in the Lazarus IDE
+          Contains the list of registered help viewers used in the Lazarus IDE.
         </short>
         <descr/>
         <seealso/>
@@ -2583,7 +2583,7 @@
 
       <element name="CreateLCLHelpSystem">
         <short>
-          Ensures the HelpDatabases and HelpViewers variables are initialized for use in the LCL help system
+          Ensures the HelpDatabases and HelpViewers variables are initialized for use in the LCL help system.
         </short>
         <descr/>
         <seealso/>
@@ -2591,7 +2591,7 @@
 
       <element name="FreeLCLHelpSystem">
         <short>
-          Frees the HelpDatabases and HelpViewers used in the LCL help system
+          Frees the HelpDatabases and HelpViewers used in the LCL help system.
         </short>
         <descr/>
         <seealso/>
@@ -2599,7 +2599,7 @@
 
       <element name="FreeUnusedLCLHelpSystem">
         <short>
-          Frees unreferenced Help databases and viewers in the LCL help system
+          Frees unreferenced Help databases and viewers in the LCL help system.
         </short>
         <descr>
           <p>
@@ -2623,7 +2623,7 @@
 
       <element name="FilenameToURL">
         <short>
-          Gets the URL with file path information for the specified file name
+          Gets the URL with file path information for the specified file name.
         </short>
         <descr>
           <p>
@@ -2635,15 +2635,15 @@
         </seealso>
       </element>
       <element name="FilenameToURL.Result">
-        <short>URL for the specified file name</short>
+        <short>URL for the specified file name.</short>
       </element>
       <element name="FilenameToURL.Filename">
-        <short>File name converted to a URL in the function</short>
+        <short>File name converted to a URL in the function.</short>
       </element>
 
       <element name="SplitURL">
         <short>
-          Separates a URL into its scheme, path, and parameter component values
+          Separates a URL into its scheme, path, and parameter component values.
         </short>
         <descr>
           <p>
@@ -2659,21 +2659,21 @@
         <seealso/>
       </element>
       <element name="SplitURL.URL">
-        <short>URL examined in the function</short>
+        <short>URL examined in the function.</short>
       </element>
       <element name="SplitURL.URLScheme">
-        <short>URL scheme used in the URL</short>
+        <short>URL scheme used in the URL.</short>
       </element>
       <element name="SplitURL.URLPath">
-        <short>File path information from the URL</short>
+        <short>File path information from the URL.</short>
       </element>
       <element name="SplitURL.URLParams">
-        <short>Parameters found in the URL</short>
+        <short>Parameters found in the URL.</short>
       </element>
 
       <element name="CombineURL">
         <short>
-          Builds a URL using the specified scheme, path, and parameter values
+          Builds a URL using the specified scheme, path, and parameter values.
         </short>
         <descr>
           <p>
@@ -2689,21 +2689,21 @@
         <seealso/>
       </element>
       <element name="CombineURL.Result">
-        <short>URL for the specified values</short>
+        <short>URL for the specified values.</short>
       </element>
       <element name="CombineURL.URLScheme">
-        <short>URL scheme to use in the URL</short>
+        <short>URL scheme to use in the URL.</short>
       </element>
       <element name="CombineURL.URLPath">
-        <short>Path to the file used in the URL</short>
+        <short>Path to the file used in the URL.</short>
       </element>
       <element name="CombineURL.URLParams">
-        <short>Parameter values for the URL</short>
+        <short>Parameter values for the URL.</short>
       </element>
 
       <element name="URLFilenameIsAbsolute">
         <short>
-          Indicates if the specified URL contains an absolute file path
+          Indicates if the specified URL contains an absolute file path.
         </short>
         <descr>
           <p>
@@ -2716,29 +2716,29 @@
         </seealso>
       </element>
       <element name="URLFilenameIsAbsolute.Result">
-        <short>True when the URL does not have relative file path information</short>
+        <short>True when the URL does not have relative file path information.</short>
       </element>
       <element name="URLFilenameIsAbsolute.URLPath">
-        <short>URL examined in the function</short>
+        <short>URL examined in the function.</short>
       </element>
 
       <element name="FindURLPathStart">
         <short>
-          Gets the position in the URL where the file path is located
+          Gets the position in the URL where the file path is located.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="FindURLPathStart.Result">
-        <short>Position where the file path begins, or -1 if not found</short>
+        <short>Position where the file path begins, or -1 if not found.</short>
       </element>
       <element name="FindURLPathStart.URL">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="FindURLPathEnd">
         <short>
-          Gets the position in the URL for the final character in the file path
+          Gets the position in the URL for the final character in the file path.
         </short>
         <descr/>
         <seealso/>
@@ -2747,51 +2747,51 @@
         <short/>
       </element>
       <element name="FindURLPathEnd.URL">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="ChompURLParams">
-        <short>Removes URL parameters from the specified URL</short>
+        <short>Removes URL parameters from the specified URL.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="ChompURLParams.Result">
-        <short>URL with any parameters removed</short>
+        <short>URL with any parameters removed.</short>
       </element>
       <element name="ChompURLParams.URL">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="ExtractURLPath">
         <short>
-          Gets the path information from the specified URL
+          Gets the path information from the specified URL.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="ExtractURLPath.Result">
-        <short>File path information from the URL</short>
+        <short>File path information from the URL.</short>
       </element>
       <element name="ExtractURLPath.URL">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="ExtractURLDirectory">
         <short>
-          Gets directories in the file path for the specified URL
+          Gets directories in the file path for the specified URL.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="ExtractURLDirectory.Result">
-        <short>File path information up to and including the final path delimiter</short>
+        <short>File path information up to and including the final path delimiter.</short>
       </element>
       <element name="ExtractURLDirectory.URL">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="TrimUrl">
-        <short>Removes leading or trailing spaces in the file path for the specified URL</short>
+        <short>Removes leading or trailing spaces in the file path for the specified URL.</short>
         <descr/>
         <seealso/>
      </element>
@@ -2799,12 +2799,12 @@
         <short/>
       </element>
       <element name="TrimUrl.URL">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="TrimURLPath">
         <short>
-          Removes leading and trailing whitespace in the file path for the specified URL
+          Removes leading and trailing whitespace in the file path for the specified URL.
         </short>
         <descr>
           <p>
@@ -2821,78 +2821,78 @@
         </seealso>
       </element>
       <element name="TrimURLPath.Result">
-        <short>File path for the URL after removing whitespace</short>
+        <short>File path for the URL after removing whitespace.</short>
       </element>
       <element name="TrimURLPath.URLPath">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="IsFileURL">
         <short>
-          Determines if the specified URL uses the 'file:' URL scheme
+          Determines if the specified URL uses the 'file:' URL scheme.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="IsFileURL.Result">
-        <short>True when 'file:' is included in the URL</short>
+        <short>True when 'file:' is included in the URL.</short>
       </element>
       <element name="IsFileURL.URL">
-        <short>URL examined in the routine</short>
+        <short>URL examined in the routine.</short>
       </element>
 
       <element name="AppendURLPathDelim">
         <short>
-          Includes a trailing path delimiter in the file path for the specified URL
+          Includes a trailing path delimiter in the file path for the specified URL.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="AppendURLPathDelim.Result">
-        <short>URL path information including the trailing path delimiter</short>
+        <short>URL path information including the trailing path delimiter.</short>
       </element>
       <element name="AppendURLPathDelim.URLPath">
-        <short>URL path information examined in the routine</short>
+        <short>URL path information examined in the routine.</short>
       </element>
 
       <element name="CreateListAndAdd">
         <short>
-          Ensures that a TList has been created before adding the specified object instance
+          Ensures that a TList has been created before adding the specified object instance.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateListAndAdd.AnObject">
-        <short>Object instance added in the routine</short>
+        <short>Object instance added in the routine.</short>
       </element>
       <element name="CreateListAndAdd.List">
-        <short>List instance created or updated in the routine</short>
+        <short>List instance created or updated in the routine.</short>
       </element>
       <element name="CreateListAndAdd.OnlyIfNotExists">
         <short>
-          Indicates if the object is added only when it does not already exist in the list
+          Indicates if the object is added only when it does not already exist in the list.
         </short>
       </element>
 
       <element name="CreateNodeQueryListAndAdd">
         <short>
-          Ensures the THelpNodeQueryList instance has been created prior to adding the specified help query item
+          Ensures the THelpNodeQueryList instance has been created prior to adding the specified help query item.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="CreateNodeQueryListAndAdd.ANode">
-        <short>Help node to locate in the list of query items</short>
+        <short>Help node to locate in the list of query items.</short>
       </element>
       <element name="CreateNodeQueryListAndAdd.QueryItem">
-        <short>Query item for the help node</short>
+        <short>Query item for the help node.</short>
       </element>
       <element name="CreateNodeQueryListAndAdd.List">
-        <short>List examined in the routine</short>
+        <short>List examined in the routine.</short>
       </element>
       <element name="CreateNodeQueryListAndAdd.OnlyIfNotExists">
         <short>
-          Indicates if the help node and query item are added only when they do not already exist in the list
+          Indicates if the help node and query item are added only when they do not already exist in the list.
         </short>
       </element>
 

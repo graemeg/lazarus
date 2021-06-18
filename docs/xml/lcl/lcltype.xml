@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="LCLType">
-      <short>Provides compatiblity with the Delphi Windows unit</short>
+      <short>Provides compatiblity with the Delphi Windows unit.</short>
       <descr>
         <p>
           <file>lcltype.pas</file> is being created specifically for compatibility with Delphi. It should only be used for constants and type definitions that are included in the Delphi Windows unit. This is only done for compatibility.
@@ -81,7 +81,7 @@
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HDC">
-        <short>The type of a Device Context Handle</short>
+        <short>The type of a Device Context Handle.</short>
         <descr/>
         <seealso/>
       </element>
@@ -93,26 +93,26 @@
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HFONT">
-        <short>The type of a Font Handle</short>
+        <short>The type of a Font Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HGDIOBJ">
-        <short>The type of a general GraphicsDeviceInterface Object Handle</short>
+        <short>The type of a general GraphicsDeviceInterface Object Handle.</short>
         <descr>GDI objects are e.g. fonts or brushes, used in GDI drawing operations.
         </descr>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HPEN">
-        <short>The type of a line drawing Pen Handle</short>
+        <short>The type of a line drawing Pen Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HRGN">
-        <short>The type of a display Region Handle</short>
+        <short>The type of a display Region Handle.</short>
         <descr>
           <p>A region can be as simple as a rectangle, or can be composed of multiple shapes.
           </p>
@@ -123,19 +123,19 @@
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HINST">
-        <short>The type of a (process) Instance Handle</short>
+        <short>The type of a (process) Instance Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HICON">
-        <short>The type of an Icon Handle</short>
+        <short>The type of an Icon Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HIMAGELIST">
-        <short>The type of an Image List Handle</short>
+        <short>The type of an Image List Handle.</short>
         <descr>
           <p>
             Image lists are frequently used with controls, whose display items (list entries...) can also show an image. Then every item refers to its image by an index into the shared image list, instead of holding a copy of the image.
@@ -145,13 +145,13 @@
       </element>
       <!-- alias type Visibility: default -->
       <element name="HCURSOR">
-        <short>The type of a mouse Cursor Handle</short>
+        <short>The type of a mouse Cursor Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- alias type Visibility: default -->
       <element name="HGLOBAL">
-        <short>The type of a Global memory block Handle</short>
+        <short>The type of a Global memory block Handle.</short>
         <descr>
           Global memory blocks are managed by the platform, used e.g. for data shared across multiple processes.
         </descr>
@@ -433,7 +433,7 @@
       <!-- constant Visibility: default -->
       <element name="SRCPAINT">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Dst or Src)
+          Fills the destination area with (Dst or Src).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -442,7 +442,7 @@
       <!-- constant Visibility: default -->
       <element name="SRCAND">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Dst and Src)
+          Fills the destination area with (Dst and Src).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -451,7 +451,7 @@
       <!-- constant Visibility: default -->
       <element name="SRCINVERT">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Dst xor Src)
+          Fills the destination area with (Dst xor Src).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -460,7 +460,7 @@
       <!-- constant Visibility: default -->
       <element name="SRCERASE">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with ((not Dst) and Src)
+          Fills the destination area with ((not Dst) and Src).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -469,7 +469,7 @@
       <!-- constant Visibility: default -->
       <element name="NOTSRCCOPY">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (not Src)
+          Fills the destination area with (not Src).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -478,7 +478,7 @@
       <!-- constant Visibility: default -->
       <element name="NOTSRCERASE">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (not (Dst or Src))
+          Fills the destination area with (not (Dst or Src)).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -487,7 +487,7 @@
       <!-- constant Visibility: default -->
       <element name="MERGECOPY">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Src and Pattern)
+          Fills the destination area with (Src and Pattern).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -496,7 +496,7 @@
       <!-- constant Visibility: default -->
       <element name="MERGEPAINT">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Dst or not Src)
+          Fills the destination area with (Dst or not Src).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -505,7 +505,7 @@
       <!-- constant Visibility: default -->
       <element name="PATCOPY">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Pattern)
+          Fills the destination area with (Pattern).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -514,7 +514,7 @@
       <!-- constant Visibility: default -->
       <element name="PATPAINT">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Dst or (not Src) or Pattern)
+          Fills the destination area with (Dst or (not Src) or Pattern).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -523,7 +523,7 @@
       <!-- constant Visibility: default -->
       <element name="PATINVERT">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (Dst xor Pattern)
+          Fills the destination area with (Dst xor Pattern).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -532,7 +532,7 @@
       <!-- constant Visibility: default -->
       <element name="DSTINVERT">
         <short>Ternary raster operation (Dst op Src op Pattern):
-          Fills the destination area with (not Dst)
+          Fills the destination area with (not Dst).
         </short>
         <seealso>
           <link id="#lcl.lclintf.BitBlt">BitBlt</link>
@@ -825,7 +825,7 @@
 
       <element name="DT_HIDEPREFIX">
         <short>
-          DrawText formatting flag: Ignore the accelerator key prefix (&amp;) and hide the underline
+          DrawText formatting flag: Ignore the accelerator key prefix (&amp;) and hide the underline.
         </short>
         <descr/>
         <seealso/>
@@ -833,7 +833,7 @@
 
       <element name="DT_PREFIXONLY">
         <short>
-          DrawText formatting flag: Draw only the underlined accelerator key, ignore any other text
+          DrawText formatting flag: Draw only the underlined accelerator key, ignore any other text.
         </short>
         <descr/>
         <seealso/>
@@ -1144,7 +1144,7 @@
       </element>
       <!-- constant Visibility: default -->
       <element name="HTTRANSPARENT">
-        <short>Hit test: transparent area</short>
+        <short>Hit test: transparent area.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6769,7 +6769,7 @@
       </element>
       <!-- alias type Visibility: default -->
       <element name="TColorRef">
-        <short>TColor, TColorRef</short>
+        <short>TColor, TColorRef.</short>
         <descr>Values from 0..$FFFFFF are BGR colors. The lowest 8 bit are the blue component, the middle 8 bit the green component and the highest 8 bit the red component. Use the functions Red, Green, Blue to extract the components, RedGreenBlue to extract all three components and RGBToColor to convert the three colors to a TColor.
 Values with highest bit set are system colors or themed colors. For example clNone, clBackground, clButton, clWindowText. Their actual value depend on the context (i.e. the used Canvas) and they are not valid in all contexts. For example clWindowText might only work for Font.Color, not for Brush.Color or Pen.Color. clBackground might be a color, gradient, pattern or image, depending on theme and control type. A system color can change during runtime, so do not store them. Use system colors only on LCL control Canvas. They probably are not defined for printer canvas and some are not defined on bitmap canvas.</descr>
         <seealso/>
@@ -9260,7 +9260,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="HORZSIZE">
-        <short>Horizontal size in millimeters</short>
+        <short>Horizontal size in millimeters.</short>
       </element>
       <!-- constant Visibility: default -->
       <element name="VERTSIZE">
@@ -9270,17 +9270,17 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="HORZRES">
-        <short>Horizontal width in pixels</short>
+        <short>Horizontal width in pixels.</short>
       </element>
       <!-- constant Visibility: default -->
       <element name="VERTRES">
-        <short>Vertical height in pixels</short>
+        <short>Vertical height in pixels.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- constant Visibility: default -->
       <element name="BITSPIXEL">
-        <short>Number of bits per pixel</short>
+        <short>Number of bits per pixel.</short>
       </element>
       <!-- constant Visibility: default -->
       <element name="PLANES">
@@ -9302,13 +9302,13 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="SIZEPALETTE">
-        <short>Number of entries in the color palette</short>
+        <short>Number of entries in the color palette.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- constant Visibility: default -->
       <element name="NUMRESERVED">
-        <short>Number of reserved entries in the color palette</short>
+        <short>Number of reserved entries in the color palette.</short>
         <descr/>
         <seealso/>
       </element>
@@ -11975,7 +11975,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="MK_LBUTTON">
-        <short>A key state constant to represent the left mouse button, equivalent to ssLeft from TShiftState</short>
+        <short>A key state constant to represent the left mouse button, equivalent to ssLeft from TShiftState.</short>
         <descr/>
         <seealso>
           <link id="MK_Shift"/>
@@ -11991,7 +11991,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="MK_RBUTTON">
-        <short>A key state constant to represent the right mouse button, equivalent to ssRight from TShiftState</short>
+        <short>A key state constant to represent the right mouse button, equivalent to ssRight from TShiftState.</short>
         <descr/>
         <seealso>
           <link id="MK_Shift"/>
@@ -12008,7 +12008,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="MK_SHIFT">
-        <short>A key state constant to represent the shift key, equivalent to ssShift from TShiftState</short>
+        <short>A key state constant to represent the shift key, equivalent to ssShift from TShiftState.</short>
         <descr/>
         <seealso>
           <link id="MK_Control"/>
@@ -12025,7 +12025,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="MK_CONTROL">
-        <short>A key state constant to represent the control key, equivalent to ssCtrl from TShiftState</short>
+        <short>A key state constant to represent the control key, equivalent to ssCtrl from TShiftState.</short>
         <descr/>
         <seealso>
           <link id="MK_Shift"/>
@@ -12042,7 +12042,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="MK_MBUTTON">
-        <short>A key state constant to represent the middle mouse button, equivalent to ssMiddle from TShiftState</short>
+        <short>A key state constant to represent the middle mouse button, equivalent to ssMiddle from TShiftState.</short>
         <descr/>
         <seealso>
           <link id="MK_Shift"/>
@@ -12059,7 +12059,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="MK_XBUTTON1">
-        <short>A key state constant to represent the first extra mouse button, equivalent to ssExtra1 from TShiftState</short>
+        <short>A key state constant to represent the first extra mouse button, equivalent to ssExtra1 from TShiftState.</short>
         <descr/>
         <seealso>
           <link id="MK_Shift"/>
@@ -12076,7 +12076,7 @@ Values with highest bit set are system colors or themed colors. For example clNo
       </element>
       <!-- constant Visibility: default -->
       <element name="MK_XBUTTON2">
-        <short>A key state constant to represent the second extra mouse button, equivalent to ssExtra2 from TShiftState</short>
+        <short>A key state constant to represent the second extra mouse button, equivalent to ssExtra2 from TShiftState.</short>
         <descr/>
         <seealso>
           <link id="MK_Shift"/>

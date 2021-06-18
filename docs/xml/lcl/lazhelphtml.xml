@@ -8,8 +8,8 @@
     -->
     <module name="LazHelpHTML">
       <short>
-        Contains types and classes used to integrate and access help files in HTML format
-      </short>
+        Contains types and classes used to integrate and access help files in HTML format.
+        </short>
       <descr>
         <p>
           <file>lazhelphtml.pas</file> contains types and classes used to integrate and access help files in HTML format (.htm or .html file extensions). It registers <var>THTMLHelpDatabase</var> and  <var>THTMLBrowserHelpViewer</var> components on the <b>System</b> tab in the Lazarus IDE component palette.
@@ -33,7 +33,7 @@
 
       <element name="THTMLHelpDatabase">
         <short>
-          Provides support for context-sensitive help using HTML help files
+          Provides support for context-sensitive help using HTML help files.
         </short>
         <descr>
           <p>
@@ -59,24 +59,24 @@
       </element>
 
       <element name="THTMLHelpDatabase.FBaseURL">
-        <short>Stores the base URL for files using the keyword prefix</short>
+        <short>Stores the base URL for files using the keyword prefix.</short>
       </element>
 
       <element name="THTMLHelpDatabase.FDefaultBaseURL">
-        <short>URL used when BaseURL is empty</short>
+        <short>URL used when BaseURL is empty.</short>
       </element>
 
       <element name="THTMLHelpDatabase.FKeywordPrefix">
-        <short>The prefix used for keyword help in the help database</short>
+        <short>The prefix used for keyword help in the help database.</short>
       </element>
 
       <element name="THTMLHelpDatabase.FKeywordPrefixNode">
-        <short>Node in the help file for entries having the keyword prefix</short>
+        <short>Node in the help file for entries having the keyword prefix.</short>
       </element>
 
       <element name="THTMLHelpDatabase.IsBaseURLStored">
         <short>
-          Indicates if the value in BaseURL is stored for the help database
+          Indicates if the value in BaseURL is stored for the help database.
         </short>
         <descr>
           <p>
@@ -89,32 +89,32 @@
         </seealso>
       </element>
       <element name="THTMLHelpDatabase.IsBaseURLStored.Result">
-        <short>True when the property value is stored</short>
+        <short>True when the property value is stored.</short>
       </element>
 
       <element name="THTMLHelpDatabase.SetBaseURL" link="#lcl.lazhelphtml.THTMLHelpDatabase.BaseURL">
-        <short>Sets the value in the BaseURL property</short>
+        <short>Sets the value in the BaseURL property.</short>
         <seealso>
           <link id="THTMLHelpDatabase.BaseURL"/>
         </seealso>
       </element>
       <element name="THTMLHelpDatabase.SetBaseURL.AValue">
-        <short>New value for the BaseURL property</short>
+        <short>New value for the BaseURL property.</short>
       </element>
 
       <element name="THTMLHelpDatabase.SetDefaultBaseURL" link="#lcl.lazhelphtml.THTMLHelpDatabase.DefaultBaseURL">
-        <short>Sets the value for the DefaultBaseURL property</short>
+        <short>Sets the value for the DefaultBaseURL property.</short>
         <seealso>
           <link id="THTMLHelpDatabase.DefaultBaseURL"/>
         </seealso>
       </element>
       <element name="THTMLHelpDatabase.SetDefaultBaseURL.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THTMLHelpDatabase.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -129,12 +129,12 @@
         </seealso>
       </element>
       <element name="THTMLHelpDatabase.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="THTMLHelpDatabase.Destroy">
         <short>
-          Destructor for the class instance
+          Destructor for the class instance.
         </short>
         <descr>
           <p>
@@ -149,7 +149,7 @@
 
       <element name="THTMLHelpDatabase.ShowURL">
         <short>
-          Displays a help viewer for the specified HTML help topic
+          Displays a help viewer for the specified HTML help topic.
         </short>
         <descr>
           <p>
@@ -192,28 +192,28 @@
       </element>
       <element name="THTMLHelpDatabase.ShowURL.Result">
         <short>
-          Status of the help display operation
+          Status of the help display operation.
         </short>
       </element>
       <element name="THTMLHelpDatabase.ShowURL.URL">
         <short>
-          Identifies the path, file, and topic information displayed in the method
+          Identifies the path, file, and topic information displayed in the method.
         </short>
       </element>
       <element name="THTMLHelpDatabase.ShowURL.Title">
         <short>
-          Value displayed in the title bar of the help viewer
+          Value displayed in the title bar of the help viewer.
         </short>
       </element>
       <element name="THTMLHelpDatabase.ShowURL.ErrMsg">
         <short>
-          Message which describes the error condition in the return value
+          Message which describes the error condition in the return value.
         </short>
       </element>
 
       <element name="THTMLHelpDatabase.ShowHelp">
         <short>
-          Displays a context-sensitive HTML help topics in the HTML database
+          Displays a context-sensitive HTML help topics in the HTML database.
         </short>
         <descr>
           <p>
@@ -236,29 +236,29 @@
         </seealso>
       </element>
       <element name="THTMLHelpDatabase.ShowHelp.Result">
-        <short>Status of the help display request</short>
+        <short>Status of the help display request.</short>
       </element>
      <element name="THTMLHelpDatabase.ShowHelp.Query">
-        <short>Not used in the method implementation</short>
+        <short>Not used in the method implementation.</short>
       </element>
       <element name="THTMLHelpDatabase.ShowHelp.BaseNode">
-        <short>Not used in the method implementation</short>
+        <short>Not used in the method implementation.</short>
       </element>
       <element name="THTMLHelpDatabase.ShowHelp.NewNode">
-        <short>Help node with the URL and Title displayed in the method</short>
+        <short>Help node with the URL and Title displayed in the method.</short>
       </element>
       <element name="THTMLHelpDatabase.ShowHelp.QueryItem">
-        <short>Not used in the method implementation</short>
+        <short>Not used in the method implementation.</short>
       </element>
       <element name="THTMLHelpDatabase.ShowHelp.ErrMsg">
         <short>
-          Message which describes an error condition in the return value
+          Message which describes an error condition in the return value.
         </short>
       </element>
 
       <element name="THTMLHelpDatabase.GetNodesForKeyword">
         <short>
-          Populates the list with help nodes using the KeywordPrefix for the HTML help database
+          Populates the list with help nodes using the KeywordPrefix for the HTML help database.
         </short>
         <descr>
           <p>
@@ -286,25 +286,25 @@
         <seealso/>
       </element>
       <element name="THTMLHelpDatabase.GetNodesForKeyword.Result">
-        <short>Status of the help display request</short>
+        <short>Status of the help display request.</short>
       </element>
       <element name="THTMLHelpDatabase.GetNodesForKeyword.HelpKeyword">
-        <short>Help keyword to locate in the HTML help database</short>
+        <short>Help keyword to locate in the HTML help database.</short>
       </element>
       <element name="THTMLHelpDatabase.GetNodesForKeyword.ListOfNodes">
         <short>
-          List used to store help nodes matching the keyword prefix and keyword value
+          List used to store help nodes matching the keyword prefix and keyword value.
         </short>
       </element>
       <element name="THTMLHelpDatabase.GetNodesForKeyword.ErrMsg">
         <short>
-          Describes an error condition encountered in the help display requested
+          Describes an error condition encountered in the help display requested.
         </short>
       </element>
 
       <element name="THTMLHelpDatabase.GetEffectiveBaseURL">
         <short>
-          Gets the effective Base URL used to access a topic in the HTML help database
+          Gets the effective Base URL used to access a topic in the HTML help database.
         </short>
         <descr>
           <p>
@@ -327,12 +327,12 @@
         </seealso>
       </element>
       <element name="THTMLHelpDatabase.GetEffectiveBaseURL.Result">
-        <short>Derived value for the URL needed to access the HTML help topic</short>
+        <short>Derived value for the URL needed to access the HTML help topic.</short>
       </element>
 
       <element name="THTMLHelpDatabase.Load">
         <short>
-          Loads HTML help database settings from the specified configuration storage
+          Loads HTML help database settings from the specified configuration storage.
         </short>
         <descr>
           <p>
@@ -350,22 +350,22 @@
       </element>
       <element name="THTMLHelpDatabase.Load.Storage">
         <short>
-          Configuration storage with values loaded in the method
+          Configuration storage with values loaded in the method.
         </short>
       </element>
 
       <element name="THTMLHelpDatabase.Save">
-        <short>Saves configuration settings to the specified storage</short>
+        <short>Saves configuration settings to the specified storage.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THTMLHelpDatabase.Save.Storage">
-        <short>Storage for the configuration settings</short>
+        <short>Storage for the configuration settings.</short>
       </element>
 
       <element name="THTMLHelpDatabase.DefaultBaseURL">
         <short>
-          Default value for the BaseURL used in the HTML help database
+          Default value for the BaseURL used in the HTML help database.
         </short>
         <descr/>
         <seealso/>
@@ -373,7 +373,7 @@
 
       <element name="THTMLHelpDatabase.BaseURL">
         <short>
-          BaseURL for the HTML help database
+          BaseURL for the HTML help database.
         </short>
         <descr/>
         <seealso/>
@@ -381,7 +381,7 @@
 
       <element name="THTMLHelpDatabase.AutoRegister">
         <short>
-          Indicates if the HTML help database is automatically registered at run-time
+          Indicates if the HTML help database is automatically registered at run-time.
         </short>
         <descr>
           <p>
@@ -398,7 +398,7 @@
 
       <element name="THTMLHelpDatabase.KeywordPrefix">
         <short>
-          Common prefix which identifies the related keyword topics handled in the HTML help database
+          Common prefix which identifies the related keyword topics handled in the HTML help database.
         </short>
         <descr>
           <p>
@@ -414,7 +414,7 @@
 
       <element name="TOnFindDefaultBrowser">
         <short>
-          Specifies an event handler signalled to get the browser application name and parameters
+          Specifies an event handler signalled to get the browser application name and parameters.
         </short>
         <descr>
           <p>
@@ -428,19 +428,19 @@
 
       <element name="TOnFindDefaultBrowser.DefaultBrowser">
         <short>
-          Path to the default browser application used for HTML help topics
+          Path to the default browser application used for HTML help topics.
         </short>
       </element>
 
       <element name="TOnFindDefaultBrowser.Params">
         <short>
-          Command line parameters for the browser application needed to open and display the HTML help topic
+          Command line parameters for the browser application needed to open and display the HTML help topic.
         </short>
       </element>
 
       <element name="THTMLBrowserHelpViewer">
         <short>
-          Implements a browser/viewer for HTML help topics
+          Implements a browser/viewer for HTML help topics.
         </short>
         <descr>
           <p>
@@ -478,25 +478,25 @@
 
       <element name="THTMLBrowserHelpViewer.SetBrowserParams" link="#lcl.lazhelphtml.THTMLBrowserHelpViewer.BrowserParams">
         <short>
-          Sets the value in the BrowserParams property
+          Sets the value in the BrowserParams property.
         </short>
       </element>
       <element name="THTMLBrowserHelpViewer.SetBrowserParams.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.SetBrowserPath" link="#lcl.lazhelphtml.THTMLBrowserHelpViewer.BrowserPath">
         <short>
-          Sets the value in the BrowserPath property
+          Sets the value in the BrowserPath property.
         </short>
       </element>
       <element name="THTMLBrowserHelpViewer.SetBrowserPath.AValue">
-        <short>New value for the property</short>
+        <short>New value for the property.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.Create">
         <short>
-          Constructor for the class instance
+          Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -513,12 +513,12 @@
         </seealso>
       </element>
       <element name="THTMLBrowserHelpViewer.Create.TheOwner">
-        <short>Owner of the class instance</short>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.ShowNode">
         <short>
-          Displays the help node for a HTML help topic
+          Displays the help node for a HTML help topic.
         </short>
         <descr>
           <p>
@@ -576,78 +576,78 @@
         </seealso>
       </element>
       <element name="THTMLBrowserHelpViewer.ShowNode.Result">
-        <short>Status code for the requested operation</short>
+        <short>Status code for the requested operation.</short>
       </element>
       <element name="THTMLBrowserHelpViewer.ShowNode.Node">
-        <short>Help node displayed in the method</short>
+        <short>Help node displayed in the method.</short>
       </element>
       <element name="THTMLBrowserHelpViewer.ShowNode.ErrMsg">
-        <short>Message describing an error condition in the return value</short>
+        <short>Message describing an error condition in the return value.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.FindDefaultBrowser">
         <short>
-          Locates the default browser application used for HTML help topics
+          Locates the default browser application used for HTML help topics.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THTMLBrowserHelpViewer.FindDefaultBrowser.Browser">
-        <short>Browser application used for the HTML help viewer</short>
+        <short>Browser application used for the HTML help viewer.</short>
       </element>
       <element name="THTMLBrowserHelpViewer.FindDefaultBrowser.Params">
-        <short>Parameters needed for the browser application</short>
+        <short>Parameters needed for the browser application.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.Assign">
         <short>
-          Stores property values from the specified help browser to the current class instance
+          Stores property values from the specified help browser to the current class instance.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THTMLBrowserHelpViewer.Assign.Source">
         <short>
-          Help browser with properties stored in the current class instance
+          Help browser with properties stored in the current class instance.
         </short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.Load">
         <short>
-          Loads configuration settings for the help viewer from the specified storage
+          Loads configuration settings for the help viewer from the specified storage.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THTMLBrowserHelpViewer.Load.Storage">
-        <short>Storage for the configuration settings</short>
+        <short>Storage for the configuration settings.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.Save">
         <short>
-          Save configuration settings for the help viewer to the specified storage
+          Save configuration settings for the help viewer to the specified storage.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THTMLBrowserHelpViewer.Save.Storage">
-        <short>Storage for the configuration settings</short>
+        <short>Storage for the configuration settings.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.GetLocalizedName">
         <short>
-          Gets the localized name for the HTML help browser/viewer application
+          Gets the localized name for the HTML help browser/viewer application.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="THTMLBrowserHelpViewer.GetLocalizedName.Result">
-        <short>Value for the localized name of the application</short>
+        <short>Value for the localized name of the application.</short>
       </element>
 
       <element name="THTMLBrowserHelpViewer.OnFindDefaultBrowser">
         <short>
-          Event handler signalled to find the default browser for the help viewer
+          Event handler signalled to find the default browser for the help viewer.
         </short>
         <descr>
           <p>
@@ -661,7 +661,7 @@
 
       <element name="THTMLBrowserHelpViewer.BrowserPath">
         <short>
-          Path to the browser application used to view a HTML help topic
+          Path to the browser application used to view a HTML help topic.
         </short>
         <descr>
           <p>
@@ -691,7 +691,7 @@
 
       <element name="THTMLBrowserHelpViewer.BrowserParams">
         <short>
-          Parameters passed to the browser application to display a HTML help topic
+          Parameters passed to the browser application to display a HTML help topic.
         </short>
         <descr>
           <p>
@@ -714,7 +714,7 @@
 
       <element name="THTMLBrowserHelpViewer.AutoRegister">
         <short>
-          Indicates if the help viewer is automatically registered in the Lazarus Help system
+          Indicates if the help viewer is automatically registered in the Lazarus Help system.
         </short>
         <descr>
           <p>
@@ -731,7 +731,7 @@
 
       <element name="Register">
         <short>
-          Registers database and viewer components for HTML help on the System tab in Lazarus
+          Registers database and viewer components for HTML help on the System tab in Lazarus.
         </short>
       </element>
     </module>
