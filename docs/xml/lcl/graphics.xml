@@ -3137,9 +3137,10 @@
         </seealso>
       </element>
       <element name="TPen.Style">
-        <short/>
+        <short>Contains the line drawing style for the pen.</short>
         <descr>
-          <p>Style can contain one of the following values:
+          <p>
+            Style is a TPenStyle property with the style used to draw lines with the Pen,  and can contain one of the following values:
           </p>
           <ul>
             <li>psSolid</li>
@@ -3151,7 +3152,17 @@
             <li>psPattern</li>
             <li>psClear</li>
           </ul>
-          <p>The default value is <var>psSolid</var>.
+          <p>
+            psDash, psDot, psDashDot, and psDashDotDot are drawn using the corresponding  TPenPattern for the Style. On the Windows platform, these styles are not available if the Width is any value other than 1.
+          </p>
+          <p>
+            psInsideFrame uses a solid drawing style, and a Color dithered to one of the values in the color table for the device. The content drawn with the pen is reduced in size so that it appears inside of a bounding rectangle including the Width for the pen.
+          </p>
+          <p>
+            psClear, in general, tells the implementing class or routine that the drawing operation is not needed.
+          </p>
+          <p>
+            The default value for the property is <var>psSolid</var>. Setting a new value for the property cause the Changed method to be called to signal the OnChange event handler (when assigned).
           </p>
         </descr>
       </element>
@@ -3159,12 +3170,13 @@
         <short>Width for the Pen.</short>
         <descr>
           <p>
-            <var>Width</var> is an
-            <var>Integer</var> property which contains the width for the pen.
+            <var>Width</var> is an <var>Integer</var> property which contains the width for the pen.
           </p>
-          <p>Setting a new value for the property causes the pen <var>Reference</var> to be re-created. The <var>Changed</var> method is called to signal the <var>OnChange</var> event handler (when assigned). The default value for the property is <b>1</b>.
+          <p>
+            Setting a new value for the property causes the pen <var>Reference</var> to be re-created. The <var>Changed</var> method is called to signal the <var>OnChange</var> event handler (when assigned). The default value for the property is <b>1</b>.
           </p>
-          <p>Width is related to the <var>Cosmetic</var> property. A cosmetic pen has a width of <b>1</b>. Setting Width to a value larger than <b>1</b> prevents using it as a cosmetic pen.
+          <p>
+            Width is related to the <var>Cosmetic</var> property. A cosmetic pen has a width of <b>1</b>. Setting Width to a value larger than <b>1</b> prevents using it as a cosmetic pen.
           </p>
         </descr>
         <seealso/>
@@ -3460,10 +3472,10 @@
         <short>Contains a Reference to the handle allocated for the Brush.</short>
         <descr>
           <p>
-            <var>Reference</var> is a read-only
-            <var>TWSBrushReference</var> property which contains a reference to the widgetset class used for the brush instance. It provides access to the Handle allocated for the  brush resource, and is used in methods that need access to an existing brush handle.
+            <var>Reference</var> is a read-only <var>TWSBrushReference</var> property which contains a reference to the widgetset class used for the brush instance. It provides access to the Handle allocated for the  brush resource, and is used in methods that need access to an existing brush handle.
         </p>
-          <p>Resources for the property are allocated (when needed) and initialized by calling the ReferenceNeeded method. The resources are freed in the FreeReference method.
+          <p>
+            Resources for the property are allocated (when needed) and initialized by calling the ReferenceNeeded method. The resources are freed in the FreeReference method.
         </p>
         </descr>
         <seealso>
@@ -3475,17 +3487,13 @@
        </short>
         <descr>
           <p>
-            <var>Color</var> is a
-            <var>TColor</var> property with the color used to draw the brush pattern indicated in the
-            <var>Style</var> property. It is the background or fill color when Style contains
-            <var>bsSolid</var>. Color is not used when Style is set to
-            <var>bsClear</var>; in fact, the brush style in
-            <var>TFPCustomBrush</var> ancestor is actually set to
-            <var>bsSolid</var>.
+            <var>Color</var> is a <var>TColor</var> property with the color used to draw the brush pattern indicated in the <var>Style</var> property. It is the background or fill color when Style contains <var>bsSolid</var>. Color is not used when Style is set to <var>bsClear</var>; in fact, the brush style in <var>TFPCustomBrush</var> ancestor is actually set to <var>bsSolid</var>.
           </p>
-          <p>Setting a new value for the property causes an existing brush handle in <var>Reference</var> to be freed, and the pattern image in <var>Bitmap</var> is discarded.
+          <p>
+            Setting a new value for the property causes an existing brush handle in <var>Reference</var> to be freed, and the pattern image in <var>Bitmap</var> is discarded.
           </p>
-          <p>The default value for the property is <var>clWhite</var>. The default property value is restored when a new value is assigned to the Bitmap property.
+          <p>
+            The default value for the property is <var>clWhite</var>. The default property value is restored when a new value is assigned to the Bitmap property.
           </p>
         </descr>
         <seealso>
