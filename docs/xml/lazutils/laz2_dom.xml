@@ -453,7 +453,7 @@
       <element name="EDOMNotFound.Create">
         <short>Constructor for the class instance.</short>
         <descr></descr>
-                <seealso></seealso>
+        <seealso></seealso>
       </element>
 
       <!-- argument Visibility: default -->
@@ -1111,7 +1111,7 @@
 
       <!-- procedure Visibility: protected -->
       <element name="TDOMNode.SetReadOnly">
-        <short>Updates the read-only Node flag for the DOM Node and it children.</short>
+        <short>Updates the read-only Node flag for the DOM Node and its children.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -3725,7 +3725,7 @@
 
       <!-- function Visibility: protected -->
       <element name="TDOMCharacterData.GetNodeValue">
-        <short/>
+        <short>Gets the value for the NodeValue property.</short>
         <descr/>
         <seealso>
           <link id="TDOMCharacterData.SetNodeValue"/>
@@ -6779,7 +6779,11 @@
       <!-- class Visibility: default -->
       <element name="TDOMNotation">
         <short>Implements the DOM Notation interface from the DOM specification.</short>
-        <descr></descr>
+        <descr>
+          <p>
+            <var>TDOMNotation</var> is a <var>TDOMNode</var> descendant which implements the Notation interface from the DOM specification. It decalres the name and format for an unparsed entity declared in a Document Type Declaration (DTD). It can also be used to set the target for a processing instruction that handles the notation. Notations are a vestige of the older SGML standard, and  provided for migration purposes. They are seldom used (if at all) in modern XML processing implementations.
+          </p>
+        </descr>
         <seealso>
           <link id="TDOMNode"/>
         </seealso>
@@ -6853,8 +6857,26 @@
       <!-- class Visibility: default -->
       <element name="TDOMEntity">
         <short>Implements the DOM Entity interface from the DOM specification.</short>
-        <descr></descr>
-        <seealso></seealso>
+        <descr>
+          <p>
+            TDOMEntity is a TDOMNode_WithChildren descendant which implements the Entity interface from the DOM specifications. An Entity is declared as part of a Document Type Declaration (DTD), and can be either parsed or unparsed in the content model. The following is an example of internal and external Entity declarations:
+          </p>
+          <code>
+          &lt;!ENTITY copyrightholder "ACME Corporation"&gt;
+          &lt;!ENTITY copyrightholder PUBLIC "https://www.w3c.org/entities.dtd"&gt;
+          &lt;!ENTITY copyrightholder SYSTEM  "/path/to/entities.dtd"&gt;
+          &lt;!-- Usage: --&gt;
+          &lt;COPYRIGHT&gt;
+            1999-2021, &amp;copyrightholder;. All rights reserved.
+          &lt;/COPYRIGHT&gt;
+          </code>
+          <p>
+            TDOMEntity provides the Name (NodeName), PublicID or SystemID, and NotationName (when used) properties used to represent the entity declaration.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDOMNode_WithChildren"/>
+        </seealso>
       </element>
 
       <!-- variable Visibility: protected -->
@@ -6866,8 +6888,16 @@
       <!-- function Visibility: protected -->
       <element name="TDOMEntity.GetNodeType">
         <short>Gets the value for the NodeType property.</short>
-        <descr></descr>
-        <seealso></seealso>
+        <descr>
+          <p>
+            Returns <var>ENTITY_NODE</var> as the property value.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDOMNode.NodeType"/>
+          <link id="TDOMNode.GetNodeType"/>
+          <link id="ENTITY_NODE"/>
+        </seealso>
       </element>
 
       <!-- function result Visibility: default -->
@@ -6879,7 +6909,10 @@
       <element name="TDOMEntity.GetNodeName">
         <short>Gets the value for the NodeName property.</short>
         <descr></descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TDOMNode.NodeName"/>
+          <link id="TDOMNode.GetNodeName"/>
+        </seealso>
       </element>
 
       <!-- function result Visibility: default -->
@@ -6889,9 +6922,27 @@
 
       <!-- function Visibility: public -->
       <element name="TDOMEntity.CloneNode">
-        <short>Makes a copy of the DOM node.</short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>Makes a copy of the DOM node with the specified owner document.</short>
+        <descr>
+          <p>
+            <var>CloneNode</var> is an overridden <var>TDOMNode</var> function in <var>TDOMEntity</var> used to make a copy of the node with <var>ACloneOwner</var> as the owner document for the new node. It re-implements the method from the ancestor class.
+          </p>
+          <p>
+            CloneNode allocates a new TDOMEntity instance in the node pool for ACloneOwner, and creates the DOM Entity node in the return value. Values from the <var>PublicID</var>, <var>SystemID</var>, and <var>NotationName</var> properties are copied to the new node. The internal name for the Entity (set when the owner document was de-serialized) is also copied to the new node. When deep is <b>True</b>, the <var>CloneChildren</var> method is called to copy the <var>ChildNodes</var> (when assigned) to the  new node.
+          </p>
+          <p>
+            CloneNode calls <var>SetReadOnly</var> to ensure that the new node cannot be modified. The cloned node does not have a parent node.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDOMEntity.PublicID"/>
+          <link id="TDOMEntity.SystemID"/>
+          <link id="TDOMEntity.NotationName"/>
+          <link id="TDOMNode.SetReadOnly"/>
+          <link id="TDOMNode_WithChildren.CloneChildren"/>
+          <link id="TDOMNode.ChildNodes"/>
+          <link id="TDOMDocument.Alloc"/>
+        </seealso>
       </element>
 
       <!-- function result Visibility: default -->
@@ -6912,21 +6963,33 @@
       <!-- property Visibility: public -->
       <element name="TDOMEntity.PublicID">
         <short>Public Identifier for the Entity.</short>
-        <descr></descr>
+        <descr>
+          <p>
+            Can contain a URL where the DTD with the entity declaration is located on the internet. It can contain the Formal Public Identifier notation used in SGML/XML.
+          </p>
+        </descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMEntity.SystemID">
         <short>System Identifier for the Entity.</short>
-        <descr></descr>
+        <descr>
+          <p>
+            Can contain a path to the DTD with the entity declaration on the local file system.
+          </p>
+        </descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMEntity.NotationName">
         <short>Notation name for the Entity.</short>
-        <descr></descr>
+        <descr>
+          <p>
+            Can contain the DOM Notation name used for the Entity. This is seldom used in modern XML processors.
+          </p>
+        </descr>
         <seealso></seealso>
       </element>
 
@@ -6975,7 +7038,7 @@
 
       <!-- function result Visibility: default -->
       <element name="TDOMEntityReference.CloneNode.Result">
-        <short>New DOM node created as for the owner document.</short>
+        <short>New DOM node created in the owner document.</short>
       </element>
 
       <!-- argument Visibility: default -->
@@ -7089,7 +7152,7 @@
 
       <!-- argument Visibility: default -->
       <element name="TDOMProcessingInstruction.CloneNode.ACloneOwner">
-        <short></short>
+        <short>Document which owns the cloned processing instruction node.</short>
       </element>
 
       <!-- property Visibility: public -->
@@ -7101,7 +7164,7 @@
 
       <!-- property Visibility: public -->
       <element name="TDOMProcessingInstruction.Data">
-        <short>Represents the Data for the DOM ProcessingInstruction node.</short>
+        <short>Contains the Data for the DOM ProcessingInstruction node.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -7136,9 +7199,20 @@
 
       <!-- class Visibility: default -->
       <element name="TDOMAttrDef">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>Implements the default attribute node introduced in DOM Level 2.</short>
+        <descr>
+          <p>
+            <var>TDOMAttrDef</var> is a <var>TDOMAttr</var> descendant which implements the  default attribute node as specified in the DOM Level 2 specification. A default attribute is associated with an Element of a given type in a Document Type Declaration (whether internal or external). It can have a value which is either explictly specified, implied from the DTD, or fixed to given value. Its value can also be limited to only those values specified in the attribute defintion.
+          </p>
+          <p>
+            TDOMAttrDef is the type returned from the <var>TDOMDocument.CreateAttributeDef</var> method. It is also used to update attribue value for an Element in methods like: <var>TDOMNamedNodeMap.RestoreDefault</var> and <var>TDOMElement.AttachDefaultAttrs</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDOMDocument.CreateAttributeDef"/>
+          <link id="TDOMNamedNodeMap.RestoreDefault"/>
+          <link id="TDOMElement.AttachDefaultAttrs"/>
+        </seealso>
       </element>
 
       <!-- variable Visibility: protected -->
@@ -7149,53 +7223,70 @@
 
       <!-- function Visibility: public -->
       <element name="TDOMAttrDef.AddEnumToken">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>Adds the specified value to the allowed values for the attribute node.</short>
+        <descr>
+          <p>
+            Checks existing values in the enumeration to prevent duplicates. The return value is <b>False</b> if <var>Buf</var> already exists in the enumeration.
+          </p>
+        </descr>
+        <seealso/>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TDOMAttrDef.AddEnumToken.Result">
-        <short></short>
+        <short>True if the value was successfully added in the method.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMAttrDef.AddEnumToken.Buf">
-        <short></short>
+        <short>DOMPChar value added to the enumeration.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMAttrDef.AddEnumToken.Len">
-        <short></short>
+        <short>Length of the value in Buf.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TDOMAttrDef.HasEnumToken">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>
+          Checks whether the specified value is one of the allowed values for the attribute.
+        </short>
+        <descr/>
+        <seealso/>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TDOMAttrDef.HasEnumToken.Result">
-        <short></short>
+        <short>True if the specified value exists the enumeration values.</short>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TDOMAttrDef.HasEnumToken.aValue">
-        <short></short>
+        <short>Value to locate in the enumeration.</short>
       </element>
 
       <!-- function Visibility: public -->
       <element name="TDOMAttrDef.CloneNode">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>
+          Makes a copy of the attribute node with the specified owner document.
+        </short>
+        <descr>
+          <p>
+            <var>CloneNode</var> is an overloaded, overridden method in <var>TDOMAttrDef</var> used to make a copy of the default attribute node using the specified owner document. CloneNode calls the inherited method on entry, and ensures that the node <var>Flags</var> include the value <var>nfSpecified</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDOMAttr.CloneNode"/>
+          <link id="TDOMAttr.Specified"/>
+          <link id="TDOMNode.Flags"/>
+          <link id="TNodeFlagEnum"/>
+        </seealso>
       </element>
 
       <!-- function result Visibility: default -->
       <element name="TDOMAttrDef.CloneNode.Result">
-        <short></short>
+        <short>DOM node created in the method.</short>
       </element>
 
       <!-- argument Visibility: default -->
@@ -7205,33 +7296,62 @@
 
       <!-- argument Visibility: default -->
       <element name="TDOMAttrDef.CloneNode.ACloneOwner">
-        <short></short>
+        <short>Document which owns the cloned DOM node.</short>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMAttrDef.Default">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>Indicates the origin of the value in the attribute node.</short>
+        <descr>
+          <p>
+            Default is a TAttrDefault property which indicates how the NodeValue for the attribute node was derived. It contains a value from the TAttrDefault enumeration, and allows values like:
+          </p>
+          <dl>
+            <dt>adImplied</dt>
+            <dd>Attribute value is implied in a DTD.</dd>
+            <dt>adDefault</dt>
+            <dd>Attribute value is the default value from the DTD.</dd>
+            <dt>adRequired</dt>
+            <dd>An Attribute value is required.</dd>
+            <dt>adFixed</dt>
+            <dd>Attribute has a fixed value provided in the DTD.</dd>
+          </dl>
+          <p>
+            The property value is used in methods like <var>TDOMNamedNodeMap.RestoreDefault</var> and <var>TDOMElement.AttachDefaultAttrs</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDOMNamedNodeMap.RestoreDefault"/>
+          <link id="TDOMElement.AttachDefaultAttrs"/>
+        </seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMAttrDef.ExternallyDeclared">
-        <short></short>
-        <descr></descr>
+        <short>Indicates if the attribute was declared in an external subset of the DTD.</short>
+        <descr>
+          <p>
+            <var>ExternallyDeclared</var> is a <var>Boolean</var> property which indicates if the attribute is declared in an external subset of the DTD in the owner document.
+          </p>
+        </descr>
         <seealso></seealso>
       </element>
 
       <!-- property Visibility: public -->
       <element name="TDOMAttrDef.Tag">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short/>
+        <descr>
+          <p>
+            <var>Tag</var> is a <var>Cardinal</var> property.
+          </p>
+        </descr>
+        <notes><note>?</note></notes>
+        <seealso/>
       </element>
 
       <!-- pointer type Visibility: default -->
       <element name="PExtent">
-        <short>Pointer to a TExtent type </short>
+        <short>Pointer to a TExtent type.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -7242,14 +7362,23 @@
           Record type with a pointer to its extent, followed by an array TDOMNode instances.
         </short>
         <descr></descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="PExtent"/>
+          <link id="TNodePool.Create"/>
+          <link id="TNodePool.Destroy"/>
+          <link id="TNodePool.AllocNode"/>
+        </seealso>
       </element>
 
       <!-- variable Visibility: default -->
       <element name="TExtent.Next">
-        <short></short>
+        <short>Pointer to the next extent in a Node pool.</short>
         <descr></descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TNodePool.Destroy"/>
+          <link id="PExtent"/>
+          <link id="TExtent"/>
+        </seealso>
       </element>
 
       <!-- class Visibility: default -->
@@ -7276,20 +7405,43 @@
 
       <!-- procedure Visibility: private -->
       <element name="TNodePool.AddExtent">
-        <short></short>
-        <descr></descr>
-        <seealso></seealso>
+        <short>Allocates a new extent with the specified number of storage slots.</short>
+        <descr>
+          <errors>
+            <p>
+              Raises an <var>EAssertionFailed</var> exception for the following conditions:
+            </p>
+            <ul>
+              <li>The current extent does not have any allocated storage.</li>
+              <li>
+                The array of node instances exceeds the available size for the current extent.
+              </li>
+              <li>The element count argument is zero (<b>0</b>).</li>
+            </ul>
+            <p>
+              Calls <var>GetMem</var> to reserve the amount storage indicated by the <var>AElemCount</var> argument and the element size specified in the constructor. AddExtent switches the node pool to the newly allocated extent prior to exiting from the method.
+            </p>
+          </errors>
+        </descr>
+        <seealso>
+          <link id="TNodePool.Create"/>
+          <link id="#rtl.system.GetMem">GetMem</link>
+        </seealso>
       </element>
 
       <!-- argument Visibility: default -->
       <element name="TNodePool.AddExtent.AElemCount">
-        <short></short>
+        <short>Number of storage slots to reserve in the new extent.</short>
       </element>
 
       <!-- constructor Visibility: public -->
       <element name="TNodePool.Create">
         <short>Constructor for the class instance.</short>
-        <descr></descr>
+        <descr>
+          <p>
+            Allocates an extent with the specified number of entries when the node pool is created.
+          </p>
+        </descr>
         <seealso></seealso>
       </element>
 
@@ -7300,7 +7452,7 @@
 
       <!-- argument Visibility: default -->
       <element name="TNodePool.Create.AElementCount">
-        <short>Number of nodes stored in the node pool.</short>
+        <short>Number of stotage slots for nodes in the node pool.</short>
       </element>
 
       <!-- destructor Visibility: public -->
