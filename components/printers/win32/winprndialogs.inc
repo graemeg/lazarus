@@ -68,6 +68,8 @@ end;
 { TPageSetupDialog }
 
 function TPageSetupDialog.DoExecute: Boolean;
+const
+  PSD_NONETWORKBUTTON = $00200000; //constant is missed in FPC 3.2
 var
   lpp        : tagPSD;
   PDev       : TPrinterDevice;
@@ -108,6 +110,20 @@ begin
       rtMargin.Right := MarginRight;
       rtMargin.Bottom := MarginBottom;
       PDev := TPrinterDevice(Printer.Printers.Objects[Printer.PrinterIndex]);
+
+      if psoDisableMargins in FOptions then
+        Flags := Flags or PSD_DISABLEMARGINS;
+      if psoDisableOrientation in FOptions then
+        Flags := Flags or PSD_DISABLEORIENTATION;
+      if psoDisablePagePainting in FOptions then
+        Flags := Flags or PSD_DISABLEPAGEPAINTING;
+      if psoDisablePaper in FOptions then
+        Flags := Flags or PSD_DISABLEPAPER;
+      if psoDisablePrinter in FOptions then
+        Flags := Flags or PSD_DISABLEPRINTER;
+      if psoNoNetworkButton in FOptions then
+        Flags := Flags or PSD_NONETWORKBUTTON;
+
       // Pdev.DevMode has the required size, just copy to the global memory
       DeviceMode := GLobalAlloc(GHND, PDev.DevModeSize);
       try
