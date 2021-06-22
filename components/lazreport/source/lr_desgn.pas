@@ -5489,10 +5489,10 @@ begin
   end;
 
   PageView.NPDrawLayerObjects(ClipRgn, TopSelected);
-
-  ActiveControl := nil;
+  if b<>8 then // without this you can't enter more then 1 digits in Fontsize-combobox
+    ActiveControl := nil;
   if b in [20, 21] then
-     SelectionChanged;
+    SelectionChanged;
 end;
 
 procedure TfrDesignerForm.frSpeedButton1Click(Sender: TObject);
