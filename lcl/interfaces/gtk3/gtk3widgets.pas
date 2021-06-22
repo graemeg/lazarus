@@ -3036,28 +3036,62 @@ end;
 
 function TGtk3Widget.GetPosition(out APoint: TPoint): Boolean;
 var
-  ALeft, ATop: gint;
+  GdkWindow: PGdkWindow;
+  GtkLeft, GtkTop: GInt;
+  Alloc:TGtkAllocation;
+  prnt:TGtk3Widget;
+  wtype:TGType;
 begin
-  APoint := Point(0, 0);
-  Result := False;
-  if IsWidgetOk then
+  fWidget^.get_allocation(@Alloc);
+  APoint.X:=alloc.X;
+  APoint.Y:=alloc.Y;
+
+  prnt:=self.GetParent; // TGtk3Widget
+  if (prnt<>nil) then
   begin
-    if FWidget^.get_realized then
+    wtype:=prnt.getType; // parent widget type
+    if (wtype<>gtk_fixed_get_type()) and
+       (wtype<>gtk_layout_get_type()) then
     begin
-      if FWidget^.get_has_window then
-      begin
-        gdk_window_get_position(FWidget^.window, @ALeft, @ATop);
-        APoint.X := ALeft;
-        APoint.Y := ATop;
-        Result := True;
-      end;
-    end;
-    if not Result then
+      // widget is not on a normal client area. e.g. TPage
+      Apoint.X:=0;
+      APoint.Y:=0;
+      Result:=true;
+    end
+    else
+    if (wtype=gtk_fixed_get_type()) and
+       prnt.Widget^.get_has_window then
     begin
-      APoint := Point(LCLObject.Left, LCLObject.Top);
-      Result := True;
+      // widget on a fixed, but fixed w/o window
+      prnt.Widget^.get_allocation(@alloc);
+      Dec(Apoint.X, alloc.x);
+      Dec(APoint.Y, alloc.y);
+      Result:=true;
     end;
   end;
+
+  if (self.getType=gtk_window_get_type()) then
+  begin
+    GdkWindow:=Self.Widget^.window;
+    if (GdkWindow<>nil) and (Self.FWidget^.get_mapped) then
+    begin
+      // window is mapped = window manager has put the window somewhere
+      gdk_window_get_root_origin(GdkWindow, @GtkLeft, @GtkTop);
+      APoint.X := GtkLeft;
+      APoint.Y := GtkTop;
+      Result:=true;
+    end else
+    begin
+      // the gtk has not yet put the window to the final position
+      // => the gtk/gdk position is not reliable
+      // => use the LCL coords
+      Apoint.X:=LCLObject.Left;
+      Apoint.Y:=LCLObject.Top;
+      Result:=true;
+    end;
+    //DebugLn(['TGtk3WidgetSet.GetWindowRelativePosition ',GetWidgetDebugReport(aWidget),' Left=',Left,' Top=',Top,' GdkWindow=',GdkWindow<>nil]);
+  end;
+  //DebugLn(['TGtk3WidgetSet.GetWindowRelativePosition ',GetWidgetDebugReport(aWidget),' Left=',Left,' Top=',Top]);
 end;
 
 procedure TGtk3Widget.Release;
