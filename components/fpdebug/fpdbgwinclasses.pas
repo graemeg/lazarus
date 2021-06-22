@@ -312,8 +312,7 @@ var
   _IsWow64Process: function (hProcess:HANDLE; WoW64Process: PBOOL):BOOL; stdcall = nil;
   _Wow64GetThreadContext: function (hThread: THandle; var   lpContext: WOW64_CONTEXT): BOOL; stdcall = nil;
   _Wow64SetThreadContext: function (hThread: THandle; const lpContext: WOW64_CONTEXT): BOOL; stdcall = nil;
-
-function DebugBreakProcess(Process:HANDLE): WINBOOL; external 'kernel32' name 'DebugBreakProcess';
+  _DebugBreakProcess: function(Process:HANDLE): WINBOOL; stdcall = nil;
 
 procedure LoadKernelEntryPoints;
 var
@@ -330,6 +329,7 @@ begin
   Pointer(_DebugActiveProcessStop) := GetProcAddress(hMod, 'DebugActiveProcessStop');
   Pointer(_DebugActiveProcess) := GetProcAddress(hMod, 'DebugActiveProcess');
   Pointer(_GetFinalPathNameByHandle) := GetProcAddress(hMod, 'GetFinalPathNameByHandleW');
+  Pointer(_DebugBreakProcess) := GetProcAddress(hMod, 'DebugBreakProcess');
   {$ifdef cpux86_64}
   Pointer(_IsWow64Process) := GetProcAddress(hMod, 'IsWow64Process');
   Pointer(_Wow64GetThreadContext) := GetProcAddress(hMod, 'Wow64GetThreadContext');
@@ -342,6 +342,7 @@ begin
   DebugLn(DBG_WARNINGS and (_DebugActiveProcessStop = nil), ['WARNING: Failed to get DebugActiveProcessStop']);
   DebugLn(DBG_WARNINGS and (_DebugActiveProcess = nil), ['WARNING: Failed to get DebugActiveProcess']);
   DebugLn(DBG_WARNINGS and (_GetFinalPathNameByHandle = nil), ['WARNING: Failed to get GetFinalPathNameByHandle']);
+  DebugLn(DBG_WARNINGS and (_DebugBreakProcess = nil), ['WARNING: Failed to get DebugBreakProcess']);
   {$ifdef cpux86_64}
   DebugLn(DBG_WARNINGS and (_IsWow64Process = nil), ['WARNING: Failed to get IsWow64Process']);
   DebugLn(DBG_WARNINGS and (_Wow64GetThreadContext = nil), ['WARNING: Failed to get Wow64GetThreadContext']);
@@ -1342,7 +1343,9 @@ begin
   //hndl := OpenProcess(PROCESS_CREATE_THREAD or PROCESS_QUERY_INFORMATION or PROCESS_VM_OPERATION or PROCESS_VM_WRITE or PROCESS_VM_READ, False, TargetPID);
   hndl := OpenProcess(PROCESS_ALL_ACCESS, false, ProcessID);
   PauseRequested:=true;
-  result := DebugBreakProcess(hndl);
+  Result := False;
+  if _DebugBreakProcess <> nil then
+    Result := _DebugBreakProcess(hndl);
   if not Result then begin
     DebugLn(DBG_WARNINGS, ['pause failed(1) ', GetLastError]);
     if (_CreateRemoteThread <> nil) and (DebugBreakAddr <> nil) then begin
