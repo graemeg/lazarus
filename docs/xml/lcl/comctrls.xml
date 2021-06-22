@@ -2600,7 +2600,7 @@
       <element name="TCustomTabControl.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
       <element name="TCustomTabControl.CreateWnd" link="#lcl.controls.TWinControl.CreateWnd"/>
 
-      <element name="TCustomTabControl.Loaded" link="#rtl.classes.TComponent.Loaded">
+      <element name="TCustomTabControl.Loaded">
         <short>
           Notifies the widgetset class of the active page when the control Handle is allocated.
         </short>
@@ -2609,7 +2609,9 @@
             Notifies the widgetset class of the value in PageIndex when the control Handle has been allocated.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.Loaded">TWinControl.Loaded</link>
+        </seealso>
       </element>
 
       <element name="TCustomTabControl.DoChange">
@@ -12127,11 +12129,11 @@
 
       <element name="TToolButton">
         <short>
-          <var>TToolButton</var> is a button control in a <var>TToolBar</var> object.
+          <var>TToolButton</var> is a button control used in a <var>TToolBar</var> object.
         </short>
         <descr>
           <p>
-            Use <var>TToolButton</var> to implement buttons on a toolbar. While other controls (including <var>TButton</var> and <var>TSpeedButton</var>) can be placed on toolbars, <var>TToolButton</var> utilizes special toolbar features to simplify the configuration of buttons and offers added display options such as pop-up borders and transparency.
+            Use <var>TToolButton</var> to implement buttons on a toolbar. While other controls (including <var>TButton</var> and <var>TSpeedButton</var>) can be placed on toolbars, <var>TToolButton</var> utilizes special toolbar features to simplify the configuration of buttons and offers added display options such as edge borders and transparency.
           </p>
           <p>
             To place tool buttons on a toolbar at design time, select the toolbar, right-click, and choose New Button.
@@ -12367,9 +12369,7 @@
       </element>
 
       <element name="TToolButton.FToolBar">
-        <short>
-          <var>FToolBar</var> - local variable indicating in which toolbar this button lives.
-        </short>
+        <short>Member variable with the tool bar where the button is used.</short>
         <descr/>
         <seealso/>
       </element>
@@ -12377,162 +12377,338 @@
       <element name="TToolButton.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TToolButton.CopyPropertiesFromMenuItem">
-        <short>
-          <var>CopyPropertiesFromMenuItem</var> - method for copying the properties of the corresponding Menu Item, to ensure that ToolButton and MenuItem produce the same behavior.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Copies properties from the specified menu item.</short>
+        <descr>
+          <p>
+            <var>CopyPropertiesFromMenuItem</var> is a method used to copy property value from the menu item in <var>Value</var> into the current class instance. This ensures that the button has the same settings and behavior as the menu item assigned to the button.
+          </p>
+          <p>
+            No actions are performed in the method when Value has not been assigned (<b>Nil</b>). Calls <var>BeginUpdate</var> on entry, and <var>EndUpdate</var> when the method is completed.
+          </p>
+          <p>
+            The following properties are copied from the menu item in Value:
+          </p>
+          <table>
+            <th>
+              <td>Source Property (in TMenuItem)</td>
+              <td>Target Property (in TToolButton)</td>
+            </th>
+            <tr>
+              <td>Action</td>
+              <td>Action </td>
+            </tr>
+            <tr>
+              <td>Caption</td>
+              <td>Caption </td>
+            </tr>
+            <tr>
+              <td>Checked</td>
+              <td>Down </td>
+            </tr>
+            <tr>
+              <td>Enabled</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Enabled</td>
+              <td>Enabled</td>
+            </tr>
+            <tr>
+              <td>Hint</td>
+              <td>Hint</td>
+            </tr>
+            <tr>
+              <td>ImageIndex</td>
+              <td>ImageIndex</td>
+            </tr>
+            <tr>
+              <td>Visible</td>
+              <td>Visible</td>
+            </tr>
+        </table>
+        <p>
+          CopyPropertiesFromMenuItem is called from the <var>Loaded</var> method when LCL component streaming has been completed, and when a new value is assigned to the <var>MenuItem</var> property.
+        </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.MenuItem"/>
+          <link id="TToolButton.Loaded"/>
+          <link id="TToolButton.BeginUpdate"/>
+          <link id="TToolButton.EndUpdate"/>
+          <link id="#lcl.menus.TMenuItem">TMenuItem</link>
+        </seealso>
       </element>
       <element name="TToolButton.CopyPropertiesFromMenuItem.Value">
-        <short/>
+        <short>Menu item with the properties copied in the method.</short>
       </element>
 
       <element name="TToolButton.GetActionLinkClass">
-        <short>
-          <var>GetActionLinkClass</var> - returns the Class of the ActionLink for this ToolButton.
-        </short>
-        <descr/>
+        <short>Gets the class type for the ActionLink in the tool button.</short>
+        <descr>
+          <p>
+            GetActionLinkClass is overridden in TWToolButton to return the <var>TToolButtonActionLink</var> type in <var>TToolButton</var>.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.controls.TControl.GetActionLinkClass">TControl.GetActionLinkClass</link>
+          <link id="#lcl.controls.TControlActionLinkClass">TControlActionLinkClass</link>
         </seealso>
       </element>
       <element name="TToolButton.GetActionLinkClass.Result">
-        <short/>
+        <short>Class type for the ActionLink in the tool button.</short>
       </element>
 
       <element name="TToolButton.ActionChange">
         <short>
-          <var>ActionChange</var> -  a method for changing the action associated with the Button.
+          Implements the handler signalled when the Action for the tool button is changed.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>ActionChange</var> is an overridden method which implements an event handler signalled when the <var>Action</var> for the tool button is changed.
+          </p>
+          <p>
+            The <var>Sender</var> argument is the new <var>TCustomAction</var> instance assigned to the Action property for the tool button.
+          </p>
+          <p>
+            <var>CheckDefaults</var> indicates when values from the action are copied into the control. When set to True, the values in the Action are applied only when its  property value has been assigned.
+          </p>
+          <p>
+            ActionChange calls the inherited method on entry to copy properties from Sender to the control. It provides support for translating the <var>Checked</var> property in the action to the <var>Down</var> property used in the tool button. It also changes the value in <var>ImageIndex</var> only when a valid image index has been assigned in the Action.
+          </p>
+        </descr>
         <seealso>
+          <link id="TToolButton.Down"/>
+          <link id="TToolButton.ImageIndex"/>
+          <link id="#lcl.actnlist.TCustomAction.Checked"/>
           <link id="#lcl.controls.TControl.ActionChange">TControl.ActionChange</link>
         </seealso>
       </element>
       <element name="TToolButton.ActionChange.Sender">
-        <short/>
+        <short>New action for the control, or Nil.</short>
       </element>
       <element name="TToolButton.ActionChange.CheckDefaults">
-        <short/>
+        <short>Indicates if the property in the action must be assigned (not empty).</short>
       </element>
 
       <element name="TToolButton.AssignTo">
         <short>
-          <var>AssignTo</var> calls inherited method: if the destination is of correct type, copies <var>ImageIndex</var> to destination and sets the Checked property.
+          Implements object persistence used to assign properties from the class instance to another persistent object.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>AssignTo</var> is an overridden method used to implement object persistence for the <var>TToolButton</var> class type. It allows properties in the class instance to be stored to  the persistent object in <var>Dest</var> when it is a <var>TCustomAction</var> instance.
+          </p>
+          <p>
+            AssignTo calls the inherited method on entry to transfer common TCustomAction values to Dest. Additional properties in the tool button, like Down and ImageIndex, are handled as well.
+          </p>
+        </descr>
         <seealso>
-          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
           <link id="#lcl.controls.TControl.AssignTo">TControl.AssignTo</link>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
+          <link id="#lcl.actnlist.TCustomAction">TCustomAction</link>
         </seealso>
       </element>
       <element name="TToolButton.AssignTo.Dest">
-        <short/>
+        <short>Persistent object where the property values are stored.</short>
       </element>
 
       <element name="TToolButton.BeginUpdate">
-        <short>
-          <var>BeginUpdate</var> - start the update process.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Starts an update process for the tool button.</short>
+        <descr>
+          <p>
+            Increments the internal counter used to consolidate calls to methods which layout or draw the control, or signal event handlers.
+          </p>
+          <p>
+            Use <var>EndUpdate</var> to end an update process for the control. The consolidated process(es) are performed when the internal counter reaches 0 (zero).
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.EndUpdate"/>
+        </seealso>
       </element>
 
       <element name="TToolButton.EndUpdate">
-        <short>
-          <var>EndUpdate</var> - finish the update process.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Ends an update process for the tool button.</short>
+        <descr>
+          <p>
+            Decrements the internal update counter used to consolidate calls to methods which layout or draw the control, or signal event handlers. The consolidated process(es) are performed when the internal counter reaches 0 (zero).
+          </p>
+          <p>
+            Use BeginUpdate to start an update process for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.BeginUpdate"/>
+        </seealso>
       </element>
 
-      <element name="TToolButton.MouseMove" link="#lcl.controls.TControl.MouseMove">
-          <short/>
-          <descr/>
+      <element name="TToolButton.MouseMove">
+          <short>
+            Detects whether the mouse is hovered over the drop-down indicator for the tool button.
+          </short>
+          <descr>
+            <p>
+              <var>MouseMove</var> is an overridden method in <var>TToolButton</var> used to handle mouse movement messages for the control. It provides support for detecting when the mouse pointer is hovered over the drop-down indicator for a tool bar button.
+            </p>
+            <p>
+              It calls the inherited method on entry to handle drag messages, and to signal the <var>OnMouseMove</var> event handler (when assigned).
+            </p>
+            <p>
+              If <var>MouseCapture</var> is not enabled for the control, and the button uses <var>tbsDropDown</var> in its <var>Style</var> property, the <var>PointInArrow</var> method is called is called to detect whether the mouse in inside the display area for the drop-down indicator. The value <var>tbfMouseInArrow</var> is include in or excluded from the flags for the tool button based on the return value from PointInArrow.
+            </p>
+            <p>
+              <var>Invalidate</var> is called to redraw the button if the flag values were modified.
+            </p>
+            <p>
+              MouseMove is called from the <var>WMMouseMove</var> message handler.
+            </p>
+          </descr>
           <seealso>
             <link id="#lcl.controls.TControl.MouseMove">TControl.MouseMove</link>
           </seealso>
         </element>
-      <element name="TToolButton.MouseMove.Shift"/>
-      <element name="TToolButton.MouseMove.X"/>
-      <element name="TToolButton.MouseMove.Y"/>
+      <element name="TToolButton.MouseMove.Shift">
+        <short>Shift, Ctrl, or Alt modifier for the mouse message.</short>
+      </element>
+      <element name="TToolButton.MouseMove.X">
+        <short>Horizontal coordinate for the mouse message.</short>
+      </element>
+      <element name="TToolButton.MouseMove.Y">
+        <short>Vertical coordinate for the mouse message.</short>
+      </element>
 
-      <element name="TToolButton.MouseDown" link="#lcl.controls.TControl.MouseDown">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolButton.MouseDown">
+        <short>Handles mouse click events for the tool button.</short>
+        <descr>
+          <p>
+            <var>MouseDown</var> is an overridden method in <var>TToolButton</var> used to perform actions needed when a mouse down (or click) event is handled for the button control.
+          </p>
+          <p>
+            MouseDown updates flags for the button control to indicate whether a left mouse button event occurred over the Button or its drop-down indicator (when used). The inherited method is called to handle a control or a form focus change, and to signal the OnMouseDown event handler (when assigned).
+          </p>
+          <p>
+            If the mouse event is over the drop-down indicator, the DropDownMenu when its AutoPopUp property is enabled. This requires sending a LM_LBUTTONUP message to ensure that the feature works for all widgetsets.
+          </p>
+          <p>
+            If the mouse event is over the button, the Down property is set to True.
+          </p>
+          <p>
+            MouseDown is called from window message handlers for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseDown">TControl.MouseDown</link>
+        </seealso>
       </element>
       <element name="TToolButton.MouseDown.Button">
-        <short/>
+        <short>Mouse button for the mouse message.</short>
       </element>
       <element name="TToolButton.MouseDown.Shift">
-        <short/>
+        <short>Shift, Alt, or Ctrl modifier for the mouse message.</short>
       </element>
       <element name="TToolButton.MouseDown.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse message.</short>
       </element>
       <element name="TToolButton.MouseDown.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse message.</short>
       </element>
 
-      <element name="TToolButton.MouseUp" link="#lcl.controls.TControl.MouseUp">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolButton.MouseUp">
+        <short>Handles mouse up events for the tool button.</short>
+        <descr>
+          <p>
+            <var>MouseUp</var> is an overridden method in TToolButton used to handle mouse up message events.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseUp">TControl.MouseUp</link>
+        </seealso>
       </element>
       <element name="TToolButton.MouseUp.Button">
-        <short/>
+        <short>Mouse button for the event.</short>
       </element>
       <element name="TToolButton.MouseUp.Shift">
-        <short/>
+        <short>Shift, Ctrl, or Alt modifier for the message.</short>
       </element>
       <element name="TToolButton.MouseUp.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse message.</short>
       </element>
       <element name="TToolButton.MouseUp.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse message.</short>
       </element>
 
-      <element name="TToolButton.MouseEnter" link="#lcl.controls.TControl.MouseEnter">
-        <short/>
+      <element name="TToolButton.MouseEnter">
+        <short>Handles a message sent when the mouse enters a control.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseEnter">TControl.MouseEnter</link>
+        </seealso>
       </element>
 
-      <element name="TToolButton.MouseLeave" link="#lcl.controls.TControl.MouseLeave">
-        <short/>
+      <element name="TToolButton.MouseLeave">
+        <short>Handles a message sent when the mouse lesaves a control.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseLeave">TControl.MouseLeave</link>
+        </seealso>
       </element>
 
-      <element name="TToolButton.Notification" link="#rtl.classes.TComponent.Notification">
-        <short/>
+      <element name="TToolButton.Notification">
+        <short>
+          Handles the notification sent when a component is added to or removed from the control.
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.Notification">TComponent.Notification</link>
+        </seealso>
       </element>
       <element name="TToolButton.Notification.AComponent">
-        <short/>
+        <short>Component for the notification message.</short>
       </element>
       <element name="TToolButton.Notification.Operation">
-        <short/>
+        <short>Operation performed for the component.</short>
       </element>
 
-      <element name="TToolButton.Paint" link="#lcl.controls.TGraphicControl.Paint">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolButton.Paint">
+        <short>Draws the tool bar button to the Canvas for the control.</short>
+        <descr>
+          <p>
+            <var>Paint</var> is an overridden method in <var>TToolButton</var>, and provides nested routines used to draw the the tool button using the style, caption, and image for the control. Paint requires <var>ToolBar</var> to be assigned before it can render the button control using the routines in the overridden method. When ToolBar is unassigned, only the inherited Paint method is called.
+          </p>
+          <p>
+            Paint calculates the area display area for the button, and calls GetButtonDrawDetail to get the Theme Element Details for the control.
+          </p>
+          <p>
+            When an OnPaintButton event handler has been assigned for the ToolBar, it is used to render the button using the theme details. No additional actions are performed in the method.
+          </p>
+          <p>
+            When OnPaintButton is unassigned, the default drawing routines are used to render the button on the Canvas for the control. This includes decorations like a drop-down indicator, an image using the required state, the Caption text, button relief, and dividers or separators. Methods in ThemeServices are called to render the control to the Handle for the Canvas.
+          </p>
+          <p>
+            Paint calls the inherited method prior to exit to signal the OnPaint event handler (when assigned).
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TGraphicControl.Canvas">TGraphicControl.Canvas</link>
+          <link id="#lcl.controls.TGraphicControl.Paint">TGraphicControl.Paint</link>
+          <link id="#lcl.controls.TGraphicControl.OnPaint">TGraphicControl.OnPaint</link>
+        </seealso>
       </element>
 
-      <element name="TToolButton.TextChanged" link="#lcl.controls.TControl.TextChanged">
+      <element name="TToolButton.TextChanged">
         <short/>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.TextChanged">TControl.TextChanged</link>
+        </seealso>
       </element>
 
-      <element name="TToolButton.CalculatePreferredSize" link="#lcl.controls.TControl.CalculatePreferredSize">
+      <element name="TToolButton.CalculatePreferredSize">
         <short/>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.CalculatePreferredSize">TControl.CalculatePreferredSize</link>
+        </seealso>
       </element>
 
       <element name="TToolButton.GetControlClassDefaultSize">
@@ -12544,36 +12720,44 @@
         </seealso>
       </element>
 
-      <element name="TToolButton.Loaded" link="#lcl.controls.TControl.Loaded">
-        <short/>
-        <descr/>
+      <element name="TToolButton.Loaded">
+        <short>Performs actions needed when LCL component streaming has been completed.</short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Calls CopyPropertiesFromMenuItem to apply values from MenuItem to the properties in the class instance.
+          </p>
+        </descr>
         <seealso>
-          <link id="#rtl.classes.TComponent.Loaded">TComponent.Loaded</link>
+          <link id="TToolButton.MenuItem"/>
+          <link id="TToolButton.CopyPropertiesFromMenuItem"/>
+          <link id="#lcl.controls.TControl.Loaded">TControl.Loaded</link>
+          <link id="#lcl.menus.TMenuItem">TMenuItem</link>
         </seealso>
       </element>
 
       <element name="TToolButton.RefreshControl">
-        <short>
-          <var>RefreshControl</var> - refreshes the drawing of the tool in case changes have been made.
-        </short>
+        <short>Refreshes the button control by updating it parent tool bar.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolButton.UpdateControl"/>
+          <link id="TToolBar"/>
+        </seealso>
       </element>
 
       <element name="TToolButton.SetToolBar">
         <short>
-          <var>SetToolBar</var> - records the existence of a new toolbar.
+          Sets the value for the internal member with the TToolBar instance for the button.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TToolButton.SetToolBar.NewToolBar">
-        <short/>
+        <short>New value for the internal member.</short>
       </element>
 
       <element name="TToolButton.UpdateControl">
         <short>
-          <var>UpdateControl</var> - brings the control up to date.
+          Causes the tool bar to adjust the size and position for its Buttons and Controls.
         </short>
         <descr/>
         <seealso/>
@@ -12581,49 +12765,127 @@
 
       <element name="TToolButton.GetButtonDrawDetail">
         <short>
-          <var>GetButtonDrawDetail</var> - find theme information for Windows XP implementations.
+          Gets the Theme Element Details used for the tool button.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            Uses values in <var>Style</var>, <var>Enabled</var>, and <var>Down</var> to determine the theme elements requested in the method. Calls <var>ThemeElement.GetElementDetails</var> to retrieve the theming details.
+          </p>
+          <p>
+            Called from the <var>Paint</var> method before the control is drawn.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
-      <element name="TToolButton.SetParent" link="#lcl.controls.TControl.SetParent">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolButton.SetParent">
+        <short>Sets the value for the Parent property.</short>
+        <descr>
+          <p>
+            <var>SetParent</var> is an overridden method in <var>TToolButton</var> used to set the value for the <var>Parent</var> property.
+          </p>
+          <p>
+            SetParent ensures that the control in AParent is assigned, and allows child classes using the TToolButton class type. An EInvalidOperation exception is raised if the class instance cannot be a child control on AParent, or AParent is also the current class instance.
+          </p>
+          <p>
+            When the parent tool bar has been assigned, the tool button must be re-parented. The RemoveButton method in the tool bar is called to remove the button from its existing Parent. If AParent is a TToolBar instance, its properties are used to set the ButtonWidth and ButtonHeight for the control. The inherited method is called to update both the old and new Parent references and their control flags.
+          </p>
+          <p>
+            The value in the internal tool bar member is set to the value in AParent, and the AddButton method in the tool bar is called. The UpdateVisibleToolbar method is calls to align and re-display the button control (and its tool bar).
+          </p>
+        </descr>
+        <errors>
+          Raises an EInvalidOperation exception if the class instance cannot be a child control on the new Parent, or the new AParent is also the current class instance.
+        </errors>
+        <seealso>
+          <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
+          <link id="#lcl.controls.TControl.SetParent">TControl.SetParent</link>
+        </seealso>
       </element>
       <element name="TToolButton.SetParent.AParent">
-        <short/>
+        <short>New value for the Parent property.</short>
       </element>
 
       <element name="TToolButton.UpdateVisibleToolbar">
         <short>
-          <var>UpdateVisibleToolbar</var> - updates just the visible part of the toolbar.
+          Calls the corresponding method in the tool bar for the button.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Calls a private method in the Parent control to update the tool bar buttons. No actions are performed if Parent is not a TToolBar instance, or unassigned.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar"/>
+          <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
+        </seealso>
       </element>
 
       <element name="TToolButton.GroupAllUpAllowed">
         <short>
-          <var>GroupAllUpAllowed</var> returns True if all buttons in a group are allowed to be 'Up'
+          Indicates if all buttons in the group are allowed to be in the 'Up' position.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Adjacent check box-style buttons (and their separators / dividers) with their Grouped property set to True are considered to be in the same group. GroupAllUpAllowed examines the adjacent tool buttons on the Parent tool bar to determine whether any of the grouped buttons have the AllowAllUp property set to True. When one grouped check-box button has AllowAllUp set, the remaining buttons in the group are treated in the same manner.
+          </p>
+          <remark>
+            Change the Grouped property to False on a separator or divider to force the preceeding or subseqent check-box buttons to be treated as a different group.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="TToolButton.Style"/>
+          <link id="TToolButton.Grouped"/>
+          <link id="TToolButton.AllowAllUp"/>
+          <link id="TToolButtonStyle"/>
+        </seealso>
       </element>
       <element name="TToolButton.GroupAllUpAllowed.Result">
-        <short/>
+        <short>
+          True when the AllowAllUp property is set for any of the adjacent grouped check-box buttons on the tool bar.
+          </short>
       </element>
 
-      <element name="TToolButton.DialogChar" link="#lcl.controls.TControl.DialogChar"/>
+      <element name="TToolButton.DialogChar">
+        <short>
+          Clicks the button when the message contains the accelerator key for the button control.
+        </short>
+        <descr>
+          <p>
+            Causes the tool button to be clicked when <var>Message</var> contains the accelerator key (shortcut) in the <var>Caption</var> for the button. <var>ShowCaptions</var> must be enabled in the <var>Parent</var> tool bar to allow the button to be clicked. If the message is not handled in the method, the inherited method is called.
+          </p>
+          <p>
+            The return value is <b>True</b> if the key message was handled as an accelerator key for the button control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.DialogChar">TControl.DialogChar</link>
+        </seealso>
+      </element>
+      <element name="TToolButton.DialogChar.Result">
+        <short>
+          True If the message was handled as an accelerator key for the tool bar button.
+        </short>
+      </element>
 
-      <element name="TToolButton.SetAutoSize" link="#lcl.controls.TControl.SetAutoSize">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolButton.SetAutoSize">
+        <short>
+          Sets the value the AutoSize property and adjusts the control size when needed.
+        </short>
+        <descr>
+          <p>
+            <var>SetAutoSize</var> is an overridden method in <var>TToolButton</var> used to set the value for the <var>AutoSize</var> property. It calls the inherited method to apply the new value for the property. It calls RequestAlign to adjust the size and alignment for the button control (and its siblings) on the Parent control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.AutoSize"/>
+          <link id="#lcl.controls.TControl.SetAutoSize">TControl.SetAutoSize</link>
+          <link id="#lcl.controls.TControl.RequestAlign">TControl.RequestAlign</link>
+          <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
+        </seealso>
       </element>
       <element name="TToolButton.SetAutoSize.Value">
-        <short/>
+        <short>New value for the AutoSize property.</short>
       </element>
 
       <element name="TToolButton.RealSetText" link="#lcl.controls.TControl.RealSetText">
@@ -12639,7 +12901,7 @@
         <short>Constructor for the class instance.</short>
         <descr>
           <p>
-            <var>Create</var> is the constructor for <var>TToolButton</var>. It calls the inherited <var>Create</var> method, and sets the initial values for the bounds and style properties.
+            <var>Create</var> is the constructor for <var>TToolButton</var>. It calls the inherited <var>Create</var> method, and sets the initial bounds for the control.  Default values for style-related properties are also assigned.
           </p>
         </descr>
         <seealso>
@@ -12652,52 +12914,114 @@
       </element>
 
       <element name="TToolButton.CheckMenuDropdown">
-        <short>
-          <var>CheckMenuDropdown</var> - returns True if there is a checked dropdown menu.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Checks for and executes a drop-down menu for the tool button.</short>
+        <descr>
+          <p>
+            <var>CheckMenuDropdown</var> is a <var>Boolean</var> function used to check whether a drop-down menu can be displayed and executed for the tool button.  The menu can be represented using either the <var>DropDownMenu</var> property (with  its <var>AutoPopUp</var> property set to <b>True</b>) or the <var>MenuItem</var> property.
+          </p>
+          <p>
+            No actions are performed in the method at design-time, when the parent tool bar has not been assigned, or when neither DropDownMenu nor MenuItem has been assigned.
+          </p>
+          <p>
+            When a menu is available, the flags for the tool button are updated to include the value <var>tbfDropDownMenuShown</var>. The CheckMenuDropdown method in the parent tool bar is called to display and execute the drop-down menu, and get the return value for the method. The return value is <b>True</b> if the menu was successfully display and executed by the parent tool bar. The button flags are reverted prior to exiting from the method.
+          </p>
+          <p>
+            CheckMenuDropdown is called from the <var>MouseDown</var> method when the left mouse button is clicked on a button (or its drop-down indicator).
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.DropDownMenu"/>
+          <link id="TToolButton.MenuItem"/>
+          <link id="TToolButton.Style"/>
+          <link id="TToolButton.MouseDown"/>
+          <link id="TToolBar.CheckMenuDropdown"/>
+        </seealso>
       </element>
       <element name="TToolButton.CheckMenuDropdown.Result">
-        <short/>
+        <short>
+          True if the drop-down menu for the button was successfully displayed and executed.
+        </short>
       </element>
 
       <element name="TToolButton.Click" link="#lcl.controls.TControl.Click"/>
 
       <element name="TToolButton.ArrowClick">
-        <short>Invokes the OnArrowClick event handler.</short>
+        <short>Signals the OnArrowClick event handler for the tool button.</short>
         <descr>
           <p>
-            Executed automatically when the user clicks the arrow for the DropDown-style control (<var>Style</var> is set to <var>tbsDropDown</var>) , and no value has been assigned to <var>DropDownMenu</var>.
+            <var>ArrowClick</var> is a method used to execute the <var>OnArrowClick</var> event handler (when assigned) for the tool button. ArrowClick is called from the <var>MouseDown</var> method when the left mouse button has been clicked on the drop-down indicator and the <var>DropDownMenu</var> for the button is not already visible.
+          </p>
+          <p>
+            See <var>Click</var> for informtion about the actions performed when the button has been clicked, instead of its drop-down indicator.
           </p>
         </descr>
         <seealso>
+          <link id="TToolButton.OnArrowClick"/>
+          <link id="TToolButton.Click"/>
+          <link id="TToolButton.MouseDown"/>
           <link id="TToolButton.Style"/>
           <link id="TToolButton.DropDownMenu"/>
+          <link id="TToolButton.MenuItem"/>
         </seealso>
       </element>
 
       <element name="TToolButton.GetCurrentIcon">
         <short>
-          <var>GetCurrentIcon</var> - finds the icon for the current button.
+          Gets the image list, index, and drawing effect for the icon on the tool button.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            GetCurrentIcon is a method used to get information for the icon drawn on the tool button. It returns values in the variable parameters with the scaled image list for the icon, its position in the image list, and the drawing effect for the image.
+          </p>
+          <p>
+            ImageList is the scaled image list with the images from the parent tool bar. It is re-created in the method and uses the image size from the parent tool bar scaled to the run-time display density (PPI). The images in the list are retrieved from the Images, HotImages, or DisabledImages properties in the parent tool bar and reflect the values in the Enabled property and the tool button flags. The default value is Nil (unassigned).
+          </p>
+          <p>
+            TheIndex is the position in the image list for the icon image. It defaults to the value in the ImageIndex property.
+          </p>
+          <p>
+            TheEffect is a TGraphicsDrawEffect value that indicates the drawing effect to apply to the tool button. It reflects the values in the Enabled property, flags for the tool button, and the toUseGlyphEffects setting in ThemeServices. The following values are used in TheEffect:
+          </p>
+          <dl>
+            <dt>gdeNormal</dt>
+            <dd>
+              Images are drawn using the normal, undecorated drawing effect. This is the default value.
+            </dd>
+            <dt>gdeShadowed</dt>
+            <dd>
+              Images are drawn using the shadowed effect when the button or drop-down indicator is  pressed.
+            </dd>
+            <dt>gdeHighlighted</dt>
+            <dd>
+              Images are drawn using highlighting when the button is Enabled and auto-effects are used in theme services. Otherwise, the tool bar HotImages or DisabledImages are used.
+            </dd>
+            <dt>gdeDisabled</dt>
+            <dd>
+              Images are drawn using the dimmed effect when the button is not Enabled, or tool bar DisabledImages are not available.
+            </dd>
+          </dl>
+          <p>
+            GetCurrentIcon is called from the Paint method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TToolButton.GetCurrentIcon.ImageList">
-        <short/>
+        <short>Scaled Image list with the available images for the icon.</short>
       </element>
       <element name="TToolButton.GetCurrentIcon.TheIndex">
-        <short/>
+        <short>Ordinal position in the image list for the icon image.</short>
       </element>
       <element name="TToolButton.GetCurrentIcon.TheEffect">
-        <short/>
+        <short>Graphic drawing effect needed for the button state.</short>
       </element>
 
-      <element name="TToolButton.GetPreferredSize" link="#lcl.controls.TControl.GetPreferredSize">
+      <element name="TToolButton.GetPreferredSize">
         <short/>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetPreferredSize">TControl.GetPreferredSize</link>
+        </seealso>
       </element>
       <element name="TToolButton.GetPreferredSize.PreferredWidth">
         <short/>
@@ -12714,7 +13038,7 @@
 
       <element name="TToolButton.Index">
         <short>
-          <var>Index </var>- is the sequence number for the current button in the list of buttons.
+          <var>Index </var>- is the sequence number for the button in ButtonList.
         </short>
         <descr>
           <p>
@@ -12729,7 +13053,7 @@
 
       <element name="TToolButton.PointInArrow">
         <short>
-          Indicates if the specified position is within the bounds for the arrow drawn on a drop- down-style control.
+          Indicates if the specified position is within the bounds for the arrow drawn on a drop-down button.
         </short>
         <descr/>
         <seealso/>
@@ -12748,53 +13072,62 @@
 
       <element name="TToolButton.AllowAllUp">
         <short>
+          Indicates if all buttons in a group can have their Down property set to False.
         </short>
         <descr>
           <p>
-            <var>AllowAllUp</var>, when True, indicates that all buttons are allowed to be  'Up' at the same time. The default value for the property is False, and indicates that one of the buttons must be in the 'Down' state.
+            <var>AllowAllUp</var>, when True, indicates that all buttons in a group are allowed to be  'Up' at the same time. The default value for the property is False, and indicates that one of the grouped buttons must have its Down property set to True.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.Grouped"/>
+          <link id="TToolButton.Down"/>
+        </seealso>
+      </element>
+
+      <element name="TToolButton.AutoSize">
+        <short>Allows the control to grow to the size for its content.</short>
+        <descr>
+          <p>
+            Allows automatic adjustment of the size for the control, according to its content.
+            The action performed depends on the control type. For example, a label or button can become bigger or smaller to accommodate a longer or shorter caption.
+          </p>
+          <p>
+            Default value for the property is False, and disables auto-sizing for the control instance.
+          </p>
+          <p>
+            The write access specifier is overridden in TToolButton to resize and align the tool button and its parent tool bar when needed.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.SetAutoSize"/>
+          <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
+        </seealso>
+      </element>
+
+      <element name="TToolButton.Caption" link="#lcl.controls.TControl.Caption"/>
+
+      <element name="TToolButton.Down">
+        <short>
+          Is this button <var>Down</var> (i.e. has it been selected)? Default false.
+        </short>
+        <descr>
+          <p>
+            <var>Down</var> is a <var>Boolean</var> property which indicates if the tool button is in a "pressed" or "down" state. The default value for the property is <b>False</b>.
+          </p>
+          <p>
+            When the value for the property is changed to <b>True</b> in a check-box button (<var>Style</var> = <var>tbsCheck</var>), other buttons on the parent tool bar are also updated. Adjacent buttons with their <var>Grouped</var> property set to <b>True</b> are checked to ensure that their Down property is set to <b>False</b>. The button(s) are redrawn if their Down property was changed. The <var>ToolButtonDown</var> method in the parent tool bar is called to set the button state in the tool bar to the new property value. The button and the tool bar are redrawn following the change.
           </p>
         </descr>
         <seealso/>
       </element>
 
-      <element name="TToolButton.AutoSize" link="#lcl.controls.TControl.AutoSize">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolButton.Caption" link="#lcl.controls.TControl.Caption">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolButton.Down">
-        <short>Is this button <var>Down</var> (i.e. has it been selected)? Default false.</short>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolButton.DragCursor" link="#lcl.controls.TControl.DragCursor">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolButton.DragKind" link="#lcl.controls.TControl.DragKind">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolButton.DragMode" link="#lcl.controls.TControl.DragMode">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolButton.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TToolButton.DragKind" link="#lcl.controls.TControl.DragKind"/>
+      <element name="TToolButton.DragMode" link="#lcl.controls.TControl.DragMode"/>
 
       <element name="TToolButton.DropdownMenu">
-        <short>A <var>DropDownMenu</var> that appears when this button is selected.</short>
+        <short>The drop-down menu that appears when the button is pressed.</short>
         <descr>
           <p>
             A <var>DropDownMenu</var> that appears when this button is selected.
@@ -12805,14 +13138,27 @@
         </descr>
       </element>
 
-      <element name="TToolButton.Enabled" link="#lcl.controls.TControl.Enabled">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolButton.Enabled">
+        <short>
+          Determines whether the button can respond to click events, and how it is displayed.
+        </short>
+        <descr>
+          <p>
+            <var>Enabled</var> is a <var>Boolean</var> property which determines whether the tool button can respond to mouse click events at run-time. Enabled, along with <var>Down</var>, <var>Style</var>,  and values in the tool bar flags influence how the button is rendered in the <var>Paint</var> method.
+          </p>
+          <p>
+            The value for the property may be changed in the <var>CopyPropertiesFromMenuItem</var> method, or when the <var>CM_ENABLEDCHANGED</var> control message is handled for the button.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Enabled">TControl.Enabled</link>
+        </seealso>
       </element>
 
       <element name="TToolButton.Grouped">
-        <short>Is this button a member of a group? Default false.</short>
+        <short>
+          Indicates if the tool button is a member of a group. The default value is False.
+        </short>
         <descr>
           <p>Is this button a member of a group?</p>
           <p>
@@ -12821,50 +13167,129 @@
         </descr>
       </element>
 
-      <element name="TToolButton.Height" link="#lcl.controls.TControl.Height">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolButton.Height">
+        <short>Contains the height for the control in pixels.</short>
+        <descr>
+          <p>
+            <var>Height</var> is an <var>Integer</var> property with the vertical size in pixels for the tool button. Height is normally set to the value in the ButtonHeight property for the parent tool bar.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.ButtonHeight"/>
+          <link id="TToolBar.ButtonWidth"/>
+          <link id="TToolButton.Width"/>
+          <link id="#lcl.controls.TControl.Height">TControl.Height</link>
+        </seealso>
       </element>
 
       <element name="TToolButton.ImageIndex">
         <short>
-          <var>ImageIndex </var>- the index value of the image from the imagelist to be used with this button.
+          Ordinal position in an image list for the icon displayed on the tool button.
         </short>
+        <descr>
+          <p>
+            <var>ImageIndex</var> is a <var>TImageIndex</var> property with the ordinal position in an image list for the icon displayed on the tool button. It refers to a position in <var>Images</var>, <var>HotImages</var>, or <var>DisabledImages</var> in the parent tool bar. The default value for the property is <b>-1</b>, and indicates that an image has not been specified for the tool button. Changing the value for the property causes the tool button to be redrawn.
+          </p>
+          <p>
+            The property value may be changed in the <var>CopyPropertiesFromMenuItem</var> method when a <var>MenuItem</var> is assigned to the tool button.
+          </p>
+          <p>
+            ImageIndex is used in the <var>Paint</var> method to select the icon drawn on the tool button.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.Paint"/>
+          <link id="TToolButton.GetCurrentIcon"/>
+          <link id="TToolButton.MenuItem"/>
+          <link id="TToolButton.CopyPropertiesFromMenuItem"/>
+          <link id="TToolBar.Images"/>
+          <link id="TToolBar.HotImages"/>
+          <link id="TToolBar.DisabledImages"/>
+        </seealso>
       </element>
 
       <element name="TToolButton.Indeterminate">
         <short>
           <var>Indeterminate</var> - if True, this button is in an unspecified state. Default False.
         </short>
-        <descr/>
+        <descr>
+          Indeterminate is a Boolean property which indicates that the tool button is in an undetermined state and may not be applicable to the current context. Indeterminate means that the button is neither selected nor unselected, and normally causes it to be displayed with a "grayed" or "dimmed" appearance.
+
+          The default value for the property is False. When the property value is changed to True, the Down property is automatically set to False and the tool button is redrawn.
+
+          Indeterminate is used in the
+        </descr>
         <seealso/>
       </element>
 
       <element name="TToolButton.Marked">
-        <short>Is this button <var>Marked</var> (i.e. has it been selected)? Default false.
-      </short>
-      <descr/>
-      <seealso/>
+        <short>Indicates if the tool button is marked.</short>
+        <descr>
+          <p>
+            <var>Marked</var> is a <var>Boolean</var> property which indicates if the tool button is marked. The default value for the property is False.
+          </p>
+          <p>
+            Marked is  provided for Delphi code compatibility; it is not used in the implementation of <var>TToolButton</var> or <var>TToolBar</var>.
+          </p>
+        </descr>
+        <seealso/>
       </element>
 
       <element name="TToolButton.MenuItem">
-        <short>The item on the Main Menu with which this tool button is associated.</short>
+        <short>Contains a menu item associated with the tool button.</short>
         <descr>
-          <p>The item on the Main Menu with which this tool button is associated.</p>
-          <p>Typically the buttons on the toolbar would each point to an entry on the menu action list which could also be accessed by using the Main Menu.</p>
+          <p>
+            <var>MenuItem</var> is a <var>TMenuItem</var> property which contains a menu item associated with the tool button.
+          </p>
+          <p>
+            Normally, a button on an application tool bar is associated with a menu item in the application. When a TMenuItem instance is assigned to the property, its property values are copied into the <var>TToolButton</var> instance using the <var>CopyPropertiesFromMenuItem</var> method. If MenuItem is set to <b>Nil</b>, a free notification is performed for the tool button instance.
+          </p>
+          <p>
+            When MenuItem has sub-menu <var>Items</var>, they are displayed as a drop-down when the tool button uses a drop-down <var>Style</var>.
+          </p>
+          <p>
+            Use <var>DropDownMenu</var> to specify a <var>TPopupMenu</var> instance that is displayed when the button (or drop-down indicator) for the tool button is clicked.
+          </p>
         </descr>
+        <seealso/>
       </element>
 
       <element name="TToolButton.OnArrowClick">
-        <short>Executed when user clicked the arrow part for Style=tbsDropDown.</short>
-        <descr>It is not executed if DropDownMenu is assigned.</descr>
+        <short>
+          Event handler signalled when the drop-down indicator for a tool button is clicked.
+        </short>
+        <descr>
+          <p>
+            <var>OnArrowClick</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the drop-down indicator is clicked on a tool button using a drop-down <var>Style</var>.
+          </p>
+          <p>
+            OnArrowClick is signalled from the <var>ArrowClick</var> method (when assigned), and occurs when the left mouse button was clicked on the drop-down indicator. It is not executed if the <var>DropDownMenu</var> has already been displayed.
+          </p>
+          <p>
+            Use <var>OnClick</var> (or OnExecute in the Action) for the event handler signalled when the tool button was clicked.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.Style"/>
+          <link id="TToolButton.ArrowClick"/>
+          <link id="TToolButton.Click"/>
+          <link id="TToolButton.DropDownMenu"/>
+          <link id="#lcl.controls.TControl.OnClick">OnClick</link>
+        </seealso>
       </element>
 
       <element name="TToolButton.OnClick" link="#lcl.controls.TControl.OnClick">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Event handler signalled when the tool button has been clicked.</short>
+        <descr>
+          <p>
+            <var>OnClick</var> is a <var>TNotifyEvent</var> property with the event handler signalled when the left mouse button is clicked on the tool button.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.Style"/>
+          <link id="TToolButton.OnArrowClick"/>
+          <link id="#lcl.controls.TControl.OnClick">TControl.OnClick</link>
+        </seealso>
       </element>
 
       <element name="TToolButton.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
@@ -12886,8 +13311,11 @@
       <element name="TToolButton.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
 
       <element name="TToolButton.ShowCaption">
-        <short>Show/Hide caption.</short>
-        <descr>The ToolBar.ShowCaptions has precedence. Hiding will only work if ToolBar.List is true.
+        <short>Indicates if the Caption text is displayed on the tool button.</short>
+        <descr>
+          <p>
+            The ToolBar.ShowCaptions has precedence. Hiding will only work if ToolBar.List is true.
+          </p>
         </descr>
       </element>
 
@@ -12895,7 +13323,11 @@
 
       <element name="TToolButton.Style">
         <short>Determines the style of the tool button.</short>
-        <descr>See TToolButtonStyle for the possible Style values.</descr>
+        <descr>
+          <p>
+            See TToolButtonStyle for the possible Style values.
+          </p>
+        </descr>
         <seealso>
           <link id="TToolButtonStyle"/>
         </seealso>
@@ -12906,7 +13338,11 @@
       <element name="TToolButton.Width" link="#lcl.controls.TControl.Width"/>
 
       <element name="TToolButton.Wrap">
-        <short>Has this button been wrapped to the next row?</short>
+        <short>
+          Indicates whether the tool button is forced onto the next row on the parent tool bar.
+        </short>
+        <descr/>
+        <seealso/>
       </element>
 
       <element name="TToolBarEnumerator">
@@ -12965,30 +13401,63 @@
 
       <element name="TToolBarFlag">
         <short>
-          <var>TToolBarFlag</var> - enumerated type for flags denoting status of ToolBar.
+          Contains values used as status flags in the TToolBar control.
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolBarFlags"/>
+          <link id="TToolBar"/>
+        </seealso>
       </element>
       <element name="TToolBarFlag.tbfUpdateVisibleBarNeeded">
-        <short/>
+        <short>Indicates the tool bar control needs to be redrawn.</short>
       </element>
       <element name="TToolBarFlag.tbfPlacingControls">
-        <short/>
+        <short>Indicates a button or other control has been moved on a tool bar control.</short>
       </element>
 
       <element name="TToolBarFlags">
-        <short>
-          <var>TToolBarFlags</var> - set of <var>TToolBarFlag</var>.
-        </short>
+        <short>Set type used to store values from the TToolBarFlag enumeration.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolBarFlag"/>
+        </seealso>
       </element>
 
       <element name="TToolBar">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Implements an application tool bar with buttons or other visual controls.
+        </short>
+        <descr>
+          <p>
+            <var>TToolBar</var> is <var>TToolWindow</var> descendant which implements a control used to arrange and  display buttons and other controls. The buttons are used to provide direct access to features or functions in the application, much like a menu.
+          </p>
+          <p>
+            A tool bar is normally aligned to an edge for the parent control so that it spans its width or height. The default alignment places the tool bar along the top edge of the parent control.
+          </p>
+          <p>
+            In basic usage, TToolBar allows TToolButton instances with the same height and width to be added to the control. The buttons can be displayed as check boxes, drop downs (combo-boxes), or drop down buttons as well. The tool bar can be configured to display images and/or captions, as well as dividers (thin) or separators (dividers with extra spacing) between buttons.
+          </p>
+          <p>
+            Other visual controls can be created using the tool bar as the parent control. These controls are resized to the width or height (depending on alignment) for the tool bar.
+          </p>
+          <p>
+            The tool bar can be configured to wrap buttons or child controls when the controls will not fit within the dimension for the tool bar alignment. Other visual aspects can be controlled, like use of edges around the tool bar or a flat appearance.
+          </p>
+          <p>
+            Use the Buttons property to access and maintain the tool buttons on the control. Use Controls to access other visual control types on the tool bar.
+          </p>
+          <p>
+            Use the OnPaint event handler to perform custom drawing on the tool bar control when the Paint method is called. Use the OnPaintButton event handler to perform custom drawing for individual tool buttons on the control.
+          </p>
+          <p>
+            TToolBar is the ancestor for the TExtendedTabToolBar in the LazControls package.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton"/>
+          <link id="#lcl.toolwin.TToolWindow">TToolWindow</link>
+        </seealso>
       </element>
 
       <element name="TToolBar.FOnPaint"/>
@@ -13025,9 +13494,19 @@
       <element name="TToolBar.FImagesWidth"/>
 
       <element name="TToolBar.ApplyFontForButtons">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Assigns the Font for the control to each of its Buttons.</short>
+        <descr>
+          <p>
+            Called from the <var>FontChanged</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.ButtonCount"/>
+          <link id="TToolBar.Buttons"/>
+          <link id="TToolBar.FontChanged"/>
+          <link id="TToolBarButton"/>
+          <link id="#lcl.controls.TControl.Font">TControl.Font</link>
+        </seealso>
       </element>
 
       <element name="TToolBar.CloseCurrentMenu">
@@ -13295,136 +13774,210 @@
       </element>
 
       <element name="TToolBar.cDefButtonWidth">
-        <short/>
+        <short>Default width for tool buttons on the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TToolBar.cDefButtonHeight">
-        <short/>
+        <short>Default height for tool buttons on the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TToolBar.FPrevVertical">
-        <short/>
+        <short>Member which indicates if the previous tool bar orientation was vertical.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TToolBar.IsVertical">
-        <short/>
-        <descr/>
+        <short>
+          Indicates if the tool bar is oriented to display buttons and controls vertically.
+        </short>
+        <descr>
+          <p>
+            <var>IsVertical</var> is a <var>Boolean</var> function in <var>TToolBar</var> used to determine if the tool bar displays its buttons or controls using a vertical orientation. The return value is determined by the value in the Align property, as follows:
+          </p>
+          <dl>
+            <dt>alLeft, alRight</dt>
+            <dd>The return value is True.</dd>
+            <dt>alNone, alClient, alCustom</dt>
+            <dd>The return value is True when Height is larger than Width.</dd>
+          </dl>
+          <p>
+            If the tool bar is parented by a <var>TCoolBar</var> control, the value in its <var>Vertical</var> property is used as the return value.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TToolBar.IsVertical.Result">
-        <short/>
+        <short>True when the buttons on the control are displayed vertically.</short>
       </element>
 
-      <element name="TToolBar.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
+      <element name="TToolBar.WSRegisterClass">
+        <short>Registers the tool bar class in the widgetset.</short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Calls RegisterToolBar in the widgetset class to ensure that the TToolBar compoenent is registered with the factory methods (when needed).
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.lclclasses.TLCLComponent.WSRegisterClass">TLCLComponent.WSRegisterClass</link>
+        </seealso>
+      </element>
 
-      <element name="TToolBar.AdjustClientRect" link="#lcl.controls.TWinControl.AdjustClientRect"/>
+      <element name="TToolBar.AdjustClientRect">
+        <short/>
+        <descr/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.AdjustClientRect">TWinControl.AdjustClientRect</link>
+        </seealso>
+      </element>
 
       <element name="TToolBar.ButtonHeightIsStored">
-        <short/>
+        <short>Implements the storage specifier for the ButtonHeight property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TToolBar.ButtonHeightIsStored.Result">
-        <short/>
+        <short>True when ButtonHeight is 0 or larger.</short>
       </element>
 
       <element name="TToolBar.ButtonWidthIsStored">
-        <short/>
+        <short>Implements the storage specifier for the ButtonWidth property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TToolBar.ButtonWidthIsStored.Result">
-        <short/>
+        <short>True when ButtonWidth is 0 or larger.</short>
       </element>
 
       <element name="TToolBar.DropDownWidthIsStored">
-        <short/>
+        <short>Implements the storage specifier for the DropDownWidth property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TToolBar.DropDownWidthIsStored.Result">
-        <short/>
+        <short>True when DropDownWidth is 0 or larger.</short>
       </element>
 
       <element name="TToolBar.GetControlClassDefaultSize">
-        <short>
-          <var>GetControlClassDefaultSize</var> - returns its own defaults, overriding the inherited values.
-        </short>
-        <descr/>
+        <short>Gets the default size for new instances of the class type.</short>
+        <descr>
+          <p>
+            Uses a default size of 150 pixels (Width) by 26 pixels (Height).
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.controls.TControl.GetControlClassDefaultSize">TControl.GetControlClassDefaultSize</link>
         </seealso>
       </element>
 
       <element name="TToolBar.DoAutoSize">
-        <short/>
+        <short>Defers auto-sizing to the AlignControls method.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolBar.AlignControls"/>
+        </seealso>
       </element>
 
       <element name="TToolBar.CalculatePreferredSize" link="#lcl.controls.TControl.CalculatePreferredSize"/>
 
       <element name="TToolBar.CheckMenuDropdown">
         <short>
-          <var>CheckMenuDropdown</var> - returns True if there is a checked dropdown menu.
+          Determines whether the specified button has a drop-down menu item which must be checked.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Called from the <var>TToolButton.CheckMenuDropdown</var> method when the tool button is clicked.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.CheckMenuDropdown"/>
+        </seealso>
       </element>
       <element name="TToolBar.CheckMenuDropdown.Result">
-        <short/>
+        <short>True if the menu item for the button was checked (clicked) in the method.</short>
       </element>
       <element name="TToolBar.CheckMenuDropdown.Button">
-        <short/>
+        <short>Tool button examined in the method.</short>
       </element>
 
       <element name="TToolBar.ClickButton">
-        <short>
-          <var>ClickButton</var> - software emulation of the <var>OnClick</var> event.
-        </short>
+        <short>Calls the Click method for the specified tool button.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TToolBar.ClickButton.Button">
-        <short/>
+        <short>Tool bar button executed in the method.short></short>
       </element>
 
-      <element name="TToolBar.CreateWnd" link="#lcl.controls.TWinControl.CreateWnd">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolBar.CreateWnd">
+        <short>Performs actions needed when the Handle for the control is created.</short>
+        <descr>
+          <p>
+            Disables auto-sizing on entry, and re-enables auto-sizing prior to exiting from the method.
+          </p>
+          <p>
+            Calls the inherited method to update creation parameters and flags, and to initialize the window handle for the control. Calls UpdateVisibleToolbar to size and align the buttons and controls on the tool bar.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.CreateWnd">TWinControl.CreateWnd</link>
+        </seealso>
       </element>
 
-      <element name="TToolBar.AlignControls" link="#lcl.controls.TWinControl.AlignControls">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TToolBar.AlignControls">
+        <short>
+          Performs actions to align the tool bar buttons in the specified rectangle.
+        </short>
+        <descr>
+          <p>
+            <var>AlignControls</var> is an overridden method in <var>TToolBar</var> and re-implements the method from the ancestor class. It does not call the inherited method.
+          </p>
+          <p>
+            No actions are performed in the method when <var>tbfPlacingControls</var> has already been included in the flags for the tool bar. This indicates that AlignControls has already been called, but not yet completed.
+          </p>
+          <p>
+            <var>DisableAlign</var> is called to prevent automatic alignment while the method is active. <var>WrapButtons</var> is called to position the buttons and controls in <var>RemainingClientRect</var> using the setting in <var>Wrapable</var> and the value from <var>IsVertical</var>. <var>EnableAlign</var> is called to re-enable alignment when the buttons have been positioned.
+          </p>
+          <p>
+            <var>tbfPlacingControls</var> is removed from the tool bar flags prior to exiting from the method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.IsVertical"/>
+          <link id="TToolBar.Wrapable"/>
+          <link id="TToolBar.WrapButtons"/>
+          <link id="#lcl.controls.TWinControl.AlignControls">TWinControl.AlignControls</link>
+        </seealso>
       </element>
       <element name="TToolBar.AlignControls.AControl">
-        <short/>
+        <short>Not used in the overridden method</short>
       </element>
       <element name="TToolBar.AlignControls.RemainingClientRect">
-        <short/>
+        <short>Rectangle with the bounds where the tool bar and its buttons are aligned.</short>
       </element>
 
       <element name="TToolBar.FindButtonFromAccel">
-        <short>
-          <var>FindButtonFromAccel</var> - returns the Button corresponding to the specified accelerator key.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Gets the tool bar button with the specified accelerator key.</short>
+        <descr>
+          <p>
+            <var>FindButtonFromAccel</var> is a <var>TToolButton</var> function used to find the tool button with the accelerator key (virtual key code) value specified in <var>Accel</var>. FindButtonFromAccel visits the Visible and Enabled <var>Buttons</var> to find the TToolButton instance using the specified accelerator key in its caption. The return value is <b>Nil</b> if a tool button is not found using the specified accelerator key.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolButton.Enabled"/>
+          <link id="TToolButton.Visible"/>
+          <link id="#lcl.forms.IsAccel">IsAccel</link>
+        </seealso>
       </element>
       <element name="TToolBar.FindButtonFromAccel.Result">
-        <short/>
+        <short>Tool button using the specified shortcut, or Nil when not found.</short>
       </element>
       <element name="TToolBar.FindButtonFromAccel.Accel">
-        <short/>
+        <short>Shortcut or accelerator key to locate in the tool bar buttons.</short>
       </element>
 
       <element name="TToolBar.FontChanged">
@@ -13436,31 +13989,51 @@
             <var>FontChanged</var> is an overridden procedure which performs action needed when the <var>Font</var> for the control has been changed. FontChanged calls the inherited FontChanged method, and applies the new font to the Buttons in the tool bar. Values are reset in internal members used to track the realized height and width for buttons and drop downs in the tool bar.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TToolBar.Buttons"/>
+          <link id="#lcl.controls.TCustomControl.FontChanged">TCustomControl.FontChanged</link>
+        </seealso>
       </element>
 
       <element name="TToolBar.Loaded" link="#lcl.controls.TWinControl.Loaded">
         <short>
           Performs actions needed when the control has finished loading from the LCL streaming mechanism.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Calls UpdateVisibleBar to adjust the size and layout for Buttons on the tool bar.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.Loaded">TWinControl.Loaded</link>
+        </seealso>
       </element>
 
       <element name="TToolBar.Notification" link="#lcl.controls.TControl.Notification">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Handles notifications for components added or removed from the control.
+        </short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Ensures that the <var>DisabledImages</var>, <var>HotImages</var>, and <var>Images</var> properties are Nil'd if their image list is removed from the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.DisabledImages"/>
+          <link id="TToolBar.HotImages"/>
+          <link id="TToolBar.Images"/>
+          <link id="#lcl.controls.TControl.Notification">TControl.Notification</link>
+        </seealso>
       </element>
       <element name="TToolBar.Notification.AComponent">
-        <short/>
+        <short>Component of the notification message.</short>
       </element>
       <element name="TToolBar.Notification.Operation">
-        <short/>
+        <short>Action which triggered the notification.</short>
       </element>
 
       <element name="TToolBar.Paint" link="#lcl.controls.TCustomControl.Paint">
-        <short>Displays the tool bar.</short>
+        <short>Draws the tool bar on the Canvas for the control.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure used to display the tool bar.  At design-time, a Red rectangle is drawn as a frame for the control. Paint calls the inherited Paint method to draw the inner and outer borders defined for the control. Paint signals the <var>OnPaint</var> event handler (when assigned) to perform drawing operations required for the tool bar.
@@ -13574,62 +14147,141 @@
       </element>
 
       <element name="TToolBar.EndUpdate">
-        <short>
-          <var>EndUpdate</var> - finishes the update process.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Finishes an update process for the tool bar.</short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Updates the size and layout for <var>Buttons</var> when the internal update counter is <b>0</b> (<b>zero</b>) and <var>tbfUpdateVisibleBarNeeded</var>  has been included in the flags for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.Buttons"/>
+          <link id="TToolBar.AlignControls"/>
+          <link id="TToolBarFlag"/>
+          <link id="#lcl.toolwin.TToolWindow.EndUpdate">TToolWindow.EndUpdate</link>
+          <link id="#lcl.toolwin.TToolWindow.BeginUpdate">TToolWindow.BeginUpdate</link>
+        </seealso>
       </element>
 
-      <element name="TToolBar.FlipChildren" link="#lcl.controls.TWinControl.FlipChildren">
-        <short/>
+      <element name="TToolBar.FlipChildren">
+        <short>Disables reversing right and left alignment for child controls.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolBar.AlignControls"/>
+          <link id="#lcl.controls.TWinControl.FlipChildren">TWinControl.FlipChildren</link>
+        </seealso>
       </element>
       <element name="TToolBar.FlipChildren.AllLevels">
-        <short/>
+        <short>Not used in the overridden method.</short>
       </element>
 
       <element name="TToolBar.GetEnumerator">
         <short>Gets a TToolBarEnumerator enumerator for the class instance.</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Creates a new <var>TToolBarEnumerator</var> instance using the current control as the owner.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBarEnumerator"/>
+        </seealso>
       </element>
       <element name="TToolBar.GetEnumerator.Result">
-        <short>Enumerator class instance created in the method.</short>
+        <short>Tool bar enumerator created in the method.</short>
       </element>
 
       <element name="TToolBar.SetButtonSize">
         <short>
-          <var>SetButtonSize</var> - stores new values for height and width.
+          Sets the width and height for Buttons on the control to the specified values.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            SetButtonSize is a convenience method used to assign values for the ButtonWidth and ButtonHeight properties in a single method call. It is called when a new value is assigned to the <var>ButtonWidth</var> or  <var>ButtonHeight</var> properties.
+          </p>
+          <p>
+            For example:
+          </p>
+<code>
+AToolbar.SetButtonSize(32, 30);
+</code>
+          <p>
+            is equivalent to:
+          </p>
+<code>
+AToolbar.ButtonWidth := 32;
+AToolbar.ButtonHeight := 30;
+</code>
+          <p>
+            The existing value in the property is kept when it is the same as the new value. No actions are performed in the method when neither value has been changed, or when BeginUpdate has already been called.
+          </p>
+          <p>
+            SetButtonSize visits each of the Buttons on the control to apply the changed values to the corresponding TToolButton properties. The button might not be updated if any of the following conditions are found.
+          </p>
+          <p>
+            For button width:
+          </p>
+          <ul>
+            <li>The new value is 0.</li>
+            <li>
+              The new value is too small for the width needed in a check box or drop-down style button.
+            </li>
+            <li>The tool button has AutoSize enabled.</li>
+            <li>The control is not derived from TToolButton.</li>
+          </ul>
+          <p>
+            For button height:
+          </p>
+          <ul>
+            <li>
+              In horizontal toolbars the height is set by the toolbar independent of the assigned size.
+            </li>
+          </ul>
+          <p>
+            SetButtonSize calls the SetBounds method in each tool bar button to apply the values in NewButtonWidth and NewButtonHeight.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.ButtonWidth"/>
+          <link id="TToolBar.ButtonHeight"/>
+          <link id="TToolBar.Buttons"/>
+        </seealso>
       </element>
       <element name="TToolBar.SetButtonSize.NewButtonWidth">
-        <short/>
+        <short>New value for the ButtonWidth property.</short>
       </element>
       <element name="TToolBar.SetButtonSize.NewButtonHeight">
-        <short/>
+        <short>New value for the ButtonHeight property.</short>
       </element>
 
-      <element name="TToolBar.CanFocus" link="#lcl.controls.TWinControl.CanFocus">
+      <element name="TToolBar.CanFocus">
         <short>Always returns False for TToolBar.</short>
+        <descr>
+          <p>
+            The tool bar cannot be given focus, but its buttons or controls can.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.CanFocus">TWinControl.CanFocus</link>
+        </seealso>
       </element>
       <element name="TToolBar.CanFocus.Result">
         <short>Always returns False for TToolBar.</short>
       </element>
 
       <element name="TToolBar.ButtonCount">
-        <short>
-          <var>ButtonCount</var> - the number of buttons on the ToolBar.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Number of Buttons defined for the tool bar control.</short>
+        <descr>
+          <p>
+            The property value is read from the <var>Count</var> property in <var>ButtonList</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.ButtonList"/>
+          <link id="#rtl.classes.TList.Count">TList.Count</link>
+        </seealso>
       </element>
 
       <element name="TToolBar.Buttons">
-        <short>Lists the tool buttons (<var>TToolButton</var>) in the toolbar.</short>
+        <short>Lists with the tool buttons on the tool bar.</short>
         <descr>
           <p>
             <var>Buttons</var> maintains a list of <var>TToolButton</var> instances. All tool buttons that share a <var>TToolBar</var> parent have the same height and (except for separators and dividers) the same width. Other controls on a toolbar are held in place by invisible separators, which are automatically created and destroyed.
@@ -13649,24 +14301,50 @@
 
       <element name="TToolBar.ButtonList">
         <short>
-          <var>ButtonList</var> - the list of Buttons (as a <var>TList</var>).
+          Contains the Buttons defined for the tool bar control.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TToolBar.RowCount">
-        <short>
-          <var>RowCount</var> - the number of Rows of Buttons.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Number of rows needed to display the buttons for the control.</short>
+        <descr>
+          <p>
+            <var>RowCount</var> is a read-only <var>Integer</var> property with the number of rows needed to display the <var>Buttons</var> and <var>Controls</var> on the tool bar using its display settings. The value in RowCount is calculated in the <var>WrapButtons</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TToolBar.Buttons"/>
+          <link id="TToolBar.ButtonHeight"/>
+          <link id="TToolBar.ButtonWidth"/>
+          <link id="TToolBar.WrapButtons"/>
+          <link id="TToolBar.Wrapable"/>
+        </seealso>
       </element>
 
+      <!-- HERE -->
+
       <element name="TToolBar.ButtonDropWidth">
+        <!-- hic sunt dracones -->
         <short/>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>ButtonDropWidth</var> is a read-only <var>Integer</var> property with the number of pixels needed for a drop-down button and its drop-down indicator.
+          </p>
+        </descr>
+        <notes>
+          <note>
+            The logic for using this and DropDownWidth is hard to follow. I've tried to document it 3 times... and discarded each attempt because it was nonsense. Will try again at some point.
+          </note>
+        </notes>
+        <seealso>
+          <link id="TToolBar.DropDownWidth"/>
+          <link id="TToolBar.FontChanged"/>
+          <link id="TToolButton.Paint"/>
+          <link id="TToolButton.PointInArrow"/>
+          <link id="TToolButton.CalculatePreferredSize"/>
+        </seealso>
       </element>
 
       <element name="TToolBar.Align" link="#lcl.controls.TControl.Align"/>
@@ -13676,9 +14354,7 @@
       <element name="TToolBar.BorderWidth" link="#lcl.controls.TWinControl.BorderWidth"/>
 
       <element name="TToolBar.ButtonHeight">
-        <short>
-          <var>ButtonHeight</var> - the height of the buttons.
-        </short>
+        <short>Contains the height for buttons on the tool bar control.</short>
         <descr>
           <p>Use 0 for auto-sized value.</p>
           <p>
@@ -13689,9 +14365,7 @@
       </element>
 
       <element name="TToolBar.ButtonWidth">
-        <short>
-          <var>ButtonWidth</var> - the width of the buttons.
-        </short>
+        <short>Contains the width for buttons on the tool bar control.</short>
         <descr>
           <p>Use 0 for auto-sized value</p>
           <p>
@@ -13707,9 +14381,12 @@
       <element name="TToolBar.Color" link="#lcl.controls.TControl.Color"/>
 
       <element name="TToolBar.DisabledImages">
-        <short>The Images on the Image List that are NOT selected for display.</short>
+        <short>List with images displayed on buttons that are not enabled.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolBar.HotImages"/>
+          <link id="TToolBar.Images"/>
+        </seealso>
       </element>
 
       <element name="TToolBar.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
@@ -13747,11 +14424,7 @@
         <seealso/>
       </element>
 
-      <element name="TToolBar.Enabled" link="#lcl.controls.TControl.Enabled">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolBar.Enabled" link="#lcl.controls.TControl.Enabled"/>
 
       <element name="TToolBar.Flat">
         <short>
@@ -13772,26 +14445,38 @@
 
       <element name="TToolBar.Font" link="#lcl.controls.TControl.Font"/>
 
-      <element name="TToolBar.Height" link="#lcl.controls.TControl.Height">
+      <element name="TToolBar.Height">
+        <short>Height for the tool bar control.</short>
         <descr>
-          The default value for the property is 32 (pixels).
+          <p>
+            <var>Height</var> is an <var>Integer</var> property re-declared in <var>TToolBar</var> to use a default value. The default value for the property is 32 (pixels).
+          </p>
         </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Height">TControl.Height</link>
+        </seealso>
       </element>
 
       <element name="TToolBar.HotImages">
-        <short>The Images on the Image list that are selected for display.</short>
+        <short>List with images displayed when a button is "hot" or hovered.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolBar.DisabledImages"/>
+          <link id="TToolBar.Images"/>
+        </seealso>
       </element>
 
       <element name="TToolBar.Images">
-        <short>The <var>Images</var> to be displayed on the buttons.</short>
+        <short>List with images displayed on tool bar buttons.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TToolBar.HotImages"/>
+          <link id="TToolBar.DisabledImages"/>
+        </seealso>
       </element>
 
       <element name="TToolBar.ImagesWidth">
-        <short>Width for images displayed on the tool bar.</short>
+        <short>Width for the images displayed on the tool bar.</short>
         <descr>
           <p>
             <var>ImagesWidth</var> is an <var>Integer</var> property which indicates the width  for images displayed on the tool bar.  The default value for the property is zero (0).
@@ -13808,113 +14493,73 @@
 
       <element name="TToolBar.Indent">
         <short>
-          <var>Indent</var> - the amount by which the buttons should be indented Default is 1
+          Number of pixels reserved as indentation spacing before buttons and controls on the tool bar. The default value is 1.
         </short>
+        <descr></descr>
+        <seealso></seealso>
       </element>
 
       <element name="TToolBar.List">
         <short>
-          Should the contents of the toolbar be displayed as a <var>List</var>? Default false.
+          Indicates whether buttons on the tool bar are displayed using a list style.
         </short>
+        <descr>
+          <p>
+            <var>List</var> is a <var>Boolean</var> property which indicates if the buttons on the tool bar are displayed using a list style.
+          </p>
+          <p>
+            When List is set to True, the icon for a tool button is displayed on the left edge of the button immediately before the Caption text (when enabled). When set to False, the icon is centered in the button width and above the Caption text for the button.
+          </p>
+          <p>
+            The default value for the property is <b>False</b>. Changing the value for the property causes the tool bar to be resized and redrawn.
+          </p>
+          <p>
+            Set <var>ShowCaptions</var> to <b>True</b> to enable Caption text on the tool bar buttons.
+          </p>
+        </descr>
+        <seealso></seealso>
       </element>
 
-      <element name="TToolBar.ParentColor" link="#lcl.controls.TControl.ParentColor">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.ParentFont" link="#lcl.controls.TControl.ParentFont">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.PopupMenu" link="#lcl.controls.TControl.PopupMenu">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolBar.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TToolBar.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
+      <element name="TToolBar.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
+      <element name="TToolBar.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
 
       <element name="TToolBar.ShowCaptions">
         <short>
-          <var>ShowCaptions</var> - should the captions be shown for the buttons? (Default False).
+          Indicates whether captions are displayed on tool bar buttons. The default value is False.
         </short>
         <descr/>
         <seealso/>
       </element>
 
-      <element name="TToolBar.ShowHint" link="#lcl.controls.TControl.ShowHint">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.TabOrder" link="#lcl.controls.TWinControl.TabOrder">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.TabStop" link="#lcl.controls.TWinControl.TabStop">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolBar.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
+      <element name="TToolBar.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
+      <element name="TToolBar.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
 
       <element name="TToolBar.Transparent">
-        <short>Is the ToolBar to be <var>Transparent</var>? Default False.</short>
+        <short>
+          Indicates whether the control is drawn with transparency. The default value is False.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
-      <element name="TToolBar.Visible" link="#lcl.controls.TControl.Visible">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolBar.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="TToolBar.Wrapable">
         <short>
-          <var>Wrapable</var> - enables wrapping buttons to the next row if there are too many for the current row.
+          Controls wrapping of buttons to the next row when there are too many for the Align orientation on the tool bar.
         </short>
-      </element>
-
-      <element name="TToolBar.OnClick" link="#lcl.controls.TControl.OnClick">
-        <short/>
         <descr/>
         <seealso/>
       </element>
 
-      <element name="TToolBar.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnDblClick" link="#lcl.controls.TControl.OnDblClick">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnDragOver" link="#lcl.controls.TControl.OnDragOver">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolBar.OnClick" link="#lcl.controls.TControl.OnClick"/>
+      <element name="TToolBar.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
+      <element name="TToolBar.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
+      <element name="TToolBar.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TToolBar.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
 
       <element name="TToolBar.OnPaintButton">
         <short>Event handler signalled to draw a button on the tool bar.</short>
@@ -13930,95 +14575,31 @@
         </seealso>
       </element>
 
-      <element name="TToolBar.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnEnter" link="#lcl.controls.TWinControl.OnEnter">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnExit" link="#lcl.controls.TWinControl.OnExit">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseWheel">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseWheelDown">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnMouseWheelUp">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolBar.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
+      <element name="TToolBar.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
+      <element name="TToolBar.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
+      <element name="TToolBar.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TToolBar.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TToolBar.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TToolBar.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TToolBar.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TToolBar.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TToolBar.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TToolBar.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
 
       <element name="TToolBar.OnPaint">
-        <short/>
-        <descr/>
+        <short>Event handler signalled when the Paint method is called for the control.</short>
+        <descr>
+          <p>
+            Signalled after the inherited <var>Paint</var> method has been performed. The <var>Sender</var> argument contains the <var>TToolBar</var> instance for the notification.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
-      <element name="TToolBar.OnResize" link="#lcl.controls.TControl.OnResize">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TToolBar.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TToolBar.OnResize" link="#lcl.controls.TControl.OnResize"/>
+      <element name="TToolBar.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds"/>
+      <element name="TToolBar.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
 
       <element name="TGrabStyle">
         <short>Represent drawing styles available for a grab bar in TCustomCoolBar.</short>
