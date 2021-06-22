@@ -133,7 +133,7 @@ type
   TEndBandEvent = procedure(Band: TfrBand) of object;
   TfrProgressEvent = procedure(n: Integer) of object;
   TBeginColumnEvent = procedure(Band: TfrBand) of object;
-  TPrintColumnEvent = procedure(ColNo: Integer; var Width: Integer) of object;
+  TPrintColumnEvent = procedure(ColNo: Integer; var AWidth: Integer) of object;
   TManualBuildEvent = procedure(Page: TfrPage) of object;
   TObjectClickEvent = procedure(View: TfrView) of object;
   TMouseOverObjectEvent = procedure(View: TfrView; var ACursor: TCursor) of object;
