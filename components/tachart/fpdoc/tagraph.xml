@@ -39,19 +39,14 @@ which is used to paint the background of the entire <var>TChart</var>, including
         </seealso>
       </element>
       <element name="TChart.Series">
-        <short>The list of chart series.</short>
-        <descr>
-          <p>To add or remove series at run-time,
+        <short>List of chart series.</short>
+        <descr><p>To add or remove series at run-time,
 use 
 <link id="TChart.AddSeries">AddSeries</link> and 
 <link id="TChart.DeleteSeries">DeleteSeries</link> methods.
-</p>
-          <p>Use <link id="TChartSeriesCount">SeriesCount</link> to determine the number of series contained in the chart.</p>
+</p><p>Use <link id="TChartSeriesCount">SeriesCount</link> to determine the number of series contained in the chart.</p>
         </descr>
-        <seealso>
-          <link id=""/>
-          <link id=""/>
-          <link id=""/>
+        <seealso><link id=""/><link id=""/><link id=""/>
         </seealso>
       </element>
       <element name="TChart.SeriesCount">
@@ -67,7 +62,7 @@ use
         </descr>
       </element>
       <element name="TChart.AxisList">
-        <short>List of graph <link id="TATypes.TChartAxis">axes</link>.</short>
+        <short>List of chart <link id="TATypes.TChartAxis">axes</link>.</short>
       </element>
       <element name="TChart.BottomAxis">
         <short>Bottom axis of the chart.</short>
@@ -501,6 +496,168 @@ The chart responds by sending the result in the parameter
   all series using this axis (cannot be called directly because TAChartAxis
   does not "use" TACustomSeries. </p><p/>
         </descr>
+      </element>
+    <element name="TChart.OnAfterCustomDrawBackground"><short>The event <var>OnAfterCustomDrawBackground</var> fires after the background of the chart has been painted</short><descr>After the background of the chart has been painted the event <var>OnAfterCustomDrawBackground</var> is 
+    generated and gives the user the opportunity to paint on the background additional stationary information 
+    such as a logo or similar.
+<p>The event has the corresponding chart, the currently active drawer and the rectangle spanning the background as parameters. 
+  Note that there is a similar event, <link id="TChart.OnAfterDrawBackground">OnAfterDrawBackground</link>, 
+  however, that works only with drawing backends supporting a canvas and thus has been marked as deprecated.
+</p>
+        </descr>
+        <seealso><link id="TChart.OnAfterDrawBackground">OnAfterDrawBackground</link><link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link><link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link><link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link><link id="TChart.OnAfterDrawBackWall">OnAfterDrawBackWall</link><link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link><link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link>
+        </seealso>
+      </element>
+      
+<element name="TChart.OnAfterDrawBackground">
+<short>The event <var>OnAfterDrawBackground</var> fires after the background of the chart has been painted</short>
+<descr>When the background of the chart (i.e. the entire area covered by the chart) 
+has been painted the event <var>OnAfterDrawBackground</var> is generated and 
+gives to user the opportunity to paint on the background additional stationary information such as a logo or similar.
+<p>The event has the corresponding chart, the canvas to be drawn, and the rectangle spanning 
+the background as parameters.</p><p>Note that this event is deprecated and will be removed because painting works only on 
+drawing backends which support a <var>TCanvas</var>. Use the more general 
+<link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link> as a replacement.
+</p>
+        </descr>
+<seealso><link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link><link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link><link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link><link id="TChart.OnAfterDrawBackWall">OnAfterDrawBackWall</link><link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link><link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link><link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link>
+        </seealso>
+      </element>
+      
+<element name="TChart.OnBeforeDrawBackground">
+  <short>The event <var>OnBeforeDrawBackground</var> fires before the background of the chart will be painted</short>
+<descr>Before the background of the chart will be painted the event <var>OnBeforeDrawBackground</var> 
+is generated and gives the user the opportunity to replace the built-in drawing 
+routine by user-defined drawing code, e.g. for painting a gradient or providing an image background. 
+Note that this custom drawing is executed only when the parameter <var>ADoDefaultDrawing</var> is false.
+<p>This event is deprecated and will be removed because painting works only on drawing backends supporting a <var>TCanvas</var>. Use the more general 
+<link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link> as a replacement.
+</p>
+        </descr>
+<seealso><link id="TChart.OnAfterDrawBackground">OnAfterDrawBackground</link><link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link><link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link><link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link><link id="TChart.OnAfterDrawBackWall">OnAfterDrawBackWall</link><link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link><link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link>
+        </seealso>
+      </element>
+
+<element name="TChart.OnBeforeCustomDrawBackground">
+<short>The event <var>OnBeforeCustomDrawBackground</var> fires before the background of the chart will be painted</short>
+<descr>Before the background of the chart will be painted the event 
+<var>OnBeforeCustomDrawBackground</var> is generated to allow custom painting of 
+the entire background by user code. This way the background can be drawn with a 
+gradient or with a background image. Note that built-in drawing is skipped only if the event 
+parameter <var>ADoDefaultDrawing</var> is set to false in the event handler.
+<p>Besides the <var>ADoDefaultDrawing</var> parameter, the event has the corresponding chart, the currently active drawer and the rectangle spanning the background as parameters.
+</p><p>Note that there is a similar event, <link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link>, 
+however, that works only with drawing backends supporting a canvas and thus has been marked as <i>deprecated</i>.
+</p>
+        </descr>
+<seealso><link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link><link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link><link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link><link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link><link id="TChart.OnAfterDrawBackWall">OnAfterDrawBackWall</link><link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link><link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link>
+        </seealso>
+      </element>
+      
+<element name="TChart.OnAfterCustomDrawBackWall">
+<short>The event <var>OnAfterCustomDrawBackWall</var> fires after the back-wall of the chart has been painted</short>
+<descr>The back-wall of a chart is the inner chart rectangle spanned by the axes. 
+After this rectangle has been painted the event <var>OnAfterCustomDrawBackWall</var> 
+is generated to give the user the opportunity to draw something over this 
+default back-wall, e.g. a logo or similar.
+<p>The event has the corresponding chart, the currently active drawer and the rectangle spanning the back-wall as parameters. 
+</p><p>Note that there is a similar event, <link id="TChart.OnAfterDrawBackWall">OnAfterDrawBackWall</link>, 
+however, that works only with drawing backends supporting a canvas and thus has been marked as deprecated.
+</p>
+        </descr>
+<seealso><link id="TChart.OnAfterDrawBackWall">OnAfterDrawBackWall</link><link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link><link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link><link id="TChart.OnAfterDrawBackground">OnAfterDrawBackground</link><link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link><link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link><link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link>
+        </seealso>
+      </element>
+      
+<element name="TChart.OnAfterDrawBackWall">
+<short>The event <var>OnAfterDrawBackWall</var> fires after the back-wall of the chart has been painted</short>
+<descr>The back-wall of a chart is the inner chart rectangle spanned by the axes. 
+After this rectangle has been painted the event <var>OnAfterDrawBackWall</var> 
+is generated and gives the user the opportunity to draw something over this 
+default back-wall, e.g. a logo or similar.
+<p>The event has the corresponding chart, the canvas to be drawn, and the rectangle spanning the backwall as parameters. 
+</p><p>Note that this event is deprecated and will be removed because painting works only 
+on drawing backends which support a <var>TCanvas</var>. Use the more general 
+<link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link> as a replacement.
+</p>
+        </descr>
+<seealso><link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link><link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link><link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link><link id="TChart.OnAfterDrawBackground">OnAfterDrawBackground</link><link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link><link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link><link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link>
+        </seealso>
+      </element>
+      
+<element name="TChart.OnBeforeCustomDrawBackWall">
+<short>The event <var>OnBeforeCustomDrawBackWall</var> fires before the back-wall 
+of the chart will be painted</short>
+<descr>The back-wall of a chart is the inner chart rectangle spanned by the axes.
+Before this rectangle is painted the event <var>OnBeforeCustomDrawBackWall</var> 
+is generated with the boolean parameter <var>ADoDefaultDrawing</var> which, if set to <var>false</var>, 
+allows to replace the built-in painting routine by user code, e.g. for filling 
+the back-wall with a gradient or with a background image.
+<p>Besides the <var>ADoDefaultDrawing</var> parameter, the event has the corresponding 
+chart, the currently active drawer and the rectangle spanning the background as parameters.
+</p>
+<p>Note that there is a similar event, <link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link>. 
+That works, however, only with drawing backends supporting a canvas and thus has been marked as deprecated.
+</p>
+        </descr>
+<seealso>
+<link id="TChart.AfterDrawBackWall">OnAfterDrawBackWall</link>
+<link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link>
+<link id="TChart.OnBeforeDrawBackWall">OnBeforeDrawBackWall</link>
+<link id="TChart.OnAfterDrawBackground">OnAfterDrawBackground</link>
+<link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link>
+<link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link>
+<link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link>
+        </seealso>
+      </element>
+      
+<element name="TChart.OnBeforeDrawBackWall">
+<short>The event <var>OnBeforeDrawBackWall</var> fires before the back-wall of the chart will be painted</short>
+<descr>The back-wall of a chart is the inner chart rectangle spanned by the axes. 
+Before this rectangle is painted the event <var>OnBeforeDrawBackWall</var> is generated 
+with the boolean parameter <var>ADoDefaultDrawing</var> which, if set to false, 
+allows to replace the built-in painting routine by user code, e.g. for filling 
+with a gradient or with a background image.
+<p>Besides the <var>ADoDefaultDrawing</var> parameter, the event has the 
+corresponding chart, the canvas on which painting occurs, as well as the 
+rectangle spanning the background as parameters.
+</p>
+<p>This event is deprecated and will be removed because painting works only on 
+drawing backends supporting a <var>TCanvas</var>. Use the more general 
+<link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link> 
+as a replacement.
+</p>
+</descr>
+<seealso>
+<link id="TChart.OnBeforeCustomDrawBackWall">OnBeforeCustomDrawBackWall</link>
+<link id="TChart.AfterDrawBackWall">OnAfterDrawBackWall</link>
+<link id="TChart.OnAfterCustomDrawBackWall">OnAfterCustomDrawBackWall</link>
+<link id="TChart.OnAfterDrawBackground">OnAfterDrawBackground</link>
+<link id="TChart.OnAfterCustomDrawBackground">OnAfterCustomDrawBackground</link>
+<link id="TChart.OnBeforeDrawBackground">OnBeforeDrawBackground</link>
+<link id="TChart.OnBeforeCustomDrawBackground">OnBeforeCustomDrawBackground</link>
+        </seealso>
+      </element>
+    <element name="TChart.OnAfterPaint"><short>The event <var>OnAfterPaint</var> is fired at the very end of the painting cycle of a chart</short><descr>When painting of a chart is complete, i.e. when all subitems such as axes, series, legend, titles have been drawn and immediately before the chart's Paint method is exited, the event <var>OnAfterPaint</var> is generated. It can be used for logging or time measurement purposes. Do not call anything which itself triggers a new drawing cycle because the event will fire again and again and make the application hang.
+</descr><seealso><link id="TChart.OnAfterDraw">OnAfterDraw</link>
+        </seealso>
+      </element><element name="TChart.OnDrawLegend"><short>The event <var>OnDrawLegend</var> can be used to custom-draw the chart legend.</short><descr>When a handler has been assigned to the <var>OnDrawlegend</var> event painting of the chart legend is done by this user code rather than the built-in default drawing code.
+<p>The rectangle passed as the <var>LegendRect</var> parameter is the rectangle that would be covered by the built-in legend.
+</p>
+        </descr>
+      </element><element name="TChart.OnAfterDraw"><short>The event <var>OnAfterDraw</var> is the last event of the drawing cycle of the chart</short><seealso><link id="TChart.OnAfterPaint">OnAfterPaint</link>
+        </seealso><descr>Before the chart's drawing cycle ends the event <var>OnAfterDraw</var> is generated. Here, the user has the last opportunity to paint something over the finished chart by using the currently active drawer given as a parameter.
+</descr>
+      </element><element name="TChart.OnFullExtentChanged"><short>A change in the chart's full extent triggers the event <var>OnFullExtentChanged</var>
+        </short><descr>When data are added to a series such that the range of values is extended, or when the user manually sets the chart's Extent property, the event <var>OnFullExtentChanged</var> is generated. This way, for example, gui elements displaying the axis range can be updated.
+</descr><seealso><link id="TChart.OnExtentChanged">OnExtentChanged</link>
+        </seealso>
+      </element><element name="TChart.OnExtentChanged"><short>The event <var>OnExtentChanged</var> fires when the chart's visible viewport changed, for example by zooming or panning.</short><descr>When the user zooms or pans a chart the visible viewport changes. To notify the application of this change the event <var>OnExtentChanged</var> is generated.
+</descr><seealso><link id="TChart.OnFullExtentChanged">OnFullExtentChanged</link>
+        </seealso>
+      </element><element name="TChart.OnExtentValidate"><short>The event <var>OnExtentValidate</var> checks whether a change of the chart's extent is allowed or not</short><descr>Zooming or panning outside the chart's FullExtent can lead to a loss of the visible viewport. To prevent this a handler for the <var>OnExtentValidate</var> event can be provided in which the boolean variable <var>AllowChange</var> should signal that the extent given in the argument <var>ALogicalExtent</var> is possible. If not, the <var>ALogicalExtent</var> can be set to the valid extent to be used instead.
+</descr>
+      </element><element name="TChart.Proportional"><short><var>Proportional</var>, when set to <var>true</var>, applies the same scaling factor to the x and y axis.</short>
       </element>
     </module>
   </package>
