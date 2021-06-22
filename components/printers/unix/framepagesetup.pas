@@ -307,6 +307,7 @@ begin
     cbPaper.ItemIndex:= cbPaper.Items.IndexOf(Printer.PaperSize.PaperName);
   end;
   cbPaper.Enabled := EnablePapers;
+  cbSource.Enabled := EnablePapers;
 
   //TODO: support reverse variants too?
   gpOrientation.Enabled := EnableOrientation;
