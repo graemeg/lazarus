@@ -323,6 +323,7 @@ type
     procedure register_transform_func(src_type: TGType; dest_type: TGType; transform_func: TGValueTransform); cdecl; inline; static;
     function type_compatible(src_type: TGType; dest_type: TGType): gboolean; cdecl; inline; static;
     function type_transformable(src_type: TGType; dest_type: TGType): gboolean; cdecl; inline; static;
+    procedure clear; inline;
   end;
   TGBoxedCopyFunc = function(boxed: gpointer): gpointer; cdecl;
   TGBoxedFreeFunc = procedure(boxed: gpointer); cdecl;
@@ -1964,6 +1965,11 @@ end;
 function TGValue.type_transformable(src_type: TGType; dest_type: TGType): gboolean; cdecl;
 begin
   Result := LazGObject2.g_value_type_transformable(src_type, dest_type);
+end;
+
+procedure TGValue.clear;
+begin
+  fillchar(Self,sizeof(Self),0);
 end;
 
 function TGClosure.new_object(sizeof_closure: guint; object_: PGObject): PGClosure; cdecl;

@@ -3043,8 +3043,13 @@ var
   wtype:TGType;
 begin
   fWidget^.get_allocation(@Alloc);
-  APoint.X:=alloc.X;
-  APoint.Y:=alloc.Y;
+  if (alloc.X=-1) and (alloc.Y=-1) and (alloc.height=1) and (alloc.width=1) then
+  // default allocation
+  else
+  begin
+    APoint.X:=alloc.X;
+    APoint.Y:=alloc.Y;
+  end;
 
   prnt:=self.GetParent; // TGtk3Widget
   if (prnt<>nil) then
@@ -6391,7 +6396,11 @@ begin
   if IsTreeView then
   begin
     Path := gtk_tree_path_new_from_indices(AIndex, [-1]);
-    PGtkTreeView(GetContainerWidget)^.get_cell_area(Path, nil, @ItemRect);
+    if GetContainerWidget^.get_realized then
+    begin
+      PGtkTreeView(GetContainerWidget)^.get_cell_area(Path, nil, @ItemRect);
+      // here may be optimization
+    end;
     gtk_tree_path_free(Path);
   end else
   begin
@@ -6414,7 +6423,11 @@ begin
   if IsTreeView then
   begin
     Path := gtk_tree_path_new_from_indices(AIndex, [-1]);
-    PGtkTreeView(GetContainerWidget)^.get_cell_area(Path, nil, @ItemRect);
+    if GetContainerWidget^.get_realized then
+    begin
+      PGtkTreeView(GetContainerWidget)^.get_cell_area(Path, nil, @ItemRect);
+      // here may be optimization
+    end;
     gtk_tree_path_free(Path);
   end else
   begin
