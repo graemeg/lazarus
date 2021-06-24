@@ -736,13 +736,13 @@ if iPos &lt;&gt; -1 then
       <element name="TColorBox.OnSelect" link="#lcl.stdctrls.TCustomComboBox.OnSelect"/>
       <element name="TColorBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
       <element name="TColorBox.ParentBidiMode" link="#lcl.controls.TControl.ParentBidiMode"/>
-      <element name="TColorBox.ParentColor" link="#lcl.stdctrls.TCustomComboBox.ParentColor"/>
+      <element name="TColorBox.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
       <element name="TColorBox.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TColorBox.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
       <element name="TColorBox.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
       <element name="TColorBox.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
       <element name="TColorBox.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
-      <element name="TColorBox.TabStop" link="#lcl.stdctrls.TCustomComboBox.TabStop"/>
+      <element name="TColorBox.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
       <element name="TColorBox.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="TLBGetColorsEvent">
@@ -887,10 +887,19 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.InitializeWnd">
-        <short/>
-        <descr/>
+        <short>
+          Performs actions needed when the window handle for the control is created.
+        </short>
+        <descr>
+          <p>
+            Updates the value in Selected to force ItemIndex to be updated.
+          </p>
+        </descr>
         <seealso>
-          <link id="#lcl.controls.TWincontrol.InitializeWnd">TWincontrol.InitializeWnd</link>
+          <link id="TCustomColorListBox.Selected"/>
+          <link id="#lcl.stdctrls.TCustomListBox.ItemIndex">TCustomListBox.ItemIndex</link>
+          <link id="#lcl.stdctrls.TCustomListBox.InitializeWnd">TCustomListBox.InitializeWnd</link>
+          <link id="#lcl.controls.TWinControl.InitializeWnd">TWincontrol.InitializeWnd</link>
         </seealso>
       </element>
 
@@ -1256,6 +1265,7 @@ if iPos &lt;&gt; -1 then
       <element name="TColorListBox.ColorRectOffset" link="#lcl.colorbox.TCustomColorListBox.ColorRectOffset"/>
       <element name="TColorListBox.DefaultColorColor" link="#lcl.colorbox.TCustomColorListBox.DefaultColorColor"/>
       <element name="TColorListBox.NoneColorColor" link="#lcl.colorbox.TCustomColorListBox.NoneColorColor"/>
+      <element name="TColorListBox.Selected" link="#lcl.colorbox.TCustomColorListBox.Selected"/>
       <element name="TColorListBox.Style" link="#lcl.colorbox.TCustomColorListBox.Style"/>
       <element name="TColorListBox.OnGetColors" link="#lcl.colorbox.TCustomColorListBox.OnGetColors"/>
 
@@ -1266,16 +1276,17 @@ if iPos &lt;&gt; -1 then
       <element name="TColorListBox.BorderStyle" link="#lcl.controls.TWinControl.BorderStyle"/>
       <element name="TColorListBox.ClickOnSelChange" link="#lcl.stdctrls.TCustomListBox.ClickOnSelChange"/>
       <element name="TColorListBox.Color" link="#lcl.controls.TControl.Color"/>
-      <element name="TColorListBox.Constraints" link="#lcl.stdctrls.TCustomListBox.Constraints"/>
+      <element name="TColorListBox.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element name="TColorListBox.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
       <element name="TColorListBox.DragKind" link="#lcl.controls.TControl.DragKind"/>
       <element name="TColorListBox.DragMode" link="#lcl.controls.TControl.DragMode"/>
       <element name="TColorListBox.ExtendedSelect" link="#lcl.stdctrls.TCustomListBox.ExtendedSelect"/>
       <element name="TColorListBox.Enabled" link="#lcl.controls.TControl.Enabled"/>
-      <element name="TColorListBox.Font" link="#lcl.stdctrls.TCustomListBox.Font"/>
+      <element name="TColorListBox.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TColorListBox.IntegralHeight" link="#lcl.stdctrls.TCustomListBox.IntegralHeight"/>
       <element name="TColorListBox.ItemHeight" link="#lcl.stdctrls.TCustomListBox.ItemHeight"/>
       <element name="TColorListBox.OnChangeBounds" link="#lcl.stdctrls.TCustomListBox.OnChangeBounds"/>
+
       <element name="TColorListBox.OnClick" link="#lcl.stdctrls.TCustomListBox.OnClick"/>
       <element name="TColorListBox.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
       <element name="TColorListBox.OnDblClick" link="#lcl.stdctrls.TCustomListBox.OnDblClick"/>

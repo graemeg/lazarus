@@ -369,10 +369,8 @@
         <short>Width needed to draw a check box.</short>
       </element>
 
-      <element name="TCustomCheckListBox.DefineProperties"  link="#rtl.classes.TComponent.DefineProperties"/>
-      <element name="TCustomCheckListBox.DefineProperties.Filer">
-        <short/>
-      </element>
+      <element name="TCustomCheckListBox.DefineProperties"  link="#lcl.controls.TControl.DefineProperties"/>
+      <element name="TCustomCheckListBox.DefineProperties.Filer" link="#lcl.controls.TControl.DefineProperties.Filer"/>
 
       <element name="TCustomCheckListBox.ReadData">
         <short>
@@ -885,7 +883,7 @@
       <element name="TCheckListBox.OnChangeBounds"
         link="#lcl.controls.TControl.OnChangeBounds"/>
 
-      <element name="TCheckListBox.OnClick" link="#lcl.stdctrls.TCustomListBox.OnClick"/>
+      <element name="TCheckListBox.OnClick" link="#lcl.controls.TControl.OnClick"/>
 
       <element name="TCheckListBox.OnClickCheck" link="#lcl.checklst.TCustomCheckListBox.OnClickCheck"/>
       <element name="TCheckListBox.OnContextPopup"
@@ -917,7 +915,7 @@
       <element name="TCheckListBox.OnMouseWheelRight"
         link="#lcl.controls.TControl.OnMouseWheelRight"/>
       <element name="TCheckListBox.OnResize" link="#lcl.controls.TControl.OnResize"/>
-      <element name="TCheckListBox.OnSelectionChange" link="#lcl.controls.TControl.OnSelectionChange"/>
+      <element name="TCheckListBox.OnSelectionChange" link="#lcl.stdctrls.TCustomListBox.OnSelectionChange"/>
       <element name="TCheckListBox.OnShowHint" link="#lcl.controls.TControl.OnShowHint"/>
       <element name="TCheckListBox.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
       <element name="TCheckListBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>

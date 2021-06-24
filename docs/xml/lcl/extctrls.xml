@@ -5029,7 +5029,20 @@
         </short>
       </element>
 
-      <element name="TCustomPanel.Color" link="#lcl.controls.TControl.Color"/>
+      <element name="TCustomPanel.Color">
+        <short>Contains the background color for the panel.</short>
+        <descr>
+          <p>
+            <var>Color</var> is a <var>TColor</var> property with the background color for the panel. It sets the default value for the property.
+          </p>
+          <p>
+            The default value in Color is the same as the value in the parent window Color property. If the color is clDefault , the result will need to be resolved using the <var>GetDefaultColor</var> method. Convenience routines which obtain the color by resolving clDefault and ParentColor are also provided in <var>TControl.GetColorResolvingParent</var> and <var>TControl.GetRGBColorResolvingParent</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Color">TControl.Color</link>
+        </seealso>
+      </element>
 
       <element name="TCustomPanel.FullRepaint">
         <short>

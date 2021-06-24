@@ -1471,7 +1471,7 @@
         <short>Indicates if the ShowMode for the glyph is examined in the method.</short>
       </element>
 
-      <element name="TCustomBitBtn.Caption" link="#lcl.controls.TControl.Caption">
+      <element name="TCustomBitBtn.Caption">
         <short>Contains the descriptive text displayed for the Bitmap button control.</short>
         <descr>
           <p>
@@ -1485,12 +1485,17 @@
           <link id="TCustomBitBtn.DefaultCaption"/>
           <link id="TCustomBitBtn.Kind"/>
           <link id="TBitBtnKind"/>
+          <link id="#lcl.controls.TControl.Caption">TControl.Caption</link>
         </seealso>
       </element>
 
       <element name="TCustomBitBtn.DefaultCaption">
         <short>Indicates if Caption contains the default value for the button Kind.</short>
-        <descr></descr>
+        <descr>
+          <p>
+            Changing the property value to True causes a resource string with the caption text for the button ID to be assigned to the Caption property when Kind is not bkCustom.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomBitBtn.Caption"/>
           <link id="TCustomBitBtn.Kind"/>
@@ -1583,94 +1588,17 @@
         </seealso>
       </element>
 
-      <element name="TBitBtn.Action" link="#lcl.controls.TControl.Action">
-        <descr>
-          <p>Standard properties, which should be supported by all descendants.</p>
-          <p>The (default) action to be associated with this control.</p>
-          <p>Can either read the action already associated with the control (GetAction), or write an action to be associated (SetAction).</p>
-        </descr>
-      </element>
-
-      <element name="TBitBtn.Align" link="#lcl.controls.TControl.Align">
-        <descr>
-          <p>Standard properties, which should be supported by all descendants.</p>
-          <p>Either reads a flag containing alignment instructions (<var>FAlign</var>) or writes alignment instructions (<var>SetAlign</var>).</p>
-          <p>May have no alignment, may have custom or client alignment, or can be aligned to top, bottom, left or right.</p>
-        </descr>
-      </element>
-
-      <element name="TBitBtn.Anchors" link="#lcl.controls.TControl.Anchors">
-        <descr>
-          <p>Standard properties, which should be supported by all descendants.</p>
-          <p>Determines how the control is to be anchored to its client or parent control.</p>
-          <p>Either reads a flag containing the set of anchors to be used, or writes a set of anchors. If they have been written, this is indicated in <var>IsAnchorsStored</var>.
-          </p>
-        </descr>
-      </element>
-
+      <element name="TBitBtn.Action" link="#lcl.controls.TControl.Action"/>
+      <element name="TBitBtn.Align" link="#lcl.controls.TControl.Align"/>
+      <element name="TBitBtn.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="TBitBtn.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TBitBtn.BidiMode" link="#lcl.controls.TControl.BidiMode"/>
-
-      <element name="TBitBtn.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing">
-        <descr>
-          <p>Standard properties, which should be supported by all descendants.</p>
-          <p>Determines the border spacing for this control.</p>
-          <p>Reads flag to find stored spacing values required for the border of the control, or writes the flag to set the spacing.</p>
-          <p>The properties are defined in the parent class <link id="#lcl.controls.TControlBorderSpacing">TControlBorderSpacing</link>.
-          </p>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TBitBtn.Cancel" link="#LCL.StdCtrls.TCustomButton.Cancel">
-        <descr>
-          <p>Setting this property to True, will have the effect that when the user hits ESC this button is Clicked, even if the button does not have focus. Usually the Button which reacts to ESC sets the ModalResult of the form to mrCancel.</p>
-        </descr>
-      </element>
-
-      <element name="TBitBtn.Caption">
-        <descr>
-          <p>
-            Gets caption as a text-string (<var>GetText</var>), or stores the new caption (<var>SetText</var>). Shows flag if caption is stored (<var>IsCaptionStored</var>).
-          </p>
-          <p>
-            By default, the <var>Caption</var> appears the same as the control <var>Name</var> in the Object Inspector, and the developer needs to set it explicitly to some new text.
-          </p>
-          <p>
-            The VCL implementation relies on the virtual <var>Get/SetTextBuf</var> to exchange text between widgets and VCL. This means a lot of (unnecessary) text copies.
-          </p>
-          <p>
-            The LCL uses strings for exchanging text (more efficient). To maintain VCL compatibility, the virtual <var>RealGet/SetText</var> is introduced. These functions interface with the LCLInterface.
-          </p>
-          <p>
-            The default <var>Get/SetTextBuf</var> implementation calls the <var>RealGet/SetText</var>. As long as the <var>Get/SetTextBuf</var> isn't overridden <var>Get/SetText</var> calls <var>RealGet/SetText</var> to avoid PChar copying.
-          </p>
-          <p>
-            To keep things optimal, LCL implementations should always override RealGet/SetText. Get/SetTextBuf is only kept for compatibility.
-          </p>
-        </descr>
-        <seealso>
-          <link id="#lcl.controls.TControl.Caption">TControl.Caption</link>
-        </seealso>
-      </element>
-
+      <element name="TBitBtn.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+      <element name="TBitBtn.Cancel" link="#lcl.stdctrls.TCustomButton.Cancel"/>
+      <element name="TBitBtn.Caption" link="#lcl.buttons.TCustomBitBtn.Caption"/>
       <element name="TBitBtn.Color" link="#lcl.controls.TControl.Color"/>
-
-      <element name="TBitBtn.Constraints" link="#lcl.controls.TControl.Constraints">
-        <descr>
-          <p>Standard properties, which should be supported by all descendants.</p>
-          <p>Determine <var>Constraints</var> (max and min height and width) for this control; reads the size constraints or stores new ones.</p>
-        </descr>
-      </element>
-
-      <element name="TBitBtn.Default" link="#LCL.StdCtrls.TCustomButton.Default">
-        <descr>
-          <p>
-            Defines whether a button is the <var>Default</var> selection for a form. That is, pressing ENTER will execute its OnClick method, even when the control does not have focus!
-          </p>
-        </descr>
-      </element>
-
+      <element name="TBitBtn.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TBitBtn.Default" link="#lcl.stdctrls.TCustomButton.Default"/>
       <element name="TBitBtn.DefaultCaption" link="#lcl.buttons.TCustomBitBtn.DefaultCaption"/>
       <element name="TBitBtn.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
       <element name="TBitBtn.DragKind" link="#lcl.controls.TControl.DragKind"/>
@@ -1699,7 +1627,7 @@
       <element name="TBitBtn.Kind" link="#lcl.buttons.TCustomBitBtn.Kind"/>
       <element name="TBitBtn.Layout" link="#lcl.buttons.TCustomBitBtn.Layout"/>
       <element name="TBitBtn.Margin" link="#lcl.buttons.TCustomBitBtn.Margin"/>
-      <element name="TBitBtn.ModalResult" link="#LCL.StdCtrls.TCustomButton.ModalResult"/>
+      <element name="TBitBtn.ModalResult" link="#lcl.stdctrls.TCustomButton.ModalResult"/>
       <element name="TBitBtn.NumGlyphs" link="#lcl.buttons.TCustomBitBtn.NumGlyphs"/>
       <element name="TBitBtn.Images" link="#lcl.buttons.TCustomBitBtn.Images"/>
       <element name="TBitBtn.ImageIndex" link="#lcl.buttons.TCustomBitBtn.ImageIndex"/>
@@ -1716,10 +1644,10 @@
         <seealso></seealso>
       </element>
 
-      <element name="TBitBtn.OnContextPopup" link="#lcl.controls.TWinControl.OnContextPopup"/>
-      <element name="TBitBtn.OnDragDrop" link="#lcl.controls.TWinControl.OnDragDrop"/>
-      <element name="TBitBtn.OnDragOver" link="#lcl.controls.TWinControl.OnDragOver"/>
-      <element name="TBitBtn.OnEndDrag" link="#lcl.controls.TWinControl.OnEndDrag"/>
+      <element name="TBitBtn.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
+      <element name="TBitBtn.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TBitBtn.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
+      <element name="TBitBtn.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
       <element name="TBitBtn.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
       <element name="TBitBtn.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
 
@@ -1760,6 +1688,8 @@
       </element>
 
       <element name="TBitBtn.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TBitBtn.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TBitBtn.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
       <element name="TBitBtn.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
       <element name="TBitBtn.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
       <element name="TBitBtn.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
@@ -2710,7 +2640,7 @@
         <seealso></seealso>
       </element>
 
-      <element name="TSpeedButton.AutoSize" link="#LCL.StdCtrls.TGraphicControl.AutoSize"/>
+      <element name="TSpeedButton.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
 
       <element name="TSpeedButton.BidiMode">
         <short>Indicates the bi-drectional text mode for the control.</short>

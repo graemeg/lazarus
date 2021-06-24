@@ -389,24 +389,34 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
         <short/>
       </element>
       <!-- procedure Visibility: public -->
-      <element name="TClipboard.Assign" link="#rtl.Classes.TPersistent.Assign">
-        <descr/>
-        <errors/>
-        <seealso/>
+      <element name="TClipboard.Assign">
+        <short>
+          Copies properties from the specified persistent object to the clipboard.
+        </short>
+        <descr>
+          <p>
+            <var>Assign</var> is an overridden method in <var>TClipboard</var> used to copy properties from the persistent object in <var>Source</var> to the clipboard instance. It provides support for using <var>TPicture</var> and <var>TGraphic</var> types in Source, and calls private methods used to copy the properties specific to the class types. If Source is not one of these class types, the inherited method is called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.Assign.Source">
-        <short/>
+        <short>Persistent object with the property values copied in the method.</short>
       </element>
       <!-- procedure Visibility: public -->
-      <element name="TClipboard.AssignTo" link="#rtl.Classes.TPersistent.AssignTo">
+      <element name="TClipboard.AssignTo">
+        <short>Copies property values into the specified persistent object.</short>
         <descr/>
-        <errors/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.AssignTo.Dest">
-        <short/>
+        <short>Persistent object where the properties in the class instance are stored.</short>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TClipboard.Clear">
@@ -438,9 +448,13 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
           <var>AClipboardType</var> - optional argument specifying type of clipboard to be created.</short>
       </element>
       <!-- destructor Visibility: public -->
-      <element name="TClipboard.Destroy" link="#rtl.Classes.TPersistent.Destroy">
-        <descr/>
-        <errors/>
+      <element name="TClipboard.Destroy">
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Destroy</var> is the overridden destructor for the class instance. It frees resources allocated in the class instance, and calls the inherited destructor prior to exiting from the method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- function Visibility: public -->
@@ -612,22 +626,66 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.SetComponent.Component">
-        <short/>
+        <short>Component stored in the clipboard.</short>
       </element>
+
+      <element name="TClipboard.SetComponentAsText">
+        <short>Stores the specified Component in the clipboard.</short>
+        <descr>
+          <p>
+            <var>SetComponentAsText</var> is a <var>Boolean</var> function used to store the specified <var>Component</var> to the <var>TClipboard</var> instance.
+          </p>
+          <p>
+            SetComponentAsText calls the <var>WriteComponentAsTextToStream</var> routine in the <file>lresources.pp</file> unit to store Component to a <var>TMemoryStream</var>. The String value in the stream is assigned to the <var>AsText</var> property to store the value in the clipboard.
+          </p>
+          <p>
+            SetComponentAsText calls <var>BeginUpdate</var> prior to storing the component to the clipboard, and <var>EndUpdate</var> when the operation has been completed. The return value for the method is the value returned from EndUpdate.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TClipBoard.AsText"/>
+          <link id="#lcl.lresources.WriteComponentAsTextToStream">.WriteComponentAsTextToStream</link>
+          <link id="#rtl.classes.TMemoryStream">TMemoryStream</link>
+        </seealso>
+      </element>
+      <element name="TClipboard.SetComponentAsText.Component">
+        <short>Component instance stored to the clipboard in the method.</short>
+      </element>
+      <element name="TClipboard.SetComponentAsText.Result">
+        <short>
+          True when no other updates are pending for the clipboard, and its ownership has not changed.
+        </short>
+      </element>
+
       <!-- procedure Visibility: public -->
       <element name="TClipboard.SetFormat">
-        <short/>
-        <descr/>
-        <errors/>
-        <seealso/>
+        <short>
+          Sets the clipboard format to the specified identifier and copies the value in Stream.
+        </short>
+        <descr>
+          <p>
+            <var>SetFormat</var> is a <var>Boolean</var> function used to select the clipboard format for the format identifer in <var>FormatID</var>, and load the content in <var>Stream</var>. It calls <var>AddFormat</var> to select the supported format in FormatID, and to cache values in Stream to its <var>TClipboardData</var> record instance.
+          </p>
+          <p>
+            SetFormat calls <var>BeginUpdate</var> prior to activating the format and loading its value. It calls <var>EndUpdate</var> when the operation has been completed. The value from EndUpdate is used as the return value for the method.
+          </p>
+          <p>
+            SetFormat is called when <var>TGraphic</var> or <var>TPicture</var> class instances are loaded to the clipboard in the <var>Assign</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TClipBoard.AddFormat"/>
+          <link id="TClipBoard.Assign"/>
+          <link id="#lcl.lcltype.TClipboardFormat"/>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.SetFormat.FormatID">
-        <short/>
+        <short>Format identifier needed for the specified stream.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.SetFormat.Stream">
-        <short/>
+        <short>Stream with the content loaded in the method.</short>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TClipboard.SetSupportedFormats">
@@ -663,15 +721,21 @@ The format CF_TEXT is handled by AsText and SetTextBuf. Use those functions inst
         <short/>
       </element>
       <!-- procedure Visibility: public -->
-      <element name="TClipboard.SetTextBuf" link="#rtl.System.SetTextBuf">
-        <short/>
-        <descr/>
+      <element name="TClipboard.SetTextBuf">
+        <short>Loads the clipboard buffer using the text in the specified PChar value.</short>
+        <descr>
+          <p>
+            <var>SetTextBuf</var> is a method used to load the text specified in <var>Buffer</var> into the clipboard. Buffer is a <var>PChar</var> type, and when not assigned (<b>Nil</b>), is set to <b>#0</b> in the method. Its value is loaded in the <var>TClipboardData</var> instances used for the text clipboard format.
+          </p>
+        </descr>
         <errors/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.system.SetTextBuf">SetTextBuf</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TClipboard.SetTextBuf.Buffer">
-        <short/>
+        <short>PChar value loaded into the clipboard.</short>
       </element>
       <!-- property Visibility: public -->
       <element name="TClipboard.AsText">

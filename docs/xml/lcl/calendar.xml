@@ -234,7 +234,7 @@
       </element>
 
       <!-- object Visibility: default -->
-      <element name="TCustomCalendar" link="#lcl.Controls.TWinControl">
+      <element name="TCustomCalendar" link="#lcl.controls.TWinControl">
         <short>
           <var>TCustomCalendar</var> - base class for <var>TCalendar</var>.
         </short>
@@ -435,19 +435,10 @@
       <!-- class function Visibility: protected -->
       <element
         name="TCustomCalendar.GetControlClassDefaultSize"
-        link="#LCL.Controls.TControl.GetControlClassDefaultSize"/>
-
-      <!-- procedure Visibility: public -->
-      <element name="TCustomCalendar.Loaded" link="#rtl.Classes.TComponent.Loaded">
-      </element>
-
-      <!-- procedure Visibility: protected -->
-      <element name="TCustomCalendar.InitializeWnd" link="#LCL.Controls.TWinControl.InitializeWnd">
-      </element>
-
-      <!-- procedure Visibility: protected -->
-      <element name="TCustomCalendar.DestroyWnd" link="#LCL.Controls.TWinControl.DestroyWnd">
-      </element>
+        link="#lcl.controls.TControl.GetControlClassDefaultSize"/>
+      <element name="TCustomCalendar.Loaded" link="#lcl.controls.TWinControl.Loaded"/>
+      <element name="TCustomCalendar.InitializeWnd" link="#lcl.controls.TWinControl.InitializeWnd"/>
+      <element name="TCustomCalendar.DestroyWnd" link="#lcl.controls.TWinControl.DestroyWnd"/>
 
       <!-- constructor Visibility: public -->
       <element name="TCustomCalendar.Create">
@@ -645,39 +636,17 @@
       </element>
 
       <!-- property Visibility: published -->
-      <element name="TCalendar.Align" link="#LCL.Controls.TControl.Align">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.Anchors" link="#LCL.Controls.TControl.Anchors">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.AutoSize" link="#LCL.Controls.TControl.AutoSize">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.BorderSpacing" link="#LCL.Controls.TControl.BorderSpacing">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.Constraints" link="#LCL.Controls.TControl.Constraints">
-        <short></short>
-      </element>
+      <element name="TCalendar.Align" link="#lcl.controls.TControl.Align"/>
+      <element name="TCalendar.Anchors" link="#lcl.controls.TControl.Anchors"/>
+      <element name="TCalendar.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
+      <element name="TCalendar.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+      <element name="TCalendar.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TCalendar.DateTime" link="#LCL.Calendar.TCustomCalendar.DateTime"/>
+      <element name="TCalendar.DisplaySettings" link="#LCL.Calendar.TCustomCalendar.DisplaySettings"/>
+      <element name="TCalendar.DoubleBuffered" link="#lcl.controls.TWinControl.DoubleBuffered"/>
+      <element name="TCalendar.FirstDayOfWeek" link="#lcl.calendar.TCustomCalendar.FirstDayOfWeek"/>
 
-      <!-- property Visibility: published -->
-      <element name="TCalendar.DateTime" link="#LCL.Calendar.TCustomCalendar.DateTime">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.DisplaySettings" link="#LCL.Calendar.TCustomCalendar.DisplaySettings">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.DoubleBuffered" link="#lcl.Controls.TWinControl.DoubleBuffered">
-        <short></short>
-      </element>
-      <element name="TCalendar.Hint" link="#lcl.Controls.TControl.Hint">
+      <element name="TCalendar.Hint" link="#lcl.controls.TControl.Hint">
         <short></short>
       </element>
       <!-- property Visibility: published -->
@@ -685,11 +654,11 @@
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnChangeBounds" link="#LCL.Controls.TControl.OnChangeBounds">
+      <element name="TCalendar.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnClick" link="#LCL.Controls.TControl.OnClick">
+      <element name="TCalendar.OnClick" link="#lcl.controls.TControl.OnClick">
         <short></short>
       </element>
       <!-- property Visibility: published -->
@@ -697,27 +666,27 @@
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnDblClick" link="#LCL.Controls.TControl.OnDblClick">
+      <element name="TCalendar.OnDblClick" link="#lcl.controls.TControl.OnDblClick">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnEnter" link="#LCL.Controls.TWinControl.OnEnter">
+      <element name="TCalendar.OnEnter" link="#lcl.controls.TWinControl.OnEnter">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnExit" link="#LCL.Controls.TWinControl.OnExit">
+      <element name="TCalendar.OnExit" link="#lcl.controls.TWinControl.OnExit">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnKeyDown" link="#LCL.Controls.TWinControl.OnKeyDown">
+      <element name="TCalendar.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnKeyPress" link="#LCL.Controls.TWinControl.OnKeyPress">
+      <element name="TCalendar.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnKeyUp" link="#LCL.Controls.TWinControl.OnKeyUp">
+      <element name="TCalendar.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp">
         <short></short>
       </element>
       <!-- property Visibility: published -->
@@ -725,47 +694,38 @@
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseDown" link="#LCL.Controls.TControl.OnMouseDown">
+      <element name="TCalendar.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseEnter" link="#LCL.Controls.TControl.OnMouseEnter">
+      <element name="TCalendar.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseLeave" link="#LCL.Controls.TControl.OnMouseLeave">
+      <element name="TCalendar.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseMove" link="#LCL.Controls.TControl.OnMouseMove">
+      <element name="TCalendar.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseUp" link="#LCL.Controls.TControl.OnMouseUp">
+      <element name="TCalendar.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp">
+        <short></short>
+      </element>
+
+      <element name="TCalendar.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TCalendar.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TCalendar.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
+      <element name="TCalendar.OnMouseWheelHorz" link="#lcl.controls.TControl.OnMouseWheelHorz"/>
+      <element name="TCalendar.OnMouseWheelLeft" link="#lcl.controls.TControl.OnMouseWheelLeft"/>
+      <element name="TCalendar.OnMouseWheelRight" link="#lcl.controls.TControl.OnMouseWheelRight"/>
+
+      <element name="TCalendar.OnResize" link="#lcl.controls.TControl.OnResize">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseWheel" link="#LCL.Controls.TControl.OnMouseWheel">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseWheelHorz" link="#LCL.Controls.TControl.OnMouseWheelHorz">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseWheelLeft" link="#LCL.Controls.TControl.OnMouseWheelLeft">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.OnMouseWheelRight" link="#LCL.Controls.TControl.OnMouseWheelRight">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.OnResize" link="#LCL.Controls.TControl.OnResize">
-        <short></short>
-      </element>
-      <!-- property Visibility: published -->
-      <element name="TCalendar.OnUTF8KeyPress" link="#LCL.Controls.TWinControl.OnUTF8KeyPress">
+      <element name="TCalendar.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress">
         <short></short>
       </element>
       <!-- property Visibility: published -->
@@ -773,23 +733,23 @@
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.ParentDoubleBuffered" link="#LCL.Controls.TControl.ParentDoubleBuffered">
+      <element name="TCalendar.ParentDoubleBuffered" link="#lcl.controls.TControl.ParentDoubleBuffered">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.PopupMenu" link="#LCL.Controls.TControl.PopupMenu">
+      <element name="TCalendar.PopupMenu" link="#lcl.controls.TControl.PopupMenu">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.TabOrder" link="#LCL.Controls.TWinControl.TabOrder">
+      <element name="TCalendar.TabOrder" link="#lcl.controls.TWinControl.TabOrder">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.Tabstop" link="#LCL.Controls.TWinControl.TabStop">
+      <element name="TCalendar.Tabstop" link="#lcl.controls.TWinControl.TabStop">
         <short></short>
       </element>
       <!-- property Visibility: published -->
-      <element name="TCalendar.Visible" link="#LCL.Controls.TControl.Visible">
+      <element name="TCalendar.Visible" link="#lcl.controls.TControl.Visible">
         <short></short>
       </element>
 
