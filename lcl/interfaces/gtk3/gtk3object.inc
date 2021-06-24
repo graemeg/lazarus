@@ -348,6 +348,14 @@ begin
 
   // g_object_set_property(gtk_settings_get_default,'gtk-enable-mnemonics',@AValue);
   // g_object_set_property(gtk_settings_get_default,'gtk-auto-mnemonics',@AValue);
+
+
+  cssProvider := gtk_css_provider_new();
+  gtk_css_provider_load_from_path(cssProvider, 'theme.css', nil);
+  gtk_style_context_add_provider_for_screen(gdk_screen_get_default(),
+                               PGtkStyleProvider(cssProvider),
+                               GTK_STYLE_PROVIDER_PRIORITY_USER);
+
 end;
 
 destructor TGtk3WidgetSet.Destroy;
@@ -355,6 +363,8 @@ begin
   {$IFDEF GTK3DEBUGCORE}
   DebugLn('** TGtk3WidgetSet.Destroy **');
   {$ENDIF}
+  if Assigned(cssProvider) then
+    cssProvider^.unref;
   ReleaseAllStyles;
   Styles.Free;
   Styles := nil;
@@ -682,7 +692,8 @@ begin
     {$IFDEF VerboseTimer}
     DebugLn(['TGtk3WidgetSet.CreateTimer Interval=',dbgs(Interval)]);
     {$ENDIF}
-    Result:= g_timeout_add_full(0 {G_PRIORITY_DEFAULT}, Interval, @gtk3TimerProc, TimerInfo, @gtk3TimerDestroyed);
+    //Result:= g_timeout_add_full(0 {G_PRIORITY_DEFAULT}, Interval, @gtk3TimerProc, TimerInfo, @gtk3TimerDestroyed);
+    Result:=g_timeout_add(Interval, @gtk3TimerProc, TimerInfo);
     if Result = 0 then
       Dispose(TimerInfo)
     else begin
@@ -707,8 +718,9 @@ begin
     if (TimerInfo^.TimerHandle = guint(TimerHandle)) then
     begin
       // in gtk3 timeout is automatically removed
-      TimerInfo^.TimerHandle := 0;
       // g_timeout_remove(TimerInfo^.TimerHandle);
+      g_source_remove(TimerInfo^.TimerHandle);
+      TimerInfo^.TimerHandle := 0;
       FTimerData.Delete(n);
       Dispose(TimerInfo);
     end;

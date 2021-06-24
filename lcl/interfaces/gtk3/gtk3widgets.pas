@@ -114,6 +114,7 @@ type
     constructor CreateFrom(const AWinControl: TWinControl; AWidget: PGtkWidget); virtual;
 
     procedure InitializeWidget; virtual;
+    procedure UpdateWidgetConstraints;virtual;
     procedure DeInitializeWidget;
     procedure RecreateWidget;
     procedure DestroyNotify({%H-}AWidget: PGtkWidget); virtual;
@@ -223,12 +224,15 @@ type
     procedure setText(const AValue: String); override;
     function CreateWidget(const {%H-}Params: TCreateParams):PGtkWidget; override;
   public
+    procedure SetBounds(Left,Top,Width,Height:integer);override;
     procedure InitializeWidget; override;
+    procedure UpdateWidgetConstraints;override;
     procedure SetEchoMode(AVisible: Boolean);
     procedure SetMaxLength(AMaxLength: Integer);
     procedure SetPasswordChar(APasswordChar: Char);
     procedure SetNumbersOnly(ANumbersOnly:boolean);
     procedure SetTextHint(const AHint:string);
+    procedure SetFrame(const aborder:boolean);
     function GetTextHint:string;
     function IsWidgetOk: Boolean; override;
     property Alignment: TAlignment read GetAlignment write SetAlignment;
@@ -1743,14 +1747,11 @@ begin
   Result := False;
   FillChar(Msg{%H-}, SizeOf(Msg), #0);
   if Event^.type_ = GDK_ENTER_NOTIFY then
-  begin
-    Msg.Msg := LM_MOUSEENTER;
-    NotifyApplicationUserInput(LCLObject, Msg.Msg);
-  end
+    Msg.Msg := LM_MOUSEENTER
   else
     Msg.Msg := LM_MOUSELEAVE;
 
-  //NotifyApplicationUserInput(LCLObject, Msg.Msg);
+  NotifyApplicationUserInput(LCLObject, Msg.Msg);
   Result := DeliverMessage(Msg, True) <> 0;
   {$IFDEF GTK3DEBUGCORE}
   MousePos.X := Round(Event^.crossing.x);
@@ -1799,7 +1800,6 @@ begin
   Msg.Keys := GdkModifierStateToLCL(Event^.motion.state, False);
 
   Msg.Msg := LM_MOUSEMOVE;
-
 
   NotifyApplicationUserInput(LCLObject, Msg.Msg);
   if Widget^.get_parent <> nil then
@@ -2653,7 +2653,6 @@ var
   ARect: TGdkRectangle;
   ARgba: TGdkRGBA;
   i: TGtkStateType;
-  mh,nh,mw,nw:gint;
 begin
   FFocusableByMouse := False;
   FCentralWidget := nil;
@@ -2664,7 +2663,6 @@ begin
   FWidgetType := [wtWidget];
   FWidget := CreateWidget(FParams);
 
-  // connect events
   if not (wtWindow in FWidgetType) then
   begin
     FWidget^.show_all;
@@ -2677,16 +2675,11 @@ begin
     end;
     FWidget^.set_allocation(@ARect);
 
-    fWidget^.get_preferred_height(@mh,@nh);
-    fWidget^.get_preferred_width(@mw,@nw);
-
-    if mh>LCLObject.Constraints.MinHeight then
-      LCLObject.Constraints.MinHeight:=mh;
-    if mw>LCLObject.Constraints.MinWidth then
-      LCLObject.Constraints.MinWidth:=mw;
+    UpdateWidgetConstraints;
   end;
   LCLIntf.SetProp(HWND(Self),'lclwidget',Self);
 
+  // connect events
   // move signal connections into attach events
   if not gtk_widget_get_realized(FWidget) then
     FWidget^.set_events(GDK_DEFAULT_EVENTS_MASK);
@@ -2736,6 +2729,22 @@ begin
   g_signal_connect_data(FWidget,'map', TGCallback(@Gtk3MapWidget), Self, nil, 0);
   g_signal_connect_data(FWidget,'size-allocate',TGCallback(@Gtk3SizeAllocate), Self, nil, 0);
   // g_signal_connect_data(FWidget, 'motion_notify_event', TGCallback(@Gtk3MotionNotifyEvent), LCLObject, nil, 0);
+end;
+
+
+procedure TGtk3Widget.UpdateWidgetConstraints;
+var mh,nh,mw,nw:gint;
+begin
+  // some GTK3 widgets my report unacceptible for LCL values
+  // i.e. GtkEntry have 152px minimal and natural width
+  // this has to be handled in specific classes
+  fWidget^.get_preferred_height(@mh,@nh);
+  fWidget^.get_preferred_width(@mw,@nw);
+
+  if mh>LCLObject.Constraints.MinHeight then
+    LCLObject.Constraints.MinHeight:=mh;
+  if mw>LCLObject.Constraints.MinWidth then
+    LCLObject.Constraints.MinWidth:=mw;
 end;
 
 procedure TGtk3Widget.DeInitializeWidget;
@@ -2913,7 +2922,8 @@ function TGtk3Widget.getClientRect: TRect;
 var
   AAlloc: TGtkAllocation;
 begin
-  Result := Rect(0, 0, 0, 0);
+  //writeln('GetClientRect ',LCLObject.Name,':',LCLObject.Name);
+  Result := LCLObject.BoundsRect;
   if not IsWidgetOK then
     exit;
   if GetContainerWidget^.get_realized then
@@ -2926,7 +2936,6 @@ begin
     FWidget^.get_allocation(@AAlloc);
     Result := Rect(AAlloc.x, AAlloc.y, AAlloc.width + AAlloc.x,AAlloc.height + AAlloc.y);
   end;
-
   OffsetRect(Result, -Result.Left, -Result.Top);
 end;
 
@@ -3633,13 +3642,29 @@ function TGtk3Entry.CreateWidget(const Params: TCreateParams): PGtkWidget;
 begin
   Result := PGtkWidget(TGtkEntry.new);
   FWidgetType := FWidgetType + [wtEntry];
+  fText:=Params.Caption;
   PrivateCursorPos := -1;
   PrivateSelection := -1;
+end;
+
+procedure TGtk3Entry.SetBounds(Left, Top, Width, Height: integer);
+var val:TGvalue;
+begin
+  val.clear;
+  val.init(G_TYPE_UINT);
+  val.set_uint(Width);
+
+  inherited SetBounds(Left, Top, Width, Height);
+  PGtkEntry(FWidget)^.set_property('width-request',@val);
+  val.unset;
 end;
 
 procedure TGtk3Entry.InitializeWidget;
 begin
   inherited InitializeWidget;
+
+  fWidget^.set_size_request(fParams.Width,fParams.Height);
+  PgtkEntry(fWidget)^.set_text(PgChar(fParams.Caption));
 
   Self.SetTextHint(TCustomEdit(Self.LCLObject).TextHint);
   Self.SetNumbersOnly(TCustomEdit(Self.LCLObject).NumbersOnly);
@@ -3649,6 +3674,19 @@ begin
 
   //g_signal_connect_data(PGtkEntry(FWidget)^.get_buffer, 'deleted-text', TGCallback(@Gtk3EntryDeletedText), Self, nil, 0);
   //g_signal_connect_data(PGtkEntry(FWidget)^.get_buffer, 'inserted-text', TGCallback(@Gtk3EntryInsertedText), Self, nil, 0);
+end;
+
+procedure TGtk3Entry.UpdateWidgetConstraints;
+var mh,nh,mw,nw:gint;
+begin
+  // GtkEntry have 152px minimal and natural width
+  fWidget^.get_preferred_height(@mh,@nh);
+  fWidget^.get_preferred_width(@mw,@nw);
+
+  if mh>LCLObject.Constraints.MinHeight then
+    LCLObject.Constraints.MinHeight:=mh;
+
+  // LCLObject.Constraints.MinWidth:=0;
 end;
 
 procedure TGtk3Entry.SetPasswordChar(APasswordChar: Char);
@@ -3675,8 +3713,14 @@ end;
 
 procedure TGtk3Entry.SetTextHint(const AHint: string);
 begin
-  if IsWidgetOK then
+  if IsWidgetOK and (Ahint<>'') then
     PGtkEntry(FWidget)^.set_placeholder_text(PgChar(AHint));
+end;
+
+procedure TGtk3Entry.SetFrame(const aborder: boolean);
+begin
+  if IsWidgetOk then
+    PGtkEntry(FWidget)^.set_has_frame(aborder);
 end;
 
 function TGtk3Entry.GetTextHint:string;
@@ -3697,7 +3741,11 @@ end;
 procedure TGtk3Entry.SetMaxLength(AMaxLength: Integer);
 begin
   if IsWidgetOK then
+  begin
     PGtkEntry(FWidget)^.set_max_length(AMaxLength);
+    PGtkEntry(FWidget)^.set_width_chars(AMaxLength);
+  end;
+
 end;
 
 function TGtk3Entry.IsWidgetOk: Boolean;
