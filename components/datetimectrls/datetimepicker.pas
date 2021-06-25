@@ -1416,6 +1416,7 @@ begin
           Result.Month := FCorrectedValue;
         dtpYear:
           Result.Year := FCorrectedValue;
+      otherwise
       end;
     end;
   end;
@@ -1578,8 +1579,8 @@ begin
         end;
         SetHour(W);
         FSelectedTextPart := 8;
-      end else begin
 
+      end else begin
         W := StrToInt(S);
         case GetSelectedDateTimePart of
           dtpYear:
@@ -1622,16 +1623,21 @@ begin
               end else
                 SetHour(W);
             end;
+
           dtpMinute:
             SetMinute(W);
+
           dtpSecond:
             SetSecond(W);
+
           dtpMiliSec:
             SetMiliSec(W);
 
+        otherwise
         end;
 
       end;
+
     finally
       FCorrectedValue := 0;
       Dec(FUserChanging);
@@ -1786,12 +1792,10 @@ begin
         FMonthPos := 1;
         FYearPos := 3;
       end;
-    ddoYMD:
-      begin
-        FDayPos := 3;
-        FMonthPos := 2;
-        FYearPos := 1;
-      end;
+  otherwise
+    FDayPos := 3;
+    FMonthPos := 2;
+    FYearPos := 1;
   end;
 
 end;
@@ -1823,6 +1827,7 @@ begin
       tdHMS:
         FEffectiveHideDateTimeParts := FEffectiveHideDateTimeParts +
                                         [dtpMiliSec];
+    otherwise
     end;
 
     if (FTimeFormat = tf24) or (dtpHour in FEffectiveHideDateTimeParts) then
@@ -1914,6 +1919,7 @@ begin
         Result := dtpYear
       else if Result = dtpYear then
         Result := dtpDay;
+  otherwise
   end;
 end;
 
@@ -1980,6 +1986,7 @@ begin
           AuxAlignment := taLeftJustify;
         taLeftJustify:
           AuxAlignment := taRightJustify;
+      otherwise
       end;
     end;
   end;
@@ -2010,8 +2017,8 @@ begin
       Result.x := XR - FTextWidth;
     taCenter:
       Result.x := (XL + XR - FTextWidth) div 2;
-  else
-    Result.x := XL;
+    taLeftJustify:
+      Result.x := XL;
   end;
 
 end;
@@ -3409,9 +3416,12 @@ begin
         if DTP < dtpHour then begin
           YMD := GetYYYYMMDD(True);
           case DTP of
-            dtpDay: YMD.Day := L;
-            dtpMonth: YMD.Month := L;
-            dtpYear: YMD.Year := L;
+            dtpDay:
+              YMD.Day := L;
+            dtpMonth:
+              YMD.Month := L;
+          otherwise
+            YMD.Year := L;
           end;
 
           if AutoAdvance and (YMD.Day <= 31) and
@@ -3424,22 +3434,23 @@ begin
                     FCorrectedDTP := dtpMonth;
                   ddoMDY:
                     FCorrectedDTP := dtpYear;
+                otherwise
                 end;
+
               dtpMonth:
                 case FEffectiveDateDisplayOrder of
-                  ddoMDY, ddoYMD:
-                    begin                         
-                      FCorrectedDTP := dtpDay;
-                      FCorrectedValue := NumberOfDaysInMonth(YMD.Month, YMD.Year);
-                      YMD.Day := FCorrectedValue;
-                    end;
                   ddoDMY:
                     FCorrectedDTP := dtpYear;
+                otherwise
+                  FCorrectedDTP := dtpDay;
+                  FCorrectedValue := NumberOfDaysInMonth(YMD.Month, YMD.Year);
+                  YMD.Day := FCorrectedValue;
                 end;
-              dtpYear:
-                if (FEffectiveDateDisplayOrder = ddoYMD) and (YMD.Month = 2)
-                      and (YMD.Day = 29) and not IsLeapYear(YMD.Year) then
-                  FCorrectedDTP := dtpMonth;
+
+            otherwise
+              if (FEffectiveDateDisplayOrder = ddoYMD) and (YMD.Month = 2)
+                    and (YMD.Day = 29) and not IsLeapYear(YMD.Year) then
+                FCorrectedDTP := dtpMonth;
             end;
 
             case FCorrectedDTP of
@@ -3455,6 +3466,7 @@ begin
                     FCorrectedValue := FCorrectedValue + 4;
                   YMD.Year := FCorrectedValue;
                 end;
+            otherwise
             end;
 
           end;
@@ -3483,7 +3495,9 @@ begin
               dtpMinute: HMSMs.Minute := L;
               dtpSecond: HMSMs.Second := L;
               dtpMiliSec: HMSMs.MiliSec := L;
+            otherwise
             end;
+
             if not TryEncodeTime(HMSMs.Hour, HMSMs.Minute, HMSMs.Second,
                                          HMSMs.MiliSec, T) then
               S := Key
@@ -3755,7 +3769,7 @@ begin
     X := (Width - 9) div 2;
     Y := (Height - 6) div 2;
 
-  { Let's draw shape of the arrow on the button: }
+    { Let's draw shape of the arrow on the button: }
     case DTPicker.FArrowShape of
       asClassicLarger:
         { triangle: }
@@ -3773,10 +3787,10 @@ begin
         { modern -- smaller variant:    }
         Canvas.Polygon([Point(X + 1, Y + 2), Point(X + 2, Y + 1),
                           Point(X + 4, Y + 3), Point(X + 6, Y + 1), Point(X + 7, Y + 2), Point(X + 4, Y + 5)]);
-      asYetAnotherShape:
-        { something in between, not very pretty:  }
-        Canvas.Polygon([Point(X + 0, Y + 1), Point(X + 1, Y + 0),
-              Point(X + 2, Y + 1), Point(X + 6, Y + 1),Point(X + 7, Y + 0), Point(X + 8, Y + 1), Point(X + 4, Y + 5)]);
+    otherwise // asYetAnotherShape:
+      { something in between, not very pretty:  }
+      Canvas.Polygon([Point(X + 0, Y + 1), Point(X + 1, Y + 0),
+            Point(X + 2, Y + 1), Point(X + 6, Y + 1),Point(X + 7, Y + 0), Point(X + 8, Y + 1), Point(X + 4, Y + 5)]);
     end;
 
   end;
