@@ -577,7 +577,6 @@ type
     // designer
     FCreateComponentFocusNameProperty: boolean;
     FSwitchToFavoritesOITab: boolean;
-    FDesignerPaintLazy: boolean;
     FShowBorderSpacing: boolean;
     FShowGrid: boolean;
     FSnapToGrid: boolean;
@@ -863,8 +862,6 @@ type
                                              write FRubberbandCreationColor;
     property RubberbandSelectsGrandChilds: boolean read FRubberbandSelectsGrandChilds
                                                   write FRubberbandSelectsGrandChilds;
-    property DesignerPaintLazy: boolean read FDesignerPaintLazy
-                                        write FDesignerPaintLazy;
     property CreateComponentFocusNameProperty: boolean read FCreateComponentFocusNameProperty
                                                       write FCreateComponentFocusNameProperty;
     property SwitchToFavoritesOITab: boolean read FSwitchToFavoritesOITab
@@ -2143,7 +2140,6 @@ begin
   FRubberbandSelectionColor:=clNavy;
   FRubberbandCreationColor:=clMaroon;
   FRubberbandSelectsGrandChilds:=DefaultRubberbandSelectsGrandChilds;
-  FDesignerPaintLazy:=true;
   FCreateComponentFocusNameProperty:=false;
   FSwitchToFavoritesOITab:=false;
   FFormTitleBarChangesObjectInspector:=false;
@@ -2631,7 +2627,6 @@ begin
     FRubberbandCreationColor:=FXMLCfg.GetValue(Path+'FormEditor/Rubberband/CreationColor/Value',
        FRubberbandCreationColor);
     FRubberbandSelectsGrandChilds:=FXMLCfg.GetValue(Path+'FormEditor/Rubberband/SelectsGrandChilds/Value',DefaultRubberbandSelectsGrandChilds);
-    FDesignerPaintLazy:=FXMLCfg.GetValue(Path+'FormEditor/DesignerPaint/Lazy/Value',true);
     FCreateComponentFocusNameProperty:=FXMLCfg.GetValue(
        Path+'FormEditor/CreateComponentFocusNameProperty/Value',false);
     FSwitchToFavoritesOITab:=FXMLCfg.GetValue(Path+'FormEditor/SwitchToFavoritesOITab/Value',false);
@@ -3003,7 +2998,6 @@ begin
        FRubberbandCreationColor,clRed);
     FXMLCfg.SetDeleteValue(Path+'FormEditor/Rubberband/SelectsGrandChilds/Value',
        FRubberbandSelectsGrandChilds,DefaultRubberbandSelectsGrandChilds);
-    FXMLCfg.SetDeleteValue(Path+'FormEditor/DesignerPaint/Lazy/Value',FDesignerPaintLazy,true);
     FXMLCfg.SetDeleteValue(Path+'FormEditor/CreateComponentFocusNameProperty/Value',
        FCreateComponentFocusNameProperty,false);
     FXMLCfg.SetDeleteValue(Path+'FormEditor/SwitchToFavoritesOITab/Value',FSwitchToFavoritesOITab,false);

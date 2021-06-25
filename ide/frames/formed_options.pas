@@ -56,7 +56,6 @@ type
     ColorBox: TColorBox;
     ColorsListBox: TColorListBox;
     CreateCompFocusNameCheckBox: TCheckBox;
-    DesignerPaintLazyCheckBox: TCheckBox;
     FormEditMiscGroupBox: TGroupBox;
     GridGroupBox: TGroupBox;
     GridSizeXSpinEdit: TSpinEdit;
@@ -136,8 +135,6 @@ procedure TFormEditorOptionsFrame.Setup(ADialog: TAbstractOptionsEditorDialog);
     OpenDesignerOnOpenUnitCheckBox.Hint:=lisOpenDesignerOnOpenUnitHint;
     RightClickSelectsCheckBox.Caption:=dlgRightClickSelects;
     RightClickSelectsCheckBox.Hint:=dlgComponentUnderMouseCursorIsFirstSelected;
-    DesignerPaintLazyCheckBox.Caption:=lisFEPaintDesignerItemsOnIdle;
-    DesignerPaintLazyCheckBox.Hint:=lisFEPaintDesignerItemsOnIdleHint;
     CreateCompFocusNameCheckBox.Caption:=lisAskNameOnCreate;
     CreateCompFocusNameCheckBox.Hint:=lisAskForComponentNameAfterPuttingItOnForm;
     SwitchToFavoritesOITabCheckBox.Caption:=lisOFESwitchToObjectInspectorFavoritesTab;
@@ -187,7 +184,6 @@ begin
     CheckPackagesOnFormCreateCheckBox.Checked := CheckPackagesOnFormCreate;
     RightClickSelectsCheckBox.Checked := RightClickSelects;
     RubberbandSelectsGrandChildsCheckBox.Checked := RubberbandSelectsGrandChilds;
-    DesignerPaintLazyCheckBox.Checked := DesignerPaintLazy;
     CreateCompFocusNameCheckBox.Checked := CreateComponentFocusNameProperty;
     SwitchToFavoritesOITabCheckBox.Checked := SwitchToFavoritesOITab;
     SwitchToFavoritesOITabCheckBox.Enabled := CreateCompFocusNameCheckBox.Checked;
@@ -224,7 +220,6 @@ begin
     CheckPackagesOnFormCreate := CheckPackagesOnFormCreateCheckBox.Checked;
     RightClickSelects := RightClickSelectsCheckBox.Checked;
     RubberbandSelectsGrandChilds := RubberbandSelectsGrandChildsCheckBox.Checked;
-    DesignerPaintLazy := DesignerPaintLazyCheckBox.Checked;
     CreateComponentFocusNameProperty := CreateCompFocusNameCheckBox.Checked;
     SwitchToFavoritesOITab := SwitchToFavoritesOITabCheckBox.Checked;
     FormTitleBarChangesObjectInspector := FormTitleBarChangesObjectInspectorCheckBox.Checked;

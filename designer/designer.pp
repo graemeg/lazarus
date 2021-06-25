@@ -2017,10 +2017,6 @@ begin
       // client grid
       if (Sender is TWinControl) and (csAcceptsControls in Sender.ControlStyle) then
         PaintClientGrid(TWinControl(Sender),DDC);
-
-      if (WidgetSet.GetLCLCapability(lcCanDrawOutsideOnPaint) <> 0) and 
-         not EnvironmentOptions.DesignerPaintLazy then
-          DoPaintDesignerItems;
     end;
    
     // clean up

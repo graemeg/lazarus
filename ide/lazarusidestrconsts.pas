@@ -1516,9 +1516,6 @@ resourcestring
   dlgrightClickSelects = 'Right click selects';
   dlgComponentUnderMouseCursorIsFirstSelected = 'Component under mouse cursor '
     +'is first selected, then the popup menu commands work on it.';
-  lisFEPaintDesignerItemsOnIdle = 'Reduce designer painting';
-  lisFEPaintDesignerItemsOnIdleHint = 'Paint designer items only on idle '
-    +'(reduce overhead for slow computers)';
   lisAskNameOnCreate = 'Ask name on create';
   lisAskForComponentNameAfterPuttingItOnForm = 'Ask for component '
     +'name after putting it on a designer form.';
