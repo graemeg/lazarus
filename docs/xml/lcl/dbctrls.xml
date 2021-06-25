@@ -854,8 +854,13 @@
         <seealso/>
       </element>
       <element name="TDBLookup.LookupCache">
-        <short/>
-        <descr>Used in classes with TDBLookup in their implementation, like TDBLookupComboBox and TDBLookupListBox.
+        <short>
+          Indicates if look-up information is cached in the field data link for the control.
+        </short>
+        <descr>
+          <p>
+            Used in classes with TDBLookup in their implementation, like <var>TDBLookupComboBox</var> and <var>TDBLookupListBox</var>.
+          </p>
          </descr>
         <seealso/>
       </element>
@@ -1051,7 +1056,7 @@
       <element name="TDBEdit.CMGetDataLink.Message">
         <short>Message examined and updated in the method.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.GetReadOnly" name="TDBEdit.GetReadOnly">
+      <element link="#lcl.stdctrls.TCustomEdit.GetReadOnly" name="TDBEdit.GetReadOnly">
         <short>Gets the value for the ReadOnly property.</short>
         <descr>
           <p>
@@ -1069,7 +1074,7 @@
       <element name="TDBEdit.GetReadOnly.Result">
         <short>Value for the property.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.SetReadOnly" name="TDBEdit.SetReadOnly">
+      <element link="#lcl.stdctrls.TCustomEdit.SetReadOnly" name="TDBEdit.SetReadOnly">
         <short>Sets the value for the ReadOnly property.</short>
         <descr>
           <p>
@@ -1146,7 +1151,9 @@
         <short>UTF-8 character examined in the method.</short>
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBEdit.Notification">
-        <short/>
+        <short>
+          Handles notifications when a component is added or remvoed from the control.
+        </short>
         <descr>Notification is overridden in TDBEdit to ensure that the DataSource for the data link in the control is set to Nil when the component is freed. Notification calls the inherited method.
         </descr>
         <seealso>
@@ -1215,7 +1222,7 @@
           <link id="#fcl.db.TDataLink.DataSource">TDataLink.DataSource</link>
         </seealso>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.WMSetFocus" name="TDBEdit.WMSetFocus">
+      <element link="#lcl.stdctrls.TCustomEdit.WMSetFocus" name="TDBEdit.WMSetFocus">
         <short>Ensures that the control has the input focus.</short>
         <descr>
           <p/>
@@ -1223,19 +1230,19 @@
         </descr>
         <seealso/>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.WMSetFocus.Message" name="TDBEdit.WMSetFocus.Message">
-        <short/>
+      <element link="#lcl.stdctrls.TCustomEdit.WMSetFocus.Message" name="TDBEdit.WMSetFocus.Message">
+        <short>Window message handled for the control.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.WMKillFocus" name="TDBEdit.WMKillFocus">
+      <element link="#lcl.stdctrls.TCustomEdit.WMKillFocus" name="TDBEdit.WMKillFocus">
         <short>Ensures that the liked dataset is updated when the modified control loses input focus.
         </short>
         <descr/>
         <seealso/>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.WMKillFocus.Message" name="TDBEdit.WMKillFocus.Message">
-        <short/>
+      <element link="#lcl.stdctrls.TCustomEdit.WMKillFocus.Message" name="TDBEdit.WMKillFocus.Message">
+        <short>Window message handled for the control.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.WndProc" name="TDBEdit.WndProc">
+      <element link="#lcl.stdctrls.TCustomEdit.WndProc" name="TDBEdit.WndProc">
         <short>Handles the specified LCL message for the control.</short>
         <descr>
           <p>
@@ -1433,7 +1440,7 @@
         </seealso>
       </element>
 
-      <element link="#LCL.StdCtrls.TCustomEdit.ReadOnly" name="TDBEdit.ReadOnly">
+      <element link="#lcl.stdctrls.TCustomEdit.ReadOnly" name="TDBEdit.ReadOnly">
         <short>Indicates if the control cannot modify the field in the linked dataset.</short>
         <descr>
           <p>
@@ -1458,7 +1465,7 @@
         </seealso>
       </element>
       <element link="#lcl.controls.TControl.Align" name="TDBEdit.Align"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.Alignment" name="TDBEdit.Alignment"/>
+      <element link="#lcl.stdctrls.TCustomEdit.Alignment" name="TDBEdit.Alignment"/>
       <element link="#lcl.controls.TControl.Anchors" name="TDBEdit.Anchors">
         <descr>
           <p>Anchors determines how the control is to be anchored to its client or parent control.
@@ -1470,7 +1477,7 @@
         </descr>
         <seealso/>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.AutoSelect" name="TDBEdit.AutoSelect"/>
+      <element link="#lcl.stdctrls.TCustomEdit.AutoSelect" name="TDBEdit.AutoSelect"/>
       <element link="#lcl.controls.TControl.AutoSize" name="TDBEdit.AutoSize">
         <descr>
           <p>One of the standard properties, which should be supported by all descendants.
@@ -1491,8 +1498,8 @@
           </p>
         </descr>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.BorderStyle" name="TDBEdit.BorderStyle"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.CharCase" name="TDBEdit.CharCase">
+      <element name="TDBEdit.BorderStyle" link="#lcl.controls.TWinControl.BorderStyle"/>
+      <element link="#lcl.stdctrls.TCustomEdit.CharCase" name="TDBEdit.CharCase">
         <descr>
           <p>Indicates how text is displayed in a text editing control in the following ways:
           </p>
@@ -1514,19 +1521,19 @@
       <element link="#lcl.controls.TControl.Enabled" name="TDBEdit.Enabled"/>
       <element link="#LCL.MaskEdit.TCustomMaskEdit.EditMask" name="TDBEdit.EditMask"/>
       <element link="#lcl.controls.TControl.Font" name="TDBEdit.Font"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.MaxLength" name="TDBEdit.MaxLength"/>
+      <element link="#lcl.stdctrls.TCustomEdit.MaxLength" name="TDBEdit.MaxLength"/>
       <element link="#lcl.controls.TControl.ParentBiDiMode" name="TDBEdit.ParentBiDiMode"/>
       <element link="#lcl.controls.TControl.ParentColor" name="TDBEdit.ParentColor"/>
       <element link="#lcl.controls.TWinControl.ParentDoubleBuffered" name="TDBEdit.ParentDoubleBuffered"/>
       <element link="#lcl.controls.TControl.ParentFont" name="TDBEdit.ParentFont"/>
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBEdit.ParentShowHint"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.PasswordChar" name="TDBEdit.PasswordChar"/>
+      <element link="#lcl.stdctrls.TCustomEdit.PasswordChar" name="TDBEdit.PasswordChar"/>
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBEdit.PopupMenu"/>
       <element link="#lcl.controls.TControl.ShowHint" name="TDBEdit.ShowHint"/>
       <element link="#lcl.controls.TWinControl.TabOrder" name="TDBEdit.TabOrder"/>
       <element link="#lcl.controls.TWinControl.TabStop" name="TDBEdit.TabStop"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBEdit.Visible"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.OnChange" name="TDBEdit.OnChange"/>
+      <element link="#lcl.stdctrls.TCustomEdit.OnChange" name="TDBEdit.OnChange"/>
 
       <element name="TDBEdit.OnClick"  link="#lcl.controls.TControl.OnClick">
         <descr>
@@ -1692,37 +1699,44 @@
       <element name="TDBText.CMGetDataLink.Message">
         <short>Message handled and updated in the method.</short>
       </element>
-      <element link="#rtl.Classes.TComponent.Notification" name="TDBText.Notification">
-        <descr>
-          <p>
-            <var>Notification</var> is called whenever a child component is destroyed, inserted or removed from the list of owned component. Components that were requested to send a notification when they are freed ((with
-            <link id="TComponent.FreeNotification">FreeNotification</link>) will also call
-            <var>Notification</var> when they are freed.
-          </p>
-          <p>The <var>AComponent</var> parameter specifies which component sends the notification, and <var>Operation</var> specifies whether the component is being inserted into or removed from the child component list, or whether it is being destroyed.
-          </p>
-          <p>Descendants of <var>TComponent</var> can use <link id="TComponent.FreeNotification">FreeNotification</link> to handle notifications when objects are freed. By overriding the <var>Notification</var> method, they can do special processing (typically, set a reference to this component to <var>Nil</var>) when this component is destroyed. The <var>Notification</var> method is called quite often in the streaming process, so speed should be a consideration when overriding this method.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-      <element link="#LCL.StdCtrls.TCustomLabel.WSRegisterClass" name="TDBText.WSRegisterClass">
-        <short>Registers the class type used to create new instance of the control for the Widgetset.
+      <element name="TDBText.Notification">
+        <short>
+          Handles a notification when a component is added to or removed from the control.
         </short>
         <descr>
           <p>
-            <var>WSRegisterClass</var> is an overridden method used to register the widgetset class type used to create new instances of the control. WSRegisterClass calls the inherited method, and excludes loading the
-            <var>Caption</var> property during LCL streaming.
+            <var>Notification</var> is called whenever a child component is destroyed, inserted or removed from the list of owned component. Components that were requested to send a notification when they are freed ((with <link id="TComponent.FreeNotification">FreeNotification</link>) will also call <var>Notification</var> when they are freed.
+          </p>
+          <p>
+            The <var>AComponent</var> parameter specifies which component sends the notification, and <var>Operation</var> specifies whether the component is being inserted into or removed from the child component list, or whether it is being destroyed.
+          </p>
+          <p>
+            Descendants of <var>TComponent</var> can use <link id="TComponent.FreeNotification">FreeNotification</link> to handle notifications when objects are freed. By overriding the <var>Notification</var> method, they can do special processing (typically, set a reference to this component to <var>Nil</var>) when this component is destroyed. The <var>Notification</var> method is called quite often in the streaming process, so speed should be a consideration when overriding this method.
           </p>
         </descr>
-        <version>The <var>Caption</var> property was included in LCL component streaming prior to LCL version 0.9.29 (revision 6462).
-        </version>
         <seealso>
-          <link id="TDBText.Caption"/>
-          <link id="TDBText.Field"/>
+          <link id="#lcl.stdctrls.TCustomLabel.Notification">TCustomLabel.Notification</link>
         </seealso>
       </element>
-      <element link="#rtl.Classes.TComponent.Loaded" name="TDBText.Loaded">
+      <element name="TDBText.WSRegisterClass">
+        <short>
+          Registers the class type used to create new instance of the control for the Widgetset.
+        </short>
+        <descr>
+          <p>
+            <var>WSRegisterClass</var> is an overridden method used to register the widgetset class type used to create new instances of the control. WSRegisterClass calls the inherited method, and excludes loading the <var>Caption</var> property during LCL streaming.
+          </p>
+        </descr>
+        <version>
+          The <var>Caption</var> property was included in LCL component streaming prior to LCL version 0.9.29.
+        </version>
+        <seealso>
+          <link id="TDBText.Field"/>
+          <link id="#lcl.stdctrls.TCustomLabel.WSRegisterClass">TCustomLabel.WSRegisterClass</link>
+        </seealso>
+      </element>
+      <element name="TDBText.Loaded">
+        <short>Performs actions when LCL component streaming has been completed.</short>
         <descr>
           <p>
             <var>Loaded</var> is called by the streaming system when a root component was completely read from a stream and all properties and references to other objects have been resolved by the streaming system. Descendants of
@@ -1731,7 +1745,9 @@
           <p>Application programmers should never call <var>Loaded</var> directly; this is done automatically by the LCL streaming system.
         </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Loaded">TControl.Loaded</link>
+        </seealso>
       </element>
       <element name="TDBText.Notification.AComponent">
         <short>Component affected by the notification.</short>
@@ -1838,48 +1854,17 @@
           <link id="#fcl.db.TField">TField</link>
         </seealso>
       </element>
-      <element link="#lcl.controls.TControl.Align" name="TDBText.Align">
-        <short/>
-        <descr>
-          <p>One of the standard properties, which should be supported by all descendants.</p>
-          <p>Either reads a flag containing alignment instructions (<var>FAlign</var>) or writes alignment instructions (<var>SetAlign</var>).
-          </p>
-          <p>May have no alignment, or have custom or client alignment, and can be aligned to specific edges such as top, bottom, left or right.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-      <element link="#LCL.StdCtrls.TCustomLabel.Alignment" name="TDBText.Alignment"/>
-      <element link="#lcl.controls.TControl.Anchors" name="TDBText.Anchors">
-        <short/>
-        <descr>
-          <p>One of the standard properties, which should be supported by all descendants.
-          </p>
-          <p>Determines how the control is to be anchored to its client or parent control.
-          </p>
-          <p>Either reads a flag containing the set of anchors to be used, or writes a set of anchors. If they have been written, this is indicated in the <var>IsAnchorsStored</var> property.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-      <element link="#lcl.controls.TControl.AutoSize" name="TDBText.AutoSize">
-        <short/>
-        <descr>
-          <p>One of the  standard properties, which should be supported by all descendants.
-          </p>
-          <p>AutoSize permits the size of a control to be adjusted automatically, for example a button can become bigger or smaller to accommodate a longer or shorter caption.
-          </p>
-          <p>Reads logical (Boolean) flag to see whether auto-sizing is to be operated, or writes the flag to say it should be done. The default is <b>False</b>, i.e. no auto-sizing.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
+      <element link="#lcl.controls.TControl.Align" name="TDBText.Align"/>
+      <element link="#lcl.stdctrls.TCustomLabel.Alignment" name="TDBText.Alignment"/>
+      <element link="#lcl.controls.TControl.Anchors" name="TDBText.Anchors"/>
+      <element link="#lcl.controls.TControl.AutoSize" name="TDBText.AutoSize"/>
       <element link="#lcl.controls.TControl.BiDiMode" name="TDBText.BiDiMode"/>
       <element link="#lcl.controls.TControl.BorderSpacing" name="TDBText.BorderSpacing"/>
       <element link="#lcl.controls.TControl.Color" name="TDBText.Color"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBText.Constraints"/>
       <element name="TDBText.DataField">
-        <short>The name of the field, as a string (i.e. cannot be referred to as an Index).
+        <short>
+          The name of the field, as a string (i.e. cannot be referred to as an Index).
         </short>
         <descr>
           <p>
@@ -1922,15 +1907,15 @@
       <element link="#lcl.controls.TControl.DragKind" name="TDBText.DragKind"/>
       <element link="#lcl.controls.TControl.DragMode" name="TDBText.DragMode"/>
       <element link="#lcl.controls.TControl.Enabled" name="TDBText.Enabled"/>
-      <element link="#LCL.StdCtrls.TCustomLabel.FocusControl" name="TDBText.FocusControl"/>
+      <element link="#lcl.stdctrls.TCustomLabel.FocusControl" name="TDBText.FocusControl"/>
       <element link="#lcl.controls.TControl.Font" name="TDBText.Font"/>
-      <element link="#LCL.StdCtrls.TLabel.Layout" name="TDBText.Layout"/>
+      <element name="TDBText.Layout" link="#lcl.stdctrls.TCustomLabel.Layout"/>
       <element link="#lcl.controls.TControl.ParentBiDiMode" name="TDBText.ParentBiDiMode"/>
       <element link="#lcl.controls.TControl.ParentColor" name="TDBText.ParentColor"/>
       <element link="#lcl.controls.TControl.ParentFont" name="TDBText.ParentFont"/>
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBText.ParentShowHint"/>
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBText.PopupMenu"/>
-      <element link="#LCL.StdCtrls.TCustomLabel.ShowAccelChar" name="TDBText.ShowAccelChar">
+      <element link="#lcl.stdctrls.TCustomLabel.ShowAccelChar" name="TDBText.ShowAccelChar">
         <descr>
           <p>
             <var>ShowAccelChar</var> controls if an underlined character in the label is drawn for the accelerator or shortcut key. Changing the value for the property causes the WidgetSetClass to be notified of the potential change to the Caption and size for the control.
@@ -1941,7 +1926,7 @@
         <seealso/>
       </element>
       <element link="#lcl.controls.TControl.ShowHint" name="TDBText.ShowHint"/>
-      <element link="#LCL.StdCtrls.TCustomLabel.Transparent" name="TDBText.Transparent"/>
+      <element link="#lcl.stdctrls.TCustomLabel.Transparent" name="TDBText.Transparent"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBText.Visible">
         <short>Indicates if the control is displayed.</short>
         <descr>
@@ -1952,7 +1937,7 @@
         </descr>
         <seealso/>
       </element>
-      <element link="#LCL.StdCtrls.TCustomLabel.WordWrap" name="TDBText.WordWrap">
+      <element link="#lcl.stdctrls.TCustomLabel.WordWrap" name="TDBText.WordWrap">
         <short>Indicates if text is wrapped at the right edge of the control.</short>
         <descr>
           <p>
@@ -1980,7 +1965,7 @@
       <element link="#lcl.controls.TControl.OnContextPopup" name="TDBText.OnContextPopup"/>
       <element link="#lcl.controls.TControl.OnResize" name="TDBText.OnResize"/>
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBText.OnStartDrag"/>
-      <element link="#LCL.StdCtrls.TCustomLabel.OptimalFill" name="TDBText.OptimalFill"/>
+      <element link="#lcl.stdctrls.TCustomLabel.OptimalFill" name="TDBText.OptimalFill"/>
       <element name="TCustomDBListBox">
         <short>Specifies a data-aware listbox control.</short>
         <descr>
@@ -2143,7 +2128,10 @@
       <element name="TCustomDBListBox.KeyDown.Shift">
         <short>Modifier for the key code applied in the method.</short>
       </element>
-      <element link="#rtl.Classes.TComponent.Notification" name="TCustomDBListBox.Notification">
+      <element name="TCustomDBListBox.Notification">
+        <short>
+          Handles notifications when a component is added to or removed from the control.
+        </short>
         <descr>
           <p>
             <var>Notification</var> is an overridden method in <var>TCustomDBListBox</var>. Notification calls the inherited method, and ensures that an assigned <var>DataSource</var> is set to <b>Nil</b> when <var>Operation</var> contains <var>opRemove</var>.
@@ -2402,7 +2390,7 @@
       <element name="TDBListBox.DataChange.Sender">
         <short>Object for the event notification.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomListBox.DoSelectionChange" name="TDBListBox.DoSelectionChange">
+      <element link="#lcl.stdctrls.TCustomListBox.DoSelectionChange" name="TDBListBox.DoSelectionChange">
         <short>Performs actions needed when the current selection in the listbox control is changed.
         </short>
         <descr>
@@ -2511,17 +2499,19 @@
       </element>
       <element link="#lcl.controls.TWinControl.BorderStyle" name="TDBListBox.BorderStyle"/>
       <element link="#lcl.controls.TControl.Color" name="TDBListBox.Color"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.Constraints" name="TDBListBox.Constraints"/>
+      <element name="TDBListBox.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element link="#lcl.dbctrls.TCustomDBListBox.DataField" name="TDBListBox.DataField"/>
       <element link="#lcl.dbctrls.TCustomDBListBox.DataSource" name="TDBListBox.DataSource"/>
       <element link="#lcl.controls.TWinControl.DoubleBuffered" name="TDBListBox.DoubleBuffered"/>
-      <element link="#lcl.controls.TControl.DragCursor" name="TDBListBox.DragCursor"/>
-      <element link="#lcl.controls.TControl.DragMode" name="TDBListBox.DragMode"/>
+      <element name="TDBListBox.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TDBListBox.DragKind" link="#lcl.controls.TControl.DragKind"/>
+      <element name="TDBListBox.DragMode" link="#lcl.controls.TControl.DragMode"/>
       <element link="#lcl.controls.TControl.Enabled" name="TDBListBox.Enabled"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.ExtendedSelect" name="TDBListBox.ExtendedSelect"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.ItemHeight" name="TDBListBox.ItemHeight"/>
-      <element link="#lcl.dbctrls.TCustomDBListBox.Items" name="TDBListBox.Items"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.MultiSelect" name="TDBListBox.MultiSelect"/>
+      <element link="#lcl.stdctrls.TCustomListBox.ExtendedSelect" name="TDBListBox.ExtendedSelect"/>
+      <element name="TDBListBox.Font" link="#lcl.controls.TControl.Font"/>
+      <element link="#lcl.stdctrls.TCustomListBox.ItemHeight" name="TDBListBox.ItemHeight"/>
+      <element name="TDBListBox.Items" link="#lcl.stdctrls.TCustomListBox.Items"/>
+      <element link="#lcl.stdctrls.TCustomListBox.MultiSelect" name="TDBListBox.MultiSelect"/>
       <element link="#lcl.controls.TControl.OnClick" name="TDBListBox.OnClick">
         <descr>
           <p>One of the  standard properties, which should be supported by all descendants.
@@ -2543,7 +2533,7 @@
       </element>
       <element link="#lcl.controls.TControl.OnDragDrop" name="TDBListBox.OnDragDrop"/>
       <element link="#lcl.controls.TControl.OnDragOver" name="TDBListBox.OnDragOver"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.OnDrawItem" name="TDBListBox.OnDrawItem">
+      <element link="#lcl.stdctrls.TCustomListBox.OnDrawItem" name="TDBListBox.OnDrawItem">
         <descr>
           <p>
             <var>OnDrawItem</var>is an event handler used to draw an Item in the data-aware list box.
@@ -2597,11 +2587,11 @@
       <element link="#lcl.controls.TControl.OnResize" name="TDBListBox.OnResize"/>
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBListBox.OnStartDrag"/>
       <element link="#lcl.controls.TWinControl.OnUTF8KeyPress" name="TDBListBox.OnUTF8KeyPress"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.Options" name="TDBListBox.Options"/>
+      <element name="TDBListBox.Options" link="#lcl.stdctrls.TCustomListBox.Options"/>
       <element link="#lcl.controls.TControl.ParentBiDiMode" name="TDBListBox.ParentBiDiMode"/>
-      <element link="#lcl.controls.TControl.ParentDoubleBuffered" name="TDBListBox.ParentDoubleBuffered"/>
+      <element name="TDBListBox.ParentDoubleBuffered" link="#lcl.controls.TWinControl.ParentDoubleBuffered"/>
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBListBox.ParentShowHint"/>
-      <element link="#LCL.StdCtrls.TCustomDBListBox.PopupMenu" name="TDBListBox.PopupMenu"/>
+      <element name="TDBListBox.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
       <element link="#lcl.dbctrls.TCustomDBListBox.ReadOnly" name="TDBListBox.ReadOnly"/>
       <element link="#lcl.controls.TControl.ShowHint" name="TDBListBox.ShowHint">
         <descr>
@@ -2612,8 +2602,8 @@
         </descr>
         <seealso/>
       </element>
-      <element link="#LCL.StdCtrls.TCustomListBox.Sorted" name="TDBListBox.Sorted"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.Style" name="TDBListBox.Style"/>
+      <element link="#lcl.stdctrls.TCustomListBox.Sorted" name="TDBListBox.Sorted"/>
+      <element link="#lcl.stdctrls.TCustomListBox.Style" name="TDBListBox.Style"/>
       <element link="#lcl.controls.TWinControl.TabOrder" name="TDBListBox.TabOrder"/>
       <element link="#lcl.controls.TWinControl.TabStop" name="TDBListBox.TabStop">
         <descr>
@@ -2626,7 +2616,7 @@
         </descr>
         <seealso/>
       </element>
-      <element link="#LCL.StdCtrls.TCustomListBox.TopIndex" name="TDBListBox.TopIndex"/>
+      <element link="#lcl.stdctrls.TCustomListBox.TopIndex" name="TDBListBox.TopIndex"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBListBox.Visible">
         <descr>
           <p>The <var>Visible</var> property represents the ability to see a visual control. If Visible is  <b>True</b> the control is shown, otherwise it is hidden. Calling Show sets  Visible to  <b>True</b>. Setting Visible to <b>False</b> is equivalent to calling Hide method.
@@ -2766,7 +2756,7 @@
         <short>Indicates if the selection change is due to user interaction with the control.
         </short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomListBox.InitializeWnd" name="TDBLookupListBox.InitializeWnd">
+      <element link="#lcl.stdctrls.TCustomListBox.InitializeWnd" name="TDBLookupListBox.InitializeWnd">
         <short>Initializes the window handle for the control.</short>
         <descr>
           <p>
@@ -2781,7 +2771,7 @@
           <link id="#lcl.stdctrls.TCustomListBox.InitializeWnd">TCustomListBox.InitializeWnd</link>
         </seealso>
       </element>
-      <element link="#LCL.StdCtrls.TCustomListBox.DestroyWnd" name="TDBLookupListBox.DestroyWnd">
+      <element link="#lcl.stdctrls.TCustomListBox.DestroyWnd" name="TDBLookupListBox.DestroyWnd">
         <short>Frees the window handle and updates the address used for the Items in the controls.
         </short>
         <descr/>
@@ -2917,7 +2907,7 @@
       <element link="#lcl.controls.TControl.BorderSpacing" name="TDBLookupListBox.BorderSpacing"/>
       <element link="#lcl.controls.TWinControl.BorderStyle" name="TDBLookupListBox.BorderStyle"/>
       <element link="#lcl.controls.TControl.Color" name="TDBLookupListBox.Color"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.Constraints" name="TDBLookupListBox.Constraints"/>
+      <element name="TDBLookupListBox.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element link="#lcl.dbctrls.TCustomDBListBox.DataField" name="TDBLookupListBox.DataField"/>
       <element link="#lcl.dbctrls.TCustomDBListBox.DataSource" name="TDBLookupListBox.DataSource"/>
       <element link="#lcl.controls.TWinControl.DoubleBuffered" name="TDBLookupListBox.DoubleBuffered"/>
@@ -2925,7 +2915,7 @@
       <element link="#lcl.controls.TControl.DragKind" name="TDBLookupListBox.DragKind"/>
       <element link="#lcl.controls.TControl.DragMode" name="TDBLookupListBox.DragMode"/>
       <element link="#lcl.controls.TControl.Enabled" name="TDBLookupListBox.Enabled"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.Font" name="TDBLookupListBox.Font"/>
+      <element name="TDBLookupListBox.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TDBLookupListBox.KeyField">
         <short>Field name in the lookup dataset with the value for the control.
         </short>
@@ -3040,35 +3030,38 @@
       <element link="#lcl.controls.TWinControl.OnKeyDown" name="TDBLookupListBox.OnKeyDown"/>
       <element link="#lcl.controls.TWinControl.OnKeyUp" name="TDBLookupListBox.OnKeyUp"/>
       <element link="#lcl.controls.TControl.OnMouseDown" name="TDBLookupListBox.OnMouseDown"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.OnMouseEnter" name="TDBLookupListBox.OnMouseEnter"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.OnMouseLeave" name="TDBLookupListBox.OnMouseLeave"/>
-      <element link="#lcl.controls.TControl.OnMouseMove" name="TDBLookupListBox.OnMouseMove"/>
-      <element link="#lcl.controls.TControl.OnMouseUp" name="TDBLookupListBox.OnMouseUp"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.OnMouseWheel" name="TDBLookupListBox.OnMouseWheel"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.OnMouseWheelDown" name="TDBLookupListBox.OnMouseWheelDown"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.OnMouseWheelUp" name="TDBLookupListBox.OnMouseWheelUp"/>
+
+      <element name="TDBLookupListBox.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TDBLookupListBox.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TDBLookupListBox.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TDBLookupListBox.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TDBLookupListBox.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TDBLookupListBox.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TDBLookupListBox.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element link="#lcl.controls.TControl.OnResize" name="TDBLookupListBox.OnResize"/>
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBLookupListBox.OnStartDrag"/>
       <element link="#lcl.controls.TWinControl.OnUTF8KeyPress" name="TDBLookupListBox.OnUTF8KeyPress"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.Options" name="TDBLookupListBox.Options"/>
+      <element link="#lcl.stdctrls.TCustomListBox.Options" name="TDBLookupListBox.Options"/>
       <element link="#lcl.controls.TControl.ParentBiDiMode" name="TDBLookupListBox.ParentBidiMode"/>
       <element link="#lcl.controls.TWinControl.ParentDoubleBuffered" name="TDBLookupListBox.ParentDoubleBuffered"/>
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBLookupListBox.ParentShowHint"/>
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBLookupListBox.PopupMenu"/>
       <element link="#lcl.dbctrls.TCustomDBListBox.ReadOnly" name="TDBLookupListBox.ReadOnly"/>
       <element name="TDBLookupListBox.ScrollListDataset">
-        <short/>
+        <short>
+          Indicates if the look-up data set is scrolled for a new value in the control.
+        </short>
         <descr>
-          <p>Indicates if the lookup dataset is searched and scrolled when a new value is selected in the control. The default value for the property is False.
+          <p>Indicates if the look-up data set is searched and scrolled when a new value is selected in the control. The default value for the property is False.
           </p>
         </descr>
         <seealso/>
       </element>
       <element link="#lcl.controls.TControl.ShowHint" name="TDBLookupListBox.ShowHint"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.Sorted" name="TDBLookupListBox.Sorted"/>
+      <element link="#lcl.stdctrls.TCustomListBox.Sorted" name="TDBLookupListBox.Sorted"/>
       <element link="#lcl.controls.TWinControl.TabOrder" name="TDBLookupListBox.TabOrder"/>
       <element link="#lcl.controls.TWinControl.TabStop" name="TDBLookupListBox.TabStop"/>
-      <element link="#LCL.StdCtrls.TCustomListBox.TopIndex" name="TDBLookupListBox.TopIndex"/>
+      <element link="#lcl.stdctrls.TCustomListBox.TopIndex" name="TDBLookupListBox.TopIndex"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBLookupListBox.Visible"/>
       <element name="TDBRadioGroup">
         <short>
@@ -3398,10 +3391,22 @@
       </element>
 
       <element name="TDBRadioGroup.ItemIndex">
+        <short>
+          Ordinal position for the selected radio button in the group.
+        </short>
         <descr>
+          <p>
+            ItemIndex is an Integer property with the ordinal position for the selected radio button in the group. The default value for the property is -1, and indicates that no radio button is selected for the group. Changing the value for the property causes the widgetset control to be updated when its Handle has been assigned.
+          </p>
+          <p>
+            ItemIndex must be in the range <b>-1..Items.Count-1</b>. An Exception is raised wiith the message in rsIndexOutOfBounds if ItemIndex is set to a value less than -1 or greater than or equal to the number Items for the control.
+          </p>
           <p>
             ItemIndex is a public property in TDBRadioGroup.
           </p>
+          <remark>
+            Some widgetsets do not allow a radio button group to have an unselected item index. To provide cross-platform compatibility, a hidden radio button is created for this purpose. When ItemIndex is set to -1, it actuals selects the hidden radio button.
+          </remark>
         </descr>
         <seealso>
           <link id="#lcl.extctrls.TCustomRadioGroup.ItemIndex">TCustomRadioGroup.ItemIndex</link>
@@ -3582,29 +3587,8 @@
           <link id="TDBRadioGroup.Value"/>
         </seealso>
       </element>
-      <element link="#lcl.controls.TControl.OnChangeBounds" name="TDBRadioGroup.OnChangeBounds">
-        <short/>
-        <descr>
-          <p>One of the  standard properties, which should be supported by all descendants.</p>
-          <p>Reads or Writes flag if bounds are changed.</p>
-        </descr>
-        <seealso>
-          <link id="#lcl.controls.TControl.OnChangeBounds">TControl.OnChangeBounds</link>
-        </seealso>
-      </element>
-      <element link="#lcl.controls.TControl.OnClick" name="TDBRadioGroup.OnClick">
-        <descr>
-          <p>One of the  standard properties, which should be supported by all descendants.
-          </p>
-          <p>This is often the default action for many controls, and is often the ONLY action specified by the programmer. The action can be specified by the user, either by typing explicit code into the implementation section for this control, or by selecting an action from a pre-supplied <var>ActionList</var>.
-          </p>
-          <p>Reads or writes a flag if  a mouse click is detected, and sets a flag if a value is stored.
-          </p>
-        </descr>
-        <seealso>
-          <link id="#lcl.controls.TControl.OnClick">TControl.OnClick</link>
-        </seealso>
-      </element>
+      <element link="#lcl.controls.TControl.OnChangeBounds" name="TDBRadioGroup.OnChangeBounds"/>
+      <element link="#lcl.controls.TControl.OnClick" name="TDBRadioGroup.OnClick"/>
       <element name="TDBRadioGroup.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
       <element link="#lcl.controls.TControl.OnDragDrop" name="TDBRadioGroup.OnDragDrop"/>
       <element link="#lcl.controls.TControl.OnDragOver" name="TDBRadioGroup.OnDragOver"/>
@@ -3617,20 +3601,7 @@
       <element link="#lcl.controls.TControl.OnMouseWheel" name="TDBRadioGroup.OnMouseWheel"/>
       <element link="#lcl.controls.TControl.OnMouseWheelDown" name="TDBRadioGroup.OnMouseWheelDown"/>
       <element link="#lcl.controls.TControl.OnMouseWheelUp" name="TDBRadioGroup.OnMouseWheelUp"/>
-
-      <element link="#lcl.controls.TControl.OnResize" name="TDBRadioGroup.OnResize">
-        <short/>
-        <descr>
-          <p>One of the  standard properties, which should be supported by all descendants.
-          </p>
-          <p>Reads or Writes flag if control is re-sized.
-          </p>
-        </descr>
-        <seealso>
-          <link id="#lcl.controls.TControl.OnResize">TControl.OnResize</link>
-        </seealso>
-      </element>
-
+      <element link="#lcl.controls.TControl.OnResize" name="TDBRadioGroup.OnResize"/>
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBRadioGroup.OnStartDrag"/>
       <element link="#lcl.controls.TControl.ParentBiDiMode" name="TDBRadioGroup.ParentBiDiMode"/>
       <element link="#lcl.controls.TControl.ParentColor" name="TDBRadioGroup.ParentColor"/>
@@ -3854,7 +3825,7 @@
       <element name="TDBCheckBox.DataChange.Sender">
         <short>Object for the event notification.</short>
       </element>
-      <element link="#LCL.StdCtrls.TButtonControl.DoOnChange" name="TDBCheckBox.DoOnChange">
+      <element link="#lcl.stdctrls.TButtonControl.DoOnChange" name="TDBCheckBox.DoOnChange">
         <short>Performs actions needed when the control is clicked.</short>
         <descr>
           <p>
@@ -4014,7 +3985,7 @@
         <short>Action examined and updated in the method.</short>
       </element>
 
-      <element link="#LCL.StdCtrls.TButtonControl.Checked" name="TDBCheckBox.Checked"/>
+      <element link="#lcl.stdctrls.TButtonControl.Checked" name="TDBCheckBox.Checked"/>
 
       <element name="TDBCheckBox.Field">
         <short>Provides access to the field definition for the data-aware control.</short>
@@ -4037,7 +4008,7 @@
         </seealso>
       </element>
 
-      <element link="#LCL.StdCtrls.TCustomCheckBox.State" name="TDBCheckBox.State">
+      <element link="#lcl.stdctrls.TCustomCheckBox.State" name="TDBCheckBox.State">
         <descr>
           <p>See <link id="#lcl.stdctrls.TCheckBoxState">TCheckBoxState</link> for possible values of <var>State</var>.
         </p>
@@ -4049,9 +4020,8 @@
 
       <element link="#lcl.controls.TControl.Action" name="TDBCheckBox.Action"/>
       <element link="#lcl.controls.TControl.Align" name="TDBCheckBox.Align"/>
-      <element link="#LCL.StdCtrls.TCustomCheckBox.Alignment" name="TDBCheckBox.Alignment"/>
-
-      <element link="#LCL.StdCtrls.TCustomCheckBox.AllowGrayed" name="TDBCheckBox.AllowGrayed">
+      <element name="TDBCheckBox.Alignment" link="#lcl.stdctrls.TCustomCheckBox.Alignment"/>
+      <element link="#lcl.stdctrls.TCustomCheckBox.AllowGrayed" name="TDBCheckBox.AllowGrayed">
         <descr>
           <p>If <var>AllowGrayed</var> is set to  <b>True</b>, the check box has three possible states: checked, unchecked and grayed. If <var>AllowGrayed</var> is set to  <b>False</b>, the check box has only two possible states: checked and unchecked.
           </p>
@@ -4190,11 +4160,7 @@
         </descr>
         <seealso/>
       </element>
-      <element link="#LCL.StdCtrls.TButtonControl.OnChange" name="TDBCheckBox.OnChange">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element link="#lcl.stdctrls.TButtonControl.OnChange" name="TDBCheckBox.OnChange"/>
       <element link="#lcl.controls.TControl.OnClick" name="TDBCheckBox.OnClick">
         <descr>
           <p>One of the  standard properties, which should be supported by all descendants.
@@ -4412,7 +4378,7 @@
         <short>Control message updated in the the method.</short>
       </element>
       <element name="TCustomDBComboBox.DoEdit">
-        <short>Performs LCL deferred edit messages for event s detected in the control.</short>
+        <short>Performs LCL deferred edit messages for events detected in the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4490,7 +4456,7 @@
       <element name="TCustomDBComboBox.DoMouseWheel.MousePos">
         <short>Mouse cursor position for the mouse wheel event.</short>
       </element>
-      <element link="#rtl.Classes.TComponent.Notification" name="TCustomDBComboBox.Notification"/>
+      <element name="TCustomDBComboBox.Notification"  link="#lcl.controls.TControl.Notification"/>
       <element name="TCustomDBComboBox.Change">
         <short>
           <var>Change</var> -if there has been a change to the data the link must be notified.
@@ -4710,8 +4676,8 @@
           <link id="#fcl.db.TField">TField</link>
         </seealso>
       </element>
-      <element link="#LCL.StdCtrls.TCustomComboBox.Text" name="TCustomDBComboBox.Text"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.ItemIndex" name="TCustomDBComboBox.ItemIndex"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.Text" name="TCustomDBComboBox.Text"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.ItemIndex" name="TCustomDBComboBox.ItemIndex"/>
 
       <element name="TCustomDBComboBox.DataField">
         <short>The name of the Field which provides the values displayed in the control.</short>
@@ -4870,10 +4836,10 @@
       </element>
       <element link="#lcl.controls.TControl.Align" name="TDBComboBox.Align"/>
       <element link="#lcl.controls.TControl.Anchors" name="TDBComboBox.Anchors"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.ArrowKeysTraverseList" name="TDBComboBox.ArrowKeysTraverseList"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.AutoComplete" name="TDBComboBox.AutoComplete"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.AutoCompleteText" name="TDBComboBox.AutoCompleteText"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.AutoDropDown" name="TDBComboBox.AutoDropDown">
+      <element link="#lcl.stdctrls.TCustomComboBox.ArrowKeysTraverseList" name="TDBComboBox.ArrowKeysTraverseList"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.AutoComplete" name="TDBComboBox.AutoComplete"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.AutoCompleteText" name="TDBComboBox.AutoCompleteText"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.AutoDropDown" name="TDBComboBox.AutoDropDown">
         <short>Indicates if the drop-down is automatically displayed when the control gets the input focus.
         </short>
         <descr>
@@ -4887,12 +4853,12 @@
           <link id="#lcl.stdctrls.TCustomComboBox.AutoDropDown">TCustomComboBox.AutoDropDown</link>
         </seealso>
       </element>
-      <element link="#LCL.StdCtrls.TCustomComboBox.AutoSelect" name="TDBComboBox.AutoSelect"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.AutoSelect" name="TDBComboBox.AutoSelect"/>
       <element link="#lcl.controls.TControl.AutoSize" name="TDBComboBox.AutoSize"/>
       <element link="#lcl.controls.TControl.BiDiMode" name="TDBComboBox.BiDiMode"/>
       <element link="#lcl.controls.TControl.BorderSpacing" name="TDBComboBox.BorderSpacing"/>
       <element link="#lcl.controls.TWinControl.BorderStyle" name="TDBComboBox.BorderStyle"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.CharCase" name="TDBComboBox.CharCase"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.CharCase" name="TDBComboBox.CharCase"/>
       <element link="#lcl.controls.TControl.Color" name="TDBComboBox.Color"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBComboBox.Constraints"/>
       <element link="#lcl.dbctrls.TCustomDBComboBox.DataField" name="TDBComboBox.DataField"/>
@@ -4901,14 +4867,14 @@
       <element link="#lcl.controls.TControl.DragCursor" name="TDBComboBox.DragCursor"/>
       <element link="#lcl.controls.TControl.DragKind" name="TDBComboBox.DragKind"/>
       <element link="#lcl.controls.TControl.DragMode" name="TDBComboBox.DragMode"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.DropDownCount" name="TDBComboBox.DropDownCount"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.DropDownCount" name="TDBComboBox.DropDownCount"/>
       <element link="#lcl.controls.TControl.Enabled" name="TDBComboBox.Enabled"/>
       <element link="#lcl.controls.TControl.Font" name="TDBComboBox.Font"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.ItemHeight" name="TDBComboBox.ItemHeight"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.Items" name="TDBComboBox.Items"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.ItemWidth" name="TDBComboBox.ItemWidth"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.MaxLength" name="TDBComboBox.MaxLength"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnChange" name="TDBComboBox.OnChange"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.ItemHeight" name="TDBComboBox.ItemHeight"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.Items" name="TDBComboBox.Items"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.ItemWidth" name="TDBComboBox.ItemWidth"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.MaxLength" name="TDBComboBox.MaxLength"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnChange" name="TDBComboBox.OnChange"/>
       <element link="#lcl.controls.TControl.OnChangeBounds" name="TDBComboBox.OnChangeBounds"/>
       <element link="#lcl.controls.TControl.OnClick" name="TDBComboBox.OnClick">
         <descr>
@@ -4934,8 +4900,8 @@
       </element>
       <element link="#lcl.controls.TControl.OnDragDrop" name="TDBComboBox.OnDragDrop"/>
       <element link="#lcl.controls.TControl.OnDragOver" name="TDBComboBox.OnDragOver"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnDrawItem" name="TDBComboBox.OnDrawItem"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnDropDown" name="TDBComboBox.OnDropDown"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnDrawItem" name="TDBComboBox.OnDrawItem"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnDropDown" name="TDBComboBox.OnDropDown"/>
       <element link="#lcl.controls.TControl.OnEditingDone" name="TDBComboBox.OnEditingDone"/>
       <element link="#lcl.controls.TControl.OnEndDrag" name="TDBComboBox.OnEndDrag"/>
       <element link="#lcl.controls.TWinControl.OnEnter" name="TDBComboBox.OnEnter"/>
@@ -4978,7 +4944,7 @@
       <element link="#lcl.controls.TControl.OnMouseWheel" name="TDBComboBox.OnMouseWheel"/>
       <element link="#lcl.controls.TControl.OnMouseWheelDown" name="TDBComboBox.OnMouseWheelDown"/>
       <element link="#lcl.controls.TControl.OnMouseWheelUp" name="TDBComboBox.OnMouseWheelUp"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnSelect" name="TDBComboBox.OnSelect"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnSelect" name="TDBComboBox.OnSelect"/>
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBComboBox.OnStartDrag"/>
       <element link="#lcl.controls.TWinControl.OnUTF8KeyPress" name="TDBComboBox.OnUTF8KeyPress"/>
       <element link="#lcl.controls.TControl.ParentBiDiMode" name="TDBComboBox.ParentBiDiMode"/>
@@ -4989,8 +4955,8 @@
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBComboBox.PopupMenu"/>
       <element link="#lcl.dbctrls.TCustomDBComboBox.ReadOnly" name="TDBComboBox.ReadOnly"/>
       <element link="#lcl.controls.TControl.ShowHint" name="TDBComboBox.ShowHint"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.Sorted" name="TDBComboBox.Sorted"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.Style" name="TDBComboBox.Style"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.Sorted" name="TDBComboBox.Sorted"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.Style" name="TDBComboBox.Style"/>
       <element link="#lcl.controls.TWinControl.TabOrder" name="TDBComboBox.TabOrder"/>
       <element link="#lcl.controls.TWinControl.TabStop" name="TDBComboBox.TabStop"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBComboBox.Visible">
@@ -5156,9 +5122,7 @@
       <element name="TDBLookupComboBox.UTF8KeyPress.UTF8Key">
         <short>UTF-8-encoded value examined in the method.</short>
       </element>
-
-      <element link="#rtl.Classes.TComponent.Loaded" name="TDBLookupComboBox.Loaded"/>
-
+      <element name="TDBLookupComboBox.Loaded" link="#lcl.controls.TWinControl.Loaded"/>
       <element name="TDBLookupComboBox.UpdateData">
         <short>
           <var>UpdateData</var> - copies the local data from the corresponding entry from the lookup field.
@@ -5205,22 +5169,22 @@
         <short>Value for the key field in the lookup dataset at the position in ItemIndex.
         </short>
         <descr>
-          <p>Read and write access for the property value is provided using methods in the internal <var>TDBLookp</var> instance used in the class. Reading the value calls the <var>GetKeyValue</var> method in TDBLookup. Writing the value calls the <var>GetKeyIndex</var> method in TDBLookUp.
+          <p>Read and write access for the property value is provided using methods in the internal <var>TDBLookup</var> instance used in the class. Reading the value calls the <var>GetKeyValue</var> method in TDBLookup. Writing the value calls the <var>GetKeyIndex</var> method in TDBLookUp.
           </p>
         </descr>
         <seealso/>
       </element>
       <element link="#lcl.controls.TControl.Align" name="TDBLookupComboBox.Align"/>
       <element link="#lcl.controls.TControl.Anchors" name="TDBLookupComboBox.Anchors"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.ArrowKeysTraverseList" name="TDBLookupComboBox.ArrowKeysTraverseList"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.AutoComplete" name="TDBLookupComboBox.AutoComplete"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.AutoDropDown" name="TDBLookupComboBox.AutoDropDown"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.AutoSelect" name="TDBLookupComboBox.AutoSelect"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.ArrowKeysTraverseList" name="TDBLookupComboBox.ArrowKeysTraverseList"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.AutoComplete" name="TDBLookupComboBox.AutoComplete"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.AutoDropDown" name="TDBLookupComboBox.AutoDropDown"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.AutoSelect" name="TDBLookupComboBox.AutoSelect"/>
       <element link="#lcl.controls.TControl.AutoSize" name="TDBLookupComboBox.AutoSize"/>
       <element link="#lcl.controls.TControl.BiDIMode" name="TDBLookupComboBox.BiDiMode"/>
       <element link="#lcl.controls.TControl.BorderSpacing" name="TDBLookupComboBox.BorderSpacing"/>
       <element link="#lcl.controls.TWinControl.BorderStyle" name="TDBLookupComboBox.BorderStyle"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.CharCase" name="TDBLookupComboBox.CharCase"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.CharCase" name="TDBLookupComboBox.CharCase"/>
       <element link="#lcl.controls.TControl.Color" name="TDBLookupComboBox.Color"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBLookupComboBox.Constraints"/>
       <element link="#lcl.dbctrls.TCustomDBComboBox.DataField" name="TDBLookupComboBox.DataField"/>
@@ -5229,7 +5193,7 @@
       <element link="#lcl.controls.TControl.DragCursor" name="TDBLookupComboBox.DragCursor"/>
       <element link="#lcl.controls.TControl.DragKind" name="TDBLookupComboBox.DragKind"/>
       <element link="#lcl.controls.TControl.DragMode" name="TDBLookupComboBox.DragMode"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.DropDownCount" name="TDBLookupComboBox.DropDownCount"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.DropDownCount" name="TDBLookupComboBox.DropDownCount"/>
       <element link="#lcl.controls.TControl.Enabled" name="TDBLookupComboBox.Enabled"/>
       <element link="#lcl.controls.TControl.Font" name="TDBLookupComboBox.Font"/>
       <element name="TDBLookupComboBox.KeyField">
@@ -5295,6 +5259,24 @@
         <descr/>
         <seealso/>
       </element>
+
+      <element name="TDBLookupComboBox.LookupCache">
+        <short>
+          Indicates if look-up items are cached in the field data link for the control.
+        </short>
+        <descr>
+          <p>
+            <var>LookupCache</var> is a <var>Boolean</var> property which indicates if look-up items are cached in the field data link for the control. The property value is re-directed to the <var>LookupCache</var> property in the internal <var>TDBLookup</var> instance for the control. Changing the property to <b>True</b> causes the value in <var>ItemIndex</var> to be updated to the value in from the look-up cache.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDBLookUp.Initialize"/>
+          <link id="TDBLookUp.LookupCache"/>
+          <link id="#lcl.stdctrls.TCustomComboBox.Items">TCustomComboBox.Items</link>
+          <link id="#lcl.stdctrls.TCustomComboBox.ItemIndex">TCustomComboBox.ItemIndex</link>
+        </seealso>
+      </element>
+
       <element name="TDBLookupComboBox.NullValueKey">
         <short>Keyboard shortcut which causes an empty value to be assigned to the field value for the lookup control.
         </short>
@@ -5355,18 +5337,18 @@
           The EmptyValue and DisplayEmpty properties were added in revision 62844, and released in LCL version 2.0.8 and higher.
         </version>
       </element>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnChange" name="TDBLookupComboBox.OnChange"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnChange" name="TDBLookupComboBox.OnChange"/>
       <element link="#lcl.controls.TControl.OnChangeBounds" name="TDBLookupComboBox.OnChangeBounds"/>
       <element link="#lcl.controls.TControl.OnClick" name="TDBLookupComboBox.OnClick"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnCloseUp" name="TDBLookupComboBox.OnCloseUp"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnCloseUp" name="TDBLookupComboBox.OnCloseUp"/>
 
       <element name="TDBLookUpComboBox.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
 
       <element link="#lcl.controls.TControl.OnDblClick" name="TDBLookupComboBox.OnDblClick"/>
       <element link="#lcl.controls.TControl.OnDragDrop" name="TDBLookupComboBox.OnDragDrop"/>
       <element link="#lcl.controls.TControl.OnDragOver" name="TDBLookupComboBox.OnDragOver"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnDrawItem" name="TDBLookupComboBox.OnDrawItem"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnDropDown" name="TDBLookupComboBox.OnDropDown"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnDrawItem" name="TDBLookupComboBox.OnDrawItem"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnDropDown" name="TDBLookupComboBox.OnDropDown"/>
       <element link="#lcl.controls.TControl.OnEditingDone" name="TDBLookupComboBox.OnEditingDone"/>
       <element link="#lcl.controls.TControl.OnEndDrag" name="TDBLookupComboBox.OnEndDrag"/>
       <element link="#lcl.controls.TWinControl.OnEnter" name="TDBLookupComboBox.OnEnter"/>
@@ -5382,15 +5364,16 @@
       <element link="#lcl.controls.TControl.OnMouseWheel" name="TDBLookupComboBox.OnMouseWheel"/>
       <element link="#lcl.controls.TControl.OnMouseWheelDown" name="TDBLookupComboBox.OnMouseWheelDown"/>
       <element link="#lcl.controls.TControl.OnMouseWheelUp" name="TDBLookupComboBox.OnMouseWheelUp"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.OnSelect" name="TDBLookupComboBox.OnSelect"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.OnSelect" name="TDBLookupComboBox.OnSelect"/>
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBLookupComboBox.OnStartDrag"/>
-      <element link="#lcl.controls.TWinControl.OnUTF8KeyPress" name="TDBLookupComboBox.OnUTF8KeyPress"/>
+      <element name="TDBLookupComboBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
+      <element name="TDBLookupComboBox.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
       <element link="#lcl.controls.TControl.ParentColor" name="TDBLookupComboBox.ParentColor"/>
       <element link="#lcl.controls.TWinControl.ParentDoubleBuffered" name="TDBLookupComboBox.ParentDoubleBuffered"/>
       <element link="#lcl.controls.TControl.ParentFont" name="TDBLookupComboBox.ParentFont"/>
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBLookupComboBox.ParentShowHint"/>
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBLookupComboBox.PopupMenu"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.ReadOnly" name="TDBLookupComboBox.ReadOnly"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.ReadOnly" name="TDBLookupComboBox.ReadOnly"/>
       <element name="TDBLookupComboBox.ScrollListDataset">
         <short>Indicates if the Dataset in ListSource can be scrolled when loading/locating key and display values.
         </short>
@@ -5411,8 +5394,8 @@
         </seealso>
       </element>
       <element link="#lcl.controls.TControl.ShowHint" name="TDBLookupComboBox.ShowHint"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.Sorted" name="TDBLookupComboBox.Sorted"/>
-      <element link="#LCL.StdCtrls.TCustomComboBox.Style" name="TDBLookupComboBox.Style"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.Sorted" name="TDBLookupComboBox.Sorted"/>
+      <element link="#lcl.stdctrls.TCustomComboBox.Style" name="TDBLookupComboBox.Style"/>
       <element link="#lcl.controls.TWinControl.TabOrder" name="TDBLookupComboBox.TabOrder"/>
       <element link="#lcl.controls.TWinControl.TabStop" name="TDBLookupComboBox.TabStop"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBLookupComboBox.Visible"/>
@@ -5470,7 +5453,7 @@
       <element name="TDBMemo.GetField.Result">
         <short>Value for the property.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.GetReadOnly" name="TDBMemo.GetReadOnly">
+      <element link="#lcl.stdctrls.TCustomEdit.GetReadOnly" name="TDBMemo.GetReadOnly">
         <short>Gets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
@@ -5518,7 +5501,7 @@
       <element name="TDBMemo.GetReadOnly.Result">
         <short>Value for the property.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.SetReadOnly" name="TDBMemo.SetReadOnly">
+      <element link="#lcl.stdctrls.TCustomEdit.SetReadOnly" name="TDBMemo.SetReadOnly">
         <short>Sets the value for the ReadOnly property.</short>
         <descr/>
         <seealso/>
@@ -5536,16 +5519,26 @@
       <element name="TDBMemo.DataChange.Sender">
         <short/>
       </element>
-      <element link="#rtl.Classes.TComponent.Notification" name="TDBMemo.Notification">
-        <short/>
-        <descr/>
-        <seealso/>
+
+      <element name="TDBMemo.Notification" link="#lcl.controls.TControl.Notification">
+        <short>
+          Handles the notification when a component is added or removed from the control.
+        </short>
+        <descr>
+          <p>
+            <var>Notification</var> is an overridden method in <var>TDBMemo</var>. It calls the inherited method on entry, and ensures that the <var>DataSource</var> property is <b>Nil</b>'d when the component it is removed from the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDBMemo.DataSource"/>
+          <link id="#lcl.controls.TControl.Notification">TControl.Notification</link>
+        </seealso>
       </element>
       <element name="TDBMemo.Notification.AComponent">
-        <short/>
+        <short>Component for the notification.</short>
       </element>
       <element name="TDBMemo.Notification.Operation">
-        <short/>
+        <short>Operation performed on / for the component.</short>
       </element>
       <element name="TDBMemo.UpdateData">
         <short>
@@ -5557,7 +5550,7 @@
       <element name="TDBMemo.UpdateData.Sender">
         <short/>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.Change" name="TDBMemo.Change">
+      <element link="#lcl.stdctrls.TCustomEdit.Change" name="TDBMemo.Change">
         <short>Performs actions needed when the value for the control has been changed.</short>
         <descr>
           <p>
@@ -5652,7 +5645,7 @@
           <link id="#lcl.stdctrls.TCustomMemo.Destroy">TCustomMemo.Destroy</link>
         </seealso>
       </element>
-      <element link="#LCL.StdCtrls.TCustomEdit.EditingDone" name="TDBMemo.EditingDone">
+      <element link="#lcl.stdctrls.TCustomEdit.EditingDone" name="TDBMemo.EditingDone">
         <short/>
         <descr/>
         <seealso/>
@@ -5737,7 +5730,7 @@
         </seealso>
       </element>
       <element link="#lcl.controls.TControl.Align" name="TDBMemo.Align"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.Alignment" name="TDBMemo.Alignment"/>
+      <element link="#lcl.stdctrls.TCustomEdit.Alignment" name="TDBMemo.Alignment"/>
       <element link="#lcl.controls.TControl.Anchors" name="TDBMemo.Anchors"/>
       <element name="TDBMemo.AutoDisplay">
         <short>
@@ -5761,8 +5754,8 @@
       </element>
       <element link="#lcl.controls.TControl.BiDIMode" name="TDBMemo.BiDiMode"/>
       <element link="#lcl.controls.TControl.BorderSpacing" name="TDBMemo.BorderSpacing"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.BorderStyle" name="TDBMemo.BorderStyle"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.CharCase" name="TDBMemo.CharCase"/>
+      <element name="TDBMemo.BorderStyle" link="#lcl.controls.TWinControl.BorderStyle"/>
+      <element link="#lcl.stdctrls.TCustomEdit.CharCase" name="TDBMemo.CharCase"/>
       <element link="#lcl.controls.TControl.Color" name="TDBMemo.Color"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBMemo.Constraints"/>
 
@@ -5814,8 +5807,8 @@
       <element link="#lcl.controls.TControl.DragMode" name="TDBMemo.DragMode"/>
       <element link="#lcl.controls.TControl.Enabled" name="TDBMemo.Enabled"/>
       <element link="#lcl.controls.TControl.Font" name="TDBMemo.Font"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.MaxLength" name="TDBMemo.MaxLength"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.OnChange" name="TDBMemo.OnChange"/>
+      <element link="#lcl.stdctrls.TCustomEdit.MaxLength" name="TDBMemo.MaxLength"/>
+      <element link="#lcl.stdctrls.TCustomEdit.OnChange" name="TDBMemo.OnChange"/>
       <element link="#lcl.controls.TControl.OnClick" name="TDBMemo.OnClick"/>
       <element link="#lcl.controls.TControl.OnContextPopup" name="TDBMemo.OnContextPopup"/>
       <element link="#lcl.controls.TControl.OnDblClick" name="TDBMemo.OnDblClick"/>
@@ -5846,7 +5839,7 @@
       <element link="#lcl.controls.TControl.ParentFont" name="TDBMemo.ParentFont"/>
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBMemo.ParentShowHint"/>
       <element link="#lcl.controls.TControl.PopupMenu" name="TDBMemo.PopupMenu"/>
-      <element link="#LCL.StdCtrls.TCustomEdit.ReadOnly" name="TDBMemo.ReadOnly">
+      <element link="#lcl.stdctrls.TCustomEdit.ReadOnly" name="TDBMemo.ReadOnly">
         <short>Indicates that the text in the control cannot be modified.
         </short>
         <descr>
@@ -5864,14 +5857,14 @@
         </seealso>
       </element>
 
-      <element link="#LCL.StdCtrls.TCustomMemo.ScrollBars" name="TDBMemo.ScrollBars"/>
+      <element link="#lcl.stdctrls.TCustomMemo.ScrollBars" name="TDBMemo.ScrollBars"/>
       <element link="#lcl.controls.TControl.ShowHint" name="TDBMemo.ShowHint"/>
       <element link="#lcl.controls.TWinControl.TabOrder" name="TDBMemo.TabOrder"/>
       <element link="#lcl.controls.TWinControl.TabStop" name="TDBMemo.Tabstop"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBMemo.Visible"/>
-      <element link="#LCL.StdCtrls.TCustomMemo.WantReturns" name="TDBMemo.WantReturns"/>
-      <element link="#LCL.StdCtrls.TCustomMemo.WantTabs" name="TDBMemo.WantTabs"/>
-      <element link="#LCL.StdCtrls.TCustomMemo.WordWrap" name="TDBMemo.WordWrap"/>
+      <element link="#lcl.stdctrls.TCustomMemo.WantReturns" name="TDBMemo.WantReturns"/>
+      <element link="#lcl.stdctrls.TCustomMemo.WantTabs" name="TDBMemo.WantTabs"/>
+      <element link="#lcl.stdctrls.TCustomMemo.WordWrap" name="TDBMemo.WordWrap"/>
       <element name="TDBGroupBox">
         <short>
           <var>TDBGroupBox</var>  - a data-aware version of
@@ -5978,7 +5971,10 @@
       <element name="TDBGroupBox.DataChange.Sender">
         <short>Object for the event notification.</short>
       </element>
-      <element link="#rtl.Classes.TComponent.Notification" name="TDBGroupBox.Notification">
+      <element name="TDBGroupBox.Notification">
+        <short>
+          Handles a notification when a component is added to or removed from the control.
+        </short>
         <descr>
           <p>
             <var>Notification</var> is called whenever a child component is destroyed, inserted or removed from the list of owned component. Components that were requested to send a notification when they are freed ((with
@@ -5990,7 +5986,9 @@
           <p>Descendants of <var>TComponent</var> can use <link id="TComponent.FreeNotification">FreeNotification</link> to request notification of the destruction of another object. By overriding the <var>Notification</var> method, they can do special processing (typically, set a reference to this component to <var>Nil</var>) when this component is destroyed. The <var>Notification</var> method is called quite often in the streaming process, so speed should be a consideration when overriding this method.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Notification">TControl.Notification</link>
+        </seealso>
       </element>
       <element name="TDBGroupBox.Notification.AComponent">
         <short>Component for the notification event.</short>
@@ -5998,7 +5996,7 @@
       <element name="TDBGroupBox.Notification.Operation">
         <short>Operation for the notification event.</short>
       </element>
-      <element link="#LCL.StdCtrls.TCustomGroupBox.Create" name="TDBGroupBox.Create">
+      <element link="#lcl.stdctrls.TCustomGroupBox.Create" name="TDBGroupBox.Create">
         <short>Constructor for the class instance.</short>
         <descr>
           <p>
@@ -6140,7 +6138,7 @@
       <element link="#lcl.controls.TControl.ClientWidth" name="TDBGroupBox.ClientWidth"/>
       <element link="#lcl.controls.TControl.Color" name="TDBGroupBox.Color"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBGroupBox.Constraints"/>
-
+      <element name="TDBGroupBox.Cursor" link="#lcl.controls.TControl.Cursor"/>
       <element name="TDBGroupBox.DataField">
         <short>Contains the name of the field with the value for the control.</short>
         <descr>
@@ -6468,7 +6466,9 @@
       <element name="TDBImage.PictureChanged.Sender">
         <short>Object for the event notification.</short>
       </element>
-      <element link="#lcl.extctrls.TCustomImage.WSRegisterClass" name="TDBImage.WSRegisterClass"/>
+
+      <element name="TDBImage.WSRegisterClass" link="#lcl.controls.TGraphicControl.WSRegisterClass"/>
+
       <element name="TDBImage.DoCopyToClipboard">
         <short>Implements the clipboard Copy (Ctrl+C) command.</short>
         <descr>
@@ -6715,7 +6715,9 @@
           <link id="TFieldDataLink"/>
         </seealso>
       </element>
-      <element link="#lcl.extctrls.TCustomImage.AutoSize" name="TDBImage.AutoSize"/>
+
+      <element name="TDBImage.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
+
       <element link="#lcl.controls.TControl.BorderSpacing" name="TDBImage.BorderSpacing"/>
       <element link="#lcl.extctrls.TCustomImage.Center" name="TDBImage.Center"/>
       <element link="#lcl.controls.TControl.Constraints" name="TDBImage.Constraints"/>
@@ -6765,12 +6767,14 @@
       <element link="#lcl.controls.TControl.DragCursor" name="TDBImage.DragCursor"/>
       <element link="#lcl.controls.TControl.DragKind" name="TDBImage.DragKind"/>
       <element link="#lcl.controls.TControl.DragMode" name="TDBImage.DragMode"/>
-      <element link="#lcl.extctrls.TCustomImage.KeepOriginXWhenClipped" name="TDBImage.KeepOriginXWhenClipped"/>
-      <element link="#lcl.extctrls.TCustomImage.KeepOriginYWhenClipped" name="TDBImage.KeepOriginYWhenClipped"/>
-      <element link="#lcl.extctrls.TCustomImage.OnClick" name="TDBImage.OnClick"/>
 
+      <element name="TDBImage.KeepOriginXWhenClipped" link="#lcl.extctrls.TCustomImage.KeepOriginXWhenClipped"/>
+
+      <element name="TDBImage.KeepOriginYWhenClipped" link="#lcl.extctrls.TCustomImage.KeepOriginYWhenClipped"/>
+
+      <element name="TDBImage.OnClick" link="#lcl.controls.TControl.OnClick"/>
       <element name="TDBImage.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
-      <element name="TDBImage.OnDblClick" link="#lcl.extctrls.TCustomImage.OnDblClick"/>
+      <element name="TDBImage.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
 
       <element name="TDBImage.OnDBImageRead">
         <short>Event to read a custom header from image stream.</short>
@@ -6809,12 +6813,10 @@
       <element link="#lcl.controls.TControl.OnMouseLeave" name="TDBImage.OnMouseLeave"/>
       <element link="#lcl.controls.TControl.OnMouseMove" name="TDBImage.OnMouseMove"/>
       <element link="#lcl.controls.TControl.OnMouseUp" name="TDBImage.OnMouseUp"/>
-      <element link="#lcl.extctrls.TCustomImage.OnMouseWheel" name="TDBImage.OnMouseWheel"/>
-      <element link="#lcl.extctrls.TCustomImage.OnMouseWheelDown" name="TDBImage.OnMouseWheelDown"/>
-      <element link="#lcl.extctrls.TCustomImage.OnMouseWheelUp" name="TDBImage.OnMouseWheelUp"/>
-
+      <element name="TDBImage.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TDBImage.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TDBImage.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element name="TDBImage.OnResize" link="#lcl.controls.TControl.OnResize"/>
-
       <element link="#lcl.controls.TControl.OnStartDrag" name="TDBImage.OnStartDrag"/>
       <element link="#lcl.controls.TControl.ParentShowHint" name="TDBImage.ParentShowHint"/>
       <element link="#lcl.extctrls.TCustomImage.Proportional" name="TDBImage.Proportional"/>
@@ -6858,10 +6860,13 @@
 
       <element link="#lcl.controls.TControl.ShowHint" name="TDBImage.ShowHint"/>
       <element link="#lcl.extctrls.TCustomImage.Stretch" name="TDBImage.Stretch"/>
-      <element link="#lcl.extctrls.TCustomImage.StretchInEnabled" name="TDBImage.StretchInEnabled"/>
-      <element link="#lcl.extctrls.TCustomImage.StretchOutEnabled" name="TDBImage.StretchOutEnabled"/>
+
+      <element name="TDBImage.StretchInEnabled" link="#lcl.extctrls.TCustomImage.StretchInEnabled"/>
+
+      <element name="TDBImage.StretchOutEnabled" link="#lcl.extctrls.TCustomImage.StretchOutEnabled"/>
+
       <element link="#lcl.extctrls.TCustomImage.Transparent" name="TDBImage.Transparent"/>
-      <element link="#lcl.extctrls.TCustomImage.Visible" name="TDBImage.Visible"/>
+      <element name="TDBImage.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="TDBImage.WriteHeader">
         <short>Write a header in the image stream.</short>
@@ -7149,8 +7154,9 @@
           <link id="#fcl.db.TField">TField</link>
         </seealso>
       </element>
-      <element link="#LCL.Calendar.TCalendar.BorderSpacing" name="TDBCalendar.BorderSpacing"/>
-      <element link="#LCL.Calendar.TCalendar.Constraints" name="TDBCalendar.Constraints"/>
+
+      <element name="TDBCalendar.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+      <element name="TDBCalendar.Constraints" link="#lcl.controls.TControl.Constraints"/>
 
       <element name="TDBCalendar.DataField">
         <short>Contains the name of the field with the value for the control.</short>
@@ -7239,10 +7245,10 @@
         </seealso>
       </element>
       <element link="#LCL.Calendar.TCustomCalendar.DisplaySettings" name="TDBCalendar.DisplaySettings"/>
-      <element link="#LCL.Calendar.TCalendar.DoubleBuffered" name="TDBCalendar.DoubleBuffered"/>
+      <element name="TDBCalendar.DoubleBuffered" link="#lcl.controls.TWindControl.DoubleBuffered"/>
       <element link="#lcl.controls.TControl.DragCursor" name="TDBCalendar.DragCursor"/>
       <element link="#lcl.controls.TControl.DragMode" name="TDBCalendar.DragMode"/>
-      <element link="#LCL.Calendar.TCalendar.ParentDoubleBuffered" name="TDBCalendar.ParentDoubleBuffered"/>
+      <element name="TDBCalendar.ParentDoubleBuffered" link="#lcl.controls.TWinControl.ParentDoubleBuffered"/>
       <element link="#lcl.controls.TControl.Visible" name="TDBCalendar.Visible"/>
       <element link="#lcl.controls.TControl.OnClick" name="TDBCalendar.OnClick"/>
 
@@ -7272,11 +7278,7 @@
         <short>TDBNavButtonType.</short>
         <descr>
           <p>
-            <var>TDBNavButtonType</var> is an enumerated type with values that represent button types (and their corresponding glyphs) in a database navigation control. TDBNavButtonType enumeration values are used when  accessing the
-            <var>Buttons</var> and
-            <var>Images</var> in
-            <var>TDBCustomNavigator</var>, and when accessing the default resource names in
-            <var>DBNavButtonResourceName</var>.
+            <var>TDBNavButtonType</var> is an enumerated type with values that represent button types (and their corresponding glyphs) in a database navigation control. TDBNavButtonType enumeration values are used when  accessing the <var>Buttons</var> and <var>Images</var> in <var>TDBCustomNavigator</var>, and when accessing the default resource names in <var>DBNavButtonResourceName</var>.
           </p>
         </descr>
         <seealso>
@@ -7648,22 +7650,11 @@
           <link id="#lcl.DBCtrls.TDBCustomNavigator.EditingChanged">EditingChanged</link>
         </seealso>
       </element>
-      <element link="#rtl.Classes.TComponent.Loaded" name="TDBCustomNavigator.Loaded">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element link="#rtl.Classes.TComponent.Notification" name="TDBCustomNavigator.Notification">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TDBCustomNavigator.Notification.AComponent">
-        <short/>
-      </element>
-      <element name="TDBCustomNavigator.Notification.Operation">
-        <short/>
-      </element>
+      <element name="TDBCustomNavigator.Loaded" link="#lcl.extctrls.TCustomPanel.Loaded"/>
+      <element name="TDBCustomNavigator.Notification"
+        link="#lcl.controls.TControl.Notification"/>
+      <element name="TDBCustomNavigator.Notification.AComponent"/>
+      <element name="TDBCustomNavigator.Notification.Operation"/>
       <element name="TDBCustomNavigator.UpdateButtons">
         <short>
           <var>UpdateButtons</var> - if the position of the buttons need to be changed, does this, then updates the status of the buttons (see
@@ -7724,9 +7715,15 @@
         <errors/>
         <seealso/>
       </element>
-      <element link="#lcl.controls.TControl.SetEnabled" name="TDBCustomNavigator.SetEnabled"/>
+      <element name="TDBCustomNavigator.SetEnabled">
+        <short>Sets the value for the Enabled property.</short>
+        <descr/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Enabled">TControl.Enabled</link>
+        </seealso>
+      </element>
       <element name="TDBCustomNavigator.SetEnabled.Value">
-        <short/>
+        <short>New value for the Enabled property.</short>
       </element>
       <element name="TDBCustomNavigator.Create">
         <short>
@@ -7893,13 +7890,10 @@
         <seealso/>
       </element>
       <element name="TDBNavFocusableButton">
-        <short/>
+        <short>Implements a button used on a database navigator control.</short>
         <descr>
           <p>
-            <var>TDBNavFocusableButton</var> is a
-            <var>TBitBtn</var> descendant which represent a button that receive focus in a database navigator control. TDBNavFocusableButton is the type stored in the
-            <var>FocusableButtons</var> member in
-            <var>TDBCustomNavigator</var>.
+            <var>TDBNavFocusableButton</var> is a <var>TBitBtn</var> descendant which implements a button that can receive focus in a database navigator control. TDBNavFocusableButton is the type maintained in the  <var>FocusableButtons</var> member in <var>TDBCustomNavigator</var>.
           </p>
         </descr>
         <seealso>
@@ -7909,14 +7903,28 @@
       <element name="TDBNavFocusableButton.FIndex"/>
       <element name="TDBNavFocusableButton.FNavStyle"/>
       <element name="TDBNavFocusableButton.NavStyle">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Contains styles and options that are enabled for the DB navigator button.</short>
+        <descr>
+          <p>
+            <var>NavStyle</var> is a <var>TDBNavButtonStyle</var> property with the set of style or options enabled for the focusable DB navigator button. Its values may be updated in the <var>TDBCustomNavigator.UpdateButtons</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDBNavButtonStyle"/>
+          <link id="TDBCustomNavigator.UpdateButtons"/>
+        </seealso>
       </element>
       <element name="TDBNavFocusableButton.Index">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Indicates the navigation button type for the button.</short>
+        <descr>
+          <p>
+            <var>Index</var> is an <var>TDBNavButtonType</var> value which indicates both the navigation button type for the button, and its ordinal position in the Buttons displayed for a <var>TDBCustomNavigator</var> / <var>TDBNavigator</var> control. The value for the property is assigned when the button is created in the <var>UpdateButtons</var> for the <var>TDBCustomNavigator</var> control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDBNavButtonType"/>
+          <link id="TDBCustomNavigator.UpdateButtons"/>
+        </seealso>
       </element>
       <element name="TDBNavDataLink">
         <short>

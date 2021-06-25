@@ -2239,7 +2239,7 @@
         <short>New value for the property.</short>
       </element>
 
-      <element name="TCustomImage.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
+      <element name="TCustomImage.WSRegisterClass" link="#lcl.controls.TGraphicControl.WSRegisterClass"/>
 
       <element name="TCustomImage.PictureChanged">
         <short>Performs actions needed when the Picture property has been changed.</short>
@@ -2427,7 +2427,7 @@
       </element>
 
       <element name="TCustomImage.KeepOriginXWhenClipped">
-        <short/>
+        <short>Preserves the Left coordinate when a clipped image is centered.</short>
         <descr>
           <p>
             The default value for the property is <b>False</b>.
@@ -2437,7 +2437,7 @@
       </element>
 
       <element name="TCustomImage.KeepOriginYWhenClipped">
-        <short/>
+        <short>Preserves the Top coordinate when a clipped image is centered.</short>
         <descr>
           <p>
             The default value for the property is <b>False</b>.
@@ -2498,7 +2498,9 @@
       </element>
 
       <element name="TCustomImage.StretchOutEnabled">
-        <short/>
+        <short>
+          Allows the image to be resized proportionally when the image drawing area is resized.
+        </short>
         <descr>
           <p>
             The default value for the property is <b>True</b>.
@@ -2508,7 +2510,9 @@
       </element>
 
       <element name="TCustomImage.StretchInEnabled">
-        <short/>
+        <short>
+          Allows the image to be resized proportionally when the image drawing area is resized.
+        </short>
         <descr>
           <p>
             The default value for the property is <b>True</b>.

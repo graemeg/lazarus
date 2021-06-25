@@ -4645,6 +4645,20 @@
       </element>
 
       <element name="TCustomListBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
+
+      <element name="TCustomListBox.Options">
+        <short>Contains options enabled for the list box control.</short>
+        <descr>
+          <p>
+            <var>Options</var> is a <var>TListBoxOptions</var> property with the options enabled for the list box control. The values in the property are assigned in the <var>Create</var> constructor, and used when the <var>LM_DrawListItem</var> message is handled for the control.
+          </p>
+          <p>
+            The default value for the property is <b>[lboDrawFocusRect]</b>, and draws a focus rectangle for the selected item in the list box.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
       <element name="TCustomListBox.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="TListBox">
@@ -8556,6 +8570,25 @@ end;
       </element>
       <element name="TCustomCheckBox.Create.TheOwner">
         <short>Owner of the class instance.</short>
+      </element>
+
+      <element name="TCustomCheckBox.Alignment">
+        <short>Indicates the alignment for the caption text in the control.</short>
+        <descr>
+          <p>
+            <var>Alignment</var> is a <var>TLeftRight</var> property with the horizontal alignment for the caption text relative to the check box. The default value for the property is <var>taRightJustify</var>, and causes the text to be drawn to the right of the check box. Use <var>taLeftJustify</var> to draw the caption text in front of the check box.
+          </p>
+          <p>
+            Changing the value for the property causes the widgetset class to be updated when its <var>Handle</var> has been allocated.
+          </p>
+          <p>
+            The value in Alignment is used to set the creation parameters for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomCheckBox.CreateParams"/>
+          <link id="#rtl.classes.TLeftRight">TLeftRight</link>
+        </seealso>
       </element>
 
       <element name="TCustomCheckBox.AllowGrayed">

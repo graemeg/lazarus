@@ -3737,14 +3737,14 @@
       </element>
 
       <element name="TSizeConstraints.AssignTo">
-        <short/>
+        <short>Copies property values to the specified persistent object.</short>
         <descr/>
         <seealso>
           <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
         </seealso>
       </element>
       <element name="TSizeConstraints.AssignTo.Dest">
-        <short/>
+        <short>Persistent object where property values are stored.</short>
       </element>
 
       <element name="TSizeConstraints.SetMaxHeight" link="#lcl.controls.TSizeConstraints.MaxHeight"/>
@@ -3859,6 +3859,20 @@
       </element>
       <element name="TSizeConstraints.MinMaxHeight.Height">
         <short>The suggested height.</short>
+      </element>
+
+      <element name="TSizeConstraints.AutoAdjustLayout">
+        <short>
+          Adjusts width and height values in the class using the specified scaling factors.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TSizeConstraints.AutoAdjustLayout.AXProportion">
+        <short>Scaling factor applied to width values.</short>
+      </element>
+      <element name="TSizeConstraints.AutoAdjustLayout.AYProportion">
+        <short>Scaling factor applied to height values.</short>
       </element>
 
       <element name="TSizeConstraints.MaxInterfaceHeight">
@@ -4636,9 +4650,15 @@
         <short>New value for the property.</short>
       </element>
 
-      <element name="TAnchorSide.GetOwner" link="#rtl.classes.TPersistent.GetOwner"/>
+      <element name="TAnchorSide.GetOwner">
+        <short>Gets the owner of the persistent object.</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
+      </element>
       <element name="TAnchorSide.GetOwner.Result">
-        <short/>
+        <short>Owner of the persistent object.</short>
       </element>
 
       <element name="TAnchorSide.Create">
@@ -4710,7 +4730,7 @@
         <short>Position of the side to anchor to.</short>
       </element>
 
-      <element link="#rtl.classes.TPersistent.Assign" name="TAnchorSide.Assign"/>
+      <element name="TAnchorSide.Assign" link="#rtl.classes.TPersistent.Assign"/>
       <element name="TAnchorSide.Assign.Source">
         <short/>
       </element>
@@ -6078,7 +6098,8 @@
       <element name="TControl.FAccessibleObject"/>
       <element link="#lcl.controls.TControl.ControlState" name="TControl.FControlState"/>
       <element link="#lcl.controls.TControl.Cursor" name="TControl.FCursor"/>
-      <element link="#lcl.lclclasses.TLCLComponent.WSRegisterClass" name="TControl.WSRegisterClass"/>
+
+      <element name="TControl.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element link="#lcl.controls.TControl.Cursor" name="TControl.GetCursor"/>
       <element name="TControl.GetCursor.Result">
@@ -6090,14 +6111,24 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.Visible" name="TControl.SetVisible"/>
+      <element name="TControl.SetVisible">
+        <short>Sets the value for the Visible property.</short>
+        <descr/>
+        <seealso>
+          <link id="TControl.Visible"/>
+        </seealso>
+      </element>
       <element name="TControl.SetVisible.Value">
-        <short/>
+        <short>New value for the Visible property.</short>
       </element>
 
       <element name="TControl.DoOnParentHandleDestruction">
-        <short/>
-        <descr>Implement in descendants</descr>
+        <short>Performs actions when the handle for the parent control is freed.</short>
+        <descr>
+          <p>
+            Has an empty implementation in TControl. Must be implement in descendents classes.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
@@ -6160,9 +6191,15 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.AutoSize" name="TControl.SetAutoSize"/>
+      <element name="TControl.SetAutoSize">
+        <short>Sets the value for the AutoSize property.</short>
+        <descr/>
+        <seealso>
+          <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
+        </seealso>
+      </element>
       <element name="TControl.SetAutoSize.Value">
-        <short/>
+        <short>New value for the AutoSize property.</short>
       </element>
 
       <element name="TControl.BoundsChanged">
@@ -6211,6 +6248,21 @@
       <element name="TControl.IsBorderSpacingInnerBorderStored.Result">
         <short>True when InnerBorder has to be taken into account.</short>
       </element>
+
+       <element name="TControl.IsCaptionStored">
+         <short>Implements the storage specifier for the Caption property.</short>
+         <descr>
+           <p>
+             Returns True if ActionLink has not been assigned, or its IsCaptionLinked property is set to False.
+           </p>
+         </descr>
+         <seealso/>
+       </element>
+       <element name="TControl.IsCaptionStored.Result">
+         <short>
+           Returns True if ActionLink has not been assigned, or its IsCaptionLinked property is set to False.
+         </short>
+       </element>
 
       <element name="TControl.SendMoveSizeMessages">
         <short>
@@ -6804,13 +6856,18 @@
       <element name="TControl.wmmbuttonup.message">
         <short/>
       </element>
-      <element name="TControl.wmmousewheel">
-        <short/>
+      <element name="TControl.WMMouseWheel">
+        <short>Handles mouse wheel messages for the control.</short>
       </element>
-      <element name="TControl.wmmousewheel.message">
-        <short/>
+      <element name="TControl.WMMouseWheel.Message">
+        <short>Mouse wheel message handled in the method.</short>
       </element>
-
+      <element name="TControl.WMMouseHWheel">
+        <short>Handles horizontal mouse wheel messages for the control.</short>
+      </element>
+      <element name="TControl.WMMouseHWheel.Message">
+        <short>Mouse wheel message handled in the method.</short>
+      </element>
       <element name="TControl.wmmove">
         <short>
           Message handler for control moved.
@@ -6842,6 +6899,19 @@
       </element>
       <element name="TControl.wmwindowposchanged.message">
         <short/>
+      </element>
+
+      <element name="TControl.CMChanged">
+        <short>Handles CM_CHANGED control messages for the control.</short>
+        <descr>
+          <p>
+            Calls the WindowProc method in the Parent control (when assigned) to handle the control message in Message.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TControl.CMChanged.Message">
+        <short>Control message handled  in the method.</short>
       </element>
 
       <element name="TControl.lmcapturechanged">
@@ -7089,7 +7159,7 @@
       </element>
 
       <element name="TControl.BeforeDragStart">
-        <short/>
+        <short>Not implemented in TControl.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7357,15 +7427,17 @@
       </element>
 
       <element name="TControl.GetMousePosFromMessage">
-        <short/>
+        <short>
+          Converts the coordinates in the specified mouse message from SmallInt to LongInt.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.GetMousePosFromMessage.Result">
-        <short/>
+        <short>TPoint instance with the LongInt values for the mouse cursor position.</short>
       </element>
       <element name="TControl.GetMousePosFromMessage.MessageMousePos">
-        <short/>
+        <short>TSmallPoint instance with the values converted in the method.</short>
       </element>
 
       <element name="TControl.MouseDown">
@@ -7504,9 +7576,15 @@
         <short>The class type of the child control.</short>
       </element>
 
-      <element link="#rtl.classes.TComponent.ReadState" name="TControl.ReadState"/>
+      <element name="TControl.ReadState">
+        <short>Updates control flags and reads the data for the component.</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
+      </element>
       <element name="TControl.ReadState.Reader">
-        <short/>
+        <short>TReader instance used to read the component data. </short>
       </element>
 
       <element name="TControl.Loaded">
@@ -7702,14 +7780,26 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.Name" name="TControl.SetName"/>
+      <element name="TControl.SetName">
+        <short>Sets the value for the Name property.</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.Name">TComponent.Name</link>
+        </seealso>
+      </element>
       <element name="TControl.SetName.Value">
-        <short/>
+        <short>New value for the Name property.</short>
       </element>
 
-      <element link="#lcl.controls.TControl.Parent" name="TControl.SetParent"/>
+      <element name="TControl.SetParent">
+        <short>Sets the value for the Parent property.</short>
+        <descr/>
+        <seealso>
+          <link id="TControl.Parent"/>
+        </seealso>
+      </element>
       <element name="TControl.SetParent.NewParent">
-        <short/>
+        <short>New value for the the Parent property.</short>
       </element>
 
       <element name="TControl.SetParentComponent">
@@ -8076,18 +8166,20 @@
       </element>
 
       <element name="TControl.DoScaleFontPPI">
-        <short/>
+        <short>
+          Adjusts the height for a Font to the specified pixels per inch.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.DoScaleFontPPI.AFont">
-        <short/>
+        <short>Font examined and updated in the method.</short>
       </element>
       <element name="TControl.DoScaleFontPPI.AToPPI">
-        <short/>
+        <short>Pixels per inch setting adjusted in the method.</short>
       </element>
       <element name="TControl.DoScaleFontPPI.AProportion">
-        <short/>
+        <short>Scaling factor a applied to the font.</short>
       </element>
 
       <element name="TControl.GetActionLinkClass">
@@ -10835,7 +10927,7 @@
         <short>Control which owns the class instance.</short>
       </element>
 
-      <element link="#rtl.classes.TPersistent.Assign" name="TControlChildSizing.Assign"/>
+      <element name="TControlChildSizing.Assign" link="#rtl.classes.TPersistent.Assign" />
       <element name="TControlChildSizing.Assign.Source">
         <short/>
       </element>
@@ -14691,7 +14783,7 @@ if MyControl.CanSetFocus then
         <short/>
       </element>
 
-      <element link="#lcl.lclclasses.TLCLComponent.WSRegisterClass" name="TGraphicControl.WSRegisterClass"/>
+      <element name="TGraphicControl.WSRegisterClass" link="#lcl.controls.TControl.WSRegisterClass"/>
 
       <element link="#lcl.controls.TControl.FontChanged" name="TGraphicControl.FontChanged"/>
       <element name="TGraphicControl.FontChanged.Sender">
@@ -14868,18 +14960,19 @@ if MyControl.CanSetFocus then
         </seealso>
       </element>
 
-      <element link="#lcl.ImgList.TCustomImageList" name="TImageList"/>
-      <element link="#lcl.ImgList.TCustomImageList.AllocBy" name="TImageList.AllocBy"/>
-      <element link="#lcl.ImgList.TCustomImageList.BlendColor" name="TImageList.BlendColor"/>
-      <element link="#LCL.ImgList.TCustomImageList.BkColor" name="TImageList.BkColor"/>
-      <element link="#LCL.ImgList.TCustomImageList.DrawingStyle" name="TImageList.DrawingStyle"/>
-      <element link="#LCL.ImgList.TCustomImageList.Height" name="TImageList.Height"/>
-      <element link="#LCL.ImgList.TCustomImageList.ImageType" name="TImageList.ImageType"/>
-      <element link="#LCL.ImgList.TCustomImageList.Masked" name="TImageList.Masked"/>
-      <element link="#LCL.ImgList.TCustomImageList.Scaled" name="TImageList.Scaled"/>
-      <element link="#LCL.ImgList.TCustomImageList.ShareImages" name="TImageList.ShareImages"/>
-      <element link="#LCL.ImgList.TCustomImageList.OnChange" name="TImageList.OnChange"/>
-      <element link="#LCL.ImgList.TCustomImageList.OnGetWidthForPPI" name="TImageList.OnGetWidthForPPI"/>
+      <element link="#lcl.imglist.TCustomImageList" name="TImageList"/>
+      <element link="#lcl.imglist.TCustomImageList.AllocBy" name="TImageList.AllocBy"/>
+      <element link="#lcl.imglist.TCustomImageList.BlendColor" name="TImageList.BlendColor"/>
+      <element link="#lcl.imglist.TCustomImageList.BkColor" name="TImageList.BkColor"/>
+      <element link="#lcl.imglist.TCustomImageList.DrawingStyle" name="TImageList.DrawingStyle"/>
+      <element link="#lcl.imglist.TCustomImageList.Height" name="TImageList.Height"/>
+      <element link="#lcl.imglist.TCustomImageList.ImageType" name="TImageList.ImageType"/>
+      <element link="#lcl.imglist.TCustomImageList.Masked" name="TImageList.Masked"/>
+      <element link="#lcl.imglist.TCustomImageList.Scaled" name="TImageList.Scaled"/>
+      <element link="#lcl.imglist.TCustomImageList.ShareImages" name="TImageList.ShareImages"/>
+      <element link="#lcl.imglist.TCustomImageList.Width" name="TImageList.Width"/>
+      <element link="#lcl.imglist.TCustomImageList.OnChange" name="TImageList.OnChange"/>
+      <element link="#lcl.imglist.TCustomImageList.OnGetWidthForPPI" name="TImageList.OnGetWidthForPPI"/>
 
       <element name="TControlPropertyStorage">
         <short/>
