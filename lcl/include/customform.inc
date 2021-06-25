@@ -706,7 +706,7 @@ begin
   end;
   { call onShow() or onActivate() for the first time,
     after first OnResize() and OnChangeBounds() }
-  if FDelayedOnResize or FDelayedOnChangeBounds then
+  if FDelayedOnResize and FDelayedOnChangeBounds then
   begin
     if FIsFirstOnShow then
     begin
