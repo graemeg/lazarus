@@ -30,10 +30,17 @@ unit etMessagesWnd;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, IDEMsgIntf, IDEImagesIntf, IDEOptionDefs,
-  IDEExternToolIntf, LazIDEIntf, SynEditMarks,
-  Forms, Controls, Graphics, Dialogs, LCLProc, etMessageFrame,
-  etQuickFixes, LazarusIDEStrConsts;
+  Classes, SysUtils,
+  // LCL
+  Forms, Controls, Graphics, Dialogs,
+  // BuildIntf
+  IDEExternToolIntf,
+  // IdeIntf
+  IDEMsgIntf, LazIDEIntf,
+  // SynEdit
+  SynEditMarks,
+  // IDE
+  IDEOptionDefs, etMessageFrame, etQuickFixes, LazarusIDEStrConsts;
 
 type
 
