@@ -1973,6 +1973,7 @@ begin
                 ie.ie_SubClass := 0;
                 ie.ie_Code := IMsg^.Code;
                 ie.ie_Qualifier := IMsg^.Qualifier and (not (IEQUALIFIER_CONTROL or IEQUALIFIER_LALT));
+                ie.ie_position.ie_addr := PPointer(iMsg^.IAddress)^;
                 ie.ie_NextEvent := nil;
                 Buff[0] := #0;
                 Ret := MapRawKey(@ie, @Buff[0], 1, nil);
