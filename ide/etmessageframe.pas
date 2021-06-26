@@ -222,7 +222,7 @@ type
     procedure UpdateScrollBar(InvalidateScrollMax: boolean);
     procedure CreateWnd; override;
     procedure DoSetBounds(ALeft, ATop, AWidth, AHeight: integer); override;
-    procedure MouseMove(Shift: TShiftState; X, Y: Integer); override;
+    //procedure MouseMove(Shift: TShiftState; X, Y: Integer); override;
     procedure MouseDown(Button: TMouseButton; Shift: TShiftState; X, Y: Integer); override;
     procedure KeyDown(var Key: Word; Shift: TShiftState); override;
     procedure DoOnShowHint(HintInfo: PHintInfo); override;
@@ -254,8 +254,9 @@ type
     function Filters: TLMsgViewFilters; inline;
 
     // select, search
+    procedure AddToSelection(View: TLMsgWndView; LineNumber: integer);
+    procedure ExtendSelection(View: TLMsgWndView; LineNumber: integer);
     function HasSelection: boolean;
-    function IsLineSelected(View: TLMsgWndView; LineNumber: integer): boolean;
     function SearchNext(StartView: TLMsgWndView; StartLine: integer;
       SkipStart, Downwards: boolean;
       out View: TLMsgWndView; out LineNumber: integer): boolean;
@@ -305,8 +306,7 @@ type
     Property OnOptionsChanged: TNotifyEvent read FOnOptionsChanged write FOnOptionsChanged;
     property Options: TMsgCtrlOptions read FOptions write SetOptions default MCDefaultOptions;
     property SearchText: string read FSearchText write SetSearchText;
-    property SelectedLines: TIntegerList read FSelectedLines;
-    // -1=header line, can be on progress line (=View.Count)
+    // First initially selected line, -1=header line, can be on progress line (=View.Count)
     property SelectedLine1: integer read GetSelectedLine write SetSelectedLine;
     property SelectedView: TLMsgWndView read FSelectedView write SetSelectedView;
     property ShowHint default true;
@@ -371,8 +371,7 @@ type
     function GetMsgPattern(SubTool: string; MsgId: integer;
       WithUrgency: boolean; MaxLen: integer): string;
   protected
-    procedure Notification(AComponent: TComponent; Operation: TOperation);
-      override;
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
   public
     MessagesCtrl: TMessagesCtrl;
     constructor Create(TheOwner: TComponent); override;
@@ -1631,7 +1630,7 @@ begin
     while (j<View.Lines.Count) and (y<ClientHeight) do begin
       Line:=View.Lines[j];
       NodeRect:=Rect(Indent,y,ClientWidth,y+ItemHeight);
-      IsSelected:=(fSelectedView=View) and (SelectedLine1=j);
+      IsSelected:=(fSelectedView=View) and (FSelectedLines.IndexOf(j)>=0);
       if not IsSelected then begin
         if (y>-ItemHeight) and (y<=0) then
           FirstLineIsNotSelectedMessage:=true
@@ -1683,7 +1682,7 @@ begin
         if col=clDefault then
           col:=TextColor;
         DrawText(NodeRect,View.ProgressLine.Msg,
-          (fSelectedView=View) and (SelectedLine1=View.Lines.Count),col);
+          (fSelectedView=View) and (FSelectedLines.IndexOf(View.Lines.Count)>=0),col);
       end;
       inc(y,ItemHeight);
     end;
@@ -1733,13 +1732,13 @@ begin
   inherited DoSetBounds(ALeft, ATop, AWidth, AHeight);
   UpdateScrollBar(true);
 end;
-
+{
 procedure TMessagesCtrl.MouseMove(Shift: TShiftState; X, Y: Integer);
 begin
   inherited MouseMove(Shift, X, Y);
   //Application.HideHint;
 end;
-
+}
 procedure TMessagesCtrl.MouseDown(Button: TMouseButton; Shift: TShiftState;
   X, Y: Integer);
 var
@@ -1750,19 +1749,23 @@ begin
     SetFocus;
   inherited MouseDown(Button, Shift, X, Y);
   if GetLineAt(Y,View,LineNumber) then begin
-    if Button=mbLeft then begin
-      Select(View,LineNumber,true,true);
-      StoreSelectedAsSearchStart;
-
+    if not (Button in [mbLeft,mbRight]) then Exit;
+    if ssCtrl in Shift then
+      AddToSelection(View,LineNumber)
+    else if ssShift in Shift then
+      ExtendSelection(View,LineNumber)
+    else begin
+      if (Button=mbLeft)
+      or (View<>SelectedView) or (FSelectedLines.IndexOf(LineNumber)=-1) then
+      begin
+        Select(View,LineNumber,true,true);
+        StoreSelectedAsSearchStart;
+      end;
+      if (Button=mbRight) then Exit;
       if ((ssDouble in Shift) and (not (mcoSingleClickOpensFile in FOptions)))
       or ((mcoSingleClickOpensFile in FOptions) and ([ssDouble,ssTriple,ssQuad]*Shift=[]))
       then
         OpenSelection;
-    end else if Button=mbRight then begin
-      if not IsLineSelected(View,LineNumber) then begin
-        Select(View,LineNumber,true,true);
-        StoreSelectedAsSearchStart;
-      end;
     end;
   end;
 end;
@@ -1997,6 +2000,51 @@ begin
       exit(true);
     end;
   until not Next;
+end;
+
+procedure TMessagesCtrl.AddToSelection(View: TLMsgWndView; LineNumber: integer);
+var
+  i: Integer;
+begin
+  if LineNumber=-1 then Exit;
+  BeginUpdate;
+  SelectedView:=View;
+  if FSelectedLines.Count=0 then         // No existing selection.
+    SelectedLine1:=LineNumber
+  else begin
+    i:=FSelectedLines.IndexOf(LineNumber);
+    if i=-1 then
+      FSelectedLines.Add(LineNumber)
+    else
+      FSelectedLines.Delete(i);          // Was already selected -> toggle.
+    Invalidate;
+  end;
+  EndUpdate;
+end;
+
+procedure TMessagesCtrl.ExtendSelection(View: TLMsgWndView; LineNumber: integer);
+var
+  i: Integer;
+begin
+  if LineNumber=-1 then Exit;
+  BeginUpdate;
+  SelectedView:=View;
+  if FSelectedLines.Count=0 then         // No existing selection.
+    SelectedLine1:=LineNumber
+  else begin
+    FSelectedLines.Count:=1;   // Delete earlier selections except the first one.
+    if LineNumber<FSelectedLines[0] then begin
+      for i:=LineNumber to FSelectedLines[0]-1 do
+        FSelectedLines.Add(i);
+    end
+    else if LineNumber>FSelectedLines[0] then begin
+      for i:=FSelectedLines[0]+1 to LineNumber do
+        FSelectedLines.Add(i);
+    end;
+    // if LineNumber=FSelectedLines[0] then do nothing.
+    Invalidate;
+  end;
+  EndUpdate;
 end;
 
 procedure TMessagesCtrl.Select(View: TLMsgWndView; LineNumber: integer;
@@ -2717,11 +2765,6 @@ begin
   Result:=SelectedLine1<View.GetShownLineCount(false,true);
 end;
 
-function TMessagesCtrl.IsLineSelected(View: TLMsgWndView; LineNumber: integer): boolean;
-begin
-  Result:=(View=SelectedView) and (LineNumber=SelectedLine1);
-end;
-
 { TMessagesFrame }
 
 procedure TMessagesFrame.MsgCtrlPopupMenuPopup(Sender: TObject);
@@ -3135,11 +3178,10 @@ end;
 
 function TMessagesFrame.AllMessagesAsString(const OnlyShown: boolean): String;
 var
-  s: String;
   Tool: TAbstractExternalTool;
   View: TLMsgWndView;
-  j: Integer;
-  i: Integer;
+  s: String;
+  i, j: Integer;
 begin
   s:='';
   for i:=0 to MessagesCtrl.ViewCount-1 do begin
@@ -3470,33 +3512,43 @@ end;
 procedure TMessagesFrame.CopyMsgToClipboard(OnlyFilename: boolean);
 var
   View: TLMsgWndView;
-  LineNumber: Integer;
-  Txt: String;
   Line: TMessageLine;
+  OrderedSelection: TIntegerList;
+  i, LineNumber: Integer;
+  Txt: String;
 begin
+  Txt:='';
   View:=MessagesCtrl.SelectedView;
   if View=nil then exit;
-  LineNumber:=MessagesCtrl.SelectedLine1;
-  if LineNumber<0 then begin
-    // header
-    if OnlyFilename then exit;
-    Txt:=MessagesCtrl.GetHeaderText(View);
-  end else if LineNumber<View.Lines.Count then begin
-    // normal messages
-    Line:=View.Lines[LineNumber];
-    if OnlyFilename then
-      Txt:=Line.Filename
-    else
-      Txt:=MessagesCtrl.GetLineText(Line);
-  end else if LineNumber=View.Lines.Count then begin
-    // progress line
-    Line:=View.ProgressLine;
-    if OnlyFilename then
-      Txt:=Line.Filename
-    else
-      Txt:=MessagesCtrl.GetLineText(Line);
-  end else
-    exit;
+  OrderedSelection:=TIntegerList.Create;
+  try
+    // The initially selected line is first in the list. The list is not sorted.
+    // Here we need the line numbers sorted.
+    OrderedSelection.Assign(MessagesCtrl.FSelectedLines);
+    OrderedSelection.Sort;
+    if OrderedSelection.Count=0 then begin
+      if OnlyFilename then exit;
+      Txt:=MessagesCtrl.GetHeaderText(View);  // header
+    end
+    else begin
+      for i:=0 to OrderedSelection.Count-1 do begin
+        LineNumber:=OrderedSelection[i];
+        Assert(LineNumber<=View.Lines.Count, 'TMessagesFrame.CopyMsgToClipboard: LineNumber is too big.');
+        if LineNumber=View.Lines.Count then
+          Line:=View.ProgressLine             // progress line
+        else
+          Line:=View.Lines[LineNumber];       // normal messages
+        if OnlyFilename then
+          Txt+=Line.Filename
+        else
+          Txt+=MessagesCtrl.GetLineText(Line);
+        if i<OrderedSelection.Count-1 then
+          Txt+=LineEnding;
+      end;
+    end;
+  finally
+    OrderedSelection.Free;
+  end;
   Clipboard.AsText:=Txt;
 end;
 
