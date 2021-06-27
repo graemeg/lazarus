@@ -37,7 +37,7 @@ uses
   Forms, Buttons, ExtCtrls, Controls, LMessages, LCLType, LCLIntf,
   Graphics, Themes, ImgList, Menus, Clipbrd, Dialogs, StdCtrls,
   // LazUtils
-  GraphType, UTF8Process, LazUTF8, LazFileCache, LazFileUtils, IntegerList,
+  GraphType, UTF8Process, LazUTF8, LazFileCache, LazFileUtils, IntegerList, LazLoggerBase,
   // SynEdit
   SynEdit, SynEditMarks,
   // BuildIntf
@@ -256,7 +256,6 @@ type
     // select, search
     procedure AddToSelection(View: TLMsgWndView; LineNumber: integer);
     procedure ExtendSelection(View: TLMsgWndView; LineNumber: integer);
-    function HasSelection: boolean;
     function SearchNext(StartView: TLMsgWndView; StartLine: integer;
       SkipStart, Downwards: boolean;
       out View: TLMsgWndView; out LineNumber: integer): boolean;
@@ -1128,7 +1127,7 @@ begin
   Invalidate;
 
   // auto scroll
-  if (SelectedView<>nil) and (SelectedLine1<SelectedView.Lines.Count) then
+  if SelectedView<>nil then
     exit; // user has selected a non progress line -> do not auto scroll
 
   for i:=0 to ViewCount-1 do
@@ -1252,21 +1251,19 @@ end;
 
 procedure TMessagesCtrl.SetSelectedLine(AValue: integer);
 // Select the given line, clear possibly existing selections.
+var
+  LineCnt: Integer;
 begin
   Assert(AValue>=-1, 'TMessagesCtrl.SetSelectedLine: AValue < -1.');
   Assert(Assigned(SelectedView), 'TMessagesCtrl.SetSelectedLine: View = Nil.');
-  AValue:=Min(AValue, SelectedView.GetShownLineCount(false,true)-1);
-  if AValue=-1 then begin
-    if FSelectedLines.Count=0 then
-      Exit;
-    FSelectedLines.Clear;       // -1 = no selection.
-  end
-  else begin
-    if (FSelectedLines.Count>0) and (FSelectedLines[0]=AValue) then
-      Exit;
-    FSelectedLines.Count:=1;    // One line.
-    FSelectedLines[0]:=AValue;
-  end;
+  LineCnt:=SelectedView.GetShownLineCount(false,true)-1;
+  Assert(AValue<=LineCnt, 'TMessagesCtrl.SetSelectedLine: Value '+IntToStr(AValue)
+                        + ' > line count ' + IntToStr(LineCnt));
+  //AValue:=Min(AValue, SelectedView.GetShownLineCount(false,true)-1);
+  if (FSelectedLines.Count>0) and (FSelectedLines[0]=AValue) then
+    Exit;
+  FSelectedLines.Count:=1;    // One line.
+  FSelectedLines[0]:=AValue;
   Invalidate;
 end;
 
@@ -1614,7 +1611,7 @@ begin
       Canvas.Line(NodeRect.Left,NodeRect.Top,NodeRect.Right,NodeRect.Top);
       Canvas.Pen.Style:=psSolid;
       DrawText(NodeRect,GetHeaderText(View),
-        (fSelectedView=View) and (FSelectedLines.Count=0),TextColor);
+        (fSelectedView=View) and (FSelectedLines.IndexOf(-1)>=0),TextColor);
       Canvas.Brush.Color:=BackgroundColor;
     end;
     inc(y,ItemHeight);
@@ -2006,44 +2003,39 @@ procedure TMessagesCtrl.AddToSelection(View: TLMsgWndView; LineNumber: integer);
 var
   i: Integer;
 begin
-  if LineNumber=-1 then Exit;
   BeginUpdate;
   SelectedView:=View;
-  if FSelectedLines.Count=0 then         // No existing selection.
-    SelectedLine1:=LineNumber
-  else begin
+  if FSelectedLines.Count=0 then        // No existing selection.
+    i:=-1
+  else
     i:=FSelectedLines.IndexOf(LineNumber);
-    if i=-1 then
-      FSelectedLines.Add(LineNumber)
-    else
-      FSelectedLines.Delete(i);          // Was already selected -> toggle.
-    Invalidate;
-  end;
+  if i=-1 then
+    FSelectedLines.Add(LineNumber)
+  else
+    FSelectedLines.Delete(i);          // Was already selected -> toggle.
+  Invalidate;
   EndUpdate;
 end;
 
 procedure TMessagesCtrl.ExtendSelection(View: TLMsgWndView; LineNumber: integer);
 var
   i: Integer;
+  Empty: Boolean;
 begin
-  if LineNumber=-1 then Exit;
   BeginUpdate;
   SelectedView:=View;
-  if FSelectedLines.Count=0 then         // No existing selection.
-    SelectedLine1:=LineNumber
-  else begin
-    FSelectedLines.Count:=1;   // Delete earlier selections except the first one.
-    if LineNumber<FSelectedLines[0] then begin
-      for i:=LineNumber to FSelectedLines[0]-1 do
-        FSelectedLines.Add(i);
-    end
-    else if LineNumber>FSelectedLines[0] then begin
-      for i:=FSelectedLines[0]+1 to LineNumber do
-        FSelectedLines.Add(i);
-    end;
-    // if LineNumber=FSelectedLines[0] then do nothing.
-    Invalidate;
-  end;
+  Empty:=FSelectedLines.Count=0;
+  FSelectedLines.Count:=1; // Delete possible earlier selections except first one.
+  if Empty then
+    FSelectedLines[0]:=LineNumber  // No earlier selection.
+  else if LineNumber<FSelectedLines[0] then
+    for i:=LineNumber to FSelectedLines[0]-1 do
+      FSelectedLines.Add(i)
+  else if LineNumber>FSelectedLines[0] then
+    for i:=FSelectedLines[0]+1 to LineNumber do
+      FSelectedLines.Add(i);
+  // if LineNumber=FSelectedLines[0] then do nothing.
+  Invalidate;
   EndUpdate;
 end;
 
@@ -2064,7 +2056,8 @@ begin
   if (Msg=nil) or (Msg.Lines=nil) or not (Msg.Lines.Owner is TLMsgWndView) then
   begin
     SelectedView:=nil;
-    SelectedLine1:=-1;
+    FSelectedLines.Clear;
+    Invalidate;
   end else begin
     SelectedView:=TLMsgWndView(Msg.Lines.Owner);
     SelectedLine1:=Msg.Index;
@@ -2395,36 +2388,33 @@ begin
     Result+=Line.Msg;
 end;
 
-function TMessagesCtrl.GetHeaderText(View: TLMsgWndView): string;
-
-  function GetStats(Lines: TMessageLines): string;
-  var
-    ErrCnt: Integer;
-    WarnCnt: Integer;
-    HintCnt: Integer;
-    c: TMessageLineUrgency;
-  begin
-    Result:='';
-    ErrCnt:=0;
-    WarnCnt:=0;
-    HintCnt:=0;
-    for c:=Low(Lines.UrgencyCounts) to high(Lines.UrgencyCounts) do begin
-      //debugln(['GetStats cat=',dbgs(c),' count=',Lines.UrgencyCounts[c]]);
-      if c>=mluError then
-        inc(ErrCnt,Lines.UrgencyCounts[c])
-      else if c=mluWarning then
-        inc(WarnCnt,Lines.UrgencyCounts[c])
-      else if c in [mluHint,mluNote] then
-        inc(HintCnt,Lines.UrgencyCounts[c]);
-    end;
-    if ErrCnt>0 then
-      Result+=Format(lisErrors2, [IntToStr(ErrCnt)]);
-    if WarnCnt>0 then
-      Result+=Format(lisWarnings, [IntToStr(WarnCnt)]);
-    if HintCnt>0 then
-      Result+=Format(lisHints, [IntToStr(HintCnt)]);
+function GetStats(Lines: TMessageLines): string;
+var
+  ErrCnt, WarnCnt, HintCnt: Integer;
+  c: TMessageLineUrgency;
+begin
+  Result:='';
+  ErrCnt:=0;
+  WarnCnt:=0;
+  HintCnt:=0;
+  for c:=Low(Lines.UrgencyCounts) to high(Lines.UrgencyCounts) do begin
+    //debugln(['GetStats cat=',dbgs(c),' count=',Lines.UrgencyCounts[c]]);
+    if c>=mluError then
+      inc(ErrCnt,Lines.UrgencyCounts[c])
+    else if c=mluWarning then
+      inc(WarnCnt,Lines.UrgencyCounts[c])
+    else if c in [mluHint,mluNote] then
+      inc(HintCnt,Lines.UrgencyCounts[c]);
   end;
+  if ErrCnt>0 then
+    Result+=Format(lisErrors2, [IntToStr(ErrCnt)]);
+  if WarnCnt>0 then
+    Result+=Format(lisWarnings, [IntToStr(WarnCnt)]);
+  if HintCnt>0 then
+    Result+=Format(lisHints, [IntToStr(HintCnt)]);
+end;
 
+function TMessagesCtrl.GetHeaderText(View: TLMsgWndView): string;
 begin
   Result:=View.Caption;
   if Result='' then
@@ -2667,8 +2657,8 @@ begin
   fSomeViewsRunning:=true;
 end;
 
-function TMessagesCtrl.GetLineAt(Y: integer; out View: TLMsgWndView; out
-  Line: integer): boolean;
+function TMessagesCtrl.GetLineAt(Y: integer; out View: TLMsgWndView;
+  out Line: integer): boolean;
 var
   i: Integer;
 begin
@@ -2753,16 +2743,6 @@ begin
       Result:=true;
   if Result then
     Invalidate;
-end;
-
-function TMessagesCtrl.HasSelection: boolean;
-var
-  View: TLMsgWndView;
-begin
-  Result:=false;
-  View:=SelectedView;
-  if View=nil then exit;
-  Result:=SelectedLine1<View.GetShownLineCount(false,true);
 end;
 
 { TMessagesFrame }
@@ -2887,20 +2867,13 @@ procedure TMessagesFrame.MsgCtrlPopupMenuPopup(Sender: TObject);
   end;
 
 var
-  HasText: Boolean;
   View: TLMsgWndView;
-  HasFilename: Boolean;
-  LineNumber: Integer;
-  Line: TMessageLine;
-  i: Integer;
-  HasViewContent: Boolean;
-  Running: Boolean;
-  MsgType: String;
-  CanFilterMsgType: Boolean;
   MinUrgency: TMessageLineUrgency;
   ToolData: TIDEExternalToolData;
-  ToolOptionsCaption: String;
-  VisibleCnt: Integer;
+  Line: TMessageLine;
+  i, LineNumber, VisibleCnt: Integer;
+  HasText, HasFilename, HasViewContent, Running, CanFilterMsgType: Boolean;
+  MsgType, ToolOptionsCaption: String;
 begin
   MessagesMenuRoot.MenuItem:=MsgCtrlPopupMenu.Items;
   //MessagesMenuRoot.BeginUpdate;
@@ -2927,11 +2900,17 @@ begin
     // check selection
     View:=MessagesCtrl.SelectedView;
     if View<>nil then begin
-      LineNumber:=MessagesCtrl.SelectedLine1;
-      if (LineNumber>=0) and (LineNumber<View.Lines.Count) then begin
-        Line:=View.Lines[LineNumber];
-        HasFilename:=Line.Filename<>'';
-        HasText:=Line.Msg<>'';
+      for i:=0 to MessagesCtrl.FSelectedLines.Count-1 do begin
+        LineNumber:=MessagesCtrl.FSelectedLines[i];
+        if LineNumber=-1 then Continue;            // header
+        if LineNumber=View.Lines.Count then
+          Line:=View.ProgressLine                  // progress line
+        else
+          Line:=View.Lines[LineNumber];            // normal messages
+        if Line.Filename<>'' then
+          HasFilename:=True;
+        if Line.Msg<>'' then
+          HasText:=True;
         if (Line.SubTool<>'') and (Line.MsgID<>0) then begin
           MsgType:=GetMsgPattern(Line.SubTool,Line.MsgID,true,40);
           CanFilterMsgType:=ord(Line.Urgency)<ord(mluError);
@@ -3215,9 +3194,19 @@ begin
     Result:=MessagesCtrl.GetLastViewWithContent;
 end;
 
+procedure TMessagesFrame.CopyFilenameMenuItemClick(Sender: TObject);
+begin
+  CopyMsgToClipboard(true);
+end;
+
 procedure TMessagesFrame.CopyMsgMenuItemClick(Sender: TObject);
 begin
   CopyMsgToClipboard(false);
+end;
+
+procedure TMessagesFrame.CopyAllMenuItemClick(Sender: TObject);
+begin
+  CopyAllClicked(false);
 end;
 
 procedure TMessagesFrame.CopyShownMenuItemClick(Sender: TObject);
@@ -3303,16 +3292,6 @@ end;
 procedure TMessagesFrame.MoreOptionsMenuItemClick(Sender: TObject);
 begin
   LazarusIDE.DoOpenIDEOptions(TMsgWndOptionsFrame);
-end;
-
-procedure TMessagesFrame.CopyFilenameMenuItemClick(Sender: TObject);
-begin
-  CopyMsgToClipboard(true);
-end;
-
-procedure TMessagesFrame.CopyAllMenuItemClick(Sender: TObject);
-begin
-  CopyAllClicked(false);
 end;
 
 procedure TMessagesFrame.AboutToolMenuItemClick(Sender: TObject);
@@ -3526,25 +3505,27 @@ begin
     // Here we need the line numbers sorted.
     OrderedSelection.Assign(MessagesCtrl.FSelectedLines);
     OrderedSelection.Sort;
-    if OrderedSelection.Count=0 then begin
-      if OnlyFilename then exit;
-      Txt:=MessagesCtrl.GetHeaderText(View);  // header
-    end
-    else begin
-      for i:=0 to OrderedSelection.Count-1 do begin
-        LineNumber:=OrderedSelection[i];
-        Assert(LineNumber<=View.Lines.Count, 'TMessagesFrame.CopyMsgToClipboard: LineNumber is too big.');
-        if LineNumber=View.Lines.Count then
-          Line:=View.ProgressLine             // progress line
+    for i:=0 to OrderedSelection.Count-1 do begin
+      LineNumber:=OrderedSelection[i];
+      Assert(LineNumber<=View.Lines.Count, 'TMessagesFrame.CopyMsgToClipboard: LineNumber is too big.');
+      if LineNumber=-1 then begin
+        if OnlyFilename then
+          Txt:=rsResourceFileName
         else
-          Line:=View.Lines[LineNumber];       // normal messages
+          Txt:=MessagesCtrl.GetHeaderText(View); // header
+      end
+      else begin
+        if LineNumber=View.Lines.Count then
+          Line:=View.ProgressLine                // progress line
+        else
+          Line:=View.Lines[LineNumber];          // normal messages
         if OnlyFilename then
           Txt+=Line.Filename
         else
           Txt+=MessagesCtrl.GetLineText(Line);
-        if i<OrderedSelection.Count-1 then
-          Txt+=LineEnding;
       end;
+      if i<OrderedSelection.Count-1 then
+        Txt+=LineEnding;
     end;
   finally
     OrderedSelection.Free;
