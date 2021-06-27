@@ -2232,8 +2232,6 @@ begin
   MousePos.x := Round(Event^.button.x);
   MousePos.y := Round(Event^.button.y);
 
-  OffsetMousePos(@MousePos);
-
   Msg.Keys := GdkModifierStateToLCL(Event^.button.state, False);
 
   Msg.XPos := SmallInt(MousePos.X);
