@@ -12,6 +12,7 @@ uses
   { add your units here }, unit1;
 
 begin
+  Application.Title:='';
   Application.Initialize;
   Application.BidiMode := bdRightToLeft;
   Application.CreateForm(TForm1, Form1);
