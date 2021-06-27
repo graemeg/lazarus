@@ -38,7 +38,10 @@ type
   TDataSetCancel = TAction;
   TDataSetRefresh = TAction;
 
+  { TMainForm }
+
   TMainForm = class(TForm)
+    DSAddress: TDataSource;
     MMain: TMainMenu;
     MFile: TMenuItem;
     ALMain: TActionList;
@@ -55,7 +58,7 @@ type
     DBA: TDbf;
     SDDBA: TSaveDialog;
     ODDBA: TOpenDialog;
-    DSAddress: TDataSource;
+    //DSAddress: TDataSource;
     ELastName: TDBEdit;
     EFirstName: TDBEdit;
     EStreet: TDBEdit;
@@ -152,8 +155,8 @@ procedure TMainForm.ACloseUpdate(Sender: TObject);
 begin
   (Sender as Taction).Enabled:=Not (DBA.State in dsEditModes);
 end;
-procedure TMainForm.CreateTable(AFileName : String);
 
+procedure TMainForm.CreateTable(AFileName : String);
 begin
   With DBA do
     begin

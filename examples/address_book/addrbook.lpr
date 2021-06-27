@@ -25,7 +25,10 @@ program addrbook;
 uses
   Interfaces, frmmain, Forms, dbflaz;
 
+{$R *.res}
+
 begin
+  Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
   Application.Run;

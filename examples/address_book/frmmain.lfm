@@ -9,12 +9,10 @@ object MainForm: TMainForm
   Caption = 'Addressbook'
   ClientHeight = 502
   ClientWidth = 734
-  Font.Height = -13
-  Font.Name = 'MS Sans Serif'
   Menu = MMain
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
-  LCLVersion = '1.1'
+  LCLVersion = '2.3.0.0'
   object PTop: TPanel
     Left = 0
     Height = 33
@@ -105,8 +103,7 @@ object MainForm: TMainForm
     DataSource = DSAddress
     ReadOnly = True
     TabOrder = 1
-    TitleFont.Height = -13
-    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = [fsBold]
   end
   object PBottom: TPanel
     Left = 0
@@ -121,250 +118,228 @@ object MainForm: TMainForm
     TabOrder = 2
     object LELastName: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 63
+      Width = 54
       Alignment = taRightJustify
       Caption = '&Last name'
       FocusControl = ELastName
       Layout = tlCenter
-      ParentColor = False
     end
     object LEFirstName: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 34
-      Width = 63
+      Width = 55
       Alignment = taRightJustify
       Caption = '&First name'
       FocusControl = EFirstName
       Layout = tlCenter
-      ParentColor = False
     end
     object LEStreet: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 64
-      Width = 36
+      Width = 30
       Alignment = taRightJustify
       Caption = '&Street'
       FocusControl = EStreet
       Layout = tlCenter
-      ParentColor = False
     end
     object LEZip: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 92
-      Width = 20
+      Width = 17
       Alignment = taRightJustify
       Caption = '&Zip'
       FocusControl = EZip
       Layout = tlCenter
-      ParentColor = False
     end
     object LETown: TLabel
       Left = 264
-      Height = 17
+      Height = 15
       Top = 90
-      Width = 34
+      Width = 28
       Alignment = taRightJustify
       Caption = 'T&own'
       FocusControl = ETown
       Layout = tlCenter
-      ParentColor = False
     end
     object LETelephone: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 145
-      Width = 67
+      Width = 54
       Alignment = taRightJustify
       Caption = '&Telephone'
       FocusControl = ETelephone
       Layout = tlCenter
-      ParentColor = False
     end
     object LECountry: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 115
-      Width = 46
+      Width = 43
       Alignment = taRightJustify
       Caption = 'Countr&y'
       FocusControl = ECountry
       Layout = tlCenter
-      ParentColor = False
     end
     object LEFax: TLabel
       Left = 288
-      Height = 17
+      Height = 15
       Top = 145
-      Width = 23
+      Width = 18
       Alignment = taRightJustify
       Caption = 'Fa&x'
       FocusControl = EFax
       Layout = tlCenter
-      ParentColor = False
     end
     object LEMobile: TLabel
       Left = 472
-      Height = 17
+      Height = 15
       Top = 145
-      Width = 42
+      Width = 37
       Alignment = taRightJustify
       Caption = '&Mobile'
       FocusControl = EMobile
       Layout = tlCenter
-      ParentColor = False
     end
     object LEEmail: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 176
-      Width = 35
+      Width = 29
       Alignment = taRightJustify
       Caption = '&Email'
       FocusControl = EEmail
       Layout = tlCenter
-      ParentColor = False
     end
     object LEWWW: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 200
-      Width = 40
+      Width = 33
       Alignment = taRightJustify
       Caption = '&WWW'
       FocusControl = EWWW
       Layout = tlCenter
-      ParentColor = False
     end
     object ELastName: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 8
       Width = 361
       DataField = 'LastName'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 0
     end
     object EFirstName: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 35
       Width = 361
       DataField = 'FirstName'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 1
     end
     object EStreet: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 62
       Width = 361
       DataField = 'Street'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 2
     end
     object EZip: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 89
       Width = 89
       DataField = 'Zip'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 3
     end
     object ECountry: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 116
       Width = 361
       DataField = 'Country'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 5
     end
     object EWWW: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 203
       Width = 361
       DataField = 'WWW'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 10
     end
     object ETelephone: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 144
       Width = 121
       DataField = 'Telephone'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 6
     end
     object EFax: TDBEdit
       Left = 336
-      Height = 24
+      Height = 23
       Top = 144
       Width = 121
       DataField = 'Fax'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 7
     end
     object EMobile: TDBEdit
       Left = 520
-      Height = 24
+      Height = 23
       Top = 144
       Width = 121
       DataField = 'Mobile'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 8
     end
     object EEmail: TDBEdit
       Left = 160
-      Height = 24
+      Height = 23
       Top = 176
       Width = 361
       DataField = 'Email'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 9
     end
     object ETown: TDBEdit
       Left = 320
-      Height = 24
+      Height = 23
       Top = 89
       Width = 201
       DataField = 'Town'
       DataSource = DSAddress
-      CharCase = ecNormal
       MaxLength = 0
       TabOrder = 4
     end
   end
   object MMain: TMainMenu
-    left = 64
-    top = 72
+    Left = 64
+    Top = 72
     object MFile: TMenuItem
       Caption = '&File'
       object MINew: TMenuItem
@@ -435,8 +410,8 @@ object MainForm: TMainForm
     end
   end
   object ALMain: TActionList
-    left = 135
-    top = 72
+    Left = 135
+    Top = 72
     object ANew: TAction
       Caption = '&New'
       HelpType = htKeyword
@@ -552,28 +527,28 @@ object MainForm: TMainForm
     TableLevel = 4
     FilterOptions = []
     AfterInsert = DBAAfterInsert
-    left = 215
-    top = 72
+    Left = 215
+    Top = 72
   end
   object SDDBA: TSaveDialog
     DefaultExt = '.dbf'
     Filter = 'DBF files|*.dbf|All files|*.*'
     FilterIndex = 0
     Options = [ofHideReadOnly, ofPathMustExist, ofEnableSizing]
-    left = 135
-    top = 144
+    Left = 135
+    Top = 144
   end
   object ODDBA: TOpenDialog
     DefaultExt = '.dbf'
     Filter = 'DBF files|*.dbf|All files|*.*'
     FilterIndex = 0
     Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing]
-    left = 64
-    top = 144
+    Left = 64
+    Top = 144
   end
-  object DSAddress: TDatasource
+  object DSAddress: TDataSource
     DataSet = DBA
-    left = 290
-    top = 72
+    Left = 215
+    Top = 144
   end
 end
