@@ -1838,7 +1838,9 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Layout">
-        <short/>
+        <short>
+          Controls the alignment of the edit control and its associate.
+        </short>
         <descr>
           <p>
             <var>Layout</var> is a <var>TLeftRight</var> property that determines the setting for the Align property in the <var>BaseEditor</var> and the <var>Buddy</var> controls. The default value for the property is <var>taLeftJustify</var>.

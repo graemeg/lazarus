@@ -532,7 +532,7 @@
         </seealso>
       </element>
       <element name="TPrepareDbGridCanvasEvent.Sender">
-        <short>Control signalling the event.</short>
+        <short>Control for the event notification.</short>
       </element>
       <element name="TPrepareDbGridCanvasEvent.DataCol">
         <short/>
@@ -545,7 +545,9 @@
       </element>
 
       <element name="TDbGridCheckBoxBitmapEvent">
-        <short/>
+        <short>
+          Specifies an event handler signalled to get the user-specified Bitmap for a check box column in the grid control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -560,7 +562,9 @@
       </element>
 
       <element name="TDbGridCheckboxStateEvent">
-        <short/>
+        <short>
+          Specifies an event handler signalled to get the user-specified state value for a check box column in the grid control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -575,7 +579,9 @@
       </element>
 
       <element name="TDbGridCellHintEvent">
-        <short/>
+        <short>
+          Specifies an event handler signalled to get the hint text for a cell in a grid control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -1232,7 +1238,7 @@
 
       <element name="TComponentDataLink.FocusControl" link="#fcl.db.TDataLink.FocusControl">
         <short>
-          Signal the OnFocusControl event handler when assigned.
+          Signals the OnFocusControl event handler when assigned.
         </short>
         <descr>
           <p>
@@ -1363,11 +1369,14 @@
         <seealso></seealso>
       </element>
 
-      <element name="TComponentDataLink.OnFocusContol">
+      <element name="TComponentDataLink.OnFocusControl">
         <short>Event handler signalled when the grid control receives focus.</short>
         <descr>
           <p>
-            <var>OnFocusControl</var> is a TFocusControlEvent property that implements an event handler signalled when  the grid control receives focus.
+            <var>OnFocusControl</var> is a <var>TFocusControlEvent</var> property that implements the event handler signalled when the grid control receives focus.
+          </p>
+          <p>
+            OnFocusControl is signalled (when assigned) from the <var>FocusControl</var> method.
           </p>
         </descr>
         <seealso>
@@ -1437,11 +1446,7 @@
         <short/>
       </element>
 
-      <element name="TComponentDataLink.VisualControl" link="#fcl.db.TDataLink.VisualControl">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
+      <element name="TComponentDataLink.VisualControl" link="#fcl.db.TDataLink.VisualControl"/>
 
       <element name="TColumnTitle">
         <short>
@@ -1653,7 +1658,7 @@
         <seealso></seealso>
       </element>
       <element name="TColumn.SetDisplayFormat.AValue">
-        <short/>
+        <short>New value for the DisplayFormat property.</short>
       </element>
 
       <element name="TColumn.SetField">
@@ -1677,7 +1682,7 @@
         </seealso>
       </element>
       <element name="TColumn.SetField.AValue">
-        <short/>
+        <short>New value for the Field property.</short>
       </element>
 
       <element name="TColumn.SetFieldName">
@@ -1698,10 +1703,10 @@
           </seealso>
       </element>
       <element name="TColumn.SetFieldName.AValue">
-        <short/>
+        <short>New value for the FieldName property.</short>
       </element>
 
-      <element name="TColumn.CreateTitle" link="#lcl.Grids.TGridColumn.CreateTitle">
+      <element name="TColumn.CreateTitle" link="#lcl.grids.TGridColumn.CreateTitle">
         <short>
           Creates the title used for the grid column.
         </short>
@@ -1785,7 +1790,7 @@
         <short>'FALSE' or '0'</short>
       </element>
 
-      <element name="TColumn.GetDefaultVisible" link="#lcl.Grids.TGridColumn.GetDefaultVisible">
+      <element name="TColumn.GetDefaultVisible" link="#lcl.grids.TGridColumn.GetDefaultVisible">
         <short>
           Indicates if the Field for the column is Visible.
         </short>
@@ -1988,7 +1993,7 @@
         <short>Persistent class with values stored in the method.</short>
       </element>
 
-      <element name="TColumn.IsDefault" link="#lcl.Grids.TGridColumn.IsDefault">
+      <element name="TColumn.IsDefault" link="#lcl.grids.TGridColumn.IsDefault">
         <short>
           Indicates if the column uses its default display format.
         </short>
@@ -2081,9 +2086,7 @@
       </element>
 
       <element name="TDbGridColumns">
-        <short>
-          Implements a collection for columns in a database grid.
-        </short>
+        <short>Implements a collection for columns in a database-aware grid.</short>
         <descr>
           <p>
             <var>TDBGridColumns</var> is a TGridColumns descendant which implements a collection for columns added to TDBGrid.
@@ -2267,27 +2270,35 @@
       </element>
 
       <element name="TDBGridColumns.ColumnByFieldname">
-        <short/>
-        <descr/>
+        <short>Gets the collection item with the specified field name.</short>
+        <descr>
+          <p>
+            <var>ColumnByFieldname</var> is a <var>TColumn</var> function used to get the collection item with the field name in <var>aFieldname</var>. Performs a case-insensitive comparison between the FieldName property in the collection items and the value in aFieldname. The return value is <b>Nil</b> if a column is not found with the specified name.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TDBGridColumns.ColumnByFieldname.Result">
-        <short/>
+        <short>TColumn instance with the specified name, or Nil.</short>
       </element>
       <element name="TDBGridColumns.ColumnByFieldname.AFieldname">
-        <short/>
+        <short>FIeld name to locate the collection items.</short>
       </element>
 
       <element name="TDBGridColumns.ColumnByTitle">
-        <short/>
-        <descr/>
+        <short>Gets the collection item with the specified column title.</short>
+        <descr>
+          <p>
+            <var>ColumnByTitle</var> is a <var>TColumn</var> function used to get the collection item with the column title specified in aTitle. ColumnByTitle is an overridden method, and calls the inherited method to get the TColumn return value.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TDBGridColumns.ColumnByTitle.Result">
-        <short/>
+        <short>Column instance with the specified title, or Nill when not found.</short>
       </element>
       <element name="TDBGridColumns.ColumnByTitle.ATitle">
-        <short/>
+        <short>Column title to located in the collection items.</short>
       </element>
 
       <element name="TDBGridColumns.LinkFields">
@@ -2332,7 +2343,7 @@
 
       <element name="TDBGridColumns.Items">
         <short>
-          <var>Items</var> provides indexed access to columns added to the collection
+          <var>Items</var> provides indexed access to columns added to the collection.
         </short>
         <descr>
           <p>
@@ -2406,7 +2417,7 @@
 
       <element name="TCustomDBGrid.EmptyGrid">
         <short>
-          Clears the data display area for the grid control
+          Clears the data display area for the grid control.
         </short>
         <descr>
           <p>
@@ -2437,7 +2448,7 @@
 
       <element name="TCustomDBGrid.GetCurrentColumn">
         <short>
-          Gets the value for the SelectedColumn property
+          Gets the value for the SelectedColumn property.
         </short>
         <descr>
           <p>
@@ -2455,7 +2466,7 @@
 
       <element name="TCustomDBGrid.GetCurrentField">
         <short>
-          Gets the value in the SelectedField property
+          Gets the value in the SelectedField property.
         </short>
         <descr>
           <p>
@@ -2473,7 +2484,7 @@
 
       <element name="TCustomDBGrid.GetDataSource">
         <short>
-          Gets the value for the DataSource property
+          Gets the value for the DataSource property.
         </short>
         <descr>
           <p>
@@ -2490,26 +2501,30 @@
       </element>
 
       <element name="TCustomDBGrid.GetFirstColumn">
-        <short/>
+        <short>Gets the value for the FirstColumn property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomDBGrid.FirstColumn"/>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.GetFirstColumn.Result">
-        <short/>
+        <short>Value for the FirstColumn property.</short>
       </element>
 
       <element name="TCustomDBGrid.GetLastColumn">
-        <short/>
+        <short>Gets the value for the LastColumn property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomDBGrid.LastColumn"/>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.GetLastColumn.Result">
-        <short/>
+        <short>Value for the LastColumn property.</short>
       </element>
 
       <element name="TCustomDBGrid.GetRecordCount">
         <short>
-          Gets the number of records in the linked dataset
+          Gets the number of records in the linked dataset.
         </short>
         <descr>
           <p>
@@ -2523,17 +2538,19 @@
       </element>
 
       <element name="TCustomDBGrid.GetSelectedFieldRect">
-        <short/>
+        <short>Gets the value for the SelectedFieldRect property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomDBGrid.SelectedFieldRect"/>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.GetSelectedFieldRect.Result">
-        <short/>
+        <short>Value for the SelectedFieldRect property.</short>
       </element>
 
       <element name="TCustomDBGrid.GetSelectedIndex">
         <short>
-          Read access specifier for the SelectedIndex property
+          Read access specifier for the SelectedIndex property.
         </short>
         <descr>
           <p>
@@ -2551,7 +2568,7 @@
 
       <element name="TCustomDBGrid.OnRecordChanged">
         <short>
-          Default implementation for the event handler in TComponentDataLink
+          Default implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <p>
@@ -2566,7 +2583,7 @@
 
       <element name="TCustomDBGrid.OnDatasetChanged">
         <short>
-          Default implementation for the event handler in TComponentDataLink
+          Default implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <p>
@@ -2581,7 +2598,7 @@
 
       <element name="TCustomDBGrid.OnDatasetOpen">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <p>
@@ -2596,7 +2613,7 @@
 
       <element name="TCustomDBGrid.OnDatasetClose">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnDatasetClose</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2609,7 +2626,7 @@
 
       <element name="TCustomDBGrid.OnEditingChanged">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnEditingChanged</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2622,7 +2639,7 @@
 
       <element name="TCustomDBGrid.OnInvalidDataset">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnInvalidDataSet</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2635,7 +2652,7 @@
 
       <element name="TCustomDBGrid.OnInvalidDataSource">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnInvalidDataSourcet</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2667,7 +2684,7 @@
 
       <element name="TCustomDBGrid.OnLayoutChanged">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnLayoutChanged</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2680,7 +2697,7 @@
 
       <element name="TCustomDBGrid.OnNewDataset">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnNewDataset</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2693,7 +2710,7 @@
 
       <element name="TCustomDBGrid.OnDatasetScrolled">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnDatasetScrolled</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2701,15 +2718,15 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnDatasetScrolled.ADataset">
-        <short/>
+        <short>Dataset for the event notification.</short>
       </element>
       <element name="TCustomDBGrid.OnDatasetScrolled.Distance">
-        <short/>
+        <short>Number of rows and relative direction for the scroll event.</short>
       </element>
 
       <element name="TCustomDBGrid.OnUpdateData">
         <short>
-          Implementation for the event handler in TComponentDataLink
+          Implementation for the event handler in TComponentDataLink.
         </short>
         <descr>
           <var>OnUpdateData</var> provides a default implementation for the event handler in TComponentDataLink.
@@ -2717,22 +2734,24 @@
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.OnUpdateData.ADataset">
-        <short/>
+        <short>Dataset for the event notification.</short>
       </element>
 
       <element name="TCustomDBGrid.SetColumns">
-        <short/>
+        <short>Sets the value for the Columns property.</short>
         <descr>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="TCustomDBGrid.Columns"/>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.SetColumns.AValue">
-        <short/>
+        <short>New value for the Columns property.</short>
       </element>
 
       <element name="TCustomDBGrid.SetCurrentField">
         <short>
-          Sets th value for the SelectedField property
+          Sets the value for the SelectedField property.
         </short>
         <descr>
           <p>
@@ -2752,7 +2771,7 @@
 
       <element name="TCustomDBGrid.SetDataSource">
         <short>
-          Sets the value in the DataSource property
+          Sets the value in the DataSource property.
         </short>
         <descr>
           <p>
@@ -2770,7 +2789,7 @@
 
       <element name="TCustomDBGrid.SetExtraOptions">
         <short>
-          Write access specifier for the ExtraOptions property
+          Write access specifier for the ExtraOptions property.
         </short>
         <descr>
           <p>
@@ -2788,7 +2807,7 @@
 
       <element name="TCustomDBGrid.SetOptions">
         <short>
-          Sets the values in the Options property
+          Sets the values in the Options property.
         </short>
         <descr>
           <p>
@@ -2827,17 +2846,19 @@
       </element>
 
       <element name="TCustomDBGrid.SetRowMoved">
-        <short/>
+        <short>Sets the value for the RowMoved property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomDBGrid.RowMoved"/>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.SetRowMoved.AValue">
-        <short/>
+        <short>New value for the RowMoved property.</short>
       </element>
 
       <element name="TCustomDBGrid.SetSelectedIndex">
         <short>
-          Write access specifier for the SelectedIndex property
+          Write access specifier for the SelectedIndex property.
         </short>
         <descr>
           <p>
@@ -2855,7 +2876,7 @@
 
       <element name="TCustomDBGrid.UpdateBufferCount">
         <short>
-          Sets the number of records buffered for the linked dataset
+          Sets the number of records buffered for the linked dataset.
         </short>
         <descr>
           <p>
@@ -2873,7 +2894,7 @@
 
       <element name="TCustomDBGrid.GetColumnCount">
         <short>
-          Gets the number of visible columns or Fields in the grid
+          Gets the number of visible columns or Fields in the grid.
         </short>
         <descr>
           <p>
@@ -2891,7 +2912,7 @@
 
       <element name="TCustomDBGrid.DefaultFieldColWidth">
         <short>
-          Gets the default column width for the specified Field
+          Gets the default column width for the specified Field.
         </short>
         <descr>
           <p>
@@ -2909,7 +2930,7 @@
 
       <element name="TCustomDBGrid.UpdateGridColumnSizes">
         <short>
-          Updates sizes for automatically sized columns in the grid
+          Updates sizes for automatically sized columns in the grid.
         </short>
         <descr>
           <p>
@@ -2927,15 +2948,15 @@
 
       <element name="TCustomDBGrid.UpdateScrollbarRange">
         <short>
+          Updates the scroll bar range, page, and position for a visible vertical scrollbar.
         </short>
-        <descr>
-        </descr>
-        <seealso></seealso>
+        <descr/>
+        <seealso/>
       </element>
 
       <element name="TCustomDBGrid.DoLayoutChanged">
         <short>
-          Update the grid and its scrollbars when its layout has changed
+          Update the grid and its scrollbars when its layout has changed.
         </short>
         <descr>
           <p>
@@ -2953,7 +2974,7 @@
 
       <element name="TCustomDBGrid.RestoreEditor">
         <short>
-          Re-enables the editor control after scrollbar messages
+          Re-enables the editor control after scrollbar messages.
         </short>
         <descr>
           <p>
@@ -2965,7 +2986,7 @@
 
       <element name="TCustomDBGrid.ISEOF">
         <short>
-          Indicates if the linked dataset is positioned at the end-of-file
+          Indicates if the linked dataset is positioned at the end-of-file.
         </short>
         <descr>
           <p>
@@ -2983,7 +3004,7 @@
 
       <element name="TCustomDBGrid.ValidDataset">
         <short>
-          Indicates the DataLink contains a valid and active Dataset
+          Indicates the DataLink contains a valid and active Dataset.
         </short>
         <descr>
           <p>
@@ -3001,7 +3022,7 @@
 
       <element name="TCustomDBGrid.InsertCancelable">
         <short>
-          Indicates if the dataset can cancel an active insert
+          Indicates if the dataset can cancel an active insert.
         </short>
         <descr>
           <p>
@@ -3019,7 +3040,7 @@
 
       <element name="TCustomDBGrid.StartUpdating">
         <short>
-          Prepares the grid control for updates to its display area
+          Prepares the grid control for updates to its display area.
         </short>
         <descr>
           <p>
@@ -3037,7 +3058,7 @@
 
       <element name="TCustomDBGrid.EndUpdating">
         <short>
-          Restores the status of the control after updating its display area
+          Restores the status of the control after updating its display area.
         </short>
         <descr>
           <p>
@@ -3052,7 +3073,7 @@
 
       <element name="TCustomDBGrid.UpdatingData">
         <short>
-          Indicates if UpdateData has already been called for the control
+          Indicates if UpdateData has already been called for the control.
         </short>
         <descr>
           <p>
@@ -3066,14 +3087,16 @@
       </element>
 
       <element name="TCustomDBGrid.SwapCheckBox">
-        <short/>
+        <short>
+          Toggles the Boolean value for a check box-style cell in the current column.
+        </short>
         <descr></descr>
         <seealso></seealso>
       </element>
 
       <element name="TCustomDBGrid.ToggleSelectedRow">
         <short>
-          Toggles the bookmark in SelectedRows for the current grid row
+          Toggles the bookmark in SelectedRows for the current grid row.
         </short>
         <descr>
           <p>
@@ -3085,7 +3108,7 @@
 
       <element name="TCustomDBGrid.SelectRecord">
         <short>
-          Changes the selection in the SelectedRows property
+          Changes the selection in the SelectedRows property.
         </short>
         <descr>
           <p>
@@ -3103,7 +3126,7 @@
 
       <element name="TCustomDBGrid.GetScrollbarParams">
         <short>
-          Adjusts scrollbars using the record count and the visible rows for the control
+          Adjusts scrollbars using the record count and the visible rows for the control.
         </short>
         <descr>
           <p>
@@ -3123,7 +3146,7 @@
       </element>
 
       <element name="TCustomDBGrid.CMGetDataLink">
-        <short/>
+        <short>Handles a CM_GETDATALINK control message for the grid.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3132,7 +3155,7 @@
       </element>
 
       <element name="TCustomDBGrid.ClearSelection">
-        <short/>
+        <short>Clears the current selection for the grid control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3181,7 +3204,7 @@
 
       <element name="TCustomDBGrid.AddAutomaticColumns">
         <short>
-          Adds a column for each Field in the dataset
+          Adds a column for each Field in the dataset.
         </short>
         <descr>
           <p>
@@ -3213,42 +3236,78 @@
       </element>
 
       <element name="TCustomDBGrid.AssignTo">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Copies property values to the specified persistent object.</short>
+        <descr>
+          <p>
+            <var>AssignTo</var> is an overridden method in <var>TCustomDBGrid</var> used to copy property values from the class instance to the persistent object specified in <var>Dest</var>. It prevents the inherited method from being called when Dest is a <var>TCustomDBGrid</var> instance. Otherwise, the inherited method is called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.grids.TCustomGrid.AssignTo">TCustomGrid.AssignTo</link>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.AssignTo.Dest">
-        <short/>
+        <short>Persistent object where the property values are stored.</short>
       </element>
 
-        <element name="TCustomDBGrid.AutoAdjustColumn">
-          <short/>
-          <descr/>
-          <seealso>
-            <link id="#lcl.grids.TCustomGrid.AutoAdjustColumn">TCustomGrid.AutoAdjustColumn</link>
-          </seealso>
-        </element>
-        <element name="TCustomDBGrid.AutoAdjustColumn.ACol">
-          <short/>
-        </element>
+      <element name="TCustomDBGrid.AutoAdjustColumn">
+        <short>Adjust properties in the specified column to display the longest value.</short>
+        <descr>
+          <p>
+            <var>AutoAdjustColumn</var> is an overridden method in <var>TCustomDBGrid</var> used to adjust column properties to accommodate the largest value in the specified column. It re-implements the method from the ancestor class.
+          </p>
+          <p>
+            AutoAdjustColumn uses the column definiton, or the field from the linked dataset, to determine the column or field size needed for the data displayed on the control canvas. A temporary TCanvas instance is created and used to measure the text width for the column. The calculated width is stored in the inherited ColWidths property.
+          </p>
+          <p>
+            AutoAdjustColumn is called from the DblClick method when the values goColSizing and goDblClickAutoSize have been included in the Options property.
+          </p>
+          <p>
+            Use AutoAdjustColumns to re-size all automatically-sized columns in the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomDBGrid.AutoAdjustColumns"/>
+          <link id="#lcl.grids.TCustomGrid.AutoAdjustColumn">TCustomGrid.AutoAdjustColumn</link>
+          <link id="#lcl.grids.TCustomGrid.ColWidths">TCustomGrid.ColWidths</link>
+        </seealso>
+      </element>
+      <element name="TCustomDBGrid.AutoAdjustColumn.ACol">
+        <short>Column (or field) number affected in the method.</short>
+      </element>
 
       <element name="TCustomDBGrid.BeforeMoveSelection">
-        <short/>
-        <descr></descr>
+        <short>
+          Performs actions needed before the selected column in the grid is changed.
+        </short>
+        <descr>
+          <p>
+            <var>BeforeMoveSelection</var> is an overridden method in <var>TCustomDbGrid</var> used to perform actions needed before the selected column in the grid is changed.
+          </p>
+          <p>
+            <var>DCol</var> and <var>DRow</var> contain the column and row number for the cell selection that will be selected following the selection change.
+          </p>
+          <p>
+            BeforeMoveSelection calls the inherited method on entry to signal the OnBeforeSelection event handler (when assigned). When DCol is different than the value in the Col property, the OnColExit event handler is signalled (when assigned). An internal flag is set to indicate that a column enter event is pending.
+          </p>
+          <p>
+            BeforeMoveSelection is called from the inherited MoveExtend method.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.grids.TCustomGrid.BeforeMoveSelection">TCustomGrid.BeforeMoveSelection</link>
         </seealso>
       </element>
       <element name="TCustomDBGrid.BeforeMoveSelection.DCol">
-        <short/>
+        <short>Destination column for the selection change.</short>
       </element>
       <element name="TCustomDBGrid.BeforeMoveSelection.DRow">
-        <short/>
+        <short>Destination row for the selection change.</short>
       </element>
 
       <element name="TCustomDBGrid.BeginLayout">
         <short>
-          <var>BeginLayout</var> starts producing layout changes for the grid control
+          <var>BeginLayout</var> starts producing layout changes for the grid control.
         </short>
         <descr>
           <p>
@@ -3264,7 +3323,7 @@
       <element name="TCustomDBGrid.CellClick">
         <short>
           <var>CellClick</var> calls the <var>OnCellClick</var> event handler if it is
-          assigned for this particular cell
+          assigned for this particular cell.
         </short>
         <descr>
           <p>
@@ -3283,7 +3342,7 @@
 
       <element name="TCustomDBGrid.CheckDisplayMemo">
         <short>
-          Indicates if the field is a Memo that needs to be displayed in the grid
+          Indicates if the field is a Memo that needs to be displayed in the grid.
         </short>
         <descr>
           <p>
@@ -3303,7 +3362,7 @@
 
       <element name="TCustomDBGrid.InvalidateSizes">
         <short>
-          Makes column sizes invalid, recalculates column sizes and re-displays the control
+          Makes column sizes invalid, recalculates column sizes and re-displays the control.
         </short>
         <descr>
           <p>
@@ -3313,9 +3372,9 @@
         <seealso></seealso>
       </element>
 
-      <element name="TCustomDBGrid.ColRowMoved" link="#lcl.Grids.TCustomGrid.ColRowMoved">
+      <element name="TCustomDBGrid.ColRowMoved" link="#lcl.grids.TCustomGrid.ColRowMoved">
         <short>
-          Signals event handlers when a row or a column is moved in the grid control
+          Signals event handlers when a row or a column is moved in the grid control.
         </short>
         <descr>
           <p>
@@ -3336,7 +3395,7 @@
 
       <element name="TCustomDBGrid.ColumnEditorStyle">
         <short>
-          <var>ColumnEditorStyle</var> gets the button style for the column being edited
+          <var>ColumnEditorStyle</var> gets the button style for the column being edited.
         </short>
         <descr>
           <p>
@@ -3363,7 +3422,7 @@
 
       <element name="TCustomDBGrid.CreateColumns">
         <short>
-          Creates the Columns collection for the grid control
+          Creates the Columns collection for the grid control.
         </short>
         <descr>
           <p>
@@ -3380,7 +3439,7 @@
 
       <element name="TCustomDBGrid.CreateWnd">
         <short>
-          <var>CreateWnd</var> - creates the window adjusts its layout and adds scrollbars when needed
+          <var>CreateWnd</var> - creates the window adjusts its layout and adds scrollbars when needed.
         </short>
         <descr></descr>
         <seealso>
@@ -3389,9 +3448,12 @@
       </element>
 
       <element name="TCustomDBGrid.DefineProperties">
+        <short>
+          Re-implements the inherited method to prevent reading or writing unused properties.
+        </short>
         <descr>
           <remark>
-            Provides has an empty implementation and avoids calling the inherited DefineProperties method. TCustomGrid defines ColWidths, RowHeights and Cells properties which do not use facilities available in the data-aware grid control.
+            Provides has an empty implementation and avoids calling the inherited DefineProperties method. TCustomGrid defines ColWidths, RowHeights and Cells properties which do not use the Columns, Datasource, or linked Dataset available in the data-aware grid control. XML configuration files are used instead.
           </remark>
         </descr>
         <seealso>
@@ -3404,55 +3466,79 @@
 
       <element name="TCustomDBGrid.DefaultDrawCell">
         <short>
-          Default method used to drawing a cell at the specified location
+          Default method used to drawing a cell at the specified location.
         </short>
         <descr>
           <p>
             <var>DefaultDrawCell</var> is a procedure that provides the default method for drawing a cell at the specified location using different cell types. DefaultDrawCell draws the background for the cell with the specified drawing state. For a cell which appears in a fixed row or column, the text for the cell is also drawn.
           </p>
           <p>
-            When the DataSet for the grid control has rows, the Field used for the specified column is retrieved and the cell is drawn in the manner needed for its column editor style. For checkbox columns, the DrawCheckBoxBitmaps is called. For columns with a button-style editor, the DrawButtonCell method is used. For Fields with a ftMemo data type, the CheckDisplayMemo method is called to determine whether the content in the memo or the DIsplayText for the column definition is drawn. Finally, the DrawCellText method is called to draw the specified cell using its state and value.
+            When the DataSet for the grid control has rows, the Field for the specified column is retrieved and the cell is drawn using its column editor style. For checkbox columns, the DrawCheckBoxBitmaps is called. For columns with a button-style editor, the DrawButtonCell method is used. For Fields with a ftMemo data type, the CheckDisplayMemo method is called to determine whether the content in the memo or the DIsplayText for the column definition is drawn. Finally, the DrawCellText method is called to draw the specified cell using its state and value.
           </p>
         </descr>
         <seealso></seealso>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aCol">
-        <short/>
+        <short>Column number for the cell.</short>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aRow">
-        <short/>
+        <short>Row number for the cell.</short>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aRect">
-        <short/>
+        <short>Display rectangle for the specified cell.</short>
       </element>
       <element name="TCustomDBGrid.DefaultDrawCell.aState">
-        <short/>
+        <short>Drawing style for the cell background.</short>
       </element>
 
       <element name="TCustomDBGrid.DefaultEditorStyle">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Gets the default editor style for the specified field.</short>
+        <descr>
+          <p>
+            <var>DefaultEditorStyle</var> is a <var>TColumnButtonStyle</var> function used to get the default editor style used for the column with the field specified in <var>F</var>.
+          </p>
+          <p>
+            The <var>Style</var> argument indicates the preferred editor style, while the return value contains the realized editor style. When F is a boolean field, and Style is cbsAuto, the return value is set to cbsCheckBoxColumn when dgeCheckboxColumn has been included in the Options for the grid control.
+          </p>
+          <p>
+            DefaultEditorStyle is used in the implementation of the ColumnEditorStyle and TColumn.GetDefaultAlignment methods.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomDBGrid.ColumnEditorStyle"/>
+        </seealso>
       </element>
       <element name="TCustomDBGrid.DefaultEditorStyle.Result">
-        <short/>
+        <short>Actual editor style for the column using the specifiefd field.</short>
       </element>
       <element name="TCustomDBGrid.DefaultEditorStyle.Style">
-        <short/>
+        <short>Preferred editor style for the field.</short>
       </element>
       <element name="TCustomDBGrid.DefaultEditorStyle.F">
-        <short/>
+        <short>Dataset field for the editor style.</short>
       </element>
 
       <element name="TCustomDBGrid.DoCopyToClipboard">
-        <short/>
-        <descr/>
+        <short>
+          Copies the field value for the current column and row to the clipboard.
+        </short>
+        <descr>
+          <p>
+            <var>DoCopyToClipboard</var> is an overridden method in <var>TCustomDBGrid</var> used to copy the field value for the selected column and row in the grid to the clipboard. No actions are performed in the method when the linked  dataset is not active.
+          </p>
+          <p>
+            DoCopyToClipboard calls <var>GetFieldFromGridColumn</var> to get the field definiton for the current column in the grid. If the field is not Nil (unassigned), the String value for the field is stored to the global <var>Clipboard</var> instance using its <var>AsText</var> method.
+          </p>
+          <p>
+            DoCopyToClipboard re-implements the method from the ancestor class.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomDBGrid.DoExit">
         <short>
-          <var>DoExit</var> closes the editor and the datalink for the control
+          <var>DoExit</var> closes the editor and the datalink for the control.
         </short>
         <descr>
           <p>
@@ -3469,7 +3555,7 @@
 
       <element name="TCustomDBGrid.DoMouseWheelDown">
         <short>
-          Handle mouse wheel down events in the grid control
+          Handle mouse wheel down events in the grid control.
         </short>
         <descr>
           <p>
@@ -3492,7 +3578,7 @@
 
       <element name="TCustomDBGrid.DoMouseWheelUp">
         <short>
-          Handle mouse wheelup events in the grid control
+          Handle mouse wheelup events in the grid control.
         </short>
         <descr>
           <p>
@@ -3513,7 +3599,7 @@
 
       <element name="TCustomDBGrid.DoOnChangeBounds">
         <short>
-          Calls the inherited method and adjusts the layout for the control when needed
+          Calls the inherited method and adjusts the layout for the control when needed.
         </short>
         <descr></descr>
         <seealso>
@@ -3523,7 +3609,7 @@
 
       <element name="TCustomDBGrid.DoPrepareCanvas">
         <short>
-          Prepares the canvas and signals the OnPrepareCanvas event handler
+          Prepares the canvas and signals the OnPrepareCanvas event handler.
         </short>
         <descr>
           <p>
@@ -3548,31 +3634,41 @@
       </element>
 
       <element name="TCustomDBGrid.DoLoadColumn">
-        <short/>
-        <descr/>
+        <short>Loads a column definition from an XML configuration file.</short>
+        <descr>
+          <p>
+            <var>DoLoadColumn</var> is an overridden method in <var>TCustomDBGrid</var> used to load the <var>TGridColumn</var> definition for the specified column from the XML configuration file in <var>aCfg</var>. Values for the <var>FieldName</var> and <var>DisplayFormat</var> properties are read from the XML file and stored in <var>aColumn</var>.
+          </p>
+          <p>
+            Calls the inherited method to signal the <var>OnLoadColumn</var> event handler (when assigned).
+          </p>
+          <p>
+            DoLoadColumn is called from the <var>LoadColumns</var> and <var>LoadContent</var> methods in the ancestor class.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.DoLoadColumn.Sender">
-        <short/>
+        <short>Object instance with the Grid control.</short>
       </element>
       <element name="TCustomDBGrid.DoLoadColumn.AColumn">
-        <short/>
+        <short>TGridColumn instance loaded in the method.</short>
       </element>
       <element name="TCustomDBGrid.DoLoadColumn.AColIndex">
-        <short/>
+        <short>Position in the grid for the column definition.</short>
       </element>
       <element name="TCustomDBGrid.DoLoadColumn.ACfg">
-        <short/>
+        <short>XML configuration file with the definition for the column.</short>
       </element>
       <element name="TCustomDBGrid.DoLoadColumn.AVersion">
-        <short/>
+        <short>Version number for the XML storage format in the configuration file.</short>
       </element>
       <element name="TCustomDBGrid.DoLoadColumn.APath">
-        <short/>
+        <short>Path to the XML node with the data for the column.</short>
       </element>
 
       <element name="TCustomDBGrid.DoSaveColumn">
-        <short/>
+        <short>Saves the specified column definition to the XML configuration file.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3595,9 +3691,9 @@
         <short/>
       </element>
 
-      <element name="TCustomDBGrid.DrawAllRows" link="#lcl.Grids.TCustomGrid.DrawAllRows">
+      <element name="TCustomDBGrid.DrawAllRows" link="#lcl.grids.TCustomGrid.DrawAllRows">
         <short>
-          Draws all data rows in grid control
+          Draws all data rows in grid control.
         </short>
         <descr>
           <p>
@@ -3607,9 +3703,9 @@
         <seealso></seealso>
       </element>
 
-      <element name="TCustomDBGrid.DrawFocusRect" link="#lcl.Grids.TCustomGrid.DrawFocusRect">
+      <element name="TCustomDBGrid.DrawFocusRect" link="#lcl.grids.TCustomGrid.DrawFocusRect">
         <short>
-          Draws the current selection  in the grid in a focused state
+          Draws the current selection  in the grid in a focused state.
         </short>
         <descr>
           <p>
@@ -3639,7 +3735,7 @@
         <short/>
       </element>
 
-      <element name="TCustomDBGrid.DrawRow" link="#lcl.Grids.TCustomGrid.DrawRow">
+      <element name="TCustomDBGrid.DrawRow" link="#lcl.grids.TCustomGrid.DrawRow">
         <short>
         </short>
         <descr>
@@ -3660,7 +3756,7 @@
 
       <element name="TCustomDBGrid.DrawCell">
         <short>
-          DrawCell renders the specified grid cell using the supplied drawing state
+          DrawCell renders the specified grid cell using the supplied drawing state.
         </short>
         <descr>
           <p>
@@ -3683,26 +3779,33 @@
       </element>
 
       <element name="TCustomDBGrid.DrawCellBackground">
-        <short/>
-        <descr/>
+        <short>Draws the background for the cell at the specified coordinates.</short>
+        <descr>
+          <p>
+            DrawCellBackground uses the value in aState and the TitleStyle property to determine the drawing method for the cell. Fixed cells using the native title style are drawn by calling the DrawThemedCell method. Otherwise, the FillRect method in the control Canvas is called to draw the cell background.
+          </p>
+          <p>
+            DrawCellBackground is called from the DrawCell method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.DrawCellBackground.ACol">
-        <short/>
+        <short>Column number for the cell drawn in the method.</short>
       </element>
       <element name="TCustomDBGrid.DrawCellBackground.ARow">
-        <short/>
+        <short>Row number for the cell drawn in the method.</short>
       </element>
       <element name="TCustomDBGrid.DrawCellBackground.ARect">
-        <short/>
+        <short>Display rectangle for the specified cell.</short>
       </element>
       <element name="TCustomDBGrid.DrawCellBackground.AState">
-        <short/>
+        <short>Drawing state for the specified cell.</short>
       </element>
 
       <element name="TCustomDBGrid.DrawCheckboxBitmaps">
         <short>
-          Draws a Checkbox bitmap for the specified Boolean column
+          Draws a Checkbox bitmap for the specified Boolean column.
         </short>
         <descr>
           <p>
@@ -3732,7 +3835,7 @@
 
       <element name="TCustomDBGrid.DrawFixedText">
         <short>
-          Draws the fixed text at the specified row and column numbers
+          Draws the fixed text at the specified row and column numbers.
         </short>
         <descr>
           <p>
@@ -3758,25 +3861,43 @@
       </element>
 
       <element name="TCustomDBGrid.DrawColumnText">
-        <short/>
-        <descr/>
+        <short>Draws the text for the cell at the specified coordinates.</short>
+        <descr>
+          <p>
+            DrawColumnText is an overridden method in TCustomDBGrid used to draw the text for the cell at the position in ACol and ARow.
+          </p>
+          <p>
+            If the cell is a fixed column title, the inherited method is called to render the image and /or text for the column header.
+          </p>
+          <p>
+            For data cells,the field type for the cell is checked. For a Memo field, the content in the field is used when dgDisplayMemoText has been included in the Options property. Otherwise, the DisplayText for the field is used.
+          </p>
+          <p>
+            The DrawCellText method is called to render the text value with the drawing state in aState.
+          </p>
+          <p>
+            DrawColumnText is called from the DrawFixedText and DefauiltDrawCell methods.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.DrawColumnText.ACol">
-        <short/>
+        <short>Column number for the cell drawn in the method.</short>
       </element>
       <element name="TCustomDBGrid.DrawColumnText.ARow">
-        <short/>
+        <short>Row number for the cell drawn in the method.</short>
       </element>
       <element name="TCustomDBGrid.DrawColumnText.ARect">
-        <short/>
+        <short>Display rectangle for the cell.</short>
       </element>
       <element name="TCustomDBGrid.DrawColumnText.AState">
-        <short/>
+        <short>Grid drawing state for the cell.</short>
       </element>
 
       <element name="TCustomDBGrid.DrawIndicator">
-        <short/>
+        <short>
+          Draws the row indicator for the grid control with cues for dataset and multi-selection state.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -3795,7 +3916,7 @@
 
       <element name="TCustomDBGrid.EditingColumn">
         <short>
-          <var>EditingColumn</var> sets or resets the column being edited in the control
+          <var>EditingColumn</var> sets or resets the column being edited in the control.
         </short>
         <descr>
           <p>
@@ -3824,7 +3945,7 @@
 
       <element name="TCustomDBGrid.EditorCancelEditing">
         <short>
-          <var>EditorCancelEditing</var> cancels pending changes and disables the editor
+          <var>EditorCancelEditing</var> cancels pending changes and disables the editor.
         </short>
         <descr>
           <p>
@@ -3847,7 +3968,7 @@
 
       <element name="TCustomDBGrid.EditorDoGetValue">
         <short>
-          <var>EditorDoGetValue</var> gets the value used in the editor for the control
+          <var>EditorDoGetValue</var> gets the value used in the editor for the control.
         </short>
         <descr>
             <p>
@@ -3861,7 +3982,7 @@
 
       <element name="TCustomDBGrid.EditorCanAcceptKey">
         <short>
-          <var>EditorCanAcceptKey</var> determines if the specified character can be applied to the Field for the editor
+          <var>EditorCanAcceptKey</var> determines if the specified character can be applied to the Field for the editor.
         </short>
         <descr>
           <p>
@@ -3883,9 +4004,9 @@
         <short>True when the character can be applied to the field.</short>
       </element>
 
-      <element name="TCustomDBGrid.EditorIsReadOnly" link="#lcl.Grids.TCustomGrid.EditorIsReadOnly">
+      <element name="TCustomDBGrid.EditorIsReadOnly" link="#lcl.grids.TCustomGrid.EditorIsReadOnly">
         <short>
-          <var>EditorIsReadOnly</var> determines if the editor can be enabled for the selected cell in the control
+          <var>EditorIsReadOnly</var> determines if the editor can be enabled for the selected cell in the control.
         </short>
         <descr>
           <p>
@@ -3912,7 +4033,7 @@
       </element>
 
       <element name="TCustomDBGrid.EditorTextChanged">
-        <short/>
+        <short>Applies a changed value from a cell editor in the grid control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3928,7 +4049,7 @@
 
       <element name="TCustomDBGrid.EndLayout">
         <short>
-          <var>EndLayout</var> finishes layout changes for the control
+          <var>EndLayout</var> finishes layout changes for the control.
         </short>
         <descr>
           <p>
@@ -3951,7 +4072,7 @@
       <element name="TCustomDBGrid.FieldIndexFromGridColumn">
         <short>
           <var>FieldIndexFromGridColumn</var> returns the index for the database Field
-          corresponding to the stated grid column
+          corresponding to the stated grid column.
         </short>
         <descr>
           <p>
@@ -3969,7 +4090,9 @@
       </element>
 
       <element name="TCustomDBGrid.FirstGridColumn">
-        <short/>
+        <short>
+          Gets the first column in the grid control after the optional row indicators.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -3979,7 +4102,7 @@
 
       <element name="TCustomDBGrid.GetBufferCount">
         <short>
-          Gets the number of rows to buffer in the grid control
+          Gets the number of rows to buffer in the grid control.
         </short>
         <descr>
           <p>
@@ -3996,8 +4119,12 @@
       </element>
 
       <element name="TCustomDBGrid.GetCellHintText">
-        <short/>
-        <descr/>
+        <short>Gets the hint text for a data cell in the grid control.</short>
+        <descr>
+          <p>
+            Re-implements the method from the ancestor class to ignore fixed title cells when getting the hint text.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.GetCellHintText.Result">
@@ -4012,7 +4139,7 @@
 
       <element name="TCustomDBGrid.GetDefaultColumnAlignment">
         <short>
-          Gets the default alignment for the column
+          Gets the default alignment for the column.
         </short>
         <descr>
           <p>
@@ -4030,7 +4157,7 @@
 
       <element name="TCustomDBGrid.GetDefaultColumnWidth">
         <short>
-          Gets the default width for the specified column
+          Gets the default width for the specified column.
         </short>
         <descr>
           <p>
@@ -4048,7 +4175,7 @@
 
       <element name="TCustomDBGrid.GetDefaultColumnReadOnly">
         <short>
-          Gets the default ReadOnlyvalue for the specified column
+          Gets the default ReadOnlyvalue for the specified column.
         </short>
         <descr>
           <p>
@@ -4066,7 +4193,7 @@
 
       <element name="TCustomDBGrid.GetDefaultColumnTitle">
         <short>
-          Gets the default title displayed for the specified column
+          Gets the default title displayed for the specified column.
         </short>
         <descr>
           <p>
@@ -4084,7 +4211,7 @@
 
       <element name="TCustomDBGrid.GetDefaultRowHeight">
         <short>
-          Get the default row height for records displayed in the grid
+          Get the default row height for records displayed in the grid.
         </short>
         <descr>
           <p>
@@ -4101,7 +4228,7 @@
 
       <element name="TCustomDBGrid.GetDsFieldFromGridColumn">
         <short>
-          <var>GetDsFieldFromGridColumn</var> returns the identity of the dataset Field corresponding to the nominated grid column
+          <var>GetDsFieldFromGridColumn</var> returns the identity of the dataset Field corresponding to the nominated grid column.
         </short>
         <descr>
           <p>
@@ -4119,7 +4246,7 @@
 
       <element name="TCustomDBGrid.GetEditMask">
         <short>
-          <var>GetEditMask</var> gets the EditMask for the Field at the specified Row and Column
+          <var>GetEditMask</var> gets the EditMask for the Field at the specified Row and Column.
         </short>
         <descr>
           <p>
@@ -4151,7 +4278,7 @@
 
       <element name="TCustomDBGrid.GetEditText">
         <short>
-          <var>GetEditText</var> gets the Text value for the specified Field
+          <var>GetEditText</var> gets the Text value for the specified Field.
         </short>
         <descr>
           <p>
@@ -4175,7 +4302,7 @@
 
       <element name="TCustomDBGrid.GetFieldFromGridColumn">
         <short>
-          <var>GetFieldFromGridColumn</var> obtain the Field either from a Db column or directly from dataset Fields
+          <var>GetFieldFromGridColumn</var> obtain the Field either from a Db column or directly from dataset Fields.
         </short>
         <descr>
           <p>
@@ -4193,7 +4320,7 @@
 
       <element name="TCustomDBGrid.GetGridColumnFromField">
         <short>
-          <var>GetGridColumnFromField</var> - gets the  corresponding grid column for the given Field
+          <var>GetGridColumnFromField</var> - gets the  corresponding grid column for the given Field.
         </short>
         <descr>
           <p>
@@ -4211,7 +4338,7 @@
 
       <element name="TCustomDBGrid.GetImageForCheckBox">
         <short>
-           Gets the bitmap displayed for a Checkbox at the specified location
+           Gets the bitmap displayed for a Checkbox at the specified location.
         </short>
         <descr>
           <p>
@@ -4242,9 +4369,9 @@
         <short>Bitmap for the checkbox.</short>
       </element>
 
-      <element name="TCustomDBGrid.GetIsCellSelected" link="#lcl.Grids.TCustomGrid.GetIsCellSelected">
+      <element name="TCustomDBGrid.GetIsCellSelected" link="#lcl.grids.TCustomGrid.GetIsCellSelected">
         <short>
-          Determines if the cell at the specified location is currently selected
+          Determines if the cell at the specified location is currently selected.
         </short>
         <descr>
             <p>
@@ -4264,8 +4391,14 @@
       </element>
 
       <element name="TCustomDBGrid.GetIsCellTitle">
-        <short/>
-        <descr/>
+        <short>
+          Determines whether the specified cell is a fixed cell title for the grid control.
+        </short>
+        <descr>
+          <p>
+            Re-implements the method from the ancestor class.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.GetIsCellTitle.Result">
@@ -4279,7 +4412,9 @@
       </element>
 
       <element name="TCustomDBGrid.GetSelectedState">
-        <short/>
+        <short>
+          Determines if a selection is available using the Focus and Options for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -4291,7 +4426,7 @@
       </element>
 
       <element name="TCustomDBGrid.GetSmoothScroll">
-        <short/>
+        <short>Gets the smooth scroll setting for the horizontal scroll bar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4303,7 +4438,7 @@
       </element>
 
       <element name="TCustomDBGrid.GetTruncCellHintText">
-        <short/>
+        <short>Gets the truncated (ellipsified) hint text for the specified cell.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4319,7 +4454,7 @@
 
       <element name="TCustomDBGrid.GridCanModify">
         <short>
-          <var>GridCanModify</var>  indicates if the DataLink is active  and allows editing
+          <var>GridCanModify</var>  indicates if the DataLink is active  and allows editing.
         </short>
         <descr>
           <p>
@@ -4334,7 +4469,7 @@
 
       <element name="TCustomDBGrid.GetSBVisibility">
         <short>
-          Determines the visibility of horizontal and vertical scroll bars for the control
+          Determines the visibility of horizontal and vertical scroll bars for the control.
         </short>
         <descr>
           <p>
@@ -4352,7 +4487,7 @@
         <short/>
       </element>
 
-      <element name="TCustomDBGrid.GetSBRanges" link="#lcl.Grids.TCustomGrid.GetSBRanges">
+      <element name="TCustomDBGrid.GetSBRanges" link="#lcl.grids.TCustomGrid.GetSBRanges">
         <short/>
         <descr></descr>
         <seealso></seealso>
@@ -4378,7 +4513,7 @@
 
       <element name="TCustomDBGrid.HeaderClick">
         <short>
-          <var>HeaderClick</var> - calls <var>OnHeaderClick</var> if assigned
+          <var>HeaderClick</var> - calls <var>OnHeaderClick</var> if assigned.
         </short>
         <descr>
           <p>
@@ -4396,9 +4531,9 @@
         <short/>
       </element>
 
-      <element name="TCustomDBGrid.HeaderSized" link="#lcl.Grids.TCustomGrid.HeaderSized">
+      <element name="TCustomDBGrid.HeaderSized" link="#lcl.grids.TCustomGrid.HeaderSized">
         <short>
-          Updates Columns in the control when a a header cell is resized
+          Updates Columns in the control when a a header cell is resized.
         </short>
         <descr>
           <p>
@@ -4421,7 +4556,9 @@
       </element>
 
       <element name="TCustomDBGrid.IsColumnVisible">
-        <short/>
+        <short>
+          Indicates if the specified column is visible using the column defintion or its display width.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -4434,7 +4571,7 @@
 
       <element name="TCustomDBGrid.IsValidChar">
         <short>
-          <var>IsValidChar</var> indicates if the  specified Field contains the specified UTF-8  character
+          <var>IsValidChar</var> indicates if the  specified Field contains the specified UTF-8  character.
         </short>
         <descr>
             <p>
@@ -4451,7 +4588,7 @@
 
       <element name="TCustomDBGrid.KeyDown">
         <short>
-          <var>KeyDown</var> handles special keys and signals the <var>OnKeyDown</var> event handler
+          <var>KeyDown</var> handles special keys and signals the <var>OnKeyDown</var> event handler.
         </short>
         <descr>
           <p>
@@ -4553,7 +4690,7 @@
 
       <element name="TCustomDBGrid.LinkActive">
         <short>
-          <var>LinkActive</var> updates the control after a change to the state of its DataLink
+          <var>LinkActive</var> updates the control after a change to the state of its DataLink.
         </short>
         <descr>
           <p>
@@ -4571,7 +4708,7 @@
 
       <element name="TCustomDBGrid.LayoutChanged">
         <short>
-          <var>LayoutChanged</var> links columns to Fields and inserts any required automatic columns
+          <var>LayoutChanged</var> links columns to Fields and inserts any required automatic columns.
         </short>
         <descr>
           <p>
@@ -4589,7 +4726,7 @@
 
       <element name="TCustomDBGrid.Loaded" link="#rtl.Classes.TComponent.Loaded">
         <short>
-          Performs layout operations after the control is loaded at run-time
+          Performs layout operations after the control is loaded at run-time.
         </short>
         <descr>
           <p>
@@ -4600,11 +4737,13 @@
       </element>
 
       <element name="TCustomDBGrid.LoadGridOptions">
-        <short/>
+        <short>
+          Loads values for the Options property from the specified XML configuration file.
+        </short>
         <descr/>
         <seealso/>
       </element>
-      <element name="TCustomDBGrid.LoadGridOptions,cfg">
+      <element name="TCustomDBGrid.LoadGridOptions.cfg">
         <short/>
       </element>
       <element name="TCustomDBGrid.LoadGridOptions.Version">
@@ -4613,7 +4752,7 @@
 
       <element name="TCustomDBGrid.MoveSelection">
         <short>
-          <var>MoveSelection</var> changes the current selection in the control
+          <var>MoveSelection</var> changes the current selection in the control.
         </short>
         <descr>
           <p>
@@ -4626,7 +4765,9 @@
       </element>
 
       <element name="TCustomDBGrid.MouseButtonAllowed">
-        <short/>
+        <short>
+          Indicates whether the specified mouse button can be used to select values(s) in the grid control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -4639,7 +4780,7 @@
 
       <element name="TCustomDBGrid.MouseDown">
         <short>
-          <var>MouseDown</var> handles mouse down messages in the control and signals the <var>OnMouseDown</var> event handler
+          <var>MouseDown</var> handles mouse down messages in the control and signals the <var>OnMouseDown</var> event handler.
         </short>
         <descr>
           <p>
@@ -4675,9 +4816,9 @@
         <short>Vertical coordinate for the mouse button click.</short>
       </element>
 
-      <element name="TCustomDBGrid.MouseMove" link="#lcl.Controls.TControl.MouseMove">
+      <element name="TCustomDBGrid.MouseMove" link="#lcl.controls.TControl.MouseMove">
         <short>
-          Signals the OnMouseMove event handler for the grid control
+          Signals the OnMouseMove event handler for the grid control.
         </short>
         <descr>
           <p>
@@ -4687,9 +4828,9 @@
         <seealso></seealso>
       </element>
 
-      <element name="TCustomDBGrid.PrepareCanvas" link="#lcl.Grids.TCustomGrid.PrepareCanvas">
+      <element name="TCustomDBGrid.PrepareCanvas" link="#lcl.grids.TCustomGrid.PrepareCanvas">
         <short>
-          Prepares the Canvas to render the specified cell with the drawing state in aState
+          Prepares the Canvas to render the specified cell with the drawing state in aState.
         </short>
         <descr>
           <p>
@@ -4709,7 +4850,7 @@
       </element>
 
       <element name="TCustomDBGrid.PrepareCellHints">
-        <short/>
+        <short>Sets the active record in the grid to the specified row.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4722,7 +4863,7 @@
 
       <element name="TCustomDBGrid.RemoveAutomaticColumns">
         <short>
-          Removes automatic columns added to the grid control
+          Removes automatic columns added to the grid control.
         </short>
         <descr>
           <p>
@@ -4742,23 +4883,25 @@
       </element>
 
       <element name="TCustomDBGrid.ResetSizes">
-        <short/>
+        <short>Resets cached column sizes and refreshes the grid control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomDBGrid.SaveGridOptions">
-        <short/>
+        <short>
+          Saves values in the Options property to the specified XML configuration file.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.SaveGridOptions.Cfg">
-        <short/>
+        <short>XML configuration file where the values are stored.</short>
       </element>
 
-      <element name="TCustomDBGrid.SelectEditor" link="#lcl.Grids.TCustomGrid.SelectEditor">
+      <element name="TCustomDBGrid.SelectEditor" link="#lcl.grids.TCustomGrid.SelectEditor">
         <short>
-          Gets the editor used for the SelectedField in the control
+          Gets the editor used for the SelectedField in the control.
         </short>
         <descr>
           <p>
@@ -4771,9 +4914,9 @@
         <seealso></seealso>
       </element>
 
-      <element name="TCustomDBGrid.SetEditText" link="#lcl.Grids.TCustomGrid.SetEditText">
+      <element name="TCustomDBGrid.SetEditText" link="#lcl.grids.TCustomGrid.SetEditText">
         <short>
-          Sets the textual value for the editor in the specified cell
+          Sets the textual value for the editor in the specified cell.
         </short>
         <descr>
           <p>
@@ -4793,23 +4936,23 @@
       </element>
 
       <element name="TCustomDBGrid.SetFixedCols">
-        <short/>
+        <short>Sets the value for the FixedCols property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.SetFixedCols.AValue">
-        <short/>
+        <short>New value for the FixedCols property.</short>
       </element>
 
       <element name="TCustomDBGrid.UnprepareCellHints">
-        <short/>
+        <short>Restores the active record when PrepareCellHints was called.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomDBGrid.UpdateActive">
         <short>
-          <var>UpdateActive</var>  redraws the control when the active row in the dataset is changed
+          <var>UpdateActive</var>  redraws the control when the active row in the dataset is changed.
         </short>
         <descr>
           <p>
@@ -4820,7 +4963,9 @@
       </element>
 
       <element name="TCustomDBGrid.UpdateAutoSizeColumns">
-        <short/>
+        <short>
+          Calculates the width for auto-sized columns and refreshes the grid control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -4843,10 +4988,9 @@
         <seealso></seealso>
       </element>
 
-
       <element name="TCustomDBGrid.UpdateGridCounts">
         <short>
-          Gets the total number of visible columns (or fields) in the grid
+          Gets the total number of visible columns (or fields) in the grid.
         </short>
         <descr>
           <p>
@@ -4862,7 +5006,7 @@
         <short/>
       </element>
 
-      <element name="TCustomDBGrid.WMVScroll" link="#lcl.Grids.TCustomGrid.WMVScroll">
+      <element name="TCustomDBGrid.WMVScroll" link="#lcl.grids.TCustomGrid.WMVScroll">
         <short/>
         <descr></descr>
         <seealso></seealso>
@@ -4871,7 +5015,7 @@
         <short/>
       </element>
 
-      <element name="TCustomDBGrid.WndProc" link="#lcl.Controls.TControl.WndProc">
+      <element name="TCustomDBGrid.WndProc" link="#lcl.controls.TControl.WndProc">
         <short/>
         <descr></descr>
        <seealso></seealso>
@@ -4882,7 +5026,7 @@
 
       <element name="TCustomDBGrid.Columns">
         <short>
-          Columns provides access to columns defined for the database grid control
+          Columns provides access to columns defined for the database grid control.
         </short>
         <descr>
           <p>
@@ -4898,7 +5042,7 @@
 
       <element name="TCustomDBGrid.GridStatus">
         <short>
-          Stores status information about operations active for the grid control
+          Stores status information about operations active for the grid control.
         </short>
         <descr>
           <p>
@@ -4915,7 +5059,9 @@
       </element>
 
       <element name="TCustomDBGrid.Datalink">
-        <short/>
+        <short>
+          Datalink for the component with event handlers for the linked dataset.
+        </short>
         <descr/>
         <seealso>
           <link id="TComponentDataLink"/>
@@ -4924,7 +5070,7 @@
 
       <element name="TCustomDBGrid.Options">
         <short>
-          Enables or disables optional features or behaviors in the grid control
+          Enables or disables optional features or behaviors in the grid control.
         </short>
         <descr>
           <p>
@@ -4961,7 +5107,7 @@
 
       <element name="TCustomDBGrid.OptionsExtra">
         <short>
-          Contains the extra options enabled for the database grid control
+          Contains the extra options enabled for the database grid control.
         </short>
         <descr>
           <p>
@@ -4979,7 +5125,7 @@
 
       <element name="TCustomDBGrid.ReadOnly">
         <short>
-           Indicates if modifications are allowed in the grid control
+           Indicates if modifications are allowed in the grid control.
         </short>
         <descr>
           <p>
@@ -4991,7 +5137,7 @@
 
       <element name="TCustomDBGrid.SelectedRows">
         <short>
-          <var>SelectedRows</var> - recorded as a bookmark list
+          <var>SelectedRows</var> - recorded as a bookmark list.
         </short>
         <descr>
           <p>
@@ -5006,7 +5152,7 @@
 
       <element name="TCustomDBGrid.OnCellClick">
         <short>
-          Event handler for mouse click in a column for the grid
+          Event handler for mouse click in a column for the grid.
         </short>
         <descr>
           <p>
@@ -5020,7 +5166,7 @@
 
       <element name="TCustomDBGrid.OnColEnter">
         <short>
-          Event handler signalled when the mouse enters a column
+          Event handler signalled when the mouse enters a column.
         </short>
         <descr>
           <p>
@@ -5034,7 +5180,7 @@
 
       <element name="TCustomDBGrid.OnColExit">
         <short>
-          Event handler signalled when the mouse exits a column
+          Event handler signalled when the mouse exits a column.
         </short>
         <descr>
           <p>
@@ -5049,7 +5195,7 @@
 
       <element name="TCustomDBGrid.OnColumnMoved">
         <short>
-          Event handler signalled when the order of a column is changed
+          Event handler signalled when the order of a column is changed.
         </short>
         <descr>
           <p>
@@ -5064,7 +5210,7 @@
 
       <element name="TCustomDBGrid.OnColumnSized">
         <short>
-          Event handler signalled when a grid column has been resized
+          Event handler signalled when a grid column has been resized.
         </short>
         <descr>
           <p>
@@ -5079,7 +5225,7 @@
 
       <element name="TCustomDBGrid.OnDrawColumnCell">
         <short>
-          Event handler signalled when a cell needs to be drawn
+          Event handler signalled when a cell needs to be drawn.
         </short>
         <descr>
           <p>
@@ -5096,7 +5242,7 @@
 
       <element name="TCustomDBGrid.OnDrawColumnTitle">
         <short>
-          Event handler signalled when a cell title needs to be drawn
+          Event handler signalled when a cell title needs to be drawn.
         </short>
         <descr>
           <p>
@@ -5110,7 +5256,7 @@
 
       <element name="TCustomDBGrid.OnFieldEditMask">
         <short>
-          Event handler signalled to get the edit mask for a Field
+          Event handler signalled to get the edit mask for a Field.
         </short>
         <descr>
           <p>
@@ -5132,7 +5278,7 @@
 
       <element name="TCustomDBGrid.OnPrepareCanvas">
         <short>
-          Event handler signalled to prepare the grid canvas for drawing a cell
+          Event handler signalled to prepare the grid canvas for drawing a cell.
         </short>
         <descr>
           <p>
@@ -5159,7 +5305,7 @@
 
       <element name="TCustomDBGrid.OnSelectEditor">
         <short>
-          Event handler signalled when the editor is selected for a Field in the grid
+          Event handler signalled when the editor is selected for a Field in the grid.
         </short>
         <descr>
           <p>
@@ -5174,7 +5320,7 @@
 
       <element name="TCustomDBGrid.OnTitleClick">
         <short>
-          Event handler for mouse clicks on a Title cell
+          Event handler for mouse clicks on a Title cell.
         </short>
         <descr>
           <p>
@@ -5189,7 +5335,7 @@
 
       <element name="TCustomDBGrid.OnUserCheckboxBitmap">
         <short>
-          Event handler signalled to get the image used for a checkbox entry on the grid
+          Event handler signalled to get the image used for a checkbox entry on the grid.
         </short>
         <descr>
             <p>
@@ -5205,7 +5351,9 @@
       </element>
 
       <element name="TCustomDBGrid.OnUserCheckboxState">
-        <short/>
+        <short>
+          Event handler signalled to get a user-specified value for a check box editor on the grid control.
+        </short>
         <descr/>
         <seealso>
           <link id="TDbGridCheckboxStateEvent"/>
@@ -5213,7 +5361,7 @@
       </element>
 
       <element name="TCustomDBGrid.OnRowMoved">
-        <short/>
+        <short>Event handler signalled when a grid row is moved in the control.</short>
         <descr/>
         <seealso>
           <link id="TMovedEvent"/>
@@ -5222,7 +5370,7 @@
 
       <element name="TCustomDBGrid.Create">
         <short>
-            Constructor for the class instance
+            Constructor for the class instance.
         </short>
         <descr>
           <p>
@@ -5289,15 +5437,21 @@
       </element>
 
       <element name="TCustomDBGrid.AutoAdjustColumns">
-        <short/>
-        <descr/>
+        <short>Updates the widths for automatically-sized columns in the grid control.</short>
+        <descr>
+          <p>
+            Removes <var>gsAutoSized</var> from the <var>GridStatus</var> flags. Calls <var>UpdateAutoSizeColumns</var> to calculate the widths for automatically sized columns. AutoAdjustColumns does <b>NOT</b> call the inherited method.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.grids.TCustomGrid.AutoAdjustColumns">TCustomGrid.AutoAdjustColumns</link>
         </seealso>
       </element>
 
       <element name="TCustomDBGrid.InitiateAction">
-        <short/>
+        <short>
+          Updates the ActionLink for the control and resets flag valuess in GridStatus.
+        </short>
         <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.InitiateAction">TControl.InitiateAction</link>
@@ -5306,7 +5460,7 @@
 
       <element name="TCustomDBGrid.DefaultDrawColumnCell">
         <short>
-          Default method used for drawing cells in a column
+          Default method used for drawing cells in a column.
         </short>
         <descr>
           <p>
@@ -5336,7 +5490,7 @@
 
       <element name="TCustomDBGrid.EditorByStyle">
         <short>
-          Gets an editor control with the specified button style
+          Gets an editor control with the specified button style.
         </short>
         <descr>
           <p>
@@ -5356,7 +5510,7 @@
 
       <element name="TCustomDBGrid.ResetColWidths">
         <short>
-          Restores column widths to their default values
+          Restores column widths to their default values.
         </short>
         <descr>
           <p>
@@ -5389,99 +5543,107 @@
       </element>
 
       <element name="TCustomDBGrid.MouseToRecordOffset">
-        <short/>
+        <short>
+          Gets the grid zone and record offset for the cell at the specified mouse coordinates.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.MouseToRecordOffset.Result">
-        <short/>
+        <short>TGridZone value for the area under the mouse cursor.</short>
       </element>
       <element name="TCustomDBGrid.MouseToRecordOffset.x">
-        <short/>
+        <short>Horizontal coordinate for the mouse cursor.</short>
       </element>
       <element name="TCustomDBGrid.MouseToRecordOffset.y">
-        <short/>
+        <short>Vertical coordinate for the mouse cursor.</short>
       </element>
       <element name="TCustomDBGrid.MouseToRecordOffset.Column">
-        <short/>
+        <short>
+          TColumn instance for the cell under the mouse cursor, or Nil if the cell is a fixed title cell.
+        </short>
       </element>
       <element name="TCustomDBGrid.MouseToRecordOffset.RecordOffset">
-        <short/>
+        <short>Offset to the row under the mouse cursor relative to the value in Row.</short>
       </element>
 
       <element name="TCustomDBGrid.ExecuteAction">
-        <short/>
+        <short>Executes the specified action in the DataLink for the grid control.</short>
         <descr/>
         <seealso>
           <link id="#rtl.classes.TComponent.ExecuteAction">TComponent.ExecuteAction</link>
         </seealso>
       </element>
       <element name="TCustomDBGrid.ExecuteAction.Result">
-        <short/>
+        <short>True DataLink is assigned, and the action was executed.</short>
       </element>
       <element name="TCustomDBGrid.ExecuteAction.AAction">
-        <short/>
+        <short>Action executed in the method.</short>
       </element>
 
       <element name="TCustomDBGrid.UpdateAction">
-        <short/>
+        <short>Updates the specified action using the DataLink for the grid control.</short>
         <descr/>
         <seealso>
           <link id="#rtl.classes.TComponent.UpdateAction">TComponent.UpdateAction</link>
         </seealso>
       </element>
       <element name="TCustomDBGrid.UpdateAction.Result">
-        <short/>
+        <short>True if DataLink is assigned, and the action was updated in the method.</short>
       </element>
       <element name="TCustomDBGrid.UpdateAction.AAction">
-        <short/>
+        <short>Action updated in the method.</short>
       </element>
 
       <element name="TCustomDBGrid.SaveToFile">
-        <short/>
+        <short>
+          Sets SaveOptions to write design-time settings for the grid, and stored the values to the specified file name.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.SaveToFile.FileName">
-        <short/>
+        <short>
+          Qualified file name where the design-time values for the grid control are stored.
+        </short>
       </element>
 
       <element name="TCustomDBGrid.SaveToStream">
-        <short/>
+        <short>
+          Sets SaveOptions to write design-time settings for the grid, and stored the values to the specified stream.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.SaveToStream.AStream">
-        <short/>
+        <short>Stream where the design-time settings for the grid control are stored.</short>
       </element>
 
       <element name="TCustomDBGrid.LoadFromFile">
-        <short/>
+        <short>
+          Loads design-time settings for the grid control from the specified file name.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.LoadFromFile.FileName">
-        <short/>
+        <short>Qualified file name with the design-time settings loaded in the method.</short>
       </element>
 
       <element name="TCustomDBGrid.LoadFromStream">
-        <short/>
+        <short>Loads design-time setting for the grid control from the specified stream.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomDBGrid.LoadFromStream.AStream">
-        <short/>
+        <short>Stream with the design-time settings loaded in the method.</short>
       </element>
 
-      <element name="TCustomDBGrid.AllowOutboundEvents">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TCustomDBGrid.AllowOutboundEvents"  link="#lcl.grids.TCustomGrid.AllowOutboundEvents"/>
 
       <element name="TCustomDBGrid.SelectedField">
         <short>
-          Field that reads and writes data for the currently selected column
+          Field that reads and writes data for the currently selected column.
         </short>
         <descr>
           <p>
@@ -5502,7 +5664,7 @@
 
       <element name="TCustomDBGrid.SelectedIndex">
         <short>
-          Ordinal position of the selected column in the grid control
+          Ordinal position of the selected column in the grid control.
         </short>
         <descr>
           <p>
@@ -5517,7 +5679,7 @@
 
       <element name="TCustomDBGrid.SelectedColumn">
         <short>
-          Represents the currently selected column in the grid control
+          Represents the currently selected column in the grid control.
         </short>
         <descr>
           <p>
@@ -5531,26 +5693,38 @@
       </element>
 
       <element name="TCustomDBGrid.SelectedFieldRect">
-        <short/>
-        <descr/>
+        <short>Display rectangle for the selected cell in the grid control.</short>
+        <descr>
+          <p>
+            <var>SelectedFieldRect</var> is a read-only <var>TRect</var> property which contains the display rectangle for the cell at the position in the <var>Col</var> and <var>Row</var> properties. Calls <var>CellRect</var> to get the value for the property.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomDbGrid.LastColumn">
-        <short/>
-        <descr/>
+        <short>Contains the last visible column in the grid control.</short>
+        <descr>
+          <p>
+            <var>LastColumn</var> is a read-only <var>TColumn</var> property which contains the last visible column for the grid control. Calls <var>GetLastVisibleColumn</var> and <var>ColumnIndexFromGridColumn</var> to get the ordinal position for the column. The property value is <b>Nil</b> if the column number was not found.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomDbGrid.FirstColumn">
-        <short/>
-        <descr/>
+        <short>Contains the first visible column for the grid control.</short>
+        <descr>
+          <p>
+            <var>FirstColumn</var> is a read-only <var>TColumn</var> property which contains the first visible column for the grid control. Calls <var>GetFirstVisibleColumn</var> and <var>ColumnIndexFromGridColumn</var> to get the ordinal position for the column. The property value is <b>Nil</b> if the column number was not found.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomDBGrid.DataSource">
         <short>
-          Provides access to the dataset displayed in the grid
+          Provides access to the dataset displayed in the grid.
         </short>
         <descr>
           <p>
@@ -5569,8 +5743,8 @@
 
       <element name="TDBGrid">
         <short>
-          Data-aware grid control for display and editing rows and columns in a dataset
-       </short>
+          Data-aware grid control for display and editing rows and columns in a dataset.
+        </short>
         <descr>
           <p>
             <var>TDBGrid</var> is a data-aware version of <var>TStringGrid</var> used to
@@ -5587,188 +5761,61 @@
         </seealso>
       </element>
 
-      <element name="TDBGrid.BorderColor" link="#lcl.grids.TCusstomGrid.BorderColor">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TDBGrid.BorderColor" link="#lcl.grids.TCustomGrid.BorderColor"/>
+      <element name="TDBGrid.Canvas" link="#lcl.controls.TCustomControl.Canvas"/>
+      <element name="TDBGrid.DefaultTextStyle" link="#lcl.grids.TCustomGrid.DefaultTextStyle"/>
+      <element name="TDBGrid.EditorBorderStyle" link="#lcl.grids.TCustomGrid.EditorBorderStyle"/>
+      <element name="TDBGrid.EditorMode" link="#lcl.grids.TCustomGrid.EditorMode"/>
+      <element name="TDBGrid.ExtendedColSizing" link="#lcl.grids.TCustomGrid.ExtendedColSizing"/>
+      <element name="TDBGrid.FastEditing" link="#lcl.grids.TCustomGrid.FastEditing"/>
+      <element name="TDBGrid.FocusColor" link="#lcl.grids.TCustomGrid.FocusColor"/>
+      <element name="TDBGrid.FocusRectVisible" link="#lcl.grids.TCustomGrid.FocusRectVisible"/>
+      <element name="TDBGrid.GridLineColor" link="#lcl.grids.TCustomGrid.GridLineColor"/>
+      <element name="TDBGrid.GridLineStyle" link="#lcl.grids.TCustomGrid.GridLineStyle"/>
+      <element name="TDBGrid.InplaceEditor" link="#lcl.grids.TCustomGrid.InplaceEditor"/>
+      <element name="TDBGrid.SelectedColor" link="#lcl.grids.TCustomGrid.SelectedColor"/>
+      <element name="TDBGrid.SelectedRows" link="#lcl.dbgrids.TCustomDBGrid.SelectedRows"/>
+      <element name="TDBGrid.OnRowMoved" link="#lcl.dbgrids.TCustomDBGrid.OnRowMoved"/>
+      <element name="TDBGrid.Align" link="#lcl.controls.TControl.Align"/>
+      <element name="TDBGrid.AlternateColor" link="#lcl.grids.TCustomGrid.AlternateColor"/>
+      <element name="TDBGrid.Anchors" link="#lcl.controls.TControl.Anchors"/>
 
-      <element name="TDBGrid.Canvas" link="#lcl.Controls.TCustomControl.Canvas">
-        <short>
-          Area on the screen where various components are drawn
-        </short>
+      <element name="TDBGrid.AutoAdvance">
+        <short>Sets the auto advance option for the grid control.</short>
         <descr>
           <p>
-            Canvas is a TCanvas that represents the area of screen on which the various components are drawn.
+            <var>AutoAdvance</var> is a published property in <var>TDBGrid</var> which sets the option used in the grid control. The default value for the property is <var>aaRightDown</var>.
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.controls.TCustomControl.Canvas">TCustomControl.Canvas</link>
+          <link id="#lcl.grids.TCustomGrid.AutoAdvance">TCustomGrid.AutoAdvance</link>
         </seealso>
       </element>
 
-      <element name="TDBGrid.DefaultTextStyle" link="#lcl.Grids.TCustomGrid.DefaultTextStyle">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
+      <element name="TDBGrid.AutoEdit" link="#lcl.grids.TCustomGrid.AutoEdit"/>
+      <element name="TDBGrid.AutoFillColumns" link="#lcl.grids.TCustomGrid.AutoFillColumns"/>
+      <element name="TDBGrid.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
+      <element name="TDBGrid.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+
+      <element name="TDBGrid.BorderStyle">
+        <short>Border style drawn around the grid control.</short>
+        <descr>
+          <remark>
+            A restricted set of options are available for the grid control: <var>bsNone</var> or <var>bsSingle</var>.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="#lcl.Controls.TWinControl.BorderStyle">TWinControl.BorderStyle</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.EditorBorderStyle" link="#lcl.Grids.TCustomGrid.EditorBorderStyle">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
+      <element name="TDBGrid.CellHintPriority" link="#lcl.grids.TCustomGrid.CellHintPriority"/>
+      <element name="TDBGrid.Color" link="#lcl.controls.TControl.Color"/>
 
-      <element name="TDBGrid.EditorMode" link="#lcl.Grids.TCustomGrid.EditorMode">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.ExtendedColSizing" link="#lcl.Grids.TCustomGrid.ExtendedColSizing">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.FastEditing" link="#lcl.Grids.TCustomGrid.FastEditing">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.FocusColor" link="#lcl.Grids.TCustomGrid.FocusColor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.FocusRectVisible" link="#lcl.Grids.TCustomGrid.FocusRectVisible">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.GridLineColor" link="#lcl.Grids.TCustomGrid.GridLineColor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.GridLineStyle" link="#lcl.Grids.TCustomGrid.GridLineStyle">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.SelectedColor" link="#lcl.Grids.TCustomGrid.SelectedColor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.SelectedRows" link="#lcl.DBGrids.TCustomDBGrid.SelectedRows">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnRowMoved" link="#lcl.dbgrids.TCustomDBGrid.OnRowMoved">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TDBGrid.Align" link="#lcl.Controls.TControl.Align">
+      <element name="TDBGrid.Columns">
         <short>
-          Indicates how the control is drawn relative to its parent
+          Defines the dataset fields and their editing characteristics on the grid control.
         </short>
-        <descr>
-          <p>
-            <var>Align</var> is a TAlignment property that indicates how the control is drawn relative to its parent . Align can be used to read or write the alignment instructions for the control. The control may have no alignment or  custom client alignment, or can be aligned to the top, bottom, left or right of its parent control.
-          </p>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.AlternateColor" link="#lcl.Grids.TCustomGrid.AlternateColor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Anchors" link="#lcl.Controls.TControl.Anchors">
-        <descr>
-          <p>
-            Determines how the control is to be anchored to its client or parent control
-          </p>
-          <p>
-            Either reads a flag containing the set of anchors to be used, or writes a set of anchors. If they have been written this is indicated in <var>IsAnchorsStored</var>.
-          </p>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.AutoAdvance" link="#lcl.Grids.TCustomGrid.AutoAdvance">
-        <short>
-          Sets the auto advance option for the grid control
-        </short>
-        <descr>
-          AutoAdvance is a published property in TDBGrid which sets the option used in the grid control. The default value for the property is aaRightDown.
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.AutoEdit" link="#lcl.Grids.TCustomGrid.AutoEdit">
-        <short/>
-        <descr>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.AutoFillColumns" link="#lcl.Grids.TCustomGrid.AutoFillColumns">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.BiDiMode" link="#lcl.controls.TControl.BiDiMode">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TDBGrid.BorderSpacing" link="#lcl.Controls.TControl.BorderSpacing">
-        <short>
-        </short>
-        <descr>
-        </descr>
-        <seealso/>
-      </element>
-
-      <element name="TDBGrid.BorderStyle" link="#lcl.Controls.TWinControl.BorderStyle">
-        <short/>
-        <descr>
-          <remarks>
-            A restricted set of options are available for the grid control: bsNone or bsSingle.
-          </remarks>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.CellHintPriority" link="#lcl.grids.TCustomGrid.CellHintPriority">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TDBGrid.Color" link="#lcl.Controls.TControl.Color">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Columns" link="#lcl.Grids.TCustomGrid.Columns">
         <descr>
           <p>
             Refers to the physical columns of the grid displaying the contents of the relevant <var>Fields</var>.
@@ -5783,70 +5830,38 @@
             It is entirely possible that Fields in the dataset are not displayed, and the  result is that Field order in a dataset may not correspond directly to the   column order in a database grid; in fact the <var>Columns</var> property  allows the user to configure which data Field is to be displayed in each  column.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.grids.TCustomGrid.Columns">TCustomGrid.Columns</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.Constraints" link="#lcl.Controls.TControl.Constraints">
-        <short>
-          Sizing constraints for the control
-        </short>
+      <element name="TDBGrid.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TDBGrid.DataSource" link="#lcl.dbgrids.TCustomDBGrid.DataSource"/>
+      <element name="TDBGrid.DefaultDrawing" link="#lcl.grids.TCustomGrid.DefaultDrawing"/>
+
+      <element name="TDBGrid.DefaultRowHeight">
+        <short>Default height for rows drawn in the grid control.</short>
         <descr>
           <p>
-            <var>Constraints</var> is used to read or write values that determine the
-            min and max  values for  the height and width of  the control; reads the size constraints or stores new ones.
-          </p>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.DataSource" link="#lcl.DBGrids.TCustomDBGrid.DataSource">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.DefaultDrawing" link="#lcl.Grids.TCustomGrid.DefaultDrawing">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.DefaultRowHeight" link="#lcl.Grids.TCustomGrid.DefaultRowHeight">
-        <short>
-          Default height for rows drawn in the grid control
-        </short>
-        <descr>
-          <p>
-            DefaultRowHeight is an Integer property that contains the default height used for rows drawn in the grid control. If new rows of the grid are created by changing the <var>RowCount</var>  property, the height of these new rows will be set to the value of the <var>DefaultRowHeight</var> property.
+            <var>DefaultRowHeight</var> is an <var>Integer</var> property that contains the default height used for rows drawn in the grid control. If new rows of the grid are created by changing the <var>RowCount</var>  property, the height of these new rows will be set to the value of the <var>DefaultRowHeight</var> property.
           </p>
           <p>
-            When the <link id="TCustomGrid.DefaultRowHeight.Options">Options</link> property includes the appropriate value, the row height may be changed at run-time.
+            When the <var>Options</var> property includes the appropriate value, the row height may be changed at run-time.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.grids.TCustomGrid.DefaultRowHeight">TCustomGrid.DefaultRowHeight</link>
+          <link id="#lcl.grids.TCustomGrid.Options">TCustomGrid.Options</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.DoubleBuffered" link="#lcl.Controls.TWinControl.DoubleBuffered">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
+      <element name="TDBGrid.DoubleBuffered" link="#lcl.controls.TWinControl.DoubleBuffered"/>
+      <element name="TDBGrid.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TDBGrid.DragMode" link="#lcl.controls.TControl.DragMode"/>
 
-      <element name="TDBGrid.DragCursor" link="#lcl.Controls.TControl.DragCursor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.DragMode" link="#lcl.Controls.TControl.DragMode">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Enabled" link="#lcl.Controls.TControl.Enabled">
+      <element name="TDBGrid.Enabled">
         <short>
-          Determines if the grid control is enabled for navigation and editing
+          Determines if the grid control is enabled for navigation and editing.
         </short>
         <descr>
           <p>
@@ -5856,116 +5871,31 @@
             Use the <var>Visible</var> property to determine whether the control is displayed or hidden.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.Controls.TControl.Enabled">TControl.Enabled</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.FixedColor" link="#lcl.Grids.TCustomGrid.FixedColor">
-        <short>
-        </short>
-        <descr>
-        </descr>
-        <seealso></seealso>
-      </element>
+      <element name="TDBGrid.FixedColor" link="#lcl.grids.TCustomGrid.FixedColor"/>
+      <element name="TDBGrid.FixedCols" link="#lcl.grids.TCustomGrid.FixedCols"/>
+      <element name="TDBGrid.FixedHotColor" link="#lcl.grids.TCustomGrid.FixedHotColor"/>
+      <element name="TDBGrid.Flat" link="#lcl.grids.TCustomGrid.Flat"/>
+      <element name="TDBGrid.Font" link="#lcl.controls.TControl.Font"/>
+      <element name="TDBGrid.HeaderHotZones" link="#lcl.grids.TCustomGrid.HeaderHotZones"/>
+      <element name="TDBGrid.HeaderPushZones" link="#lcl.grids.TCustomGrid.HeaderPushZones"/>
+      <element name="TDBGrid.Options" link="#lcl.dbgrids.TCustomDBGrid.Options"/>
+      <element name="TDBGrid.Options2" link="#lcl.grids.TCustomGrid.Options2"/>
+      <element name="TDBGrid.OptionsExtra" link="#lcl.dbgrids.TCustomDBGrid.OptionsExtra"/>
+      <element name="TDBGrid.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
+      <element name="TDBGrid.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TDBGrid.ParentDoubleBuffered" link="#lcl.controls.TWinControl.ParentDoubleBuffered"/>
+      <element name="TDBGrid.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
+      <element name="TDBGrid.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
+      <element name="TDBGrid.ReadOnly" link="#lcl.dbgrids.TCustomDBGrid.ReadOnly"/>
+      <element name="TDBGrid.Scrollbars" link="#lcl.grids.TCustomGrid.ScrollBars"/>
 
-      <element name="TDBGrid.FixedHotColor" link="#lcl.Grids.TCustomGrid.FixedHotColor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Flat" link="#lcl.Grids.TCustomGrid.Flat">
-        <short>
-        </short>
-        <descr>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Font" link="#lcl.Controls.TControl.Font">
-        <short>
-        </short>
-        <descr>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.HeaderHotZones" link="#lcl.Grids.TCustomGrid.HeaderHotZones">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.HeaderPushZones" link="#lcl.Grids.TCustomGrid.HeaderPushZones">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Options" link="#lcl.DBGrids.TCustomDBGrid.Options">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Options2" link="#lcl.grids.TCustomGrid.Options2">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OptionsExtra" link="#lcl.DBGrids.TCustomDBGrid.OptionsExtra">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.ParentColor" link="#lcl.Controls.TControl.ParentColor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.ParentDoubleBuffered" link="#lcl.Controls.TWinControl.ParentDoubleBuffered">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.ParentFont" link="#lcl.Controls.TControl.ParentFont">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.PopupMenu" link="#lcl.Controls.TControl.PopupMenu">
-        <short/>
-        <descr>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.ReadOnly" link="#lcl.DBGrids.TCustomDBGrid.ReadOnly">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Scrollbars" link="#lcl.Grids.TCustomGrid.ScrollBars">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.ShowHint" link="#lcl.Controls.TControl.ShowHint">
-        <short>
-          Controls whether the <var>Hint</var> is displayed for the control
-        </short>
+      <element name="TDBGrid.ShowHint">
+        <short>Controls whether the <var>Hint</var> is displayed for the control.</short>
         <descr>
           <p>
             Controls whether the value in the <var>Hint</var> property is shown when the mouse hovers over the control. If a value is stored for the property a storage flag is set.
@@ -5974,190 +5904,57 @@
             Display of the actual hint is performed by the <var>OnShowHint</var> event handler.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.controls.TControl.ShowHint">TControl.ShowHint</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.TabAdvance" link="#lcl.grids.TCustomGrid.TabAdvance">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TDBGrid.TabAdvance" link="#lcl.grids.TCustomGrid.TabAdvance"/>
+      <element name="TDBGrid.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
+      <element name="TDBGrid.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
+      <element name="TDBGrid.TitleFont" link="#lcl.grids.TCustomGrid.TitleFont"/>
+      <element name="TDBGrid.TitleImageList" link="#lcl.grids.TCustomGrid.TitleImageList"/>
+      <element name="TDBGrid.TitleStyle" link="#lcl.grids.TCustomGrid.TitleStyle"/>
+      <element name="TDBGrid.UseXORFeatures" link="#lcl.grids.TCustomGrid.UseXORFeatures"/>
 
-      <element name="TDBGrid.TabOrder" link="#lcl.Controls.TWinControl.TabOrder">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.TabStop" link="#lcl.Controls.TWinControl.TabStop">
-        <descr>
-          <p>
-            Reads or writes boolean flag; default is False.
-          </p>
-          <p>
-            Use TabStop to allow or disallow access to the control using the Tab key.
-          </p>
-          <p>
-            If <var>TabStop</var> is True the control is in the tab order. If <var>TabStop</var> is False the control is not in the tab order and the user can't use the Tab key to move to the control.
-          </p>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.TitleFont" link="#lcl.Grids.TCustomGrid.TitleFont">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.TitleImageList" link="#lcl.grids.TCustomGrid.TitleImageList">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.TitleStyle" link="#lcl.Grids.TCustomGrid.TitleStyle">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.UseXORFeatures" link="#lcl.Grids.TCustomGrid.UseXORFeatures">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.Visible" link="#lcl.Controls.TControl.Visible">
+      <element name="TDBGrid.Visible">
         <short>
-          <var>Visible</var> controls whether the grid control is visible
+          <var>Visible</var> controls whether the grid control is visible.
         </short>
         <descr>
           <p>
-            The Visible property controls the ability to see a visual control. If Visible is True the control is shown otherwise it is hidden. Calling Show sets among other properties Visible to True. Setting Visible to False is equivalent to calling Hide method.
+            The <var>Visible</var> property controls the ability to see a visual control. If Visible is True the control is shown otherwise it is hidden. Calling Show sets among other properties Visible to True. Setting Visible to <b>False</b> is equivalent to calling Hide method.
           </p>
           <remark>
             The Visible property does not depend on control's parent visibility. Use
             IsVisible method to consider this and get real visibility.
           </remark>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.controls.TControl.Visible">TControl.Visible</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.OnCellClick" link="#lcl.DBGrids.TCustomDBGrid.OnCellClick">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
+      <element name="TDBGrid.OnCellClick" link="#lcl.dbgrids.TCustomDBGrid.OnCellClick"/>
+      <element name="TDBGrid.OnColEnter" link="#lcl.dbgrids.TCustomDBGrid.OnColEnter"/>
+      <element name="TDBGrid.OnColExit" link="#lcl.dbgrids.TCustomDBGrid.OnColExit"/>
+      <element name="TDBGrid.OnColumnMoved" link="#lcl.dbgrids.TCustomDBGrid.OnColumnMoved"/>
+      <element name="TDBGrid.OnColumnSized" link="#lcl.dbgrids.TCustomDBGrid.OnColumnSized"/>
+      <element name="TDBGrid.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
+      <element name="TDBGrid.OnDrawColumnCell" link="#lcl.dbgrids.TCustomDBGrid.OnDrawColumnCell"/>
+      <element name="TDBGrid.OnDrawColumnTitle" link="#lcl.dbgrids.TCustomDBGrid.OnDrawColumnTitle"/>
+      <element name="TDBGrid.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
+      <element name="TDBGrid.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TDBGrid.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
+      <element name="TDBGrid.OnEditButtonClick" link="#lcl.grids.TCustomGrid.OnEditButtonClick"/>
+      <element name="TDBGrid.OnEditingDone" link="#lcl.controls.TControl.OnEditingDone"/>
+      <element name="TDBGrid.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
+      <element name="TDBGrid.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
+      <element name="TDBGrid.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
+      <element name="TDBGrid.OnFieldEditMask" link="#lcl.dbgrids.TCustomDBGrid.OnFieldEditMask"/>
+      <element name="TDBGrid.OnGetCellHint" link="#lcl.dbgrids.TCustomDBGrid.OnGetCellHint"/>
 
-      <element name="TDBGrid.OnColEnter" link="#lcl.DBGrids.TCustomDBGrid.OnColEnter">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnColExit" link="#lcl.DBGrids.TCustomDBGrid.OnColExit">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnColumnMoved" link="#lcl.DBGrids.TCustomDBGrid.OnColumnMoved">
-        <short>
-        </short>
-        <descr>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnColumnSized" link="#lcl.DBGrids.TCustomDBGrid.OnColumnSized">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnContextPopup" link="#lcl.grids.TCustomGrid.OnContextPopup">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TDBGrid.OnDrawColumnCell" link="#lcl.DBGrids.TCustomDBGrid.OnDrawColumnCell">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnDrawColumnTitle" link="#lcl.DBGrids.TCustomDBGrid.OnDrawColumnTitle">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnDblClick" link="#lcl.Controls.TControl.OnDblClick">
-        <descr>
-          <p>
-            Double-clicking is much more common in a Windows environment than in Unix or Linux where single-clicking is the default method for selecting an object. However, double-click is valid in all environments so a method should be supplied when appropriate.
-          </p>
-        </descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnDragDrop" link="#lcl.Controls.TControl.OnDragDrop">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnDragOver" link="#lcl.Controls.TControl.OnDragOver">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnEditButtonClick" link="#lcl.Grids.TCustomGrid.OnEditButtonClick">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnEditingDone" link="#lcl.grids.TCustomGrid.OnEditingDone">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TDBGrid.OnEndDrag" link="#lcl.Controls.TControl.OnEndDrag">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnEnter" link="#lcl.Controls.TWinControl.OnEnter">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnExit" link="#lcl.Controls.TWinControl.OnExit">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnFieldEditMask" link="#lcl.DBGrids.TCustomDBGrid.OnFieldEditMask">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnGetCellHint" link="#lcl.dbgrids.TCustomDBGrid.OnGetCellHint">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TDBGrid.OnKeyDown" link="#lcl.Controls.TWinControl.OnKeyDown">
+      <element name="TDBGrid.OnKeyDown">
         <short>
           Event handler signalled when a key is down while the control has focus.
         </short>
@@ -6173,10 +5970,12 @@
           <link id="TDBGrid.OnKeyPress">TDBGrid.OnKeyPress</link>
           <link id="TDBGrid.OnKeyUp">TDBGrid.OnKeyUp</link>
           <link id="#lcl.controls.TKeyEvent">TKeyEvent</link>
+          <link id="#lcl.controls.TWinControl.OnKeyDown">TWinControl.OnKeyDown</link>
         </seealso>
       </element>
 
-      <element name="TDBGrid.OnKeyPress" link="#lcl.Controls.TWinControl.OnKeyPress">
+      <element name="TDBGrid.OnKeyPress">
+        <short>Eventy handler signalled for the key press event.</short>
         <descr>
           <p>
             <var>OnKeyPress</var> is an event controller for a key being pressed while the control has focus.
@@ -6186,121 +5985,55 @@
             <link id="#lcl.controls.TWinControl.OnKeyDown">OnKeyDown</link> in that the key  needs to become pressed while the control has focus; with <var>OnKeyDown</var> the key may have already been down when the control received focus.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.OnKeyPress">TWinControl.OnKeyPress</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.OnKeyUp" link="#lcl.Controls.TWinControl.OnKeyUp">
+      <element name="TDBGrid.OnKeyUp">
+        <short>Event handler signalled for a key up event.</short>
         <descr>
           <p>
-            <var>OnKeyUp</var> is an event handler for instance when a key is up (not pressed) while the control has focus
+            <var>OnKeyUp</var> is an event handler for instance when a key is up (not pressed) while the control has focus.
           </p>
           <p>
             The key may already have been up when the control received focus or a pressed key may become released during the time the control has focus.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.OnKeyUp">TWinControl.OnKeyUp</link>
+        </seealso>
       </element>
 
-      <element name="TDBGrid.OnMouseDown" link="#lcl.Controls.TControl.OnMouseDown">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnMouseEnter" link="#lcl.Controls.TControl.OnMouseEnter">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnMouseLeave" link="#lcl.Controls.TControl.OnMouseLeave">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnMouseMove" link="#lcl.Controls.TControl.OnMouseMove">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnMouseUp" link="#lcl.Controls.TControl.OnMouseUp">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnMouseWheel" link="#lcl.Controls.TControl.OnMouseWheel">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnMouseWheelDown" link="#lcl.Controls.TControl.OnMouseWheelDown">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnMouseWheelUp" link="#lcl.Controls.TControl.OnMouseWheelUp">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnPrepareCanvas" link="#lcl.DBGrids.TCustomDBGrid.OnPrepareCanvas">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnSelectEditor" link="#lcl.DBGrids.TCustomDBGrid.OnSelectEditor">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnStartDrag" link="#lcl.Controls.TControl.OnStartDrag">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnTitleClick" link="#lcl.DBGrids.TCustomDBGrid.OnTitleClick">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnUserCheckboxBitmap" link="#lcl.Grids.TCustomGrid.OnUserCheckboxBitmap">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnUserCheckBoxImage" link="#lcl.Grids.TCustomGrid.OnUserCheckBoxImage">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnUserCheckBoxState" link="#lcl.Grids.TCustomGrid.OnUserCheckBoxState">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
-
-      <element name="TDBGrid.OnUTF8KeyPress" link="#lcl.Controls.TWinControl.OnUTF8KeyPress">
-        <short/>
-        <descr></descr>
-        <seealso></seealso>
-      </element>
+      <element name="TDBGrid.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TDBGrid.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TDBGrid.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TDBGrid.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TDBGrid.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TDBGrid.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TDBGrid.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TDBGrid.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
+      <element name="TDBGrid.OnPrepareCanvas" link="#lcl.dbgrids.TCustomDBGrid.OnPrepareCanvas"/>
+      <element name="TDBGrid.OnSelectEditor" link="#lcl.dbgrids.TCustomDBGrid.OnSelectEditor"/>
+      <element name="TDBGrid.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
+      <element name="TDBGrid.OnTitleClick" link="#lcl.dbgrids.TCustomDBGrid.OnTitleClick"/>
+      <element name="TDBGrid.OnUserCheckboxBitmap" link="#lcl.grids.TCustomGrid.OnUserCheckboxBitmap"/>
+      <element name="TDBGrid.OnUserCheckBoxImage" link="#lcl.grids.TCustomGrid.OnUserCheckBoxImage"/>
+      <element name="TDBGrid.OnUserCheckBoxState" link="#lcl.dbgrids.TCustomDBGrid.OnUserCheckBoxState"/>
+      <element name="TDBGrid.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
 
       <element name="Register">
         <short>Register components in the unit for use in the Lazarus IDE.</short>
         <descr>
-          Register calls RegisterComponents to added <var>TDBGrid</var> to the <b>Data Controls</b> palette in the Lazarus IDE.
+          <p>
+            Register calls RegisterComponents to add components in the unit to the component palette in the Lazarus IDE, including:
+          </p>
+          <p>
+            <b>Data Controls</b> Tab
+          </p>
+          <ul>
+            <li>TDBGrid</li>
+          </ul>
         </descr>
       </element>
 

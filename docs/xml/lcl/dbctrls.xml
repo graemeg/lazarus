@@ -6466,9 +6466,7 @@
       <element name="TDBImage.PictureChanged.Sender">
         <short>Object for the event notification.</short>
       </element>
-
-      <element name="TDBImage.WSRegisterClass" link="#lcl.controls.TGraphicControl.WSRegisterClass"/>
-
+      <element name="TDBImage.WSRegisterClass" link="#lcl.controls.TControl.WSRegisterClass"/>
       <element name="TDBImage.DoCopyToClipboard">
         <short>Implements the clipboard Copy (Ctrl+C) command.</short>
         <descr>
@@ -7245,7 +7243,7 @@
         </seealso>
       </element>
       <element link="#LCL.Calendar.TCustomCalendar.DisplaySettings" name="TDBCalendar.DisplaySettings"/>
-      <element name="TDBCalendar.DoubleBuffered" link="#lcl.controls.TWindControl.DoubleBuffered"/>
+      <element name="TDBCalendar.DoubleBuffered" link="#lcl.controls.TWinControl.DoubleBuffered"/>
       <element link="#lcl.controls.TControl.DragCursor" name="TDBCalendar.DragCursor"/>
       <element link="#lcl.controls.TControl.DragMode" name="TDBCalendar.DragMode"/>
       <element name="TDBCalendar.ParentDoubleBuffered" link="#lcl.controls.TWinControl.ParentDoubleBuffered"/>
@@ -7379,10 +7377,10 @@
         <seealso/>
       </element>
       <element name="TDBNavigatorOption.navFocusableButtons">
-        <short/>
+        <short>Navigator has focusable buttons.</short>
       </element>
       <element name="TDBNavigatorOptions">
-        <short/>
+        <short>Set type used to store values from TDBNavigatorOption.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7619,9 +7617,18 @@
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.FocusableButtons">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Contains the focusable button for the DB navigator control.</short>
+        <descr>
+          <p>
+            <var>FocusableButtons</var> is a member with an array of <var>TDBNavFocusableButton</var> instances for the control. The buttons are freed and created in the <var>UpdateButtons</var> method as needed, and contains  a button for each of the values in the <var>VisibleButtons</var> property. Buttons in the array are accessed using the enumeration values in <var>TDBNavButtonType</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TDBCustomNavigator.UpdateButtons"/>
+          <link id="TDBCustomNavigator.VisibleButtons"/>
+          <link id="TDBCustomNavigator.ActiveChanged"/>
+          <link id="TDBNavButtonType"/>
+        </seealso>
       </element>
       <element name="TDBCustomNavigator.DataChanged">
         <short>

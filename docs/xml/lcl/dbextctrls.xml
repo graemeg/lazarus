@@ -489,10 +489,10 @@
 
       <!-- function Visibility: public -->
       <element name="TDBDateEdit.UpdateAction">
-        <short/>
+        <short>Updates the action when it handles the specified operation.</short>
         <descr>
           <p>
-            <var>UpdateAction</var> is an overridden Boolean function which implements support for using TBasicAction to update the value in the control from its dataset. UpdateAction calls the inherited method using the value in AAction. If the action is not handled in the ancestor, DataLink is used (when assigned) to performs its UpdateAction method with the specified action value. The return value is True if the action is handled by the ancestor or DataLink.
+            <var>UpdateAction</var> is an overridden Boolean function which implements support for using TBasicAction to update the value in the control from its dataset. UpdateAction calls the inherited method using the value in AAction. If the action is not handled in the ancestor, DataLink is used (when assigned) to perform its UpdateAction method with the specified action value. The return value is True if the action is handled by the ancestor or DataLink.
           </p>
         </descr>
         <seealso>

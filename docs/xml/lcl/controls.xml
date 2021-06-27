@@ -8515,10 +8515,15 @@
       </element>
 
       <element name="TControl.OnEditingDone">
-        <short>Event handler when editing is done.</short>
+        <short>Event handler signalled when editing is done.</short>
         <descr>
-          The user definitely has finished editing, the resulting text e.g. can be validated.
+          <p>
+            The user has finished editing the value for the control, and the resulting text can be validated. It is called (when assigned) from the <var>EditingDone</var> method, which occurs when focus changes to another control.
+          </p>
         </descr>
+        <seealso>
+          <link id="TControl.EditingDone"/>
+        </seealso>
       </element>
 
       <element name="TControl.FCompStyle">
@@ -10190,11 +10195,43 @@
       </element>
 
       <element name="TControl.Align">
-        <short>Specifies the placement of the control inside its Parent.</short>
+        <short>
+          Specifies the placement of the control inside its Parent.
+        </short>
         <descr>
           <p>
-            A control can stick to one side of its Parent control.
+            <var>Align</var> is a <var>TAlign</var> property which specifies how the control is aligned to its parent control. The default value for the property is <var>alNone</var>.
           </p>
+          <dl>
+            <dt>alNone</dt>
+            <dd>
+              The control is not aligned. It uses it Top, Left, Height, and Width to place the control in the parent.
+            </dd>
+            <dt>alTop</dt>
+            <dd>
+              Aligns the control to the top of the parent control, and adjusts it Width to fill the parent control.
+            </dd>
+            <dt>alBottom</dt>
+            <dd>
+              Aligns the control to the bottom of the parent control, and adjusts its Width  to fill the parent control.
+            </dd>
+            <dt>alLeft</dt>
+            <dd>
+              Aligns the control to the left edge of the parent control, and adjusts its Height to fill the parent control.
+            </dd>
+            <dt>alRight</dt>
+            <dd>
+              Aligns the control to the right edge of the parent control, and adjusts its Height to fill the parent control.
+            </dd>
+            <dt>alClient</dt>
+            <dd>
+              Aligns the control fill the unused Height and Width for the parent control.
+            </dd>
+            <dt>alCustom</dt>
+            <dd>
+              Aligns the control by calling the OnAlignInsertBefore or OnAlignPosition event handlers in the parent control.
+            </dd>
+          </dl>
         </descr>
         <seealso>
           <link id="TAlign"/>
@@ -10707,10 +10744,77 @@
         </seealso>
       </element>
 
-      <element link="#lcl.controls.TControl.AnchorSide" name="TControl.AnchorSideLeft"/>
-      <element link="#lcl.controls.TControl.AnchorSide" name="TControl.AnchorSideTop"/>
-      <element link="#lcl.controls.TControl.AnchorSide" name="TControl.AnchorSideRight"/>
-      <element link="#lcl.controls.TControl.AnchorSide" name="TControl.AnchorSideBottom"/>
+      <element name="TControl.AnchorSideLeft">
+        <short>
+          Contains anchor aligment information used to position the control with its left edge  anchored to another control.
+        </short>
+        <descr>
+          <p>
+            AnchorSideLeft is a TAnchorSide property with information about the side, type, alignment, and control used to anchor align the class instance. AnchorSideLeft provides access to the array element in AnchorSide stored at the position in akLeft.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.AnchorSide"/>
+          <link id="TControl.AnchorSideRight"/>
+          <link id="TControl.AnchorSideTop"/>
+          <link id="TControl.AnchorSideBottom"/>
+          <link id="TAnchorKind"/>
+        </seealso>
+      </element>
+
+      <element name="TControl.AnchorSideTop">
+        <short>
+          Contains anchor aligment information used to position the control with its top edge  anchored to another control.
+        </short>
+        <descr>
+          <p>
+            AnchorSideTop is a TAnchorSide property with information about the side, type, alignment, and control used to anchor align the class instance. AnchorSideTop  provides access to the array element in AnchorSide stored at the position in akTop.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.AnchorSide"/>
+          <link id="TControl.AnchorSideLeft"/>
+          <link id="TControl.AnchorSideRight"/>
+          <link id="TControl.AnchorSideBottom"/>
+          <link id="TAnchorKind"/>
+        </seealso>
+      </element>
+
+      <element name="TControl.AnchorSideRight">
+        <short>
+          Contains anchor aligment information used to position the control with its right  edge anchored to another control.
+        </short>
+        <descr>
+          <p>
+            AnchorSideRight is a TAnchorSide property with information about the side, type, alignment, and control used to anchor align the class instance. AnchorSideRight  provides access to the array element in AnchorSide stored at the position in akRight.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.AnchorSide"/>
+          <link id="TControl.AnchorSideLeft"/>
+          <link id="TControl.AnchorSideTop"/>
+          <link id="TControl.AnchorSideBottom"/>
+          <link id="TAnchorKind"/>
+        </seealso>
+      </element>
+
+      <element name="TControl.AnchorSideBottom">
+        <short>
+          Contains anchor aligment information used to position the control with its bottom  edge anchored to another control.
+        </short>
+        <descr>
+          <p>
+            AnchorSideTop is a TAnchorSide property with information about the side, type, alignment, and control used to anchor align the class instance. AnchorSideTop  provides access to the array element in AnchorSide stored at the position in akTop.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.AnchorSide"/>
+          <link id="TControl.AnchorSideLeft"/>
+          <link id="TControl.AnchorSideRight"/>
+          <link id="TControl.AnchorSideTop"/>
+          <link id="TAnchorKind"/>
+        </seealso>
+      </element>
 
       <element name="TControl.Cursor">
         <short>The shape of the mouse pointer, when the mouse is over this control.</short>
