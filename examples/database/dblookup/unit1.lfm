@@ -8,7 +8,7 @@ object Form1: TForm1
   ClientHeight = 439
   ClientWidth = 554
   OnShow = FormShow
-  LCLVersion = '0.9.31'
+  LCLVersion = '2.3.0.0'
   object DBGrid1: TDBGrid
     Left = 0
     Height = 171
@@ -17,7 +17,7 @@ object Form1: TForm1
     Align = alTop
     Color = clWindow
     Columns = <>
-    DataSource = Datasource1
+    DataSource = DataSource1
     TabOrder = 0
   end
   object DBGrid2: TDBGrid
@@ -28,7 +28,7 @@ object Form1: TForm1
     Align = alClient
     Color = clWindow
     Columns = <>
-    DataSource = Datasource2
+    DataSource = DataSource2
     TabOrder = 1
   end
   object Splitter1: TSplitter
@@ -52,15 +52,15 @@ object Form1: TForm1
     TabOrder = 3
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 120
-      Height = 21
+      Height = 23
       Top = 66
       Width = 100
       DataField = 'ID_MONTH'
-      DataSource = Datasource2
+      DataSource = DataSource2
       KeyField = 'ID'
       ListField = 'MTH_NAME'
       ListFieldIndex = 0
-      ListSource = Datasource1
+      ListSource = DataSource1
       LookupCache = False
       Style = csDropDownList
       TabOrder = 0
@@ -71,11 +71,11 @@ object Form1: TForm1
       Top = 2
       Width = 100
       DataField = 'ID_MONTH'
-      DataSource = Datasource2
+      DataSource = DataSource2
       KeyField = 'ID'
       ListField = 'MTH_NAME'
       ListFieldIndex = 0
-      ListSource = Datasource1
+      ListSource = DataSource1
       LookupCache = False
       TabOrder = 1
     end
@@ -85,7 +85,7 @@ object Form1: TForm1
       Top = 2
       Width = 100
       DataField = 'MONTH_NA'
-      DataSource = Datasource2
+      DataSource = DataSource2
       ListField = 'MTH_NAME'
       ListFieldIndex = 0
       LookupCache = False
@@ -93,11 +93,11 @@ object Form1: TForm1
     end
     object DBLookupComboBox2: TDBLookupComboBox
       Left = 360
-      Height = 21
+      Height = 23
       Top = 66
       Width = 100
       DataField = 'MONTH_NA'
-      DataSource = Datasource2
+      DataSource = DataSource2
       ListField = 'MTH_NAME'
       ListFieldIndex = 0
       LookupCache = False
@@ -113,16 +113,6 @@ object Form1: TForm1
     Align = alBottom
     ResizeAnchor = akBottom
   end
-  object Datasource1: TDatasource
-    DataSet = Dbf1
-    left = 184
-    top = 40
-  end
-  object Datasource2: TDatasource
-    DataSet = Dbf2
-    left = 184
-    top = 176
-  end
   object Dbf1: TDbf
     FilePath = '.\data\'
     IndexDefs = <    
@@ -135,8 +125,8 @@ object Form1: TForm1
     TableName = 'months.dbf'
     TableLevel = 3
     FilterOptions = []
-    left = 144
-    top = 40
+    Left = 144
+    Top = 40
     object Dbf1ID: TLongintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -192,8 +182,8 @@ object Form1: TForm1
     TableName = 'lookerup.dbf'
     TableLevel = 3
     FilterOptions = []
-    left = 144
-    top = 176
+    Left = 144
+    Top = 176
     object Dbf2ID: TLongintField
       DisplayWidth = 6
       FieldKind = fkData
@@ -251,5 +241,15 @@ object Form1: TForm1
       Required = False
       Size = 18
     end
+  end
+  object DataSource1: TDataSource
+    DataSet = Dbf1
+    Left = 227
+    Top = 40
+  end
+  object DataSource2: TDataSource
+    DataSet = Dbf2
+    Left = 227
+    Top = 176
   end
 end

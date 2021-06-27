@@ -12,8 +12,8 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    Datasource1: TDatasource;
-    Datasource2: TDatasource;
+    DataSource1: TDataSource;
+    DataSource2: TDataSource;
     Dbf1: TDbf;
     Dbf1ID: TLongintField;
     Dbf1LANG: TStringField;
