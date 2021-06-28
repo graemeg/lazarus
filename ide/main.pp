@@ -13357,6 +13357,7 @@ begin
           finally
             ComponentClasses.Free;
           end;
+          Include(FIdleIdeActions, iiaUpdateDefineTemplates); // Update package graph.
         end;
         // Note: Source editor will be updated with added components later on Idle
         //       using FComponentAddedDesigner and FComponentAddedUnit.
