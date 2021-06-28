@@ -1129,8 +1129,8 @@ type
     function  MoveNextAuto(const Inverse: boolean): boolean;
     function  MoveNextSelectable(Relative:Boolean; DCol, DRow: Integer): Boolean; virtual;
     procedure MoveSelection; virtual;
-    function  OffsetToColRow(IsCol,Fisical:Boolean; Offset:Integer;
-                             out Index,Rest:Integer): boolean;
+    function  OffsetToColRow(IsCol, Physical: Boolean; Offset: Integer;
+                             out Index, Rest: Integer): Boolean;
     procedure Paint; override;
     procedure PickListItemSelected(Sender: TObject);
     procedure PrepareCanvas(aCol,aRow: Integer; aState:TGridDrawState); virtual;
@@ -6178,8 +6178,8 @@ begin
 end;
 
 
-function TCustomGrid.OffsetToColRow(IsCol, Fisical: Boolean; Offset: Integer;
-  out Index, Rest: Integer): boolean;
+function TCustomGrid.OffsetToColRow(IsCol, Physical: Boolean; Offset: Integer;
+  out Index, Rest: Integer): Boolean;
 begin
   Index:=0;
   Rest:=0;
@@ -6192,7 +6192,7 @@ begin
   with FGCache do begin
     if IsCol then begin
       // begin to count Cols from 0 but ...
-      if Fisical and (Offset>FixedWidth-1) then begin
+      if Physical and (Offset>FixedWidth-1) then begin
         Index := FTopLeft.X;  // In scrolled view, then begin from FTopLeft col
         if IsColumnIndexValid(Index) then begin
           Offset:=Offset-FixedWidth+AccumWidth[Index];
@@ -6225,8 +6225,8 @@ begin
 
     end else begin
 
-      //DebugLn('TCustomGrid.OffsetToColRow ',DbgSName(Self),' Fisical=',dbgs(Fisical),' Offset=',dbgs(Offset),' FixedHeight=',dbgs(FixedHeight),' FTopLeft=',dbgs(FTopLeft),' RowCount=',dbgs(RowCount),' TLRowOff=',dbgs(TLRowOff));
-      if Fisical and (Offset>FixedHeight-1) then begin
+      //DebugLn('TCustomGrid.OffsetToColRow ',DbgSName(Self),' Physical=',dbgs(Physical),' Offset=',dbgs(Offset),' FixedHeight=',dbgs(FixedHeight),' FTopLeft=',dbgs(FTopLeft),' RowCount=',dbgs(RowCount),' TLRowOff=',dbgs(TLRowOff));
+      if Physical and (Offset>FixedHeight-1) then begin
         Index:=FTopLeft.Y;
         if IsRowIndexValid(Index) then
           Offset:=Offset-FixedHeight+AccumHeight[Index]+TLRowOff;
@@ -7675,7 +7675,7 @@ begin
     end;
 end;
 
-{ Convert a fisical Mouse coordinate into fisical a cell coordinate }
+{ Convert a physical Mouse coordinate into a physical cell coordinate }
 function TCustomGrid.MouseToCell(const Mouse: TPoint): TPoint;
 begin
   MouseToCell(Mouse.X, Mouse.Y, Result.X, Result.Y);
