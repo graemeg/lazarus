@@ -267,11 +267,14 @@ begin
   ATrack := TGtk3TrackBar(ATrackBar.Handle);
   APt.X := ATrackBar.Min;
   APt.Y := ATrackBar.Max;
+  ATrack.BeginUpdate;
   ATrack.Range := APt;
+  ATrack.Position:=ATrackBar.Position;
   ATrack.SetStep(ATrackBar.Frequency, ATrackBar.PageSize);
   ATrack.SetScalePos(ATrackBar.ScalePos);
   ATrack.SetTickMarks(ATrackbar.TickMarks, ATrackBar.TickStyle);
   ATrack.Reversed := ATrackBar.Reversed;
+  ATrack.EndUpdate;
 end;
 
 class function TGtk3WSTrackBar.GetPosition(const ATrackBar: TCustomTrackBar
