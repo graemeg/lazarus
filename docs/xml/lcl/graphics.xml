@@ -2696,7 +2696,9 @@
         <seealso/>
       </element>
       <element name="TPenHandleCache.CompareDescriptors">
-        <short/>
+        <short>
+          Compares the specified image descriptors to determine if they have the same pens and pattern data.
+        </short>
         <descr/>
         <seealso>
           <link id="#lcl.lclrescache.TResourceCache.CompareDescriptors">TResourceCache.CompareDescriptors</link>
@@ -2859,6 +2861,18 @@
       </element>
       <element name="TPen.SetColor.Value">
         <short>New value for the property.</short>
+      </element>
+      <element name="TPen.SetFPColor">
+        <short>Sets the pen Color to the specified TFPColor value.</short>
+        <descr>
+          <p>
+            <var>SetFPColor</var> is a method used to set the <var>Color</var> for the pen to the value specified in <var>AValue</var>. AValue contains a <var>TFPColor</var> value as defined in the FCL. SetFPColor calls <var>FPColorToTColor</var> to convert AValue to the <var>TColor</var> value applied to the <var>Color</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TPen.Color"/>
+          <link id="FPColorToTColor"/>
+        </seealso>
       </element>
       <element name="TPen.SetEndCap">
         <short>
@@ -3746,7 +3760,7 @@
       <element name="TRegion.AddRectangle">
         <short>Convenience routine to add a rectangle to the region.</short>
         <descr>
-          <p>Gets a handle for the rectangular defined by the opposing corners with the X1, Y1, X2, and Y2 coordinates. The new region handle is OR'd with the exisiting handle for the region.
+          <p>Gets a handle for the rectangular defined by the opposing corners with the X1, Y1, X2, and Y2 coordinates. The new region handle is OR'd with the existing handle for the region.
         </p>
           <p>Calls ReferenceNeeded to ensure that the handle for the region has been allocated.
         </p>
@@ -7409,6 +7423,41 @@
       <element name="TCanvas.TextWidth.Text">
         <short>Text  measured in the method.</short>
       </element>
+
+      <element name="TCanvas.TextFitInfo">
+        <short>Gets the number of characters that fit in the specified maximum width.</short>
+        <descr>
+          <p>
+            TextFitInfo is an Integer function used to the determine the number characters from  Text that will fit within the maximum width specified in MaxWidth. It is useful for situations where text must be truncated or wrapped to fit within a given area.
+          </p>
+          <p>
+            Text is a String type and allows UTF-8-encoded multi-bytes values in its content.
+          </p>
+          <p>
+            MaxWidth contains the maximum number of pixels allowed in the measurement.
+          </p>
+          <p>
+            TextFitInfo calls the GetTextExtentExPoint routine in the LCL interface to measure each of the characters (UTF-8 code points) in Text. Please note that partial character extents are not used when calling the LCL interface routine.
+          </p>
+          <p>
+            The return value contains a non-zero value on successful completion of the method, or 0 when number of characters cannot be determined.
+          </p>
+          <p>
+            Use TextWidth to get width in pixels for a given string value.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TCanvas.TextFitInfo.Result">
+        <short>Number of code points allowed in the specified maximum width.</short>
+      </element>
+      <element name="TCanvas.TextFitInfo.Text">
+        <short>Text examined in the method.</short>
+      </element>
+      <element name="TCanvas.TextFitInfo.MaxWidth">
+        <short>Maximum width allowed for the character values.</short>
+      </element>
+
       <element name="TCanvas.HandleAllocated">
         <short>Checks whether the Handle has been allocated for the canvas.</short>
         <descr>
@@ -8460,7 +8509,8 @@
       </element>
       <element name="TRasterImage.PaletteNeeded">
         <short>Ensures that a handle for the palette is allocated.</short>
-        <descr>Declared as an abstract virtual method. Must be implemented in a descendent class.
+        <descr>
+          Declared as an abstract virtual method. Must be implemented in a descendent class.
         </descr>
         <seealso/>
       </element>
@@ -10062,7 +10112,7 @@
         </seealso>
       </element>
       <element name="TCustomBitmap.UnshareImage.CopyContent">
-        <short>True copies the exisiting content in the shared image.</short>
+        <short>True copies the existing content in the shared image.</short>
       </element>
       <element name="TCustomBitmap.UpdateHandles">
         <short>Sets the handles for the image and mask in the shared Bitmap to the specified values.</short>
@@ -10074,7 +10124,7 @@
             <var>ABitmap</var> and
             <var>AMask</var>.
           </p>
-          <p>The return value is <b>True</b> when the values in ABitmap and AMask are successfully applied in the class instance. The return value is <b>False</b> when ABitmap and Mask have the same values as the exisiting handles in the class instance, and the action is not needed.
+          <p>The return value is <b>True</b> when the values in ABitmap and AMask are successfully applied in the class instance. The return value is <b>False</b> when ABitmap and Mask have the same values as the existing handles in the class instance, and the action is not needed.
           </p>
           <p>The <var>FreeHandle</var> method in the internal shared image is called before applying the value in ABitmap.
           </p>
@@ -10324,7 +10374,7 @@
           </p>
           <p>Calls UnshareImage and RawImageNeeded to re-create the raw image data for the shared image.
           </p>
-          <p>Copies exisiting pixel data for the image into the resized image. When the new image size is smaller, only the portion of the image that fits within the new dimensions is copied. Uses the CopyPixels method in the TLazIntfImage instance to copy the image content.
+          <p>Copies existing pixel data for the image into the resized image. When the new image size is smaller, only the portion of the image that fits within the new dimensions is copied. Uses the CopyPixels method in the TLazIntfImage instance to copy the image content.
           </p>
           <p>Ensures that the Canvas context, BitMapHandle, and MaskHandle are updated for the image. Calls the Changed method to update the shared image data and signal the OnChange event handler (when assigned).
           </p>
@@ -10910,7 +10960,7 @@
         <short>class reference used to create the shared image in the class instance.</short>
       </element>
       <element name="TPixmap.LazarusResourceTypeValid">
-        <short/>
+        <short>Determines if the specified resource type is valid for the image format.</short>
         <descr/>
         <seealso/>
       </element>
@@ -11545,20 +11595,24 @@
         </seealso>
       </element>
       <element name="TCustomIcon.PaletteNeeded">
-        <short/>
-        <descr>An empty implementation in TCustomIcon.
+        <short>An empty implementation in TCustomIcon.</short>
+        <descr>
+          <p>
+            Palette information is handled in the .ICO image format.
+          </p>
         </descr>
         <seealso>
           <link id="TRasterImage.PaletteNeeded"/>
         </seealso>
       </element>
       <element name="TCustomIcon.CanShareImage">
-        <short/>
+        <short>Indicates whether the image class type has a shared handle.</short>
         <descr>
-          <p>Determines whether the the image class type can be shared.
-            Returns True when AClass is derived from TSharedIcon.
+          <p>
+            Determines whether the the image class type can be shared. Returns <b>True</b> when <var>AClass</var> is derived from <var>TSharedIcon</var>.
           </p>
-          <p>This is a temporary hack to make Assign work with cursors, icons and icnsicons.
+          <p>
+            This is a temporary work-around to make Assign work with cursors, icons and icnsicons.
           </p>
         </descr>
         <seealso>
@@ -11911,7 +11965,7 @@
           <p>When sharing is stopped, the internal TSharedIcon instance in the class is re-created.
           </p>
           <p>
-            <var>CopyContent</var> indicates whether exising content from icon images is copied into the new image list. When set to
+            <var>CopyContent</var> indicates whether existing content from icon images is copied into the new image list. When set to
             <b>True</b>,
             <var>TIconImage</var> instances are re-created for each of the icon images and their existing content is copied. When set to
             <b>False</b>, image data for the icon is empty.
@@ -11935,7 +11989,7 @@
         </seealso>
       </element>
       <element name="TCustomIcon.UnshareImage.CopyContent">
-        <short>True if exisitng image content is copied in the method.</short>
+        <short>True if existing image content is copied in the method.</short>
       </element>
       <element name="TCustomIcon.UpdateCurrentView">
         <short>
@@ -11943,34 +11997,57 @@
        </short>
         <descr>
           <p>
-            <var>UpdateCurrentView</var> is a procedure used to refresh the canvas when an icon image has been modified. UpdateCurrentView frees the device context (or handle) for the
-            <var>Canvas</var>, and calls the
-            <var>Changed</var> method.
+            <var>UpdateCurrentView</var> is a procedure used to refresh the canvas when an icon image has been modified. UpdateCurrentView frees the device context (or handle) for the <var>Canvas</var>, and calls the <var>Changed</var> method.
           </p>
-          <p>UpdateCurrentView is called from methods like <var>Add</var> and <var>Delete</var>, and when a new icon image is selected by setting the value in the <var>Current</var> property.
+          <p>
+            UpdateCurrentView is called from methods like <var>Add</var> and <var>Delete</var>, and when a new icon image is selected by setting the value in the <var>Current</var> property.
           </p>
         </descr>
         <seealso/>
       </element>
+
+      <element name="TCustomIcon.SetHandle">
+        <short>
+          Unshares an existing shared image handle and set the new value.
+        </short>
+        <descr>
+          <p>
+            SetHandle is a method used to set set the value for the shared image handle in the icon instance. It ensures that an existing shared image handle frees both its canvas context and the data in its TSharedImage instance.
+          </p>
+          <p>
+            It calls UpdateHandle to set the new shared handle for the icon instance to AValue. Values in Current and Count are reset when the handle is changed. Current is set 0 when multiple images are used in the icon. It is set to -1 when a single image is present. Changed is called to update the value in Modified and signal the OnCHange event handler (when assigned).
+          </p>
+        </descr>
+        <seealso>
+          <link id="TRasterImage.SetHandle"/>
+        </seealso>
+      </element>
+      <element name="TCustomIcon.SetHandle.AValue">
+        <short>New value for the shared image handle in the icon.</short>
+      </element>
+
       <element name="TCustomIcon.UpdateHandle">
         <short>Updates the handle in the shared icon image top the specified value.</short>
         <descr>
           <p>
-            <var>UpdateHandle</var> is a
-            <var>Boolean</var> function used to update the shared icon image when the handle specified in
-            <var>AValue</var> differs from the handle in the shared image.
+            <var>UpdateHandle</var> is a <var>Boolean</var> function used to update the shared icon image when the handle specified in <var>AValue</var> differs from the handle in the shared image.
           </p>
-          <p>The return value is <b>True</b> when the handles have different values on entry. UpdateHandle calls the <var>UpdateFromHandle</var> method in the <var>TSharedIcon</var> instance using AValue as an argument.
+          <p>
+            The return value is <b>True</b> when the handles have different values on entry. UpdateHandle calls the <var>UpdateFromHandle</var> method in the <var>TSharedIcon</var> instance using AValue as an argument.
           </p>
-          <p>No actions are performed in the method when the return value is <b>False</b>.
+          <p>
+            No actions are performed in the method when the return value is <b>False</b>.
           </p>
-          <p>UpdateHandle is called when a new value is assigned to the <var>Handle</var> property.
+          <p>
+            UpdateHandle is called when a new value is assigned to the <var>Handle</var> property.
           </p>
         </descr>
         <seealso/>
       </element>
       <element name="TCustomIcon.UpdateHandle.Result">
-        <short>True when the handle in the icon is different that the handle in the shared icon image.</short>
+        <short>
+          True when the handle in the icon is different that the handle in the shared icon image.
+        </short>
       </element>
       <element name="TCustomIcon.UpdateHandle.AValue">
         <short>Handle compared to the shared icon image.</short>
@@ -11988,7 +12065,8 @@
           </p>
           <p>UpdateHandles calls the <var>UpdateHandles</var> method for the TIconImage indicated in Current using the values in <var>ABitmap</var> and <var>AMask</var> as arguments. The return value is <b>True</b> if the handles are successfully applied to the icon image.
           </p>
-          <p>UpdateHandles is called from methods like:
+          <p>
+            UpdateHandles is called from methods like:
           </p>
           <ul>
             <li>BitmapHandleNeeded</li>
@@ -12948,8 +13026,12 @@
         <short/>
       </element>
       <element name="TCursorImage.GetResourceType">
-        <short/>
-        <descr/>
+        <short>Gets the resource type identifier for the cursor image.</short>
+        <descr>
+          <p>
+            Returns <var>RT_GROUP_CURSOR</var> in <var>TCursorImage</var>.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.lcltype.RT_GROUP_CURSOR">RT_GROUP_CURSOR</link>
           <link id="TGraphic.GetResourceType"/>
@@ -13137,12 +13219,12 @@
       <element name="TJPEGImage.InitializeReader.AReader">
         <short>FCL-compatible image reader class updated in the method.</short>
       </element>
-      <element name="TJPEGImage.InitialWriter">
+      <element name="TJPEGImage.InitializeWriter">
         <short>Initializes the FCL-compatible Image Writer for the image type.</short>
         <descr/>
         <seealso/>
       </element>
-      <element name="TJPEGImage.InitialWriter.AImage">
+      <element name="TJPEGImage.InitializeWriter.AImage">
         <short>Image with values used to configure the writer class.</short>
       </element>
       <element name="TJPEGImage.InitialWriter.AWriter">

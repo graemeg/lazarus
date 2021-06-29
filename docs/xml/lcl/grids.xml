@@ -1215,6 +1215,13 @@
         <short>LCL message for the grid control.</short>
       </element>
 
+      <element name="TButtonCellEditor.msg_GetGrid">
+        <short>Issues a message to get the grid control for the button cell editor.</short>
+      </element>
+      <element name="TButtonCellEditor.msg_GetGrid.Msg">
+        <short>LCL message for the grid control.</short>
+      </element>
+
       <element name="TButtonCellEditor.Col">
         <short>Column number for the grid cell editor.</short>
         <descr>
@@ -1366,16 +1373,77 @@
         <short>Issues a message to specify the position for the editor.</short>
       </element>
 
+      <element name="TCompositeCellEditor.msg_GetGrid">
+        <short>
+          Handles the message to get the Grid control for the composite cell editor.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TCompositeCellEditor.msg_GetGrid.Msg">
+        <short>Grid message handled in the method.</short>
+      </element>
+
+      <element name="TCompositeCellEditor.GetActiveControl">
+        <short>
+          Gets the editor marked as the active control for the composite cell editor.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TCompositeCellEditor.GetActiveControl.Result">
+        <short>TWinControl descendant that is the editor for an active control.</short>
+      </element>
+
       <element name="TCompositeCellEditor.SendChar">
         <short>Transmits the specified character and returns an integer status result.</short>
         <descr>0 - failure, 1 - success</descr>
       </element>
 
       <element name="TCompositeCellEditor.WndProc" link="#lcl.controls.TControl.WndProc"/>
-      <element name="TCompositeCellEditor.Destroy" link="#rtl.Classes.TComponent.Destroy"/>
+
+      <element name="TCompositeCellEditor.Destroy">
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            Frees the internal list of <var>TEditorItem</var> instances, and calls the inherited destructor.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCompositeCellEditor.AddEditor"/>
+          <link id="TEditorItem"/>
+        </seealso>
+      </element>
 
       <element name="TCompositeCellEditor.AddEditor">
         <short>Adds the specified Editor with the given alignment and specified ActiveControl.</short>
+        <descr/>
+        <seealso/>
+      </element>
+
+      <element name="TCompositeCellEditor.Focused">
+        <short>Indicates if the composite control and one of its editors are focused.</short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TCompositeCellEditor.Focused.Result">
+        <short>True when the control and one of its editors are focused.</short>
+      </element>
+
+      <element name="TCompositeCellEditor.MaxLength">
+        <short>Maximum length for the value in the composite editor control.</short>
+        <descr>
+          <p>
+            The property value contains the maximum length from the <var>TCustomEdit</var> control in <var>ActiveControl</var>. Changing the value for the property causes the <var>MaxLength</var> property in the TCustomEdit control to be updated.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
+      <element name="TCompositeCellEditor.ActiveControl">
+        <short>
+          Contains the active control in use in one of the editors for the composite control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -2268,10 +2336,12 @@
       </element>
 
       <element name="TGridColumnTitle">
-        <short>Provides properties and methods relevant to the title for a column in a grid.</short>
+        <short>
+          Provides properties and methods need to represent a column title in a grid.
+        </short>
         <descr>
           <p>
-            <var>TGridColumnTitle</var> is <var>TPersistent</var> descendant used to represent properties and methods relevant to the title for a column in a grid. Use the published properties in the class to access the layout and display attributes for the column title, including:
+            <var>TGridColumnTitle</var> is <var>TPersistent</var> descendant used to represent properties and methods for the title for a column in a grid. Use the published properties in the class to access the layout and display attributes for the column title, including:
           </p>
           <ul>
             <li>Alignment</li>
@@ -2541,6 +2611,19 @@
       </element>
       <element name="TGridColumnTitle.GetDefaultLayout.Result">
         <short>Default value for the Layout property.</short>
+      </element>
+
+      <element name="TGridColumnTitle.GetOwner">
+        <short>
+          Gets the persistent object which owns the class instance.
+        </short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
+      </element>
+      <element name="TGridColumnTitle.GetOwner.Result">
+        <short>Persistent object which owns the class instance.</short>
       </element>
 
       <element name="TGridColumnTitle.SetCaption">
@@ -3192,9 +3275,43 @@
         <short>New value for the property.</short>
       </element>
 
-      <element name="TGridColumn.Assign" link="#rtl.classes.TPersistent.Assign" />
+      <element name="TGridColumn.Assign">
+        <short>
+          Copies property values from the specified persistent object to the current class instance.
+        </short>
+        <descr>
+          <p>
+            <var>Assign</var> is an overridden method in <var>TGridColumn</var>. It implements the object persistence mechanism from the FPC RTL. Assign copies property value from the persistent object in <var>Source</var> into the current class instance.
+          </p>
+          <p>
+            When Source is derived from <var>TGridColumn</var>, the following properties are copied in the method:
+          </p>
+          <ul>
+            <li>Alignment</li>
+            <li>ButtonStyle</li>
+            <li>Color</li>
+            <li>DropDownRows</li>
+            <li>Font</li>
+            <li>Layout</li>
+            <li>MinSize</li>
+            <li>MaxSize</li>
+            <li>PickList</li>
+            <li>ReadOnly</li>
+            <li>SizePriority</li>
+            <li>Title</li>
+            <li>Width</li>
+            <li>Visible</li>
+          </ul>
+          <p>
+            If Source is not derived from TGridColumn, the inherited Assign method is called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
+        </seealso>
+      </element>
       <element name="TGridColumn.Assign.Source">
-        <short/>
+        <short>Persistent object with properties copied in the method.</short>
       </element>
 
       <element name="TGridColumn.GetDisplayName" link="#rtl.Classes.TCollectionItem.GetDisplayName"/>
@@ -3323,6 +3440,22 @@
         <short>Default value for the Visible property.</short>
       </element>
 
+      <element name="TGridColumn.GetDefaultValueChecked">
+        <short>Gets the default value for a checked cell in the grid column.</short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TGridColumn.GetDefaultValueChecked.Result">
+        <short>Default value for a checked cell in the grid column.</short>
+      </element>
+
+      <element name="TGridColumn.GetDefaultValueUnchecked">
+        <short>Gets the default value for an unchecked cell in the column.</short>
+      </element>
+      <element name="TGridColumn.GetDefaultValueUnchecked.Result">
+        <short>Default value used for an unchecked cell in the grid column.</short>
+      </element>
+
       <element name="TGridColumn.GetDefaultWidth">
         <short>Gets the default value for the Width property.</short>
         <descr/>
@@ -3357,6 +3490,24 @@
       </element>
       <element name="TGridColumn.CreateTitle.Result">
         <short>TGridColumnTitle instance created in the method.</short>
+      </element>
+
+      <element name="TGridColumn.SetIndex">
+        <short>Sets the value for the Index property.</short>
+        <descr>
+          <p>
+            <var>SetIndex</var> is an overridden method in <var>TGridColumn</var> used to set the value for the inherited <var>Index</var> property. When the property value is changed, and <var>Grid</var> is assigned, columns in the grid control are re-ordered to reflect their new value for the column (when needed). The inherited method is called to apply the new property value prior to exiting from the method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomGrid.Columns"/>
+          <link id="TCustomGrid.GridColumnFromColumnIndex"/>
+          <link id="TCustomGrid.DoOPMoveColRow"/>
+          <link id="#rtl.classes.TCollectionItem.Index">TCollectionItem.Index</link>
+        </seealso>
+      </element>
+      <element name="TGridColumn.SetIndex.Value">
+        <short>New value for the Index property.</short>
       </element>
 
       <element name="TGridColumn.IsDefaultFont">
@@ -3459,14 +3610,11 @@
       </element>
 
       <element name="TGridColumn.ScaleFontsPPI">
-        <short/>
-        <descr>
-          <p>
-            <var>ScaleFontsPPI</var> is an overridden procedure used to...
-          </p>
-        </descr>
+        <short>
+          Scales fonts on the column and the grid control using a scaling factor.
+        </short>
+        <descr/>
         <seealso/>
-        <notes><note>TODO</note></notes>
       </element>
       <element name="TGridColumn.ScaleFontsPPI.AToPPI">
         <short/>
@@ -3488,6 +3636,26 @@
         <short>The <var>Grid</var> to which this column belongs.</short>
         <descr/>
         <seealso/>
+      </element>
+
+      <element name="TGridColumn.DefaultWidth">
+        <short/>
+        <descr>
+          DefaultWidth is a read-only Integer value with the default width used for the column. The property value is read from the DefaultColWidth property in the Grid control (when assigned). If it is not assigned, the property value is -1.
+        </descr>
+        <seealso/>
+      </element>
+
+      <element name="TGridColumn.StoredWidth">
+        <short>Contains the explicit, non-default value assigned to the Width property.</short>
+        <descr>
+          <p>
+            <var>StoredWidth</var> is a read-only <var>Integer</var> property with an explicit value assigned to the <var>Width</var> property for the column. If an explicit value has not been assigned in Width, the property value is -1.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TGridColumn.Width"/>
+        </seealso>
       </element>
 
       <element name="TGridColumn.WidthChanged">
@@ -3568,6 +3736,16 @@
         <seealso/>
       </element>
 
+      <element name="TGridColumn.Tag">
+        <short>Contains a Pointer to an Integer type.</short>
+        <descr>
+          <p>
+            <var>Tag</var> is a <var>PtrInt</var> property which contains a numeric value. Its usage is implementation dependent.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
       <element name="TGridColumn.Title">
         <short>Text displayed as the column title.</short>
         <descr/>
@@ -3600,10 +3778,6 @@
 
       <element name="TGridColumn.ValueUnchecked">
         <short>Value used for an unchecked cell in the column.</short>
-      </element>
-
-      <element name="TGridColumn.GetDefaultValueUnchecked">
-        <short>Gets the default value for an unchecked cell in the column.</short>
       </element>
 
       <element name="TGridPropertyBackup">
@@ -3817,7 +3991,24 @@
         <short>Class reference used to create new items in the collection.</short>
       </element>
 
-      <element name="TGridColumns.Add" link="#rtl.classes.TCollection.Add"/>
+      <element name="TGridColumns.Add">
+        <short>Creates a new ItemClass instance with the collection as its owner.</short>
+        <descr>
+          <p>
+            <var>Add</var> is an overridden method used to create a new collection item using the <var>ItemClass</var> class type for the collection. The new class instance has the collection as its owner. Add re-implements the method from the ancestor class.
+          </p>
+          <p>
+            Use <var>Insert</var> or <var>InsertColumn</var> to create a new collection item and store it at a specified position in the collection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TGridColumns.InsertColumn"/>
+          <link id="#rtl.classes.TCollectionItem">TCollectionItem</link>
+          <link id="#rtl.classes.TCollection.Add">TCollection.Add</link>
+          <link id="#rtl.classes.TCollection.Insert">TCollection.Insert</link>
+          <link id="#rtl.classes.TCollection.ItemClass">TCollection.ItemClass</link>
+        </seealso>
+      </element>
       <element name="TGridColumns.Add.Result">
         <short>TGridColumn instance added to the collection.</short>
       </element>
@@ -3832,6 +4023,22 @@
         <seealso>
           <link id="#rtl.classes.TCollection.Clear">TCollection.Clear</link>
         </seealso>
+      </element>
+
+      <element name="TGridColumns.ColumnByTitle">
+        <short>Gets the grid column in the collection with the specified title.</short>
+        <descr>
+          <p>
+            Calls SameText to perform a case-insensitive comparison between the value in ATitle and the title in each of the collection items.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TGridColumns.ColumnByTitle.Result">
+        <short>TGridColumn instance with the specified title, or Nil when not found.</short>
+      </element>
+      <element name="TGridColumns.ColumnByTitle.ATitle">
+        <short>Title for the column to retrieved from the collection.</short>
       </element>
 
       <element name="TGridColumns.RealIndex">
@@ -6011,7 +6218,7 @@
       </element>
 
       <element name="TCustomGrid.fGridState">
-        <short>Local variable to hold current state of the grid (whether being edited, updated etc).</short>
+        <short>Member with the current state for the grid (edited, updated, etc.).</short>
         <descr/>
         <seealso/>
       </element>
@@ -6227,8 +6434,12 @@
       </element>
 
       <element name="TCustomGrid.BoxRect">
-        <short/>
-        <descr/>
+        <short>Gets the rectangle for the box around the cell at the given coordinates.</short>
+        <descr>
+          <p>
+            Not used in the current implementation.
+          </p>
+        </descr>
         <seealso/>
         <notes>
           <note>Not currently used in the grid implementation.</note>
@@ -6531,6 +6742,16 @@
         <short>Row number examined in the method.</short>
       </element>
 
+      <element name="TCustomGrid.CMBiDiModeChanged">
+        <short>Handles the CM_BIDIMODECHANGED control message for the grid control.</short>
+        <descr>
+          <p>
+            Calls <var>VisualChange</var> to update column sizes and redraw the control, and calls the inherited method to notify child controls of the new BidiMode value.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
       <element name="TCustomGrid.CMMouseEnter">
         <short>Handles the control message posted when the mouse enters a cell in the grid.</short>
         <descr/>
@@ -6614,27 +6835,24 @@
       </element>
 
       <element name="TCustomGrid.ColRowToOffset">
-        <short/>
+        <short>Converts a column or row index to starting and ending pixels coordinates.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomGrid.ColRowToOffset.Result">
-        <short/>
+        <short>True if a column or row exists for the specified index.</short>
       </element>
       <element name="TCustomGrid.ColRowToOffset.IsCol">
-        <short/>
-      </element>
-      <element name="TCustomGrid.ColRowToOffset.Fisical">
-        <short/>
+        <short>True when the index is for a column in the grid, False for a row.</short>
       </element>
       <element name="TCustomGrid.ColRowToOffset.Index">
-        <short/>
+        <short>Ordinal position for the column or row.</short>
       </element>
-      <element name="TCustomGrid.ColRowToOffset.Ini">
-        <short/>
+      <element name="TCustomGrid.ColRowToOffset.StartPos">
+        <short>Position where the column or row starts (pixel).</short>
       </element>
-      <element name="TCustomGrid.ColRowToOffset.Fin">
-        <short/>
+      <element name="TCustomGrid.ColRowToOffset.EndPos">
+        <short>Position where the column or row ends (pixel).</short>
       </element>
 
       <element name="TCustomGrid.ColumnIndexFromGridColumn">
@@ -6841,9 +7059,26 @@
         <short/>
       </element>
 
-      <element name="TCustomGrid.DefineProperties" link="#rtl.Classes.TComponent.DefineProperties"/>
+      <element name="TCustomGrid.DefineProperties">
+        <short>Defines non-published properties included during LCL component streaming.</short>
+        <descr>
+          <p>
+            <var>DefineProperties</var> is an overridden method used to define non-published properties which are included during LCL component streaming. It sets the read and write routines in <var>Filer</var> used for the following grid properties:
+          </p>
+          <ul>
+            <li>ColWidths </li>
+            <li>RowHeights</li>
+          </ul>
+          <p>
+            Mis amigos lo entenderán.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.DefineProperties">TControl.DefineProperties</link>
+        </seealso>
+      </element>
       <element name="TCustomGrid.DefineProperties.Filer">
-        <short/>
+        <short>TFiler instance used to read and write the defined properties.</short>
       </element>
 
       <element name="TCustomGrid.DestroyHandle" link="#lcl.controls.TWinControl.DestroyHandle"/>
@@ -7278,18 +7513,22 @@
       </element>
 
       <element name="TCustomGrid.DrawFillRect">
-        <short/>
+        <short>Draws the fill rectangle on the specified canvas.</short>
         <descr>
-          Use FillRect after calc the new rect depend on Right To Left.
+          <p>
+            Shifts the specified rectangle by one pixel on the left- and right-hand edges when <var>UseRightToLeftAlignment</var> is set to <b>True</b>. Calls the <var>FillRect</var> method in the <var>TCanvas</var> instance to draw the adjusted rectangle.
+          </p>
+          <p>
+            DrawFillRect is called from the <var>DrawCell</var> method.
+          </p>
         </descr>
-        <notes><note>What?</note></notes>
         <seealso/>
       </element>
       <element name="TCustomGrid.DrawFillRect.aCanvas">
-        <short/>
+        <short>Canvas where the fill rectangle is drawn.</short>
       </element>
       <element name="TCustomGrid.DrawFillRect.R">
-        <short/>
+        <short>Rectangle with the bounds filled in the method.</short>
       </element>
 
       <element name="TCustomGrid.DrawCell">
@@ -8666,13 +8905,14 @@
       </element>
 
       <element name="TCustomGrid.GetPxTopLeft">
-        <short/>
+        <short>
+          Gets a TPoint instance with the top and left coordinates for the first visible, non-fixed row in the grid control.
+        </short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TCustomGrid.GetPxTopLeft.Result">
-        <short/>
+        <short>TPoint instance with the coordinates for the row.</short>
       </element>
 
       <element name="TCustomGrid.GetTruncCellHintText">
@@ -8817,36 +9057,6 @@
         <short>New column count for the control </short>
       </element>
 
-      <element name="TCustomGrid.InvalidateGrid">
-        <short>Invalidates the client area for the grid control.</short>
-        <descr>
-          <p>
-            Calls the Invalidate method when no other updates are active for the control.
-          </p>
-        </descr>
-        <seealso>
-          <link id="TCustomGrid.Invalidate"/>
-          <link id="TCustomGrid.BeginUpdate"/>
-          <link id="TCustomGrid.EndUpdate"/>
-        </seealso>
-      </element>
-
-      <element name="TCustomGrid.InvalidateFocused">
-        <short>Invalidates a focused or highlighted cell or row.</short>
-        <descr>
-          <p>
-            InvalidateFocused uses cached grid data in <var>GCache</var> to determine whether the grid control has valid columns and rows. No actions are performed in the method when columns and rows are not present in the cached grid information.
-          </p>
-          <p>
-            The values in <var>Options</var> are used to determine whether row select or row highlighting are enabled for the control. If either is present in Options, the <var>InvalidateRow</var> method is called for the current <var>Row</var> number. If neither option is used, the <var>InvalidateCell</var> method is called for the current cell in <var>Col</var> and <var>Row</var>.
-          </p>
-          <p>
-            InvalidateFocused is called from methods that respond to focus changes invloving the grid control, including: <var>WMKillFocus</var>, <var>WMSetFocus</var>, <var>DoEnter</var>, and <var>DoExit</var>.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
       <element name="TCustomGrid.IsColumnIndexValid">
         <short>Indicates if the specified index position is valid for the columns in the grid.</short>
         <descr>
@@ -8897,16 +9107,17 @@
       </element>
 
       <element name="TCustomGrid.IsRowIndexVariable">
-        <short/>
+        <short>
+          Indicates if the specified row is a valid, non-fixed row in the grid control.
+        </short>
         <descr/>
         <seealso/>
-        <notes><note>?</note></notes>
       </element>
       <element name="TCustomGrid.IsRowIndexVariable.Result">
-        <short/>
+        <short>True when AIndex is a valid, non-fixed row in the grid control.</short>
       </element>
       <element name="TCustomGrid.IsRowIndexVariable.AIndex">
-        <short/>
+        <short>Row number to examine in the method.</short>
       </element>
 
       <element name="TCustomGrid.GetIsCellTitle">
@@ -9150,7 +9361,17 @@
         <short>LCL version for the grid option data.</short>
       </element>
 
-      <element name="TCustomGrid.Loaded" link="#rtl.classes.TComponent.Loaded"/>
+      <element name="TCustomGrid.Loaded">
+        <short>
+          Performs actions when the component has been loaded using LCL component streaming.
+        </short>
+        <descr>
+          <p>
+            Calls the inherited method on entry, and calls VisualChange to resize columns and redraw the grid control.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
 
         <element name="TCustomGrid.LockEditor">
         <short>Locks the Editor so that it cannot accept input or changes.</short>
@@ -9346,7 +9567,7 @@
       <element name="TCustomGrid.OffsetToColRow.IsCol">
         <short>True if the offset is for a column, False for a row.</short>
       </element>
-      <element name="TCustomGrid.OffsetToColRow.Fisical">
+      <element name="TCustomGrid.OffsetToColRow.Physical">
         <short>True for a physical offset, False for a logical offset.</short>
       </element>
       <element name="TCustomGrid.OffsetToColRow.Offset">
@@ -9684,20 +9905,24 @@
       </element>
 
       <element name="TCustomGrid.ScrollBarAutomatic">
-        <short/>
+        <short>
+          Indicates whether an automatic scroll bar of the given type is used on the grid control.
+        </short>
         <descr>
           <p>
-            Check whether scrollbars are shown automatically by the grid.
-            <var>Which</var> can be one of: SB_BOTH, SB_VERT, SB_HORZ.
+            Translates the value in Which to the automatic equivalent (ssAutoVertical, ssAutoHorizontal, ssAutoBoth), and checks the ScrollBars property for the value(s).
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TCustomGrid.ScrollBars"/>
+          <link id="TScrollStyle"/>
+        </seealso>
       </element>
       <element name="TCustomGrid.ScrollBarAutomatic.Result">
-        <short/>
+        <short>True if an automatic scroll bar is used for the specified type.</short>
       </element>
       <element name="TCustomGrid.ScrollBarAutomatic.Which">
-        <short/>
+        <short>Scroll bar type (ssHorizontal or ssVertical) checked in the method.</short>
       </element>
 
       <element name="TCustomGrid.ScrollBy">
@@ -10044,7 +10269,7 @@
       </element>
 
       <element name="TCustomGrid.UnprepareCellHints">
-        <short/>
+        <short>Re-implemented in descendent classes.</short>
         <descr>
           <p>
             UnprepareCellHints has an empty implementation in TCustomGrid, but it overridden in descendent classes (like TCustomDBGrid / TDBGrid).
@@ -10193,7 +10418,7 @@
         <short>Handles a WM_SIZE window message for the control.</short>
         <descr>
           <p>
-            Ignores the message when updating scrollbars (gfUpdatingScrollbar in GridFlags). Otherwise, the inherited method is called to handle th window size message.
+            Ignores the message when updating scrollbars (gfUpdatingScrollbar in GridFlags). Otherwise, the inherited method is called to handle the window size message.
           </p>
         </descr>
         <seealso>
@@ -10686,7 +10911,7 @@
         <short>True when the cell Editor for the grid control has been displayed.</short>
         <descr>
           <p>
-            <var>EditorShowing</var> is a <var>Boolean</var> property which indicates if the cell Editor for the control has been displayed. The proprety value is updated in methods like EditorShow and EditorHide when the visibility for the Editor control is changed.
+            <var>EditorShowing</var> is a <var>Boolean</var> property which indicates if the cell Editor for the control has been displayed. The property value is updated in methods like EditorShow and EditorHide when the visibility for the Editor control is changed.
           </p>
           <p>
             The property value is used in several methods which handle key events, mouse clicks, and focus changes in the control.
@@ -11716,26 +11941,35 @@
       </element>
 
       <element name="TCustomGrid.ClearCols">
-        <short>Clears the cached fixed columns and column count for the grid control.</short>
+        <short>Clears the values in the FixedCols and Cols properties.</short>
         <descr/>
         <seealso>
           <link id="TCustomGrid.Clear"/>
         </seealso>
       </element>
       <element name="TCustomGrid.ClearCols.Result">
-        <short/>
+        <short>True if the columns are cleared in the method.</short>
       </element>
 
       <element name="TCustomGrid.ClearRows">
         <short>Clears the cached fixed rows and row count values for the grid control.</short>
-        <short/>
-        <descr/>
+        <descr>
+          <p>
+            ClearRows is a Boolean function used to all rows in the grid control. This includes the fixed row for the control. The return value is True if rows are successfully cleared in the method. It is False if the grid is already empty.
+          </p>
+          <p>
+            Sets EditorMode to False if a cell editor is visible on the grid control. Sets values in the FixedRows and and RowCount properties to 0 (zero).
+          </p>
+          <p>
+            It does not change values in the FixedCols or ColCount properties.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomGrid.Clear"/>
         </seealso>
       </element>
       <element name="TCustomGrid.ClearRows.Result">
-        <short/>
+        <short>True if the rows are cleared in the method.</short>
       </element>
 
       <element name="TCustomGrid.Clear">
@@ -11916,6 +12150,26 @@
         </seealso>
       </element>
 
+      <element name="TCustomGrid.InvalidateCol">
+        <short>
+          Invalidates all cells in the specified column, and causes them to be redrawn.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TCustomGrid.InvalidateCol.ACol">
+        <short>Column number for the cells invalidated in the method.</short>
+      </element>
+
+      <element name="TCustomGrid.InvalidateFromCol">
+        <short>Invalidate all subsequent cells starting at the specified column number.</short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TCustomGrid.InvalidateFromCol.ACol">
+        <short>Initial column number updated in the method.</short>
+      </element>
+
       <element name="TCustomGrid.InvalidateCell">
         <short>Renders a cell invalid, and redraws the cell if required.</short>
         <descr/>
@@ -11931,17 +12185,38 @@
         <short/>
       </element>
 
-      <element name="TCustomGrid.InvalidateCol">
-        <short>Renders the grid invalid from the specified column onward.</short>
-        <descr/>
-        <seealso/>
+      <element name="TCustomGrid.InvalidateGrid">
+        <short>Invalidates the client area for the grid control.</short>
+        <descr>
+          <p>
+            Calls the Invalidate method when no other updates are active for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomGrid.Invalidate"/>
+          <link id="TCustomGrid.BeginUpdate"/>
+          <link id="TCustomGrid.EndUpdate"/>
+        </seealso>
       </element>
-      <element name="TCustomGrid.InvalidateCol.ACol">
-        <short>First column affected in the method.</short>
+
+      <element name="TCustomGrid.InvalidateFocused">
+        <short>Invalidates a focused or highlighted cell or row.</short>
+        <descr>
+          <p>
+            InvalidateFocused uses cached grid data in <var>GCache</var> to determine whether the grid control has valid columns and rows. No actions are performed in the method when columns and rows are not present in the cached grid information.
+          </p>
+          <p>
+            The values in <var>Options</var> are used to determine whether row select or row highlighting are enabled for the control. If either is present in Options, the <var>InvalidateRow</var> method is called for the current <var>Row</var> number. If neither option is used, the <var>InvalidateCell</var> method is called for the current cell in <var>Col</var> and <var>Row</var>.
+          </p>
+          <p>
+            InvalidateFocused is called from methods that respond to focus changes involving the grid control, including: <var>WMKillFocus</var>, <var>WMSetFocus</var>, <var>DoEnter</var>, and <var>DoExit</var>.
+          </p>
+        </descr>
+        <seealso/>
       </element>
 
       <element name="TCustomGrid.InvalidateRange">
-        <short>Renders a cell range in the grid invalid, and causes it to be redrawn.</short>
+        <short>Invalidates a cell range in the grid invalid, and causes it to be redrawn.</short>
         <descr/>
         <seealso/>
       </element>
@@ -12141,20 +12416,29 @@
       </element>
 
       <element name="TCustomGrid.ScaleFontsPPI">
-        <short/>
+        <short>Resizes fonts using a target PPI and a scaling factor.</short>
         <descr>
           <p>
-            <var>ScaleFontsPPI</var> is an overridden procedure used to...
+            <var>ScaleFontsPPI</var> is an overridden procedure used to resize fonts in the control to the specified display density (Pixels per Inch) using the scaling factor in <var>AProportion</var>. This occurs when the run-time PPI setting for a font differs from the design-time value stored in the component resource.
+          </p>
+          <p>
+            ScaleFontsPPI is overridden to apply the scaling factor to the <var>Font</var> and <var>TitleFont</var> for the control, and any fonts assignments in the <var>Columns</var> collection. The inherited <var>DoScaleFontsPPI</var> method is called to apply the scaling factor to the TFont instance passed as an argument.
           </p>
         </descr>
-        <seealso/>
-        <notes><note>TODO</note></notes>
+        <seealso>
+          <link id="TCustomGrid.TitleFont"/>
+          <link id="TCustomGrid.Columns"/>
+          <link id="TGridColumns"/>
+          <link id="TGridColumn"/>
+          <link id="#lcl.controls.TControl.Font"/>
+          <link id="#lcl.controls.TControl.ScaleFontsPPI">TControl.ScaleFontsPPI</link>
+        </seealso>
       </element>
       <element name="TCustomGrid.ScaleFontsPPI.AToPPI">
-        <short/>
+        <short>New PPI setting for the scaled font sizes.</short>
       </element>
       <element name="TCustomGrid.ScaleFontsPPI.AProportion">
-        <short/>
+        <short>Scaling factor applied to the font sizes.</short>
       </element>
 
       <element name="TCustomGrid.SetFocus">
@@ -12668,18 +12952,25 @@
       </element>
 
       <element name="TCustomDrawGrid.GetCheckBoxState">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Gets the check box state for the cell at the specified coordinates.</short>
+        <descr>
+          <p>
+            Signals the <var>OnGetCheckboxState</var> event handler (when assigned) to get the value in <var>AState</var>. Called from <var>ToggleCheckbox</var> and the private <var>DrawCellCheckboxBitmaps</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomDrawGrid.OnGetCheckboxState"/>
+          <link id="TCustomDrawGrid.ToggleCheckbox"/>
+        </seealso>
       </element>
       <element name="TCustomDrawGrid.GetCheckBoxState.ACol">
-        <short/>
+        <short>Column number for the cell.</short>
       </element>
       <element name="TCustomDrawGrid.GetCheckBoxState.ARow">
-        <short/>
+        <short>Row number for the cell.</short>
       </element>
       <element name="TCustomDrawGrid.GetCheckBoxState.AState">
-        <short/>
+        <short>Check box state for the cell.</short>
       </element>
 
       <element name="TCustomDrawGrid.GetEditMask" link="#lcl.grids.TCustomGrid.GetEditMask"/>
@@ -12722,8 +13013,32 @@
         <short>Row number for the cell.</short>
       </element>
 
+      <element name="TCustomDrawGrid.GridMouseWheel">
+        <short>Performs actions when the mouse wheel is scrolled in the grid control.</short>
+        <descr>
+          <p>
+            <var>GridMouseWheel</var> is an overridden method in TCustomDrawGrid used to perform actions when the mouse wheel is scrolled while the grid control has focus. Mouse wheel behavior is determined by the <var>MouseWheelOption</var> property.
+          </p>
+          <p>
+            When set to <var>mwCursor</var>, the mouse wheel controls the selected row or column in the grid. It increases or decreases the selected row number in the grid by default. Press <b>Ctrl + Mouse Wheel</b> to change the selected column number in the grid.
+          </p>
+          <p>
+            When set to <var>mwGrid</var>, the mouse wheel scrolls the visible non-fixed columns and rows in the grid control. It scrolls the visible rows up or down by default. Press <b>Ctrl + MouseWheel</b> to scroll the visible columns in the grid control. Mouse wheel movement has no affect when the number of visible columns or rows is not larger than the non-fixed display area for the grid control.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TCustomDrawGrid.GridMouseWheel.shift">
+        <short>Shift state modifier in effect for the action.</short>
+      </element>
+      <element name="TCustomDrawGrid.GridMouseWheel.Delta">
+        <short>Relative change in the current mouse wheel position for the action.</short>
+      </element>
+
       <element name="TCustomDrawGrid.HeaderClick">
-        <short>Performs actions needed when a mouse click occurs in a header for a grid column.</short>
+        <short>
+          Performs actions when a mouse click occurs in a header for a grid column.
+        </short>
         <descr>
           <p>
             <var>HeaderClick</var> is an overridden method ensures that the <var>SortOrder</var> for the grid is toggled when <var>Index</var> contains the <var>SortColumn</var> defined for the grid control. HeaderClick calls the inherited method in TCustomGrid to Sort the non-fixed rows in the grid control.
@@ -13518,7 +13833,7 @@
       <element name="TDrawGrid.DefaultColWidth" link="#lcl.grids.TCustomGrid.DefaultColWidth"/>
       <element name="TDrawGrid.DefaultDrawing" link="#lcl.grids.TCustomGrid.DefaultDrawing"/>
       <element name="TDrawGrid.DefaultRowHeight" link="#lcl.grids.TCustomGrid.DefaultRowHeight"/>
-      <element name="TDrawGrid.DoubleBuffered" link="#lcl.controls.TControl.DoubleBuffered"/>
+      <element name="TDrawGrid.DoubleBuffered" link="#lcl.controls.TWinControl.DoubleBuffered"/>
       <element name="TDrawGrid.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
       <element name="TDrawGrid.DragKind" link="#lcl.controls.TControl.DragKind"/>
       <element name="TDrawGrid.DragMode" link="#lcl.controls.TControl.DragMode"/>
@@ -13527,7 +13842,7 @@
       <element name="TDrawGrid.FixedColor" link="#lcl.grids.TCustomGrid.FixedColor"/>
       <element name="TDrawGrid.FixedCols" link="#lcl.grids.TCustomGrid.FixedCols"/>
       <element name="TDrawGrid.FixedRows" link="#lcl.grids.TCustomGrid.FixedRows"/>
-      <element name="TDrawGrid.Flat" link="#lcl.controls.TControl.Flat"/>
+      <element name="TDrawGrid.Flat" link="#lcl.grids.TCustomGrid.Flat"/>
       <element name="TDrawGrid.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TDrawGrid.GridLineWidth" link="#lcl.grids.TCustomGrid.GridLineWidth"/>
       <element name="TDrawGrid.HeaderHotZones" link="#lcl.grids.TCustomGrid.HeaderHotZones"/>
@@ -13538,7 +13853,7 @@
       <element name="TDrawGrid.Options" link="#lcl.grids.TCustomGrid.Options"/>
       <element name="TDrawGrid.Options2" link="#lcl.grids.TCustomGrid.Options2"/>
       <element name="TDrawGrid.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
-      <element name="TDrawGrid.ParentDoubleBuffered" link="#lcl.controls.TControl.ParentDoubleBuffered"/>
+      <element name="TDrawGrid.ParentDoubleBuffered" link="#lcl.controls.TWinControl.ParentDoubleBuffered"/>
       <element name="TDrawGrid.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TDrawGrid.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
       <element name="TDrawGrid.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
@@ -13562,10 +13877,10 @@
       <element name="TDrawGrid.OnBeforeSelection" link="#lcl.grids.TCustomGrid.OnBeforeSelection"/>
       <element name="TDrawGrid.OnCheckboxToggled" link="#lcl.grids.TCustomGrid.OnCheckboxToggled"/>
       <element name="TDrawGrid.OnClick" link="#lcl.controls.TControl.OnClick"/>
-      <element name="TDrawGrid.OnColRowDeleted" link="#lcl.grids.TCustomGrid.OnColRowDeleted"/>
-      <element name="TDrawGrid.OnColRowExchanged" link="#lcl.grids.TCustomGrid.OnColRowExchanged"/>
-      <element name="TDrawGrid.OnColRowInserted" link="#lcl.grids.TCustomGrid.OnColRowInserted"/>
-      <element name="TDrawGrid.OnColRowMoved" link="#lcl.grids.TCustomGrid.OnColRowMoved"/>
+      <element name="TDrawGrid.OnColRowDeleted" link="#lcl.grids.TCustomDrawGrid.OnColRowDeleted"/>
+      <element name="TDrawGrid.OnColRowExchanged" link="#lcl.grids.TCustomDrawGrid.OnColRowExchanged"/>
+      <element name="TDrawGrid.OnColRowInserted" link="#lcl.grids.TCustomDrawGrid.OnColRowInserted"/>
+      <element name="TDrawGrid.OnColRowMoved" link="#lcl.grids.TCustomDrawGrid.OnColRowMoved"/>
       <element name="TDrawGrid.OnCompareCells" link="#lcl.grids.TCustomGrid.OnCompareCells"/>
       <element name="TDrawGrid.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
       <element name="TDrawGrid.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
@@ -13574,18 +13889,18 @@
       <element name="TDrawGrid.OnDrawCell" link="#lcl.grids.TCustomGrid.OnDrawCell"/>
       <element name="TDrawGrid.OnEditButtonClick" link="#lcl.grids.TCustomGrid.OnEditButtonClick"/>
       <element name="TDrawGrid.OnButtonClick" link="#lcl.grids.TCustomGrid.OnButtonClick"/>
-      <element name="TDrawGrid.OnEditingDone" link="#lcl.grids.TCustomGrid.OnEditingDone"/>
+      <element name="TDrawGrid.OnEditingDone" link="#lcl.controls.TControl.OnEditingDone"/>
       <element name="TDrawGrid.OnEndDock" link="#lcl.controls.TControl.OnEndDock"/>
       <element name="TDrawGrid.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
       <element name="TDrawGrid.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
       <element name="TDrawGrid.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
       <element name="TDrawGrid.OnGetCellHint" link="#lcl.grids.TCustomGrid.OnGetCellHint"/>
-      <element name="TDrawGrid.OnGetCheckboxState" link="#lcl.grids.TCustomGrid.OnGetCheckboxState"/>
-      <element name="TDrawGrid.OnGetEditMask" link="#lcl.grids.TCustomGrid.OnGetEditMask"/>
-      <element name="TDrawGrid.OnGetEditText" link="#lcl.grids.TCustomGrid.OnGetEditText"/>
-      <element name="TDrawGrid.OnHeaderClick" link="#lcl.grids.TCustomGrid.OnHeaderClick"/>
-      <element name="TDrawGrid.OnHeaderSized" link="#lcl.grids.TCustomGrid.OnHeaderSized"/>
-      <element name="TDrawGrid.OnHeaderSizing" link="#lcl.grids.TCustomGrid.OnHeaderSizing"/>
+      <element name="TDrawGrid.OnGetCheckboxState" link="#lcl.grids.TCustomDrawGrid.OnGetCheckboxState"/>
+      <element name="TDrawGrid.OnGetEditMask" link="#lcl.grids.TCustomDrawGrid.OnGetEditMask"/>
+      <element name="TDrawGrid.OnGetEditText" link="#lcl.grids.TCustomDrawGrid.OnGetEditText"/>
+      <element name="TDrawGrid.OnHeaderClick" link="#lcl.grids.TCustomDrawGrid.OnHeaderClick"/>
+      <element name="TDrawGrid.OnHeaderSized" link="#lcl.grids.TCustomDrawGrid.OnHeaderSized"/>
+      <element name="TDrawGrid.OnHeaderSizing" link="#lcl.grids.TCustomDrawGrid.OnHeaderSizing"/>
       <element name="TDrawGrid.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
       <element name="TDrawGrid.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
       <element name="TDrawGrid.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
@@ -13594,19 +13909,19 @@
       <element name="TDrawGrid.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
       <element name="TDrawGrid.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
       <element name="TDrawGrid.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
-      <element name="TDrawGrid.OnMouseWheel" link="#lcl.grids.TCustomGrid.OnMouseWheel"/>
-      <element name="TDrawGrid.OnMouseWheelDown" link="#lcl.grids.TCustomGrid.OnMouseWheelDown"/>
-      <element name="TDrawGrid.OnMouseWheelUp" link="#lcl.grids.TCustomGrid.OnMouseWheelUp"/>
-      <element name="TDrawGrid.OnMouseWheelHorz" link="#lcl.grids.TCustomGrid.OnMouseWheelHorz"/>
-      <element name="TDrawGrid.OnMouseWheelLeft" link="#lcl.grids.TCustomGrid.OnMouseWheelLeft"/>
-      <element name="TDrawGrid.OnMouseWheelRight" link="#lcl.grids.TCustomGrid.OnMouseWheelRight"/>
-      <element name="TDrawGrid.OnPickListSelect" link="#lcl.grids.TCustomGrid.OnPickListSelect"/>
+      <element name="TDrawGrid.OnMouseWheel" link="#lcl.grids.TCustomDrawGrid.OnMouseWheel"/>
+      <element name="TDrawGrid.OnMouseWheelDown" link="#lcl.grids.TCustomDrawGrid.OnMouseWheelDown"/>
+      <element name="TDrawGrid.OnMouseWheelUp" link="#lcl.grids.TCustomDrawGrid.OnMouseWheelUp"/>
+      <element name="TDrawGrid.OnMouseWheelHorz" link="#lcl.grids.TCustomDrawGrid.OnMouseWheelHorz"/>
+      <element name="TDrawGrid.OnMouseWheelLeft" link="#lcl.grids.TCustomDrawGrid.OnMouseWheelLeft"/>
+      <element name="TDrawGrid.OnMouseWheelRight" link="#lcl.grids.TCustomDrawGrid.OnMouseWheelRight"/>
+      <element name="TDrawGrid.OnPickListSelect" link="#lcl.grids.TCustomDrawGrid.OnPickListSelect"/>
       <element name="TDrawGrid.OnPrepareCanvas" link="#lcl.grids.TCustomGrid.OnPrepareCanvas"/>
       <element name="TDrawGrid.OnSelectEditor" link="#lcl.grids.TCustomGrid.OnSelectEditor"/>
       <element name="TDrawGrid.OnSelection" link="#lcl.grids.TCustomGrid.OnSelection"/>
       <element name="TDrawGrid.OnSelectCell" link="#lcl.grids.TCustomDrawGrid.OnSelectCell"/>
-      <element name="TDrawGrid.OnSetCheckboxState" link="#lcl.grids.TCustomGrid.OnSetCheckboxState"/>
-      <element name="TDrawGrid.OnSetEditText" link="#lcl.grids.TCustomGrid.OnSetEditText"/>
+      <element name="TDrawGrid.OnSetCheckboxState" link="#lcl.grids.TCustomDrawGrid.OnSetCheckboxState"/>
+      <element name="TDrawGrid.OnSetEditText" link="#lcl.grids.TCustomDrawGrid.OnSetEditText"/>
       <element name="TDrawGrid.OnStartDock" link="#lcl.controls.TControl.OnStartDock"/>
       <element name="TDrawGrid.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
       <element name="TDrawGrid.OnTopleftChanged" link="#lcl.grids.TCustomGrid.OnTopLeftChanged"/>
@@ -14041,7 +14356,7 @@
       </element>
 
       <element name="TCustomStringGrid.CalcCellExtent">
-        <short/>
+        <short>Deprecated in the ancestor class.</short>
         <descr>
           <remark>
             CalcCellExtent is marked as deprecated in the ancestor class.
@@ -14061,9 +14376,17 @@
         <short/>
       </element>
 
-      <element name="TCustomStringGrid.DefineProperties" link="#rtl.Classes.TComponent.DefineProperties"/>
+      <element name="TCustomStringGrid.DefineProperties">
+        <short>Defines non-published properties included in LCL componenrt streaming.</short>
+        <descr>
+          <p>
+            <var>DefineProperties</var> is an overridden method used to define non-published properties which are read and written using LCL component streaming. In <var>TCustomStringGrid</var>, it adds read and write routines for the <var>Cells</var> property to the <var>TFiler</var> instance.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <element name="TCustomStringGrid.DefineProperties.Filer">
-        <short/>
+        <short>TFIler instance used to read or write values for the class type.</short>
       </element>
 
       <element name="TCustomStringGrid.DefineCellsProperty">
@@ -14281,8 +14604,12 @@
       </element>
 
       <element name="TCustomStringGrid.LoadContent">
-        <short/>
-        <descr/>
+        <short>Loads configuration settings from the specified XML configuration file.</short>
+        <descr>
+          <p>
+            Loads values for the <var>Cells</var> property when enabled in the configuration file.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomGrid.LoadContent"/>
         </seealso>
@@ -14290,10 +14617,22 @@
       <element name="TCustomStringGrid.LoadContent.cfg" link="#lcl.grids.TCustomGrid.LoadContent.cfg"/>
       <element name="TCustomStringGrid.LoadContent.Version" link="#lcl.grids.TCustomGrid.LoadContent.Version"/>
 
-      <element name="TCustomStringGrid.Loaded" link="#rtl.classes.TComponent.Loaded"/>
+      <element name="TCustomStringGrid.Loaded">
+        <short>Performs actions when LCL component streaming has been completed.</short>
+        <descr>
+          <p>
+            Calls the inherited method on entry, and sets the value for the <var>Modified</var> property to <b>False</b>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomGrid.Loaded"/>
+        </seealso>
+      </element>
 
       <element name="TCustomStringGrid.SaveContent">
-        <short/>
+        <short>
+          Saves configuration settings from SaveOptions and optionally values from Cells in the specified XML configuration file.
+        </short>
         <descr/>
         <seealso>
           <link id="TCustomGrid.SaveContent"/>

@@ -13022,12 +13022,18 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TWinControl.DoKeyPress" name="TWinControl.DoUTF8KeyPress"/>
+      <element name="TWinControl.DoUTF8KeyPress">
+        <short>
+          Tries all <link id="#lcl.Controls.TWinControl.OnUTF8KeyPress">OnUTF8KeyPress</link> handlers;  the Parent OnUTF8KeyPress handler is tried first.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
       <element name="TWinControl.DoUTF8KeyPress.Result">
         <short>True if the key was handled.</short>
       </element>
       <element name="TWinControl.DoUTF8KeyPress.UTF8Key">
-        <short/>
+        <short>UTF-8-encoded character examined in the method.</short>
       </element>
 
       <element name="TWinControl.DoKeyUpBeforeInterface">

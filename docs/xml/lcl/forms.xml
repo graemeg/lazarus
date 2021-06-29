@@ -1251,7 +1251,19 @@
         <short>New value for the property.</short>
       </element>
 
-      <element name="TScrollingWinControl.Create" link="#rtl.classes.TComponent.Create"/>
+      <element name="TScrollingWinControl.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry. It allocates resources needed for the <var>VertScrollBar</var> and <var>HorzScrollBar</var> properties, sets the default value in <var>AutoScroll</var> to <b>False</b>, and sets the initial bounds for the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TScrollingWinControl.VertScrollBar"/>
+          <link id="TScrollingWinControl.HorzScrollBar"/>
+          <link id="TScrollingWinControl.AutoScroll"/>
+        </seealso>
+      </element>
       <element name="TScrollingWinControl.Create.TheOwner">
         <short>Owner of the class instance.</short>
       </element>
@@ -1381,11 +1393,28 @@
           <link id="TScrollingWinControl"/>
         </seealso>
       </element>
+
       <element name="TScrollBox.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
-      <element name="TScrollBox.Create" link="#rtl.classes.TComponent.Create"/>
+
+      <element name="TScrollBox.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance. It calls the inherited method on entry, an updates the component and control style flags as needed for the class instance. It sets the default values for the following properties:
+          </p>
+          <ul>
+            <li>AutoScroll (True)</li>
+            <li>BorderStyle (bsSingle)</li>
+          </ul>
+        </descr>
+        <seealso>
+          <link id="#lcl.forms.TScrollingWinControl.Create">TScrollingWinControl.Create</link>
+        </seealso>
+      </element>
       <element name="TScrollBox.Create.AOwner">
         <short>Owner of the class instance.</short>
       </element>
+
       <element name="TScrollBox.Align" link="#lcl.controls.TControl.Align"/>
       <element name="TScrollBox.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="TScrollBox.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
@@ -1404,7 +1433,7 @@
       <element name="TScrollBox.Enabled" link="#lcl.controls.TControl.Enabled"/>
       <element name="TScrollBox.Color" link="#lcl.controls.TControl.Color"/>
       <element name="TScrollBox.Font" link="#lcl.controls.TControl.Font"/>
-      <element name="TScrollBox.ParentBackground" link="#lcl.controls.TControl.ParentBackground"/>
+      <element name="TScrollBox.ParentBackground" link="#lcl.controls.TWinControl.ParentBackground"/>
       <element name="TScrollBox.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
       <element name="TScrollBox.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
       <element name="TScrollBox.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
@@ -1621,6 +1650,7 @@
         <descr/>
         <seealso/>
       </element>
+
       <element name="TCustomDesignControl.Scaled">
         <short>
           Indicates if the design surface is scaled to reflect changes in display density (Pixels Per Inch).
@@ -1804,20 +1834,42 @@
         <short>Control message handled in the method.</short>
       </element>
 
-      <element name="TCustomFrame.DefineProperties" link="#rtl.classes.TComponent.DefineProperties"/>
+      <element name="TCustomFrame.DefineProperties">
+        <short>
+          Defines non-published properties that are included in LCL component streaming.
+        </short>
+        <descr>
+          <p>
+            <var>DefineProperties</var> is an overridden method used to include non-published properties in the values read and written during LCL component streaming. In TCustomFrame, design-time information for the Top and Left coordinates for the frame are included (when available) in the specified TFiler instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.DefineProperties">TControl.DefineProperties</link>
+        </seealso>
+      </element>
       <element name="TCustomFrame.DefineProperties.Filer">
-        <short/>
+        <short>TFiler instance where property definitions are added.</short>
       </element>
 
       <element name="TCustomFrame.CalculatePreferredSize" link="#lcl.controls.TControl.CalculatePreferredSize"/>
-      <element name="TCustomFrame.CalculatePreferredSize.PreferredWidth">
-        <short/>
-      </element>
-      <element name="TCustomFrame.CalculatePreferredSize.PreferredHeight">
-        <short/>
-      </element>
-      <element name="TCustomFrame.CalculatePreferredSize.WithThemeSpace">
-        <short/>
+      <element name="TCustomFrame.CalculatePreferredSize.PreferredWidth"/>
+      <element name="TCustomFrame.CalculatePreferredSize.PreferredHeight"/>
+      <element name="TCustomFrame.CalculatePreferredSize.WithThemeSpace"/>
+
+      <element name="TCustomFrame.UpdateOpaque">
+        <short>Updates control style flags to reflect the transparency for the frame.</short>
+        <descr>
+          <p>
+            <var>UpdateOpaque</var> is a method used to update <var>ControlStyle</var> flags to reflect the transparency for the frame. When <var>ParentBackground</var> is <b>True</b>, the value <var>csOpaque</var> is excluded from the <var>ControlStyle</var> property to allow the frame to be drawn with transparency. When set to <b>False</b>, csOpaque is included in ControlStyle.
+          </p>
+          <p>
+            UpdateOpaque is called when the value for the ParentBackground has been changed, and when the <var>CM_PARENTCOLORCHANGED</var> control message is handled for the frame.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomFrame.ParentBackground"/>
+          <link id="#lcl.controls.TControl.ControlStyle">TControl.ControlStyle</link>
+        </seealso>
       </element>
 
       <element name="TCustomFrame.Create">
@@ -1921,6 +1973,7 @@
       <element name="TFrame.ClientWidth" link="#lcl.controls.TControl.ClientWidth"/>
       <element name="TFrame.Color" link="#lcl.controls.TControl.Color"/>
       <element name="TFrame.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TFrame.DesignTimePPI" link="#lcl.forms.TCustomDesignControl.DesignTimePPI"/>
       <element name="TFrame.DockSite" link="#lcl.controls.TWinControl.DockSite"/>
       <element name="TFrame.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
       <element name="TFrame.DragKind" link="#lcl.controls.TControl.DragKind"/>
@@ -1949,15 +2002,20 @@
       <element name="TFrame.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
       <element name="TFrame.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
       <element name="TFrame.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
+      <element name="TFrame.OnMouseWheelHorz" link="#lcl.controls.TControl.OnMouseWheelHorz"/>
+      <element name="TFrame.OnMouseWheelLeft" link="#lcl.controls.TControl.OnMouseWheelLeft"/>
+      <element name="TFrame.OnMouseWheelRight" link="#lcl.controls.TControl.OnMouseWheelRight"/>
       <element name="TFrame.OnResize" link="#lcl.controls.TControl.OnResize"/>
       <element name="TFrame.OnStartDock" link="#lcl.controls.TControl.OnStartDock"/>
       <element name="TFrame.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
       <element name="TFrame.OnUnDock" link="#lcl.controls.TWinControl.OnUnDock"/>
+      <element name="TFrame.ParentBackground" link="#lcl.forms.TCustomFrame.ParentBackground"/>
       <element name="TFrame.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
       <element name="TFrame.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
       <element name="TFrame.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TFrame.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
       <element name="TFrame.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
+      <element name="TFrame.Scaled" link="#lcl.forms.TCustomDesignControl.Scaled"/>
       <element name="TFrame.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
       <element name="TFrame.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
       <element name="TFrame.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
@@ -3137,7 +3195,7 @@
         <short>Values examined and updated in the method.</short>
       </element>
 
-      <element name="TCustomForm.CreateWnd" link="#lcl.controls.TWinControl.CreateWnd">
+      <element name="TCustomForm.CreateWnd">
         <short>
           Creates the handle for the widgetset class and updates it Menu and Icons.
         </short>
@@ -3373,12 +3431,27 @@
         </seealso>
       </element>
 
-      <element name="TCustomForm.Notification" link="#rtl.classes.TComponent.Notification"/>
+      <element name="TCustomForm.Notification">
+        <short>
+          Handles the notification when a component is added to or removed from the form.
+        </short>
+        <descr>
+          <p>
+            <var>Notification</var> is an overridden method in <var>TCustomForm</var> used to handle the notification when the component in <var>AComponent</var> has been added to or removed from the form instance. Operation is the action performed for the component.
+          </p>
+          <p>
+            Notification calls the inherited method on entry, and performs additional actions for the ActionList, Menu, and pop-up parent form used in the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Notification">TControl.Notification</link>
+        </seealso>
+      </element>
       <element name="TCustomForm.Notification.AComponent">
-        <short/>
+        <short>Component for the notification.</short>
       </element>
       <element name="TCustomForm.Notification.Operation">
-        <short/>
+        <short>Operation performed for the component.</short>
       </element>
 
       <element name="TCustomForm.PaintWindow" link="#lcl.controls.TCustomControl.PaintWindow">
@@ -3449,6 +3522,18 @@
       </element>
       <element name="TCustomForm.CalculatePreferredSize.WithThemeSpace">
         <short/>
+      </element>
+
+      <element name="TCustomForm.DoOnResize">
+        <short>Performs a delayed resize action using the DelayedEvent for the control.</short>
+        <descr/>
+        <seealso/>
+      </element>
+
+      <element name="TCustomForm.DoOnChangeBounds">
+        <short>Performs a delayed bounds change using the DelayedEvent for the control.</short>
+        <descr/>
+        <seealso/>
       </element>
 
       <element name="TCustomForm.SetZOrder">
@@ -3669,14 +3754,16 @@
         </descr>
       </element>
 
-      <element name="TCustomForm.VisibleIsStored" link="#lcl.forms.TCustomForm.Visible">
+      <element name="TCustomForm.VisibleIsStored">
         <short>Implements the storage specifier for the Visible property.</short>
         <descr>
           <p>
             Returns the value in the Visible property.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TCustomForm.Visible"/>
+        </seealso>
       </element>
       <element name="TCustomForm.VisibleIsStored.Result">
         <short>True when the Visible property is set to True.</short>
@@ -3734,7 +3821,6 @@
           <link id="TCustomDesignControl.Scaled"/>
           <link id="TCustomDesignControl.SetScaled"/>
           <link id="TApplication.Scaled"/>
-          <link id="TForm.Scaled"/>
         </seealso>
       </element>
       <element name="TCustomForm.SetScaled.AScaled">
@@ -4494,8 +4580,14 @@
       </element>
 
       <element name="TCustomForm.WantChildKey">
-        <short/>
-        <descr>Always returns False in TCustomForm</descr>
+        <short>
+          Indicates if key messages in a child control are handled in the message processing loop for the form.
+        </short>
+        <descr>
+          <p>
+            Always returns <b>False</b> in <var>TCustomForm</var>.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomForm.WantChildKey.Result">
@@ -5619,11 +5711,58 @@
         <seealso/>
       </element>
 
-      <element name="TForm.CreateWnd" link="#lcl.controls.TWinControl.CreateWnd"/>
-      <element name="TForm.Loaded" link="#lcl.forms.TCustomForm.Loaded"/>
-      <element name="TForm.Create" link="#rtl.classes.TComponent.Create"/>
+      <element name="TForm.CreateWnd">
+        <short>
+          Creates the handle for the widgetset class and updates it menu and icons.
+        </short>
+        <descr>
+          <p>
+            <var>CreateWnd</var> is an overridden method in <var>TForm</var>. It makes the form instance the main form in the <var>Application</var> singleton if not already assigned and the form is not a MDI Child or a splash form.
+          </p>
+          <p>
+            CreateWnd calls the inherited method to create (or re-create) the Handle for the widgetset class, set the form state and auto-sizing behavior, and update its Menu and Icons.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomForm.CreateWnd"/>
+          <link id="TCustomForm.FormStyle"/>
+          <link id="TCustomForm.Menu"/>
+          <link id="TCustomForm.Icon"/>
+          <link id="TCustomForm.BorderIcons"/>
+          <link id="TApplication.MainForm"/>
+        </seealso>
+      </element>
+
+      <element name="TForm.Loaded">
+        <short>
+          Performs actions when LCL component streaming has been completed for the form instance.
+        </short>
+        <descr>
+          <p>
+            <var>Loaded</var> is an overridden method in <var>TForm</var>, and calls the inherited method on entry. It ensures that the value in the <var>LCLVersion</var> property is set to the <var>lcl_version</var> constant from the <file>LCLVersion</file> unit.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TForm.LCLVersion"/>
+          <link id="TCustomForm.Loaded"/>
+        </seealso>
+      </element>
+
+      <element name="TForm.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is an overridden constructor for the class instance. Create ensures that the <var>LCLVersion</var> property is updated with the value from the <var>lcl_version</var> constant in the <file>LCLVersion</file> unit. Create calls the inherited constructor prior to exiting from the method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomForm.Create"/>
+          <link id="TCustomForm.CreateNew"/>
+          <link id="#lcl.lclversion.lcl_version">lcl_version</link>
+        </seealso>
+      </element>
       <element name="TForm.Create.TheOwner">
-        <short/>
+        <short>Owner of the form instance.</short>
       </element>
 
       <element name="TForm.Cascade">
@@ -5660,6 +5799,20 @@
         <seealso/>
       </element>
 
+      <element name="TForm.ArrangeIcons">
+        <short>Arranges the icons for minimized forms in a MDI form.</short>
+        <descr>
+          <p>
+            <var>ArrangeIcons</var> is a method used to arrange the icons for minimized forms on a MDI form. No actions are performed in the method at design-time, or when <var>FormStyle</var> is set to a value other than <var>fsMDIForm</var>. ArrangeIcons calls the corresponding method in the widgetset class when its <var>Handle</var> has been allocated.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomForm.FormStyle"/>
+          <link id="#lcl.controls.TWinControl.Handle">TWinControl.Handle</link>
+          <link id="#lcl.controls.TWinControl.HandleAllocated">TWinControl.HandleAllocated</link>
+        </seealso>
+      </element>
+
       <element name="TForm.ClientHandle" link="#lcl.forms.TCustomForm.ClientHandle"/>
       <element name="TForm.DockManager" link="#lcl.controls.TWinControl.DockManager"/>
       <element name="TForm.Action" link="#lcl.controls.TControl.Action"/>
@@ -5684,7 +5837,7 @@
       <element name="TForm.DefaultMonitor" link="#lcl.forms.TCustomForm.DefaultMonitor"/>
       <element name="TForm.DesignTimePPI" link="#lcl.forms.TCustomDesignControl.DesignTimePPI"/>
       <element name="TForm.DockSite" link="#lcl.controls.TWinControl.DockSite"/>
-      <element name="TForm.DoubleBuffered" link="#lcl.controls.TControl.DoubleBuffered"/>
+      <element name="TForm.DoubleBuffered" link="#lcl.controls.TWinControl.DoubleBuffered"/>
       <element name="TForm.DragKind" link="#lcl.controls.TControl.DragKind"/>
       <element name="TForm.DragMode" link="#lcl.controls.TControl.DragMode"/>
       <element name="TForm.Enabled" link="#lcl.controls.TControl.Enabled"/>
@@ -5699,7 +5852,8 @@
       <element name="TForm.OnClick" link="#lcl.controls.TControl.OnClick"/>
       <element name="TForm.OnClose" link="#lcl.forms.TCustomForm.OnClose"/>
       <element name="TForm.OnCloseQuery" link="#lcl.forms.TCustomForm.OnCloseQuery"/>
-      <element name="TForm.OnContextPopup" link="#lcl.forms.TCustomForm.OnContextPopup"/>
+      <element name="TForm.OnConstrainedResize" link="#lcl.controls.TControl.OnConstrainedResize"/>
+      <element name="TForm.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
       <element name="TForm.OnCreate" link="#lcl.forms.TCustomForm.OnCreate"/>
       <element name="TForm.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
       <element name="TForm.OnDeactivate" link="#lcl.forms.TCustomForm.OnDeactivate"/>
@@ -5724,6 +5878,9 @@
       <element name="TForm.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
       <element name="TForm.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
       <element name="TForm.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
+      <element name="TForm.OnMouseWheelHorz" link="#lcl.controls.TControl.OnMouseWheelHorz"/>
+      <element name="TForm.OnMouseWheelLeft" link="#lcl.controls.TControl.OnMouseWheelLeft"/>
+      <element name="TForm.OnMouseWheelRight" link="#lcl.controls.TControl.OnMouseWheelRight"/>
       <element name="TForm.OnPaint" link="#lcl.controls.TCustomControl.OnPaint"/>
       <element name="TForm.OnResize" link="#lcl.controls.TControl.OnResize"/>
       <element name="TForm.OnShortCut" link="#lcl.forms.TCustomForm.OnShortcut"/>
@@ -5734,9 +5891,9 @@
       <element name="TForm.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
       <element name="TForm.OnWindowStateChange" link="#lcl.forms.TCustomForm.OnWindowStateChange"/>
       <element name="TForm.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
-      <element name="TForm.ParentDoubleBuffered" link="#lcl.controls.TControl.ParentDoubleBuffered"/>
+      <element name="TForm.ParentDoubleBuffered" link="#lcl.controls.TWinControl.ParentDoubleBuffered"/>
       <element name="TForm.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
-      <element name="TForm.PixelsPerInch" link="#lcl.forms.TCustomForm.PixelsPerInch"/>
+      <element name="TForm.PixelsPerInch" link="#lcl.forms.TCustomDesignControl.PixelsPerInch"/>
       <element name="TForm.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
       <element name="TForm.PopupMode" link="#lcl.forms.TCustomForm.PopupMode"/>
       <element name="TForm.PopupParent" link="#lcl.forms.TCustomForm.PopupParent"/>
@@ -5757,7 +5914,7 @@
         </descr>
       </element>
 
-      <element name="TForm.Scaled"/>
+      <element name="TForm.Scaled" link="#lcl.forms.TCustomDesignControl.Scaled"/>
       <element name="TForm.Visible" link="#lcl.controls.TControl.Visible"/>
       <element name="TForm.WindowState" link="#lcl.forms.TCustomForm.WindowState"/>
 
@@ -5827,15 +5984,32 @@
         <seealso/>
       </element>
 
-      <element name="TCustomDockForm.Create" link="#rtl.classes.TComponent.Create"/>
+      <element name="TCustomDockForm.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            Create is the overridden constructor for the class instance. It calls CreateNew to create a new form instance, and sets the default values for:
+          </p>
+          <ul>
+            <li>AutoScroll (False)</li>
+            <li>BorderStyle (bsSizeToolWin)</li>
+            <li>DockSite (True)</li>
+            <li>FormStyle (fsStayOnTop)</li>
+          </ul>
+        </descr>
+        <seealso>
+          <link id="TCustomForm.CreateNew"/>
+        </seealso>
+      </element>
+
       <element name="TCustomDockForm.Create.TheOwner">
         <short>Owner for the class instance.</short>
       </element>
 
-      <element name="TCustomDockForm.AutoScroll" link="#lcl.forms.TScrollingWinControl.AutoScroll"/>
+      <element name="TCustomDockForm.AutoScroll" link="#lcl.forms.TCustomForm.AutoScroll"/>
       <element name="TCustomDockForm.BorderStyle" link="#lcl.forms.TCustomForm.BorderStyle"/>
       <element name="TCustomDockForm.FormStyle" link="#lcl.forms.TCustomForm.FormStyle"/>
-      <element name="TCustomDockForm.PixelsPerInch" link="#lcl.forms.TCustomForm.PixelsPerInch"/>
+      <element name="TCustomDockForm.PixelsPerInch" link="#lcl.forms.TCustomDesignControl.PixelsPerInch"/>
 
       <element name="THintWindow">
         <short>
@@ -10536,19 +10710,31 @@
       </element>
 
       <element name="TApplication.DisableIdleHandler">
-        <short>.
-        </short>
+        <short>Disables Idle handling.</short>
         <descr>
-          Blocks Idle handling. Can be called more often, every call must be followed by EnableIdleHandler.
+          <p>
+            Blocks Idle handling by incrementing the internal idle lock counter. Can be called multiple times, but each call must be followed by EnableIdleHandler.
+          </p>
+          <p>
+            Used in the ShowException method while an exception dialog is active.
+          </p>
         </descr>
         <seealso>
           <link id="TApplication.EnableIdleHandler"/>
+          <link id="TApplication.ShowException"/>
         </seealso>
       </element>
 
       <element name="TApplication.EnableIdleHandler">
-        <short>Resume Idle handling.</short>
-        <descr/>
+        <short>Resumes Idle handling.</short>
+        <descr>
+          <p>
+            Attempts to re-enable idle handling by decrementing the internal idle lock counter. Idle handling is enabled when the internal idle lock counter is 0.
+          </p>
+          <p>
+            Called from the ShowException method when the exception dialog is exited.
+          </p>
+        </descr>
         <errors>
           Raises a catchable GDB Exception if the idle handler has not already been disabled.
         </errors>
@@ -10558,7 +10744,7 @@
       </element>
 
       <element name="TApplication.NotifyUserInputHandler">
-        <short>Notifies all user input handlers.</short>
+        <short>Notifies all user input handlers of the specified message.</short>
         <descr/>
         <seealso>
           <link id="TApplicationHandlerType"/>
@@ -11207,6 +11393,18 @@
         <short/>
       </element>
 
+      <element name="TApplication.IntfSettingsChange">
+        <short>
+          Called when the WM_SETTINGCHANGE message is handled for the application.
+        </short>
+        <descr>
+          <p>
+            Calls <var>GetFormatSettingsUTF8</var> or <var>GetFormatSettings</var>, depending on use of UTF-8 in the RTL, when UpdateFormatSettings is set to True. This applies to Windows platforms only.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
       <element name="TApplication.IntfThemeOptionChange">
         <short>Called by the interface when a theme option has changed.</short>
         <descr/>
@@ -11343,9 +11541,20 @@
       </element>
 
       <element name="TApplication.ExtendedKeysSupport">
-        <short/>
-        <descr>See VK_LSHIFT in LCLType for more details.</descr>
-        <seealso/>
+        <short>
+          Controls whether extended key codes are available in key down and key up messages.
+        </short>
+        <descr>
+          <p>
+            When enabled, ExtendedKeysSupport causes Shift, Ctrl, and Alt (Menu) (Options or Mac OS) to generate distinct values for the left and right keys. The values can then be handled in OnKeyDown and OnKeyUp event handlers, or in overridden KeyDown and KeyUp methods.
+          </p>
+          <p>
+            See VK_LSHIFT in LCLType for more details.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.lcltype.VK_LSHIFT"/>
+        </seealso>
       </element>
 
       <element name="TApplication.ExceptionDialog">
@@ -11372,7 +11581,7 @@
       </element>
 
       <element name="TApplication.Flags">
-        <short>Application state flags.</short>
+        <short>Contains state flags for the Application.</short>
         <descr/>
         <seealso/>
       </element>
@@ -12655,10 +12864,15 @@
       </element>
 
       <element name="TApplicationProperties.HelpFile">
-        <short/>
-        <descr/>
+        <short>Contains the name for the help file in an application.</short>
+        <descr>
+          <p>
+            <var>HelpFile</var> is a <var>String</var> property with the name of the help file for an application. It is read from or written to the HelpFile property in the Application singleton. Changing the value for the property at run-time causes the Application instance to be updated.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomForm.HelpFile"/>
+          <link id="Application"/>
         </seealso>
       </element>
 
@@ -12685,9 +12899,18 @@
       </element>
 
       <element name="TApplicationProperties.OnException">
-        <short/>
-        <descr/>
+        <short>Event handler signalled to handle an exception in an application.</short>
+        <descr>
+          <p>
+            OnException is a TExceptionEvent property with an event handler signalled to handle an exception in an application. Its value is assigned to the OnException property in the Application singleton at run-time.
+          </p>
+          <p>
+            Changing the value for the property at run-time causes the Application singleton to be updated.
+          </p>
+        </descr>
         <seealso>
+          <link id="Application"/>
+          <link id="TApplication.HandleException"/>
           <link id="#fcl.custapp.TCustomApplication.OnException">TCustomApplication.OnException</link>
         </seealso>
       </element>

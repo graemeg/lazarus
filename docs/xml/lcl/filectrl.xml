@@ -597,8 +597,15 @@
 
       <element name="TFileListBox.Align" link="#lcl.controls.TControl.Align"/>
       <element name="TFileListBox.Anchors" link="#lcl.controls.TControl.Anchors"/>
+      <element name="TFileListBox.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
+      <element name="TFileListBox.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
       <element name="TFileListBox.BorderStyle" link="#lcl.controls.TWinControl.BorderStyle"/>
+      <element name="TFileListBox.Color" link="#lcl.controls.TControl.Color"/>
       <element name="TFileListBox.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TFileListBox.Directory" link="#lcl.filectrl.TCustomFileListBox.Directory"/>
+      <element name="TFileListBox.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TFileListBox.DragMode" link="#lcl.controls.TControl.DragMode"/>
+      <element name="TFileListBox.Enabled" link="#lcl.controls.TControl.Enabled"/>
       <element name="TFileListBox.ExtendedSelect" link="#lcl.stdctrls.TCustomListBox.ExtendedSelect"/>
       <element name="TFileListBox.FileType" link="#lcl.filectrl.TCustomFileListBox.FileType"/>
       <element name="TFileListBox.Font" link="#lcl.controls.TControl.Font"/>
@@ -608,28 +615,31 @@
       <element name="TFileListBox.MultiSelect" link="#lcl.stdctrls.TCustomListBox.MultiSelect"/>
       <element name="TFileListBox.OnChange" link="#lcl.filectrl.TCustomFileListBox.OnChange"/>
       <element name="TFileListBox.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds"/>
-      <element name="TFileListBox.Directory" link="#lcl.filectrl.TCustomFileListBox.Directory"/>
-      <element name="TFileListBox.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
-      <element name="TFileListBox.DragMode" link="#lcl.controls.TControl.DragMode"/>
-      <element name="TFileListBox.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
-      <element name="TFileListBox.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
-      <element name="TFileListBox.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
-      <element name="TFileListBox.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
-      <element name="TFileListBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
       <element name="TFileListBox.OnClick" link="#lcl.controls.TControl.OnClick"/>
       <element name="TFileListBox.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
+      <element name="TFileListBox.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TFileListBox.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
+      <element name="TFileListBox.OnDrawItem" link="#lcl.stdctrls.TCustomListBox.OnDrawItem"/>
+      <element name="TFileListBox.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
       <element name="TFileListBox.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
       <element name="TFileListBox.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
       <element name="TFileListBox.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
       <element name="TFileListBox.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
       <element name="TFileListBox.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
-      <element name="TFileListBox.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
       <element name="TFileListBox.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TFileListBox.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TFileListBox.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TFileListBox.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
       <element name="TFileListBox.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
       <element name="TFileListBox.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
       <element name="TFileListBox.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
       <element name="TFileListBox.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element name="TFileListBox.OnResize" link="#lcl.controls.TControl.OnResize"/>
+      <element name="TFileListBox.OnSelectionChange" link="#lcl.stdctrls.TCustomListBox.OnSelectionChange"/>
+      <element name="TFileListBox.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
+      <element name="TFileListBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
+      <element name="TFileListBox.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
+      <element name="TFileListBox.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
       <element name="TFileListBox.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
       <element name="TFileListBox.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TFileListBox.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
@@ -640,10 +650,6 @@
       <element name="TFileListBox.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
       <element name="TFileListBox.TopIndex" link="#lcl.stdctrls.TCustomListBox.TopIndex"/>
       <element name="TFileListBox.Visible" link="#lcl.controls.TControl.Visible"/>
-      <element name="TFileListBox.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
-      <element name="TFileListBox.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
-      <element name="TFileListBox.OnSelectionChange" link="#lcl.stdctrls.TCustomListBox.OnSelectionChange"/>
-      <element name="TFileListBox.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
 
       <element name="TCustomFilterComboBox">
         <short>Specifies a combo-box used to select a file filter.</short>
@@ -936,8 +942,13 @@ Binaries (*.exe)</pre>
       <element name="TFilterComboBox.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
       <element name="TFilterComboBox.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
       <element name="TFilterComboBox.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TFilterComboBox.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TFilterComboBox.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
       <element name="TFilterComboBox.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
       <element name="TFilterComboBox.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TFilterComboBox.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TFilterComboBox.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TFilterComboBox.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element name="TFilterComboBox.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
       <element name="TFilterComboBox.OnSelect" link="#lcl.stdctrls.TCustomComboBox.OnSelect"/>
       <element name="TFilterComboBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
