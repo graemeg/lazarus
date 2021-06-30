@@ -76,7 +76,7 @@ begin
     exit;
 
   liReturnCount := 0;
-  liMaxReturns := 2;
+  liMaxReturns := Succ(FormattingSettings.Returns.MaxBlankLinesInSection);
   lcTest := lcSourceToken;
 
   { remove all returns up to that point (except one) }
