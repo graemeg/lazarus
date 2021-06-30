@@ -117,26 +117,26 @@ const
   // Windows Compatability}
   //-------------
  { System Menu Commands }
-  SC_SIZE           = 61440;
-  SC_MOVE           = 61456;
-  SC_MINIMIZE       = 61472;
-  SC_MAXIMIZE       = 61488;
-  SC_NEXTWINDOW     = 61504;
-  SC_PREVWINDOW     = 61520;
-  SC_CLOSE          = 61536;
-  SC_VSCROLL        = 61552;
-  SC_HSCROLL        = 61568;
-  SC_MOUSEMENU      = 61584;
-  SC_KEYMENU        = 61696;
-  SC_ARRANGE        = 61712;
-  SC_RESTORE        = 61728;
-  SC_TASKLIST       = 61744;
-  SC_SCREENSAVE     = 61760;
-  SC_HOTKEY         = 61776;
-  SC_DEFAULT        = 61792;
-  SC_MONITORPOWER   = 61808;
-  SC_CONTEXTHELP    = 61824;
-  SC_SEPARATOR      = 61455;
+  SC_SIZE           = $F000; // handling message WM_SYSCOMMAND
+  SC_MOVE           = $F010; // in certain places requires bit masking
+  SC_MINIMIZE       = $F020; // eg. (.CmdType and $FFF0) because
+  SC_MAXIMIZE       = $F030; // the four low-order bits of the wParam parameter
+  SC_NEXTWINDOW     = $F040; // are used internally by the system
+  SC_PREVWINDOW     = $F050;
+  SC_CLOSE          = $F060;
+  SC_VSCROLL        = $F070;
+  SC_HSCROLL        = $F080;
+  SC_MOUSEMENU      = $F090;
+  SC_KEYMENU        = $F100;
+  SC_ARRANGE        = $F110;
+  SC_RESTORE        = $F120;
+  SC_TASKLIST       = $F130;
+  SC_SCREENSAVE     = $F140;
+  SC_HOTKEY         = $F150;
+  SC_DEFAULT        = $F160;
+  SC_MONITORPOWER   = $F170;
+  SC_CONTEXTHELP    = $F180;
+  SC_SEPARATOR      = $F00F;
 
 
   //-------------
