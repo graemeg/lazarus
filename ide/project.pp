@@ -7284,13 +7284,13 @@ begin
   // Create Debug mode
   Result:=Add(DebugModeName);
   AssignAndSetBooleans(Result, True);
-  Result.CompilerOptions.OptimizationLevel:=1;        // Optimization
-  Result.CompilerOptions.DebugInfoType:=dsDwarf2Set;  // Debug
+  Result.CompilerOptions.OptimizationLevel:=1;    // Optimization
+  Result.CompilerOptions.DebugInfoType:=dsDwarf3; // Debug
   // Create Release mode
   RelMode:=Add(ReleaseModeName);
   AssignAndSetBooleans(RelMode, False);
-  RelMode.CompilerOptions.OptimizationLevel:=3;       // Optimization, slow, but safe, -O4 is dangerous
-  RelMode.CompilerOptions.DebugInfoType:=dsAuto;      // No Debug
+  RelMode.CompilerOptions.OptimizationLevel:=3; // Slow but safe optimization, -O4 is dangerous
+  RelMode.CompilerOptions.DebugInfoType:=dsAuto;  // No Debug
 end;
 
 // Methods for LoadFromXMLConfig
