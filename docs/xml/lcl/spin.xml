@@ -130,8 +130,8 @@
 
       <element name="TCustomFloatSpinEdit.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
-      <element name="TCustomFloatSpinEdit.RealGetText" link="#lcl.stdctrls.TCustomEdit.RealGetText">
-        <short/>
+      <element name="TCustomFloatSpinEdit.RealGetText">
+        <short>Gets the value for the text in the control.</short>
         <descr>
           <p>
             <var>RealGetText</var> is an overridden method in <var>TCustomFloatSpinEdit</var>, and calls the inherited method to get the return value when the <var>Handle</var> has been allocated for the control. If the Handle has not been assigned, <var>ValueToStr</var> is called to get the return value for the method.
@@ -144,13 +144,7 @@
       </element>
       <element name="TCustomFloatSpinEdit.RealGetText.Result" link="#lcl.stdctrls.TCustomEdit.RealGetText.Result"/>
 
-      <element name="TCustomFloatSpinEdit.RealSetText" link="#lcl.stdctrls.TCustomEdit.RealSetText">
-        <short/>
-        <descr/>
-        <seealso>
-          <link id="#lcl.stdctrls.TCustomEdit.RealSetText">TCustomEdit.RealSetText</link>
-        </seealso>
-      </element>
+      <element name="TCustomFloatSpinEdit.RealSetText" link="#lcl.stdctrls.TCustomEdit.RealSetText"/>
       <element name="TCustomFloatSpinEdit.RealSetText.AValue">
         <short/>
       </element>

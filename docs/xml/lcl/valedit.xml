@@ -80,7 +80,7 @@
         <short>The Value column is used to sort items.</short>
       </element>
 
-      <element name="TItemProp" link="#rtl.classes.TPersistent">
+      <element name="TItemProp">
         <short>
           Represents items in the TValueListEditor control.
         </short>
@@ -99,6 +99,7 @@
         <seealso>
           <link id="TItemPropList">TItemPropList</link>
           <link id="TValueListEditor.ItemProps">TValueListEditor.ItemProps</link>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
         </seealso>
       </element>
 
@@ -659,7 +660,7 @@
         </seealso>
       </element>
 
-      <element name="TValueListStrings" link="#rtl.classes.TStringList">
+      <element name="TValueListStrings">
         <short>
           Stores values and item definitions used in TValueListEditor.
         </short>
@@ -1409,7 +1410,7 @@
         </seealso>
       </element>
 
-      <element name="TValueListEditor.ColRowExchanged" link="#lcl.grids.TCustomDrawGrid.ColRowExchanged">
+      <element name="TValueListEditor.ColRowExchanged">
         <short>
           Exchanges row values at the specified positions.
         </short>
@@ -1418,7 +1419,9 @@
             <var>ColRowExchanged</var> is a procedure used to exchange row values at the specified positions. ColRowExchanged extends the inherited method by applying the changes to the <var>Strings</var> property after adjusting the index positions for the number of FixedRows in the control. ColRowExchanged calls the inherited method using <var>IsColumn</var>, <var>Index</var>, and <var>WithIndex</var> as arguments.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.grids.TCustomDrawGrid.ColRowExchanged">TCustomDrawGrid.ColRowExchanged</link>
+        </seealso>
       </element>
       <element name="TValueListEditor.ColRowExchanged.IsColumn">
         <short>
@@ -1432,7 +1435,7 @@
         <short>Second position to be swapped.</short>
       </element>
 
-      <element name="TValueListEditor.ColRowDeleted" link="#lcl.grids.TCustomDrawGrid.ColRowDeleted">
+      <element name="TValueListEditor.ColRowDeleted">
         <short>
           Performs actions needed when a row is deleted in the control.
         </short>
@@ -1441,7 +1444,9 @@
             <var>ColRowDeleted</var> is an overridden procedure used to perform actions needed when a Key-Value row is deleted in the control. ColRowDeleted ensures that <var>EditorMode</var> is set to <b>False</b>, and deletes the active row in the <var>Strings</var> property. ColRowDeleted calls the inherited method using <var>IsColumn</var> and <var>Index</var> as arguments.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.grids.TCustomDrawGrid.ColRowDeleted">TCustomDrawGrid.ColRowDeleted</link>
+        </seealso>
       </element>
       <element name="TValueListEditor.ColRowDeleted.IsColumn">
         <short>Indicates the action is for a column (and not a row).</short>
@@ -1450,7 +1455,7 @@
         <short>Ordinal position of the affected item.</short>
       </element>
 
-      <element name="TValueListEditor.DefineCellsProperty" link="#lcl.grids.TCustomStringGrid">
+      <element name="TValueListEditor.DefineCellsProperty">
         <short>
           Not used in the current implementation.
         </short>
@@ -1485,7 +1490,7 @@
         </seealso>
       </element>
 
-      <element name="TValueListEditor.GetAutoFillColumnInfo" link="#lcl.grids.TCustomGrid.GetAutoFillColumnInfo">
+      <element name="TValueListEditor.GetAutoFillColumnInfo">
         <short>
           Gets the display priority for an auto-fill column.
         </short>
@@ -1500,7 +1505,9 @@
             Values in the aMin and aMax arguments are not used; they were used in an ancestor class, but are not required in TValueListEditor.
           </remark>
         </descr>
-        <seealso></seealso>
+        <seealso>
+          <link id="#lcl.grids.TCustomGrid.GetAutoFillColumnInfo">TCustomGrid.GetAutoFillColumnInfo</link>
+        </seealso>
       </element>
       <element name="TValueListEditor.GetAutoFillColumnInfo.Index">
         <short>Column number examined in the method.</short>
@@ -1606,13 +1613,12 @@
         <short>Editor control for the specified column number.</short>
       </element>
 
-      <element name="TValueListEditor.GetRowCount" link="#lcl.grids.TCustomGrid.GetRowCount">
+      <element name="TValueListEditor.GetRowCount">
         <short>Gets the value for the RowCount property.</short>
         <descr/>
         <seealso>
           <link id="TValueListEditor.RowCount"/>
-          <link id="#lcl.grids.TCustomGrid.GetRowCount">TCustomGrid.GetRowCount</link>
-          <link id="#lcl.grids.TCustomGrid.GetRowCount">TCustomGrid.RowCount</link>
+          <link id="#lcl.grids.TCustomGrid.RowCount">TCustomGrid.RowCount</link>
         </seealso>
       </element>
       <element name="TValueListEditor.GetRowCount.Result">
@@ -1697,7 +1703,7 @@
         <short>XML configuration file where values are stored in the method.</short>
       </element>
 
-      <element name="TValueListEditor.SetCells" link="#lcl.grids.TCustomStringGrid.SetCells">
+      <element name="TValueListEditor.SetCells">
         <short>
           Sets the value in the Cells property at the specified position.
         </short>
@@ -1716,6 +1722,7 @@
           <link id="TValueListEditor.Strings">TValueListEditor.Strings</link>
           <link id="TValueListEditor.DisplayOptions">TValueListEditor.DisplayOptions</link>
           <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
+          <link id="#lcl.grids.TCustomStringGrid.SetCells">TCustomStringGrid.SetCells</link>
         </seealso>
       </element>
       <element name="TValueListEditor.SetCells.ACol">
@@ -1728,7 +1735,7 @@
         <short>New value for the cell.</short>
       </element>
 
-      <element name="TValueListEditor.SetEditText" link="#lcl.grids.TCustomStringGrid.SetEditText">
+      <element name="TValueListEditor.SetEditText">
         <short>
           Sets the cell value at the specified position.
         </short>
@@ -1739,6 +1746,7 @@
         </descr>
         <seealso>
           <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
+          <link id="#lcl.grids.TCustomStringGrid.SetEditText">TCustomStringGrid.SetEditText</link>
         </seealso>
       </element>
       <element name="TValueListEditor.SetEditText.ACol">
@@ -2460,24 +2468,13 @@
       <element name="TValueListEditor.MouseWheelOption" link="#lcl.grids.TCustomGrid.MouseWheelOption"/>
       <element name="TValueListEditor.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
 
-      <element name="TValueListEditor.ParentColor" link="#lcl.controls.TControl.ParentColor">
-        <short/>
-        <descr>
-          <p>
-            The default value for the property is <b>False</b> in <var>TValueListEditor</var>.
-          </p>
-        </descr>
-        <seealso>
-          <link id="#lcl.controls.TControl.ParentColor">TControl.ParentColor</link>
-        </seealso>
-      </element>
-
+      <element name="TValueListEditor.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
       <element name="TValueListEditor.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TValueListEditor.ParentShowHint" link="#lcl.grids.TCustomDrawGrid.ParentShowHint"/>
       <element name="TValueListEditor.PopupMenu" link="#lcl.grids.TCustomDrawGrid.PopupMenu"/>
 
-      <element name="TValueListEditor.RowCount" link="#lcl.grids.TCustomDrawGrid.RowCount">
-        <short/>
+      <element name="TValueListEditor.RowCount">
+        <short>Gets the number of rows for the control.</short>
         <descr>
           <p>
             Read and write access specifiers for the <var>RowCount</var> property are re-implemented in <var>TValueListEditor</var>. They are redirected to the inherited property value, and additional validation is performed when setting a new value for the property. See <link id="TValueListEditor.SetRowCount">SetRowCount</link>.

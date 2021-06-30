@@ -135,7 +135,7 @@
         </short>
         <descr>
           <p>
-            <var>OnChange</var> is a <var>TNotifyEvent</var> property that represents the event handler signalled for a change in the image list. OnChange is signalled from the Change method.
+            <var>OnChange</var> is a <var>TNotifyEvent</var> property that represents the event handler signalled for a change in the image list. OnChange is signalled from the <var>Change</var> method.
           </p>
         </descr>
         <seealso>
@@ -144,10 +144,26 @@
           <link id="TCustomImageList.UnRegisterChanges"/>
         </seealso>
       </element>
+
+      <element name="TChangeLink.OnDestroyResolutionHandle">
+        <short>
+          Event handler signalled when the handle for an image resolution is freed.
+        </short>
+        <descr/>
+        <seealso>
+          <link id="TChangeLink.OnChange"/>
+          <link id="TCustomImageList.RegisterChanges"/>
+          <link id="TCustomImageList.UnregisterChanges"/>
+        </seealso>
+      </element>
+
       <element name="TChangeLink.Sender">
         <short>
           The Image list for change notifications in the class.
         </short>
+        <seealso>
+          <link id="TCustomImageList"/>
+        </seealso>
       </element>
 
       <element name="TDrawingStyle">
@@ -3768,6 +3784,43 @@
         </short>
       </element>
 
+      <element name="TCustomImageList.GetIcon">
+        <short>
+          Gets the icon at the specified index and applies an image effect.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TCustomImageList.GetIcon.Index">
+        <short>Ordinal position in the imagelist with the icon image data.</short>
+      </element>
+      <element name="TCustomImageList.GetIcon.Image">
+        <short>TIcon instance where the image data is stored.</short>
+      </element>
+      <element name="TCustomImageList.GetIcon.AEffect">
+        <short>
+          Drawing effect applied to the image data. gdeNormal when not specified.
+        </short>
+      </element>
+
+      <element name="TCustomImageList.GetRawImage">
+        <short>
+          Gets the raw image data at the specified position from the default image resolution (Width).
+        </short>
+        <descr>
+          <p>
+            Calls GetResolution to get the image resolution for the value in the Width proprety. Calls GetRawImage in the image resolution to re-initialize and populate the Image output variable.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TCustomImageList.GetRawImage.Index">
+        <short>Ordinal position in the image list for the raw image data.</short>
+      </element>
+      <element name="TCustomImageList.GetRawImage.Image">
+        <short>TRawImage instance where the image data is stored.</short>
+      </element>
+
       <element name="TCustomImageList.GetHotSpot">
         <short>
           Returns the offset from the drawing position to the image origin.
@@ -5051,7 +5104,7 @@
         <short>Resource name to locate.</short>
       </element>
 
-      <element name="TLCLGlyphsMissingResources.TLCLGlyphs.RegisterResolutions">
+      <element name="TLCLGlyphs.RegisterResolutions">
         <short>Register a list of resolutions using the specified suffixes.</short>
         <descr/>
         <seealso/>

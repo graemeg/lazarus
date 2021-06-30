@@ -3181,7 +3181,7 @@
         <short>Receives the total width and height of the required display area.</short>
       </element>
 
-      <element name="TWidgetSet.GetTextExtentPoint32" link="#lcl.interfacebase.TWidgetSet.GetTextExtentPoint">
+      <element name="TWidgetSet.GetTextExtentPoint32">
         <short>Computes the display width and height for a string.</short>
         <descr/>
         <seealso>
@@ -3821,10 +3821,12 @@
         </short>
       </element>
 
-      <element name="TWidgetSet.MonitorFromRect" link="#lcl.interfacebase.TWidgetSet.MonitorFromPoint">
+      <element name="TWidgetSet.MonitorFromRect">
         <short>Finds the monitor covering most of a rectangle.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TWidgetSet.MonitorFromPoint"/>
+        </seealso>
       </element>
       <element name="TWidgetSet.MonitorFromRect.Result">
         <short>The monitor handle; see <link id="TWidgetSet.MonitorFromPoint">dwFlags</link>.
@@ -5983,7 +5985,7 @@
         <short/>
       </element>
 
-      <element name="TWidgetSet.ExtUTF8Out" link="#lcl.interfacebase.TWidgetSet.ExtTextOut">
+      <element name="TWidgetSet.ExtUTF8Out">
         <short>Draws an UTF-8 string without formatting (single line).</short>
         <descr>
           <p>

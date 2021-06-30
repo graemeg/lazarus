@@ -6,10 +6,11 @@
       MaskEdit
     ====================================================================
     -->
+    <!-- TODO: Modified in 2.1. Needs review. -->
     <module name="MaskEdit">
       <short>
-        Defines classes for a masked edit control.
-        </short>
+        Defines classes, types, and constants used to implement a masked edit control.
+      </short>
       <descr>
         <p>
           <file>maskedit.pp</file> implements an masked edit control which can be used to format, vaidate, or obscure the text entered in the control. The following components are added to the Lazarus IDE component palette:
@@ -20,6 +21,9 @@
         <ul>
           <li>TMaskEdit</li>
         </ul>
+        <p>
+          This file is part of the Lazarus Component Library (<b>LCL</b>).
+        </p>
       </descr>
 
       <!-- unresolved references -->
@@ -672,7 +676,6 @@
         </descr>
         <seealso>
           <link id="TCustomMaskEdit.EditMask"/>
-          <link id="TCustomMaskEdit.ClearInternalMask"/>
           <link id="TCustomMaskEdit.RealGetText"/>
         </seealso>
       </element>
@@ -1292,15 +1295,22 @@
         <short>Value stored in the text for the control.</short>
       </element>
 
-      <element name="TCustomMaskEdit.RealGetText" link="#lcl.stdctrls.TCustomEdit.RealGetText">
+      <element name="TCustomMaskEdit.RealGetText">
         <short>Gets the value for the Text in the control.</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>RealGetText</var> is an overridden <var>TCaption</var> function used to get the text value for the masked edit control. It calls the inherited method on entry to get the caption text for control. The value may contain mask literals inserted when the <var>EditMask</var> was applied to the value. When <var>IsMasked</var> is <b>True</b>, the <var>GetTextWithoutMask</var> method is called to remove the mask literals.
+          </p>
+        </descr>
         <seealso>
+          <link id="TCustomMaskEdit.GetTextWithoutMask"/>
+          <link id="TCustomMaskEdit.EditMask"/>
+          <link id="TCustomMaskEdit.IsMasked"/>
           <link id="#lcl.stdctrls.TCustomEdit.RealGetText"/>
         </seealso>
       </element>
-      <element name="TCustomMaskEdit.RealGetText.Result" link="#lcl.stdctrls.TCustomEdit.RealGetText.Result">
-        <short/>
+      <element name="TCustomMaskEdit.RealGetText.Result">
+        <short>Text for the control without mask literals.</short>
       </element>
 
       <element name="TCustomMaskEdit.GetTextWithoutMask">
@@ -1674,7 +1684,7 @@
         <short>Character handled in the method.</short>
       </element>
 
-      <element name="TCustomMaskEdit.Utf8KeyPress" link="#lcl.controls.TWinControl.UTF8KeyPress">
+      <element name="TCustomMaskEdit.Utf8KeyPress">
         <short>
           Handles a key press with the specified UTF-8 character value.
         </short>
@@ -1701,7 +1711,7 @@
       </element>
 
       <element name="TCustomMaskEdit.MouseUp">
-        <short>Perfoems actions needed to handle a mouse button up message.</short>
+        <short>Performs actions needed to handle a mouse button up message.</short>
         <descr>
           <p>
             Calls the inherited <var>MouseUp</var> method. When a mask is used in the control, the cursor is moved to the beginning of the current selection in the control and <var>SetCursorPos</var> is called to update the caret position.
@@ -1809,7 +1819,6 @@
         </seealso>
       </element>
 
-      <!-- TODO: set notation, other changes? -->
       <element name="TCustomMaskEdit.EditMask">
         <short>
           Contains the mask characters classes and literals used to format/obscure the value for the control.
@@ -1911,10 +1920,34 @@
         <seealso/>
       </element>
 
+      <element name="TCustomMaskEdit.ValidationErrorMode">
+        <short>
+          Indicates the action taken when the control value is invalid for its mask.
+        </short>
+        <descr>
+          <p>
+            <var>ValidationErrorMode</var> is a <var>TMaskEditValidationErrorMode</var> property which indicates the action taken when the value for the control is invalid for the mask in the <var>EditMask</var> property.
+          </p>
+          <p>
+            The default value for the property is <var>mvemException</var>, and causes an exception to be raised when control value is invalid for its mask. Use <var>mvemException</var> to cause the <var>OnValidationError</var> event handler to be signalled for the validation error.
+          </p>
+          <p>
+            The property value is used in the <var>ValidateEdit</var> method when <var>IsMasked</var> is set to <b>True</b> and the <var>EditText</var> for the control is not valid.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomMaskEdit.OnValidationError"/>
+          <link id="TCustomMaskEdit.ValidateEdit"/>
+          <link id="TCustomMaskEdit.IsMasked"/>
+          <link id="TCustomMaskEdit.EditText"/>
+          <link id="TMaskEditValidationErrorMode"/>
+        </seealso>
+      </element>
+
       <element name="TCustomMaskEdit.CutToClipBoard" link="#lcl.stdctrls.TCustomEdit.CutToClipboard"/>
       <element name="TCustomMaskEdit.PasteFromClipBoard" link="#lcl.stdctrls.TCustomEdit.PasteFromClipboard"/>
 
-      <element name="TCustomMaskEdit.Create" link="#rtl.classes.TComponent.Create">
+      <element name="TCustomMaskEdit.Create">
         <short>Constructor for the class instance.</short>
         <descr>
           <p>
@@ -1925,9 +1958,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomMaskEdit.ClearInternalMask"/>
-          <link id="TMaskEditTrimType.metTrimRight"/>
           <link id="#lcl.stdctrls.TCustomEdit.RealGetText">TCustomEdit.RealGetText</link>
+          <link id="TMaskEditTrimType"/>
         </seealso>
       </element>
       <element name="TCustomMaskEdit.Create.AOwner">
@@ -2069,48 +2101,18 @@
 
       <element name="TMaskEdit.IsMasked" link="#lcl.maskedit.TCustomMaskEdit.IsMasked"/>
       <element name="TMaskEdit.EditText" link="#lcl.maskedit.TCustomMaskEdit.EditText"/>
-
-      <element name="TMaskEdit.ValidationErrorMode">
-        <short>Indicates the action taken when the control value is invalid for its mask.</short>
-        <descr>
-          <p>
-            <var>ValidationErrorMode</var> is a <var>TMaskEditValidationErrorMode</var> property which indicates the action taken when the value for the control is invalid for the mask in the <var>EditMask</var> property.
-          </p>
-          <p>
-            The default value for the property is <var>mvemException</var>, and causes an exception to be raised when control value is invalid for its mask. Use <var>mvemException</var> to cause the <var>OnValidationError</var> event handler to be signalled for the validation error.
-          </p>
-          <p>
-            The property value is used in the <var>ValidateEdit</var> method when <var>IsMasked</var> is set to <b>True</b> and the EditText for the control is not valid.
-          </p>
-        </descr>
-        <seealso>
-          <link id="TCustomMaskEdit.OnValidationError"/>
-          <link id="TCustomMaskEdit.ValidateEdit"/>
-          <link id="TCustomMaskEdit.IsMasked"/>
-          <link id="TCustomMaskEdit.EditText"/>
-          <link id="TMaskEditValidationErrorMode"/>
-        </seealso>
-      </element>
-
+      <element name="TMaskEdit.ValidationErrorMode" link="#lcl.maskedit.TCustomMaskEdit.ValidationErrorMode"/>
       <element name="TMaskEdit.Align" link="#lcl.controls.TControl.Align"/>
       <element name="TMaskEdit.Alignment" link="#lcl.stdctrls.TCustomEdit.Alignment"/>
-
-      <element name="TMaskEdit.Anchors" link="#lcl.controls.TControl.Anchors">
-        <descr>
-          <p>One of the standard properties, which should be supported by all descendants.</p>
-          <p>Determines how the control is to be anchored to its client or parent control.</p>
-          <p>Either reads a flag containing the set of anchors to be used, or writes a set of anchors. If they have been written, this is indicated in <var>IsAnchorsStored</var>.</p>
-        </descr>
-        <seealso/>
-      </element>
-
+      <element name="TMaskEdit.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="TMaskEdit.AutoSelect" link="#lcl.stdctrls.TCustomEdit.AutoSelect"/>
-      <element name="TMaskEdit.AutoSize" link="#lcl.stdctrls.TCustomEdit.AutoSize"/>
+      <element name="TMaskEdit.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TMaskEdit.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
       <element name="TMaskEdit.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
-      <element name="TMaskEdit.BorderStyle" link="#lcl.stdctrls.TCustomEdit.BorderStyle"/>
+      <element name="TMaskEdit.BorderStyle" link="#lcl.controls.TWinControl.BorderStyle"/>
 
-      <element name="TMaskEdit.CharCase" link="#lcl.stdctrls.TCustomEdit.CharCase">
+      <element name="TMaskEdit.CharCase">
+        <short>Determines the case for the text in the masked edit control.</short>
         <descr>
           <p>
             Indicates how text is displayed in a text editing control in the following ways:
@@ -2122,61 +2124,18 @@
           </ul>
           <p>The rules can, of course, be overridden by use of the shift key.</p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.CharCase">TCustomEdit.CharCase"</link>
+        </seealso>
       </element>
 
-      <element name="TMaskEdit.Color" link="#lcl.controls.TControl.Color">
-        <descr>
-          <p>One of the standard properties, which should be supported by all descendants.</p>
-          <p>Reads the value for color, or stores the value, and sets a flag if the color is stored.</p>
-          <p>The default color is the same as the window in which the control is located.</p>
-        </descr>
-        <seealso/>
-      </element>
-
-      <element name="TMaskEdit.Constraints" link="#lcl.controls.TControl.Constraints">
-        <descr>
-          <p>One of the standard properties, which should be supported by all descendants.</p>
-          <p>Determine <var>Constraints</var> (max and min height and width) for this control; reads the size constraints or stores new ones.</p>
-        </descr>
-        <seealso/>
-      </element>
-
+      <element name="TMaskEdit.Color" link="#lcl.controls.TControl.Color"/>
+      <element name="TMaskEdit.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element name="TMaskEdit.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
       <element name="TMaskEdit.DragKind" link="#lcl.controls.TControl.DragKind"/>
       <element name="TMaskEdit.DragMode" link="#lcl.controls.TControl.DragMode"/>
-
-      <element name="TMaskEdit.Enabled" link="#lcl.controls.TControl.Enabled">
-        <descr>
-          <p>
-            One of the standard properties, which should be supported by all descendants.
-          </p>
-          <p>
-            Whether the control is <var>Enabled</var>. If not, it usually appears 'greyed-out'.
-          </p>
-          <p>
-            Reads a flag to see whether the control is enabled, or stores a new value. If stored, sets a flag to say so.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
-      <element name="TMaskEdit.Font" link="#lcl.controls.TControl.Font">
-        <descr>
-          <p>
-            One of the standard properties, which should be supported by all descendants.
-          </p>
-          <p>
-            Reads a flag to see what font should be used, or sets a flag to store it. If stored, sets a flag to say so.
-          </p>
-          <p>
-            The properties of <var>Font</var> are defined in the parent class
-            <link id="#lcl.Graphics.TFont">TFont</link>.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
+      <element name="TMaskEdit.Enabled" link="#lcl.controls.TControl.Enabled"/>
+      <element name="TMaskEdit.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TMaskEdit.MaxLength" link="#lcl.stdctrls.TCustomEdit.MaxLength"/>
       <element name="TMaskEdit.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
       <element name="TMaskEdit.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
@@ -2184,7 +2143,9 @@
       <element name="TMaskEdit.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
 
       <element name="TMaskEdit.PopupMenu">
-        <short>PopupMenu - a context-sensitive menu that pops up when the right mouse button is clicked over this control.</short>
+        <short>
+          A context-sensitive menu that pops up when the right mouse button is clicked over this control.
+        </short>
         <descr>
           <p>
             One of the standard properties, which should be supported by all descendants.
@@ -2196,13 +2157,7 @@
         <seealso/>
       </element>
 
-      <element name="TMaskEdit.ReadOnly" link="#lcl.stdctrls.TCustomEdit.ReadOnly">
-        <short>
-          <var>ReadOnly</var> indicates if the contents of the edit box may only be read, not written or erased.
-        </short>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TMaskEdit.ReadOnly" link="#lcl.stdctrls.TCustomEdit.ReadOnly"/>
 
       <element name="TMaskEdit.ShowHint">
         <short>Flag to determine if the hint is displayed for this control.</short>
@@ -2217,7 +2172,7 @@
         <seealso/>
       </element>
 
-      <element name="TMaskEdit.TabOrder" link="#lcl.controls.TWinControl.TabOrder">
+      <element name="TMaskEdit.TabOrder">
         <short>Keyboard navigation order for the control when Tab is pressed.</short>
         <descr>
           <p>
@@ -2229,10 +2184,11 @@
         </descr>
         <seealso>
           <link id="TMaskEdit.TabStop"/>
+          <link id="#lcl.controls.TWinControl.TabOrder">TWinControl.TabOrder</link>
         </seealso>
       </element>
 
-      <element name="TMaskEdit.TabStop" link="#lcl.controls.TWinControl.TabStop">
+      <element name="TMaskEdit.TabStop">
         <short>
           Enables or disables keyboard navigation using the Tab key.
         </short>
@@ -2241,50 +2197,29 @@
             Use the TabStop property to allow or disallow access to the control using the Tab key. If <var>TabStop</var> is True, the control is in the tab order. If <var>TabStop</var> is False, the control is not in the tab order and the user can't use the Tab key to move to the control.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.TabStop">TWinControl.TabStop</link>
+        </seealso>
       </element>
 
-      <element name="TMaskEdit.Visible" link="#lcl.controls.TControl.Visible">
+      <element name="TMaskEdit.Visible">
         <short>Indicates if the control is visible or hidden.</short>
         <descr>
           <p>
             The <var>Visible</var> property indicates the ability to see a visual control. If Visible is True the control is shown, otherwise it is hidden. Calling Show sets Visible to True. Setting Visible to False is equivalent to calling the Hide method.
           </p>
           <remark>
-            The Visible property does not depend on the visibility for a parent control. Use the IsVisible method to consider this and get the effective visibility.
+            The Visible property does not reflect the visibility for a parent control. Use the IsVisible method to consider this and get the effective visibility.
           </remark>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Visible">TControl.Visible</link>
+        </seealso>
       </element>
 
       <element name="TMaskEdit.OnChange" link="#lcl.stdctrls.TCustomEdit.OnChange"/>
-
-      <element name="TMaskEdit.OnClick" link="#lcl.controls.TControl.OnClick">
-        <short/>
-        <descr>
-          <p>
-            One of the standard properties, which should be supported by all descendants.
-          </p>
-          <p>
-            This is often the default action for many controls, and is often the ONLY action specified by the programmer. The action can be specified by the user, either by typing explicit code into the implementation section for this control, or by selecting an action from a pre-supplied <var>ActionList</var>.
-          </p>
-          <p>
-            Reads or writes a flag if a mouse click is detected, and sets a flag if a value is stored.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
-      <element name="TMaskEdit.OnDblClick" link="#lcl.controls.TControl.OnDblClick">
-        <short/>
-        <descr>
-          <p>
-            Double-clicking is much more common in a Windows environment than in Unix or Linux, where single-clicking is the default method for selecting an object. However, in all environments there could be valid use for a double-click, and a method should be supplied if appropriate.
-          </p>
-         </descr>
-        <seealso/>
-      </element>
-
+      <element name="TMaskEdit.OnClick" link="#lcl.controls.TControl.OnClick"/>
+      <element name="TMaskEdit.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
       <element name="TMaskEdit.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
       <element name="TMaskEdit.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
       <element name="TMaskEdit.OnEditingDone" link="#lcl.controls.TControl.OnEditingDone"/>
@@ -2293,7 +2228,7 @@
       <element name="TMaskEdit.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
       <element name="TMaskEdit.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
 
-      <element name="TMaskEdit.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown">
+      <element name="TMaskEdit.OnKeyDown">
         <short>Handles a key down event for the focused control.</short>
         <descr>
           <p>
@@ -2303,10 +2238,12 @@
             Differs from <link id="#lcl.Controls.TWinControl.OnKeyPress">OnKeyPress</link> in that the key may have already been down when the control received focus; with <var>OnKeyPress</var> the key needs to become pressed while the control has focus.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.OnKeyDown">TWinControl.OnKeyDown</link>
+        </seealso>
       </element>
 
-      <element name="TMaskEdit.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress">
+      <element name="TMaskEdit.OnKeyPress">
         <short>Handles a key press event for the focused control.</short>
         <descr>
           <p>
@@ -2316,10 +2253,12 @@
             Differs from <link id="#lcl.Controls.TWinControl.OnKeyDown">OnKeyDown</link> in that the key needs to become pressed while the control has focus; with <var>OnKeyDown</var> the key may have already been down when the control received focus.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.OnKeyPress">TWinControl.OnKeyPress</link>
+        </seealso>
       </element>
 
-      <element name="TMaskEdit.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp">
+      <element name="TMaskEdit.OnKeyUp">
         <short>Handles a key up event for the focused control.</short>
         <descr>
           <p>
