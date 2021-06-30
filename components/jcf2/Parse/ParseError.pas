@@ -53,13 +53,26 @@ type
   end;
 
   procedure CheckNilPointer(aPtr:Pointer);
+  procedure CheckNilInstance(aInstance: TObject; aLastValidToken: TObject);
 
 implementation
 
 procedure CheckNilPointer(aPtr:Pointer);
 begin
   if aPtr=nil then
-    raise TEParseError.Create('JCF Internal error, Unexpected nil pointer', nil);
+    raise TEParseError.Create('JCF Internal Error. Unexpected NIL pointer', nil);
+end;
+
+procedure CheckNilInstance(aInstance: TObject; aLastValidToken: TObject);
+begin
+  if not Assigned(AInstance) then
+  begin
+    if not (aLastValidToken is TSourceToken) then
+    begin
+      aLastValidToken := nil;
+    end;
+    raise TEParseError.Create('JCF Internal Error. Unexpected error in source code', TSourceToken(aLastValidToken));
+  end;
 end;
 
 { TEParseError }
