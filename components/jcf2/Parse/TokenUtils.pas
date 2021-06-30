@@ -645,7 +645,7 @@ var
 begin
   // form dfm comment
   lsToken:=UpperCase(pt.SourceCode);
-  Result := (pt.TokenType = ttComment) and ((lsToken = '{$R *.DFM}') or (lsToken = '[$R *.LFM}')) and
+  Result := (pt.TokenType = ttComment) and ((lsToken = '{$R *.DFM}') or (lsToken = '{$R *.LFM}')) and
     pt.HasParentNode(nImplementationSection, 4);
 end;
 
