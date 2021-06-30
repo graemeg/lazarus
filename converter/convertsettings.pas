@@ -500,7 +500,7 @@ begin
   MapReplacement('Windows',             'LCLIntf, LCLType, LMessages');
   MapReplacement('WinTypes',            'LCLIntf, LCLType, LMessages');
   MapReplacement('WinProcs',            'LCLIntf, LCLType, LMessages');
-  MapReplacement('Mask',                'MaskEdit');
+  MapReplacement('Mask',                'Masks');
   MapReplacement('TabNotBk',            'ComCtrls');
   MapReplacement('OpenGL',              'dglOpenGL');
 //  MapReplacement('dglOpenGL',           'GL, GLu, GLut');  // ?
