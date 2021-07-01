@@ -234,13 +234,18 @@
         <short/>
       </element>
 
-      <element name="TMenuActionLink.IsOnExecuteLinked" link="#rtl.classes.TBasicActionLink.IsOnExecuteLinked">
+      <element name="TMenuActionLink.IsOnExecuteLinked">
+        <short>
+          Indicates if the OnExecute event handler in the action is linked to a menu item.
+        </short>
         <descr>
           <p>
             <var>IsOnExecuteLinked</var> always returns true in <var>TBasicActionLink</var>. Descendent classes can override this method to provide a different result.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TBasicActionLink"/>
+        </seealso>
       </element>
       <element name="TMenuActionLink.IsOnExecuteLinked.Result">
         <short/>
@@ -339,8 +344,8 @@
         <short>New value for the Visible property in the menu item.</short>
       </element>
 
-      <element name="TMenuActionLink.SetOnExecute" link="#rtl.classes.TBasicActionLink.SetOnExecute">
-        <short/>
+      <element name="TMenuActionLink.SetOnExecute">
+        <short>Not used in the current LCL implementation.</short>
         <descr>
           <p>
             In previous LCL versions, this method changed the OnClick event handler. That action is not needed because TMenuItem.Click executes the Action. The current version has an empty implementation.
@@ -995,6 +1000,16 @@
         <short>Message handled in the method.</short>
       </element>
 
+      <element name="TMenuItem.CheckChildrenHandles">
+        <short>Verifies the handles for child menu items on the menu.</short>
+        <descr>
+          <p>
+            CheckChildrenHandles recursively checks menu items to ensure that handles for merged menu items are freed when they are hidden, or not owned by a menu item on the menu. No actions are performed in the method when Items has not been assigned.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
       <element name="TMenuItem.CreateHandle">
         <short>Creates the Handle for the menu item.</short>
         <descr>
@@ -1366,14 +1381,16 @@
         <short>Output variable with the width for the images in AImages.</short>
       </element>
 
-      <element name="TMenuItem.GetParentComponent" link="#rtl.classes.TComponent.GetParentComponent">
-        <short/>
+      <element name="TMenuItem.GetParentComponent">
+        <short>Gets the menu for the Parent component when available.</short>
         <descr>
           <p>
-            Overridden to ensure that the <var>TMenu</var> instance for the <var>Parent</var> menu item is used (when assigned). GetParentComponent does not call the inherited method.
+            Overridden to ensure that the <var>TMenu</var> instance for the <var>Parent</var> menu item is used (when assigned). If not assigned, the value in Parent is returned. GetParentComponent does not call the inherited method.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.GetParentComponent">TComponent.GetParentComponent</link>
+        </seealso>
       </element>
       <element name="TMenuItem.GetParentComponent.Result">
         <short>Parent menu item or menu for the current class instance.</short>
@@ -1476,14 +1493,16 @@
         </short>
       </element>
 
-      <element name="TMenuItem.HasParent" link="#rtl.classes.TComponent.HasParent">
-        <short/>
+      <element name="TMenuItem.HasParent">
+        <short>Indicates if the menu item has a parent menu item.</short>
         <descr>
           <p>
-            Overridden to check for an assigned value in the Parent property. Does not call the inherited method.
+            Returns True if the menu item has a parent responsible for streaming. Overridden to check for an assigned value in the Parent property. Does not call the inherited method.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.HasParent">TComponent.HasParent</link>
+        </seealso>
       </element>
       <element name="TMenuItem.HasParent.Result">
         <short>True when a Parent menu item has been assigned for the menu item.</short>
@@ -2261,10 +2280,10 @@
       </element>
 
       <element name="TMenuItem.SubMenuImagesWidth">
-        <short/>
+        <short>Width for the bitmaps in the SubMenuImages property.</short>
         <descr>
           <p>
-            SubMenuImagesWidth is an Integer property with the width for the bitmaps in the SubImages property. The default value for the property is 0 (zero), and indicates that an explicit value has not been assigned for the property. This causes the width from the SubImages image list to be used.
+            SubMenuImagesWidth is an Integer property with the width for the bitmaps in the SubMenuImages property. The default value for the property is 0 (zero), and indicates that an explicit value has not been assigned for the property. This causes the width from the SubMenuImages image list to be used.
           </p>
         </descr>
         <seealso/>
@@ -2553,20 +2572,22 @@
         <short>Value for the property.</short>
       </element>
 
-      <element name="TMenu.GetChildren" link="#rtl.classes.TComponent.GetChildren">
-        <short/>
+      <element name="TMenu.GetChildren">
+        <short>Calls the specified process for the Items in the menu control.</short>
         <descr>
             <p>
-              This is a helper function used during LCL component streaming.
+              Calls the processing routine in Proc for each of the Items in the control. This is a helper function used during LCL component streaming.
             </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
       </element>
       <element name="TMenu.GetChildren.Proc" link="#rtl.classes.TComponent.GetChildren.Proc">
-        <short/>
+        <short>Process called for the child items.</short>
       </element>
       <element name="TMenu.GetChildren.Root" link="#rtl.classes.TComponent.GetChildren.Root">
-        <short/>
+        <short>Not used in the method.</short>
       </element>
 
       <element name="TMenu.MenuChanged">
@@ -2613,7 +2634,19 @@
         <short>Persistent object where the property values are stored.</short>
       </element>
 
-      <element name="TMenu.Notification" link="#rtl.classes.TComponent.Notification"/>
+      <element name="TMenu.Notification">
+        <short>
+          Handles a notification when a component is added to or removed from the control.
+        </short>
+        <descr>
+          <p>
+            Notification is an overridden method in TMenu. It calls the inherited method on entry, and sets the member for the Images property to Nil when it is removed from the control. An exception is raised if the Items property is removed from the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent.Notification">TComponent.Notification</link>
+        </seealso>
+      </element>
 
       <element name="TMenu.ParentBidiModeChanged">
         <short>Performs action when ParentBiDiMode has been changed.</short>
@@ -2631,7 +2664,19 @@
         <short>Owner of the menu instance with the BiDiMode value applied to the menu.</short>
       </element>
 
-      <element name="TMenu.SetChildOrder" link="#rtl.classes.TComponent.SetChildOrder"/>
+      <element name="TMenu.SetChildOrder">
+        <short>Sets the order for the menu item specified in Child.</short>
+        <descr>
+          <p>
+            SetChildOrder is an overridden method used to set the order for the specified child in the menu instance. It ensures that the value in Child is cast to a TMenuItem instance before assigning the value in Order to its MenuIndex property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TMenu.Items"/>
+          <link id="TMenuItem.MenuIndex"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
+      </element>
 
       <element name="TMenu.UpdateItems">
         <short>
@@ -3270,8 +3315,7 @@
       </element>
 
       <element name="TPopupMenu.Destroy">
-        <short>.
-        </short>
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
             <var>Destroy</var> is the destructor for <var>TPopupMenu</var>. It closes the display window for the pop-up menu and calls the inherited <var>Destroy</var> method.

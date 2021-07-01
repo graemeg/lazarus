@@ -602,13 +602,13 @@
         <seealso/>
       </element>
       <element name="TCMMouseWheel.Unused">
-        <short>inserted for alignment only.</short>
+        <short>Inserted for alignment only.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCMMouseWheel.WheelData">
         <short>
-          Number of notches or units the mouse wheel was turned; negative when turned backwards.
+          Number of notches or units the mouse wheel was turned. Negative for mouse wheel up movements.
         </short>
         <descr/>
         <seealso/>
@@ -624,7 +624,7 @@
       </element>
       <element name="TCMMouseWheel.Result">
         <short>
-          Result for the mouse wheel message; Zero (0) indicates the message was handled.
+          Result for the mouse wheel message. Zero (0) indicates the message was handled.
         </short>
       </element>
 
@@ -1435,8 +1435,8 @@
 
       <element name="TControlCanvas.CreateHandle" link="#lcl.graphics.TCanvas.CreateHandle"/>
 
-      <element name="TControlCanvas.GetDefaultColor" link="#lcl.graphics.TCanvas.GetDefaultColor">
-        <short/>
+      <element name="TControlCanvas.GetDefaultColor">
+        <short>Gets the color value used for clDefault.</short>
         <descr>
           <p>
             <var>GetDefaultColor</var> is overridden in <var>TControlCanvas</var> to ensure that the <var>Control</var> is used (when assigned) to retrieve the default color. If Control is not assigned, the inherited method is called to get the default color value.
@@ -4102,7 +4102,6 @@
 
       <element name="TControlBorderSpacing.GetAroundRight">
         <short>Gets the value for the AroundRight property.</short>
-        <short/>
         <descr/>
         <seealso>
           <link id="TControlBorderSpacing.AroundRight"/>
@@ -4255,22 +4254,42 @@
         <short>currently ignored (distinction no more required).</short>
       </element>
 
-      <element name="TControlBorderSpacing.Create"/>
+      <element name="TControlBorderSpacing.Create">
+        <short>Constructor for the class instance.</short>
+        <descr/>
+        <seealso/>
+      </element>
       <element name="TControlBorderSpacing.Create.OwnerControl">
-        <short>The associated control.</short>
+        <short>The associated control which owns the class isntance.</short>
       </element>
       <element name="TControlBorderSpacing.Create.ADefault">
-        <short>Pointer to an record with default settings; can be <b>Nil</b> for all zero defaults.</short>
+        <short>
+          Pointer to an record with default settings; can be <b>Nil</b> for all zero defaults.
+        </short>
       </element>
 
-      <element link="#rtl.classes.TPersistent.Assign" name="TControlBorderSpacing.Assign"/>
+      <element name="TControlBorderSpacing.Assign">
+        <short>Copies property values from the specified persistent object.</short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
+      </element>
       <element name="TControlBorderSpacing.Assign.Source">
-        <short/>
+        <short>Persistent object with the values copied in the method.</short>
       </element>
 
-      <element link="#rtl.classes.TPersistent.Assign" name="TControlBorderSpacing.AssignTo"/>
+      <element name="TControlBorderSpacing.AssignTo">
+        <short>
+          Copies property value from the class instance to the specified persistent object.
+        </short>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
+      </element>
       <element name="TControlBorderSpacing.AssignTo.Dest">
-        <short/>
+        <short>Persistent object where property values are stored.</short>
       </element>
 
       <element name="TControlBorderSpacing.IsEqual">
@@ -4730,9 +4749,28 @@
         <short>Position of the side to anchor to.</short>
       </element>
 
-      <element name="TAnchorSide.Assign" link="#rtl.classes.TPersistent.Assign"/>
+      <element name="TAnchorSide.Assign">
+        <short>
+          Copies properties from the specifed persistent object into the current class instance.
+        </short>
+        <descr>
+          <p>
+            <var>Assign</var> is an overridden method in <var>TAnchorSide</var> used to copy property values from the persistent object in <var>Source</var> into the current class instance. When Source is derived from <var>TAnchorSide</var>, the following properties are copied:
+          </p>
+          <ul>
+            <li>Side</li>
+            <li>Control</li>
+          </ul>
+          <p>
+            If Source is not derived from TAnchorSide, the inherited method is called using Source as an argument.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
+      </element>
       <element name="TAnchorSide.Assign.Source">
-        <short/>
+        <short>Persistent object with the properties copied in the method.</short>
       </element>
 
       <element name="TAnchorSide.IsAnchoredToParent">
@@ -4750,21 +4788,30 @@
       <element name="TAnchorSide.FixCenterAnchoring">
         <short>Remove conflicting anchors.</short>
         <descr>
-          With asrCenter, both sides are controlled by one anchor. Disable opposite anchor and all aligning.
+          <p>
+            With <var>asrCenter</var>, both sides are controlled by one anchor. Disable opposite anchor and all aligning.
+          </p>
         </descr>
         <seealso/>
       </element>
 
       <element name="TAnchorSide.Owner">
         <short>The control being anchored.</short>
-        <descr>For example AButton1.AnchorSide[akBottom].Owner = AButton1.</descr>
+        <descr>
+          <p>
+            For example:
+          </p>
+          <code>AButton1.AnchorSide[akBottom].Owner = AButton1</code>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TAnchorSide.Kind">
         <short>The control side being anchored.</short>
         <descr>
-          <p>Every control has four AnchorSide, one for each side. For example:</p>
+          <p>
+            Every control has four AnchorSide elements, one for each side. For example:
+          </p>
           <code>AButton1.AnchorSide[akLeft].Kind := akLeft.</code>
         </descr>
         <seealso/>
@@ -4786,7 +4833,12 @@
       <element name="TAnchorSide.Side">
         <short>The side of the target Control, to which we anchor.</short>
         <descr>
-          <p>For example if the right side of a Button1 is anchored to the left side of Edit1, then Button1.AnchorSide[akRight].Control=Edit1 and Button1.AnchorSide[akRight].Side=asrLeft.</p>
+          <p>
+            For example, if the right side of a Button1 is anchored to the left side of Edit1, then:
+          </p>
+          <code>Button1.AnchorSide[akRight].Control=Edit1</code>
+          <p>and</p>
+          <code>Button1.AnchorSide[akRight].Side=asrLeft</code>
         </descr>
         <seealso/>
       </element>
@@ -5088,7 +5140,7 @@
         <short>Set when BoundsRectForNewParent has been initialized.</short>
       </element>
       <element name="TControlFlag.cfBaseBoundsValid">
-        <short/>
+        <short>Indicates if the rectangle in the base bounds for a control is valid.</short>
       </element>
       <element name="TControlFlag.cfPreferredSizeValid">
         <short>Set when PreferredSize has been calculated (CalculatePreferredSize).</short>
@@ -5369,7 +5421,7 @@
         </seealso>
       </element>
       <element name="TLazAccessibleObject.SetPosition.AValue">
-        <short/>
+        <short>New value for the Position property.</short>
       </element>
 
       <element name="TLazAccessibleObject.SetSize">
@@ -5465,10 +5517,12 @@
       <element name="TLazAccessibleObject.SetAccessibleName">
         <short>Sets the value for AccessibleName.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TLazAccessibleObject.AccessibleName"/>
+        </seealso>
       </element>
       <element name="TLazAccessibleObject.SetAccessibleName.AName">
-        <short/>
+        <short>New value for the AccessibleName property.</short>
       </element>
 
       <element name="TLazAccessibleObject.SetAccessibleDescription">
@@ -5488,10 +5542,10 @@
       </element>
 
       <element name="TLazAccessibleObject.AddChildAccessibleObject">
-        <short>Creates a new child accessible object and returns it.</short>
+        <short>Creates and returns a new child accessiblity object.</short>
       </element>
       <element name="TLazAccessibleObject.AddChildAccessibleObject.Result">
-        <short/>
+        <short>Child accessibility object created in the method.</short>
       </element>
       <element name="TLazAccessibleObject.AddChildAccessibleObject.ADataObject">
         <short/>
@@ -5691,7 +5745,7 @@
       <element name="TControl.FAutoSizingSelf"/>
       <element link="#lcl.controls.TControl.Enabled" name="TControl.FEnabled"/>
       <element name="TControl.FMouseInClient"/>
-      <element link="#lcl.controls.TControl.Visible" name="TControl.FVisible"/>
+      <element name="TControl.FVisible"/>
 
       <element link="#lcl.controls.TControl.CaptureMouseButtons" name="TControl.CaptureMouseButtonsIsStored"/>
       <element name="TControl.CaptureMouseButtonsIsStored.Result">
@@ -5713,7 +5767,9 @@
       <element name="TControl.GetAccessibleDescription">
          <short>Gets the value for the AccessibleDescription property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TControl.AccessibleDescription"/>
+        </seealso>
       </element>
       <element name="TControl.GetAccessibleDescription.Result">
          <short>Value for the property.</short>
@@ -5722,7 +5778,9 @@
       <element name="TControl.GetAccessibleValue">
          <short>Gets the value for the AccessibleValue property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TControl.AccessibleValue"/>
+        </seealso>
       </element>
       <element name="TControl.GetAccessibleValue.Result">
          <short>Value for the property.</short>
@@ -5731,15 +5789,23 @@
       <element name="TControl.GetAccessibleRole">
          <short>Gets the value for the AccessibleRole property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TControl.AccessibleRole"/>
+        </seealso>
       </element>
       <element name="TControl.GetAccessibleRole.Result">
          <short>Value for the property.</short>
       </element>
 
-      <element link="#lcl.controls.TControl.AutoSizingAll" name="TControl.GetAutoSizingAll"/>
-      <element name="TControl.GetAutoSizingAll.Result">
+      <element name="TControl.GetAutoSizingAll">
         <short/>
+        <descr/>
+        <seealso>
+          <link id="TControl.AutoSizingAll"/>
+        </seealso>
+      </element>
+      <element name="TControl.GetAutoSizingAll.Result">
+        <short>Value for the AutoSizingAll property.</short>
       </element>
 
       <element link="#lcl.controls.TControl.AnchorSide" name="TControl.GetAnchorSide"/>
@@ -6095,7 +6161,10 @@
         <short/>
       </element>
 
-      <element name="TControl.FAccessibleObject"/>
+      <element name="TControl.FAccessibleObject">
+        <short>Member with the accessibility object for the control.</short>
+      </element>
+
       <element link="#lcl.controls.TControl.ControlState" name="TControl.FControlState"/>
       <element link="#lcl.controls.TControl.Cursor" name="TControl.FCursor"/>
 
@@ -6493,7 +6562,21 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.ClientRect" name="TControl.GetClientRect"/>
+      <element name="TControl.GetClientRect">
+        <short>Gets the value for the ClientRect property.</short>
+        <descr>
+          <p>
+            Returns the size for the visual client area in the control. For example, the inner size of a TGroupBox. For a TScrollBox it is the visual size, and not the logical size.
+          </p>
+          <p>
+            The return value is a TRect instance with the Top and Left members set to 0, and the Height and Width members set to the corresponding property values for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.ClientRect">TControl.ClientRect</link>
+        </seealso>
+      </element>
+
       <element name="TControl.GetClientRect.Result">
         <short/>
       </element>
@@ -7765,9 +7848,22 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.Color" name="TControl.SetColor"/>
+      <element name="TControl.SetColor">
+        <short>Sets the value for the Color property.</short>
+        <descr>
+          <p>
+            SetColor is a method used to set the value for the Color property to the specified TColor value. Assigning a value to Color causes the ParentColor property to be set to False.
+          </p>
+          <p>
+            SetColor calls Perform to send a CM_COLORCHANGED control message to the widgetset class. Invalidate is called to force the control to be redrawn.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.Color"/>
+        </seealso>
+      </element>
       <element name="TControl.SetColor.Value">
-        <short/>
+        <short>New value for the Color property.</short>
       </element>
 
       <element link="#lcl.controls.TControl.Enabled" name="TControl.SetEnabled"/>
@@ -7775,9 +7871,19 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.Hint" name="TControl.SetHint"/>
+      <element name="TControl.SetHint">
+        <short>Sets the value for the Hint property.</short>
+        <descr>
+          <p>
+            Value is a TTranslateString type which allows it be recognized and processed in the LCL translation facilities.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.Hint"/>
+        </seealso>
+      </element>
       <element name="TControl.SetHint.Value">
-        <short/>
+        <short>New value for the Hint property.</short>
       </element>
 
       <element name="TControl.SetName">
@@ -7825,8 +7931,33 @@
         </descr>
       </element>
 
-      <element link="#lcl.controls.TControl.MouseCapture" name="TControl.GetMouseCapture"/>
-      <element name="TControl.GetMouseCapture.Result"/>
+      <element name="TControl.GetMouseCapture">
+        <short>Gets the value for the MouseCapture property.</short>
+        <descr>
+          <p>
+            Indicates if the class instance is the current CaptureControl for the LCL framework.
+            The property value is True when the following condition are satisfied:
+          </p>
+          <ul>
+            <li>
+              Parent is assigned (not Nil).
+            </li>
+            <li>
+              Parent has an allocated window handle.
+            </li>
+            <li>
+              The value in the LCL CaptureContol variable is the current class instance.
+            </li>
+          </ul>
+        </descr>
+        <seealso>
+          <link id="TControl.MouseCapture"/>
+          <link id="GetCaptureControl"/>
+        </seealso>
+      </element>
+      <element name="TControl.GetMouseCapture.Result">
+        <short>True when the current class instance is the LCL CaptureControl.</short>
+      </element>
 
       <element name="TControl.CaptureChanged">
         <short>Handler for mouse capture moved to a different control.</short>
@@ -7885,9 +8016,15 @@
         <short>Returns the window handle of the device context.</short>
       </element>
 
-      <element link="#lcl.controls.TControl.Enabled" name="TControl.GetEnabled"/>
+      <element name="TControl.GetEnabled">
+        <short>Gets the valu for the Enabled property.</short>
+        <descr/>
+        <seealso>
+          <link id="TControl.Enabled"/>
+        </seealso>
+      </element>
       <element name="TControl.GetEnabled.Result">
-        <short/>
+        <short>Value for the Enabled property.</short>
       </element>
 
       <element link="#lcl.controls.TControl.PopupMenu" name="TControl.GetPopupMenu"/>
@@ -8661,9 +8798,22 @@
       </element>
 
       <element name="TControl.Docked">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Indicates if the control has a host dock site.</short>
+        <descr>
+          <p>
+            Docked is a Boolean function which indicates if the constrol instance is docked to a host  docking site. The return value is True when all of the following conditions are met:
+          </p>
+          <ul>
+            <li>Parent is assigned (not Nil).</li>
+            <li>Parent has the same value as the HostDockSite property.</li>
+            <li>Parent has a parent form with a different value than Parent itsself.</li>
+          </ul>
+        </descr>
+        <seealso>
+          <link id="TControl.HostDockSite"/>
+          <link id="TControl.Parent"/>
+          <link id="#lcl.forms.GetParentForm">GetParentForm</link>
+        </seealso>
       </element>
       <element name="TControl.Docked.Result">
         <short/>
@@ -8730,123 +8880,176 @@
       </element>
 
       <element name="TControl.ScaleDesignToForm">
-        <short/>
-        <descr/>
+        <short>
+          Scales a size value from the design-time PPI to the run-time PPI for the parent form.
+        </short>
+        <descr>
+        </descr>
         <seealso/>
       </element>
       <element name="TControl.ScaleDesignToForm.Result">
-        <short/>
+        <short>Scaled sized value.</short>
       </element>
       <element name="TControl.ScaleDesignToForm.ASize">
-        <short/>
+        <short>Original size value scled in the method.</short>
       </element>
 
       <element name="TControl.ScaleFormToDesign">
-        <short/>
+        <short>
+          Scales a size value from the run-time PPI for the parent form to the design-time PPI.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.ScaleFormToDesign.Result">
-        <short/>
+        <short>Scaled sized value.</short>
       </element>
       <element name="TControl.ScaleFormToDesign.ASize">
-        <short/>
+        <short>Original size value scled in the method.</short>
       </element>
 
       <element name="TControl.Scale96ToForm">
-        <short/>
+        <short>
+          Scales a size value from 96 PPI to the run-time PPI for the Screen.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.Scale96ToForm.Result">
-        <short/>
+        <short>
+          Scaled size value.
+        </short>
       </element>
       <element name="TControl.Scale96ToForm.ASize">
-        <short/>
+        <short>
+          Original size value scaled in the method.
+        </short>
       </element>
 
       <element name="TControl.ScaleFormTo96">
-        <short/>
+        <short>
+          Scales a size value from the PPI for the Parent form (or designer control) to 96 PPI.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.ScaleFormTo96.Result">
-        <short/>
+        <short>
+          Scaled size value.
+        </short>
       </element>
       <element name="TControl.ScaleFormTo96.ASize">
-        <short/>
+        <short>
+          Original size value scaled in the method.
+        </short>
       </element>
 
       <element name="TControl.Scale96ToFont">
-        <short/>
+        <short>
+          Scales a size value from 96 PPI to the PPI setting for the Font in the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.Scale96ToFont.Result">
-        <short/>
+        <short>
+          Scaled sized value.
+        </short>
       </element>
       <element name="TControl.Scale96ToFont.ASize">
-        <short/>
+        <short>
+          Original size value sclared in the method.
+        </short>
       </element>
 
       <element name="TControl.ScaleFontTo96">
-        <short/>
+        <short>
+          Scales a size value from the PPI setting in the Font for the control to 96 PPI.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.ScaleFontTo96.Result">
-        <short/>
+        <short>
+          Scaled size value.
+        </short>
       </element>
       <element name="TControl.ScaleFontTo96.ASize">
-        <short/>
+        <short>
+          Original size value scaled in the method.
+        </short>
       </element>
 
       <element name="TControl.ScaleScreenToFont">
-        <short/>
+        <short>
+          Scales a size value from the PPI setting for the Screen to the PPI setting for the Font in the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.ScaleScreenToFont.Result">
-        <short/>
+        <short>
+          Scaled size value.
+        </short>
       </element>
       <element name="TControl.ScaleScreenToFont.ASize">
-        <short/>
+        <short>
+          Original size value scaled in the method.
+        </short>
       </element>
 
       <element name="TControl.ScaleFontToScreen">
-        <short/>
+        <short>
+          Scales a size value from the PPI setting for the Font to the PPI setting for the Screen.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.ScaleFontToScreen.Result">
-        <short/>
+        <short>
+          Scaled size value.
+        </short>
       </element>
       <element name="TControl.ScaleFontToScreen.ASize">
-        <short/>
+        <short>
+          Size value scaled in the method.
+        </short>
       </element>
 
       <element name="TControl.Scale96ToScreen">
-        <short/>
+        <short>
+          Scales a size value from 96 PPI to the PPI setting for the Screen.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.Scale96ToScreen.Result">
-        <short/>
+        <short>
+          Scaled size value.
+        </short>
       </element>
       <element name="TControl.Scale96ToScreen.ASize">
-        <short/>
+        <short>
+          Size value scaled in the method.
+        </short>
       </element>
 
       <element name="TControl.ScaleScreenTo96">
-        <short/>
+        <short>
+          Scales a size value from the PPI setting for the Screen to 96 PPI.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.ScaleScreenTo96.Result">
-        <short/>
+        <short>
+          Scaled size value.
+        </short>
       </element>
       <element name="TControl.ScaleScreenTo96.ASize">
-        <short/>
+        <short>
+          Size value scaled in the method.
+        </short>
       </element>
 
       <element name="TControl.AdjustSize">
@@ -8908,7 +9111,7 @@
       </element>
 
       <element name="TControl.AutoSizeDelayedReport">
-        <short/>
+        <short>Returns a string with a debugging message for delayed auto-size requests.</short>
         <descr/>
         <seealso/>
       </element>
@@ -8917,8 +9120,14 @@
       </element>
 
       <element name="TControl.AutoSizeDelayedHandle">
-        <short/>
-        <descr/>
+        <short>
+          Returns true if AutoSize should be skipped or delayed because of its handle.
+        </short>
+        <descr>
+          <p>
+            A TControl instance does not have a handle, so it needs a parent control.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TControl.AutoSizeDelayedHandle.Result">
@@ -9183,8 +9392,8 @@
       </element>
 
       <element name="TControl.GetDefaultWidth">
-        <short>The default width for this control,
-          independent of any calculated values like Width and GetPreferredSize.
+        <short>
+          The default width for this control, independent of any calculated values like Width and GetPreferredSize.
         </short>
       </element>
       <element name="TControl.GetDefaultWidth.Result">
@@ -9350,8 +9559,21 @@
       </element>
 
       <element name="TControl.AutoAdjustLayout">
-        <short/>
-        <descr/>
+        <short>Applies an automatic adjustment layout policy to the control.</short>
+        <descr>
+          <p>
+            AutoAdjustLayout can be used to alter PPI settings, scale the control, or apply changes to height or width without scaling.
+          </p>
+          <p>
+            AMode indicates the layout policy applied in the method, and the actions performed to achieve the task.
+          </p>
+          <p>
+            Scaling factors are calculated (when needed) for both horizontal (X-axis) and vertical (Y-axis ) adjustments. The factors may represent changes to the PPI settings, or changes in the width for the control.
+          </p>
+          <p>
+            AutoAdjustLayout temporarily disables auto-sizing, and calls DoAutoAdjustLayout to apply the scaling factors or size changes.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TControl.AutoAdjustLayout.AMode">
@@ -9371,36 +9593,76 @@
       </element>
 
       <element name="TControl.ShouldAutoAdjust">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Indicates whether the height and/or width for a control can be automatically adjusted.
+        </short>
+        <descr>
+          <p>
+            In TControl, both AWidth and AHeight are set to True when the AutoSize property has not been enabled.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.AutoSize"/>
+        </seealso>
       </element>
       <element name="TControl.ShouldAutoAdjust.AWidth">
-        <short/>
+        <short>True if the width can be auto-adjusted.</short>
       </element>
       <element name="TControl.ShouldAutoAdjust.AHeight">
-        <short/>
+        <short>True if the height can be auto-adjusted.</short>
       </element>
 
       <element name="TControl.FixDesignFontsPPI">
-        <short/>
-        <descr/>
+        <short>Corrects the font size for High-DPI-aware applications.</short>
+        <descr>
+          <p>
+            FixDesignFontsPPI is a method used to adjust the font size when the design-time PPI (Pixels per Inch) setting differs from the run-time PPI setting for the font in the control.  It calls DoFixDesignFontPPI to restore the value in ADesignTimePPI to the Font reference passed as an argument to to the method. The font height is scaled using the factor represented by TFont.PixelsPerInch/ADesignTimePPI.
+          </p>
+          <p>
+            This method does not trigger a CM_PARENTFONTCHANGED message in the Parent control.
+          </p>
+          <p>
+            In TControl, this action is performed for the Font property. In descendent class, additional properties with a font reference may also be adjusted using the method.
+          </p>
+          <p>
+            FixDesignFontsPPI is called when scaling is enabled, and the Form which hosts the control calls its Loaded method when LCL streaming is completed.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TControl.FixDesignFontsPPI.ADesignTimePPI">
-        <short/>
+        <short>Design-time PPI setting applied for the font size adjustment.</short>
       </element>
 
       <element name="TControl.ScaleFontsPPI">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Resizes a font to the specified Pixels per Inch setting.</short>
+        <descr>
+        <p>
+            ScaleFontsPPI is a method used to resize a font in the control to the specified display density (Pixels per Inch) using the scaling factor in AProportion (when needed).
+        </p>
+          <p>
+            A font may need to be scaled when the run-time PPI setting for the screen differs from the design-time value applied to the font. If the font height is not assigned at run-time, its height is set to the value in TFont.PixelsPerInch / Screen.PixelsPerInch.
+          </p>
+          <p>
+            When AToPPI has a positive non-zero value, it is stored in the TFont.PixelsPerInch property for the font. Otherwise, the exising TFont.PixelsPerInch value is adjusted using the scaling factor in AProportion.
+          </p>
+          <p>
+            ScaleFontsPPI may be overridden in descendent controls to call the method for its child controls.
+          </p>
+          <p>
+            ScaleFontsPPI is called form the AutoAdjustLayout method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.AutoAdjustLayout"/>
+          <link id="TControl.ShouldAutoAdjust"/>
+        </seealso>
       </element>
       <element name="TControl.ScaleFontsPPI.AToPPI">
-        <short/>
+        <short>PPI setting to apply to the font.</short>
       </element>
       <element name="TControl.ScaleFontsPPI.AProportion">
-        <short/>
+        <short>Scaling factor applied to the font height.</short>
       </element>
 
       <element name="TControl.Create">
@@ -9561,15 +9823,30 @@
       </element>
 
       <element name="TControl.FindSubComponent">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Finds the sub-component with the specified name in the components property.
+        </short>
+        <descr>
+          <p>
+            FindSubComponent is a TComponent function used to get the sub-component with the name specified in AName. FindSubComponent is similar to TComponent.FindComponent, but accepts a prefixed component name in AName. For example: 'LabeledEdit1.EditLabel'.
+          </p>
+          <p>
+            FindSubComponent separates the value in AName into the owner and sub-component names. When a prefix is used, the FindComponent method is called to locate the TComponent instance with the owner name. Its FindComponent method is called to get the component with the sub-component name that is used in the return value. If a prefix is not used, the initial component is used as the return value.
+          </p>
+          <p>
+            The return value is Nil if a component is not found with the specified name.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent.FindComponent">TComponent.FindComponent</link>
+          <link id="#rtl.classes.TComponent.Components">TComponent.Components</link>
+        </seealso>
       </element>
       <element name="TControl.FindSubComponent.Result">
-        <short/>
+        <short>The component with the specified name, or Nil when not found.</short>
       </element>
       <element name="TControl.FindSubComponent.AName">
-        <short/>
+        <short>Parentage/path for the sub-component to retrieve in the method.</short>
       </element>
 
       <element name="TControl.IsVisible">
@@ -9603,44 +9880,55 @@
       </element>
 
       <element name="TControl.IsParentColor">
-        <short/>
+        <short>Provides access to the value in the protected ParentColor property.</short>
         <descr>
-          Checks the value in the protected ParentColor property. Needed for widgetset classes.
+          <p>
+            Checks the value in the member for the protected ParentColor property. Used in places where we need to check ParentColor property from TControl. Needed for widgetset classes.
+          </p>
         </descr>
         <seealso/>
       </element>
       <element name="TControl.IsParentColor.Result">
-        <short/>
+        <short>True when ParentColor is set to True.</short>
       </element>
 
       <element name="TControl.IsParentFont">
-        <short/>
+        <short>Provides access to the value in the protected ParentFont property.</short>
         <descr>
-          Checks the value in the protected ParentFont property. Needed for widgetset classes.
+          <p>
+            Checks the value in the member for the protected ParentFont property. Used in places where we need to check ParentFont from TControl.
+            Needed for widgetset classes.
+          </p>
         </descr>
         <seealso/>
       </element>
       <element name="TControl.IsParentFont.Result">
-        <short/>
+        <short>True when ParentFont is set to True.</short>
       </element>
 
       <element name="TControl.FormIsUpdating">
         <short>True if the form is being updated.</short>
-        <descr/>
+        <descr>
+          <p>
+            The return value is True a value has been assigned to Parent, and its FormIsUpdating method returns True.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TControl.FormIsUpdating.Result">
-        <short/>
+        <short>True if the form is being updated.</short>
       </element>
 
       <element name="TControl.IsProcessingPaintMsg">
         <short>True while painting the control.</short>
         <descr>
-          As the name implies, the cfProcessingWMPaint flag in FControlFlags is set while a LM_PAINT message is processed, and IsProcessingPaintMsg checks this flag.
+          <p>
+            As the name implies, the cfProcessingWMPaint flag in FControlFlags is set while a LM_PAINT message is processed, and IsProcessingPaintMsg checks this flag.
+          </p>
         </descr>
       </element>
       <element name="TControl.IsProcessingPaintMsg.Result">
-        <short/>
+        <short>True when the control flags contain a value for paint methods.</short>
       </element>
 
       <element name="TControl.Hide">
@@ -9868,22 +10156,41 @@
       </element>
 
       <element name="TControl.ClientToParent">
-        <short></short>
-        <descr/>
+        <short>
+          Converts the screen coordinates for the control to the screen coordinates for the specified parent control.
+        </short>
+        <descr>
+          <p>
+            ClientToParent is a TPoint function used to convert the screen coordinates for the control to the screen coordinates for the specified parent control. If Aparent is unassigned, the Parent property for the control is used in the method.
+          </p>
+          <p>
+            ClientToParent calls the IsParentOf method in AParent to determine if control is in its control hierarchy. An EInvalidOperation exception is raised if the return valu from IsParentOf is False.
+          </p>
+          <p>
+            The return value is determined by converting the client coorsinates for the control to screen coordinates, and asking the parent control to convert them back to the client coordinates for the parent control.
+          </p>
+          <p>
+            ClientToParent is used, for instance, in the TScrollingWinControl.ScrollInView method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TControl.ClientToParent.Result">
-        <short/>
+        <short>
+          TPoint instance with the client coordinates adjusted to the parent control.
+        </short>
       </element>
       <element name="TControl.ClientToParent.Point">
-        <short/>
+        <short>TPoint instance with the client coordinates for the control.</short>
       </element>
       <element name="TControl.ClientToParent.AParent">
-        <short/>
+        <short>Parent control with the bounds for the adjusted coordinates.</short>
       </element>
 
       <element name="TControl.ParentToClient">
-        <short/>
+        <short>
+          Converts the screen coordinates for the parent control to the screen coordinates for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -9897,16 +10204,18 @@
         <short/>
       </element>
 
-      <element name="TControl.GetChildsRect">
+      <element name="TControl.GetChildrenRect">
         <short>Get the visible part of a possibly scrolled client area.</short>
         <descr>
-          <p>If <var>Scrolled</var> is False, the ScrollOffset is ignored, so that the ClientRect is returned.</p>
+          <p>
+            If <var>Scrolled</var> is False, the ScrollOffset is ignored, so that the ClientRect is returned. Returns the Client rectangle relative to the left and top for the control. If Scrolled is true, the rectangle is moved by the current scrolling values (for an example see TScrollingWincontrol).
+          </p>
         </descr>
       </element>
-      <element name="TControl.GetChildsRect.Result">
+      <element name="TControl.GetChildrenRect.Result">
         <short>The visible part of the client area.</short>
       </element>
-      <element name="TControl.GetChildsRect.Scrolled">
+      <element name="TControl.GetChildrenRect.Scrolled">
         <short>True forces scrolling taken into account.</short>
       </element>
 
@@ -10147,6 +10456,12 @@
         <short/>
       </element>
 
+      <element name="TControl.AccessibleName">
+        <short>Contains the accessible name for the control.</short>
+        <descr/>
+        <seealso/>
+      </element>
+
       <element name="TControl.AccessibleDescription">
         <short>
           The accessible description of the control.This should describe the role of the control, for example for TLabel it could be "a text caption"
@@ -10369,11 +10684,17 @@
       </element>
 
       <element name="TControl.ClientRect">
-        <short>Size of the client area of the control.</short>
+        <short>Size of the client area for the control.</short>
         <descr>
-          The origin is always (0,0). Bottom and Right reflect the ClientWidth and ClientHeight for the control.
+          <p>
+            Contains  the size for the visual client area in the control. For example, the inner size of a TGroupBox. For a TScrollBox it is the visual size, and not the logical size.
+          </p>
+          <p>
+            The property value is a TRect instance with the Top and Left members set to 0, and the Height and Width members set to the corresponding property values for the control.
+          </p>
         </descr>
         <seealso>
+          <link id="TControl.GetClientRect"/>
           <link id="TControl.GetLogicalClientRect"/>
           <link id="#rtl.classes.TRect">TRect</link>
         </seealso>
@@ -10462,7 +10783,7 @@
       </element>
 
       <element name="TControl.MouseInClient">
-        <short/>
+        <short>True when the mouse is in the client area for the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -11031,14 +11352,26 @@
         <short>Control which owns the class instance.</short>
       </element>
 
-      <element name="TControlChildSizing.Assign" link="#rtl.classes.TPersistent.Assign" />
+      <element name="TControlChildSizing.Assign">
+        <short>
+          Copies property values from th specified persistent object into the current class instance.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
       <element name="TControlChildSizing.Assign.Source">
-        <short/>
+        <short>Persistent object with the property values copied in the method.</short>
       </element>
 
-      <element link="#rtl.classes.TPersistent.Assign" name="TControlChildSizing.AssignTo"/>
+      <element name="TControlChildSizing.AssignTo">
+        <short>
+          Copies property values from the current class instance to the specified persistent object.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
       <element name="TControlChildSizing.AssignTo.Dest">
-        <short/>
+        <short>Persistent object where the property values are stored.</short>
       </element>
 
       <element name="TControlChildSizing.IsEqual">
@@ -11402,9 +11735,15 @@
         </seealso>
       </element>
 
-      <element name="TWinControlEnumerator.FIndex"/>
-      <element name="TWinControlEnumerator.FLowToHigh"/>
-      <element name="TWinControlEnumerator.FParent"/>
+      <element name="TWinControlEnumerator.FIndex">
+        <short>Member with the current position for the enumerator.</short>
+      </element>
+      <element name="TWinControlEnumerator.FLowToHigh">
+        <short>Member which indicates the order for the enumerator.</short>
+      </element>
+      <element name="TWinControlEnumerator.FParent">
+        <short>Member with the Parent for the enumerated values.</short>
+      </element>
 
       <element name="TWinControlEnumerator.GetCurrent">
         <short>Gets the current enumerator value.</short>
@@ -12033,21 +12372,29 @@
       </element>
 
       <element name="TWinControl.InvalidateBoundsRealized">
-        <short/>
-        <descr/>
+        <short>Resets the bounds rectangle for the control.</short>
+        <descr>
+          <p>
+            Creates a new, empty TRect instance for the internal member passed to the widgetset class. Used in widgetset methods which apply changes to the Font for the control.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TWinControl.CreateSubClass">
-        <short/>
-        <descr/>
+        <short>An empty imlpementation in the current LCL version.</short>
+        <descr>
+          <p>
+            An empty imlpementation in the current LCL version.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TWinControl.CreateSubClass.Params">
-        <short/>
+        <short>Creation parameters for the subclass.</short>
       </element>
       <element name="TWinControl.CreateSubClass.ControlClassName">
-        <short/>
+        <short>Class name for the control added as a subclass.</short>
       </element>
 
       <element link="#lcl.controls.TControl.DoConstraintsChange" name="TWinControl.DoConstraintsChange"/>
@@ -12156,6 +12503,30 @@
       </element>
       <element name="TWinControl.CalculatePreferredSize.WithThemeSpace">
         <short>Indicates if additional space is reserved for theme services.</short>
+      </element>
+
+      <element name="TWinControl.GetPreferredSizeClientFrame">
+        <short>Calculates the width and height for the frame area around the control.</short>
+        <descr>
+          <p>
+            Calculated as follows:
+          </p>
+          <ul>
+            <li>
+              AWidth is the difference between Width and ClientWidth.
+            </li>
+            <li>
+              AHeight is the difference between Height and ClientHeight.
+            </li>
+          </ul>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TWinControl.GetPreferredSizeClientFrame.AWidth">
+        <short>Width used for the frame around the control.</short>
+      </element>
+      <element name="TWinControl.GetPreferredSizeClientFrame.AHeight">
+        <short>Height used for the frame around the control.</short>
       </element>
 
       <element name="TWinControl.GetChildren">
@@ -12310,12 +12681,21 @@
       </element>
 
       <element name="TWinControl.CMParentDoubleBufferedChanged">
-        <short/>
-        <descr/>
+        <short>
+          Handles the CM_PARENTDOUBLEBUFFEREDCHANGED control message for the control (when enabled).
+        </short>
+        <descr>
+          <p>
+            Sets the value in ParentDoubleBuffered to True. When Parent is assigned, the value in DoubleBufferred is set to the corresponding value from the Parent control.
+          </p>
+          <p>
+            No actions are performed in the method if ParentDoubleBuffered is already set to False.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TWinControl.CMParentDoubleBufferedChanged.Message">
-        <short/>
+        <short>Message handled in the method.</short>
       </element>
 
       <element name="TWinControl.CMShowingChanged">
@@ -12354,18 +12734,38 @@
       </element>
 
       <element name="TWinControl.CMEnter">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Handles the CM_ENTER control message for the control.</short>
+        <descr>
+          <p>
+            CM_ENTER and CM_EXIT messages occur when the active control is changed on a form.
+          </p>
+          <p>
+            Calls DoEnter to signal the OnEnter event handler (when assigned).
+          </p>
+        </descr>
+        <seealso>
+          <link id="TWinControl.DoEnter"/>
+          <link id="TWinControl.OnEnter"/>
+        </seealso>
       </element>
       <element name="TWinControl.CMEnter.Message">
-        <short/>
+        <short>Message handled in the method.</short>
       </element>
 
       <element name="TWinControl.CMExit">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Handles the CM_EXIT control message for the control.</short>
+        <descr>
+          <p>
+            CM_ENTER and CM_EXIT messages occur when the active control is changed on a form.
+          </p>
+          <p>
+            Calls DoExit to signal the OnExit event handler (when assigned).
+          </p>
+        </descr>
+        <seealso>
+          <link id="TWinControl.DoExit"/>
+          <link id="TWinControl.OnExit"/>
+        </seealso>
       </element>
       <element name="TWinControl.CMExit.Message">
         <short/>
@@ -12443,21 +12843,21 @@
       </element>
 
       <element name="TWinControl.WMEnter">
-        <short/>
+        <short>Handles the LM_ENTER message for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TWinControl.WMEnter.Message">
-        <short/>
+        <short>Message handled in the method.</short>
       </element>
 
       <element name="TWinControl.WMExit">
-        <short/>
+        <short>Handles the LM_EXIT message for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TWinControl.WMExit.Message">
-        <short/>
+        <short>Message handled in the method.</short>
       </element>
 
       <element name="TWinControl.WMKeyDown">
@@ -12862,12 +13262,21 @@
       </element>
 
       <element name="TWinControl.GetTopParentHandle">
-        <short/>
-        <descr/>
+        <short>
+          Gets the window handle for the parent control at the top of the control hierarchy.
+        </short>
+        <descr>
+          <p>
+            GetTopParentHandle is a HWND function used to get the window handle for the first control in the parent control hierarchy. The value in Parent is recusrively searched until Parent is not assigned.
+          </p>
+          <p>
+            The return value is the ParentWindow property in the top-most control. If ParentWindow is 0 (the unassigned value), the value in its Handle property is used.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TWinControl.GetTopParentHandle.Result">
-        <short/>
+        <short>Window handle for the top-most parent control in the hierarchy.</short>
       </element>
 
       <element name="TWinControl.ReloadDockedControl">
@@ -12982,7 +13391,7 @@
 
       <element name="TWinControl.DoRemainingKeyDown">
         <short>
-          Handles keys which are not handled by the widget.
+          Handles key down messages which are not handled by the widget.
         </short>
         <descr/>
         <seealso/>
@@ -12995,7 +13404,9 @@
       </element>
 
       <element name="TWinControl.DoRemainingKeyUp">
-        <short/>
+        <short>
+          Handles key up messages which are not handled by the widget.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -13055,7 +13466,7 @@
       </element>
 
       <element name="TWinControl.ChildKey">
-        <short/>
+        <short>Applies the key message using ChildKey in the parent control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -13067,8 +13478,14 @@
       </element>
 
       <element name="TWinControl.SendDialogChar">
-        <short/>
-        <descr/>
+        <short>
+          Forwards the key message to the parent form to be handled as an accelerator (shortcut) key.
+        </short>
+        <descr>
+          <p>
+            No actions are performed in the method when accelerator keys are not enabled for the LCL interface, or when ParentForm is unassigned for the control.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TWinControl.SendDialogChar.Result">
@@ -13139,8 +13556,12 @@
       </element>
 
       <element name="TWinControl.KeyDownAfterInterface">
-        <short/>
-        <descr/>
+        <short>An empty implementation in the current LCL version.</short>
+        <descr>
+          <p>
+            An empty implementation in the current LCL version.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TWinControl.KeyDownAfterInterface.Key">
@@ -13190,8 +13611,12 @@
       </element>
 
       <element name="TWinControl.KeyUpAfterInterface">
-        <short/>
-        <descr/>
+        <short>An empty implementation in the current LCL version.</short>
+        <descr>
+          <p>
+            An empty implementation in the current LCL version.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TWinControl.KeyUpAfterInterface.Key">
@@ -13255,26 +13680,45 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.GetClientOrigin" name="TWinControl.GetClientOrigin"/>
+      <element name="TWinControl.GetClientOrigin">
+        <short>Gets the top, left screen coordinates for the client area in the control.</short>
+        <descr>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetClientOrigin">TControl.GetClientOrigin</link>
+        </seealso>
+      </element>
       <element name="TWinControl.GetClientOrigin.Result">
-        <short/>
+        <short>
+          TPoint instance with the screen coordinates for the origin of the control.
+        </short>
       </element>
 
-      <element link="#lcl.controls.TControl.GetClientRect" name="TWinControl.GetClientRect"/>
-      <element name="TWinControl.GetClientRect.Result">
-        <short/>
-      </element>
-
-      <element link="#lcl.controls.TControl.GetControlOrigin" name="TWinControl.GetControlOrigin">
-        <short>The screen coordinates for the control.</short>
+      <element name="TWinControl.GetClientRect">
+        <short>Gets the value for the ClientRect property.</short>
         <descr>
           <p>
-            Returns the screen coordinates for the top/left pixel in the control.
+            GetClientRect is an overridden method in TWinControl used to get the value for the ClientRect property. ClientRect contains the visual client area for the control.
           </p>
-          <remark>
-            Please note: This value is the position as stored in the interface, and is not always in sync with the LCL. When a control is moved, the LCL sets the bounds to the requested position and sends a move message to the interface. It is up to the interface to handle moves instantly, or to queue the request.
-          </remark>
+          <p>
+            GetClientRect extends the ancestor method to synchronize values in the control and its widgetset class using the Handle for the control. It uses values in ComponentState and the control flags for the TWinControl instance to determine the actions needed in the method. If an action cannot be determined, or the handle is not available, values in ClientWidth and ClientHeight are used as the Width and Height in the TRect instance.
+          </p>
         </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetClientRect">TControl.GetClientRect</link>
+        </seealso>
+      </element>
+      <element name="TWinControl.GetClientRect.Result">
+        <short>Value for the ClientRect property.</short>
+      </element>
+
+      <element name="TWinControl.GetControlOrigin">
+        <short>The screen coordinates for the control.</short>
+        <descr>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetControlOrigin">TControl.GetControlOrigin</link>
+        </seealso>
       </element>
       <element name="TWinControl.GetControlOrigin.Result">
         <short/>
@@ -13458,12 +13902,20 @@
       </element>
 
       <element name="TWinControl.GetMouseCapture">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Gets the value for the MopuseCapture property.</short>
+        <descr>
+          <p>
+            GetMouseCapture is a Boolean function used to get the value for the MouseCapture property. It is overridden in TWinControl to ensure that the Handle for the control has been allocated. The return value is True when HandleAllocated returns True, and GetCaptureControl returns the current class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.MouseCapture"/>
+          <link id="TControl.GetMouseCapture"/>
+          <link id="GetCaptureControl"/>
+        </seealso>
       </element>
       <element name="TWinControl.GetMouseCapture.Result">
-        <short/>
+        <short>Value for the MouseCapture property.</short>
       </element>
 
       <element link="#lcl.controls.TControl.RealSetText" name="TWinControl.RealSetText"/>
@@ -13493,7 +13945,24 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.SetColor" name="TWinControl.SetColor"/>
+      <element name="TWinControl.SetColor">
+        <short>Sets the value for the Color property.</short>
+        <descr>
+          <p>
+            SetColor is an overridden method in TWinControl used to set the value for the Color property. It calls the inherited method on entry, and ensures that the new property value is applied to the internal TBrush instance used in the control. This includes translating the value clDefault to the actual brush color used for the platform.
+          </p>
+          <p>
+            If the Handle has been allocated for the control, the widgetset class is updated. Otherwise, control flags are updated to include the value wcfColorChanged.
+          </p>
+          <p>
+            The NotifyControls method is called to post the CM_PARENTCOLORCHANGED control message to the child controls.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.Color"/>
+          <link id="TControl.SetColor"/>
+        </seealso>
+      </element>
       <element name="TWinControl.SetColor.Value">
         <short/>
       </element>
@@ -13819,8 +14288,12 @@
       </element>
 
       <element name="TWinControl.IsFlipped">
-        <short/>
-        <descr>IsFlipped is a read-only Boolean property.</descr>
+        <short>Used in Carbon and Cocoa widgetsets</short>
+        <descr>
+          <p>
+            IsFlipped is a read-only Boolean property. It is used in the Carbon and Cocoa widgetsets for these Mac platforms.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
@@ -14016,21 +14489,22 @@
       </element>
 
       <element name="TWinControl.DesignerDeleting">
-        <short/>
+        <short>
+          Indicates whether the wcfDesignerDeleting flagis included  in the flags for the control.
+        </short>
         <descr>
           <p>
-            <var>DesignerDeleting</var> is a <var>Boolean</var> property.
+            <var>DesignerDeleting</var> is a <var>Boolean</var> property which indicates if the wcfDesignerDeleting is includes in the control flags for the TWinControl instance. When set to True, wcfDesignerDeleting is included in the control flag values. When set to False, it is removed. Used in TPairSplitter only.
           </p>
         </descr>
         <seealso/>
       </element>
 
       <element name="TWinControl.IsSpecialSubControl">
-        <short/>
+        <short>Indicates if the control has the wcfSpecialSubControl control flag.</short>
         <descr>
           <p>
-            <var>IsSpecialSubControl</var> is a read-only <var>Boolean</var> property.
-            Used in <var>TCustomPairSplitter</var> only.
+            <var>IsSpecialSubControl</var> is a read-only <var>Boolean</var> property. Its vale is True when wcfSpecialSubControl has been included in the WinControlFlags for the control. Used in <var>TCustomPairSplitter</var> only.
           </p>
         </descr>
         <seealso/>
@@ -14059,12 +14533,12 @@
         <short/>
       </element>
 
-      <element name="TWinControl.AutoSizeDelayedReport">
+      <element name="TWinControl.AutoSizeDelayedReport" link="#lcl.controls.TControl.AutoSizeDelayedReport">
         <short/>
         <descr/>
         <seealso/>
       </element>
-      <element name="TWinControl.AutoSizeDelayedReport.Result">
+      <element name="TWinControl.AutoSizeDelayedReport.Result" link="#lcl.controls.TControl.AutoSizeDelayedReport.Result">
         <short/>
       </element>
 
@@ -14203,22 +14677,35 @@
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.GetChildsRect" name="TWinControl.GetChildsRect"/>
-      <element name="TWinControl.GetChildsRect.Result">
+      <element name="TWinControl.GetChildrenRect">
+        <short>
+          Returns the Client rectangle relative to the controls left, top.
+        </short>
+        <descr>
+          <p>
+            If Scrolled is true, the rectangle is moved by the current scrolling values
+            (for an example see TScrollingWincontrol).
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetChildrenRect">TControl.GetChildrenRect</link>
+        </seealso>
+      </element>
+      <element name="TWinControl.GetChildrenRect.Result">
         <short/>
       </element>
-      <element name="TWinControl.GetChildsRect.Scrolled">
+      <element name="TWinControl.GetChildrenRect.Scrolled">
         <short/>
       </element>
 
       <element name="TWinControl.DisableAlign">
-        <short/>
+        <short>Disables auto-sizing for the control and its parent.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TWinControl.EnableAlign">
-        <short/>
+        <short>Re-enables auto-sizing for the control and its parent.</short>
         <descr/>
         <seealso/>
       </element>
@@ -15021,9 +15508,20 @@ if MyControl.CanSetFocus then
         <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.SetColor" name="TCustomControl.SetColor"/>
+      <element name="TCustomControl.SetColor">
+        <short>Sets the value for the Color property</short>
+        <descr>
+          <p>
+            SetColor is an overridden method in TCustomControl used to set the value in the Color property. It calls the inherited method on entry, and applies the new color value to the Brush in the control Canvas.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Color">TControl.Color</link>
+          <link id="#lcl.controls.TWinControl.SetColor">TWinControl.SetColor</link>
+        </seealso>
+      </element>
       <element name="TCustomControl.SetColor.Value">
-        <short/>
+        <short>New value for the Color property.</short>
       </element>
 
       <element name="TCustomControl.Paint">
@@ -15044,8 +15542,21 @@ if MyControl.CanSetFocus then
       </element>
 
       <element name="TCustomControl.Destroy">
-        <short/>
-        <descr/>
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            Destroy is the overridden destructor for the class instance.
+          </p>
+          <p>
+            It calls RemoveFocus to prevent the Parent control from giving focus to the free control. It destroys the Handle for the control, and ensures that the control is removed as a Parent or DockSite for its child controls. It does not free the child controls; they are freed by their owner.
+          </p>
+          <p>
+            Controls in the DockClient property are updated to remove the class instance from the HostDockSite property in the docking clients.
+          </p>
+          <p>
+            Destroy frees resource allocated in the constructor, and calls the inherited method proper to exit.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
