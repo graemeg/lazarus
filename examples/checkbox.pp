@@ -122,7 +122,7 @@ procedure TForm1.CheckBoxClick(Sender : TObject);
 Begin
   DebugLn('[TForm1.CheckBoxClick]');
    if assigned (CheckBox1) and assigned (label1) then begin
-      Writeln ('   [checkbox and label assigned]');
+      DebugLn ('   [checkbox and label assigned]');
       if CheckBox1.Checked
         then label1.Caption := 'checked'
         else label1.Caption := 'unchecked';
