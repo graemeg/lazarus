@@ -14,7 +14,7 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    Datasource1: TDatasource;
+    DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     MSSQLConnection1: TMSSQLConnection;
     SQLQuery1: TSQLQuery;
