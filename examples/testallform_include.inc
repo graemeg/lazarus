@@ -267,7 +267,7 @@ const
       'SaveDialog',
       'SavepictureDialog',
       'SelectdirectoryDialog',
-      'QuesionDialog'
+      'QuestionDialog'
   );
 
 function VkToString(Key: Word): String;
