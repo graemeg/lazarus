@@ -290,7 +290,7 @@ begin
   OldKeyEq:=isKeyEq;
   isKeyEq := true;
   try
-    inherited performKeyEquivalent(theEvent);
+    Result := inherited performKeyEquivalent(theEvent);
   finally
     isKeyEq := OldKeyEq;
   end;
