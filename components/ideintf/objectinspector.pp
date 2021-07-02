@@ -5853,7 +5853,8 @@ var
   end;
 
 var
-  b, AtLeastOneComp, CanChangeClass, HasParentCand: Boolean;
+  b, CanBeCopyPasted, CanBeDeleted, CanChangeClass, HasParentCand: Boolean;
+  i: Integer;
   CurRow: TOIPropertyGridRow;
   Persistent: TPersistent;
   Page: TObjectInspectorPage;
@@ -5866,7 +5867,8 @@ begin
     if GridControl[Page] <> nil then
       GridControl[Page].ShowHint := False;
   Persistent := GetSelectedPersistent;
-  AtLeastOneComp := False;
+  CanBeCopyPasted := False;
+  CanBeDeleted := False;
   CanChangeClass := False;
   HasParentCand := False;
   // show component editors only for component treeview
@@ -5883,21 +5885,28 @@ begin
       else if Persistent is TCollectionItem then
         AddCollectionEditorMenuItems(TCollectionItem(Persistent).Collection);
     end;
-    AtLeastOneComp := (Selection.Count > 0) and (Selection[0] is TComponent);
+    for i:=0 to Selection.Count-1 do
+      if Selection[i] is TComponent then
+      begin
+        CanBeDeleted := True;
+        // ToDo: Figure out why TMenuItem cannot be copy / pasted in OI,
+        if not (Selection[i] is TMenuItem) then     // then fix it.
+          CanBeCopyPasted := True;
+      end;
     CanChangeClass := (Selection.Count = 1) and (Selection[0] is TComponent)
                   and (Selection[0] <> FPropertyEditorHook.LookupRoot);
     // add Z-Order menu
     if (Selection.Count = 1) and (Selection[0] is TControl) then
       AddZOrderMenuItems;
     // check existing of Change Parent candidates
-    if AtLeastOneComp then
+    if CanBeCopyPasted then
       HasParentCand := HasParentCandidates;
   end;
-  CutPopupMenuItem.Visible := AtLeastOneComp;
-  CopyPopupMenuItem.Visible := AtLeastOneComp;
-  PastePopupMenuItem.Visible := AtLeastOneComp;
-  DeletePopupMenuItem.Visible := AtLeastOneComp;
-  OptionsSeparatorMenuItem2.Visible := AtLeastOneComp;
+  CutPopupMenuItem.Visible := CanBeCopyPasted;
+  CopyPopupMenuItem.Visible := CanBeCopyPasted;
+  PastePopupMenuItem.Visible := CanBeCopyPasted;
+  DeletePopupMenuItem.Visible := CanBeDeleted;
+  OptionsSeparatorMenuItem2.Visible := CanBeCopyPasted or CanBeDeleted;
   ChangeClassPopupmenuItem.Visible := CanChangeClass;
   ChangeParentPopupmenuItem.Visible := HasParentCand;
   OptionsSeparatorMenuItem3.Visible := CanChangeClass or HasParentCand;
