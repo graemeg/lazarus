@@ -1659,8 +1659,30 @@
         <short>Shift / Ctrl / Alt modifier for the key down event.</short>
       </element>
 
+      <element name="TValueListEditor.KeyPress">
+        <short>Handles special key presses for the control.</short>
+        <descr>
+          <p>
+            KeyPress is an overridden method in TValueListEditor which handles key press events for special characters used in the control.
+          </p>
+          <p>
+            It calls the inherited method on entry to handle the character value in Key.  If not handled in the ancestor class, it prevents the name/value separator used in Strings from being entered in the Name column for the control. If detected, Key is set to #0 and the focus is changed to the Value column and its editor is activated.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TValueListEditor.Strings"/>
+          <link id="TValueListEditor.Keys"/>
+          <link id="TValueListEditor.Values"/>
+        </seealso>
+      </element>
+      <element name="TValueListEditor.KeyPress.Key">
+        <short>Key value examined in the method.</short>
+      </element>
+
       <element name="TValueListEditor.LoadContent">
-        <short>Loads configuration and content from the specified XML configuration file.</short>
+        <short>
+          Loads configuration and content from the specified XML configuration file.
+        </short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -1723,6 +1745,7 @@
           <link id="TValueListEditor.DisplayOptions">TValueListEditor.DisplayOptions</link>
           <link id="#lcl.grids.TCustomStringGrid.Cells">TCustomStringGrid.Cells</link>
           <link id="#lcl.grids.TCustomStringGrid.SetCells">TCustomStringGrid.SetCells</link>
+          <link id="#lcl.grids.TCustomGrid.KeyPress">TCustomGrid.KeyPress</link>
         </seealso>
       </element>
       <element name="TValueListEditor.SetCells.ACol">
@@ -1733,6 +1756,22 @@
       </element>
       <element name="TValueListEditor.SetCells.AValue">
         <short>New value for the cell.</short>
+      </element>
+
+      <element name="TValueListEditor.SetColCount">
+        <short>Sets the value for the ColCount property.</short>
+        <descr>
+          <p>
+            SetColCount is an overridden method in TValueListEditor used to set the value for the ColCount property. It raises an EGridException exception if the property is set to any value other than 2.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.grids.TCustomGrid.ColCount">TCustomGrid.ColCount</link>
+          <link id="#lcl.grids.TCustomGrid.SetColCount">TCustomGrid.SetColCount</link>
+        </seealso>
+      </element>
+      <element name="TValueListEditor.SetColCount.AValue">
+        <short>New value for the ColCount property.</short>
       </element>
 
       <element name="TValueListEditor.SetEditText">
@@ -2440,38 +2479,37 @@
         <short>Key name or position for the item definition.</short>
       </element>
 
-      <element name="TValueListEditor.Align" link="#lcl.grids.TCustomDrawGrid.Align"/>
+      <element name="TValueListEditor.Align" link="#lcl.controls.TControl.Align"/>
       <element name="TValueListEditor.AlternateColor" link="#lcl.grids.TCustomGrid.AlternateColor"/>
-      <element name="TValueListEditor.Anchors" link="#lcl.grids.TCustomDrawGrid.Anchors"/>
-      <element name="TValueListEditor.AutoAdvance" link="#lcl.grids.TCustomDrawGrid.AutoAdvance"/>
+      <element name="TValueListEditor.Anchors" link="#lcl.controls.TControl.Anchors"/>
+      <element name="TValueListEditor.AutoAdvance" link="#lcl.grids.TCustomGrid.AutoAdvance"/>
       <element name="TValueListEditor.AutoEdit" link="#lcl.grids.TCustomGrid.AutoEdit"/>
       <element name="TValueListEditor.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
-      <element name="TValueListEditor.BorderSpacing" link="#lcl.grids.TCustomDrawGrid.BorderSpacing"/>
-      <element name="TValueListEditor.BorderStyle" link="#lcl.grids.TCustomDrawGrid.BorderStyle"/>
-      <element name="TValueListEditor.Color" link="#lcl.grids.TCustomDrawGrid.Color"/>
-      <element name="TValueListEditor.Constraints" link="#lcl.grids.TCustomDrawGrid.Constraints"/>
-      <element name="TValueListEditor.DefaultColWidth" link="#lcl.grids.TCustomDrawGrid.DefaultColWidth"/>
-      <element name="TValueListEditor.DefaultDrawing" link="#lcl.grids.TCustomDrawGrid.DefaultDrawing"/>
-      <element name="TValueListEditor.DefaultRowHeight" link="#lcl.grids.TCustomDrawGrid.DefaultRowHeight"/>
+      <element name="TValueListEditor.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+      <element name="TValueListEditor.BorderStyle" link="#lcl.controls.TWinControl.BorderStyle"/>
+      <element name="TValueListEditor.Color" link="#lcl.controls.TControl.Color"/>
+      <element name="TValueListEditor.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TValueListEditor.DefaultColWidth" link="#lcl.grids.TCustomGrid.DefaultColWidth"/>
+      <element name="TValueListEditor.DefaultDrawing" link="#lcl.grids.TCustomGrid.DefaultDrawing"/>
+      <element name="TValueListEditor.DefaultRowHeight" link="#lcl.grids.TCustomGrid.DefaultRowHeight"/>
       <element name="TValueListEditor.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
       <element name="TValueListEditor.DragKind" link="#lcl.controls.TControl.DragKind"/>
       <element name="TValueListEditor.DragMode" link="#lcl.controls.TControl.DragMode"/>
-      <element name="TValueListEditor.Enabled" link="#lcl.grids.TCustomDrawGrid.Enabled"/>
-      <element name="TValueListEditor.ExtendedSelect" link="#lcl.grids.TCustomStringGrid.ExtendedSelect"/>
-      <element name="TValueListEditor.FixedColor" link="#lcl.grids.TCustomDrawGrid.FixedColor"/>
-      <element name="TValueListEditor.FixedCols" link="#lcl.grids.TCustomDrawGrid.FixedCols"/>
-      <element name="TValueListEditor.Flat" link="#lcl.grids.TCustomDrawGrid.Flat"/>
-      <element name="TValueListEditor.Font" link="#lcl.grids.TCustomDrawGrid.Font"/>
-      <element name="TValueListEditor.GridLineWidth" link="#lcl.grids.TCustomDrawGrid.GridLineWidth"/>
+      <element name="TValueListEditor.Enabled" link="#lcl.controls.TControl.Enabled"/>
+      <element name="TValueListEditor.ExtendedSelect" link="#lcl.grids.TCustomGrid.ExtendedSelect"/>
+      <element name="TValueListEditor.FixedColor" link="#lcl.grids.TCustomGrid.FixedColor"/>
+      <element name="TValueListEditor.FixedCols" link="#lcl.grids.TCustomGrid.FixedCols"/>
+      <element name="TValueListEditor.Flat" link="#lcl.grids.TCustomGrid.Flat"/>
+      <element name="TValueListEditor.Font" link="#lcl.controls.TControl.Font"/>
+      <element name="TValueListEditor.GridLineWidth" link="#lcl.grids.TCustomGrid.GridLineWidth"/>
       <element name="TValueListEditor.HeaderHotZones" link="#lcl.grids.TCustomGrid.HeaderHotZones"/>
       <element name="TValueListEditor.HeaderPushZones" link="#lcl.grids.TCustomGrid.HeaderPushZones"/>
       <element name="TValueListEditor.MouseWheelOption" link="#lcl.grids.TCustomGrid.MouseWheelOption"/>
       <element name="TValueListEditor.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
-
       <element name="TValueListEditor.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
       <element name="TValueListEditor.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
-      <element name="TValueListEditor.ParentShowHint" link="#lcl.grids.TCustomDrawGrid.ParentShowHint"/>
-      <element name="TValueListEditor.PopupMenu" link="#lcl.grids.TCustomDrawGrid.PopupMenu"/>
+      <element name="TValueListEditor.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
+      <element name="TValueListEditor.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
 
       <element name="TValueListEditor.RowCount">
         <short>Gets the number of rows for the control.</short>
@@ -2487,33 +2525,32 @@
         </seealso>
       </element>
 
-      <element name="TValueListEditor.ScrollBars" link="#lcl.grids.TCustomDrawGrid.ScrollBars"/>
-      <element name="TValueListEditor.ShowHint" link="#lcl.grids.TCustomDrawGrid.ShowHint"/>
-      <element name="TValueListEditor.TabOrder" link="#lcl.grids.TCustomDrawGrid.TabOrder"/>
-      <element name="TValueListEditor.TabStop" link="#lcl.grids.TCustomDrawGrid.TabStop"/>
+      <element name="TValueListEditor.ScrollBars" link="#lcl.grids.TCustomGrid.ScrollBars"/>
+      <element name="TValueListEditor.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
+      <element name="TValueListEditor.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
+      <element name="TValueListEditor.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
       <element name="TValueListEditor.TitleFont" link="#lcl.grids.TCustomGrid.TitleFont"/>
       <element name="TValueListEditor.TitleImageList" link="#lcl.grids.TCustomGrid.TitleImageList"/>
       <element name="TValueListEditor.TitleStyle" link="#lcl.grids.TCustomGrid.TitleStyle"/>
-      <element name="TValueListEditor.UseXORFeatures" link="#lcl.grids.TCustomStringGrid.UseXORFeatures"/>
-      <element name="TValueListEditor.Visible" link="#lcl.grids.TCustomDrawGrid.Visible"/>
-      <element name="TValueListEditor.VisibleColCount" link="#lcl.grids.TCustomDrawGrid.VisibleColCount"/>
-      <element name="TValueListEditor.VisibleRowCount" link="#lcl.grids.TCustomDrawGrid.VisibleRowCount"/>
-
-      <element name="TValueListEditor.OnBeforeSelection" link="#lcl.grids.TCustomDrawGrid.OnBeforeSelection"/>
-      <element name="TValueListEditor.OnButtonClick" link="#lcl.grids.TCustomDrawGrid.OnButtonClick"/>
+      <element name="TValueListEditor.UseXORFeatures" link="#lcl.grids.TCustomGrid.UseXORFeatures"/>
+      <element name="TValueListEditor.Visible" link="#lcl.controls.TControl.Visible"/>
+      <element name="TValueListEditor.VisibleColCount" link="#lcl.grids.TCustomGrid.VisibleColCount"/>
+      <element name="TValueListEditor.VisibleRowCount" link="#lcl.grids.TCustomGrid.VisibleRowCount"/>
+      <element name="TValueListEditor.OnBeforeSelection" link="#lcl.grids.TCustomGrid.OnBeforeSelection"/>
+      <element name="TValueListEditor.OnButtonClick" link="#lcl.grids.TCustomGrid.OnButtonClick"/>
       <element name="TValueListEditor.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds"/>
       <element name="TValueListEditor.OnCheckboxToggled" link="#lcl.grids.TCustomGrid.OnCheckboxToggled"/>
-      <element name="TValueListEditor.OnClick" link="#lcl.grids.TCustomDrawGrid.OnClick"/>
+      <element name="TValueListEditor.OnClick" link="#lcl.controls.TControl.OnClick"/>
       <element name="TValueListEditor.OnColRowDeleted" link="#lcl.grids.TCustomDrawGrid.OnColRowDeleted"/>
       <element name="TValueListEditor.OnColRowExchanged" link="#lcl.grids.TCustomDrawGrid.OnColRowExchanged"/>
       <element name="TValueListEditor.OnColRowInserted" link="#lcl.grids.TCustomDrawGrid.OnColRowInserted"/>
       <element name="TValueListEditor.OnColRowMoved" link="#lcl.grids.TCustomDrawGrid.OnColRowMoved"/>
       <element name="TValueListEditor.OnCompareCells" link="#lcl.grids.TCustomDrawGrid.OnCompareCells"/>
-      <element name="TValueListEditor.OnContextPopup" link="#lcl.grids.TCustomDrawGrid.OnContextPopup"/>
-      <element name="TValueListEditor.OnDragDrop" link="#lcl.grids.TCustomDrawGrid.OnDragDrop"/>
-      <element name="TValueListEditor.OnDragOver" link="#lcl.grids.TCustomDrawGrid.OnDragOver"/>
-      <element name="TValueListEditor.OnDblClick" link="#lcl.grids.TCustomDrawGrid.OnDblClick"/>
-      <element name="TValueListEditor.OnDrawCell" link="#lcl.grids.TCustomDrawGrid.OnDrawCell"/>
+      <element name="TValueListEditor.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
+      <element name="TValueListEditor.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TValueListEditor.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
+      <element name="TValueListEditor.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
+      <element name="TValueListEditor.OnDrawCell" link="#lcl.grids.TCustomGrid.OnDrawCell"/>
 
       <element name="TValueListEditor.OnEditButtonClick">
         <short>Deprecated.</short>
@@ -2526,43 +2563,43 @@
       </element>
 
       <element name="TValueListEditor.OnEditingDone" link="#lcl.controls.TControl.OnEditingDone"/>
-      <element name="TValueListEditor.OnEndDock" link="#lcl.grids.TCustomDrawGrid.OnEndDock"/>
-      <element name="TValueListEditor.OnEndDrag" link="#lcl.grids.TCustomDrawGrid.OnEndDrag"/>
-      <element name="TValueListEditor.OnEnter" link="#lcl.grids.TCustomDrawGrid.OnEnter"/>
-      <element name="TValueListEditor.OnExit" link="#lcl.grids.TCustomDrawGrid.OnExit"/>
+      <element name="TValueListEditor.OnEndDock" link="#lcl.controls.TControl.OnEndDock"/>
+      <element name="TValueListEditor.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
+      <element name="TValueListEditor.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
+      <element name="TValueListEditor.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
       <element name="TValueListEditor.OnGetEditMask" link="#lcl.grids.TCustomDrawGrid.OnGetEditMask"/>
       <element name="TValueListEditor.OnGetEditText" link="#lcl.grids.TCustomDrawGrid.OnGetEditText"/>
       <element name="TValueListEditor.OnHeaderClick" link="#lcl.grids.TCustomDrawGrid.OnHeaderClick"/>
       <element name="TValueListEditor.OnHeaderSized" link="#lcl.grids.TCustomDrawGrid.OnHeaderSized"/>
       <element name="TValueListEditor.OnHeaderSizing" link="#lcl.grids.TCustomDrawGrid.OnHeaderSizing"/>
-      <element name="TValueListEditor.OnKeyDown" link="#lcl.grids.TCustomDrawGrid.OnKeyDown"/>
-      <element name="TValueListEditor.OnKeyPress" link="#lcl.grids.TCustomDrawGrid.OnKeyPress"/>
-      <element name="TValueListEditor.OnKeyUp" link="#lcl.grids.TCustomDrawGrid.OnKeyUp"/>
-      <element name="TValueListEditor.OnMouseDown" link="#lcl.grids.TCustomDrawGrid.OnMouseDown"/>
-      <element name="TValueListEditor.OnMouseEnter" link="#lcl.grids.TCustomDrawGrid.OnMouseEnter"/>
-      <element name="TValueListEditor.OnMouseLeave" link="#lcl.grids.TCustomDrawGrid.OnMouseLeave"/>
-      <element name="TValueListEditor.OnMouseMove" link="#lcl.grids.TCustomDrawGrid.OnMouseMove"/>
-      <element name="TValueListEditor.OnMouseUp" link="#lcl.grids.TCustomDrawGrid.OnMouseUp"/>
-      <element name="TValueListEditor.OnMouseWheel" link="#lcl.grids.TCustomDrawGrid.OnMouseWheel"/>
-      <element name="TValueListEditor.OnMouseWheelDown" link="#lcl.grids.TCustomDrawGrid.OnMouseWheelDown"/>
-      <element name="TValueListEditor.OnMouseWheelUp" link="#lcl.grids.TCustomDrawGrid.OnMouseWheelUp"/>
+      <element name="TValueListEditor.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
+      <element name="TValueListEditor.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
+      <element name="TValueListEditor.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
+      <element name="TValueListEditor.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TValueListEditor.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TValueListEditor.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TValueListEditor.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TValueListEditor.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TValueListEditor.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TValueListEditor.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TValueListEditor.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element name="TValueListEditor.OnMouseWheelHorz" link="#lcl.controls.TControl.OnMouseWheelHorz"/>
       <element name="TValueListEditor.OnMouseWheelLeft" link="#lcl.controls.TControl.OnMouseWheelLeft"/>
       <element name="TValueListEditor.OnMouseWheelRight" link="#lcl.controls.TControl.OnMouseWheelRight"/>
-      <element name="TValueListEditor.OnPickListSelect" link="#lcl.grids.TCustomDrawGrid.OnPickListSelect"/>
-      <element name="TValueListEditor.OnPrepareCanvas" link="#lcl.grids.TCustomDrawGrid.OnPrepareCanvas"/>
+      <element name="TValueListEditor.OnPickListSelect" link="#lcl.grids.TCustomGrid.OnPickListSelect"/>
+      <element name="TValueListEditor.OnPrepareCanvas" link="#lcl.grids.TCustomGrid.OnPrepareCanvas"/>
       <element name="TValueListEditor.OnResize" link="#lcl.controls.TControl.OnResize"/>
-      <element name="TValueListEditor.OnSelectEditor" link="#lcl.grids.TCustomDrawGrid.OnSelectEditor"/>
-      <element name="TValueListEditor.OnSelection" link="#lcl.grids.TCustomDrawGrid.OnSelection"/>
+      <element name="TValueListEditor.OnSelectEditor" link="#lcl.grids.TCustomGrid.OnSelectEditor"/>
+      <element name="TValueListEditor.OnSelection" link="#lcl.grids.TCustomGrid.OnSelection"/>
       <element name="TValueListEditor.OnSelectCell" link="#lcl.grids.TCustomDrawGrid.OnSelectCell"/>
       <element name="TValueListEditor.OnSetEditText" link="#lcl.grids.TCustomDrawGrid.OnSetEditText"/>
       <element name="TValueListEditor.OnShowHint" link="#lcl.controls.TControl.OnShowHint"/>
-      <element name="TValueListEditor.OnStartDock" link="#lcl.grids.TCustomDrawGrid.OnStartDock"/>
-      <element name="TValueListEditor.OnStartDrag" link="#lcl.grids.TCustomDrawGrid.OnStartDrag"/>
-      <element name="TValueListEditor.OnTopLeftChanged" link="#lcl.grids.TCustomDrawGrid.OnTopLeftChanged"/>
+      <element name="TValueListEditor.OnStartDock" link="#lcl.controls.TControl.OnStartDock"/>
+      <element name="TValueListEditor.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
+      <element name="TValueListEditor.OnTopLeftChanged" link="#lcl.grids.TCustomGrid.OnTopLeftChanged"/>
       <element name="TValueListEditor.OnUserCheckboxBitmap" link="#lcl.grids.TCustomGrid.OnUserCheckboxBitmap"/>
-      <element name="TValueListEditor.OnUTF8KeyPress" link="#lcl.grids.TCustomDrawGrid.OnUTF8KeyPress"/>
-      <element name="TValueListEditor.OnValidateEntry" link="#lcl.grids.TCustomDrawGrid.OnValidateEntry"/>
+      <element name="TValueListEditor.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
+      <element name="TValueListEditor.OnValidateEntry" link="#lcl.grids.TCustomGrid.OnValidateEntry"/>
 
       <element name="TValueListEditor.DisplayOptions">
         <short>

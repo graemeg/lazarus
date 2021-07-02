@@ -1866,7 +1866,7 @@ Mike Lischke (public@soft-gems.net, www.soft-gems.net).
 </element>
 
 <element name="TThemeServices">
-<short>Implements theme services.</short>
+<short>Implements theme services for supported platforms.</short>
 <descr>
 <p>
 <var>TThemeServices</var> is a small foot print class to provide the user with pure Windows XP theme related abilities like painting elements and text, or retrieving theme element details.
@@ -1900,55 +1900,59 @@ Mike Lischke (public@soft-gems.net, www.soft-gems.net).
 </element>
 
 <element name="TThemeServices.InitThemes">
-<short/>
+<short>Always returns False.</short>
 <descr/>
 <seealso/>
 </element>
 <element name="TThemeServices.InitThemes.Result">
-<short/>
+<short>Always returns False.</short>
 </element>
 
 <element name="TThemeServices.UnloadThemeData">
-<short/>
+<short>An empty implemetation in TThemeServices.</short>
 <descr/>
 <seealso/>
 </element>
 
 <element name="TThemeServices.UseThemes">
-<short/>
+<short>Always returns False.</short>
 <descr/>
 <seealso/>
 </element>
 <element name="TThemeServices.UseThemes.Result">
-<short/>
+<short>Always returns False.</short>
 </element>
 
 <element name="TThemeServices.ThemedControlsEnabled">
-<short/>
+<short>Always returns False.</short>
 <descr/>
 <seealso/>
 </element>
 <element name="TThemeServices.ThemedControlsEnabled.Result">
-<short/>
+<short>Always returns False.</short>
 </element>
 
 <element name="TThemeServices.InternalColorToRGB">
-<short/>
+<short>Converts the numeric color value to color reference.</short>
 <descr/>
-<seealso/>
+<seealso>
+  <link id="#lcl.graphics.ColorToRGB"/>
+  <link id="#lcl.lcltype.TColorRef"/>
+  <link id="#lcl.lcltype.COLORREF"/>
+</seealso>
 </element>
 <element name="TThemeServices.InternalColorToRGB.Result">
-<short/>
+<short>Cardinal color reference as defined in the LCLType unit.</short>
 </element>
 <element name="TThemeServices.InternalColorToRGB.Details">
-<short/>
+<short>Not used in the method.</short>
 </element>
 <element name="TThemeServices.InternalColorToRGB.Color">
-<short/>
+<short>Numeric color value converted in the method.</short>
 </element>
 
 <element name="TThemeServices.InternalDrawParentBackground">
-<short/>
+<short>An empty implementation in TThemeServices.</short>
 <descr/>
 <seealso/>
 </element>
@@ -1987,13 +1991,13 @@ Destructor for the class instance.
 </element>
 
 <element name="TThemeServices.IntfDoOnThemeChange">
-<short/>
+<short>Signals the OnThemeChange event handler (when assigned).</short>
 <descr/>
 <seealso/>
 </element>
 
 <element name="TThemeServices.IsDisabled">
-<short/>
+<short>Indicates if the theme element value in Details is in a disabled state.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2005,7 +2009,7 @@ Destructor for the class instance.
 </element>
 
 <element name="TThemeServices.IsPushed">
-<short/>
+  <short>Indicates if the theme element value in Details is in a pushed state.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2017,7 +2021,7 @@ Destructor for the class instance.
 </element>
 
 <element name="TThemeServices.IsHot">
-<short/>
+  <short>Indicates if the theme element value in Details is in a hot or hovered state.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2029,7 +2033,7 @@ Destructor for the class instance.
 </element>
 
 <element name="TThemeServices.IsChecked">
-<short/>
+  <short>Indicates if the theme element value in Details is in a checked state.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2041,7 +2045,9 @@ Destructor for the class instance.
 </element>
 
 <element name="TThemeServices.IsMixed">
-<short/>
+  <short>
+    Indicates if the theme element value in Details has more than one theming state.
+  </short>
 <descr/>
 <seealso/>
 </element>
@@ -2053,7 +2059,7 @@ Destructor for the class instance.
 </element>
 
 <element name="TThemeServices.GetElementDetails">
-<short/>
+<short>Fills members in the theme element details.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2106,7 +2112,7 @@ Gets the handle to the region for a theme element.
 </element>
 
 <element name="TThemeServices.GetStockImage">
-<short/>
+<short>Always returns False.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2124,7 +2130,7 @@ Gets the handle to the region for a theme element.
 </element>
 
 <element name="TThemeServices.GetOption">
-<short/>
+<short>Returns 1 if the theme option is used for the platform, or 0 when not used.</short>
 <descr>
 <p>
 Use of toUseGlyphEffects is OS-dependent. The option is used for Linux. It is not used for Windows or OSX.
@@ -2277,7 +2283,7 @@ Overloaded to provide WIndows and non-Windows variants. Overridden in the TWin32
 </element>
 
 <element name="TThemeServices.DrawParentBackground">
-<short/>
+<short>Draws a parent background using the specified window handle and device context.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2331,7 +2337,7 @@ Draws the text for a themed control.
 </element>
 
 <element name="TThemeServices.HasTransparentParts">
-<short/>
+<short>Always returns True.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2379,13 +2385,13 @@ Called from the <var>Create</var> constructor. Think of it as the theme counterp
 </element>
 
 <element name="TThemeServices.ThemesAvailable">
-<short/>
+<short>Indicates if theme data is available.</short>
 <descr/>
 <seealso/>
 </element>
 
 <element name="TThemeServices.ThemesEnabled">
-<short/>
+<short>Indicates if themes are enabled for the platform.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2418,7 +2424,7 @@ Provides access to the Theme Services singleton for the widgetset.
 </element>
 
 <element name="ThemedElementDetailsEqual">
-<short/>
+<short>Compares the content for the specified theme element detail arguments.</short>
 <descr/>
 <seealso/>
 </element>
@@ -2433,7 +2439,7 @@ Provides access to the Theme Services singleton for the widgetset.
 </element>
 
 <element name="ThemeManagerCopyright">
-<short/>
+<short>Copyright information for the theme manager code.</short>
 <descr>
 <p>
 Do not modify the copyright in any way! Usage of this unit is prohibited without the copyright notice in the compiled binary file.
@@ -2495,7 +2501,7 @@ Reference to the control with the Canvas updated in the event handler.
 </element>
 
 <element name="ThemesImageDrawEvent">
-<short/>
+<short>Variable with the event handler signalled to draw a themed image to a Canvas.</short>
 <descr>
 <p>
 <var>ThemesImageDrawEvent</var> is a unit global <var>TThemesImageDrawEvent</var> variable with the event handler signalled to draw an image in an imagelist to a Canvas. The value for the variable is assigned in the <file>imglist</file> unit when used in an application.

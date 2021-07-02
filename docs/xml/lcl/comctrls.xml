@@ -9217,7 +9217,7 @@
       <element name="TCustomListView.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TCustomListView.GetControlClassDefaultSize">
-        <short/>
+        <short>Gets the default size for new instances of the class.</short>
         <descr/>
         <seealso/>
       </element>
@@ -9250,21 +9250,23 @@
       <element name="TCustomListView.BeginAutoDrag" link="#lcl.controls.TControl.BeginAutoDrag"/>
 
       <element name="TCustomListView.CreateListItem">
-        <short/>
+        <short>
+          Signals the OnCreateItemClass event handler (when assigned) to get the class type used for new list items, and creates a new list item.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomListView.CreateListItem.Result">
-        <short/>
+        <short>List item created in the method.</short>
       </element>
 
       <element name="TCustomListView.CreateListItems">
-        <short/>
+        <short>Creates a new TListItems instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomListView.CreateListItems.Result">
-        <short/>
+        <short>TListItems instance created in the method.</short>
       </element>
 
       <element name="TCustomListView.CanEdit">
@@ -9446,8 +9448,14 @@
       </element>
 
       <element name="TCustomListView.DoEndEdit">
-        <short/>
-        <descr/>
+        <short>
+          Performs actions when editing has been completed for an item in the control.
+        </short>
+        <descr>
+          <p>
+            Calls an overridden Edit method when available, or signals the OnEdited event handler (when assigned).
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomListView.DoEndEdit.AItem">
@@ -9458,12 +9466,14 @@
       </element>
 
       <element name="TCustomListView.Edit">
-        <short/>
+        <short>
+          Signals OnEdited to validate the editor text, and updates the caption for the specified list item.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomListView.Edit.AItem">
-        <short/>
+        <short>List item updated in the method.</short>
       </element>
 
       <element name="TCustomListView.ImageChanged">
@@ -9675,7 +9685,7 @@
       </element>
 
       <element name="TCustomListView.DoOwnerDataHint">
-        <short/>
+        <short>Signals the OnDataHint event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -9690,7 +9700,7 @@
       </element>
 
       <element name="TCustomListView.DoOwnerDataStateChange">
-        <short/>
+        <short>Signals the OnDataStateChange event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -9831,9 +9841,11 @@
       </element>
 
       <element name="TCustomListView.LargeImagesWidth">
-        <short/>
+        <short>Contains the Width for the large images used in the list view.</short>
         <descr>
-          LargeImagesWidth is an Integer property used to access the width for large images in the list view. Reading and writing a value to the property accesses an internal array with width values for the image list using the TListViewImageList enumeration value. The default value for the property is zero (<b>0</b>).
+          <p>
+            LargeImagesWidth is an Integer property used to access the width for large images in the list view. Reading and writing a value to the property accesses an internal array with width values for the image list using the TListViewImageList enumeration value. The default value for the property is zero (<b>0</b>).
+          </p>
         </descr>
         <seealso/>
       </element>
@@ -10006,13 +10018,17 @@
       </element>
 
       <element name="TCustomListView.OnEdited">
-        <short/>
+        <short>
+          Event handler signalled when editing has been completed for an item in the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomListView.OnEditing">
-        <short/>
+        <short>
+          Event handler signalled to determine if editing can be started for an item in the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -10100,10 +10116,10 @@
       </element>
 
       <element name="TCustomListView.Destroy">
-        <short>
-          <var>Destroy</var> - destructor for <var>TCustomListView</var>: frees Canvas, calls inherited <var>Destroy</var> and frees columns, links and list items.
-        </short>
-        <descr/>
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <var>Destroy</var> is the destructor for <var>TCustomListView</var>. It frees the Canvas, calls the inherited <var>Destroy</var>, and frees the columns and list items.
+        </descr>
         <seealso>
           <link id="#lcl.controls.TWinControl.Destroy">TWinControl.Destroy</link>
           <link id="#rtl.classes.TComponent.Destroy">TComponent.Destroy</link>
@@ -10111,22 +10127,22 @@
       </element>
 
       <element name="TCustomListView.AddItem">
-        <short/>
+        <short>Adds a list item with the specified caption and optional object.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomListView.AddItem.Item">
-        <short/>
+        <short>Caption for the new list item.</short>
       </element>
       <element name="TCustomListView.AddItem.AObject">
-        <short/>
+        <short>Optional object instance for the list item.</short>
       </element>
 
       <element name="TCustomListView.AlphaSort">
-        <short/>
+        <short>Sorts the first column for the list view in ascending order.</short>
         <descr>
-        Always sorts column 0 in sdAscending order.
-      </descr>
+          Always sorts column 0 in sdAscending order.
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomListView.AlphaSort.Result">
@@ -10134,13 +10150,17 @@
       </element>
 
       <element name="TCustomListView.Sort">
-        <short/>
+        <short>
+          Sorts the values in Items when SortType is not stNone and SortColumn is valid.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomListView.CustomSort">
-        <short/>
+        <short>
+          Sorts the Items for the control using the specified procedure or the OnCompare event handler.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -10164,7 +10184,7 @@
 
       <element name="TCustomListView.Clear">
         <short>
-          <var>Clear</var> - the stringlist.
+          Clears the Items for the list view.
         </short>
         <descr/>
         <seealso/>
@@ -10172,14 +10192,14 @@
 
       <element name="TCustomListView.EndUpdate">
         <short>
-          <var>EndUpdate</var> - finish updating the list view.
+          Finishes an active update for the list view.
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomListView.Repaint">
-        <short/>
+        <short>Updates the OwnerData (when used), and repaints the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -10205,7 +10225,7 @@
       </element>
 
       <element name="TCustomListView.FindData">
-        <short/>
+        <short>Locates the specified list item data in the Items for the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -10226,7 +10246,9 @@
       </element>
 
       <element name="TCustomListView.GetHitTestInfoAt">
-        <short/>
+        <short>
+          Gets hit text information from the widgetset class when its Handle has been assigned.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -10256,7 +10278,7 @@
       </element>
 
       <element name="TCustomListView.GetNearestItem">
-        <short/>
+        <short>Locates the list item closest to the specified position.</short>
         <descr>
           <p>
             GetNearestItem is used to locate a list item from a position specified in pixel coordinates relative to the top left corner of the list view. It starts looking at the position specified by the Point parameter, and moves in the direction indicated by the Direction parameter until it locates a list item.If no item is found Nil is returned.
@@ -10275,7 +10297,7 @@
       </element>
 
       <element name="TCustomListView.GetNextItem">
-        <short/>
+        <short>Gets the next list item in the given direction from the starting item.</short>
         <descr>
           <p>
             GetNextItem is a TListItem function used to find the next list item after StartItem in the direction given by the Direction parameter. Only items in the state indicated by the States parameter are considered. If no item is found, Nil is returned.
@@ -10297,19 +10319,19 @@
       </element>
 
       <element name="TCustomListView.ClearSelection">
-        <short/>
+        <short>Clears single or multi-selections in the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomListView.SelectAll">
-        <short/>
+        <short>Selects all items in the control when MultiSelect has been enabled.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomListView.IsEditing">
-        <short/>
+        <short>Indicates if the list view editor is active.</short>
         <descr>
           Delphi compatible function which returns if our listview editor is active.
         </descr>
@@ -10363,7 +10385,7 @@
       </element>
 
       <element name="TCustomListView.ColumnCount">
-        <short/>
+        <short>The number of defined Columns for the control.</short>
         <descr>
           ColumnCount is a read-only Integer property which indicates the number of columns displayed for the list view.
         </descr>
@@ -10371,7 +10393,7 @@
       </element>
 
       <element name="TCustomListView.DropTarget">
-        <short/>
+        <short>The list item that is the drop target on the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -10385,7 +10407,7 @@
       </element>
 
       <element name="TCustomListView.FullDrag">
-        <short/>
+        <short>Indicates whether column headers are redrawn when they are dragged.</short>
         <descr/>
         <seealso/>
       </element>
@@ -10450,7 +10472,7 @@
       </element>
 
       <element name="TCustomListView.ItemIndex">
-        <short/>
+        <short>Contains the position for the selected item in the control.</short>
         <descr/>
         <seealso/>
       </element>

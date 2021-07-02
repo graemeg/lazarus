@@ -150,18 +150,27 @@
       </element>
 
       <element name="TCustomFloatSpinEdit.TextChanged">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Updates the control state when the value in Text has been changed.</short>
+        <descr>
+          <p>
+            <var>TextChanged</var> is an overridden method in <var>TCustomFloatSpinEdit</var>. It ensures that internal flags are updated to track the value and state for the control when it has been changed. It calls the inherited method to validate the content in Text and update the caret position for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.TextChanged">TCustomEdit.TextChanged</link>
+          <link id="#lcl.stdctrls.TCustomEdit.CaretPos">TCustomEdit.CaretPos</link>
+        </seealso>
       </element>
 
       <element name="TCustomFloatSpinEdit.SetDecimals">
-        <short/>
+        <short>Sets the value for the DecimalPlaces property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomFloatSpinEdit.DecimalPlaces"/>
+        </seealso>
       </element>
       <element name="TCustomFloatSpinEdit.SetDecimals.ADecimals">
-        <short/>
+        <short>New value for the DecimalPlaces property.</short>
       </element>
 
       <element name="TCustomFloatSpinEdit.SetValue">
@@ -490,10 +499,12 @@
       </element>
 
       <element name="TFloatSpinEdit.Align" link="#lcl.controls.TControl.Align"/>
+      <element name="TFloatSpinEdit.Alignment" link="#lcl.stdctrls.TCustomEdit.Alignment"/>
       <element name="TFloatSpinEdit.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="TFloatSpinEdit.AutoSelect" link="#lcl.stdctrls.TCustomEdit.AutoSelect"/>
       <element name="TFloatSpinEdit.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TFloatSpinEdit.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+      <element name="TFloatSpinEdit.Color" link="#lcl.controls.TControl.Color"/>
       <element name="TFloatSpinEdit.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element name="TFloatSpinEdit.DecimalPlaces" link="#lcl.spin.TCustomFloatSpinEdit.DecimalPlaces"/>
       <element name="TFloatSpinEdit.EditorEnabled" link="#lcl.spin.TCustomFloatSpinEdit.EditorEnabled"/>
@@ -524,16 +535,27 @@
       <element name="TFloatSpinEdit.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
       <element name="TFloatSpinEdit.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
       <element name="TFloatSpinEdit.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
-      <element name="TFloatSpinEdit.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
       <element name="TFloatSpinEdit.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TFloatSpinEdit.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TFloatSpinEdit.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
       <element name="TFloatSpinEdit.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
       <element name="TFloatSpinEdit.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TFloatSpinEdit.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TFloatSpinEdit.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TFloatSpinEdit.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
+      <element name="TFloatSpinEdit.OnMouseWheelHorz" link="#lcl.controls.TControl.OnMouseWheelHorz"/>
+      <element name="TFloatSpinEdit.OnMouseWheelLeft" link="#lcl.controls.TControl.OnMouseWheelLeft"/>
+      <element name="TFloatSpinEdit.OnMouseWheelRight" link="#lcl.controls.TControl.OnMouseWheelRight"/>
       <element name="TFloatSpinEdit.OnResize" link="#lcl.controls.TControl.OnResize"/>
+      <element name="TFloatSpinEdit.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
+      <element name="TFloatSpinEdit.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TFloatSpinEdit.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TFloatSpinEdit.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
       <element name="TFloatSpinEdit.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
       <element name="TFloatSpinEdit.ReadOnly" link="#lcl.stdctrls.TCustomEdit.ReadOnly"/>
       <element name="TFloatSpinEdit.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
       <element name="TFloatSpinEdit.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
+      <element name="TFloatSpinEdit.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
       <element name="TFloatSpinEdit.Value" link="#lcl.spin.TCustomFloatSpinEdit.Value"/>
       <element name="TFloatSpinEdit.Visible" link="#lcl.controls.TControl.Visible"/>
 
@@ -753,13 +775,16 @@
 
       <element name="TSpinEdit.AutoSelected" link="#lcl.stdctrls.TCustomEdit.AutoSelected"/>
       <element name="TSpinEdit.Align" link="#lcl.controls.TControl.Align"/>
+      <element name="TSpinEdit.Alignment" link="#lcl.stdctrls.TCustomEdit.Alignment"/>
       <element name="TSpinEdit.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="TSpinEdit.AutoSelect" link="#lcl.stdctrls.TCustomEdit.AutoSelect"/>
       <element name="TSpinEdit.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TSpinEdit.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+      <element name="TSpinEdit.Color" link="#lcl.controls.TControl.Color"/>
       <element name="TSpinEdit.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element name="TSpinEdit.EditorEnabled" link="#lcl.spin.TCustomFloatSpinEdit.EditorEnabled"/>
       <element name="TSpinEdit.Enabled" link="#lcl.controls.TControl.Enabled"/>
+      <element name="TSpinEdit.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TSpinEdit.Increment" link="#lcl.spin.TCustomSpinEdit.Increment"/>
       <element name="TSpinEdit.MaxValue" link="#lcl.spin.TCustomSpinEdit.MaxValue"/>
       <element name="TSpinEdit.MinValue" link="#lcl.spin.TCustomSpinEdit.MinValue"/>
@@ -779,17 +804,27 @@
 
       <element name="TSpinEdit.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds"/>
       <element name="TSpinEdit.OnClick" link="#lcl.controls.TControl.OnClick"/>
-      <element name="TSpinEdit.OnEditingDone" link="#lcl.stdctrls.TCustomEdit.OnEditingDone"/>
+      <element name="TSpinEdit.OnEditingDone" link="#lcl.controls.TControl.OnEditingDone"/>
       <element name="TSpinEdit.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
       <element name="TSpinEdit.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
       <element name="TSpinEdit.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
       <element name="TSpinEdit.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
       <element name="TSpinEdit.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
-      <element name="TSpinEdit.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
       <element name="TSpinEdit.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TSpinEdit.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TSpinEdit.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
       <element name="TSpinEdit.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
       <element name="TSpinEdit.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TSpinEdit.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TSpinEdit.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TSpinEdit.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
+      <element name="TSpinEdit.OnMouseWheelHorz" link="#lcl.controls.TControl.OnMouseWheelHorz"/>
+      <element name="TSpinEdit.OnMouseWheelLeft" link="#lcl.controls.TControl.OnMouseWheelLeft"/>
+      <element name="TSpinEdit.OnMouseWheelRight" link="#lcl.controls.TControl.OnMouseWheelRight"/>
       <element name="TSpinEdit.OnResize" link="#lcl.controls.TControl.OnResize"/>
+      <element name="TSpinEdit.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
+      <element name="TSpinEdit.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TSpinEdit.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TSpinEdit.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
       <element name="TSpinEdit.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
       <element name="TSpinEdit.ReadOnly" link="#lcl.stdctrls.TCustomEdit.ReadOnly"/>

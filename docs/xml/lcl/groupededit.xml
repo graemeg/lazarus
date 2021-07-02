@@ -1032,10 +1032,10 @@
         <short>New value for the property.</short>
       </element>
 
-      <element
-        name="TCustomAbstractGroupedEdit.WSRegisterClass"
-        link="#lcl.controls.TCustomControl.WSRegisterClass">
-        <short>Registers the widget set class used to create new instances of the grouped edit.</short>
+      <element name="TCustomAbstractGroupedEdit.WSRegisterClass">
+        <short>
+          Registers the widget set class used to create new instances of the grouped edit.
+        </short>
         <descr>
           <p>
             Calls the inherited method, and registers the following properties to be skipped during LCL component streaming:
@@ -1047,7 +1047,9 @@
             <dd>Used in a previous version of Lazarus</dd>
           </dl>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TCustomControl.WSRegisterClass">TCustomControl.WSRegisterClass</link>
+        </seealso>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.CalculatePreferredSize">
@@ -1234,6 +1236,17 @@
         <short>Value for the property.</short>
       </element>
 
+      <element name="TCustomAbstractGroupedEdit.GetBuddyVisible">
+        <short>Gets the Visible property for the Buddy control.</short>
+        <descr/>
+        <seealso>
+          <link id="TCustomAbstractGroupedEdit.Buddy"/>
+        </seealso>
+      </element>
+      <element name="TCustomAbstractGroupedEdit.GetBuddyVisible.Result">
+        <short>True if the Buddy control is visible.</short>
+      </element>
+
       <element name="TCustomAbstractGroupedEdit.SetBuddyCaption">
         <short>Sets the Caption used in the Buddy property.</short>
         <descr/>
@@ -1276,6 +1289,17 @@
       </element>
       <element name="TCustomAbstractGroupedEdit.SetBuddyWidth.AValue">
         <short>Value assigned as the Width in the Buddy property.</short>
+      </element>
+
+      <element name="TCustomAbstractGroupedEdit.SetBuddyVisible">
+        <short>Sets the value for the Visible property in the Buddy control.</short>
+        <descr/>
+        <seealso>
+          <link id="TCustomAbstractGroupedEdit.Buddy"/>
+        </seealso>
+      </element>
+      <element name="TCustomAbstractGroupedEdit.SetBuddyVisible.AValue">
+        <short>True to display the Buddy control, False to hide it.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.BuddyClick">
@@ -1335,30 +1359,36 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditContextPopup">
-        <short/>
+        <short>Signals the OnContextPopup event handler (when assigned).</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomAbstractGroupedEdit.OnContextPopup"/>
+        </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.EditContextPopup.MousePos">
-        <short/>
+        <short>Mouse coordinates for the context pop-up.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.EditContextPopup.Handled">
-        <short/>
+        <short>True if the pop-up was handled for the control.</short>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditDblClick">
-        <short/>
+        <short>Signals the OnDblClick event handler (when assigned).</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomAbstractGroupedEdit.OnDblClick"/>
+        </seealso>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditDragDrop">
-        <short/>
+        <short>Signals the OnDragDrop event handler (when assigned).</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomAbstractGroupedEdit.OnDragDrop"/>
+        </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.EditDragDrop.Source">
-        <short/>
+        <short>Control for the event notification.</short>
       </element>
       <element name="TCustomAbstractGroupedEdit.EditDragDrop.X">
         <short/>
@@ -1368,9 +1398,11 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditDragOver">
-        <short/>
+        <short>Signals the OnDragOver event handler (when assigned).</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomAbstractGroupedEdit.OnDragOver"/>
+        </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.EditDragOver.Source">
         <short/>
@@ -1389,13 +1421,13 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditEditingDone">
-        <short/>
+        <short>Signals the OnEditEditingDone event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditEndDrag">
-        <short/>
+        <short>Signals the OnEditEndDrag event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1410,19 +1442,19 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditEnter">
-        <short/>
+        <short>Signals the OnEditEnter event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditExit">
-        <short/>
+        <short>Signals the OnEditExit event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditKeyDown">
-        <short/>
+        <short>Signals the OnEditKeyDown event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1434,7 +1466,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditKeyPress">
-        <short/>
+        <short>Signals the OnEditKeyPress event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1443,7 +1475,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditKeyUp">
-        <short/>
+        <short>Signals the OnEditKeyUp event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1455,7 +1487,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseDown">
-        <short/>
+        <short>Signals the OnEditMouseDown event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1473,7 +1505,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseUp">
-        <short/>
+        <short>Signals the OnEditMouseUp event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1491,19 +1523,19 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseEnter">
-        <short/>
+        <short>Signals the FOnEditMouseEnter event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseLeave">
-        <short/>
+        <short>Signals the OnEditMouseLeave event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseMove">
-        <short/>
+        <short>Signals the OnEditMouseMove event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1518,7 +1550,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseWheel">
-        <short/>
+        <short>Signals the OnEditMouseWheel event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1536,7 +1568,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseWheelUp">
-        <short/>
+        <short>Signals the OnEditMouseWheelUp event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1551,7 +1583,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditMouseWheelDown">
-        <short/>
+        <short>Signals the OnEditMouseWheelDown event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1566,7 +1598,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditUtf8KeyPress">
-        <short/>
+        <short>Signals the OnEditUtf8KeyPress event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1575,7 +1607,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditStartDrag">
-        <short/>
+        <short>Signals the OnEditStartDrag event handler (when assigned).</short>
         <descr/>
         <seealso/>
       </element>
@@ -1584,7 +1616,9 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.UpdateSpacing">
-        <short/>
+        <short>
+          Updates border spacing in BaseEditor for the Layout or visibility of the Buddy control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -1607,7 +1641,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.EditCanModify">
-        <short/>
+        <short>Indicates if BaseEditor can be modified.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1664,9 +1698,14 @@
 
       <element name="TCustomAbstractGroupedEdit.SetAutoSize">
         <short>Sets the value for the AutoSize property.</short>
-        <descr/>
+        <descr>
+          <p>
+            SetAutoSize is overridden in TCustomAbstractGroupedEdit, and calls the inherited method on entry. It ensures that the new value for the property is applied to AutoSize property in BaseEditor.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomAbstractGroupedEdit.AutoSize"/>
+          <link id="TCustomAbstractGroupedEdit.BaseEditor"/>
         </seealso>
       </element>
       <element name="TCustomAbstractGroupedEdit.SetAutoSize.AValue">
@@ -1696,8 +1735,10 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.ShouldAutoAdjust">
-        <short/>
-        <descr/>
+        <short>Indicates if the height or width is affected during auto-adjust.</short>
+        <descr>
+          AWidth is set to True in TCustomAbstractGroupedEdit. AHeight is set to False when AutoSize is True, and vice-versa.
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomAbstractGroupedEdit.ShouldAutoAdjust.AWidth">
@@ -1759,9 +1800,15 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.Color">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Background color for the BaseEdit in the control.</short>
+        <descr>
+          <p>
+            Does not apply to the Buddy control (button); buttons always used the system-defined color for the button surface.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Color">TControl.Color</link>
+        </seealso>
       </element>
 
       <element name="TCustomAbstractGroupedEdit.DirectInput">
@@ -2009,7 +2056,24 @@
         </seealso>
       </element>
 
-      <element name="TCustomAbstractGroupedEdit.Autosize" link="#lcl.controls.TControl.AutoSize"/>
+      <element name="TCustomAbstractGroupedEdit.AutoSize">
+          <short>
+            Allows automatic adjustment of the size for the control, according to its content.
+          </short>
+          <descr>
+            <p>
+              <var>AutoSize</var> is a <var>Boolean</var> property redeclared in <var>TCustomAbstractGroupedEdit</var> with an overridden write access specifiers. AutoSize allows the control to automatically adjustment its size to the content in the control.
+            </p>
+           <p>
+             The default value for the property is <b>True</b>.
+           </p>
+          </descr>
+          <seealso>
+            <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
+            <link id="#lcl.controls.TControl.SetAutoSize">TControl.SetAutoSize</link>
+            <link id="#lcl.controls.AutoSize">Using AutoSize</link>
+          </seealso>
+        </element>
 
       <element name="TCustomAbstractGroupedEdit.AutoSizeHeightIsEditHeight">
         <short>
@@ -2173,6 +2237,7 @@
       </element>
 
       <element name="TCustomAbstractGroupedEdit.TabStop">
+        <short>Indicates if the control can be reached using Tab navigation.</short>
         <descr>
           <p>
             <var>TabStop</var> is a <var>Boolean</var> property which indicates if the control can be accessed using Tab or Shift+Tab keyboard navigation. Read and write access to the property value is redirected to the <var>BaseEditor</var> property.
@@ -2266,8 +2331,8 @@
       <element name="TAbstractGroupedEdit.Alignment" link="#lcl.groupededit.TCustomAbstractGroupedEdit.Alignment"/>
       <element name="TAbstractGroupedEdit.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="TAbstractGroupedEdit.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
-      <element name="TAbstractGroupedEdit.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
-      <element name="TAbstractGroupedEdit.BorderStyle" link="#lcl.controls.TCustomControl.BorderStyle"/>
+      <element name="TAbstractGroupedEdit.BorderSpacing" link="#lcl.controls.TWinControl.BorderSpacing"/>
+      <element name="TAbstractGroupedEdit.BorderStyle" link="#lcl.controls.TControl.BorderStyle"/>
       <element name="TAbstractGroupedEdit.BuddyCaption" link="#lcl.groupededit.TCustomAbstractGroupedEdit.BuddyCaption"/>
       <element name="TAbstractGroupedEdit.BuddyCursor" link="#lcl.groupededit.TCustomAbstractGroupedEdit.BuddyCursor"/>
       <element name="TAbstractGroupedEdit.BuddyHint" link="#lcl.groupededit.TCustomAbstractGroupedEdit.BuddyHint"/>
@@ -2285,31 +2350,31 @@
       <element name="TAbstractGroupedEdit.Layout" link="#lcl.groupededit.TCustomAbstractGroupedEdit.Layout"/>
       <element name="TAbstractGroupedEdit.MaxLength" link="#lcl.groupededit.TCustomAbstractGroupedEdit.MaxLength"/>
       <element name="TAbstractGroupedEdit.OnChange" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnChange"/>
-      <element name="TAbstractGroupedEdit.OnClick" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnClick"/>
-      <element name="TAbstractGroupedEdit.OnDblClick" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnDblClick"/>
-      <element name="TAbstractGroupedEdit.OnDragDrop" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnDragDrop"/>
-      <element name="TAbstractGroupedEdit.OnDragOver" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnDragOver"/>
+      <element name="TAbstractGroupedEdit.OnClick" link="#lcl.controls.TControl.OnClick"/>
+      <element name="TAbstractGroupedEdit.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
+      <element name="TAbstractGroupedEdit.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TAbstractGroupedEdit.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
       <element name="TAbstractGroupedEdit.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
-      <element name="TAbstractGroupedEdit.OnEditingDone" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnEditingDone"/>
-      <element name="TAbstractGroupedEdit.OnEndDrag" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnEndDrag"/>
-      <element name="TAbstractGroupedEdit.OnEnter" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnEnter"/>
-      <element name="TAbstractGroupedEdit.OnExit" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnExit"/>
-      <element name="TAbstractGroupedEdit.OnKeyDown" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnKeyDown"/>
-      <element name="TAbstractGroupedEdit.OnKeyPress" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnKeyPress"/>
-      <element name="TAbstractGroupedEdit.OnKeyUp" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnKeyUp"/>
-      <element name="TAbstractGroupedEdit.OnMouseDown" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseDown"/>
-      <element name="TAbstractGroupedEdit.OnMouseEnter" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseEnter"/>
-      <element name="TAbstractGroupedEdit.OnMouseLeave" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseLeave"/>
-      <element name="TAbstractGroupedEdit.OnMouseMove" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseMove"/>
-      <element name="TAbstractGroupedEdit.OnMouseUp" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseUp"/>
-      <element name="TAbstractGroupedEdit.OnMouseWheel" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseWheel"/>
-      <element name="TAbstractGroupedEdit.OnMouseWheelDown" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseWheelDown"/>
-      <element name="TAbstractGroupedEdit.OnMouseWheelUp" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnMouseWheelUp"/>
+      <element name="TAbstractGroupedEdit.OnEditingDone" link="#lcl.controls.TControl.OnEditingDone"/>
+      <element name="TAbstractGroupedEdit.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
+      <element name="TAbstractGroupedEdit.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
+      <element name="TAbstractGroupedEdit.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
+      <element name="TAbstractGroupedEdit.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
+      <element name="TAbstractGroupedEdit.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
+      <element name="TAbstractGroupedEdit.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
+      <element name="TAbstractGroupedEdit.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TAbstractGroupedEdit.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TAbstractGroupedEdit.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TAbstractGroupedEdit.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TAbstractGroupedEdit.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TAbstractGroupedEdit.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TAbstractGroupedEdit.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TAbstractGroupedEdit.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element name="TAbstractGroupedEdit.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
-      <element name="TAbstractGroupedEdit.OnUTF8KeyPress" link="#lcl.groupededit.TCustomAbstractGroupedEdit.OnUTF8KeyPress"/>
+      <element name="TAbstractGroupedEdit.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
       <element name="TAbstractGroupedEdit.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
-      <element name="TAbstractGroupedEdit.ParentColor" link="#lcl.groupededit.TAbstractGroupedEdit.ParentColor"/>
-      <element name="TAbstractGroupedEdit.ParentFont" link="#lcl.controls.TControl.ParentShowFont"/>
+      <element name="TAbstractGroupedEdit.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TAbstractGroupedEdit.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TAbstractGroupedEdit.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
       <element name="TAbstractGroupedEdit.PasswordChar" link="#lcl.groupededit.TCustomAbstractGroupedEdit.PasswordChar"/>
       <element name="TAbstractGroupedEdit.PopupMenu" link="#lcl.groupededit.TCustomAbstractGroupedEdit.PopupMenu"/>
