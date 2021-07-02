@@ -85,7 +85,7 @@ uses
   RemoveEmptyComment, AddBeginEnd, AddBlockEndSemicolon, SortUses,
   { warnings }
   Warning, WarnEmptyBlock, WarnRealType, WarnAssignToFunctionName,
-  WarnCaseNoElse, WarnDestroy, WarnUnusedParam,
+  WarnCaseNoElse, WarnDestroy, WarnUnusedParam, WarnImbalancedComment,
   { caps}
   UnitNameCaps, SpecificWordCaps, IdentifierCaps, Capitalisation,
   { returns }
@@ -148,8 +148,10 @@ begin
   try
     if lc.IsIncludedInSettings then
     begin
-      if (lc is TWarning) then
+      if lc is TWarning then
+      begin
         (lc as TWarning).OnWarning := OnMessage;
+      end;
 
       fcTreeWalker.Visit(fcRoot, lc);
 
@@ -266,6 +268,8 @@ begin
   ApplyVisitorType(TWarnDestroy);
 
   ApplyVisitorType(TWarnUnusedParam);
+
+  ApplyVisitorType(TWarnImbalancedComment);
 end;
 
 procedure TAllProcesses.Capitalisation;

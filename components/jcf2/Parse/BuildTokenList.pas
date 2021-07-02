@@ -112,7 +112,7 @@ implementation
 uses
   { local }
   JcfStringUtils, JcfSystemUtils,
-  JcfRegistrySettings;
+  JcfRegistrySettings, ParseError;
 
 const
   CurlyLeft =  '{'; //widechar(123);
@@ -225,15 +225,30 @@ end;
 
 function TBuildTokenList.TryBracketStarComment(const pcToken: TSourceToken): boolean;
 var
-  liCommentLength: integer;
+  liCommentLength, lNestedDepth: integer;
+  bPossiblyImbalanced: Boolean;
 
   procedure MoveToCommentEnd;
+  var
+    sCurrentStr: string;
   begin
     { comment is ended by *) or by EOF (bad source) }
     while True do
     begin
       if EndOfFileAfter(liCommentLength) then
+      begin
+        if bPossiblyImbalanced then
+        begin
+          // $ (US): 2021-06-28 15:48:59 $
+          //  Although it is not a parse error, but I do not want to introduce
+          //  another exception class.
+          raise TEParseError.Create('Unable to recover from imbalanced bracket star comment.', pcToken);
+        end else
+        begin
+          bPossiblyImbalanced := True;
+        end;
         break;
+      end;
 
       if CheckMultiByte(ForwardChar(liCommentLength)) then
       begin
@@ -241,8 +256,18 @@ var
         continue;
       end;
 
-      if ForwardChars(liCommentLength, 2) = '*)' then
-        break;
+      sCurrentStr := ForwardChars(liCommentLength, 2);
+      if '(*' = sCurrentStr then
+      begin
+        Inc(lNestedDepth);
+      end else if '*)' = sCurrentStr then
+      begin
+        Dec(lNestedDepth);
+        if (lNestedDepth = 0) or bPossiblyImbalanced then
+        begin
+          break;
+        end;
+      end;
 
       inc(liCommentLength);
     end;
@@ -262,10 +287,17 @@ begin
   if CurrentChars(2) <> '(*' then
     exit;
 
+  lNestedDepth := 1;
   { if the comment starts with (*) that is not the end of the comment }
   liCommentLength := 2;
 
   MoveToCommentEnd;
+  if bPossiblyImbalanced then
+  begin
+    lNestedDepth := 1;
+    liCommentLength := 2;
+    MoveToCommentEnd;
+  end;
 
   pcToken.TokenType := ttComment;
   pcToken.CommentStyle := eBracketStar;
@@ -278,6 +310,7 @@ end;
 function TBuildTokenList.TryCurlyComment(const pcToken: TSourceToken): boolean;
 var
   liCommentLength, lNestedDepth: integer;
+  bPossiblyImbalanced: Boolean;
 
   procedure MoveToCommentEnd;
   var
@@ -287,7 +320,19 @@ var
     while True do
     begin
       if EndOfFileAfter(liCommentLength) then
+      begin
+        if bPossiblyImbalanced then
+        begin
+          // $ (US): 2021-06-28 15:48:59 $
+          //  Although it is not a parse error, but I do not want to introduce
+          //  another exception class.
+          raise TEParseError.Create('Unable to recover from imbalanced curly comment.', pcToken);
+        end else
+        begin
+          bPossiblyImbalanced := True;
+        end;
         break;
+      end;
       lForwardChar:=ForwardChar(liCommentLength);
       if CheckMultiByte(lForwardChar) then
       begin
@@ -299,7 +344,7 @@ var
         Inc(lNestedDepth)
       else if lForwardChar = CurlyRight then begin
         Dec(lNestedDepth);
-        if (lNestedDepth = 0) then
+        if (lNestedDepth = 0) or bPossiblyImbalanced then
           break;
       end;
     end;
@@ -311,6 +356,8 @@ begin
   Result := False;
   if Current <> '{' then
     exit;
+
+  bPossiblyImbalanced := False;
 
   pcToken.TokenType  := ttComment;
   lNestedDepth := 1;
@@ -324,6 +371,12 @@ begin
     pcToken.CommentStyle := eCurlyBrace;
 
   MoveToCommentEnd;
+  if bPossiblyImbalanced then
+  begin
+    lNestedDepth := 1;
+    liCommentLength := 1;
+    MoveToCommentEnd;
+  end;
   pcToken.SourceCode := CurrentChars(liCommentLength);
   Consume(liCommentLength);
 

@@ -30,16 +30,16 @@ See http://www.gnu.org/licenses/gpl.html
 interface
 
 uses
-  StdCtrls, Classes,
+  StdCtrls, ExtCtrls, Classes,
   IDEOptionsIntf, IDEOptEditorIntf;
 
 type
-
   { TfComments }
 
   TfComments = class(TAbstractIDEOptionsEditor)
     cbRemoveEmptyDoubleSlashComments: TCheckBox;
     cbRemoveEmptyCurlyBraceComments: TCheckBox;
+    rgImbalancedCommentAction: TRadioGroup;
   public
     constructor Create(AOwner: TComponent); override;
 
@@ -55,7 +55,7 @@ implementation
 {$R *.lfm}
 
 uses
-  JcfSettings, JcfUIConsts;
+  JcfSettings, JcfUIConsts, SetComments;
 
 constructor TfComments.Create(AOwner: TComponent);
 begin
@@ -72,6 +72,7 @@ procedure TfComments.Setup(ADialog: TAbstractOptionsEditorDialog);
 begin
   cbRemoveEmptyDoubleSlashComments.Caption := lisCommentsRemoveEmptySlashComments;
   cbRemoveEmptyCurlyBraceComments.Caption := lisCommentsRemoveEmptyCurlyBracesComments;
+  FormattingSettings.Comments.GetImbalancedCommentActions(rgImbalancedCommentAction.Items);
 end;
 
 procedure TfComments.ReadSettings(AOptions: TAbstractIDEOptions);
@@ -80,6 +81,7 @@ begin
   begin
     cbRemoveEmptyDoubleSlashComments.Checked := RemoveEmptyDoubleSlashComments;
     cbRemoveEmptyCurlyBraceComments.Checked  := RemoveEmptyCurlyBraceComments;
+    rgImbalancedCommentAction.ItemIndex      := Ord(ImbalancedCommentAction);
   end;
 end;
 
@@ -89,6 +91,7 @@ begin
   begin
     RemoveEmptyDoubleSlashComments := cbRemoveEmptyDoubleSlashComments.Checked;
     RemoveEmptyCurlyBraceComments  := cbRemoveEmptyCurlyBraceComments.Checked;
+    ImbalancedCommentAction        := TImbalancedCommentAction(rgImbalancedCommentAction.ItemIndex);
   end;
 end;
 
