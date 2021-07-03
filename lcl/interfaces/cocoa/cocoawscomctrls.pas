@@ -202,6 +202,7 @@ type
     class procedure SetScrollBars(const ALV: TCustomListView; const AValue: TScrollStyle); override;
     class procedure SetSort(const ALV: TCustomListView; const {%H-}AType: TSortType; const {%H-}AColumn: Integer;
       const {%H-}ASortDirection: TSortDirection); override;
+    class function RestoreItemCheckedAfterSort(const ALV: TCustomListView): Boolean; override;
     (*class procedure SetViewOrigin(const ALV: TCustomListView; const AValue: TPoint); override;
     class procedure SetViewStyle(const ALV: TCustomListView; const AValue: TViewStyle); override;*)
   end;
@@ -1675,9 +1676,14 @@ class procedure TCocoaWSCustomListView.SetSort(const ALV: TCustomListView;
   const ASortDirection: TSortDirection);
 var
   lTableLV: TCocoaTableListView;
+  lCocoaLV: TCocoaListView;
   lNSColumn: NSTableColumn;
+  Cb: TLCLListViewCallback;
 begin
   if not CheckColumnParams(lTableLV, lNSColumn, ALV, AColumn) then Exit;
+  if not CheckParamsCb(lCocoaLV, lTableLV, cb, ALV) then Exit;
+
+  cb.checkedIdx.removeAllIndexes;
   lTableLV.reloadData();
   { //todo:
     lNSColumn.setSortDescriptorPrototype(
@@ -1687,6 +1693,12 @@ begin
       objcselector('none:')
     )
   );}
+end;
+
+class function TCocoaWSCustomListView.RestoreItemCheckedAfterSort(
+  const ALV: TCustomListView): Boolean;
+begin
+  Result:=true;
 end;
 
 { TCocoaWSProgressBar }

@@ -1038,6 +1038,8 @@ procedure TCustomListView.SortWithParams(ACompareFunc: TListSortCompare);
 var
   FSavedSelection: TFPList;
   FSavedFocused: TListItem;
+  FSavedChecked: TFPList;
+  FSavedCheckItem: TListItem;
   i: Integer;
   AItemIndex: Integer;
 begin
@@ -1048,6 +1050,7 @@ begin
   begin
     Include(FFlags, lffItemsSorting);
     FSavedSelection := TFPList.Create;
+    FSavedChecked := nil;
     try
       if (ItemIndex >= 0) then
         FSavedFocused := Items[ItemIndex]
@@ -1060,6 +1063,15 @@ begin
           for i := 0 to Items.Count-1 do
             if Items[i].Selected and (Items[i] <> Selected) then
               FSavedSelection.Add(Items[i]);
+      end;
+      if (TWSCustomListViewClass(WidgetSetClass).RestoreItemCheckedAfterSort(Self))
+        and Items.WSUpdateAllowed
+        and not OwnerData then
+      begin
+        FSavedChecked := TFPList.Create;
+        for i := 0 to Items.Count - 1 do
+          if Items[i].Checked then
+            FSavedChecked.Add(Items[i]);
       end;
 
       Items.FCacheIndex := -1;
@@ -1084,6 +1096,19 @@ begin
             TWSCustomListViewClass(WidgetSetClass).ItemSetState(Self,
               AItemIndex, Items[AItemIndex], lisSelected, True);
         end;
+
+        if FSavedChecked <> nil then
+        begin
+          for i := 0 to FSavedChecked.Count - 1 do
+          begin
+            FSavedCheckItem := TListItem( FSavedChecked[i] );
+            // todo: this is inefficient, because FSavedCheckItem.Index must be called again
+            TWSCustomListViewClass(WidgetSetClass).ItemSetChecked(Self,
+              FSavedCheckItem.Index, FSavedCheckItem, True);
+          end;
+          FSavedChecked.Free;
+        end;
+
       end;
     finally
       FreeThenNil(FSavedSelection);

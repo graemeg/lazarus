@@ -174,6 +174,10 @@ type
       const ASortDirection: TSortDirection); virtual;
     class procedure SetViewOrigin(const ALV: TCustomListView; const AValue: TPoint); virtual;
     class procedure SetViewStyle(const ALV: TCustomListView; const Avalue: TViewStyle); virtual;
+    // if returns true, then LCL will call SetItemChecked after calling SetSort
+    // for every item previously checked. Only widgetsets that don't support native sort
+    // AND/OR that don't support native checkboxes should have this method return true
+    class function RestoreItemCheckedAfterSort(const ALV: TCustomListView): Boolean; virtual;
   end;
 
   TWSCustomListViewClass = class of TWSCustomListView;
@@ -779,6 +783,12 @@ end;
 
 class procedure TWSCustomListView.SetViewStyle(const ALV: TCustomListView; const Avalue: TViewStyle);
 begin
+end;
+
+class function TWSCustomListView.RestoreItemCheckedAfterSort(const ALV: TCustomListView
+  ): Boolean;
+begin
+  Result := false;
 end;
 
 class procedure TWSCustomListView.SetItemsCount(const ALV: TCustomListView; const Avalue: Integer); 
