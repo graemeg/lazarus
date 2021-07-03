@@ -2554,7 +2554,7 @@ begin
   ctx := CheckDC(DC);
   if Assigned(ctx) then
   begin
-    Result := ctx.TextColor;
+    Result := TColorRef(ctx.TextColor);
     ctx.TextColor := TColor(Color);
   end
   else
