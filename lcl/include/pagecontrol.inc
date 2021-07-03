@@ -193,5 +193,9 @@ begin
   Result.PageControl := Self;
 end;
 
+procedure TPageControl.Clear;
+begin
+  Tabs.Clear;
+end;
 
 // included by comctrls.pp

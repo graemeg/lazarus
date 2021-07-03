@@ -589,6 +589,7 @@ type
     function DoUndockClientMsg(NewTarget, Client: TControl):boolean; override;
     function ChildClassAllowed(ChildClass: TClass): boolean; override;
   public
+    procedure Clear;
     function FindNextPage(CurPage: TTabSheet;
                           GoForward, CheckTabVisible: Boolean): TTabSheet;
     procedure SelectNextPage(GoForward: Boolean);
