@@ -1832,7 +1832,7 @@ var
 begin
   //'x86', 'i386', 'i486', 'i586', 'i686',
   //'ia64', 'x86_64', 'powerpc', aarch64
-  //'sparc', 'arm'
+  //'sparc', 'arm', 'xtensa', 'wasm32'
   Result := 4;
   lcCpu := LowerCase(CpuName);
   if (lcCpu='ia64') or (lcCpu='x86_64') or (lcCpu='aarch64') or (lcCpu='powerpc64')

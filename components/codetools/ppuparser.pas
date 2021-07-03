@@ -166,11 +166,11 @@ type
           cpu_no,                       { 0 }
           cpu_i386,                     { 1 }
           cpu_m68k,                     { 2 }
-          cpu_alpha,                    { 3 }
+          obsolete_cpu_alpha,           { 3 }
           cpu_powerpc,                  { 4 }
           cpu_sparc,                    { 5 }
-          cpu_vm,                       { 6 }
-          cpu_iA64,                     { 7 }
+          obsolete_cpu_vm,              { 6 }
+          obsolete_cpu_ia64,            { 7 }
           cpu_x86_64,                   { 8 }
           cpu_mipseb,                   { 9 }
           cpu_arm,                      { 10 }
@@ -179,7 +179,13 @@ type
           cpu_mipsel,                   { 13 }
           cpu_jvm,                      { 14 }
           cpu_i8086,                    { 15 }
-          cpu_aarch64                   { 16 }
+          cpu_aarch64,                  { 16 }
+          cpu_wasm32,                   { 17 }
+          cpu_sparc64,                  { 18 }
+          cpu_riscv32,                  { 19 }
+          cpu_riscv64,                  { 20 }
+          cpu_xtensa,                   { 21 }
+          cpu_z80                       { 22 }
     );
 
 const
@@ -200,12 +206,17 @@ const
      'mipsel',
      'jvm',
      'i8086',
-     'aarch64'
+     'aarch64',
+     'wasm32',
+     'sparc64',
+     'riscv32',
+     'riscv64',
+     'xtensa',
+     'z80'
      );
 
 // from ppu.pas
-  { We need to use the correct size of aint and pint for
-  the target CPU }
+  { We need to use the correct size of aint and pint for the target CPU }
 const
   CpuAddrBitSize : array[tsystemcpu] of longint =
     (
@@ -225,7 +236,13 @@ const
     { 13 } 32 {'mipsel'},
     { 14 } 32 {'jvm'},
     { 15 } 16 {'i8086'},
-    { 16 } 64 {'aarch64'}
+    { 16 } 64 {'aarch64'},
+    { 17 } 32 {'wasm32},
+    { 18 } 64 {'sparc64},
+    { 19 } 32 {'riscv32'},
+    { 20 } 64 {'riscv64'},
+    { 21 } 32 {'xtensa'},
+    { 22 } 16 {'z80'}
     );
   CpuAluBitSize : array[tsystemcpu] of longint =
     (
@@ -245,7 +262,13 @@ const
     { 13 } 32 {'mipsel'},
     { 14 } 64 {'jvm'},
     { 15 } 16 {'i8086'},
-    { 16 } 64 {'aarch64'}
+    { 16 } 64 {'aarch64'},
+    { 17 } 64 {'wasm32'},
+    { 18 } 64 {'sparc64'},
+    { 19 } 32 {'riscv32'},
+    { 20 } 64 {'riscv64'},
+    { 21 } 32 {'xtensa'},
+    { 22 }  8 {'z80'}
     );
 
 type
@@ -1474,22 +1497,6 @@ type
     pi_needs_implicit_finally
   );
   //tprocinfoflags=set of tprocinfoflag;
-
-  tsystemcpu=
-  (
-    cpu_no,                       { 0 }
-    cpu_i386,                     { 1 }
-    cpu_m68k,                     { 2 }
-    cpu_alpha,                    { 3 }
-    cpu_powerpc,                  { 4 }
-    cpu_sparc,                    { 5 }
-    cpu_vm,                       { 6 }
-    cpu_iA64,                     { 7 }
-    cpu_x86_64,                   { 8 }
-    cpu_mips,                     { 9 }
-    cpu_arm,                      { 10 }
-    cpu_powerpc64                 { 11 }
-  );
 var
   EntryNr: Byte;
   calloption: tproccalloption;

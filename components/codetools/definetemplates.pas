@@ -109,7 +109,7 @@ const
   VirtualTempDir='TEMPORARYDIRECTORY';
   
   // FPC operating systems and processor types
-  FPCOperatingSystemNames: array[1..38] of shortstring =(
+  FPCOperatingSystemNames: array[1..39] of shortstring =(
      'linux',
      'win32','win64','wince',
      'darwin','macos',
@@ -141,9 +141,10 @@ const
      'symbian',
      'watcom',
      'wdosx',
-     'wii'
+     'wii',
+     'wasi'
     );
-  FPCOperatingSystemCaptions: array[1..38] of shortstring =(
+  FPCOperatingSystemCaptions: array[1..39] of shortstring =(
      'AIX',
      'Amiga',
      'Android',
@@ -181,7 +182,8 @@ const
      'Win32',
      'Win64',
      'WinCE',
-     'Wii'
+     'Wii',
+     'Wasi'
     );
 
   FPCOperatingSystemAlternativeNames: array[1..2] of shortstring =(
@@ -190,7 +192,7 @@ const
   FPCOperatingSystemAlternative2Names: array[1..2] of shortstring =(
       'bsd', 'linux' // see GetDefaultSrcOS2ForTargetOS
     );
-  FPCProcessorNames: array[1..14] of shortstring =(
+  FPCProcessorNames: array[1..15] of shortstring =(
       'aarch64',
       'arm',
       'avr',
@@ -204,7 +206,8 @@ const
       'powerpc64',
       'sparc',
       'x86_64',
-      'xtensa'
+      'xtensa',
+      'wasm32'
     );
   FPCSyntaxModes: array[1..6] of shortstring = (
     'FPC', 'ObjFPC', 'Delphi', 'TP', 'MacPas', 'ISO'
@@ -3746,6 +3749,8 @@ begin
     Result:=Result+'aarch64'
   else if SysUtils.CompareText(TargetCPU,'xtensa')=0 then
     Result:=Result+'xtensa'
+  else if SysUtils.CompareText(TargetCPU,'wasm32')=0 then
+    Result:=Result+'wasm32'
   else
     Result:='fpc';
   Result:=Result+ExeExt;
@@ -3877,6 +3882,7 @@ begin
     'jvm'    : ;
     'aarch64'  : ;
     'xtensa' : Xtensa;
+    'wasm32' : ;
   end;
 end;
 
