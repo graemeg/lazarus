@@ -109,6 +109,8 @@ type
 
   TCocoaWSCustomListBox = class(TWSCustomListBox)
   published
+    class procedure DragStart(const ACustomListBox: TCustomListBox); override;
+
     class function CreateHandle(const AWinControl: TWinControl; const AParams: TCreateParams): TLCLIntfHandle; override;
     class function GetIndexAtXY(const ACustomListBox: TCustomListBox; X, Y: integer): integer; override;
     class function GetItemIndex(const ACustomListBox: TCustomListBox): integer; override;
@@ -2193,6 +2195,17 @@ begin
   list.isDynamicRowHeight := AStyle = lbOwnerDrawVariable;
   //todo: if flag isCustomRowHeight changes in runtime
   //      noteHeightOfRowsWithIndexesChanged, should be sent to listview
+end;
+
+class procedure TCocoaWSCustomListBox.DragStart(
+  const ACustomListBox: TCustomListBox);
+var
+  view: TCocoaTableListView;
+  cb : TLCLListBoxCallback;
+begin
+  view := GetListBoxWithCb(ACustomListBox, cb);
+  if not Assigned(view) or not Assigned(cb) then Exit;
+  cb.BlockCocoaMouseMove:=true;
 end;
 
 class function TCocoaWSCustomListBox.CreateHandle(const AWinControl:TWinControl;

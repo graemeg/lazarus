@@ -60,6 +60,7 @@ type
     HandleFrame: NSView; // HWND and "frame" (rectangle) of the a control
     BlockCocoaUpDown: Boolean;
     BlockCocoaKeyBeep: Boolean;
+    BlockCocoaMouseMove: Boolean;
     SuppressTabDown: Boolean; // all tabs should be suppressed, so Cocoa would not switch focus
     ForceReturnKeyDown: Boolean; // send keyDown/LM_KEYDOWN for Return even if handled by IntfUTF8KeyPress/CN_CHAR
 
@@ -1063,7 +1064,11 @@ begin
       NSLeftMouseUp,
       NSRightMouseUp,
       NSOtherMouseUp:
+      begin
         if TrackedControl = Owner then TrackedControl := nil;
+        if lEventType = NSLeftMouseUp then
+          BlockCocoaMouseMove := false;
+      end;
     end;
 end;
 
@@ -1174,6 +1179,7 @@ begin
 
   NotifyApplicationUserInput(Target, Msg.Msg);
   Result := DeliverMessage(Msg) <> 0;
+  if BlockCocoaMouseMove then Result := true;
 end;
 
 function TLCLCommonCallback.scrollWheel(Event: NSEvent): Boolean;

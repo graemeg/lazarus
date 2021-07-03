@@ -666,7 +666,12 @@ begin
     if isMouseMoveEvent(Result.type_) then
     begin
       cb := TrackedControl.lclGetCallback;
-      if Assigned(cb) then cb.MouseMove(Result);
+      if Assigned(cb) then begin
+        // if the mouse event was handled by LCL - just don't return it back to Cocoa
+        // i.e. needed for LCL to handle MouseMove events during DragAndDrop
+        // Cocoa should not process the mouseMove at this time!
+        if cb.MouseMove(Result) then Result := nil;
+      end;
     end;
   end;
 end;
