@@ -276,6 +276,7 @@ type
     procedure RecogniseAnonymousMethod;
     function AnonymousMethodNext: boolean;
     procedure CheckEnumeratorToken;
+    function CheckSpecialize(aRecogniseIfFound:boolean):boolean;
   Protected
     procedure RaiseParseError(const aMessage: string; aSourceToken: TSourceToken);
   Public
@@ -332,10 +333,7 @@ begin
 
   while lbMore do
   begin
-
-    if fcTokenList.FirstSolidTokenType = ttSpecialize then
-      Recognise(ttSpecialize);
-
+    CheckSpecialize(True);
     RecogniseDottedName;
     if fcTokenList.FirstSolidTokenType = ttLessThan then
     begin
@@ -1299,59 +1297,55 @@ function TBuildParseTree.GenericAhead: boolean;
 var
   liTokenIndex: integer;
   lcToken: TSourceToken;
+  lbMustBeCommaOrGreaterThan:boolean;
 begin
   Result := false;
   // generics follow the pattern "< typeid >" or  "< typeid, typeid >"
-
   if fcTokenList.FirstSolidTokenType <> ttLessThan then
-  begin
     exit;
-  end;
-
   liTokenIndex := 2;
+  lbMustBeCommaOrGreaterThan:=false;
   while True do
   begin
     lcToken := fcTokenList.SolidToken(liTokenIndex);
     if lcToken = nil then
-    begin
       exit;
-    end;
-
     // alternating id and comma
-    if liTokenIndex mod 2 = 0 then
+    if not lbMustBeCommaOrGreaterThan then
     begin
       // should be id
-      if (lcToken.WordType <> wtBuiltInType) and (not IsIdentifierToken(lcToken, idAny)) and (not (lcToken.TokenType in CONST_GENERIC_TOKENS)) then
+      while true do   //Unit1.Id1.id2
       begin
-        break;
+        if (lcToken.WordType <> wtBuiltInType) and (not IsIdentifierToken(lcToken, idAny)) and (not (lcToken.TokenType in CONST_GENERIC_TOKENS)) then
+          break;
+        lcToken:=fcTokenList.SolidToken(liTokenIndex+1);
+        if lcToken = nil then
+          exit;
+        if lcToken.TokenType=ttDot then
+        begin
+          inc(liTokenIndex,2);
+          lcToken := fcTokenList.SolidToken(liTokenIndex);
+          if lcToken = nil then
+            exit;
+        end
+        else
+          break;
       end;
-
     end
     else
     begin
       // should be comma or end with ">"
       if lcToken.TokenType = ttGreaterThan then
-      begin
-        Result := true;
-        break;
-      end
+        Exit(true)
       else if lcToken.TokenType = ttLessThan then
-      begin
-        // looks like a nested generic
-        Result := true;
-        break;
-      end
+        Exit(True) // looks like a nested generic
       else if lcToken.TokenType <> ttComma then
-      begin
         break;
-      end;
     end;
-
     inc(liTokenIndex);
+    lbMustBeCommaOrGreaterThan:=not lbMustBeCommaOrGreaterThan;
   end; // while
-
 end;
-
 
 const
   ConstraintTokens = [ttClass, ttRecord, ttConstructor, ttInterface, ttObject];
@@ -1373,7 +1367,7 @@ var
     if lbHasConst = False then //can be a expresion like    h: specialize TNames<[Blaise,Pascal]>;
     begin
       lbisGenericType:=(fcTokenList.FirstSolidTokenType=ttIdentifier) and (fcTokenList.SolidTokenType(2)=ttLessThan); //is generic type
-      if fcTokenList.FirstSolidTokenType=ttSpecialize then
+      if CheckSpecialize(False) then
         lbIsGenericType:=true;
       if (fcTokenList.FirstSolidTokenType in CONST_GENERIC_TOKENS) and (not lbIsGenericType) then
       begin //hack. recognise tokens until ; , or >
@@ -1737,90 +1731,94 @@ begin
 
   PushNode(nType);
 
-  lc  := fcTokenList.FirstSolidToken;
+  lc := fcTokenList.FirstSolidToken;
   CheckNilInstance(lc, fcRoot.LastLeaf);
   lc2 := fcTokenList.SolidToken(2);
 
-  if (lc.TokenType = ttType) then
+  if CheckSpecialize(True) then
+    RecogniseType
+  else
   begin
+
+    if (lc.TokenType = ttType) then
+    begin
     { this can be a prefix. See help under "Declaring types".
       an e.g. is in TestDeclarations.pas }
-    Recognise(ttType);
-  end;
+      Recognise(ttType);
+    end;
 
   { Adem Baba - used case for speed
       not sure this is faster. But it does avoid mixing tokentypes in the conditionals}
-  case lc.TokenType of
-    ttConst: Recognise(ttConst);
-    ttReal48, ttReal, ttSingle, ttDouble, ttExtended, ttCurrency, ttComp,
-    ttShortInt, ttSmallInt, ttInteger, ttByte, ttLongInt, ttInt64, ttWord,
-    ttBoolean, ttByteBool, ttWordBool, ttLongBool,
-    ttChar, ttWideChar, ttLongWord, ttPChar, ttCardinal, ttNativeInt, ttNativeUInt,
-    ttInt8, ttInt16, ttInt32, ttUInt8, ttUInt16, ttUInt32, ttUInt64, ttAnsiChar,
-    ttUnicodeChar, ttPAnsiChar, ttPUnicodeChar, ttPWideChar, ttPByte, ttPShortString:
-      RecogniseSimpleType; {RealTypes + OrdTypes}
-    ttOpenBracket:
-      RecogniseSimpleType; {enumerated types}
-    ttPacked:
-    begin
-      CheckNilInstance(lc2, fcRoot.LastLeaf);
+    case lc.TokenType of
+      ttConst: Recognise(ttConst);
+      ttReal48, ttReal, ttSingle, ttDouble, ttExtended, ttCurrency, ttComp,
+      ttShortInt, ttSmallInt, ttInteger, ttByte, ttLongInt, ttInt64, ttWord,
+      ttBoolean, ttByteBool, ttWordBool, ttLongBool,
+      ttChar, ttWideChar, ttLongWord, ttPChar, ttCardinal, ttNativeInt, ttNativeUInt,
+      ttInt8, ttInt16, ttInt32, ttUInt8, ttUInt16, ttUInt32, ttUInt64, ttAnsiChar,
+      ttUnicodeChar, ttPAnsiChar, ttPUnicodeChar, ttPWideChar, ttPByte, ttPShortString:
+        RecogniseSimpleType; {RealTypes + OrdTypes}
+      ttOpenBracket:
+        RecogniseSimpleType; {enumerated types}
+      ttPacked:
+      begin
+        CheckNilInstance(lc2, fcRoot.LastLeaf);
 
-      // packed can be applied to class types and to structured types (e.g. records)
-      if lc2.TokenType = ttClass then
-      begin
-        RecogniseClassType;
-      end
-      else if lc2.TokenType = ttObject then
-      begin
-        RecogniseObjectType;
-      end
-      else
-      begin
-        RecogniseStrucType;
+        // packed can be applied to class types and to structured types (e.g. records)
+        if lc2.TokenType = ttClass then
+        begin
+          RecogniseClassType;
+        end
+        else if lc2.TokenType = ttObject then
+        begin
+          RecogniseObjectType;
+        end
+        else
+        begin
+          RecogniseStrucType;
+        end;
       end;
-    end;
 
-    ttArray, ttSet, ttFile, ttRecord:
-      RecogniseStrucType;
-    ttSpecialize:
-      RecogniseSpecializeType;
-    ttHat:
-      RecognisePointerType;
-    ttString, ttAnsiString, ttWideString, ttShortString,
-    ttUnicodeString, ttUtf8String, ttUtf16String, ttRawByteString:
-      RecogniseStringType; {StringWords}
-    ttProcedure, ttFunction:
-      RecogniseProcedureType;
-    ttVariant, ttOleVariant:
-      RecogniseVariantType; {VariantTypes}
-  else
-    CheckNilInstance(lc2, fcRoot.LastLeaf);
+      ttArray, ttSet, ttFile, ttRecord:
+        RecogniseStrucType;
+      ttHat:
+        RecognisePointerType;
+      ttString, ttAnsiString, ttWideString, ttShortString,
+      ttUnicodeString, ttUtf8String, ttUtf16String, ttRawByteString:
+        RecogniseStringType; {StringWords}
+      ttProcedure, ttFunction:
+        RecogniseProcedureType;
+      ttVariant, ttOleVariant:
+        RecogniseVariantType; {VariantTypes}
+      else
+        CheckNilInstance(lc2, fcRoot.LastLeaf);
 
-    if (lc.TokenType = ttClass) and (lc2.TokenType = ttOf) then
-    begin
-      RecogniseClassRefType;
-    end else
-    if (lc.TokenType = ttReference) and (lc2.TokenType = ttTo) then
-    begin
-      RecogniseMethodReferenceType;
-    end
-    else if (lc.WordType in IdentifierTypes) or (lc.TokenType = ttAmpersand) then
-    begin
+        if (lc.TokenType = ttClass) and (lc2.TokenType = ttOf) then
+        begin
+          RecogniseClassRefType;
+        end
+        else
+        if (lc.TokenType = ttReference) and (lc2.TokenType = ttTo) then
+        begin
+          RecogniseMethodReferenceType;
+        end
+        else if (lc.WordType in IdentifierTypes) or (lc.TokenType = ttAmpersand) then
+        begin
       { could be a subrange on an enum,
         e.g. "clBlue .. clBlack".
         NB: this can also be Low(Integer) .. High(Integer)
         or <expr> .. <expr>
         }
-      if SubrangeTypeNext then
-        RecogniseSubRangeType
-      else
-        // some previously declared type that this simple prog does not know of
-        RecogniseTypeId;
-    end
-    else
-      RecogniseSimpleType;
+          if SubrangeTypeNext then
+            RecogniseSubRangeType
+          else
+            // some previously declared type that this simple prog does not know of
+            RecogniseTypeId;
+        end
+        else
+          RecogniseSimpleType;
+    end;
   end;
-
   PopNode;
 end;
 
@@ -2769,13 +2767,9 @@ begin
       or a call to an inherited fucntion, e.g. "inherited foo();
       Note that the function name can be omitted "
    }
-  lt := fcTokenList.FirstSolidTokenType;
-  if lt = ttSpecialize then
-  begin
-    Recognise(ttSpecialize);
-    lt := fcTokenList.FirstSolidTokenType;
-  end;
 
+  CheckSpecialize(True);
+  lt := fcTokenList.FirstSolidTokenType;
   if AnonymousMethodNext then
   begin
     RecogniseAnonymousMethod;
@@ -3139,6 +3133,48 @@ begin
   end;
 end;
 
+function TBuildParseTree.CheckSpecialize(aRecogniseIfFound:boolean):boolean;
+var
+  lIndex:integer;
+  lt:TTokenType;
+  lCount:integer;
+begin
+  Result:=false;
+  if fcTokenList.FirstSolidTokenType = ttSpecialize then
+  begin
+    if aRecogniseIfFound then
+      Recognise(ttSpecialize);
+    result:=true;
+  end
+  else
+  begin  //check for dotted unit prefix   Unit2.Unit1.specialize Test<Unit1.TTestType>(1);
+    lIndex:=2;
+    lCount:=1;
+    lt:=fcTokenList.SolidTokenType(lIndex);
+    while lt=ttDot do
+    begin
+      inc(lIndex);
+      inc(lCount,2);
+      lt:=fcTokenList.SolidTokenType(lIndex);
+      if lt = ttSpecialize then
+      begin
+        result:=true;
+        break;
+      end;
+      inc(lIndex);
+      lt:=fcTokenList.SolidTokenType(lIndex);
+    end;
+    if aRecogniseIfFound and result then
+    begin
+      while lCount>0 do
+      begin
+        Recognise(fcTokenList.FirstSolidTokenType);
+        dec(lCount);
+      end;
+    end;
+  end;
+end;
+
 procedure TBuildParseTree.RecogniseExprList;
 begin
   // ExprList -> Expression/','...
@@ -3163,13 +3199,8 @@ begin
   // Statement -> [LabelId ':'] [SimpleStatement | StructStmt]
 
   PushNode(nStatement);
-
+  CheckSpecialize(True);
   lt :=  fcTokenList.FirstSolidTokenType;
-  if lt = ttSpecialize then
-  begin
-    Recognise(ttSpecialize);
-    lt :=  fcTokenList.FirstSolidTokenType;
-  end;
 
   if lt = ttSemicolon then
   begin
@@ -4646,7 +4677,6 @@ const
   CLASS_DECL_WORDS = [ttProcedure, ttFunction, ttConstructor, ttDestructor,
                       ttProperty, ttClass, ttConst, ttType, ttVar, ttThreadVar];
 var
-  lc: TSourceToken;
   lt: TTokenType;
   lbStarted: boolean;
   lbHasTrailingSemicolon: Boolean;
@@ -5804,7 +5834,6 @@ procedure TBuildParseTree.RecogniseExportedProc;
 const
   ExportedDirectives: TTokenTypeSet = [ttName, ttIndex, ttResident];
 var
-  lc: TSourceToken;
   lt: TTokenType;
 begin
   PushNode(nExportedProc);
@@ -5888,14 +5917,9 @@ const
 var
   lc: TSourceToken;
 begin
+  CheckSpecialize(True);
   lc := fcTokenList.FirstSolidToken;
   CheckNilInstance(lc, fcRoot.LastLeaf);
-  if lc.TokenType = ttSpecialize then
-  begin
-    Recognise(ttSpecialize);
-    lc := fcTokenList.FirstSolidToken;
-    CheckNilInstance(lc, fcRoot.LastLeaf);
-  end;
   { all kinds of reserved words can sometimes be param names
     thanks to COM and named params
     See LittleTest43.pas }
