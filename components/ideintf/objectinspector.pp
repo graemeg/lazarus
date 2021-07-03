@@ -33,7 +33,8 @@ uses
   Classes, SysUtils, Types, TypInfo, StrUtils, math,
   // LCL
   LCLPlatformDef, InterfaceBase, LCLType, LCLIntf, Forms, Buttons, Graphics,
-  StdCtrls, Controls, ComCtrls, ExtCtrls, Menus, Dialogs, Themes, LMessages, ImgList,
+  StdCtrls, Controls, ComCtrls, ExtCtrls, Menus, Dialogs, Themes, LMessages,
+  ImgList, ActnList,
   // LazControls
   {$IFnDEF UseOINormalCheckBox} CheckBoxThemed, {$ENDIF}
   TreeFilterEdit, ListFilterEdit,
@@ -5889,8 +5890,9 @@ begin
       if Selection[i] is TComponent then
       begin
         CanBeDeleted := True;
-        // ToDo: Figure out why TMenuItem cannot be copy / pasted in OI,
-        if not (Selection[i] is TMenuItem) then     // then fix it.
+        // ToDo: Figure out why TMenuItem or TAction cannot be copy / pasted in OI,
+        if not (Selection[i] is TMenuItem) and
+           not (Selection[i] is TAction) then     // then fix it.
           CanBeCopyPasted := True;
       end;
     CanChangeClass := (Selection.Count = 1) and (Selection[0] is TComponent)
