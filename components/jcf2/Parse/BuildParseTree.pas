@@ -3410,6 +3410,11 @@ begin
   begin
     Recognise(ttAt);
     RecogniseExpr(True);
+    if fcTokenList.FirstSolidTokenType = ttComma then
+    begin
+      Recognise(ttComma);
+      RecogniseExpr(True);
+    end;
   end;
 end;
 
