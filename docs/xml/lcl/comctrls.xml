@@ -3549,6 +3549,16 @@
 
       <element name="TPageControl.FPageToUndock"/>
 
+      <element name="TPageControl.Clear">
+        <short>Removes all pages from the PageControl.</short>
+        <descr>
+          <p>The method <var>Clear</var> removes all tabsheets from the PageControl. Its <var>PageCount</var> is <var>0</var> afterwards.
+          </p>
+          <p>Note that the controls on the tabsheets are only destroyed when their <var>Owner</var> is one of the tabsheets. Otherwise they still exist on the form, but their <var>Parent</var> has been set to <var>nil</var>.
+          </p>
+        </descr>
+      </element>
+
       <element name="TPageControl.GetActivePageIndex">
         <short>Gets the value for the ActivePageIndex property.</short>
         <descr/>
