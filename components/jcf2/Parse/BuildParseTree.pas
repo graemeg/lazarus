@@ -275,7 +275,7 @@ type
 
     procedure RecogniseAnonymousMethod;
     function AnonymousMethodNext: boolean;
-    procedure CheckEnumeratorToken;
+    procedure CheckEnumeratorToken(aCheckTwoTokens:boolean=false);
     function CheckSpecialize(aRecogniseIfFound:boolean):boolean;
   Protected
     procedure RaiseParseError(const aMessage: string; aSourceToken: TSourceToken);
@@ -4290,7 +4290,7 @@ begin
 
     external is more complex
   }
-  CheckEnumeratorToken();
+  CheckEnumeratorToken(fcTokenList.FirstSolidTokenType = ttSemicolon);
   if (fcTokenList.FirstSolidTokenType in ProcedureDirectives) or
     ((fcTokenList.FirstSolidTokenType = ttSemicolon) and
     (fcTokenList.SolidTokenType(2) in ProcedureDirectives)) then
@@ -4301,7 +4301,7 @@ begin
       Recognise(ttSemiColon);
     lbFirstPass := True;
 
-    CheckEnumeratorToken();
+    CheckEnumeratorToken(fcTokenList.FirstSolidTokenType = ttSemicolon);
     while (fcTokenList.FirstSolidTokenType in ProcedureDirectives) or
       ((fcTokenList.FirstSolidTokenType = ttSemicolon) and
         (fcTokenList.SolidTokenType(2) in ProcedureDirectives)) do
@@ -5775,7 +5775,7 @@ const
   }
   PropertyDirectives = [ttDefault, ttNoDefault, ttStored, ttEnumerator];
 begin
-  CheckEnumeratorToken();
+  CheckEnumeratorToken(fcTokenList.FirstSolidTokenType = ttSemicolon);
   if ((fcTokenList.FirstSolidTokenType = ttSemicolon) and
     (fcTokenList.SolidTokenType(2) in PropertyDirectives)) or
     (fcTokenList.FirstSolidTokenType in PropertyDirectives) then
@@ -6008,7 +6008,7 @@ begin
   end;
 end;
 
-procedure TBuildParseTree.CheckEnumeratorToken;
+procedure TBuildParseTree.CheckEnumeratorToken(aCheckTwoTokens:boolean);
 var
   lc: TSourceToken;
 begin
@@ -6018,11 +6018,14 @@ begin
     lc.TokenType:=ttEnumerator;
     lc.WordType:=wtReservedWord;
   end;
-  lc := fcTokenList.SolidToken(2);
-  if (lc<>nil) and (lc.TokenType=ttIdentifier) and (length(lc.SourceCode)=10) and (lowercase(lc.SourceCode)='enumerator') then
+  if aCheckTwoTokens then
   begin
-    lc.TokenType:=ttEnumerator;
-    lc.WordType:=wtReservedWord;
+    lc := fcTokenList.SolidToken(2);
+    if (lc<>nil) and (lc.TokenType=ttIdentifier) and (length(lc.SourceCode)=10) and (lowercase(lc.SourceCode)='enumerator') then
+    begin
+      lc.TokenType:=ttEnumerator;
+      lc.WordType:=wtReservedWord;
+    end;
   end;
 end;
 
