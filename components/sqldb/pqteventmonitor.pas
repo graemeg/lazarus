@@ -14,7 +14,6 @@ type
 
   TPQTEventMonitor=class(TPQEventMonitor)
   private
-    FInited:Boolean;
     Timer:TTimer;
     function GetPollInterval: integer;
     procedure OnTimer(Sender: TObject);
@@ -35,6 +34,7 @@ implementation
 
 procedure TPQTEventMonitor.SetPollInterval(AValue: integer);
 begin
+  if Timer.Interval=AValue then Exit;
   Timer.Interval:=AValue;
 end;
 
@@ -50,14 +50,8 @@ end;
 
 constructor TPQTEventMonitor.Create(AOwner: TComponent);
 begin
-  try
-    inherited Create(AOwner);
-    FInited:=true;
-  except
-    //FPC code raises EInOutError in Create() if Postgres lib was not loaded
-    FInited:=false;
-  end;
-  Timer:=TTimer.Create(self);
+  inherited Create(AOwner);
+  Timer:=TTImer.Create(self);
   Timer.Interval:=500;
   Timer.Enabled:=false;
   Timer.OnTimer:=@OnTimer;
@@ -65,20 +59,17 @@ end;
 
 destructor TPQTEventMonitor.Destroy;
 begin
-  if not FInited then exit;
   inherited Destroy;
 end;
 
 procedure TPQTEventMonitor.RegisterEvents;
 begin
-  if not FInited then exit;
   inherited RegisterEvents;
   Timer.Enabled:=true;
 end;
 
 procedure TPQTEventMonitor.UnRegisterEvents;
 begin
-  if not FInited then exit;
   Timer.Enabled:=false;
   inherited UnRegisterEvents;
 end;
