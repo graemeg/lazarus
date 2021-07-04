@@ -59,7 +59,7 @@ program Svn2RevisionInc;
 uses
   Classes, CustApp, SysUtils, Process, Dom, XmlRead,
   // LazUtils
-  FileUtil, LazFileUtils, LazUTF8, UTF8Process, LazLogger;
+  FileUtil, LazFileUtils, LazUTF8, UTF8Process, LazLogger, StrUtils;
 
 type
 
@@ -87,6 +87,7 @@ type
     function IsThisGitUpstreamBranch: boolean;
     function GetGitBranchPoint: string;
     function GitRevisionFromGitCommit: boolean;
+    function GitDescribeCommit(KeepRevStr: Boolean): boolean;
   public
     constructor Create(TheOwner: TComponent); override;
     destructor Destroy; override;
@@ -416,6 +417,9 @@ begin
         Result := GetRevisionFromGitVersion
       else
         Result := GitRevisionFromGitCommit;
+
+      if GitDescribeCommit(Result) then
+        Result := True;
     end;
   end;
 
@@ -725,7 +729,7 @@ begin
 end;
 
 { Get the branch point, and exact the SVN revision from that commit log }
-function TSvn2RevisionApplication.GitRevisionFromGitCommit: Boolean;
+function TSvn2RevisionApplication.GitRevisionFromGitCommit: boolean;
 const
   cBufSize = 80;
 var
@@ -758,6 +762,51 @@ begin
           RevisionStr := s;
           System.Delete(RevisionStr, 1, Pos('@', RevisionStr));
           System.Delete(RevisionStr, Pos(' ', RevisionStr), Length(RevisionStr));
+        end;
+      except
+        // ignore error, default result is false
+      end;
+    end;
+  finally
+    p.Free;
+  end;
+end;
+
+function TSvn2RevisionApplication.GitDescribeCommit(KeepRevStr: Boolean
+  ): boolean;
+const
+  cBufSize = 80;
+var
+  p: TProcessUTF8;
+  Buffer: string;
+  n: LongInt;
+  s: string;
+begin
+  Result := False;
+  p := TProcessUTF8.Create(nil);
+  try
+    with p do begin
+      CommandLine := 'git describe --always ';
+      //CommandLine := 'git describe --always --match ''main*'' --match ''fixes*'' --match ''release*'' --match ''b-*'' --match ''f-*'' ';
+      Options := [poUsePipes, poWaitOnExit];
+      try
+        Execute;
+        { now process the output }
+        SetLength(Buffer, cBufSize);
+        s := '';
+        repeat
+          n := OutPut.Read(Buffer[1], cBufSize);
+          s := s + Copy(Buffer, 1, n);
+        until n < cBufSize;
+        { now search for our marker }
+        if PosSet([#10,#13], s) > 0 then
+          System.Delete(s, PosSet([#10,#13], s), Length(s));
+        if (s <> '') then
+        begin
+          Result := True;
+          if KeepRevStr and (RevisionStr <> '') then
+            s := ' (' + RevisionStr + ')';
+          RevisionStr := s;
         end;
       except
         // ignore error, default result is false
