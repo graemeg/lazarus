@@ -76,6 +76,13 @@ type
     Verbose: boolean;
     UseStdOut: boolean;
 
+    function RunCommand(ACmd: String; AParams: array of string; ABytesNeeded: Integer = -1): Boolean;
+    function RunCommand(ACmd: String; AParams: array of string; out ARes: String;
+      ABytesNeeded: Integer = -1): Boolean;
+    function SvnInPath: Boolean;
+    function GitInPath: Boolean;
+    function HgInPath: Boolean;
+
     function FindRevision: boolean;
     function IsValidRevisionInc: boolean;
     procedure WriteRevisionInc;
@@ -85,8 +92,9 @@ type
     function ConstStart: string;
     procedure Show(msg: string);
     function IsThisGitUpstreamBranch: boolean;
-    function GetGitBranchPoint: string;
-    function GitRevisionFromGitCommit: boolean;
+    function GetRevisionFromGitVersion(ACommitIsh: String = '') : boolean;
+    function GetGitCommitInRemoteBranch(ARemotePattern: String = '*'): string;
+    function GitRevisionFromRemoteSVNGitVersion: boolean;
     function GitDescribeCommit(KeepRevStr: Boolean): boolean;
   public
     constructor Create(TheOwner: TComponent); override;
@@ -100,118 +108,91 @@ var
 
 const
   RevisionIncComment = '// Created by Svn2RevisionInc';
-  
-function SvnInPath: Boolean;
+
+function TSvn2RevisionApplication.RunCommand(ACmd: String;
+  AParams: array of string; ABytesNeeded: Integer): Boolean;
 var
-  P: TProcessUTF8;
+  ADummy: String;
+begin
+  Result := RunCommand(ACmd, AParams, ADummy, ABytesNeeded);
+end;
+
+function TSvn2RevisionApplication.RunCommand(ACmd: String;
+  AParams: array of string; out ARes: String; ABytesNeeded: Integer): Boolean;
+const
+  cBufSize = 500;
+var
+  p: TProcessUTF8;
+  Buffer: string;
+  n: LongInt;
+  t: QWord;
+  i: Integer;
 begin
   Result := True;
-  P := TProcessUTF8.Create(nil);
+  p := TProcessUTF8.Create(nil);
   try
-    P.Options := [poUsePipes, poWaitOnExit];
-    P.CommandLine := 'svn --version';
     try
-      P.Execute;
+      with p do begin
+        Executable := ACmd;
+        for i := 0 to high(AParams) do
+          Parameters.Add(AParams[i]);
+        Options := [poUsePipes];
+
+        Execute;
+        { now process the output }
+        SetLength(Buffer, cBufSize);
+        ARes := '';
+        t := GetTickCount64;
+        while (ABytesNeeded < 0) or (Length(ARes) < ABytesNeeded) do begin
+          if Output.NumBytesAvailable > 0 then begin
+            n := OutPut.Read(Buffer[1], cBufSize);
+            ARes := ARes + Copy(Buffer, 1, n);
+          end
+          else begin
+            if not p.Running then
+              break;
+            if GetTickCount64 - t > 30 * 1000 then begin
+              Result := False;
+              exit
+            end;
+            if Stderr.NumBytesAvailable > 0 then begin
+              n := Stderr.Read(Buffer[1], cBufSize);
+              Show(Copy(Buffer, 1, n));
+            end;
+            sleep(10);
+          end;
+        end;
+      end;
     except
       Result := False;
     end;
   finally
-    P.Destroy;
-  end;
-end;
-
-function GitInPath: Boolean;
-var
-  P: TProcessUTF8;
-begin
-  Result := True;
-  P := TProcessUTF8.Create(nil);
-  try
-    P.Options := [poUsePipes, poWaitOnExit];
-    P.CommandLine := 'git --version';
     try
-      P.Execute;
-    except
-      Result := False;
+      p.Terminate(0);
+    finally
+      p.Free;
     end;
-  finally
-    P.Destroy;
   end;
 end;
 
-function HgInPath: Boolean;
-var
-  P: TProcessUTF8;
+function TSvn2RevisionApplication.SvnInPath: Boolean;
 begin
-  Result := True;
-  P := TProcessUTF8.Create(nil);
-  try
-    P.Options := [poUsePipes, poWaitOnExit];
-    P.CommandLine := 'hg --version';
-    try
-      P.Execute;
-    except
-      Result := False;
-    end;
-  finally
-    P.Destroy;
-  end;
+  Result := RunCommand('svn', ['--version'], 0);
 end;
 
+function TSvn2RevisionApplication.GitInPath: Boolean;
+begin
+  Result := RunCommand('git', ['--version'], 0);
+end;
+
+function TSvn2RevisionApplication.HgInPath: Boolean;
+begin
+  Result := RunCommand('hg', ['--version'], 0);
+end;
 
 function TSvn2RevisionApplication.FindRevision: boolean;
 var
   GitDir: string;
-
-
-  function GetRevisionFromGitVersion : boolean;
-  var
-    GitVersionProcess: TProcessUTF8;
-    Buffer: string;
-    n: LongInt;
-  begin
-    Result:=false;
-    GitVersionProcess := TProcessUTF8.Create(nil);
-    try
-      with GitVersionProcess do begin
-        CommandLine := 'git log -1 --pretty=format:"%b"';
-        Options := [poUsePipes, poWaitOnExit];
-        try
-          CurrentDirectory:=GitDir;
-          Execute;
-          SetLength(Buffer, 80);
-          n:=OutPut.Read(Buffer[1], 80);
-
-          if (Pos('git-svn-id:', Buffer) > 0) then begin
-            //Read version is OK
-            Result:=true;
-            RevisionStr := Copy(Buffer, 1, n);
-            System.Delete(RevisionStr, 1, Pos('@', RevisionStr));
-            System.Delete(RevisionStr, Pos(' ', RevisionStr), Length(RevisionStr));
-          end;
-        except
-        // ignore error, default result is false
-        end;
-      end;
-    finally
-      GitVersionProcess.Free;
-    end;
-    if Result then
-    begin
-      Show('Success retrieving revision with git log.');
-    end
-    else
-    begin
-      Show('Failed retrieving revision with git log.');
-      if n>0 then
-      begin
-        Show('');
-        Show('git log error output:');
-        Show(Copy(Buffer, 1, n));
-      end;
-    end;
-    Show('');
-  end;
 
   function GetRevisionFromHgVersion : boolean;
   var
@@ -413,10 +394,10 @@ begin
     GitDir:= AppendPathDelim(SourceDirectory)+'.git';
     if DirectoryExistsUTF8(GitDir) and GitInPath then
     begin
-      if IsThisGitUpstreamBranch then
-        Result := GetRevisionFromGitVersion
-      else
-        Result := GitRevisionFromGitCommit;
+      Result := GetRevisionFromGitVersion;
+      if not Result then begin
+        Result := GitRevisionFromRemoteSVNGitVersion;
+      end;
 
       if GitDescribeCommit(Result) then
         Result := True;
@@ -661,159 +642,95 @@ begin
   end;
 end;
 
-{ Determine the commit at which we branched away from 'upstream'. Note the
-  SHA1 commit we are looking for is always the last one in the list that has
-  the '-' prefix added.
-  Example output:
-    $ git rev-list --boundary HEAD...upstream
-    a39f9f70f96b9533377c2cad27155066a0b01411
-    3874aa82b83fedaa19459fedaa30f4582251b9a1
-    0379257d111d465bf28e879d6b87080d9e896648
-    5dd8ca18ef06520a524bfac9648103d440fbe0bc
-    -d1fba5c3f36a4816c933a8f7f361c585258b5b01
-}
-function TSvn2RevisionApplication.GetGitBranchPoint: string;
-const
-  READ_BYTES = 2048;
+function TSvn2RevisionApplication.GetRevisionFromGitVersion(ACommitIsh: String
+  ): boolean;
 var
-  p: TProcessUTF8;
-  MemStream: TMemoryStream;
-  n, i, NumBytes, BytesRead: integer;
-  s: string;
-  sl: TStringList;
+  s: String;
 begin
-  Result := '';
-  BytesRead := 0;
-  sl := Nil;
-  MemStream := TMemoryStream.Create;
-  p := TProcessUTF8.Create(nil);
-  try
-    p.CommandLine := 'git rev-list --boundary HEAD...' + MainBranch;
-    p.Options := [poUsePipes];
-    p.Execute;
-    // read while the process is running
-    while p.Running do begin
-      MemStream.SetSize(BytesRead + READ_BYTES); // make sure we have room
-      // try reading it
-      NumBytes := p.Output.Read((MemStream.Memory + BytesRead)^, READ_BYTES);
-      if NumBytes > 0 then
-        Inc(BytesRead, NumBytes)
-      else                                       // no data, wait 100 ms
-        Sleep(100);
-    end;
-    // read last part
-    repeat
-      MemStream.SetSize(BytesRead + READ_BYTES);
-      NumBytes := p.Output.Read((MemStream.Memory + BytesRead)^, READ_BYTES);
-      if NumBytes > 0 then
-        Inc(BytesRead, NumBytes);
-    until NumBytes <= 0;
-    MemStream.SetSize(BytesRead);
-    sl := TStringList.Create;
-    sl.LoadFromStream(MemStream);
-    { now search for the '-' marker. Should be the last one, so search in reverse. }
-    for i := sl.Count-1 downto 0 do
-    begin
-      s := sl[i];
-      n := Pos('-', s);
-      if n > 0 then begin
-        Result := Copy(s, 2, Length(s));
-        exit;
-      end;
-    end;
-  finally
-    sl.Free;
-    p.Free;
-    MemStream.Free;
+  if ACommitIsh <> '' then
+    Result := RunCommand('git', ['log', '-1', '--pretty=format:"%b"', ACommitIsh], s)
+  else
+    Result := RunCommand('git', ['log', '-1', '--pretty=format:"%b"'], s);
+  if not Result then
+    exit;
+
+  // git-svn-id: http://svn.freepascal.org/svn/lazarus/trunk@60656 4005530d-fff6-0310-9dd1-cebe43e6787f
+  Result := Pos('git-svn-id: ', s) > 0;
+  if Result then begin
+    //Read version is OK
+    System.Delete(s, 1, Pos('git-svn-id: ', s));
+    System.Delete(s, 1, Pos('@', s));
+    if PosSet([' ', #10,#13], s) > 0 then
+      System.Delete(s, PosSet([' ', #10,#13], s), Length(s));
+    RevisionStr := s;
+  end;
+  if Result then
+  begin
+    Show('Success retrieving revision with git log.');
+  end
+  else
+  begin
+    Show('Failed retrieving revision with git log.');
   end;
 end;
 
-{ Get the branch point, and exact the SVN revision from that commit log }
-function TSvn2RevisionApplication.GitRevisionFromGitCommit: boolean;
-const
-  cBufSize = 80;
+{ Determine the closest parent commit that is in a remote branch
+}
+function TSvn2RevisionApplication.GetGitCommitInRemoteBranch(
+  ARemotePattern: String): string;
 var
-  sha1: string;
-  p: TProcessUTF8;
-  Buffer: string;
-  n: LongInt;
   s: string;
 begin
-  Result := False;
-  sha1 := GetGitBranchPoint;
-  p := TProcessUTF8.Create(nil);
-  try
-    with p do begin
-      CommandLine := 'git show --summary --pretty=format:"%b" ' + sha1;
-      Options := [poUsePipes, poWaitOnExit];
-      try
-        Execute;
-        { now process the output }
-        SetLength(Buffer, cBufSize);
-        s := '';
-        repeat
-          n := OutPut.Read(Buffer[1], cBufSize);
-          s := s + Copy(Buffer, 1, n);
-        until n < cBufSize;
-        { now search for our marker }
-        if (Pos('git-svn-id:', s) > 0) then
-        begin
-          Result := True;
-          RevisionStr := s;
-          System.Delete(RevisionStr, 1, Pos('@', RevisionStr));
-          System.Delete(RevisionStr, Pos(' ', RevisionStr), Length(RevisionStr));
-        end;
-      except
-        // ignore error, default result is false
-      end;
-    end;
-  finally
-    p.Free;
+  if not  RunCommand('git',
+    ['log', 'HEAD', '--not', '--remotes="'+ARemotePattern+'"', '--reverse', '--pretty=format:"%H"'],
+    Result, 40) // sha1 = 40 bytes
+  then begin
+    Result := '';
+    exit;
   end;
+
+  if Result <> '' then
+    Result := Result + '~1'; // parent
+end;
+
+{ Get the branch point, and exact the SVN revision from that commit log }
+function TSvn2RevisionApplication.GitRevisionFromRemoteSVNGitVersion: boolean;
+var
+  sha1: string;
+begin
+  Result := False;
+  // git svn  uses /remote/svn/<branch> as remote
+  sha1 := GetGitCommitInRemoteBranch('svn/*');
+  if sha1 <> '' then begin
+    Result := GetRevisionFromGitVersion(sha1);
+    if not Result then begin
+      sha1 := GetGitCommitInRemoteBranch; // try any remote branch
+      Result := GetRevisionFromGitVersion(sha1);
+    end;
+  end;
+  if Result then
+    RevisionStr := RevisionStr + '(B)'; // local commits "Based on"
 end;
 
 function TSvn2RevisionApplication.GitDescribeCommit(KeepRevStr: Boolean
   ): boolean;
-const
-  cBufSize = 80;
 var
-  p: TProcessUTF8;
-  Buffer: string;
-  n: LongInt;
   s: string;
 begin
-  Result := False;
-  p := TProcessUTF8.Create(nil);
-  try
-    with p do begin
-      CommandLine := 'git describe --always ';
-      //CommandLine := 'git describe --always --match ''main*'' --match ''fixes*'' --match ''release*'' --match ''b-*'' --match ''f-*'' ';
-      Options := [poUsePipes, poWaitOnExit];
-      try
-        Execute;
-        { now process the output }
-        SetLength(Buffer, cBufSize);
-        s := '';
-        repeat
-          n := OutPut.Read(Buffer[1], cBufSize);
-          s := s + Copy(Buffer, 1, n);
-        until n < cBufSize;
-        { now search for our marker }
-        if PosSet([#10,#13], s) > 0 then
-          System.Delete(s, PosSet([#10,#13], s), Length(s));
-        if (s <> '') then
-        begin
-          Result := True;
-          if KeepRevStr and (RevisionStr <> '') then
-            s := ' (' + RevisionStr + ')';
-          RevisionStr := s;
-        end;
-      except
-        // ignore error, default result is false
-      end;
-    end;
-  finally
-    p.Free;
+  Result := RunCommand('git', ['describe', '--always'], s);
+  if not Result then
+    exit;
+
+  if PosSet([#10,#13], s) > 0 then
+    System.Delete(s, PosSet([#10,#13], s), Length(s));
+  s := Trim(s);
+  Result := s <> '';
+  if Result then
+  begin
+    Result := True;
+    if KeepRevStr and (RevisionStr <> '') then
+      s := s + ' / ' + RevisionStr;
+    RevisionStr := s;
   end;
 end;
 
