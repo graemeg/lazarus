@@ -128,6 +128,10 @@ begin
     // Delphi.Net attribute
     Result := 0;
   end
+  else if pt.HasParentNode(nGeneric) then
+  begin
+    Result:=0; //tricky parse tree in generic with const.
+  end
   else
   begin
     Result := 0;
