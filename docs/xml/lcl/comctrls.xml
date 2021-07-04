@@ -3550,13 +3550,20 @@
       <element name="TPageControl.FPageToUndock"/>
 
       <element name="TPageControl.Clear">
-        <short>Removes all pages from the PageControl.</short>
+        <short>
+          Clears the list of tab names of the control, and causes the associated tab sheets or pages to be freed.
+        </short>
         <descr>
-          <p>The method <var>Clear</var> removes all tabsheets from the PageControl. Its <var>PageCount</var> is <var>0</var> afterwards.
+          <p>
+            By calling the <var>Clear</var> method of the protected <var>Tabs</var> property in the <var>TCustomTabControl</var> ancestor, this method removes all tab sheets from the PageControl. The <var>TPageControl.PageCount</var> is <var>0</var> afterwards.
           </p>
-          <p>Note that the controls on the tabsheets are only destroyed when their <var>Owner</var> is one of the tabsheets. Otherwise they still exist on the form, but their <var>Parent</var> has been set to <var>nil</var>.
+          <p>
+            Note, however, that the controls on the tab sheets are only destroyed when their <var>Owner</var> is one of the tabsheets. Otherwise they still exist on the form, but their <var>Parent</var> has been set to <var>nil</var>.
           </p>
         </descr>
+        <seealso>
+          <link id="TCustomTabControl.Tabs"/>
+        </seealso>
       </element>
 
       <element name="TPageControl.GetActivePageIndex">
@@ -3699,20 +3706,6 @@
       </element>
       <element name="TPageControl.ChildClassAllowed.ChildClass">
         <short/>
-      </element>
-
-      <element name="TPageControl.Clear">
-        <short>
-          Clears the list of tab names for the control, and causes the associated tab sheets or pages to be freed.
-        </short>
-        <descr>
-          <p>
-            Calls the Clear method for the protected Tabs property in the TCustomTabControl ancestor.
-          </p>
-        </descr>
-        <seealso>
-          <link id="TCustomTabControl.Tabs"/>
-        </seealso>
       </element>
 
       <element name="TPageControl.FindNextPage">
@@ -5335,7 +5328,7 @@
         <seealso/>
       </element>
       <element name="TTabControl.RowCount.Result">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TTabControl.ScrollTabs">
@@ -7216,7 +7209,7 @@
       </element>
 
       <element name="TSortIndicator">
-        <short></short>
+        <short/>
         <descr>
           <p>
             <var>TSortIndicator</var> is an enumerated type with values that represent the sort indicators available in the <var>TListColumn</var> class. TSortIndicator is the type used to implement the <var>SortIndicator</var> property in <var>TListColumn</var>.
@@ -14435,7 +14428,7 @@ AToolbar.ButtonHeight := 30;
             Indent is used in the <var>AdjustClientRect</var> method to increment the left edge of the display area for tool buttons on the control.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso/>
       </element>
 
       <element name="TToolBar.List">
@@ -14456,7 +14449,7 @@ AToolbar.ButtonHeight := 30;
             Set <var>ShowCaptions</var> to <b>True</b> to enable Caption text on the tool bar buttons.
           </p>
         </descr>
-        <seealso></seealso>
+        <seealso/>
       </element>
 
       <element name="TToolBar.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
@@ -21108,16 +21101,16 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomTreeView.TripleClick" link="#lcl.controls.TControl.TripleClick">
-        <short></short>
-        <descr></descr>
+        <short/>
+        <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.TripleClick">TControl.TripleClick</link>
         </seealso>
       </element>
 
       <element name="TCustomTreeView.QuadClick" link="#lcl.controls.TControl.QuadClick">
-        <short></short>
-        <descr></descr>
+        <short/>
+        <descr/>
         <seealso>
           <link id="#lcl.controls.TControl.QuadClick">TControl.QuadClick</link>
         </seealso>
@@ -23637,7 +23630,7 @@ OldExpanded.Free;
         </seealso>
       </element>
       <element name="THeaderSection.Assign.Source">
-        <short></short>
+        <short/>
       </element>
 
       <element name="THeaderSection.Left">
@@ -23894,16 +23887,16 @@ OldExpanded.Free;
         </short>
       </element>
       <element name="TCustomSectionTrackEvent.HeaderControl">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomSectionTrackEvent.Section">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomSectionTrackEvent.Width">
-        <short></short>
+        <short/>
       </element>
       <element name="TCustomSectionTrackEvent.State">
-        <short></short>
+        <short/>
       </element>
 
       <element name="TSectionDragEvent">
@@ -24603,7 +24596,8 @@ OldExpanded.Free;
           <p>
             Register is a procedure used to register components in the <file>comctrls.pp</file> unit in the Lazarus IDE. Register adds the following components:
           </p>
-          <p><b>Common Controls Tab</b></p>
+          <p><b>Common Controls Tab</b>
+          </p>
           <ul>
             <li>TTrackbar</li>
             <li>TProgressBar</li>
