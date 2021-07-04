@@ -5786,7 +5786,7 @@
         <short>Destructor for the class instance.</short>
         <descr>
           <p>
-            <var>Destroy</var> is the overridden destructor for the class instance. It ensures that the <var>Flags</var> for the node are updated to include the value <var>nfDestroying</var>. If the <var>OwnerDocument</var> for the node has a hash table for node IDs, its <var>RemoveID</var> method is called to remove the current class isntance. Destroy frees resources allocated for the <var>Attributes</var> property, and calls the inherited destructor prior to exit.
+            <var>Destroy</var> is the overridden destructor for the class instance. It ensures that the <var>Flags</var> for the node are updated to include the value <var>nfDestroying</var>. If the <var>OwnerDocument</var> for the node has a hash table for node IDs, its <var>RemoveID</var> method is called to remove the current class instance. Destroy frees resources allocated for the <var>Attributes</var> property, and calls the inherited destructor prior to exit.
           </p>
         </descr>
         <seealso></seealso>

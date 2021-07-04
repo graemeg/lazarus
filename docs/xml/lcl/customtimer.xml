@@ -185,7 +185,23 @@
           <link id="TCustomTimer.Destroy"/>
         </seealso>
       </element>
-      <element name="TCustomTimer.Loaded" link="#rtl.classes.TComponent.Loaded"/>
+
+      <element name="TCustomTimer.Loaded">
+        <short>Performs actions needed when LCL component streaming has been completed.</short>
+        <descr>
+          <p>
+            <var>Loaded</var> is an overridden method in <var>TCustomTimer</var>. It calls the inherited method on entry to remove <var>csLoading</var> from the <var>ComponentState</var> property.
+          </p>
+          <p>
+            Loaded calls <var>UpdateTimer</var> to re-create the timer handle and signal event event handlers as needed for the Enabled property in the timer. An <var>EOutOfResources</var> exception is raised (in UpdateTimer) if a timer handle cannot be allocated in the widgetset class.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTimer.UpdateTimer"/>
+          <link id="#rtl.classes.TComponent.ComponentState">TComponent.ComponentState</link>
+        </seealso>
+      </element>
+
       <element name="TCustomTimer.Create">
         <short>
           <var>Create</var> - constructor for <var>TCustomTimer</var>: calls inherited <var>Create</var>, sets up handle and initializes timer interval.

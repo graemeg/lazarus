@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fpdoc-descriptions>
-  <package name="LCL">
+  <package name="lcl">
     <!--
       ====================================================================
         Controls
       ====================================================================
      -->
-    <module name="Controls">
+    <module name="controls">
       <short>
         Contains types, constants, classes, and routines used to implement visual controls.
       </short>
@@ -4260,7 +4260,7 @@
         <seealso/>
       </element>
       <element name="TControlBorderSpacing.Create.OwnerControl">
-        <short>The associated control which owns the class isntance.</short>
+        <short>The associated control which owns the class instance.</short>
       </element>
       <element name="TControlBorderSpacing.Create.ADefault">
         <short>
@@ -4751,7 +4751,7 @@
 
       <element name="TAnchorSide.Assign">
         <short>
-          Copies properties from the specifed persistent object into the current class instance.
+          Copies properties from the specified persistent object into the current class instance.
         </short>
         <descr>
           <p>
@@ -6020,20 +6020,26 @@
       </element>
 
       <element name="TControl.SetAnchorSide">
-        <short>Setter for AnchorSideLeft.</short>
+        <short>Sets the value for the indexed AnchorSide property.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TControl.SetAnchorSide.Kind">
-       <short/>
+       <short>Index for the element updated in the method.</short>
       </element>
       <element name="TControl.SetAnchorSide.AValue">
-       <short/>
+       <short>New value for the AnchorSize property.</short>
       </element>
 
-      <element link="#lcl.controls.TControl.BorderSpacing" name="TControl.SetBorderSpacing"/>
+      <element link="#lcl.controls.TControl.BorderSpacing" name="TControl.SetBorderSpacing">
+        <short>Sets the value for the BorderSpacing property.</short>
+        <descr/>
+        <seealso>
+          <link id="TControl.BorderSpacing"/>
+        </seealso>
+      </element>
       <element name="TControl.SetBorderSpacing.AValue">
-       <short/>
+       <short>New value for the BorderSpacing property.</short>
       </element>
 
       <element link="#lcl.controls.TControl.BoundsRect" name="TControl.SetBoundsRect"/>
@@ -6061,9 +6067,15 @@
        <short/>
       </element>
 
-      <element link="#lcl.controls.TControl.Constraints" name="TControl.SetConstraints"/>
+      <element name="TControl.SetConstraints">
+        <short>Sets the value for the Constraints property.</short>
+        <descr/>
+        <seealso>
+          <link id="TControl.Constraints"/>
+        </seealso>
+      </element>
       <element name="TControl.SetConstraints.Value">
-       <short/>
+       <short>New value for the Constraints property.</short>
       </element>
 
       <element link="#lcl.controls.TControl.DesktopFont" name="TControl.SetDesktopFont"/>
@@ -10722,7 +10734,7 @@
       </element>
 
       <element name="TControl.Constraints">
-        <short>The minimum and maximum Width and Height for this control.</short>
+        <short>The minimum and maximum Width and Height for the control.</short>
         <descr/>
         <seealso>
           <link id="TSizeConstraints"/>
@@ -10730,7 +10742,7 @@
       </element>
 
       <element name="TControl.ControlOrigin">
-        <short>The top left pixel of this control, in screen coordinates.</short>
+        <short>The top, left pixel of the control in screen coordinates.</short>
         <descr/>
         <seealso>
           <link id="TControl.ClientOrigin"/>

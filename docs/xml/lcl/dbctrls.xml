@@ -4383,7 +4383,7 @@
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.DoEdit.Result">
-        <short/>
+        <short>True if the field was edited in the linked data set.</short>
       </element>
       <element name="TCustomDBComboBox.DoOnCloseUp">
         <short>Performs actions to close the drop down for the combo box.</short>
@@ -4414,7 +4414,7 @@
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.LMDeferredEdit.Message">
-        <short/>
+        <short>Message handled in the method.</short>
       </element>
       <element name="TCustomDBComboBox.DetectedEvents">
         <short>Deferred messages pending for the control.</short>
@@ -5007,7 +5007,7 @@
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.DoEdit.Result">
-        <short/>
+        <short>True if the field was edited in the linked data set.</short>
       </element>
       <element name="TDBLookupComboBox.IsUnbound">
         <short>Indicates if the control lacks a datasource or field name ("unbound" mode).</short>
@@ -5015,7 +5015,9 @@
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.IsUnbound.Result">
-        <short/>
+        <short>
+          True if either DataSource or DataField are not assigned in the field data link.
+        </short>
       </element>
       <!-- visibility: private -->
       <element name="TDBLookupComboBox.FLookup"/>
@@ -5137,7 +5139,7 @@
         <seealso/>
       </element>
       <element name="TDBLookupComboBox.DataChange.Sender">
-        <short/>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TDBLookupComboBox.DoOnSelect">
         <short>Performs the OnSelect event handler when in drop-down list mode.</short>
@@ -5491,7 +5493,7 @@
         <seealso/>
       </element>
       <element name="TDBMemo.CMGetDataLink.Message">
-        <short/>
+        <short>Message handled in the method.</short>
       </element>
       <element name="TDBMemo.GetReadOnly">
         <short>Gets the value for the ReadOnly property.</short>
@@ -5517,7 +5519,7 @@
         <seealso/>
       </element>
       <element name="TDBMemo.DataChange.Sender">
-        <short/>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TDBMemo.Notification" link="#lcl.controls.TControl.Notification">
@@ -5548,7 +5550,7 @@
         <seealso/>
       </element>
       <element name="TDBMemo.UpdateData.Sender">
-        <short/>
+        <short>Object for the event notification.</short>
       </element>
       <element link="#lcl.stdctrls.TCustomEdit.Change" name="TDBMemo.Change">
         <short>Performs actions needed when the value for the control has been changed.</short>
@@ -5597,16 +5599,12 @@
       <element name="TDBMemo.KeyDown.Shift">
         <short>Sift modifier for the key code.</short>
       </element>
-      <element link="#lcl.controls.TWinControl.KeyPress" name="TDBMemo.KeyPress">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TDBMemo.KeyPress.Key">
-        <short/>
-      </element>
+
+      <element link="#lcl.controls.TWinControl.KeyPress" name="TDBMemo.KeyPress"/>
+      <element name="TDBMemo.KeyPress.Key" link="#lcl.controls.TWinControl.KeyPress.Key"/>
       <element link="#lcl.controls.TControl.WndProc" name="TDBMemo.WndProc"/>
       <element link="#lcl.controls.TControl.WndProc.Message" name="TDBMemo.WndProc.Message"/>
+
       <element name="TDBMemo.WSRegisterClass">
         <short>Registers the widgetset class created for new instances of the control.</short>
         <descr/>
@@ -6466,7 +6464,27 @@
       <element name="TDBImage.PictureChanged.Sender">
         <short>Object for the event notification.</short>
       </element>
-      <element name="TDBImage.WSRegisterClass" link="#lcl.controls.TControl.WSRegisterClass"/>
+
+      <element name="TDBImage.WSRegisterClass">
+        <short>Register the component class with the widgetset.</short>
+        <descr>
+          <p>
+            <var>WSRegisterClass</var> is a class method used to register the component class with the widgetset.
+          </p>
+          <p>
+            It is overridden in <var>TDBImage</var> to ensure that the class is registered only once. No actions are performed in the method if the class has already been registered with the widgetset. It calls the inherited method to register ancestor image classes.
+          </p>
+          <p>
+            TDBImage calls <var>RegisterPropertyToSkip</var> to exclude the <var>Picture</var> property during LCL component streaming. TDBImage loads its Picture data from the data set, and not from an LFM resource. Picture was removed in Lazarus version 0.9.29.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.extctrls.TCustomImage.WSRegisterClass">TCustomImage.WSRegisterClass</link>
+          <link id="#lcl.extctrls.TCustomImage.Picture">TCustomImage.Picture</link>
+          <link id="#lcl.lresources.RegisterPropertyToSkip">RegisterPropertyToSkip</link>
+        </seealso>
+      </element>
+
       <element name="TDBImage.DoCopyToClipboard">
         <short>Implements the clipboard Copy (Ctrl+C) command.</short>
         <descr>

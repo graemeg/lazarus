@@ -828,7 +828,20 @@
       <element name="TShellTreeView.StateImages" link="#lcl.comctrls.TCustomTreeView.StateImages"/>
       <element name="TShellTreeView.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
       <element name="TShellTreeView.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
-      <element name="TShellTreeView.Tag" link="#rtl.classes.TComponent.Tag"/>
+
+      <!-- Link attribute to TComponent.Tag does not find the topic using fpdoc in 3.2.2. So I am duplicating the content here temporarily. TODO: Remove this and restore link. -->
+      <element name="TShellTreeView.Tag">
+        <short>Tag value for the component.</short>
+        <descr>
+          <p>
+            <var>Tag</var> can be used to store an integer value in the component. This value is streamed together with all other published properties. It can be used for instance to quickly identify a component in an event handler.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
+      </element>
+
       <element name="TShellTreeView.ToolTips" link="#lcl.comctrls.TCustomTreeView.ToolTips"/>
       <element name="TShellTreeView.Visible" link="#lcl.controls.TControl.Visible"/>
       <element name="TShellTreeView.OnAddItem" link="#lcl.shellctrls.TCustomShellTreeView.OnAddItem"/>

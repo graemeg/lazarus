@@ -40,11 +40,18 @@
 
       <!-- object Visibility: default -->
       <element name="TContainedAction">
-        <short>
-          <var>TContainedAction</var> - parent class for <var>TCustomAction</var>; defines some properties especially relationships with parents.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Implements an Action class which has a category and parent action list.</short>
+        <descr>
+          <p>
+            <var>TContainedAction</var> is a <var>TBasicAction</var> descendant which allows an action to be given a category, and grouped with related actions. It provides additional properties and methods used to assign an action to the category and an associated list of actions. These values are used at design-time in the Action List editor.
+          </p>
+          <p>
+            TContainedAction is the ancestor for the TCustomAction class.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction">TBasicAction</link>
+        </seealso>
       </element>
 
       <element name="TContainedAction.FCategory"/>
@@ -101,106 +108,150 @@
         <short/>
       </element>
       <!-- procedure Visibility: protected -->
-      <element name="TContainedAction.ReadState" link="#rtl.Classes.TComponent.ReadState">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TContainedAction.ReadState">
+        <short>Reads properties and child components for the class instance.</short>
+        <descr>
+          <p>
+            <var>ReadState</var> is an overridden method in <var>TContainedAction</var> used to read values for the class instance during LCL component streaming. It calls the inherited method to read properties and child components using the specified <var>TReader</var> class instance. When the <var>Parent</var> in Reader is a <var>TCustomActionList</var> instance, it is stored in the ActionList property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TContainedAction.ActionList"/>
+          <link id="TCustomActionList"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+          <link id="#rtl.classes.TReader.Parent">TReader.Parent</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TContainedAction.ReadState.Reader">
-        <short/>
+        <short>TReader instance used to read values for the component.</short>
       </element>
       <!-- procedure Visibility: protected -->
-      <element name="TContainedAction.SetParentComponent" link="#rtl.Classes.TComponent.SetParentComponent">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TContainedAction.SetParentComponent">
+        <short>Sets the parent component for the class instance.</short>
+        <descr>
+          <p>
+            <var>SetParentComponent</var> is an overridden method used to set the property in the class instance which contains the parent component. It re-implements the method from the ancestor class.
+          </p>
+          <p>
+            In TContainedAction, it sets the ActionList property to the value in AParent when AParent is derived from TCustomActionList.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomActionList"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TContainedAction.SetParentComponent.AParent">
-        <short/>
+        <short>Value assigned to the parent component for the class.</short>
       </element>
-      <!-- procedure Visibility: protected -->
-      <element name="TContainedAction.Change">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TContainedAction.Destroy" link="#rtl.Classes.TBasicAction.Destroy">
+      <element name="TContainedAction.Destroy" link="#rtl.classes.TBasicAction.Destroy">
+        <short>Destructor for the class instance.</short>
         <descr>
           <p>
-            If you call <var>Destroy</var> for an object which hasn't being initialized yet it will generate an error. Always use the Free method to deallocate objects, because it verifies if object variable doesn´t contain the value nil.
+            <var>Destroy</var> is the overridden destructor for the class instance.  When <var>ActionList</var> has been assigned, its <var>RemoveAction</var> method is called to delete the current class instance.
           </p>
           <p>
-            Take the following precautions when creating your own Destroy method:
+            Destroy calls the inherited method to free the class instance and unregister any action link clients.
           </p>
-          <ul>
-            <li>
-              Declare Destroy with the override directive, because it is a virtual method.
-            </li>
-            <li>
-              Always call 'inherited Destroy;' as the last thing on the destructor code.
-            </li>
-            <li>
-              An exception may be raised on the constructor in case there is not enough memory to create an object, or something else goes wrong. If the exception is not handled inside the constructor, the object will be only partially built. In this case Destroy will be called, so your destructor must check if the resources were really allocated before disposing of them.
-            </li>
-            <li>
-              Remember to call Free for all objects created on the constructor.
-            </li>
-          </ul>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TContainedAction.ActionList"/>
+          <link id="TCustomActionList.RemoveAction"/>
+          <link id="#rtl.classes.TBasicAction.Destroy">TBasicAction.Destroy</link>
+          <link id="#rtl.classes.TComponent.Destroy">TComponent.Destroy</link>
+        </seealso>
       </element>
       <!-- function Visibility: public -->
-      <element name="TContainedAction.Execute" link="#rtl.Classes.TBasicAction.Execute">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TContainedAction.Execute">
+        <short>Executes the action using a available OnExecute event handler.</short>
+        <descr>
+          <p>
+            <var>Execute</var> is an overridden method in TContainedAction. It checks for an available <var>OnExecute</var> event handlers in <var>ActionList</var>, the <var>Application</var> singleton, and the class instance. If an OnExecute event handler is not found, it posts a <var>CM_ACTIONEXECUTE</var> control message to the application.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomActionList.ExecuteAction"/>
+          <link id="#lcl.forms.TApplication"/>
+          <link id="#lcl.lclproc.SendApplicationMessage"/>
+          <link id="#rtl.classes.TComponent.ExecuteAction">TComponent.ExecuteAction</link>
+          <link id="#rtl.classes.TBasicAction.Execute">TBasicAction.Execute</link>
+        </seealso>
       </element>
       <!-- function result Visibility: default -->
       <element name="TContainedAction.Execute.Result">
-        <short/>
+        <short>
+          True if the action was executed using one of the available execution options.
+        </short>
       </element>
       <!-- function Visibility: public -->
-      <element name="TContainedAction.GetParentComponent" link="#rtl.Classes.TComponent.GetParentComponent">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TContainedAction.GetParentComponent">
+        <short>Gets the parent component for the class instance.</short>
+        <descr>
+          <p>
+            <var>GetParentComponent</var> is an overridden method used to get the property in the class instance which is the parent component for the class instance. It re-implements the method from the ancestor class.
+          </p>
+          <p>
+            In TContainedAction, it gets the value in the ActionList property (when assigned) or calls the inherited method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TContainedAction.ActionList"/>
+          <link id="TCustomActionList"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
       </element>
       <!-- function result Visibility: default -->
       <element name="TContainedAction.GetParentComponent.Result">
-        <short/>
+        <short>Parent component for the class instance, or Nil when not assigned.</short>
       </element>
       <!-- function Visibility: public -->
-      <element name="TContainedAction.HasParent" link="#rtl.Classes.TComponent.HasParent">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TContainedAction.HasParent">
+        <short>
+          Indicates if a value has been assigned to the property with the parent component for the class instance.
+        </short>
+        <descr>
+          <p>
+            <var>HasParent</var> is an overridden method in <var>TContainedAction</var>. It checks for an assigned value in the <var>ActionList</var> property, and sets the return value to <b>True</b> when assigned. Otherwise, the inherited method is called to get the return value.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TContainedAction.ActionList"/>
+          <link id="#rtl.classes.TComponent.HasParent">TComponent.HasParent</link>
+        </seealso>
       </element>
       <!-- function result Visibility: default -->
       <element name="TContainedAction.HasParent.Result">
-        <short/>
+        <short>True when the parent component has been assigned.</short>
       </element>
       <!-- function Visibility: public -->
-      <element name="TContainedAction.Update" link="#rtl.Classes.TBasicAction.Update">
-        <short/>
+      <element name="TContainedAction.Update">
+        <short>
+          Signals an available OnUpdate event handler to update values in the Action.
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.Update">TBasicAction.Update</link>
+        </seealso>
       </element>
       <!-- function result Visibility: default -->
       <element name="TContainedAction.Update.Result">
-        <short/>
+        <short>True if an OnUpdate event handler was found and executed for the Action.</short>
       </element>
       <!-- property Visibility: public -->
       <element name="TContainedAction.ActionList">
-        <short>The <var>ActionList</var> in which this action is contained.</short>
+        <short>
+          The <var>ActionList</var> where the action is stored, and its parent component.
+      </short>
         <descr/>
         <seealso/>
       </element>
       <!-- property Visibility: public -->
       <element name="TContainedAction.Index">
-        <short>The <var>Index</var> of this action in the list of actions.</short>
+        <short>
+          Ordinal position for the action in ActionList.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -212,41 +263,112 @@
       </element>
       <!-- "class of" type Visibility: default -->
       <element name="TContainedActionClass">
-        <short/>
+        <short>Class type for TContainedAction instances.</short>
         <descr/>
         <seealso/>
       </element>
+
+      <element name="TActionListEnumerator">
+        <short>Implements an enumerator for the Actions in TCustomActionList.</short>
+        <descr>
+          <p>
+            <var>TActionListEnumerator</var> implements an enumerator for <var>TContainedAction</var> values stored in <var>TCustomActionList</var>. It allows navigation of values in the <var>Actions</var> property using the <b>"for .. in"</b> loop syntax. TActionListEnumerator is the type returned from the <var>TCustomActionList.GetEnumerator</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomActionList.GetEnumerator"/>
+          <link id="TCustomActionList.Actions"/>
+          <link id="TContainedAction"/>
+        </seealso>
+      </element>
+
+      <element name="TActionListEnumerator.FList"/>
+      <element name="TActionListEnumerator.FPosition"/>
+      <element name="TActionListEnumerator.GetCurrent"/>
+      <element name="TActionListEnumerator.GetCurrent.Result"/>
+
+      <element name="TActionListEnumerator.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            Stores the value passed in AList to the member variable for the Actions property. Sets the value for the internal position member to -1.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TActionListEnumerator.Create.AList">
+        <short>Action list with the values for the enumerator.</short>
+      </element>
+
+      <element name="TActionListEnumerator.MoveNext">
+        <short>Moves to the next value for the enumerator.</short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TActionListEnumerator.MoveNext.Result">
+        <short>
+          True if the next value was available. False when no more values exist for the enumerator.
+        </short>
+      </element>
+
+      <element name="TActionListEnumerator.Current">
+        <short>Current value for the enumerator.</short>
+        <descr>
+          <p>
+            Current is a read-only TContainedAction property with the current value for the enumerator. The property value is retrieved from Actions using the position in an  internal member.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
       <!-- procedure type Visibility: default -->
       <element name="TActionEvent">
-        <short/>
-        <descr/>
+        <short>
+          Specifies an event handler signalled to implement an action in TCustomActionList.
+        </short>
+        <descr>
+          <p>
+            Arguments passed to the event handler include the Action for the notification and a return value that indicates if the action was executed.
+          </p>
+          <p>
+            TActionEvent is the type used for the OnExecute and OnUpdate properties in TCustomActionList.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="TActionEvent.Action">
-        <short/>
+        <short>TBasicAction for the event notification.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TActionEvent.Handled">
-        <short/>
+        <short>True if the action was executed in the action list for t he handler.</short>
       </element>
       <!-- enumeration type Visibility: default -->
       <element name="TActionListState">
-        <short/>
-        <descr/>
+        <short>Represents state values for an action list.</short>
+        <descr>
+          <p>
+            TActionListState is the type used for the State property in TCustomActionList.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TActionListState.asNormal">
-        <short/>
+        <short>The action list is enabled, and can update and execute its actions.</short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TActionListState.asSuspended">
-        <short/>
+        <short>
+          The action list is disabled, and the Enabled state for its actions is ignored.
+        </short>
       </element>
       <!-- enumeration value Visibility: default -->
       <element name="TActionListState.asSuspendedEnabled">
-        <short/>
+        <short>
+          The action list is disabled, but the Enabled state for its actions is set to True.
+        </short>
       </element>
       <!-- object Visibility: default -->
       <element name="TCustomActionList">
@@ -333,84 +455,122 @@
       </element>
       <!-- procedure Visibility: protected -->
       <element name="TCustomActionList.AddAction">
-        <short><var>AddAction</var> - adds an action to the list.</short>
-        <descr/>
+        <short>Adds the specified action to the action list.</short>
+        <descr>
+          <p>
+            Sets the parent component for the action, and adds the value to the internal list for the component. Raises an Exception if the Action has already been added to the action list.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.AddAction.Action">
-        <short/>
+        <short>TContainedAction instance added in the method.</short>
       </element>
       <!-- procedure Visibility: protected -->
       <element name="TCustomActionList.RemoveAction">
-        <short><var>RemoveAction</var> - removes an action from the list.</short>
+        <short>Removes the specified action from the action list.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.RemoveAction.Action">
-        <short/>
+        <short>TContainedAction instance removed from the action list.</short>
       </element>
       <!-- procedure Visibility: protected -->
       <element name="TCustomActionList.Change">
-        <short><var>Change</var> the action.</short>.<descr/>
-        <seealso/>
+        <short>
+          Performs action needed when the action list or one of its Actions has been changed.
+        </short>
+        <descr>
+          <p>
+            <var>Change</var> signals the OnChange event handler (when assigned) to perform user-specified operations for the action list. Change also visits each of the Actions in the action list, and calls its Change method to signal the OnChange event handler supplied at the action level. It calls the OwnerFormDesignerModified routine at design-time to notify the form designer of the change to the action list.
+          </p>
+          <p>
+            Change is called when a new TCustomImageList value is assigned to the Images property in the action list.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.lclproc.OwnerFormDesignerModified">OwnerFormDesignerModified</link>
+        </seealso>
       </element>
       <!-- procedure Visibility: protected -->
-      <element name="TCustomActionList.GetChildren" link="#rtl.Classes.TComponent.GetChildren">
-        <short/>
+      <element name="TCustomActionList.GetChildren">
+        <short>Executes the specified procedure for each of the children in Actions.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomActionList.Actions"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+          <link id="#rtl.classes.TGetChildProc">TGetChildProc</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.GetChildren.Proc">
-        <short/>
+        <short>Object procedure to execute for each of the children in the component.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.GetChildren.Root">
-        <short/>
+        <short>Not used in the method.</short>
       </element>
       <!-- procedure Visibility: protected -->
-      <element name="TCustomActionList.Notification" link="#rtl.Classes.TComponent.Notification">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TCustomActionList.Notification">
+        <short>
+          Handles the notification performed when a component is added to or removed from the class instance.
+        </short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Sets <var>Images</var> to <b>Nil</b> when the image list is removed from the component. Calls the <var>RemoveAction</var> method when <var>AComponent</var> is a <var>TContainedAction</var> instance removed from the component.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.Notification.AComponent">
-        <short/>
+        <short>Component of the notification.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.Notification.Operation">
-        <short/>
+        <short>Action performed for the specified component.</short>
       </element>
       <!-- procedure Visibility: protected -->
-      <element name="TCustomActionList.SetChildOrder" link="#rtl.Classes.TComponent.SetChildOrder">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TCustomActionList.SetChildOrder">
+        <short>Set the order for the specified child (Action).</short>
+        <descr>
+          <p>
+            <var>SetChildOrder</var> is an overridden method in <var>TCustomActionList</var>. It sets the ordinal position for the action in <var>Component</var> to the value specified in <var>Order</var>.  The <var>IndexOf</var> method in <var>Actions</var> is called to get the current position for Component. The value in Order is assigned to the <var>Index</var> property in the <var>TContainedAction</var> when it exists in Actions. No actions are performed in the method when Component is not stored in the Actions for the action list.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomActionList.Actions"/>
+          <link id="TContainedAction.Index"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.SetChildOrder.Component">
-        <short/>
+        <short>Child component (action) re-order in the method.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.SetChildOrder.Order">
-        <short/>
+        <short>New position in the Actions list.</short>
       </element>
       <!-- procedure Visibility: protected -->
       <element name="TCustomActionList.SetImages">
-        <short><var>SetImages</var> - stores a list of images.</short>
+        <short>Sets the value for the Images property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomActionList.Images"/>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomActionList.SetImages.Value">
-        <short/>
+        <short>New value for the Images property.</short>
       </element>
       <!-- property Visibility: protected -->
       <element name="TCustomActionList.OnChange">
-        <short><var>OnChange</var> - event handler for a change in the action.</short>
+        <short>Event handler signalled when the action list has been changed.</short>
         <descr/>
         <seealso/>
       </element>
@@ -467,14 +627,31 @@
         </seealso>
       </element>
 
-      <element name="TCustomActionList.ExecuteAction" link="#rtl.Classes.TComponent.ExecuteAction">
+      <!-- function Visibility: public -->
+      <element name="TCustomActionList.ActionByName">
+        <short>Returns an action identified by its name (as a string).</short>
+        <descr/>
+        <seealso/>
+      </element>
+      <!-- function result Visibility: default -->
+      <element name="TCustomActionList.ActionByName.Result">
+        <short/>
+      </element>
+      <!-- argument Visibility: default -->
+      <element name="TCustomActionList.ActionByName.ActionName">
+        <short/>
+      </element>
+
+      <element name="TCustomActionList.ExecuteAction">
         <short>Examines and executes the specified Action.</short>
         <descr>
           <p>
             <var>ExecuteAction</var> checks whether <var>Action</var> handles the current component, and if yes, calls the <var>ExecuteAction</var> method, passing itself as a parameter. The function returns <var>True</var> if the action handles the current component.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.ExecuteAction">TComponent.ExecuteAction</link>
+        </seealso>
       </element>
       <element name="TCustomActionList.ExecuteAction.Result">
         <short/>
@@ -483,20 +660,33 @@
         <short/>
       </element>
 
-      <element name="TCustomActionList.UpdateAction" link="#rtl.Classes.TComponent.UpdateAction">
+      <element name="TCustomActionList.UpdateAction">
           <short>Examines and updates the target for the specified Action.</short>
           <descr>
             <p>
               <var>UpdateAction</var> checks whether <var>Action</var> handles the current component, and if yes, calls the <var>UpdateTarget</var> method, passing itself as a parameter. The function returns <var>True</var> if the action handles the current component.
             </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.UpdateAction">TComponent.UpdateAction</link>
+        </seealso>
       </element>
       <element name="TCustomActionList.UpdateAction.Result">
         <short/>
       </element>
       <element name="TCustomActionList.UpdateAction.Action">
         <short/>
+      </element>
+
+      <element name="TCustomActionList.GetEnumerator">
+        <short>Gets an enumerator for the action list.</short>
+        <descr/>
+        <seealso>
+          <link id="TActionListEnumerator"/>
+        </seealso>
+      </element>
+      <element name="TCustomActionList.GetEnumerator.Result">
+        <short>TActionListEnumerator instance for the class.</short>
       </element>
 
       <element name="TCustomActionList.IndexOfName">
@@ -520,20 +710,6 @@
         <short></short>
       </element>
 
-      <!-- function Visibility: public -->
-      <element name="TCustomActionList.ActionByName">
-        <short>Returns an action identified by its name (as a string).</short>
-        <descr/>
-        <seealso/>
-      </element>
-      <!-- function result Visibility: default -->
-      <element name="TCustomActionList.ActionByName.Result">
-        <short/>
-      </element>
-      <!-- argument Visibility: default -->
-      <element name="TCustomActionList.ActionByName.ActionName">
-        <short/>
-      </element>
       <!-- property Visibility: public -->
       <element name="TCustomActionList.Actions">
         <short>The indexed list of actions.</short>
@@ -572,7 +748,7 @@
             <var>TActionList</var> - The basic actions list class. <var>TActionList</var> is the last component on the "Standard" component palette on the Lazarus IDE.
           </p>
           <p>
-            To use an ActionList, click on the icon on the IDE Standard Components toolbar, then click anywhere on the main form and an ActionList icon will appear. It doesn't matter where you position it, because it is not visible at run-time.
+            To use an ActionList, click on the icon on the IDE Standard Components toolbar, then click anywhere on the main form and an ActionList icon will appear. It does not matter where you position it, because it is not visible at run-time.
           </p>
           <p>
             You can add, remove or modify actions on the list by right-clicking on the ActionList icon on the form editor and then choosing "Edit action list...", or by double-clicking on the icon with the left mouse button. This will open the "Action List Editor".
@@ -584,7 +760,7 @@
             The <var>TActionList</var> class introduces very few properties of its own, but inherits a lot from its ancestor, <link id="#lcl.ActnList.TCustomActionList">TCustomActionList</link>, and related components <link id="#lcl.ActnList.TAction">TAction</link>,
             <link id="#lcl.ActnList.TCustomAction">TCustomAction</link>,
             <link id="#lcl.ActnList.TContainedAction">TContainedAction</link> and
-            <link id="#rtl.Classes.TBasicAction">TBasicAction</link>.
+            <link id="#rtl.classes.TBasicAction">TBasicAction</link>.
           </p>
           <p>
             Each entry in the ActionList appears in the Object Inspector as an instance of <var>TAction</var>, and its properties are accessible and modifiable from the Object Inspector.
@@ -685,23 +861,22 @@
       </element>
 
       <!-- variable Visibility: private -->
-      <element name="TCustomAction.FDisableIfNoHandler"/>
+      <element name="TCustomAction.FAutoCheck"/>
       <element name="TCustomAction.FCaption"/>
-      <element name="TCustomAction.FChecking"/>
       <element name="TCustomAction.FChecked"/>
+      <element name="TCustomAction.FChecking"/>
       <element name="TCustomAction.FEnabled"/>
       <element name="TCustomAction.FGroupIndex"/>
-      <element name="TCustomAction.FHelpType"/>
       <element name="TCustomAction.FHelpContext"/>
       <element name="TCustomAction.FHelpKeyword"/>
+      <element name="TCustomAction.FHelpType"/>
       <element name="TCustomAction.FHint"/>
       <element name="TCustomAction.FImageIndex"/>
+      <element name="TCustomAction.FOnHint"/>
+      <element name="TCustomAction.FSavedEnabledState"/>
+      <element name="TCustomAction.FSecondaryShortCuts"/>
       <element name="TCustomAction.FShortCut"/>
       <element name="TCustomAction.FVisible"/>
-      <element name="TCustomAction.FOnHint"/>
-      <element name="TCustomAction.FSecondaryShortCuts"/>
-      <element name="TCustomAction.FSavedEnabledState"/>
-      <element name="TCustomAction.FAutoCheck"/>
 
       <element name="TCustomAction.SetAutoCheck">
         <short/>
@@ -856,7 +1031,10 @@
       <element name="TCustomAction.FImage"/>
       <element name="TCustomAction.FMask"/>
 
-      <element name="TCustomAction.AssignTo" link="#rtl.Classes.TPersistent.AssignTo">
+      <element name="TCustomAction.AssignTo">
+        <short>
+          Copies property from the class instance to the specified persistent object.
+        </short>
         <descr>
           <p>
             <var>AssignTo</var> is the generic function to assign the class' contents to another class. This method must be overridden by descendent classes to actually assign the content of the source instance to the destination instance.
@@ -872,21 +1050,29 @@
         <errors>
           Raises an EConvertError exception if the current class cannot be assigned to the  persistent class instance in Dest.
         </errors>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomAction.AssignTo.Dest">
         <short/>
       </element>
       <!-- procedure Visibility: protected -->
-      <element name="TCustomAction.SetName" link="#rtl.Classes.TComponent.SetName">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TCustomAction.SetName">
+        <short>Sets the value for the Name property.</short>
+        <descr>
+          <p>
+            SetName is overridden in TCustomAction. It calls the inherited method to ensure that Value is a valid identifier name for the component and its owner (when assigned). The inherited method may raise an EComponentError exception if the name in value is not a valid identifier. The new property value is also assigned to the Caption property in the action when the number of control clients is 0.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TCustomAction.SetName.Value">
-        <short/>
+        <short>New value for the Name property.</short>
       </element>
       <!-- function Visibility: protected -->
       <element name="TCustomAction.HandleShortCut">
@@ -946,7 +1132,25 @@
           <var>HintStr</var> - the text-string for display as a hint.</short>
       </element>
       <!-- function Visibility: public -->
-      <element name="TCustomAction.Execute" link="#rtl.Classes.TBasicAction.Execute"/>
+      <element name="TCustomAction.Execute">
+        <short>Executes the action using a available OnExecute event handler.</short>
+        <descr>
+          <p>
+            <var>Execute</var> is an overridden method in TCustomAction.  It checks the State for the ActionList to enusre that it is not suspended. No actions are performed in the method when ActionList.State contains a value other than asNormal.
+          </p>
+          <p>
+            Execute calls Update to signal an available OnUpdate event handler in the ActionList, the Application singleton, or the class instance. It toggles the value in the Checked property when AutoCheck is enabled. The inherited Execute method is called when the class instance is Enabled.
+          </p>
+          <p>
+            The return value is True if the action was executed in the method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TContainedAction.Execute"/>
+          <link id="#rtl.classes.TBasicAction.Execute">TBasicAction.Execute</link>
+        </seealso>
+      </element>
+
       <!-- function result Visibility: default -->
       <element name="TCustomAction.Execute.Result">
         <short>True if action is to be performed.</short>
@@ -1105,7 +1309,7 @@
         <seealso/>
       </element>
       <!-- property Visibility: published -->
-      <element name="TAction.OnExecute" link="#rtl.Classes.TBasicAction.OnExecute">
+      <element name="TAction.OnExecute" link="#rtl.classes.TBasicAction.OnExecute">
         <short>Event called when action is executed.</short>
         <descr>
           <p>
@@ -1127,13 +1331,18 @@
         <seealso/>
       </element>
 
-      <element name="TAction.OnUpdate" link="#rtl.Classes.TBasicAction.OnUpdate">
+      <element name="TAction.OnUpdate">
+        <short>
+          Event handler signalled to update an action when the application is idle.
+        </short>
         <descr>
           <p>
             <var>OnUpdate</var> is the event triggered when the application is idle, and the action is being updated. The <var>OnUpdate</var> event can be used to set the state of the action, for instance disable it if the action cannot be executed at this point in time.
           </p>
-          </descr>
-        <seealso/>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.OnUpdate">TBasicAction.OnUpdate</link>
+        </seealso>
       </element>
 
       <element name="TAction.SecondaryShortCuts" link="#LCL.ActnList.TCustomAction.SecondaryShortCuts">

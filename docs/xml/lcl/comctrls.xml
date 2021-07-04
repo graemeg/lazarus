@@ -3691,6 +3691,20 @@
         <short/>
       </element>
 
+      <element name="TPageControl.Clear">
+        <short>
+          Clears the list of tab names for the control, and causes the associated tab sheets or pages to be freed.
+        </short>
+        <descr>
+          <p>
+            Calls the Clear method for the protected Tabs property in the TCustomTabControl ancestor.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.Tabs"/>
+        </seealso>
+      </element>
+
       <element name="TPageControl.FindNextPage">
         <short>
           <var>FindNextPage</var> - returns the next page (<var>TTabSheet</var>) in the sequence.
