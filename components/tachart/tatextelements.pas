@@ -365,7 +365,8 @@ begin
     ADrawer.ClippingStop;
 
   DrawLink(ADrawer, ADataPoint, ALabelCenter);
-  ADrawer.Brush := GetLabelBrush;
+  with GetLabelBrush do
+    ADrawer.SetBrushParams(Style, ColorToRGB(Color));
   if IsMarginRequired then begin
     if GetFrame.Visible then
       ADrawer.Pen := GetFrame
