@@ -287,7 +287,7 @@ procedure DbgAppendToFileWithoutLn(FileName, S: String);
 
 // case..of utility functions
 function ClassCase(const AClass: TClass; const ACase: array of TClass {; const ADescendant: Boolean = True}): Integer; overload;
-function ClassCase(const AClass: TClass; const ACase: array of TClass; const ADecendant: Boolean): Integer; overload;
+function ClassCase(const AClass: TClass; const ACase: array of TClass; const ADescendant: Boolean): Integer; overload;
 
 // MWE: define (missing) UTF16string similar to UTF8
 //      strictly spoken, a widestring <> utf16string
@@ -2319,17 +2319,17 @@ begin
   CloseFile(F);
 end;
 
-function ClassCase(const AClass: TClass; const ACase: array of TClass {; const ADecendant: Boolean = True}): Integer;
+function ClassCase(const AClass: TClass; const ACase: array of TClass {; const ADescendant: Boolean = True}): Integer;
 begin
   Result := ClassCase(AClass, ACase, True);
 end;
 
-function ClassCase(const AClass: TClass; const ACase: array of TClass; const ADecendant: Boolean): Integer;
+function ClassCase(const AClass: TClass; const ACase: array of TClass; const ADescendant: Boolean): Integer;
 begin
   for Result := Low(ACase) to High(ACase) do
   begin
     if AClass = ACase[Result] then Exit;
-    if not ADecendant then Continue;
+    if not ADescendant then Continue;
     if AClass.InheritsFrom(ACase[Result]) then Exit;
   end;
 
