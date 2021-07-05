@@ -345,6 +345,18 @@ end;
 
 { TWin32WSColorDialog }
 
+Function CCHookProc(H: THandle; msg: Cardinal; W: WParam; L: LParam): UintPtr; StdCall;
+var
+  ws: WideString;
+begin
+  if (H <> 0) and (Msg = WM_InitDialog) then
+  begin
+    ws := TColorDialog(PChooseColor(L)^.lCustData).Title;
+    SetWindowTextW(H, PWideChar(ws));
+  end;
+  Result := 0;
+end;
+
 class function TWin32WSColorDialog.CreateHandle(const ACommonDialog: TCommonDialog): THandle;
 var
   CC: PChooseColor;
@@ -372,7 +384,9 @@ begin
     RGBResult := ColorToRGB(ColorDialog.Color);
     LPCustColors := AllocMem(16 * SizeOf(DWord));
     FillCustomColors;
-    Flags := CC_FULLOPEN or CC_RGBINIT;
+    lCustData := LParam(ACommonDialog);
+    lpfnHook := @CCHookProc;
+    Flags := CC_FULLOPEN or CC_RGBINIT or CC_ENABLEHOOK;
   end;
   Result := THandle(CC);
 end;
