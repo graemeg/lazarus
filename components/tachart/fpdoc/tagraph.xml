@@ -268,10 +268,7 @@ For example, <link id="TASeries.TPieSeries">pie series</link> displays a separat
       </element>
       <element name="TChart.YImageToGraph">
         <short>Converts the Y coordinate of a point from image units to graph units.</short>
-        <seealso>
-          <link id="TChart.YGraphToImage"/>
-          <link id="TChart.XImageToGraph"/>
-          <link id="TChart.ImageToGraph"/>
+        <seealso><link id="TChart.YGraphToImage"/><link id="TChart.XImageToGraph"/><link id="TChart.ImageToGraph"/>
         </seealso>
       </element>
       <element name="TChart.CurrentExtent">
@@ -316,7 +313,9 @@ chart margin and the space reserved for series marks.
       </element>
       <element name="Register" skip="1"/>
       <element name="RegisterSeriesClass" skip="1"/>
-      <element name="TChart.EraseBackground" skip="1"/>
+      <element name="TChart.EraseBackground" skip="1"><short>This overridden background painting method does nothing because the background will be painted over anyway.</short><descr>The inherited behaviour is ignored.
+</descr>
+      </element>
       <element name="TChart.GetChildren" skip="1"/>
       <element name="TChart.Paint" skip="1"/>
       <element name="TChart.SetChildOrder" skip="1"/>
@@ -326,10 +325,10 @@ chart margin and the space reserved for series marks.
       </element>
       <element name="TChart.PaintOnCanvas.Draw"/>
       <element name="TChart.Draw">
-        <short>Draws the chart usung the given drawing back-end</short>
+        <short>Draws the chart using the given drawing back-end</short>
         <descr>This method draws the chart by means of the given drawing back-end, 
 <var>Drawer</var>. Unlike 
-<var>PaintOnCanvas</var> the chart can be drawn on non-canvas devices, such as a svg file.
+<var>PaintOnCanvas</var> the chart can be drawn on non-canvas devices, such as a svg file or OpenGL context.
 </descr>
         <seealso><link id=""/>
         </seealso>
@@ -658,6 +657,9 @@ as a replacement.
       </element><element name="TChart.OnExtentValidate"><short>The event <var>OnExtentValidate</var> checks whether a change of the chart's extent is allowed or not</short><descr>Zooming or panning outside the chart's FullExtent can lead to a loss of the visible viewport. To prevent this a handler for the <var>OnExtentValidate</var> event can be provided in which the boolean variable <var>AllowChange</var> should signal that the extent given in the argument <var>ALogicalExtent</var> is possible. If not, the <var>ALogicalExtent</var> can be set to the valid extent to be used instead.
 </descr>
       </element><element name="TChart.Proportional"><short><var>Proportional</var>, when set to <var>true</var>, applies the same scaling factor to the x and y axis.</short>
+      </element>
+    <element name="TChart.ScalingValid"><short>Indicates whether the scaling parameters for the conversion between graph and image coordinates have valid values.</short>
+      </element><element name="TChart.ActiveToolIndex"><short>Returns the index of the currently active chart tool in the toolset attached to the chart.</short>
       </element>
     </module>
   </package>
