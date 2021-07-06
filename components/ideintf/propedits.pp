@@ -8238,6 +8238,9 @@ begin
   RegisterPropertyEditor(TypeInfo(TCustomPage), TCustomTabControl, 'ActivePage', TNoteBookActiveControlPropertyEditor);
   RegisterPropertyEditor(TypeInfo(TSizeConstraints), TControl, 'Constraints', TConstraintsPropertyEditor);
   RegisterPropertyEditor(TypeInfo(TStrings), TNoteBook, 'Pages', TPagesPropertyEditor);
+  RegisterPropertyEditor(TypeInfo(TTranslateString), TCustomTaskDialog, 'Text', TStringMultilinePropertyEditor);
+  RegisterPropertyEditor(TypeInfo(TTranslateString), TCustomTaskDialog, 'ExpandedText', TStringMultilinePropertyEditor);
+  RegisterPropertyEditor(TypeInfo(TTranslateString), TCustomTaskDialog, 'FooterText', TStringMultilinePropertyEditor);
 
   // Property is hidden and editing disabled by HiddenPropertyEditor :
   RegisterPropertyEditor(TypeInfo(TAnchorSide), TControl, 'AnchorSideLeft', THiddenPropertyEditor);
