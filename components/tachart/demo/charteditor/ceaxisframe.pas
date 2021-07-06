@@ -95,6 +95,7 @@ type
     procedure seTitleDistanceChange(Sender: TObject);
   private
     FAxis: TChartAxis;
+    FAxisMin, FAxisMax: Double;
     FTitleFontFrame: TChartFontFrame;
     FTitleShapeBrushPenMarginsFrame: TChartShapeBrushPenMarginsFrame;
     FLabelFontFrame: TChartFontFrame;
@@ -357,8 +358,6 @@ begin
 end;
 
 procedure TChartAxisFrame.Prepare(Axis: TChartAxis);
-var
-  mn, mx: Double;
 begin
   FAxis := Axis;
 
@@ -381,9 +380,9 @@ begin
   end;
 
   // Page "Labels"
-  GetChart.GetAxisRange(Axis, mn, mx);
-  seMaximum.Value := mx;
-  seMinimum.Value := mn;
+  GetChart.GetAllSeriesAxisLimits(Axis, FAxisMin, FAxisMax);
+  seMaximum.Value := IfThen(Axis.Range.UseMax, Axis.Range.Max, FAxisMax);
+  seMinimum.Value := IfThen(Axis.Range.UseMin, Axis.Range.Min, FAxisMin);
   cbAutoMax.Checked := not Axis.Range.UseMax;
   cbAutoMin.Checked := not Axis.Range.UseMin;
   cbInverted.Checked := Axis.Inverted;
