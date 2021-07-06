@@ -357,6 +357,8 @@ begin
 end;
 
 procedure TChartAxisFrame.Prepare(Axis: TChartAxis);
+var
+  mn, mx: Double;
 begin
   FAxis := Axis;
 
@@ -379,8 +381,9 @@ begin
   end;
 
   // Page "Labels"
-  seMaximum.Value := Axis.Range.Max;
-  seMinimum.Value := Axis.Range.Min;
+  GetChart.GetAxisRange(Axis, mn, mx);
+  seMaximum.Value := mx;
+  seMinimum.Value := mn;
   cbAutoMax.Checked := not Axis.Range.UseMax;
   cbAutoMin.Checked := not Axis.Range.UseMin;
   cbInverted.Checked := Axis.Inverted;

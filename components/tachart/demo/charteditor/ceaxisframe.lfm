@@ -46,17 +46,17 @@ object ChartAxisFrame: TChartAxisFrame
     TabOrder = 1
     object pgTitle: TTabSheet
       Caption = 'Title'
-      ClientHeight = 378
+      ClientHeight = 418
       ClientWidth = 638
       object TitleMemoPanel: TPanel
         Left = 8
-        Height = 151
+        Height = 191
         Top = 8
         Width = 622
         Align = alClient
         BorderSpacing.Around = 8
         BevelOuter = bvNone
-        ClientHeight = 151
+        ClientHeight = 191
         ClientWidth = 622
         TabOrder = 0
         object lblTitle: TLabel
@@ -68,7 +68,6 @@ object ChartAxisFrame: TChartAxisFrame
           Width = 21
           BorderSpacing.Top = 2
           Caption = 'Text'
-          ParentColor = False
         end
         object mmoTitle: TMemo
           AnchorSideLeft.Control = lblTitle
@@ -79,7 +78,7 @@ object ChartAxisFrame: TChartAxisFrame
           AnchorSideBottom.Control = TitleMemoPanel
           AnchorSideBottom.Side = asrBottom
           Left = 0
-          Height = 130
+          Height = 170
           Top = 21
           Width = 622
           Anchors = [akTop, akLeft, akRight, akBottom]
@@ -109,7 +108,7 @@ object ChartAxisFrame: TChartAxisFrame
       object TitleParamsPanel: TPanel
         Left = 8
         Height = 203
-        Top = 167
+        Top = 207
         Width = 622
         Align = alBottom
         BorderSpacing.Around = 8
@@ -199,7 +198,6 @@ object ChartAxisFrame: TChartAxisFrame
           Width = 45
           Caption = 'Distance'
           FocusControl = seTitleDistance
-          ParentColor = False
         end
         object seTitleDistance: TSpinEdit
           AnchorSideLeft.Control = lblTitleDistance
@@ -248,7 +246,6 @@ object ChartAxisFrame: TChartAxisFrame
           BorderSpacing.Left = 16
           BorderSpacing.Top = 6
           Caption = 'Automatic'
-          ParentColor = False
         end
         object cbAutoMax: TCheckBox
           AnchorSideLeft.Control = lblAutomatic
@@ -427,7 +424,6 @@ object ChartAxisFrame: TChartAxisFrame
           Top = 31
           Width = 38
           Caption = 'Format'
-          ParentColor = False
         end
         object seLabelDistance: TSpinEdit
           AnchorSideLeft.Control = edLabelFormat
@@ -453,7 +449,6 @@ object ChartAxisFrame: TChartAxisFrame
           Width = 45
           Caption = 'Distance'
           FocusControl = seLabelDistance
-          ParentColor = False
         end
       end
       object Bevel2: TBevel
@@ -524,7 +519,6 @@ object ChartAxisFrame: TChartAxisFrame
           Width = 67
           BorderSpacing.Left = 16
           Caption = 'Outer length'
-          ParentColor = False
         end
         object lblTickInnerLength: TLabel
           AnchorSideLeft.Control = lblTickLength
@@ -535,7 +529,6 @@ object ChartAxisFrame: TChartAxisFrame
           Top = 37
           Width = 64
           Caption = 'Inner length'
-          ParentColor = False
         end
         object cbTickColor: TColorButton
           AnchorSideTop.Side = asrCenter
@@ -555,8 +548,8 @@ object ChartAxisFrame: TChartAxisFrame
     end
     object pgGrid: TTabSheet
       Caption = 'Grid'
-      ClientHeight = 378
-      ClientWidth = 513
+      ClientHeight = 418
+      ClientWidth = 638
       object gbGrid: TGroupBox
         AnchorSideLeft.Control = pgGrid
         AnchorSideTop.Control = pgGrid
@@ -590,8 +583,8 @@ object ChartAxisFrame: TChartAxisFrame
     end
     object pgLine: TTabSheet
       Caption = 'Line'
-      ClientHeight = 378
-      ClientWidth = 513
+      ClientHeight = 418
+      ClientWidth = 638
       object gbFrame: TGroupBox
         AnchorSideLeft.Control = pgLine
         AnchorSideTop.Control = pgLine
@@ -599,19 +592,19 @@ object ChartAxisFrame: TChartAxisFrame
         Left = 8
         Height = 119
         Top = 8
-        Width = 275
+        Width = 400
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Left = 8
         BorderSpacing.Top = 8
         Caption = 'gbFrame'
         ClientHeight = 99
-        ClientWidth = 271
+        ClientWidth = 396
         TabOrder = 0
         object cbFrameVisible: TCheckBox
           Left = 16
           Height = 19
           Top = 8
-          Width = 239
+          Width = 364
           Align = alTop
           BorderSpacing.Left = 16
           BorderSpacing.Top = 8
@@ -631,18 +624,18 @@ object ChartAxisFrame: TChartAxisFrame
         Left = 8
         Height = 137
         Top = 143
-        Width = 275
+        Width = 400
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Top = 16
         Caption = 'gbAxisLine'
         ClientHeight = 117
-        ClientWidth = 271
+        ClientWidth = 396
         TabOrder = 1
         object cbAxisLineVisible: TCheckBox
           Left = 16
           Height = 19
           Top = 8
-          Width = 239
+          Width = 364
           Align = alTop
           BorderSpacing.Left = 16
           BorderSpacing.Top = 8
@@ -659,7 +652,7 @@ object ChartAxisFrame: TChartAxisFrame
         AnchorSideTop.Control = gbFrame
         AnchorSideRight.Control = pgLine
         AnchorSideRight.Side = asrBottom
-        Left = 307
+        Left = 432
         Height = 156
         Top = 8
         Width = 200
@@ -693,7 +686,6 @@ object ChartAxisFrame: TChartAxisFrame
           Top = 39
           Width = 61
           Caption = 'Base length'
-          ParentColor = False
         end
         object lblArrowLength: TLabel
           AnchorSideLeft.Control = cbArrowVisible
@@ -704,7 +696,6 @@ object ChartAxisFrame: TChartAxisFrame
           Top = 70
           Width = 37
           Caption = 'Length'
-          ParentColor = False
         end
         object lblArrowWidth: TLabel
           AnchorSideLeft.Control = cbArrowVisible
@@ -715,7 +706,6 @@ object ChartAxisFrame: TChartAxisFrame
           Top = 101
           Width = 32
           Caption = 'Width'
-          ParentColor = False
         end
         object seArrowBaseLength: TSpinEdit
           AnchorSideLeft.Control = lblArrowBaseLength
