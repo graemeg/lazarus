@@ -699,12 +699,12 @@ var
   sha1: string;
 begin
   Result := False;
-  // git svn  uses /remote/svn/<branch> as remote
-  sha1 := GetGitCommitInRemoteBranch('svn/*');
+  sha1 := GetGitCommitInRemoteBranch; // try any remote branch
   if sha1 <> '' then begin
     Result := GetRevisionFromGitVersion(sha1);
     if not Result then begin
-      sha1 := GetGitCommitInRemoteBranch; // try any remote branch
+      // git svn  uses /remote/svn/<branch> as remote
+      sha1 := GetGitCommitInRemoteBranch('svn/*');
       Result := GetRevisionFromGitVersion(sha1);
     end;
   end;
