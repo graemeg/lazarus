@@ -352,6 +352,7 @@ type
     procedure Draw(ADrawer: IChartDrawer; const ARect: TRect);
     procedure DrawLegendOn(ACanvas: TCanvas; var ARect: TRect);
     procedure EnableRedrawing;
+    procedure GetAxisRange(AAxis: TChartAxis; out AMin, AMax: Double);
     function GetFullExtent: TDoubleRect;
     function GetLegendItems(AIncludeHidden: Boolean = false): TChartLegendItems;
     procedure Notify(ACommand: Integer; AParam1, AParam2: Pointer; var AData); override;
@@ -1162,6 +1163,15 @@ begin
       calRight: AAlign := calLeft;
     end;
   Result := FAxisList.GetAxisByAlign(AAlign);
+end;
+
+procedure TChart.GetAxisRange(AAxis: TChartAxis; out AMin, AMax: Double);
+var
+  interval: TDoubleInterval;
+begin
+  interval := GetAxisBounds(AAxis);
+  AMin := interval.FStart;
+  AMax := interval.FEnd;
 end;
 
 function TChart.GetChartHeight: Integer;

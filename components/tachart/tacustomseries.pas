@@ -441,13 +441,17 @@ function TCustomChartSeries.GetAxisBounds(AAxis: TChartAxis;
   out AMin, AMax: Double): Boolean;
 var
   ex: TDoubleRect;
+  axIndexX, axIndexY: Integer;
 begin
-  if (AAxis.Index = AxisIndexX) or (AAxis.Index = AxisIndexY) then begin
+  axIndexX := GetAxisX.Index;
+  axIndexY := GetAxisY.Index;
+
+  if (AAxis.Index = axIndexX) or (AAxis.Index = axIndexY) then begin
     ex := EmptyExtent;
     GetBounds(ex);
     with ex do begin
-      UpdateBoundsByAxisRange(FChart.AxisList, AxisIndexX, a.X, b.X);
-      UpdateBoundsByAxisRange(FChart.AxisList, AxisIndexY, a.Y, b.Y);
+      UpdateBoundsByAxisRange(FChart.AxisList, axIndexX, a.X, b.X);
+      UpdateBoundsByAxisRange(FChart.AxisList, axIndexY, a.Y, b.Y);
       if IsRotated then begin
         Exchange(a.X, a.Y);
         Exchange(b.X, b.Y);

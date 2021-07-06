@@ -661,6 +661,11 @@ as a replacement.
     <element name="TChart.ScalingValid"><short>Indicates whether the scaling parameters for the conversion between graph and image coordinates have valid values.</short>
       </element><element name="TChart.ActiveToolIndex"><short>Returns the index of the currently active chart tool in the toolset attached to the chart.</short>
       </element>
+    <element name="TChart.GetAxisBounds"/><element name="TChart.GetAxisRange"><short>Determines the data range covered by all series assigned to the specified axis. Minimum and maximum are returned in axis units.</short>
+      </element><element name="TChart.MouseDown"><short>The inherited handler for MouseDown events is overridden to dispatch the event to the ChartToolset assigned to the chart.</short>
+      </element><element name="TChart.MouseMove"><short>The inherited handler for MouseMove events is overridden to dispatch the event to the ChartToolset assigned to the chart.</short>
+      </element><element name="TChart.MouseUp"><short>The inherited handler for MouseUp events is overridden to dispatch the event to the ChartToolset assigned to the chart.</short>
+      </element>
     </module>
   </package>
 </fpdoc-descriptions>
