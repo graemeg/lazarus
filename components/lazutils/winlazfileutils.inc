@@ -416,9 +416,48 @@ begin
   Result := SysUtils.FileExists(Filename);
 end;
 
+{$If FPC_FULLVERSION < 30301}
+{ Note: temporary fix for issue #39120.
+  DirectoryIsMountPoint() fixes mount points not being detected by SysUtils.DirectoryExists() which
+  causes DirectoryExistsUTF8() to return an invalid value when applied to a mount point. This in
+  turn causes the IDE to not being able to rebuild itself when installed inside a mount point.
+
+  This patch should be removed when the minimum required FPC version contains the fixed
+  DirectoryExists() function. (will be fixed in FPC 3.2.4?) }
+function DirectoryIsMountPoint(const Directory: string): boolean;
+{$ifndef wince}
+const
+  IO_REPARSE_TAG_MOUNT_POINT = $A0000003;
+var
+  Attr: Longint;
+  Rec: TSearchRec;
+{$endif}
+begin
+{$ifndef wince}
+  Attr := FileGetAttrUTF8(Directory);
+  if (Attr <> -1) and (Attr and FILE_ATTRIBUTE_REPARSE_POINT <> 0) then
+  begin
+    FindFirstUTF8(Directory, Attr, Rec);
+    if Rec.FindHandle <> feInvalidHandle then
+    begin
+      Windows.FindClose(Rec.FindHandle);
+      Result := Rec.FindData.dwReserved0 = IO_REPARSE_TAG_MOUNT_POINT;
+    end
+    else
+      Result := False;
+  end
+  else
+{$endif}
+    Result := False;
+end;
+{$endIf}
+
 function DirectoryExistsUTF8(const Directory: string): boolean;
 begin
-  Result := SysUtils.DirectoryExists(Directory);
+  Result := SysUtils.DirectoryExists(Directory)
+  {$If FPC_FULLVERSION < 30301}
+    or DirectoryIsMountPoint(Directory)
+  {$endIf};
 end;
 
 function FileIsExecutable(const AFilename: string): boolean;
