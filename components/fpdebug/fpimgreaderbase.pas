@@ -68,10 +68,12 @@ type
     FMapHandle: THandle;
     FModulePtr: Pointer;
     {$else}
-    FFileName: String;
     FStream: TStream;
     FList: TList;
     {$endif}
+    FFileName: String;
+
+    function GetFileName: String;
   public
     constructor Create(AFileName: String);
     {$ifdef USE_WIN_FILE_MAPPING}
@@ -82,6 +84,7 @@ type
     function  Read(AOffset, ASize: QWord; AMem: Pointer): QWord;
     function  LoadMemory(AOffset, ASize: QWord; out AMem: Pointer): QWord;
     procedure UnloadMemory({%H-}AMem: Pointer);
+    property FileName: String read GetFileName;
   end;
 
   { TDbgImageReader }
@@ -195,11 +198,52 @@ begin
 end;
 
 
+{$ifdef USE_WIN_FILE_MAPPING}
+type
+  TGetFinalPathNameByHandle = function(hFile: THandle; lpszFilePath: PWideChar; cchFilePath, dwFlags: DWORD): DWORD; stdcall;
+var
+  GetFinalPathNameByHandle: TGetFinalPathNameByHandle = nil;
+function GetFinalPathNameByHandleDummy(hFile: THandle; lpszFilePath: PWideChar; cchFilePath, dwFlags: DWORD): DWORD; stdcall;
+begin
+  Result := 0;
+end;
+function FileHandleToFileName(Handle : THandle): string;
+var
+  U: WideString;
+  hmod: HMODULE;
+begin
+  if not Assigned(GetFinalPathNameByHandle) then
+  begin
+    hmod := GetModuleHandle('kernel32');
+    if hmod <> 0 then
+      Pointer(GetFinalPathNameByHandle) := GetProcAddress(hmod,'GetFinalPathNameByHandleW');
+    if not Assigned(GetFinalPathNameByHandle) then
+      GetFinalPathNameByHandle := @GetFinalPathNameByHandleDummy;
+  end;
+
+  SetLength(U, MAX_PATH+1);
+  SetLength(U, GetFinalPathNameByHandle(Handle, @U[1], Length(U), 0));
+  if Copy(U, 1, 4)='\\?\' then
+    Delete(U, 1, 4);
+  Result := U;
+end;
+{$endif}
+
 { TDbgFileLoader }
 
 {$ifdef USE_WIN_FILE_MAPPING}
 function CreateFileW(lpFileName:LPCWSTR; dwDesiredAccess:DWORD; dwShareMode:DWORD; lpSecurityAttributes:LPSECURITY_ATTRIBUTES; dwCreationDisposition:DWORD;dwFlagsAndAttributes:DWORD; hTemplateFile:HANDLE):HANDLE; stdcall; external 'kernel32' name 'CreateFileW';
 {$ENDIF}
+
+function TDbgFileLoader.GetFileName: String;
+begin
+  {$ifdef USE_WIN_FILE_MAPPING}
+  if (FFileName = '') and (FFileHandle <> 0) then begin
+    FFileName := FileHandleToFileName(FFileHandle);
+  end;
+  {$endif}
+  Result := FFileName;
+end;
 
 constructor TDbgFileLoader.Create(AFileName: String);
 {$IFDEF MacOS}
@@ -212,6 +256,7 @@ var
 {$ENDIF}
 begin
   {$ifdef USE_WIN_FILE_MAPPING}
+  FFileName := AFileName;
   s := UTF8Decode(AFileName);
   FFileHandle := CreateFileW(PWideChar(s), GENERIC_READ, FILE_SHARE_READ, nil, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
   Create(FFileHandle);
