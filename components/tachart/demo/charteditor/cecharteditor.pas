@@ -29,6 +29,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
+    procedure TreeChanging(Sender: TObject; Node: TTreeNode;
+      var AllowChange: Boolean);
     procedure TreeDeletion(Sender: TObject; Node: TTreeNode);
     procedure TreeSelectionChanged(Sender: TObject);
   private
@@ -57,6 +59,7 @@ type
     procedure SaveChartToStream;
     procedure SelectNode(ANode: TTreeNode);
     procedure RestoreChartFromStream;
+    function Validate(ANode: TTreeNode; out AMsg: String; out AControl: TWinControl): boolean;
   public
     procedure SelectAxis(AxisIndex: Integer; APage: TChartAxisEditorPage);
     procedure SelectFooter;
@@ -210,8 +213,17 @@ begin
 end;
 
 procedure TChartEditorForm.ApplyButtonClick(Sender: TObject);
+var
+  msg: String;
+  C: TWinControl;
 begin
-  RestoreChartFromStream;
+  if not Validate(Tree.Selected, msg, C) then
+  begin
+    C.SetFocus;
+    MessageDlg(msg, mtError, [mbOK], 0);
+    ModalResult := mrNone;
+  end else
+    RestoreChartFromStream;
 end;
 
 procedure TChartEditorForm.FormActivate(Sender: TObject);
@@ -338,8 +350,31 @@ begin
 end;
 
 procedure TChartEditorForm.OKButtonClick(Sender: TObject);
+var
+  msg: String;
+  C: TWinControl;
 begin
-  FOKClicked := true;
+  if not Validate(Tree.selected, msg, C) then
+  begin
+    C.SetFocus;
+    MessageDlg(msg, mtError, [mbOK], 0);
+    ModalResult := mrNone;
+  end else
+    FOKClicked := true;
+end;
+
+procedure TChartEditorForm.TreeChanging(Sender: TObject; Node: TTreeNode;
+  var AllowChange: Boolean);
+var
+  msg: String;
+  C: TWinControl;
+begin
+  if not Validate(Tree.Selected, msg, C) then
+  begin
+    C.SetFocus;
+    MessageDlg(msg, mtError, [mbOk], 0);
+    AllowChange := false;
+  end;
 end;
 
 procedure TChartEditorForm.PopulateAxes(AChart: TChart);
@@ -557,6 +592,20 @@ begin
   ChartImagesDM.ChartImages.Chart := nil;
   ChartImagesDM.ChartImages.Chart := FChart;
   ChartImagesDM.ChartImages.GetBitmap(Tree.Selected.ImageIndex, Image1.Picture.Bitmap);
+end;
+
+function TChartEditorForm.Validate(ANode: TTreeNode; out AMsg: String;
+  out AControl: TWinControl): Boolean;
+begin
+  if ANode = nil then
+    exit(true);
+
+  if TObject(ANode.Data) is TChartAxisFrame then
+  begin
+    Result := TChartAxisFrame(ANode.Data).Validate(AMsg, AControl);
+    if not Result then exit;
+  end;
+  Result := true;
 end;
 
 end.

@@ -10,7 +10,7 @@ object ChartEditorForm: TChartEditorForm
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.1.0.0'
+  LCLVersion = '2.3.0.0'
   object ButtonPanel: TButtonPanel
     Left = 6
     Height = 34
@@ -41,6 +41,7 @@ object ChartEditorForm: TChartEditorForm
     Constraints.MinWidth = 120
     Images = ChartImagesDM.ChartImages
     TabOrder = 1
+    OnChanging = TreeChanging
     OnDeletion = TreeDeletion
     OnSelectionChanged = TreeSelectionChanged
   end
@@ -110,7 +111,6 @@ object ChartEditorForm: TChartEditorForm
       Font.Color = clWindow
       Font.Height = -16
       Font.Style = [fsBold]
-      ParentColor = False
       ParentFont = False
     end
     object Image1: TImage

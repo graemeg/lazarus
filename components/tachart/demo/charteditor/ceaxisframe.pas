@@ -83,6 +83,7 @@ type
     procedure cbTitleVisibleChange(Sender: TObject);
     procedure edLabelFormatEditingDone(Sender: TObject);
     procedure mmoTitleChange(Sender: TObject);
+    procedure PageControlChanging(Sender: TObject; var AllowChange: Boolean);
     procedure rgTitleAlignmentClick(Sender: TObject);
     procedure seArrowBaseLengthChange(Sender: TObject);
     procedure seArrowLengthChange(Sender: TObject);
@@ -120,9 +121,12 @@ type
     procedure CalculatePreferredSize(var PreferredWidth, PreferredHeight: integer;
       {%H-}WithThemeSpace: Boolean); override;
     function GetChart: TChart;
+    function GetRealAxisMax: Double;
+    function GetRealAxisMin: Double;
   public
     constructor Create(AOwner: TComponent); override;
     procedure Prepare(Axis: TChartAxis);
+    function Validate(out AMsg: String; out AControl: TWinControl): Boolean;
     property Page: TChartAxisEditorPage read GetPage write SetPage;
   end;
 
@@ -337,6 +341,22 @@ begin
   Result := TChartAxisEditorPage(PageControl.ActivePageIndex);
 end;
 
+function TChartAxisFrame.GetRealAxisMax: Double;
+begin
+  if cbAutoMax.Checked then
+    Result := FAxisMax
+  else
+    Result := seMaximum.Value;
+end;
+
+function TChartAxisFrame.GetRealAxisMin: Double;
+begin
+  if cbAutoMin.Checked then
+    Result := FAxisMin
+  else
+    Result := seMinimum.Value;
+end;
+
 procedure TChartAxisFrame.LabelChangedHandler(Sender: TObject);
 begin
   GetChart.Invalidate;
@@ -355,6 +375,20 @@ end;
 procedure TChartAxisFrame.mmoTitleChange(Sender: TObject);
 begin
   FAxis.Title.Caption := mmoTitle.Lines.Text;
+end;
+
+procedure TChartAxisFrame.PageControlChanging(Sender: TObject;
+  var AllowChange: Boolean);
+var
+  msg: String;
+  C: TWinControl;
+begin
+  if not Validate(msg, C) then
+  begin
+    C.SetFocus;
+    MessageDlg(msg, mtError, [mbOK], 0);
+    AllowChange := false;
+  end;
 end;
 
 procedure TChartAxisFrame.Prepare(Axis: TChartAxis);
@@ -491,6 +525,23 @@ end;
 procedure TChartAxisFrame.TitleShapeChangedHandler(AShape: TChartLabelShape);
 begin
   FAxis.Title.Shape := AShape;
+end;
+
+function TChartAxisFrame.Validate(out AMsg: String; out AControl: TWinControl): Boolean;
+begin
+  Result := false;
+  if GetRealAxisMin >= GetRealAxisMax then
+  begin
+    AMsg := 'The axis minimum must be smaller than the axis maximum.';
+    if seMaximum.Visible then
+      AControl := seMaximum
+    else if seMinimum.Visible then
+      AControl := seMinimum
+    else
+      AControl := cbAutoMax;
+    exit;
+  end;
+  Result := true;
 end;
 
 
