@@ -7,7 +7,7 @@
       </element>
       <element name="TChartGetMarkEvent"/>
       <element name="TChartSeries.Count">
-        <short>Return number of points in the series.</short>
+        <short>Returns the number of points in the series.</short>
       </element>
       <element name="TChartSeries.Add">
         <short>Add new point to the right of the series.</short>
@@ -32,7 +32,7 @@
       <element name="TChartSeries.ListSource">
         <errors><link id="TASources.EEditableSourceRequired">EEditableSourceRequired</link>
         </errors>
-        <short>Verify that the data source is editable and return it.</short>
+        <short>Verifies that the data source is editable and returns it (or <var>nil</var> if the source is not a <var>TListChartSource</var>)</short>
       </element>
       <element name="TChartSeries.Clear">
         <short>Remove all points from the series.</short>
@@ -40,12 +40,10 @@
         </descr>
       </element>
       <element name="TChartSeries.Delete">
-        <errors>
-          <link id="TASources.EEditableSourceRequired">EEditableSourceRequired</link>
+        <errors><link id="TASources.EEditableSourceRequired">EEditableSourceRequired</link>
         </errors>
-        <short>Remove point by index.</short>
-        <descr>
-          <p>Requires <link id="TChartSeries.ListSource">editable data source</link>.</p>
+        <short>Removes  a data point by index.</short>
+        <descr><p>Requires <link id="TChartSeries.ListSource">editable data source</link>.</p>
         </descr>
       </element>
       <element name="TChartSeries.SetXValue"/>
@@ -55,6 +53,8 @@
       </element>
       <element name="TChartSeries.Marks">
         <short>Mark parameters.</short>
+      <descr>Marks are the text labels drawn for each data point.
+</descr>
       </element>
       <element name="TChartSeries.OnGetMark">
         <short>Called before the drawing of each mark.</short>
@@ -81,7 +81,7 @@ from a <link id="TACustomSource.TCustomChartSource"><var>chart source</var>
         <short>Return the label for the point number <var>AIndex</var> formatted as per <var>Marks</var> property</short>
       </element>
       <element name="TChartSeries.Extent">
-        <short>Return the bounding rectangle for all points in the serie.</short>
+        <short>Returns the bounding rectangle for all points in the serie.</short>
         <seealso><link id="TASources.TCustomChartSource.Extent">TCustomChartSource.Extent</link>
         </seealso>
       </element>
@@ -191,6 +191,20 @@ per data points than specified by <link id="TChartSeriesGetXYCountNeeded"><var>G
 <var>DepthBrightnessDelta</var> has a negative or positive value, respectively.</p><p>The value specified is added to the rgb color components of the series color.</p><p>Use a negative value, such as -32, to moderately darken the series sides. </p><p/>
 By default, i.e. <var>DepthBrightnessDelta=0</var>, the series sides have the same color as the series itself.
 </descr>
+      </element>
+    <element name="TChartSeries.FindYRange"><short>Finds the y maximum and minimum of the series data having an x between AXMin and AXMax</short>
+      </element><element name="TChartSeries.IsEmpty"><short>Returns true when the series contains no data.</short>
+      </element><element name="TChartSeries.LastValueIndex"><short>Returns the index of the last data point.</short>
+      </element><element name="TChartSeries.MaxXValue"><short>Returns the largest x value</short>
+      </element><element name="TChartSeries.MinXValue"><short>Returns the smallest x value</short>
+      </element><element name="TChartSeries.MaxYValue"><short>Returns the largest y value</short>
+      </element><element name="TChartSeries.MinYValue"><short>Returns the smallest y value</short>
+      </element><element name="TChartSeries.XValue"><short>Returns the x value of the data point with the given index</short>
+      </element><element name="TChartSeries.YValue"><short>Returns the y value of the data point with the given index</short>
+      </element><element name="TChartSeries.XValues"><short>If a source provides data points with multiple x values, the x value with the index <var>AXIndex</var> is returned for the data point at index <var>AIndex</var>
+        </short>
+      </element><element name="TChartSeries.YValues"><short>If a source provides data points with multiple y values, the y value with the index <var>AYIndex</var> is returned for the data point at index <var>AIndex</var>
+        </short>
       </element>
     </module>
   </package>
