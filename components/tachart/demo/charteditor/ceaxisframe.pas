@@ -281,7 +281,7 @@ end;
 
 procedure TChartAxisFrame.cbInvertedChange(Sender: TObject);
 begin
-  FAxis.Inverted := not FAxis.Inverted;
+  FAxis.Inverted := cbInverted.Checked;
 end;
 
 procedure TChartAxisFrame.cbLabelsVisibleChange(Sender: TObject);
