@@ -441,17 +441,19 @@ class function TQtWSCustomTabControl.GetTabRect(const ATabControl: TCustomTabCon
   const AIndex: Integer): TRect;
 var
   TabWidget: TQtTabWidget;
+  Offs: TRect;
 begin
   Result := Rect(-1, -1, -1, -1);
   if not WSCheckHandleAllocated(ATabControl, 'GetTabRect') then
     Exit;
   TabWidget := TQtTabWidget(ATabControl.Handle);
+  Offs := TabWidget.getGeometry;
   Result := TabWidget.TabBar.GetTabRect(AIndex);
   case ATabControl.TabPosition of
     tpTop: OffsetRect(Result, 0, -Result.Bottom);
     tpLeft: OffsetRect(Result, -Result.Right, 0);
-    tpRight: OffsetRect(Result, Result.Left, 0);
-    tpBottom: OffsetRect(Result, Result.Top, 0);
+    tpRight: OffsetRect(Result, Offs.Width - Result.Right, 0);
+    tpBottom: OffsetRect(Result, 0, Offs.Height - Result.Bottom);
   end;
 end;
 
