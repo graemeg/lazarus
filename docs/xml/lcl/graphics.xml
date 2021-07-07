@@ -11034,7 +11034,7 @@
       <element name="TPortableNetworkGraphic.GetReaderClass.Result">
         <short/>
       </element>
-      <element name="TPortableNetworkGraphic.GetWriterClass">
+      <element name="TPortableNetworkGraphic.GetWriterClass" link="#lcl.graphics.TFPImageBitmap.GetReaderClass">
         <short/>
         <descr/>
         <seealso/>
@@ -11042,6 +11042,11 @@
       <element name="TPortableNetworkGraphic.GetWriterClass.Result">
         <short/>
       </element>
+
+      <element name="TPortableNetworkGraphic.InitializeWriter" link="#lcl.graphics.TFPImageBitmap.InitializeWriter"/>
+      <element name="TPortableNetworkGraphic.InitializeWriter.AImage"/>
+      <element name="TPortableNetworkGraphic.InitializeWriter.AWriter"/>
+
       <element link="#lcl.graphics.TRasterImage.GetSharedImageClass" name="TPortableNetworkGraphic.GetSharedImageClass">
         <descr/>
         <seealso/>
@@ -11050,7 +11055,9 @@
         <short/>
       </element>
       <element name="TPortableNetworkGraphic.IsStreamFormatSupported">
-        <short/>
+        <short>
+          Determines if the specified stream contains image data supported for the image type.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11083,7 +11090,6 @@
         <descr>
           <var>TPortableAnyMapGraphic</var> is a
           <var>TFPImageBitmap</var> descendant which implements support for the Portable Any Map (PNM) graphic format.
-
 
           <b>PNM</b> is a member of the NetPBM family of image formats and includes
           <b>PBM</b>,
@@ -11119,7 +11125,9 @@
         <short/>
       </element>
       <element name="TPortableAnyMapGraphic.IsStreamFormatSupported">
-        <short/>
+        <short>
+          Determines if the specified stream contains image data supported for the image type.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -12655,8 +12663,8 @@
       <element name="TIcon.SetIconHandle.AValue">
         <short>New value for the property.</short>
       </element>
-      <element link="TCustomIcon.GetStreamSignature" name="TIcon.GetStreamSignature"/>
-      <element link="TCustomIcon.GetStreamSignature.Result" name="TIcon.GetStreamSignature.Result"/>
+      <element link="#lcl.graphics.TCustomIcon.GetStreamSignature" name="TIcon.GetStreamSignature"/>
+      <element link="#lcl.graphics.TCustomIcon.GetStreamSignature.Result" name="TIcon.GetStreamSignature.Result"/>
       <element link="#lcl.graphics.TCustomIcon.GetTypeID" name="TIcon.GetTypeID"/>
       <element link="#lcl.graphics.TCustomIcon.GetTypeID.Result" name="TIcon.GetTypeID.Result"/>
       <element name="TIcon.HandleNeeded">
@@ -12696,12 +12704,18 @@
         <short>HICON value removed from the Handle in the class instance.</short>
       </element>
       <element name="TIcon.GetResourceType">
-        <short/>
+        <short>Gets the Integer Resource Type for the class instance.</short>
         <descr>
+          <p>
+            GetResourceType is an overridden TResourceType function in TIcon.
+            It is used to get the resource type identifier for the class instance. It identifies the storage format used for graphic data in a resource.
+          </p>
           <p>The return value is RT_GROUP_ICON in TIcon.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TGraphic.GetResourceType"/>
+        </seealso>
       </element>
       <element name="TIcon.GetResourceType.Result">
         <short>Resource type used for the icon image type.</short>
@@ -13485,7 +13499,7 @@
       <element name="TTiffImage.FinalizeReader.AReader">
         <short/>
       </element>
-      <element name="TTiffImage.GetReaderClass">
+      <element name="TTiffImage.GetReaderClass" link="#lcl.graphics.TFPImageBitmap.GetReaderClass">
         <short/>
         <descr/>
         <seealso/>
@@ -13493,7 +13507,7 @@
       <element name="TTiffImage.GetReaderClass.Result">
         <short/>
       </element>
-      <element name="TTiffImage.GetWriterClass">
+      <element name="TTiffImage.GetWriterClass" link="#lcl.graphics.TFPImageBitmap.GetWriterClass">
         <short/>
         <descr/>
         <seealso/>
@@ -13501,7 +13515,7 @@
       <element name="TTiffImage.GetWriterClass.Result">
         <short/>
       </element>
-      <element name="TTiffImage.GetSharedImageClass">
+      <element name="TTiffImage.GetSharedImageClass" link="#lcl.graphics.TRasterImage.GetSharedImageClass">
         <short/>
         <descr/>
         <seealso/>
@@ -13648,7 +13662,7 @@
       <element name="TGIFImage.FinalizeReader.AReader">
         <short>FCL-compatible reader for the image type.</short>
       </element>
-      <element name="TGIFImage.GetReaderClass">
+      <element name="TGIFImage.GetReaderClass" link="#lcl.graphics.TFPImageBitmap.GetReaderClass">
         <short/>
         <descr/>
         <seealso>

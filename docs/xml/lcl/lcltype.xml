@@ -67,40 +67,44 @@
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="THandle">
-        <short/>
-        <descr/>
+        <short>Alias to the PtrUInt type.</short>
+        <descr>
+          <p>
+            Defined for platforms other than Windows. Needed because THandle in the RTL SysUtils unit is defined as longint.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element link="#lcl.lcltype.THandle" name="HANDLE"/>
       <element link="#lcl.lcltype.THandle" name="PHandle"/>
       <!-- alias type Visibility: default -->
       <element name="HKEY">
-        <short/>
+        <short>Handle to a registry key.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HDC">
-        <short>The type of a Device Context Handle.</short>
+        <short>The type for a Device Context Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HHOOK">
-        <short/>
+        <short>Handle for a callback routine.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HFONT">
         <short>The type of a Font Handle.</short>
-        <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HGDIOBJ">
         <short>The type of a general GraphicsDeviceInterface Object Handle.</short>
-        <descr>GDI objects are e.g. fonts or brushes, used in GDI drawing operations.
+        <descr>
+          GDI objects are e.g. fonts or brushes, used in GDI drawing operations.
         </descr>
         <seealso/>
       </element>
@@ -145,13 +149,13 @@
       </element>
       <!-- alias type Visibility: default -->
       <element name="HCURSOR">
-        <short>The type of a mouse Cursor Handle.</short>
+        <short>The type for a mouse Cursor Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- alias type Visibility: default -->
       <element name="HGLOBAL">
-        <short>The type of a Global memory block Handle.</short>
+        <short>The type for a Global memory block Handle.</short>
         <descr>
           Global memory blocks are managed by the platform, used e.g. for data shared across multiple processes.
         </descr>
@@ -159,40 +163,30 @@
       </element>
       <!-- alias type Visibility: default -->
       <element name="HWND">
-        <short>The type of a
-          Window
-          Handle.
-        </short>
-        <descr>Windows are managed by the platform's window manager.
+        <short>The type of a Window Handle. </short>
+        <descr>
+          Windows are managed by the platform's window manager.
           A window can be stand-alone (TForm) or embeddable (TWinControl).
         </descr>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HMENU">
-        <short>The type of a
-          Menu
-          Handle.
-        </short>
+        <short>The type of a Menu Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HBITMAP">
-        <short>The type of a
-          Bitmap
-          Handle.
-        </short>
+        <short>The type of a Bitmap Handle.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- "type" alias type Visibility: default -->
       <element name="HPALETTE">
-        <short>The type of a
-          color Palette
-          Handle.
-        </short>
-        <descr>A color palette is frequently used in compressed bitmaps,
+        <short>The type of a color Palette Handle.</short>
+        <descr>
+          A color palette is frequently used in compressed bitmaps,
           which contain short (1..8 bit) palette indices instead of RGB colors,
           for every pixel.
         </descr>

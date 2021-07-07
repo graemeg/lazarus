@@ -696,7 +696,7 @@ if iPos &lt;&gt; -1 then
       <element name="TColorBox.AutoCompleteText" link="#lcl.stdctrls.TCustomComboBox.AutoCompleteText"/>
       <element name="TColorBox.AutoDropDown" link="#lcl.stdctrls.TCustomComboBox.AutoDropDown"/>
       <element name="TColorBox.AutoSelect" link="#lcl.stdctrls.TCustomComboBox.AutoSelect"/>
-      <element name="TColorBox.AutoSize" link="#lcl.stdctrls.TCustomComboBox.AutoSize"/>
+      <element name="TColorBox.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
       <element name="TColorBox.BidiMode" link="#lcl.controls.TControl.BidiMode"/>
       <element name="TColorBox.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
       <element name="TColorBox.Color" link="#lcl.controls.TControl.Color"/>
@@ -904,21 +904,35 @@ if iPos &lt;&gt; -1 then
       </element>
 
       <element name="TCustomColorListBox.DoAutoAdjustLayout">
-        <short/>
-        <descr/>
+        <short>
+          Performs actions needed to auto-adjust the control using the specified layout policy.
+        </short>
+        <descr>
+          <p>
+            <var>DoAutoAdjustLayout</var> is an overridden method used to apply the specified auto-adjust layout policy to the control. DoAutoAdjustLayout calls the inherited method on entry.
+          </p>
+          <p>
+            DoAutoAdjustLayout ensures that the value in ColorRectWidth is adjusted by the scaling factor in <var>AXProportion</var> when <var>AMode</var> contains <var>lapAutoAdjustWithoutHorizontalScrolling</var> or <var>lapAutoAdjustForDPI</var>. The control is redrawn after ColorRectWidth is updated.
+          </p>
+          <p>
+            DoAutoAdjustLayout is called from the AutoAdjustLayout method.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.stdctrls.TCustomListBox.DoAutoAdjustLayout">
             TCustomListBox.DoAutoAdjustLayout
           </link>
+          <link id="#lcl.controls.TControl.DoAutoAdjustLayout">TControl.DoAutoAdjustLayout</link>
         </seealso>
       </element>
       <element name="TCustomColorListBox.DoAutoAdjustLayout.AMode">
-        <short/>
+        <short>Layout adjustment policy applied in the method.</short>
       </element>
       <element name="TCustomColorListBox.DoAutoAdjustLayout.AXProportion">
-        <short/>
+        <short>Horizontal scaling factor for the policy.</short>
       </element>
       <element name="TCustomColorListBox.DoAutoAdjustLayout.AYProportion">
+        <short>Vertical scaling factor for the policy.</short>
         <short/>
       </element>
 
@@ -1285,45 +1299,44 @@ if iPos &lt;&gt; -1 then
       <element name="TColorListBox.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TColorListBox.IntegralHeight" link="#lcl.stdctrls.TCustomListBox.IntegralHeight"/>
       <element name="TColorListBox.ItemHeight" link="#lcl.stdctrls.TCustomListBox.ItemHeight"/>
-      <element name="TColorListBox.OnChangeBounds" link="#lcl.stdctrls.TCustomListBox.OnChangeBounds"/>
-
-      <element name="TColorListBox.OnClick" link="#lcl.stdctrls.TCustomListBox.OnClick"/>
+      <element name="TColorListBox.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds"/>
+      <element name="TColorListBox.OnClick" link="#lcl.controls.TControl.OnClick"/>
       <element name="TColorListBox.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
-      <element name="TColorListBox.OnDblClick" link="#lcl.stdctrls.TCustomListBox.OnDblClick"/>
+      <element name="TColorListBox.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
       <element name="TColorListBox.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
       <element name="TColorListBox.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
-      <element name="TColorListBox.OnEnter" link="#lcl.stdctrls.TCustomListBox.OnEnter"/>
+      <element name="TColorListBox.OnEnter" link="#lcl.controls.TWinControl.OnEnter"/>
       <element name="TColorListBox.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
-      <element name="TColorListBox.OnExit" link="#lcl.stdctrls.TCustomListBox.OnExit"/>
-      <element name="TColorListBox.OnKeyPress" link="#lcl.stdctrls.TCustomListBox.OnKeyPress"/>
-      <element name="TColorListBox.OnKeyDown" link="#lcl.stdctrls.TCustomListBox.OnKeyDown"/>
-      <element name="TColorListBox.OnKeyUp" link="#lcl.stdctrls.TCustomListBox.OnKeyUp"/>
-      <element name="TColorListBox.OnMouseDown" link="#lcl.stdctrls.TCustomListBox.OnMouseDown"/>
-      <element name="TColorListBox.OnMouseEnter" link="#lcl.stdctrls.TCustomListBox.OnMouseEnter"/>
-      <element name="TColorListBox.OnMouseLeave" link="#lcl.stdctrls.TCustomListBox.OnMouseLeave"/>
-      <element name="TColorListBox.OnMouseMove" link="#lcl.stdctrls.TCustomListBox.OnMouseMove"/>
-      <element name="TColorListBox.OnMouseUp" link="#lcl.stdctrls.TCustomListBox.OnMouseUp"/>
-      <element name="TColorListBox.OnMouseWheel" link="#lcl.stdctrls.TCustomListBox.OnMouseWheel"/>
-      <element name="TColorListBox.OnMouseWheelDown" link="#lcl.stdctrls.TCustomListBox.OnMouseWheelDown"/>
-      <element name="TColorListBox.OnMouseWheelUp" link="#lcl.stdctrls.TCustomListBox.OnMouseWheelUp"/>
+      <element name="TColorListBox.OnExit" link="#lcl.controls.TWinControl.OnExit"/>
+      <element name="TColorListBox.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
+      <element name="TColorListBox.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
+      <element name="TColorListBox.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
+      <element name="TColorListBox.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TColorListBox.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TColorListBox.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TColorListBox.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TColorListBox.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TColorListBox.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TColorListBox.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TColorListBox.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
       <element name="TColorListBox.OnMouseWheelHorz" link="#lcl.controls.TControl.OnMouseWheelHorz"/>
       <element name="TColorListBox.OnMouseWheelLeft" link="#lcl.controls.TControl.OnMouseWheelLeft"/>
       <element name="TColorListBox.OnMouseWheelRight" link="#lcl.controls.TControl.OnMouseWheelRight"/>
-      <element name="TColorListBox.OnResize" link="#lcl.stdctrls.TCustomListBox.OnResize"/>
+      <element name="TColorListBox.OnResize" link="#lcl.controls.TControl.OnResize"/>
       <element name="TColorListBox.OnSelectionChange" link="#lcl.stdctrls.TCustomListBox.OnSelectionChange"/>
       <element name="TColorListBox.OnShowHint" link="#lcl.controls.TControl.OnShowHint"/>
       <element name="TColorListBox.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
-      <element name="TColorListBox.OnUTF8KeyPress" link="#lcl.stdctrls.TCustomListBox.OnUTF8KeyPress"/>
+      <element name="TColorListBox.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
       <element name="TColorListBox.ParentBidiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
-      <element name="TColorListBox.ParentColor" link="#lcl.stdctrls.TCustomListBox.ParentColor"/>
-      <element name="TColorListBox.ParentShowHint" link="#lcl.stdctrls.TCustomListBox.ParentShowHint"/>
-      <element name="TColorListBox.ParentFont" link="#lcl.stdctrls.TCustomListBox.ParentFont"/>
-      <element name="TColorListBox.PopupMenu" link="#lcl.stdctrls.TCustomListBox.PopupMenu"/>
-      <element name="TColorListBox.ShowHint" link="#lcl.stdctrls.TCustomListBox.ShowHint"/>
-      <element name="TColorListBox.TabOrder" link="#lcl.stdctrls.TCustomListBox.TabOrder"/>
-      <element name="TColorListBox.TabStop" link="#lcl.stdctrls.TCustomListBox.TabStop"/>
+      <element name="TColorListBox.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TColorListBox.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
+      <element name="TColorListBox.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
+      <element name="TColorListBox.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
+      <element name="TColorListBox.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
+      <element name="TColorListBox.TabOrder" link="#lcl.controls.TWinControl.TabOrder"/>
+      <element name="TColorListBox.TabStop" link="#lcl.controls.TWinControl.TabStop"/>
       <element name="TColorListBox.TopIndex" link="#lcl.stdctrls.TCustomListBox.TopIndex"/>
-      <element name="TColorListBox.Visible" link="#lcl.stdctrls.TCustomListBox.Visible"/>
+      <element name="TColorListBox.Visible" link="#lcl.controls.TControl.Visible"/>
 
       <element name="Register">
         <short>Register components for use in the Lazarus IDE.</short>

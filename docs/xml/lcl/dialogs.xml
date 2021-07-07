@@ -1300,29 +1300,62 @@
         <seealso/>
       </element>
 
-      <element name="TColorDialog.Title" link="#lcl.dialogs.TCommonDialog.Title">
+      <element name="TColorDialog.Title">
+        <short>The Title or Caption displayed in the title bar for the dialog.</short>
         <descr>
-          You can set the caption of the color dialog by changing this property.
+          <p>
+            Title can be used to provide a usage context for the re-usable dialog. The default value for the property is provided by the DefaultTitle method, which is an empty string in TColorDialog. Set the value for the property before calling the Execute method.
+          </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.dialogs.TCommonDialog.Title">TCommonDialog.Title</link>
+        </seealso>
       </element>
 
       <element name="TColorDialog.Color">
-        <short>
-          <var>Color</var> the color that is selected by the dialog (a value may have been pre-set and may be accepted, but a new value can be chosen).
-        </short>
+        <short>Color selected by the user in the color dialog.</short>
         <descr>
-          When the Color dialog has been shown and the user pressed OK, the FColor property contains the chosen color.
+          <p>
+            <var>Color</var>  is a TColor property with the color selected using the dialog. A value can be pre-set and may be accepted, but a new value may also be chosen. When the Color dialog is displayed and the user pressed OK, the Color property contains the chosen color.
+          </p>
+          <p>
+            Use CustomColors to define a palette with color names and their hexadecimal values available in the dialog.
+          </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TColorDialog.CustomColors"/>
+          <link id="TCommonDialog.Execute"/>
+        </seealso>
       </element>
 
       <element name="TColorDialog.CustomColors">
-        <short>
-          <var>CustomColors</var> - a customized list of colors that can be used instead of the system-supplied list.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Defines the color names and values available in the color dialog.</short>
+        <descr>
+          <p>
+            <var>CustomColors</var> is a <var>TStrings</var> property which contains the color names and hexadecimal values available in the color dialog. It allows a custom color palette to be used in place of the default colors for the platform.
+          </p>
+          <p>
+            Values added to CustomColors are in the "name=hexvalue" format. For example:
+          </p>
+<code>
+ADialog.CustomColors.Add('ColorA=FFFF00');
+// or
+ADialog.CustomColors.Values['ColorA'] := 'FFFF00';
+</code>
+          <p>
+            The hexadecimal color value is 6-digits representing the RGB components for the color.
+          </p>
+          <p>
+            The default values in CustomColors are assigned in the Create constructor to the standard and extended colors for the platform. It does not include the equivalents for clDefault and clNone.
+          </p>
+          <p>
+            Use Color to get the TColor value selected using the dialog when the Execute method was called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TColorDialog.Color"/>
+          <link id="TCommonDialog.Execute"/>
+        </seealso>
       </element>
 
       <element name="TColorButton">
@@ -2550,46 +2583,61 @@
       </element>
 
       <element name="TTaskDialogFlag">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Represents options that can be enabled for TTaskDialog.</short>
+        <descr>
+          TTaskDialogFlag values are stored in the TTaskDialogFlags type, as used in the TCustomTaskDialog.Flags property.
+        </descr>
+        <seealso>
+          <link id="TTaskDialogFlags"/>
+          <link id="TCustomTaskDialog.Flags"/>
+        </seealso>
       </element>
       <element name="TTaskDialogFlag.tfEnableHyperlinks">
         <short>
-          Allow HTML-like hyperlinks in the dialog (in Text, Footer, and ExpandedText) using HTML tag "a href=..."
+          Allows HTML-like hyperlinks in the dialog (in Text, Footer, and ExpandedText) using the <b>'&lt;a href="target"&gt;Target&lt;/a&gt;'</b> notation.
         </short>
       </element>
       <element name="TTaskDialogFlag.tfUseHiconMain">
-        <short>Use custom main icon with CustomMainIcon property.</short>
+        <short>
+          Uses the handle to the image in MainIcon as the primary image for the Task dialog. Disables hyperlinks.
+        </short>
       </element>
       <element name="TTaskDialogFlag.tfUseHiconFooter">
-        <short>Use custom footer icon with CustomFooterIcon property.</short>
+        <short>
+          Uses the handle to the image in FooterIcon as the footer icon in the Task dialog. Disables hyperlinks.
+        </short>
       </element>
       <element name="TTaskDialogFlag.tfAllowDialogCancellation">
-        <short>Allow canceling the dialog by Esc key, or Alt+F4 (i.e. OS default hotkey).</short>
+        <short>
+          Allow canceling the dialog by Esc key, or Alt+F4 (i.e. OS default hotkey).
+        </short>
       </element>
       <element name="TTaskDialogFlag.tfUseCommandLinks">
         <short>
-          Custom buttons will be shown as big buttons in the middle of the dialog. Use "\n" to add info to buttons (shown in hint in emulated dialog).
+          Custom buttons will be shown as big buttons in the middle of the dialog. Use #10 to add info to buttons (shown in hint in emulated dialog). Disables hyperlinks.
         </short>
       </element>
       <element name="TTaskDialogFlag.tfUseCommandLinksNoIcon">
-        <short>Don't show glyphs for custom buttons in the "command links" mode.</short>
+        <short>
+          Hides glyphs for custom buttons in the "command links" mode. Disables hyperlinks.
+        </short>
       </element>
       <element name="TTaskDialogFlag.tfExpandFooterArea">
-        <short>Show ExpandedText in the footer, instead of near the main text.</short>
+        <short>Show ExpandedText in the footer, instead of inline after the main text.</short>
       </element>
       <element name="TTaskDialogFlag.tfExpandedByDefault">
-        <short>Initially show dialog in expanded state.</short>
+        <short>Displays the dialog with ExpandedText in the expanded state.</short>
       </element>
       <element name="TTaskDialogFlag.tfVerificationFlagChecked">
-        <short>Bottom check-box (verification) shows in the checked state.</short>
+        <short>
+          Displays the verification check-box verification shows in the checked state.
+        </short>
       </element>
       <element name="TTaskDialogFlag.tfShowProgressBar">
-        <short>Show additional progress-bar.</short>
+        <short>Shows a progress bar.</short>
       </element>
       <element name="TTaskDialogFlag.tfShowMarqueeProgressBar">
-        <short>Show additional progress-bar, in the marquee style, never ending progress.</short>
+        <short>Shows a progress bar using the marquee style.</short>
       </element>
       <element name="TTaskDialogFlag.tfCallbackTimer">
         <short>Execute the timer callback event every 200 milliseconds.</short>
@@ -2601,213 +2649,325 @@
         <short>Use Right-to-Left layout for texts.</short>
       </element>
       <element name="TTaskDialogFlag.tfNoDefaultRadioButton">
-        <short>Don't check any of radio-buttons.</short>
+        <short>Does not pre-select any of the radio buttons.</short>
       </element>
       <element name="TTaskDialogFlag.tfCanBeMinimized">
-        <short>Allow minimizing the dialog.</short>
+        <short>Allow the dialog to be minimized.</short>
       </element>
 
       <element name="TTaskDialogFlags">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Set type used to store values from the TTaskDialogFlag enumeration.</short>
+        <descr>
+          <p>
+            TTaskDialogFlags is the type used for the TCustomTaskDialog.Flags property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogFlag"/>
+          <link id="TCustomTaskDialog.Flags"/>
+        </seealso>
       </element>
 
       <element name="TTaskDialogCommonButton">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Identifier used for common buttons visible on a Task dialog.</short>
+        <descr>
+          <p>
+            Values from <var>TTaskDialogCommonButton</var> are stored in the <var>TTaskDialogCommonButtons</var> set type, as used in the <var>TCustomTaskDialog.CommonButtons</var> property. When a value is included in the set, the corresponding button is visible on the task dialog.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogCommonButtons"/>
+          <link id="TCustomTaskDialog.CommonButtons"/>
+        </seealso>
       </element>
       <element name="TTaskDialogCommonButton.tcbOk">
-        <short/>
+        <short>The Ok button.</short>
       </element>
       <element name="TTaskDialogCommonButton.tcbYes">
-        <short/>
+        <short>The Yes button.</short>
       </element>
       <element name="TTaskDialogCommonButton.tcbNo">
-        <short/>
+        <short>The No button.</short>
       </element>
       <element name="TTaskDialogCommonButton.tcbCancel">
-        <short/>
+        <short>The Cancel button.</short>
       </element>
       <element name="TTaskDialogCommonButton.tcbRetry">
-        <short/>
+        <short>The Retry button.</short>
       </element>
       <element name="TTaskDialogCommonButton.tcbClose">
-        <short/>
+        <short>The Close button.</short>
       </element>
 
       <element name="TTaskDialogCommonButtons">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Set type used to store values from TTaskDialogCommonButton.</short>
+        <descr>
+          <p>
+            <var>TTaskDialogCommonButtons</var> is the type used for the <var>CommonButtons</var> property  in <var>TCustomTaskDialog</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.CommonButtons"/>
+        </seealso>
       </element>
 
       <element name="TTaskDlgClickEvent">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Specifies an event handler signalled when a button is clicked in TCustomTaskDialog / TTaskDialog.
+        </short>
+        <descr>
+          <p>
+            TTaskDlgClickEvent is the type used for the OnButtonClicked event handler in TCustomTaskDialog.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.OnButtonClicked"/>
+        </seealso>
       </element>
       <element name="TTaskDlgClickEvent.Sender">
-        <short/>
+        <short>Task dialog for the event notification.</short>
       </element>
       <element name="TTaskDlgClickEvent.AModalResult">
-        <short/>
+        <short>Modal result for the clicked button.</short>
       </element>
       <element name="TTaskDlgClickEvent.ACanClose">
-        <short/>
+        <short>True if the dialog can close.</short>
       </element>
 
       <element name="TTaskDialogIcon">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Identifier for an icon displayed on a Task dialog.</short>
+        <descr>
+          <p>
+            TTaskDialogIcon is the type used for the FooterIcon and MainIcon properties in TCustomTaskDialog.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.FooterIcon"/>
+          <link id="TCustomTaskDialog.MainIcon"/>
+        </seealso>
       </element>
       <element name="TTaskDialogIcon.tdiNone">
-        <short/>
+        <short>No icon is displayed.</short>
       </element>
       <element name="TTaskDialogIcon.tdiWarning">
-        <short/>
+        <short>Displays the Warning icon (Amber triangle with an Exclamation mark).</short>
       </element>
       <element name="TTaskDialogIcon.tdiError">
-        <short/>
+        <short>Displays the Error icon (Red circle with an X).</short>
       </element>
       <element name="TTaskDialogIcon.tdiInformation">
-        <short/>
+        <short>Displays the Information icon (Blue circle with a Question Mark).</short>
       </element>
       <element name="TTaskDialogIcon.tdiShield">
-        <short/>
+        <short>Displays the Shield icon.</short>
       </element>
       <element name="TTaskDialogIcon.tdiQuestion">
-        <short/>
+        <short>Displays the Question icon (Blue circle witth a Question Mark).</short>
       </element>
 
       <element name="TTaskDialogBaseButtonItem">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Defines the base class for a custom button displayed on a Task dialog.</short>
+        <descr>
+          <p>
+            <var>TTaskDialogBaseButtonItem</var> is a <var>TCollectionItem</var> descendant which defines a cusotm button that can be displayed on a Task dialog. It provides properties that indicate the <var>Caption</var> for the button, its use as the <var>Default</var> button on a dialog, and its <var>ModalResult</var> value.
+          </p>
+          <p>
+            TTaskDialogBaseButtonItem is the ancestor for <var>TTaskDialogBaseButtonItem</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem"/>
+        </seealso>
       </element>
 
       <element name="TTaskDialogBaseButtonItem.FCaption"/>
       <element name="TTaskDialogBaseButtonItem.FClient"/>
       <element name="TTaskDialogBaseButtonItem.FModalResult"/>
 
-      <element name="TTaskDialogBaseButtonItem.GetDefault">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TTaskDialogBaseButtonItem.GetDefault.Result">
-        <short/>
-      </element>
-
-      <element name="TTaskDialogBaseButtonItem.SetCaption">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TTaskDialogBaseButtonItem.SetCaption.ACaption">
-        <short/>
-      </element>
-
-      <element name="TTaskDialogBaseButtonItem.SetDefault">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TTaskDialogBaseButtonItem.SetDefault.Value">
-        <short/>
-      </element>
+      <!-- private -->
+      <element name="TTaskDialogBaseButtonItem.GetDefault"/>
+      <element name="TTaskDialogBaseButtonItem.GetDefault.Result"/>
+      <element name="TTaskDialogBaseButtonItem.SetCaption"/>
+      <element name="TTaskDialogBaseButtonItem.SetCaption.ACaption"/>
+      <element name="TTaskDialogBaseButtonItem.SetDefault"/>
+      <element name="TTaskDialogBaseButtonItem.SetDefault.Value"/>
 
       <element name="TTaskDialogBaseButtonItem.Client">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>TCustomTaskDialog where the button is used.</short>
+        <descr>
+          <p>
+            <var>Client</var> is a read-only <var>TCustomTaskDialog</var> property with the dialog where the button is used. Its value is set to the Task dialog that is the owner of the collection where the button definition is stored.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem.Create"/>
+          <link id="#rtl.classes.TCollection.Owner">TCollection.Owner</link>
+        </seealso>
       </element>
 
       <element name="TTaskDialogBaseButtonItem.GetDisplayName">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Gets the value for the DisplayName property.</short>
+        <descr>
+          <p>
+            <var>GetDisplayName</var> is an overridden method used to get the value for the
+            <var>DisplayName</var> property. In TTaskDialogBaseButtonItem, the value in <var>Caption</var> is used (when assigned) for the property value. When Caption is empty, the inherited method is called to get the property value.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TCollectionItem">TCollectionItem</link>
+        </seealso>
       </element>
       <element name="TTaskDialogBaseButtonItem.GetDisplayName.Result">
-        <short/>
+        <short>Value for the DisplayName property.</short>
       </element>
 
       <element name="TTaskDialogBaseButtonItem.TaskButtonCollection">
-        <short/>
-        <descr/>
+        <short>
+          Gets the collection where the button definition is stored.
+        </short>
+        <descr>
+          <p>
+            TaskButtonCollection is a TTaskDialogButtons function which retrieves the Collection where the button definition is stored. It allows the button definition to access properties and methods in the collection.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TTaskDialogBaseButtonItem.TaskButtonCollection.Result">
-        <short/>
+        <short>Collection which owns the button cast to a TTaskDialogButtons type.</short>
       </element>
 
       <element name="TTaskDialogBaseButtonItem.Create">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance. It calls the inherited method on entry, and sets the value in the <var>Client</var> property to the dialog which is the owner for the Collection. The value in <var>ModalResult</var> is set to the <var>ID</var> value for the collection item + 100.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem.Client"/>
+          <link id="TTaskDialogBaseButtonItem.ModalResult"/>
+          <link id="#rtl.classes.TCollectionItem.Collection">TCollectionItem.Collection</link>
+          <link id="#rtl.classes.TCollectionItem.ID">TCollectionItem.ID</link>
+        </seealso>
       </element>
       <element name="TTaskDialogBaseButtonItem.Create.ACollection">
-        <short/>
+        <short>Collection which owns the button item.</short>
       </element>
 
       <element name="TTaskDialogBaseButtonItem.ModalResult">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Modal result value returned when the button is clicked.</short>
+        <descr>
+          <p>
+            The default value for the property is assigned when the button item is created and is based in its ID value + 100. The value can  be changed to any reasonable value that is unique for the context.
+          </p>
+          <p>
+            ModalResult is used when a Task dialog is executed and a button is clicked on the dialog. Its value for the clicked button is assigned to the ModalResult property in the TCustomTaskDialog instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Execute"/>
+          <link id="TCustomTaskDialog.ModalResult"/>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TCustomTaskDialog.CommonButtons"/>
+        </seealso>
       </element>
 
       <element name="TTaskDialogBaseButtonItem.Caption">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Caption text displayed on the button surface.</short>
+        <descr>
+          <p>
+            <var>Caption</var> is a <var>TTranslateString</var> property with the caption text displayed on the button surface. It can be localized using the built-in translation facilities available in the LCL. When assigned, Caption also provides the DisplayName for the collection item in the object inspector.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TCollectionItem.DisplayName">TCollectionItem.DisplayName</link>
+        </seealso>
       </element>
 
       <element name="TTaskDialogBaseButtonItem.Default">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Indicates if the button is the default button on a Task dialog.</short>
+        <descr>
+          <p>
+            <var>Default</var> is a <var>Boolean</var> property which indicates if the button is the default button for a Task dialog. The default value for the property is <b>False</b>.
+          </p>
+          <p>
+            Changing the value in the property causes the <var>DefaultButton</var> property in the Collection to be updated. When set to <b>True</b>, the button instance is assigned to the DefaultButton property in the collection. When set to <b>False</b>, the DefaultButton in the collection is set to <b>Nil</b>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem.TaskButtonCollection"/>
+          <link id="TTaskDialogButtons.DefaultButton"/>
+          <link id="#rtl.classes.TCollectionItem.Collection">TCollectionItem.Collection</link>
+        </seealso>
       </element>
 
       <element name="TTaskDialogButtonItem">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Implements a button definition used for a button in TCustomTaskDialog.
+        </short>
+        <descr>
+          <p>
+            <var>TTaskDialogButtonItem</var> is a <var>TTaskDialogBaseButtonItem</var> descendant used to define and store buttons created in <var>TCustomTaskDialog</var> / <var>TTaskDialog</var>. It provides an overridden constructor which creates an object inspector-friendly name for the button item. It also sets the visibility for the <var>ModalResult</var> property to published.
+          </p>
+          <p>
+            TTaskDialogButtonItem is the type used for the <var>Button</var> property in TCustomTaskDialog, and maintained in its <var>Buttons</var> collection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Button"/>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TTaskDialogBaseButtonItem"/>
+        </seealso>
       </element>
 
       <element name="TTaskDialogButtonItem.Create">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry. It assigns an object inspector-friendly value to the <var>Caption</var> property, such as 'Button3'. The Caption is also used as the <var>DisplayName</var> for the collection item when assigned.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem.Caption"/>
+          <link id="#rtl.classes.TCollectionItem.DisplayName">TCollectionItem.DisplayName</link>
+        </seealso>
       </element>
       <element name="TTaskDialogButtonItem.Create.ACollection">
-        <short/>
+        <short>Collection which owns the button item.</short>
       </element>
 
-      <element name="TTaskDialogButtonItem.ModalResult">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TTaskDialogButtonItem.ModalResult" link="#lcl.dialogs.TTaskDialogBaseButtonItem.ModalResult"/>
 
       <element name="TTaskDialogRadioButtonItem">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Implements a radio button displayed on a Task dialog.</short>
+        <descr>
+          <p>
+            <var>TTaskDialogRadioButtonItem</var> is a <var>TTaskDialogBaseButtonItem</var> descendant which implements a radio button displayed on a Task dialog. TTaskDialogRadioButtonItem is the type used for the <var>RadioButton</var> property in <var>TCustomTaskDialog</var>, and maintained in its <var>RadioButtons</var> collection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.RadioButton"/>
+          <link id="TCustomTaskDialog.RadioButtons"/>
+        </seealso>
       </element>
 
       <element name="TTaskDialogRadioButtonItem.Create">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry. Creates assign an object inspector-friendly value for the Caption property, such as 'RadioButton2'.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem.Create"/>
+        </seealso>
       </element>
       <element name="TTaskDialogRadioButtonItem.Create.ACollection">
-        <short/>
+        <short>Collection which owns the radio button item.</short>
       </element>
 
       <element name="TTaskDialogButtonsEnumerator">
-        <short/>
+        <short>Implements an enumerator for buttons defined in a Task dialog.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2816,128 +2976,191 @@
       <element name="TTaskDialogButtonsEnumerator.FCollection"/>
 
       <element name="TTaskDialogButtonsEnumerator.Create">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            Sets the internal position for the enumerator to -1 to indicate that a button is not available. Use <var>MoveNext</var> to position the enumerator at the first button in the collection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogButtonsEnumerator.MoveNext"/>
+        </seealso>
       </element>
       <element name="TTaskDialogButtonsEnumerator.Create.ACollection">
-        <short/>
+        <short>Collection which owns the buttons for the enumerator.</short>
       </element>
 
       <element name="TTaskDialogButtonsEnumerator.GetCurrent">
-        <short/>
+        <short>Gets the value for the Current property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TTaskDialogButtonsEnumerator.Current"/>
+        </seealso>
       </element>
       <element name="TTaskDialogButtonsEnumerator.GetCurrent.Result">
-        <short/>
+        <short>Value for the Current property.</short>
       </element>
 
       <element name="TTaskDialogButtonsEnumerator.MoveNext">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Positions the enumerator on the next button in the collection.</short>
+        <descr>
+          <p>
+            <var>MoveNext</var> is a <var>Boolean</var> function used to move the position for the enumeration to the next button in the collection. When the enumerator is created, its position is undefined (-1) by default. Use MoveNext to move the position to the first button when the enumerator is created.
+          </p>
+          <p>
+            The return value is <b>True</b> when another value was found in the collection. It is set to <var>False</var> if the position reaches the value in <var>Count</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogButtonsEnumerator.Current"/>
+          <link id="#rtl.classes.TCollection.Count">TCollection.Count</link>
+        </seealso>
       </element>
       <element name="TTaskDialogButtonsEnumerator.MoveNext.Result">
-        <short/>
+        <short>True if another button was available in the collection.</short>
       </element>
 
       <element name="TTaskDialogButtonsEnumerator.Current">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Button at the current position for the enumerator.</short>
+        <descr>
+          <p>
+            <var>Current</var> is a read-only <var>TTaskDialogBaseButtonItem</var> property with the button at the current position for the enumerator. It uses the ordinal position in the collection for the button item as set when the <var>MoveNext</var> method was called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogButtonsEnumerator.MoveNext"/>
+          <link id="TTaskDialogButtons"/>
+        </seealso>
       </element>
 
       <element name="TTaskDialogButtons">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Collection type used to access and maintain buttons defined for a Task dialog.
+        </short>
+        <descr>
+            <p>
+              <var>TTaskDialogButtons</var> is a <var>TOwnedCollection</var> descendant which implements the collection used for the buttons on a Task dialog. TTaskDialogButtons provides properties and methods used to access and maintain the buttons in the collection, such as: <var>Add</var>, <var>FindButton</var>, <var>DefaultButton</var>, <var>Items</var>, and <var>GetEnumerator</var>.
+            </p>
+            <p>
+              TTaskDialogButtons is the type used for the <var>Buttons</var> and <var>RadioButtons</var> properties in <var>TCustomTaskDialog</var> / <var>TTaskDialog</var>.
+            </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TCustomTaskDialog.RadioButtons"/>
+        </seealso>
       </element>
 
+      <!-- private -->
       <element name="TTaskDialogButtons.FDefaultButton"/>
-
-      <element name="TTaskDialogButtons.GetItem">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TTaskDialogButtons.GetItem.Result">
-        <short/>
-      </element>
-      <element name="TTaskDialogButtons.GetItem.Index">
-        <short/>
-      </element>
-
-      <element name="TTaskDialogButtons.SetDefaultButton">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TTaskDialogButtons.SetDefaultButton.Value">
-        <short/>
-      </element>
-
-      <element name="TTaskDialogButtons.SetItem">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TTaskDialogButtons.SetItem.Index">
-        <short/>
-      </element>
-      <element name="TTaskDialogButtons.SetItem.Value">
-        <short/>
-      </element>
+      <element name="TTaskDialogButtons.GetItem"/>
+      <element name="TTaskDialogButtons.GetItem.Result"/>
+      <element name="TTaskDialogButtons.GetItem.Index"/>
+      <element name="TTaskDialogButtons.SetDefaultButton"/>
+      <element name="TTaskDialogButtons.SetDefaultButton.Value"/>
+      <element name="TTaskDialogButtons.SetItem"/>
+      <element name="TTaskDialogButtons.SetItem.Index"/>
+      <element name="TTaskDialogButtons.SetItem.Value"/>
 
       <element name="TTaskDialogButtons.Add">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Adds a new collection item using the ItemClass for the collection.</short>
+        <descr>
+          <p>
+            Calls the inherited <var>Add</var> method to create the new collection item, and casts the return value to the <var>TTaskDialogBaseButtonItem</var> type used as the <var>ItemClass</var>. The inherited metod uses the Collection as the Owner for the new collection item.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TCollection.Add">TCollection.Add</link>
+          <link id="#rtl.classes.TCollection.Owner">TCollection.Owner</link>
+          <link id="#rtl.classes.TCollection.ItemClass">TCollection.ItemClass</link>
+        </seealso>
       </element>
       <element name="TTaskDialogButtons.Add.Result">
-        <short/>
+        <short>Collection item created in the method.</short>
       </element>
 
       <element name="TTaskDialogButtons.FindButton">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Gets the button item in the collection with the specified modal result value.
+        </short>
+        <descr>
+          <p>
+            <var>FindButton</var> enumerates values in the <var>Items</var> property to find  the first button using the modal result value in AModalResult. The return value is Nil if a button using the modal result value is not found.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogButtons.Items"/>
+          <link id="TTaskDialogBaseButtonItem"/>
+        </seealso>
       </element>
       <element name="TTaskDialogButtons.FindButton.Result">
-        <short/>
+        <short>TTaskDialogBaseButtonItem instance with the specified modal result value.</short>
       </element>
       <element name="TTaskDialogButtons.FindButton.AModalResult">
-        <short/>
+        <short>Modal result value to locate in the button items for the collection.</short>
       </element>
 
       <element name="TTaskDialogButtons.GetEnumerator">
-        <short/>
+        <short>Gets an enumerator for the buttons in the Items property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TTaskDialogButtons.Items"/>
+        </seealso>
       </element>
       <element name="TTaskDialogButtons.GetEnumerator.Result">
-        <short/>
+        <short>TTaskDialogButtonsEnumerator instance for the buttons in the collection.</short>
       </element>
 
       <element name="TTaskDialogButtons.DefaultButton">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Contains the collection item that is the default button for a Task dialog.
+        </short>
+        <descr>
+          <p>
+            <var>DefaultButton</var> is a <var>TTaskDialogBaseButtonItem</var> property with the button that is the default button for a Task dialog. The value for the property is updated when the <var>Default</var> property in a button item is changed.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem.Default"/>
+        </seealso>
       </element>
 
       <element name="TTaskDialogButtons.Items">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Provides indexed access to buttons defined in the collection.</short>
+        <descr>
+          <p>
+            <var>Items</var> is an indexed <var>TTaskDialogBaseButtonItem</var> property with the buttons defined for the collection. It re-implements the property introduced in the ancestor class to use the <var>TTaskDialogBaseButtonItem</var> type when reading or writing values in the collection. Values in the property are accessed by their ordinal position in the collection.
+          </p>
+          <p>
+            Items is the default property, and the target for an enumerator created for the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialogBaseButtonItem"/>
+          <link id="TTaskDialogButtons.GetEnumerator"/>
+          <link id="#rtl.classes.TCollection.Items">TCollection.Items</link>
+          <link id="#rtl.classes.TCollection.ItemClass">TCollection.ItemClass</link>
+        </seealso>
       </element>
       <element name="TTaskDialogButtons.Items.Index">
-        <short/>
+        <short>Ordinal position in the collection for the property value.</short>
       </element>
 
       <element name="TCustomTaskDialog">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Defines a configurable, modal task dialog at run-time.</short>
+        <descr>
+          <p>
+            <var>TCustomTaskDialog</var> is a <var>TComponent</var> descendant which defines a configurable, modal task dialog. It is a non-visual component which creates modal dialogs at run-time, with rich UI elements. It is a wrapper for <var>LCLTaskDialog.TTaskDialog</var>  which implements the Windows TaskDialog API.
+          </p>
+          <p>
+            TCustomTaskDialog provides properties which can be used to configure the class instance at design-time in the object inspector. At run-time, the <var>Execute</var> method handles converting properties and calling routines in the <var>LCLTaskDialog.TTaskDialog</var> implementation.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTaskDialog"/>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+          <link id="#lcl.lcltaskdialog.TTaskDialog">LCLTaskDialog.TTaskDialog</link>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.FButton"/>
@@ -3005,256 +3228,528 @@
       </element>
 
       <element name="TCustomTaskDialog.DoExecute">
-        <short/>
-        <descr/>
+        <short>
+          Performs actions to convert values in the class, and execute the dialog using the wrapper in the LCLTaskDialog unit.
+        </short>
+        <descr>
+          <!-- hic sunt dracones -->
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomTaskDialog.DoExecute.Result">
-        <short/>
+        <short>True if a valid button identifier was clicked in the dialog.</short>
       </element>
       <element name="TCustomTaskDialog.DoExecute.ParentWnd">
-        <short/>
+        <short>Handle for the Parent Window of the dialog.</short>
       </element>
 
       <element name="TCustomTaskDialog.DoOnButtonClicked">
-        <short/>
-        <descr/>
+        <short>
+          Signals the OnButtonClicked event handler (when assigned) for the button with the specified modal result value.
+        </short>
+        <descr>
+          <p>
+            DoOnButtonClicked is called from the callback routine passed to the wrapper in LCLTaskDialog.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomTaskDialog.DoOnButtonClicked.AModalResult">
-        <short/>
+        <short>Modal result value signalled for the button click notification.</short>
       </element>
       <element name="TCustomTaskDialog.DoOnButtonClicked.ACanClose">
-        <short/>
+        <short>True if the dialog should be closed, or False to continue execution.</short>
       </element>
 
       <element name="TCustomTaskDialog.Create">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry. Create allocates resources needed for the <var>Buttons</var> and <var>RadioButtons</var> properties. It sets the default values for the following properties:
+          </p>
+          <dl>
+            <dt>CommonButtons</dt>
+            <dd>Set to the value [tcbOk, tcbCancel].</dd>
+            <dt>DefaultButton</dt>
+            <dd>Set to tcbOK.</dd>
+            <dt>Flags</dt>
+            <dd>Set to [tfAllowDialogCancellation].</dd>
+            <dt>FooterIcon</dt>
+            <dd>Set to tdiNone.</dd>
+            <dt>MainIcon</dt>
+            <dd>Set to tdiInformation.</dd>
+          </dl>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TCustomTaskDialog.RadioButtons"/>
+          <link id="TCustomTaskDialog.CommonButtons"/>
+          <link id="TCustomTaskDialog.DefaultButton"/>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TCustomTaskDialog.FooterIcon"/>
+          <link id="TCustomTaskDialog.MainIcon"/>
+        </seealso>
       </element>
       <element name="TCustomTaskDialog.Create.AOwner">
-        <short/>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomTaskDialog.Destroy">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Destroy</var> is the overridden destructor for the class instance. It frees resources allocated for the <var>Buttons</var> and <var>RadioButtons</var> properties, and calls the inherited method prior to exit.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TCustomTaskDialog.RadioButtons"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.Execute">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Displays the dialog and captures the modal result value.</short>
+        <descr>
+          <p>
+            <var>Execute</var> is an overloaded <var>Boolean</var> function used to display the dialog and capture the modal result value using the wrapper in the <file>LCLTaskDialog</file> unit. The return value is <b>True</b> if a valid button identifier was selected in the wrapper.
+          </p>
+          <p>
+            Execute calls the <var>DoExecute</var> method to convert property values in the class instance to the values expected in the <var>TTaskDialog</var> record, and execute the dialog using the <file>LCLTaskDialog</file> wrapper. The value in ModalResult is updated from the Button with the identifir returned from the wrapper.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.ModalResult"/>
+          <link id="TCustomTaskDialog.Button"/>
+          <link id="#lcl.lcltaskdialog.TTaskDialog"/>
+        </seealso>
       </element>
       <element name="TCustomTaskDialog.Execute.Result">
-        <short/>
+        <short>True if a valid button identifier was selected in the dialog.</short>
       </element>
       <element name="TCustomTaskDialog.Execute.ParentWnd">
-        <short/>
+        <short>
+          Parent window handle used to position the dialog in the LCLTaskDialog wrapper.
+        </short>
       </element>
 
       <element name="TCustomTaskDialog.Button">
-        <short/>
-        <descr/>
+        <short>Not used in the current LCL version.</short>
+        <descr>
+          <p>
+            <var>Button</var> is a <var>TTaskDialogButtonItem</var> property. It is not used in the current LCL version.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomTaskDialog.Buttons">
-        <short/>
-        <descr/>
+        <short>Collection with the buttons for the Task dialog.</short>
+        <descr>
+          <p>
+            <var>Buttons</var> is a <var>TTaskDialogButtons</var> property with the collection that contains the buttons for the Task dialog. Values in Buttons and <var>CommonButtons</var> are used in the <var>DoExecute</var> method to define the button identifiers and modal result values  available in the <file>LCLTaskDialog</file> wrapper.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomTaskDialog.Caption">
-        <short/>
-        <descr/>
+        <short>Caption text displayed on the title bar for the Task dialog.</short>
+        <descr>
+          <p>
+            <var>Caption</var> is a <var>TTranslateString</var> property with the text displayed on the title bar for the Task dialog. Caption can be localized using the LCL translation facilities.
+          </p>
+          <p>
+            Use <var>Title</var> to set the text displayed as the title in the main content area. Use <var>Text</var> to set the text displayed beneath the Title in the main content area. Use <var>ExpandedText</var> to set the text displayed in the expandable content area for the dialog. Use <var>FooterText</var> to set the text displayed in the footer aread for the dialog.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomTaskDialog.CommonButtons">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Set of common buttons displayed on the Task dialog.</short>
+        <descr>
+          <p>
+            <var>CommonButtons</var>is a <var>TTaskDialogCommonButtons</var> property with the set of common buttons displayed on the Task dialog. Values from the <var>TTaskDialogCommonButton</var> enumeration are included in the set to make buttons visible. Values are excluded from the set to remove the buttons. The default value for the property is <var>[tcbOk, tcbCancel]</var>,  and enables the <b>OK</b> and <b>Cancel</b> buttons for the Task dialog.
+          </p>
+          <p>
+            CommonButtons is used in conjunction with the <var>Buttons</var> collection, which contains custom button definitions that do not fit the common button definitions. Both CommonButtons and Buttons are used in <var>DoExecute</var>, and passed as arguments to the wrapper in <file>LCLTaskDialog</file>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TCustomTaskDialog.DoExecute"/>
+          <link id="TCustomTaskDialog.Execute"/>
+          <link id="TTaskDialogCommonButtons"/>
+          <link id="TTaskDialogCommonButton"/>
+          <link id="#lcl.lcltaskdialog.TTaskDialog">LCLTaskDialog.TTaskDialog</link>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.DefaultButton">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Index of the default button, from the set in the CommonButtons property.</short>
+        <descr>
+          <p>
+            <var>DefaultButton</var> is <var>TTaskDialogCommonButton</var> property which indicates the default button for the Task dialog. It represents the button that is clicked if the user presses the Space or Enter key when the Task dialog is initially displayed.
+          </p>
+          <p>
+            The property contains one of the values from the <var>CommonButtons</var> property. The default value for the property is <var>tcbOK</var>, and represents the <b>OK</b> button.
+          </p>
+          <p>
+            It is used to set the default modal result value returned during execution when a <var>DefaultButton</var> has not been specified in the <var>Buttons</var> collection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.CommonButtons"/>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TTaskDialogButtons.DefaultButton"/>
+          <link id="TTaskDialogCommonButton"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.ExpandButtonCaption">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Caption displayed for the expand/collapse button on the dialog.</short>
+        <descr>
+          <p>
+            <var>ExpandButtonCaption</var> is a TTranslateString property with the caption text displayed beside the button used to expand or collapse the ExpandedText on the Task dialog. The property value can be localized using the standard LCL translation facilities.
+          </p>
+           <p>
+             The default value for the property is an empty String (''), and cause the values "See details" or "Hide details" to be used on the Task dialog (when the lanuguage is English). Setting a value for the property causes the same caption to be displayed for both the expanded and collapsed states; only the button indicator changes.
+           </p>
+           <p>
+             Use the Flags property to control the position (tfExpandFooterArea) or the expanded / collapsed state (tfExpandedByDefault) for the ExpandedText on the Task dialog.
+           </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.ExpandedText"/>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogFlags"/>
+          <link id="TTaskDialogFlag"/>
+          <link id="#lcl.lcltype.TTranslateString"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.ExpandedText">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Text that is displayed in the expandable / collapsable area on the Task dialog.
+        </short>
+        <descr>
+          <p>
+            ExpandedText is a TTranslateString property with the text displayed in the expandable / collapsable area on the Task dialog. Its value can be localized using the standard LCL translation facilities. It can contain multi-line text when line ending characters (#13,#10) are embedded in the String value. For example:
+          </p>
+<code>
+ADialog.ExpandedText := 'Please read the Terms of Service.'+#10+
+  'Available on our &lt;a href="https://www.bogus.org/tos.html"&gt;Website&lt;/a&gt;';
+</code>
+          <p>
+            Or, the multi-line value can be entered in the object inspector property editor at design-time.
+          </p>
+          <p>
+            Text, ExpandedText, and FooterText allow an HTML-like hyperlinking capability (as seen in the previous code example). The feature must be enabled by including tfEnableHyperlinks in the Flags property. Use tfExpandFooterArea to control the position for the expanded text, or tfExpandedByDefault to expand or collapse the text area.
+          </p>
+        </descr>
+        <version>
+          Multi-line property editors in the object inspector were enabled in Lazarus version 2.2.0.
+        </version>
+        <seealso>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogFlags"/>
+          <link id="TTaskDialogFlag"/>
+          <link id="#lcl.lcltype.TTranslateString"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.Flags">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Set of options enabled for the Task dialog.</short>
+        <descr>
+          Flags is a TTaskDialogFlags property with the set of options for the Task dialog. It contains values from the TTaskDialogFlag enumeration, and when included, enable the corresponding feature in the Task Dialog. The default value for the property is [tfAllowDialogCancellation] and allows the dialog to be cancelled.
+        </descr>
+        <seealso>
+          <link id="TTaskDialogFlags"/>
+          <link id="TTaskDialogFlag"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.FooterIcon">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Icon for the footer area displayed at the bottom of the dialog.</short>
+        <descr>
+          <p>
+            <var>FooterIcon</var> is a <var>TTaskDialogIcon</var> property with a value which identifies the icon displayed in the footer area for the Task dialog. The footer icon is displayed beside the optional text in <var>FooterText</var>. The default value for the property is <var>tdiNone</var>, and causes the icon to be omitted. See <var>TTaskDialogIcon</var> for information about the values in the enumeration and their meanings.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.FooterText"/>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogIcon"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.FooterText">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Text that is displayed in the footer area on the Task dialog.
+        </short>
+        <descr>
+          <p>
+            <var>FooterText</var> is a <var>TTranslateString</var> property with the text displayed in the footer area on the Task dialog. Its value can be localized using the standard LCL translation facilities. It can contain multi-line text when line ending characters (#13,#10) are embedded in the String value. For example:
+          </p>
+<code>
+ADialog.FooterText := '(c) Copyright 1960-2021, Acme Corporation LLC.' + #10 +
+  'All rights reserved.';
+</code>
+          <p>
+            Or, the multi-line value can be entered in the object inspector property editor at design-time.
+          </p>
+          <p>
+            Text, ExpandedText, and FooterText allow an HTML-like hyperlinking capability using the &lt;a href="linktarget"&gt;Link Text&lt;/a&gt; notation. The feature must be enabled by including tfEnableHyperlinks in the Flags property. Use tfExpandFooterArea to position the expanded text in the footer area.
+          </p>
+        </descr>
+        <version>
+          Multi-line property editors in the object inspector were enabled in Lazarus version 2.2.0.
+        </version>
+        <seealso>
+          <link id="TCustomTaskDialog.FooterIcon"/>
+          <link id="TCustomTaskDialog.Text"/>
+          <link id="TCustomTaskDialog.ExpandedText"/>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogFlags"/>
+          <link id="TTaskDialogFlag"/>
+          <link id="#lcl.lcltype.TTranslateString"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.MainIcon">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Icon displayed beside the Title for the dialog.</short>
+        <descr>
+          <p>
+            <var>MainIcon</var> is a <var>TTaskDialogIcon</var> with a value that identifies the icon displayed beside the <var>Title</var> for the Task dialog. The default value is <var>tdiInformation</var>, and causes a blue circle with a Question Mark to be displayed as the icon. See <var>TTaskDialogIcon</var> for more information about the values in the enumeration and their meanings.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Title"/>
+          <link id="TCustomTaskDialog.Text"/>
+          <link id="TCustomTaskDialog.ExpandedText"/>
+          <link id="TCustomTaskDialog.FooterText"/>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogIcon"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.ModalResult">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Modal result value returned when the Task dialog was executed.</short>
+        <descr>
+          <p>
+            <var>ModalResult</var> is a <var>TModalResult</var> property with the modal result value returned when the Task dialog was executed. It contains the corresponding value from the <var>Button</var> used to close the Task dialog, <var>DefaultButton</var> if <b>Enter</b> or <b>Space</b> was pressed when the dialog was displayed, or <var>mrNone</var> if the dialog was cancelled.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Buttons"/>
+          <link id="TCustomTaskDialog.Button"/>
+          <link id="TCustomTaskDialog.DefaultButton"/>
+          <link id="TCustomTaskDialog.Execute"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.RadioButton">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>The radio button selected in the Task dialog.</short>
+        <descr>
+          <p>
+            <var>RadioButton</var> is a read-only <var>TTaskDialogRadioButtonItem</var> property with the radio button selected when the Task dialog was executed. The property value is set when the <var>Execute</var> method calls the wrapper in <file>LCLTaskDialog</file>. It contains an entry from the <var>RadioButtons</var> collection that was passed as an argument to the <var>TTaskDialog</var> wrapper.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.RadioButtons"/>
+          <link id="TCustomTaskDialog.Execute"/>
+          <link id="TCustomTaskDialog.DoExecute"/>
+          <link id="TTaskDialogRadioButtonItem"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.RadioButtons">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Collection with the optional radio buttons defined for the Task dialog.
+        </short>
+        <descr>
+          <p>
+            <var>RadioButtons</var> is a <var>TTaskDialogButtons</var> proprety with the collection of defined radio buttons for the Task dialog.
+          </p>
+          <p>
+            Radio buttons are displayed in the main content area for the Task dialog, below the values in <var>Text</var> and <var>ExpandedText</var>. Use of radio buttons is optional. They are displayed when items have been added to the collection. The <var>TTaskDialogRadioButtonItem</var> items in the collection are passed as an argument when the <var>Execute</var> method is called.
+          </p>
+          <p>
+            Use the <var>RadioButton</var> property to determine the radio button selected on the Task dialog.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTaskDialog.Execute"/>
+          <link id="TCustomTaskDialog.RadioButton"/>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogButtons"/>
+          <link id="TTaskDialogRadioButtonItem"/>
+          <link id="TTaskDialogFlags"/>
+          <link id="TTaskDialogFlag"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.Text">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Text displayed as main content for the Task dialog.
+        </short>
+        <descr>
+          <p>
+            <var>Text</var> is a <var>TTranslateString</var> property with the text displayed in the main content area on the Task dialog. Its value can be localized using the standard LCL translation facilities. It can contain multi-line text when line ending characters (#13,#10) are embedded in the String value. For example:
+          </p>
+<code>
+ADialog.Text := 'Please read and accept the &lt;a href="file://tos.pdf"&gt;Terms of Service&lt;/a&gt;. '+
+  #10+'You must agree before the application can be installed.';
+</code>
+          <p>
+            Or, the multi-line value can be entered in the object inspector property editor at design-time.
+          </p>
+          <p>
+            Text, ExpandedText, and FooterText allow an HTML-like hyperlinking capability using the &lt;a href="linktarget"&gt;Link Text&lt;/a&gt; notation. The feature must be enabled by including tfEnableHyperlinks in the Flags property.
+            Use tfExpandFooterArea to position the expanded text in the footer area.
+          </p>
+          <p>
+            Use ExpandedText to set the content in the collasible area on the Task dialog. Use tfExpandFooterArea in the FLags property to position the expanded text in the footer area.
+          </p>
+        </descr>
+        <version>
+          Multi-line property editors in the object inspector were enabled in Lazarus version 2.2.0.
+        </version>
+        <seealso>
+          <link id="TCustomTaskDialog.ExpandedText"/>
+          <link id="TCustomTaskDialog.FooterText"/>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogFlags"/>
+          <link id="TTaskDialogFlag"/>
+          <link id="#lcl.lcltype.TTranslateString"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.Title">
-        <short/>
+        <short>
+          Header text displayed at the top of dialog, with a larger font size and using a bold font style.
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomTaskDialog.MainIcon"/>
+          <link id="TCustomTaskDialog.Text"/>
+          <link id="TCustomTaskDialog.ExpandedText"/>
+          <link id="TCustomTaskDialog.FooterText"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.VerificationText">
-        <short/>
+        <short>
+          Optional caption text for the check box displayed at the bottom of the Task dialog.
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomTaskDialog.Flags"/>
+          <link id="TTaskDialogFlags"/>
+          <link id="TTaskDialogFlag"/>
+        </seealso>
       </element>
 
       <element name="TCustomTaskDialog.OnButtonClicked">
-        <short/>
-        <descr/>
+        <short>
+          Event handler signalled for the button clicked when the Task dialog was executed.
+        </short>
+        <descr>
+          <p>
+            OnButtonClicked is signalled after a button is clicked on the Task dialog.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TTaskDialog">
-        <short>Creates full-features modal dialogs at run-time.</short>
+        <short>Creates a configurable, modal task dialog at run-time.</short>
         <descr>
           <p>
-            A non-visual component which creates modal dialogs at run-time, with rich UI elements. Like the Windows TaskDialog API.
+            A non-visual component which creates modal dialogs at run-time, with rich UI elements. Like the Windows TaskDialog API. For example:
           </p>
+          <p>
+            <b>Using TTaskDialog at Run-time.</b>
+          </p>
+<code>
+procedure TForm1.Button1Click(Sender: TObject);
+  var ATaskDialog: TTaskDialog; // requires Dialogs in uses clause
+begin
+  ATaskDialog := TTaskDialog.Create(Self);
+  with ATaskDialog do
+  begin
+     Caption := 'Let''s do this...';
+     MainIcon := tdiShield;
+     Title := 'Task Title';
+
+    Text := 'This tells the user the purpose for the dialog. ' +
+      'Please read and accept the ' +
+      '&lt;a href="https://www.acme.org/tos.html"&gt;Terms of Service&lt;/a&gt;. '+#10+#10+
+      'Some users prefer a little conversation before they will agree. ' +
+      'Along with a progress bar. Please tell us your level of interest.';
+
+    RadioButtons.Clear;
+    RadioButtons.Add.Caption := 'Low';
+    RadioButtons.Add.Caption := 'Medium';
+    RadioButtons.Add.Caption := 'High';
+
+    CommonButtons := [tcbOk,tcbCancel,tcbRetry];
+
+    ExpandedText := 'The Terms of Service grants a waiver of responsibility to ' +
+      'Acme Corporation LLC (the Corporation) for any insane acts a Coyote ' +
+      'might perform using products or services provided by the Corporation. '+#10+#10+
+      'There is no legal venue where the Corporation is responsible. ' +
+      'Especially Albuquerque, NM USA. ' +#10+#10+
+      'Buyer beware. All rights reserved. Shipping fees and taxes may apply.';
+
+    VerificationText := 'I agree to everything.';
+
+    FooterIcon := tdiWarning;
+    FooterText := 'This is your &lt;a href="#terminus"&gt;final&lt;/a&gt; warning.';
+
+    Flags := [tfEnableHyperlinks, tfAllowDialogCancellation, tfExpandFooterArea, tfExpandedByDefault, tfVerificationFlagChecked, tfShowMarqueeProgressBar];
+
+    if Execute then ; // do something with the ModalResult
+    Free;
+  end;
+end;
+</code>
         </descr>
       </element>
 
-      <element name="TTaskDialog.Buttons">
-        <short>
-          Collection of items that describe buttons in dialog. Additional to CommonButtons.
-        </short>
-      </element>
-
-      <element name="TTaskDialog.Caption">
-        <short>Caption of the dialog form.</short>
-      </element>
-
-      <element name="TTaskDialog.CommonButtons">
-        <short>Set of standard buttons in dialog: OK, Cancel, Yes etc. Additional to Buttons.</short>
-      </element>
-
-      <element name="TTaskDialog.DefaultButton">
-        <short>Index of default button, from set of CommonButtons property.</short>
-      </element>
-
-      <element name="TTaskDialog.ExpandButtonCaption">
-        <short>
-          Dialog can have "expand button", with specified caption that shows additional info.
-        </short>
-      </element>
-
-      <element name="TTaskDialog.ExpandedText">
-        <short>Text that is shown when dialog is expanded. Use "\n" for new lines.</short>
-      </element>
-
-      <element name="TTaskDialog.Flags">
-        <short>Set of advanced options for dialog.</short>
-      </element>
-
-      <element name="TTaskDialog.FooterIcon">
-        <short>Icon for the footer area, at the bottom.</short>
-      </element>
-
-      <element name="TTaskDialog.FooterText">
-        <short>Text that shows in the footer area, at the bottom. Use "\n" for new lines.</short>
-      </element>
-
-      <element name="TTaskDialog.MainIcon">
-        <short>Icon for the main info in dialog.</short>
-      </element>
-
-      <element name="TTaskDialog.RadioButtons">
-        <short>
-          Collection of items that describe radio-buttons; they are shown in the lower part. Use "\n" to add info to buttons (shown in hint in emulated dialog, or in a new line in native Windows dialog.).
-        </short>
-      </element>
-
-      <element name="TTaskDialog.Text">
-        <short>
-          Text that is shown as main information in the dialog. Use "\n" for new lines.
-        </short>
-      </element>
-
-      <element name="TTaskDialog.Title">
-        <short>
-          Header text that is shown on the top, with big font and bold style. Use "\n" for new lines.
-        </short>
-      </element>
-
-      <element name="TTaskDialog.VerificationText">
-        <short>If not empty, dialog shows check-box with this caption, at the bottom.</short>
-      </element>
+      <element name="TTaskDialog.Buttons" link="#lcl.dialogs.TCustomTaskDialog.Buttons"/>
+      <element name="TTaskDialog.Caption" link="#lcl.dialogs.TCustomTaskDialog.Caption"/>
+      <element name="TTaskDialog.CommonButtons" link="#lcl.dialogs.TCustomTaskDialog.CommonButtons"/>
+      <element name="TTaskDialog.DefaultButton" link="#lcl.dialogs.TCustomTaskDialog.DefaultButton"/>
+      <element name="TTaskDialog.ExpandButtonCaption" link="#lcl.dialogs.TCustomTaskDialog.ExpandButtonCaption"/>
+      <element name="TTaskDialog.ExpandedText" link="#lcl.dialogs.TCustomTaskDialog.ExpandedText"/>
+      <element name="TTaskDialog.Flags" link="#lcl.dialogs.TCustomTaskDialog.Flags"/>
+      <element name="TTaskDialog.FooterIcon" link="#lcl.dialogs.TCustomTaskDialog.FooterIcon"/>
+      <element name="TTaskDialog.FooterText" link="#lcl.dialogs.TCustomTaskDialog.FooterText"/>
+      <element name="TTaskDialog.MainIcon" link="#lcl.dialogs.TCustomTaskDialog.MainIcon"/>
+      <element name="TTaskDialog.RadioButtons" link="#lcl.dialogs.TCustomTaskDialog.RadioButtons"/>
+      <element name="TTaskDialog.Text" link="#lcl.dialogs.TCustomTaskDialog.Text"/>
+      <element name="TTaskDialog.Title" link="#lcl.dialogs.TCustomTaskDialog.Title"/>
+      <element name="TTaskDialog.VerificationText" link="#lcl.dialogs.TCustomTaskDialog.VerificationText"/>
+      <element name="TTaskDialog.OnButtonClicked" link="#lcl.dialogs.TCustomTaskDialog.OnButtonClicked"/>
 
       <element name="MinimumDialogButtonWidth">
-        <short/>
+        <short>Minimum width for a button on a dialog.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="MinimumDialogButtonHeight">
-        <short/>
+        <short>Minimum height for a button on a dialog.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="MessageDlg">
-        <short>Message Dialog.</short>
+        <short>Shows a message to the user and gets the response.</short>
         <descr>
           <p>
-            Show a message to the user and receive his response. There are four versions of this function.
+            There are four versions of this function.
           </p>
           <p>
             The first version displays a dialog with the standard caption. The second, third and fourth versions enable you to set the caption.
@@ -3643,7 +4138,7 @@ end;
           </p>
           <code>[400, 'Yes!!!', 401, 'Are you mad?', 402, 'My mistake']</code>
           <p>
-            This will create a dialog with three buttons; the captions of the buttons will be the strings given in the array.
+            This will create a dialog with three buttons; the captions for the buttons will be the strings values given in the array.
           </p>
           <p>
             The return value of the function will be 400, 401 or 402, depending on whether the user clicked the 'Yes!!!', the 'Are you mad?' or the 'My mistake' button.
@@ -3659,7 +4154,7 @@ end;
       </element>
 
       <element name="ShowMessage">
-        <short>Show Message.</short>
+        <short>Displays the specified message text.</short>
         <descr>
           <p>
             The simplest message dialog: takes a simple string as argument, displays it in a box, and waits for a mouse-click or enter-key event before returning to the calling routine or program.
@@ -3735,7 +4230,7 @@ end;
 
       <element name="InputBox">
         <short>
-          Displays a box with defined title and prompt, and expects user input in a text box.
+          Displays a box with specified title and prompt, and accepts user input in a text box.
         </short>
         <descr>
           <p>
@@ -3767,7 +4262,7 @@ end;
       </element>
 
       <element name="PasswordBox">
-        <short>Password Box.</short>
+        <short>Displays a Password prompt with input masking.</short>
         <descr>
           <p>
             PasswordBox is a specialized form of InputQuery. The editbox on the dialog box will mask the input. The only parameters are aCaption and aPrompt.
@@ -3852,7 +4347,7 @@ end;
       </element>
 
       <element name="cInputQuerySpacingSize">
-        <short>Spacing between Input Query controls.</short>
+        <short>Spacing between the controls on an Input Query dialog.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3870,11 +4365,11 @@ end;
         <short/>
       </element>
       <element name="TSelectDirOpts">
-        <short>Set of directory selection options.</short>
+        <short>Set type for directory selection options.</short>
       </element>
 
       <element name="SelectDirectory">
-        <short>A function that allows one to user to select a directory.</short>
+        <short>A function that allows a user to select a directory.</short>
         <descr>
           <p>
             This function will show a dialog which allows the user to select the required directory when the directory structure is displayed as a tree.
@@ -4006,25 +4501,34 @@ end;
       </element>
 
       <element name="InputCombo">
-        <short/>
+        <short>
+          Creates and executes a combo-box dialog with the specified Caption, Prompt, and list of selectable values.
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="InputComboEx"/>
+          <link id="InputQuery"/>
+        </seealso>
       </element>
       <element name="InputCombo.Result">
-        <short/>
+        <short>
+          Ordinal position for the value selected in AList, or -1 if ian option was not selected.
+        </short>
       </element>
       <element name="InputCombo.ACaption">
-        <short/>
+        <short>Caption or title for the dialog.</short>
       </element>
       <element name="InputCombo.APrompt">
-        <short/>
+        <short>Label displayed for the combo-box control on the dialog.</short>
       </element>
       <element name="InputCombo.AList">
-        <short/>
+        <short>List of values which can be displayed and selected using the combo-box.</short>
       </element>
 
       <element name="InputComboEx">
-        <short/>
+        <short>
+          Displays an extended input combo-box dialog that allows entry of custom text values.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -4032,61 +4536,88 @@ end;
         <short/>
       </element>
       <element name="InputComboEx.ACaption">
-        <short/>
+        <short>Caption for the dialog.</short>
       </element>
       <element name="InputComboEx.APrompt">
-        <short/>
+        <short>Prompt or label for the combio-box control.</short>
       </element>
       <element name="InputComboEx.AList">
-        <short/>
+        <short>List of values displayed in the combo-box control.</short>
       </element>
       <element name="InputComboEx.AllowCustomText">
-        <short/>
+        <short>True to allow new values to be added to the combo-box control.</short>
       </element>
 
       <element name="ExtractColorIndexAndColor">
-        <short/>
+        <short>
+          Extracts the color index and color value for the specified position in a color list.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="ExtractColorIndexAndColor.Result">
-        <short/>
+        <short>True on success, false if the list does not use the correct format.</short>
       </element>
       <element name="ExtractColorIndexAndColor.AColorList">
-        <short/>
+        <short>List of colors in COLORID=VALUE format.</short>
       </element>
       <element name="ExtractColorIndexAndColor.AIndex">
-        <short/>
+        <short>Position in the list for the extracted color index and value.</short>
       </element>
       <element name="ExtractColorIndexAndColor.ColorIndex">
-        <short/>
+        <short>Color index (ColorA=0, ColorB=1, etc.)</short>
       </element>
       <element name="ExtractColorIndexAndColor.ColorValue">
-        <short/>
+        <short>TColor for the hexadecimal value in the list.</short>
       </element>
 
       <element name="GetDialogCaption">
-        <short/>
-        <descr/>
+        <short>
+          Gets the resource string used as the caption for the specified dialog identifier.
+        </short>
+        <descr>
+          <p>
+            The following dialog identifers and return values are used in the routine:
+          </p>
+          <dl>
+            <dt>idDialogWarning</dt>
+            <dd>Return value is rsMtWarning.</dd>
+            <dt>idDialogError</dt>
+            <dd>Return value is rsMtError.</dd>
+            <dt>idDialogInfo</dt>
+            <dd>Return value is rsMtInformation.</dd>
+            <dt>idDialogConfirm</dt>
+            <dd>Return value is rsMtConfirmation.</dd>
+            <dt>idDialogShield</dt>
+            <dd>Return value is rsMtAuthentication.</dd>
+          </dl>
+          <p>
+            The return value is '?' when an unknown value is used in the idDiag argument.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="GetDialogCaption.Result">
-        <short/>
+        <short>Default caption for the dialog identifier.</short>
       </element>
       <element name="GetDialogCaption.idDiag">
-        <short/>
+        <short>Identifier for the dialog type, i. e. idDialogWarning or idDialogError.</short>
       </element>
 
       <element name="GetDialogIcon">
-        <short/>
-        <descr/>
+        <short>Gets a bitmap with the icon for the specified dialog identifier.</short>
+        <descr>
+          <p>
+            The bitmap may contain a stock image provided by theme services (when available), or a PNG image image loaded from a Lazarus resource in the application.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="GetDialogIcon.Result">
-        <short/>
+        <short>Bitmap with the icon for the dialog identifier.</short>
       </element>
       <element name="GetDialogIcon.idDiag">
-        <short/>
+        <short>Identifier for the dialog type, i. e. idDialogWarning or idDialogShield.</short>
       </element>
 
       <element name="dbgs">
@@ -4105,9 +4636,7 @@ end;
       </element>
 
       <element name="Register">
-        <short>
-          Registers components for use in the Lazarus IDE.
-        </short>
+        <short>Registers components for use in the Lazarus IDE.</short>
         <descr>
           <p>
             Register is the procedure used to register components for use in the Lazarus IDE.

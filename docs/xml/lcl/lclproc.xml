@@ -65,7 +65,7 @@
       </element>
 
       <element name="TDebugLCLItemInfo.Info">
-        <short>A descriptive string.</short>
+        <short>A descriptive string for the item.</short>
         <descr/>
         <seealso/>
       </element>
@@ -83,7 +83,7 @@
       </element>
 
       <element name="TDebugLCLItemInfo.AsString">
-        <short>All information about the object.</short>
+        <short>All information about the object as a string value.</short>
         <descr/>
         <seealso/>
       </element>
@@ -91,7 +91,7 @@
         <short/>
       </element>
       <element name="TDebugLCLItemInfo.AsString.WithStackTraces">
-        <short>True means include stack traces.</short>
+        <short>True to include stack traces.</short>
       </element>
 
       <element name="TDebugLCLItemInfo.Destroy">
@@ -105,7 +105,7 @@
           A list describing dynamically allocated (and destroyed) memory objects.
         </short>
         <descr>
-          The list holds descriptive information about the object, and stack traces of its creation and destruction.
+          The list holds descriptive information about the object, and stack traces at the time of creation and destruction.
         </descr>
         <seealso/>
       </element>
@@ -154,7 +154,7 @@
       </element>
 
       <element name="TDebugLCLItems.IsDestroyed">
-        <short>True when the item has been created and destroyed.</short>
+        <short>True when the item has been destroyed.</short>
         <descr/>
         <errors>
         </errors>
@@ -273,63 +273,103 @@
       </element>
 
       <element name="TStringsSortCompare">
-        <short>Compare function type for TStrings Strings[].</short>
-        <descr/>
-        <seealso/>
+        <short>
+          Specifies a comparison function type for string values in a TStrings instance.
+        </short>
+        <descr>
+          <p>
+            TStringsSortCompare is an Integer function type used to compare string values to determine the relative sort order. The return value indicates the relative sort order for the compared items, and normally contains a value like the one returned from CompareText. For example:
+          </p>
+          <dl>
+            <dt>&lt;0</dt>
+            <dd>Item1 has a value that comes before Item2.</dd>
+            <dt>0</dt>
+            <dd>Item1 and Item2 have the same value.</dd>
+            <dt>&gt;0</dt>
+            <dd>Item1 has a value that comes after Item2.</dd>
+          </dl>
+          <p>
+            The address for a TStringsSortCompare type is passed as an argument to the MergeSort routine.
+          </p>
+        </descr>
+        <seealso>
+          <link id="MergeSort"/>
+        </seealso>
       </element>
       <element name="TStringsSortCompare.Result">
-        <short/>
+        <short>Integer with the relative sort order for the compared values.</short>
       </element>
       <element name="TStringsSortCompare.Item1">
-        <short/>
+        <short>First string value for the comparison.</short>
       </element>
       <element name="TStringsSortCompare.Item2">
-        <short/>
+        <short>Second string value for the comparison.</short>
       </element>
 
       <element name="MergeSort">
-        <short>Sorting TStrings or TFPList.</short>
-        <descr/>
-        <seealso/>
+        <short>Implements a merge/sort for TStrings or TFPList.</short>
+        <descr>
+          <p>
+            MergeSort is an overloaded routine used to implement a comparison-based sort routine for values in List. List can be a TStrings or TFPList instance. No actions are performed in the routine when List has not been assigned (contains Nil).
+          </p>
+          <p>
+            The StartIndex and EndIndex arguments allow the intial and final entries in a TFPList instance to be specified. When the values are omitted, they default to the first value (position 0) and the last value (Count-1) in List.
+          </p>
+          <p>
+            OnCompare is the comparison routine used to detemine the order for the sorted values. It can be a TListSortCompare or TStringsSortCompare function, depending on the overloaded variant of the called routine.
+          </p>
+          <p>
+            MergeSort implements the J. von Nuemann divide-and-conquer algorithm, with an insertion sort used for lists with 6 or fewer elements.
+          </p>
+          <!-- TODO: Explain TStrings vs TFPList, insertion sort, etc. -->
+        </descr>
+        <seealso>
+          <link id="TListSortCompare"/>
+          <link id="TStringsSortCompare"/>
+        </seealso>
       </element>
       <element name="MergeSort.List">
-        <short>The list to sort (overloaded type).</short>
+        <short>The list of values to sort (overloaded type).</short>
       </element>
       <element name="MergeSort.OnCompare">
         <short>The sort compare function.</short>
       </element>
       <element name="MergeSort.StartIndex">
-        <short/>
+        <short>The initial entry in List used in the merge/sort.</short>
       </element>
       <element name="MergeSort.EndIndex">
-        <short/>
+        <short>The final entry in List used in the merge/sort.</short>
       </element>
 
       <element name="KeyAndShiftStateToKeyString">
-        <short/>
+        <short>
+          Converts the specified key code and shift modifier to their representation as a String.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="KeyAndShiftStateToKeyString.Result">
-        <short/>
+        <short>String representation for the specified value; i. e. 'Ctrl+Home'.</short>
       </element>
       <element name="KeyAndShiftStateToKeyString.Key">
-        <short/>
+        <short>Key code converted in the routine.</short>
       </element>
       <element name="KeyAndShiftStateToKeyString.ShiftState">
-        <short/>
+        <short>Shift, Ctrl, Alt modifier converted in the routine.</short>
       </element>
 
       <element name="KeyStringIsIrregular">
-        <short/>
+        <short>
+          Indicates if the string contains the 'Word(nn)' representation for an unknown key code.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="KeyStringIsIrregular.Result">
-        <short/>
+        <short>True when the string is not a named virtual key code.</short>
       </element>
       <element name="KeyStringIsIrregular.s">
-        <short/>
+        <short>Value examined in the method.</short>
       </element>
 
       <element name="ShortCutToText">
@@ -338,22 +378,24 @@
         <seealso/>
       </element>
       <element name="ShortCutToText.Result">
-        <short/>
+        <short>Localized text value for the specified shortcut.</short>
       </element>
       <element name="ShortCutToText.ShortCut">
         <short/>
       </element>
 
       <element name="ShortCutToTextRaw">
-        <short/>
+        <short>
+          Converts a shortcut value to its text representation without localization.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="ShortCutToTextRaw.Result">
-        <short/>
+        <short>Non-localized text value for the specified shortcut.</short>
       </element>
       <element name="ShortCutToTextRaw.ShortCut">
-        <short/>
+        <short>Shortcut value converted in the method.</short>
       </element>
 
       <element name="TextToShortCut">
@@ -362,14 +404,16 @@
         <seealso/>
       </element>
       <element name="TextToShortCut.Result">
-        <short/>
+        <short>TShortcut value for the specified text.</short>
       </element>
       <element name="TextToShortCut.ShortCutText">
-        <short/>
+        <short>Text converted to a shortcut value in the method.</short>
       </element>
 
       <element name="TextToShortCutRaw">
-        <short/>
+        <short>
+          Converts the non-localized textual representation for a shortcut into a shortcut value.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -381,7 +425,7 @@
       </element>
 
       <element name="GetCompleteText">
-        <short>Find an string in a list, given its first few characters.</short>
+        <short>Finds a string in a list, given its first few characters.</short>
         <descr/>
         <seealso/>
       </element>
@@ -405,7 +449,9 @@
       </element>
 
       <element name="IsEditableTextKey">
-        <short/>
+        <short>
+          Indicates if the specified key code has a value allowed in an editable text string.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -413,11 +459,11 @@
         <short/>
       </element>
       <element name="IsEditableTextKey.Key">
-        <short>The virtual key code.</short>
+        <short>The virtual key code examined in the routine.</short>
       </element>
 
       <element name="TSendApplicationMessageFunction">
-        <short/>
+        <short>Hooks used to prevent circular unit references.</short>
         <descr/>
         <seealso/>
       </element>
@@ -444,13 +490,9 @@
       </element>
 
       <element name="SendApplicationMessageFunction">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="SendApplicationMessageFunction">
-        <short/>
+        <short>
+          Function used to send an application mesage using the specified parameter values.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -462,7 +504,9 @@
       </element>
 
       <element name="SendApplicationMessage">
-        <short/>
+        <short>
+          Sends an application mesage using the specified parameter values.
+        </short>
         <descr/>
         <errors/>
         <seealso/>
@@ -491,7 +535,7 @@
       </element>
 
       <element name="FreeThenNil">
-        <short>Free the TObject, before setting the reference to Nil.</short>
+        <short>Frees the TObject instance, before setting the reference to Nil.</short>
         <descr/>
         <seealso/>
       </element>
@@ -509,7 +553,7 @@
       </element>
 
       <element name="CallInterfaceInitializationHandlers">
-        <short>Invokes the registered handlers.</short>
+        <short>Calls each of the registered initialization handlers.</short>
         <descr/>
         <seealso/>
       </element>
@@ -525,14 +569,16 @@
       </element>
 
       <element name="CallInterfaceFinalizationHandlers">
-        <short>Invokes the registered handlers.</short>
+        <short>Calls each of the registered finalization handlers.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
 
       <element name="OffsetRect">
-        <short>Increments the TopLeft and BottomRight coordinates of the rectangle.</short>
+        <short>
+          Increments the Top, Left and Bottom, Right rectangle coordinates by the specified amounts.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -550,7 +596,7 @@
       </element>
 
       <element name="MoveRect">
-        <short>Makes the rectangle originate at the given coordinates.</short>
+        <short>Moves the rectangle origin to the given coordinates.</short>
         <descr/>
         <seealso/>
       </element>
@@ -622,91 +668,140 @@
 
       <element name="DeleteAmpersands">
         <short>
-          Replaces all '&amp;x' with 'x', and returns the position of the first adjusted letter in the resulting string.
+          Removes all Ampersand ('&amp;') characters Str, and return the position for the first occurence.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>DeleteAmpersands</var> is an <var>Integer</var> function used to remove all occurences of the Ampersand character in Str. The return value contains the position in Str where the first occurence of the of the character was found.
+          </p>
+          <p>
+            Double Ampersands (&amp;&amp;) are converted to a single &amp; character in Str.
+          </p>
+          <p>
+            DeleteAmpersands can be used to remove the prefix used for accelerator keys in button, tool bar, and menu  captions.
+          </p>
+        </descr>
         <errors/>
         <seealso/>
       </element>
       <element name="DeleteAmpersands.Result">
-        <short>Position of the first adjusted non-ampersand letter.</short>
+        <short>Position where the first ampersand character was found.</short>
       </element>
       <element name="DeleteAmpersands.Str">
-        <short/>
+        <short>String with values converted in the method.</short>
       </element>
 
       <element name="RemoveAmpersands">
-        <short/>
-        <descr/>
+        <short>
+          Removes single Ampersand characters, and returns the converted value.
+        </short>
+        <descr>
+          <p>
+            <var>RemoveAmpersands</var> is an overloaded function used to remove all occurences of a single Ampsersand (&amp;) character from the specified value. It provides variants that operate on String and PChar types. The return value contains the original value after all single Ampersand characters have been removed. Double Ampersand (&amp;&amp;) characters are converted into a single Ampersand character.
+          </p>
+          <p>
+            Use <var>DeleteAmpersands</var> to remove Ampersand character in the original String value.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="RemoveAmpersands.Result">
-        <short/>
+        <short>Value after single Ampersand characters are removed.</short>
       </element>
       <element name="RemoveAmpersands.ASource">
-        <short/>
+        <short>String with the values examined in the routine.</short>
       </element>
       <element name="RemoveAmpersands.Src">
-        <short/>
+        <short>PChar value examined in the routine.</short>
       </element>
       <element name="RemoveAmpersands.LineLength">
-        <short/>
+        <short>Length of the value in Src.</short>
       </element>
 
       <element name="CompareHandles">
-        <short>Compares two Handles, returning the Sign of the difference.</short>
-        <descr/>
-        <errors/>
+        <short>Compares two Handles, returning the relative order for the handle values.</short>
+        <descr>
+          <p>
+            The return value contains the following:
+          </p>
+          <dl>
+            <dt>-1</dt>
+            <dd>h1 has a lower value than h2.</dd>
+            <dt>0</dt>
+            <dd>h1 and h2 have the same value.</dd>
+            <dt>1</dt>
+            <dd>h1 has a higher value than h2.</dd>
+          </dl>
+        </descr>
         <seealso/>
       </element>
       <element name="CompareHandles.Result">
-        <short/>
+        <short>Relative order for the compared handle values.</short>
       </element>
       <element name="CompareHandles.h1">
-        <short/>
+        <short>First handle for the comparison.</short>
       </element>
       <element name="CompareHandles.h2">
-        <short/>
+        <short>Second handle for the comparison.</short>
       </element>
 
       <element name="CompareRect">
-        <short>Returns True when the two rectangles are equal.</short>
+        <short>
+          Indicates if the specified rectangle pointers have the same coordinate values.
+        </short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <element name="CompareRect.Result">
-        <short/>
+        <short>
+          True when the top, left, bottom, and right values in each rectangle are the same.
+        </short>
       </element>
       <element name="CompareRect.R1">
-        <short/>
+        <short>Pointer to the first rectangle for the comparision.</short>
       </element>
       <element name="CompareRect.R2">
-        <short/>
+        <short>Pointer to the second rectangle for the comparision.</short>
       </element>
 
       <element name="ComparePoints">
-        <short>Compares the coordinates (y first) and returns the Sign of the difference.
-        </short>
-        <descr/>
-        <errors>
-        </errors>
+        <short>Compares the specified TPoint values to get their relative order.</short>
+        <descr>
+          <p>
+            <var>ComparePoints</var> is an <var>Integer</var> function used to compare the coordinates in the specified <var>TPoint</var> instances to determine their relative order. The return value contains -1, 0, or 1 for the following conditions:
+          </p>
+          <dl>
+            <dt>-1</dt>
+            <dd>p1.y is smaller than p2.y, or p1.x is smaller than p2.x.</dd>
+            <dt>0</dt>
+            <dd>p1 and p2 have the same x and y values.</dd>
+            <dt>1</dt>
+            <dd>p1.y is larger than p2.y, or p1.x is larger than p2.x.</dd>
+          </dl>
+        </descr>
         <seealso/>
       </element>
       <element name="ComparePoints.Result">
-        <short/>
+        <short>Relative order for the compared TPoint values.</short>
       </element>
       <element name="ComparePoints.p1">
-        <short/>
+        <short>First TPoint instance for the comparison.</short>
       </element>
       <element name="ComparePoints.p2">
-        <short/>
+        <short>Second TPoint instance for the comparison.</short>
       </element>
 
       <element name="CompareCaret">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>See ComparePoints</short>
+        <descr>
+          <p>
+            See ComparePoints.
+          </p>
+        </descr>
+        <seealso>
+          <link id="ComparePoints"/>
+        </seealso>
       </element>
       <element name="CompareCaret.Result">
         <short/>
@@ -921,8 +1016,6 @@
       <element name="DebugLnEnter">
         <short/>
         <descr/>
-        <errors>
-        </errors>
         <seealso/>
       </element>
       <element name="DebugLnEnter.s">
@@ -1284,31 +1377,33 @@
       </element>
 
       <element name="ClassCase">
-        <short/>
+        <short>Indicates if a TClass instance is found in the specified array.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="ClassCase.Result">
-        <short/>
+        <short>
+          Ordinal position in ACase where the TClass instance was found, or -1 when not found.
+        </short>
       </element>
       <element name="ClassCase.AClass">
-        <short/>
+        <short>TClass instance to locate in ACase.</short>
       </element>
       <element name="ClassCase.ACase">
-        <short/>
+        <short>Array of TClass instances to examine in the routine.</short>
       </element>
-      <element name="ClassCase.ADecendant">
-        <short/>
+      <element name="ClassCase.ADescendant">
+        <short>True to consider descendants of AClass as a match in the routine.</short>
       </element>
 
       <element name="UTF16String">
-        <short/>
+        <short>Alias to the UnicodeString type.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="PUTF16String" link="UTF16String">
-        <short/>
+        <short>Pointer to the UTF16String type.</short>
         <descr/>
         <seealso/>
       </element>
@@ -1395,15 +1490,15 @@
       </element>
 
       <element name="IsFontNameDefault">
-        <short/>
+        <short>Indicates if the specified name contains 'default'.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="IsFontNameDefault.Result">
-        <short/>
+        <short>True when AName contains 'default'.</short>
       </element>
       <element name="IsFontNameDefault.AName">
-        <short/>
+        <short>Font name examined in the routine.</short>
       </element>
 
       <element name="DebugLnMaxNestPrefixLen">

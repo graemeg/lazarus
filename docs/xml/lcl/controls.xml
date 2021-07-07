@@ -1481,7 +1481,26 @@
         </seealso>
       </element>
 
-      <element name="TControlCanvas.FreeHandle" link="#lcl.graphics.TCanvas.FreeHandle"/>
+      <element name="TControlCanvas.FreeHandle">
+        <short>
+          Frees the Handle for the control canvas, and its device context when assigned.
+        </short>
+        <descr>
+          <p>
+            <var>FreeHandle</var> is an overridden method in TControlCanvas. It calls the inherited method on entry to set the value in <var>Handle</var> to 0 (the unassigned value). If a device context (DC) has been allocated for the window handle (HWND), the <var>ReleaseDC</var> routine is called to release the device context.
+          </p>
+            <p>
+              FreeHandle is called when a new value is assigned to the <var>Control</var> property, or when the class instance is freed.
+            </p>
+        </descr>
+        <seealso>
+          <link id="TControlCanvas.Destroy"/>
+          <link id="TControlCanvas.Control"/>
+          <link id="#lcl.graphics.TCanvas.Handle">TCanvas.Handle</link>
+          <link id="#lcl.graphics.TCanvas.FreeHandle">TCanvas.FreeHandle</link>
+          <link id="#lcl.lclintf.ReleaseDC">ReleaseDC</link>
+        </seealso>
+      </element>
 
       <element name="TControlCanvas.ControlIsPainting">
         <short>Indicates if the Control has called but not completed its Paint method.</short>
@@ -5435,12 +5454,24 @@
          <short>New value for the property.</short>
       </element>
 
-      <element name="TLazAccessibleObject.FHandle"/>
-      <element name="TLazAccessibleObject.FChildrenSortedForDataObject"/>
-      <element name="TLazAccessibleObject.FAccessibleName"/>
-      <element name="TLazAccessibleObject.FAccessibleDescription"/>
-      <element name="TLazAccessibleObject.FAccessibleValue"/>
-      <element name="TLazAccessibleObject.FAccessibleRole"/>
+      <element name="TLazAccessibleObject.FHandle">
+        <short>Member with the Handle for the accessibility object.</short>
+      </element>
+      <element name="TLazAccessibleObject.FChildrenSortedForDataObject">
+        <short>Member with the AVL tree for the sorted child objects.</short>
+      </element>
+      <element name="TLazAccessibleObject.FAccessibleName">
+        <short>Member with the value for AccessibleName.</short>
+      </element>
+      <element name="TLazAccessibleObject.FAccessibleDescription">
+        <short>Member with the value for AccessibleDescription.</short>
+      </element>
+      <element name="TLazAccessibleObject.FAccessibleValue">
+        <short>Member with the value for AccessibleValue.</short>
+      </element>
+      <element name="TLazAccessibleObject.FAccessibleRole">
+        <short>Member with the value for AccessibleRole.</short>
+      </element>
 
       <element name="TLazAccessibleObject.WSRegisterClass"  link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
@@ -5576,6 +5607,24 @@
       <element name="TLazAccessibleObject.GetChildAccessibleObjectsCount">
         <short>Returns the number of direct children that this accessible object has.</short>
       </element>
+
+       <element name="TLazAccessibleObject.GetFirstChildAccessibleObject">
+         <short>Searches in sub-controls for the first child accessibility object.</short>
+         <descr/>
+         <seealso/>
+       </element>
+       <element name="TLazAccessibleObject.GetFirstChildAccessibleObject.Result">
+         <short/>
+       </element>
+
+       <element name="TLazAccessibleObject.GetNextChildAccessibleObject">
+         <short>Searches in sub-controls for the next child accessibility object.</short>
+         <descr/>
+         <seealso/>
+       </element>
+       <element name="TLazAccessibleObject.GetNextChildAccessibleObject.Result">
+         <short/>
+       </element>
 
       <element name="TLazAccessibleObject.GetSelectedChildAccessibleObject">
         <short>
@@ -7165,14 +7214,16 @@
       </element>
 
       <element name="TControl.CMCursorChanged">
-        <short>
-          Message handler for changes to the cursor shape.
-        </short>
-        <descr/>
+        <short>Handles the CM_CURSORCHANGED message for the control.</short>
+        <descr>
+          <p>
+            At run-time, the SetTempCursor method is called to apply the temporary cursor shape in the Cursor property. No actions are performed in the method at design-time.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TControl.CMCursorChanged.Message">
-        <short/>
+        <short>Control message handled in the method.</short>
       </element>
 
       <element name="TControl.CalculateDockSizes">
@@ -10905,8 +10956,7 @@
       </element>
 
       <element name="TControl.Visible">
-        <short>Allows to show or hide the control, and all of its children.
-        </short>
+        <short>Allows the control, and all of its children, to be displayed or hidden.</short>
         <descr>
           <p>
             Visible is set to True by <var>Show</var>, or to False by <var>Hide</var>. Calling these methods is equivalent to setting the Visible property.
@@ -15392,7 +15442,7 @@ if MyControl.CanSetFocus then
         <short/>
       </element>
 
-      <element name="TGraphicControl.WSRegisterClass" link="#lcl.controls.TControl.WSRegisterClass"/>
+      <element name="TGraphicControl.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element link="#lcl.controls.TControl.FontChanged" name="TGraphicControl.FontChanged"/>
       <element name="TGraphicControl.FontChanged.Sender">
@@ -15414,9 +15464,17 @@ if MyControl.CanSetFocus then
       <element link="#lcl.controls.TControl.DoOnChangeBounds" name="TGraphicControl.DoOnChangeBounds"/>
 
       <element name="TGraphicControl.DoOnParentHandleDestruction">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Performs actions when the handle for the parent control is freed.</short>
+        <descr>
+          <p>
+            <var>DoOnParentHandleDestruction</var> is overridden in <var>TGraphicControl</var> to re-implement the method in the ancestor class. It ensures that Handle for the Canvas is freed when the parent handler is destroyed.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TGraphicControl.Canvas"/>
+          <link id="TControlCanvas.FreeHandle"/>
+          <link id="TControl.DoOnParentHandleDestruction"/>
+        </seealso>
       </element>
 
       <element name="TGraphicControl.OnPaint">
@@ -15429,9 +15487,25 @@ if MyControl.CanSetFocus then
       </element>
 
       <element name="TGraphicControl.CMCursorChanged">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Handles the CM_CURSORCHANGED message for the control.</short>
+        <descr>
+          <p>
+            CMCursorChanged is an overridden method in TGraphicControl.  It ensures that the control is Visible before the temporary cursor shape is changed.
+          </p>
+          <p>
+            <var>Visible</var> must be set to <b>True</b>, and the <var>Parent</var> control (with the window handle) must be assigned before the control can be displayed. No actions are performed in the method if Visible is <b>False</b>, or Parent is <b>Nil</b>.
+          </p>
+          <p>
+            In addition, the mouse must be over the control to apply the cursor shape using <var>SetTempCursor</var> and the value in the <var>Cursor</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TControl.CMCursorChanged"/>
+          <link id="TControl.Visible"/>
+          <link id="TControl.Parent"/>
+          <link id="TControl.Cursor"/>
+          <link id="TControl.SetTempCursor"/>
+        </seealso>
       </element>
 
       <element name="TGraphicControl.Create">
@@ -16212,18 +16286,32 @@ if MyControl.CanSetFocus then
       </element>
 
       <element name="TDockTree.BeginUpdate">
-        <short></short>
-        <descr></descr>
+        <short>Starts an update process for the class instance.</short>
+        <descr>
+          <p>
+            <var>BeginUpdate</var> is an overridden method in TDockTree. It increments the internal update counter for the class. It is used to consolidate calls to the UpdateAll method until the internal counter reaches zero (0).
+          </p>
+        </descr>
         <seealso>
           <link id="TDockManager.BeginUpdate"/>
+          <link id="TDockManager.EndUpdate"/>
+          <link id="TDockTree.UpdateAll"/>
         </seealso>
       </element>
 
       <element name="TDockTree.EndUpdate">
-        <short></short>
-        <descr></descr>
+        <short>Finishes an update process for the class instance.</short>
+        <descr>
+          <p>
+            <var>EndUpdate</var> is an overridden method in TDockTree. BeginUpdate and EndUpdate are used to consolidate calls to the <var>UpdateAll</var> method. EndUpdate decrements the internal update counter, and when it reaches zero (0) calls UpdateAll to remove dtfUpdateAllNeeded from the docking tree flags.
+          </p>
+        </descr>
         <seealso>
           <link id="TDockManager.EndUpdate"/>
+          <link id="TDockManager.BeginUpdate"/>
+          <link id="TDockTree.UpdateAll"/>
+          <link id="TDockTreeFlags"/>
+          <link id="TDockTreeFlag"/>
         </seealso>
       </element>
 
