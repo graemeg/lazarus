@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <CONFIG>
   <Makefile Value="True"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -vew -l -Fuforms;widgetset;;../packager/units/%(CPU_TARGET)-%(OS_TARGET);../components/lazutils/lib/%(CPU_TARGET)-%(OS_TARGET);. -Fiinclude alllclunits.pp"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -vew -l -Fuforms;widgetset;;../packager/units/%(CPU_TARGET)-%(OS_TARGET);../components/lazutils/lib/%(CPU_TARGET)-%(OS_TARGET);../components/freetype/lib/%(CPU_TARGET)-%(OS_TARGET);. -Fiinclude alllclunits.pp"/>
 </CONFIG>
