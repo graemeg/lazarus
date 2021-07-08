@@ -203,6 +203,16 @@ gmkdir -p %BUILDDIR%\image\components\lazcontrols
 cp -pr %BUILDDIR%\components\lazcontrols\lib %BUILDDIR%\image\components\lazcontrols\lib
 
 gmkdir -p %BUILDDIR%\components
+%SVN% export -q %LAZSVNDIR%\components\buildintf %BUILDDIR%\components\buildintf
+:: export images dir, the buildintf includes them
+%SVN% export -q %LAZSVNDIR%\images %BUILDDIR%\images
+cd %BUILDDIR%\components\buildintf
+IF ERRORLEVEL 1 GOTO CLEANUP
+%MAKEEXE% FPC=%compiler%
+gmkdir -p %BUILDDIR%\image\components\buildintf\units
+cp -pr %BUILDDIR%\components\buildintf\units\%FPCFULLTARGET% %BUILDDIR%\image\components\buildintf\units\%FPCFULLTARGET%
+
+gmkdir -p %BUILDDIR%\components
 %SVN% export -q %LAZSVNDIR%\components\ideintf %BUILDDIR%\components\ideintf
 :: export images dir, the ideintf includes them
 %SVN% export -q %LAZSVNDIR%\images %BUILDDIR%\images
@@ -244,6 +254,7 @@ if not exist %LAZBUILD_REPLACE_TEXT% GOTO NO_REPLACE
 %LAZBUILD_REPLACE_TEXT% %BUILDDIR%\image\lcl\units\%TARGETCPU%-%TARGETOS%\%LCL_PLATFORM%\LCL.compiled "-MObjFPC" "-T%TARGETOS% -P%TARGETCPU% -MObjFPC"
 %LAZBUILD_REPLACE_TEXT% %BUILDDIR%\image\components\synedit\units\%TARGETCPU%-%TARGETOS%\%LCL_PLATFORM%\SynEdit.compiled "-MObjFPC" "-T%TARGETOS% -P%TARGETCPU% -MObjFPC"
 %LAZBUILD_REPLACE_TEXT% %BUILDDIR%\image\components\lazcontrols\lib\%TARGETCPU%-%TARGETOS%\%LCL_PLATFORM%\LazControls.compiled "-MObjFPC" "-T%TARGETOS% -P%TARGETCPU% -MObjFPC"
+%LAZBUILD_REPLACE_TEXT% %BUILDDIR%\image\components\buildintf\units\%TARGETCPU%-%TARGETOS%\BuildIntf.compiled "-MObjFPC" "-T%TARGETOS% -P%TARGETCPU% -MObjFPC"
 %LAZBUILD_REPLACE_TEXT% %BUILDDIR%\image\components\ideintf\units\%TARGETCPU%-%TARGETOS%\%LCL_PLATFORM%\IDEIntf.compiled "-MObjFPC" "-T%TARGETOS% -P%TARGETCPU% -MObjFPC"
 
 :GOTO NO_REPLACE
