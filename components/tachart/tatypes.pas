@@ -751,6 +751,7 @@ begin
   diag := -ADrawer.Scale(Round(Sqrt(Sqr(Length) + Sqr(Width))));
   pt1 := AEndPos + RotatePointX(diag, AAngle - da)*sgn;
   pt2 := AEndPos + RotatePointX(diag, AAngle + da)*sgn;
+  ADrawer.SetPenParams(psSolid, FPColorToTColor(APen.FPColor), APen.Width);
   if BaseLength > 0 then begin
     ptBase := AEndPos + RotatePointX(-ADrawer.Scale(BaseLength), AAngle)*sgn;
     ADrawer.SetBrushParams(bsSolid, FPColorToChartColor(APen.FPColor));
