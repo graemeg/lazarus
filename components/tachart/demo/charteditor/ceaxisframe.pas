@@ -272,7 +272,7 @@ end;
 
 procedure TChartAxisFrame.cbAxisLineVisibleChange(Sender: TObject);
 begin
-  FAxis.Grid.Visible := cbGridVisible.Checked;
+  FAxis.AxisPen.Visible := cbAxisLineVisible.Checked;
 end;
 
 procedure TChartAxisFrame.cbFrameVisibleChange(Sender: TObject);
