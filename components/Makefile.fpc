@@ -94,12 +94,12 @@ all: base
 clean:
 	$(MAKE) -C lazutils clean
 	$(MAKE) -C codetools clean
+	$(MAKE) -C freetype clean
 	$(MAKE) -C debuggerintf clean
 	$(MAKE) -C lazdebuggergdbmi clean
 	$(MAKE) -C lazcontrols clean
 	$(MAKE) -C lazcontrols/design clean
 	$(MAKE) -C buildintf clean
-	$(MAKE) -C freetype clean
 	$(MAKE) -C ideintf clean
 	$(MAKE) -C synedit clean
 	$(MAKE) -C synedit/design clean
@@ -141,12 +141,12 @@ cleanall: clean
 distclean:
 	$(MAKE) -C lazutils distclean
 	$(MAKE) -C codetools distclean
+	$(MAKE) -C freetype distclean
 	$(MAKE) -C debuggerintf distclean
 	$(MAKE) -C lazdebuggergdbmi distclean
 	$(MAKE) -C lazcontrols distclean
 	$(MAKE) -C lazcontrols/design distclean
 	$(MAKE) -C buildintf distclean
-	$(MAKE) -C freetype distclean
 	$(MAKE) -C ideintf distclean
 	$(MAKE) -C synedit distclean
 	$(MAKE) -C synedit/design distclean
