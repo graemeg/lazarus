@@ -515,9 +515,9 @@ const
   IDI_INFORMATION = IDI_ASTERISK;
 
   TD_ICONS: array[TTaskDialogIcon] of integer = (
-    17, 84, 99, 98, 81, 0, 78);
+    0, 84, 99, 98, 81, 0, 78);
   TD_FOOTERICONS: array[TTaskDialogFooterIcon] of integer = (
-    17, 84, 99, 98, 65533, 65532);
+    0, 84, 99, 98, 65533, 65532);
   WIN_ICONS: array[TTaskDialogIcon] of PChar = (
     nil, IDI_WARNING, IDI_QUESTION, IDI_ERROR, IDI_INFORMATION, nil, nil);
   WIN_FOOTERICONS: array[TTaskDialogFooterIcon] of PChar = (
