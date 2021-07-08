@@ -15,7 +15,7 @@
     <Debugger>
       <Configs>
         <Config ConfigName="FpDebug" ConfigClass="TFpDebugDebugger" Active="True"/>
-        <Config ConfigName="Gdb" ConfigClass="TGDBMIDebugger" DebuggerFilename="$(LazarusDir)mingw\$(TargetCPU)\bin\gdb.exe"/>
+        <Config ConfigName="Gdb" ConfigClass="TGDBMIDebugger" DebuggerFilename="$(LazarusDir)\mingw\$(TargetCPU)-$(TargetOS)\bin\gdb.exe"/>
       </Configs>
     </Debugger>
   </EnvironmentOptions>
