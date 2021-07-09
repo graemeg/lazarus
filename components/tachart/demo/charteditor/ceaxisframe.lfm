@@ -40,9 +40,9 @@ object ChartAxisFrame: TChartAxisFrame
     Height = 446
     Top = 25
     Width = 646
-    ActivePage = pgLabels
+    ActivePage = pgGrid
     Align = alClient
-    TabIndex = 1
+    TabIndex = 2
     TabOrder = 1
     OnChanging = PageControlChanging
     object pgTitle: TTabSheet
@@ -578,6 +578,7 @@ object ChartAxisFrame: TChartAxisFrame
           BorderSpacing.Right = 16
           BorderSpacing.Bottom = 8
           Caption = 'Visible'
+          OnChange = cbGridVisibleChange
           TabOrder = 0
         end
       end
