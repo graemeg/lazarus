@@ -55,7 +55,9 @@
 program Svn2RevisionInc;
 
 {$mode objfpc}{$H+}
-
+{$IF FPC_FULLVERSION>30200}
+{$WARN 6058 off : Call to subroutine "$1" marked as inline is not inlined}
+{$ENDIF}
 uses
   Classes, CustApp, SysUtils, Process, Dom, XmlRead,
   // LazUtils
@@ -79,6 +81,7 @@ type
     function RunCommand(ACmd: String; AParams: array of string; ABytesNeeded: Integer = -1): Boolean;
     function RunCommand(ACmd: String; AParams: array of string; out ARes: String;
       ABytesNeeded: Integer = -1): Boolean;
+    function CmdInPath(Exe, Param: string): boolean;
     function SvnInPath: Boolean;
     function GitInPath: Boolean;
     function HgInPath: Boolean;
@@ -140,7 +143,7 @@ begin
 
         Execute;
         { now process the output }
-        SetLength(Buffer, cBufSize);
+        SetLength(Buffer{%H-}, cBufSize);
         ARes := '';
         t := GetTickCount64;
         while (ABytesNeeded < 0) or (Length(ARes) < ABytesNeeded) do begin
@@ -175,19 +178,30 @@ begin
   end;
 end;
 
+function TSvn2RevisionApplication.CmdInPath(Exe, Param: string): boolean;
+begin
+  if FindDefaultExecutablePath(Exe+GetExeExt)='' then
+    exit(false);
+  try
+    Result := RunCommand(Exe, [Param], 0);
+  except
+    Result:=false;
+  end;
+end;
+
 function TSvn2RevisionApplication.SvnInPath: Boolean;
 begin
-  Result := RunCommand('svn', ['--version'], 0);
+  Result := CmdInPath('svn', '--version');
 end;
 
 function TSvn2RevisionApplication.GitInPath: Boolean;
 begin
-  Result := RunCommand('git', ['--version'], 0);
+  Result := CmdInPath('git','--version');
 end;
 
 function TSvn2RevisionApplication.HgInPath: Boolean;
 begin
-  Result := RunCommand('hg', ['--version'], 0);
+  Result := CmdInPath('hg','--version');
 end;
 
 function TSvn2RevisionApplication.FindRevision: boolean;
@@ -207,11 +221,13 @@ var
       with HgVersionProcess do begin
         // Get global revision ID (no need to worry about branches)
         CurrentDirectory:=SourceDirectory;
-        CommandLine := 'hg parents --template="{svnrev}:{node|short}"';
+        Executable:='hg';
+        Parameters.Add('parents');
+        Parameters.Add('--template={svnrev}:{node|short}');
         Options := [poUsePipes, poWaitOnExit];
         try
           Execute;
-          SetLength(Buffer, 80);
+          SetLength(Buffer{%H-}, 80);
           n:=OutPut.Read(Buffer[1], 80);
 
           Result:=true;
@@ -268,11 +284,13 @@ var
     SvnVersionProcess := TProcessUTF8.Create(nil);
     try
       with SvnVersionProcess do begin
-        CommandLine := 'svnversion -n "' + SourceDirectory + '"';
+        Executable:='svnversion';
+        Parameters.Add('-n');
+        Parameters.Add(SourceDirectory);
         Options := [poUsePipes, poWaitOnExit];
         try
           Execute;
-          SetLength(Buffer, 80);
+          SetLength(Buffer{%H-}, 80);
           n:=OutPut.Read(Buffer[1], 80);
           RevisionStr := Copy(Buffer, 1, n);
 
@@ -362,7 +380,7 @@ var
            begin
              if EntryNode.Attributes.GetNamedItem('name').NodeValue='' then
              begin
-               RevisionStr:=EntryNode.Attributes.GetNamedItem('revision').NodeValue;
+               RevisionStr:=String(EntryNode.Attributes.GetNamedItem('revision').NodeValue);
                Result := True;
              end;
              EntryNode := EntryNode.NextSibling;
@@ -611,11 +629,12 @@ begin
   p := TProcessUTF8.Create(nil);
   sl := TStringList.Create;
   try
-    p.CommandLine := 'git branch';
+    p.Executable:='git';
+    p.Parameters.Add('branch');
     p.Options := [poUsePipes, poWaitOnExit];
     p.Execute;
     // Now lets process the output
-    SetLength(Buffer, cBufSize);
+    SetLength(Buffer{%H-}, cBufSize);
     s := '';
     repeat
       n := p.Output.Read(Buffer[1], cBufSize);
@@ -678,8 +697,6 @@ end;
 }
 function TSvn2RevisionApplication.GetGitCommitInRemoteBranch(
   ARemotePattern: String): string;
-var
-  s: string;
 begin
   if not  RunCommand('git',
     ['log', 'HEAD', '--not', '--remotes="'+ARemotePattern+'"', '--reverse', '--pretty=format:"%H"'],
