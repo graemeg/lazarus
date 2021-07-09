@@ -42,16 +42,28 @@ uses
   ServiceManager,
 {$endif}
   Classes, SysUtils, Process, DB, BufDataset, csvdataset, SimpleIPC, XMLConf, EventLog,
-  UTF8Process;
+  UTF8Process, ComponentEditors;
 
 procedure RegisterFCLBaseComponents;
 procedure RegisterLazUtilsComponents;
 
 implementation
 
+type
+  TDatasetRequirements = class(TComponentRequirements)
+    procedure RequiredUnits(Units: TStrings); override;
+  end;
+
+procedure TDatasetRequirements.RequiredUnits(Units: TStrings);
+begin
+  { the DB unit is nearly always required for working comfortably with datasets }
+  Units.Add('DB');
+end;
+
 procedure RegisterDB;
 begin                                                   // this bites dbflaz
   RegisterComponents('Data Access',[TDatasource, TBufDataset, TCSVDataset]);
+  RegisterComponentRequirements([TBufDataset, TCSVDataset], TDatasetRequirements);
 end;
 
 procedure RegisterSimpleIPC;
