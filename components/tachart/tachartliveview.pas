@@ -134,8 +134,20 @@ begin
             ygmin := Min(ygmin, ser.AxisToGraphY(ymin));
             ygmax := Max(ygmax, ser.AxisToGraphY(ymax));
           end;
-        if (ygmin <> Infinity) and (ygmax <> -Infinity) then
+        if not IsInfinite(ygmin) and not IsInfinite(-ygmax) then
         begin
+          if ygmin = ygmax then
+          begin
+            if ygmin = 0 then
+            begin
+              ygmin := -1;
+              ygmax := +1;
+            end else
+            begin
+              ygmin := 0.9*ygmin;
+              ygmax := 1.1*ygmax;
+            end;
+          end;
           lext.a.y := ygmin;
           lext.b.y := ygmax;
         end;
