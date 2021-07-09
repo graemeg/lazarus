@@ -124,6 +124,8 @@ begin
       begin
         ygmin := Infinity;
         ygmax := -Infinity;
+        ymin := Infinity;
+        ymax := -Infinity;
         for i := 0 to FChart.SeriesCount-1 do
           if FChart.Series[i] is TChartSeries then
           begin
