@@ -317,8 +317,12 @@
       </element>
       <!-- function Visibility: public -->
       <element name="TLazDockTree.FindBorderControl">
-        <short/>
-        <descr/>
+        <short>Gets the control with the specified dock zone and anchor side.</short>
+        <descr>
+          <p>
+            Returns the DockSite if no controls are found using the specified zone and anchor side.
+          </p>
+        </descr>
         <errors/>
         <seealso/>
       </element>
@@ -495,18 +499,11 @@
       <element name="TLazDockPages.Page.Index">
         <short/>
       </element>
+
       <!-- property Visibility: public -->
-      <element name="TLazDockPages.ActivePageComponent" link="#LCL.ComCtrls.TCustomNotebook.ActivePageComponent">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <!-- property Visibility: public -->
-      <element name="TLazDockPages.Pages" link="#LCL.ComCtrls.TCustomNotebook.Pages">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TLazDockPages.ActivePageComponent" link="#lcl.comctrls.TCustomTabControl.ActivePageComponent"/>
+      <element name="TLazDockPages.Pages" link="#lcl.comctrls.TCustomTabControl.Pages"/>
+
       <!-- constant Visibility: default -->
       <element name="DockAlignOrientations">
         <short/>

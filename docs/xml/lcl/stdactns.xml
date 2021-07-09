@@ -88,336 +88,574 @@
       </element>
 
       <element name="TEditAction">
-        <short>
-          <var>TEditAction </var>- base class for actions associated with the
-          various <var>Edit</var> menu options.
-        </short>
-        <descr/>
+        <short>The base class for standard editing actions applied to an edit control.</short>
+        <descr>
+          <p>
+            <var>TEditAction</var> is a <var>TAction</var> descendant which defines the base class for standard editing actions applied to an edit control. It provides a <var>Control</var> property with the <var>TCustomEdit</var> control where the action is applied. It provides an overridden <var>HandlesTarget</var> method to determine if the action can be applied to a specified control.
+          </p>
+          <p>
+            Do not create instances of TEditAction. Use one of the descendent classes that implement <var>UpdateTarget</var> and <var>ExecuteTarget</var> methods, like:
+          </p>
+          <ul>
+            <li>TEditCut</li>
+            <li>TEditCopy</li>
+            <li>TEditPaste</li>
+            <li>TEditUndo</li>
+            <li>TEditSelectAll</li>
+            <li>TEditDelete</li>
+          </ul>
+        </descr>
         <seealso>
           <link id="#lcl.actnlist.TAction">TAction</link>
+          <link id="#lcl.actnlist.TCustomAction">TCustomAction</link>
+          <link id="#lcl.actnlist.TContainedAction">TContainedAction</link>
+          <link id="#rtl.classes.TBasicAction">TBasicAction</link>
         </seealso>
       </element>
 
       <element name="TEditAction.FControl">
-        <short>
-          <var>FControl</var> - local variable holding the Edit control
-          associated with this action.
-        </short>
+        <short>Member with the edit control for the editing action.</short>
       </element>
 
       <element name="TEditAction.SetControl">
-        <short>
-          <var>SetControl</var> - specifies the Edit control associated with
-          this action.
-        </short>
+        <short>Sets the value for the Control property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TEditAction.Control"/>
+        </seealso>
       </element>
       <element name="TEditAction.SetControl.AValue">
-        <short/>
+        <short>New value for the Control property.</short>
       </element>
 
-      <element name="TEditAction.Notification" link="#rtl.classes.TComponent.Notification">
+      <element name="TEditAction.Notification">
         <short>
-          Handles notifcations when a control in the class instance is added
-          or removed.
+          Handles the notification performed when a component is added to or removed from the class instance.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Ensures that the value in the <var>Control</var> member is set to <b>Nil</b> when the component is removed from the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent.Notification">TComponent.Notification</link>
+        </seealso>
       </element>
       <element name="TEditAction.Notification.AComponent">
-        <short/>
+        <short>Component for the notification.</short>
       </element>
       <element name="TEditAction.Notification.Operation">
-        <short/>
+        <short>Operation performed for the component.</short>
       </element>
 
-      <element name="TEditAction.Destroy" link="#rtl.classes.TBasicAction.Destroy">
+      <element name="TEditAction.Destroy">
         <short>Destructor for the class instance.</short>
-        <descr>
-          Calls the inherited destructor.
-        </descr>
-        <seealso/>
+        <descr/>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.Destroy">TBasicAction.Destroy</link>
+        </seealso>
       </element>
 
-      <element name="TEditAction.HandlesTarget" link="#rtl.classes.TBasicAction.HandlesTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditAction.HandlesTarget">
+        <short>
+          Indicates if the editing action can be used for the specified target control.
+        </short>
+        <descr>
+          <p>
+            <var>HandlesTarget</var> is a <var>Boolean</var> function which indicates if the editing action can be applied to the object in Target. The return value is <b>True</b> when:
+          </p>
+          <ul>
+            <li>Target has been assigned.</li>
+            <li>Control and Target are the same object instance, or...</li>
+            <li>Control is unassigned, and Target is a TCustomEdit descendant.</li>
+          </ul>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.HandlesTarget">TBasicAction.HandlesTarget</link>
+        </seealso>
       </element>
       <element name="TEditAction.HandlesTarget.Result">
-        <short/>
+        <short>True when the action can be applied to the target.</short>
       </element>
       <element name="TEditAction.HandlesTarget.Target">
-        <short/>
+        <short>Object instance with the target control for the action.</short>
       </element>
 
       <element name="TEditAction.Control">
-        <short>The Edit <var>Control</var> associated with this action.</short>
+        <short>The edit control associated with this action.</short>
         <descr>
           <p>
-            Limits the target for the action to a specific control.
+            <var>Control</var> is a <var>TCustomEdit</var> property with the control for the standard editing action. Control limits the target for the action to a specific control. Setting a new value for the property causes a free notification to be added or removed as needed for the new property value.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TEditAction.Notification"/>
+          <link id="#lcl.stdctrls.TCustomEdit">TCustomEdit</link>
+          <link id="#rtl.classes.TComponent.FreeNotification">TComponent.FreeNotification</link>
+          <link id="#rtl.classes.TComponent.RemoveFreeNotification">TComponent.RemoveFreeNotification</link>
+        </seealso>
       </element>
 
       <element name="TEditCut">
         <short>
-          <var>TEditCut</var>- standard action associated with the
-          <var>Edit Cut</var> menu option.
+          Editing action used to cut the selected value in a control to the clipboard.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>TEditCut</var> is a <var>TEditAction</var> descendant which performs a cut to clipboard editing action for a <var>TCustomEdit</var> control. It re-implements the <var>UpdateTarget</var> and <var>ExecuteTarget</var> methods to use the TCustomEdit type for the affected control.
+          </p>
+        </descr>
         <seealso>
           <link id="TEditAction"/>
+          <link id="#lcl.stdctrls.TCustomEdit">TCustomEdit</link>
         </seealso>
       </element>
 
-      <element name="TEditCut.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditCut.ExecuteTarget">
+        <short>Executes the action for the specified target control.</short>
+        <descr>
+          <p>
+            <var>ExecuteTarget</var> is an overridden method used to execute the editing action for the specified target control. It re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            <var>Target</var> is the object instance where the editing action is applied. It is cast to a <var>TCustomEdit</var> type, and its <var>CutToClipboard</var> method is called to perform the editing action.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.CutToClipboard">TCustomEdit.CutToClipboard</link>
+          <link id="#rtl.classes.TBasicAction.ExecuteTarget">TBasicAction.ExecuteTarget</link>
+        </seealso>
       </element>
       <element name="TEditCut.ExecuteTarget.Target">
-        <short/>
+        <short>Object where the editing action is applied.</short>
       </element>
 
-      <element name="TEditCut.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditCut.UpdateTarget">
+        <short>Updates the enabled state for the action.</short>
+        <descr>
+          <p>
+            <var>UpdateTarget</var> is an overridden method used to update values in the action based on settings in the specified <var>Target</var> control. UpdateTarget re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            Target is the object instance examined in the method. It is cast to the <var>TCustomEdit</var> type used in the <var>Control</var> property. The <var>Enabled</var> property is set to <b>True</b> when the control in Target has an active text selection (<var>SelLength</var> is not 0).
+          </p>
+          <p>
+            UpdateTarget is called from the <var>UpdateActions</var> method in <var>TCustomForm</var> when actions and action lists are updated during an application idle state.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.actnlist.TCustomAction.Enabled">TCustomAction.Enabled</link>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.UpdateTarget</link>
+        </seealso>
       </element>
       <element name="TEditCut.UpdateTarget.Target">
-        <short/>
+        <short>Object instance with the values examined in the method.</short>
       </element>
 
       <element name="TEditCopy">
         <short>
-          <var>TEditCopy</var> - standard action associated with the
-          <var>Edit Copy</var> menu option.
+          Editing action used to copy the selected value in a control to the clipboard.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>TEditCopy</var> is a <var>TEditAction</var> descendant which performs a copy to clipboard editing action for the selected value in a <var>TCustomEdit</var> control. It re-implements the <var>UpdateTarget</var> and <var>ExecuteTarget</var> methods to use the TCustomEdit type for the affected control.
+          </p>
+        </descr>
         <seealso>
           <link id="TEditAction"/>
+          <link id="#lcl.stdctrls.TCustomEdit">TCustomEdit</link>
         </seealso>
       </element>
 
-      <element name="TEditCopy.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditCopy.ExecuteTarget">
+        <short>Executes the action for the specified target control.</short>
+        <descr>
+          <p>
+            <var>ExecuteTarget</var> is an overridden method used to execute the editing action for the specified target control. It re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            <var>Target</var> is the object instance where the editing action is applied. It is cast to a <var>TCustomEdit</var> type, and its <var>CopyToClipboard</var> method is called to perform the editing action.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.CopyToClipboard">TCustomEdit.CopyToClipboard</link>
+          <link id="#rtl.classes.TBasicAction.ExecuteTarget">TBasicAction.ExecuteTarget</link>
+        </seealso>
       </element>
       <element name="TEditCopy.ExecuteTarget.Target">
-        <short/>
+        <short>Object where the editing action is applied.</short>
       </element>
 
-      <element name="TEditCopy.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditCopy.UpdateTarget">
+        <short>Updates the enabled state for the action.</short>
+        <descr>
+          <p>
+            <var>UpdateTarget</var> is an overridden method used to update values in the action based on settings in the specified <var>Target</var> control. UpdateTarget re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            Target is the object instance examined in the method. It is cast to the <var>TCustomEdit</var> type used in the <var>Control</var> property. The <var>Enabled</var> property is set to <b>True</b> when the control in Target has an active text selection (<var>SelLength</var> is not 0).
+          </p>
+          <p>
+            UpdateTarget is called from the <var>UpdateActions</var> method in <var>TCustomForm</var> when actions and action lists are updated during an application idle state.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.actnlist.TCustomAction.Enabled">TCustomAction.Enabled</link>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.UpdateTarget</link>
+        </seealso>
       </element>
       <element name="TEditCopy.UpdateTarget.Target">
-        <short/>
+        <short>Object instance with the values examined in the method.</short>
       </element>
 
       <element name="TEditPaste">
         <short>
-          <var>TEditPaste</var> - standard action associated with the
-          <var>Edit Paste</var> menu option.
+          Editing action used to paste values from the clipboard into the specified control.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>TEditPaste</var> is a <var>TEditAction</var> descendant which copies the contents of the clipboard editing action into the  specified <var>TCustomEdit</var> control. It re-implements the <var>UpdateTarget</var> and <var>ExecuteTarget</var> methods to use the TCustomEdit type for the affected control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TEditAction"/>
+          <link id="#lcl.stdctrls.TCustomEdit">TCustomEdit</link>
+        </seealso>
       </element>
 
-      <element name="TEditPaste.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditPaste.UpdateTarget">
+        <short>Updates the enabled state for the action.</short>
+        <descr>
+          <p>
+            <var>UpdateTarget</var> is an overridden method used to update values in the action based on settings in the specified <var>Target</var> control. UpdateTarget re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            UpdateTarget sets the value in Enabled to True when values in the Clipboard includes the CF_TEXT content format.
+          </p>
+          <p>
+            UpdateTarget is called from the <var>UpdateActions</var> method in <var>TCustomForm</var> when actions and action lists are updated during an application idle state.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.actnlist.TCustomAction.Enabled">TCustomAction.Enabled</link>
+          <link id="#lcl.clipbrd.Clipboard">Clipboard</link>
+          <link id="#lcl.clipbrd.TClipboard.HasFormat">TClipboard.HasFormat</link>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.UpdateTarget</link>
+        </seealso>
       </element>
       <element name="TEditPaste.UpdateTarget.Target">
-        <short/>
+        <short>Object instance with values examined in the method.</short>
       </element>
 
-      <element name="TEditPaste.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditPaste.ExecuteTarget">
+        <short>Executes the action for the specified target control.</short>
+        <descr>
+          <p>
+            <var>ExecuteTarget</var> is an overridden method used to execute the editing action for the specified target control. It re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            <var>Target</var> is the object instance where the editing action is applied. It is cast to a <var>TCustomEdit</var> type, and its <var>PasteFromClipboard</var> method is called to perform the editing action.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.CopyToClipboard">TCustomEdit.PasteFromClipboard</link>
+          <link id="#rtl.classes.TBasicAction.ExecuteTarget">TBasicAction.ExecuteTarget</link>
+        </seealso>
       </element>
       <element name="TEditPaste.ExecuteTarget.Target">
-        <short/>
+        <short>Object instance where the editing action is applied.</short>
       </element>
 
       <element name="TEditSelectAll">
         <short>
-          <var>TEditSelectAll</var> - standard action associated with the
-          <var>Edit Select All </var>menu option.
+          Editing action used to select all of the content in the value for the specified control.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>TEditSelectAll</var> is a <var>TEditAction</var> descendant which selects all of the content in the value for the specified <var>TCustomEdit</var> control. It re-implements the <var>UpdateTarget</var> and <var>ExecuteTarget</var> methods to use the TCustomEdit type for the affected control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TEditAction"/>
+          <link id="#lcl.stdctrls.TCustomEdit">TCustomEdit</link>
+        </seealso>
       </element>
 
-      <element name="TEditSelectAll.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditSelectAll.ExecuteTarget">
+        <short>Executes the action for the specified target control.</short>
+        <descr>
+          <p>
+            <var>ExecuteTarget</var> is an overridden method used to execute the editing action for the specified target control. It re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            <var>Target</var> is the object instance where the editing action is applied. It is cast to a <var>TCustomEdit</var> type, and its <var>SelectAll</var> method is called to perform the editing action.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.SelectAll">TCustomEdit.SelectAll</link>
+          <link id="#rtl.classes.TBasicAction.ExecuteTarget">TBasicAction.ExecuteTarget</link>
+        </seealso>
       </element>
       <element name="TEditSelectAll.ExecuteTarget.Target">
-        <short/>
+        <short>Object instance where the editing action is applied.</short>
       </element>
 
-      <element name="TEditSelectAll.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditSelectAll.UpdateTarget">
+        <short>Updates the enabled state for the action.</short>
+        <descr>
+          <p>
+            <var>UpdateTarget</var> is an overridden method used to update values in the action based on settings in the specified <var>Target</var> control. UpdateTarget re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            Target is the object instance with values examined in the method. It is cast to the TCustomEdit type used in the Control property, and its Text property is checked for an existing text value. UpdateTarget sets the value in Enabled to True when Text is not an empty string ('').
+          </p>
+          <p>
+            UpdateTarget is called from the <var>UpdateActions</var> method in <var>TCustomForm</var> when actions and action lists are updated during an application idle state.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.actnlist.TCustomAction.Enabled">TCustomAction.Enabled</link>
+          <link id="#lcl.stdctrls.TCustomEdit.Text">TCustomEdit.Text</link>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.UpdateTarget</link>
+        </seealso>
       </element>
       <element name="TEditSelectAll.UpdateTarget.Target">
-        <short/>
+        <short>Object instance with values examined in the method.</short>
       </element>
 
       <element name="TEditUndo">
         <short>
-          <var>TEditUndo</var> - standard action associated with the
-          <var>Edit Undo</var> menu option.
+          Editing action used to Undo the previous change to the value for the specified control.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>TEditUndo</var> is a <var>TEditAction</var> descendant which reverses the previous change to the value for the specified <var>TCustomEdit</var> control. It re-implements the <var>UpdateTarget</var> and <var>ExecuteTarget</var> methods to use the TCustomEdit type for the affected control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TEditAction"/>
+          <link id="#lcl.stdctrls.TCustomEdit">TCustomEdit</link>
+        </seealso>
       </element>
 
-      <element name="TEditUndo.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditUndo.ExecuteTarget">
+        <short>Executes the action for the specified target control.</short>
+        <descr>
+          <p>
+            <var>ExecuteTarget</var> is an overridden method used to execute the editing action for the specified target control. It re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            <var>Target</var> is the object instance where the editing action is applied. It is cast to a <var>TCustomEdit</var> type, and its <var>Undo</var> method is called to perform the editing action.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.Undo">TCustomEdit.Undo</link>
+          <link id="#rtl.classes.TBasicAction.ExecuteTarget">TBasicAction.ExecuteTarget</link>
+        </seealso>
       </element>
       <element name="TEditUndo.ExecuteTarget.Target">
-        <short/>
+        <short>Object instance where the editing action is applied.</short>
       </element>
 
-      <element name="TEditUndo.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditUndo.UpdateTarget">
+        <short>Updates the enabled state for the action.</short>
+        <descr>
+          <p>
+            <var>UpdateTarget</var> is an overridden method used to update values in the action based on settings in the specified <var>Target</var> control. UpdateTarget re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            Target is the object instance with values examined in the method. It is cast to the TCustomEdit type used in the Control property, and its CanUndo method is called  to get the value assigned to the Enabled property.
+          </p>
+          <p>
+            UpdateTarget is called from the <var>UpdateActions</var> method in <var>TCustomForm</var> when actions and action lists are updated during an application idle state.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.actnlist.TCustomAction.Enabled">TCustomAction.Enabled</link>
+          <link id="#lcl.stdctrls.TCustomEdit.CanUndo">TCustomEdit.CanUndo</link>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.UpdateTarget</link>
+        </seealso>
       </element>
       <element name="TEditUndo.UpdateTarget.Target">
-        <short/>
+        <short>Object instance with the values examined in the method.</short>
       </element>
 
       <element name="TEditDelete">
         <short>
-          <var>TEditDelete</var> - standard action associated with the
-          <var>Edit Delete</var> menu option.
+          Editing action used to remove the current selection in the specified control.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>TEditDelete</var> is a <var>TEditAction</var> descendant which removes the current selected text for the specified <var>TCustomEdit</var> control. It re-implements the <var>UpdateTarget</var> and <var>ExecuteTarget</var> methods to use the TCustomEdit type for the affected control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TEditAction"/>
+          <link id="#lcl.stdctrls.TCustomEdit">TCustomEdit</link>
+        </seealso>
       </element>
 
-      <element name="TEditDelete.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditDelete.ExecuteTarget">
+        <short>Executes the action for the specified target control.</short>
+        <descr>
+          <p>
+            <var>ExecuteTarget</var> is an overridden method used to execute the editing action for the specified target control. It re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            <var>Target</var> is the object instance where the editing action is applied. It is cast to a <var>TCustomEdit</var> type, and its <var>ClearSelection</var> method is called to perform the editing action.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.stdctrls.TCustomEdit.ClearSelection">TCustomEdit.ClearSelection</link>
+          <link id="#rtl.classes.TBasicAction.ExecuteTarget">TBasicAction.ExecuteTarget</link>
+        </seealso>
       </element>
       <element name="TEditDelete.ExecuteTarget.Target">
-        <short/>
+        <short>Object instance where the editing action is applied.</short>
       </element>
 
-      <element name="TEditDelete.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TEditDelete.UpdateTarget">
+        <short>Updates the enabled state for the action.</short>
+        <descr>
+          <p>
+            <var>UpdateTarget</var> is an overridden method used to update values in the action based on settings in the specified <var>Target</var> control. UpdateTarget re-implements the method introduced in the ancestor class.
+          </p>
+          <p>
+            Target is the object instance with values examined in the method. It is cast to the TCustomEdit type used in the Control property, and sets Enabled to True when text is currently selected in the control.
+          </p>
+          <p>
+            UpdateTarget is called from the <var>UpdateActions</var> method in <var>TCustomForm</var> when actions and action lists are updated during an application idle state.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.actnlist.TCustomAction.Enabled">TCustomAction.Enabled</link>
+          <link id="#lcl.stdctrls.TCustomEdit.SelLength">TCustomEdit.SelLength</link>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.UpdateTarget</link>
+        </seealso>
       </element>
       <element name="TEditDelete.UpdateTarget.Target">
-        <short/>
+        <short>Object instance with values examined in the method.</short>
       </element>
 
       <element name="THelpAction">
         <short>
-          <var>THelpAction</var> - base class for actions associated with
-          the various <var>Help</var> menu options.
+          The base class for standard help actions.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>THelpAction</var> is a <var>TAction</var> descendant which implements the base class for help actions. It is used as the ancestor for classes including: THelpContents, THelpTopicSearch, THelpOnHelp , and THelpContextAction.
+          </p>
+        </descr>
         <seealso>
+          <link id="THelpContents"/>
+          <link id="THelpTopicSearch"/>
+          <link id="THelpOnHelp"/>
+          <link id="THelpContextAction"/>
           <link id="#lcl.actnlist.TAction">TAction</link>
         </seealso>
       </element>
 
-      <element name="THelpAction.Create" link="#rtl.classes.TBasicAction.Create">
+      <element name="THelpAction.Create">
         <short>Constructor for the class instance.</short>
         <descr>
-          Calls the inherited constructor.
+          <p>
+            Calls the inherited constructor.
+          </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.Create">TBasicAction.Create</link>
+        </seealso>
       </element>
       <element name="THelpAction.Create.TheOwner">
         <short>Owner of the class instance.</short>
       </element>
 
-      <element name="THelpAction.HandlesTarget" link="#rtl.classes.TBasicAction.HandlesTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="THelpAction.HandlesTarget">
+        <short>Determines whether the help action can be applied to the Target control.</short>
+        <descr>
+          <p>
+            Calls the inherited method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.HandlesTarget">TBasicAction.HandlesTarget</link>
+        </seealso>
       </element>
       <element name="THelpAction.HandlesTarget.Result">
-        <short/>
+        <short>True if the action can be applied to the target control.</short>
       </element>
       <element name="THelpAction.HandlesTarget.Target">
-        <short/>
+        <short>Object instance with the control examined in the method.</short>
       </element>
 
-      <element name="THelpAction.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="THelpAction.UpdateTarget">
+        <short>
+          Updates the enabled state for the action using values in the target control.
+        </short>
+        <descr>
+          <p>
+            Calls the inherited method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.UpdateTarget</link>
+        </seealso>
       </element>
       <element name="THelpAction.UpdateTarget.Target">
-        <short/>
+        <short>Object instance with values examined in the method.</short>
       </element>
 
       <element name="THelpContents">
         <short>
-          <var>THelpContents</var> - standard action associated with the
-          <var>Help Contents</var> menu option.
+          Help action used to display a Table of Contents for the HelpContext.
         </short>
         <descr/>
         <seealso/>
       </element>
 
-      <element name="THelpContents.ExecuteTarget" link="#rtlClasses.TBasicAction.ExecuteTarget">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="THelpContents.ExecuteTarget">
+        <short>Executes the help action for the HelpContext.</short>
+        <descr>
+          <p>
+            Calls the inherited method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.UpdateTarget">TBasicAction.ExecuteTarget</link>
+        </seealso>
       </element>
       <element name="THelpContents.ExecuteTarget.Target">
-        <short/>
+        <short>Object instance with the context for the help action.</short>
       </element>
 
       <element name="THelpTopicSearch">
         <short>
-          <var>THelpTopicSearch</var> - standard action associated with the
-          <var>Help Topic Search</var> menu option.
+          Help action used to search for a help topic.
         </short>
-        <descr/>
+        <descr>
+        </descr>
         <seealso/>
       </element>
 
-      <element name="THelpTopicSearch.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
+      <element name="THelpTopicSearch.ExecuteTarget">
+        <short>Executes the help action for the help context.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="THelpTopicSearch.ExecuteTarget.Target">
-        <short/>
+        <short>Object instance with the help context.</short>
       </element>
 
       <element name="THelpOnHelp">
         <short>
-          <var>THelpOnHelp</var> - standard action associated with the
-          <var>Help On Help</var> menu item (i.e. how to get help).
+          Help action used to display the Help on Help topic, or "How to Get Help".
         </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="THelpOnHelp.ExecuteTarget">
-        <short/>
+        <short>Executes the help action.</short>
         <descr/>
         <seealso/>
       </element>
@@ -427,15 +665,14 @@
 
       <element name="THelpContextAction">
         <short>
-          <var>THelpContextAction</var> - standard action for providing
-          context-sensitive <var>Help</var>.
+          Help action used to get help for a specific help context.
         </short>
         <descr/>
         <seealso/>
       </element>
 
-      <element name="THelpContextAction.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
-        <short/>
+      <element name="THelpContextAction.ExecuteTarget">
+        <short>Executes the help action.</short>
         <descr/>
         <seealso/>
       </element>
@@ -443,8 +680,8 @@
         <short/>
       </element>
 
-      <element name="THelpContextAction.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
-        <short/>
+      <element name="THelpContextAction.UpdateTarget">
+        <short>Updates the enabled state for the help action.</short>
         <descr/>
         <seealso/>
       </element>
@@ -454,16 +691,19 @@
 
       <element name="TCommonDialogClass">
         <short>
-          <var>TCommonDialogClass</var> - class of <var>TCommonDialog</var>.
+          Class reference for the TCommonDialog type.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            Contains the class reference used to create new dialog instances in TCommonDialogAction. TCommonDialogClass  is the type returned from the GetDialogClass method in TCommonDialogAction.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCommonDialogAction">
         <short>
-          <var>TCommonDialogAction</var> - base class for providing actions
-          associated with <var>Dialogs</var>.
+          Dialog action used to create, configure, and display a dialog.
         </short>
         <descr/>
         <seealso>
@@ -525,26 +765,31 @@
         </short>
         <descr>
           <p>
-            Calls GetDialogClass to get the class reference used to create
-            the dialog instance. When assigned, it is created and stored in
-            the Dialog property. It Name is set to the ClassName for the
-            class reference, and it is marked as a sub-component for the
-            class instance.
+            Calls GetDialogClass to get the class reference used to create the dialog instance. When assigned, it is created and stored in the Dialog property. It Name is set to the ClassName for the class reference, and it is marked as a sub-component for the class instance.
           </p>
         </descr>
         <seealso/>
       </element>
 
-      <element name="TCommonDialogAction.Create" link="#rtl.classes.TBasicAction.Create">
+      <element name="TCommonDialogAction.Create">
         <short>Constructor for the class instance.</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry.  Create calls <var>CreateDialog</var> to create and configure a new instance of the dialog class type used in the implementation. It sets the value in <var>Enabled</var> to <b>True</b>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCommonDialogAction.CreateDialog"/>
+          <link id="TCommonDialogAction.GetDialogClass"/>
+          <link id="#lcl.actnlist.TCustomAction.Enabled">TCustomAction.Enabled</link>
+          <link id="#rtl.classes.TBasicAction.Create">TBasicAction.Create</link>
+        </seealso>
       </element>
       <element name="TCommonDialogAction.Create.TheOwner">
-        <short>Owner for the class instance.</short>
+        <short>Owner of the class instance.</short>
       </element>
 
-      <element name="TCommonDialogAction.HandlesTarget" link="#rtl.classes.TBasicAction.HandlesTarget">
+      <element name="TCommonDialogAction.HandlesTarget">
         <short/>
         <descr/>
         <seealso/>
@@ -556,7 +801,7 @@
         <short/>
       </element>
 
-      <element name="TCommonDialogAction.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
+      <element name="TCommonDialogAction.ExecuteTarget">
         <short/>
         <descr/>
         <seealso/>
@@ -882,7 +1127,7 @@
         <short/>
       </element>
 
-      <element name="TFileExit.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
+      <element name="TFileExit.ExecuteTarget">
         <short/>
         <descr/>
         <seealso/>
@@ -932,13 +1177,15 @@
         <seealso/>
       </element>
 
-      <element name="TSearchAction.Notification" link="#rtl.classes.TComponent.Notification">
+      <element name="TSearchAction.Notification">
         <short>
-          Handles notifcations when a control in the class instance is added
+          Handles notifications when a control in the class instance is added
           or removed.
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.Notification">TComponent.Notification</link>
+        </seealso>
       </element>
       <element name="TSearchAction.Notification.AComponent">
         <short>Component for the notification.</short>
@@ -982,42 +1229,36 @@
         <seealso/>
       </element>
 
-      <element name="TSearchAction.Create" link="#rtl.classes.TBasicAction.Create">
+      <element name="TSearchAction.Create">
         <short>Constructor for the class instance.</short>
         <descr>
           <p>
-            Calls the inherited constructor, and sets the value for the
-            internal Control to <b>Nil</b>.
+            Calls the inherited constructor, and sets the value for the internal Control to <b>Nil</b>.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.Create">TBasicAction.Create</link>
+        </seealso>
       </element>
       <element name="TSearchAction.Create.TheOwner">
         <short>Owner for the class instance.</short>
       </element>
 
-      <element name="TSearchAction.Destroy" link="#rtl.classes.TBasicAction.Destroy">
+      <element name="TSearchAction.Destroy">
         <short>Destructor for the class instance.</short>
         <descr>
           <p>
-            Removes the free notification for the internal Control
-            (when assigned), and calls the inherited destructor.
+            Removes the free notification for the internal Control (when assigned), and calls the inherited destructor.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TBasicAction.Destroy">TBasicAction.Destroy</link>
+        </seealso>
       </element>
 
-      <element name="TSearchAction.HandlesTarget" link="#rtl.classes.TBasicAction.HandlesTarget">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TSearchAction.HandlesTarget.Result">
-        <short/>
-      </element>
-      <element name="TSearchAction.HandlesTarget.Target">
-        <short/>
-      </element>
+      <element name="TSearchAction.HandlesTarget" link="#rtl.classes.TBasicAction.HandlesTarget"/>
+      <element name="TSearchAction.HandlesTarget.Result"/>
+      <element name="TSearchAction.HandlesTarget.Target"/>
 
       <element name="TSearchAction.Search">
         <short>Performs the <var>Search</var> action.</short>
@@ -1028,23 +1269,19 @@
         <short/>
       </element>
 
-      <element name="TSearchAction.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget">
+      <element name="TSearchAction.UpdateTarget">
         <short/>
         <descr/>
         <seealso/>
       </element>
-      <element name="TSearchAction.UpdateTarget.Target">
-        <short/>
-      </element>
+      <element name="TSearchAction.UpdateTarget.Target"/>
 
-      <element name="TSearchAction.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget">
+      <element name="TSearchAction.ExecuteTarget">
         <short/>
         <descr/>
         <seealso/>
       </element>
-      <element name="TSearchAction.ExecuteTarget.Target">
-        <short/>
-      </element>
+      <element name="TSearchAction.ExecuteTarget.Target"/>
 
       <element name="TSearchFind">
         <short>
@@ -1180,23 +1417,37 @@
         <short>Owner of the class instance.</short>
       </element>
 
-      <element name="TSearchFindNext.HandlesTarget" link="#rtl.classes.TBasicAction.HandlesTarget"/>
+      <element name="TSearchFindNext.HandlesTarget">
+        <short/>
+        <descr/>
+        <seealso/>
+      </element>
       <element name="TSearchFindNext.HandlesTarget.Result"/>
       <element name="TSearchFindNext.HandlesTarget.Target"/>
 
-      <element name="TSearchFindNext.UpdateTarget" link="#rtl.classes.TBasicAction.UpdateTarget"/>
+      <element name="TSearchFindNext.UpdateTarget">
+        <short/>
+        <descr/>
+        <seealso/>
+      </element>
       <element name="TSearchFindNext.UpdateTarget.Target"/>
 
-      <element name="TSearchFindNext.ExecuteTarget" link="#rtl.classes.TBasicAction.ExecuteTarget"/>
+      <element name="TSearchFindNext.ExecuteTarget">
+        <short/>
+        <descr/>
+        <seealso/>
+      </element>
       <element name="TSearchFindNext.ExecuteTarget.Target"/>
 
-      <element name="TSearchFindNext.Notification" link="#rtl.classes.TComponent.Notification">
+      <element name="TSearchFindNext.Notification">
         <short>
-          Handles notifcations when a component used in the class instance is
+          Handles notifications when a component used in the class instance is
           added or removed.
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent.Notification">TComponent.Notification</link>
+        </seealso>
       </element>
       <element name="TSearchFindNext.Notification.AComponent"/>
       <element name="TSearchFindNext.Notification.Operation"/>

@@ -3569,7 +3569,7 @@ ADialog.FooterText := '(c) Copyright 1960-2021, Acme Corporation LLC.' + #10 +
         </short>
         <descr>
           <p>
-            <var>RadioButtons</var> is a <var>TTaskDialogButtons</var> proprety with the collection of defined radio buttons for the Task dialog.
+            <var>RadioButtons</var> is a <var>TTaskDialogButtons</var> property with the collection of defined radio buttons for the Task dialog.
           </p>
           <p>
             Radio buttons are displayed in the main content area for the Task dialog, below the values in <var>Text</var> and <var>ExpandedText</var>. Use of radio buttons is optional. They are displayed when items have been added to the collection. The <var>TTaskDialogRadioButtonItem</var> items in the collection are passed as an argument when the <var>Execute</var> method is called.

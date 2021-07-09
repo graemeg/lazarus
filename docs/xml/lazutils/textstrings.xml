@@ -577,7 +577,7 @@
         <short>Starts an update process for the component.</short>
         <descr>
           <p>
-            <var>BeginUpdate</var> is a method used to start an update process for the component. It increments an internal update counter used to consolidate <var>OnChanging</var> and <var>OnChange</var>  event notifcations. The counter value is used in the <var>Changing</var> and <var>Changed</var> methods, and controls when the event notifications are enabled and performed.
+            <var>BeginUpdate</var> is a method used to start an update process for the component. It increments an internal update counter used to consolidate <var>OnChanging</var> and <var>OnChange</var>  event notifications. The counter value is used in the <var>Changing</var> and <var>Changed</var> methods, and controls when the event notifications are enabled and performed.
           </p>
           <p>
             Use EndUpdate to decrement the internal update counter.
@@ -600,7 +600,7 @@
             <var>EndUpdate</var> is a method used to finish an active update process for the component.
           </p>
           <p>
-            For each call to <var>BeginUpdate</var>, there needs to be a corresponding call to EndUpdate. The methods are used as a pair to consolidate <var>OnChanging</var> and <var>OnChange</var> event notifcations.
+            For each call to <var>BeginUpdate</var>, there needs to be a corresponding call to EndUpdate. The methods are used as a pair to consolidate <var>OnChanging</var> and <var>OnChange</var> event notifications.
           </p>
           <p>
             EndUpdate decrements the internal update counter incremented by calling BeginUpdate. When the update counter is a postive non-zero value, the <var>Changed</var> method is not called and the <var>OnChange</var> event handler is not signalled.

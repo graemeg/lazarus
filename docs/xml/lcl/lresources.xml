@@ -8,7 +8,7 @@
 -->
     <module name="LResources">
       <short>
-        Maintains a global list of Lazarus resources and provides methods and types to stream components.
+        Maintains a global list of Lazarus resources, and provides methods and types used to stream components.
       </short>
       <descr>
         <p>
@@ -32,9 +32,13 @@
       </descr>
 
       <!-- unresolved type reference Visibility: default -->
+      <element name="Windows"/>
       <element name="Classes"/>
       <element name="SysUtils"/>
+      <element name="Types"/>
+      <element name="RtlConsts"/>
       <element name="TypInfo"/>
+      <element name="Variants"/>
       <element name="LCLProc"/>
       <element name="LCLStrConsts"/>
       <element name="LazConfigStorage"/>
@@ -52,21 +56,21 @@
       </element>
       <!-- array type Visibility: default -->
       <element name="TFilerSignature">
-        <short/>
+        <short>
+          Signature for a the version of the TFiler instance used to read or write value using a Lazarus Resource Stream (LRS file).
+        </short>
         <descr/>
         <seealso/>
       </element>
       <!-- object Visibility: default -->
       <element name="TLResource">
-        <short>The Lazarus resource descriptor class.
-        </short>
+        <short>Describes a Lazarus resource stored in TLResourceList.</short>
         <descr/>
-        <errors/>
         <seealso/>
       </element>
       <!-- variable Visibility: public -->
       <element name="TLResource.Name">
-        <short>The resource name.</short>
+        <short>Name for the Lazarus resource.</short>
         <descr/>
         <seealso/>
       </element>
@@ -78,50 +82,52 @@
       </element>
       <!-- variable Visibility: public -->
       <element name="TLResource.Value">
-        <short>The resource value.</short>
+        <short>The value for the resource.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- object Visibility: default -->
       <element name="TLResourceList">
-        <short>The container class for all Lazarus resources.
-        </short>
+        <short>Container class used for Lazarus resource descriptions.</short>
         <descr/>
-        <errors/>
         <seealso/>
       </element>
       <!-- variable Visibility: private -->
       <element link="#lcl.lresources.TLResourceList.Items" name="TLResourceList.FList">
-        <short>Main list with all resource pointers.</short>
+        <short>Member with the list for resource descriptions.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: private -->
       <element name="TLResourceList.FMergeList">
-        <short>List needed for mergesort.</short>
+        <short>List used to MergeSort resources in the list.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: private -->
       <element name="TLResourceList.FSortedCount">
-        <short>0 .. FSortedCount-1 resources are sorted.</short>
+        <short>The number of resource descriptions in the sorted list.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- function Visibility: private -->
       <element name="TLResourceList.FindPosition">
-        <short>Returns the index of the named resource, -1 if not found.
-        </short>
-        <descr>The list is sorted, if required.
+        <short>Returns the index of the named resource, or -1 if not found.</short>
+        <descr>
+          <p>
+            The list is sorted, if required.
+          </p>
         </descr>
         <errors/>
         <seealso/>
       </element>
       <element name="TLResourceList.FindPosition.Result">
-        <short/>
+        <short>
+          Ordinal position for the named resource in the list, or -1 when not found.
+        </short>
       </element>
       <element name="TLResourceList.FindPosition.Name">
-        <short/>
+        <short>Name of the resource to locate in the list of descriptions.</short>
       </element>
       <!-- function Visibility: private -->
       <element link="#lcl.lresources.TLResourceList.Items" name="TLResourceList.GetItems"/>
@@ -140,7 +146,7 @@
       </element>
       <!-- procedure Visibility: private -->
       <element name="TLResourceList.MergeSort">
-        <short>MergeSort sorting part.</short>
+        <short>Implements a MergeSort for the resource descriptions in the list.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -180,33 +186,51 @@
         <short/>
       </element>
       <!-- constructor Visibility: public -->
-      <element name="TLResourceList.Create"/>
+      <element name="TLResourceList.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            Allocates resources needed for the internal lists used in the class instance, and sets the default values for internal members.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <!-- destructor Visibility: public -->
-      <element name="TLResourceList.Destroy"/>
+      <element name="TLResourceList.Destroy">
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            Frees the values in and resources allocated to the internal lists for the class instance.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <!-- procedure Visibility: public -->
       <element name="TLResourceList.Add">
-        <short>Adds a resource.</short>
-        <descr>ValueType is stored in uppercase.
+        <short>Adds a resource description to the list with the specified values.</short>
+        <descr>
+          <p>
+            ValueType is stored in uppercase.
+          </p>
         </descr>
         <errors/>
         <seealso/>
       </element>
       <element name="TLResourceList.Add.Name">
-        <short/>
+        <short>Name for the resource.</short>
       </element>
       <element name="TLResourceList.Add.ValueType">
-        <short/>
+        <short>Name for the Type used in the value.</short>
       </element>
       <element name="TLResourceList.Add.Value">
-        <short>A sinlge value string.</short>
+        <short>A single AnsiString value string for the type.</short>
       </element>
       <element name="TLResourceList.Add.Values">
-        <short>The value split into an string array.</short>
+        <short>An array with the String values for the type.</short>
       </element>
       <!-- function Visibility: public -->
       <element name="TLResourceList.Find">
-        <short>Returns the resource of the given name (and type).
-        </short>
+        <short>Returns the resource in the list with the given name and type.</short>
         <descr/>
         <errors/>
         <seealso/>
@@ -222,17 +246,17 @@
       </element>
       <!-- function Visibility: public -->
       <element name="TLResourceList.Count">
-        <short>The number of listed resources.</short>
+        <short>Gets the number of resource descriptions in the list.</short>
         <descr/>
         <errors/>
         <seealso/>
       </element>
       <element name="TLResourceList.Count.Result">
-        <short/>
+        <short>The number of resource descriptions in the list.</short>
       </element>
       <!-- property Visibility: public -->
       <element name="TLResourceList.Items">
-        <short>Indexed access to the resource list.</short>
+        <short>Provides Indexed access to the resource descriptions in the list.</short>
         <descr/>
         <seealso/>
       </element>
@@ -309,7 +333,15 @@
         <short/>
       </element>
       <!-- destructor Visibility: public -->
-      <element name="TLazarusResourceStream.Destroy"/>
+      <element name="TLazarusResourceStream.Destroy">
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            Calls the UnlockResource and FreeResource routines when resource descriptors are used for the platform. Calls the inherited method prior to exit.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <!-- function Visibility: public -->
       <element name="TLazarusResourceStream.Write">
         <short>Raises an error on an attempt to write to the stream.</short>
@@ -336,38 +368,66 @@
       </element>
       <!-- class Visibility: default -->
       <element name="TAbstractTranslator">
-        <short>Abstract base class for translators.</short>
+        <short>Abstract base class for translators used in the LCL.</short>
         <descr>
+          <p>
+            <var>TAbstractTranslator</var> is a class which specifies the base class string and property translators used in the Lazarus Component Library (<b>LCL</b>). It defines an abstract virtual method used to translate string properties when they are read from a Lazarus Resource Stream (<b>LRS</b>).
+          </p>
+          <p>
+            Do not create instances of TAbstractTranslator; use one of the descendent class like <var>TUpdateTranslator</var>, <var>TDefaultTranslator</var>, or <var>TPOTranslator</var>.
+          </p>
         </descr>
-        <errors/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.lcltranslator.TUpdateTranslator">TUpdateTranslator</link>
+          <link id="#lcl.lcltranslator.TDefaultTranslator">TDefaultTranslator</link>
+          <link id="#lcl.lcltranslator.TPOTranslator">TPOTranslator</link>
+        </seealso>
       </element>
       <!-- procedure Visibility: public -->
       <element name="TAbstractTranslator.TranslateStringProperty">
-        <short>The base class for an TReader.OnReadStringProperty handler.</short>
+        <short>Specifies a method used to translate a String property.</short>
         <descr>
+          <p>
+            <var>TranslateStringProperty</var> is an abstract virtual method which defines the method used to translate a <var>String</var> property in a persistent object instance. TranslateStringProperty must be implemented in a descendent class to perform the actions needed to retrieve and translate the specified property value.
+          </p>
+          <p>
+            The address for the method is assigned as the <var>OnReadStringProperty</var> event handler in <var>TReader</var> class instances.
+          </p>
         </descr>
-        <errors/>
-        <seealso/>
+        <seealso>
+          <link id="TLRSObjectReader"/>
+          <link id="#rtl.classes.TReader">TReader</link>
+          <link id="#rtl.classes.TFiler">TFiler</link>
+        </seealso>
       </element>
       <element name="TAbstractTranslator.TranslateStringProperty.Sender">
-        <short/>
+        <short>Object for the event notification.</short>
       </element>
       <element name="TAbstractTranslator.TranslateStringProperty.Instance">
-        <short/>
+        <short>Persistent object with the property value translated in the method.</short>
       </element>
       <element name="TAbstractTranslator.TranslateStringProperty.PropInfo">
-        <short/>
+        <short>RTTI information for the property translated in the method.</short>
       </element>
       <element name="TAbstractTranslator.TranslateStringProperty.Content">
-        <short/>
+        <short>
+          Variable parameter where the translated value for the property is returned.
+        </short>
       </element>
       <!-- variable Visibility: default -->
       <element name="LRSTranslator">
-        <short>The default translator instance to use in <link id="CreateLRSReader"/>.
+        <short>
+          Variable with the default translator used in CreateLRSReader.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            The value for the variable is assigned when SetDefaultLang is called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="CreateLRSReader"/>
+          <link id="#lcl.lcltranslator.SetDefaultLang">SetDefaultLang</link>
+        </seealso>
       </element>
       <!-- enumeration type Visibility: default -->
       <element name="TLRSItemType">
@@ -396,14 +456,15 @@
       </element>
       <!-- variable Visibility: default -->
       <element name="TLRSORStackItem.Name">
-        <short/>
+        <short>Name for the item on the LRS Reader Object stack.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="TLRSORStackItem.ItemType">
-        <short/>
-        <descr/>
+        <short>Identifies the type for the stack item.</short>
+        <descr>
+        </descr>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
@@ -1554,13 +1615,33 @@
         <short/>
       </element>
       <!-- constructor Visibility: public -->
-      <element name="TLRPositionLinks.Create"/>
+      <element name="TLRPositionLinks.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            Allocates the internal list used to store values in the Data property.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <!-- destructor Visibility: public -->
-      <element name="TLRPositionLinks.Destroy"/>
+      <element name="TLRPositionLinks.Destroy">
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            Frees resources allocated for the Data property, and calls the inherited method prior to exit.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <!-- procedure Visibility: public -->
       <element name="TLRPositionLinks.Clear">
-        <short/>
-        <descr/>
+        <short>Removes items stored in the Data property.</short>
+        <descr>
+          <p>
+            Sets the value in the Count property to 0, which causes the items stored in Data to be freed.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- procedure Visibility: public -->
@@ -1626,7 +1707,9 @@
       </element>
       <!-- procedure Visibility: public -->
       <element name="TLRPositionLinks.Add">
-        <short/>
+        <short>
+          Adds a new item to the Data property using the specified positions and pointer to the item data.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -1934,12 +2017,31 @@
         <seealso/>
       </element>
       <!-- constructor Visibility: public -->
-      <element name="TUTF8Parser.Create"/>
+      <element name="TUTF8Parser.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the constructor for the class instance.
+          </p>
+          <p>
+            Create allocates a 4K buffer used to store the values read from Stream. The buffer is examined in the methods for the class. It initializes internal members used in the parser implementation to their default  values. The internal buffer is loaded with the first 4K block of values in Stream, and the NextToken method is called to position the parser on the first token in the buffered values.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <element name="TUTF8Parser.Create.Stream">
-        <short/>
+        <short>Stream with the values parser in the class.</short>
       </element>
       <!-- destructor Visibility: public -->
-      <element name="TUTF8Parser.Destroy"/>
+      <element name="TUTF8Parser.Destroy">
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Destroy</var> is the overridden destructor for the class instance. It moves the stream to the position returned from <var>SourcePos</var> (the position for the last processed value in the internal buffer). Destroy free the memory allocated for the internal buffer in the class instance.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <!-- procedure Visibility: public -->
       <element name="TUTF8Parser.CheckToken">
         <short>Asserts that Token is of the expected type.</short>
@@ -2115,77 +2217,90 @@
         <descr/>
         <seealso/>
       </element>
-<!-- class Visibility: default -->
+      <!-- class Visibility: default -->
       <element name="TCustomLazComponentQueue">
-        <short>A queue to stream components, used for multithreading or network.
-        </short>
+        <short>A queue to stream components, used for multithreading or network.</short>
         <descr>
           <p>
-            The function ConvertComponentAsString converts a component to binary format
-            with a leading size information (using WriteLRSInt64MB).
-          </p><p>
-            When streaming components over network, they will arrive in chunks.
-          </p><p>
-            TCustomLazComponentQueue tells you, if a whole component has arrived.
+            ConvertComponentAsString converts a component to binary format with a leading size information (using WriteLRSInt64MB).
+          </p>
+          <p>
+            When streaming components over network, they will arrive in chunks. TCustomLazComponentQueue tells you, if a whole component has arrived.
           </p>
         </descr>
-        <errors/>
         <seealso/>
       </element>
       <!-- variable Visibility: private -->
       <element name="TCustomLazComponentQueue.FOnFindComponentClass" link="#lcl.lresources.TCustomLazComponentQueue.OnFindComponentClass"/>
       <!-- variable Visibility: protected -->
       <element name="TCustomLazComponentQueue.FQueue">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Member with the dynamic storage for the queue..</short>
       </element>
       <!-- function Visibility: protected -->
       <element name="TCustomLazComponentQueue.ReadComponentSize">
-        <short/>
+        <short>Reads the component size and the length for the size value.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomLazComponentQueue.ReadComponentSize.Result">
-        <short/>
+        <short>False if there is not enough storage in the queue for the component size.</short>
       </element>
       <element name="TCustomLazComponentQueue.ReadComponentSize.ComponentSize">
-        <short/>
+        <short>Size of the component.</short>
       </element>
       <element name="TCustomLazComponentQueue.ReadComponentSize.SizeLength">
-        <short/>
+        <short>Number of bytes needed for the component size value.</short>
       </element>
       <!-- constructor Visibility: public -->
-      <element name="TCustomLazComponentQueue.Create"/>
+      <element name="TCustomLazComponentQueue.Create">
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            Allocates resources needed for the internal queue storage.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
       <element name="TCustomLazComponentQueue.Create.TheOwner">
-        <short/>
+        <short>Owner of the class instance.</short>
       </element>
       <!-- destructor Visibility: public -->
-      <element name="TCustomLazComponentQueue.Destroy"/>
+      <element name="TCustomLazComponentQueue.Destroy">
+        <short>Destructor for the class instance.</short>
+        <descr>
+          <p>
+            Frees resources allocated to the internal queue storage.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+
       <!-- procedure Visibility: public -->
       <element name="TCustomLazComponentQueue.Clear">
-        <short/>
+        <short>Clears all values in the internal queue storage.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- function Visibility: public -->
       <element name="TCustomLazComponentQueue.Write">
-        <short/>
+        <short>Pushes values in Buffer onto the internal storage queue.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomLazComponentQueue.Write.Result">
-        <short/>
+        <short>Number of bytes added to the queue in the method.</short>
       </element>
       <element name="TCustomLazComponentQueue.Write.Buffer">
-        <short/>
+        <short>Untyped buffer with values pushed onto the internal queue storage.</short>
       </element>
       <element name="TCustomLazComponentQueue.Write.Count">
-        <short/>
+        <short>Number of bytes in Buffer.</short>
       </element>
       <!-- function Visibility: public -->
       <element name="TCustomLazComponentQueue.CopyFrom">
-        <short/>
+        <short>
+          Copies the specified number of bytes from the stream and pushes the values onto the queue.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -2200,7 +2315,9 @@
       </element>
       <!-- function Visibility: public -->
       <element name="TCustomLazComponentQueue.HasComponent">
-        <short/>
+        <short>
+          Determines whether the queue contains the entire contents of the component at the top of the queue.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -2209,7 +2326,7 @@
       </element>
       <!-- function Visibility: public -->
       <element name="TCustomLazComponentQueue.ReadComponent">
-        <short/>
+        <short>Reads a component from the queue and sets it owner.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2224,8 +2341,8 @@
       </element>
       <!-- function Visibility: public -->
       <element name="TCustomLazComponentQueue.ConvertComponentAsString">
-        <short>Converts a component to binary format
-            with a leading size information (using WriteLRSInt64MB).
+        <short>
+          Converts a component to binary format with a leading size information (using WriteLRSInt64MB).
         </short>
         <descr/>
         <seealso/>
@@ -2238,57 +2355,71 @@
       </element>
       <!-- property Visibility: public -->
       <element name="TCustomLazComponentQueue.OnFindComponentClass">
-        <short/>
+        <short>
+          Event handler signalled to get the class type for the specified class name in a TReader instance.
+        </short>
         <descr/>
         <seealso/>
       </element>
-<!-- class Visibility: default -->
+      <!-- class Visibility: default -->
       <element name="TLazComponentQueue">
-        <short/>
+        <short>Publishes property from the ancestor class.</short>
+        <descr/>
+        <seealso/>
       </element>
       <!-- property Visibility: published -->
       <element name="TLazComponentQueue.Name">
-        <short/>
+        <short>Published Name for the component queue.</short>
       </element>
       <!-- property Visibility: published -->
       <element name="TLazComponentQueue.OnFindComponentClass">
-        <short/>
+        <short>
+          Published event handler used to get the class type for a give class name.
+        </short>
       </element>
-<!-- record type Visibility: default -->
+      <!-- record type Visibility: default -->
       <element name="TPropertyToSkip">
-        <short>Item of TPropertiesToSkip.</short>
-        <descr/>
+        <short>
+          Contains information about a property omitted from LCL component streaming.
+        </short>
+        <descr>
+          <p>
+            <var>TPropertyToSkip</var> is a record type with information about a property in a persistent class that is omitted during LCL component streaming. TPropertyToSkip is the type maintained in the TPropertiesToSkip list when the RegisterPropertyToSkip routine is called.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="TPropertyToSkip.PersistentClass">
-        <short/>
+        <short>Class type for the persistent object with the omitted property.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="TPropertyToSkip.PropertyName">
-        <short/>
+        <short>Name for the omitted property.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="TPropertyToSkip.Note">
-        <short/>
+        <short>A note about the omitted property.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="TPropertyToSkip.HelpKeyword">
-        <short/>
+        <short>Help keyword for the omitted property.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- pointer type Visibility: default -->
       <element name="PRemovedProperty" link="#lcl.lresources.TPropertyToSkip"/>
-<!-- class Visibility: default -->
+      <!-- class Visibility: default -->
       <element name="TPropertiesToSkip">
-        <short/>
+        <short>
+          Implements a list used to store properties which are skipped during LCL streaming.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -2318,7 +2449,9 @@
       </element>
       <!-- procedure Visibility: protected -->
       <element name="TPropertiesToSkip.Notify">
-        <short/>
+        <short>
+          Handles a notification action when the specified Pointer is added to or removed from the list.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -2330,7 +2463,9 @@
       </element>
       <!-- procedure Visibility: protected -->
       <element name="TPropertiesToSkip.DoPropertyNotFound">
-        <short/>
+        <short>
+          Determines if the specified property type and name exists and is handled in the list.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -2354,51 +2489,63 @@
       </element>
       <!-- function Visibility: public -->
       <element name="TPropertiesToSkip.IndexOf">
-        <short/>
+        <short>
+          Gets the ordinal position in the list where the property type and name is stored.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPropertiesToSkip.IndexOf.Result">
-        <short/>
+        <short>Ordinal position in the list, or -1 when not found.</short>
       </element>
       <element name="TPropertiesToSkip.IndexOf.AInstance">
-        <short/>
+        <short>Property instance to locate in the list.</short>
       </element>
       <element name="TPropertiesToSkip.IndexOf.APropertyName">
-        <short/>
+        <short>Name for the property type to locate in the list.</short>
       </element>
       <element name="TPropertiesToSkip.IndexOf.AClass">
-        <short/>
+        <short>Class type for the property to located in the list.</short>
       </element>
       <!-- function Visibility: public -->
       <element name="TPropertiesToSkip.Add">
-        <short/>
+        <short>
+          Adds the specified property type and name to the list when not already present.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TPropertiesToSkip.Add.Result">
-        <short/>
+        <short>
+          Ordinal position in the list where the skipped property was found or stored.
+        </short>
       </element>
       <element name="TPropertiesToSkip.Add.APersistentClass">
-        <short/>
+        <short>Class type for the skipped property.</short>
       </element>
       <element name="TPropertiesToSkip.Add.APropertyName">
-        <short/>
+        <short>Name for the skipped property.</short>
       </element>
       <element name="TPropertiesToSkip.Add.ANote">
-        <short/>
+        <short>Note to associate with the skipped property.</short>
       </element>
       <element name="TPropertiesToSkip.Add.AHelpKeyWord">
-        <short/>
+        <short>Help keyword for the skipped property.</short>
       </element>
       <!-- property Visibility: public -->
       <element name="TPropertiesToSkip.Items">
-        <short/>
-        <descr/>
+        <short>
+          Provides indexed access to skipped properties in the list by their ordinal position.
+        </short>
+        <descr>
+          <p>
+            Items is an indexed PRemovedProperty property used to access skipped property definitions by their ordinal position in the list. Read and write access for the property value ensures the inherited Get or Put methods are called.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TPropertiesToSkip.Items.AIndex">
-        <short/>
+        <short>Ordinal position for the indexed property value.</short>
       </element>
       <!-- constant Visibility: default -->
       <element name="ObjStreamMaskInherited">
@@ -2418,25 +2565,25 @@
       </element>
       <!-- variable Visibility: default -->
       <element name="LazarusResources" link="#lcl.lresources.TLResourceList">
-        <short>The list of all loaded standard resources.</short>
+        <short>The list with all of the loaded standard resources.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="PropertiesToSkip">
-        <short/>
+        <short>Unit global variable with all of the registered skipped properties.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="LRSObjectReaderClass">
-        <short/>
+        <short>Class type for Lazarus Object Reader instances.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- variable Visibility: default -->
       <element name="LRSObjectWriterClass">
-        <short/>
+        <short>Class type for Lazarus Object Writer instances.</short>
         <descr/>
         <seealso/>
       </element>
@@ -2688,9 +2835,10 @@
       <!-- procedure Visibility: default -->
       <element name="BinaryToLazarusResourceCode">
         <short/>
-        <descr>FPC is not optimized for building a constant string out of thousands of lines.
-          It needs huge amounts of memory and becomes very slow.
-          Therefore big files are split into several strings.
+        <descr>
+          <p>
+            FPC is not optimized for building a constant string out of thousands of lines. It needs huge amounts of memory and becomes very slow. Therefore big files are split into several strings.
+          </p>
         </descr>
         <errors/>
         <seealso/>

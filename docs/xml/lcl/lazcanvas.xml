@@ -92,16 +92,16 @@
         <seealso></seealso>
       </element>
       <element name="TFPSharpInterpolation.Execute.x">
-        <short></short>
+        <short>Horizontal coordinate.</short>
       </element>
       <element name="TFPSharpInterpolation.Execute.y">
-        <short></short>
+        <short>Vertical coordinate.</short>
       </element>
       <element name="TFPSharpInterpolation.Execute.w">
-        <short></short>
+        <short>Width for the output.</short>
       </element>
       <element name="TFPSharpInterpolation.Execute.h">
-        <short></short>
+        <short>Height for the output.</short>
       </element>
 
       <!-- class Visibility: default -->
@@ -456,6 +456,24 @@
         <seealso></seealso>
       </element>
 
+      <element name="TLazCanvas.ExtraFontData">
+        <short>Member with extra FreeType font data from the canvas or device context.</short>
+        <descr>Used in custom-drawn LCL controls.</descr>
+        <seealso/>
+      </element>
+
+      <element name="TLazCanvas.ImageFormat">
+        <short>Member with the TLazCanvasImageFormat instance used to speed up drawing.</short>
+        <descr/>
+        <seealso/>
+      </element>
+
+      <element name="TLazCanvas.SelectedBitmap">
+        <short>Member with the GDI Handle for an image.</short>
+        <descr>Used in custom-drawn LCL controls.</descr>
+        <seealso/>
+      </element>
+
       <!-- constructor Visibility: public -->
       <element name="TLazCanvas.Create">
         <short>Constructor for the class instance.</short>
@@ -577,7 +595,7 @@
 
       <!-- procedure Visibility: public -->
       <element name="TLazCanvas.AlphaBlendIgnoringDestPixels">
-        <short></short>
+        <short>Performs an AlphaBlend operation assuming a white background.</short>
         <descr>
           <p>
             This is a safer version for use where the destination pixels may not be consistent or valid. It will draw as if the target area contained opaque white pixels.
