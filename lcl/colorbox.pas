@@ -49,6 +49,7 @@ type
     FColorRectOffset: Integer;
     FDefaultColorColor: TColor;
     FNoneColorColor: TColor;
+    FcolorDialog:TColorDialog;
     FOnGetColors: TGetColorsEvent;
     FStyle: TColorBoxStyle;
     FSelected: TColor;
@@ -87,6 +88,7 @@ type
     property DefaultColorColor: TColor read FDefaultColorColor write SetDefaultColorColor default clBlack;
     property NoneColorColor: TColor read FNoneColorColor write SetNoneColorColor default clBlack;
     property OnGetColors: TGetColorsEvent read FOnGetColors write FOnGetColors;
+    property ColorDialog:TcolorDialog read FColorDialog write FcolorDialog;
   end;
 
   { TColorBox }
@@ -100,7 +102,7 @@ type
     property Selected;
     property Style;
     property OnGetColors;
-
+    property ColorDialog;
     property Align;
     property Anchors;
     property ArrowKeysTraverseList;
@@ -170,6 +172,7 @@ type
     FDefaultColorColor: TColor;
     FNoneColorColor: TColor;
     FOnGetColors: TLBGetColorsEvent;
+    FColorDialog:TColorDialog;
     FSelected: TColor;
     FStyle: TColorBoxStyle;
     function GetColorRectWidth: Integer;
@@ -207,6 +210,7 @@ type
     property DefaultColorColor: TColor read FDefaultColorColor write SetDefaultColorColor default clBlack;
     property NoneColorColor: TColor read FNoneColorColor write SetNoneColorColor default clBlack;
     property OnGetColors: TLBGetColorsEvent read FOnGetColors write FOnGetColors;
+    property ColorDialog:TColorDialog read fcolorDialog write FColorDialog;
   end;
 
   { TColorListBox }
@@ -220,7 +224,7 @@ type
     property Selected;
     property Style;
     property OnGetColors;
-
+    property ColorDialog;
     property Align;
     property Anchors;
     property BidiMode;
@@ -708,23 +712,29 @@ begin
 end;
 
 function TCustomColorBox.PickCustomColor: Boolean;
+Var
+  FreeDialog:Boolean;
 begin
   if csDesigning in ComponentState then
   begin
     Result := False;
     Exit;
   end;
-
-  with TColorDialog.Create(Self) do
-  begin
-    Color := Colors[0];
-    Result := Execute;
-    if Result then
-    begin
-      Items.Objects[0] := TObject(PtrInt(Color));
-      invalidate;
+  FreeDialog := FcolorDialog = NIL;
+  If FColorDialog = Nil Then FcolorDialog := TcolorDialog.Create(GetTopParent);
+  Try
+    With FColorDialog do
+    Begin
+      Color := Colors[0];
+      Result := Execute;
+      If Result Then
+       Begin
+         items.objects[0]:= TObject(PtrInt(COlor));
+         Invalidate;
+       end;
     end;
-    Free;
+  finally
+    If FreeDialog Then FreeAndNil(FcolorDialog);
   end;
 end;
 
@@ -1059,23 +1069,29 @@ begin
 end;
 
 function TCustomColorListBox.PickCustomColor: Boolean;
+Var
+  FreeDialog:Boolean;
 begin
   if csDesigning in ComponentState then
   begin
     Result := False;
     Exit;
   end;
-
-  with TColorDialog.Create(Self) do
-  begin
-    Color := Colors[0];
-    Result := Execute;
-    if Result then
-    begin
-      Items.Objects[0] := TObject(PtrInt(Color));
-      invalidate;
+  FreeDialog := FcolorDialog = NIL;
+  If FColorDialog = Nil Then FcolorDialog := TcolorDialog.Create(GetTopParent);
+  Try
+    With FColorDialog do
+    Begin
+      Color := Colors[0];
+      Result := Execute;
+      If Result Then
+       Begin
+         items.objects[0]:= TObject(PtrInt(COlor));
+         Invalidate;
+       end;
     end;
-    Free;
+  finally
+    If FreeDialog Then FreeAndNil(FcolorDialog);
   end;
 end;
 
