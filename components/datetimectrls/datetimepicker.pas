@@ -3881,8 +3881,8 @@ end;
 
 procedure TCustomDateTimePicker.DoAutoCheck;
 begin
-  if ShowCheckBox and not Checked and (dtpoAutoCheck in Options) then
-    Checked := True;
+  if dtpoAutoCheck in Options then
+    SetChecked(True);
 end;
 
 procedure TCustomDateTimePicker.DoAutoAdjustLayout(
