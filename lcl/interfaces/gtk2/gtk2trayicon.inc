@@ -383,7 +383,11 @@ begin
   begin
     FStatusIcon := gtk_status_icon_new();
     gtk_status_icon_set_from_pixbuf(FStatusIcon, {%H-}PGdkPixbuf(FTrayIcon.Icon.Handle));
+    {$IF FPC_FULLVERSION>30300}
+    gtk_status_icon_set_tooltip_text(FStatusIcon, PChar(FTrayIcon.Hint));
+    {$ELSE}
     gtk_status_icon_set_tooltip(FStatusIcon, PChar(FTrayIcon.Hint));
+    {$ENDIF}
     g_object_set(PGObject(FStatusIcon), 'has-tooltip', gTRUE, nil);
     fEmbedded := gtk_status_icon_is_embedded(FStatusIcon);
 
@@ -485,7 +489,11 @@ begin
   if FStatusIcon <> nil then
   begin
     gtk_status_icon_set_from_pixbuf(FStatusIcon, NewPixBuf);
+    {$IF FPC_FULLVERSION>30300}
+    gtk_status_icon_set_tooltip_text(FStatusIcon, PChar(NewHint));
+    {$ELSE}
     gtk_status_icon_set_tooltip(FStatusIcon, PChar(NewHint));
+    {$ENDIF}
     g_object_set(PGObject(FStatusIcon), 'has-tooltip', gTRUE, nil);
   end
   else
