@@ -49,7 +49,7 @@
       </element>
 
       <element name="PProcessEventHandler">
-        <short>Pointer to a processs event handler routine.</short>
+        <short>Pointer to a process event handler routine.</short>
         <short/>
         <descr>
           <p>
@@ -83,7 +83,7 @@
         <short>Represents reasons that a child process was exited.</short>
         <descr>
           <p>
-            <var>TChildExitReason</var> is an enumerted type with values that represent reasons a child process was exited. TChildExitReason values are passed as a parameter to <var>TChildExitEvent</var> event handler routines, and used in the <var>TAsyncProcess.HandleProcessTermination</var> method which implements the event handler.
+            <var>TChildExitReason</var> is an enumerated type with values that represent reasons a child process was exited. TChildExitReason values are passed as a parameter to <var>TChildExitEvent</var> event handler routines, and used in the <var>TAsyncProcess.HandleProcessTermination</var> method which implements the event handler.
           </p>
         </descr>
         <seealso>
@@ -588,7 +588,7 @@
       <element name="TDialogButtons.Destroy" link="#rtl.classes.TCollection.Destroy"/>
 
       <element name="TDialogButtons.Add">
-        <short>Adds a new button instance to the Items in the collction.</short>
+        <short>Adds a new button instance to the Items in the collection.</short>
         <descr>
           <p>
             <var>Add</var> is an overridden <var>TDialogButton</var> function in <var>TDialogButtons</var> used to add a new button instance to the <var>Items</var> in the collection. Add ensures that the value returned from the inherited Add method is cast to the TDialogButton type used in Items.
@@ -725,7 +725,7 @@
         <short>Passes commandline arguments needed for the platform.</short>
         <descr>
           <p>
-            <var>PassCmdLineOptions</var> is a procedure used to pass commandline arguments used for the platfom-specific widgetset implementation. PassCmdLineOptions has an empty implementation in <var>TWidgetSet</var>, and must be overridden in a descendent class. It allows commandline arguments to be preprocessed or modified prior to starting an application.
+            <var>PassCmdLineOptions</var> is a procedure used to pass commandline arguments used for the platform-specific widgetset implementation. PassCmdLineOptions has an empty implementation in <var>TWidgetSet</var>, and must be overridden in a descendent class. It allows commandline arguments to be preprocessed or modified prior to starting an application.
           </p>
         </descr>
         <seealso/>
@@ -1052,7 +1052,7 @@
         <short>Enables or disables anti-aliasing for the specified device context.</short>
         <descr>
           <p>
-            Called from the RealizeAntiAliasing method in TCanvas when its handle or AntialiasingMode properrty is changed.
+            Called from the RealizeAntiAliasing method in TCanvas when its handle or AntialiasingMode property is changed.
           </p>
         </descr>
         <seealso/>
@@ -1975,7 +1975,7 @@
         <short>The bounding (clipping) rectangle.</short>
       </element>
       <element name="TWidgetSet.DrawText.Flags">
-        <short>Formatting flags apllied in the method.</short>
+        <short>Formatting flags applied in the method.</short>
       </element>
 
       <element name="TWidgetSet.EnableScrollBar">
@@ -3591,7 +3591,7 @@
       </element>
 
       <element name="TWidgetSet.LeaveCriticalSection">
-        <short>Releases a critical section, and alows use by other threads.</short>
+        <short>Releases a critical section, and allows use by other threads.</short>
         <descr/>
         <seealso>
           <link id="TWidgetSet.InitializeCriticalSection"/>
@@ -3809,7 +3809,7 @@
         <seealso/>
       </element>
       <element name="TWidgetSet.MonitorFromPoint.Result">
-        <short>Monotor handle, or a value derived from Flags.</short>
+        <short>Gets the monitor handle, or a value derived from Flags.</short>
       </element>
       <element name="TWidgetSet.MonitorFromPoint.ptScreenCoords">
         <short>The point in screen coordinates.</short>
@@ -6026,7 +6026,7 @@
 
       <element name="TWidgetSet.FontIsMonoSpace">
         <short>
-          Determines if the typeface in the specified font handle is a monspaced font.
+          Determines if the typeface in the specified font handle is a mono-spaced font.
         </short>
         <descr/>
         <seealso/>

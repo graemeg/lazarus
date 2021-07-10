@@ -5759,7 +5759,7 @@
         </short>
         <descr>
           <p>
-            <var>RestoreDefaultAttr</var> is a method used to restore the default attibute name and value specified in <var>AttrDef</var> to the <var>Attributes</var> for the DOM Element.
+            <var>RestoreDefaultAttr</var> is a method used to restore the default attribute name and value specified in <var>AttrDef</var> to the <var>Attributes</var> for the DOM Element.
           </p>
           <p>
             RestoreDefaultAttr checks for a namespace prefix in the name for the attribute, and applies the default namespace information for names starting with <b>'xmlns'</b> or <b>'xml'</b>. It calls <var>LookupNamespaceURI</var> to get and set the namespace URI for a name which starts with another prefix. It calls <var>SetAttributeNode</var> to add or update the node in the Attributes property.
@@ -6421,7 +6421,7 @@
             <var>CloneNode</var> is a <var>TDOMNode</var> function used to create a copy or clone of the current DOM Comment node using the specified DOM Document as the owner of the new node. CloneNode calls the <var>CreateComment</var> method in the <var>ACloneOwner</var> argument to allocate and create the new <var>TDOMComment</var> instance, and store the character data in its Data property.
           </p>
           <p>
-            The value for the <var>deep</var> argument is not signifcant in the method; it is not used to clone a comment node.
+            The value for the <var>deep</var> argument is not significant in the method; it is not used to clone a comment node.
           </p>
         </descr>
         <seealso>
@@ -6512,7 +6512,7 @@
             <var>CloneNode</var> is a <var>TDOMNode</var> function used to create a copy or clone of the current DOM CDATA section using the specified DOM Document as the owner of the new node. CloneNode calls the <var>CreateCDATASection</var> method in the <var>ACloneOwner</var> argument to allocate and create the new <var>TDOMCDATASection</var> instance with NodeValue from the current class instance.
           </p>
           <p>
-            The value for the <var>deep</var> argument is not signifcant in the method; it is not used to clone a CDATA node.
+            The value for the <var>deep</var> argument is not significant in the method; it is not used to clone a CDATA node.
           </p>
         </descr>
         <seealso>
@@ -6714,7 +6714,7 @@
             <var>PublicID</var> is a read-only <var>DOMString</var> property which contains the public identifier for the external subset in the document type declaration. It contains the value passed as an argument to the CreateDocumentType method in TDOMImplementation, and stored in the new class instance.
           </p>
           <p>
-            PublicID was introduced in the SGML specifications (the predecessor of XML), and had an elaborate Formal Public Identifier format. For DOM and XML, the content has generally been simplified to an origanization identifier  and URL where the DTD is located. For example:
+            PublicID was introduced in the SGML specifications (the predecessor of XML), and had an elaborate Formal Public Identifier format. For DOM and XML, the content has generally been simplified to an organization identifier  and URL where the DTD is located. For example:
           </p>
 <code>
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -6781,7 +6781,7 @@
         <short>Implements the DOM Notation interface from the DOM specification.</short>
         <descr>
           <p>
-            <var>TDOMNotation</var> is a <var>TDOMNode</var> descendant which implements the Notation interface from the DOM specification. It decalres the name and format for an unparsed entity declared in a Document Type Declaration (DTD). It can also be used to set the target for a processing instruction that handles the notation. Notations are a vestige of the older SGML standard, and  provided for migration purposes. They are seldom used (if at all) in modern XML processing implementations.
+            <var>TDOMNotation</var> is a <var>TDOMNode</var> descendant which implements the Notation interface from the DOM specification. It declares the name and format for an unparsed entity declared in a Document Type Declaration (DTD). It can also be used to set the target for a processing instruction that handles the notation. Notations are a vestige of the older SGML standard, and  provided for migration purposes. They are seldom used (if at all) in modern XML processing implementations.
           </p>
         </descr>
         <seealso>
@@ -7202,10 +7202,10 @@
         <short>Implements the default attribute node introduced in DOM Level 2.</short>
         <descr>
           <p>
-            <var>TDOMAttrDef</var> is a <var>TDOMAttr</var> descendant which implements the  default attribute node as specified in the DOM Level 2 specification. A default attribute is associated with an Element of a given type in a Document Type Declaration (whether internal or external). It can have a value which is either explictly specified, implied from the DTD, or fixed to given value. Its value can also be limited to only those values specified in the attribute defintion.
+            <var>TDOMAttrDef</var> is a <var>TDOMAttr</var> descendant which implements the  default attribute node as specified in the DOM Level 2 specification. A default attribute is associated with an Element of a given type in a Document Type Declaration (whether internal or external). It can have a value which is either explicitly specified, implied from the DTD, or fixed to given value. Its value can also be limited to only those values specified in the attribute definition.
           </p>
           <p>
-            TDOMAttrDef is the type returned from the <var>TDOMDocument.CreateAttributeDef</var> method. It is also used to update attribue value for an Element in methods like: <var>TDOMNamedNodeMap.RestoreDefault</var> and <var>TDOMElement.AttachDefaultAttrs</var>.
+            TDOMAttrDef is the type returned from the <var>TDOMDocument.CreateAttributeDef</var> method. It is also used to update attribute value for an Element in methods like: <var>TDOMNamedNodeMap.RestoreDefault</var> and <var>TDOMElement.AttachDefaultAttrs</var>.
           </p>
         </descr>
         <seealso>
@@ -7452,7 +7452,7 @@
 
       <!-- argument Visibility: default -->
       <element name="TNodePool.Create.AElementCount">
-        <short>Number of stotage slots for nodes in the node pool.</short>
+        <short>Number of storage slots for nodes in the node pool.</short>
       </element>
 
       <!-- destructor Visibility: public -->

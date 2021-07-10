@@ -288,7 +288,7 @@
       <element name="TCommonDialog.FWSEventCapabilities"/>
 
       <element name="TCommonDialog.SetHandle">
-        <short>Sets th value for the Handle property.</short>
+        <short>Sets the value for the Handle property.</short>
         <descr/>
         <seealso>
           <link id="TCommonDialog.Handle"/>
@@ -407,7 +407,7 @@
         <short>Event handler signalled when a result is available for the dialog.</short>
         <descr>
           <p>
-            <var>OnDialogResult</var> is a <var>TDialogResultEvent</var> property with the event handlr signalled when a result is available for the dialog.
+            <var>OnDialogResult</var> is a <var>TDialogResultEvent</var> property with the event handler signalled when a result is available for the dialog.
           </p>
           <p>
             OnDialogResult is a platform-specific  property, and may not be used in all widgetsets. It provides a way for platforms which use native dialogs in their  implementation to notify the dialog that a result is availabile.
@@ -2420,7 +2420,7 @@ ADialog.CustomColors.Values['ColorA'] := 'FFFF00';
         <short>Constructor for the class instance.</short>
         <descr>
           <p>
-            <var>Create</var> is the constructor for <var>TReplaceDialog</var>, and calls the  inherited <var>Create</var> method. It sets the intial option values for find and replace.
+            <var>Create</var> is the constructor for <var>TReplaceDialog</var>, and calls the  inherited <var>Create</var> method. It sets the initial option values for find and replace.
           </p>
         </descr>
         <seealso>
@@ -2762,14 +2762,14 @@ ADialog.CustomColors.Values['ColorA'] := 'FFFF00';
         <short>Displays the Shield icon.</short>
       </element>
       <element name="TTaskDialogIcon.tdiQuestion">
-        <short>Displays the Question icon (Blue circle witth a Question Mark).</short>
+        <short>Displays the Question icon (Blue circle with a Question Mark).</short>
       </element>
 
       <element name="TTaskDialogBaseButtonItem">
         <short>Defines the base class for a custom button displayed on a Task dialog.</short>
         <descr>
           <p>
-            <var>TTaskDialogBaseButtonItem</var> is a <var>TCollectionItem</var> descendant which defines a cusotm button that can be displayed on a Task dialog. It provides properties that indicate the <var>Caption</var> for the button, its use as the <var>Default</var> button on a dialog, and its <var>ModalResult</var> value.
+            <var>TTaskDialogBaseButtonItem</var> is a <var>TCollectionItem</var> descendant which defines a custom button that can be displayed on a Task dialog. It provides properties that indicate the <var>Caption</var> for the button, its use as the <var>Default</var> button on a dialog, and its <var>ModalResult</var> value.
           </p>
           <p>
             TTaskDialogBaseButtonItem is the ancestor for <var>TTaskDialogBaseButtonItem</var>.
@@ -3066,7 +3066,7 @@ ADialog.CustomColors.Values['ColorA'] := 'FFFF00';
         <short>Adds a new collection item using the ItemClass for the collection.</short>
         <descr>
           <p>
-            Calls the inherited <var>Add</var> method to create the new collection item, and casts the return value to the <var>TTaskDialogBaseButtonItem</var> type used as the <var>ItemClass</var>. The inherited metod uses the Collection as the Owner for the new collection item.
+            Calls the inherited <var>Add</var> method to create the new collection item, and casts the return value to the <var>TTaskDialogBaseButtonItem</var> type used as the <var>ItemClass</var>. The inherited method uses the Collection as the Owner for the new collection item.
           </p>
         </descr>
         <seealso>
@@ -3314,7 +3314,7 @@ ADialog.CustomColors.Values['ColorA'] := 'FFFF00';
             <var>Execute</var> is an overloaded <var>Boolean</var> function used to display the dialog and capture the modal result value using the wrapper in the <file>LCLTaskDialog</file> unit. The return value is <b>True</b> if a valid button identifier was selected in the wrapper.
           </p>
           <p>
-            Execute calls the <var>DoExecute</var> method to convert property values in the class instance to the values expected in the <var>TTaskDialog</var> record, and execute the dialog using the <file>LCLTaskDialog</file> wrapper. The value in ModalResult is updated from the Button with the identifir returned from the wrapper.
+            Execute calls the <var>DoExecute</var> method to convert property values in the class instance to the values expected in the <var>TTaskDialog</var> record, and execute the dialog using the <file>LCLTaskDialog</file> wrapper. The value in ModalResult is updated from the Button with the identifier returned from the wrapper.
           </p>
         </descr>
         <seealso>
@@ -3430,11 +3430,11 @@ ADialog.CustomColors.Values['ColorA'] := 'FFFF00';
 
       <element name="TCustomTaskDialog.ExpandedText">
         <short>
-          Text that is displayed in the expandable / collapsable area on the Task dialog.
+          Text that is displayed in the expandable / collapsible area on the Task dialog.
         </short>
         <descr>
           <p>
-            ExpandedText is a TTranslateString property with the text displayed in the expandable / collapsable area on the Task dialog. Its value can be localized using the standard LCL translation facilities. It can contain multi-line text when line ending characters (#13,#10) are embedded in the String value. For example:
+            ExpandedText is a TTranslateString property with the text displayed in the expandable / collapsible area on the Task dialog. Its value can be localized using the standard LCL translation facilities. It can contain multi-line text when line ending characters (#13,#10) are embedded in the String value. For example:
           </p>
 <code>
 ADialog.ExpandedText := 'Please read the Terms of Service.'+#10+
@@ -3609,7 +3609,7 @@ ADialog.Text := 'Please read and accept the &lt;a href="file://tos.pdf"&gt;Terms
             Use tfExpandFooterArea to position the expanded text in the footer area.
           </p>
           <p>
-            Use ExpandedText to set the content in the collasible area on the Task dialog. Use tfExpandFooterArea in the FLags property to position the expanded text in the footer area.
+            Use ExpandedText to set the content in the collapsible area on the Task dialog. Use tfExpandFooterArea in the FLags property to position the expanded text in the footer area.
           </p>
         </descr>
         <version>
@@ -4512,7 +4512,7 @@ end;
       </element>
       <element name="InputCombo.Result">
         <short>
-          Ordinal position for the value selected in AList, or -1 if ian option was not selected.
+          Ordinal position for the value selected in AList, or -1 if an option was not selected.
         </short>
       </element>
       <element name="InputCombo.ACaption">
@@ -4539,7 +4539,7 @@ end;
         <short>Caption for the dialog.</short>
       </element>
       <element name="InputComboEx.APrompt">
-        <short>Prompt or label for the combio-box control.</short>
+        <short>Prompt or label for the combo-box control.</short>
       </element>
       <element name="InputComboEx.AList">
         <short>List of values displayed in the combo-box control.</short>
@@ -4577,7 +4577,7 @@ end;
         </short>
         <descr>
           <p>
-            The following dialog identifers and return values are used in the routine:
+            The following dialog identifiers and return values are used in the routine:
           </p>
           <dl>
             <dt>idDialogWarning</dt>

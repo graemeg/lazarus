@@ -1152,7 +1152,7 @@
       </element>
       <element link="#rtl.Classes.TComponent.Notification" name="TDBEdit.Notification">
         <short>
-          Handles notifications when a component is added or remvoed from the control.
+          Handles notifications when a component is added or removed from the control.
         </short>
         <descr>Notification is overridden in TDBEdit to ensure that the DataSource for the data link in the control is set to Nil when the component is freed. Notification calls the inherited method.
         </descr>
@@ -3399,13 +3399,13 @@
             ItemIndex is an Integer property with the ordinal position for the selected radio button in the group. The default value for the property is -1, and indicates that no radio button is selected for the group. Changing the value for the property causes the widgetset control to be updated when its Handle has been assigned.
           </p>
           <p>
-            ItemIndex must be in the range <b>-1..Items.Count-1</b>. An Exception is raised wiith the message in rsIndexOutOfBounds if ItemIndex is set to a value less than -1 or greater than or equal to the number Items for the control.
+            ItemIndex must be in the range <b>-1..Items.Count-1</b>. An Exception is raised with the message in rsIndexOutOfBounds if ItemIndex is set to a value less than -1 or greater than or equal to the number Items for the control.
           </p>
           <p>
             ItemIndex is a public property in TDBRadioGroup.
           </p>
           <remark>
-            Some widgetsets do not allow a radio button group to have an unselected item index. To provide cross-platform compatibility, a hidden radio button is created for this purpose. When ItemIndex is set to -1, it actuals selects the hidden radio button.
+            Some widgetsets do not allow a radio button group to have an unselected item index. To provide cross-platform compatibility, a hidden radio button is created for this purpose. When ItemIndex is set to -1, it actually selects the hidden radio button.
           </remark>
         </descr>
         <seealso>
@@ -4262,12 +4262,12 @@
       </element>
       <element name="TCustomDBComboBox">
         <short>
-          <var>TCustomDBComboBox</var> is a data-aware Combo Box for displaying information from a database.
+          <var>TCustomDBComboBox</var> is a data-aware combo-box for displaying information from a database.
         </short>
         <descr>
           <p>
             <var>TCustomDBComboBox</var> is a
-            <var>TCustomComboBox</var> descendant which specifies a data-aware combo box control used to display and edit values in a database table. TCustomDBComboBox extends the ancestor class to provide
+            <var>TCustomComboBox</var> descendant which specifies a data-aware combo-box control used to display and edit values in a database table. TCustomDBComboBox extends the ancestor class to provide
             <var>DataField</var>,
             <var>DataSource</var>, and
             <var>Field</var> properties needed to control access to the field in a linked dataset.
@@ -4386,7 +4386,7 @@
         <short>True if the field was edited in the linked data set.</short>
       </element>
       <element name="TCustomDBComboBox.DoOnCloseUp">
-        <short>Performs actions to close the drop down for the combo box.</short>
+        <short>Performs actions to close the drop down for the combo-box.</short>
         <descr/>
         <seealso>
           <link id="TCustomDBComboBox.CloseUp"/>
@@ -4422,7 +4422,7 @@
         <seealso/>
       </element>
       <element name="TCustomDBComboBox.CloseUp">
-        <short>Sets deferred events when the drop down for the combo box is closed.</short>
+        <short>Sets deferred events when the drop down for the combo-box is closed.</short>
         <descr/>
         <seealso/>
       </element>
@@ -4970,17 +4970,17 @@
       </element>
       <element name="TDBLookupComboBox">
         <short>
-          <var>TDBLookupComboBox</var> - a dataware ComboBox for examining a lookup table from a database.
+          <var>TDBLookupComboBox</var> - a data-aware combo-box for examining a lookup table in a database.
         </short>
         <descr>
           <p>
             <var>TDBLookupComboBox</var> is a
-            <var>TCustomDBComboBox</var> descendant which implements a data-aware combo box control that adds lookup capabilities using values from a separate dataset. Like the ancestor class, the
+            <var>TCustomDBComboBox</var> descendant which implements a data-aware combo-box control that adds lookup capabilities using values from a separate dataset. Like the ancestor class, the
             <var>DataField</var> and
             <var>DataSource</var> properties are used to identify the dataset and field where the selected value for the control is stored. The
             <var>ListSource</var>,
             <var>KeyField</var>, and
-            <var>ListField</var> properties are added to define the dataset with the values displayed and captured using the drop down for the combo box control. Internally, a
+            <var>ListField</var> properties are added to define the dataset with the values displayed and captured using the drop down for the combo-box control. Internally, a
             <var>TDBLookUp</var> instance is used to perform lookup operations for the control.
           </p>
           <p>Other important properties used to manage the behavior and appearance of the control include:
@@ -5643,20 +5643,54 @@
           <link id="#lcl.stdctrls.TCustomMemo.Destroy">TCustomMemo.Destroy</link>
         </seealso>
       </element>
-      <element link="#lcl.stdctrls.TCustomEdit.EditingDone" name="TDBMemo.EditingDone">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TDBMemo.EditingDone">
+        <short>Called when editing has been completed in the control.</short>
+        <descr>
+          <p>
+            <var>EditingDone</var> is an overridden method in <var>TDBMemo</var>. It is called when the user has finished editing in the control, and ensures that changes are applied to the field in the linked data set.
+          </p>
+          <p>
+            In TDBMemo, it calls the <var>UpdateRecord</var> method in the field data link when it can be modified and has been placed in edit mode. The inherited method is called to signal the <var>OnEditingDone</var> event handler (when assigned).
+          </p>
+          <p>
+            If the field cannot be modified in the linked data set, or the data set is not in Edit mode, the <var>Reset</var> method in the field data link is called. This will signal the <var>OnDataChange</var> event handler (when assigned), but the linked data set is not updated.
+          </p>
+          <p>
+            EditingDone is called from the KeyUpAfterInterface method when the VK_RETURN
+             key code is handled, and when the focus is changed to another control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TFieldDataLink.CanModify"/>
+          <link id="TFieldDataLink.Editing"/>
+          <link id="TFieldDataLink.Reset"/>
+          <link id="TFieldDataLink.OnDataChange"/>
+          <link id="#fcl.db.TDataLink.UpdateRecord">TDataLink.UpdateRecord</link>
+          <link id="#lcl.stdctrls.TCustomEdit.EditingDone">TCustomEdit.EditingDone</link>
+          <link id="#lcl.controls.TControl.OnEditingDone">TControl.OnEditingDone</link>
+        </seealso>
       </element>
       <element name="TDBMemo.LoadMemo">
         <short>
-          <var>LoadMemo</var> - tries to load data from current field as a string if possible, otherwise returns an exception.
+          Loads the lines of text for the memo from the field in the linked data set.
         </short>
-        <descr/>
-        <errors/>
+        <descr>
+          <p>
+            <var>LoadMemo</var> is a method used to load the text for the control from the field in the linked data set. No actions are performed in the method if the value for the memo has already been loaded, the field in the data link has not been assigned, or the field does not use the TBlobField field type.
+          </p>
+          <p>
+            LoadMemo signals the <var>OnGetText</var> event handler (when assigned) in the field data link to get the value that is stored in the <var>Lines</var> property. If the event handler has not been assigned, the <var>AsString</var> method in the linked data field is used to get the value for the control.
+          </p>
+          <p>
+            If an <var>EInvalidOperation</var> exception occurs while getting the value for the control, the exception message is stored in the Lines property.
+          </p>
+          <p>
+            LoadMemo is called when the value in <var>AutoDisplay</var> is changed to <b>True</b>, when the <var>DataChange</var> method is called, and when the <b>Enter</b> key is handled in the <var>KeyPress</var> method.
+          </p>
+        </descr>
         <seealso/>
       </element>
-      <element link="#RTL.Classes.TComponent.ExecuteAction" name="TDBMemo.ExecuteAction">
+      <element link="#rtl.classes.TComponent.ExecuteAction" name="TDBMemo.ExecuteAction">
         <short>Provides support for TBasicAction in the control.</short>
         <descr>
           <p>
@@ -6272,24 +6306,17 @@
         <seealso/>
       </element>
       <element link="#lcl.controls.TWinControl.TabOrder" name="TDBGroupBox.TabOrder"/>
-      <element link="#lcl.controls.TWinControl.TabStop" name="TDBGroupBox.TabStop">
-        <short/>
-        <descr>
-          <p>Reads or writes Boolean flag; default is  <b>False</b>.</p>
-          <p>Use the TabStop to allow or disallow access to the control using the Tab key.</p>
-          <p>If <var>TabStop</var> is  <b>True</b>, the control is in the tab order. If <var>TabStop</var> is  <b>False</b>, the control is not in the tab order and the user can't use the Tab key to move to the control.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-      <element link="#lcl.controls.TControl.Visible" name="TDBGroupBox.Visible">
+      <element link="#lcl.controls.TWinControl.TabStop" name="TDBGroupBox.TabStop"/>
+      <element name="TDBGroupBox.Visible">
         <descr>
           <p>The Visible property represents the ability to see a visual control. If Visible is  <b>True</b> the control is shown, otherwise it is hidden. Calling Show sets, among others, Visible to  <b>True</b>. Setting Visible to <b>False</b> is equivalent to calling Hide method.
           </p>
           <remark>The Visible property does not depend on control's parent visibility. Use IsVisible method to consider this and get real visibility.
           </remark>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Visible">TControl.Visible</link>
+        </seealso>
       </element>
       <element name="TDBImage">
         <short>
@@ -6320,11 +6347,15 @@
       <element name="TDBImage.FWriteHeader"/>
       <element name="TDBImage.GetDataField">
         <short>Gets the value for the DataField property.</short>
-        <descr/>
+        <descr>
+          <p>
+            Returns the FieldName property from the field data link.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TDBImage.GetDataField.Result">
-        <short/>
+        <short>Field name with the data for the control.</short>
       </element>
       <element name="TDBImage.GetDataSource">
         <short>Gets the value for the DataSource property.</short>
@@ -7371,7 +7402,7 @@
         <short>Allows the button to be drawn with a focus rectangle.</short>
       </element>
       <element name="TDBNavButtonDirection">
-        <short/>
+        <short>Represents the orientation for buttons on a TDBNavigator control.</short>
         <descr>
           <p>
             <var>TDBNavButtonDirection</var> is an enumerated type with values that control the orientation for buttons on a database navigation control. TDBNavButtonDirection is the type used to implement the
@@ -7390,7 +7421,7 @@
         <short>Buttons are displayed vertically (in a column).</short>
       </element>
       <element name="TDBNavigatorOption">
-        <short/>
+        <short>Represents options available on a TDBNavigator control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7438,7 +7469,7 @@
         <short>Navigator button for the click event.</short>
       </element>
       <element name="DefaultDBNavigatorButtons">
-        <short/>
+        <short>Set with the default buttons displayed on a TDBNavigator control.</short>
         <descr>
           <p>
             <var>DefaultDBNavigatorButtons</var> is an array constant which contains the default buttons available in a database navigation control. DefaultDBNavigatorButtons contain values from the
@@ -7784,15 +7815,15 @@
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.BtnClick.Index">
-        <short/>
+        <short>Ordinal position for the button clicked on the navigator control.</short>
       </element>
       <element name="TDBCustomNavigator.VisibleButtonCount">
-        <short>Number of visible buttons in the control.</short>
+        <short>Number of visible buttons on the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TDBCustomNavigator.VisibleButtonCount.Result">
-        <short/>
+        <short>Number of visible buttons on the control.</short>
       </element>
       <element name="TDBCustomNavigator.BeforeAction">
         <short>
@@ -7899,7 +7930,7 @@
       </element>
       <element name="TDBNavButton.NavStyle">
         <short>
-          <var>NavStyle</var> - the style of Navigator Button.
+          Set with the style values for TDBNavigator buttons.
         </short>
         <descr/>
         <seealso/>

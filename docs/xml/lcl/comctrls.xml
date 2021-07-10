@@ -1223,7 +1223,7 @@
         <short>Handles the CM_HITTEST control  message.</short>
         <descr>
           <p>
-            CMHitTest checks the type for the Parent control to determine whether the Message is ignored or forwarded to the inherited method. When Parent is a TCustomTabControl descendant, the class instance must be the active page in the parent control. When it is not, the Message result is set to 0 and the message is ignored. Otherwise, the inherited method is called to handle the Messsage.
+            CMHitTest checks the type for the Parent control to determine whether the Message is ignored or forwarded to the inherited method. When Parent is a TCustomTabControl descendant, the class instance must be the active page in the parent control. When it is not, the Message result is set to 0 and the message is ignored. Otherwise, the inherited method is called to handle the Message.
           </p>
         </descr>
         <seealso>
@@ -12333,7 +12333,7 @@
         <short>Default width for tool buttons using the divider style.</short>
       </element>
       <element name="TToolButton.cDefButtonDropDecArrowWidth">
-        <short>Defaulrt width the drop-down indicator in tools buttons.</short>
+        <short>Default width the drop-down indicator in tools buttons.</short>
       </element>
 
       <element name="TToolButton.FToolBar">
@@ -12811,7 +12811,7 @@
             Adjacent check box-style buttons (and their separators / dividers) with their Grouped property set to True are considered to be in the same group. GroupAllUpAllowed examines the adjacent tool buttons on the Parent tool bar to determine whether any of the grouped buttons have the AllowAllUp property set to True. When one grouped check-box button has AllowAllUp set, the remaining buttons in the group are treated in the same manner.
           </p>
           <remark>
-            Change the Grouped property to False on a separator or divider to force the preceeding or subseqent check-box buttons to be treated as a different group.
+            Change the Grouped property to False on a separator or divider to force the preceeding or subsequent check-box buttons to be treated as a different group.
           </remark>
         </descr>
         <seealso>
@@ -12933,7 +12933,7 @@
             <var>ArrowClick</var> is a method used to execute the <var>OnArrowClick</var> event handler (when assigned) for the tool button. ArrowClick is called from the <var>MouseDown</var> method when the left mouse button has been clicked on the drop-down indicator and the <var>DropDownMenu</var> for the button is not already visible.
           </p>
           <p>
-            See <var>Click</var> for informtion about the actions performed when the button has been clicked, instead of its drop-down indicator.
+            See <var>Click</var> for information about the actions performed when the button has been clicked, instead of its drop-down indicator.
           </p>
         </descr>
         <seealso>
@@ -13637,7 +13637,7 @@
         <short>Registers the tool bar class in the widgetset.</short>
         <descr>
           <p>
-            Calls the inherited method on entry. Calls RegisterToolBar in the widgetset class to ensure that the TToolBar compoenent is registered with the factory methods (when needed).
+            Calls the inherited method on entry. Calls RegisterToolBar in the widgetset class to ensure that the TToolBar component is registered with the factory methods (when needed).
           </p>
         </descr>
         <seealso>
@@ -14247,7 +14247,7 @@ AToolbar.ButtonHeight := 30;
             <var>DisabledImages </var> is a <var>TCustomImageList</var> property with icon images displayed on tool buttons when they are not Enabled. Use <var>Images</var> for the images displayed when the tool button are enabled but not hovered. Use <var>HotImages</var> for the images displayed when tool buttons are hovered under the mouse cursor.
           </p>
           <p>
-            The image position for a tool button is stored in the ImageIndex proprerty in the TToolButton instance.This requires the image at a given position in the image lists to target the same button on the tool bar control.
+            The image position for a tool button is stored in the ImageIndex property in the TToolButton instance.This requires the image at a given position in the image lists to target the same button on the tool bar control.
           </p>
           <p>
             The image list should contain images which uses the sames width and height, and appropriately sized for the ButtonWidth and ButtonHeight for the tool bar. Use <var>ImagesWidth</var> to specify the size needed for tool button icons independent of the actual image size stored in the image lists.
@@ -14256,7 +14256,7 @@ AToolbar.ButtonHeight := 30;
             When a new image list is assigned to the property, the tool bar is redrawn.
           </p>
           <p>
-            The image lists are used when the tool butons get the current icon drawn in the Paint method.
+            The image lists are used when the tool buttons get the current icon drawn in the Paint method.
           </p>
         </descr>
         <seealso>
@@ -14346,7 +14346,7 @@ AToolbar.ButtonHeight := 30;
             <var>HotImages</var> is a <var>TCustomImageList</var> property with icon images displayed on tool buttons when the mouse is hovered over the controls. Use <var>Images</var> for the images displayed when the tool button are enabled but not hovered. Use <var>DisabledImages</var> for the images displayed when tool buttons are not enabled.
           </p>
           <p>
-            The image position for a tool button is stored in the ImageIndex proprerty in the TToolButton instance.This requires the image at a given position in the image lists to target the same button on the tool bar control.
+            The image position for a tool button is stored in the ImageIndex property in the TToolButton instance.This requires the image at a given position in the image lists to target the same button on the tool bar control.
           </p>
           <p>
             The image list should contain images which uses the sames width and height, and appropriately sized for the ButtonWidth and ButtonHeight for the tool bar. Use <var>ImagesWidth</var> to specify the size needed for tool button icons independent of the actual image size stored in the image lists.
@@ -14355,7 +14355,7 @@ AToolbar.ButtonHeight := 30;
             When a new image list is assigned to the property, the tool bar is redrawn.
           </p>
           <p>
-            The image lists are used when the tool butons get the current icon drawn in the Paint method.
+            The image lists are used when the tool buttons get the current icon drawn in the Paint method.
           </p>
         </descr>
         <seealso>
@@ -14375,7 +14375,7 @@ AToolbar.ButtonHeight := 30;
             <var>Images</var> is a <var>TCustomImageList</var> property with icon images displayed on tool buttons when they are enabled. Use <var>DisabledImages</var> for the images displayed when the tool button are not enabled. Use <var>HotImages</var> for the images displayed when tool buttons are enabled and hovered under the mouse cursor.
           </p>
           <p>
-            The image position for a tool button is stored in the ImageIndex proprerty in the TToolButton instance.This requires the image at a given position in the image lists to target the same button on the tool bar control.
+            The image position for a tool button is stored in the ImageIndex property in the TToolButton instance.This requires the image at a given position in the image lists to target the same button on the tool bar control.
           </p>
           <p>
             The image list should contain images which uses the sames width and height, and appropriately sized for the ButtonWidth and ButtonHeight for the tool bar. Use <var>ImagesWidth</var> to specify the size needed for tool button icons independent of the actual image size stored in the image lists.
@@ -14384,7 +14384,7 @@ AToolbar.ButtonHeight := 30;
             When a new image list is assigned to the property, the tool bar is redrawn.
           </p>
           <p>
-            The image lists are used when the tool butons get the current icon drawn in the Paint method.
+            The image lists are used when the tool buttons get the current icon drawn in the Paint method.
           </p>
         </descr>
         <seealso>
@@ -23426,7 +23426,7 @@ OldExpanded.Free;
       </element>
 
       <element name="TTreeNodeExpandedState.OnGetNodeText">
-        <short>Event handler signalled to get the text for the specififed tree node.</short>
+        <short>Event handler signalled to get the text for the specified tree node.</short>
         <descr>
           <p>
             OnGetNodeText is a TTVGetNodeText property with the event handler signalled to get the text for the tree node passed as an argument.  It is signalled from the CreateChildNodes method when the tree node has a parent node, or when expanding its  child nodes. It is also signalled from the Apply method to get the text for an expanded child node.

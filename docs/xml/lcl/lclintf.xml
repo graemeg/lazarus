@@ -808,7 +808,7 @@
       </element>
 
       <element name="DrawFocusRect">
-        <short>Determines if the focuis rectangle is handled by the widgetset class.</short>
+        <short>Determines if the focus rectangle is handled by the widgetset class.</short>
         <descr/>
         <seealso/>
       </element>
@@ -871,7 +871,7 @@
       </element>
 
       <element name="EnableScrollBar">
-        <short>Enables or disables the arrows of a scrollbar control, or of the scrollbars of a window.
+        <short>Enables or disables the arrows of a scroll bar control, or of the scroll bars of a window.
         </short>
         <descr/>
         <seealso/>
@@ -1658,7 +1658,7 @@ end;
       </element>
 
       <element name="GetScrollInfo">
-        <short>Returns all or selected information about a ScrollBar.
+        <short>Returns all or selected information about a Scroll Bar.
         </short>
         <descr/>
         <seealso>
@@ -1670,10 +1670,10 @@ end;
         <short>False on failure.</short>
       </element>
       <element name="GetScrollInfo.Handle">
-        <short>The ScrollBar or window handle.</short>
+        <short>The Scroll Bar or window handle.</short>
       </element>
       <element name="GetScrollInfo.SBStyle">
-        <short>The ScrollBar kind.
+        <short>The Scroll Bar kind.
         </short>
       </element>
       <element name="GetScrollInfo.ScrollInfo">
@@ -3388,7 +3388,7 @@ end;
       </element>
 
       <element name="ShowScrollBar">
-        <short>Shows or hides a ScrollBar.</short>
+        <short>Shows or hides a Scroll Bar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -3793,12 +3793,12 @@ end;
       </element>
 
       <element name="GetScrollPos">
-        <short>Returns the scollbar position.</short>
-        <descr>If the scrollbar is not visible, then the return value is 0.</descr>
+        <short>Returns the scroll bar position.</short>
+        <descr>If the scroll bar is not visible, then the return value is 0.</descr>
         <seealso/>
       </element>
       <element name="GetScrollPos.Result">
-        <short>The position, zero if the scrollbar is not visible.</short>
+        <short>The position, zero if the scroll bar is not visible.</short>
       </element>
       <element name="GetScrollPos.Handle">
         <short/>
@@ -3808,7 +3808,7 @@ end;
       </element>
 
       <element name="GetScrollRange">
-        <short>Returns the minimum and maximum Position values of a ScrollBar.
+        <short>Returns the minimum and maximum Position values of a Scroll Bar.
         </short>
         <descr/>
         <seealso/>
@@ -4248,7 +4248,7 @@ end;
       </element>
 
       <element name="SetScrollPos">
-        <short>Changes the Position of an ScrollBar slider.
+        <short>Changes the Position of an Scroll Bar slider.
         </short>
         <descr>
           The SetScrollPos function sets the position of the scroll box (thumb) in the specified scroll bar and, if requested, redraws the scroll bar to reflect the new position of the scroll box.
@@ -4261,12 +4261,12 @@ end;
         <short>The previous Position, zero if invisible.</short>
       </element>
       <element name="SetScrollPos.Handle">
-        <short>The ScrollBar or Window Handle.</short>
+        <short>The Scroll Bar or Window Handle.</short>
       </element>
       <element name="SetScrollPos.nBar">
         <short>
           <link id="#lcl.LCLType.SB_CTL">SB_CTL</link>
-          means a ScrollBar control.</short>
+          means a Scroll Bar control.</short>
       </element>
       <element name="SetScrollPos.nPos">
         <short>The new Position.</short>
@@ -4276,7 +4276,7 @@ end;
       </element>
 
       <element name="SetScrollRange">
-        <short>Sets the minimum and maximum position values of an ScrollBar.
+        <short>Sets the minimum and maximum position values of an Scroll Bar.
         </short>
         <descr/>
         <seealso>
@@ -5867,7 +5867,7 @@ end;
         <short>Open a given URL with the default browser.</short>
         <descr>
           <p>
-            The function uses FindDefaultBrowser to find the default browser for the platfrom. If it was found,  it is started and the returns value is set to <b>True</b>.
+            The function uses FindDefaultBrowser to find the default browser for the platform. If it was found,  it is started and the returns value is set to <b>True</b>.
           </p>
           <p>
             AURL is passed as parameter to the browser application. AURL must be an URL like http://www.lazarus.freepascal.org or file:///tmp/test.txt or file://C:\test.txt. AURL is quoted when passed as an argument to ensure that space(s) in the path or file name are handled properly.

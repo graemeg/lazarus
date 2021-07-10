@@ -7,7 +7,7 @@
       ====================================================================
     -->
     <module name="LCLType">
-      <short>Provides compatiblity with the Delphi Windows unit.</short>
+      <short>Provides compatibility with the Delphi Windows unit.</short>
       <descr>
         <p>
           <file>lcltype.pas</file> is being created specifically for compatibility with Delphi. It should only be used for constants and type definitions that are included in the Delphi Windows unit. This is only done for compatibility.
@@ -6764,8 +6764,17 @@
       <!-- alias type Visibility: default -->
       <element name="TColorRef">
         <short>TColor, TColorRef.</short>
-        <descr>Values from 0..$FFFFFF are BGR colors. The lowest 8 bit are the blue component, the middle 8 bit the green component and the highest 8 bit the red component. Use the functions Red, Green, Blue to extract the components, RedGreenBlue to extract all three components and RGBToColor to convert the three colors to a TColor.
-Values with highest bit set are system colors or themed colors. For example clNone, clBackground, clButton, clWindowText. Their actual value depend on the context (i.e. the used Canvas) and they are not valid in all contexts. For example clWindowText might only work for Font.Color, not for Brush.Color or Pen.Color. clBackground might be a color, gradient, pattern or image, depending on theme and control type. A system color can change during runtime, so do not store them. Use system colors only on LCL control Canvas. They probably are not defined for printer canvas and some are not defined on bitmap canvas.</descr>
+        <descr>
+          <p>
+            Values from 0..$FFFFFF are BGR colors. The lowest 8 bit are the blue component, the middle 8 bit the green component and the highest 8 bit the red component. Use the functions Red, Green, Blue to extract the components, RedGreenBlue to extract all three components and RGBToColor to convert the three colors to a TColor.
+          </p>
+          <p>
+            Values with highest bit set are system colors or themed colors. For example clNone, clBackground, clButton, clWindowText. Their actual value depend on the context (i.e. the used Canvas) and they are not valid in all contexts. For example clWindowText might only work for Font.Color, not for Brush.Color or Pen.Color. clBackground might be a color, gradient, pattern or image, depending on theme and control type.
+          </p>
+          <p>
+            A system color can change during run-time, so do not store them. Use system colors only on LCL control Canvas. They probably are not defined for printer canvas and some are not defined on bitmap canvas.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- constant Visibility: default -->

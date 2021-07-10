@@ -1586,7 +1586,7 @@
         <short>Performs actions need to end printing for the current document.</short>
         <descr>
           <p>
-            <var>DoEndDoc</var> is a vitual method used to finishing printing the current document. <var>aAborted</var> is <b>True</b> if printing has been halted by calling the <var>Abort</var> method.
+            <var>DoEndDoc</var> is a virtual method used to finishing printing the current document. <var>aAborted</var> is <b>True</b> if printing has been halted by calling the <var>Abort</var> method.
           </p>
           <remark>
             Please note: In <var>TPrinter</var>, DoEndDoc has an empty implementation. It must be overridden in a desendent class to perfom actions needed for the operating system / widgetset / printer-related technology used in the implementation.
@@ -1725,7 +1725,7 @@
 
       <element name="TPrinter.DoInitialization">
         <short>
-          Performs intializations after the list of Printers has been populated.
+          Performs initializations after the list of Printers has been populated.
         </short>
         <descr>
           <p>
@@ -2961,7 +2961,7 @@
         <short>Name for the default Paper Bin on the print device.</short>
         <descr>
           <p>
-            <var>DefaultBinName</var> is a read-only <var>String</var> property which contains the name for the defauilt Paper Bin on the selected print device. The value for the property is retrieved using the <var>DoGetDefaultBinName</var> method.
+            <var>DefaultBinName</var> is a read-only <var>String</var> property which contains the name for the default Paper Bin on the selected print device. The value for the property is retrieved using the <var>DoGetDefaultBinName</var> method.
           </p>
           <p>
             DefaultBinName is used in the implementation of the <var>RestoreDefaultBin</var> method.

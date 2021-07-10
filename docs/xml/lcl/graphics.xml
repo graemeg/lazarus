@@ -5524,7 +5524,7 @@
         <short>Implements a drawing surface for a visual control or bitmap image.</short>
         <descr>
           <p>
-            <var>TCanvas</var> is a desendant of the <var>TFPCustomCanvas</var> class in the FCL (Free Pascal Component Library). TCanvas implements a drawing surface which can be used to display a visual control or render output to a bitmap. TCanvas provides drawing tools like Brush, Pen, and Font needed to draw on the surface. Events are provided to respond to change notifications and progress events. Methods are provided to implement common drawing operations, such as:
+            <var>TCanvas</var> is a descendant of the <var>TFPCustomCanvas</var> class in the FCL (Free Pascal Component Library). TCanvas implements a drawing surface which can be used to display a visual control or render output to a bitmap. TCanvas provides drawing tools like Brush, Pen, and Font needed to draw on the surface. Events are provided to respond to change notifications and progress events. Methods are provided to implement common drawing operations, such as:
           </p>
           <ul>
             <li>Pen, Brush, and Color selection</li>
@@ -6477,7 +6477,7 @@
         <short>Sets the value for the Handle property.</short>
         <descr>
           <p>De-selects any existing handles in the class instance, and sets the new value for the property.
-            Applies the anit-aliasing mode when the handle is valid. Updates the state flags for the canvas.
+            Applies the anti-aliasing mode when the handle is valid. Updates the state flags for the canvas.
           </p>
         </descr>
         <seealso>
@@ -10533,7 +10533,7 @@
             <var>OnProgress</var> event handler in
             <var>AWriter</var>. When AWriter implmements the
             <var>ILazImageWriter</var> interface, its
-            <var>Intialize</var> method is called to store the data for the LCL interface image in
+            <var>Initialize</var> method is called to store the data for the LCL interface image in
             <var>AImage</var>.
           </p>
           <p>InitializeWriter is called from the <var>WriteStream</var> method prior to any operation that writes the raw image data to a stream.
@@ -10800,7 +10800,7 @@
             <var>GetReaderClass</var> is an overridden <var>TFPCustomImageReaderClass</var> class function used to get the FCL-compatible reader for the image type. The return value is a <var>TLazReaderBMP</var> class reference in <var>TBitmap</var>.
           </p>
           <p>
-            GetReaderClass is called from the <var>ReadStream</var> method when the reader is created and intialized. It is used to load a <var>TLazIntfImage</var> instance with the image content supplied in a stream. It is also used in the <var>IsStreamFormatSupported</var> method to determine if the stream contains an image format that can be read using the reader class type.
+            GetReaderClass is called from the <var>ReadStream</var> method when the reader is created and initialized. It is used to load a <var>TLazIntfImage</var> instance with the image content supplied in a stream. It is also used in the <var>IsStreamFormatSupported</var> method to determine if the stream contains an image format that can be read using the reader class type.
           </p>
         </descr>
         <seealso>
@@ -13910,7 +13910,7 @@
       <element name="ColorToRGB">
         <short>Converts a TColor value to an RGB color constant.</short>
         <descr>
-          <p>ColorToRGB ensures that TColor values for special and sytem colors remove the non-RGB values in the constant.
+          <p>ColorToRGB ensures that TColor values for special and system colors remove the non-RGB values in the constant.
             </p>
         </descr>
         <seealso/>
@@ -14331,7 +14331,7 @@
         <short/>
       </element>
       <element name="ClearXLFDPitch">
-        <short>Replaces the spacing for a XLFD font descrtiptor format with a '*' wildcard.
+        <short>Replaces the spacing for a XLFD font descriptor format with a '*' wildcard.
        </short>
         <descr/>
         <seealso/>
@@ -14343,7 +14343,7 @@
         <short/>
       </element>
       <element name="ClearXLFDStyle">
-        <short>Replaces the WeightName, Slant and SetwidthName segmetnts in an XLFD font name with the '*' wildcard.
+        <short>Replaces the WeightName, Slant and SetwidthName segments in an XLFD font name with the '*' wildcard.
        </short>
         <descr/>
         <seealso/>
@@ -14355,7 +14355,8 @@
         <short/>
       </element>
       <element name="XLFDHeightIsSet">
-        <short>Chechs whether an explicit value is assigned to XLFD segments controlling font height.
+        <short>
+          Checks whether an explicit value is assigned to XLFD segments controlling font height.
        </short>
         <descr/>
         <seealso/>

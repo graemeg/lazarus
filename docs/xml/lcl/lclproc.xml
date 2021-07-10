@@ -313,10 +313,10 @@
             MergeSort is an overloaded routine used to implement a comparison-based sort routine for values in List. List can be a TStrings or TFPList instance. No actions are performed in the routine when List has not been assigned (contains Nil).
           </p>
           <p>
-            The StartIndex and EndIndex arguments allow the intial and final entries in a TFPList instance to be specified. When the values are omitted, they default to the first value (position 0) and the last value (Count-1) in List.
+            The StartIndex and EndIndex arguments allow the initial and final entries in a TFPList instance to be specified. When the values are omitted, they default to the first value (position 0) and the last value (Count-1) in List.
           </p>
           <p>
-            OnCompare is the comparison routine used to detemine the order for the sorted values. It can be a TListSortCompare or TStringsSortCompare function, depending on the overloaded variant of the called routine.
+            OnCompare is the comparison routine used to determine the order for the sorted values. It can be a TListSortCompare or TStringsSortCompare function, depending on the overloaded variant of the called routine.
           </p>
           <p>
             MergeSort implements the J. von Nuemann divide-and-conquer algorithm, with an insertion sort used for lists with 6 or fewer elements.
@@ -491,7 +491,7 @@
 
       <element name="SendApplicationMessageFunction">
         <short>
-          Function used to send an application mesage using the specified parameter values.
+          Function used to send an application message using the specified parameter values.
         </short>
         <descr/>
         <seealso/>
@@ -505,7 +505,7 @@
 
       <element name="SendApplicationMessage">
         <short>
-          Sends an application mesage using the specified parameter values.
+          Sends an application message using the specified parameter values.
         </short>
         <descr/>
         <errors/>
@@ -672,7 +672,7 @@
         </short>
         <descr>
           <p>
-            <var>DeleteAmpersands</var> is an <var>Integer</var> function used to remove all occurences of the Ampersand character in Str. The return value contains the position in Str where the first occurence of the of the character was found.
+            <var>DeleteAmpersands</var> is an <var>Integer</var> function used to remove all occurrences of the Ampersand character in Str. The return value contains the position in Str where the first occurence of the of the character was found.
           </p>
           <p>
             Double Ampersands (&amp;&amp;) are converted to a single &amp; character in Str.
@@ -697,7 +697,7 @@
         </short>
         <descr>
           <p>
-            <var>RemoveAmpersands</var> is an overloaded function used to remove all occurences of a single Ampsersand (&amp;) character from the specified value. It provides variants that operate on String and PChar types. The return value contains the original value after all single Ampersand characters have been removed. Double Ampersand (&amp;&amp;) characters are converted into a single Ampersand character.
+            <var>RemoveAmpersands</var> is an overloaded function used to remove all occurrences of a single Ampersand (&amp;) character from the specified value. It provides variants that operate on String and PChar types. The return value contains the original value after all single Ampersand characters have been removed. Double Ampersand (&amp;&amp;) characters are converted into a single Ampersand character.
           </p>
           <p>
             Use <var>DeleteAmpersands</var> to remove Ampersand character in the original String value.
@@ -759,10 +759,10 @@
         </short>
       </element>
       <element name="CompareRect.R1">
-        <short>Pointer to the first rectangle for the comparision.</short>
+        <short>Pointer to the first rectangle for the comparison.</short>
       </element>
       <element name="CompareRect.R2">
-        <short>Pointer to the second rectangle for the comparision.</short>
+        <short>Pointer to the second rectangle for the comparison.</short>
       </element>
 
       <element name="ComparePoints">
@@ -1355,7 +1355,7 @@
       </element>
 
       <element name="DbgAppendToFileWithoutLn">
-        <short>Appends (preformatted) text to an file.</short>
+        <short>Appends (pre-formatted) text to an file.</short>
         <descr/>
         <errors>
         </errors>

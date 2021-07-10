@@ -105,7 +105,7 @@
         <short>Specifies an event handler signalled to draw the background for an image.</short>
         <descr>
           <p>
-            <var>TImagePaintBackgroundEvent</var> is an object procedure  which specifies an event handler signalled to draw the backgound for a <var>TImage</var> class instance. TImagePaintBackgroundEvent is the type used to implement the <var>OnPaintBackground</var> event handler in <var>TCustomImage</var>.
+            <var>TImagePaintBackgroundEvent</var> is an object procedure  which specifies an event handler signalled to draw the background for a <var>TImage</var> class instance. TImagePaintBackgroundEvent is the type used to implement the <var>OnPaintBackground</var> event handler in <var>TCustomImage</var>.
           </p>
         </descr>
         <seealso>
@@ -2852,7 +2852,7 @@
       </element>
 
       <element name="TBevel.Assign" link="#rtl.classes.TPersistent.Assign">
-        <short>Copies properrtty values from Source to the current class instance.</short>
+        <short>Copies property values from Source to the current class instance.</short>
         <descr>
           <p>
             <var>Assign</var> copies the contents of <var>Source</var> to <var>Self</var>, if the classes of the destination and source classes are compatible.
@@ -4041,7 +4041,7 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.FlipChildren.AllLevels">
-        <short>True all child controls and their desendants are flipped.</short>
+        <short>True all child controls and their descendants are flipped.</short>
       </element>
 
       <element name="TCustomCheckGroup.Rows">
@@ -4317,7 +4317,7 @@
       <element name="TBoundLabel.Create">
         <short>Constructor for the class instance.</short>
         <descr>
-          <var>Create</var> is the constructor for <var>TBoundLabel</var>. It calls the inherited <var>Create</var> method, and makes itself a SubComponent of the Owner. The Caption in the control is changd to the Name in the Owner.
+          <var>Create</var> is the constructor for <var>TBoundLabel</var>. It calls the inherited <var>Create</var> method, and makes itself a SubComponent of the Owner. The Caption in the control is changed to the Name in the Owner.
         </descr>
         <seealso>
           <link id="#lcl.stdctrls.TCustomLabel.Create">TCustomLabel.Create</link>
@@ -4852,7 +4852,7 @@
         </short>
         <descr>
           <p>
-            <var>AdjustClientRect</var> is an overridden procedure used to adjust the drawing rectangle in <var>ARect</var> to account for borders and bevels used on the panel. AdjustClientRect calls the inherited method, and calculates the numer of pixels required for the settings in <var>BorderWidth</var>, <var>BeveInner</var>, and <var>BevelOuter</var>. AdjustClientRect calls <var>InflateRect</var> to adjust ARect by the calcluated border and bevel widths.
+            <var>AdjustClientRect</var> is an overridden procedure used to adjust the drawing rectangle in <var>ARect</var> to account for borders and bevels used on the panel. AdjustClientRect calls the inherited method, and calculates the number of pixels required for the settings in <var>BorderWidth</var>, <var>BeveInner</var>, and <var>BevelOuter</var>. AdjustClientRect calls <var>InflateRect</var> to adjust ARect by the calcluated border and bevel widths.
           </p>
           <p>
             AdjustClientRect is called when the control is autosize or aligned.
@@ -4879,7 +4879,7 @@
         <seealso/>
       </element>
       <element name="TCustomPanel.GetControlClassDefaultSize.Result">
-        <short>TSize value with the default dimesions for new class instances.</short>
+        <short>TSize value with the default dimensions for new class instances.</short>
       </element>
 
       <element name="TCustomPanel.CMParentColorChanged" link="#lcl.controls.TControl.CMParentColorChanged">
@@ -7061,7 +7061,7 @@
 
       <element name="TCustomControlBar.FInnerBevelWidth">
         <short>
-          Member with the width for inner bevels following a CM_BORDERCHANGED control mesage.
+          Member with the width for inner bevels following a CM_BORDERCHANGED control message.
         </short>
       </element>
 
@@ -7475,7 +7475,7 @@
 
       <element name="TCustomControlBar.Resize">
         <short>
-          Signals the OnResize event handler (when assigned) and religns bands and their controls when needed.
+          Signals the OnResize event handler (when assigned) and re-aligns bands and their controls when needed.
         </short>
         <descr/>
         <seealso>
@@ -7531,7 +7531,7 @@
         <short>Handles the LM_SIZE message.</short>
         <descr>
           <p>
-            Overridden to resize and arrange visible bands on the control when the size for the cotnrol bar is changed.
+            Overridden to resize and arrange visible bands on the control when the size for the control bar is changed.
           </p>
         </descr>
         <seealso>

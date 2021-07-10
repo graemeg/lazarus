@@ -43,7 +43,9 @@
         <short>Skip or ignore the encoding conversion error.</short>
       </element>
       <element name="TConvertEncodingErrorMode.ceemException">
-        <short>Raise an EConvertError exception with a message releveant to the concersion error.</short>
+        <short>
+          Raises an EConvertError exception with a message relevant to the conversion error.
+        </short>
       </element>
       <element name="TConvertEncodingErrorMode.ceemReplace">
         <short>Replace the suspect value with an error placeholder (usually the '?' character).</short>
@@ -665,7 +667,7 @@
         <short>String with the UTF-8-encoded value, or an empty string.</short>
       </element>
       <element name="SingleByteToUTF8.s">
-        <short>String with the siobngle-byte values converted in the routine.</short>
+        <short>String with the single-byte values converted in the routine.</short>
       </element>
       <element name="SingleByteToUTF8.Table">
         <short>Table with Character to PChar mappings for the converted value.</short>

@@ -297,7 +297,7 @@
         </short>
         <descr>
           <p>
-            Returns a UTF-8-encoded system environment string stored at the specified position. The value in <var>Index</var> is in the range 1..GetEnvironmentVariableCountUTF8. For Unix and Windows the string normally is in the form 'name=value'. Beware that Windows knows some special formats, e.g. '=C:=SomePath'. Nota bene: Raymond Chen called thse "bookkeeping variables" which emulate the MS-DOS tracking mechanism for the current directory on different drives.
+            Returns a UTF-8-encoded system environment string stored at the specified position. The value in <var>Index</var> is in the range 1..GetEnvironmentVariableCountUTF8. For Unix and Windows the string normally is in the form 'name=value'. Beware that Windows knows some special formats, e.g. '=C:=SomePath'. Nota bene: Raymond Chen called these "bookkeeping variables" which emulate the MS-DOS tracking mechanism for the current directory on different drives.
           </p>
           <p>
             Use <var>GetEnvironmentVariableUTF8</var> to lookup values for environment variables by name.
@@ -1033,7 +1033,7 @@ end;
             <var>UTF8StringReplace</var> is an overloaded <var>String</var> function which replaces values in a String matching a pattern starting at a given position.
           </p>
           <p>
-            <var>S</var> is the UTF-8-encoded string to update in the function. <var>OldPattern</var> is a pattern with the values to be replaced. <var>NewPattern</var> is the values used to replace the valuein OldPattern. <var>Flags</var> contains <var>TReplaceFlags</var> values to use for the operation. <var>ALanguage</var> is the Language Code used for values in function. <var>Count</var> is an output variable used to return the number of replacements performed in the function.
+            <var>S</var> is the UTF-8-encoded string to update in the function. <var>OldPattern</var> is a pattern with the values to be replaced. <var>NewPattern</var> is the values used to replace the value in OldPattern. <var>Flags</var> contains <var>TReplaceFlags</var> values to use for the operation. <var>ALanguage</var> is the Language Code used for values in function. <var>Count</var> is an output variable used to return the number of replacements performed in the function.
           </p>
           <p>
             The return value is a UTF-8-encoded string with the updated values following replacement.

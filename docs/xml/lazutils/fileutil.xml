@@ -542,7 +542,7 @@
         <short>The name of the file to locate in the routine.</short>
       </element>
       <element name="SearchFileInPath.BasePath">
-        <short>Path used to resolve realtive path references in a search path.</short>
+        <short>Path used to resolve relative path references in a search path.</short>
       </element>
       <element name="SearchFileInPath.SearchPath">
         <short>List of search paths examined in the routine.</short>
@@ -1021,7 +1021,7 @@
         <short>Character used as a delimiter between file masks.</short>
         <descr>
           <p>
-            <var>MaskSeparator</var> is a <var>Char</var> property which contains the character used as a delimiter between file masks in the search critera. The default value for the property is '<b>;</b>' as assigned in the <var>Create</var> method.
+            <var>MaskSeparator</var> is a <var>Char</var> property which contains the character used as a delimiter between file masks in the search criteria. The default value for the property is '<b>;</b>' as assigned in the <var>Create</var> method.
           </p>
           <p>
             MaskSeparator is used in<var>Search</var> to fill an internal <var>TMaskList</var> instance used in the method.
@@ -1375,7 +1375,7 @@
         <short>Path(s) to the directories examined in the routine.</short>
       </element>
       <element name="FindAllDirectories.SearchSubDirs">
-        <short>True to recurse into sub-sirectories in the search.</short>
+        <short>True to recurse into sub-directories in the search.</short>
       </element>
       <element name="FindAllDirectories.PathSeparator">
         <short>Delimiter used to separate path names in the SearchPath parameter.</short>
@@ -1391,10 +1391,12 @@
         </seealso>
       </element>
       <element name="TCopyFileFlag.cffOverwriteFile">
-        <short>Oerwrites the destination file if it already exists.</short>
+        <short>Overwrites the destination file if it already exists.</short>
       </element>
       <element name="TCopyFileFlag.cffCreateDestDirectory">
-        <short>Create the directory for the destination fil if it does not already exist.</short>
+        <short>
+          Create the directory for the destination fie if it does not already exist.
+        </short>
       </element>
       <element name="TCopyFileFlag.cffPreserveTime">
         <short>Preserves the timestamp for the source file in the destination file.</short>

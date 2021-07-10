@@ -641,7 +641,7 @@
         <short>Canvas where the glyph is rendered.</short>
       </element>
       <element name="TButtonGlyph.Draw.Client">
-        <short>Ciient coodintates for the drawing operation.</short>
+        <short>Ciient coordintates for the drawing operation.</short>
       </element>
       <element name="TButtonGlyph.Draw.Offset">
         <short>Offset in the client coordinates where the glyph is drawn.</short>
@@ -1807,7 +1807,7 @@
         <short>Determines whether the action link can update the image index for the associated control.</short>
         <descr>
           <p>
-            <var>IsImageIndexLinked</var> is an overridden <var>Boolean</var> function used to dtermine if the Action Link can update the image in its associated <var>TSpeedButton</var> control. The return value is <b>True</b> when the <var>Action</var> is derived from <var>TCustomAction</var> and the <var>ImageIndex</var> values in the TSpeedButton and the Action currently have the same values.
+            <var>IsImageIndexLinked</var> is an overridden <var>Boolean</var> function used to determine if the Action Link can update the image in its associated <var>TSpeedButton</var> control. The return value is <b>True</b> when the <var>Action</var> is derived from <var>TCustomAction</var> and the <var>ImageIndex</var> values in the TSpeedButton and the Action currently have the same values.
           </p>
           <p>
             IsImageIndexLinked is called from the <var>SetImageIndex</var> method before updating the value in the ImageIndex for the TSpeedButton control.
@@ -2499,7 +2499,7 @@
 
       <element name="TCustomSpeedButton.AllowAllUp">
         <short>
-          Boolean flag whichindicates if all buttons in a group are allowed to be Up (default is False).
+          Boolean flag which indicates if all buttons in a group are allowed to be Up (default is False).
         </short>
         <descr></descr>
         <seealso></seealso>
@@ -2643,7 +2643,7 @@
       <element name="TSpeedButton.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
 
       <element name="TSpeedButton.BidiMode">
-        <short>Indicates the bi-drectional text mode for the control.</short>
+        <short>Indicates the bi-directional text mode for the control.</short>
         <descr></descr>
         <seealso></seealso>
       </element>
@@ -2975,7 +2975,7 @@ Buttons.GetDefaultBitBtnGlyph := @GetCustomBitBtnGlyph;
       </element>
 
       <element name="BidiAdjustButtonLayout">
-        <short>Adjusts the specified button layout for use in bi-drectional rendering.</short>
+        <short>Adjusts the specified button layout for use in bi-directional rendering.</short>
         <descr>
           <p>
             Adjusts the layout for button glyphs to reflect the settings in <var>IsRightToLeft</var>. Uses an implementation constant to get the <var>TButtonLayout</var> value needed for the setting in IsRightLeft.

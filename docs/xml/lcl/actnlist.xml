@@ -1136,7 +1136,7 @@
         <short>Executes the action using a available OnExecute event handler.</short>
         <descr>
           <p>
-            <var>Execute</var> is an overridden method in TCustomAction.  It checks the State for the ActionList to enusre that it is not suspended. No actions are performed in the method when ActionList.State contains a value other than asNormal.
+            <var>Execute</var> is an overridden method in TCustomAction.  It checks the State for the ActionList to ensure that it is not suspended. No actions are performed in the method when ActionList.State contains a value other than asNormal.
           </p>
           <p>
             Execute calls Update to signal an available OnUpdate event handler in the ActionList, the Application singleton, or the class instance. It toggles the value in the Checked property when AutoCheck is enabled. The inherited Execute method is called when the class instance is Enabled.
@@ -1619,81 +1619,104 @@
       </element>
       <!-- procedure type Visibility: default -->
       <element name="TEnumActionProc">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Specifies a routine used to perform actions when enumerating actions.</short>
+        <descr>
+          <p>
+            <var>TEnumActionProc</var> is an object procedure type with the routine executed when enumerating actions. The type is passed as an argument to the <var>EnumRegisteredActions</var> routine, and used in the Lazarus IDE Action List editor.
+          </p>
+        </descr>
+        <seealso>
+          <link id="EnumRegisteredActions"/>
+        </seealso>
       </element>
       <!-- argument Visibility: default -->
       <element name="TEnumActionProc.Category">
-        <short/>
+        <short>Category name for the action in Info.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TEnumActionProc.ActionClass">
-        <short/>
+        <short>Class type for the action in Info.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="TEnumActionProc.Info">
-        <short/>
+        <short>Pointer to the action class instance.</short>
       </element>
       <!-- procedure Visibility: default -->
       <element name="RegisterActions">
-        <short/>
-        <descr/>
+        <short>Registers the array of action classes using the specified category name.</short>
+        <descr>
+          <p>
+            RegisterActions is a procedure used to register the specified array of action class types. Category contains the category name for the action used to group related actions in an action list. Resource contains the optional class type for a resource used in the action classes.
+          </p>
+          <p>
+            RegisterActions calls RegisterActionsProc to perform the actions needed to register the action class types. An Exception is raised with the message in SInvalidActionRegistration if The RegisterActionsProc constant has not been assigned.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="RegisterActions.CategoryName">
-        <short/>
+        <short>Category name for the actions.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="RegisterActions.AClasses">
-        <short/>
+        <short>Array of action class types registered in the routine.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="RegisterActions.Resource">
-        <short/>
+        <short>Option resource class type for the actions.</short>
       </element>
       <!-- procedure Visibility: default -->
       <element name="UnRegisterActions">
-        <short/>
-        <descr/>
+        <short>Unregisters the specified array of action class types.</short>
+        <descr>
+          <p>
+            Calls UnRegisterActionsProc to unregister the action class types.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="UnRegisterActions.AClasses">
-        <short/>
+        <short>Array of action class types unregistered in the routine.</short>
       </element>
       <!-- procedure Visibility: default -->
       <element name="EnumRegisteredActions">
-        <short/>
+        <short>Enumerates the registered actions and calls a routine for values in Info.</short>
         <descr/>
         <seealso/>
       </element>
       <!-- argument Visibility: default -->
       <element name="EnumRegisteredActions.Proc">
-        <short/>
+        <short>Routine called to process the values in Info.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="EnumRegisteredActions.Info">
-        <short/>
+        <short>Pointer to the action(s) processed in the routine.</short>
       </element>
       <!-- function Visibility: default -->
       <element name="CreateAction">
-        <short/>
-        <descr/>
+        <short>
+          Creates a new TBasicAction instance with the specified owner and class type.
+        </short>
+        <descr>
+          <p>
+            <var>CreateAction</var> is a <var>TBasicAction</var> function used to create a new instance of the action class type in <var>ActionClass</var> with the TheOwner as the owner of the new class instance. Calls the <var>CreateActionProc</var> routine to create the new class instance. Raises an <var>Exception</var> with the message in <var>SInvalidActionCreation</var> if the CreateActionProc constant has not been assigned.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <!-- function result Visibility: default -->
       <element name="CreateAction.Result">
-        <short/>
+        <short>TBasicAction instance allocated in the routine.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="CreateAction.TheOwner">
-        <short/>
+        <short>Component which owns the new class instance.</short>
       </element>
       <!-- argument Visibility: default -->
       <element name="CreateAction.ActionClass">
-        <short/>
+        <short>Class type for the action instance created in the routine.</short>
       </element>
       <!-- constant Visibility: default -->
       <element name="RegisterActionsProc">

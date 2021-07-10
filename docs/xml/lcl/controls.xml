@@ -7271,7 +7271,7 @@
       </element>
 
       <element name="TControl.GetFloating">
-        <short>Determibes whether the control is floating.</short>
+        <short>Determines whether the control is floating.</short>
         <descr>
           <p>
             Floating state is assumed when the control has a HostDockSite of FloatingDockSiteClass, and is the only docked client.
@@ -8080,7 +8080,7 @@
       </element>
 
       <element name="TControl.GetEnabled">
-        <short>Gets the valu for the Enabled property.</short>
+        <short>Gets the value for the Enabled property.</short>
         <descr/>
         <seealso>
           <link id="TControl.Enabled"/>
@@ -8864,7 +8864,7 @@
         <short>Indicates if the control has a host dock site.</short>
         <descr>
           <p>
-            Docked is a Boolean function which indicates if the constrol instance is docked to a host  docking site. The return value is True when all of the following conditions are met:
+            Docked is a Boolean function which indicates if the control instance is docked to a host  docking site. The return value is True when all of the following conditions are met:
           </p>
           <ul>
             <li>Parent is assigned (not Nil).</li>
@@ -8954,7 +8954,7 @@
         <short>Scaled sized value.</short>
       </element>
       <element name="TControl.ScaleDesignToForm.ASize">
-        <short>Original size value scled in the method.</short>
+        <short>Original size value scaled in the method.</short>
       </element>
 
       <element name="TControl.ScaleFormToDesign">
@@ -8968,7 +8968,7 @@
         <short>Scaled sized value.</short>
       </element>
       <element name="TControl.ScaleFormToDesign.ASize">
-        <short>Original size value scled in the method.</short>
+        <short>Original size value scaled in the method.</short>
       </element>
 
       <element name="TControl.Scale96ToForm">
@@ -9021,7 +9021,7 @@
       </element>
       <element name="TControl.Scale96ToFont.ASize">
         <short>
-          Original size value sclared in the method.
+          Original size value scaled in the method.
         </short>
       </element>
 
@@ -9707,7 +9707,7 @@
             A font may need to be scaled when the run-time PPI setting for the screen differs from the design-time value applied to the font. If the font height is not assigned at run-time, its height is set to the value in TFont.PixelsPerInch / Screen.PixelsPerInch.
           </p>
           <p>
-            When AToPPI has a positive non-zero value, it is stored in the TFont.PixelsPerInch property for the font. Otherwise, the exising TFont.PixelsPerInch value is adjusted using the scaling factor in AProportion.
+            When AToPPI has a positive non-zero value, it is stored in the TFont.PixelsPerInch property for the font. Otherwise, the existing TFont.PixelsPerInch value is adjusted using the scaling factor in AProportion.
           </p>
           <p>
             ScaleFontsPPI may be overridden in descendent controls to call the method for its child controls.
@@ -10227,10 +10227,10 @@
             ClientToParent is a TPoint function used to convert the screen coordinates for the control to the screen coordinates for the specified parent control. If Aparent is unassigned, the Parent property for the control is used in the method.
           </p>
           <p>
-            ClientToParent calls the IsParentOf method in AParent to determine if control is in its control hierarchy. An EInvalidOperation exception is raised if the return valu from IsParentOf is False.
+            ClientToParent calls the IsParentOf method in AParent to determine if control is in its control hierarchy. An EInvalidOperation exception is raised if the return value from IsParentOf is False.
           </p>
           <p>
-            The return value is determined by converting the client coorsinates for the control to screen coordinates, and asking the parent control to convert them back to the client coordinates for the parent control.
+            The return value is determined by converting the client coordinates for the control to screen coordinates, and asking the parent control to convert them back to the client coordinates for the parent control.
           </p>
           <p>
             ClientToParent is used, for instance, in the TScrollingWinControl.ScrollInView method.
@@ -11416,7 +11416,7 @@
 
       <element name="TControlChildSizing.Assign">
         <short>
-          Copies property values from th specified persistent object into the current class instance.
+          Copies property values from the specified persistent object into the current class instance.
         </short>
         <descr/>
         <seealso/>
@@ -12444,10 +12444,10 @@
       </element>
 
       <element name="TWinControl.CreateSubClass">
-        <short>An empty imlpementation in the current LCL version.</short>
+        <short>An empty implementation in the current LCL version.</short>
         <descr>
           <p>
-            An empty imlpementation in the current LCL version.
+            An empty implementation in the current LCL version.
           </p>
         </descr>
         <seealso/>
@@ -13964,7 +13964,7 @@
       </element>
 
       <element name="TWinControl.GetMouseCapture">
-        <short>Gets the value for the MopuseCapture property.</short>
+        <short>Gets the value for the MouseCapture property.</short>
         <descr>
           <p>
             GetMouseCapture is a Boolean function used to get the value for the MouseCapture property. It is overridden in TWinControl to ensure that the Handle for the control has been allocated. The return value is True when HandleAllocated returns True, and GetCaptureControl returns the current class instance.
@@ -14552,7 +14552,7 @@
 
       <element name="TWinControl.DesignerDeleting">
         <short>
-          Indicates whether the wcfDesignerDeleting flagis included  in the flags for the control.
+          Indicates whether the wcfDesignerDeleting flag is included  in the flags for the control.
         </short>
         <descr>
           <p>

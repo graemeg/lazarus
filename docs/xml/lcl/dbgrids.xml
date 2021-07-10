@@ -2054,7 +2054,7 @@
         <short>The format to be used for display in this column.</short>
         <descr>
           <p>
-            <var>DisplayFormat</var> is a String property which specifies a format string used for displaying the value of a Field with the name in FieldName. Use of DisplayFormat in TColumn is consistent with its use in TField (and decendants), but can assign a value that overrides the default display format for the Field.
+            <var>DisplayFormat</var> is a String property which specifies a format string used for displaying the value of a Field with the name in FieldName. Use of DisplayFormat in TColumn is consistent with its use in TField (and descendants), but can assign a value that overrides the default display format for the Field.
           </p>
           <p>
             <var>GetDisplayFormat</var> is the read access specifier for the property. <var>SetDisplayFormat</var> is the write access specifier for the property. Changing the value in DisplayFormat causes the ColumnChanged method to be called when the column definition has been updated.
@@ -3257,7 +3257,7 @@
             <var>AutoAdjustColumn</var> is an overridden method in <var>TCustomDBGrid</var> used to adjust column properties to accommodate the largest value in the specified column. It re-implements the method from the ancestor class.
           </p>
           <p>
-            AutoAdjustColumn uses the column definiton, or the field from the linked dataset, to determine the column or field size needed for the data displayed on the control canvas. A temporary TCanvas instance is created and used to measure the text width for the column. The calculated width is stored in the inherited ColWidths property.
+            AutoAdjustColumn uses the column definition, or the field from the linked dataset, to determine the column or field size needed for the data displayed on the control canvas. A temporary TCanvas instance is created and used to measure the text width for the column. The calculated width is stored in the inherited ColWidths property.
           </p>
           <p>
             AutoAdjustColumn is called from the DblClick method when the values goColSizing and goDblClickAutoSize have been included in the Options property.
@@ -3509,7 +3509,7 @@
         </seealso>
       </element>
       <element name="TCustomDBGrid.DefaultEditorStyle.Result">
-        <short>Actual editor style for the column using the specifiefd field.</short>
+        <short>Actual editor style for the column using the specified field.</short>
       </element>
       <element name="TCustomDBGrid.DefaultEditorStyle.Style">
         <short>Preferred editor style for the field.</short>
@@ -3527,7 +3527,7 @@
             <var>DoCopyToClipboard</var> is an overridden method in <var>TCustomDBGrid</var> used to copy the field value for the selected column and row in the grid to the clipboard. No actions are performed in the method when the linked  dataset is not active.
           </p>
           <p>
-            DoCopyToClipboard calls <var>GetFieldFromGridColumn</var> to get the field definiton for the current column in the grid. If the field is not Nil (unassigned), the String value for the field is stored to the global <var>Clipboard</var> instance using its <var>AsText</var> method.
+            DoCopyToClipboard calls <var>GetFieldFromGridColumn</var> to get the field definition for the current column in the grid. If the field is not Nil (unassigned), the String value for the field is stored to the global <var>Clipboard</var> instance using its <var>AsText</var> method.
           </p>
           <p>
             DoCopyToClipboard re-implements the method from the ancestor class.
@@ -3876,7 +3876,7 @@
             The DrawCellText method is called to render the text value with the drawing state in aState.
           </p>
           <p>
-            DrawColumnText is called from the DrawFixedText and DefauiltDrawCell methods.
+            DrawColumnText is called from the DrawFixedText and DefaultDrawCell methods.
           </p>
         </descr>
         <seealso/>
@@ -4557,7 +4557,7 @@
 
       <element name="TCustomDBGrid.IsColumnVisible">
         <short>
-          Indicates if the specified column is visible using the column defintion or its display width.
+          Indicates if the specified column is visible using the column definition or its display width.
         </short>
         <descr/>
         <seealso/>
@@ -4807,7 +4807,7 @@
         <short>Mouse button examined in the method.</short>
       </element>
       <element name="TCustomDBGrid.MouseDown.Shift">
-        <short>Shift / Ctrl / Alt modifier for the mouse buttom.</short>
+        <short>Shift / Ctrl / Alt modifier for the mouse button.</short>
       </element>
       <element name="TCustomDBGrid.MouseDown.X">
         <short>Horizontal coordinate for the mouse button click.</short>
@@ -5450,7 +5450,7 @@
 
       <element name="TCustomDBGrid.InitiateAction">
         <short>
-          Updates the ActionLink for the control and resets flag valuess in GridStatus.
+          Updates the ActionLink for the control and resets flag values in GridStatus.
         </short>
         <descr/>
         <seealso>
@@ -5975,7 +5975,7 @@
       </element>
 
       <element name="TDBGrid.OnKeyPress">
-        <short>Eventy handler signalled for the key press event.</short>
+        <short>Event handler signalled for the key press event.</short>
         <descr>
           <p>
             <var>OnKeyPress</var> is an event controller for a key being pressed while the control has focus.

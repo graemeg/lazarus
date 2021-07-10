@@ -875,7 +875,7 @@
         <short>Default padding for the content in grid cells.</short>
         <descr>
           <p>
-            Cell padding is the amount of space added around cell values and hints drawn for a grid control. The value represents the number of pixels added to the boundaries at the default display density (96 PPI). The value may be scaled and stored in the <var>varCellPadding</var> variable when a new instance of a grid control is created. varCellPadding contains the paddding value actually applied to the values and hints in the control.
+            Cell padding is the amount of space added around cell values and hints drawn for a grid control. The value represents the number of pixels added to the boundaries at the default display density (96 PPI). The value may be scaled and stored in the <var>varCellPadding</var> variable when a new instance of a grid control is created. varCellPadding contains the padding value actually applied to the values and hints in the control.
           </p>
         </descr>
         <seealso>
@@ -904,7 +904,7 @@
         <short>Default padding for the content in grid cells.</short>
         <descr>
           <p>
-            Cell padding is the amount of space added around cell values and hints drawn for a grid control. The value represents the number of pixels added to the boundaries at the default display density (96 PPI). The value may be scaled and stored in the <var>varCellPadding</var> variable when a new instance of a grid control is created. varCellPadding contains the paddding value actually applied to the values and hints in the control.
+            Cell padding is the amount of space added around cell values and hints drawn for a grid control. The value represents the number of pixels added to the boundaries at the default display density (96 PPI). The value may be scaled and stored in the <var>varCellPadding</var> variable when a new instance of a grid control is created. varCellPadding contains the padding value actually applied to the values and hints in the control.
           </p>
         </descr>
         <seealso>
@@ -2663,7 +2663,7 @@
         <short>Destructor for the class instance.</short>
         <descr>
           <p>
-            <var>Destroy</var> is the ovverridden destructor for <var>TGridColumnTitle</var>. It frees resource allocated for properties like Font, Alignment, Color, Caption, and Layout. It calls the inherited destructor prior to exiting from the method.
+            <var>Destroy</var> is the overridden destructor for <var>TGridColumnTitle</var>. It frees resource allocated for properties like Font, Alignment, Color, Caption, and Layout. It calls the inherited destructor prior to exiting from the method.
           </p>
         </descr>
         <seealso>
@@ -2740,7 +2740,7 @@
             <li>IsDefaultFont returns True.</li>
           </ul>
           <p>
-            IsDefault is when the coloumns for the parent grid are streamed using the LCL component streaming mechanism. Columns which contain defauilt values (including the title) are not written during component streaming.
+            IsDefault is when the coloumns for the parent grid are streamed using the LCL component streaming mechanism. Columns which contain default values (including the title) are not written during component streaming.
           </p>
         </descr>
         <seealso>
@@ -3478,7 +3478,9 @@
       </element>
 
       <element name="TGridColumn.AllColumnsChange">
-        <short>Method used to indicate that all columns in the collection have been chenged.</short>
+        <short>
+          Method used to indicate that all columns in the collection have been changed.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -6646,7 +6648,7 @@
         <short>Column number for the click event.</short>
       </element>
       <element name="TCustomGrid.CellClick.aRow">
-        <short>Row number for the clisck event.</short>
+        <short>Row number for the click event.</short>
       </element>
 
       <element name="TCustomGrid.CellExtent">
@@ -7069,9 +7071,6 @@
             <li>ColWidths </li>
             <li>RowHeights</li>
           </ul>
-          <p>
-            Mis amigos lo entenderán.
-          </p>
         </descr>
         <seealso>
           <link id="#lcl.controls.TControl.DefineProperties">TControl.DefineProperties</link>
@@ -7420,7 +7419,7 @@
       </element>
 
       <element name="TCustomGrid.DoPrepareCanvas">
-        <short>Perfoms actions needed to prepare the canvas for a drawing operation.</short>
+        <short>Performs actions needed to prepare the canvas for a drawing operation.</short>
         <descr>
           <p>
             Signals the OnPrepareCanvas event handler (when assigned) to prepare the Canvas for the cell using the specified state. Called from the PrepareCavas method. Allows the default actions performed in the caller to be overridden.
@@ -7824,7 +7823,7 @@
         <short>Row number for the column title.</short>
       </element>
       <element name="TCustomGrid.DrawColumnText.aRect">
-        <short>Rectangle with the counds for the column title.</short>
+        <short>Rectangle with the bounds for the column title.</short>
       </element>
       <element name="TCustomGrid.DrawColumnText.aState">
         <short>Drawing state for the text in the cell.</short>
@@ -7918,7 +7917,7 @@
       </element>
 
       <element name="TCustomGrid.EditButtonClicked">
-        <short>Signals the OnEditButtonClick oir OnButtonClick event handler (when assigned).</short>
+        <short>Signals the OnEditButtonClick or OnButtonClick event handler (when assigned).</short>
         <descr>
           <p>
             When Sender is the TButtonCellEditor for the control, the DoEditButtonClick method is called using the Col and Row numbers from the TButtonCellEditor class instance. Otherwise, DoEditButtonClick is called using the values in the Col and Row properties.
@@ -7984,7 +7983,7 @@
         <short>Hides a visible cell editor in the grid control.</short>
         <descr>
           <p>
-            EditorHide ensures that an active, visible cell editor is locked / hidden / unlocked in the method. No actions are performed in the method when EditorLocked returns True, or the Editor is not VIsible.
+            EditorHide ensures that an active, visible cell editor is locked / hidden / unlocked in the method. No actions are performed in the method when EditorLocked returns True, or the Editor is not visible.
           </p>
           <p>
             EditorHide sets the value in EditorMode to False, and sets GridState to gsNormal.
@@ -8272,7 +8271,7 @@
         <seealso/>
       </element>
       <element name="TCustomGrid.GetCells.Result">
-        <short>Content for the sepcified cell.</short>
+        <short>Content for the specified cell.</short>
       </element>
       <element name="TCustomGrid.GetCells.ACol">
         <short>Column number for the cell.</short>
@@ -8303,7 +8302,7 @@
         <short>Column number examined in the grid.</short>
       </element>
       <element name="TCustomGrid.GetColumnAlignment.ForTitle">
-        <short>True when the alignment in the column tItle is used.</short>
+        <short>True when the alignment in the column title is used.</short>
       </element>
 
       <element name="TCustomGrid.GetColumnColor">
@@ -8446,16 +8445,16 @@
         <seealso/>
       </element>
       <element name="TCustomGrid.GetDeltaMoveNext.Result">
-        <short>Tru if the calculated cell for the movement is selected in the grid control.</short>
+        <short>True if the calculated cell for the movement is selected in the grid control.</short>
       </element>
       <element name="TCustomGrid.GetDeltaMoveNext.Inverse">
         <short>True is the navigation order is reversed.</short>
       </element>
       <element name="TCustomGrid.GetDeltaMoveNext.ACol">
-        <short>Column number after the navigatioon request.</short>
+        <short>Column number after the navigation request.</short>
       </element>
       <element name="TCustomGrid.GetDeltaMoveNext.ARow">
-        <short>Column number after the navigatioon request.</short>
+        <short>Column number after the navigation request.</short>
       </element>
       <element name="TCustomGrid.GetDeltaMoveNext.AAutoAdvance">
         <short>Direction of movement for the request.</short>
@@ -8508,7 +8507,7 @@
             <var>GetDefaultColumnLayout</var> gets the default vertical layout for text in the specified Column. The <var>DefaultTextStyle</var> property is used as the source for the text Layout, and contains the value assigned in the constructor for the class instance.
           </p>
           <p>
-            GetDefaultColumnLayout is called from <var>GetColumnLayout</var> when a <var>TGridColumn</var> instance cannot be located in <var>Columns</var> for the specififed column number. This occurs when <var>Column</var> is invalid for the defined Columns in the control, or when Columns has not been <var>Enabled</var> (contains at least one visible column).
+            GetDefaultColumnLayout is called from <var>GetColumnLayout</var> when a <var>TGridColumn</var> instance cannot be located in <var>Columns</var> for the specified column number. This occurs when <var>Column</var> is invalid for the defined Columns in the control, or when Columns has not been <var>Enabled</var> (contains at least one visible column).
           </p>
           <p>
             Change values in the DefaultTextStyle property to override the default values assigned in the Create method. Use the Columns collection to change the text layout used in a column when Columns are Enabled.
@@ -9355,7 +9354,7 @@
         <seealso/>
       </element>
       <element name="TCustomGrid.LoadGridOptions.cfg">
-        <short>XML configuraton file instance examined in the method.</short>
+        <short>XML configuration file instance examined in the method.</short>
       </element>
       <element name="TCustomGrid.LoadGridOptions.Version">
         <short>LCL version for the grid option data.</short>
@@ -9794,7 +9793,7 @@
       </element>
 
       <element name="TCustomGrid.ScrollBarRange">
-        <short>Sets  the range for the specifeid scrollbar.</short>
+        <short>Sets  the range for the specified scrollbar.</short>
         <descr/>
         <seealso/>
       </element>
@@ -10285,7 +10284,7 @@
         <short>Updates the horizontal scrollbar to use the specified range, page, and position.</short>
         <descr>
           <p>
-            <var>UpdateHorzScrollBar</var> calls <var>ScrollBarShow</var> to updated the scrollbar visibility when it differs from the value in <var>aVisible</var>. The <var>ScrollBarRange</var> is called to apply the values in ARange, APage, and APos to the horizontal scrollbar for the control. No actions are performed if the visibiity has not been changed and the scrollbar is not visibile.
+            <var>UpdateHorzScrollBar</var> calls <var>ScrollBarShow</var> to updated the scrollbar visibility when it differs from the value in <var>aVisible</var>. The <var>ScrollBarRange</var> is called to apply the values in ARange, APage, and APos to the horizontal scrollbar for the control. No actions are performed if the visibility has not been changed and the scrollbar is not visible.
           </p>
           <p>
             UpdateHorzScrollBar is called from the CalcScrollbarsRange method when the visible area in the grid is scrolled.
@@ -11627,7 +11626,7 @@
         <short>Event handler signalled when the value for a Checkbox cell is toggled.</short>
         <descr>
           <p>
-            <var>OnCheckboxToggled</var> is a <var>TToggledCheckboxEvent</var> property with the event handler signalled when the value for a check box-stle cell is toggled. OnCheckboxToggled is triggered (when assigned) after the cell value has been changed and stored. OnCheckboxToggled is used descendnent classes which implement a Toggle method, like TCustomDrawGrid.
+            <var>OnCheckboxToggled</var> is a <var>TToggledCheckboxEvent</var> property with the event handler signalled when the value for a check box-style cell is toggled. OnCheckboxToggled is triggered (when assigned) after the cell value has been changed and stored. OnCheckboxToggled is used descendent classes which implement a Toggle method, like TCustomDrawGrid.
           </p>
         </descr>
         <seealso>
@@ -11664,7 +11663,7 @@
         <short>Event handler signalled to draw a cell in the grid control.</short>
         <descr>
           <p>
-            <var>OnDrawCell</var> is a <var>TOnDrawCell</var> property with the event handler signalled to render a cell in teh grid control. Parameters passed to the event handler identify the column and row numbers for the cell, and the drawing state.
+            <var>OnDrawCell</var> is a <var>TOnDrawCell</var> property with the event handler signalled to render a cell in the grid control. Parameters passed to the event handler identify the column and row numbers for the cell, and the drawing state.
           </p>
           <p>
             OnDrawCell can be used along with the default drawing mechanism for the grid control. Set the <var>DefaultDrawing</var> property to <b>True</b> to allow the grid to render the cell background, state, and focus. Use OnDrawCell to handle the text which appears in the specified cell.
@@ -11998,7 +11997,7 @@
         <seealso/>
       </element>
       <element name="TCustomGrid.EditorByStyle.Result">
-        <short>Cell editor for the spceified style.</short>
+        <short>Cell editor for the specified style.</short>
       </element>
       <element name="TCustomGrid.EditorByStyle.Style">
         <short>Editor style selected in the method.</short>
@@ -12751,7 +12750,7 @@
         <short>Value from the Editor control.</short>
       </element>
       <element name="TCustomDrawGrid.GetEditorValue.ACol">
-        <short>Column numbre for the cell.</short>
+        <short>Column number for the cell.</short>
       </element>
       <element name="TCustomDrawGrid.GetEditorValue.ARow">
         <short>Row number for the cell.</short>
@@ -13164,7 +13163,7 @@
         <seealso/>
       </element>
       <element name="TCustomDrawGrid.NotifyColRowChange.WasInsert">
-        <short>True if an insert tiggered the notification.</short>
+        <short>True if an insert triggered the notification.</short>
       </element>
       <element name="TCustomDrawGrid.NotifyColRowChange.IsColumn">
         <short>True if a column was affected by the change.</short>
@@ -13540,10 +13539,10 @@
         <short>Column or row number sorted in the method.</short>
       </element>
       <element name="TCustomDrawGrid.SortColRow.FromIndex">
-        <short>Starting postion sorted in the column or row.</short>
+        <short>Starting position sorted in the column or row.</short>
       </element>
       <element name="TCustomDrawGrid.SortColRow.ToIndex">
-        <short>Ending postion sorted in the column or row.</short>
+        <short>Ending position sorted in the column or row.</short>
       </element>
 
       <element name="TCustomDrawGrid.DefaultDrawCell">
@@ -14110,7 +14109,7 @@
         <short>Deletes a value stored in the class instance.</short>
         <descr>
             <p>
-              <var>Delete</var> is overridden to prevent removing entires in the <var>Strings</var> property. It always raises an <var>EGridException</var> exception.
+              <var>Delete</var> is overridden to prevent removing entries in the <var>Strings</var> property. It always raises an <var>EGridException</var> exception.
             </p>
         </descr>
         <errors>
@@ -14377,7 +14376,7 @@
       </element>
 
       <element name="TCustomStringGrid.DefineProperties">
-        <short>Defines non-published properties included in LCL componenrt streaming.</short>
+        <short>Defines non-published properties included in LCL component streaming.</short>
         <descr>
           <p>
             <var>DefineProperties</var> is an overridden method used to define non-published properties which are read and written using LCL component streaming. In <var>TCustomStringGrid</var>, it adds read and write routines for the <var>Cells</var> property to the <var>TFiler</var> instance.
@@ -14472,7 +14471,7 @@
         <short>Draws the text and image for a grid column title at the specified cell coordinates.</short>
         <descr>
           <p>
-            <var>DrawColumnText</var> is an overridden method used to draw the text and image for a grid column title at the cell coordinates specified in <var>ACol</var> and <var>ARow</var>. Whn Coilumns has been enabled, the inherited method is called to draw the image, sort indicator, and text when needed. Whn Columns has not been enabled, the DrawColumnTitleImage and DrawCellText methods are called to draw the sort indicator and text for the column.
+            <var>DrawColumnText</var> is an overridden method used to draw the text and image for a grid column title at the cell coordinates specified in <var>ACol</var> and <var>ARow</var>. When Columns has been enabled, the inherited method is called to draw the image, sort indicator, and text when needed. When Columns has not been enabled, the DrawColumnTitleImage and DrawCellText methods are called to draw the sort indicator and text for the column.
           </p>
           <p>
             DrawColumnText is called from the <var>DefaultDrawCell</var> method for cells which contain fixed column titles.
@@ -14641,7 +14640,7 @@
       <element name="TCustomStringGrid.SaveContent.cfg" link="#lcl.grids.TCustomGrid.SaveContent.cfg"/>
 
       <element name="TCustomStringGrid.SelectionSetText">
-        <short>Stores the sepecified Tab-seperated values to the Selection in the grid.</short>
+        <short>Stores the specified Tab-separated values to the Selection in the grid.</short>
         <descr/>
         <seealso/>
       </element>
@@ -15011,7 +15010,7 @@
       <element name="TCustomStringGrid.ExtendedSelect" link="#lcl.grids.TCustomGrid.ExtendedSelect"/>
 
       <element name="TCustomStringGrid.Objects">
-        <short>Provides indexed acces to a TObject instance associated with the cell.</short>
+        <short>Provides indexed access to a TObject instance associated with the cell.</short>
         <descr/>
           <p>
             Objects is an indexed TObject property which is used to associate an object instance with the cell specified in the ACol and ARow index values. The property value can be any TObject descendant. The application must allocate and free the object instance, and must ensure it is cast to the correct type when retrieved.

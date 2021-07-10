@@ -811,14 +811,14 @@
 
       <element name="TCustomMaskEdit.JumpToNextDot">
         <short>
-          Moves to the next occurrance of the specified character in the value for the edit control.
+          Moves to the next occurrence of the specified character in the value for the edit control.
         </short>
         <descr>
           <p>
-            <var>JumpToNextDot</var> is a procedure used to move to the next occurrance of the character in <var>Dot</var> in the mask for the edit control. Dot must be included in the mask, and must occur after the current cursor position. Dot must contain either a Period ('.') or Comma (',') character; no actions are performed in the method when Dot contains another character value.
+            <var>JumpToNextDot</var> is a procedure used to move to the next occurrence of the character in <var>Dot</var> in the mask for the edit control. Dot must be included in the mask, and must occur after the current cursor position. Dot must contain either a Period ('.') or Comma (',') character; no actions are performed in the method when Dot contains another character value.
           </p>
           <p>
-            If a mask contains both Period and Comma characters, only the first character can be accesses using the method. A mask literal cannot appear after the requested occurrance of Dot, and the next occurrance cannot be the last character in the mask.
+            If a mask contains both Period and Comma characters, only the first character can be accesses using the method. A mask literal cannot appear after the requested occurrence of Dot, and the next occurrence cannot be the last character in the mask.
           </p>
           <p>
             The cursor position is set to the next character after the mask literal, when allowed. JumpToNextDot calls the <var>SetCursorPos</var> method to update the caret position in the edit control.
@@ -867,7 +867,7 @@
         </short>
         <descr>
           <p>
-            <var>IsLiteral</var> is a <var>Boolean</var> function which indicates whether the Integer vaule in <var>Index</var> represents a mask literal which cannot be edited in the control.
+            <var>IsLiteral</var> is a <var>Boolean</var> function which indicates whether the Integer value in <var>Index</var> represents a mask literal which cannot be edited in the control.
           </p>
           <p>
             The return value is <b>False</b> when the mask type for the character in Index is <b>not</b> one for the following TMaskType values:
@@ -897,7 +897,7 @@
 
       <element name="TCustomMaskEdit.TextIsValid">
         <short>
-          Indicates whether the specified valuel is valid for the EditMask in the control.
+          Indicates whether the specified value is valid for the EditMask in the control.
         </short>
         <descr>
           <p>
@@ -929,7 +929,7 @@
             CharMatchesMask uses the internal TInternalMask instance to determine if the value in Ch matches the mask definition at the specified position. The return value is <b>True</b> when Ch contains a valid character value for the mask character type.
           </p>
           <p>
-            If an unrecognized mask character type is found in the in the EditMask, an <var>EDBEditError</var> exception is raised. It is not really a database exception; it's just an identifer, defined in this unit, with a confusingly  unfortunate name.
+            If an unrecognized mask character type is found in the in the EditMask, an <var>EDBEditError</var> exception is raised. It is not really a database exception; it's just an identifier, defined in this unit, with a confusingly  unfortunate name.
           </p>
           <p>
             CharMatchesMask is used in the implementation of the <var>TextIsValid</var> method.
@@ -962,7 +962,7 @@
         <short>Clears a character which is not a literal at the specified Position.</short>
         <descr>
           <p>
-            For Delphi compatibilty, only literals remain.
+            For Delphi compatibility, only literals remain.
           </p>
           <p>
             ClearChar checks the <var>TMaskType</var> value for the character at the specified <var>Position</var>. The return value contains the hour separator, date separator, or literal value used for the mask character. Date and time separators use values from the DefaultFormatSettings variable in the RTL.
@@ -1207,11 +1207,11 @@
 
       <element name="TCustomMaskEdit.CanShowEmulatedTextHint">
         <short>
-          Indicates if the control can display its Hint or TextHint using the LCL capatibility layer.
+          Indicates if the control can display its Hint or TextHint using the LCL capability layer.
         </short>
         <descr>
           <p>
-            <var>CanShowEmulatedTextHint</var> is an overridden <var>Boolean</var> function which indicates if the control can display its <var>Hint</var> or <var>TextHint</var> using the LCL capatibility layer in the Widget set class. CanShowEmulatedTextHint returns <b>False</b> when an edit mask has been assigned for the control. Otherwise, the inherited method is called to get the return value for the method.
+            <var>CanShowEmulatedTextHint</var> is an overridden <var>Boolean</var> function which indicates if the control can display its <var>Hint</var> or <var>TextHint</var> using the LCL capability layer in the Widget set class. CanShowEmulatedTextHint returns <b>False</b> when an edit mask has been assigned for the control. Otherwise, the inherited method is called to get the return value for the method.
           </p>
         </descr>
         <seealso>
@@ -1273,7 +1273,7 @@
         <short>True on success.</short>
       </element>
       <element name="TCustomMaskEdit.RestoreMask.NewText">
-        <short>New vaule assigned to the Text property.</short>
+        <short>New value assigned to the Text property.</short>
       </element>
 
       <element name="TCustomMaskEdit.RealSetText">
@@ -2378,7 +2378,7 @@
         <short>Delimited mask specification examined in the method.</short>
       </element>
       <element name="SplitEditMask.AMaskPart">
-        <short>Contains the mask chatracters or literals in the specification.</short>
+        <short>Contains the mask characters or literals in the specification.</short>
       </element>
       <element name="SplitEditMask.AMaskSave">
         <short>Indicates if mask data is saved with the value in a control.</short>

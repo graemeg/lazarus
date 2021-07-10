@@ -474,7 +474,7 @@
         <short>Gets the preferred size for new instances of the class.</short>
         <descr>
           <p>
-            <var>CalculatePreferredSize</var> is overridden in TCustomScrollBar. The inherited method is called, and the value in PreferredHeight or PerferredWidth is updated, based on the value in <var>Kind</var>, to use the corresponding value from <var>GetSystemMetrics</var>.
+            <var>CalculatePreferredSize</var> is overridden in TCustomScrollBar. The inherited method is called, and the value in PreferredHeight or PreferredWidth is updated, based on the value in <var>Kind</var>, to use the corresponding value from <var>GetSystemMetrics</var>.
           </p>
         </descr>
         <seealso>
@@ -4377,7 +4377,7 @@
             <var>Canvas</var> is a read-only <var>TCanvas</var> property with the drawing surface where the control is drawn.
           </p>
           <p>
-            Its value is assigned the contructor for the class instance, and uses a <var>TControlCanvas</var> instance to maintain an association between the control and its device context. It is freed when the control is destroyed.
+            Its value is assigned the constructor for the class instance, and uses a <var>TControlCanvas</var> instance to maintain an association between the control and its device context. It is freed when the control is destroyed.
           </p>
           <p>
             Values in the <var>Font</var> and <var>Brush</var> properties are assigned to Canvas, and used to measure and draw the Items for the control.
@@ -8750,7 +8750,7 @@ end;
         <short>Secondary shortcut key for the control.</short>
         <descr>
           <p>
-            <var>ShortCutKey2</var> is a <var>TShortCut</var> property with the secondary  shortcut key or accelerator key for the control. The property value contains both the virtual key code and the shift modifier cobined to form the short cut key.
+            <var>ShortCutKey2</var> is a <var>TShortCut</var> property with the secondary  shortcut key or accelerator key for the control. The property value contains both the virtual key code and the shift modifier combined to form the short cut key.
           </p>
           <p>
             The property value (along with Shortcut) is passed to the widgetst class when the WSSetText method is called.

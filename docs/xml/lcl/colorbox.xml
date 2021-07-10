@@ -184,6 +184,7 @@
       <element name="TCustomColorBox.FColorRectOffset"/>
       <element name="TCustomColorBox.FDefaultColorColor"/>
       <element name="TCustomColorBox.FNoneColorColor"/>
+      <element name="TCustomColorBox.FColorDialog"/>
       <element name="TCustomColorBox.FOnGetColors"/>
       <element name="TCustomColorBox.FStyle"/>
       <element name="TCustomColorBox.FSelected"/>
@@ -360,7 +361,7 @@
             PickCustomColor is used when cbCustomColor is included in the Style for the control and ItemIndex is set to 0. This position was reserved for a custom color when the list of colors was loaded for the Style settings in the control.
           </p>
           <p>
-            PickCustomColor creates and executes a TColorDialog to get the color selection for the control. The custom color selection is stored as the first TColor value in the Items for the control. When a color is successfully selected using the dialog, the return value is set to True and the control is redrawn.
+            PickCustomColor uses an existing value in ColorDialog when assigned, or creates the ColorDialog when needed. It  executes the ColorDialog to get the color selection for the control. The custom color selection is stored as the first TColor value in the Items for the control. When a color is successfully selected using the dialog, the return value is set to True and the control is redrawn.
           </p>
           <p>
             The color selection dialog is not displayed at design-time, and the return value is always set to False.
@@ -653,6 +654,18 @@ if iPos &lt;&gt; -1 then
         </seealso>
       </element>
 
+      <element name="TCustomColorBox.ColorDialog">
+        <short>Dialog displayed to select a custom color for the control.</short>
+        <descr>
+          <p>
+            <var>ColorDialog</var> is a <var>TColorDialog</var> property with the dialog displayed to select a custom color for the control. Its value can be assigned directly to the control, or it can be created and freed at run-time when the <var>PickCustomColor</var> method is called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.dialogs.TColorDialog">TColorDialog</link>
+        </seealso>
+      </element>
+
       <element name="TColorBox">
         <short>Implements combo-box control used to select a color name or value.</short>
         <descr>
@@ -689,6 +702,7 @@ if iPos &lt;&gt; -1 then
       <element name="TColorBox.Selected" link="#lcl.colorbox.TCustomColorBox.Selected"/>
       <element name="TColorBox.Style" link="#lcl.colorbox.TCustomColorBox.Style"/>
       <element name="TColorBox.OnGetColors" link="#lcl.colorbox.TCustomColorBox.OnGetColors"/>
+      <element name="TColorBox.ColorDialog" link="#lcl.colorbox.TCustomColorBox.ColorDialog"/>
       <element name="TColorBox.Align" link="#lcl.controls.TControl.Align"/>
       <element name="TColorBox.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="TColorBox.ArrowKeysTraverseList" link="#lcl.stdctrls.TCustomComboBox.ArrowKeysTraverseList"/>
@@ -795,6 +809,7 @@ if iPos &lt;&gt; -1 then
       <element name="TCustomColorListBox.FColorRectOffset"/>
       <element name="TCustomColorListBox.FDefaultColorColor"/>
       <element name="TCustomColorListBox.FNoneColorColor"/>
+      <element name="TCustomColorListBox.FColorDialog"/>
       <element name="TCustomColorListBox.FOnGetColors"/>
       <element name="TCustomColorListBox.FSelected"/>
       <element name="TCustomColorListBox.FStyle"/>
@@ -956,7 +971,7 @@ if iPos &lt;&gt; -1 then
             The User parameter indicates the origin of the change. When User is True, the change occurred due to user interaction with the control. When User is False, the change occurred when the ItemIndex property was updated by another method in the control.
           </p>
           <p>
-            When User is True, the Style property is examined to see if a custom color can be used in the Colors for the control. When Style includes the value cbCustomColor, and ItemIndex is set to 0, the PickCustomColor method is called to select a custom color using a color dialog. If a custom color was successfully selected, the TColor value in Colors for the ITtmIndex  is stored in the Selected property.
+            When User is True, the Style property is examined to see if a custom color can be   used in the Colors for the control. When Style includes the value cbCustomColor, and ItemIndex is set to 0, the PickCustomColor method is called to select a custom color using a color dialog. If a custom color was successfully selected, the TColor value in Colors for the ItemIndex  is stored in the Selected property.
           </p>
           <p>
             The color dialog is not displayed, and Selected is not updated when User is set to False.
@@ -982,7 +997,7 @@ if iPos &lt;&gt; -1 then
             PickCustomColor is used when cbCustomColor is included in the Style for the control and ItemIndex is set to 0. This position was reserved for a custom color when the list of colors was loaded for the Style settings in the control.
           </p>
           <p>
-            PickCustomColor creates and executes a TColorDialog to get the color selection for the control. The custom color selection is stored as the first TColor value in the Items for the control. When a color is successfully selected using the dialog, the return value is set to True and the control is redrawn.
+            PickCustomColor uses an existing value in ColorDialog when available, or creates and executes a TColorDialog to get the color selection for the control. The custom color selection is stored as the first TColor value in the Items for the control. When a color is successfully selected using the dialog, the return value is set to True and the control is redrawn.
           </p>
           <p>
             The color selection dialog is not displayed at design-time, and the return value is always set to False.
@@ -1248,8 +1263,22 @@ if iPos &lt;&gt; -1 then
         <seealso/>
       </element>
 
+      <element name="TCustomColorListBox.ColorDialog">
+        <short>Dialog displayed to select a custom color for the control.</short>
+        <descr>
+          <p>
+            <var>ColorDialog</var> is a <var>TColorDialog</var> property with the dialog displayed to select a custom color for the control. It can be assigned directly to the control, or it can be created at run-time when the <var>PickCustomColor</var> method is called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.dialogs.TColorDialog">TColorDialog</link>
+        </seealso>
+      </element>
+
       <element name="TColorListBox">
-        <short>Implements a list box control used to display and select color names and values.</short>
+        <short>
+          Implements a list box control used to display and select color names and values.
+        </short>
         <descr>
           <p>
             <var>TColorListBox</var> is a <var>TCustomColorListBox</var> descendant which implements a list box control used to display and select color names and values. Each item in the control has a small rectangle where the color is displayed (swatch) and the color name.
@@ -1282,6 +1311,7 @@ if iPos &lt;&gt; -1 then
       <element name="TColorListBox.Selected" link="#lcl.colorbox.TCustomColorListBox.Selected"/>
       <element name="TColorListBox.Style" link="#lcl.colorbox.TCustomColorListBox.Style"/>
       <element name="TColorListBox.OnGetColors" link="#lcl.colorbox.TCustomColorListBox.OnGetColors"/>
+      <element name="TColorListBox.ColorDialog" link="#lcl.colorbox.TCustomColorListBox.ColorDialog"/>
 
       <element name="TColorListBox.Align" link="#lcl.controls.TControl.Align"/>
       <element name="TColorListBox.Anchors" link="#lcl.controls.TControl.Anchors"/>

@@ -81,10 +81,10 @@
       </element>
 
       <element name="LazStartsStr">
-        <short>Determines if a string starts wih the specified value.</short>
+        <short>Determines if a string starts with the specified value.</short>
         <descr>
           <p>
-            <var>LazStartsStr</var> is a <var>Boolean</var> function used to determine if the string in <var>AText</var> starts wih the text specified in <var>ASubText</var>. It is a modified version of <var>StartsStr</var> from the RTL <file>strutils.pp</file> unit.
+            <var>LazStartsStr</var> is a <var>Boolean</var> function used to determine if the string in <var>AText</var> starts with the text specified in <var>ASubText</var>. It is a modified version of <var>StartsStr</var> from the RTL <file>strutils.pp</file> unit.
           </p>
           <p>
             LazStartsStr casts the values in ASubText and AText to PChar types, and calls <var>StrLComp</var> to perform the comparison.
@@ -109,10 +109,10 @@
       </element>
 
       <element name="LazEndsStr">
-        <short>Determines if a string ends wih the specified value.</short>
+        <short>Determines if a string ends with the specified value.</short>
         <descr>
           <p>
-            <var>LazEndsStr</var> is a <var>Boolean</var> function used to determine if the string in <var>AText</var> ends wih the text specified in <var>ASubText</var>. It is a modified version of <var>EndsStr</var> from the RTL <file>strutils.pp</file> unit.
+            <var>LazEndsStr</var> is a <var>Boolean</var> function used to determine if the string in <var>AText</var> ends with the text specified in <var>ASubText</var>. It is a modified version of <var>EndsStr</var> from the RTL <file>strutils.pp</file> unit.
           </p>
           <p>
             LazEndsStr casts the values in ASubText and AText to PChar types, and calls <var>StrLComp</var> to perform the comparison.

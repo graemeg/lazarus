@@ -167,7 +167,7 @@
             <var>TLazRegionPolygon</var> is a <var>TLazRegionPart</var> descendant which implements a region as a polygonal area defined by a series of vertices.
           </p>
           <p>
-            The <var>Points</var> member contains the <var>TPoint</var> values that define the vertices for the polygon. <var>FillMode</var> defines how the interior of the polygon is fillled, as uses values like those defined for the Windows GDI API. An overridden <var>IsPointInPart</var> is provided to detemine if a point is within the bounds for the polygonal area.
+            The <var>Points</var> member contains the <var>TPoint</var> values that define the vertices for the polygon. <var>FillMode</var> defines how the interior of the polygon is fillled, as uses values like those defined for the Windows GDI API. An overridden <var>IsPointInPart</var> is provided to determine if a point is within the bounds for the polygonal area.
           </p>
           <p>
             Instances of TLazRegionPolygon are created when the <var>AddPolygon</var> method in <var>TLazRegion</var> is called.
