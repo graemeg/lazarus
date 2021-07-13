@@ -8,21 +8,33 @@ uses
   Classes, SysUtils, TAGraph, TAChartUtils;
 
 type
-  TChartLiveViewExtentY = (lveAuto, lveFull, lveLogical);
+  TChartLiveViewExtentY = (lveAuto, lveFull, lveLogical, lveMultiAxisRange);
+
+  { TChartLiveView }
 
   TChartLiveView = class(TComponent)
+  private
+    type
+      TLVAxisRange = record
+        Min, Max: double;
+        UseMin, UseMax: Boolean;
+      end;
   private
     FActive: Boolean;
     FChart: TChart;
     FExtentY: TChartLiveViewExtentY;
     FListener: TListener;
     FViewportSize: Double;
+    FAxisRanges: Array of TLVAxisRange;
     procedure FullExtentChanged(Sender: TObject);
     procedure SetActive(const AValue: Boolean);
     procedure SetChart(const AValue: TChart);
     procedure SetExtentY(const AValue: TChartLiveViewExtentY);
     procedure SetViewportSize(const AValue: Double);
     procedure UpdateViewport;
+  protected
+    procedure RestoreAxisRanges;
+    procedure StoreAxisRanges;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -39,7 +51,7 @@ procedure Register;
 implementation
 
 uses
-  Math, TACustomSeries;
+  Math, TAChartAxis, TAChartAxisUtils, TACustomSeries;
 
 constructor TChartLiveView.Create(AOwner: TComponent);
 begin
@@ -60,11 +72,37 @@ begin
   UpdateViewport;
 end;
 
+procedure TChartLiveView.RestoreAxisRanges;
+var
+  i: Integer;
+  ax: TChartAxis;
+begin
+  if FChart = nil then
+    exit;
+
+  for i := 0 to FChart.AxisList.Count-1 do
+  begin
+    ax := FChart.AxisList[i];
+    ax.Range.Max := FAxisRanges[i].Max;
+    ax.Range.Min := FAxisRanges[i].Min;
+    ax.Range.UseMax := FAxisRanges[i].UseMax;
+    ax.Range.UseMin := FAxisRanges[i].UseMin;
+  end;
+end;
+
 procedure TChartLiveView.SetActive(const AValue: Boolean);
 begin
   if FActive = AValue then exit;
 
   FActive := AValue;
+  if FChart <> nil then
+  begin
+    if FActive then
+      StoreAxisRanges
+    else
+      RestoreAxisRanges;
+  end;
+
   FullExtentChanged(nil);
 end;
 
@@ -77,6 +115,7 @@ begin
   FChart := AValue;
   if FChart <> nil then
     FChart.FullExtentBroadcaster.Subscribe(FListener);
+  StoreAxisRanges;
   FullExtentChanged(Self);
 end;
 
@@ -84,6 +123,7 @@ procedure TChartLiveview.SetExtentY(const AValue: TChartLiveViewExtentY);
 begin
   if FExtentY = AValue then exit;
   FExtentY := AValue;
+  RestoreAxisRanges;
   FullExtentChanged(nil);
 end;
 
@@ -95,17 +135,37 @@ begin
   FullExtentChanged(nil);
 end;
 
+procedure TChartLiveView.StoreAxisRanges;
+var
+  i: Integer;
+  ax: TChartAxis;
+begin
+  SetLength(FAxisRanges, FChart.AxisList.Count);
+  for i := 0 to FChart.AxisList.Count-1 do
+  begin
+    ax := FChart.AxisList[i];
+    FAxisRanges[i].Max := ax.Range.Max;
+    FAxisRanges[i].Min := ax.Range.Min;
+    FAxisRanges[i].UseMax := ax.Range.UseMax;
+    FAxisRanges[i].UseMin := ax.Range.UseMin;
+  end;
+end;
+
 procedure TChartLiveView.UpdateViewport;
 var
   fext, lext: TDoubleRect;
   w: double;
-  i: Integer;
+  i, j: Integer;
   ymin, ymax: Double;
   ygmin, ygmax: Double;
   ser: TChartSeries;
+  ax: TChartAxis;
 begin
   if not FChart.ScalingValid then
     exit;
+
+  if Length(FAxisRanges) = 0 then
+    StoreAxisRanges;
 
   fext := FChart.GetFullExtent();
   lext := FChart.LogicalExtent;
@@ -120,38 +180,6 @@ begin
     lext.b.x := lext.a.x + w;
   end;
   case FExtentY of
-    lveAuto:
-      begin
-        ygmin := Infinity;
-        ygmax := -Infinity;
-        ymin := Infinity;
-        ymax := -Infinity;
-        for i := 0 to FChart.SeriesCount-1 do
-          if FChart.Series[i] is TChartSeries then
-          begin
-            ser := TChartSeries(FChart.Series[i]);
-            ser.FindYRange(lext.a.x, lext.b.x, ymin, ymax);
-            ygmin := Min(ygmin, ser.AxisToGraphY(ymin));
-            ygmax := Max(ygmax, ser.AxisToGraphY(ymax));
-          end;
-        if not IsInfinite(ygmin) and not IsInfinite(-ygmax) then
-        begin
-          if ygmin = ygmax then
-          begin
-            if ygmin = 0 then
-            begin
-              ygmin := -1;
-              ygmax := +1;
-            end else
-            begin
-              ygmin := 0.9*ygmin;
-              ygmax := 1.1*ygmax;
-            end;
-          end;
-          lext.a.y := ygmin;
-          lext.b.y := ygmax;
-        end;
-      end;
     lveFull:
       begin
         lext.a.y := fext.a.y;
@@ -159,6 +187,57 @@ begin
       end;
     lveLogical:
       ;
+    lveAuto,
+    lveMultiAxisRange:
+      begin
+        lext.a.y := Infinity;
+        lext.b.y := -Infinity;
+        for i := 0 to FChart.AxisList.Count-1 do
+        begin
+          ax := FChart.AxisList[i];
+          if not (ax.Alignment in [calLeft, calRight]) then
+            Continue;
+          ymin := Infinity;
+          ymax := -Infinity;
+          for j := 0 to FChart.SeriesCount-1 do
+            if FChart.Series[j] is TChartSeries then
+            begin
+              ser := TChartSeries(FChart.Series[j]);
+              if (not ser.Active) or (ser.GetAxisY <> ax) then
+                continue;
+              ser.FindYRange(lext.a.x, lext.b.x, ymin, ymax);
+            end;
+          if (ymin = Infinity) then
+          begin
+            ymin := -1;
+            ymax := +1;
+          end else
+          if (ymin = ymax) then
+          begin
+            if ymin = 0 then
+            begin
+              ymin := -1;
+              ymax := +1;
+            end else
+            begin
+              ymin := abs(ymin) * 0.9;
+              ymax := abs(ymax) * 1.1;
+            end;
+          end;
+          ax.Range.Min := ymin;
+          ax.Range.Max := ymax;
+          if (FExtentY = lveMultiAxisRange) then
+          begin
+            if FAxisRanges[i].UseMin then ax.Range.Min := FAxisRanges[i].Min;
+            if FAxisRanges[i].UseMax then ax.Range.Max := FAxisRanges[i].Max;
+          end;
+          ax.Range.UseMin := true;
+          ax.Range.UseMax := true;
+          lext.a.y := Min(lext.a.y, ax.GetTransform.AxisToGraph(ymin));
+          lext.b.y := Max(lext.b.y, ax.GetTransform.AxisToGraph(ymax));
+        end;  // for i
+      end;
+
   end;
   FChart.LogicalExtent := lext;
 end;
