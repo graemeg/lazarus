@@ -120,23 +120,23 @@ begin
     end;
   end;
 
-  // we need to correct ActiveEditor to right form
-  // this code works correctly on Windows platform
-  // (is necessery for selecting controls after form resizing).
-  // in Linux platforms below code brings problems with QT (inactive form)
-  {$IFDEF WINDOWS}
   case Msg.msg of
+    {$IFDEF WINDOWS}
+    // we need to correct ActiveEditor to right form
+    // this code works correctly on Windows platform
+    // (is necessery for selecting controls after form resizing).
+    // in Linux platforms below code brings problems with QT (inactive form)
     LM_LBUTTONDOWN, LM_RBUTTONDOWN, LM_MBUTTONDOWN, LM_XBUTTONDOWN:
       if LastActiveSourceWindow <> nil then
       begin
         SourceEditorManagerIntf.ActiveSourceWindow := LastActiveSourceWindow;
         SourceEditorManagerIntf.ActiveEditor := LastActiveSourceWindow.ActiveEditor;
       end;
+    {$ENDIF}
     // Prevent usage of parent hint (SourceEditorWindow), see issue #39217
     CM_PARENTSHOWHINTCHANGED:
       Exit;
   end;
-  {$ENDIF}
 
   FWndMethod(Msg);
 end;
