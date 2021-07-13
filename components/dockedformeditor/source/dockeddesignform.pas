@@ -121,7 +121,7 @@ begin
   end;
 
   case Msg.msg of
-    {$IFDEF WINDOWS}
+    {$IFDEF Win32}
     // we need to correct ActiveEditor to right form
     // this code works correctly on Windows platform
     // (is necessery for selecting controls after form resizing).
@@ -135,7 +135,10 @@ begin
     {$ENDIF}
     // Prevent usage of parent hint (SourceEditorWindow), see issue #39217
     CM_PARENTSHOWHINTCHANGED:
-      Exit;
+      begin
+        Msg.Result := 0;
+        Exit;
+      end;
   end;
 
   FWndMethod(Msg);

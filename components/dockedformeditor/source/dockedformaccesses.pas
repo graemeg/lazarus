@@ -135,7 +135,7 @@ end;
 function TFormAccess.ClientOffset: TPoint;
 begin
   Result := Point(0, 0);
-  {$IFDEF WINDOWS}
+  {$IFDEF Win32}
   Result.X := GetSystemMetrics(SM_CXSIZEFRAME);
   Result.Y := GetSystemMetrics(SM_CYSIZEFRAME) + GetSystemMetrics(SM_CYCAPTION);
   {$ENDIF}
