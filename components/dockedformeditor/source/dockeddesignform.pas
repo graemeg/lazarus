@@ -132,6 +132,9 @@ begin
         SourceEditorManagerIntf.ActiveSourceWindow := LastActiveSourceWindow;
         SourceEditorManagerIntf.ActiveEditor := LastActiveSourceWindow.ActiveEditor;
       end;
+    // Prevent usage of parent hint (SourceEditorWindow), see issue #39217
+    CM_PARENTSHOWHINTCHANGED:
+      Exit;
   end;
   {$ENDIF}
 
