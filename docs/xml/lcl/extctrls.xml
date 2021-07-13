@@ -131,8 +131,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.StdCtrls.HowToUseStdCtrls">HowToUseStdCtrls</link>
           <link id="#lcl.ExtCtrls.MultiPageControls">Multi-Page Controls</link>
+          <link id="#lcl.stdctrls.HowToUseStdCtrls">How to use StdCtrls, ComCtrls or ExtCtrls. </link>
         </seealso>
       </element>
 
@@ -159,11 +159,7 @@
         </short>
       </element>
 
-      <element name="TPage.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TPage.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
       <element name="TPage.SetParent">
         <short>Sets the value for the Parent property.</short>
@@ -216,7 +212,7 @@
         <seealso/>
       </element>
 
-      <element name="TPage.PageIndex" link="#LCL.ComCtrls.TCustomPage.PageIndex">
+      <element name="TPage.PageIndex">
         <short>Ordinal position for the page in its Notebook.</short>
         <descr>
           <p>
@@ -224,8 +220,9 @@
           </p>
         </descr>
         <seealso>
-          <link id="TPage.Parent"/>
           <link id="TNotebook.IndexOf"/>
+           <link id="#lcl.comctrls.TCustomPage.PageIndex">TCustomPage.PageIndex</link>
+           <link id="#lcl.controls.TControl.Parent">TControl.Parent</link>
         </seealso>
       </element>
 
@@ -354,7 +351,7 @@
         <short>Ordinal position in the list of pages for the requested page object.</short>
       </element>
 
-      <element name="TUNBPages.Put" link="#rtl.classes.TStrings.Put">
+      <element name="TUNBPages.Put">
         <short>Ensures that the index value is valid before accessing the TPage object.</short>
         <descr>
           <p>
@@ -367,7 +364,9 @@
         <errors>
           Calls <var>RaiseGDBException</var> with the exception message 'TUNBPages.Put Index out of bounds' when Index contains an invalid value.
         </errors>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TStrings">TStrings</link>
+        </seealso>
       </element>
       <element name="TUNBPages.Put.Index">
         <short>Ordinal position for the page object updated in the method.</short>
@@ -448,32 +447,36 @@
         <short>Ordinal position in the list of pages for page removed in the method.</short>
       </element>
 
-      <element name="TUNBPages.IndexOfObject" link="#rtl.classes.TStrings.IndexOfObject">
+      <element name="TUNBPages.IndexOfObject">
         <short>
           Gets the ordinal position for the specified page object in the list of pages.
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TStrings.IndexOfObject">TStrings.IndexOfObject</link>
+        </seealso>
       </element>
       <element name="TUNBPages.IndexOfObject.Result">
-        <short/>
+        <short>Ordinal position for the page object.</short>
       </element>
       <element name="TUNBPages.IndexOfObject.AObject">
-        <short/>
+        <short>The page object to locate in the list of pages.</short>
       </element>
 
-      <element name="TUNBPages.Insert" link="#rtl.classes.TStrings.Insert">
+      <element name="TUNBPages.Insert">
         <short>
           Inserts a page with the specified name at the given position in the list of pages.
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TStrings.Insert">TStrings.Insert</link>
+        </seealso>
       </element>
       <element name="TUNBPages.Insert.Index">
-        <short/>
+        <short>Ordinal position where the page is stored.</short>
       </element>
       <element name="TUNBPages.Insert.S">
-        <short/>
+        <short>Name for new page.</short>
       </element>
 
       <element name="TUNBPages.Move">
@@ -492,7 +495,7 @@
             The Move method in the internal page list (TObjectList) is called to move the TPage instance from using the required positions. The PageIndex for the TNotebook control is reset to re-activate the page moved in the operation.
           </p>
           <remark>
-            Please note : Move does <b>NOT</b> call the inherited method.
+            Move does <b>NOT</b> call the inherited method.
           </remark>
         </descr>
         <seealso>
@@ -528,7 +531,7 @@
         <seealso>
           <link id="#lcl.extctrls.TPage">TPage</link>
           <link id="#lcl.extctrls.MultiPageControls">Multi-Page Controls</link>
-          <link id="#lcl.stdctrls.HowToUseStdCtrls">How To Use Standard Controls</link>
+          <link id="#lcl.stdctrls.HowToUseStdCtrls">How to use StdCtrls, ComCtrls or ExtCtrls. </link>
         </seealso>
       </element>
 
@@ -659,7 +662,7 @@
             ShowControl calls the inherited method prior to exit.
           </p>
           <remark>
-            Please note: No actions are performed in the method when AControl is the same as the control stored in the <var>ActivePageComponent</var> property.
+            No actions are performed in the method when AControl is the same as the control stored in the <var>ActivePageComponent</var> property.
           </remark>
         </descr>
         <seealso>
@@ -757,7 +760,7 @@
             <var>PageIndex</var> is an <var>Integer</var> property that indicates the ordinal position for the active page in the notebook control.
           </p>
           <remark>
-            Please note: A value assigned to the property must must be in the range -1 to the number of defined <var>Pages</var> - 1. No actions are performed in the method when the new value for PageIndex is not in the required range.
+            A value assigned to the property must must be in the range -1 to the number of defined <var>Pages</var> - 1. No actions are performed in the method when the new value for PageIndex is not in the required range.
           </remark>
           <p>
             Setting the value in the property causes the active page object to be hidden; it is hidden at run-time and design-time using the <var>Visible</var> and <var>ControlStyle</var> properties. The <var>OnBeforeShow</var> event handler in the newly selected page object is signalled (when assigned). The page object is displayed by updating its Visible, ControlStyle, and <var>Align</var>  properties.
@@ -779,7 +782,7 @@
             Setting a new value in Pages causes the new page names to be compared to the internal page objects in the notebook. New or altered pages are added or replaced in the notebook. An existing page object not present in the new page names is deleted; the Application singleton is notified that the page object is being released and allowed to process the message.
           </p>
           <p>
-            Please note: The value in Pages is not assigned at design-time.
+            The value in Pages is not assigned at design-time.
           </p>
         </descr>
         <seealso/>
@@ -829,11 +832,11 @@
         </descr>
       </element>
 
-      <element name="TTimer.Enabled" link="#LCL.CustomTimer.TCustomTimer.Enabled"/>
-      <element name="TTimer.Interval" link="#LCL.CustomTimer.TCustomTimer.Interval"/>
-      <element name="TTimer.OnTimer" link="#LCL.CustomTimer.TCustomTimer.OnTimer"/>
-      <element name="TTimer.OnStartTimer" link="#LCL.CustomTimer.TCustomTimer.OnStartTimer"/>
-      <element name="TTimer.OnStopTimer" link="#LCL.CustomTimer.TCustomTimer.OnStopTimer"/>
+      <element name="TTimer.Enabled" link="#lcl.customtimer.TCustomTimer.Enabled"/>
+      <element name="TTimer.Interval" link="#lcl.customtimer.TCustomTimer.Interval"/>
+      <element name="TTimer.OnTimer" link="#lcl.customtimer.TCustomTimer.OnTimer"/>
+      <element name="TTimer.OnStartTimer" link="#lcl.customtimer.TCustomTimer.OnStartTimer"/>
+      <element name="TTimer.OnStopTimer" link="#lcl.customtimer.TCustomTimer.OnStopTimer"/>
 
       <element name="TIdleTimerAutoEvent">
         <short>
@@ -914,13 +917,13 @@
             <dd>Assigned using Application.AddOnUserInputHandler</dd>
           </dl>
           <remark>
-            Please note: No assignments are made to the Application singleton at design-time, or when the component is being loaded or destroyed.
+            No assignments are made to the Application singleton at design-time, or when the component is being loaded or destroyed.
           </remark>
           <p>
             When AutoEnabled is <b>False</b>,  the event handler routines are disconnected from the Application singleton.
           </p>
           <remark>
-            Please note: No actions are performed when handlers have not been previously assigned to Application, or Application has not been assigned (contains <b>Nil</b>).
+            No actions are performed when handlers have not been previously assigned to Application, or Application has not been assigned (contains <b>Nil</b>).
           </remark>
         </descr>
         <seealso/>
@@ -953,7 +956,7 @@
             The <var>AutoEnabled</var> property is checked to determine if the value in the <var>Enabled</var> property can be updated to reflect the state needed for the <var>AutoEndEvent</var> and <var>AutoStartEvent</var> properties. If AutoEndEvent contains <var>itaOnIdle</var>, the value in Enabled is set to <b>False</b>. If <var>AutoStartEvent</var> contains <var>itaOnIdle</var>, the value in Enabled is set to <b>True</b>.
           </p>
           <remark>
-            Please note: The Enabled property is not modified when AutoEnabled contains False.
+            The Enabled property is not modified when AutoEnabled contains False.
           </remark>
           <p>
             DoOnIdle is assigned as a handler for the <var>Application</var> singleton in the <var>UpdateHandlers</var> method.
@@ -990,7 +993,7 @@
         <short>Object for the event notification.</short>
       </element>
       <element name="TCustomIdleTimer.DoOnUserInput.Msg">
-          <short/>
+          <short>Message examined in the method.</short>
       </element>
 
       <element name="TCustomIdleTimer.Loaded">
@@ -1116,11 +1119,11 @@
       <element name="TIdleTimer.AutoEnabled" link="#lcl.extctrls.TCustomIdleTimer.AutoEnabled"/>
       <element name="TIdleTimer.AutoEndEvent" link="#lcl.extctrls.TCustomIdleTimer.AutoEndEvent"/>
       <element name="TIdleTimer.AutoStartEvent" link="#lcl.extctrls.TCustomIdleTimer.AutoStartEvent"/>
-      <element name="TIdleTimer.Enabled" link="#LCL.CustomTimer.TCustomTimer.Enabled"/>
-      <element name="TIdleTimer.Interval" link="#LCL.CustomTimer.TCustomTimer.Interval"/>
-      <element name="TIdleTimer.OnTimer" link="#LCL.CustomTimer.TCustomTimer.OnTimer"/>
-      <element name="TIdleTimer.OnStartTimer" link="#LCL.CustomTimer.TCustomTimer.OnStartTimer"/>
-      <element name="TIdleTimer.OnStopTimer" link="#LCL.CustomTimer.TCustomTimer.OnStopTimer"/>
+      <element name="TIdleTimer.Enabled" link="#lcl.customtimer.TCustomTimer.Enabled"/>
+      <element name="TIdleTimer.Interval" link="#lcl.customtimer.TCustomTimer.Interval"/>
+      <element name="TIdleTimer.OnTimer" link="#lcl.customtimer.TCustomTimer.OnTimer"/>
+      <element name="TIdleTimer.OnStartTimer" link="#lcl.customtimer.TCustomTimer.OnStartTimer"/>
+      <element name="TIdleTimer.OnStopTimer" link="#lcl.customtimer.TCustomTimer.OnStopTimer"/>
 
       <element name="TShapeType">
         <short>
@@ -1136,46 +1139,70 @@
         </seealso>
       </element>
       <element name="TShapeType.stRectangle">
-        <short/>
+        <short>Draws a rectangle shape in the client area for a TShape control.</short>
       </element>
       <element name="TShapeType.stSquare">
-        <short/>
+        <short>Draws a square shape in the client area for a TShape control.</short>
       </element>
       <element name="TShapeType.stRoundRect">
-        <short/>
+        <short>
+          Draws a rectangle shape with radiused corners in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stRoundSquare">
-        <short/>
+        <short>
+          Draws a square shape with radiused corners in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stEllipse">
-        <short/>
+        <short>
+          Draws a ellipse shape that fits in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stCircle">
-        <short/>
+        <short>
+          Draws a circle shape that fits in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stSquaredDiamond">
-        <short/>
+        <short>
+          Draws a four point polygon in the client area for a TShape control. Same as stDiamond.
+        </short>
       </element>
       <element name="TShapeType.stDiamond">
-        <short/>
+        <short>
+          Draws a four point polygon in the client area for a TShape control. Same as stSquaredDiamond.
+        </short>
       </element>
       <element name="TShapeType.stTriangle">
-        <short/>
+        <short>
+          Draws an upward pointing triangle in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stTriangleLeft">
-        <short/>
+        <short>
+          Draws a triangle pointing to the left in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stTriangleRight">
-        <short/>
+        <short>
+          Draws a triangle pointing to the right in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stTriangleDown">
-        <short/>
+        <short>
+          Draws a downward-pointing triangle in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stStar">
-        <short/>
+        <short>
+          Draws a five-point star shape in the client area for a TShape control.
+        </short>
       </element>
       <element name="TShapeType.stStarDown">
-        <short/>
+        <short>
+          Draws a five-point star shape (center angle points down) in the client area for a TShape control.
+        </short>
       </element>
 
       <element name="TShape">
@@ -1261,7 +1288,7 @@
         </seealso>
       </element>
       <element name="TShape.Create.TheOwner">
-        <short/>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TShape.Destroy">
@@ -1274,7 +1301,7 @@
         </seealso>
       </element>
 
-      <element name="TShape.Paint" link="#lcl.controls.TGraphicControl.Paint">
+      <element name="TShape.Paint">
         <short>Draws the shape for the control on its Canvas.</short>
         <descr>
           <p>
@@ -1289,6 +1316,7 @@
           <link id="TShape.Brush"/>
           <link id="TGraphicControl.Canvas"/>
           <link id="TShapeType"/>
+          <link id="#lcl.controls.TGraphicControl.Paint">TGraphicControl.Paint</link>
         </seealso>
       </element>
 
@@ -1300,7 +1328,7 @@
         <seealso/>
       </element>
       <element name="TShape.StyleChanged.Sender">
-        <short/>
+        <short>Object for the event notification.</short>
       </element>
 
       <element name="TShape.Align" link="#lcl.controls.TControl.Align"/>
@@ -1622,7 +1650,7 @@
         <short/>
       </element>
 
-      <element name="TCustomSplitter.MouseDown" link="#lcl.controls.TControl.MouseDown">
+      <element name="TCustomSplitter.MouseDown">
         <short>Initiates the splitter movement operation.</short>
         <descr>
           <p>
@@ -1632,7 +1660,9 @@
             Calls GetCursorPos to capture the mouse position, and calls StartSplitterMove to initiate the splitter movement operation.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseDown">TControl.MouseDown</link>
+        </seealso>
       </element>
       <element name="TCustomSplitter.MouseDown.Button">
         <short>Button examined in the method.</short>
@@ -1647,20 +1677,34 @@
         <short>Vertical coordinate for the mouse event.</short>
       </element>
 
-      <element name="TCustomSplitter.MouseEnter" link="#lcl.controls.TControl.MouseEnter">
+      <element name="TCustomSplitter.MouseEnter">
         <short>Starts mouse capture and tracking for the control.</short>
         <descr>
           <p>
             Calls the inherited method. No additional actions are performed in the method at design-time, or when mouse capture has already been enabled for the control. Ensures that the internal flag used to track mouse entry into the control is set, and the control is refreshed by calling Invalidate.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseEnter">TControl.MouseEnter</link>
+        </seealso>
       </element>
 
-      <element name="TCustomSplitter.MouseLeave" link="#lcl.controls.TControl.MouseLeave">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TCustomSplitter.MouseLeave">
+        <short>Perform actions when the mouse pointer exits the control.</short>
+        <descr>
+          <p>
+            <var>MouseLeave</var> is an overridden method used to perform actions when the mouse pointer exits the control. MouseLeave calls the inherited method on entry.
+          </p>
+          <p>
+            No additional actions are performed in the method at design-time.
+          </p>
+          <p>
+            At run-time, the internal flag that indicates if the control is hovered is reset. The <var>Invalidate</var> method is called to force the control to be redrawn.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseLeave">TControl.MouseLeave</link>
+        </seealso>
       </element>
 
       <element name="TCustomSplitter.MouseMove" link="#lcl.controls.TControl.MouseMove">
@@ -1696,8 +1740,8 @@
         <short/>
       </element>
 
-      <element name="TCustomSplitter.Paint" link="#lcl.controls.TCustomControl.Paint">
-        <short/>
+      <element name="TCustomSplitter.Paint">
+        <short>Draws the splitter control.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure used to draw the splitter control. Paint calls the inherited Paint method, and adds additional logic to handle drawing the splitter control.
@@ -1706,14 +1750,14 @@
             The <var>OnPaint</var> event handler is signalled (when assigned) to draw the splitter control.
           </p>
           <p>
-            When OnPaint is unassigned (contains Nil), an internal routine is used to paint the gripper bar using the <var>TThemedRebar</var> settings in <var>ThemeServices</var>. The control is drawn using the theme settings needed for the state in the <var>Enabled</var>, <var>MouseInControl</var>,  and <var>Beveled</var> properties.
+            When OnPaint is unassigned (contains Nil), an internal routine is used to paint the gripper bar using the <var>TThemedRebar</var> settings in <var>ThemeServices</var>. The control is drawn using the theme settings needed for the state in the <var>Enabled</var> and <var>Beveled</var> properties, and the internal <var>MouseInControl</var> member.
           </p>
         </descr>
         <seealso>
-          <link id="TCustomSplitter.OnPaint"/>
-          <link id="TCustomSplitter.Enabled"/>
-          <link id="TCustomSplitter.MouseInControl"/>
           <link id="TCustomSplitter.Beveled"/>
+          <link id="#lcl.controls.TCustomControl.Paint">TCustomControl.Paint</link>
+          <link id="#lcl.controls.TCustomControl.OnPaint">TCustomControl.OnPaint</link>
+          <link id="#lcl.controls.TControl.Enabled">TControl.Enabled</link>
         </seealso>
       </element>
 
@@ -1804,10 +1848,26 @@
       </element>
 
       <element name="TCustomSplitter.Create">
-        <short>
-          <var>Create</var> - constructor for <var>TCustomSplitter</var>: calls inherited <var>Create</var> then sets initial alignment, size and style.
-        </short>
-        <descr/>
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry.
+          </p>
+          <p>
+            Create sets the default values for properties, including:
+          </p>
+          <ul>
+            <li>Align</li>
+            <li>AutoSnap</li>
+            <li>Beveled</li>
+            <li>MinSize</li>
+            <li>ResizeAnchor</li>
+            <li>ResizeStyle</li>
+            <li>Width</li>
+            <li>AccessibleRole</li>
+            <li>AccessibleDescription  </li>
+          </ul>
+        </descr>
         <seealso>
           <link id="#LCL.Controls.TCustomControl.Create">TCustomControl.Create</link>
         </seealso>
@@ -1963,7 +2023,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.StdCtrls.HowToUseStdCtrls">HowToUseStdCtrls</link>
+          <link id="#lcl.stdctrls.HowToUseStdCtrls">How to use StdCtrls, ComCtrls or ExtCtrls. </link>
         </seealso>
       </element>
 
@@ -2000,15 +2060,16 @@
 
       <element name="TPaintBox">
         <short>
-          <var>TPaintBox</var>: a painted rectangular box with defined size and color.
+          Implements a control with a rectangular drawing area using a given Font and Color.
         </short>
         <descr>
           <p>
-            <var>TPaintBox</var> is a painted rectangular box with defined size and color.
+            <var>TPaintBox</var> is a <var>TGraphicControl</var> descendant which implements a control with a rectangular drawing area using a given <var>Font</var> and <var>Color</var>. Like its ancestor, TPaintBox provides a <var>Canvas</var> which is used to draw on the control surface. It provides an overridden <var>Paint</var> method to configure the Pen, Brush, and Font for the Canvas prior to calling the inherited Paint method. Use the <var>OnPaint</var> event handler to perform drawing operations needed for the control.
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.StdCtrls.HowToUseStdCtrls">HowToUseStdCtrls</link>
+          <link id="#lcl.controls.TGraphicControl">TGraphicControl</link>
+          <link id="#lcl.stdctrls.HowToUseStdCtrls">How to use StdCtrls, ComCtrls or ExtCtrls. </link>
         </seealso>
       </element>
 
@@ -2036,14 +2097,16 @@
         </seealso>
       </element>
 
-      <element name="TPaintBox.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize">
+      <element name="TPaintBox.GetControlClassDefaultSize">
         <short>Gets the default size used for new instances of the class.</short>
         <descr>
           <p>
             The default dimensions used in <var>TPaintBox</var> are 105 pixels wide x 105 pixels high.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetControlClassDefaultSize">TControl.GetControlClassDefaultSize</link>
+        </seealso>
       </element>
       <element name="TPaintBox.GetControlClassDefaultSize.Result">
         <short>TSize instance with the default dimensions for a new TPaintBox control.</short>
@@ -2305,14 +2368,14 @@
         <short/>
       </element>
 
-      <element name="TCustomImage.Paint" link="#lcl.controls.TGraphicControl.Paint">
+      <element name="TCustomImage.Paint">
         <short>Draws the image to the control canvas.</short>
         <descr>
           <p>
             <var>Paint</var> is an overridden procedure used to draw the image to the control <var>Canvas</var>. At design-time, a dashed black line is drawn around the image as a frame to mark the dimensions for its content.
          </p>
          <remark>
-           Please note: No additional actions are performed in the method when a  <var>TGraphic</var>  instance has not been assigned to the <var>Graphic</var> property in <var>Picture</var>.
+           No additional actions are performed in the method when a  <var>TGraphic</var>  instance has not been assigned to the <var>Graphic</var> property in <var>Picture</var>.
          </remark>
          <p>
            Paint uses the Canvas from the ancestor class as the target for the drawing operation. The value in <var>AntialiasingMode</var> is assigned to the corresponding property in the Canvas. The rectangle returned from    <var>DestRect</var> is used as the drawing area.
@@ -2331,9 +2394,10 @@
           <link id="TCustomImage.Transparent"/>
           <link id="TCustomImage.Stretch"/>
           <link id="TCustomImage.OnPaintBackground"/>
-          <link id="TCustomImage.OnPaint"/>
           <link id="#lcl.graphics.TCanvas">TCanvas</link>
           <link id="#lcl.graphics.TCanvas.StretchDraw">TCanvas.StretchDraw</link>
+          <link id="#lcl.controls.TGraphicControl.Paint">TGraphicControl.Paint</link>
+          <link id="#lcl.controls.TGraphicControl.OnPaint">TGraphicControl.OnPaint</link>
         </seealso>
       </element>
 
@@ -2393,7 +2457,7 @@
             Invalidate extends the ancestor method to include logic that reduces the number of calls to the <var>Paint</var> method, and avoids flicker caused by the redundant calls. It uses an internal flag in the class to determine if the Paint method has already been called, but has not yet been completed. If the flag has not been set, the inherited Invalidate method is called to refresh the control using its visibility and control style settings.
           </p>
           <remark>
-            Please note: No actions are performed in the method when Paint is already active.
+            No actions are performed in the method when Paint is already active.
           </remark>
         </descr>
         <seealso>
@@ -2619,10 +2683,10 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.StdCtrls.HowToUseStdCtrls">HowToUseStdCtrls</link>
           <link id="TCustomImage"/>
           <link id="#lcl.controls.TGraphicControl">TGraphicControl</link>
           <link id="#lcl.controls.TControl">TControl</link>
+          <link id="#lcl.StdCtrls.HowToUseStdCtrls">How To Use Standard Controls</link>
         </seealso>
       </element>
 
@@ -2699,10 +2763,10 @@
         <seealso/>
       </element>
       <element name="TBevelStyle.bsLowered">
-        <short/>
+        <short>Draws the bevel so it appears lower than the surface for the control.</short>
       </element>
       <element name="TBevelStyle.bsRaised">
-        <short/>
+        <short>Draws the bevel so it appears highter than the surface for the control.</short>
       </element>
 
       <element name="TBevelShape">
@@ -2711,7 +2775,7 @@
         </short>
         <descr>
           <p>
-            <var>TBevelShape</var> is an enumerated type rerpresting the shapes available for a bevel.
+            <var>TBevelShape</var> is an enumerated type representing the shapes available for a bevel.
           </p>
           <ul>
             <li>bsBox</li>
@@ -2725,22 +2789,25 @@
         <seealso/>
       </element>
       <element name="TBevelShape.bsBox">
-        <short/>
+        <short>Uses a raised or lowered box for the bevel.</short>
       </element>
       <element name="TBevelShape.bsFrame">
-        <short/>
+        <short>Uses a raised or lowered outline around a control.</short>
       </element>
       <element name="TBevelShape.bsTopLine">
-        <short/>
+        <short>Draws a solid line at the top of a control.</short>
       </element>
       <element name="TBevelShape.bsBottomLine">
-        <short/>
+        <short>Draws a solid line at the bottom of a control.</short>
       </element>
       <element name="TBevelShape.bsLeftLine">
-        <short/>
+        <short>Draws a solid line on the left edge of a control.</short>
       </element>
       <element name="TBevelShape.bsRightLine">
-        <short/>
+        <short>Draws a solid line on the right edge of a control.</short>
+      </element>
+      <element name="TBevelShape.bsSpacer">
+        <short>Draws an empty space as the bevel around a control.</short>
       </element>
 
       <element name="TBevel">
@@ -2779,7 +2846,7 @@
 
       <element name="TBevel.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
-      <element name="TBevel.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize">
+      <element name="TBevel.GetControlClassDefaultSize">
         <short>Gets the default size for new instances of the class.</short>
         <descr>
           <p>
@@ -2787,14 +2854,14 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.lclclasses.TLCLComponent.WSRegisterClass">TLCLComponent.WSRegisterClass</link>
+          <link id="#lcl.controls.TControl.GetControlClassDefaultSize">TControl.GetControlClassDefaultSize</link>
         </seealso>
       </element>
       <element name="TBevel.GetControlClassDefaultSize.Result">
         <short>Default size for a new instance of the class.</short>
       </element>
 
-      <element name="TBevel.Paint" link="#lcl.controls.TGraphicControl.Paint">
+      <element name="TBevel.Paint">
         <short>Handles paint requests received from the parent control.</short>
         <descr>
           <p>
@@ -2813,8 +2880,7 @@
         <seealso>
           <link id="TBevel.Shape"/>
           <link id="TBevel.Style"/>
-          <link id="TBevel.Pen"/>
-          <link id="TBevel.Canvas"/>
+          <link id="#lcl.controls.TGraphicControl.Canvas">TGraphicControl.Canvas</link>
           <link id="#lcl.controls.TGraphicControl.Paint">TGraphicControl.Paint</link>
           <link id="#lcl.controls.TGraphicControl.OnPaint">TGraphicControl.OnPaint</link>
         </seealso>
@@ -2845,20 +2911,22 @@
         <short>Owner of the class instance.</short>
       </element>
 
-      <element name="TBevel.Destroy" link="#lcl.controls.TGraphicControl.Destroy">
+      <element name="TBevel.Destroy">
         <short>Destructor for the class instance.</short>
         <descr>Calls the inherited destructor.</descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TGraphicControl.Destroy">TGraphicControl.Destroy</link>
+        </seealso>
       </element>
 
-      <element name="TBevel.Assign" link="#rtl.classes.TPersistent.Assign">
+      <element name="TBevel.Assign">
         <short>Copies property values from Source to the current class instance.</short>
         <descr>
           <p>
             <var>Assign</var> copies the contents of <var>Source</var> to <var>Self</var>, if the classes of the destination and source classes are compatible.
           </p>
           <p>
-            The <var>TPersistent</var> implementation of <var>Assign</var> does nothing but call the <link id="#rtl.Classes.TPersistent.AssignTo">AssignTo</link> method for the source. This means that if the destination class does not know how to assign the contents of the source class, the source class instance is asked to assign itself to the destination class. This means that it is necessary to implement only one of the two methods so that two classes can be assigned to one another.
+            The <var>TPersistent</var> implementation of <var>Assign</var> does nothing but call the <link id="#rtl.Classes.TPersistent">AssignTo</link> method for the source. This means that if the destination class does not know how to assign the contents of the source class, the source class instance is asked to assign itself to the destination class. This means that it is necessary to implement only one of the two methods so that two classes can be assigned to one another.
           </p>
           <remark>
             <p>In general, a statement of the form:</p>
@@ -2872,64 +2940,34 @@
             </p>
           </remark>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
       </element>
 
-      <element name="TBevel.Align" link="#lcl.controls.TControl.Align">
-        <short/>
-        <descr>
-          <p>
-            Either reads a flag containing alignment instructions (<var>FAlign</var>) or writes alignment instructions (<var>SetAlign</var>).
-          </p>
-          <p>
-            May have no alignment, may have custom or client alignment, or can be aligned to top, bottom, left or right.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
-      <element name="TBevel.Anchors" link="#lcl.controls.TControl.Anchors">
-        <descr>
-          <p>
-            Determines how the control is anchored to its parent control. Either reads a flag containing the set of anchors to be used, or writes a set of anchors. If they have been written, this is indicated in <var>IsAnchorsStored</var>.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
-      <element name="TBevel.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing">
-        <short/>
-        <descr>
-          <p>Determines the border spacing for this control.</p>
-          <p>
-            Reads flag to find stored spacing values required for the border of the control, or writes the flag to set the spacing.
-          </p>
-          <p>
-            The properties are defined in the parent class <link id="#lcl.Controls.TControlBorderSpacing">TControlBorderSpacing</link>.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
-      <element name="TBevel.Constraints" link="#lcl.controls.TControl.Constraints">
-        <short/>
-        <descr>
-          <p>
-            Determine <var>Constraints</var> (max and min height and width) for this control; reads the size constraints or stores new ones.
-          </p>
-        </descr>
-        <seealso/>
-      </element>
-
+      <element name="TBevel.Align" link="#lcl.controls.TControl.Align"/>
+      <element name="TBevel.Anchors" link="#lcl.controls.TControl.Anchors"/>
+      <element name="TBevel.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
+      <element name="TBevel.Constraints" link="#lcl.controls.TControl.Constraints"/>
       <element name="TBevel.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
 
       <element name="TBevel.Shape">
         <short>
           <var>Shape</var>  - whether a box, a frame or a line along one of the edges.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>Shape</var> is a <var>TBevelShape</var> property which indicates the shape drawn as the bevel on the control. The default value for the property is <var>bsBox</var>, and causes a simple box to be drawn to represent the bevel. Changing the value for the property causes the control to be redrawn.
+          </p>
+          <p>
+            Use <var>Style</var> to indicate whether the shape is drawn as a raised or lowered area on the control surface.
+          </p>
+          <p>
+            Shape and Style are used in the <var>Paint</var> method to draw the control on its <var>Canvas</var>.
+          </p>
+        </descr>
         <seealso>
-          <link id="#lcl.extctrls.TBevelShape">TBevelShape</link>
+          <link id="TBevelShape"/>
         </seealso>
       </element>
 
@@ -2937,15 +2975,25 @@
 
       <element name="TBevel.Style">
         <short>
-          <var>Style</var> indicates whether the bevel is displayed using a raised or a lowered style.
+          Indicates whether the bevel is drawn using a raised or a lowered style.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>Style</var> is a <var>TBevelStyle</var> property which indicates whether the bevel is drawn as a raised or a lowered area on the control surface. The default value for the property is <var>bsLowered</var>. Changing the value for the property causes the control to be redrawn.
+          </p>
+          <p>
+            Shape and Style are used in the <var>Paint</var> method to draw the control on its <var>Canvas</var>.
+          </p>
+          <p>
+            The relief in Style is achieved by drawing the opposite edges of the bevel Shape using contrasting colors. <var>bsLowered</var> uses <var>cl3DHighlight</var> and <var>cl3DShadow</var> for the color combination. <var>bsRaised</var> uses the same colors - but on the opposite edges.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.extctrls.TBevelStyle">TBevelStyle</link>
         </seealso>
       </element>
 
-      <element name="TBevel.Visible" link="#lcl.controls.TControl.Visible">
+      <element name="TBevel.Visible">
         <short>Makes the control visible or hidden.</short>
         <descr>
           <p>
@@ -3055,7 +3103,9 @@
       </element>
 
       <element name="TCustomRadioGroup.ItemEnter">
-        <short/>
+        <short>
+          Implements the OnEnter event handler assigned to radio buttons in the group.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -3064,7 +3114,9 @@
       </element>
 
       <element name="TCustomRadioGroup.ItemExit">
-        <short/>
+        <short>
+          Implements the OnExit event handler assigned to radio buttons in the group.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -3161,7 +3213,9 @@
       </element>
 
       <element name="TCustomRadioGroup.ItemResize">
-        <short/>
+        <short>
+          Implements the OnResize event handler assigned to radio buttons in the group.
+        </short>
         <descr>
           <remark>
             <var>ItemResize</var> is an empty implementation in the current LCL version.
@@ -3400,7 +3454,7 @@
             <var>AutoFill</var> is a <var>Boolean</var> property which indicates whether child controls (radio buttons) are resized to fill the available space in the control. When AutoFill is set to <b>True</b>, child controls are resized by setting the <var>EnlargeHorizontal</var> and <var>EnlargeVertical</var> properties in <var>ChildSizing</var> to the value <var>crsHomogenousChildResize</var>. When AutoFill is set to <b>False</b>, the properties in ChildSizing are set to the value <var>crsAnchorAligning</var>.
           </p>
           <remark>
-            Please note: <var>DisableAlign</var> is called on entry to the method, and <var>EnableAlign</var> is called prior to exiting from the method.
+            <var>DisableAlign</var> is called on entry to the method, and <var>EnableAlign</var> is called prior to exiting from the method.
           </remark>
           <p>
             AutoFill is set to <b>True</b> in the <var>Create</var> constructor.
@@ -3471,11 +3525,20 @@
       </element>
 
       <element name="TCustomRadioGroup.ColumnLayout">
-        <short>
-          <var>ColumnLayout</var> - <var>HorizontalThenVertical </var> or vice versa.
-        </short>
-        <descr/>
-        <seealso/>
+        <short>Fill direction for columns on the grouped control.</short>
+        <descr>
+          <p>
+            <var>ColumnLayout</var> is a <var>TColumnLayout</var> property which indicates the direction used to fill columns in the group control.  The default value for the property is <var>clHorizontalThenVertical</var>, and causes columns to filled horizontally before advancing to the next row.
+          </p>
+          <p>
+            Use <var>Columns</var> to specify the number of columns displayed for the Items on the grouped  control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomRadioGroup.Columns"/>
+          <link id="TCustomRadioGroup.Items"/>
+          <link id="TColumnLayout"/>
+        </seealso>
       </element>
 
       <element name="TCustomRadioGroup.OnClick">
@@ -3507,6 +3570,9 @@
             OnItemEnter was added in LCL version 2.2, and should be used in place of the OnEnter event handler. This change is Delphi compatible.
           </remark>
         </descr>
+        <version>
+          Added in LCL version 2.2.0.
+        </version>
         <seealso>
           <link id="#lcl.stdctrls.TRadioButton.OnEnter">TRadioButton.OnEnter</link>
         </seealso>
@@ -3525,6 +3591,9 @@
             OnItemExit was added in LCL version 2.2, and should be used in place of the OnExit event handler. This change is Delphi compatible.
           </remark>
         </descr>
+        <version>
+          Added in LCL version 2.2.0.
+        </version>
         <seealso>
           <link id="#lcl.stdctrls.TRadioButton.OnExit">TRadioButton.OnExit</link>
         </seealso>
@@ -3571,8 +3640,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.StdCtrls.HowToUseStdCtrls">HowToUseStdCtrls</link>
           <link id="#lcl.StdCtrls.TRadioButton">TRadioButton</link>
+          <link id="#lcl.StdCtrls.HowToUseStdCtrls">How To Use Standard Controls</link>
         </seealso>
         <example file="extctrls/radiobutton.pas"/>
       </element>
@@ -3726,7 +3795,7 @@
             <var>Clicked</var> is a procedure which performs actions needed when a check box in the grouped control is clicked. <var>Sender</var> contains the <var>TCheckBox</var> instance generating the click notification. Clicked checks the internal list of check boxes to find the ordinal position for the control in Sender, and calls <var>DoClick</var> to trigger the <var>OnItemClick</var> event handler.
           </p>
           <remark>
-            Please note: No actions are performed in the method if Sender is not found in the list of check boxes for the grouped control.
+            No actions are performed in the method if Sender is not found in the list of check boxes for the grouped control.
           </remark>
           <p>
             Clicked is used as the <var>OnClick</var> event handler in the <var>TCheckBox</var> instances created in <var>UpdateItems</var>.
@@ -3962,7 +4031,7 @@
         </seealso>
       </element>
       <element name="TCustomCheckGroup.DefineProperties.Filer">
-        <short/>
+        <short>TFiler instance used to read and write the content for the control.</short>
       </element>
 
       <element name="TCustomCheckGroup.ReadData">
@@ -3983,7 +4052,7 @@
         <short>TStream instance where values are written in the method.</short>
       </element>
 
-      <element name="TCustomCheckGroup.Loaded" link="#rtl.classes.TComponent.Loaded">
+      <element name="TCustomCheckGroup.Loaded">
         <short>
           Performs actions needed when the component has finished loading from the LCL component streaming mechanism.
         </short>
@@ -3993,7 +4062,7 @@
           </p>
         </descr>
         <seealso>
-          <link id="#rtl.classes.TComponent.Loaded">TComponent.Loaded</link>
+          <link id="#rtl.classes.TComponent">TComponent</link>
         </seealso>
       </element>
 
@@ -4206,8 +4275,8 @@
           </p>
         </descr>
         <seealso>
-          <link id="#lcl.StdCtrls.HowToUseStdCtrls">HowToUseStdCtrls</link>
           <link id="#lcl.ExtCtrls.TRadioGroup">TRadioGroup</link>
+          <link id="#lcl.StdCtrls.HowToUseStdCtrls">How To Use Standard Controls</link>
         </seealso>
       </element>
 
@@ -4383,20 +4452,20 @@
         <seealso/>
       </element>
       <element name="TLabelPosition.lpAbove">
-        <short/>
+        <short>Label is displayed above the control.</short>
       </element>
       <element name="TLabelPosition.lpBelow">
-        <short/>
+        <short>Label is displayed below the control.</short>
       </element>
       <element name="TLabelPosition.lpLeft">
-        <short/>
+        <short>Label is displayed to the left of the control.</short>
       </element>
       <element name="TLabelPosition.lpRight">
-        <short/>
+        <short>Label is displayed to the right of the control.</short>
       </element>
 
       <element name="TCustomLabeledEdit">
-        <short>Custom Labelled Edit.</short>
+        <short>Defines a edit control with a label bound to the control.</short>
         <descr>
           <p>
             <var>TCustomLabeledEdit</var> : The base type for <var>LabeledEdit</var>.
@@ -4457,8 +4526,8 @@
         <short>New parent for the control.</short>
       </element>
 
-      <element name="TCustomLabeledEdit.SetName" link="#lcl.controls.TControl.SetName">
-        <short/>
+      <element name="TCustomLabeledEdit.SetName">
+        <short>Sets the value for the Name property and the Caption in the label.</short>
         <descr>
           <p>
             <var>SetName</var> is overridden in <var>TCustomLabeledEdit</var> to assign the new value for the property to the Caption in <var>EditLabel</var> at design-time. SetName calls the inherited method prior to exit.
@@ -4473,7 +4542,7 @@
         <short>New value for the property.</short>
       </element>
 
-      <element name="TCustomLabeledEdit.Loaded" link="#rtl.classes.TComponent.Loaded">
+      <element name="TCustomLabeledEdit.Loaded">
         <short>
           Performs actions needed when the component has finished loading in the LCL streaming mechanism.
         </short>
@@ -4484,7 +4553,7 @@
         </descr>
         <seealso>
           <link id="TCustomLabeledEdit.DoPositionLabel"/>
-          <link id="#rtl.classes.TComponent.Loaded">TComponent.Loaded</link>
+          <link id="#rtl.classes.TComponent">TComponent</link>
         </seealso>
       </element>
 
@@ -4704,7 +4773,7 @@
       <element name="TLabeledEdit.OnUTF8KeyPress" link="#lcl.controls.TWinControl.OnUTF8KeyPress"/>
 
       <element name="TPanelBevel">
-        <short/>
+        <short>Alias for the TBevelCut type.</short>
         <descr>
           <p>
             <var>TPanelBevel</var> is an alias to the <var>TBevelCut</var> type. TPanelBevel is the type used to implement the <var>BevelInner</var> and <var>BevelOuter</var> properties in <var>TCustomPanel</var>.
@@ -4718,9 +4787,15 @@
       </element>
 
       <element name="TBevelWidth">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Defines the range of values allowed in a bevel width.</short>
+        <descr>
+          <p>
+            <var>TBevelWidth</var> is an Integer range type which defines the range of values allowed in properties using the type. TBevelWidth is the type used to implement the <var>BevelWidth</var> property in <var>TCustomPanel</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomPanel.BevelWidth"/>
+        </seealso>
       </element>
 
       <element name="TCustomPanel">
@@ -4752,7 +4827,7 @@
             <var>PaintBevel</var> is a procedure used to draw the bevel for the panel using the values in the <var>BevelColor</var> and <var>BevelWidth</var> properties. <var>ARect</var> is the rectangle with the coordinates where the bevel is drawn. <var>ABevel</var> contains the style used to draw the bevel.
           </p>
           <remark>
-            Please note: No actions are performed in the method when <var>ABevel</var> contains the value <var>bvNone</var>.
+            No actions are performed in the method when <var>ABevel</var> contains the value <var>bvNone</var>.
           </remark>
           <p>
             PaintBevel uses the <var>Canvas</var> for the control as the target for the drawing operation. The <var>Frame3D</var> method in the Canvas is used to draw the bevel with the required color, width, and style for the panel.
@@ -4846,7 +4921,7 @@
 
       <element name="TCustomPanel.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
-      <element name="TCustomPanel.AdjustClientRect" link="#lcl.controls.TWinControl.AdjustClientRect">
+      <element name="TCustomPanel.AdjustClientRect">
         <short>
           Adjusts the specified rectangle to account for border and bevels used in the control.
         </short>
@@ -4859,24 +4934,26 @@
           </p>
         </descr>
         <seealso>
-          <link id="TCustomPanel.BorderWidth"/>
           <link id="TCustomPanel.BevelInner"/>
           <link id="TCustomPanel.BevelOuter"/>
-          <link id="TCustomPanel.InflateRect"/>
+          <link id="#lcl.controls.TWinControl.BorderWidth">TWinControl.BorderWidth</link>
+          <link id="#lcl.controls.TWinControl.AdjustClientRect">TWinControl.AdjustClientRect</link>
         </seealso>
       </element>
       <element name="TCustomPanel.AdjustClientRect.Rect">
         <short>Drawing rectangle adjusted in the method.</short>
       </element>
 
-      <element name="TCustomPanel.GetControlClassDefaultSize" link="#lcl.controls.TControl.GetControlClassDefaultSize">
+      <element name="TCustomPanel.GetControlClassDefaultSize">
         <short>Gets the size used for new instance of the class type.</short>
         <descr>
           <p>
             <var>GetControlClassDefaultSize</var> is overridden to provide the default size for new instances of the class type. The return value is a <var>TSize</var> type which contains the dimensions for the new control. The CX member contains the Width for the panel, and defaults to 170 pixels. The CY member contains the Height for the panel, and defaults to 50 pixels.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetControlClassDefaultSize">TControl.GetControlClassDefaultSize</link>
+        </seealso>
       </element>
       <element name="TCustomPanel.GetControlClassDefaultSize.Result">
         <short>TSize value with the default dimensions for new class instances.</short>
@@ -4900,7 +4977,7 @@
         <short/>
       </element>
 
-      <element name="TCustomPanel.Loaded" link="#rtl.classes.TComponent.Loaded">
+      <element name="TCustomPanel.Loaded">
         <short>Performs actions needed when the component has finished loading in the LCL  streaming mechanism.</short>
         <descr>
           <p>
@@ -4911,17 +4988,20 @@
           <link id="TCustomPanel.UpdateParentColorChange"/>
           <link id="TCustomPanel.ParentColor"/>
           <link id="#lcl.controls.TControl.ControlStyle">TControl.ControlStyle</link>
+          <link id="#rtl.classes.TComponent">TComponent</link>
         </seealso>
       </element>
 
-      <element name="TCustomPanel.RealSetText" link="#lcl.controls.TControl.RealSetText">
+      <element name="TCustomPanel.RealSetText">
         <short>Stores the specified value as the Caption for the control.</short>
         <descr>
           <p>
             <var>RealSetText</var> is an overridden procedure used to store the specified value as the <var>Caption</var> for the control. RealSetText calls the inherited method to store the text, and then calls the <var>Invalidate</var> method to repaint the control.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.RealSetText">TControl.RealSetText</link>
+        </seealso>
       </element>
       <element name="TCustomPanel.RealSetText.Value">
         <short>New text value used as the caption for the control.</short>
@@ -5296,7 +5376,7 @@
       </element>
 
       <element name="TWrapAfter">
-        <short/>
+        <short>Represents the wrapping strategies used in TCustomFlowPanel.</short>
         <descr>
           <p>
             TWrapAfter is an enumerated type with values that specify the wrapping strategy for controls in TCustomFlowPanel.
@@ -5356,32 +5436,38 @@
         <short>New value for the property.</short>
       </element>
 
-      <element name="TFlowPanelControl.GetDisplayName" link="#LCL.Classes.TCollectionItem.DisplayName">
+      <element name="TFlowPanelControl.GetDisplayName">
         <short>Gets the value for the DisplayName property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TCollectionItem.DisplayName">TCollectionItem.DisplayName</link>
+        </seealso>
       </element>
       <element name="TFlowPanelControl.GetDisplayName.Result">
         <short>Value for the property.</short>
       </element>
 
-      <element name="TFlowPanelControl.SetIndex" link ="#LCL.Classes.TCollectionItem.SetIndex">
+      <element name="TFlowPanelControl.SetIndex">
         <short>Sets the value for the Index property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TCollectionItem.Index">TCollectionItem.Index</link>
+        </seealso>
       </element>
       <element name="TFlowPanelControl.SetIndex.Value">
-        <short/>
+        <short>New value for the Index property.</short>
       </element>
 
-      <element name="TFlowPanelControl.AssignTo" link="#LCL.Classes.TPersistent.AssignTo">
+      <element name="TFlowPanelControl.AssignTo">
         <short>implement persistence in the control.</short>
         <descr>
           <p>
             <var>AssignTo</var> is an overridden method used to implement persistence in the control. AssignTo provides support for storing property values from the current class instance into the <var>Dest</var> argument when it is derived from <var>TFlowPanelControl</var>. Otherwise, the inherited AssignTo method is called.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
       </element>
       <element name="TFlowPanelControl.AssignTo.Dest">
         <short>Persistent object where property values are stored.</short>
@@ -5555,10 +5641,10 @@
         <seealso/>
       </element>
       <element name="TFlowPanelControlList.IndexOf.Result">
-        <short/>
+        <short>Ordinal position in the list for the control.</short>
       </element>
       <element name="TFlowPanelControlList.IndexOf.AControl">
-        <short/>
+        <short>Control to locate in the list.</short>
       </element>
 
       <element name="TFlowPanelControlList.Items">
@@ -5675,7 +5761,7 @@
             Calls DisableAlign prior to adding (inserting) the control in ControlList. Calls ReAlign when the control is added, and calls EnableAlign prior to exit.
           </p>
         <remark>
-          Please note: The CM_CONTROLCHANGE message is ignored when the component is being loaded using LCL steaming. No actions are performed in the method when csLoading is in the ComponentState property.
+          The CM_CONTROLCHANGE message is ignored when the component is being loaded using LCL steaming. No actions are performed in the method when csLoading is in the ComponentState property.
         </remark>
         </descr>
         <seealso/>
@@ -5691,7 +5777,7 @@
             <var>AlignControls</var> is an overridden procedure used to perform layout and alignment for flowed controls on the panel.
           </p>
           <remark>
-            Please note: AlignControls does <b>NOT</b> call the inherited method.
+            AlignControls does <b>NOT</b> call the inherited method.
           </remark>
         </descr>
         <seealso/>
@@ -5901,12 +5987,27 @@
 
       <element name="TCustomTrayIcon">
         <short>
-          Implements the base class for a a multi-platform System Tray component.
+          Defines the base class for a multi-platform system tray icon component.
         </short>
         <descr>
           <p>
-            <var>TCustomTrayIcon </var> is the base class for <var>TTrayIcon</var>, a multi-platform System Tray component.
+            <var>TCustomTrayIcon </var> is the base class for <var>TTrayIcon</var>, a multi-platform system tray icon component. It provides properties, methods, and events used to configure and control the tray icon.
           </p>
+          <p>
+            On the Windows platform, the system tray is usually located on the bottom-right corner of the screen, but it ban be located on other edges for the physical screen. For other operating systems, this position varies according to the window or display manager in use.
+          </p>
+          <p>
+            Use ShowIcon, Icon, Icons, AnimateInterval and Animate to display an animated icon on the component.
+          </p>
+          <p>
+            Use BalloonFlags, BalloonHint, BalloonTimeout and BalloonTitle for the balloon hints displayed for the tray icon.
+          </p>
+          <p>
+            Use PopUpMenu to set the menu displayed when the icon is right clicked with the mouse.
+          </p>
+          <remark>
+            TCustomTrayIcon / TTrayIcon is <b>partially</b> compatible with the Delphi component. It adds an OnPaint event handler which does not exist in Delphi. It omits properties like IconIndex and OnBalloonClick.
+          </remark>
         </descr>
         <seealso>
           <link id="TTrayIcon"/>
@@ -6124,7 +6225,7 @@
             IconChanged is a procedure which implements an event handler signalled when the Icon is changed for the component. IconChanged ensures that the WidgetSetClass is notified of the change to the tray icon.
           </p>
           <remark>
-            Please note: No actions are performed in the event handler if a Handle has already been assigned (contains a non-zero value) for the component.
+            No actions are performed in the event handler if a Handle has already been assigned (contains a non-zero value) for the component.
           </remark>
           <p>
             IconChanged is assigned as the OnChange event handler for the Icon property in the constructor for the class instance.
@@ -6141,14 +6242,16 @@
 
       <element name="TCustomTrayIcon.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
 
-      <element name="TCustomTrayIcon.Notification" link="#LCL.Classes.TComponent.Notification">
+      <element name="TCustomTrayIcon.Notification">
         <short>Performs action when a component is added or removed at run-time.</short>
         <descr>
           <p>
             <var>Notification</var> is an overridden procedure used to perform actions when a component is added or removed at run-time. Notification calls the inherited method, and ensures that the <var>PopUpMenu</var> for the tray icon is set to <b>Nil</b> when the component is removed.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
       </element>
       <element name="TCustomTrayIcon.Notification.AComponent">
         <short>Component for the notification.</short>
@@ -6216,7 +6319,7 @@
             <var>Hide</var> is a <var>Boolean</var> function used to hide the tray icon and to remove it from the tray area in the task bar.
           </p>
           <remark>
-            Please note: No actions are performed in the method when <var>Visible</var> is set to <b>False</b>, or at design-time, or when the component is loaded from the LCL streaming mechanism.
+            No actions are performed in the method when <var>Visible</var> is set to <b>False</b>, or at design-time, or when the component is loaded from the LCL streaming mechanism.
           </remark>
           <p>
             Hide sets the value in the <var>Visible</var> property to <b>False</b>, and calls the namesake method in the <var>WidgetSetClass</var>. The internal animation timer for the tray icon is also disabled in the method.
@@ -6422,25 +6525,37 @@
             OnPaint is an event handler used to implement custom drawing for the tray icon. Draw using the canvas property for the tray icon.
           </p>
           <remark>
-            Please note: OnPaint does <b>not</b> work on the Win32 platform.
+            OnPaint does <b>not</b> work on the Win32 platform.
           </remark>
         </descr>
       </element>
 
       <element name="TTrayIcon">
         <short>
-          Implements a multi-platform System Tray component.
+          Implements a multi-platform system tray component.
         </short>
         <descr>
           <p>
-            <var>TTrayIcon</var> is a <var>TCustomTrayIcon</var> descendant which implements a multi-platform System Tray component. It adds an icon to the tray which signifies  an application that is inactive but ready to be activated.
+            <var>TTrayIcon</var> is a <var>TCustomTrayIcon</var> descendant which implements a multi-platform System Tray component.
           </p>
           <p>
             On the Windows platform, the System tray is usually located on the bottom-right corner of the screen, but it ban be located on other edges for the physical screen. For other operating systems, this position varies according to the window or display manager in use.
           </p>
           <p>
+            Use ShowIcon, Icon, Icons, AnimateInterval and Animate to display an animated icon on the component.
+          </p>
+          <p>
+            Use BalloonFlags, BalloonHint, BalloonTimeout and BalloonTitle for the balloon hints displayed for the tray icon.
+          </p>
+          <p>
+            Use PopUpMenu to set the menu displayed when the icon is right clicked with the mouse.
+          </p>
+          <p>
             TTrayIcon sets the visibility for properties defined in the ancestor class.
           </p>
+          <remark>
+            TCustomTrayIcon / TTrayIcon is <b>partially</b> compatible with the Delphi component. It adds an OnPaint event handler which does not exist in Delphi. It omits properties like IconIndex and OnBalloonClick.
+          </remark>
         </descr>
         <seealso>
           <link id="TCustomTrayIcon"/>
@@ -6463,19 +6578,21 @@
       <element name="TTrayIcon.OnPaint" link="#lcl.extctrls.TCustomTrayIcon.OnPaint"/>
 
       <element name="TBandDrawingStyle">
-        <short/>
+        <short>Represents the drawing styles available for tool bar bands.</short>
         <descr>
           <p>
-            <var>TBandDrawingStyle</var> is an enumeration type with values representing the drawing styles available for tool bar bands.
+            <var>TBandDrawingStyle</var> is an enumeration type with values representing the drawing styles available for tool bar bands. TBandDrawingStyle is the type used for the <var>DrawingStyle</var> property in <var>TCustomControlBar</var>.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TCustomControlBar.DrawingStyle"/>
+        </seealso>
       </element>
       <element name="TBandDrawingStyle.dsNormal">
-        <short/>
+        <short>Bands are drawn noramlly using the color for the control bar.</short>
       </element>
       <element name="TBandDrawingStyle.dsGradient">
-        <short/>
+        <short>Bands are drawn using a gradient for the background colors.</short>
       </element>
 
       <element name="TBandPaintOption">
@@ -6488,22 +6605,24 @@
         <seealso/>
       </element>
       <element name="TBandPaintOption.bpoGrabber">
-        <short/>
+        <short>Band is drawn with a grabber or gripper.</short>
       </element>
       <element name="TBandPaintOption.bpoFrame">
-        <short/>
+        <short>Band is drawn with a frame around the outer edges.</short>
       </element>
       <element name="TBandPaintOption.bpoGradient">
-        <short/>
+        <short>Band is drawn using a gradient in the background color.</short>
       </element>
       <element name="TBandPaintOption.bpoRoundRect">
-        <short/>
+        <short>Not used internally, but available to OnBandPaint.</short>
       </element>
 
       <element name="TBandPaintOptions">
         <short>Stores values from the TBandPaintOption enumeration.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TBandPaintOption"/>
+        </seealso>
       </element>
 
       <element name="TBandDragEvent">
@@ -6595,7 +6714,9 @@
       </element>
 
       <element name="TRowSize">
-        <short/>
+        <short>
+          Defines the range of values available for the RowSize property in TCustomControlBar.
+        </short>
         <descr>
           <p>
             TRowSize a range type which defines the range of values available for the RowSize property in TCustomControlBar. Essentially, any positive non-zero Integer value.
@@ -6621,19 +6742,19 @@
 
       <element name="TCursorDesign">
         <short>
-          Represents cursor shapes displayed when the mouse hovers over different an area in a control band.
+          Represents cursor shapes displayed when the mouse hovers over different areas in a control band.
         </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCursorDesign.cdDefault">
-        <short/>
+        <short>Uses the default cursor shape.</short>
       </element>
       <element name="TCursorDesign.cdGrabber">
-        <short/>
+        <short>Uses the grabber cursor shape.</short>
       </element>
       <element name="TCursorDesign.cdRestricted">
-        <short/>
+        <short>Uses the "not available" cursor shape.</short>
       </element>
 
       <element name="TCtrlBand">
