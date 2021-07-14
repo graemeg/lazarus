@@ -11,6 +11,9 @@
         <p>
           Initial implementation:  2016 by Bart Broersma. Revised in August 2020.
         </p>
+        <p>
+          This file is part of the <file>LazControls</file> package.
+        </p>
       </descr>
 
       <!-- unresolved external references -->
@@ -327,7 +330,7 @@
         </seealso>
       </element>
 
-      <element name="TSpinEditExBase.RealGetText" link="#lcl.groupededit.TCustomAbstractGroupedEdit.RealGetText">
+      <element name="TSpinEditExBase.RealGetText">
         <short>Gets the text displayed for the control.</short>
         <descr>
           <p>
@@ -338,7 +341,7 @@
           <link id="TSpinEditExBase.Value"/>
           <link id="TSpinEditExBase.ValueToStr"/>
           <link id="TSpinEditExBase.Edit"/>
-          <link id="#lcl.groupededit.TCustomAbstractGroupedEdit.RealGetText"/>
+          <link id="#lcl.groupededit.TCustomAbstractGroupedEdit.RealGetText">TCustomAbstractGroupedEdit.RealGetText</link>
         </seealso>
       </element>
       <element name="TSpinEditExBase.RealGetText.Result">
@@ -486,7 +489,7 @@
             <var>AValue</var> contains the type with the numeric value to be decremented.
           </p>
           <p>
-            The return value contains the numeric value for the type after the value in Increment has been subtracted. The return value is constrained when the incremented value is too large for the data type.
+            The return value contains the numeric value for the type after the value in Increment has been subtracted. The return value is range limited when the incremented value is too large for the data type.
           </p>
           <p>
             SafeDec is used in the implementation of the <var>SpinUpDown</var> method.
@@ -498,10 +501,10 @@
         </seealso>
       </element>
       <element name="TSpinEditExBase.SafeDec.Result">
-        <short/>
+        <short>Control value after the decrement operation.</short>
       </element>
       <element name="TSpinEditExBase.SafeDec.AValue">
-        <short>The decremented (and possibly constrained) value.</short>
+        <short>The decremented (and possibly range limited) value.</short>
       </element>
 
       <element name="TSpinEditExBase.SetValue">
@@ -597,7 +600,7 @@
         <seealso/>
       </element>
 
-      <element name="TSpinEditExBase.FinalizeWnd" link="#lcl.controls.TWinControl.FinalizeWnd">
+      <element name="TSpinEditExBase.FinalizeWnd">
         <short>Performs actions prior to freeing the handle for the control.</short>
         <descr>
           <p>
@@ -1287,7 +1290,7 @@
 
       <element name="TCustomFloatSpinEditEx.ExponentialFormatLimitPos">
         <short>
-          Maximum exponent allowed before exponential notation is required for a positive number.
+          Maximum exponent digits allowed before exponential notation is required for a positive number.
         </short>
         <descr>
           <p>
@@ -1318,7 +1321,9 @@
       </element>
 
       <element name="TCustomFloatSpinEditEx.ExponentialFormatLimitNeg">
-        <short/>
+        <short>
+          Maximum exponent digits allowed before exponential notation is required for a negative number.
+        </short>
         <descr>
           <p>
             <var>ExponentialFormatLimitNeg</var> is an <var>Integer</var> property which contains the exponent value at which use of scientific notation is triggered for a negative <var>Value</var> in the control. The default value for the property is <b>-6</b>, and indicates that scientific notation is required when Value is smaller than 10^-6.

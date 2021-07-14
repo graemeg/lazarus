@@ -4,7 +4,14 @@
 
     <module name="ListFilterEdit">
       <short>Implements a control used to filter an associated list box.</short>
-      <descr/>
+      <descr>
+        <p>
+          <file>ListFilterEdit.pas</file> contains classes and types used to implement the <var>TListFilterEdit</var> control, and filtered edit control for values in an associated list box.
+        </p>
+        <p>
+          This file is part of the <file>LazControls</file> package.
+        </p>
+      </descr>
 
       <!-- unresolved external references -->
       <element name="Classes"/>
@@ -20,7 +27,7 @@
       <element name="AvgLvlTree"/>
 
       <element name="TImageIndexEvent">
-        <short/>
+        <short>Not used in the current implementation.</short>
         <descr/>
         <seealso/>
       </element>
@@ -38,10 +45,10 @@
       </element>
 
       <element name="TListFilterEdit">
-        <short>Filter for an associated ListBox.</short>
+        <short>Implements an edit control used to filter an associated ListBox.</short>
         <descr>
           <p>
-            TListFilterEdit is a TCustomControlFilterEdit descendant which implements a filter for an associated ListBox.
+            TListFilterEdit is a TCustomControlFilterEdit descendant which implements an edit control used to filter an associated TListBox control.
           </p>
         </descr>
         <seealso/>
@@ -57,7 +64,7 @@
       </element>
 
       <element name="TListFilterEdit.FOriginalData">
-        <short>The orignal value supplied in the Data property.</short>
+        <short>The original value supplied in the Data property.</short>
       </element>
 
       <element name="TListFilterEdit.FSortedData">
@@ -90,19 +97,29 @@
 
       <!-- protected methods -->
       <element name="TListFilterEdit.Notification">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Handles a notification when a component is added to or removed from the control.
+        </short>
+        <descr>
+          <p>
+            <var>Notification</var> is an overridden method in <var>TListFilterEdit</var>, and calls the inherited method on entry.  It ensures that the <var>FilteredListbox</var> property is set to <b>Nil</b> when the component is removed from the class instance. It also sets the value for <var>IdleConnected</var> to <b>False</b>, and resets the internal update flag for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TListFilterEdit.FilteredListbox"/>
+          <link id="#lcl.editbtn.TCustomControlFilterEdit.IdleConnected">TCustomControlFilterEdit.IdleConnected</link>
+          <link id="#lcl.controls.TControl.Notification">TControl.Notification</link>
+        </seealso>
       </element>
       <element name="TListFilterEdit.Notification.AComponent">
-        <short/>
+        <short>Component for the notification.</short>
       </element>
       <element name="TListFilterEdit.Notification.Operation">
-        <short/>
+        <short>Operation performed for the component.</short>
       </element>
 
       <element name="TListFilterEdit.MoveTo">
-        <short/>
+        <short>Changes the position in FilteredListbox and optionally selects the value.</short>
         <descr/>
         <seealso/>
       </element>
@@ -114,7 +131,9 @@
       </element>
 
       <element name="TListFilterEdit.MoveNext">
-        <short/>
+        <short>
+          Moves to the next item in FilteredListbox and optionally selects the value.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -123,7 +142,9 @@
       </element>
 
       <element name="TListFilterEdit.MovePrev">
-        <short/>
+        <short>
+          Moves to the previous item in FilteredListbox and optionally selects the value.
+        </short>
         <descr/>
         <seealso/>
       </element>

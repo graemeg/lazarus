@@ -3,17 +3,19 @@
   <package name="LazControls">
 
     <module name="TreeFilterEdit">
-      <short>Implements a control used to filter an associated TreeView.</short>
-      <descr/>
+      <short>Implements a control used to filter an associated TTreeView control.</short>
+      <descr>
+        <file>treefilteredit.pas</file> contains classes and other types used to implement a control used to filter an associated TTreeView control. This file is part of the <file>LazControls</file> package.
+      </descr>
 
       <element name="TTreeFilterEdit">
-        <short>Filter for an associated TreeView.</short>
+        <short>Filter for an associated TreeView control.</short>
         <descr>
           <p>
-            This control has 2 different operation modes. One mode maintains and filters sub-items of root-nodes in a tree, another mode filters a whole existing tree using TreeNode.Visible property.
+            This control has 2 different operation modes. One mode maintains and filters sub-items of root-nodes in a tree. The other mode filters the whole tree using the  TreeNode.Visible property for each of the nodes.
           </p>
           <p>
-            <b>Mode 1</b>: Sub-branches under root nodes Items for each branch are maintained in TTreeFilterBranch class instance.
+            <b>Mode 1</b>: Sub-branches under root nodes Items for each branch are maintained in a TTreeFilterBranch class instance.
           </p>
           <p>
             <b>Mode 2</b>: A whole tree When no branches are defined (no calls made to GetBranch), the TreeFilterEdit control filters the whole tree automatically. It uses each TreeNode's Visible property to show/hide it.
@@ -87,7 +89,7 @@
         </short>
         <descr>
           <p>
-            Text, a data reference, and an associated file name can be added.
+            Text, a data reference, and an associated file name can be added for the node.
           </p>
         </descr>
       </element>

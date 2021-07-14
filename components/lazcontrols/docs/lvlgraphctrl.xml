@@ -4,7 +4,14 @@
     <!-- LvlGraphCtrl -->
     <module name="LvlGraphCtrl">
       <short>Implements a Level (or Layered) Graph control.</short>
-      <descr/>
+      <descr>
+        <p>
+          <file>LvlGraphCtrl.pas</file> contains classes, types, constants, and routines used to implement a Level (or Layered) Graph control.
+        </p>
+        <p>
+          This file is part of the <file>LazControls</file> package.
+        </p>
+      </descr>
 
       <!-- unresolved external references -->
       <element name="Classes"/>
@@ -1601,7 +1608,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
       </element>
       <element name="TLvlGraphCtrlOption.lgoMinimizeEdgeLens">
         <short>
-          If nodes are not fixed to a level by neighbours on both side, find the level which reduces total edge length the most.
+          If nodes are not fixed to a level by neighbors on both side, find the level which reduces total edge length the most.
         </short>
       </element>
       <element name="TLvlGraphCtrlOption.lgoStraightenGraph">
@@ -2447,10 +2454,10 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
         <short>Ancestor for the TLvlGraphControl control.</short>
         <descr>
           <p>
-            <var>TCustomLvlGraphControl</var> is a <var>TCustomControl</var> descendant which impements the ancestor for <var>TLvlGraphControl</var>.
+            <var>TCustomLvlGraphControl</var> is a <var>TCustomControl</var> descendant which implements the ancestor for <var>TLvlGraphControl</var>.
           </p>
           <p>
-            It is used to render a level graph (also known as a edlayered graph). A level graph consists of nodes (or vertices) and edges  with an equidistant spacing beteen related nodes.
+            It is used to render a level graph (also known as a edlayered graph). A level graph consists of nodes (or vertices) and edges  with an equidistant spacing between related nodes.
           </p>
           <p>
             TCustomLvlGraphControl and TLvlGraphControl provide the following features:
@@ -2487,7 +2494,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
               You can highlight nodes or edges under the mouse.
             </li>
             <li>
-              The control displays back edges in special colours, which facilitates quick visual identification of cycles (e.g. unit circles).
+              The control displays back edges in special colors, which facilitates quick visual identification of cycles (e.g. unit circles).
             </li>
             <li>
               Edges can be drawn straight or as a curve (bezier).
@@ -3124,7 +3131,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
         <short>Implements a control used to draw a level (or layered) graph.</short>
         <descr>
           <p>
-            <var>TLvlGraphControl</var> is a <var>TCustomLvlGraphControl</var> descendant which implements a control used to render a level graph (also known as a edlayered graph). A level graph consists of nodes (or vertices) and edges  with an equidistant spacing beteen related nodes.
+            <var>TLvlGraphControl</var> is a <var>TCustomLvlGraphControl</var> descendant which implements a control used to render a level graph (also known as a edlayered graph). A level graph consists of nodes (or vertices) and edges  with an equidistant spacing between related nodes.
           </p>
           <p>
             TLvlGraphControl provides the following features:
@@ -3161,7 +3168,7 @@ DrawPositionEnd := DrawPosition + Max(InSize, OutSize);
               You can highlight nodes or edges under the mouse.
             </li>
             <li>
-              The control displays back edges in special colours, which facilitates quick visual identification of cycles (e.g. unit circles).
+              The control displays back edges in special colors, which facilitates quick visual identification of cycles (e.g. unit circles).
             </li>
             <li>
               Edges can be drawn straight or as a curve (bezier).

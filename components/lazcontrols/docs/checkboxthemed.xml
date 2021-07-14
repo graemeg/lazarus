@@ -7,6 +7,9 @@
         <p>
           <file>checkboxthemed.pas</file> contains classes used to implements a custom-drawn check box control drawn using theme services.
         </p>
+        <p>
+          This file is part of the <file>LazControls</file> package.
+        </p>
       </descr>
 
       <!-- unresolved external references -->
@@ -45,20 +48,28 @@
 
       <element name="TCheckBoxThemedActionLink.AssignClient">
         <short>Sets the control used as the client in the action link.</short>
-        <descr/>
+        <descr>
+          <p>
+            Calls the inherited method, and stores the control as a TCustomCheckBoxThemed instance in the member variable used in the class instance.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCheckBoxThemedActionLink.AssignClient.AClient">
-        <short/>
+        <short>The themed check box object that is the client for the action link.</short>
       </element>
 
       <element name="TCheckBoxThemedActionLink.SetChecked">
-        <short>Sets the value in Checked for the client control when linked.</short>
+        <short>
+          Sets the value in the Checked property for the client control when linked to the action.
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCheckBoxThemedActionLink.IsCheckedLinked"/>
+        </seealso>
       </element>
       <element name="TCheckBoxThemedActionLink.SetChecked.Value">
-        <short/>
+        <short>New value for the Checked property.</short>
       </element>
 
       <!-- public methods -->
@@ -67,7 +78,9 @@
           Determines if an Action is linked to the client control and if the Checked values are in sync.
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCheckBoxThemedActionLink.SetChecked"/>
+        </seealso>
       </element>
       <element name="TCheckBoxThemedActionLink.IsCheckedLinked.Result">
         <short>
@@ -177,7 +190,7 @@
       </element>
 
       <element name="TCustomCheckBoxThemed.CheckBoxPressed">
-        <short>Internal flag used to track key or mouse state in the control.</short>
+        <short>Member used to track key or mouse state in the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -206,13 +219,13 @@
         <seealso/>
       </element>
       <element name="TCustomCheckBoxThemed.CalculatePreferredSize.PreferredWidth">
-        <short/>
+        <short>Preferred width calculated in the method.</short>
       </element>
       <element name="TCustomCheckBoxThemed.CalculatePreferredSize.PreferredHeight">
-        <short/>
+        <short>Preferred height calculated in the method.</short>
       </element>
       <element name="TCustomCheckBoxThemed.CalculatePreferredSize.WithThemeSpace">
-        <short/>
+        <short>True if additional space is reserved for theming element / details.</short>
       </element>
 
       <element name="TCustomCheckBoxThemed.CMBiDiModeChanged">
@@ -234,8 +247,14 @@
       </element>
 
       <element name="TCustomCheckBoxThemed.InitCheckBoxSize">
-        <short/>
-        <descr/>
+        <short>
+          Gets the size needed for the check box when drawn using ThemeServices.
+        </short>
+        <descr>
+          <p>
+            <var>InitCheckBoxSize</var> is a class method used to initialize the member used to store the check box size when drawn using theme element details. Calls the GetDetailSize method in ThemeServices to store the value for the TPoint member.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
@@ -253,29 +272,69 @@
 
       <element name="TCustomCheckBoxThemed.DoClick">
         <short>Performs actions needed when the control is clicked.</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            DoClick ensures that the State or Checked property is updated when the control is clicked. When AllowGrayed is enabled, the value in State is updated to the next value for the tri-state check box control. Otherwise, the current value in Checked is toggled.
+          </p>
+          <p>
+            DoClick is called from DialogChar when an accelerator key is handled for the control. It is called from KeyUp when the VK_RETURN or VK_SPACE  key code is handled for the control. It is also called from MouseUp when a Left mouse button event occurs on the hovered control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomCheckBoxThemed.Checked"/>
+          <link id="TCustomCheckBoxThemed.State"/>
+          <link id="TCustomCheckBoxThemed.AllowGrayed"/>
+          <link id="TCustomCheckBoxThemed.DialogChar"/>
+          <link id="TCustomCheckBoxThemed.KeyUp"/>
+          <link id="TCustomCheckBoxThemed.MouseUp"/>
+        </seealso>
       </element>
 
       <element name="TCustomCheckBoxThemed.DoEnter">
-        <short>Performs actions needed when the control is entered (receives input focus).</short>
-        <descr/>
-        <seealso/>
+        <short>
+          Performs actions needed when the control is entered (receives input focus).
+        </short>
+        <descr>
+          <p>
+            <var>DoEnter</var> is an overridden method in <var>TCustomCheckBoxThemed</var>. It calls the inherited method on entry to signal the <var>OnEnter</var> event handler (when assigned). It calls <var>Invalidate</var> to force the control to be redrawn.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.DoEnter">TWinControl.DoEnter</link>
+          <link id="#lcl.controls.TWinControl.OnEnter">TWinControl.OnEnter</link>
+          <link id="#lcl.controls.TWinControl.Invalidate">TWinControl.Invalidate</link>
+        </seealso>
       </element>
 
       <element name="TCustomCheckBoxThemed.DoExit">
         <short>Performs actions needed when the control is exited (loses input focus).</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>DoExit</var> is an overridden method in <var>TCustomCheckBoxThemed</var>. It calls the inherited method on entry to signal the <var>OnExit</var> event handler (when assigned). It calls <var>Invalidate</var> to force the control to be redrawn.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.DoExit">TWinControl.DoExit</link>
+          <link id="#lcl.controls.TWinControl.OnExit">TWinControl.OnExit</link>
+          <link id="#lcl.controls.TWinControl.Invalidate">TWinControl.Invalidate</link>
+        </seealso>
+
       </element>
 
       <element name="TCustomCheckBoxThemed.GetActionLinkClass">
         <short>Gets the class reference used to create the action link for the control.</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>GetActionLinkClass</var> is an overridden method in <var>TCustomCheckBoxThemed</var> used to get the class reference needed to create a new action link for the control. The return value is the TCheckBoxThemedActionLink type.
+          </p>
+          <p>
+            It re-implements the method introduced in the ancestor class. It does not call the inherited method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomCheckBoxThemed.GetActionLinkClass.Result">
-        <short/>
+        <short>Always returns the TCheckBoxThemedActionLink type.</short>
       </element>
 
       <element name="TCustomCheckBoxThemed.KeyDown">
@@ -308,53 +367,57 @@
         <seealso/>
       </element>
       <element name="TCustomCheckBoxThemed.MouseDown.Button">
-        <short/>
+        <short>Mouse button for the event.</short>
       </element>
       <element name="TCustomCheckBoxThemed.MouseDown.Shift">
-        <short/>
+        <short>Shift, Alt, or Ctrl modifier for the mouse event.</short>
       </element>
       <element name="TCustomCheckBoxThemed.MouseDown.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse pointer.</short>
       </element>
       <element name="TCustomCheckBoxThemed.MouseDown.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse pointer.</short>
       </element>
 
       <element name="TCustomCheckBoxThemed.MouseEnter">
-        <short>Handles hover state when the mouse cursor enters the control.</short>
+        <short>Updates the hover state when the mouse pointer enters the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCheckBoxThemed.MouseLeave">
-        <short>Handles hover state when the mouse cursor leaves the control.</short>
+        <short>Updates the hover state when the mouse pointer leaves the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCheckBoxThemed.MouseUp">
-        <short>Handles mouse up events for the control.</short>
-        <descr/>
+        <short>Handles a mouse up event for the control.</short>
+        <descr>
+          <p>
+            <var>MouseUp</var> is an overridden method in <var>TCustomCheckBoxThemed</var>. It calls the inherited method on entry to signal the <var>OnMouseUp</var> event handler (when assigned). It ensures that a Left mouse button click anywhere within the client rectangle for the control causes the DoClick method to be called to update values in the State and/or Checked property.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomCheckBoxThemed.MouseUp.Button">
-        <short/>
+        <short>Mouse button for the event.</short>
       </element>
       <element name="TCustomCheckBoxThemed.MouseUp.Shift">
-        <short/>
+        <short>Shift, Ctrl, Alt modifier for the mouse event.</short>
       </element>
       <element name="TCustomCheckBoxThemed.MouseUp.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse pointer.</short>
       </element>
       <element name="TCustomCheckBoxThemed.MouseUp.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse pointer.</short>
       </element>
 
       <element name="TCustomCheckBoxThemed.Paint">
-        <short>Draws the control.</short>
+        <short>Draws the themed check box control.</short>
         <descr>
           <p>
-            <var>Paint</var> is an overridden method in <var>TCustomCheckBoxThemed</var>. It calls the inherited method to signal the default <var>OnPaint</var> event handler (when assigned). It calls <var>PaintSelf</var> which implements the custom drawing method used for the themed check box control.
+            <var>Paint</var> is an overridden method in <var>TCustomCheckBoxThemed</var>. It calls the inherited method to signal the <var>OnPaint</var> event handler (when assigned). It calls <var>PaintSelf</var> which implements the custom drawing method used for the themed check box control.
           </p>
         </descr>
         <seealso>
@@ -364,17 +427,26 @@
       </element>
 
       <element name="TCustomCheckBoxThemed.TextChanged">
-        <short>Redraws the control when the caption has been changed.</short>
-        <descr/>
+        <short>
+          Redraws the control when the caption text has been changed.
+        </short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Calls <var>Invalidate</var> to force the control to be redrawn.
+          </p>
+        </descr>
         <seealso>
-          <link id="TCustomCheckBoxThemed.Invalidate"/>
-          <link id="#lcl.controls.TControl.Invalidate">TControl.Invalidate</link>
+          <link id="#lcl.controls.TWinControl.Invalidate">TWinControl.Invalidate</link>
         </seealso>
       </element>
 
       <element name="TCustomCheckBoxThemed.WMSize">
         <short>Handles the WM_SIZE message for the control and redraws the control.</short>
-        <descr/>
+        <descr>
+          <p>
+            Calls the inherited method on entry to apply the message to the control. Calls Invalidate to force the control to be redrawn.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.controls.TWinControl.WMSize">TWinControl.WMSize</link>
         </seealso>
@@ -384,7 +456,7 @@
       </element>
 
       <element name="TCustomCheckBoxThemed.CheckBoxHovered">
-        <short>Protected property used to track mouse hover for the control.</short>
+        <short>Indicates if the mouse pointer is hovered over the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -398,7 +470,9 @@
       </element>
 
       <element name="TCustomCheckBoxThemed.cFocusBorder">
-        <short>Internal constant with the space reserved for the focus border in the control.</short>
+        <short>
+          Internal constant with the space reserved for the focus border in the control.
+        </short>
         <descr/>
         <seealso/>
       </element>

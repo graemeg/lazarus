@@ -3,8 +3,15 @@
   <package name="LazControls">
 
     <module name="ListViewFilterEdit">
-      <short/>
-      <descr/>
+      <short>Implements a control used to filter an associated TListView control.</short>
+      <descr>
+        <p>
+          <file>ListViewFilterEdit</file> contains classes and types used to implement the <var>TListViewFilterEdit</var> control. It is used to filter the items displayed for an associated <var>TListView</var> control.
+        </p>
+        <p>
+          This file is part of the <file>LazControls</file> package.
+        </p>
+      </descr>
 
       <!-- unresolved external references -->
       <element name="Classes"/>
@@ -24,19 +31,25 @@
       </element>
 
       <element name="TListViewDataItem">
-        <short/>
-        <descr/>
+        <short>
+          Record type with data and lines of text for an item in a list view control.
+        </short>
+        <descr>
+          <p>
+            TListViewDataItem is the typed maintained in TListViewDataList.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TListViewDataItem.Data">
-        <short/>
+        <short>Pointer to the data for the list item.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TListViewDataItem.StringArray">
-        <short/>
+        <short>Array of String values with the text displayed for the list item.</short>
         <descr/>
         <seealso/>
       </element>
@@ -45,41 +58,50 @@
         <short>
           Implements the Equal (=) comparison operator for TListViewDataItem instances.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            The return value is <b>True</b> when both the <var>Data</var> and the <var>StringArray</var> for the compared <var>TListViewDataItem</var> instances are the same.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TListViewDataItem.OperatorEqual.Result">
-        <short/>
+        <short>True when the compared items have the same Data and StringArray values.</short>
       </element>
       <element name="TListViewDataItem.OperatorEqual.a">
-        <short/>
+        <short>TListViewDataItem instance for the comparison operator.</short>
       </element>
       <element name="TListViewDataItem.OperatorEqual.b">
-        <short/>
+        <short>TListViewDataItem instance for the comparison operator.</short>
       </element>
 
       <element name="TListViewDataList">
         <short>List container for TListViewDataItem instances.</short>
-        <descr/>
+        <descr>
+          <p>
+            <var>TListViewDataList</var> is a specialization of TFPGList to use TListViewDataItem instances in the container. TListViewDataList is the type used to implement the <var>Items</var> property in <var>TListViewFilterEdit</var>.
+          </p>
+        </descr>
         <seealso>
-          <link id="#fcl.Fgl.TFPGList"/>
           <link id="TListViewDataItem"/>
+          <link id="TListViewFilterEdit.Items"/>
+          <link id="#fcl.Fgl.TFPGList">TFPGList</link>
         </seealso>
       </element>
 
       <element name="TListViewFilterEdit">
-        <short>Implements a control used to filter an associated ListView.</short>
+        <short>Implements a control used to filter an associated TListView control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <!-- private members and methods -->
       <element name="TListViewFilterEdit.FFilteredListview">
-        <short>A control showing the (filtered) data.</short>
+        <short>TListView control showing the filtered data.</short>
       </element>
 
       <element name="TListViewFilterEdit.FByAllFields">
-        <short></short>
+        <short>Stores the value for the ByAllFields property.</short>
       </element>
 
       <element name="TListViewFilterEdit.FSelectionList">
@@ -215,18 +237,24 @@
       </element>
 
       <element name="TListViewFilterEdit.ApplyFilterCore">
-        <short/>
-        <descr/>
+        <short>
+          Implements the method used to apply filter data to the associated control.
+        </short>
+        <descr>
+          <p>
+            Called when the ApplyFilter method in the ancestor class is executed.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TListViewFilterEdit.GetDefaultGlyphName">
-        <short/>
+        <short>Gets the default resource name for the button glyph on the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TListViewFilterEdit.GetDefaultGlyphName.Result">
-        <short/>
+        <short>Resource name for the button glyph.</short>
       </element>
 
       <!-- public methods and properties -->
@@ -234,7 +262,7 @@
         <short>Constructor for the class instance.</short>
         <descr>
           <p>
-            Create is the overridden constructor for the class instance.
+            <var>Create</var> is the overridden constructor for the class instance, and calls the inherited method on entry. It allocates resources for the <var>SelectionList</var> and <var>Items</var> properties. It creates an internal <var>TListViewDataList</var> instance used to store the filtered data for the list view control.
           </p>
         </descr>
         <seealso/>
@@ -247,7 +275,7 @@
         <short>Destructor for the class instance.</short>
         <descr>
           <p>
-            Destroy is the overridden destructor for the class instance.
+            <var>Destroy</var> is the overridden destructor for the class instance. It frees resources allocated to <var>SelectionList</var>, <var>Items</var>, and the internal filtered data list. It calls the inherited method prior to exit.
           </p>
         </descr>
         <seealso/>
@@ -269,7 +297,7 @@
         <short>Selected items restored after filtering.</short>
         <descr>
           <p>
-            The list of selected items. They are restored after filtering.
+            The list of selected items in the list view control. They are restored after filtering is applied.
           </p>
         </descr>
         <seealso/>
@@ -283,7 +311,7 @@
 
       <!-- published properties -->
       <element name="TListViewFilterEdit.FilteredListview">
-        <short>The associated ListView.</short>
+        <short>The associated TListView control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -292,7 +320,10 @@
         <short>Indicates if all fields are compared using the filter.</short>
         <descr>
           <p>
-            Use all ListView fields when searching filter matches. Otherwise just the first field (ListView caption) is used.
+            When set to <b>True</b>, all fields in the list view data areused when searching for a value that matches the filter. Otherwise, only the first field is used. The default value for the property is <b>False</b>.
+          </p>
+          <p>
+            <var>ByAllFields</var> is used when <var>SortAndFilter</var> is called to select and order the filtered data for the control.
           </p>
         </descr>
         <seealso/>

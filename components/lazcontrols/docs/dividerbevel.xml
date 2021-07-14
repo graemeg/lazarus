@@ -3,8 +3,14 @@
   <package name="LazControls">
 
     <module name="DividerBevel">
-      <short/>
-      <descr/>
+      <short>
+        Implements a bevel with additional drawing features used as a separator on forms, frames, and panels.
+      </short>
+      <descr>
+        <p>
+          <file>DividerBevel.pas</file> contains the <var>TDividerBevel</var> control, a bevel with additional drawing features. This file is part of the <file>LazControls</file> package.
+        </p>
+      </descr>
 
       <!-- unresolved external references -->
       <element name="Classes"/>
@@ -22,10 +28,16 @@
         <short>Line with text in the middle, used as a divider or header.</short>
         <descr>
           <p>
-            TDividerBevel is a TGraphicControl descendant which implements a component represented as a beveled line with a caption. It is used as a separator or header on forms, frames, and panels.
+            TDividerBevel is a TGraphicControl descendant which implements a component represented as a beveled line with a caption. It is used as a separator or header on forms, frames, and panels. It is similar to TBevel, but provides additional drawing styles as well layout options for the control caption.
           </p>
           <p>
-            TDividerBevel can be oriented either horizontally or vertically. The bevel can be drawn using a raised or lowered drawing style. The bevel can be rendered using a line drawing style or pattern defined in the TGrabStlye enumeration. The height of the bevel  can be specified, or a height relative to the size of the Text on the control can be used. The caption drawn on the control can be surrounded by additional space, drawn at specific position, or centered in the orientation for the control. Transparency is also supported in the control.
+            TDividerBevel can be oriented either horizontally or vertically. The bevel can be drawn using a raised or lowered drawing style. The bevel can be rendered using a line drawing shape or a pattern defined in the Style property. The height of the bevel  can be specified, or it can resize to the Text on the control. The caption can be drawn at a specific position (LeftIndent) and surrounded by an unused space using the CaptionSpacing property. Transparency is also supported in the control.
+          </p>
+          <p>
+            The BevelWidth property indicates the thickness for the bevel. It is set to -1 by default, and indicates that the size is Max(3, TextHeight div 5). A positive value means that pixel measurements are used in the property.
+          </p>
+          <p>
+            The LeftIndent is set by default to 60. Any negative value in LeftIndent causes the text in Caption to be centered along the bevel orientation.
           </p>
         </descr>
         <seealso/>
@@ -46,57 +58,70 @@
       <element name="TDividerBevel.FTransparent"/>
 
       <element name="TDividerBevel.SetBevelStyle">
-        <short/>
+        <short>Sets the value in the BevelStyle property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.BevelStyle"/>
+          <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
+        </seealso>
       </element>
       <element name="TDividerBevel.SetBevelStyle.AValue">
-        <short/>
+        <short>New value for the BevelStyle property.</short>
       </element>
 
       <element name="TDividerBevel.SetBevelWidth">
-        <short/>
+        <short>Sets the value in the BevelWidth property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.SetBevelWidth"/>
+        </seealso>
       </element>
       <element name="TDividerBevel.SetBevelWidth.AValue">
-        <short/>
+        <short>New value for the BevelWidth property.</short>
       </element>
 
       <element name="TDividerBevel.SetCaptionSpacing">
-        <short/>
+        <short>Sets the value for the CaptionSpacing property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.CaptionSpacing"/>
+        </seealso>
       </element>
       <element name="TDividerBevel.SetCaptionSpacing.AValue">
-        <short/>
+        <short>New value for the CaptionSpacing property.</short>
       </element>
 
       <element name="TDividerBevel.SetLeftIndent">
-        <short/>
+        <short>Sets the value for the LeftIndent property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.LeftIndent"/>
+        </seealso>
       </element>
       <element name="TDividerBevel.SetLeftIndent.AValue">
-        <short/>
+        <short>New value for the LeftIndent property.</short>
       </element>
 
       <element name="TDividerBevel.SetOrientation">
-        <short/>
+        <short>Sets the value for the Orientation property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.Orientation"/>
+        </seealso>
       </element>
       <element name="TDividerBevel.SetOrientation.AValue">
-        <short/>
+        <short>New value for the Orientation property.</short>
       </element>
 
       <element name="TDividerBevel.SetStyle">
-        <short/>
+        <short>Sets the value for the Style property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.Style"/>
+        </seealso>
       </element>
       <element name="TDividerBevel.SetStyle.AValue">
-        <short/>
+        <short>New value for the Style property.</short>
       </element>
 
       <element name="TDividerBevel.SetTransparent">
@@ -116,81 +141,158 @@
       </element>
 
       <element name="TDividerBevel.FBevelTop">
-        <short/>
+        <short>Member with the height for the bevel.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDividerBevel.FNeedCalcSize">
-        <short/>
+        <short>
+          Member with the flag set when the Font, Text, or preferred size is changed.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDividerBevel.FTextExtent">
-        <short/>
+        <short>Member with the text extent for the Caption property.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TDividerBevel.GetControlClassDefaultSize">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>The default size of new instance of the class.</short>
+        <descr>
+          <p>
+            GetControlClassDefaultSize is an overridden TSize function used to get the default size for new instances of the TDividerBevel class. The width (CX) in the TSize instance is set to 240. The height (CY) in the TSize instance is set to 17.
+          </p>
+          <p>
+            Used by the GetDefaultWidth and GetDefaultHeight methods.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.GetControlClassDefaultSize">TControl.GetControlClassDefaultSize</link>
+        </seealso>
       </element>
       <element name="TDividerBevel.GetControlClassDefaultSize.Result">
-        <short/>
+        <short>TSize instance with the width and height for the new class instance.</short>
       </element>
 
       <element name="TDividerBevel.CalcSize">
-        <short/>
-        <descr/>
+        <short>Calculates the height for the Caption text and the bevel on the control.</short>
+        <descr>
+          <p>
+            CalcSize is a method used to calculate the height for the Caption text and the bevel drawn on the control. An internal flag, set when the Text or Font for the control is changed, is used to determine when the calculation is needed. No actions are performed in the method if the flag has not been set.
+          </p>
+          <p>
+            CalcSize calls the TextExtent method in the control Canvas to get the text extent for Caption.
+          </p>
+          <p>
+            BevelWidth is used to set the height for the bevel in pixels when it has a positive or zero value. When BevelWidth has a negative value, the height for the bevel is  set to the larger of 20% of the text height or 3 pixels. The bevel is centered in the text height.
+          </p>
+          <p>
+            CalcSize is called from the CalculatePreferredSize and Paint methods.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TDividerBevel.Paint">
-        <short/>
-        <descr/>
+        <short>Draws the control on its Canvas.</short>
+        <descr>
+          <p>
+            <var>Paint</var> is an overridden method used to draw the control on its <var>Canvas</var>. It re-implements the method from the ancestor class, and does <b>not</b> call the inherited method.
+          </p>
+          <p>
+            Paint calls CalcSize to ensure that the height for the Caption text and the bevel are updated before the control is drawn.
+          </p>
+          <p>
+            If Transparent is set to False, the background for the control is filled using the value in Color.
+          </p>
+          <p>
+            Values in BevelStyle, Style, Orientation, and Caption are used to determine the drawing area for the bevel on the control. The PaintBevel method is called to render the bevel to the control Canvas.
+          </p>
+          <p>
+            When Caption has been assigned, it is positioned using the values in LeftIndent and CaptionSpacing. The TextOut method in Canvas is called to draw the Caption text using the Orientation for the control.
+          </p>
+          <p>
+            Use the Font property to configure the font face, style, and size used for the Caption text.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TDividerBevel.FontChanged">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Performs actions when the Font for the control has been changed.</short>
+        <descr>
+          <p>
+            <var>FontChanged</var> is an overridden method used to update the control when the value in <var>Font</var> has been changed. It calls the inherited method on entry to apply the new font to the control <var>Canvas</var>, and post a <var>CM_FONTCHANGED</var> control message to the widgetset class. The internal flag used to force text and bevel sizes to be recalculated is set. <var>Invalidate</var> is called to force the control to be redrawn.
+          </p>
+          <p>
+            FontChanged is assigned as the OnChange event handler in the Font property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TGraphicControl.FontChanged">TGraphicControl.FontChanged</link>
+        </seealso>
       </element>
       <element name="TDividerBevel.FontChanged.Sender">
-        <short/>
+        <short>Object instance for the event notification.</short>
       </element>
 
       <element name="TDividerBevel.SetAutoSize">
-        <short/>
+        <short>Sets the value for the AutoSize property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
+        </seealso>
       </element>
       <element name="TDividerBevel.SetAutoSize.Value">
-        <short/>
+        <short>New value for the AutoSize property.</short>
       </element>
 
       <element name="TDividerBevel.TextChanged">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Performs actions when the CM_TEXTCHANGED message is handled for the control.
+        </short>
+        <descr>
+          <p>
+            <var>TextChanged</var> is an overridden method used to perform action needed when the value in the text property has been changed for the control. It re-implements the method from the ancestor class to set in the internal flag to recalculate text and bevel sizes in the control, and calls the <var>Invalidate</var> method to force the control to be redrawn.
+          </p>
+          <p>
+            TextChanged is called from the <var>CMTextChanged</var> method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.CMTextChanged">TControl.CMTextChanged</link>
+        </seealso>
       </element>
 
       <element name="TDividerBevel.CalculatePreferredSize">
-        <short/>
-        <descr/>
+        <short>Calculates the preferred size for the control.</short>
+        <descr>
+          <p>
+            CalculatePreferredSize is an overridden method used to calculate the preferred width and height for the control. It re-implements the method from the ancestor class, and does not call the inherited method.
+          </p>
+          <p>
+            CalculatePreferredSize sets the internal flag to recalculate the text and bevel height, and calls CalcSize to update the values.
+          </p>
+          <p>
+            The value in Orientation is used to determine the value calculated in the method. When set to trHorizontal,  PreferredHeight is set to the maximum of the text height or the bevel height (Caption is empty). When set to trVertical, the PreferredWidth is set to the maximum of the text height or the bevel height (Caption is empty).
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TDividerBevel.CalculatePreferredSize.PreferredWidth">
-        <short/>
+        <short>The preferred width for the control.</short>
       </element>
       <element name="TDividerBevel.CalculatePreferredSize.PreferredHeight">
-        <short/>
+        <short>The preferred height for the control.</short>
       </element>
       <element name="TDividerBevel.CalculatePreferredSize.WithThemeSpace">
-        <short/>
+        <short>
+          True if additional space is reserved for theme elements. Not used in the method.
+        </short>
       </element>
 
       <!-- public methods -->
@@ -198,7 +300,19 @@
         <short>Constructor for the class instance.</short>
         <descr>
           <p>
-            Create is the overridden constructor for the class instance.
+            Create is the overridden constructor for the class instance, and calls the inherited method on entry. It sets the default values for properties, including:
+          </p>
+          <ul>
+            <li>BevelStyle (bsLowered)</li>
+            <li>BevelWidth (-1 for relative bevel size)</li>
+            <li>CaptionSpacing (10 pixels)</li>
+            <li>LeftIndex (60 pixels)</li>
+            <li>Orientation (trHorizontal)</li>
+            <li>Transparent (True)</li>
+            <li>AutoSize (True)</li>
+          </ul>
+          <p>
+            An internal flag used to force the text and bevel height to be calculated is set. The GetControlClassDefaultSize method is called get and set the initial bounds for the class instance.
           </p>
         </descr>
         <seealso/>
@@ -208,35 +322,53 @@
       </element>
 
       <element name="TDividerBevel.ShouldAutoAdjust">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Determine if the width and/or height can be adjusted by a layout policy.</short>
+        <descr>
+          <p>
+            Re-implements the method from the ancestor class, and does not call the inherited method. In <var>TDividerBevel</var>, a dimension can be auto-adjusted when <var>AutoSize</var> is not enabled, and the dimension is not the <var>Orientation</var> for the control. Called when an auto-adjust layout policy is applied to the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.ShouldAutoAdjust">TControl.ShouldAutoAdjust</link>
+        </seealso>
       </element>
       <element name="TDividerBevel.ShouldAutoAdjust.AWidth">
-        <short/>
+        <short>True if the width can be auto-adjusted by a layout policy.</short>
       </element>
       <element name="TDividerBevel.ShouldAutoAdjust.AHeight">
-        <short/>
+        <short>True if the height can be auto-adjusted by a layout policy.</short>
       </element>
 
       <!-- published properties -->
-      <element name="TDividerBevel.Caption"/>
-      <element name="TDividerBevel.Align"/>
-      <element name="TDividerBevel.AutoSize"/>
-      <element name="TDividerBevel.Anchors"/>
+      <element name="TDividerBevel.Caption" link="#lcl.controls.TControl.Caption"/>
+      <element name="TDividerBevel.Align" link="#lcl.controls.TControl.Align"/>
+      <element name="TDividerBevel.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
+      <element name="TDividerBevel.Anchors" link="#lcl.controls.TControl.Anchors"/>
 
       <element name="TDividerBevel.BevelStyle">
-        <short/>
+        <short>
+          Indicates whether the bevel is drawn using a raised or lowered drawing style.
+        </short>
         <descr>
           <p>
-            The default value for the property is <var>bsLowered</var>.
+            <var>BevelStyle</var> is a <var>TBevelStyle</var> property which indicates if the bevel is drawn using a raised or lowered style. The default value for the property is <var>bsLowered</var>. Changing the value for the property causes the control to be redrawn.
+          </p>
+          <p>
+            Use BevelWidth to set the bevel height in pixels, or relative to the text height for the control. Use Style to set the shape or pattern used to draw the bevel.
+          </p>
+          <p>
+            BevelStyle is used in the Paint method.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.BevelWidth"/>
+          <link id="TDividerBevel.Style"/>
+          <link id="TBevelStyle"/>
+        </seealso>
       </element>
 
       <element name="TDividerBevel.BevelWidth">
-        <short/>
+        <short>Height for the bevel on its Orientation.</short>
         <descr>
           <p>
             The default value for the property is <b>-1</b>. Negative values in the property indicate that the bevel is drawn using 20% of the Text height for the control, with a minimum height of 3 pixels.
@@ -245,89 +377,154 @@
         <seealso/>
       </element>
 
-      <element name="TDividerBevel.BiDiMode"/>
-      <element name="TDividerBevel.BorderSpacing"/>
+      <element name="TDividerBevel.BiDiMode" link="#lcl.controls.TControl.BidiMode"/>
+      <element name="TDividerBevel.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
 
       <element name="TDividerBevel.CaptionSpacing">
-        <short/>
+        <short>
+          Number of pixels reserved as spacing in front of and following the Caption.
+        </short>
         <descr>
           <p>
-            The default value for the property is <b>10</b>.
+            The default value for the property is <b>10</b>. Use <var>LeftIndent</var> to set the position (in pixels) where the Caption text starts. Any negative value in LeftIndent causes the caption to be centered along the bevel.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.LeftIndent"/>
+        </seealso>
       </element>
 
-      <element name="TDividerBevel.Color"/>
-      <element name="TDividerBevel.Constraints"/>
-      <element name="TDividerBevel.DragCursor"/>
-      <element name="TDividerBevel.DragKind"/>
-      <element name="TDividerBevel.DragMode"/>
-      <element name="TDividerBevel.Font"/>
-      <element name="TDividerBevel.Hint"/>
+      <element name="TDividerBevel.Color" link="#lcl.controls.TControl.Color"/>
+      <element name="TDividerBevel.Constraints" link="#lcl.controls.TControl.Constraints"/>
+
+      <element name="TDividerBevel.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TDividerBevel.DragKind" link="#lcl.controls.TControl.DragKind"/>
+      <element name="TDividerBevel.DragMode" link="#lcl.controls.TControl.DragMode"/>
+      <element name="TDividerBevel.Font" link="#lcl.controls.TControl.Font"/>
+      <element name="TDividerBevel.Hint" link="#lcl.controls.TControl.Hint"/>
 
       <element name="TDividerBevel.LeftIndent">
-        <short/>
+        <short>
+          Position relative to Left where the CaptionSpacing and Caption are displayed.
+        </short>
         <descr>
           <p>
-            The default value for the property is 60 pixels.
+            <var>LeftIndent</var> is an <var>Integer</var> property which indicates the position relative to the <var>Left</var> property where the <var>CaptionSpacing</var> and <var>Caption</var> text are displayed on the control. The default value for the property is <b>60</b> pixels.
+          </p>
+          <p>
+            Use <var>CaptionSpacing</var> to set the number of pixels reserved as undecorated blank space on each side of the Caption text.
+          </p>
+          <p>
+            For example:  If CaptionSpacing is set to 10, and LeftIndent is set to 60, the CaptionSpacing starts at 60 pixels and the text at 70 pixels.
+          </p>
+          <p>
+            LeftIndent, when set to any negative value, causes the CaptionSpacing and Caption text to be centered along the Orientation for the divider bevel. When set to 0, no left indent or caption spacing is applied before the Caption text.
+          </p>
+          <p>
+            Changing the value for the property causes the control to be redrawn.
+          </p>
+          <p>
+            LeftIndent is used in the Paint method.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.CaptionSpacing"/>
+          <link id="TDividerBevel.Caption"/>
+          <link id="TDividerBevel.Orientation"/>
+          <link id="TDividerBevel.Paint"/>
+          <link id="#lcl.controls.TControl.Left">TControl.Left</link>
+        </seealso>
       </element>
 
       <element name="TDividerBevel.Orientation">
-        <short/>
+        <short>Direction that the bevel and caption are drawn.</short>
         <descr>
           <p>
-            The default valule for the property is <var>trHorizontal</var>.
+            <var>Orientation</var> is a <var>TTrackBarOrientation</var> property which indicates the direction that the bevel and caption are drawn on the control. The default value for the property is <var>trHorizontal</var>, and causes the bevel and caption to be draw from left to right horizontally. When set to trVertical, the <var>Font</var> on the control <var>Canvas</var> is rotated 90 degrees and the bevel and caption are drawn from top to bottom vertically.
+          </p>
+          <p>
+            Changing the value for the property causes the size to be adjusted when <var>AutoSize</var> is set to <b>True</b>. The control is redrawn when the new property value is applied.
+          </p>
+          <p>
+            Orientation is used in the <var>Paint</var> method.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.Paint"/>
+          <link id="#lcl.controls.TGraphicControl.Canvas">TGraphicControl.Canvas</link>
+          <link id="#lcl.comctrls.TControl.AutoSize">TControl.AutoSize</link>
+          <link id="#lcl.comctrls.TTrackBarOrientation">TTrackBarOrientation</link>
+        </seealso>
       </element>
 
-      <element name="TDividerBevel.ParentBiDiMode"/>
-      <element name="TDividerBevel.ParentColor"/>
-      <element name="TDividerBevel.ParentFont"/>
-      <element name="TDividerBevel.ParentShowHint"/>
-      <element name="TDividerBevel.PopupMenu"/>
-      <element name="TDividerBevel.ShowHint"/>
+      <element name="TDividerBevel.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
+      <element name="TDividerBevel.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TDividerBevel.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
+      <element name="TDividerBevel.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
+      <element name="TDividerBevel.PopupMenu" link="#lcl.controls.TControl.PopupMenu"/>
+      <element name="TDividerBevel.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
 
       <element name="TDividerBevel.Style">
         <short/>
         <descr>
           <p>
-            The default value for the property is <var>gsSimple</var>.
+            <var>Style</var> is a <var>TGrabStyle</var> property with the shape or pattern used to draw the bevel on the control.
           </p>
+          <p>
+            The default value for the property is <var>gsSimple</var>, and causes a simple rectangle to be drawn with the appearance in the <var>BevelStyle</var> property. Contrasting colors on the borders are used to achieve the raised or lowered appearance. Other values include:
+          </p>
+          <dl>
+            <dt>gsDouble</dt>
+            <dd>Draws double lines using the appearance in BevelStyle.</dd>
+            <dt>gsHorLines</dt>
+            <dd>Draws a single line using the appearance in BevelStyle.</dd>
+            <dt>gsVerLines</dt>
+            <dd>Draws a vertical line using the appearance in BevelStyle.</dd>
+            <dt>gsGripper</dt>
+            <dd>
+              Draws a row of raised dots on the bevel. BevelStyle is not used. Drawn using the trGripper theme element details in ThemeServices.
+            </dd>
+            <dt>gsButton</dt>
+            <dd>
+              Draws the bevel using a pseudo-button style. BevelStyle is not used. Drawn using the tbPushButtonNormal theme element details in ThemeServices.
+            </dd>
+          </dl>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TDividerBevel.BevelStyle"/>
+          <link id="TDividerBevel.BevelWidth"/>
+        </seealso>
       </element>
 
       <element name="TDividerBevel.Transparent">
-        <short/>
+        <short>
+          Indicates if the parent control is visible beneath the drawing area for the divider bevel.
+        </short>
         <descr>
           <p>
-            The defauilt value for the property is <b>True</b>.
+            <var>Transparent</var> is a Boolean property which indicates if the control is drawn with transparency. When set to <b>True</b>, the parent control is visible beneath the undecorated areas on the control. When set to <b>False</b>, the client area for the control is filled using the value in Color. The default value for the property is <b>True</b>.
           </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Color">TControl.Color</link>
+        </seealso>
       </element>
 
-      <element name="TDividerBevel.Visible"/>
-      <element name="TDividerBevel.OnChangeBounds"/>
-      <element name="TDividerBevel.OnClick"/>
-      <element name="TDividerBevel.OnContextPopup"/>
-      <element name="TDividerBevel.OnDblClick"/>
-      <element name="TDividerBevel.OnDragDrop"/>
-      <element name="TDividerBevel.OnDragOver"/>
-      <element name="TDividerBevel.OnEndDrag"/>
-      <element name="TDividerBevel.OnMouseDown"/>
-      <element name="TDividerBevel.OnMouseEnter"/>
-      <element name="TDividerBevel.OnMouseLeave"/>
-      <element name="TDividerBevel.OnMouseMove"/>
-      <element name="TDividerBevel.OnMouseUp"/>
-      <element name="TDividerBevel.OnResize"/>
-      <element name="TDividerBevel.OnStartDrag"/>
+      <element name="TDividerBevel.Visible" link="#lcl.controls.TControl.Visible"/>
+      <element name="TDividerBevel.OnChangeBounds" link="#lcl.controls.TControl.OnChangeBounds"/>
+      <element name="TDividerBevel.OnClick" link="#lcl.controls.TControl.OnClick"/>
+      <element name="TDividerBevel.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
+      <element name="TDividerBevel.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
+      <element name="TDividerBevel.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TDividerBevel.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
+      <element name="TDividerBevel.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
+      <element name="TDividerBevel.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TDividerBevel.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TDividerBevel.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TDividerBevel.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TDividerBevel.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TDividerBevel.OnResize" link="#lcl.controls.TControl.OnResize"/>
+      <element name="TDividerBevel.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
 
     </module>
 
