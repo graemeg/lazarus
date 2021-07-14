@@ -1,3 +1,24 @@
+{
+ /***************************************************************************
+                              TAChartLiveView.pas
+                              -------------------
+
+ TChartLiveView is a component optimized for displaying a long array of incoming
+ data in a viewport with only the most recent data while older data are flowing
+ to the left out of the viewport.
+
+ It was created based on the following forum discussions:
+ - https://forum.lazarus.freepascal.org/index.php/topic,15037.html
+ - https://forum.lazarus.freepascal.org/index.php/topic,50759.0.html
+ - https://forum.lazarus.freepascal.org/index.php/topic,55266.html
+
+ See the file COPYING.modifiedLGPL.txt, included in this distribution,
+ for details about the license.
+ *****************************************************************************
+
+  Author: Werner Pamler
+}
+
 unit TAChartLiveView;
 
 {$mode objfpc}{$H+}
@@ -65,6 +86,8 @@ begin
   inherited;
 end;
 
+{ A new data point has been added to the chart so that the full extent changes.
+  As a consequence the viewport of the live view must be updated. }
 procedure TChartLiveView.FullExtentChanged(Sender: TObject);
 begin
   if (not FActive) or (FChart = nil) then
@@ -90,6 +113,9 @@ begin
   end;
 end;
 
+{ Activates the live view mode. Because the Range of the y axes can be changed
+  their current Range is stored before activating, and restored after
+  deactivating the mode. }
 procedure TChartLiveView.SetActive(const AValue: Boolean);
 begin
   if FActive = AValue then exit;
@@ -106,6 +132,9 @@ begin
   FullExtentChanged(nil);
 end;
 
+{ Attaches the chart on which the liveview operates. Installs a "listener"
+  object so that the liveview can be notified of a change in the chart's full
+  extent when a new data point has been added (method FullExtentChanged). }
 procedure TChartLiveView.SetChart(const AValue: TChart);
 begin
   if FChart = AValue then exit;
@@ -130,7 +159,6 @@ end;
 procedure TChartLiveView.SetViewportSize(const AValue: Double);
 begin
   if FViewportSize = AValue then exit;
-
   FViewportSize := AValue;
   FullExtentChanged(nil);
 end;
@@ -151,9 +179,12 @@ begin
   end;
 end;
 
+{ "Workhorse" method of the component. It calculates the logical extent and
+  the axis ranges needed to display only the recent data values in the
+  given viewport. }
 procedure TChartLiveView.UpdateViewport;
 var
-  fext, lext: TDoubleRect;
+  fext, lext: TDoubleRect;    // "full extent", "logical extent" variables
   w: double;
   i, j: Integer;
   ymin, ymax: Double;
@@ -195,6 +226,7 @@ begin
         for i := 0 to FChart.AxisList.Count-1 do
         begin
           ax := FChart.AxisList[i];
+          // we only support scrolling along x, i.e. ax must be a y axis.
           if not (ax.Alignment in [calLeft, calRight]) then
             Continue;
           ymin := Infinity;
@@ -203,7 +235,7 @@ begin
             if FChart.Series[j] is TChartSeries then
             begin
               ser := TChartSeries(FChart.Series[j]);
-              if (not ser.Active) or (ser.GetAxisY <> ax) then
+              if (not ser.Active) or (ser.GetAxisY <> ax) or ser.IsRotated then
                 continue;
               ser.FindYRange(lext.a.x, lext.b.x, ymin, ymax);
             end;
@@ -237,7 +269,6 @@ begin
           lext.b.y := Max(lext.b.y, ax.GetTransform.AxisToGraph(ymax));
         end;  // for i
       end;
-
   end;
   FChart.LogicalExtent := lext;
 end;
