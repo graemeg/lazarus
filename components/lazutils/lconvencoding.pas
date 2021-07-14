@@ -138,6 +138,8 @@ function CP852ToUTF8(const s: string): string;  // DOS central europe
 function CP866ToUTF8(const s: string): string;  // DOS and Windows console's cyrillic
 function CP874ToUTF8(const s: string): string;  // thai
 function KOI8RToUTF8(const s: string): string;  // russian cyrillic
+// Deprecated in Lazarus 2.2, 14.7.2021.
+function KOI8ToUTF8(const s: string): string; deprecated 'Call KOI8RToUTF8 instead.';
 function MacintoshToUTF8(const s: string): string;  // Macintosh, alias Mac OS Roman
 function SingleByteToUTF8(const s: string; const Table: TCharToUTF8Table): string;
 function UCS2LEToUTF8(const s: string): string; // UCS2-LE 2byte little endian
@@ -463,6 +465,11 @@ end;
 function KOI8RUToUTF8(const s: string): string;
 begin
   Result:=SingleByteToUTF8(s,ArrayKOI8RUToUTF8);
+end;
+
+function KOI8ToUTF8(const s: string): string;
+begin
+ Result:=KOI8RUToUTF8(s);
 end;
 
 function MacintoshToUTF8(const s: string): string;
