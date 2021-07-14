@@ -121,7 +121,7 @@ begin
   end;
 
   case Msg.msg of
-    {$IFDEF Win32}
+    {$IF Defined(LCLWin32) or Defined(LCLWin64)}
     // we need to correct ActiveEditor to right form
     // this code works correctly on Windows platform
     // (is necessery for selecting controls after form resizing).
