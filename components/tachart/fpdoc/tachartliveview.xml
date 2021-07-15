@@ -6,8 +6,8 @@
 </descr>
       </element><element name="TChartLiveView.Active"><short>Allows to turn the scrolling controlled by the component ON and OFF.</short>
       </element><element name="TChartLiveView.ExtentY"><short>Mode determining how the vertical y axis is displayed in the scrolling viewport</short>
-      <descr><p><var>lveAuto</var>: adjusts the height to the visible data range automatically. This works also when the chart contains several y axes.
-</p><p><var>lveFull</var>: freezes the height to the full extent of the chart.</p><p><var>lveLogical</var>: freezes the height to the logical extent of the chart.</p><p><var>lveMultiAxisRange</var> tries to use a predefined <var>Range</var> of the y axes in case of a multi-axis chart. Use the <var>Range.Min</var>, <var>Range.Max</var>, <var>Range.UseMin</var> and <var>Range.UseMax</var> properties to set up the axis range. Note that the range is extended automatically when a series attached to this axis contains out-of-range y values. When no range is specified (i.e., <var>axis.Range.UseMin=false</var> and <var>axis.Range.UseMax=false</var>) the behaviour is similar to <var>lveAuto</var>.</p>
+      <descr><p><var>lveAuto</var>: adjusts the height to the visible data range automatically. This works also when the chart contains several y axes. Ranges assigned to the axes (by setting <var>axis.Range.Min</var> and <var>axis.Range.UseMin</var>, and/or <var>axis.Range.Max</var> and <var>axis.Range.UseMax</var>) are respected (as long as data points are within this range).
+</p><p><var>lveFull</var>: freezes the height to the full extent of the chart.</p><p><var>lveLogical</var>: freezes the height to the logical extent of the chart.</p>
         </descr>
       </element><element name="TChartLiveView.Create"><short>Constructor of the <var>TChartLiveView</var>
         </short>

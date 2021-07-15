@@ -29,7 +29,7 @@ uses
   Classes, SysUtils, TAGraph, TAChartUtils;
 
 type
-  TChartLiveViewExtentY = (lveAuto, lveFull, lveLogical, lveMultiAxisRange);
+  TChartLiveViewExtentY = (lveAuto, lveFull, lveLogical);
 
   { TChartLiveView }
 
@@ -151,8 +151,9 @@ end;
 procedure TChartLiveview.SetExtentY(const AValue: TChartLiveViewExtentY);
 begin
   if FExtentY = AValue then exit;
+  if FExtentY = lveAuto then
+    RestoreAxisRanges;
   FExtentY := AValue;
-  RestoreAxisRanges;
   FullExtentChanged(nil);
 end;
 
@@ -188,7 +189,6 @@ var
   w: double;
   i, j: Integer;
   ymin, ymax: Double;
-  ygmin, ygmax: Double;
   ser: TChartSeries;
   ax: TChartAxis;
 begin
@@ -211,18 +211,10 @@ begin
     lext.b.x := lext.a.x + w;
   end;
   case FExtentY of
-    lveFull:
+    lveAuto:
       begin
         lext.a.y := fext.a.y;
         lext.b.y := fext.b.y;
-      end;
-    lveLogical:
-      ;
-    lveAuto,
-    lveMultiAxisRange:
-      begin
-        lext.a.y := Infinity;
-        lext.b.y := -Infinity;
         for i := 0 to FChart.AxisList.Count-1 do
         begin
           ax := FChart.AxisList[i];
@@ -256,19 +248,27 @@ begin
               ymax := abs(ymax) * 1.1;
             end;
           end;
-          ax.Range.Min := ymin;
-          ax.Range.Max := ymax;
-          if (FExtentY = lveMultiAxisRange) then
-          begin
-            if FAxisRanges[i].UseMin then ax.Range.Min := FAxisRanges[i].Min;
-            if FAxisRanges[i].UseMax then ax.Range.Max := FAxisRanges[i].Max;
-          end;
+          if FAxisRanges[i].UseMin then
+            ax.Range.Min := FAxisRanges[i].Min
+          else
+            ax.Range.Min := ymin;
+          if FAxisRanges[i].UseMax then
+            ax.Range.Max := FAxisRanges[i].Max
+          else
+            ax.Range.Max := ymax;
           ax.Range.UseMin := true;
           ax.Range.UseMax := true;
           lext.a.y := Min(lext.a.y, ax.GetTransform.AxisToGraph(ymin));
           lext.b.y := Max(lext.b.y, ax.GetTransform.AxisToGraph(ymax));
         end;  // for i
       end;
+    lveFull:
+      begin
+        lext.a.y := fext.a.y;
+        lext.b.y := fext.b.y;
+      end;
+    lveLogical:
+      ;
   end;
   FChart.LogicalExtent := lext;
 end;
