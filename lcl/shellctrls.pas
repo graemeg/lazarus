@@ -87,6 +87,7 @@ type
     function CanExpand(Node: TTreeNode): Boolean; override;
     function DrawBuiltInIcon(ANode: TTreeNode; ARect: TRect): TSize; override;
     function GetBuiltinIconSize: TSize; override;
+    function NodeHasChildren(Node: TTreeNode): Boolean; override;
   public
     { Basic methods }
     constructor Create(AOwner: TComponent); override;
@@ -176,6 +177,7 @@ type
     property OnExpanding;
     property OnGetImageIndex;
     property OnGetSelectedIndex;
+    property OnHasChildren;
     property OnKeyDown;
     property OnKeyPress;
     property OnKeyUp;
@@ -829,6 +831,54 @@ begin
     Result := IncludeTrailingPathDelimiter(Result);
 end;
 
+function TCustomShellTreeView.NodeHasChildren(Node: TTreeNode): Boolean;
+
+  function HasSubDir(Const ADir: String): Boolean;
+  var
+    SR: TSearchRec;
+    FindRes: LongInt;
+    Attr: Longint;
+    IsHidden: Boolean;
+  begin
+    Result:=False;
+    try
+      Attr := faDirectory;
+      if (otHidden in fObjectTypes) then Attr := Attr or faHidden{%H-};
+      FindRes := FindFirstUTF8(AppendPathDelim(ADir) + AllFilesMask, Attr , SR);
+      while (FindRes = 0) do
+      begin
+        if ((SR.Attr and faDirectory <> 0) and (SR.Name <> '.') and
+           (SR.Name <> '..')) then
+        begin
+          IsHidden := ((Attr and faHidden{%H-}) > 0);
+          if not (IsHidden and (not ((otHidden in fObjectTypes)))) then
+          begin
+            Result := True;
+            Break;
+          end;
+        end;
+        FindRes := FindNextUtf8(SR);
+      end;
+    finally
+      FindCloseUTF8(SR);
+    end; //try
+  end;
+
+var
+  NodePath: String;
+begin
+  if Assigned(OnHasChildren) then
+    Result := OnHasChildren(Self, Node)
+  else
+  begin
+    NodePath := GetPathFromNode(Node);
+    if (fObjectTypes * [otNonFolders] = []) then
+      Result := TShellTreeNode(Node).IsDirectory and HasSubDir(NodePath)
+    else
+      Result := TShellTreeNode(Node).IsDirectory;
+  end;
+end;
+
 { Returns true if at least one item was added, false otherwise }
 function TCustomShellTreeView.PopulateTreeNodeWithFiles(
   ANode: TTreeNode; ANodePath: string): Boolean;
@@ -837,38 +887,6 @@ var
   Files: TStringList;
   NewNode: TTreeNode;
   CanAdd: Boolean;
-
-   function HasSubDir(Const ADir: String): Boolean;
-   var
-     SR: TSearchRec;
-     FindRes: LongInt;
-     Attr: Longint;
-     IsHidden: Boolean;
-   begin
-     Result:=False;
-     try
-       Attr := faDirectory;
-       if (otHidden in fObjectTypes) then Attr := Attr or faHidden{%H-};
-       FindRes := FindFirstUTF8(AppendPathDelim(ADir) + AllFilesMask, Attr , SR);
-       while (FindRes = 0) do
-       begin
-         if ((SR.Attr and faDirectory <> 0) and (SR.Name <> '.') and
-            (SR.Name <> '..')) then
-         begin
-           IsHidden := ((Attr and faHidden{%H-}) > 0);
-           if not (IsHidden and (not ((otHidden in fObjectTypes)))) then
-           begin
-             Result := True;
-             Break;
-           end;
-         end;
-         FindRes := FindNextUtf8(SR);
-       end;
-     finally
-       FindCloseUTF8(SR);
-     end; //try
-   end;
-
 begin
   Result := False;
   // avoids crashes in the IDE by not populating during design
@@ -890,12 +908,8 @@ begin
         NewNode := Items.AddChildObject(ANode, Files[i], nil);
         TShellTreeNode(NewNode).FFileInfo := TFileItem(Files.Objects[i]).FileInfo;
         TShellTreeNode(NewNode).SetBasePath(TFileItem(Files.Objects[i]).FBasePath);
-
-        if (fObjectTypes * [otNonFolders] = []) then
-          NewNode.HasChildren := (TShellTreeNode(NewNode).IsDirectory and
-                                 HasSubDir(AppendpathDelim(ANodePath)+Files[i]))
-        else
-          NewNode.HasChildren := TShellTreeNode(NewNode).IsDirectory;
+        // NewNode.HasChildren will be set later when needed to avoid opening
+        // all subdirectories (--> NodeHasChildren).
       end;
     end;
   finally

@@ -854,6 +854,14 @@ end;
 
 function TTreeNode.GetHasChildren: Boolean;
 begin
+  if not GetState(nsValidHasChildren) then
+  begin
+    if Owner.Owner.NodeHasChildren(Self) then
+      Include(FStates, nsHasChildren)
+    else
+      Exclude(FStates, nsHasChildren);
+    Include(FStates, nsValidHasChildren);
+  end;
   Result := GetState(nsHasChildren);
 end;
 
@@ -895,7 +903,7 @@ end;
 
 procedure TTreeNode.SetHasChildren(AValue: Boolean);
 begin
-  if AValue=HasChildren then exit;
+  if GetState(nsValidHasChildren) and (AValue=HasChildren) then exit;
   //DebugLn('[TTreeNode.SetHasChildren] Self=',DbgS(Self),' Self.Text=',Text,' AValue=',AValue);
   if AValue then
     Include(FStates,nsHasChildren)
@@ -904,6 +912,7 @@ begin
       GetLastChild.Free;
     Exclude(FStates,nsHasChildren)
   end;
+  Include(FStates, nsValidHasChildren);
   Update;
 end;
 
@@ -5941,6 +5950,14 @@ procedure TCustomTreeView.NodeChanged(Node: TTreeNode; ChangeReason: TTreeNodeCh
 begin
   if assigned(FOnNodeChanged) then
      OnNodeChanged(self,Node,ChangeReason);
+end;
+
+function TCustomTreeView.NodeHasChildren(Node: TTreeNode): Boolean;
+begin
+  if Assigned(FOnHasChildren) then
+    Result := FOnHasChildren(Self, Node)
+  else
+    Result := false;
 end;
 
 procedure TCustomTreeView.Notification(AComponent: TComponent; Operation: TOperation);
