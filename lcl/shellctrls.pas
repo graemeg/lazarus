@@ -617,9 +617,14 @@ begin
   if not Result then exit;
   OldAutoExpand:=AutoExpand;
   AutoExpand:=False;
-  Node.DeleteChildren;
-  Result := PopulateTreeNodeWithFiles(Node, GetPathFromNode(Node));
-  AutoExpand:=OldAutoExpand;
+  BeginUpdate;
+  try
+    Node.DeleteChildren;
+    Result := PopulateTreeNodeWithFiles(Node, GetPathFromNode(Node));
+    AutoExpand:=OldAutoExpand;
+  finally
+    EndUpdate;
+  end;
 end;
 
 constructor TCustomShellTreeView.Create(AOwner: TComponent);
