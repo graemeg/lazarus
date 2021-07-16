@@ -1243,24 +1243,15 @@ var
           Target := Source;
     end;
     if Source = Target then Exit; // no move
-
     if Position in [poMainFormCenter, poOwnerFormCenter] then
     begin
       ABounds := Target.BoundsRect;
       // shift X and Y from Source to Target monitor
       X := (X - Source.Left) + ABounds.Left;
       Y := (Y - Source.Top) + ABounds.Top;
-
       // check that we are still in the desired monitor
-      if X + RealWidth > ABounds.Right then
-        X := ABounds.Right - RealWidth;
-      if X < ABounds.Left then
-        X := ABounds.Left;
-
-      if Y + RealHeight > ABounds.Bottom then
-        Y := ABounds.Bottom - RealHeight;
-      if Y < ABounds.Top then
-        Y := ABounds.Top;
+      X:= Max(ABounds.Left, Min(ABounds.Right-RealWidth, X));
+      Y:= Max(ABounds.Top, Min(ABounds.Bottom-RealHeight, Y));
     end
     else // poWorkAreaCenter, poScreenCenter
     begin
@@ -1344,6 +1335,9 @@ begin
             Y := ((AFormRealHeight - RealHeight) div 2) + AForm.Top;
           end;
         end;
+        // check that we are still in the viewarea
+        X:= Max(Screen.WorkAreaLeft, Min((Screen.WorkAreaLeft+Screen.WorkAreaWidth)-RealWidth, X))
+        Y:= Max(Screen.WorkAreaTop, Min((Screen.WorkAreaTop+Screen.WorkAreaHeight)-RealHeight, Y))
       end;
   end;
   // get current widgetset position
