@@ -134,7 +134,7 @@ begin
   Result:=nil;
   for i:=0 to Count - 1 do
   begin
-    if CompareText(TQueryParam(Items[i]).ParamName), AParamName) = 0 then
+    if CompareText(TQueryParam(Items[i]).ParamName, AParamName) = 0 then
     begin
       Result:=TQueryParam(Items[i]);
       exit;
