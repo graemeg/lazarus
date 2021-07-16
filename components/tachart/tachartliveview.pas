@@ -4,10 +4,10 @@
                               -------------------
 
  TChartLiveView is a component optimized for displaying a long array of incoming
- data in a viewport with only the most recent data while older data are flowing
- to the left out of the viewport.
+ data in a viewport showing only the most recent data while older data are
+ flowing out of the viewport to the left.
 
- It was created based on the following forum discussions:
+ It was created on the basis of the following forum discussions:
  - https://forum.lazarus.freepascal.org/index.php/topic,15037.html
  - https://forum.lazarus.freepascal.org/index.php/topic,50759.0.html
  - https://forum.lazarus.freepascal.org/index.php/topic,55266.html
@@ -52,13 +52,13 @@ type
     procedure SetChart(const AValue: TChart);
     procedure SetExtentY(const AValue: TChartLiveViewExtentY);
     procedure SetViewportSize(const AValue: Double);
-    procedure UpdateViewport;
   protected
-    procedure RestoreAxisRanges;
-    procedure StoreAxisRanges;
+    procedure UpdateViewport; virtual;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    procedure RestoreAxisRanges;
+    procedure StoreAxisRanges;
   published
     property Active: Boolean read FActive write SetActive default false;
     property Chart: TChart read FChart write SetChart default nil;
@@ -82,6 +82,7 @@ end;
 
 destructor TChartLiveView.Destroy;
 begin
+  RestoreAxisRanges;
   FreeAndNil(FListener);
   inherited;
 end;
@@ -95,6 +96,11 @@ begin
   UpdateViewport;
 end;
 
+{ The ChartLiveView may change the Range properties of an axis. The original
+  values, before applying the live view, are restored here from internal
+  variables.
+  Be careful when calling this procedure in user code, it may disrupt the
+  operation of the live view. }
 procedure TChartLiveView.RestoreAxisRanges;
 var
   i: Integer;
@@ -164,6 +170,10 @@ begin
   FullExtentChanged(nil);
 end;
 
+{ The ChartLiveView may change the Range properties of an axis. The original
+  values, before applying the live view, are stored here in internal variables.
+  Be careful when calling this procedure in user code, it may disrupt the
+  operation of the live view. }
 procedure TChartLiveView.StoreAxisRanges;
 var
   i: Integer;
@@ -188,10 +198,14 @@ var
   fext, lext: TDoubleRect;    // "full extent", "logical extent" variables
   w: double;
   i, j: Integer;
-  ymin, ymax: Double;
+  yminAx, ymaxAx, yminSer, ymaxSer: Double;
+  dy: Double;
   ser: TChartSeries;
-  ax: TChartAxis;
+  axis: TChartAxis;
 begin
+  if csDesigning in ComponentState then
+    exit;
+
   if not FChart.ScalingValid then
     exit;
 
@@ -204,72 +218,94 @@ begin
     w := lext.b.x - lext.a.x
   else
     w := FViewportSize;
+  // Move the extent to the right
   lext.b.x := fext.b.x;
-  lext.a.x := lext.b.X - w;
+  lext.a.x := lext.b.x - w;
   if lext.a.x < fext.a.x then begin
     lext.a.x := fext.a.x;
     lext.b.x := lext.a.x + w;
   end;
   case FExtentY of
     lveAuto:
+      // The aim of lveAuto is to determine the y-axis range according to
+      // the ymin/ymax of the series connected to the axis
       begin
         lext.a.y := fext.a.y;
         lext.b.y := fext.b.y;
         for i := 0 to FChart.AxisList.Count-1 do
         begin
-          ax := FChart.AxisList[i];
-          // we only support scrolling along x, i.e. ax must be a y axis.
-          if not (ax.Alignment in [calLeft, calRight]) then
+          axis := FChart.AxisList[i];
+          // Ignore x-axes
+          if (axis.Alignment in [calTop, calBottom]) then
             Continue;
-          ymin := Infinity;
-          ymax := -Infinity;
+          ymaxAx := -Infinity;
+          yminAx := Infinity;
+          // Step through all active non-rotated series attached to this axis
           for j := 0 to FChart.SeriesCount-1 do
+          begin
             if FChart.Series[j] is TChartSeries then
             begin
               ser := TChartSeries(FChart.Series[j]);
-              if (not ser.Active) or (ser.GetAxisY <> ax) or ser.IsRotated then
+              if (not ser.Active) or (ser.GetAxisY <> axis) or ser.IsRotated then
                 continue;
-              ser.FindYRange(lext.a.x, lext.b.x, ymin, ymax);
-            end;
-          if (ymin = Infinity) then
-          begin
-            ymin := -1;
-            ymax := +1;
-          end else
-          if (ymin = ymax) then
-          begin
-            if ymin = 0 then
-            begin
-              ymin := -1;
-              ymax := +1;
-            end else
-            begin
-              ymin := abs(ymin) * 0.9;
-              ymax := abs(ymax) * 1.1;
+              yminSer := Infinity;
+              ymaxSer := -Infinity;
+              ser.FindYRange(lext.a.x, lext.b.x, yminSer, ymaxSer);
+              yminAx := Min(yminAx, yminSer);
+              ymaxAx := Max(ymaxAx, ymaxSer);
             end;
           end;
-          if FAxisRanges[i].UseMin then
-            ax.Range.Min := FAxisRanges[i].Min
+          // Only if an axis has no active non-rotated series, we have -infinity
+          if ymaxAx > -Infinity then
+          begin
+            if ymaxAx = yminAx then
+            begin
+              if yminAx = 0 then
+              begin
+                yminAx := -1;
+                ymaxAx := +1;
+              end
+              else
+              // Set the range to 10% around the value, take care of the sign!
+              begin
+                dy := abs(yminAx) * 0.1;
+                yminAx := yminAx - dy;
+                ymaxAx := ymaxAx + dy;
+              end;
+            end;
+          end
           else
-            ax.Range.Min := ymin;
-          if FAxisRanges[i].UseMax then
-            ax.Range.Max := FAxisRanges[i].Max
-          else
-            ax.Range.Max := ymax;
-          ax.Range.UseMin := true;
-          ax.Range.UseMax := true;
-          lext.a.y := Min(lext.a.y, ax.GetTransform.AxisToGraph(ymin));
-          lext.b.y := Max(lext.b.y, ax.GetTransform.AxisToGraph(ymax));
-        end;  // for i
-      end;
+          begin
+            yminAx := -1;
+            ymaxAx := +1;
+          end;
+          // Only if the user did not set its own range we set the axis range
+          // determined above.
+          if (not FAxisRanges[i].UseMin) then
+          begin
+            axis.Range.Min := yminAx;
+            axis.Range.UseMin := true;  // we had stored the original UseMin in FAxisRanges
+            lext.a.y := axis.GetTransform.AxisToGraph(yminAx);
+          end;
+          if (not FAxisRanges[i].UseMax) then
+          begin
+            axis.Range.Max := ymaxAx;
+            axis.Range.UseMax := true;  // we had stored the original UseMax in FAxisRanges
+            lext.b.y := axis.GetTransform.AxisToGraph(ymaxAx);
+          end;
+        end;  // series loop
+      end;  // axes loop
+
     lveFull:
       begin
         lext.a.y := fext.a.y;
         lext.b.y := fext.b.y;
       end;
+
     lveLogical:
       ;
   end;
+
   FChart.LogicalExtent := lext;
 end;
 
