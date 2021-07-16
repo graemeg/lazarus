@@ -1336,8 +1336,8 @@ begin
           end;
         end;
         // check that we are still in the viewarea
-        X:= Max(Screen.WorkAreaLeft, Min((Screen.WorkAreaLeft+Screen.WorkAreaWidth)-RealWidth, X))
-        Y:= Max(Screen.WorkAreaTop, Min((Screen.WorkAreaTop+Screen.WorkAreaHeight)-RealHeight, Y))
+        X:= Max(Screen.WorkAreaLeft, Min((Screen.WorkAreaLeft+Screen.WorkAreaWidth)-RealWidth, X));
+        Y:= Max(Screen.WorkAreaTop, Min((Screen.WorkAreaTop+Screen.WorkAreaHeight)-RealHeight, Y));
       end;
   end;
   // get current widgetset position
