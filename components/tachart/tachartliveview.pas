@@ -198,7 +198,7 @@ var
   fext, lext: TDoubleRect;    // "full extent", "logical extent" variables
   w: double;
   i, j: Integer;
-  yminAx, ymaxAx, yminSer, ymaxSer: Double;
+  ymin, ymax: Double;
   dy: Double;
   ser: TChartSeries;
   axis: TChartAxis;
@@ -238,8 +238,8 @@ begin
           // Ignore x-axes
           if (axis.Alignment in [calTop, calBottom]) then
             Continue;
-          ymaxAx := -Infinity;
-          yminAx := Infinity;
+          ymax := -Infinity;
+          ymin := Infinity;
           // Step through all active non-rotated series attached to this axis
           for j := 0 to FChart.SeriesCount-1 do
           begin
@@ -248,50 +248,46 @@ begin
               ser := TChartSeries(FChart.Series[j]);
               if (not ser.Active) or (ser.GetAxisY <> axis) or ser.IsRotated then
                 continue;
-              yminSer := Infinity;
-              ymaxSer := -Infinity;
-              ser.FindYRange(lext.a.x, lext.b.x, yminSer, ymaxSer);
-              yminAx := Min(yminAx, yminSer);
-              ymaxAx := Max(ymaxAx, ymaxSer);
+              ser.FindYRange(lext.a.x, lext.b.x, ymin, ymax);
             end;
           end;
           // Only if an axis has no active non-rotated series, we have -infinity
-          if ymaxAx > -Infinity then
+          if ymax > -Infinity then
           begin
-            if ymaxAx = yminAx then
+            if ymax = ymin then
             begin
-              if yminAx = 0 then
+              if ymin = 0 then
               begin
-                yminAx := -1;
-                ymaxAx := +1;
+                ymin := -1;
+                ymax := +1;
               end
               else
               // Set the range to 10% around the value, take care of the sign!
               begin
-                dy := abs(yminAx) * 0.1;
-                yminAx := yminAx - dy;
-                ymaxAx := ymaxAx + dy;
+                dy := abs(ymin) * 0.1;
+                ymin := ymin - dy;
+                ymax := ymax + dy;
               end;
             end;
           end
           else
           begin
-            yminAx := -1;
-            ymaxAx := +1;
+            ymin := -1;
+            ymax := +1;
           end;
           // Only if the user did not set its own range we set the axis range
           // determined above.
           if (not FAxisRanges[i].UseMin) then
           begin
-            axis.Range.Min := yminAx;
+            axis.Range.Min := ymin;
             axis.Range.UseMin := true;  // we had stored the original UseMin in FAxisRanges
-            lext.a.y := axis.GetTransform.AxisToGraph(yminAx);
+            lext.a.y := Min(lext.a.y, axis.GetTransform.AxisToGraph(ymin));
           end;
           if (not FAxisRanges[i].UseMax) then
           begin
-            axis.Range.Max := ymaxAx;
+            axis.Range.Max := ymax;
             axis.Range.UseMax := true;  // we had stored the original UseMax in FAxisRanges
-            lext.b.y := axis.GetTransform.AxisToGraph(ymaxAx);
+            lext.b.y := Max(lext.b.y, axis.GetTransform.AxisToGraph(ymax));
           end;
         end;  // series loop
       end;  // axes loop
