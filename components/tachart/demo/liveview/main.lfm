@@ -1,4 +1,4 @@
-object MainFrom: TMainFrom
+object MainForm: TMainForm
   Left = 299
   Height = 446
   Top = 130
@@ -7,7 +7,7 @@ object MainFrom: TMainFrom
   ClientHeight = 446
   ClientWidth = 723
   OnCreate = FormCreate
-  LCLVersion = '2.1.0.0'
+  LCLVersion = '2.3.0.0'
   object Chart1: TChart
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -106,7 +106,6 @@ object MainFrom: TMainFrom
       Width = 69
       BorderSpacing.Left = 24
       Caption = 'Viewport size'
-      ParentColor = False
       Visible = False
     end
     object seViewportSize: TFloatSpinEdit
@@ -120,7 +119,6 @@ object MainFrom: TMainFrom
       Width = 73
       Alignment = taRightJustify
       BorderSpacing.Left = 8
-      MaxValue = 0
       OnChange = seViewportSizeChange
       TabOrder = 2
       Value = 5
@@ -170,7 +168,6 @@ object MainFrom: TMainFrom
       Width = 40
       BorderSpacing.Left = 24
       Caption = 'ExtentY'
-      ParentColor = False
     end
   end
   object ChartNavScrollBar1: TChartNavScrollBar

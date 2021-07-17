@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TMainFrom }
+  { TMainForm }
 
-  TMainFrom = class(TForm)
+  TMainForm = class(TForm)
     btnAddDataPoint: TButton;
     Chart1: TChart;
     Chart1LineSeries1: TLineSeries;
@@ -38,7 +38,7 @@ type
   end;
 
 var
-  MainFrom: TMainFrom;
+  MainForm: TMainForm;
 
 implementation
 
@@ -47,9 +47,9 @@ implementation
 uses
   Math, TAChartUtils;
 
-{ TMainFrom }
+{ TMainForm }
 
-procedure TMainFrom.btnAddDataPointClick(Sender: TObject);
+procedure TMainForm.btnAddDataPointClick(Sender: TObject);
 const
   TWO_PI = 2.0 * pi;
 var
@@ -60,7 +60,7 @@ begin
   Chart1Lineseries1.AddXY(x, y);
 end;
 
-procedure TMainFrom.cbFixedExtentChange(Sender: TObject);
+procedure TMainForm.cbFixedExtentChange(Sender: TObject);
 begin
   Chart1.Extent.YMin := -1.5;
   Chart1.Extent.YMax := 1.5;
@@ -68,7 +68,7 @@ begin
   Chart1.Extent.UseYMax := cbFixedExtent.Checked;
 end;
 
-procedure TMainFrom.cbLiveModeChange(Sender: TObject);
+procedure TMainForm.cbLiveModeChange(Sender: TObject);
 begin
   ChartLiveView1.Active := cbLiveMode.Checked;
   seViewportSize.Visible := cbLiveMode.Checked;
@@ -77,12 +77,12 @@ begin
   lblExtentY.Visible := cbLiveMode.Checked;
 end;
 
-procedure TMainFrom.cbExtentYChange(Sender: TObject);
+procedure TMainForm.cbExtentYChange(Sender: TObject);
 begin
   ChartLiveView1.ExtentY := TChartLiveViewExtentY(cbExtentY.ItemIndex);
 end;
 
-procedure TMainFrom.FormCreate(Sender: TObject);
+procedure TMainForm.FormCreate(Sender: TObject);
 begin
   // Add three data points to start with
   btnAddDataPointClick(nil);
@@ -95,7 +95,7 @@ begin
   cbExtentY.ItemIndex := ord(ChartLiveView1.ExtentY);
 end;
 
-procedure TMainFrom.seViewportSizeChange(Sender: TObject);
+procedure TMainForm.seViewportSizeChange(Sender: TObject);
 begin
   ChartLiveView1.ViewportSize := seViewportSize.Value;
 end;
