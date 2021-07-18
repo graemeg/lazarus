@@ -1389,10 +1389,12 @@
       </element>
 
       <element name="TCustomPage.CanTab">
-        <short/>
+        <short>
+          Indicates if the Tab key can be used to navigate into or out of the control.
+        </short>
         <descr>
           <p>
-            Returns <b>False</b> in <var>TCustomPage</var>.
+            Always returns <b>False</b> in <var>TCustomPage</var>.
           </p>
         </descr>
         <seealso>
@@ -1530,7 +1532,9 @@
       </element>
 
       <element name="TCustomPage.Left">
-        <short/>
+        <short>
+          Not stored in LCL component streaming for TCustomPage.
+        </short>
         <descr>
           The value for the Left property is not stored in the LCL component streaming mechanism for TCustomPage.
         </descr>
@@ -1540,7 +1544,9 @@
       </element>
 
       <element name="TCustomPage.Top">
-        <short/>
+        <short>
+          Not stored in LCL component streaming for TCustomPage.
+        </short>
         <descr>
           The value for the Top property is not stored in the LCL component streaming mechanism for TCustomPage.
         </descr>
@@ -1550,7 +1556,9 @@
       </element>
 
       <element name="TCustomPage.Width">
-        <short/>
+        <short>
+          Not stored in LCL component streaming for TCustomPage.
+        </short>
         <descr>
           The value for the Width property is not stored in the LCL component streaming mechanism for TCustomPage.
         </descr>
@@ -1560,7 +1568,9 @@
       </element>
 
       <element name="TCustomPage.Height">
-        <short/>
+        <short>
+          Not stored in LCL component streaming for TCustomPage.
+        </short>
         <descr>
           The value for the Height property is not stored in the LCL component streaming mechanism for TCustomPage.
         </descr>
@@ -1570,7 +1580,9 @@
       </element>
 
       <element name="TCustomPage.TabOrder">
-        <short/>
+        <short>
+          Not stored in LCL component streaming for TCustomPage.
+        </short>
         <descr>
           The value for the TabOrder property is not stored in the LCL component streaming mechanism for TCustomPage.
         </descr>
@@ -1580,7 +1592,9 @@
       </element>
 
       <element name="TCustomPage.Visible">
-        <short/>
+        <short>
+          Not stored in LCL component streaming for TCustomPage.
+        </short>
         <descr>
           <p>
             The value for the Visible property is not stored in the LCL component streaming mechanism for TCustomPage.
@@ -2628,7 +2642,20 @@
       </element>
 
       <element name="TCustomTabControl.WSRegisterClass" link="#lcl.lclclasses.TLCLComponent.WSRegisterClass"/>
-      <element name="TCustomTabControl.CreateWnd" link="#lcl.controls.TWinControl.CreateWnd"/>
+
+      <element name="TCustomTabControl.CreateWnd">
+        <short>
+          Creates the Handle for the widgetset object and displays the selected tab and page.
+        </short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Adds or removes handles for pages on the control. Displays the visible tabs and the active page for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.CreateWnd">TWinControl.CreateWnd</link>
+        </seealso>
+      </element>
 
       <element name="TCustomTabControl.Loaded">
         <short>
@@ -2709,14 +2736,8 @@
         <short>Key modifier(s) used in the method.</short>
       </element>
 
-      <element name="TCustomTabControl.ReadState" link="#rtl.classes.TComponent.ReadState">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TCustomTabControl.ReadState.Reader">
-        <short/>
-      </element>
+      <element name="TCustomTabControl.ReadState" link="#lcl.controls.TControl.ReadState"/>
+      <element name="TCustomTabControl.ReadState.Reader"/>
 
       <element name="TCustomTabControl.DialogChar">
         <short>Handles an accelerator key for the active page in the tabbed control.</short>
@@ -2821,7 +2842,7 @@
         <short/>
       </element>
 
-      <element name="TCustomTabControl.Notification" link="#lcl.controls.TControl.Notification">
+      <element name="TCustomTabControl.Notification">
         <short>
           Handles the notification when a component is added to or removed from the control.
         </short>
@@ -2832,6 +2853,7 @@
         </descr>
         <seealso>
           <link id="TCustomTabControl.Images"/>
+          <link id="#lcl.controls.TControl.Notification">TControl.Notification</link>
         </seealso>
       </element>
       <element name="TCustomTabControl.Notification.AComponent">
@@ -2925,7 +2947,9 @@
       </element>
 
       <element name="TCustomTabControl.InsertPage">
-        <short/>
+        <short>
+          Updates the control when the specified page is inserted into the page list.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -2937,7 +2961,9 @@
       </element>
 
       <element name="TCustomTabControl.RemovePage">
-        <short/>
+        <short>
+          Updates the control when the page at the specified position is removed from the page list.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -3184,7 +3210,9 @@
       </element>
 
       <element name="TCustomTabControl.PageToTabIndex">
-        <short/>
+        <short>
+          Maps the LCL page to the tab index in the widgetset class.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -3967,7 +3995,7 @@
 
       <element name="TTabControlStrings.SetScrollOpposite">
         <short>
-          <var>SetScrollOpposite</var> - specifies whether scrollbars are to operate in the opposite sense to normal.</short>
+          <var>SetScrollOpposite</var> - specifies whether scroll bars are to operate in the opposite sense to normal.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5022,10 +5050,10 @@
       </element>
 
       <element name="TTabControl.WSRegisterClass">
-        <short/>
+        <short>Registers the class type with the widgetset.</short>
         <descr>
           <p>
-            <var>WSRegisterClass</var> is an overridden class procedure used to register the widgetset class used to create new instances of the class. WSRegisterClass calls the inherited method, and calls RegisterPropertyToSkip to omit the <var>OnDrawTab</var> property when the component is loaded at run-time. OnDrawTab was used in an older version of the Lazarus LCL.
+            <var>WSRegisterClass</var> is an overridden class procedure used to register the widgetset class used to create new instances of the class. WSRegisterClass calls the inherited method, and calls RegisterPropertyToSkip to omit the <var>OnDrawTab</var> property when the component is loaded at run-time. OnDrawTab was used in an older version of the LCL.
           </p>
         </descr>
         <seealso/>
@@ -5044,7 +5072,7 @@
       </element>
 
       <element name="TTabControl.AddRemovePageHandle">
-        <short/>
+        <short>Not implemented in TTabControl. Page handles are not used.</short>
         <descr>
           <p>
             An empty implementation in TTabControl; there are no pages, so no handle is required.
@@ -5057,60 +5085,87 @@
       </element>
 
       <element name="TTabControl.CanChange">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Indicates whether the tab control can update its Tabs property.</short>
+        <descr>
+          <p>
+            Signals the OnChanging event handler (when assigned) to get the return value for the method. The default return value is True when OnChanging has not been assigned.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.Tabs"/>
+          <link id="TCustomTabControl.OnChanging"/>
+        </seealso>
       </element>
       <element name="TTabControl.CanChange.Result">
-        <short/>
+        <short>True if the Tabs for the control can be modified.</short>
       </element>
 
       <element name="TTabControl.CanShowTab">
-        <short/>
-        <descr/>
+        <short>Indicates if the control can show the tab at the specified position.</short>
+        <descr>
+          <p>Always returns True in TTabControl.</p>
+        </descr>
         <seealso/>
       </element>
       <element name="TTabControl.CanShowTab.Result">
-        <short/>
+        <short>Always returns True in TTabControl.</short>
       </element>
       <element name="TTabControl.CanShowTab.ATabIndex">
-        <short/>
+        <short>Ordinal position for the requested tab.</short>
       </element>
 
       <element name="TTabControl.Change">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Changes the active tab for the control.</short>
+        <descr>
+          <p>
+            Change is an overridden method in TTabControl. It re-implements the method from the ancestor class to signal the OnChange event handler (when assigned) to change the active tab for the control. An internal flag is used to determine if a previous call to OnChange has not been completed. No actions are performed in the method when the flag is set.
+          </p>
+          <p>
+            Change does <b>not</b> call the inherited method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTabControl.IsUpdating"/>
+          <link id="TCustomTabControl.Change"/>
+        </seealso>
       </element>
 
-      <element name="TTabControl.CreateWnd">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-
-      <element name="TTabControl.DestroyHandle">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
+      <element name="TTabControl.CreateWnd" link="#lcl.comctrls.TCustomTabControl.CreateWnd"/>
+      <element name="TTabControl.DestroyHandle" link="#lcl.controls.TWinControl.DestroyHandle"/>
 
       <element name="TTabControl.Notification">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Handles the notification when a component is added to or removed from the class instance.
+        </short>
+        <descr>
+          <p>
+            <var>Notification</var> is an overridden method in <var>TTabControl</var>, and calls the inherited method on entry. It ensures that the <var>Images</var> member is set to <b>Nil</b> when the component is removed from the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.Notification"/>
+        </seealso>
       </element>
       <element name="TTabControl.Notification.AComponent">
-        <short/>
+        <short>Component for the notification.</short>
       </element>
       <element name="TTabControl.Notification.Operation">
-        <short/>
+        <short>Operation performed for the component.</short>
       </element>
 
       <element name="TTabControl.SetDragMode">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Sets the value for the DragMode property.</short>
+        <descr>
+          <p>
+            <var>SetDragMode</var> is an overridden method in <var>TTabControl</var> used to set the value for the <var>DragMode</var> property. It calls the inherited method on entry, and copies the new property value to the <var>Tabs</var> property.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.Tabs"/>
+          <link id="TTabControlNoteBookStrings"/>
+          <link id="#lcl.controls.TControl.SetDragMode">TControl.SetDragMode</link>
+          <link id="#lcl.controls.TControl.DragMode">TControl.DragMode</link>
+        </seealso>
       </element>
       <element name="TTabControl.SetDragMode.Value">
         <short/>
@@ -5128,64 +5183,111 @@
       </element>
 
       <element name="TTabControl.UpdateTabImages">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Calls the corresponding method in Tabs.</short>
+        <descr>
+          <p>Calls the corresponding method in Tabs.</p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.Tabs"/>
+        </seealso>
       </element>
 
       <element name="TTabControl.ImageListChange">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Calls the corresponding method in Tabs.</short>
+        <descr>
+          <p>Calls the corresponding method in Tabs.</p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.Tabs"/>
+        </seealso>
       </element>
       <element name="TTabControl.ImageListChange.Sender">
-        <short/>
+        <short>Object (TCustomTabControl) for the event.</short>
       </element>
 
       <element name="TTabControl.DoSetBounds">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Updates the bounds for the control to the specified values.
+        </short>
+        <descr>
+          <p>
+            <var>DoSetBounds</var> is an overridden method in cv <var>TTabControl</var>. It calls the inherited method in entry to adjust the client rectangle for the control and its control flags. Calls the <var>TabControlBoundsChange</var> method in the <var>Tabs</var> property when it has been assigned.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.Tabs"/>
+          <link id="#lcl.controls.TWinControl.DoSetBounds">TWinControl.DoSetBounds</link>
+        </seealso>
       </element>
       <element name="TTabControl.DoSetBounds.ALeft">
-        <short/>
+        <short>New value for the Left property.</short>
       </element>
       <element name="TTabControl.DoSetBounds.ATop">
-        <short/>
+        <short>New value for the Top property.</short>
       </element>
       <element name="TTabControl.DoSetBounds.AWidth">
-        <short/>
+        <short>New value for the Width property.</short>
       </element>
       <element name="TTabControl.DoSetBounds.AHeight">
-        <short/>
+        <short>New value for the Height property.</short>
       </element>
 
       <element name="TTabControl.GetControlClassDefaultSize">
-        <short/>
-        <descr/>
+        <short>Gets the default size for new instances of the class.</short>
+        <descr>
+          <p>
+            <var>GetControlClassDefaultSize</var> is an overridden <var>TSize</var> class function used to get the dimensions for a new instance of the <var>TTabControl</var> class. The return value contains the Width (CX) and Height (CY) for the class instance.
+          </p>
+          <p>
+            The default size in TTabControl is 200 pixels (width) by 150 pixels (height).
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TTabControl.GetControlClassDefaultSize.Result">
-        <short/>
+        <short>TSize instance with the dimensions for the new class instance.</short>
       </element>
 
       <element name="TTabControl.PaintWindow">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Updates the canvas handle and paints the control.</short>
+        <descr>
+          <p>
+            <var>PaintWindow</var> is an overridden method in <var>TTabControl</var>. It ensures that the specified device context matches the <var>Handle</var> for the control canvas. When they differ, the value in <var>DC</var> is temporarily used as the canvas handle. The modified canvas handle is reset prior to exiting from the method.
+          </p>
+          <p>
+            PaintWindow calls the <var>Paint</var> method to render the control using the theme elements details available for a tab control. PaintWindow is called when a paint message is received and applied in the <var>PaintHandler</var> method.
+          </p>
+          <p>
+            PaintWindow re-implements the method from the ancestor class, and does not call the inherited method.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTabControl.Paint"/>
+          <link id="#lcl.controls.TWinControl.PaintWindow">TWinControl.PaintWindow</link>
+        </seealso>
       </element>
       <element name="TTabControl.PaintWindow.DC">
-        <short/>
+        <short>Device context for the control canvas.</short>
       </element>
 
       <element name="TTabControl.Paint">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Paints the control to its Canvas using theme services.</short>
+        <descr>
+        <p>
+            <var>Paint</var> is a method used to render the tab control to its canvas. It handles the background and tabs for the control excluding any button decorations. Buttons are handled in a differ component. Paint adjusts the display rectangle in ARect to reserved a single pixel on the edge indicated in the <var>TabPosition</var> property. This avoids drawing a border on the edge where the control is aligned.
+        </p>
+          <p>
+            Paint uses <var>ThemeServices</var> to get theme elements available for a tab control, and to draw the control to its <var>Canvas</var> using the theme details. A raised 3D frame is drawn around the control. At design-time, the <var>Caption</var> for the control is drawn centered in its display area.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TTabControl.TabPosition"/>
+          <link id="#lcl.controls.TControl.Caption">TControl.Caption</link>
+        </seealso>
       </element>
 
       <element name="TTabControl.AdjustDisplayRectWithBorder">
-        <short/>
+        <short>Adjust the specified display rectangle to use the size in Tabs.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5194,7 +5296,7 @@
       </element>
 
       <element name="TTabControl.AdjustClientRect">
-        <short/>
+        <short>Calls the AdjustDisplayRect method.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5203,12 +5305,12 @@
       </element>
 
       <element name="TTabControl.CreateTabNoteBookStrings">
-        <short/>
+        <short>Creates the TTabControlNoteBookStrings instance used in Tabs.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TTabControl.CreateTabNoteBookStrings.Result">
-        <short/>
+        <short>TTabControlNoteBookStrings instance created in the method.</short>
       </element>
 
       <element name="TTabControl.Create">
@@ -5250,25 +5352,37 @@
       </element>
 
       <element name="TTabControl.IndexOfTabAt">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Gets the position for the tab at the specified mouse coordinates.</short>
+        <descr>
+          <p>
+            <var>IndexOfTabAt</var> is an overridden overloaded <var>Integer</var> function used to get the position for the tab at the specified mouse coordinates. The overloaded variants allow the mouse coordinates to be specified as a <var>TPoint</var> instance, or two Integer values.
+          </p>
+          <p>
+            IndexOfTabAt re-implements the methods from the ancestor class to use the <var>TTabControlNoteBookStrings</var> instance in Tabs. Tabs provides the offset for the control from the value in ClientOrigin. The <var>IndexOfTabAt</var> method in Tabs is called to get the return value for the method.
+          </p>
+          <p>
+            The return value contains the ordinal position in Tabs where the mouse pointer is located.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTabControl.IndexOfTabAt"/>
+        </seealso>
       </element>
       <element name="TTabControl.IndexOfTabAt.Result">
-        <short/>
+        <short>Ordinal position for the hovered tab in the Tabs property.</short>
       </element>
       <element name="TTabControl.IndexOfTabAt.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse pointer.</short>
       </element>
       <element name="TTabControl.IndexOfTabAt.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse pointer.</short>
       </element>
       <element name="TTabControl.IndexOfTabAt.P">
-        <short/>
+        <short>TPoint instance with the mouse coordinates.</short>
       </element>
 
       <element name="TTabControl.GetHitTestInfoAt">
-        <short/>
+        <short>Gets a set of hit test results for the specified mouse coordinates.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5297,7 +5411,7 @@
       </element>
 
       <element name="TTabControl.IndexOfTabWithCaption">
-        <short/>
+        <short>Gets the ordinal position for the tab with the specified Caption.</short>
         <descr/>
         <seealso/>
       </element>
@@ -5343,19 +5457,35 @@
       </element>
 
       <element name="TTabControl.BeginUpdate">
-        <short/>
-        <descr/>
+        <short>Starts an update process for the control.</short>
+        <descr>
+          <p>
+            No actions are performed in the method if the Tabs property has not been assigned.
+          </p>
+          <p>
+            Calls the BeginUpdate method in Tabs to start the update process.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TTabControl.EndUpdate">
-        <short/>
-        <descr/>
+        <short>Finishes an update process for the control.</short>
+        <descr>
+          <p>
+            No actions are performed in the method if the <var>Tabs</var> property has not been assigned.
+          </p>
+          <p>
+            Calls the <var>EndUpdate</var> method in Tabs to complete the update process. The <var>Change</var> method is called when there no unfinished updates in Tabs and an internal flag is set to trigger the <var>OnChange</var> event handler.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TTabControl.IsUpdating">
-        <short/>
+        <short>
+          Indicates if there are unfinished updates for one of the Tabs on the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -5364,7 +5494,7 @@
       </element>
 
       <element name="TTabControl.DisplayRect">
-        <short/>
+        <short>Display area for the tab control.</short>
         <descr>
           <p>
             <var>DisplayRect</var> is a read-only <var>TRect</var> property which contains the display area for the page in the tabbed control. It uses the client rectangle for the control as the value for the property. Use <var>TabRect</var> to get the display area for the tab in the tabbed control.
@@ -5425,6 +5555,7 @@
       <element name="TTabControl.OnStartDock" link="#lcl.controls.TControl.OnStartDock"/>
       <element name="TTabControl.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
       <element name="TTabControl.OnUnDock" link="#lcl.controls.TWinControl.OnUnDock"/>
+      <element name="TTabControl.Options" link="#lcl.comctrls.TCustomTabControl.Options"/>
       <element name="TTabControl.ParentBiDiMode" link="#lcl.controls.TControl.ParentBiDiMode"/>
       <element name="TTabControl.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
       <element name="TTabControl.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
@@ -6534,7 +6665,9 @@
       </element>
 
       <element name="TListItem.StateIndex">
-        <short/>
+        <short>
+          Ordinal position for the image used to represent the state for the list item.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -6694,7 +6827,7 @@
       </element>
 
       <element name="TListItemsEnumerator.MoveNext">
-        <short/>
+        <short>Moves to the next value for the enumerator.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6703,7 +6836,7 @@
       </element>
 
       <element name="TListItemsEnumerator.Current">
-        <short/>
+        <short>Current value for the enumerator.</short>
         <descr/>
         <seealso/>
       </element>
@@ -6865,12 +6998,12 @@
       </element>
 
       <element name="TListItems.GetOwner">
-        <short/>
+        <short>Gets the owner of the persistent object. </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TListItems.GetOwner.Result">
-        <short/>
+        <short>TCustomListView instance that owns the list items.</short>
       </element>
 
       <element name="TListItems.WSCreateItems">
@@ -6882,18 +7015,20 @@
       </element>
 
       <element name="TListItems.DoFinalizeWnd">
-        <short/>
+        <short>Updates flags in the class instance when the widgetset handle is freed.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TListItems.SetCount">
-        <short/>
+        <short>Sets the value for the Count property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TListItems.Count"/>
+        </seealso>
       </element>
       <element name="TListItems.SetCount.ACount">
-        <short/>
+        <short>New value for the Count property.</short>
       </element>
 
       <element name="TListItems.SetItem">
@@ -6911,15 +7046,21 @@
       </element>
 
       <element name="TListItems.ClearSelection">
-        <short/>
+        <short>Clears the selected state for all TListItem instances in the class.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TListItems.Item"/>
+          <link id="TListItem.Selected"/>
+        </seealso>
       </element>
 
       <element name="TListItems.SelectAll">
-        <short/>
+        <short>Sets the selected state for all TListItem instances in the class.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TListItems.Item"/>
+          <link id="TListItem.Selected"/>
+        </seealso>
       </element>
 
       <element name="TListItems.Add">
@@ -7001,7 +7142,7 @@
       </element>
 
       <element name="TListItems.Exchange">
-        <short/>
+        <short>Exchanges the list items stored at the specified positions.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7013,7 +7154,9 @@
       </element>
 
       <element name="TListItems.Move">
-        <short/>
+        <short>
+          Moves the list item at the specified position to a new position in the list.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -7077,16 +7220,18 @@
       </element>
 
       <element name="TListItems.GetEnumerator">
-        <short/>
+        <short>Gets an enumerator for the Item values in the list.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TListItemsEnumerator"/>
+        </seealso>
       </element>
       <element name="TListItems.GetEnumerator.Result">
         <short/>
       </element>
 
       <element name="TListItems.IndexOf">
-        <short/>
+        <short>Gets the ordinal position in the list for the specified list item.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7126,9 +7271,15 @@
       </element>
 
       <element name="TListItems.Flags">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Contains the flag values currently assigned to the list.</short>
+        <descr>
+          <p>
+            <var>Flags</var> is a read-only <var>TListItemsFlags</var> property with the flag values currently assigned to the list. Values in flags are added and removed as needed in methods for the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TListItemsFlags"/>
+        </seealso>
       </element>
 
       <element name="TListItems.Count">
@@ -7396,7 +7547,7 @@
       </element>
 
       <element name="TListColumn.GetStoredWidth">
-        <short/>
+        <short>Gets the value for Width as included in LCL component streaming.</short>
         <descr/>
         <seealso/>
       </element>
@@ -7441,9 +7592,10 @@
       </element>
 
       <element name="TListColumn.WidthType">
-        <short/>
+        <short>Not used in LCL.</short>
         <descr>
           WidthType is a read-only TWidth property.
+          Provided for VCL code compatibility.
         </descr>
         <seealso/>
       </element>
@@ -7561,12 +7713,14 @@
       </element>
 
       <element name="TListColumns.GetOwner">
-        <short/>
+        <short>Gets the owner of the persistent object.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent"/>
+        </seealso>
       </element>
       <element name="TListColumns.GetOwner.Result">
-        <short/>
+        <short>TPersistent object instance that owns the collection.</short>
       </element>
 
       <element name="TListColumns.Create">
@@ -7619,19 +7773,31 @@
         <short/>
       </element>
 
-      <element name="TListColumns.Owner" link="#rtl.classes.TCollection.Owner">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TListColumns.Owner">
+        <short>Owner of the collection instance.</short>
+        <descr>
+          <p>
+            <var>Owner</var> is a read-only <var>TCustomListView</var> property which contains the control that is the owner of the column collection. Its value is set to the argument passed to the Create constructor.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomListView"/>
+        </seealso>
       </element>
 
-      <element name="TListColumns.Items" link="#rtl.classes.TCollection.Items">
-        <short/>
-        <descr/>
-        <seealso/>
+      <element name="TListColumns.Items">
+        <short>Provides indexed access to the items in the column collection.</short>
+        <descr>
+          <p>
+            <var>Items</var> is the default property for the collection, and the target for an enumerator used with the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TCollection.Items">TCollection.Items</link>
+        </seealso>
       </element>
       <element name="TListColumns.Items.AIndex">
-        <short/>
+        <short>Ordinal position for the indexed property value.</short>
       </element>
 
       <element name="TListColumns.Assign">
@@ -9505,7 +9671,9 @@
       </element>
 
       <element name="TCustomListView.Loaded">
-        <short/>
+        <short>
+          Performs actions when LCL component streaming is completed for the component.
+        </short>
         <descr>
           <p>
             Creates columns in the widgetset class when the Handle for the control has been allocated. Calls the inherited method prior to exit.
@@ -9517,7 +9685,9 @@
       </element>
 
       <element name="TCustomListView.Notification">
-        <short/>
+        <short>
+          Handles the notification when a component is added to or removed from the class instance.
+        </short>
         <descr>
           <p>
             Ensures that members for the LargeImages, SmallImages, and StateImages are set to Nil when the corresponding image list is removed.
@@ -9750,7 +9920,7 @@
       </element>
 
       <element name="TCustomListView.KeyDown">
-        <short/>
+        <short>Handles key down messages for the control.</short>
         <descr>
           <p>
             Handles an F2 function key pressed when the control has focus. Ensures that the editor is displayed when the control is not marked  as ReadOnly. The keystroke is digested (set to zero).
@@ -9877,7 +10047,7 @@
 
       <element name="TCustomListView.ScrollBars">
         <short>
-          Kind of scrollbars in control: vertical, horizontal, none or both. Auto* mean that scrollbars hide automatically.
+          Kind of scroll bars in control: vertical, horizontal, none or both. Auto* mean that scroll bars hide automatically.
         </short>
         <descr/>
         <seealso/>
@@ -9891,9 +10061,15 @@
 
       <element name="TCustomListView.ShowWorkAreas">
         <short>
+          Indicates if work area captions and highlights are enabled for the control.
         </short>
         <descr>
-          The WorkAreas property sets the work areas in the ListView. This property allows to highlight each work area with its own color and show with own caption.
+          <p>
+            ShowWorkAreas is an indexed Boolean property used to configure whether work areas are displayed on the control.
+          </p>
+          <remark>
+            Work areas are not implemented (for any platform) in the current LCL version.
+          </remark>
         </descr>
         <seealso/>
       </element>
@@ -10057,9 +10233,17 @@
       </element>
 
       <element name="TCustomListView.OnItemChecked">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Event handler signalled when the Checked property for a list item has been changed.
+        </short>
+        <descr>
+          <p>
+            Signalled (when assigned) from the <var>DoItemChecked</var> method when the <var>Checked</var> property for a list item has been changed. It occurs when the <var>LVN_ITEMCHANGED</var> list view notification message is handled for the control..
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomListView.DoItemChecked"/>
+        </seealso>
       </element>
 
       <element name="TCustomListView.OnSelectItem">
@@ -10119,17 +10303,18 @@
       </element>
 
       <element name="TCustomListView.Create">
-        <short>
-          <var>Create</var> - constructor for TCustomListView: calls inherited <var>Create</var> then initializes columns, the list of items, the canvas and properties and some formats and styles.
-        </short>
-        <descr/>
+        <short>Constructor for the class instance.</short>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for <var>TCustomListView</var>. It calls the inherited <var>Create</var> method, and allocates resources needed for the class instance. It sets the default values for properties and the control style flags. It creates a TChangeLink instance for the image lists in SmallImages, LargeImages, and StateImages. The change links are configures to use the ImageChange and ImageResolutionHandleDestroyed methods in their event handlers. It also creates the TCustomListViewEditor instance used to edit values in the list view control.
+          </p>
+        </descr>
         <seealso>
-          <link id="#rtl.classes.TComponent.Create">TComponent.Create</link>
           <link id="#lcl.controls.TWinControl.Create">TWinControl.Create</link>
         </seealso>
       </element>
       <element name="TCustomListView.Create.AOwner">
-        <short/>
+        <short>Owner of the class instance.</short>
       </element>
 
       <element name="TCustomListView.Destroy">
@@ -10417,7 +10602,7 @@
 
       <element name="TCustomListView.FlatScrollBars">
         <short>
-          Show ListView scrollbars in "flat" style (default off, not for all widgetsets).
+          Show ListView scroll bars in "flat" style (default off, not for all widgetsets).
         </short>
         <descr/>
         <seealso/>
@@ -11675,7 +11860,9 @@
       </element>
 
       <element name="TCustomUpDown.OnAssociateChangeEnabled">
-        <short/>
+        <short>
+          Event handler signalled when Enabled is changed for the associated control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11684,7 +11871,9 @@
       </element>
 
       <element name="TCustomUpDown.OnAssociateChangeVisible">
-        <short/>
+        <short>
+          Event handler signalled when Visible is changed for the associated control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11693,7 +11882,9 @@
       </element>
 
       <element name="TCustomUpDown.DoMouseWheelDown">
-        <short/>
+        <short>
+          Performs actions when a mouse wheel down event occurs for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11708,7 +11899,9 @@
       </element>
 
       <element name="TCustomUpDown.DoMouseWheelUp">
-        <short/>
+        <short>
+          Performs actions when a mouse wheel up event occurs for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11723,7 +11916,9 @@
       </element>
 
       <element name="TCustomUpDown.DoMouseWheelLeft">
-        <short/>
+        <short>
+          Performs actions when a mouse wheel left event occurs for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11738,7 +11933,9 @@
       </element>
 
       <element name="TCustomUpDown.DoMouseWheelRight">
-        <short/>
+        <short>
+          Performs actions when a mouse wheel right event occurs for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11753,19 +11950,25 @@
       </element>
 
       <element name="TCustomUpDown.MouseEnter">
-        <short/>
+        <short>
+          Performs actions when the mouse pointer enters the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomUpDown.MouseLeave">
-        <short/>
+        <short>
+          Performs actions when the mouse pointer leaves the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomUpDown.DoSetBounds">
-        <short/>
+        <short>
+          Applies the specified bounds to the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -11783,12 +11986,14 @@
       </element>
 
       <element name="TCustomUpDown.SetEnabled">
-        <short/>
+        <short>Sets the value for the Enabled property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Enabled">TControl.Enabled</link>
+        </seealso>
       </element>
       <element name="TCustomUpDown.SetEnabled.Value">
-        <short/>
+        <short>New value for the Enabled property.</short>
       </element>
 
       <element name="TCustomUpDown.GetControlClassDefaultSize">
@@ -11804,7 +12009,7 @@
       </element>
 
       <element name="TCustomUpDown.CalculatePreferredSize">
-        <short/>
+        <short>Calculates the preferred width and height for the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -11907,7 +12112,9 @@
       </element>
 
       <element name="TCustomUpDown.MinRepeatInterval">
-        <short/>
+        <short>
+          Minimum interval that must elapse before the action for the control is repeated.
+        </short>
         <descr>
           MinRepeatInterval is a Byte property.
           The default value for the property is 100.
@@ -11924,7 +12131,7 @@
       </element>
 
       <element name="TCustomUpDown.OnChangingEx">
-        <short/>
+        <short>Event handler signalled to determine if the control can change its value.</short>
         <descr/>
         <seealso/>
       </element>
@@ -11963,7 +12170,9 @@
       </element>
 
       <element name="TCustomUpDown.Flat">
-        <short/>
+        <short>
+          Indicates of the speed buttons for the control are drawn using a flat appearance.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -12684,13 +12893,7 @@
         </seealso>
       </element>
 
-      <element name="TToolButton.CalculatePreferredSize">
-        <short/>
-        <descr/>
-        <seealso>
-          <link id="#lcl.controls.TControl.CalculatePreferredSize">TControl.CalculatePreferredSize</link>
-        </seealso>
-      </element>
+      <element name="TToolButton.CalculatePreferredSize" link="#lcl.controls.TControl.CalculatePreferredSize"/>
 
       <element name="TToolButton.GetControlClassDefaultSize">
         <short>
@@ -13268,7 +13471,7 @@
         </seealso>
       </element>
 
-      <element name="TToolButton.OnClick" link="#lcl.controls.TControl.OnClick">
+      <element name="TToolButton.OnClick">
         <short>Event handler signalled when the tool button has been clicked.</short>
         <descr>
           <p>
@@ -13928,7 +14131,6 @@
         <notes>
         <note>This topic needs some work.</note>
         </notes>
-        <!-- hic sunt dracones -->
         <seealso/>
       </element>
       <element name="TToolBar.WrapButtons.Result">
@@ -14190,9 +14392,8 @@ AToolbar.ButtonHeight := 30;
         </seealso>
       </element>
 
-      <!-- TODO: Needs more description. -->
       <element name="TToolBar.ButtonDropWidth">
-        <short/>
+        <short>Width for the drop-down button indicator.</short>
         <descr>
           <p>
             <var>ButtonDropWidth</var> is a read-only <var>Integer</var> property with the number of pixels needed for a drop-down button and its drop-down indicator.
@@ -14885,6 +15086,10 @@ AToolbar.ButtonHeight := 30;
         <short>Default value for the Width property.</short>
       </element>
 
+      <element name="TCoolBand.cDivider">
+        <short>Default width used for dividers on the control.</short>
+      </element>
+
       <element name="TCoolBand.cGrabIndent">
         <short>Default indentation used for the grabber (sizing grip).</short>
       </element>
@@ -15014,15 +15219,40 @@ AToolbar.ButtonHeight := 30;
         <seealso/>
       </element>
 
-      <element name="TCoolBand.Assign" link="#rtl.classes.TPersistent.Assign">
-        <short/>
-        <descr/>
+      <element name="TCoolBand.Assign">
+        <short>
+          Copies property values from the specified persistent object to the current class instance.
+        </short>
+        <descr>
+          <p>
+            Assign is an overridden method which implements object persistence for the TCoolBand type. When ASource is a TCoolBand instance, the following properties in ASource are copied:
+          </p>
+          <ul>
+            <li>Bitmap</li>
+            <li>Break</li>
+            <li>Color</li>
+            <li>FixedBackground</li>
+            <li>FixedSize</li>
+            <li>HorizontalOnly</li>
+            <li>ImageIndex</li>
+            <li>MinHeight</li>
+            <li>MinWidth</li>
+            <li>ParentBitmap</li>
+            <li>ParentColor</li>
+            <li>Text</li>
+            <li>Visible</li>
+            <li>Control (when it exists in the parent control)</li>
+          </ul>
+          <p>
+            If ASource is not a TCoolBar instance, the inherited method is called to copy values in ASource.
+          </p>
+        </descr>
         <seealso>
-          <link id="#rtl.classes.TPersistent.Assign">TPersistent.Assign</link>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
         </seealso>
       </element>
       <element name="TCoolBand.Assign.ASource">
-        <short>Persistent object with property values loaded in the method.</short>
+        <short>Persistent object with property values copied in the method.</short>
       </element>
 
       <element name="TCoolBand.AutosizeWidth">
@@ -15227,97 +15457,156 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCoolBands.SetItem">
-        <short>Sets the value for the Items property.</short>
+        <short>Sets the value for the indexed Items property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCoolBands.Items"/>
+        </seealso>
       </element>
       <element name="TCoolBands.SetItem.Index">
-        <short/>
+        <short>Ordinal position in the collection for the property value.</short>
       </element>
       <element name="TCoolBands.SetItem.Value">
-        <short/>
+        <short>New value for the indexed Items property.</short>
       </element>
 
       <element name="TCoolBands.GetOwner">
         <short>Gets the owner for the persistent object.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TPersistent">TPersistent</link>
+        </seealso>
       </element>
       <element name="TCoolBands.GetOwner.Result">
         <short>Persistent object which owns the collection.</short>
       </element>
 
       <element name="TCoolBands.Update">
-        <short/>
-        <descr/>
+        <short>
+          Updates the specified item in the collection, and updates the cool bar when needed.
+        </short>
+        <descr>
+          <p>
+            <var>Update</var> is an overridden method in <var>TCoolBands</var>. It calls the inherited method on entry to notify observers that the collection item has  changed. If a TCoolBar instance was assigned as the owner for the collection, its CalculateAndAlign method is called to layout and resize the visible bands for the control. The cool bar control is redrawn prior to exiting from the method.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCoolBands.Update.AItem">
-        <short/>
+        <short>Collection item updated in the collection.</short>
       </element>
 
       <element name="TCoolBands.Notify">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Handles the notification that occurs when a collection item is added, extracted, or deleted.
+        </short>
+        <descr>
+          <p>
+            <var>Notify</var> is an overridden method in TCoolBands, and calls the inherited method on entry to notify observers of the change to the  collection item. If the collection item was added, its owner is set to the TCoolBar instance that owns the collection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCoolBand"/>
+          <link id="#rtl.classes.TCollectionItem">TCollectionItem</link>
+          <link id="#rtl.classes.TCollection">TCollection</link>
+          <link id="#rtl.classes.TCollectionNotification">TCollectionNotification</link>
+        </seealso>
       </element>
       <element name="TCoolBands.Notify.AItem">
-        <short/>
+        <short>Collection item for the notification.</short>
       </element>
       <element name="TCoolBands.Notify.AAction">
-        <short/>
+        <short>Action performed for the collection item.</short>
       </element>
 
       <element name="TCoolBands.Create">
         <short>Constructor for the class instance.</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>Create</var> is the overridden constructor for the class instance. It calls the inherited method using <var>TCoolBand</var> as the <var>ItemClass</var> for the collection. It sets the owner of the collection to the value passed in the <var>ACoolBar</var> argument.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCoolBand"/>
+          <link id="TCoolBar"/>
+          <link id="#rtl.classes.TCollection.Create">TCollection.Create</link>
+          <link id="#rtl.classes.TCollection.ItemClass">TCollection.ItemClass</link>
+        </seealso>
       </element>
       <element name="TCoolBands.Create.ACoolBar">
         <short>Control which owns the class instance.</short>
       </element>
 
       <element name="TCoolBands.Add">
-        <short/>
-        <descr/>
+        <short>Creates a new collection item and adds it to the collection.</short>
+        <descr>
+          <p>
+            <var>Add</var> is a <var>TCoolBand</var> function used to create and store a new collection item in the collection. The return value is the TCoolBand created and stored in the method. Add re-implements the method from the ancestor class to ensure that the collection item is a TCoolBand instance.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCoolBands.Add.Result">
-        <short/>
+        <short>Collection item created and stored in the method.</short>
       </element>
 
       <element name="TCoolBands.FindBand">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Gets the collection item which contains the specified control.</short>
+        <descr>
+          <p>
+            <var>FindBand</var> iterates over the values in <var>Items</var> to locate the <var>TCoolBand</var> instance which contains the control specified in <var>AControl</var>. The return value is the TCoolBand instance in the collection, or <b>Nil</b> if AControl is not used in one of the collection Items.
+          </p>
+          <p>
+            Use <var>FindBandIndex</var> to get the ordinal position in the collection for the collection item which contains a specified control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCoolBands.Items"/>
+          <link id="TCoolBands.FindBandIndex"/>
+          <link id="TCoolBand"/>
+        </seealso>
       </element>
       <element name="TCoolBands.FindBand.Result">
-        <short/>
+        <short>
+          TCoolBand instance with the specified control, or Nil when not found.
+        </short>
       </element>
       <element name="TCoolBands.FindBand.AControl">
-        <short/>
+        <short>Control to locate in the collection items.</short>
       </element>
 
       <element name="TCoolBands.FindBandIndex">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Gets the ordinal position for the collection item which contains the specified control.
+        </short>
+        <descr>
+          <p>
+            <var>FindBandIndex</var> is an Integer function used to get the ordinal position for the collection item which contains the control specified in AControl. FindBandIndex iterates over the values in <var>Items</var> to locate the <var>TCoolBand</var> instance whose Control property is the control specified in <var>AControl</var>. The return value is the position in the Items, or <b>-1</b> if AControl is not used in one of the collection Items.
+          </p>
+          <p>
+            Use <var>FindBand</var> to get the collection item which contains a specified control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCoolBands.Items"/>
+          <link id="TCoolBands.FindBand"/>
+          <link id="TCoolBand"/>
+        </seealso>
       </element>
       <element name="TCoolBands.FindBandIndex.Result">
-        <short/>
+        <short>
+          Ordinal position for the collection item with the specified control, or -1 when not found.
+        </short>
       </element>
       <element name="TCoolBands.FindBandIndex.AControl">
-        <short/>
+        <short>Control to locate in the collection items.</short>
       </element>
 
       <element name="TCoolBands.Items">
         <short>Provides indexed access to the TCoolBand instances in the collection.</short>
         <descr>
            <p>
-             <var>Items</var> is a <var>TCoolBand</var> property which provides indexed access to the class instances in the collection. Values in the collection are accessed by their ordinal position.
-           </p>
-           <p>
-             Items is the default property for the collection.
+             <var>Items</var> is a <var>TCoolBand</var> property which provides indexed access to the class instances in the collection. Values in the collection are accessed by their ordinal position. Items is the default property for the collection.
            </p>
            <p>
              Use Add to create a new TCoolBand instance in the collection.
@@ -15353,10 +15642,10 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomCoolBar">
-        <short>Implements a Rebar-like control with resizable bands.</short>
+        <short>Defines a Rebar-like control with resizable bands.</short>
         <descr>
           <p>
-            <var>TCustomCoolBar</var> is a <var>TToolWindow</var> descendant which implements a control like the Windows Rebar control. It provides a collection of windowed controls which are displayed in movable, resizable bands.
+            <var>TCustomCoolBar</var> is a <var>TToolWindow</var> descendant which defines a control like the Windows Rebar control. It provides a collection of windowed controls which are displayed in movable, resizable bands.
           </p>
           <p>
             Each band (or <var>TCoolBand</var>) on the control can have a configurable sizing grip (or grabber), a bitmap, a text label, and a single windowed control. The CoolBar handles the size and position for the control when its band is moved.  Each band can have a fixed size, or can automatically re-size to the contained control. Bands can be displayed one band per line, or re-sized and positioned to fill the available width or height for the CoolBar control.
@@ -15453,127 +15742,146 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomCoolBar.SetGrabStyle">
-        <short/>
+        <short>Sets the value for the GrabStyle property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.GrabStyle"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetGrabStyle.aValue">
-        <short/>
+        <short>New value for the GrabStyle property.</short>
       </element>
+
       <element name="TCustomCoolBar.SetGrabWidth">
-        <short/>
+        <short>Sets the value for the GrabWidth property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.GrabWidth"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetGrabWidth.aValue">
-        <short/>
+        <short>New value for the GrabWidth property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetHorizontalSpacing">
-        <short/>
+        <short>Sets the value for the HorizontalSpacing property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.HorizontalSpacing"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetHorizontalSpacing.aValue">
-        <short/>
+        <short>New value for the HorizontalSpacing property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetImages">
-        <short/>
+        <short>Sets the value for the Images property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.Images"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetImages.aValue">
-        <short/>
+        <short>New value for the Images property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetImagesWidth">
-        <short/>
+        <short>Sets the value for the ImagesWidth property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.ImagesWidth"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetImagesWidth.AImagesWidth">
-        <short/>
+        <short>New value for the ImagesWidth property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetShowText">
-        <short/>
+        <short>Sets the value for the ShowText property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.ShowText"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetShowText.aValue">
-        <short/>
+        <short>New value for the ShowText property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetThemed">
-        <short/>
+        <short>Sets the value for the Themed property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.Themed"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetThemed.aValue">
-        <short/>
+        <short>New value for the Themed property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetVertical">
-        <short/>
+        <short>Sets the value for the Vertical property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.Vertical"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetVertical.aValue">
-        <short/>
+        <short>Sets the value for the Vertical property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetVerticalSpacing">
-        <short/>
+        <short>Sets the value for the VerticalSpacing property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.VerticalSpacing"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetVerticalSpacing.aValue">
-        <short/>
+        <short>New value for the VerticalSpacing property.</short>
       </element>
 
       <element name="TCustomCoolBar.cDefGrabStyle">
-        <short/>
+        <short>Default value for the GrabStyle property.</short>
       </element>
       <element name="TCustomCoolBar.cDefGrabWidth">
-        <short/>
+        <short>Default value for the GrabWidth property.</short>
       </element>
       <element name="TCustomCoolBar.cDefHorSpacing">
-        <short/>
+        <short>Default value for the HorizontalSpacing property.</short>
       </element>
-      <element name="TCustomCoolBar.cDefVerSpacing">
-        <short/>
+      <element name="TCustomCoolBar.cDefVertSpacing">
+        <short>Default value for the VerticalSpacing property.</short>
       </element>
       <element name="TCustomCoolBar.cNewRowBelow">
-        <short/>
+        <short>Free space below the last row.</short>
       </element>
       <element name="TCustomCoolBar.cNewRowAbove">
-        <short/>
+        <short>Free space above the first row.</short>
       </element>
 
       <element name="TCustomCoolBar.FBorderEdges">
-        <short/>
+        <short>Members used for the realized EdgeBorders for the control.</short>
       </element>
       <element name="TCustomCoolBar.FBorderLeft">
-        <short/>
+        <short>Member used for the realized left border on the control.</short>
       </element>
       <element name="TCustomCoolBar.FBorderTop">
-        <short/>
+        <short>Member used for the realized top border on the control.</short>
       </element>
       <element name="TCustomCoolBar.FBorderRight">
-        <short/>
+        <short>Member used for the realized right border on the control.</short>
       </element>
       <element name="TCustomCoolBar.FBorderBottom">
-        <short/>
+        <short>Member used for the realized bottom border on the control.</short>
       </element>
       <element name="TCustomCoolBar.FBorderWidth">
-        <short/>
+        <short>Member used for the total width of realized borders on the control.</short>
       </element>
       <element name="TCustomCoolBar.FCursorBkgnd">
-        <short/>
+        <short>Member with the cursor shape when the mouse is over the cool bar background.</short>
       </element>
       <element name="TCustomCoolBar.FDragBand">
-        <short/>
+        <short>Member with the band being dragged in the control.</short>
       </element>
       <element name="TCustomCoolBar.FDraggedBandIndex">
         <short>
@@ -15584,22 +15892,30 @@ AToolbar.ButtonHeight := 30;
         <short>Initial mouse X - position (for resizing Bands).</short>
       </element>
       <element name="TCustomCoolBar.FLockCursor">
-        <short/>
+        <short>
+          Member which indicates if the cursor shape can be changed for the control.
+        </short>
       </element>
       <element name="TCustomCoolBar.FRightToLeft">
-        <short/>
+        <short>
+          Member which indicates is bands are aligned in reverse (right-to-left) order.
+        </short>
       </element>
       <element name="TCustomCoolBar.FTextHeight">
-        <short/>
+        <short>Member with the calculated text height used on the control.</short>
       </element>
       <element name="TCustomCoolBar.FVisiBands">
-        <short/>
+        <short>Member with the visible bands for the control.</short>
       </element>
 
       <element name="TCustomCoolBar.AlignControls">
-        <short/>
+        <short>
+          Aligns the bands (and their controls) using the orientation, layout order, and anchors for the control.
+        </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.AlignControls">TWinControl.AlignControls</link>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.AlignControls.AControl">
         <short/>
@@ -15609,18 +15925,24 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomCoolBar.BitmapOrImageListChange">
-        <short/>
-        <descr/>
+        <short>Implements the OnChange handler used for Bitmap and Images.</short>
+        <descr>
+          <p>
+            Causes the control to be redrawn when an image or an image list is changed for the control.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.BitmapOrImageListChange.Sender">
-        <short/>
+        <short>Object (TCoolBar) for the event notification.</short>
       </element>
 
       <element name="TCustomCoolBar.CalculatePreferredSize">
-        <short/>
+        <short>Calculates the preferred width and height for the control.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.CalculatePreferredSize">TWinControl.CalculatePreferredSize</link>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.CalculatePreferredSize.PreferredWidth">
         <short/>
@@ -15629,17 +15951,19 @@ AToolbar.ButtonHeight := 30;
         <short/>
       </element>
       <element name="TCustomCoolBar.CalculatePreferredSize.WithThemeSpace">
-        <short/>
+        <short>True to reserve additional space for theme elements.</short>
       </element>
 
       <element name="TCustomCoolBar.CalculateAndAlign">
-        <short/>
+        <short>
+          Calculates the size and position for visible bands using the orientation, layout, and order for the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.CalculateRealIndex">
-        <short/>
+        <short>Gets the real position for the band at the specified visible position.</short>
         <descr/>
         <seealso/>
       </element>
@@ -15651,73 +15975,107 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomCoolBar.ChangeCursor">
-        <short/>
+        <short>
+          Changes the cursor shape when a band, a grabber, or the control background is active.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.ChangeCursor.ABand">
-        <short/>
+        <short>True is a band is under the mouse pointer.</short>
       </element>
       <element name="TCustomCoolBar.ChangeCursor.AGrabber">
-        <short/>
+        <short>True is the grabber is under the mouse pointer.</short>
       </element>
 
       <element name="TCustomCoolBar.CMBiDiModeChanged">
-        <short/>
+        <short>Handles the CM_BIDIMODECHANGED message for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.CMBiDiModeChanged.Message">
-        <short/>
+        <short>Message examined in the method.</short>
       </element>
 
       <element name="TCustomCoolBar.CreateWnd">
-        <short/>
+        <short>
+          Creates the window handle for the control, and sets the cursor shape for the control background.
+        </short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.DoFontChanged">
-        <short/>
-        <descr/>
+        <short>
+          Calculates the text height and width in each of the bands when the font has been changed.
+        </short>
+        <descr>
+          <p>
+            Uses the Canvas to get the text height for the control. No actions are performed in the method if the handle has not been allocated for the control Canvas.
+          </p>
+          <p>
+            Calls the CalcTextWidth method for each of the Bands on the control.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.DrawTiledBitmap">
-        <short/>
+        <short>
+          Tile draws the specified bitmap on the control Canvas to fill the area in ARect.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.DrawTiledBitmap.ARect">
-        <short/>
+        <short>Rectangle where the bitmap is tiled.</short>
       </element>
       <element name="TCustomCoolBar.DrawTiledBitmap.ABitmap">
-        <short/>
+        <short>Bitmap image drawn on the Canvas for the control.</short>
       </element>
 
       <element name="TCustomCoolBar.FontChanged">
-        <short/>
+        <short>Re-implements the OnChange event handler for the Font in the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.FontChanged.Sender">
-        <short/>
+        <short>Object (TCustomCoolBar) for the event notification.</short>
       </element>
 
       <element name="TCustomCoolBar.IsFirstAtRow">
-        <short/>
-        <descr/>
+        <short>
+          Checks whether the band at the specified position is the first one on a row.
+        </short>
+        <descr>
+          <p>
+            IsFirstAtRow is a Boolean function which indicates if the visible band at the specified position is the first band on its row.
+          </p>
+          <p>
+            ABand is the ordinal position for the requested band in the visible bands for the control. It represents an element in the internal array of visible TCoolBand instances populated in the CalculateAndAlign method.
+          </p>
+          <p>
+            IsFirstAtRow uses values from Vertical and IsRightToLeft to determine the orientation and order for the bands. The return value is True when the band at the specified position is the first one visually displayed on a given row.
+          </p>
+          <p>
+            IsFirstAtRow is used in MouseDown and MouseMove when handling drag messages to order the bands in the control.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.IsFirstAtRow.Result">
-        <short/>
+        <short>
+          True is the requested band is the left edge of the visible display area for the control.
+        </short>
       </element>
       <element name="TCustomCoolBar.IsFirstAtRow.ABand">
-        <short/>
+        <short>Ordinal position for the visible band examined in the method.</short>
       </element>
 
       <element name="TCustomCoolBar.IsRowEnd">
-        <short/>
+        <short>
+          Indicates whether the band at the specified position is the last one on a row.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -15732,113 +16090,140 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomCoolBar.MouseDown">
-        <short/>
+        <short>Handles mouse down messages for the control.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.MouseDown">TControl.MouseDown</link>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.MouseDown.Button">
-        <short/>
+        <short>Mouse button for the message.</short>
       </element>
       <element name="TCustomCoolBar.MouseDown.Shift">
-        <short/>
+        <short>Shift, Ctrl, or Alt modifier for the mouse message.</short>
       </element>
       <element name="TCustomCoolBar.MouseDown.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse pointer.</short>
       </element>
       <element name="TCustomCoolBar.MouseDown.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse pointer.</short>
       </element>
 
       <element name="TCustomCoolBar.MouseMove">
-        <short/>
+        <short>Handles mouse move messages for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.MouseMove.Shift">
-        <short/>
+        <short>Shift, Ctrl, or Alt modifier for the mouse message.</short>
       </element>
       <element name="TCustomCoolBar.MouseMove.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse pointer.</short>
       </element>
       <element name="TCustomCoolBar.MouseMove.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse pointer.</short>
       </element>
 
       <element name="TCustomCoolBar.MouseUp">
-        <short/>
+        <short>Handles mouse up messages for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.MouseUp.Button">
-        <short/>
+        <short>Mouse button for the message.</short>
       </element>
       <element name="TCustomCoolBar.MouseUp.Shift">
-        <short/>
+        <short>Shift, Ctrl, or Alt modifier for the mouse message.</short>
       </element>
       <element name="TCustomCoolBar.MouseUp.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse pointer.</short>
       </element>
       <element name="TCustomCoolBar.MouseUp.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse pointer.</short>
       </element>
 
       <element name="TCustomCoolBar.Notification">
-        <short/>
+        <short>
+          Handles the notification when a component is added to or removed from the control.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.Notification.AComponent">
-        <short/>
+        <short>Component for the notification.</short>
       </element>
       <element name="TCustomCoolBar.Notification.Operation">
-        <short/>
+        <short>Operation performed for the component.</short>
       </element>
 
       <element name="TCustomCoolBar.Paint">
-        <short/>
+        <short>Draws the visible bands for the control on its Canvas.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.Bands"/>
+          <link id="TCustomCoolBar.Bitmap"/>
+          <link id="TCustomCoolBar.Images"/>
+          <link id="TCustomCoolBar.BandBorderStyle"/>
+          <link id="TCustomCoolBar.GrabStyle"/>
+          <link id="TCustomCoolBar.ShowText"/>
+          <link id="TCustomCoolBar.Vertical"/>
+          <link id="#lcl.toolwin.TToolWindow.Paint">TToolWindow.Paint</link>
+        </seealso>
       </element>
 
       <element name="TCustomCoolBar.SetAlign">
-        <short/>
+        <short>Sets the value for the Align property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.Align"/>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetAlign.aValue">
-        <short/>
+        <short>New value for the Align property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetAutoSize">
-        <short/>
+        <short>Sets the value for the AutoSize property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.AutoSize">TControl.AutoSize</link>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetAutoSize.Value">
-        <short/>
+        <short>New value for the AutoSize property.</short>
       </element>
 
       <element name="TCustomCoolBar.SetCursor">
-        <short/>
+        <short>Sets the value for the Cursor property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TControl.Cursor">TControl.Cursor</link>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.SetCursor.Value">
-        <short/>
+        <short>New value for the Cursor property.</short>
       </element>
 
       <element name="TCustomCoolBar.WMSize">
-        <short/>
-        <descr/>
+        <short>Handles the LM_SIZE window message for the control.</short>
+        <descr>
+          <p>
+            Calls the inherited method on entry to realize the bounds and parent for the control. Calls CalculateAndAlign to layout and position the visible bands for the control.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.WMSize.Message">
-        <short/>
+        <short>Window message handled in the method.</short>
       </element>
 
       <element name="TCustomCoolBar.Create">
         <short>Constructor for the class instance.</short>
-        <descr/>
+        <descr>
+          <p>
+            Allocates resources for the Bands property, and calls the inherited method. Sets the default values for properties in the class instance. Updates the control style flags to the values needed for the widgetset class. Methods in the class instance are assigned to the OnChange handlers for the Bitmap and Images in the class instance.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.Create.AOwner">
@@ -15847,69 +16232,125 @@ AToolbar.ButtonHeight := 30;
 
       <element name="TCustomCoolBar.Destroy">
         <short>Destructor for the class instance.</short>
-        <descr/>
+        <descr>
+          <p>
+            Frees resources allocate in the Create constructor, and calls the inherited method.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.AutosizeBands">
-        <short/>
+        <short>Indicates if a band is automatically resized to its Control.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar.FixedSize"/>
+          <link id="TCustomCoolBar.Bands"/>
+          <link id="TCoolBand.Control"/>
+        </seealso>
       </element>
 
       <element name="TCustomCoolBar.EndUpdate">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Ends an update process for the control.</short>
+        <descr>
+          <p>
+            EndUpdate is an overridden method in TCustomCoolBar. It calls the inherited method to decrement the internal update counter for the control. When the update counter reaches 0, the CalculateAndAlign method is called to size and layout the visible bands on the control. Temporarily disables auto-sizing while the control recalculates and aligns its bands. Calls Invalidate to force the control to be redrawn.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.toolwin.TToolWindow.EndUpdate">TToolWindow.EndUpdate</link>
+        </seealso>
       </element>
 
       <element name="TCustomCoolBar.Invalidate">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Causes the control to be redrawn.</short>
+        <descr>
+          <p>
+            <var>Invalidate</var> is an overridden method in <var>TCustomCoolBar</var> which forces the control to be redrawn using the settings in the <var>EdgeInner</var>, <var>EdgeOuter</var>, and <var>EdgeBorders</var> properties. <var>CalculateAndAlign</var> is called to size and layout the visible bands on the control. The inherited <var>Invalidate</var> method is called to update the widgetset class when its <var>Handle</var> has been allocated.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.Invalidate">TWinControl.Invalidate</link>
+        </seealso>
       </element>
 
       <element name="TCustomCoolBar.InsertControl">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>
+          Inserts a band for the specified control at the ordinal position in Index.
+        </short>
+        <descr>
+          <p>
+            <var>InsertControl</var> is an overridden method in <var>TCustomCoolBar</var>. It calls the inherited method on entry to align and parent the control in <var>AControl</var>.
+          </p>
+          <p>
+            No additional actions are performed in the method if AControl is not a <var>TWinControl</var> descendant.
+          </p>
+          <p>
+            InsertControl checks for an existing band in the <var>Bands</var> collection which uses the control in AControl. If one does not already exist, a <var>TCoolBand</var> instance is created for the control and stored in the collection.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.InsertControl">TWinControl.InsertControl</link>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.InsertControl.AControl">
-        <short/>
+        <short>Control for the TCoolBand instance created and stored in the method.</short>
       </element>
       <element name="TCustomCoolBar.InsertControl.Index">
-        <short/>
+        <short>Ordinal position in Bands where the new band is stored.</short>
       </element>
 
       <element name="TCustomCoolBar.MouseToBandPos">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Gets the position for the band under the mouse pointer.</short>
+        <descr>
+          <p>
+            MouseToBandPos is a method used to get the position for the band under the specified mouse coordinates.
+          </p>
+          <p>
+            ABand is an Integer output parameter with the position for the band under the mouse pointer. It can contain an ordinal position in the visible bands for the control, and can be in the range 0..Bands.Count-1. The upper limit may be smaller if any of the bands have their Visible property set to False.
+          </p>
+          <p>
+            ABand may contain a negative value, defined in the cNewRowAbove and cNewRowBelow constants, that represent the unused space above or below the bands on the control.
+          </p>
+          <p>
+            ABand is set to -2147483648 (the lowest value for an Integer) if the mouse pointer is positioned over the background for the control and not one of its bands.
+          </p>
+          <p>
+            AGrabber is a Boolean output parameter which indicates if the mouse pointer is positioned over the grabber (or gripper) for the band in ABand.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomCoolBar.Bands"/>
+          <link id="TCoolBar.Visible"/>
+          <link id="#rtl.classes.TCollection.Count">TCollection.Count</link>
+        </seealso>
       </element>
       <element name="TCustomCoolBar.MouseToBandPos.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse.</short>
       </element>
       <element name="TCustomCoolBar.MouseToBandPos.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse.</short>
       </element>
       <element name="TCustomCoolBar.MouseToBandPos.ABand">
-        <short/>
+        <short>
+          Position for the band under the mouse pointer, or -2147483648 when not over a band.
+        </short>
       </element>
       <element name="TCustomCoolBar.MouseToBandPos.AGrabber">
-        <short/>
+        <short>Indicates if the mouse pointer is over the grabber for the band.</short>
       </element>
 
       <element name="TCustomCoolBar.RemoveControl">
-        <short/>
+        <short>Removes the band with the specified control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomCoolBar.RemoveControl.AControl">
-        <short/>
+        <short>Control to locate in Bands.</short>
       </element>
 
       <element name="TCustomCoolBar.Align">
-        <short/>
+        <short>Contains the edge in the Parent where the control is aligned.</short>
         <descr>
           <p>
             <var>Align</var> is a <var>TAlign</var> property which is re-introduced in <var>TCustomCoolBar</var> to change its default value. The default value for the property is <var>alTop</var>.
@@ -15919,75 +16360,92 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomCoolBar.BandBorderStyle">
-        <short/>
+        <short>Border style used around bands on the control.</short>
         <descr>
-          The default value for the property is <var>bsSingle</var>.
+          <p>
+            <var>BandBorderStyle</var> is a <var>TBorderStyle</var> property with the border style used around the bands on the control. The default value for the property is <var>bsSingle</var>. Changing the value for the property causes the control to be redrawn.
+          </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TBorderStyle">TBorderStyle</link>
+        </seealso>
       </element>
 
       <element name="TCustomCoolBar.BandMaximize">
-        <short/>
+        <short>
+          Indicates the action used to maximize the width for a band on the control.
+        </short>
         <descr>
-          The default value for the property is <var>bmClick</var>.
+          <p>
+            The default value for the property is <var>bmClick</var>, and indicates that single clicking on the background for a band causes it to be maximized.
+          </p>
         </descr>
-        <seealso/>
+        <notes>
+          <note>
+            Code comments say its not used. It is used in MouseUp. Also says it is defined but not used in VCL. Is that correct?
+          </note>
+        </notes>
+        <seealso>
+          <link id="TCoolBandMaximize"/>
+        </seealso>
       </element>
 
       <element name="TCustomCoolBar.Bands">
-        <short/>
+        <short>Collection with the bands defined for the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.Bitmap">
-        <short/>
+        <short>Optional image displayed as the background for the cool bar control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.FixedSize">
-        <short/>
+        <short>Indicates if bands on the control have a fixed size.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.FixedOrder">
-        <short/>
+        <short>Indicates if the order of the bands on the control is fixed or locked.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.GrabStyle">
-        <short/>
+        <short>Drawing style used for a grabber or gripper displayed on the control.</short>
         <descr>
-          GrabStyle is a TGrabStyle property.
-          The default value for the property is <var>cDefGrabStyle</var>.
+          <p>
+            <var>GrabStyle</var> is a <var>TGrabStyle </var>property with the drawing style used for a grabber or gripper displayed for the control. The default value for the property is defined in the <var>cDefGrabStyle</var> constant.
+          </p>
         </descr>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.GrabWidth">
-        <short/>
+        <short>Width for the grabber on the control.</short>
         <descr>
-          GrabWidth is an Integer property.
-          The default value for the property is <var>cDefGrabWidth</var>.
+          <p>
+            <var>GrabWidth</var> is an <var>Integer</var> property with the width for a grabber or gripper on the control. The default value for the property is <var>cDefGrabWidth</var>.
+          </p>
         </descr>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.HorizontalSpacing">
-        <short>Horizontal space reserved between visual elements in the control.</short>
+        <short>Horizontal space reserved between visual elements on the control.</short>
         <descr>
           <p>
-            HorizontalSpacing is an Integer property with the space reserved between visual elements in the control when the horizontal orientation is used. The default value for the property is defined in the cDefHorSpacing constant.
+            HorizontalSpacing is an Integer property with the space reserved between visual elements on the control when the horizontal orientation is used. The default value for the property is defined in the cDefHorSpacing constant.
           </p>
         </descr>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.Images">
-        <short/>
+        <short>Contains images displayed on the bands for the control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -15999,19 +16457,19 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomCoolBar.ShowText">
-        <short>Indicates that text captions are displayed on the bands in the control.</short>
+        <short>Indicates if text captions are displayed for the bands on the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.Themed">
-        <short>Enables themed rendering for the control.</short>
+        <short>Enables or disables themed rendering for the control.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TCustomCoolBar.Vertical">
-        <short>Indicates if control is displayed vertically instead of horizontally.</short>
+        <short>Indicates if the control is displayed vertically instead of horizontally.</short>
         <descr/>
         <seealso/>
       </element>
@@ -16031,78 +16489,87 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCoolBar">
-        <short/>
+        <short>Implements a Rebar-like control with resizable bands.</short>
         <descr>
-          TCoolBar is a TCustomCoolBar descendant.
+          <p>
+            TCoolBar is a TCustomCoolBar descendant which implements a control like the Windows Rebar control. It provides a collection of windowed controls which are displayed in movable, resizable bands.
+          </p>
+          <p>
+            Each band (or <var>TCoolBand</var>) on the control can have a configurable sizing grip (or grabber), a bitmap, a text label, and a single windowed control. The CoolBar handles the size and position for the control when its band is moved.  Each band can have a fixed size, or can automatically re-size to the contained control. Bands can be displayed one band per line, or re-sized and positioned to fill the available width or height for the CoolBar control.
+          </p>
+          <p>
+            A common use case is hosting multiple toolbars in an application. Separate TToolbar instance are created and configured with event handlers or actions as needed. Each toolbar is assigned as the Control for a band on the cool bar control. A perfect example is the Lazarus IDE, which uses TCoolbar to host the file, view and run toolbars in its interface.
+          </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TCustomCoolBar"/>
+        </seealso>
       </element>
 
-      <element name="TCoolBar.Align"/>
-      <element name="TCoolBar.Anchors"/>
-      <element name="TCoolBar.AutoSize"/>
-      <element name="TCoolBar.BandBorderStyle"/>
-      <element name="TCoolBar.BandMaximize"/>
-      <element name="TCoolBar.Bands"/>
-      <element name="TCoolBar.BiDiMode"/>
-      <element name="TCoolBar.BorderStyle"/>
-      <element name="TCoolBar.BorderWidth"/>
-      <element name="TCoolBar.Color"/>
-      <element name="TCoolBar.Constraints"/>
-      <element name="TCoolBar.DockSite"/>
-      <element name="TCoolBar.DragCursor"/>
-      <element name="TCoolBar.DragKind"/>
-      <element name="TCoolBar.DragMode"/>
-      <element name="TCoolBar.EdgeBorders"/>
-      <element name="TCoolBar.EdgeInner"/>
-      <element name="TCoolBar.EdgeOuter"/>
-      <element name="TCoolBar.Enabled"/>
-      <element name="TCoolBar.FixedSize"/>
-      <element name="TCoolBar.FixedOrder"/>
-      <element name="TCoolBar.Font"/>
-      <element name="TCoolBar.GrabStyle"/>
-      <element name="TCoolBar.GrabWidth"/>
-      <element name="TCoolBar.HorizontalSpacing"/>
-      <element name="TCoolBar.Images"/>
-      <element name="TCoolBar.ImagesWidth"/>
-      <element name="TCoolBar.ParentColor"/>
-      <element name="TCoolBar.ParentFont"/>
-      <element name="TCoolBar.ParentShowHint"/>
-      <element name="TCoolBar.Bitmap"/>
-      <element name="TCoolBar.PopupMenu"/>
-      <element name="TCoolBar.ShowHint"/>
-      <element name="TCoolBar.ShowText"/>
-      <element name="TCoolBar.Themed"/>
-      <element name="TCoolBar.Vertical"/>
-      <element name="TCoolBar.VerticalSpacing"/>
-      <element name="TCoolBar.Visible"/>
-      <element name="TCoolBar.OnChange"/>
-      <element name="TCoolBar.OnClick"/>
-      <element name="TCoolBar.OnContextPopup"/>
-      <element name="TCoolBar.OnDblClick"/>
-      <element name="TCoolBar.OnDockDrop"/>
-      <element name="TCoolBar.OnDockOver"/>
-      <element name="TCoolBar.OnDragDrop"/>
-      <element name="TCoolBar.OnDragOver"/>
-      <element name="TCoolBar.OnEndDock"/>
-      <element name="TCoolBar.OnEndDrag"/>
-      <element name="TCoolBar.OnGetSiteInfo"/>
-      <element name="TCoolBar.OnMouseDown"/>
-      <element name="TCoolBar.OnMouseEnter"/>
-      <element name="TCoolBar.OnMouseLeave"/>
-      <element name="TCoolBar.OnMouseMove"/>
-      <element name="TCoolBar.OnMouseUp"/>
-      <element name="TCoolBar.OnMouseWheel"/>
-      <element name="TCoolBar.OnMouseWheelDown"/>
-      <element name="TCoolBar.OnMouseWheelUp"/>
-      <element name="TCoolBar.OnResize"/>
-      <element name="TCoolBar.OnStartDock"/>
-      <element name="TCoolBar.OnStartDrag"/>
-      <element name="TCoolBar.OnUnDock"/>
+      <element name="TCoolBar.Align" link="#lcl.comctrls.TCustomCoolBar.Align"/>
+      <element name="TCoolBar.Anchors" link="#lcl.controls.TControl.Anchors"/>
+      <element name="TCoolBar.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
+      <element name="TCoolBar.BandBorderStyle" link="#lcl.comctrls.TCustomCoolBar.BandBorderStyle"/>
+      <element name="TCoolBar.BandMaximize" link="#lcl.comctrls.TCustomCoolBar.BandMaximize"/>
+      <element name="TCoolBar.Bands" link="#lcl.comctrls.TCustomCoolBar.Bands"/>
+      <element name="TCoolBar.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
+      <element name="TCoolBar.BorderWidth" link="#lcl.controls.TWinControl.BorderWidth"/>
+      <element name="TCoolBar.Color" link="#lcl.controls.TControl.Color"/>
+      <element name="TCoolBar.Constraints" link="#lcl.controls.TControl.Constraints"/>
+      <element name="TCoolBar.DockSite" link="#lcl.controls.TWinControl.DockSite"/>
+      <element name="TCoolBar.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
+      <element name="TCoolBar.DragKind" link="#lcl.controls.TControl.DragKind"/>
+      <element name="TCoolBar.DragMode" link="#lcl.controls.TControl.DragMode"/>
+      <element name="TCoolBar.EdgeBorders" link="#lcl.toolwin.TToolWindow.EdgeBorders"/>
+      <element name="TCoolBar.EdgeInner" link="#lcl.toolwin.TToolWindow.EdgeInner"/>
+      <element name="TCoolBar.EdgeOuter" link="#lcl.toolwin.TToolWindow.EdgeOuter"/>
+      <element name="TCoolBar.Enabled" link="#lcl.controls.TControl.Enabled"/>
+      <element name="TCoolBar.FixedSize" link="#lcl.comctrls.TCustomCoolBar.FixedSize"/>
+      <element name="TCoolBar.FixedOrder" link="#lcl.comctrls.TCustomCoolBar.FixedOrder"/>
+      <element name="TCoolBar.Font" link="#lcl.controls.TControl.Font"/>
+      <element name="TCoolBar.GrabStyle" link="#lcl.comctrls.TCustomCoolBar.GrabStyle"/>
+      <element name="TCoolBar.GrabWidth" link="#lcl.comctrls.TCustomCoolBar.GrabWidth"/>
+      <element name="TCoolBar.HorizontalSpacing" link="#lcl.comctrls.TCustomCoolBar.HorizontalSpacing"/>
+      <element name="TCoolBar.Images" link="#lcl.comctrls.TCustomCoolBar.Images"/>
+      <element name="TCoolBar.ImagesWidth" link="#lcl.comctrls.TCustomCoolBar.ImagesWidth"/>
+      <element name="TCoolBar.ParentColor" link="#lcl.controls.TControl.ParentColor"/>
+      <element name="TCoolBar.ParentFont" link="#lcl.controls.TControl.ParentFont"/>
+      <element name="TCoolBar.ParentShowHint" link="#lcl.controls.TControl.ParentShowHint"/>
+      <element name="TCoolBar.Bitmap" link="#lcl.comctrls.TCustomCoolBar.Bitmap"/>
+      <element name="TCoolBar.PopupMenu" link="#lcl.controls.TControl.ParentShowHint"/>
+      <element name="TCoolBar.ShowHint" link="#lcl.controls.TControl.ShowHint"/>
+      <element name="TCoolBar.ShowText" link="#lcl.comctrls.TCustomCoolBar.ShowText"/>
+      <element name="TCoolBar.Themed" link="#lcl.comctrls.TCustomCoolBar.Themed"/>
+      <element name="TCoolBar.Vertical" link="#lcl.comctrls.TCustomCoolBar.Vertical"/>
+      <element name="TCoolBar.VerticalSpacing" link="#lcl.comctrls.TCustomCoolBar.VerticalSpacing"/>
+      <element name="TCoolBar.Visible" link="#lcl.controls.TControl.Visible"/>
+      <element name="TCoolBar.OnChange" link="#lcl.comctrls.TCustomCoolBar.OnChange"/>
+      <element name="TCoolBar.OnClick" link="#lcl.controls.TControl.OnClick"/>
+      <element name="TCoolBar.OnContextPopup" link="#lcl.controls.TControl.OnContextPopup"/>
+      <element name="TCoolBar.OnDblClick" link="#lcl.controls.TControl.OnDblClick"/>
+      <element name="TCoolBar.OnDockDrop" link="#lcl.controls.TWinControl.OnDockDrop"/>
+      <element name="TCoolBar.OnDockOver" link="#lcl.controls.TWinControl.OnDockOver"/>
+      <element name="TCoolBar.OnDragDrop" link="#lcl.controls.TControl.OnDragDrop"/>
+      <element name="TCoolBar.OnDragOver" link="#lcl.controls.TControl.OnDragOver"/>
+      <element name="TCoolBar.OnEndDock" link="#lcl.controls.TControl.OnEndDock"/>
+      <element name="TCoolBar.OnEndDrag" link="#lcl.controls.TControl.OnEndDrag"/>
+      <element name="TCoolBar.OnGetSiteInfo" link="#lcl.controls.TWinControl.OnGetSiteInfo"/>
+      <element name="TCoolBar.OnMouseDown" link="#lcl.controls.TControl.OnMouseDown"/>
+      <element name="TCoolBar.OnMouseEnter" link="#lcl.controls.TControl.OnMouseEnter"/>
+      <element name="TCoolBar.OnMouseLeave" link="#lcl.controls.TControl.OnMouseLeave"/>
+      <element name="TCoolBar.OnMouseMove" link="#lcl.controls.TControl.OnMouseMove"/>
+      <element name="TCoolBar.OnMouseUp" link="#lcl.controls.TControl.OnMouseUp"/>
+      <element name="TCoolBar.OnMouseWheel" link="#lcl.controls.TControl.OnMouseWheel"/>
+      <element name="TCoolBar.OnMouseWheelDown" link="#lcl.controls.TControl.OnMouseWheelDown"/>
+      <element name="TCoolBar.OnMouseWheelUp" link="#lcl.controls.TControl.OnMouseWheelUp"/>
+      <element name="TCoolBar.OnResize" link="#lcl.controls.TControl.OnResize"/>
+      <element name="TCoolBar.OnStartDock" link="#lcl.controls.TControl.OnStartDock"/>
+      <element name="TCoolBar.OnStartDrag" link="#lcl.controls.TControl.OnStartDrag"/>
+      <element name="TCoolBar.OnUnDock" link="#lcl.controls.TWinControl.OnUnDock"/>
 
       <element name="TTrackBarOrientation">
         <short>
-          <var>TTrackBarOrientation</var> - enumerated type denoting horizontal or vertical orientation for a track bar.
+          Enumerated type with values that represent the orientation for a track bar.
         </short>
         <descr/>
         <seealso/>
@@ -16471,6 +16938,8 @@ AToolbar.ButtonHeight := 30;
         <short>Position for the tick mark (between Min and Max).</short>
       </element>
 
+      <element name="TCustomTrackBar.AutoSize" link="#lcl.controls.TControl.AutoSize"/>
+
       <element name="TCustomTrackBar.Frequency">
         <short>
           Indicates the frequency of tick marks displayed for the control.
@@ -16739,6 +17208,11 @@ AToolbar.ButtonHeight := 30;
       </element>
       <element name="TNodeState.nsBound">
         <short>The tree node is bound to a tree (has a Parent) or is a top-level node.</short>
+      </element>
+      <element name="TNodeState.nsValidHasChildren">
+        <short>
+          The  tree node has child nodes and a value assigned to its HasChildren property.
+        </short>
       </element>
 
       <element name="TNodeStates">
@@ -17252,6 +17726,30 @@ AToolbar.ButtonHeight := 30;
         <short/>
       </element>
 
+      <element name="TTVHasChildrenEvent">
+        <short>
+          Specifies an event handler signalled to determine if a given tree node has child nodes.
+        </short>
+        <descr>
+          <p>
+            <var>TTVHasChildrenEvent</var> is the type used for the <var>OnHasChildren</var> property in <var>TCustomTreeView</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTreeView.OnHasChildren"/>
+          <link id="TTreeNode.HasChildren"/>
+        </seealso>
+      </element>
+      <element name="TTVHasChildrenEvent.Result">
+        <short>True if the specified node has child nodes.</short>
+      </element>
+      <element name="TTVHasChildrenEvent.Sender">
+        <short>Object (TCustomTreeView ) for the event notification.</short>
+      </element>
+      <element name="TTVHasChildrenEvent.ANode">
+        <short>Tree node examined in the routine.</short>
+      </element>
+
       <element name="TTreeNodeCompare">
         <short>
           <var>TTreeNodeCompare</var> - generic function to compare Tree Nodes: returns -1 if Node1 is less than Node2, zero if equal, +1 if Node1 is greater.
@@ -17496,8 +17994,6 @@ AToolbar.ButtonHeight := 30;
       <element name="TTreeNode.GetAbsoluteIndex.Result"/>
       <element name="TTreeNode.GetDeleting"/>
       <element name="TTreeNode.GetDeleting.Result"/>
-      <element name="TTreeNode.GetHasChildren"/>
-      <element name="TTreeNode.GetHasChildren.Result"/>
       <element name="TTreeNode.GetCount"/>
       <element name="TTreeNode.GetCount.Result"/>
       <element name="TTreeNode.GetCut"/>
@@ -17508,6 +18004,8 @@ AToolbar.ButtonHeight := 30;
       <element name="TTreeNode.GetExpanded.Result"/>
       <element name="TTreeNode.GetFocused"/>
       <element name="TTreeNode.GetFocused.Result"/>
+      <element name="TTreeNode.GetHasChildren"/>
+      <element name="TTreeNode.GetHasChildren.Result"/>
       <element name="TTreeNode.GetHeight"/>
       <element name="TTreeNode.GetHeight.Result"/>
       <element name="TTreeNode.GetIndex"/>
@@ -18094,7 +18592,9 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TTreeNode.GetNextSkipChildren">
-        <short/>
+        <short>
+          Gets the next sibling node for the current tree node, or Nil when a sibling does not exist.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -19335,27 +19835,27 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TTreeNodes.AddNode">
-        <short/>
+        <short>Adds or inserts a tree node as a sibling to a specified relative node.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TTreeNodes.AddNode.Result">
-        <short/>
+        <short>Tree node with an updated Parent node after the operation.</short>
       </element>
       <element name="TTreeNodes.AddNode.Node">
-        <short/>
+        <short>Node added or inserted to the node tree for the relative node.</short>
       </element>
       <element name="TTreeNodes.AddNode.Relative">
-        <short/>
+        <short>Tree node where the node will become a sibling.</short>
       </element>
       <element name="TTreeNodes.AddNode.S">
-        <short/>
+        <short>Accessibility value for the tree node.</short>
       </element>
       <element name="TTreeNodes.AddNode.Ptr">
-        <short/>
+        <short>Pointer to the accessibility data for the tree node.</short>
       </element>
       <element name="TTreeNodes.AddNode.Method">
-        <short/>
+        <short>Method used to store the node: add or insert.</short>
       </element>
 
       <element name="TTreeNodes.AddObject">
@@ -19877,7 +20377,7 @@ AToolbar.ButtonHeight := 30;
       </element>
       <element name="TTreeViewState.tvsScrollbarChanged">
         <short>
-          Scrollbar visibility or position has been changed in the control.
+          Scroll bar visibility or position has been changed in the control.
         </short>
       </element>
       <element name="TTreeViewState.tvsMaxRightNeedsUpdate">
@@ -20230,6 +20730,7 @@ AToolbar.ButtonHeight := 30;
       <element name="TCustomTreeView.FOnExpanding"/>
       <element name="TCustomTreeView.FOnGetImageIndex"/>
       <element name="TCustomTreeView.FOnGetSelectedIndex"/>
+      <element name="TCustomTreeView.FOnHasChildren"/>
       <element name="TCustomTreeView.FOnNodeChanged"/>
       <element name="TCustomTreeView.FOnSelectionChanged"/>
       <element name="TCustomTreeView.FOptions"/>
@@ -20996,10 +21497,10 @@ AToolbar.ButtonHeight := 30;
             If multi-selection has not been enabled for the control, the value in ANewNode is assigned to the <var>Selected</var> property.
           </p>
           <p>
-            The <var>MakeVisible</var> method in the <var>TTreeNode</var> instance is called to make the node visible, and the scrollbars for the control are updated.
+            The <var>MakeVisible</var> method in the <var>TTreeNode</var> instance is called to make the node visible, and the scroll bars for the control are updated.
           </p>
           <p>
-            Used in the implementation of the <var>KeyDown</var> method. Used to implement methods like <var>MoveHome</var>, <var>MoveEnd</var>, <var>MovePageDown</var>, <var>MovePageUp</var>, <var>MoveToNexNode</var>, and <var>MoveToNexNode</var>.
+            Used in the implementation of the <var>KeyDown</var> method. Used to implement methods like <var>MoveHome</var>, <var>MoveEnd</var>, <var>MovePageDown</var>, <var>MovePageUp</var>, <var>MoveToNextNode</var>, and <var>MoveToPrevNode</var>.
           </p>
         </descr>
         <seealso/>
@@ -21038,7 +21539,7 @@ AToolbar.ButtonHeight := 30;
         <short>Performs actions needed when the specified tree node is collapsed.</short>
         <descr>
           <p>
-            <var>Collapse</var> is a method used to perform actions needed when the tree node in <var>Node</var> is collapsed. Collapse updates the visibility and position for the scrollbars in the control. The <var>OnCollapsed</var> event handler is signalled (when assigned) for the tree node in Node.
+            <var>Collapse</var> is a method used to perform actions needed when the tree node in <var>Node</var> is collapsed. Collapse updates the visibility and position for the scroll bars in the control. The <var>OnCollapsed</var> event handler is signalled (when assigned) for the tree node in Node.
           </p>
           <p>
             No actions are performed in the method when the component is being freed.
@@ -21064,7 +21565,7 @@ AToolbar.ButtonHeight := 30;
         <short>Performs actions needed when the handle for the control is (re-)created.</short>
         <descr>
           <p>
-            <var>CreateWnd</var> is an overridden method in <var>TCustomTreeView</var> used to perform actions needed when the handle for the control is created or re-created. CreateWnd ensures that the <var>States</var> property is updated to remove the value <var>tvsStateChanging</var>. The internal flags for scrollbar visibility are reset, and the inherited method is called.
+            <var>CreateWnd</var> is an overridden method in <var>TCustomTreeView</var> used to perform actions needed when the handle for the control is created or re-created. CreateWnd ensures that the <var>States</var> property is updated to remove the value <var>tvsStateChanging</var>. The internal flags for scroll bar visibility are reset, and the inherited method is called.
           </p>
         </descr>
         <seealso>
@@ -21136,7 +21637,7 @@ AToolbar.ButtonHeight := 30;
         <short>Performs actions needed when the handle for the control is destroyed.</short>
         <descr>
           <p>
-            Includes the <var>tvsStateChanging</var> flag in the <var>States</var> property, and calls the inherited method. Ensures that the Canvas handle has been freed after calling the inherited method. Resets size values in the ScrollInfo for the horizontal and vertical scrollbars.
+            Includes the <var>tvsStateChanging</var> flag in the <var>States</var> property, and calls the inherited method. Ensures that the Canvas handle has been freed after calling the inherited method. Resets size values in the ScrollInfo for the horizontal and vertical scroll bars.
           </p>
         </descr>
         <seealso>
@@ -21145,14 +21646,14 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomTreeView.DoCreateNodeClass">
-        <short/>
+        <short>Signals the OnCreateNodeClass event handler (when assigned).</short>
         <descr>
           Signals the OnCreateNodeClass event handler (when assigned).
         </descr>
         <seealso/>
       </element>
       <element name="TCustomTreeView.DoCreateNodeClass.NewNodeClass">
-        <short/>
+        <short>Class reference used to create the new node instance.</short>
       </element>
 
       <element name="TCustomTreeView.DoEndDrag" link="#lcl.controls.TControl.DoEndDrag">
@@ -21189,9 +21690,15 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomTreeView.DoMouseWheelHorz">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Performs actions to handle a horizontal mouse wheel message.</short>
+        <descr>
+          <p>
+            <var>DoMouseWheelHorz</var> is an overridden method used to perform actions needed to handle a horizontal mouse wheel message. It calls the inherited method to signal the <var>OnMouseWheelHorz</var> event handler (when assigned), or other chtOnMouseWheelHorz  handlers registered in the application. If the message is not handled in the ancestor, the value in <var>ScrolledLeft</var> is updated to apply the delta value in <var>WheelDelta</var>. The position for a tool tip (or hint) is also updated using the coordinates in Mouse.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.DoMouseWheelHorz">TControl.DoMouseWheelHorz</link>
+        </seealso>
       </element>
       <element name="TCustomTreeView.DoMouseWheelHorz.Result">
         <short/>
@@ -21301,6 +21808,30 @@ AToolbar.ButtonHeight := 30;
         <short/>
       </element>
 
+      <element name="TCustomTreeView.DrawBuiltinIcon">
+        <short>
+          Defines a method used to draw a built-in icon for a specified tree node.
+        </short>
+        <descr>
+          <p>
+            <var>DrawBuiltInIcon</var> is a virtual method which is used to draw the a built-in icon for the specified tree node. A built-in icon is provided by the operating system or platform when an image list has not been provided or populated in the <var>Images</var>  property.
+          </p>
+          <p>
+            The return value contains a <var>TSize</var> instance with the dimensions for the built-in image. In TCustomTreeView, the method returns an empty TSize instance (CX and CY are both set to 0). The method must be overridden in a descendent class (like <var>TShellTreeView</var>) to use the icon(s) appropriate for the implementation.
+          </p>
+        </descr>
+        <seealso/>
+      </element>
+      <element name="TCustomTreeView.DrawBuiltinIcon.Result">
+        <short>TSize instance with the dimensions for the built-in image.</short>
+      </element>
+      <element name="TCustomTreeView.DrawBuiltinIcon.ANode">
+        <short>Tree node used to select an appropriate icon image.</short>
+      </element>
+      <element name="TCustomTreeView.DrawBuiltinIcon.ARect">
+        <short>Rectangle where the icon image was drawn.</short>
+      </element>
+
       <element name="TCustomTreeView.EndEditing">
         <short>Updates the specified tree node and hides editor.</short>
         <descr>
@@ -21350,14 +21881,14 @@ AToolbar.ButtonHeight := 30;
 
       <element name="TCustomTreeView.Expand">
         <short>
-          Expands the specified tree node and updates the scrollbars for the control.
+          Expands the specified tree node and updates the scroll bars for the control.
         </short>
         <descr>
           <p>
             Expand is a method used to expand the tree node specified in Node on the tree view control. Expand is called after when the TTreeNode instance in Node has updated its States property and notified the Items container of the change.
           </p>
           <p>
-            Expand updates the scrollbars for the control. The OnExpanded event handler is signalled (when assigned) to performs actions needed after the tree node has been expanded.
+            Expand updates the scroll bars for the control. The OnExpanded event handler is signalled (when assigned) to performs actions needed after the tree node has been expanded.
           </p>
         </descr>
         <seealso/>
@@ -21547,20 +22078,27 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomTreeView.MouseMove">
-        <short/>
-        <descr/>
+        <short>Handles mouse move messages for the control.</short>
+        <descr>
+          <p>
+            <var>MouseMove</var> is an overridden method in <var>TCustomTreeView</var> used to handle mouse move messages for the control. It calls the inherited method on entry to notify the drag manager when the control is dragged, and signals the OnMouseMove event handler (when assigned).
+          </p>
+          <p>
+            MouseMove ensures that an automatic insertion mark is generated when needed. It also updates the tool tip (or Hint) location and updates the hot tracking position.
+          </p>
+        </descr>
         <seealso>
           <link id="#lcl.controls.TControl.MouseMove">TControl.MouseMove</link>
         </seealso>
       </element>
       <element name="TCustomTreeView.MouseMove.Shift">
-        <short/>
+        <short>Shift, Ctrl, or Alt modifier for the mouse message.</short>
       </element>
       <element name="TCustomTreeView.MouseMove.X">
-        <short/>
+        <short>Horizontal coordinate for the mouse pointer.</short>
       </element>
       <element name="TCustomTreeView.MouseMove.Y">
-        <short/>
+        <short>Vertical coordinate for the mouse pointer.</short>
       </element>
 
       <element name="TCustomTreeView.MouseUp">
@@ -21603,15 +22141,59 @@ AToolbar.ButtonHeight := 30;
         <short>Indicates the value changed in the tree node.</short>
       </element>
 
-      <element name="TCustomTreeView.Notification" link="#lcl.controls.TControl.Notification"/>
-      <element name="TCustomTreeView.Notification.AComponent"/>
-      <element name="TCustomTreeView.Notification.Operation"/>
+      <element name="TCustomTreeView.NodeHaschildren">
+        <short>Determines if the specified tree node has child nodes.</short>
+        <descr>
+          <p>
+            <var>NodeHasChildren</var> is a <var>Boolean</var> function used to determine if the tree node specified in <var>Node</var> has child nodes. NodeHasChildren signals the <var>OnHasChildren</var> event handler (when assigned) to determine the return value for the method. The return value is <b>False</b> if OnHasChildren has not been assigned.
+          </p>
+          <p>
+            NodeHasChildren is called when a tree node reads the value for its <var>HasChildren</var> property. The <var>TTreeNode</var> instance uses an existing value in its States flags when available. If not set, NodeHasChildren is used to determine if the flag value (<var>nsHasChildren</var>) is included in or excluded from the <var>States</var> property in the tree node.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTreeView.OnHasChildren"/>
+          <link id="TTreeNode.HasChildren"/>
+          <link id="TTreeNode.States"/>
+          <link id="TTreeNode.TreeView"/>
+          <link id="TNodeStates"/>
+          <link id="TNodeState"/>
+        </seealso>
+      </element>
+      <element name="TCustomTreeView.NodeHaschildren.Result">
+        <short>
+          True if the node has child nodes. False if OnHasChildren has not been assigned.
+        </short>
+      </element>
+      <element name="TCustomTreeView.NodeHaschildren.Node">
+        <short>Tree node examined in the method.</short>
+      </element>
+
+      <element name="TCustomTreeView.Notification">
+        <short>
+          Handles the notification when a component is added to or removed from the class instance.
+        </short>
+        <descr>
+          <p>
+            <var>Notification</var> is an overridden method in <var>TCustomTreeView</var>, and calls the inherited method on entry. It ensures that the member for <var>Images</var> or <var>StateImages</var> is set to <b>Nil</b> when the component is removed from the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Notification">TControl.Notification</link>
+        </seealso>
+      </element>
+      <element name="TCustomTreeView.Notification.AComponent">
+        <short>Component for the notification event.</short>
+      </element>
+      <element name="TCustomTreeView.Notification.Operation">
+        <short>Operation performed for the component.</short>
+      </element>
 
       <element name="TCustomTreeView.Paint" link="#lcl.controls.TCustomControl.Paint">
         <short>Renders the tree view control.</short>
         <descr>
           <p>
-            Calls DoPaint to implement the Paint method for the control.
+            Calls DoPaint to render the tree nodes, scroll bars, and decorations for the control.
           </p>
         </descr>
         <seealso>
@@ -21635,8 +22217,16 @@ AToolbar.ButtonHeight := 30;
         <short>Vertical offset applied to the visible area for the control.</short>
       </element>
 
-      <element name="TCustomTreeView.SetDragMode" link="#lcl.controls.TControl.SetDragMode"/>
-      <element name="TCustomTreeView.SetDragMode.Value" link="#lcl.controls.TControl.SetDragMode.Value"/>
+      <element name="TCustomTreeView.SetDragMode">
+        <short>Sets the value for the DragMode property.</short>
+        <descr/>
+        <seealso>
+          <link id="#lcl.controls.TControl.DragMode">TControl.SetDragMode</link>
+        </seealso>
+      </element>
+      <element name="TCustomTreeView.SetDragMode.Value">
+        <short>New value for the DragMode property.</short>
+      </element>
 
       <element name="TCustomTreeView.SetOptions">
         <short>Sets the value for the Options property.</short>
@@ -21687,60 +22277,114 @@ AToolbar.ButtonHeight := 30;
 
       <element name="TCustomTreeView.UpdateInsertMark">
         <short>
-          <var>UpdateInsertMark</var> - see if there is an insert mark at X,Y and put one in if necessary.
+          Sets or removes an insertion mark at the specified position based on the values in Options.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            An insertion mark is removed if <var>tvoAutoInsertMark</var> has not been included in the <var>Options</var> for the control, and at design-time. Calls <var>SetInsertMark</var> to create and display the insertion mark.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomTreeView.UpdateInsertMark.X">
-        <short/>
+        <short>Horizontal coordinate for the insertion mark.</short>
       </element>
       <element name="TCustomTreeView.UpdateInsertMark.Y">
-        <short/>
+        <short>Vertical coordinate for the insertion mark.</short>
       </element>
 
       <element name="TCustomTreeView.DoSelectionChanged">
         <short>
-          <var>DoSelectionChanged</var> - perform the code required for a change in selection.
+           Performs actions needed when the selection for the tree view has been changed.
         </short>
-        <descr/>
+        <descr>
+          <p>
+            <var>DoSelectionChanged</var> is called when a value in the Selection or MultiSelected property is changed. It signals the OnSelectionChange event handler (when assigned).
+          </p>
+          <p>
+            DoSelectionChanged is called after the flags in <var>States</var> has been updated to include <var>tvsSelectionChanged</var>, and before the change timer is enabled for the control.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomTreeView.WMHScroll">
-        <short>Handles the WMHScroll message for the control.</short>
-        <descr/>
+        <short>Handles the LM_HSCROLL message for the control.</short>
+        <descr>
+          <p>
+            <var>WMHScroll</var> ensures that the <var>ScrollLeft</var> property is updated to apply the horizontal scroll code passed in the <var>Msg</var> argument. The following scroll codes are handled in the method:
+          </p>
+          <dl>
+            <dt>SB_LEFT</dt>
+            <dd>Sets ScrolledLeft to 0.</dd>
+            <dt>SB_RIGHT</dt>
+            <dd>Sets ScrolledLeft to its  largest value for the visible control area.</dd>
+            <dt>SB_LINERIGHT</dt>
+            <dd>
+              Increments ScrolledLeft by one-half of the default ItemHeight for the control. (?)
+            </dd>
+            <dt>SB_LINELEFT</dt>
+            <dd>
+              Decrements ScrolledLeft by one-half of the default ItemHeight for the control. (?)
+            </dd>
+            <dt>SB_PAGERIGHT</dt>
+            <dd>Increments ScrolledLeft by one page of lines. (?)</dd>
+            <dt>SB_PAGELEFT</dt>
+            <dd>Decrements ScrolleLeft by one page of lines. (?)</dd>
+            <dt>SB_THUMBPOSITION, SB_THUMBTRACK</dt>
+            <dd>Sets ScrolledLeft to the current scroll bar position in Msg.</dd>
+            <dt>SB_ENDSCROLL</dt>
+            <dd>Ends scroll bar message handling.</dd>
+          </dl>
+        </descr>
+        <notes>
+          <note>
+            (?) Using client / item height instead of client / item width. Is that correct?
+          </note>
+        </notes>
         <seealso/>
       </element>
       <element name="TCustomTreeView.WMHScroll.Msg">
-        <short>Control message handled in the method.</short>
+        <short>Window message handled in the method.</short>
       </element>
 
       <element name="TCustomTreeView.WMVScroll">
-        <short>Handles the WMVScroll message for the control.</short>
+        <short>Handles the LM_VSCROLL message for the control.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TCustomTreeView.WMVScroll.Msg">
-        <short>Control message handled in the method.</short>
+        <short>Window message handled in the method.</short>
       </element>
 
-      <element name="TCustomTreeView.WMLButtonDown" link="#lcl.controls.TControl.WMLButtonDown">
-        <short>Handles the WMLButtonDown message for the control.</short>
-        <descr/>
-        <seealso/>
+      <element name="TCustomTreeView.WMLButtonDown">
+        <short>Handles the LM_LBUTTONDOWN message for the control.</short>
+        <descr>
+          <p>
+            <var>WMLButtonDown</var> ensures that the <var>States</var> property is updated to include <var>tvsDragged</var> for the Left mouse button message. It calls the inherited method prior to exit to update MouseCapture and Click events for the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.WMLButtonDown">TControl.WMLButtonDown</link>
+        </seealso>
       </element>
       <element name="TCustomTreeView.WMLButtonDown.AMessage">
-        <short>Message examined in the method.</short>
+        <short>Window message examined in the method.</short>
       </element>
 
       <element name="TCustomTreeView.WMSetFocus">
-        <short>Handles the WMSetFocus message for the control.</short>
-        <descr/>
-        <seealso/>
+        <short>Handles the LM_SETFOCUS message for the control.</short>
+        <descr>
+          <p>
+            Calls the <var>Invalidate</var> method to force the control to be redrawn. Calls the inherited method prior to exit.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.WMSetFocus">TWinControl.WMSetFocus</link>
+        </seealso>
       </element>
       <element name="TCustomTreeView.WMSetFocus.Message">
-        <short>Control message handled in the method.</short>
+        <short>Window message handled in the method.</short>
       </element>
 
       <element name="TCustomTreeView.WMKillFocus">
@@ -21752,52 +22396,69 @@ AToolbar.ButtonHeight := 30;
         <short>Control message handled in the method.</short>
       </element>
 
-      <element name="TCustomTreeView.Resize" link="#lcl.controls.TControl.Resize">
-        <short>Resizes the control and updates the scrollbars and the States property.</short>
-        <descr/>
-        <seealso/>
+      <element name="TCustomTreeView.Resize">
+        <short>Resizes the control and updates the scroll bars and the States property.</short>
+        <descr>
+          <p>
+            <var>Resize</var> is an overridden method in <var>TCustomTreeView</var>. It updates values in the <var>States</var> property to include <var>tvsScrollbarChanged</var> and <var>tvsBottomItemNeedsUpdate</var>. It calls the inherited method to check for changes and execute the <var>DoOnResize</var> method. Resize calls <var>UpdateScrollbars</var> to update the visibility and position for the scroll bars on the control.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#lcl.controls.TControl.Resize">TControl.Resize</link>
+        </seealso>
       </element>
 
       <element name="TCustomTreeView.EditingItem">
         <short>Contains the tree node being edited in the control.</short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>EditingItem</var> is a read-only <var>TTreeNode</var> property which contains the tree node currently being edited in the control. Its value is assigned when the <var>BeginEditing</var> method is called, and unassigned when the <var>EndEditing</var> method is called.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TCustomTreeView.BeginEditing"/>
+          <link id="TCustomTreeView.EndEditing"/>
+          <link id="TCustomTreeView.KeyDown"/>
+          <link id="TCustomTreeView.MouseUp"/>
+          <link id="TTreeNode.EditText"/>
+        </seealso>
       </element>
 
       <element name="TCustomTreeView.States">
         <short>Contains the state values in effect for the control.</short>
         <descr>
-          States is a read-only TTreeViewStates property which contains the state values in effect for the control. Value from the TTreeViewState enumeration are included in the set type to indicate that the corresponding state is "ON", "TRUE", or "ACTIVE".
+          <p>
+            <var>States</var> is a read-only <var>TTreeViewStates</var> property which contains the state values in effect for the control. Value from the <var>TTreeViewState</var> enumeration are included in the set type to indicate that the corresponding state is "ON", "TRUE", or "ACTIVE". See <var>TTreeViewState</var> for more information about the enumeration values and their meanings.
+          </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="TTreeViewStates"/>
+          <link id="TTreeViewState"/>
+        </seealso>
       </element>
 
       <element name="TCustomTreeView.GetSelectedChildAccessibleObject">
-        <short/>
-        <descr/>
+        <short>Returns the currently selected child accessible object.</short>
+        <descr>
+          <p>
+            In TCustomTreeView, the value in Selection is included as a data object for the accessibility object.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TCustomTreeView.GetSelectedChildAccessibleObject.Result">
-        <short/>
+        <short>True if the node data was successfully added to the accessibility object.</short>
       </element>
 
-      <element name="TCustomTreeView.GetChildAccessibleObjectAtPos">
-        <short/>
-        <descr/>
-        <seealso/>
-      </element>
-      <element name="TCustomTreeView.GetChildAccessibleObjectAtPos.Result">
-        <short/>
-      </element>
-      <element name="TCustomTreeView.GetChildAccessibleObjectAtPos.APos">
-        <short/>
-      </element>
+      <element name="TCustomTreeView.GetChildAccessibleObjectAtPos" link="#lcl.controls.TControl.GetChildAccessibleObjectAtPos"/>
+      <element name="TCustomTreeView.GetChildAccessibleObjectAtPos.Result"/>
+      <element name="TCustomTreeView.GetChildAccessibleObjectAtPos.APos"/>
 
       <element name="TCustomTreeView.AccessibilityOn">
-        <short>Allows to turn accessibility off to speed up the control.</short>
+        <short>Turns accessibility on or off to speed up the control.</short>
         <descr>
           <p>
-            This property is provided for the case when a tree view contains a huge amount of items, lets say 10.000+. In this case accessibility might slow the tree down, so turning this property off might make things faster.
+            This property is provided for the situation where a tree view contains a huge number of items, lets say 10,000+. In this case accessibility might slow the tree down, so turning this property off might make things faster.
           </p>
         </descr>
         <seealso/>
@@ -21818,6 +22479,8 @@ AToolbar.ButtonHeight := 30;
         </descr>
         <seealso/>
       </element>
+
+      <element name="TCustomTreeView.BorderStyle" link="#lcl.controls.TWinControl.BorderStyle"/>
 
       <element name="TCustomTreeView.HideSelection">
         <short>
@@ -21852,7 +22515,7 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomTreeView.DisabledFontColor">
-        <short>Font color used for tree nodes when the control is not enabled.</short>
+        <short>Font color used for tree nodes when the tree view is not enabled.</short>
         <descr>
           <p>
             The default value for the property is <var>clGrayText</var>.
@@ -21872,19 +22535,53 @@ AToolbar.ButtonHeight := 30;
       </element>
 
       <element name="TCustomTreeView.MultiSelect">
-        <short>
-          Allow to select several tree-items at a time, e.g. using Ctrl+click (select one item more) or Shift+click (select range of items).
-        </short>
-        <descr/>
+        <short>Enables or disables selection of several tree-items at one time.</short>
+        <descr>
+          <p>
+            <var>MultiSelect</var> is a <var>Boolean</var> property used to enable or disable selection of multiple nodes in the tree view control. The default value for the property is <b>False</b>, and allows a single selected node indicated in the <var>Selection</var> property.
+          </p>
+          <p>
+            When set to <b>True</b>, multiple nodes can be selected and stored in the Selections property. Use <b>Ctrl+Click</b> add or remove a node in the Selections property. Use <b>Shift+Click</b> to add or remove a range of nodes in the Selections property.
+          </p>
+          <p>
+            Changing the value for the property causes existing nodes in both Selection and Selections to be cleared.
+          </p>
+          <p>
+            Use <var>MultiSelectStyle</var> to set the multi-selection style enabled for the control.
+          </p>
+          <p>
+            Use the <var>Select</var> method to add a node to the values in Selections.
+          </p>
+          <p>
+            Use <var>SelectionCount</var> to get the number of nodes in Selections.
+          </p>
+          <p>
+            Use <var>GetFirstMultiSelected</var> or <var>GetLastMultiSelected</var> to get the tree node for the corresponding node in Selections.
+          </p>
+          <p>
+            Use <var>ClearMultiSelection</var> to remove all existing nodes in Selections.
+          </p>
+        </descr>
         <seealso/>
       </element>
 
       <element name="TCustomTreeView.OnAddition">
         <short>
-          Event handler signalled when a tree node is added or moved in the Items in the control.
+          Event handler signalled when a tree node is added to the tree node Items in the control.
         </short>
-        <descr/>
-        <seealso/>
+        <descr>
+          <p>
+            <var>OnAddition</var> is a <var>TTVExpandedEvent</var> property with the event handler signalled when a tree node is added to the Items for the control. The Sender argument contains the TCustomTreeViwe instance for the notification. The Node argument contains the TTreeNode instance added to the control.
+          </p>
+          <remark>
+            OnAddition is not used in the current LCL implementation.
+          </remark>
+        </descr>
+        <seealso>
+          <link id="TCustomTreeView.Items"/>
+          <link id="TTreeNodes"/>
+          <link id="TTVExpandedEvent"/>
+        </seealso>
       </element>
 
       <element name="TCustomTreeView.OnAdvancedCustomDraw">
@@ -22045,6 +22742,17 @@ AToolbar.ButtonHeight := 30;
         </short>
         <descr/>
         <seealso/>
+      </element>
+
+      <element name="TCustomTreeView.OnHasChildren">
+        <short>
+          Event handler signalled to determine if a given node in the tree view has child nodes.
+        </short>
+        <descr/>
+        <seealso>
+          <link id="TTVHasChildrenEvent"/>
+          <link id="TTreeNode.HasChildren"/>
+        </seealso>
       </element>
 
       <element name="TCustomTreeView.OnNodeChanged">
@@ -22309,7 +23017,7 @@ AToolbar.ButtonHeight := 30;
             Top-level nodes in Items are sorted by calling the SortTopLevelNodes in items. Child nodes are then sorted (when present), starting at the first top-level node in the tree. The ClearCache method in Items is called to invalidate the node cache for the control.
           </p>
           <p>
-            The States property is updated to force the node coordinates and scrollbars to be refreshed in the control.
+            The States property is updated to force the node coordinates and scroll bars to be refreshed in the control.
           </p>
         </descr>
         <seealso/>
@@ -22346,10 +23054,12 @@ AToolbar.ButtonHeight := 30;
         </descr>
       </element>
 
-      <element name="TCustomTreeView.EraseBackground" link="#lcl.controls.TWinControl.EraseBackground">
+      <element name="TCustomTreeView.EraseBackground">
         <short>Has an empty implementation in the current LCL version.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#lcl.controls.TWinControl.EraseBackground">TWinControl.EraseBackground</link>
+        </seealso>
       </element>
       <element name="TCustomTreeView.EraseBackground.DC">
         <short/>
@@ -22387,6 +23097,23 @@ AToolbar.ButtonHeight := 30;
       </element>
       <element name="TCustomTreeView.GetNodeAt.Y">
         <short>Vertical coordinate for the tree node or row.</short>
+      </element>
+
+      <element name="TCustomTreeView.GetNodeWithExpandSignAt">
+        <short>
+          Gets the tree node at the specified vertical coordinate with a visible expand symbol.
+        </short>
+        <descr/>
+        <seealso/>
+      </element>
+      <element name="TCustomTreeView.GetNodeWithExpandSignAt.Result">
+        <short/>
+      </element>
+      <element name="TCustomTreeView.GetNodeWithExpandSignAt.X">
+        <short/>
+      </element>
+      <element name="TCustomTreeView.GetNodeWithExpandSignAt.Y">
+        <short/>
       </element>
 
       <element name="TCustomTreeView.GetInsertMarkAt">
@@ -22507,7 +23234,7 @@ AToolbar.ButtonHeight := 30;
             EndUpdates raises an Exception (catchable in the debugger) if the internal update counter is 0 or less when the method is called.
           </p>
           <p>
-            EndUpdates calls the EndUpdate method in the <var>Items</var> container. <var>UpdateScrollBars</var> is called to refresh the position in the visible scrollbars when a change actually occurred in the list of tree nodes.
+            EndUpdates calls the EndUpdate method in the <var>Items</var> container. <var>UpdateScrollBars</var> is called to refresh the position in the visible scroll bars when a change actually occurred in the list of tree nodes.
           </p>
         </descr>
         <errors>
@@ -22981,7 +23708,7 @@ AText := ATreeView.Items.Item[0].Text;  // caption for the first tree node
       </element>
 
       <element name="TCustomTreeView.ScrollBars">
-        <short>Specifies the scrollbars displayed for the tree view control.</short>
+        <short>Specifies the scroll bars displayed for the tree view control.</short>
         <descr/>
         <seealso/>
       </element>
@@ -23217,6 +23944,7 @@ AText := ATreeView.Items.Item[0].Text;  // caption for the first tree node
       <element name="TTreeView.Font" link="#lcl.controls.TControl.Font"/>
       <element name="TTreeView.HideSelection" link="#lcl.comctrls.TCustomTreeView.HideSelection"/>
       <element name="TTreeView.HotTrack" link="#lcl.comctrls.TCustomTreeView.HotTrack"/>
+      <element name="TTreeView.HotTrackColor" link="#lcl.comctrls.TCustomTreeView.HotTrackColor"/>
       <element name="TTreeView.Images" link="#lcl.comctrls.TCustomTreeView.Images"/>
       <element name="TTreeView.ImagesWidth" link="#lcl.comctrls.TCustomTreeView.ImagesWidth"/>
       <element name="TTreeView.Indent" link="#lcl.comctrls.TCustomTreeView.Indent"/>
@@ -23275,6 +24003,7 @@ AText := ATreeView.Items.Item[0].Text;  // caption for the first tree node
       <element name="TTreeView.OnExpanding" link="#lcl.comctrls.TCustomTreeView.OnExpanding"/>
       <element name="TTreeView.OnGetImageIndex" link="#lcl.comctrls.TCustomTreeView.OnGetImageIndex"/>
       <element name="TTreeView.OnGetSelectedIndex" link="#lcl.comctrls.TCustomTreeView.OnGetSelectedIndex"/>
+      <element name="TTreeView.OnHasChildren" link="#lcl.comctrls.TCustomTreeView.OnHasChildren"/>
       <element name="TTreeView.OnKeyDown" link="#lcl.controls.TWinControl.OnKeyDown"/>
       <element name="TTreeView.OnKeyPress" link="#lcl.controls.TWinControl.OnKeyPress"/>
       <element name="TTreeView.OnKeyUp" link="#lcl.controls.TWinControl.OnKeyUp"/>
@@ -23364,7 +24093,8 @@ OldExpanded.Free;
         <seealso/>
       </element>
 
-      <element name="TTreeNodeExpandedState.Create" link="#rtl.System.TObject.Create">
+      <element name="TTreeNodeExpandedState.Create">
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
@@ -23378,15 +24108,15 @@ OldExpanded.Free;
         <short/>
       </element>
 
-      <element name="TTreeNodeExpandedState.Destroy" link="#rtl.System.TObject.Destroy">
-        <short/>
+      <element name="TTreeNodeExpandedState.Destroy">
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
 
       <element name="TTreeNodeExpandedState.Clear">
         <short>
-          <var>Clear</var> the nodes from the tree structure.
+          <var>Clear</var> the expanded nodes for the tree structure.
         </short>
         <descr/>
         <seealso/>
@@ -23394,7 +24124,7 @@ OldExpanded.Free;
 
       <element name="TTreeNodeExpandedState.CreateChildNodes">
         <short>
-          <var>CreateChildNodes</var> - constructor for the offspring nodes.
+          <var>CreateChildNodes</var> - constructor for the child nodes.
         </short>
         <descr/>
         <seealso/>
@@ -23596,10 +24326,12 @@ OldExpanded.Free;
         <seealso/>
       </element>
 
-      <element name="THeaderSection.GetDisplayName" link="#rtl.classes.TCollectionItem.DisplayName">
-        <short/>
+      <element name="THeaderSection.GetDisplayName">
+        <short>Gets the value for the DisplayName property.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TCollectionItem.DisplayName"/>
+        </seealso>
       </element>
       <element name="THeaderSection.Result">
         <short>Display name for the collection item.</short>
@@ -23781,21 +24513,27 @@ OldExpanded.Free;
         <short>Section updated in the collection for the header control.</short>
       </element>
 
-      <element name="THeaderSections.Create" link="#rtl.classes.TCollection.Create">
+      <element name="THeaderSections.Create">
         <short>Constructor for the class instance.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TCollection.Create">TCollection.Create</link>
+        </seealso>
       </element>
       <element name="THeaderSections.Create.HeaderControl">
         <short>Owner of the collection.</short>
       </element>
 
-      <element name="THeaderSections.Add" link="#rtl.classes.TCollection.Add">
+      <element name="THeaderSections.Add">
         <short>Creates a new header section and adds it to the collection.</short>
         <descr>
-          Adds calls the AddItem method to get the return value for the method.
+          <p>
+            Adds calls the AddItem method to get the return value for the method.
+          </p>
         </descr>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TCollection.Add">TCollection.Add</link>
+        </seealso>
       </element>
       <element name="THeaderSections.Add.Result">
         <short>Collection item created and stored in the method.</short>
@@ -23821,10 +24559,12 @@ OldExpanded.Free;
         <short>Ordinal position in the collection where the header section is stored.</short>
       </element>
 
-      <element name="THeaderSections.Insert" link="#rtl.classes.TCollection.Insert">
+      <element name="THeaderSections.Insert">
         <short>Inserts a new collection item at the specified position in the collection.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TCollection.Insert">TCollection.Insert</link>
+        </seealso>
       </element>
       <element name="THeaderSections.Insert.Result">
         <short>Header section created in the method.</short>
@@ -23835,12 +24575,14 @@ OldExpanded.Free;
         </short>
       </element>
 
-      <element name="THeaderSections.Delete" link="#rtl.classes.TCollection.Delete">
+      <element name="THeaderSections.Delete">
         <short>
           Deletes the collection item stored at the specified position in the collection.
         </short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="#rtl.classes.TCollection.Delete">TCollection.Delete</link>
+        </seealso>
       </element>
       <element name="THeaderSections.Delete.Index">
         <short>Ordinal position for the collection item deleted in the method.</short>
@@ -24057,7 +24799,19 @@ OldExpanded.Free;
 
       <element name="TCustomHeaderControl.Loaded" link="#lcl.controls.TWinControl.Loaded"/>
 
-      <element name="TCustomHeaderControl.Notification" link="#rtl.classes.TComponent.Notification"/>
+      <element name="TCustomHeaderControl.Notification">
+        <short>
+          Handles the notification when a component is added to or removed from the class instance.
+        </short>
+        <descr>
+          <p>
+            Calls the inherited method on entry. Ensures that the <var>Images</var> member is set to <b>Nil</b> when the component is removed from the class instance.
+          </p>
+        </descr>
+        <seealso>
+          <link id="#rtl.classes.TComponent">TComponent</link>
+        </seealso>
+      </element>
 
       <element name="TCustomHeaderControl.SectionClick">
         <short>
@@ -24185,7 +24939,9 @@ OldExpanded.Free;
       </element>
 
       <element name="TCustomHeaderControl.DoAutoAdjustLayout">
-        <short/>
+        <short>
+          Applies an automatic layout policy to the control using the specified scaling factors.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -24274,7 +25030,7 @@ OldExpanded.Free;
         <short>TPoint instance with the coordinates examined in the method.</short>
       </element>
 
-      <element name="TCustomHeaderControl.Paint" link="#lcl.controls.TCustomControl.Paint">
+      <element name="TCustomHeaderControl.Paint">
         <short>
           Draws the control to its Canvas using highlighting, drag images, and theme details.
         </short>
@@ -24458,7 +25214,7 @@ OldExpanded.Free;
       <element name="THeaderControl.Anchors" link="#lcl.controls.TControl.Anchors"/>
       <element name="THeaderControl.BiDiMode" link="#lcl.controls.TControl.BiDiMode"/>
       <element name="THeaderControl.BorderWidth" link="#lcl.controls.TWinControl.BorderWidth"/>
-      <element name="THeaderControl.BorderSpacing" link="#lcl.controls.TWinControl.BorderSpacing"/>
+      <element name="THeaderControl.BorderSpacing" link="#lcl.controls.TControl.BorderSpacing"/>
       <element name="THeaderControl.DragCursor" link="#lcl.controls.TControl.DragCursor"/>
       <element name="THeaderControl.DragKind" link="#lcl.controls.TControl.DragKind"/>
       <element name="THeaderControl.DragMode" link="#lcl.controls.TControl.DragMode"/>

@@ -7,7 +7,7 @@
     ====================================================================
     -->
     <module name="Graphics">
-      <short>Contains classes and types used in graphic applications.</short>
+      <short>Contains classes, types, and routines used in graphics applications.</short>
       <descr>
         <p>
           <file>graphics.pp</file> contains classes, types, and routines used to represent graphic images in a Lazarus Component Library (<b>LCL</b>) application. The following classes are added to the registered class list used by the Run-time Library (<b>RTL</b>):
@@ -12731,29 +12731,43 @@
       </element>
       <!-- .ICNS is the Apple icon image format used in MacOS. -->
       <element name="TIcnsRec">
-        <short/>
+        <short>
+          Record type with the icon type and raw image data for a TIcnsIcon  instance.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsRec.IconType">
-        <short/>
+        <short>
+          TIcnsIconType value for the icon data, mask, or alpha channel used in the raw image.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsRec.RawImage">
-        <short/>
+        <short>Contains the TRawImage instance with the data for an icon image.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="PIcnsRec">
-        <short/>
+        <short>Pointer to a TIcnsRec instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsList">
-        <short/>
-        <descr/>
-        <seealso/>
+        <short>Implements a list used to maintain TIcnsIcon instances.</short>
+        <descr>
+          <p>
+            <var>TIcnsList</var> is a <var>TList</var> descendant which implements a list used to create, store, and maintain TIcnsIcon instances. It provides indexed access to the icons using the <var>Items</var> property. It re-implements the <var>Add</var> method to allow an icon instance to be created and stored using the specified icon type and raw image data.
+          </p>
+          <p>
+            TIcnsList is the type used to implement storage for images and masks in <var>TIcnsIcon</var>.
+          </p>
+        </descr>
+        <seealso>
+          <link id="TIcnsIcon"/>
+          <link id="#rtl.classes.TList">TList</link>
+        </seealso>
       </element>
       <element name="TIcnsList.GetItem">
         <short/>
@@ -12778,48 +12792,62 @@
         <short/>
       </element>
       <element name="TIcnsList.Notify">
-        <short/>
+        <short>
+          Handles the notification when an icon image is added to or removed from the list.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsList.Notify.Ptr">
-        <short/>
+        <short>
+          Pointer to the TIcnsRec with the icon type and raw image data for the notification.
+        </short>
       </element>
       <element name="TIcnsList.Notify.Action">
-        <short/>
+        <short>
+          Action performed for the icon image.
+          </short>
       </element>
       <element name="TIcnsList.Add">
-        <short/>
+        <short>
+          Creates and stores a entry in the list for the specified icon type and raw image.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsList.Add.Result">
-        <short/>
+        <short>Ordinal position in the list where the new entry was stored.</short>
       </element>
       <element name="TIcnsList.Add.AIconType">
-        <short/>
+        <short>Type for the image data, mask, or alpha channel image in the raw data.</short>
       </element>
       <element name="TIcnsList.Add.ARawImage">
-        <short/>
+        <short>Raw image instance added to the container.</short>
       </element>
       <element name="TIcnsList.Items">
-        <short/>
+        <short>
+          Provides indexed access to the icon images in the list by their ordinal position.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsList.Items.Index">
-        <short/>
+        <short>Ordinal position in the list for the property value.</short>
       </element>
       <element name="TSharedIcnsIcon ">
-        <short/>
+        <short>Declares the shared icon for the TIcnsIcon type.</short>
         <descr/>
         <seealso>
           <link id="TSharedIcon"/>
         </seealso>
       </element>
       <element name="TIcnsIcon">
-        <short/>
-        <descr/>
+        <short>Implements a MacOS Icon Resource file.</short>
+        <descr>
+          <p>
+            <var>TIcnsIcon</var> is a <var>TCustomIcon</var> descendant which implements a class used for MacOS Icon resources. TIcnsIcon is similar to the .ICO format used on Windows platforms. An Icns Icon can store one or more images, which generally use the PNG image format. Standard icon sizes used in Icns Icon files include: 16x16, 32x32, 48x48, 128x128, 256x256, 512x512, and 1024x1024 pixels.
+          </p>
+        </descr>
         <seealso>
           <link id="TCustomIcon"/>
         </seealso>
@@ -12843,7 +12871,7 @@
         <seealso/>
       </element>
       <element name="TIcnsIcon.GetSharedImageClass">
-        <short/>
+        <short>Gets the class reference used to create the shared image for the icon.</short>
         <descr/>
         <seealso/>
       </element>
@@ -12851,7 +12879,9 @@
         <short/>
       </element>
       <element name="TIcnsIcon.ReadData">
-        <short/>
+        <short>
+          Reads icon data from the specified stream, and performs byte order conversion when needed.
+        </short>
         <descr/>
         <seealso/>
       </element>
@@ -12859,7 +12889,9 @@
         <short/>
       </element>
       <element name="TIcnsIcon.ReadStream">
-        <short/>
+        <short>
+          Reads each of the icon resources from the specified stream, and adds them to the list of icon images.
+          </short>
         <descr/>
         <seealso/>
       </element>
@@ -12870,41 +12902,51 @@
         <short/>
       </element>
       <element name="TIcnsIcon.WriteStream">
-        <short/>
-        <descr/>
+        <short>
+          Writes each of the icon resources in the list to the specified stream.
+        </short>
+        <descr>
+          <p>
+            Does not write icons using the JPEG2000 image format in the current LCL version.
+          </p>
+        </descr>
         <seealso/>
       </element>
       <element name="TIcnsIcon.WriteStream.AStream">
         <short/>
       </element>
       <element name="TIcnsIcon.Create">
-        <short/>
+        <short>Constructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsIcon.Destroy">
-        <short/>
+        <short>Destructor for the class instance.</short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsIcon.GetFileExtensions">
-        <short/>
+        <short>Gets the file extension(s) used for the icon type.</short>
         <descr/>
-        <seealso/>
+        <seealso>
+          <link id="TCustomIcon.GetFileExtensions"/>
+        </seealso>
       </element>
       <element name="TIcnsIcon.GetFileExtensions.Result">
-        <short/>
+        <short>Always returns 'icns' in TIcnsIcon.</short>
       </element>
       <element name="TIcnsIcon.LazarusResourceTypeValid">
-        <short/>
+        <short>
+          Checks whether the specified Resource Type name is valid for the icon type.
+        </short>
         <descr/>
         <seealso/>
       </element>
       <element name="TIcnsIcon.LazarusResourceTypeValid.Result">
-        <short/>
+        <short>True when the uppercase value in ResourceType is 'ICNS'.</short>
       </element>
       <element name="TIcnsIcon.LazarusResourceTypeValid.ResourceType">
-        <short/>
+        <short>Resource type name checked in the method.</short>
       </element>
       <element name="TSharedCursorImage">
         <short>Implements a reference-counted shared image used for cursors.</short>
@@ -13391,7 +13433,7 @@
         <seealso/>
       </element>
       <element name="TSharedTiffImage">
-        <short/>
+        <short>Declares the shared image for the TTiffImage type.</short>
         <descr/>
         <seealso>
           <link id="TSharedCustomBitmap"/>
@@ -13409,7 +13451,8 @@
         <short>No absolute unit of measurement.
        </short>
         <descr>
-          <p>Used for images that may have a non-square aspect ratio, but no meaningful absolute dimensions.
+          <p>
+            Used for images that may have a non-square aspect ratio, but no meaningful absolute dimensions.
           </p>
         </descr>
       </element>
@@ -13558,7 +13601,7 @@
         <seealso/>
       </element>
       <element name="TTiffImage.DocumentName">
-        <short/>
+        <short>Name of the document from which the image was scanned.</short>
         <descr/>
         <seealso/>
       </element>

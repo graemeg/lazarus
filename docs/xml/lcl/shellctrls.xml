@@ -418,13 +418,16 @@
         </short>
         <descr>
           <p>
-            <var>CanExpand</var> is an overridden <var>Boolean</var> function used to determine if the specified tree node can be expanded in the shell control. <var>Node</var> contains the <var>TTreeNode</var> examined in the method. CanExpand calls the inherited method using the value in Node as an argument.
+            <var>CanExpand</var> is an overridden <var>Boolean</var> function used to determine if the specified tree node can be expanded in the shell control. <var>Node</var> contains the <var>TTreeNode</var> examined in the method.
           </p>
           <p>
-            No additional actions are performed if the inherited method returns <b>False</b>.
+            CanExpand calls the inherited method to signal the OnExpanding event handler (when assigned). No additional actions are performed if the inherited method returns <b>False</b>.
           </p>
           <p>
-            <var>CanExpand</var> temporarily disables the <var>AutoExpand</var> functionality in the shell control, and removes all child tree nodes in <var>Node</var>. The child nodes are re-created using the <var>PopulateTreeNodeWithFiles</var> method. This ensures that the shell control reflects the current content in the local file system during execution of the method. The value in <var>AutoExpand</var> is restored to its original value on entry to the method.
+            <var>CanExpand</var> temporarily disables the <var>AutoExpand</var> functionality in the shell control, and removes all child tree nodes in <var>Node</var>. The child nodes are re-created using the <var>PopulateTreeNodeWithFiles</var> method. This ensures that the shell control reflects the current content in the local file system during execution of the method. The value in <var>AutoExpand</var> is restored to its original value prior to exiting from the method.
+          </p>
+          <p>
+            The entire update process is done in a BeginUpdate  / EndUpdate block to reduce the number of screen refreshes in the method.
           </p>
         </descr>
         <seealso>
